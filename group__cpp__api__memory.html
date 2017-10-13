@@ -256,12 +256,21 @@ Enumerations</h2></td></tr>
 <a class="el" href="group__cpp__api__memory.html#ggae45a07d6121fdd33e310782753178076a12c72b1d3a7f7b06fdd0dbd7f8fa6c12">mkldnn::eltwise_tanh</a> = mkldnn_eltwise_tanh, 
 <br/>
 &#160;&#160;<a class="el" href="group__cpp__api__memory.html#ggae45a07d6121fdd33e310782753178076a69bd24cf8965e1bc499cb1722c12a597">mkldnn::eltwise_elu</a> = mkldnn_eltwise_elu, 
-<a class="el" href="group__cpp__api__memory.html#ggae45a07d6121fdd33e310782753178076a5ba3a03af8dc6c1b9066e48508ae9b5c">mkldnn::lrn_across_channels</a> = mkldnn_lrn_across_channels, 
+<a class="el" href="group__cpp__api__memory.html#ggae45a07d6121fdd33e310782753178076a74831c7c423625321de36ba24968ba83">mkldnn::eltwise_square</a> = mkldnn_eltwise_square, 
+<a class="el" href="group__cpp__api__memory.html#ggae45a07d6121fdd33e310782753178076ad74c080e0ccc56afdbbf1488465ca41d">mkldnn::eltwise_abs</a> = mkldnn_eltwise_abs, 
+<a class="el" href="group__cpp__api__memory.html#ggae45a07d6121fdd33e310782753178076a89ce2e86e4f1e02bf2ab725daec41931">mkldnn::eltwise_sqrt</a> = mkldnn_eltwise_sqrt, 
+<br/>
+&#160;&#160;<a class="el" href="group__cpp__api__memory.html#ggae45a07d6121fdd33e310782753178076aa400a0c599327e4ac606af461533df32">mkldnn::eltwise_linear</a> = mkldnn_eltwise_linear, 
+<a class="el" href="group__cpp__api__memory.html#ggae45a07d6121fdd33e310782753178076a9b795beea0fa5ea1b1ab08f978beb83b">mkldnn::eltwise_bounded_relu</a> = mkldnn_eltwise_bounded_relu, 
+<a class="el" href="group__cpp__api__memory.html#ggae45a07d6121fdd33e310782753178076a8690d7851db72ce930fd5af554c419c6">mkldnn::eltwise_soft_relu</a> = mkldnn_eltwise_soft_relu, 
+<a class="el" href="group__cpp__api__memory.html#ggae45a07d6121fdd33e310782753178076acdf3d961f51fa67b6f20bfd765bd95cd">mkldnn::eltwise_logistic</a> = mkldnn_eltwise_logistic, 
+<br/>
+&#160;&#160;<a class="el" href="group__cpp__api__memory.html#ggae45a07d6121fdd33e310782753178076a5ba3a03af8dc6c1b9066e48508ae9b5c">mkldnn::lrn_across_channels</a> = mkldnn_lrn_across_channels, 
 <a class="el" href="group__cpp__api__memory.html#ggae45a07d6121fdd33e310782753178076a1bec35024f741400d95f4c15897b50a2">mkldnn::lrn_within_channel</a> = mkldnn_lrn_within_channel, 
 <a class="el" href="group__cpp__api__memory.html#ggae45a07d6121fdd33e310782753178076ab1d69186fe566f20003f62b15e9aee8c">mkldnn::pooling_max</a> = mkldnn_pooling_max, 
+<a class="el" href="group__cpp__api__memory.html#ggae45a07d6121fdd33e310782753178076af370bca4c92b4f310923dabec54ef476">mkldnn::pooling_avg</a> = mkldnn_pooling_avg, 
 <br/>
-&#160;&#160;<a class="el" href="group__cpp__api__memory.html#ggae45a07d6121fdd33e310782753178076af370bca4c92b4f310923dabec54ef476">mkldnn::pooling_avg</a> = mkldnn_pooling_avg, 
-<a class="el" href="group__cpp__api__memory.html#ggae45a07d6121fdd33e310782753178076af1d57d5eddbf76411006a0206d435502">mkldnn::pooling_avg_include_padding</a> = mkldnn_pooling_avg_include_padding, 
+&#160;&#160;<a class="el" href="group__cpp__api__memory.html#ggae45a07d6121fdd33e310782753178076af1d57d5eddbf76411006a0206d435502">mkldnn::pooling_avg_include_padding</a> = mkldnn_pooling_avg_include_padding, 
 <a class="el" href="group__cpp__api__memory.html#ggae45a07d6121fdd33e310782753178076a8547db746e2b24e920a1bb912b7ed702">mkldnn::pooling_avg_exclude_padding</a> = mkldnn_pooling_avg_exclude_padding
 <br/>
  }</td></tr>
@@ -477,6 +486,8 @@ Functions</h2></td></tr>
 <tr class="separator:ga63c5cf5f767124069ddd815b142efe8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8a0adb7ef1a51b39f7a67982b9f71eb1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__memory.html#ga8a0adb7ef1a51b39f7a67982b9f71eb1">mkldnn::convolution_backward_data::desc::desc</a> (algorithm aalgorithm, const memory::desc &amp;diff_src_desc, const memory::desc &amp;weights_desc, const memory::desc &amp;diff_dst_desc, const memory::dims strides, const memory::dims padding_l, const memory::dims padding_r, const padding_kind apadding_kind)</td></tr>
 <tr class="separator:ga8a0adb7ef1a51b39f7a67982b9f71eb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga55bfdc4f5cefd0ba5fbbf721ea200f35"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__memory.html#ga55bfdc4f5cefd0ba5fbbf721ea200f35">mkldnn::convolution_backward_data::desc::desc</a> (algorithm aalgorithm, const memory::desc &amp;diff_src_desc, const memory::desc &amp;weights_desc, const memory::desc &amp;diff_dst_desc, const memory::dims strides, const memory::dims dilates, const memory::dims padding_l, const memory::dims padding_r, const padding_kind apadding_kind)</td></tr>
+<tr class="separator:ga55bfdc4f5cefd0ba5fbbf721ea200f35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0fcb4679c5de445bf9e32335b3e3c49f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__memory.html#ga0fcb4679c5de445bf9e32335b3e3c49f">mkldnn::convolution_backward_data::primitive_desc::primitive_desc</a> (const desc &amp;adesc, const engine &amp;aengine, const convolution_forward::primitive_desc &amp;hint_fwd_primitive_desc)</td></tr>
 <tr class="separator:ga0fcb4679c5de445bf9e32335b3e3c49f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga47929f7011563b59d5f8bd45e3c6269c"><td class="memItemLeft" align="right" valign="top">memory::primitive_desc&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__memory.html#ga47929f7011563b59d5f8bd45e3c6269c">mkldnn::convolution_backward_data::primitive_desc::diff_src_primitive_desc</a> () const </td></tr>
@@ -493,6 +504,10 @@ Functions</h2></td></tr>
 <tr class="separator:gabea7ad74752b830aff0a803760556756"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga2c07bfad08b5afd4260278479e24b1f2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__memory.html#ga2c07bfad08b5afd4260278479e24b1f2">mkldnn::convolution_backward_weights::desc::desc</a> (algorithm aalgorithm, const memory::desc &amp;src_desc, const memory::desc &amp;diff_weights_desc, const memory::desc &amp;diff_dst_desc, const memory::dims strides, const memory::dims padding_l, const memory::dims padding_r, const padding_kind apadding_kind)</td></tr>
 <tr class="separator:ga2c07bfad08b5afd4260278479e24b1f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9e70b89c5f2da8683a70561a3ee5764e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__memory.html#ga9e70b89c5f2da8683a70561a3ee5764e">mkldnn::convolution_backward_weights::desc::desc</a> (algorithm aalgorithm, const memory::desc &amp;src_desc, const memory::desc &amp;diff_weights_desc, const memory::desc &amp;diff_bias_desc, const memory::desc &amp;diff_dst_desc, const memory::dims strides, const memory::dims dilates, const memory::dims padding_l, const memory::dims padding_r, const padding_kind apadding_kind)</td></tr>
+<tr class="separator:ga9e70b89c5f2da8683a70561a3ee5764e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2274d5bbcf01060b2e1ff868a4d43c05"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__memory.html#ga2274d5bbcf01060b2e1ff868a4d43c05">mkldnn::convolution_backward_weights::desc::desc</a> (algorithm aalgorithm, const memory::desc &amp;src_desc, const memory::desc &amp;diff_weights_desc, const memory::desc &amp;diff_dst_desc, const memory::dims strides, const memory::dims dilates, const memory::dims padding_l, const memory::dims padding_r, const padding_kind apadding_kind)</td></tr>
+<tr class="separator:ga2274d5bbcf01060b2e1ff868a4d43c05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gabda8e2b320a0065cc2cdaebf9a9b080d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__memory.html#gabda8e2b320a0065cc2cdaebf9a9b080d">mkldnn::convolution_backward_weights::primitive_desc::primitive_desc</a> (const desc &amp;adesc, const engine &amp;aengine, const convolution_forward::primitive_desc &amp;hint_fwd_primitive_desc)</td></tr>
 <tr class="separator:gabda8e2b320a0065cc2cdaebf9a9b080d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga675b8844743f7d8e372fe8d49a4596b5"><td class="memItemLeft" align="right" valign="top">memory::primitive_desc&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__memory.html#ga675b8844743f7d8e372fe8d49a4596b5">mkldnn::convolution_backward_weights::primitive_desc::src_primitive_desc</a> () const </td></tr>
@@ -846,6 +861,20 @@ Friends</h2></td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggae45a07d6121fdd33e310782753178076a12c72b1d3a7f7b06fdd0dbd7f8fa6c12"></a>eltwise_tanh</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggae45a07d6121fdd33e310782753178076a69bd24cf8965e1bc499cb1722c12a597"></a>eltwise_elu</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="ggae45a07d6121fdd33e310782753178076a74831c7c423625321de36ba24968ba83"></a>eltwise_square</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="ggae45a07d6121fdd33e310782753178076ad74c080e0ccc56afdbbf1488465ca41d"></a>eltwise_abs</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="ggae45a07d6121fdd33e310782753178076a89ce2e86e4f1e02bf2ab725daec41931"></a>eltwise_sqrt</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="ggae45a07d6121fdd33e310782753178076aa400a0c599327e4ac606af461533df32"></a>eltwise_linear</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="ggae45a07d6121fdd33e310782753178076a9b795beea0fa5ea1b1ab08f978beb83b"></a>eltwise_bounded_relu</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="ggae45a07d6121fdd33e310782753178076a8690d7851db72ce930fd5af554c419c6"></a>eltwise_soft_relu</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="ggae45a07d6121fdd33e310782753178076acdf3d961f51fa67b6f20bfd765bd95cd"></a>eltwise_logistic</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggae45a07d6121fdd33e310782753178076a5ba3a03af8dc6c1b9066e48508ae9b5c"></a>lrn_across_channels</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
@@ -2736,6 +2765,82 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ga55bfdc4f5cefd0ba5fbbf721ea200f35"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">mkldnn::convolution_backward_data::desc::desc </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__cpp__api__memory.html#gae45a07d6121fdd33e310782753178076">algorithm</a>&#160;</td>
+          <td class="paramname"><em>aalgorithm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;&#160;</td>
+          <td class="paramname"><em>diff_src_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;&#160;</td>
+          <td class="paramname"><em>weights_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;&#160;</td>
+          <td class="paramname"><em>diff_dst_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__cpp__api__memory.html#ga0fa655354b5c62453d93c58e2f229a43">memory::dims</a>&#160;</td>
+          <td class="paramname"><em>strides</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__cpp__api__memory.html#ga0fa655354b5c62453d93c58e2f229a43">memory::dims</a>&#160;</td>
+          <td class="paramname"><em>dilates</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__cpp__api__memory.html#ga0fa655354b5c62453d93c58e2f229a43">memory::dims</a>&#160;</td>
+          <td class="paramname"><em>padding_l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__cpp__api__memory.html#ga0fa655354b5c62453d93c58e2f229a43">memory::dims</a>&#160;</td>
+          <td class="paramname"><em>padding_r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__cpp__api__memory.html#gaa1ff931b28e0a90473ad5bddd21c60fc">padding_kind</a>&#160;</td>
+          <td class="paramname"><em>apadding_kind</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="gabea7ad74752b830aff0a803760556756"></a>
 <div class="memitem">
 <div class="memproto">
@@ -2848,6 +2953,164 @@ Friends</h2></td></tr>
           <td></td>
           <td class="paramtype">const <a class="el" href="group__cpp__api__memory.html#ga0fa655354b5c62453d93c58e2f229a43">memory::dims</a>&#160;</td>
           <td class="paramname"><em>strides</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__cpp__api__memory.html#ga0fa655354b5c62453d93c58e2f229a43">memory::dims</a>&#160;</td>
+          <td class="paramname"><em>padding_l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__cpp__api__memory.html#ga0fa655354b5c62453d93c58e2f229a43">memory::dims</a>&#160;</td>
+          <td class="paramname"><em>padding_r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__cpp__api__memory.html#gaa1ff931b28e0a90473ad5bddd21c60fc">padding_kind</a>&#160;</td>
+          <td class="paramname"><em>apadding_kind</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ga9e70b89c5f2da8683a70561a3ee5764e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">mkldnn::convolution_backward_weights::desc::desc </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__cpp__api__memory.html#gae45a07d6121fdd33e310782753178076">algorithm</a>&#160;</td>
+          <td class="paramname"><em>aalgorithm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;&#160;</td>
+          <td class="paramname"><em>src_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;&#160;</td>
+          <td class="paramname"><em>diff_weights_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;&#160;</td>
+          <td class="paramname"><em>diff_bias_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;&#160;</td>
+          <td class="paramname"><em>diff_dst_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__cpp__api__memory.html#ga0fa655354b5c62453d93c58e2f229a43">memory::dims</a>&#160;</td>
+          <td class="paramname"><em>strides</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__cpp__api__memory.html#ga0fa655354b5c62453d93c58e2f229a43">memory::dims</a>&#160;</td>
+          <td class="paramname"><em>dilates</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__cpp__api__memory.html#ga0fa655354b5c62453d93c58e2f229a43">memory::dims</a>&#160;</td>
+          <td class="paramname"><em>padding_l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__cpp__api__memory.html#ga0fa655354b5c62453d93c58e2f229a43">memory::dims</a>&#160;</td>
+          <td class="paramname"><em>padding_r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__cpp__api__memory.html#gaa1ff931b28e0a90473ad5bddd21c60fc">padding_kind</a>&#160;</td>
+          <td class="paramname"><em>apadding_kind</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ga2274d5bbcf01060b2e1ff868a4d43c05"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">mkldnn::convolution_backward_weights::desc::desc </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__cpp__api__memory.html#gae45a07d6121fdd33e310782753178076">algorithm</a>&#160;</td>
+          <td class="paramname"><em>aalgorithm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;&#160;</td>
+          <td class="paramname"><em>src_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;&#160;</td>
+          <td class="paramname"><em>diff_weights_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;&#160;</td>
+          <td class="paramname"><em>diff_dst_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__cpp__api__memory.html#ga0fa655354b5c62453d93c58e2f229a43">memory::dims</a>&#160;</td>
+          <td class="paramname"><em>strides</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__cpp__api__memory.html#ga0fa655354b5c62453d93c58e2f229a43">memory::dims</a>&#160;</td>
+          <td class="paramname"><em>dilates</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
