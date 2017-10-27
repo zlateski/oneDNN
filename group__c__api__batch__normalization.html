@@ -93,12 +93,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gaeb687c827e16b943fd9ea26a66b29d94"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__batch__normalization.html#gaeb687c827e16b943fd9ea26a66b29d94">mkldnn_batch_normalization_forward_desc_init</a> (<a class="el" href="structmkldnn__batch__normalization__desc__t.html">mkldnn_batch_normalization_desc_t</a> *bnrm_desc, <a class="el" href="group__c__api__types__generic.html#ga5b98c8059c2aff8861157bf070c3f520">mkldnn_prop_kind_t</a> prop_kind, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *data_desc, double epsilon, unsigned flags)</td></tr>
-<tr class="memdesc:gaeb687c827e16b943fd9ea26a66b29d94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a batch normalization descriptor <code>bnrm_desc</code> for forward propagation using <code>prop_kind</code>, (possible values are <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f" title="Forward data propagation (training mode). ">mkldnn_forward_training</a> or <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a58a923fb6c4e1214e1505b5fa0b1e3fa" title="Forward data propagation (inference mode). ">mkldnn_forward_inference</a>), memory descriptor <code>data_desc</code>, normalization parameter <code>epsilon</code> and flags (possible values are <a class="el" href="group__c__api__types__generic.html#gga5b1f166df8eea3a306f9226baf6ca3a3a106c7b376858470c79facbfc48755644" title="Use global statistics. ">mkldnn_use_global_stats</a> and <a class="el" href="group__c__api__types__generic.html#gga5b1f166df8eea3a306f9226baf6ca3a3aa839d67dd3809f4068e915a112ce618c" title="Use scale and shift parameters. ">mkldnn_use_scaleshift</a>).  <a href="#gaeb687c827e16b943fd9ea26a66b29d94">More...</a><br/></td></tr>
-<tr class="separator:gaeb687c827e16b943fd9ea26a66b29d94"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga62b8c34264a74273b6b7182a129e13a0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__batch__normalization.html#ga62b8c34264a74273b6b7182a129e13a0">mkldnn_batch_normalization_backward_desc_init</a> (<a class="el" href="structmkldnn__batch__normalization__desc__t.html">mkldnn_batch_normalization_desc_t</a> *bnrm_desc, <a class="el" href="group__c__api__types__generic.html#ga5b98c8059c2aff8861157bf070c3f520">mkldnn_prop_kind_t</a> prop_kind, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *diff_data_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *data_desc, double epsilon, unsigned flags)</td></tr>
-<tr class="memdesc:ga62b8c34264a74273b6b7182a129e13a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a batch normalization descriptor <code>bnrm_desc</code> for backward propagation with respect to data and scale-shift parameters using memory descriptors <code>data_desc</code> and <code>diff_data_desc</code>, and normalization parameter <code>epsilon</code> and flags (possible values are <a class="el" href="group__c__api__types__generic.html#gga5b1f166df8eea3a306f9226baf6ca3a3a106c7b376858470c79facbfc48755644" title="Use global statistics. ">mkldnn_use_global_stats</a> and <a class="el" href="group__c__api__types__generic.html#gga5b1f166df8eea3a306f9226baf6ca3a3aa839d67dd3809f4068e915a112ce618c" title="Use scale and shift parameters. ">mkldnn_use_scaleshift</a>).  <a href="#ga62b8c34264a74273b6b7182a129e13a0">More...</a><br/></td></tr>
-<tr class="separator:ga62b8c34264a74273b6b7182a129e13a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3d3498ea608a63f6ed09a825414d02af"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__batch__normalization.html#ga3d3498ea608a63f6ed09a825414d02af">mkldnn_batch_normalization_forward_desc_init</a> (<a class="el" href="structmkldnn__batch__normalization__desc__t.html">mkldnn_batch_normalization_desc_t</a> *bnrm_desc, <a class="el" href="group__c__api__types__generic.html#ga5b98c8059c2aff8861157bf070c3f520">mkldnn_prop_kind_t</a> prop_kind, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *data_desc, float epsilon, unsigned flags)</td></tr>
+<tr class="memdesc:ga3d3498ea608a63f6ed09a825414d02af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a batch normalization descriptor <code>bnrm_desc</code> for forward propagation using <code>prop_kind</code>, (possible values are <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f" title="Forward data propagation (training mode). ">mkldnn_forward_training</a> or <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a58a923fb6c4e1214e1505b5fa0b1e3fa" title="Forward data propagation (inference mode). ">mkldnn_forward_inference</a>), memory descriptor <code>data_desc</code>, normalization parameter <code>epsilon</code> and flags (possible values are <a class="el" href="group__c__api__types__generic.html#gga5b1f166df8eea3a306f9226baf6ca3a3a106c7b376858470c79facbfc48755644" title="Use global statistics. ">mkldnn_use_global_stats</a> and <a class="el" href="group__c__api__types__generic.html#gga5b1f166df8eea3a306f9226baf6ca3a3aa839d67dd3809f4068e915a112ce618c" title="Use scale and shift parameters. ">mkldnn_use_scaleshift</a>).  <a href="#ga3d3498ea608a63f6ed09a825414d02af">More...</a><br/></td></tr>
+<tr class="separator:ga3d3498ea608a63f6ed09a825414d02af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga04b42bb3b0185826bde30fbfc94e965e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__batch__normalization.html#ga04b42bb3b0185826bde30fbfc94e965e">mkldnn_batch_normalization_backward_desc_init</a> (<a class="el" href="structmkldnn__batch__normalization__desc__t.html">mkldnn_batch_normalization_desc_t</a> *bnrm_desc, <a class="el" href="group__c__api__types__generic.html#ga5b98c8059c2aff8861157bf070c3f520">mkldnn_prop_kind_t</a> prop_kind, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *diff_data_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *data_desc, float epsilon, unsigned flags)</td></tr>
+<tr class="memdesc:ga04b42bb3b0185826bde30fbfc94e965e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a batch normalization descriptor <code>bnrm_desc</code> for backward propagation with respect to data and scale-shift parameters using memory descriptors <code>data_desc</code> and <code>diff_data_desc</code>, and normalization parameter <code>epsilon</code> and flags (possible values are <a class="el" href="group__c__api__types__generic.html#gga5b1f166df8eea3a306f9226baf6ca3a3a106c7b376858470c79facbfc48755644" title="Use global statistics. ">mkldnn_use_global_stats</a> and <a class="el" href="group__c__api__types__generic.html#gga5b1f166df8eea3a306f9226baf6ca3a3aa839d67dd3809f4068e915a112ce618c" title="Use scale and shift parameters. ">mkldnn_use_scaleshift</a>).  <a href="#ga04b42bb3b0185826bde30fbfc94e965e">More...</a><br/></td></tr>
+<tr class="separator:ga04b42bb3b0185826bde30fbfc94e965e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>A primitive to perform batch normalization </p>
@@ -110,7 +110,7 @@ Functions</h2></td></tr>
 <p><img class="formulaInl" alt="$\mu[c] = \frac{1}{NHW} \sum\limits_{whn} src[n][c][h][w]$" src="form_17.png"/>, <img class="formulaInl" alt="$\sigma[c] = \frac{1}{NHW} \sum\limits_{whn} (src[n][c][h][w] - \mu[c])^2$" src="form_18.png"/>,</p>
 <p>and eps is a constant to improve numerical stability. </p>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="ga62b8c34264a74273b6b7182a129e13a0"></a>
+<a class="anchor" id="ga04b42bb3b0185826bde30fbfc94e965e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -141,7 +141,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
+          <td class="paramtype">float&#160;</td>
           <td class="paramname"><em>epsilon</em>, </td>
         </tr>
         <tr>
@@ -163,7 +163,7 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="gaeb687c827e16b943fd9ea26a66b29d94"></a>
+<a class="anchor" id="ga3d3498ea608a63f6ed09a825414d02af"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -188,7 +188,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
+          <td class="paramtype">float&#160;</td>
           <td class="paramname"><em>epsilon</em>, </td>
         </tr>
         <tr>

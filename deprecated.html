@@ -82,20 +82,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><dl class="reflist">
-<dt><a class="anchor" id="_deprecated000004"></a>Member <a class="el" href="group__cpp__api__memory.html#ga813a877299d67bd34c9aac132f036c3d">mkldnn::eltwise_backward::desc::desc</a>  (const memory::desc &amp;diff_data_desc, const memory::desc &amp;data_desc, T negative_slope)</dt>
+<dt><a class="anchor" id="_deprecated000006"></a>Member <a class="el" href="group__cpp__api__memory.html#ga813a877299d67bd34c9aac132f036c3d">mkldnn::eltwise_backward::desc::desc</a>  (const memory::desc &amp;diff_data_desc, const memory::desc &amp;data_desc, T negative_slope)</dt>
 <dd>: api backward compatibility for relu  </dd>
-<dt><a class="anchor" id="_deprecated000003"></a>Member <a class="el" href="group__cpp__api__memory.html#gadccb0cbc9c670dff0c58f41b7ac4476c">mkldnn::eltwise_forward::desc::desc</a>  (prop_kind aprop_kind, const memory::desc &amp;src_desc, T negative_slope)</dt>
+<dt><a class="anchor" id="_deprecated000005"></a>Member <a class="el" href="group__cpp__api__memory.html#gadccb0cbc9c670dff0c58f41b7ac4476c">mkldnn::eltwise_forward::desc::desc</a>  (prop_kind aprop_kind, const memory::desc &amp;src_desc, T negative_slope)</dt>
 <dd>: api backward compatibility for relu  </dd>
-<dt><a class="anchor" id="_deprecated000006"></a>Member <a class="el" href="structmkldnn__eltwise__desc__t.html#af3b109de260ae012055e3cb33ef03a86">mkldnn_eltwise_desc_t::negative_slope</a>  </dt>
-<dd>: for ReLU use alpha instead  </dd>
-<dt><a class="anchor" id="_deprecated000007"></a>Member <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9accaba3afad2f4cadcae200a3e4b536ae">mkldnn_query_relu_d</a>  </dt>
+<dt><a class="anchor" id="_deprecated000004"></a>Member <a class="el" href="group__cpp__api__memory.html#gae6c91ec63b68e0f3e3e584e2a24b19a2">mkldnn::sum::primitive_desc::primitive_desc</a>  (std::vector&lt; double &gt; scale, std::vector&lt; memory::primitive_desc &gt; inputs)</dt>
+<dd>: api backwards compatibility for double scales type  </dd>
+<dt><a class="anchor" id="_deprecated000003"></a>Member <a class="el" href="group__cpp__api__memory.html#gac86333458595488266984fced8b10939">mkldnn::sum::primitive_desc::primitive_desc</a>  (const memory::desc &amp;output, std::vector&lt; double &gt; scale, std::vector&lt; memory::primitive_desc &gt; inputs)</dt>
+<dd>: api backwards compatibility for double scales type  </dd>
+<dt><a class="anchor" id="_deprecated000008"></a>Member <a class="el" href="structmkldnn__eltwise__desc__t.html#a20d931ce4d17b5cf6207749c616595e0">mkldnn_eltwise_desc_t::negative_slope</a>  </dt>
+<dd>: use alpha instead  </dd>
+<dt><a class="anchor" id="_deprecated000009"></a>Member <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9accaba3afad2f4cadcae200a3e4b536ae">mkldnn_query_relu_d</a>  </dt>
 <dd></dd>
-<dt><a class="anchor" id="_deprecated000005"></a>Member <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a8beb4159b64f50ce4a367e305c9db860">mkldnn_relu</a>  </dt>
+<dt><a class="anchor" id="_deprecated000007"></a>Member <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a8beb4159b64f50ce4a367e305c9db860">mkldnn_relu</a>  </dt>
 <dd>. </dd>
-<dt><a class="anchor" id="_deprecated000002"></a>Member <a class="el" href="group__c__api__relu.html#ga06dd85dacbe0459e1424dd777ea8d0c2">mkldnn_relu_backward_desc_init</a>  (mkldnn_relu_desc_t *relu_desc, const <a class="el" href="structmkldnn__memory__desc__t.html" title="Memory descriptor. ">mkldnn_memory_desc_t</a> *diff_data_desc, const <a class="el" href="structmkldnn__memory__desc__t.html" title="Memory descriptor. ">mkldnn_memory_desc_t</a> *data_desc, double negative_slope)</dt>
-<dd>use <a class="el" href="group__c__api__eltwise.html#ga2c8a1ff918b22abafdfd9464d9c6bdde" title="Initializes a eltwise_desc for backward propagation using alg_kind algorithm memory descriptors diff_...">mkldnn_eltwise_backward_desc_init()</a> instead, with <code>alpha</code> equals <code>negative_slope</code>  </dd>
-<dt><a class="anchor" id="_deprecated000001"></a>Member <a class="el" href="group__c__api__relu.html#gad80d4869c671dcf51d62c5565e016d25">mkldnn_relu_forward_desc_init</a>  (mkldnn_relu_desc_t *relu_desc, mkldnn_prop_kind_t prop_kind, const <a class="el" href="structmkldnn__memory__desc__t.html" title="Memory descriptor. ">mkldnn_memory_desc_t</a> *data_desc, double negative_slope)</dt>
-<dd>use <a class="el" href="group__c__api__eltwise.html#ga0ac7165cba8a30e8204f25f23da280ce" title="Initializes a eltwise_desc for forward propagation using prop_kind (possible values are mkldnn_forwar...">mkldnn_eltwise_forward_desc_init()</a> instead, with <code>alpha</code> equals <code>negative_slope</code> </dd>
+<dt><a class="anchor" id="_deprecated000002"></a>Member <a class="el" href="group__c__api__relu.html#ga30d2d37343d3cf7b472cb14d535b0040">mkldnn_relu_backward_desc_init</a>  (mkldnn_relu_desc_t *relu_desc, const <a class="el" href="structmkldnn__memory__desc__t.html" title="Memory descriptor. ">mkldnn_memory_desc_t</a> *diff_data_desc, const <a class="el" href="structmkldnn__memory__desc__t.html" title="Memory descriptor. ">mkldnn_memory_desc_t</a> *data_desc, float negative_slope)</dt>
+<dd>use <a class="el" href="group__c__api__eltwise.html#ga6f5a8f5b448140e651b14aba6a6fdd6e" title="Initializes a eltwise_desc for backward propagation using alg_kind algorithm memory descriptors diff_...">mkldnn_eltwise_backward_desc_init()</a> instead, with <code>alpha</code> equals <code>negative_slope</code>  </dd>
+<dt><a class="anchor" id="_deprecated000001"></a>Member <a class="el" href="group__c__api__relu.html#gac1e0110c8e3c430df9e35138265767a0">mkldnn_relu_forward_desc_init</a>  (mkldnn_relu_desc_t *relu_desc, mkldnn_prop_kind_t prop_kind, const <a class="el" href="structmkldnn__memory__desc__t.html" title="Memory descriptor. ">mkldnn_memory_desc_t</a> *data_desc, float negative_slope)</dt>
+<dd>use <a class="el" href="group__c__api__eltwise.html#ga9cf5980e26f537653e5f0d4e00f984c7" title="Initializes a eltwise_desc for forward propagation using prop_kind (possible values are mkldnn_forwar...">mkldnn_eltwise_forward_desc_init()</a> instead, with <code>alpha</code> equals <code>negative_slope</code> </dd>
 </dl>
 </div></div><!-- contents -->
 <!-- start footer part -->

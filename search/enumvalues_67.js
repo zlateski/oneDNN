@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['giohw16o16i',['gIOhw16o16i',['../group__cpp__api__memory.html#gga563b90355ae4fbfed12f6db8ab25a87eaed5bd42c3c68a277cbdca346a72251fa',1,'mkldnn::memory']]],
   ['gohiw16o4i',['gOhIw16o4i',['../group__cpp__api__memory.html#gga563b90355ae4fbfed12f6db8ab25a87ea12dbcd423f39fcd621b399d494e5dfe7',1,'mkldnn::memory']]],
   ['gohwi16o',['gOhwi16o',['../group__cpp__api__memory.html#gga563b90355ae4fbfed12f6db8ab25a87ea5686f7dbdddd9ee3f502f7600cbe731a',1,'mkldnn::memory']]],
   ['gohwi8o',['gOhwi8o',['../group__cpp__api__memory.html#gga563b90355ae4fbfed12f6db8ab25a87eae7df7db47e81d11cd459f53f46928cb9',1,'mkldnn::memory']]],
