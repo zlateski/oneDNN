@@ -493,6 +493,30 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>mkldnn_primitive_at()
 : <a class="el" href="group__c__api__primitive__common.html#ga8348d36b13571f3b0b1c724c35708692">mkldnn.h</a>
 </li>
+<li>mkldnn_primitive_attr_clone()
+: <a class="el" href="group__c__api__attributes.html#gae07196198f1d52306bd467aee1183f4c">mkldnn.h</a>
+</li>
+<li>mkldnn_primitive_attr_create()
+: <a class="el" href="group__c__api__attributes.html#gaa5402b9efc0a7fd3360610382f85e6de">mkldnn.h</a>
+</li>
+<li>mkldnn_primitive_attr_destroy()
+: <a class="el" href="group__c__api__attributes.html#ga8ba73185f89f106b8f66258b6a0972f9">mkldnn.h</a>
+</li>
+<li>mkldnn_primitive_attr_get_int_output_round_mode()
+: <a class="el" href="group__c__api__attributes.html#gaaafcb2712aeb6eda41c06c7e60502894">mkldnn.h</a>
+</li>
+<li>mkldnn_primitive_attr_get_output_scales()
+: <a class="el" href="group__c__api__attributes.html#ga691a3631739c12351776bec991a11c24">mkldnn.h</a>
+</li>
+<li>mkldnn_primitive_attr_set_int_output_round_mode()
+: <a class="el" href="group__c__api__attributes.html#gaad8659404cefb328a47ffcf81ab904c8">mkldnn.h</a>
+</li>
+<li>mkldnn_primitive_attr_set_output_scales()
+: <a class="el" href="group__c__api__attributes.html#ga20dc6bdefe4c709388e5a2197d69fb56">mkldnn.h</a>
+</li>
+<li>mkldnn_primitive_attr_t
+: <a class="el" href="group__c__api__primitive__attr.html#gaeaf9bd515118e1667f7fd1846bb79de1">mkldnn_types.h</a>
+</li>
 <li>mkldnn_primitive_create()
 : <a class="el" href="group__c__api__primitive__common.html#gab89ca5488bf37e4b3c4f1eb0be671867">mkldnn.h</a>
 </li>
@@ -502,11 +526,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>mkldnn_primitive_desc_create()
 : <a class="el" href="group__c__api__primitive__common.html#gad77744286537b947b399cc4bfee2b6b4">mkldnn.h</a>
 </li>
+<li>mkldnn_primitive_desc_create_v2()
+: <a class="el" href="group__c__api__primitive__common.html#ga372ece6a05bc13ed4d57e2b08bed1ce3">mkldnn.h</a>
+</li>
 <li>mkldnn_primitive_desc_destroy()
 : <a class="el" href="group__c__api__primitive__common.html#gacad44a12c7d863fb47dc02a76b4b794a">mkldnn.h</a>
 </li>
+<li>mkldnn_primitive_desc_get_attr()
+: <a class="el" href="group__c__api__primitive__common.html#ga86d0f67044d18c77f6c60dfed9db417a">mkldnn.h</a>
+</li>
 <li>mkldnn_primitive_desc_iterator_create()
 : <a class="el" href="group__c__api__primitive__common.html#gab5a3ab7a1481bf2d26e4103b16f02eea">mkldnn.h</a>
+</li>
+<li>mkldnn_primitive_desc_iterator_create_v2()
+: <a class="el" href="group__c__api__primitive__common.html#gafd485acc99a906086ad8345b7cfdddc3">mkldnn.h</a>
 </li>
 <li>mkldnn_primitive_desc_iterator_destroy()
 : <a class="el" href="group__c__api__primitive__common.html#ga8368e2a6339f2df57128b00aae74ce37">mkldnn.h</a>
@@ -667,6 +700,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>mkldnn_reorder_primitive_desc_create()
 : <a class="el" href="group__c__api__reorder.html#ga8c48f471eb77e39a8f2e5e64a6336d0a">mkldnn.h</a>
 </li>
+<li>mkldnn_reorder_primitive_desc_create_v2()
+: <a class="el" href="group__c__api__reorder.html#gabdcd3faeebbcdab72811279a5a1b5d15">mkldnn.h</a>
+</li>
+<li>mkldnn_round_down
+: <a class="el" href="group__c__api__types__generic.html#gga825f736d520c8183d422d1aad60f2ad9a128e155cc5ae4db261a7e366417a197c">mkldnn_types.h</a>
+</li>
+<li>mkldnn_round_mode_t
+: <a class="el" href="group__c__api__types__generic.html#ga825f736d520c8183d422d1aad60f2ad9">mkldnn_types.h</a>
+</li>
+<li>mkldnn_round_nearest
+: <a class="el" href="group__c__api__types__generic.html#gga825f736d520c8183d422d1aad60f2ad9a55acfe2ce6cd9dff83837656b5f27686">mkldnn_types.h</a>
+</li>
 <li>mkldnn_runtime_error
 : <a class="el" href="group__c__api__types__generic.html#gga31866789b66acfb1c28b2f9bdd7bdfdda005b67c7d1d8e90a5c68f82f08931b29">mkldnn_types.h</a>
 </li>
@@ -719,7 +764,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a1d5a4ac349734074b150188851be19c8">mkldnn_types.h</a>
 </li>
 <li>mkldnn_sum_primitive_desc_create()
-: <a class="el" href="group__c__api__sum.html#ga20f5011fe4a437b8f8a4c624e7a3fc83">mkldnn.h</a>
+: <a class="el" href="group__c__api__sum.html#ga01127cfec6a36871777e6ddcf9be6c1c">mkldnn.h</a>
 </li>
 <li>mkldnn_try_again
 : <a class="el" href="group__c__api__types__generic.html#gga31866789b66acfb1c28b2f9bdd7bdfdda2142ba130acda7b81aa7c60e2ca5eff3">mkldnn_types.h</a>

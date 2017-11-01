@@ -89,6 +89,9 @@ Functions</h2></td></tr>
 <tr class="memitem:gab5a3ab7a1481bf2d26e4103b16f02eea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__primitive__common.html#gab5a3ab7a1481bf2d26e4103b16f02eea">mkldnn_primitive_desc_iterator_create</a> (<a class="el" href="group__c__api__primitive__desc__iterators.html#gab10071e5bb605ceee088b7e9cdbac9a2">mkldnn_primitive_desc_iterator_t</a> *iterator, <a class="el" href="group__c__api__types__op__descs.html#gac7e49603b052255540a6f6dc072a627c">const_mkldnn_op_desc_t</a> op_desc, <a class="el" href="group__c__api__engine__types.html#ga40f5f917cdbf2215fa5324e4bf62d523">mkldnn_engine_t</a> engine, <a class="el" href="group__c__api__primitive__descs.html#ga9f002a6449ae9be775393e888698cfe0">const_mkldnn_primitive_desc_t</a> hint_forward_primitive_desc)</td></tr>
 <tr class="memdesc:gab5a3ab7a1481bf2d26e4103b16f02eea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a primitive descriptor <code>iterator</code> for given <code>op_desc</code>, <code>engine</code>, and optionally a hint primitive descriptor from forward propagation (required for backward propagation).  <a href="#gab5a3ab7a1481bf2d26e4103b16f02eea">More...</a><br/></td></tr>
 <tr class="separator:gab5a3ab7a1481bf2d26e4103b16f02eea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafd485acc99a906086ad8345b7cfdddc3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__primitive__common.html#gafd485acc99a906086ad8345b7cfdddc3">mkldnn_primitive_desc_iterator_create_v2</a> (<a class="el" href="group__c__api__primitive__desc__iterators.html#gab10071e5bb605ceee088b7e9cdbac9a2">mkldnn_primitive_desc_iterator_t</a> *iterator, <a class="el" href="group__c__api__types__op__descs.html#gac7e49603b052255540a6f6dc072a627c">const_mkldnn_op_desc_t</a> op_desc, <a class="el" href="group__c__api__primitive__attr.html#ga46ed0b1e4ce02ec90570c80b5a69701f">const_mkldnn_primitive_attr_t</a> attr, <a class="el" href="group__c__api__engine__types.html#ga40f5f917cdbf2215fa5324e4bf62d523">mkldnn_engine_t</a> engine, <a class="el" href="group__c__api__primitive__descs.html#ga9f002a6449ae9be775393e888698cfe0">const_mkldnn_primitive_desc_t</a> hint_forward_primitive_desc)</td></tr>
+<tr class="memdesc:gafd485acc99a906086ad8345b7cfdddc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a primitive descriptor <code>iterator</code> for given <code>op_desc</code>, <code>attr</code>, <code>engine</code>, and optionally a hint primitive descriptor from forward propagation (required for backward propagation).  <a href="#gafd485acc99a906086ad8345b7cfdddc3">More...</a><br/></td></tr>
+<tr class="separator:gafd485acc99a906086ad8345b7cfdddc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3887ba1fa83051afac8fac2b93d15ed7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__primitive__common.html#ga3887ba1fa83051afac8fac2b93d15ed7">mkldnn_primitive_desc_iterator_next</a> (<a class="el" href="group__c__api__primitive__desc__iterators.html#gab10071e5bb605ceee088b7e9cdbac9a2">mkldnn_primitive_desc_iterator_t</a> iterator)</td></tr>
 <tr class="memdesc:ga3887ba1fa83051afac8fac2b93d15ed7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterates over primitive descriptors.  <a href="#ga3887ba1fa83051afac8fac2b93d15ed7">More...</a><br/></td></tr>
 <tr class="separator:ga3887ba1fa83051afac8fac2b93d15ed7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -101,9 +104,15 @@ Functions</h2></td></tr>
 <tr class="memitem:gad77744286537b947b399cc4bfee2b6b4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__primitive__common.html#gad77744286537b947b399cc4bfee2b6b4">mkldnn_primitive_desc_create</a> (<a class="el" href="group__c__api__primitive__descs.html#ga4108b6ee20cf3d2e472504c1aea67497">mkldnn_primitive_desc_t</a> *primitive_desc, <a class="el" href="group__c__api__types__op__descs.html#gac7e49603b052255540a6f6dc072a627c">const_mkldnn_op_desc_t</a> op_desc, <a class="el" href="group__c__api__engine__types.html#ga40f5f917cdbf2215fa5324e4bf62d523">mkldnn_engine_t</a> engine, <a class="el" href="group__c__api__primitive__descs.html#ga9f002a6449ae9be775393e888698cfe0">const_mkldnn_primitive_desc_t</a> hint_forward_primitive_desc)</td></tr>
 <tr class="memdesc:gad77744286537b947b399cc4bfee2b6b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <code>primitive_desc</code> using <code>op_desc</code>, <code>engine</code>, and optionally a hint primitive descriptor from forward propagation.  <a href="#gad77744286537b947b399cc4bfee2b6b4">More...</a><br/></td></tr>
 <tr class="separator:gad77744286537b947b399cc4bfee2b6b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga372ece6a05bc13ed4d57e2b08bed1ce3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__primitive__common.html#ga372ece6a05bc13ed4d57e2b08bed1ce3">mkldnn_primitive_desc_create_v2</a> (<a class="el" href="group__c__api__primitive__descs.html#ga4108b6ee20cf3d2e472504c1aea67497">mkldnn_primitive_desc_t</a> *primitive_desc, <a class="el" href="group__c__api__types__op__descs.html#gac7e49603b052255540a6f6dc072a627c">const_mkldnn_op_desc_t</a> op_desc, <a class="el" href="group__c__api__primitive__attr.html#ga46ed0b1e4ce02ec90570c80b5a69701f">const_mkldnn_primitive_attr_t</a> attr, <a class="el" href="group__c__api__engine__types.html#ga40f5f917cdbf2215fa5324e4bf62d523">mkldnn_engine_t</a> engine, <a class="el" href="group__c__api__primitive__descs.html#ga9f002a6449ae9be775393e888698cfe0">const_mkldnn_primitive_desc_t</a> hint_forward_primitive_desc)</td></tr>
+<tr class="memdesc:ga372ece6a05bc13ed4d57e2b08bed1ce3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <code>primitive_desc</code> using <code>op_desc</code>, <code>attr</code>, <code>engine</code>, and optionally a hint primitive descriptor from forward propagation.  <a href="#ga372ece6a05bc13ed4d57e2b08bed1ce3">More...</a><br/></td></tr>
+<tr class="separator:ga372ece6a05bc13ed4d57e2b08bed1ce3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0b9555bd267ce2add362ee18cdaadd73"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__primitive__common.html#ga0b9555bd267ce2add362ee18cdaadd73">mkldnn_primitive_desc_clone</a> (<a class="el" href="group__c__api__primitive__descs.html#ga4108b6ee20cf3d2e472504c1aea67497">mkldnn_primitive_desc_t</a> *primitive_desc, <a class="el" href="group__c__api__primitive__descs.html#ga9f002a6449ae9be775393e888698cfe0">const_mkldnn_primitive_desc_t</a> existing_primitive_desc)</td></tr>
 <tr class="memdesc:ga0b9555bd267ce2add362ee18cdaadd73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes a copy of a <code>primitive_desc</code>.  <a href="#ga0b9555bd267ce2add362ee18cdaadd73">More...</a><br/></td></tr>
 <tr class="separator:ga0b9555bd267ce2add362ee18cdaadd73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga86d0f67044d18c77f6c60dfed9db417a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__primitive__common.html#ga86d0f67044d18c77f6c60dfed9db417a">mkldnn_primitive_desc_get_attr</a> (<a class="el" href="group__c__api__primitive__descs.html#ga9f002a6449ae9be775393e888698cfe0">const_mkldnn_primitive_desc_t</a> primitive_desc, <a class="el" href="group__c__api__primitive__attr.html#ga46ed0b1e4ce02ec90570c80b5a69701f">const_mkldnn_primitive_attr_t</a> *attr)</td></tr>
+<tr class="memdesc:ga86d0f67044d18c77f6c60dfed9db417a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a constant reference to the attribute of a <code>primitive_desc</code>.  <a href="#ga86d0f67044d18c77f6c60dfed9db417a">More...</a><br/></td></tr>
+<tr class="separator:ga86d0f67044d18c77f6c60dfed9db417a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gacad44a12c7d863fb47dc02a76b4b794a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__primitive__common.html#gacad44a12c7d863fb47dc02a76b4b794a">mkldnn_primitive_desc_destroy</a> (<a class="el" href="group__c__api__primitive__descs.html#ga4108b6ee20cf3d2e472504c1aea67497">mkldnn_primitive_desc_t</a> primitive_desc)</td></tr>
 <tr class="memdesc:gacad44a12c7d863fb47dc02a76b4b794a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes a <code>primitive_desc</code>.  <a href="#gacad44a12c7d863fb47dc02a76b4b794a">More...</a><br/></td></tr>
 <tr class="separator:gacad44a12c7d863fb47dc02a76b4b794a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -280,6 +289,53 @@ MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 
 </div>
 </div>
+<a class="anchor" id="ga372ece6a05bc13ed4d57e2b08bed1ce3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API mkldnn_primitive_desc_create_v2 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__c__api__primitive__descs.html#ga4108b6ee20cf3d2e472504c1aea67497">mkldnn_primitive_desc_t</a> *&#160;</td>
+          <td class="paramname"><em>primitive_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__c__api__types__op__descs.html#gac7e49603b052255540a6f6dc072a627c">const_mkldnn_op_desc_t</a>&#160;</td>
+          <td class="paramname"><em>op_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__c__api__primitive__attr.html#ga46ed0b1e4ce02ec90570c80b5a69701f">const_mkldnn_primitive_attr_t</a>&#160;</td>
+          <td class="paramname"><em>attr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__c__api__engine__types.html#ga40f5f917cdbf2215fa5324e4bf62d523">mkldnn_engine_t</a>&#160;</td>
+          <td class="paramname"><em>engine</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__c__api__primitive__descs.html#ga9f002a6449ae9be775393e888698cfe0">const_mkldnn_primitive_desc_t</a>&#160;</td>
+          <td class="paramname"><em>hint_forward_primitive_desc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates a <code>primitive_desc</code> using <code>op_desc</code>, <code>attr</code>, <code>engine</code>, and optionally a hint primitive descriptor from forward propagation. </p>
+<p>The call is equivalent to create a primitive descriptor iterator, instantly fetch a <code>primitive_desc</code> and destroy the iterator. </p>
+
+</div>
+</div>
 <a class="anchor" id="gacad44a12c7d863fb47dc02a76b4b794a"></a>
 <div class="memitem">
 <div class="memproto">
@@ -295,6 +351,37 @@ MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 </div><div class="memdoc">
 
 <p>Deletes a <code>primitive_desc</code>. </p>
+
+</div>
+</div>
+<a class="anchor" id="ga86d0f67044d18c77f6c60dfed9db417a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API mkldnn_primitive_desc_get_attr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__c__api__primitive__descs.html#ga9f002a6449ae9be775393e888698cfe0">const_mkldnn_primitive_desc_t</a>&#160;</td>
+          <td class="paramname"><em>primitive_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__c__api__primitive__attr.html#ga46ed0b1e4ce02ec90570c80b5a69701f">const_mkldnn_primitive_attr_t</a> *&#160;</td>
+          <td class="paramname"><em>attr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns a constant reference to the attribute of a <code>primitive_desc</code>. </p>
+<dl class="section warning"><dt>Warning</dt><dd>User should not destroy obtained <code>attr</code> </dd>
+<dd>
+The lifetime of an <code>attr</code> is same as <code>primitive_desc</code>, so it is illegal to use the <code>attr</code> once <code>primitive_desc</code> is destroyed </dd></dl>
 
 </div>
 </div>
@@ -335,6 +422,53 @@ MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 </div><div class="memdoc">
 
 <p>Creates a primitive descriptor <code>iterator</code> for given <code>op_desc</code>, <code>engine</code>, and optionally a hint primitive descriptor from forward propagation (required for backward propagation). </p>
+<p>Pass <code>NULL</code> for forward propagation. </p>
+
+</div>
+</div>
+<a class="anchor" id="gafd485acc99a906086ad8345b7cfdddc3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API mkldnn_primitive_desc_iterator_create_v2 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__c__api__primitive__desc__iterators.html#gab10071e5bb605ceee088b7e9cdbac9a2">mkldnn_primitive_desc_iterator_t</a> *&#160;</td>
+          <td class="paramname"><em>iterator</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__c__api__types__op__descs.html#gac7e49603b052255540a6f6dc072a627c">const_mkldnn_op_desc_t</a>&#160;</td>
+          <td class="paramname"><em>op_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__c__api__primitive__attr.html#ga46ed0b1e4ce02ec90570c80b5a69701f">const_mkldnn_primitive_attr_t</a>&#160;</td>
+          <td class="paramname"><em>attr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__c__api__engine__types.html#ga40f5f917cdbf2215fa5324e4bf62d523">mkldnn_engine_t</a>&#160;</td>
+          <td class="paramname"><em>engine</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__c__api__primitive__descs.html#ga9f002a6449ae9be775393e888698cfe0">const_mkldnn_primitive_desc_t</a>&#160;</td>
+          <td class="paramname"><em>hint_forward_primitive_desc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates a primitive descriptor <code>iterator</code> for given <code>op_desc</code>, <code>attr</code>, <code>engine</code>, and optionally a hint primitive descriptor from forward propagation (required for backward propagation). </p>
 <p>Pass <code>NULL</code> for forward propagation. </p>
 
 </div>

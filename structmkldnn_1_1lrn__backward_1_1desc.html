@@ -109,16 +109,152 @@ Collaboration diagram for mkldnn::lrn_backward::desc:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ga38df77e39508e351914ca4ab29783615"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__memory.html#ga38df77e39508e351914ca4ab29783615">desc</a> (<a class="el" href="group__cpp__api__memory.html#gae45a07d6121fdd33e310782753178076">algorithm</a> aalgorithm, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;data_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_data_desc, int local_size, float alpha, float beta, float k)</td></tr>
-<tr class="separator:ga38df77e39508e351914ca4ab29783615"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga565f5c94ac87a807b0d581cfd21c34e8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__memory.html#ga565f5c94ac87a807b0d581cfd21c34e8">desc</a> (<a class="el" href="group__cpp__api__memory.html#gae45a07d6121fdd33e310782753178076">algorithm</a> aalgorithm, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;data_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_data_desc, int local_size, float alpha, float beta)</td></tr>
-<tr class="separator:ga565f5c94ac87a807b0d581cfd21c34e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38df77e39508e351914ca4ab29783615"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1lrn__backward_1_1desc.html#a38df77e39508e351914ca4ab29783615">desc</a> (<a class="el" href="group__cpp__api__enums.html#gae45a07d6121fdd33e310782753178076">algorithm</a> aalgorithm, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;data_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_data_desc, int local_size, float alpha, float beta, float k)</td></tr>
+<tr class="separator:a38df77e39508e351914ca4ab29783615"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a565f5c94ac87a807b0d581cfd21c34e8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1lrn__backward_1_1desc.html#a565f5c94ac87a807b0d581cfd21c34e8">desc</a> (<a class="el" href="group__cpp__api__enums.html#gae45a07d6121fdd33e310782753178076">algorithm</a> aalgorithm, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;data_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_data_desc, int local_size, float alpha, float beta)</td></tr>
+<tr class="separator:a565f5c94ac87a807b0d581cfd21c34e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:ga9b8640a231c4894c9684861fb26345bd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmkldnn__lrn__desc__t.html">mkldnn_lrn_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__memory.html#ga9b8640a231c4894c9684861fb26345bd">data</a></td></tr>
-<tr class="separator:ga9b8640a231c4894c9684861fb26345bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b8640a231c4894c9684861fb26345bd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmkldnn__lrn__desc__t.html">mkldnn_lrn_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1lrn__backward_1_1desc.html#a9b8640a231c4894c9684861fb26345bd">data</a></td></tr>
+<tr class="separator:a9b8640a231c4894c9684861fb26345bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a38df77e39508e351914ca4ab29783615"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">mkldnn::lrn_backward::desc::desc </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__cpp__api__enums.html#gae45a07d6121fdd33e310782753178076">algorithm</a>&#160;</td>
+          <td class="paramname"><em>aalgorithm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;&#160;</td>
+          <td class="paramname"><em>data_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;&#160;</td>
+          <td class="paramname"><em>diff_data_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>local_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>alpha</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>beta</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>k</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a565f5c94ac87a807b0d581cfd21c34e8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">mkldnn::lrn_backward::desc::desc </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__cpp__api__enums.html#gae45a07d6121fdd33e310782753178076">algorithm</a>&#160;</td>
+          <td class="paramname"><em>aalgorithm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;&#160;</td>
+          <td class="paramname"><em>data_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;&#160;</td>
+          <td class="paramname"><em>diff_data_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>local_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>alpha</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>beta</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a9b8640a231c4894c9684861fb26345bd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmkldnn__lrn__desc__t.html">mkldnn_lrn_desc_t</a> mkldnn::lrn_backward::desc::data</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li>include/<a class="el" href="mkldnn_8hpp_source.html">mkldnn.hpp</a></li>
 </ul>

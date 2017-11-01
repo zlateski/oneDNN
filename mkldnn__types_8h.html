@@ -176,6 +176,14 @@ Typedefs</h2></td></tr>
 <a class="el" href="structmkldnn__primitive__desc.html">mkldnn_primitive_desc</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__primitive__descs.html#ga9f002a6449ae9be775393e888698cfe0">const_mkldnn_primitive_desc_t</a></td></tr>
 <tr class="memdesc:ga9f002a6449ae9be775393e888698cfe0"><td class="mdescLeft">&#160;</td><td class="mdescRight">A constant primitive descriptor handle.  <a href="group__c__api__primitive__descs.html#ga9f002a6449ae9be775393e888698cfe0">More...</a><br/></td></tr>
 <tr class="separator:ga9f002a6449ae9be775393e888698cfe0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaeaf9bd515118e1667f7fd1846bb79de1"><td class="memItemLeft" align="right" valign="top">typedef struct <br class="typebreak"/>
+<a class="el" href="structmkldnn__primitive__attr.html">mkldnn_primitive_attr</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__primitive__attr.html#gaeaf9bd515118e1667f7fd1846bb79de1">mkldnn_primitive_attr_t</a></td></tr>
+<tr class="memdesc:gaeaf9bd515118e1667f7fd1846bb79de1"><td class="mdescLeft">&#160;</td><td class="mdescRight">A primitive descriptor attributes handle that controls primitive behavior.  <a href="group__c__api__primitive__attr.html#gaeaf9bd515118e1667f7fd1846bb79de1">More...</a><br/></td></tr>
+<tr class="separator:gaeaf9bd515118e1667f7fd1846bb79de1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga46ed0b1e4ce02ec90570c80b5a69701f"><td class="memItemLeft" align="right" valign="top">typedef struct <br class="typebreak"/>
+<a class="el" href="structmkldnn__primitive__attr.html">mkldnn_primitive_attr</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__primitive__attr.html#ga46ed0b1e4ce02ec90570c80b5a69701f">const_mkldnn_primitive_attr_t</a></td></tr>
+<tr class="memdesc:ga46ed0b1e4ce02ec90570c80b5a69701f"><td class="mdescLeft">&#160;</td><td class="mdescRight">A constant primitive descriptor attributes handle.  <a href="group__c__api__primitive__attr.html#ga46ed0b1e4ce02ec90570c80b5a69701f">More...</a><br/></td></tr>
+<tr class="separator:ga46ed0b1e4ce02ec90570c80b5a69701f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac7821f6b4a4fa0d58fe5279a1ff2fda3"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structmkldnn__primitive.html">mkldnn_primitive</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__primitive.html#gac7821f6b4a4fa0d58fe5279a1ff2fda3">mkldnn_primitive_t</a></td></tr>
 <tr class="memdesc:gac7821f6b4a4fa0d58fe5279a1ff2fda3"><td class="mdescLeft">&#160;</td><td class="mdescRight">A primitive handle.  <a href="group__c__api__types__primitive.html#gac7821f6b4a4fa0d58fe5279a1ff2fda3">More...</a><br/></td></tr>
 <tr class="separator:gac7821f6b4a4fa0d58fe5279a1ff2fda3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -219,6 +227,11 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:ga826b2a9be4d94ac17f99bacac6d0cb29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data type specification.  <a href="group__c__api__types__generic.html#ga826b2a9be4d94ac17f99bacac6d0cb29">More...</a><br/></td></tr>
 <tr class="separator:ga826b2a9be4d94ac17f99bacac6d0cb29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga825f736d520c8183d422d1aad60f2ad9"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__generic.html#ga825f736d520c8183d422d1aad60f2ad9">mkldnn_round_mode_t</a> { <a class="el" href="group__c__api__types__generic.html#gga825f736d520c8183d422d1aad60f2ad9a55acfe2ce6cd9dff83837656b5f27686">mkldnn_round_nearest</a> = 1, 
+<a class="el" href="group__c__api__types__generic.html#gga825f736d520c8183d422d1aad60f2ad9a128e155cc5ae4db261a7e366417a197c">mkldnn_round_down</a> = 2
+ }</td></tr>
+<tr class="memdesc:ga825f736d520c8183d422d1aad60f2ad9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rounding mode.  <a href="group__c__api__types__generic.html#ga825f736d520c8183d422d1aad60f2ad9">More...</a><br/></td></tr>
+<tr class="separator:ga825f736d520c8183d422d1aad60f2ad9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga30a390f87ef74bf03dfa48a7b3f2fb74"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__generic.html#ga30a390f87ef74bf03dfa48a7b3f2fb74">mkldnn_memory_format_t</a> { <br/>
 &#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a9a565f82425fa7a397344fb7a570aba3">mkldnn_format_undef</a> = 0, 
 <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a5ae7d369fcd51464f613e51d73eae547">mkldnn_any</a>, 

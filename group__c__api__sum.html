@@ -89,14 +89,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga20f5011fe4a437b8f8a4c624e7a3fc83"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__sum.html#ga20f5011fe4a437b8f8a4c624e7a3fc83">mkldnn_sum_primitive_desc_create</a> (<a class="el" href="group__c__api__primitive__descs.html#ga4108b6ee20cf3d2e472504c1aea67497">mkldnn_primitive_desc_t</a> *sum_primitive_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *output_desc, int n, const float *scale, <a class="el" href="group__c__api__primitive__descs.html#ga9f002a6449ae9be775393e888698cfe0">const_mkldnn_primitive_desc_t</a> *input_pds)</td></tr>
-<tr class="memdesc:ga20f5011fe4a437b8f8a4c624e7a3fc83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates out-of-place <code>sum_primitive_desc</code> for sum of <code>n</code> inputs multiplied by scale with resulting <code>output_desc</code> memory descriptor.  <a href="#ga20f5011fe4a437b8f8a4c624e7a3fc83">More...</a><br/></td></tr>
-<tr class="separator:ga20f5011fe4a437b8f8a4c624e7a3fc83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga01127cfec6a36871777e6ddcf9be6c1c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__sum.html#ga01127cfec6a36871777e6ddcf9be6c1c">mkldnn_sum_primitive_desc_create</a> (<a class="el" href="group__c__api__primitive__descs.html#ga4108b6ee20cf3d2e472504c1aea67497">mkldnn_primitive_desc_t</a> *sum_primitive_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *output_desc, int n, const float *scales, <a class="el" href="group__c__api__primitive__descs.html#ga9f002a6449ae9be775393e888698cfe0">const_mkldnn_primitive_desc_t</a> *input_pds)</td></tr>
+<tr class="memdesc:ga01127cfec6a36871777e6ddcf9be6c1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates out-of-place <code>sum_primitive_desc</code> for sum of <code>n</code> inputs multiplied by scale with resulting <code>output_desc</code> memory descriptor.  <a href="#ga01127cfec6a36871777e6ddcf9be6c1c">More...</a><br/></td></tr>
+<tr class="separator:ga01127cfec6a36871777e6ddcf9be6c1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>A primitive to sum data. </p>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="ga20f5011fe4a437b8f8a4c624e7a3fc83"></a>
+<a class="anchor" id="ga01127cfec6a36871777e6ddcf9be6c1c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -122,7 +122,7 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const float *&#160;</td>
-          <td class="paramname"><em>scale</em>, </td>
+          <td class="paramname"><em>scales</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>

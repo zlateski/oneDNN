@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['memory_5fconsumption_5fs64',['memory_consumption_s64',['../group__cpp__api__engine.html#gga6d88ff11a07bae09a5c348d314c5d1d9a4faa2a57cddf474a9356b136ece00401',1,'mkldnn']]],
-  ['memory_5fd',['memory_d',['../group__cpp__api__engine.html#gga6d88ff11a07bae09a5c348d314c5d1d9a7b7d987552be10a6654ea645cede0a95',1,'mkldnn']]],
+  ['memory',['memory',['../classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00dacd69b4957f06cd818d7bf3d61980e291',1,'mkldnn::primitive']]],
+  ['memory_5fconsumption_5fs64',['memory_consumption_s64',['../group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a4faa2a57cddf474a9356b136ece00401',1,'mkldnn']]],
+  ['memory_5fd',['memory_d',['../group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a7b7d987552be10a6654ea645cede0a95',1,'mkldnn']]],
   ['mkldnn_5fany',['mkldnn_any',['../group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a5ae7d369fcd51464f613e51d73eae547',1,'mkldnn_types.h']]],
   ['mkldnn_5fany_5fengine',['mkldnn_any_engine',['../group__c__api__engine__types.html#ggaec8e96cbc2f19125c9def11efa98aa7ea33e9143910c4711e89aaacc7287e4f26',1,'mkldnn_types.h']]],
   ['mkldnn_5fany_5fstream',['mkldnn_any_stream',['../group__c__api__types__stream.html#ggadd66574e231fe36721cdbe02ea47aa18a21e1070feb34b05c8f262e0b9b0705c6',1,'mkldnn_types.h']]],
@@ -125,6 +126,8 @@ var searchData=
   ['mkldnn_5fquery_5fworkspace_5fpd',['mkldnn_query_workspace_pd',['../group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ad18aadd1899c151835c624d7b83edb56',1,'mkldnn_types.h']]],
   ['mkldnn_5frelu',['mkldnn_relu',['../group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a8beb4159b64f50ce4a367e305c9db860',1,'mkldnn_types.h']]],
   ['mkldnn_5freorder',['mkldnn_reorder',['../group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973aa30263e89f006b199b4d2229c99f0bf8',1,'mkldnn_types.h']]],
+  ['mkldnn_5fround_5fdown',['mkldnn_round_down',['../group__c__api__types__generic.html#gga825f736d520c8183d422d1aad60f2ad9a128e155cc5ae4db261a7e366417a197c',1,'mkldnn_types.h']]],
+  ['mkldnn_5fround_5fnearest',['mkldnn_round_nearest',['../group__c__api__types__generic.html#gga825f736d520c8183d422d1aad60f2ad9a55acfe2ce6cd9dff83837656b5f27686',1,'mkldnn_types.h']]],
   ['mkldnn_5fruntime_5ferror',['mkldnn_runtime_error',['../group__c__api__types__generic.html#gga31866789b66acfb1c28b2f9bdd7bdfdda005b67c7d1d8e90a5c68f82f08931b29',1,'mkldnn_types.h']]],
   ['mkldnn_5fs16',['mkldnn_s16',['../group__c__api__types__generic.html#gga826b2a9be4d94ac17f99bacac6d0cb29a52cf5da9e69d930560994e0ec28edcbb',1,'mkldnn_types.h']]],
   ['mkldnn_5fs32',['mkldnn_s32',['../group__c__api__types__generic.html#gga826b2a9be4d94ac17f99bacac6d0cb29a4ceccb30ecf3a259a933028cd234701f',1,'mkldnn_types.h']]],

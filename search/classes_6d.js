@@ -13,6 +13,7 @@ var searchData=
   ['mkldnn_5fpooling_5fdesc_5ft',['mkldnn_pooling_desc_t',['../structmkldnn__pooling__desc__t.html',1,'']]],
   ['mkldnn_5fprimitive',['mkldnn_primitive',['../structmkldnn__primitive.html',1,'']]],
   ['mkldnn_5fprimitive_5fat_5ft',['mkldnn_primitive_at_t',['../structmkldnn__primitive__at__t.html',1,'']]],
+  ['mkldnn_5fprimitive_5fattr',['mkldnn_primitive_attr',['../structmkldnn__primitive__attr.html',1,'']]],
   ['mkldnn_5fprimitive_5fdesc',['mkldnn_primitive_desc',['../structmkldnn__primitive__desc.html',1,'']]],
   ['mkldnn_5fprimitive_5fdesc_5fiterator',['mkldnn_primitive_desc_iterator',['../structmkldnn__primitive__desc__iterator.html',1,'']]],
   ['mkldnn_5fsoftmax_5fdesc_5ft',['mkldnn_softmax_desc_t',['../structmkldnn__softmax__desc__t.html',1,'']]],
