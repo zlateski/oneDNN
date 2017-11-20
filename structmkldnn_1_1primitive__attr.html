@@ -125,6 +125,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa91e6f5640f7fb0e5da943e0e45dab3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c2ba432512cf9950b81febce265e35d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1primitive__attr.html#a1c2ba432512cf9950b81febce265e35d">set_output_scales</a> (int mask, const std::vector&lt; float &gt; &amp;scales)</td></tr>
 <tr class="separator:a1c2ba432512cf9950b81febce265e35d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a999c92505cbdd4e381a988920307806b"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structmkldnn_1_1post__ops.html">post_ops</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1primitive__attr.html#a999c92505cbdd4e381a988920307806b">get_post_ops</a> () const </td></tr>
+<tr class="separator:a999c92505cbdd4e381a988920307806b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4730acedb91c4cd93616bb69c3df90a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1primitive__attr.html#a4730acedb91c4cd93616bb69c3df90a7">set_post_ops</a> (<a class="el" href="structmkldnn_1_1post__ops.html">post_ops</a> ops)</td></tr>
+<tr class="separator:a4730acedb91c4cd93616bb69c3df90a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classmkldnn_1_1handle"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classmkldnn_1_1handle')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classmkldnn_1_1handle.html">mkldnn::handle&lt; mkldnn_primitive_attr_t &gt;</a></td></tr>
 <tr class="memitem:adc0d8bf89b381da03c8a2173896322cc inherit pub_methods_classmkldnn_1_1handle"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmkldnn_1_1handle.html#adc0d8bf89b381da03c8a2173896322cc">handle</a> (const <a class="el" href="classmkldnn_1_1handle.html">handle</a> &amp;other)</td></tr>
 <tr class="separator:adc0d8bf89b381da03c8a2173896322cc inherit pub_methods_classmkldnn_1_1handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -234,6 +238,29 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a999c92505cbdd4e381a988920307806b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structmkldnn_1_1post__ops.html">post_ops</a> mkldnn::primitive_attr::get_post_ops </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a394a1a86d0568c201b427467603d99ae"></a>
 <div class="memitem">
 <div class="memproto">
@@ -281,6 +308,30 @@ Additional Inherited Members</h2></td></tr>
           <td></td>
           <td>)</td>
           <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4730acedb91c4cd93616bb69c3df90a7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mkldnn::primitive_attr::set_post_ops </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmkldnn_1_1post__ops.html">post_ops</a>&#160;</td>
+          <td class="paramname"><em>ops</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>
