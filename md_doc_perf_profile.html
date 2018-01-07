@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>Intel(R) MKL-DNN: File List</title>
+<title>Intel(R) MKL-DNN: Performance profiling</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -42,7 +42,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
-      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -61,13 +61,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </li>
     </ul>
   </div>
-  <div id="navrow2" class="tabs2">
-    <ul class="tablist">
-      <li class="current"><a href="files.html"><span>File&#160;List</span></a></li>
-      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
-    </ul>
-  </div>
-</div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -82,21 +75,43 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">File List</div>  </div>
+<div class="title">Performance profiling </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock">Here is a list of all files with brief descriptions:</div><div class="directory">
-<div class="levels">[detail level <span onclick="javascript:toggleLevel(1);">1</span><span onclick="javascript:toggleLevel(2);">2</span>]</div><table class="directory">
-<tr id="row_0_" class="even"><td class="entry"><img id="arr_0_" src="ftv2mlastnode.png" alt="\" width="16" height="22" onclick="toggleFolder('0_')"/><img id="img_0_" src="ftv2folderopen.png" alt="-" width="24" height="22" onclick="toggleFolder('0_')"/><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html" target="_self">include</a></td><td class="desc"></td></tr>
-<tr id="row_0_0_"><td class="entry"><img src="ftv2blank.png" alt="&#160;" width="16" height="22" /><img src="ftv2node.png" alt="o" width="16" height="22" /><a href="mkldnn_8h_source.html"><img src="ftv2doc.png" alt="*" width="24" height="22" /></a><a class="el" href="mkldnn_8h.html" target="_self">mkldnn.h</a></td><td class="desc"></td></tr>
-<tr id="row_0_1_" class="even"><td class="entry"><img src="ftv2blank.png" alt="&#160;" width="16" height="22" /><img src="ftv2node.png" alt="o" width="16" height="22" /><a href="mkldnn_8hpp_source.html"><img src="ftv2doc.png" alt="*" width="24" height="22" /></a><a class="el" href="mkldnn_8hpp.html" target="_self">mkldnn.hpp</a></td><td class="desc"></td></tr>
-<tr id="row_0_2_"><td class="entry"><img src="ftv2blank.png" alt="&#160;" width="16" height="22" /><img src="ftv2node.png" alt="o" width="16" height="22" /><a href="mkldnn__debug_8h_source.html"><img src="ftv2doc.png" alt="*" width="24" height="22" /></a><a class="el" href="mkldnn__debug_8h.html" target="_self">mkldnn_debug.h</a></td><td class="desc"></td></tr>
-<tr id="row_0_3_" class="even"><td class="entry"><img src="ftv2blank.png" alt="&#160;" width="16" height="22" /><img src="ftv2lastnode.png" alt="\" width="16" height="22" /><a href="mkldnn__types_8h_source.html"><img src="ftv2doc.png" alt="*" width="24" height="22" /></a><a class="el" href="mkldnn__types_8h.html" target="_self">mkldnn_types.h</a></td><td class="desc"></td></tr>
-</table>
-</div><!-- directory -->
-</div><!-- contents -->
+<div class="textblock"><p>It is often useful to collect information about how much of an application run time is spent executing Intel(R) MKL-DNN primitives and which of those take the most time. One of the popular methods to do this is to use profilers like Linux* perf or Intel(R) VTune(tm) Amplifier. Currently, Intel MKL-DNN has very limited support for these tools since it does not annotate code generated at run-time and thus the profiles cannot properly attribute it. However, Intel MKL-DNN implements another feature called <em>verbose mode</em> that allows tracing execution of Intel MKL-DNN primitives and collection of basic statistics like execution time and primitive parameters.</p>
+<h2>Verbose mode</h2>
+<p>To enable Intel MKL-DNN verbose mode, set <code>MKLDNN_VERBOSE</code> environment variable to <code>1</code> (to dump only execution time) or <code>2</code> (to dump both execution and creation time). For example:</p>
+<p>``` $ export MKLDNN_VERBOSE=1 $ ./benchdnn &ndash;conv ic16ih7oc16oh7kh5ph2n"wip" ```</p>
+<p>This will produce the following output (the line break was added to fit into the page width):</p>
+<p>``` mkldnn_verbose,exec,reorder,undef,in:f32_nchw out:f32_nChw8c,num:1,2x16x7x7,0.484863 mkldnn_verbose,exec,reorder,undef,in:f32_goihw out:f32_gOIhw8i8o,num:1,1x16x16x5x5,0.494141 mkldnn_verbose,exec,reorder,undef,in:f32_nchw out:f32_nChw8c,num:1,2x16x7x7,0.478027 mkldnn_verbose,exec,reorder,undef,in:f32_x out:f32_x,num:1,16,0.219971 mkldnn_verbose,exec,convolution,forward_inference,fsrc:nChw8c fwei:gOIhw8i8o fbia:x \ fdst:nChw8c,alg:convolution_direct,mb2_g1ic16oc16_ih7oh7kh5sh1dh0ph2_iw7ow7kw5sw1dw0pw2,0.0170898 mkldnn_verbose,exec,reorder,undef,in:f32_nChw8c out:f32_nchw,num:1,2x16x7x7,0.488037 mkldnn_verbose,exec,reorder,undef,in:f32_nChw8c out:f32_nchw,num:1,2x16x7x7,0.00512695 0:PASSED __REPRO: ic16ih7oc16oh7kh5ph2nwip tests:1 passed:1 skipped:0 mistrusted:0 unimplemented:0 failed:0 ```</p>
+<p>Each line with verbose information is formatted as a comma-separated list containing:</p>
+<ul>
+<li><code>mkldnn_verbose</code></li>
+<li><code>stage</code>, e.g. <code>create</code> or <code>exec</code></li>
+<li><code>primitive-kind</code>, e.g. <code>convolution</code>, <code>reorder</code>, <code>sum</code>, ...</li>
+<li>propagation-kind, e.g. <code>forward_training</code></li>
+<li>input/output data info, e.g. data type and data format</li>
+<li>auxiliary information, e.g. algorithm or number of input</li>
+<li>problem description<ul>
+<li>for convolution the problem description is dumped in benchdnn friendly format</li>
+<li>for reorder, sum, and concat problem description is simply logical dims</li>
+<li>for other primitives the problem description is similar to convolution one</li>
+</ul>
+</li>
+<li>execution time in milliseconds</li>
+</ul>
+<p>To get more information about verbose report format please refer to the <code>verbose_templ()</code> function in the <a href="https://github.com/01org/mkl-dnn/blob/master/src/common/verbose.hpp">src/common/verbose.hpp</a> file. </p>
+<hr/>
+<p> <b>NOTE</b> The format is subject to change </p>
+<hr/>
+<hr/>
+<p> <b>WARNING</b> Verbose mode has non-negligible performance impact especially if the output rate is high. </p>
+<hr/>
+<p><a href="legal_information.md">Legal information</a> </p>
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
