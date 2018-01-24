@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['get',['get',['../classmkldnn_1_1handle.html#a6cff23ba3e461babe5edcff193d0c42c',1,'mkldnn::handle']]],
-  ['get_5fcount',['get_count',['../structmkldnn_1_1engine.html#a27e38cf2b95a0e29713c726ed702fe70',1,'mkldnn::engine']]],
-  ['get_5fdata_5fhandle',['get_data_handle',['../structmkldnn_1_1memory.html#a07d67b26cdd115092f8574cc000f96fc',1,'mkldnn::memory']]],
-  ['get_5fnumber_5fof_5felements',['get_number_of_elements',['../structmkldnn_1_1memory_1_1desc.html#a45858278c23b36dcc6dbb60b89e52ce2',1,'mkldnn::memory::desc::get_number_of_elements()'],['../structmkldnn_1_1memory_1_1primitive__desc.html#a016f492d362894249734641058218425',1,'mkldnn::memory::primitive_desc::get_number_of_elements()']]],
-  ['get_5fprimitive_5fdesc',['get_primitive_desc',['../group__cpp__api__utils.html#ga4016dac2d0c51a22a36521660c0cd5f4',1,'mkldnn::primitive::get_primitive_desc()'],['../structmkldnn_1_1memory.html#a7b32596c911a3086799d7ec85cee9260',1,'mkldnn::memory::get_primitive_desc()']]],
-  ['get_5fsize',['get_size',['../structmkldnn_1_1memory_1_1desc.html#a273a35ba51f1ce0185e1703cc96d9dec',1,'mkldnn::memory::desc::get_size()'],['../structmkldnn_1_1memory_1_1primitive__desc.html#a3aa950433f988550f7829a8f77fe164a',1,'mkldnn::memory::primitive_desc::get_size()']]]
+  ['eltwise_5fbackward',['eltwise_backward',['../structmkldnn_1_1eltwise__backward.html#a9bd0d26c2864da762f63745c81fc9a47',1,'mkldnn::eltwise_backward']]],
+  ['eltwise_5fforward',['eltwise_forward',['../structmkldnn_1_1eltwise__forward.html#a8d284ab511d05dadf55deeb518b36ae7',1,'mkldnn::eltwise_forward']]],
+  ['engine',['engine',['../structmkldnn_1_1engine.html#acfa129c9cf572d121c3b1748fc8444fa',1,'mkldnn::engine::engine(kind akind, size_t index)'],['../structmkldnn_1_1engine.html#aeab8a660589202ecf17ed042a69bf5d5',1,'mkldnn::engine::engine(const mkldnn_engine_t &amp;aengine)'],['../structmkldnn_1_1engine.html#a8511af0d3b8729e1ef9edab6d68a5e0d',1,'mkldnn::engine::engine(const handle&lt; mkldnn_primitive_desc_t &gt; &amp;pd)']]],
+  ['error',['error',['../structmkldnn_1_1error.html#a7812548bbce0899a64348d1a73e2f57a',1,'mkldnn::error']]]
 ];

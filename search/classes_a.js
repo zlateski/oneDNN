@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['stream',['stream',['../structmkldnn_1_1stream.html',1,'mkldnn']]]
+  ['reorder',['reorder',['../structmkldnn_1_1reorder.html',1,'mkldnn']]]
 ];

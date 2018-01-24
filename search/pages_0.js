@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['developer_20manual',['Developer Manual',['../index.html',1,'']]]
+  ['a_20performance_20library_20for_20deep_20learning',['A Performance Library for Deep Learning',['../index.html',1,'']]]
 ];

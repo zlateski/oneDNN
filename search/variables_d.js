@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['relu_5fdesc',['relu_desc',['../structmkldnn__relu__primitive__desc__t.html#a4ad271b7860778013ea64610a5134352',1,'mkldnn_relu_primitive_desc_t']]]
+  ['variance_5fdesc',['variance_desc',['../structmkldnn__batch__normalization__desc__t.html#a0b77081ca4865c1dcd40e349b78f4d95',1,'mkldnn_batch_normalization_desc_t']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['dims',['dims',['../structmkldnn_1_1tensor.html#a7a61d1a90eb1af9ce5ef6af16da938db',1,'mkldnn::tensor']]]
+  ['dims',['dims',['../structmkldnn_1_1memory.html#a0fa655354b5c62453d93c58e2f229a43',1,'mkldnn::memory']]]
 ];

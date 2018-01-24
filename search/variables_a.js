@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['ndims',['ndims',['../structmkldnn__tensor__desc__t.html#a3b879c59a5ae355e9eef8b6a2dd1f178',1,'mkldnn_tensor_desc_t']]],
-  ['negative_5fslope',['negative_slope',['../structmkldnn__relu__desc__t.html#a37b4d57f30db49038c4a5edf5d11480b',1,'mkldnn_relu_desc_t']]]
+  ['offset_5fpadding',['offset_padding',['../structmkldnn__blocking__desc__t.html#adc8fd26e935fee00dc25bb098a204138',1,'mkldnn_blocking_desc_t']]],
+  ['offset_5fpadding_5fto_5fdata',['offset_padding_to_data',['../structmkldnn__blocking__desc__t.html#afdac3519f52607a08c6dfd738a60166c',1,'mkldnn_blocking_desc_t']]],
+  ['output_5findex',['output_index',['../structmkldnn__primitive__at__t.html#a23adfce1001ba6761b4f910595f64494',1,'mkldnn_primitive_at_t']]]
 ];

@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['padding_5fkind',['padding_kind',['../group__cpp__api__primitives.html#gaa1ff931b28e0a90473ad5bddd21c60fc',1,'mkldnn']]],
-  ['precision',['precision',['../structmkldnn_1_1memory.html#ab8f13ab4d5e9b02b09a884a51f6fae5f',1,'mkldnn::memory']]],
-  ['prop_5fkind',['prop_kind',['../group__cpp__api__primitives.html#gaeb087eae78f70a4d249a90aefa165cf8',1,'mkldnn']]]
+  ['kind',['kind',['../classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00d',1,'mkldnn::primitive::kind()'],['../structmkldnn_1_1engine.html#a81bcf1ea92d7f98852a2c3e187825de6',1,'mkldnn::engine::kind()'],['../structmkldnn_1_1stream.html#a7b46a4cd837ea0ccf835d7fa4fc37cff',1,'mkldnn::stream::kind()']]]
 ];

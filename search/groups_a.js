@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['types',['Types',['../group__c__api__types.html',1,'']]]
+  ['queries',['Queries',['../group__c__api__types__query.html',1,'']]]
 ];

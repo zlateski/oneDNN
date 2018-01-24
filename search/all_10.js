@@ -1,12 +1,16 @@
 var searchData=
 [
-  ['stream',['Stream',['../group__cpp__api__stream.html',1,'']]],
-  ['scratch_5fprimitive_5fdesc',['scratch_primitive_desc',['../structmkldnn__lrn__primitive__desc__t.html#a892be19a7280ea925b04bcec25b18aec',1,'mkldnn_lrn_primitive_desc_t']]],
-  ['src_5fdesc',['src_desc',['../structmkldnn__convolution__desc__t.html#ac1ac756cd9506ffaf1e7d68e334e9420',1,'mkldnn_convolution_desc_t::src_desc()'],['../structmkldnn__pooling__desc__t.html#a3145a3354e2c46b2827a645fe90c1b04',1,'mkldnn_pooling_desc_t::src_desc()'],['../structmkldnn__relu__desc__t.html#ad1cdb91322556bbec17d0fcd99d23d0d',1,'mkldnn_relu_desc_t::src_desc()'],['../structmkldnn__lrn__desc__t.html#a13d892461f01be26183695b94a2c9e7f',1,'mkldnn_lrn_desc_t::src_desc()'],['../structmkldnn__inner__product__desc__t.html#ab2ab25825825a88d9be4b15ca3ee6105',1,'mkldnn_inner_product_desc_t::src_desc()']]],
-  ['src_5fprimitive_5fdesc',['src_primitive_desc',['../structmkldnn__convolution__primitive__desc__t.html#a5c84915dd0fe11c1914134abd79af084',1,'mkldnn_convolution_primitive_desc_t::src_primitive_desc()'],['../structmkldnn__pooling__primitive__desc__t.html#a2a67a9216681585268c56a159405dca8',1,'mkldnn_pooling_primitive_desc_t::src_primitive_desc()'],['../structmkldnn__relu__primitive__desc__t.html#a814562b5763a97298ea440556b41bc23',1,'mkldnn_relu_primitive_desc_t::src_primitive_desc()'],['../structmkldnn__lrn__primitive__desc__t.html#adab344c23ffd799e511489eac02b47bc',1,'mkldnn_lrn_primitive_desc_t::src_primitive_desc()'],['../structmkldnn__inner__product__primitive__desc__t.html#a64b493694d58a7c6098d70c5ab9b3b36',1,'mkldnn_inner_product_primitive_desc_t::src_primitive_desc()']]],
-  ['status',['status',['../structmkldnn_1_1error.html#a372df84a0b6d6b928cd849eabca73e34',1,'mkldnn::error']]],
-  ['stream',['stream',['../structmkldnn_1_1stream.html',1,'mkldnn']]],
-  ['stream',['stream',['../classmkldnn_1_1primitive.html#a8d3c0a2dcad3384b3eefe13168d1e382',1,'mkldnn::primitive::stream()'],['../structmkldnn_1_1stream.html#aa806222d143fb609e0352b6a9d639440',1,'mkldnn::stream::stream()']]],
-  ['strides',['strides',['../structmkldnn__blocking__desc__t.html#a136bf1d1afb82ad408c823688054fee9',1,'mkldnn_blocking_desc_t::strides()'],['../structmkldnn__convolution__desc__t.html#a55fa258e8e2ddc24de4c6fdf5562501f',1,'mkldnn_convolution_desc_t::strides()'],['../structmkldnn__pooling__desc__t.html#a8c339dae420e12a19a4bef3c7de08948',1,'mkldnn_pooling_desc_t::strides()']]],
-  ['submit',['submit',['../structmkldnn_1_1stream.html#a018e38932cc072568a48015f55fbe798',1,'mkldnn::stream']]]
+  ['relu_20_28deprecated_2c_20use_20eltwise_20instead_29',['ReLU (deprecated, use Eltwise instead)',['../group__c__api__relu.html',1,'']]],
+  ['reorder',['Reorder',['../group__c__api__reorder.html',1,'']]],
+  ['reorder',['Reorder',['../group__cpp__api__reorder.html',1,'']]],
+  ['relu',['relu',['../classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00dabc5ce62b39aff2f661146911808eadc1',1,'mkldnn::primitive']]],
+  ['relu_5fbackward',['relu_backward',['../group__cpp__api__eltwise.html#gab854378aae0281874a3afbd38f8917f2',1,'mkldnn']]],
+  ['relu_5fd',['relu_d',['../group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a20f677933e74a40096d45a51664c5ee4',1,'mkldnn']]],
+  ['relu_5fforward',['relu_forward',['../group__cpp__api__eltwise.html#ga5a566a3bc019b743b75735b5c96d2b06',1,'mkldnn']]],
+  ['reorder',['reorder',['../structmkldnn_1_1reorder.html',1,'mkldnn::reorder'],['../structmkldnn_1_1reorder.html#a29c984f7c35259e40d0b3a48ae2fe514',1,'mkldnn::reorder::reorder(const primitive_desc &amp;aprimitive_desc, const primitive::at &amp;input, const memory &amp;output)'],['../structmkldnn_1_1reorder.html#a7dc314cf0c42202b8504f423a721a587',1,'mkldnn::reorder::reorder(const primitive::at &amp;input, const memory &amp;output)'],['../classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00da8dbc5523c131d7900138d32d1dcbf093',1,'mkldnn::primitive::reorder()']]],
+  ['rerun',['rerun',['../structmkldnn_1_1stream.html#a44e326ef7e4a9d6c26bf006961e1eaf7',1,'mkldnn::stream']]],
+  ['reset',['reset',['../classmkldnn_1_1handle.html#a3aa9cec1c7e14dd77c9a904503960b9e',1,'mkldnn::handle']]],
+  ['round_5fdown',['round_down',['../group__cpp__api__enums.html#gga9d7c927196d96da9d2dcb0926f50845da5e31c27e1a2c7c1ac5bfe9c8026bc72e',1,'mkldnn']]],
+  ['round_5fmode',['round_mode',['../group__cpp__api__enums.html#ga9d7c927196d96da9d2dcb0926f50845d',1,'mkldnn']]],
+  ['round_5fnearest',['round_nearest',['../group__cpp__api__enums.html#gga9d7c927196d96da9d2dcb0926f50845dadfa185bc1c3ce87a0905475a288c58fd',1,'mkldnn']]]
 ];

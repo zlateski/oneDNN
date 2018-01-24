@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['lrn',['LRN',['../group__c__api__lrn.html',1,'']]]
+  ['generic',['Generic',['../group__c__api__types__generic.html',1,'']]]
 ];

@@ -1,11 +1,20 @@
 var searchData=
 [
   ['lrn',['LRN',['../group__c__api__lrn.html',1,'']]],
+  ['lrn',['LRN',['../group__cpp__api__lrn.html',1,'']]],
   ['layout_5fdesc',['layout_desc',['../structmkldnn__memory__desc__t.html#ae49f98c84c36039ec2984c3ecf981c8e',1,'mkldnn_memory_desc_t']]],
-  ['legal_20information',['Legal Information',['../legal_information.html',1,'index']]],
+  ['lazy',['lazy',['../structmkldnn_1_1stream.html#a7b46a4cd837ea0ccf835d7fa4fc37cffa02b04eb4c732cc0525e409b7e7e60498',1,'mkldnn::stream']]],
   ['legal_5finformation_2emd',['legal_information.md',['../legal__information_8md.html',1,'']]],
-  ['local_5fsize',['local_size',['../structmkldnn__lrn__desc__t.html#a9840f89d6c29b865dd8e4df90ba61312',1,'mkldnn_lrn_desc_t']]],
-  ['lrn',['lrn',['../structmkldnn_1_1lrn.html',1,'mkldnn']]],
-  ['lrn',['lrn',['../structmkldnn_1_1lrn.html#a749b481b179469d6c206a5ff09c9ee88',1,'mkldnn::lrn::lrn(const primitive_desc &amp;aprimitive_desc, const primitive::at &amp;src, const primitive::at &amp;scratch, const memory &amp;dst)'],['../structmkldnn_1_1lrn.html#a271f8ce7ea4c80d93255548373d1df99',1,'mkldnn::lrn::lrn(prop_kind aprop_kind, algorithm aalgorithm, const primitive::at &amp;src, const primitive::at &amp;scratch, const memory &amp;dst, double alpha, double beta, uint32_t local_size)']]],
-  ['lrn_5fdesc',['lrn_desc',['../structmkldnn__lrn__primitive__desc__t.html#a8ba01470ba36211d68c805aca647bd54',1,'mkldnn_lrn_primitive_desc_t']]]
+  ['len',['len',['../structmkldnn_1_1post__ops.html#a31d60795d96db50f64d53de3af087557',1,'mkldnn::post_ops']]],
+  ['local_5fsize',['local_size',['../structmkldnn__lrn__desc__t.html#a6e4711d09762d5c3a38dac99ab4397df',1,'mkldnn_lrn_desc_t']]],
+  ['lrn',['lrn',['../classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00da7d9c7d1747abfac2c3c3ff337712f575',1,'mkldnn::primitive']]],
+  ['lrn_5facross_5fchannels',['lrn_across_channels',['../group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076a5ba3a03af8dc6c1b9066e48508ae9b5c',1,'mkldnn']]],
+  ['lrn_5falpha',['lrn_alpha',['../structmkldnn__lrn__desc__t.html#abe1a26e98c5bf28a39722e63215b2d68',1,'mkldnn_lrn_desc_t']]],
+  ['lrn_5fbackward',['lrn_backward',['../structmkldnn_1_1lrn__backward.html',1,'mkldnn::lrn_backward'],['../structmkldnn_1_1lrn__backward.html#aa8a5aca14c604d2a1fb70801cd8cca56',1,'mkldnn::lrn_backward::lrn_backward(const primitive_desc &amp;aprimitive_desc, const primitive::at &amp;src, const primitive::at &amp;diff_dst, const primitive::at &amp;workspace, const memory &amp;diff_src)'],['../structmkldnn_1_1lrn__backward.html#af23cbd8f53aca23a80df1ba0cd135567',1,'mkldnn::lrn_backward::lrn_backward(const primitive_desc &amp;aprimitive_desc, const primitive::at &amp;src, const primitive::at &amp;diff_dst, const memory &amp;diff_src)']]],
+  ['lrn_5fbeta',['lrn_beta',['../structmkldnn__lrn__desc__t.html#ad29c3af8cae0dc599c62d3e04ebb94df',1,'mkldnn_lrn_desc_t']]],
+  ['lrn_5fd',['lrn_d',['../group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a76add43bb6bee4f897e668e2d54476a2',1,'mkldnn']]],
+  ['lrn_5fforward',['lrn_forward',['../structmkldnn_1_1lrn__forward.html',1,'mkldnn::lrn_forward'],['../structmkldnn_1_1lrn__forward.html#a452b11f3734755695cdf6eb4d4556a84',1,'mkldnn::lrn_forward::lrn_forward(const primitive_desc &amp;aprimitive_desc, const primitive::at &amp;src, const memory &amp;workspace, const memory &amp;dst)'],['../structmkldnn_1_1lrn__forward.html#acbd49285d69e89a49bab508d096b27c2',1,'mkldnn::lrn_forward::lrn_forward(const primitive_desc &amp;aprimitive_desc, const primitive::at &amp;src, const memory &amp;dst)']]],
+  ['lrn_5fk',['lrn_k',['../structmkldnn__lrn__desc__t.html#a87736331128ad8a787012b6f3eced386',1,'mkldnn_lrn_desc_t']]],
+  ['lrn_5fwithin_5fchannel',['lrn_within_channel',['../group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076a1bec35024f741400d95f4c15897b50a2',1,'mkldnn']]],
+  ['legal_20information',['Legal Information',['../md_doc_legal_information.html',1,'']]]
 ];

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['relu',['ReLU',['../group__c__api__relu.html',1,'']]],
-  ['reorder',['Reorder',['../group__c__api__reorder.html',1,'']]]
+  ['operation_20descriptors',['Operation descriptors',['../group__c__api__types__op__descs.html',1,'']]]
 ];

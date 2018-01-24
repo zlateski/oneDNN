@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['wait',['wait',['../structmkldnn_1_1stream.html#a577fe98393390dc1ba646266d57566e2',1,'mkldnn::stream']]],
-  ['weights_5fdesc',['weights_desc',['../structmkldnn__convolution__desc__t.html#a182f81ea06178cdfec5f8e120918cef3',1,'mkldnn_convolution_desc_t::weights_desc()'],['../structmkldnn__inner__product__desc__t.html#a2639f37a1b46ac5129c8368215629e34',1,'mkldnn_inner_product_desc_t::weights_desc()']]],
-  ['weights_5fprimitive_5fdesc',['weights_primitive_desc',['../structmkldnn__convolution__primitive__desc__t.html#a1fc50a308983a37f55d0f2f719ea8f0f',1,'mkldnn_convolution_primitive_desc_t::weights_primitive_desc()'],['../structmkldnn__inner__product__primitive__desc__t.html#ad5a3e60554e162bf6d575f5bdb2876b8',1,'mkldnn_inner_product_primitive_desc_t::weights_primitive_desc()']]],
-  ['within_5fchannel',['within_channel',['../structmkldnn_1_1lrn.html#a8dbea5cd59af2d6fd5d54151dd68df2fa0ccdf92740736051c9f0c8d1af80083e',1,'mkldnn::lrn']]],
-  ['wrap_5fc_5fapi',['wrap_c_api',['../structmkldnn_1_1error.html#a9217132bf07620e239523c921c51e36d',1,'mkldnn::error']]]
+  ['view',['View',['../group__cpp__api__view.html',1,'']]],
+  ['validate_5fdims',['validate_dims',['../structmkldnn_1_1memory.html#a2b5aee608f913a4fcbfef41b63f48650',1,'mkldnn::memory']]],
+  ['variance_5fdesc',['variance_desc',['../structmkldnn__batch__normalization__desc__t.html#a0b77081ca4865c1dcd40e349b78f4d95',1,'mkldnn_batch_normalization_desc_t']]],
+  ['variance_5fprimitive_5fdesc',['variance_primitive_desc',['../structmkldnn_1_1batch__normalization__forward_1_1primitive__desc.html#a379b485209b4772e7f3a0decc9fe29b7',1,'mkldnn::batch_normalization_forward::primitive_desc::variance_primitive_desc()'],['../structmkldnn_1_1batch__normalization__backward_1_1primitive__desc.html#ae3f879c96dd185ab343288cd6c46c588',1,'mkldnn::batch_normalization_backward::primitive_desc::variance_primitive_desc()']]],
+  ['view',['view',['../structmkldnn_1_1view.html',1,'mkldnn::view'],['../structmkldnn_1_1view.html#a28b4a6dd02a91f4286f3d5e865f64e12',1,'mkldnn::view::view(const primitive_desc &amp;view_pd, primitive::at input)'],['../structmkldnn_1_1view.html#add84c97a1d70e7135a9d35719247b761',1,'mkldnn::view::view(memory input, memory::dims dims, memory::dims offsets)'],['../classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00da1bda80f2be4d3658e0baa43fbe7ae8c1',1,'mkldnn::primitive::view()']]]
 ];

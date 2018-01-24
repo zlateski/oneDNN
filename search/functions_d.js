@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['validate_5fdims',['validate_dims',['../structmkldnn_1_1tensor.html#afcca8d19f154a5c68520e6cb249aa502',1,'mkldnn::tensor']]]
+  ['query',['query',['../structmkldnn_1_1engine.html#aa0a4e078d059debf90e7bf09367ef868',1,'mkldnn::engine']]]
 ];
