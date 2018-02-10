@@ -25,5 +25,7 @@ var searchData=
   ['eltwise_5ftanh',['eltwise_tanh',['../group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076a12c72b1d3a7f7b06fdd0dbd7f8fa6c12',1,'mkldnn']]],
   ['engine',['engine',['../structmkldnn_1_1engine.html',1,'mkldnn::engine'],['../structmkldnn_1_1engine.html#acfa129c9cf572d121c3b1748fc8444fa',1,'mkldnn::engine::engine(kind akind, size_t index)'],['../structmkldnn_1_1engine.html#aeab8a660589202ecf17ed042a69bf5d5',1,'mkldnn::engine::engine(const mkldnn_engine_t &amp;aengine)'],['../structmkldnn_1_1engine.html#a8511af0d3b8729e1ef9edab6d68a5e0d',1,'mkldnn::engine::engine(const handle&lt; mkldnn_primitive_desc_t &gt; &amp;pd)']]],
   ['error',['error',['../structmkldnn_1_1error.html',1,'mkldnn::error'],['../classmkldnn_1_1primitive.html#a44a600fabe6477225905e375551b34d1',1,'mkldnn::primitive::error()'],['../structmkldnn_1_1error.html#a7812548bbce0899a64348d1a73e2f57a',1,'mkldnn::error::error()']]],
-  ['error_5fprimitive',['error_primitive',['../structmkldnn_1_1error.html#afa457ffa341634f9275610aa34a36c4c',1,'mkldnn::error']]]
+  ['error_5fprimitive',['error_primitive',['../structmkldnn_1_1error.html#afa457ffa341634f9275610aa34a36c4c',1,'mkldnn::error']]],
+  ['ex_5fint8_5fsimplenet_2emd',['ex_int8_simplenet.md',['../ex__int8__simplenet_8md.html',1,'']]],
+  ['ex_5fsimplenet_2emd',['ex_simplenet.md',['../ex__simplenet_8md.html',1,'']]]
 ];

@@ -19,3 +19,31 @@
 \form#18:$\mu[c] = \frac{1}{NHW} \sum\limits_{whn} src[n][c][h][w]$
 \form#19:$\sigma[c] = \frac{1}{NHW} \sum\limits_{whn} (src[n][c][h][w] - \mu[c])^2$
 \form#20:\[dst[n][oc] = \sum\limits_{ic, kh, kw} src[n][ic][kh][kw] \cdot weights[oc][ic][kh][kw] + bias[oc]\]
+\form#21:$\dagger$
+\form#22:$ R_{\{\alpha,w\}} = max(abs(T_{\{\alpha,w\}}))$
+\form#23:$ T_{\{\alpha,w\}}$
+\form#24:$w$
+\form#25:$\alpha$
+\form#26:$ Q_{\alpha} = \frac{255}{R_{\alpha}}$
+\form#27:$ Q_{w} = \frac{127}{R_{w}}$
+\form#28:$\alpha_{u8} = \lceil Q_{\alpha} \alpha_{f32} \rceil \in [0,255]$
+\form#29:$W_{s8} = \lceil Q_{w} W_{f32} \rceil \in [-127,127]$
+\form#30:$b_{s32} = \lceil Q_{\alpha} Q_{w} b_{f32} \rceil \in [-2^{31},2^{31}-1]$
+\form#31:$ \lceil \rceil $
+\form#32:$ X_{s32} = W_{s8} \times \alpha{u8} + b_{s32} \approx Q_{\alpha} Q_{\omega} X_{f32}$
+\form#33:$X_{f32} = W_{f32} \times \alpha_{f32} + b_{f32}$
+\form#34:$ X_{f32} \approx \frac{1}{Q_{\alpha} Q_{\omega}} X_{s32} $
+\form#35:$ T_{\alpha} = [15, 14, 15 ... 8, 11 ]$
+\form#36:$ max(abs(T_{\alpha})) = 15$
+\form#37:$ T_{\omega} = [-5.1 , 6.8, ... -1.2, 9.8 ]$
+\form#38:$ max(abs(T_{\omega})) = 9.8$
+\form#39:$ T_{\alpha} = [ 2.4, -5.2 ... -8 ]$
+\form#40:$ max(abs(T_{\alpha})) = 8$
+\form#41:$ Q_{\alpha} = \frac{255}{R_{\alpha}} = \frac{255}{15} = 17 $
+\form#42:$ Q_{w} = \frac{127}{R_{w}} = \frac{127}{9.8} = 12.96$
+\form#43:$\alpha_{u8} = \lceil Q_{\alpha} \alpha_{f32} \rceil$
+\form#44:$ = \lceil 17 \times [15, 14, ... 11 ] \rceil = [255, 238, ... 187] $
+\form#45:$W_{s8} = \lceil Q_{w} W_{f32} \rceil = \lceil 12.96 \times [-5.1 , 6.8, ... -1.2, 9.8 ] \rceil = [-66, 88, ... -15, 127] $
+\form#46:$b_{s32} = \lceil Q_{\alpha} Q_{w} b_{f32} \rceil = \lceil 17 \times 12.96 \times [ 2.4, -5.2 ... -8 ] \rceil = [528, -1145, ... -1762] $
+\form#47:$ dst[ ] \leftarrow scale * dst[] + op(...); instead of dst[ ] \leftarrow op(...) $
+\form#48:$ dst[ ] \leftarrow scale * eltwise_op ( op(...) ); instead of dst[ ] \leftarrow op(...)$

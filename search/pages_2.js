@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['legal_20information',['Legal Information',['../md_doc_legal_information.html',1,'']]]
+  ['introduction_20to_20low_2dprecision_208_2dbit_20integer_20computations',['Introduction to Low-Precision 8-bit Integer Computations',['../md_doc_ex_int8_simplenet.html',1,'']]]
 ];

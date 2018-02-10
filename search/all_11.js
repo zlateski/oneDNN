@@ -7,6 +7,7 @@ var searchData=
   ['softmax',['Softmax',['../group__cpp__api__softmax.html',1,'']]],
   ['stream',['Stream',['../group__cpp__api__stream.html',1,'']]],
   ['sum',['Sum',['../group__cpp__api__sum.html',1,'']]],
+  ['simplenet_20example',['SimpleNet Example',['../md_doc_ex_simplenet.html',1,'']]],
   ['s16',['s16',['../structmkldnn_1_1memory.html#aa8a0d49cc7faaceef9d8f55d66bff57ba3b210ee3077fc5a8cf09a48bd01c5f59',1,'mkldnn::memory']]],
   ['s32',['s32',['../structmkldnn_1_1memory.html#aa8a0d49cc7faaceef9d8f55d66bff57baafd6316d6d009465fd42d0effc8cdac1',1,'mkldnn::memory']]],
   ['s8',['s8',['../structmkldnn_1_1memory.html#aa8a0d49cc7faaceef9d8f55d66bff57ba4b4eb008e1bc38c0f4f2de74fdc354ab',1,'mkldnn::memory']]],
