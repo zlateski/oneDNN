@@ -4,6 +4,7 @@ var searchData=
   ['lrn',['LRN',['../group__cpp__api__lrn.html',1,'']]],
   ['layout_5fdesc',['layout_desc',['../structmkldnn__memory__desc__t.html#ae49f98c84c36039ec2984c3ecf981c8e',1,'mkldnn_memory_desc_t']]],
   ['lazy',['lazy',['../structmkldnn_1_1stream.html#a7b46a4cd837ea0ccf835d7fa4fc37cffa02b04eb4c732cc0525e409b7e7e60498',1,'mkldnn::stream']]],
+  ['legal_20information',['Legal Information',['../legal_information.html',1,'']]],
   ['legal_5finformation_2emd',['legal_information.md',['../legal__information_8md.html',1,'']]],
   ['len',['len',['../structmkldnn_1_1post__ops.html#a31d60795d96db50f64d53de3af087557',1,'mkldnn::post_ops']]],
   ['local_5fsize',['local_size',['../structmkldnn__lrn__desc__t.html#a6e4711d09762d5c3a38dac99ab4397df',1,'mkldnn_lrn_desc_t']]],
@@ -15,6 +16,5 @@ var searchData=
   ['lrn_5fd',['lrn_d',['../group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a76add43bb6bee4f897e668e2d54476a2',1,'mkldnn']]],
   ['lrn_5fforward',['lrn_forward',['../structmkldnn_1_1lrn__forward.html',1,'mkldnn::lrn_forward'],['../structmkldnn_1_1lrn__forward.html#a452b11f3734755695cdf6eb4d4556a84',1,'mkldnn::lrn_forward::lrn_forward(const primitive_desc &amp;aprimitive_desc, const primitive::at &amp;src, const memory &amp;workspace, const memory &amp;dst)'],['../structmkldnn_1_1lrn__forward.html#acbd49285d69e89a49bab508d096b27c2',1,'mkldnn::lrn_forward::lrn_forward(const primitive_desc &amp;aprimitive_desc, const primitive::at &amp;src, const memory &amp;dst)']]],
   ['lrn_5fk',['lrn_k',['../structmkldnn__lrn__desc__t.html#a87736331128ad8a787012b6f3eced386',1,'mkldnn_lrn_desc_t']]],
-  ['lrn_5fwithin_5fchannel',['lrn_within_channel',['../group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076a1bec35024f741400d95f4c15897b50a2',1,'mkldnn']]],
-  ['legal_20information',['Legal Information',['../md_doc_legal_information.html',1,'']]]
+  ['lrn_5fwithin_5fchannel',['lrn_within_channel',['../group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076a1bec35024f741400d95f4c15897b50a2',1,'mkldnn']]]
 ];
