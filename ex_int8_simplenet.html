@@ -132,15 +132,15 @@ where the function <img class="formulaInl" alt="$ \lceil \rceil $" src="form_31.
 <p>MKLDNN has 2 formats for defining the output scaling factor, depending on the configuration set by the scaling mask, the output is either scaled uniformly across all the dimensions (<em>mask = 0</em>) or a set of scaling values are applied to specific dimension(s), as explanation below:</p>
 <ul>
 <li>A <em>single float-value</em> shared across the tensor. <div class="image">
-<img src="img_singlescalar.png" alt="Single-value scaling format"/>
-</div>
+<img src="img_singlescalar.png" alt="img_singlescalar.png"/>
+<div class="caption">
+Single-value scaling format</div></div>
 </li>
 <li>An array of float values each corresponding to a specific output channel. <div class="image">
-<img src="img_multiscalar.png" alt="Multi-value scaling format"/>
-</div>
-</li>
-</ul>
-<p>The <b>mask</b> parameter determines the dimension to which the scales array is applied to where the i<sup>th</sup>-bit(s) of mask selects the dimension(s) d<sub>i</sub> (where <em>d</em> is an <em>n</em>-dimensional output tensor with logical dimensions as [<em>d0, d1, ..., dn-1</em>]), for example:</p><ul>
+<img src="img_multiscalar.png" alt="img_multiscalar.png"/>
+<div class="caption">
+Multi-value scaling format</div></div>
+ The <b>mask</b> parameter determines the dimension to which the scales array is applied to where the i<sup>th</sup>-bit(s) of mask selects the dimension(s) d<sub>i</sub> (where <em>d</em> is an <em>n</em>-dimensional output tensor with logical dimensions as [<em>d0, d1, ..., dn-1</em>]), for example:</li>
 <li>The single-scale format always has mask = 0.</li>
 <li>For a 5-dimensional tensor T[g0, o1,i2,h3,w4] where the numbering indicates the bit-index:<ul>
 <li>A mask = 2 = 2<sup>1</sup> selects the output channel for scaling.</li>
@@ -185,9 +185,10 @@ where the function <img class="formulaInl" alt="$ \lceil \rceil $" src="form_31.
 </ol>
 <p>The diagram to summarize this example is as follows:</p>
 <div class="image">
-<img src="img_diagram.png" alt="Diagram depicting simple_net_int8 data flow"/>
-</div>
- <hr/>
+<img src="img_diagram.png" alt="img_diagram.png"/>
+<div class="caption">
+Diagram depicting simple_net_int8 data flow</div></div>
+<hr/>
 <p> <a class="el" href="legal_information.html">Legal information</a> </p>
 </div></div><!-- contents -->
 <!-- start footer part -->
