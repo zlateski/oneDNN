@@ -90,7 +90,7 @@ $(function() {
 <p> <b>WARNING</b> Verbose mode has non-negligible performance impact especially if the output rate is high. </p><hr/>
 <h2>Intel(R) VTune(TM) profiling</h2>
 <p>To collect performance data of JIT-kernels set <code>VTUNEROOT</code> environment variable to path to VTune before building of Intel MKL-DNN. For example:</p>
-<div class="fragment"><div class="line">$ export VTUNEROOT=/path/to/vtune</div><div class="line">$ mkdir -p build &amp;&amp; cd build &amp;&amp; cmake .. &amp;&amp; make</div></div><!-- fragment --><h2>Dump JIT-kernels</h2>
+<div class="fragment"><div class="line">$ mkdir -p build &amp;&amp; cd build &amp;&amp; cmake -DVTUNEROOT=/path/to/vtune .. &amp;&amp; make</div></div><!-- fragment --><h2>Dump JIT-kernels</h2>
 <p>To dump JIT-kernels set MKLDNN_JIT_DUMP environment variable to <code>1</code>. For example:</p>
 <div class="fragment"><div class="line">$ export MKLDNN_JIT_DUMP=1</div><div class="line">$ ./simple-net-c</div></div><!-- fragment --><p>This will produce the following output files: mkldnn_dump_jit_avx2_conv_fwd_kernel_f32.0.bin mkldnn_dump_jit_uni_lrn_fwd_kernel_f32.2.bin mkldnn_dump_jit_uni_lrn_fwd_kernel_f32.3.bin mkldnn_dump_jit_uni_lrn_fwd_kernel_f32.4.bin mkldnn_dump_jit_uni_pool_kernel_f32.5.bin mkldnn_dump_jit_uni_relu_kernel_f32.1.bin</p>
 <p>To open these files any disassembler can be used. For example:</p>
