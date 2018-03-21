@@ -9,6 +9,8 @@ var searchData=
   ['mkldnn_5fprimitive_5fkind_5ft',['mkldnn_primitive_kind_t',['../group__c__api__types__generic.html#ga4f5c189c2ba9ef6444250299f1f8e973',1,'mkldnn_types.h']]],
   ['mkldnn_5fprop_5fkind_5ft',['mkldnn_prop_kind_t',['../group__c__api__types__generic.html#ga5b98c8059c2aff8861157bf070c3f520',1,'mkldnn_types.h']]],
   ['mkldnn_5fquery_5ft',['mkldnn_query_t',['../group__c__api__types__query.html#ga6eebc661a8a3437b49d9c677f8972fc9',1,'mkldnn_types.h']]],
+  ['mkldnn_5frnn_5fcell_5fflags_5ft',['mkldnn_rnn_cell_flags_t',['../group__c__api__types__memory.html#ga62b06d91e9fcf6bd086311fd4d8ece36',1,'mkldnn_types.h']]],
+  ['mkldnn_5frnn_5fdirection_5ft',['mkldnn_rnn_direction_t',['../group__c__api__types__memory.html#ga3cb09316c36bd985698e0eea542cb424',1,'mkldnn_types.h']]],
   ['mkldnn_5fround_5fmode_5ft',['mkldnn_round_mode_t',['../group__c__api__types__generic.html#ga825f736d520c8183d422d1aad60f2ad9',1,'mkldnn_types.h']]],
   ['mkldnn_5fstatus_5ft',['mkldnn_status_t',['../group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd',1,'mkldnn_types.h']]],
   ['mkldnn_5fstream_5fkind_5ft',['mkldnn_stream_kind_t',['../group__c__api__types__stream.html#gadd66574e231fe36721cdbe02ea47aa18',1,'mkldnn_types.h']]]

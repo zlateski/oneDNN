@@ -1,5 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classmkldnn_1_1handle.html" title="mkldnn::handle\&lt; mkldnn\l_primitive_desc_t \&gt;" alt="" coords="6,645,170,686"/>
+<area shape="rect" id="node1" href="$classmkldnn_1_1handle.html" title="mkldnn::handle\&lt; mkldnn\l_primitive_desc_t \&gt;" alt="" coords="6,710,170,751"/>
 <area shape="rect" id="node2" href="$structmkldnn_1_1batch__normalization__backward_1_1primitive__desc.html" title="mkldnn::batch_normalization\l_backward::primitive_desc" alt="" coords="239,5,427,46"/>
 <area shape="rect" id="node3" href="$structmkldnn_1_1batch__normalization__forward_1_1primitive__desc.html" title="mkldnn::batch_normalization\l_forward::primitive_desc" alt="" coords="239,70,427,111"/>
 <area shape="rect" id="node4" href="$structmkldnn_1_1concat_1_1primitive__desc.html" title="mkldnn::concat::primitive_desc" alt="" coords="232,136,435,163"/>
@@ -18,7 +18,9 @@
 <area shape="rect" id="node17" href="$structmkldnn_1_1pooling__backward_1_1primitive__desc.html" title="mkldnn::pooling_backward\l::primitive_desc" alt="" coords="245,958,421,999"/>
 <area shape="rect" id="node18" href="$structmkldnn_1_1pooling__forward_1_1primitive__desc.html" title="mkldnn::pooling_forward\l::primitive_desc" alt="" coords="252,1023,415,1065"/>
 <area shape="rect" id="node19" href="$structmkldnn_1_1reorder_1_1primitive__desc.html" title="mkldnn::reorder::primitive_desc" alt="" coords="231,1089,435,1116"/>
-<area shape="rect" id="node20" href="$structmkldnn_1_1softmax__forward_1_1primitive__desc.html" title="mkldnn::softmax_forward\l::primitive_desc" alt="" coords="249,1141,418,1182"/>
-<area shape="rect" id="node21" href="$structmkldnn_1_1sum_1_1primitive__desc.html" title="mkldnn::sum::primitive_desc" alt="" coords="239,1207,428,1233"/>
-<area shape="rect" id="node22" href="$structmkldnn_1_1view_1_1primitive__desc.html" title="mkldnn::view::primitive_desc" alt="" coords="238,1257,429,1284"/>
+<area shape="rect" id="node20" href="$structmkldnn_1_1rnn__backward_1_1primitive__desc.html" title="mkldnn::rnn_backward\l::primitive_desc" alt="" coords="257,1141,410,1182"/>
+<area shape="rect" id="node21" href="$structmkldnn_1_1rnn__forward_1_1primitive__desc.html" title="mkldnn::rnn_forward\l::primitive_desc" alt="" coords="263,1206,403,1247"/>
+<area shape="rect" id="node22" href="$structmkldnn_1_1softmax__forward_1_1primitive__desc.html" title="mkldnn::softmax_forward\l::primitive_desc" alt="" coords="249,1271,418,1313"/>
+<area shape="rect" id="node23" href="$structmkldnn_1_1sum_1_1primitive__desc.html" title="mkldnn::sum::primitive_desc" alt="" coords="239,1337,428,1364"/>
+<area shape="rect" id="node24" href="$structmkldnn_1_1view_1_1primitive__desc.html" title="mkldnn::view::primitive_desc" alt="" coords="238,1388,429,1415"/>
 </map>

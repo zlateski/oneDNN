@@ -64,7 +64,7 @@ $(function() {
 <div class="title">A Performance Library for Deep Learning </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>The Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN) is an open source performance library for Deep Learning (DL) applications intended for acceleration of DL frameworks on Intel(R) architecture. Intel MKL-DNN includes highly vectorized and threaded building blocks for implementation of convolutional neural networks (CNN) with C and C++ interfaces. This project is created to help the DL community innovate on the Intel(R) processor family.</p>
+<div class="textblock"><p>The Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN) is an open source performance library for Deep Learning (DL) applications intended for acceleration of DL frameworks on Intel(R) architecture. Intel MKL-DNN includes highly vectorized and threaded building blocks for implementation of convolutional neural networks (CNN) and reccurent neural networks (RNN) with C and C++ interfaces. This project is created to help the DL community innovate on the Intel(R) processor family.</p>
 <p>The library supports the most commonly used primitives necessary to accelerate bleeding edge image recognition topologies, including Cifar*, AlexNet*, VGG*, GoogleNet*, and ResNet*. The primitives include convolution, inner product, pooling, normalization, and activation with support for inference operations. The library includes the following classes of functions:</p>
 <ul>
 <li>Convolution<ul>
@@ -92,6 +92,14 @@ $(function() {
 <li>sum,</li>
 <li>concat</li>
 <li>view</li>
+</ul>
+</li>
+</ul>
+<p>Also the library contains experimental support of RNN primitives to accelerate speech recognition and neural machine translation topologies. The experemental support includes the following classes of functions:</p>
+<ul>
+<li>RNN<ul>
+<li>RNN cell</li>
+<li>LSTM cell</li>
 </ul>
 </li>
 </ul>
@@ -143,6 +151,10 @@ $(function() {
 <li>Creation of full training net (forward and backward primitives)<ul>
 <li>C: simple_training.c</li>
 <li>C++: simple_training_net.cpp</li>
+</ul>
+</li>
+<li>Creation of forward propagation of GNMT topology (experimental support)<ul>
+<li>C++: simple_rnn.cpp</li>
 </ul>
 </li>
 </ul>

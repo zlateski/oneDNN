@@ -17,8 +17,10 @@
 <area shape="rect" id="node18" href="$structmkldnn_1_1pooling__backward.html" title="mkldnn::pooling_backward" alt="" coords="396,900,572,927"/>
 <area shape="rect" id="node19" href="$structmkldnn_1_1pooling__forward.html" title="mkldnn::pooling_forward" alt="" coords="403,951,565,977"/>
 <area shape="rect" id="node20" href="$structmkldnn_1_1reorder.html" title="mkldnn::reorder" alt="" coords="428,1001,540,1028"/>
-<area shape="rect" id="node21" href="$structmkldnn_1_1softmax__forward.html" title="mkldnn::softmax_forward" alt="" coords="399,1052,569,1079"/>
-<area shape="rect" id="node22" href="$structmkldnn_1_1sum.html" title="mkldnn::sum" alt="" coords="435,1103,533,1129"/>
-<area shape="rect" id="node23" href="$structmkldnn_1_1view.html" title="mkldnn::view" alt="" coords="435,1153,533,1180"/>
-<area shape="rect" id="node2" href="$classmkldnn_1_1handle.html" title="mkldnn::handle\&lt; mkldnn\l_primitive_t \&gt;" alt="" coords="6,617,170,658"/>
+<area shape="rect" id="node21" href="$structmkldnn_1_1rnn__backward.html" title="mkldnn::rnn_backward" alt="" coords="407,1052,561,1079"/>
+<area shape="rect" id="node22" href="$structmkldnn_1_1rnn__forward.html" title="mkldnn::rnn_forward" alt="" coords="414,1103,554,1129"/>
+<area shape="rect" id="node23" href="$structmkldnn_1_1softmax__forward.html" title="mkldnn::softmax_forward" alt="" coords="399,1153,569,1180"/>
+<area shape="rect" id="node24" href="$structmkldnn_1_1sum.html" title="mkldnn::sum" alt="" coords="435,1204,533,1231"/>
+<area shape="rect" id="node25" href="$structmkldnn_1_1view.html" title="mkldnn::view" alt="" coords="435,1255,533,1281"/>
+<area shape="rect" id="node2" href="$classmkldnn_1_1handle.html" title="mkldnn::handle\&lt; mkldnn\l_primitive_t \&gt;" alt="" coords="6,682,170,723"/>
 </map>

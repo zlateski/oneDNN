@@ -102,10 +102,12 @@ Inheritance diagram for mkldnn::primitive:</div>
 <area shape="rect" id="node18" href="structmkldnn_1_1pooling__backward.html" title="mkldnn::pooling_backward" alt="" coords="396,900,572,927"/>
 <area shape="rect" id="node19" href="structmkldnn_1_1pooling__forward.html" title="mkldnn::pooling_forward" alt="" coords="403,951,565,977"/>
 <area shape="rect" id="node20" href="structmkldnn_1_1reorder.html" title="mkldnn::reorder" alt="" coords="428,1001,540,1028"/>
-<area shape="rect" id="node21" href="structmkldnn_1_1softmax__forward.html" title="mkldnn::softmax_forward" alt="" coords="399,1052,569,1079"/>
-<area shape="rect" id="node22" href="structmkldnn_1_1sum.html" title="mkldnn::sum" alt="" coords="435,1103,533,1129"/>
-<area shape="rect" id="node23" href="structmkldnn_1_1view.html" title="mkldnn::view" alt="" coords="435,1153,533,1180"/>
-<area shape="rect" id="node2" href="classmkldnn_1_1handle.html" title="mkldnn::handle\&lt; mkldnn\l_primitive_t \&gt;" alt="" coords="6,617,170,658"/>
+<area shape="rect" id="node21" href="structmkldnn_1_1rnn__backward.html" title="mkldnn::rnn_backward" alt="" coords="407,1052,561,1079"/>
+<area shape="rect" id="node22" href="structmkldnn_1_1rnn__forward.html" title="mkldnn::rnn_forward" alt="" coords="414,1103,554,1129"/>
+<area shape="rect" id="node23" href="structmkldnn_1_1softmax__forward.html" title="mkldnn::softmax_forward" alt="" coords="399,1153,569,1180"/>
+<area shape="rect" id="node24" href="structmkldnn_1_1sum.html" title="mkldnn::sum" alt="" coords="435,1204,533,1231"/>
+<area shape="rect" id="node25" href="structmkldnn_1_1view.html" title="mkldnn::view" alt="" coords="435,1255,533,1281"/>
+<area shape="rect" id="node2" href="classmkldnn_1_1handle.html" title="mkldnn::handle\&lt; mkldnn\l_primitive_t \&gt;" alt="" coords="6,682,170,723"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -144,7 +146,9 @@ Public Types</h2></td></tr>
 &#160;&#160;<a class="el" href="classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00da7d9c7d1747abfac2c3c3ff337712f575">kind::lrn</a> = mkldnn_lrn, 
 <a class="el" href="classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00da780789647a31acedb6477412a99154bb">kind::batch_normalization</a> = mkldnn_batch_normalization, 
 <a class="el" href="classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00da30813812e3beef3eefcc2b97dc2e0783">kind::inner_product</a> = mkldnn_inner_product, 
-<a class="el" href="classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00dae5f1605cfaaac60c3cd6af9d086e0651">kind::convolution_relu</a> = mkldnn_convolution_relu
+<a class="el" href="classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00dae5f1605cfaaac60c3cd6af9d086e0651">kind::convolution_relu</a> = mkldnn_convolution_relu, 
+<br />
+&#160;&#160;<a class="el" href="classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00da6eed45b9327120cabad6916919a9a600">kind::rnn</a> = mkldnn_rnn
 <br />
  }<tr class="memdesc:ac42347ba533ce9b531c1a29e330ac00d"><td class="mdescLeft">&#160;</td><td class="mdescRight">A proxy to C primitive kind enum.  <a href="classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00d">More...</a><br /></td></tr>
 </td></tr>
@@ -232,6 +236,7 @@ Additional Inherited Members</h2></td></tr>
 <tr><td class="fieldname"><a id="ac42347ba533ce9b531c1a29e330ac00da780789647a31acedb6477412a99154bb"></a>batch_normalization&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="ac42347ba533ce9b531c1a29e330ac00da30813812e3beef3eefcc2b97dc2e0783"></a>inner_product&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="ac42347ba533ce9b531c1a29e330ac00dae5f1605cfaaac60c3cd6af9d086e0651"></a>convolution_relu&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac42347ba533ce9b531c1a29e330ac00da6eed45b9327120cabad6916919a9a600"></a>rnn&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 </div>

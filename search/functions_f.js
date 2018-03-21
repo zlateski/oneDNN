@@ -1,12 +1,8 @@
 var searchData=
 [
-  ['set_5fdata_5fhandle',['set_data_handle',['../structmkldnn_1_1memory.html#a9e2e6e828a867debc2be1508b31bce8d',1,'mkldnn::memory']]],
-  ['set_5fint_5foutput_5fround_5fmode',['set_int_output_round_mode',['../structmkldnn_1_1primitive__attr.html#a394a1a86d0568c201b427467603d99ae',1,'mkldnn::primitive_attr']]],
-  ['set_5foutput_5fscales',['set_output_scales',['../structmkldnn_1_1primitive__attr.html#a1c2ba432512cf9950b81febce265e35d',1,'mkldnn::primitive_attr']]],
-  ['set_5fpost_5fops',['set_post_ops',['../structmkldnn_1_1primitive__attr.html#a4730acedb91c4cd93616bb69c3df90a7',1,'mkldnn::primitive_attr']]],
-  ['softmax_5fforward',['softmax_forward',['../structmkldnn_1_1softmax__forward.html#a0c2c19e0566480132d975aa0904eadf3',1,'mkldnn::softmax_forward']]],
-  ['src_5fprimitive_5fdesc',['src_primitive_desc',['../structmkldnn_1_1convolution__forward_1_1primitive__desc.html#ae50f734c4505f7b6a8fd9e34c20cf70b',1,'mkldnn::convolution_forward::primitive_desc::src_primitive_desc()'],['../structmkldnn_1_1convolution__backward__weights_1_1primitive__desc.html#ace8cc23ab5f5006c4d6b90dc517ad6a6',1,'mkldnn::convolution_backward_weights::primitive_desc::src_primitive_desc()'],['../structmkldnn_1_1lrn__forward_1_1primitive__desc.html#aef43af04686033eb319a807d22b9558c',1,'mkldnn::lrn_forward::primitive_desc::src_primitive_desc()'],['../structmkldnn_1_1inner__product__forward_1_1primitive__desc.html#a27e580d6f66788db221a75aa094d7fe6',1,'mkldnn::inner_product_forward::primitive_desc::src_primitive_desc()'],['../structmkldnn_1_1inner__product__backward__weights_1_1primitive__desc.html#abb3c99453c2a0587c15d0a838aeb57af',1,'mkldnn::inner_product_backward_weights::primitive_desc::src_primitive_desc()']]],
-  ['stream',['stream',['../structmkldnn_1_1stream.html#a22daa1004aa81953f5d27b24b1893cc7',1,'mkldnn::stream']]],
-  ['submit',['submit',['../structmkldnn_1_1stream.html#a018e38932cc072568a48015f55fbe798',1,'mkldnn::stream']]],
-  ['sum',['sum',['../structmkldnn_1_1sum.html#acceb32f44f2240015f58bb1d905189ca',1,'mkldnn::sum']]]
+  ['reorder',['reorder',['../structmkldnn_1_1reorder.html#a29c984f7c35259e40d0b3a48ae2fe514',1,'mkldnn::reorder::reorder(const primitive_desc &amp;aprimitive_desc, const primitive::at &amp;input, const memory &amp;output)'],['../structmkldnn_1_1reorder.html#a7dc314cf0c42202b8504f423a721a587',1,'mkldnn::reorder::reorder(const primitive::at &amp;input, const memory &amp;output)']]],
+  ['rerun',['rerun',['../structmkldnn_1_1stream.html#a44e326ef7e4a9d6c26bf006961e1eaf7',1,'mkldnn::stream']]],
+  ['reset',['reset',['../classmkldnn_1_1handle.html#a3aa9cec1c7e14dd77c9a904503960b9e',1,'mkldnn::handle']]],
+  ['rnn_5fbackward',['rnn_backward',['../structmkldnn_1_1rnn__backward.html#a7bad9931976a9ddd4c3cf2f7e3704469',1,'mkldnn::rnn_backward']]],
+  ['rnn_5fforward',['rnn_forward',['../structmkldnn_1_1rnn__forward.html#ac07e8b700fb3e15dd16912ce30bd3073',1,'mkldnn::rnn_forward']]]
 ];
