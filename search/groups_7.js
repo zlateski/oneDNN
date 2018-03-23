@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['memory',['Memory',['../group__c__api__memory.html',1,'']]],
-  ['memory',['Memory',['../group__cpp__api__memory.html',1,'']]]
+  ['lrn',['LRN',['../group__c__api__lrn.html',1,'']]],
+  ['lrn',['LRN',['../group__cpp__api__lrn.html',1,'']]]
 ];

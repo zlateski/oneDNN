@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['utils',['Utils',['../group__cpp__api__utils.html',1,'']]]
+  ['types',['Types',['../group__c__api__types.html',1,'']]]
 ];

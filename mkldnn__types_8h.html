@@ -137,6 +137,9 @@ Typedefs</h2></td></tr>
 <tr class="memitem:gac7e49603b052255540a6f6dc072a627c"><td class="memItemLeft" align="right" valign="top">typedef const void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__op__descs.html#gac7e49603b052255540a6f6dc072a627c">const_mkldnn_op_desc_t</a></td></tr>
 <tr class="memdesc:gac7e49603b052255540a6f6dc072a627c"><td class="mdescLeft">&#160;</td><td class="mdescRight">A pointer to any of the operation descriptors (constant variant).  <a href="group__c__api__types__op__descs.html#gac7e49603b052255540a6f6dc072a627c">More...</a><br /></td></tr>
 <tr class="separator:gac7e49603b052255540a6f6dc072a627c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga22892e72c09157377e6d0358273025a3"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structmkldnn__convolution__desc__t.html">mkldnn_convolution_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#ga22892e72c09157377e6d0358273025a3">mkldnn_deconvolution_desc_t</a></td></tr>
+<tr class="memdesc:ga22892e72c09157377e6d0358273025a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">A descriptor of a deconvolution operation.  <a href="group__c__api__types__memory.html#ga22892e72c09157377e6d0358273025a3">More...</a><br /></td></tr>
+<tr class="separator:ga22892e72c09157377e6d0358273025a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5472f7e013cb456d4ef7789cf8785a4c"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structmkldnn__eltwise__desc__t.html">mkldnn_eltwise_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#ga5472f7e013cb456d4ef7789cf8785a4c">mkldnn_relu_desc_t</a></td></tr>
 <tr class="separator:ga5472f7e013cb456d4ef7789cf8785a4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga40f5f917cdbf2215fa5324e4bf62d523"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structmkldnn__engine.html">mkldnn_engine</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__engine__types.html#ga40f5f917cdbf2215fa5324e4bf62d523">mkldnn_engine_t</a></td></tr>
@@ -321,17 +324,18 @@ Enumerations</h2></td></tr>
 <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a1d5a4ac349734074b150188851be19c8">mkldnn_sum</a>, 
 <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a88592adccf64d1fd271ed6e21d66b271">mkldnn_convolution</a>, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973ae1cbd23f0addc5270d4f8ae63e0ecc7d">mkldnn_eltwise</a>, 
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a7a0e90ea42fb73798b564210f1aba335">mkldnn_deconvolution</a>, 
+<a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973ae1cbd23f0addc5270d4f8ae63e0ecc7d">mkldnn_eltwise</a>, 
 <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a8beb4159b64f50ce4a367e305c9db860">mkldnn_relu</a> = mkldnn_eltwise, 
 <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973acda8db2022e0c87c016286c098f0c31e">mkldnn_softmax</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a4962b750b011e794c6a7fcebcc5a4fb2">mkldnn_pooling</a>, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973ac9dbe1aea35cb16f509ad407695cb8b7">mkldnn_lrn</a>, 
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a4962b750b011e794c6a7fcebcc5a4fb2">mkldnn_pooling</a>, 
+<a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973ac9dbe1aea35cb16f509ad407695cb8b7">mkldnn_lrn</a>, 
 <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a07b76e29d8363303cb682627dc56a515">mkldnn_batch_normalization</a>, 
 <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973ad2ae1c6b5f66bdfca8a2734ea328385f">mkldnn_inner_product</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a264d5710e0bce9795951fed76b6e34a4">mkldnn_convolution_relu</a>, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973aff4b0118f66cb37f23178a078aa7b2e8">mkldnn_rnn</a>
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a264d5710e0bce9795951fed76b6e34a4">mkldnn_convolution_relu</a>, 
+<a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973aff4b0118f66cb37f23178a078aa7b2e8">mkldnn_rnn</a>
 <br />
  }<tr class="memdesc:ga4f5c189c2ba9ef6444250299f1f8e973"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kinds of primitives.  <a href="group__c__api__types__generic.html#ga4f5c189c2ba9ef6444250299f1f8e973">More...</a><br /></td></tr>
 </td></tr>
@@ -360,9 +364,11 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a69461b64295cd2bff5fef4eac3f3383a">mkldnn_pooling_avg</a> = mkldnn_pooling_avg_exclude_padding, 
 <a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a1ed17baabce0edc962f1dcfe83d09d5d">mkldnn_lrn_across_channels</a> = 65, 
 <a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a03714f6e5eff68bca2f4d9c9396e9ce6">mkldnn_lrn_within_channel</a> = 66, 
-<a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a1f61363b51f29e33a64b4670e7f3a488">mkldnn_vanilla_rnn</a> = 80, 
+<a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97ad3f1e5264ef9fb0a1c27cbcf6c9f77bd">mkldnn_deconvolution_direct</a> = 71, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a456ac674f7f3d7ac0d3e71bc82b832d6">mkldnn_vanilla_lstm</a> = 81, 
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a28c28ec7e89f2cd7cf1e87b8fc5c6797">mkldnn_deconvolution_winograd</a> = 72, 
+<a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a1f61363b51f29e33a64b4670e7f3a488">mkldnn_vanilla_rnn</a> = 80, 
+<a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a456ac674f7f3d7ac0d3e71bc82b832d6">mkldnn_vanilla_lstm</a> = 81, 
 <a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97ab0c8902b2a48f9e27389d1a459f38d7d">mkldnn_vanilla_gru</a> = 82
 <br />
  }<tr class="memdesc:gaa27d43cdd1e439cc41a9580d23ce3e97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kinds of algorithms.  <a href="group__c__api__types__generic.html#gaa27d43cdd1e439cc41a9580d23ce3e97">More...</a><br /></td></tr>
@@ -410,29 +416,30 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a6e663244b7f359919db4b5941b63221a">mkldnn_query_some_d</a> = 64, 
 <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a7e98c1f19c54633720dd5120b22d8809">mkldnn_query_memory_d</a>, 
 <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a3e1f5ad4718ad7f41916b4227e0a9964">mkldnn_query_convolution_d</a>, 
-<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a6ea3ff9ae6be79fe71a89bbfc87b4d7e">mkldnn_query_eltwise_d</a>, 
+<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a43c69ed45016096444979bd659b13933">mkldnn_query_deconvolution_d</a>, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9accaba3afad2f4cadcae200a3e4b536ae">mkldnn_query_relu_d</a> = mkldnn_query_eltwise_d, 
+&#160;&#160;<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a6ea3ff9ae6be79fe71a89bbfc87b4d7e">mkldnn_query_eltwise_d</a>, 
+<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9accaba3afad2f4cadcae200a3e4b536ae">mkldnn_query_relu_d</a> = mkldnn_query_eltwise_d, 
 <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ab9907d7aa54e335ee653649347f3d8c2">mkldnn_query_softmax_d</a>, 
 <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a0623ff58865a6d4e3a1a3cda27a563dd">mkldnn_query_pooling_d</a>, 
-<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a8cd41fba74cf7a570ae98e03e22f9043">mkldnn_query_lrn_d</a>, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a2d5736954ae78ef9e2cf4e354829e874">mkldnn_query_batch_normalization_d</a>, 
+&#160;&#160;<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a8cd41fba74cf7a570ae98e03e22f9043">mkldnn_query_lrn_d</a>, 
+<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a2d5736954ae78ef9e2cf4e354829e874">mkldnn_query_batch_normalization_d</a>, 
 <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a079af104c4c7cd8de5833316e137fa03">mkldnn_query_inner_product_d</a>, 
 <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9aaaf2a7c677ec8412645d6ec0b7be6171">mkldnn_query_convolution_relu_d</a>, 
-<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a7a567d8e61a6e0b1aeb219f5229b13de">mkldnn_query_rnn_d</a>, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a58e08302e148a2f4f8e95090a89c80a8">mkldnn_query_some_pd</a> = 128, 
+&#160;&#160;<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a7a567d8e61a6e0b1aeb219f5229b13de">mkldnn_query_rnn_d</a>, 
+<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a58e08302e148a2f4f8e95090a89c80a8">mkldnn_query_some_pd</a> = 128, 
 <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9aa3100118ca28db99bc4fa00c6c6f6b21">mkldnn_query_input_pd</a>, 
 <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ac7133f49888b4946ac227810be0146fd">mkldnn_query_output_pd</a>, 
-<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ac17b645e3801adaaeee3107103ec8a72">mkldnn_query_src_pd</a>, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ac95fbe152e97a3989dc794a70643d834">mkldnn_query_diff_src_pd</a>, 
+&#160;&#160;<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ac17b645e3801adaaeee3107103ec8a72">mkldnn_query_src_pd</a>, 
+<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ac95fbe152e97a3989dc794a70643d834">mkldnn_query_diff_src_pd</a>, 
 <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9aad24a528aa4e68a27da4b23063eb76ee">mkldnn_query_weights_pd</a>, 
 <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ab43b4c2b7a151bc59bddffc009abae66">mkldnn_query_diff_weights_pd</a>, 
-<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9abb15fa8a7eb5aebfe547ac57a96c2d56">mkldnn_query_dst_pd</a>, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9aa5b466fae3a9bda2d112db68cfd2b68e">mkldnn_query_diff_dst_pd</a>, 
+&#160;&#160;<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9abb15fa8a7eb5aebfe547ac57a96c2d56">mkldnn_query_dst_pd</a>, 
+<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9aa5b466fae3a9bda2d112db68cfd2b68e">mkldnn_query_diff_dst_pd</a>, 
 <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ad18aadd1899c151835c624d7b83edb56">mkldnn_query_workspace_pd</a>
 <br />
  }<tr class="memdesc:ga6eebc661a8a3437b49d9c677f8972fc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Primitive descriptor query specification.  <a href="group__c__api__types__query.html#ga6eebc661a8a3437b49d9c677f8972fc9">More...</a><br /></td></tr>

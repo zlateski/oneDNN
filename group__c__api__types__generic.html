@@ -209,17 +209,18 @@ Enumerations</h2></td></tr>
 <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a1d5a4ac349734074b150188851be19c8">mkldnn_sum</a>, 
 <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a88592adccf64d1fd271ed6e21d66b271">mkldnn_convolution</a>, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973ae1cbd23f0addc5270d4f8ae63e0ecc7d">mkldnn_eltwise</a>, 
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a7a0e90ea42fb73798b564210f1aba335">mkldnn_deconvolution</a>, 
+<a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973ae1cbd23f0addc5270d4f8ae63e0ecc7d">mkldnn_eltwise</a>, 
 <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a8beb4159b64f50ce4a367e305c9db860">mkldnn_relu</a> = mkldnn_eltwise, 
 <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973acda8db2022e0c87c016286c098f0c31e">mkldnn_softmax</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a4962b750b011e794c6a7fcebcc5a4fb2">mkldnn_pooling</a>, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973ac9dbe1aea35cb16f509ad407695cb8b7">mkldnn_lrn</a>, 
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a4962b750b011e794c6a7fcebcc5a4fb2">mkldnn_pooling</a>, 
+<a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973ac9dbe1aea35cb16f509ad407695cb8b7">mkldnn_lrn</a>, 
 <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a07b76e29d8363303cb682627dc56a515">mkldnn_batch_normalization</a>, 
 <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973ad2ae1c6b5f66bdfca8a2734ea328385f">mkldnn_inner_product</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a264d5710e0bce9795951fed76b6e34a4">mkldnn_convolution_relu</a>, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973aff4b0118f66cb37f23178a078aa7b2e8">mkldnn_rnn</a>
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a264d5710e0bce9795951fed76b6e34a4">mkldnn_convolution_relu</a>, 
+<a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973aff4b0118f66cb37f23178a078aa7b2e8">mkldnn_rnn</a>
 <br />
  }<tr class="memdesc:ga4f5c189c2ba9ef6444250299f1f8e973"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kinds of primitives.  <a href="group__c__api__types__generic.html#ga4f5c189c2ba9ef6444250299f1f8e973">More...</a><br /></td></tr>
 </td></tr>
@@ -248,9 +249,11 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a69461b64295cd2bff5fef4eac3f3383a">mkldnn_pooling_avg</a> = mkldnn_pooling_avg_exclude_padding, 
 <a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a1ed17baabce0edc962f1dcfe83d09d5d">mkldnn_lrn_across_channels</a> = 65, 
 <a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a03714f6e5eff68bca2f4d9c9396e9ce6">mkldnn_lrn_within_channel</a> = 66, 
-<a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a1f61363b51f29e33a64b4670e7f3a488">mkldnn_vanilla_rnn</a> = 80, 
+<a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97ad3f1e5264ef9fb0a1c27cbcf6c9f77bd">mkldnn_deconvolution_direct</a> = 71, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a456ac674f7f3d7ac0d3e71bc82b832d6">mkldnn_vanilla_lstm</a> = 81, 
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a28c28ec7e89f2cd7cf1e87b8fc5c6797">mkldnn_deconvolution_winograd</a> = 72, 
+<a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a1f61363b51f29e33a64b4670e7f3a488">mkldnn_vanilla_rnn</a> = 80, 
+<a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a456ac674f7f3d7ac0d3e71bc82b832d6">mkldnn_vanilla_lstm</a> = 81, 
 <a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97ab0c8902b2a48f9e27389d1a459f38d7d">mkldnn_vanilla_gru</a> = 82
 <br />
  }<tr class="memdesc:gaa27d43cdd1e439cc41a9580d23ce3e97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kinds of algorithms.  <a href="group__c__api__types__generic.html#gaa27d43cdd1e439cc41a9580d23ce3e97">More...</a><br /></td></tr>
@@ -315,6 +318,10 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="ggaa27d43cdd1e439cc41a9580d23ce3e97a1ed17baabce0edc962f1dcfe83d09d5d"></a>mkldnn_lrn_across_channels&#160;</td><td class="fielddoc"><p>Local response normalization (LRN) across multiple channels. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="ggaa27d43cdd1e439cc41a9580d23ce3e97a03714f6e5eff68bca2f4d9c9396e9ce6"></a>mkldnn_lrn_within_channel&#160;</td><td class="fielddoc"><p>LRN within a single channel. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaa27d43cdd1e439cc41a9580d23ce3e97ad3f1e5264ef9fb0a1c27cbcf6c9f77bd"></a>mkldnn_deconvolution_direct&#160;</td><td class="fielddoc"><p>Direct deconvolution. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaa27d43cdd1e439cc41a9580d23ce3e97a28c28ec7e89f2cd7cf1e87b8fc5c6797"></a>mkldnn_deconvolution_winograd&#160;</td><td class="fielddoc"><p>Winograd deconvolution. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="ggaa27d43cdd1e439cc41a9580d23ce3e97a1f61363b51f29e33a64b4670e7f3a488"></a>mkldnn_vanilla_rnn&#160;</td><td class="fielddoc"><p>RNN cell. </p>
 </td></tr>
@@ -596,6 +603,8 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="gga4f5c189c2ba9ef6444250299f1f8e973a1d5a4ac349734074b150188851be19c8"></a>mkldnn_sum&#160;</td><td class="fielddoc"><p>A sum primitive. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="gga4f5c189c2ba9ef6444250299f1f8e973a88592adccf64d1fd271ed6e21d66b271"></a>mkldnn_convolution&#160;</td><td class="fielddoc"><p>A convolution primitive. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga4f5c189c2ba9ef6444250299f1f8e973a7a0e90ea42fb73798b564210f1aba335"></a>mkldnn_deconvolution&#160;</td><td class="fielddoc"><p>A deconvolution primitive. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="gga4f5c189c2ba9ef6444250299f1f8e973ae1cbd23f0addc5270d4f8ae63e0ecc7d"></a>mkldnn_eltwise&#160;</td><td class="fielddoc"><p>An element-wise primitive. </p>
 </td></tr>
