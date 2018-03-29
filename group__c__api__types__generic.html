@@ -171,9 +171,10 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74abd0d254bc5c97521e05c590ae9de8364">mkldnn_ldgoi</a>, 
 <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74ae3debd06f01fcfc7249e64922652ed4f">mkldnn_ldgoi_p</a>, 
 <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74ac5b1fb199e6e5c031766bb72dabb1859">mkldnn_ldgo</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a70523c4d4800ba448e10b801d84a2314">mkldnn_oIhw8i</a> = mkldnn_nChw8c, 
+<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74ab2a625557c90d7e7b044bb1fcd3f4616">mkldnn_format_last</a>, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a886c622f279ad85035bca4acbdfdb55e">mkldnn_oIhw16i</a> = mkldnn_nChw16c
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a70523c4d4800ba448e10b801d84a2314">mkldnn_oIhw8i</a> = mkldnn_nChw8c, 
+<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a886c622f279ad85035bca4acbdfdb55e">mkldnn_oIhw16i</a> = mkldnn_nChw16c
 <br />
  }<tr class="memdesc:ga30a390f87ef74bf03dfa48a7b3f2fb74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Memory format specification.  <a href="group__c__api__types__generic.html#ga30a390f87ef74bf03dfa48a7b3f2fb74">More...</a><br /></td></tr>
 </td></tr>
@@ -543,6 +544,9 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="gga30a390f87ef74bf03dfa48a7b3f2fb74ae3debd06f01fcfc7249e64922652ed4f"></a>mkldnn_ldgoi_p&#160;</td><td class="fielddoc"><p>5D weights tensor in the blocked format. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="gga30a390f87ef74bf03dfa48a7b3f2fb74ac5b1fb199e6e5c031766bb72dabb1859"></a>mkldnn_ldgo&#160;</td><td class="fielddoc"><p>4D bias tensor in the format (num_layers, num_directions, num_gates, output_channels). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga30a390f87ef74bf03dfa48a7b3f2fb74ab2a625557c90d7e7b044bb1fcd3f4616"></a>mkldnn_format_last&#160;</td><td class="fielddoc"><p>Just a sentinel, not real memory format. </p>
+<p>Must be changed after new format is added. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="gga30a390f87ef74bf03dfa48a7b3f2fb74a70523c4d4800ba448e10b801d84a2314"></a>mkldnn_oIhw8i&#160;</td><td class="fielddoc"><p>4D weights tensor in the oihw format with input channels data laid out in memory in 8-element blocks. </p>
 </td></tr>

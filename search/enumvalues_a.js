@@ -40,6 +40,7 @@ var searchData=
   ['mkldnn_5feltwise_5fsquare',['mkldnn_eltwise_square',['../group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97af4f3e47ddb2105e7c2ddf1bbd8434d02',1,'mkldnn_types.h']]],
   ['mkldnn_5feltwise_5ftanh',['mkldnn_eltwise_tanh',['../group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a6b50624e847783bfc94b7cf6badfa16c',1,'mkldnn_types.h']]],
   ['mkldnn_5ff32',['mkldnn_f32',['../group__c__api__types__generic.html#gga826b2a9be4d94ac17f99bacac6d0cb29a6d9faa3e054a4f7b7e5ab5b3d420684e',1,'mkldnn_types.h']]],
+  ['mkldnn_5fformat_5flast',['mkldnn_format_last',['../group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74ab2a625557c90d7e7b044bb1fcd3f4616',1,'mkldnn_types.h']]],
   ['mkldnn_5fformat_5fundef',['mkldnn_format_undef',['../group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a9a565f82425fa7a397344fb7a570aba3',1,'mkldnn_types.h']]],
   ['mkldnn_5fforward',['mkldnn_forward',['../group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a941ed539f3fbf685d3dd787c255c76f9',1,'mkldnn_types.h']]],
   ['mkldnn_5fforward_5finference',['mkldnn_forward_inference',['../group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a58a923fb6c4e1214e1505b5fa0b1e3fa',1,'mkldnn_types.h']]],
