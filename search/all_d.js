@@ -1,6 +1,8 @@
 var searchData=
 [
   ['operation_20descriptors',['Operation descriptors',['../group__c__api__types__op__descs.html',1,'']]],
+  ['oc_5fblock',['oc_block',['../structmkldnn__wino__desc__t.html#a47b3d2a7106931317f6d78102afd1215',1,'mkldnn_wino_desc_t']]],
+  ['odhwi16o',['Odhwi16o',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eafe5531230831268fe4924777e8d714a4',1,'mkldnn::memory']]],
   ['offset_5fpadding',['offset_padding',['../structmkldnn__blocking__desc__t.html#adc8fd26e935fee00dc25bb098a204138',1,'mkldnn_blocking_desc_t']]],
   ['offset_5fpadding_5fto_5fdata',['offset_padding_to_data',['../structmkldnn__blocking__desc__t.html#afdac3519f52607a08c6dfd738a60166c',1,'mkldnn_blocking_desc_t']]],
   ['ohiw16o4i',['OhIw16o4i',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea0e1f301f069a122158ac1ab3d1854a54',1,'mkldnn::memory']]],
@@ -8,6 +10,9 @@ var searchData=
   ['ohwi8o',['Ohwi8o',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea2f135b7d8ff60dcce96a4919722b0fad',1,'mkldnn::memory']]],
   ['oi',['oi',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea4c8c6b41aae08b78d95bb5b76d28d22b',1,'mkldnn::memory']]],
   ['oidhw',['oidhw',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea72975b1e4e79839b1821fe32a973c602',1,'mkldnn::memory']]],
+  ['oidhw16i16o',['OIdhw16i16o',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eac40a945be6be77690a88f37570fa58d0',1,'mkldnn::memory']]],
+  ['oidhw16o',['Oidhw16o',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea1ab877dcc92270edc374988c9c918e16',1,'mkldnn::memory']]],
+  ['oidhw16o16i',['OIdhw16o16i',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea6eb0df091955635faeac2ad96f90daf9',1,'mkldnn::memory']]],
   ['oihw',['oihw',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ead5691debf8e19e13d09e15d7d99a7ee3',1,'mkldnn::memory']]],
   ['oihw16i',['oIhw16i',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eadfb8daccb2a4b9ef406c1dfc929e2a83',1,'mkldnn::memory']]],
   ['oihw16i16o',['OIhw16i16o',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea2f7490bd350bc8d194f2e4b67213adf7',1,'mkldnn::memory']]],

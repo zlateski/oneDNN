@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['tensor_5fdesc',['tensor_desc',['../structmkldnn__memory__desc__t.html#a138898caea337d0e29d20d3141b11488',1,'mkldnn_memory_desc_t']]]
+  ['variance_5fdesc',['variance_desc',['../structmkldnn__batch__normalization__desc__t.html#a0b77081ca4865c1dcd40e349b78f4d95',1,'mkldnn_batch_normalization_desc_t']]]
 ];

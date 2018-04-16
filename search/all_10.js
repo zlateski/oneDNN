@@ -5,6 +5,7 @@ var searchData=
   ['rnn',['RNN',['../group__c__api__rnn.html',1,'']]],
   ['reorder',['Reorder',['../group__cpp__api__reorder.html',1,'']]],
   ['rnn',['RNN',['../group__cpp__api__rnn.html',1,'']]],
+  ['r',['r',['../structmkldnn__wino__desc__t.html#a018396114414702f213e5dc17862ef90',1,'mkldnn_wino_desc_t']]],
   ['relu',['relu',['../classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00dabc5ce62b39aff2f661146911808eadc1',1,'mkldnn::primitive']]],
   ['relu_5fbackward',['relu_backward',['../group__cpp__api__eltwise.html#gab854378aae0281874a3afbd38f8917f2',1,'mkldnn']]],
   ['relu_5fd',['relu_d',['../group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a20f677933e74a40096d45a51664c5ee4',1,'mkldnn']]],

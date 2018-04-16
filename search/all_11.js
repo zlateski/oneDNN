@@ -17,6 +17,7 @@ var searchData=
   ['set_5fint_5foutput_5fround_5fmode',['set_int_output_round_mode',['../structmkldnn_1_1primitive__attr.html#a394a1a86d0568c201b427467603d99ae',1,'mkldnn::primitive_attr']]],
   ['set_5foutput_5fscales',['set_output_scales',['../structmkldnn_1_1primitive__attr.html#a1c2ba432512cf9950b81febce265e35d',1,'mkldnn::primitive_attr']]],
   ['set_5fpost_5fops',['set_post_ops',['../structmkldnn_1_1primitive__attr.html#a4730acedb91c4cd93616bb69c3df90a7',1,'mkldnn::primitive_attr']]],
+  ['size',['size',['../structmkldnn__wino__desc__t.html#a21b0565adbbb09671e0bdc91c92a2f6d',1,'mkldnn_wino_desc_t']]],
   ['softmax',['softmax',['../classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00dace2f1fbd249d24aabc07ac4488ab5b8c',1,'mkldnn::primitive']]],
   ['softmax_5faxis',['softmax_axis',['../structmkldnn__softmax__desc__t.html#a5d94f826587310a84027c88eb41e1b4f',1,'mkldnn_softmax_desc_t']]],
   ['softmax_5fd',['softmax_d',['../group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9abdb39a5fa96f35b51571bb5481ed2cc2',1,'mkldnn']]],

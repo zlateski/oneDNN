@@ -3,6 +3,7 @@ var searchData=
   ['inner_20product',['Inner product',['../group__c__api__inner__product.html',1,'']]],
   ['inner_20product',['Inner Product',['../group__cpp__api__inner__product.html',1,'']]],
   ['introduction_20to_20low_2dprecision_208_2dbit_20integer_20computations',['Introduction to Low-Precision 8-bit Integer Computations',['../ex_int8_simplenet.html',1,'']]],
+  ['ic_5fblock',['ic_block',['../structmkldnn__wino__desc__t.html#abc0b42d8f3d2d97753df87cb90e06556',1,'mkldnn_wino_desc_t']]],
   ['ihwo',['ihwo',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea7fe3459cd6d4a96ee1b7374a829339d5',1,'mkldnn::memory']]],
   ['impl_5finfo_5fstr',['impl_info_str',['../group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a022fea4ccfab3e1045c7358d07de3d5e',1,'mkldnn']]],
   ['inner_5fproduct',['inner_product',['../classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00da30813812e3beef3eefcc2b97dc2e0783',1,'mkldnn::primitive']]],

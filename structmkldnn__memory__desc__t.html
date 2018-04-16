@@ -78,6 +78,7 @@ Collaboration diagram for mkldnn_memory_desc_t:</div>
 <div class="center"><img src="structmkldnn__memory__desc__t__coll__graph.png" border="0" usemap="#mkldnn__memory__desc__t_coll__map" alt="Collaboration graph"/></div>
 <map name="mkldnn__memory__desc__t_coll__map" id="mkldnn__memory__desc__t_coll__map">
 <area shape="rect" id="node2" href="structmkldnn__blocking__desc__t.html" title="Generic description of blocked data layout for most memory formats. " alt="" coords="5,5,171,32"/>
+<area shape="rect" id="node3" href="structmkldnn__wino__desc__t.html" title="Description of tensor of weights for integer 8bit winograd convolution. " alt="" coords="195,5,339,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -102,6 +103,9 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a7b68c56e101608bf84f48fd56592621b"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="structmkldnn__blocking__desc__t.html">mkldnn_blocking_desc_t</a>&#160;&#160;&#160;<a class="el" href="structmkldnn__memory__desc__t.html#ab93d81dc3502465caad206777389c747">blocking</a></td></tr>
 <tr class="memdesc:a7b68c56e101608bf84f48fd56592621b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Description of the data layout for memory formats that use blocking.  <a href="#a7b68c56e101608bf84f48fd56592621b">More...</a><br /></td></tr>
 <tr class="separator:a7b68c56e101608bf84f48fd56592621b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3638656dc280b6200585557a410c2f3f"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="structmkldnn__wino__desc__t.html">mkldnn_wino_desc_t</a>&#160;&#160;&#160;<a class="el" href="structmkldnn__memory__desc__t.html#aa219a8379e78fc4a553e6af998759c78">wino_desc</a></td></tr>
+<tr class="memdesc:a3638656dc280b6200585557a410c2f3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tensor of weights for integer 8bit winograd convolution.  <a href="#a3638656dc280b6200585557a410c2f3f">More...</a><br /></td></tr>
+<tr class="separator:a3638656dc280b6200585557a410c2f3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae49f98c84c36039ec2984c3ecf981c8e"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__memory__desc__t.html#ae49f98c84c36039ec2984c3ecf981c8e">layout_desc</a></td></tr>
 <tr class="separator:ae49f98c84c36039ec2984c3ecf981c8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -218,6 +222,22 @@ Public Attributes</h2></td></tr>
 
 <p>The kind of primitive. </p>
 <p>Used for self identifying the primitive descriptor. Must be <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973aacec523f11e0ef981ef4933a60fe4fa5" title="A memory primitive. ">mkldnn_memory</a>. </p>
+
+</div>
+</div>
+<a id="aa219a8379e78fc4a553e6af998759c78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa219a8379e78fc4a553e6af998759c78">&#9670;&nbsp;</a></span>wino_desc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmkldnn__wino__desc__t.html">mkldnn_wino_desc_t</a> mkldnn_memory_desc_t::wino_desc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tensor of weights for integer 8bit winograd convolution. </p>
 
 </div>
 </div>

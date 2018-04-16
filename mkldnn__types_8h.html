@@ -81,6 +81,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__blocking__desc__t.html">mkldnn_blocking_desc_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic description of blocked data layout for most memory formats.  <a href="structmkldnn__blocking__desc__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__wino__desc__t.html">mkldnn_wino_desc_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Description of tensor of weights for integer 8bit winograd convolution.  <a href="structmkldnn__wino__desc__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Memory descriptor.  <a href="structmkldnn__memory__desc__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -230,12 +233,22 @@ Enumerations</h2></td></tr>
 <br />
 &#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74acf26dda829c10d1a318c955e1d185248">mkldnn_nChw8c</a>, 
 <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a5e2542092c6c47f27f8914de0b2d9789">mkldnn_nChw16c</a>, 
+<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a55268cf202bb4367b19fd0aeb13739ce">mkldnn_ncdhw</a>, 
+<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74afe9f8381139e749050fda6fb70808e1c">mkldnn_ndhwc</a>, 
+<br />
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74ae71727c41010dc2a1498277dafd09aab">mkldnn_nCdhw16c</a>, 
 <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74ae5344fffd9e1e8c46ced6403c21310b1">mkldnn_oi</a>, 
 <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a433ebc123e9f80c292c0e6e82715c118">mkldnn_io</a>, 
+<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74acc2eeaa304a91dc0d8ec301a8a13fa4a">mkldnn_oihw</a>, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74acc2eeaa304a91dc0d8ec301a8a13fa4a">mkldnn_oihw</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74aabd4140704b547b4a9706140255cb225">mkldnn_ihwo</a>, 
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74aabd4140704b547b4a9706140255cb225">mkldnn_ihwo</a>, 
 <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a56fdb8a888dba3cd5bb8e5a0bd521f8f">mkldnn_hwio</a>, 
+<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74afac4917edc105faa444307270eb0d1a5">mkldnn_oidhw</a>, 
+<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74ac7465701385671fc16f9fbb1e6b8cb66">mkldnn_OIdhw16i16o</a>, 
+<br />
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a5a12bfc303558d60c605b4bf31d2dc85">mkldnn_OIdhw16o16i</a>, 
+<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a36093b9014ed02bdcf65ebdc782b3f7e">mkldnn_Oidhw16o</a>, 
+<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a042484854ae729cd8296eef4b7501a15">mkldnn_Odhwi16o</a>, 
 <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a986b2f7b25d9a0c577c3e7d0957125be">mkldnn_OIhw8i8o</a>, 
 <br />
 &#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a2e8a39027e0991d05a2a599df7de8ee2">mkldnn_OIhw16i16o</a>, 
@@ -274,22 +287,26 @@ Enumerations</h2></td></tr>
 <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74ab2fe945b166429473f67c7e6b00aeb10">mkldnn_Goihw16g</a>, 
 <br />
 &#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a92db70487560432a5b1d34fb41b28ba6">mkldnn_gOhIw16o4i</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a55268cf202bb4367b19fd0aeb13739ce">mkldnn_ncdhw</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74afac4917edc105faa444307270eb0d1a5">mkldnn_oidhw</a>, 
 <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a643d2d2b24f526447a6852940fdca46a">mkldnn_goidhw</a>, 
+<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74abbbe379c84986ed49b9b833cac46b195">mkldnn_gOIdhw16i16o</a>, 
+<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a1cae36559d8e0066e21fc12dbffbeb34">mkldnn_gOIdhw16o16i</a>, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74affe5c26458ee8c3f3dff7c182cadd33c">mkldnn_ntc</a>, 
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74ab2c4bc56c62c5d7658643647ead863e0">mkldnn_gOidhw16o</a>, 
+<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a1c66f62007df134ba6dc73bf1b8f6489">mkldnn_gOdhwi16o</a>, 
+<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74affe5c26458ee8c3f3dff7c182cadd33c">mkldnn_ntc</a>, 
 <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a421cac1506ecc22ca2902c2f56e7dd1b">mkldnn_tnc</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a315cfab7829564b47079d13e46dd3edc">mkldnn_ldsnc</a>, 
+<br />
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a315cfab7829564b47079d13e46dd3edc">mkldnn_ldsnc</a>, 
 <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a8297cb7a081984c40f40ed9d24a4023a">mkldnn_ldigo</a>, 
-<br />
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74aa01ef053fccf8bd78da948b9c61cc758">mkldnn_ldigo_p</a>, 
+<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74aa01ef053fccf8bd78da948b9c61cc758">mkldnn_ldigo_p</a>, 
 <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74abd0d254bc5c97521e05c590ae9de8364">mkldnn_ldgoi</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74ae3debd06f01fcfc7249e64922652ed4f">mkldnn_ldgoi_p</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74ac5b1fb199e6e5c031766bb72dabb1859">mkldnn_ldgo</a>, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74ab2a625557c90d7e7b044bb1fcd3f4616">mkldnn_format_last</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a70523c4d4800ba448e10b801d84a2314">mkldnn_oIhw8i</a> = mkldnn_nChw8c, 
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74ae3debd06f01fcfc7249e64922652ed4f">mkldnn_ldgoi_p</a>, 
+<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74ac5b1fb199e6e5c031766bb72dabb1859">mkldnn_ldgo</a>, 
+<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a28bcfa51875bf06c8b336dcba069f5c0">mkldnn_wino_fmt</a>, 
+<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74ab2a625557c90d7e7b044bb1fcd3f4616">mkldnn_format_last</a>, 
+<br />
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a70523c4d4800ba448e10b801d84a2314">mkldnn_oIhw8i</a> = mkldnn_nChw8c, 
 <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a886c622f279ad85035bca4acbdfdb55e">mkldnn_oIhw16i</a> = mkldnn_nChw16c
 <br />
  }<tr class="memdesc:ga30a390f87ef74bf03dfa48a7b3f2fb74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Memory format specification.  <a href="group__c__api__types__generic.html#ga30a390f87ef74bf03dfa48a7b3f2fb74">More...</a><br /></td></tr>
@@ -383,6 +400,10 @@ Enumerations</h2></td></tr>
  }<tr class="memdesc:ga5b1f166df8eea3a306f9226baf6ca3a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flags for batch-normalization primititve.  <a href="group__c__api__types__generic.html#ga5b1f166df8eea3a306f9226baf6ca3a3">More...</a><br /></td></tr>
 </td></tr>
 <tr class="separator:ga5b1f166df8eea3a306f9226baf6ca3a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9b836385e37583fa1aeaf2753b25e966"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#ga9b836385e37583fa1aeaf2753b25e966">mkldnn_wino_memory_format_t</a> { <a class="el" href="group__c__api__types__memory.html#gga9b836385e37583fa1aeaf2753b25e966a4ccff5ca7da7995745fda89a4226ff41">mkldnn_wino_undef</a> = 0, 
+<a class="el" href="group__c__api__types__memory.html#gga9b836385e37583fa1aeaf2753b25e966ab3201fd84b8b965daaac644d3e7c2a21">mkldnn_wino_wei_aaOIoi</a>
+ }</td></tr>
+<tr class="separator:ga9b836385e37583fa1aeaf2753b25e966"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga62b06d91e9fcf6bd086311fd4d8ece36"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#ga62b06d91e9fcf6bd086311fd4d8ece36">mkldnn_rnn_cell_flags_t</a> { <a class="el" href="group__c__api__types__memory.html#gga62b06d91e9fcf6bd086311fd4d8ece36a55f69148433cce0b97e8edd117f6b2ed">mkldnn_rnn_cell_with_relu</a> = 0x1U, 
 <a class="el" href="group__c__api__types__memory.html#gga62b06d91e9fcf6bd086311fd4d8ece36a41f97c53ef51f113a259c26a8c8363ed">mkldnn_rnn_cell_with_clipping</a> = 0x2U
  }<tr class="memdesc:ga62b06d91e9fcf6bd086311fd4d8ece36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flags for RNN cell.  <a href="group__c__api__types__memory.html#ga62b06d91e9fcf6bd086311fd4d8ece36">More...</a><br /></td></tr>

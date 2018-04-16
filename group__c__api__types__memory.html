@@ -81,6 +81,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__blocking__desc__t.html">mkldnn_blocking_desc_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic description of blocked data layout for most memory formats.  <a href="structmkldnn__blocking__desc__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__wino__desc__t.html">mkldnn_wino_desc_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Description of tensor of weights for integer 8bit winograd convolution.  <a href="structmkldnn__wino__desc__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__convolution__desc__t.html">mkldnn_convolution_desc_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A descriptor of a convolution operation.  <a href="structmkldnn__convolution__desc__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -133,6 +136,10 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
+<tr class="memitem:ga9b836385e37583fa1aeaf2753b25e966"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#ga9b836385e37583fa1aeaf2753b25e966">mkldnn_wino_memory_format_t</a> { <a class="el" href="group__c__api__types__memory.html#gga9b836385e37583fa1aeaf2753b25e966a4ccff5ca7da7995745fda89a4226ff41">mkldnn_wino_undef</a> = 0, 
+<a class="el" href="group__c__api__types__memory.html#gga9b836385e37583fa1aeaf2753b25e966ab3201fd84b8b965daaac644d3e7c2a21">mkldnn_wino_wei_aaOIoi</a>
+ }</td></tr>
+<tr class="separator:ga9b836385e37583fa1aeaf2753b25e966"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga62b06d91e9fcf6bd086311fd4d8ece36"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#ga62b06d91e9fcf6bd086311fd4d8ece36">mkldnn_rnn_cell_flags_t</a> { <a class="el" href="group__c__api__types__memory.html#gga62b06d91e9fcf6bd086311fd4d8ece36a55f69148433cce0b97e8edd117f6b2ed">mkldnn_rnn_cell_with_relu</a> = 0x1U, 
 <a class="el" href="group__c__api__types__memory.html#gga62b06d91e9fcf6bd086311fd4d8ece36a41f97c53ef51f113a259c26a8c8363ed">mkldnn_rnn_cell_with_clipping</a> = 0x2U
  }<tr class="memdesc:ga62b06d91e9fcf6bd086311fd4d8ece36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flags for RNN cell.  <a href="group__c__api__types__memory.html#ga62b06d91e9fcf6bd086311fd4d8ece36">More...</a><br /></td></tr>
@@ -272,6 +279,26 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="gga3cb09316c36bd985698e0eea542cb424a29eacee8606bd282bc82396590c29590"></a>mkldnn_bidirectional_concat&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="gga3cb09316c36bd985698e0eea542cb424a41da7196bf8914d34a35ce7c1122e9bc"></a>mkldnn_bidirectional_sum&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="gga3cb09316c36bd985698e0eea542cb424a8f20ac563a5da76af44afced57b477e1"></a>mkldnn_unidirectional&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="ga9b836385e37583fa1aeaf2753b25e966"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9b836385e37583fa1aeaf2753b25e966">&#9670;&nbsp;</a></span>mkldnn_wino_memory_format_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__c__api__types__memory.html#ga9b836385e37583fa1aeaf2753b25e966">mkldnn_wino_memory_format_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga9b836385e37583fa1aeaf2753b25e966a4ccff5ca7da7995745fda89a4226ff41"></a>mkldnn_wino_undef&#160;</td><td class="fielddoc"><p>Undefined memory format, used for empty memory descriptors. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga9b836385e37583fa1aeaf2753b25e966ab3201fd84b8b965daaac644d3e7c2a21"></a>mkldnn_wino_wei_aaOIoi&#160;</td><td class="fielddoc"><p>Tensor of weights for integer 8bit winograd convolution. </p>
+</td></tr>
 </table>
 
 </div>
