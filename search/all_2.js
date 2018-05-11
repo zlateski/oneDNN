@@ -8,6 +8,7 @@ var searchData=
   ['c_5frnn_5fcell_5f',['c_rnn_cell_',['../structmkldnn_1_1rnn__cell_1_1desc.html#a0620e1f9e62150404d682647b23ce5ae',1,'mkldnn::rnn_cell::desc']]],
   ['cell_5fdesc',['cell_desc',['../structmkldnn__rnn__desc__t.html#a50b2aef792cdba38a22885634e7ade43',1,'mkldnn_rnn_desc_t']]],
   ['cell_5fkind',['cell_kind',['../structmkldnn__rnn__cell__desc__t.html#a9bef54e3d3390acd98eb089121833a12',1,'mkldnn_rnn_cell_desc_t']]],
+  ['check_5fnum_5fparameters',['check_num_parameters',['../group__cpp__api__memory.html#ga0791c1b5deab912d247f81941cded0cd',1,'mkldnn']]],
   ['chwn',['chwn',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eaeab9b02510aacc27bd0043473caa6a8e',1,'mkldnn::memory']]],
   ['clipping',['clipping',['../structmkldnn__rnn__cell__desc__t.html#a6d6c936048a7a0dc1cff86af8d7f180b',1,'mkldnn_rnn_cell_desc_t']]],
   ['concat',['concat',['../structmkldnn_1_1concat.html',1,'mkldnn::concat'],['../structmkldnn_1_1concat.html#a06f1dbb81a1ce8d0bc564ab69d426c64',1,'mkldnn::concat::concat()'],['../classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00da414e7c8ede73a0c2c3d17699134f4080',1,'mkldnn::primitive::concat()']]],

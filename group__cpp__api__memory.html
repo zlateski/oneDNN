@@ -80,6 +80,8 @@ Functions</h2></td></tr>
 <tr class="separator:ga89d7937b8dfe0604a96f61019dd52813"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8f1285e03c10b250eca7866423317a53"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmkldnn_1_1memory.html">memory</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__memory.html#ga8f1285e03c10b250eca7866423317a53">mkldnn::null_memory</a> (<a class="el" href="structmkldnn_1_1engine.html">engine</a> eng)</td></tr>
 <tr class="separator:ga8f1285e03c10b250eca7866423317a53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0791c1b5deab912d247f81941cded0cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__memory.html#ga0791c1b5deab912d247f81941cded0cd">mkldnn::check_num_parameters</a> (const <a class="el" href="group__c__api__primitive__descs.html#gacf18210edd8d1816e216075fab637ce9">const_mkldnn_primitive_desc_t</a> &amp;aprimitive_desc, int n_inputs, int n_outputs, const std::string &amp;prim_name)</td></tr>
+<tr class="separator:ga0791c1b5deab912d247f81941cded0cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga2f261589e9cd70a5a46debfd5146aafd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__memory.html#ga2f261589e9cd70a5a46debfd5146aafd">mkldnn::is_null_memory</a> (const <a class="el" href="group__c__api__types__primitive.html#ga5c35758e2445410362c85e0ddb6bbf9f">const_mkldnn_primitive_t</a> &amp;aprimitive)</td></tr>
 <tr class="separator:ga2f261589e9cd70a5a46debfd5146aafd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf571070d442c8057567f0b3b125c48a9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__memory.html#gaf571070d442c8057567f0b3b125c48a9">mkldnn::operator==</a> (<a class="el" href="group__c__api__types__generic.html#ga826b2a9be4d94ac17f99bacac6d0cb29">mkldnn_data_type_t</a> a, <a class="el" href="structmkldnn_1_1memory.html#aa8a0d49cc7faaceef9d8f55d66bff57b">memory::data_type</a> b)</td></tr>
@@ -101,6 +103,54 @@ Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="ga0791c1b5deab912d247f81941cded0cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0791c1b5deab912d247f81941cded0cd">&#9670;&nbsp;</a></span>check_num_parameters()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mkldnn::check_num_parameters </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__c__api__primitive__descs.html#gacf18210edd8d1816e216075fab637ce9">const_mkldnn_primitive_desc_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>aprimitive_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n_inputs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n_outputs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>prim_name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ga2f261589e9cd70a5a46debfd5146aafd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga2f261589e9cd70a5a46debfd5146aafd">&#9670;&nbsp;</a></span>is_null_memory()</h2>
 

@@ -27,6 +27,7 @@ var searchData=
   ['mkldnn_5fdeconvolution',['mkldnn_deconvolution',['../group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a7a0e90ea42fb73798b564210f1aba335',1,'mkldnn_types.h']]],
   ['mkldnn_5fdeconvolution_5fdirect',['mkldnn_deconvolution_direct',['../group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97ad3f1e5264ef9fb0a1c27cbcf6c9f77bd',1,'mkldnn_types.h']]],
   ['mkldnn_5fdeconvolution_5fwinograd',['mkldnn_deconvolution_winograd',['../group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a28c28ec7e89f2cd7cf1e87b8fc5c6797',1,'mkldnn_types.h']]],
+  ['mkldnn_5fdhwio',['mkldnn_dhwio',['../group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a6669e57588b920dcd21b951ac7eb1682',1,'mkldnn_types.h']]],
   ['mkldnn_5feager',['mkldnn_eager',['../group__c__api__types__stream.html#ggadd66574e231fe36721cdbe02ea47aa18a31d72581d8e1f3e15fc78f996a43ecc2',1,'mkldnn_types.h']]],
   ['mkldnn_5feltwise',['mkldnn_eltwise',['../group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973ae1cbd23f0addc5270d4f8ae63e0ecc7d',1,'mkldnn_types.h']]],
   ['mkldnn_5feltwise_5fabs',['mkldnn_eltwise_abs',['../group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97acdc9ab2cd85eae9d8ad1fa11db97543e',1,'mkldnn_types.h']]],
