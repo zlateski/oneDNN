@@ -64,46 +64,68 @@ $(function() {
 <div class="title">A Performance Library for Deep Learning </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>The Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN) is an open source performance library for Deep Learning (DL) applications intended for acceleration of DL frameworks on Intel(R) architecture. Intel MKL-DNN includes highly vectorized and threaded building blocks for implementation of convolutional neural networks (CNN) and reccurent neural networks (RNN) with C and C++ interfaces. This project is created to help the DL community innovate on the Intel(R) processor family.</p>
-<p>The library supports the most commonly used primitives necessary to accelerate bleeding edge image recognition topologies, including Cifar*, AlexNet*, VGG*, GoogleNet*, and ResNet*. The primitives include convolution, inner product, pooling, normalization, and activation with support for inference operations. The library includes the following classes of functions:</p>
-<ul>
-<li>Convolution<ul>
-<li>direct batched convolution</li>
-</ul>
-</li>
-<li>Inner Product</li>
-<li>Pooling<ul>
-<li>maximum</li>
-<li>average</li>
-</ul>
-</li>
-<li>Normalization<ul>
-<li>local response normalization (LRN) across channels and within channel</li>
-<li>batch normalization</li>
-</ul>
-</li>
-<li>Activation<ul>
-<li>rectified linear unit neuron activation (ReLU)</li>
-<li>softmax</li>
-</ul>
-</li>
-<li>Data manipulation<ul>
-<li>reorder (multi-dimensional transposition/conversion),</li>
-<li>sum,</li>
-<li>concat</li>
-<li>view</li>
-</ul>
-</li>
-</ul>
-<p>Also the library contains experimental support of RNN primitives to accelerate speech recognition and neural machine translation topologies. The experemental support includes the following classes of functions:</p>
-<ul>
-<li>RNN<ul>
-<li>RNN cell</li>
-<li>LSTM cell</li>
-</ul>
-</li>
-</ul>
-<p>Intel MKL DNN primitives implement a plain C/C++ application programming interface (API) that can be used in the existing C/C++ DNN frameworks, as well as in custom DNN applications.</p>
+<div class="textblock"><p>The Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN) is an open source performance library for Deep Learning (DL) applications intended for acceleration of DL frameworks on Intel(R) architecture. Intel MKL-DNN includes highly vectorized and threaded building blocks for implementation of convolutional neural networks (CNNs) and reccurent neural networks (RNNs) with C and C++ interfaces. This project is created to help the DL community innovate on the Intel(R) processor family.</p>
+<p>The library provides optimized implementations for the most common computational functions (also called primitives) used in deep neural networks covering a wide range of applications, including image recognition, object detection, semantic segmentation, neural machine translation, and speech recognition. The table below summarizes the list of supported functions and their variants.</p>
+<table class="doxtable">
+<tr>
+<th align="left">Primitive class </th><th align="left">Primitive </th><th align="center">fp32 training </th><th align="center">fp32 inference </th><th align="center">int8 inference  </th></tr>
+<tr>
+<td align="left">Convolution </td><td align="left">2D direct convolution </td><td align="center">x </td><td align="center">x </td><td align="center">x </td></tr>
+<tr>
+<td align="left"></td><td align="left">2D direct deconvolution </td><td align="center">x </td><td align="center">x </td><td align="center"></td></tr>
+<tr>
+<td align="left"></td><td align="left">2D winograd convolution </td><td align="center">x </td><td align="center">x </td><td align="center">x </td></tr>
+<tr>
+<td align="left"></td><td align="left">3D direct convolution </td><td align="center">x </td><td align="center">x </td><td align="center"></td></tr>
+<tr>
+<td align="left"></td><td align="left">3D direct deconvolution </td><td align="center">x </td><td align="center">x </td><td align="center"></td></tr>
+<tr>
+<td align="left">Inner Product </td><td align="left">2D inner product </td><td align="center">x </td><td align="center">x </td><td align="center"></td></tr>
+<tr>
+<td align="left"></td><td align="left">3D inner product </td><td align="center">x </td><td align="center">x </td><td align="center"></td></tr>
+<tr>
+<td align="left">RNN (experimental)</td><td align="left">Vanilla RNN cell </td><td align="center">x </td><td align="center">x </td><td align="center"></td></tr>
+<tr>
+<td align="left"></td><td align="left">LSTM cell </td><td align="center">x </td><td align="center">x </td><td align="center"></td></tr>
+<tr>
+<td align="left">Pooling </td><td align="left">2D maximum pooling </td><td align="center">x </td><td align="center">x </td><td align="center">x </td></tr>
+<tr>
+<td align="left"></td><td align="left">2D average pooling </td><td align="center">x </td><td align="center">x </td><td align="center">x </td></tr>
+<tr>
+<td align="left"></td><td align="left">3D maximum pooling </td><td align="center">x </td><td align="center">x </td><td align="center"></td></tr>
+<tr>
+<td align="left"></td><td align="left">3D average pooling </td><td align="center">x </td><td align="center">x </td><td align="center"></td></tr>
+<tr>
+<td align="left">Normalization </td><td align="left">2D LRN (within channel) </td><td align="center">x </td><td align="center">x </td><td align="center"></td></tr>
+<tr>
+<td align="left"></td><td align="left">2D LRN (across channels) </td><td align="center">x </td><td align="center">x </td><td align="center"></td></tr>
+<tr>
+<td align="left"></td><td align="left">2D batch normalization </td><td align="center">x </td><td align="center">x </td><td align="center"></td></tr>
+<tr>
+<td align="left"></td><td align="left">3D Batch Normalization </td><td align="center">x </td><td align="center">x </td><td align="center"></td></tr>
+<tr>
+<td align="left">Activation </td><td align="left">ReLU </td><td align="center">x </td><td align="center">x </td><td align="center">x </td></tr>
+<tr>
+<td align="left"></td><td align="left">Tanh </td><td align="center"></td><td align="center">x </td><td align="center"></td></tr>
+<tr>
+<td align="left"></td><td align="left">ELU </td><td align="center"></td><td align="center">x </td><td align="center"></td></tr>
+<tr>
+<td align="left"></td><td align="left">Bounded ReLU </td><td align="center"></td><td align="center">x </td><td align="center"></td></tr>
+<tr>
+<td align="left"></td><td align="left">Soft ReLU </td><td align="center"></td><td align="center">x </td><td align="center"></td></tr>
+<tr>
+<td align="left"></td><td align="left">Logistic regression </td><td align="center"></td><td align="center">x </td><td align="center"></td></tr>
+<tr>
+<td align="left"></td><td align="left">Softmax </td><td align="center"></td><td align="center">x </td><td align="center"></td></tr>
+<tr>
+<td align="left">Data manipulation </td><td align="left">Reorder/quantization </td><td align="center">x </td><td align="center">x </td><td align="center">x </td></tr>
+<tr>
+<td align="left"></td><td align="left">Sum </td><td align="center">x </td><td align="center">x </td><td align="center">x </td></tr>
+<tr>
+<td align="left"></td><td align="left">Concat </td><td align="center">x </td><td align="center">x </td><td align="center">x </td></tr>
+<tr>
+<td align="left"></td><td align="left">Elementwise operations </td><td align="center"></td><td align="center">x </td><td align="center"></td></tr>
+</table>
 <h2>Programming Model</h2>
 <p>Intel MKL-DNN models memory as a primitive similar to an operation primitive. This allows reconstruction of the graph of computations at run time.</p>
 <h3>Basic Terminology</h3>
