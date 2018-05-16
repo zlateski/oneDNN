@@ -307,6 +307,7 @@ var searchData=
   ['mkldnn_5fs32',['mkldnn_s32',['../group__c__api__types__generic.html#gga826b2a9be4d94ac17f99bacac6d0cb29a4ceccb30ecf3a259a933028cd234701f',1,'mkldnn_types.h']]],
   ['mkldnn_5fs8',['mkldnn_s8',['../group__c__api__types__generic.html#gga826b2a9be4d94ac17f99bacac6d0cb29a8a09db71666549aebad36fd23d974180',1,'mkldnn_types.h']]],
   ['mkldnn_5fsoftmax',['mkldnn_softmax',['../group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973acda8db2022e0c87c016286c098f0c31e',1,'mkldnn_types.h']]],
+  ['mkldnn_5fsoftmax_5fbackward_5fdesc_5finit',['mkldnn_softmax_backward_desc_init',['../group__c__api__softmax.html#ga38603b5a9da112762085deeddc92040b',1,'mkldnn.h']]],
   ['mkldnn_5fsoftmax_5fdesc_5ft',['mkldnn_softmax_desc_t',['../structmkldnn__softmax__desc__t.html',1,'']]],
   ['mkldnn_5fsoftmax_5fforward_5fdesc_5finit',['mkldnn_softmax_forward_desc_init',['../group__c__api__softmax.html#gaf9ea3543dc0b1d9734c7290e90ccce23',1,'mkldnn.h']]],
   ['mkldnn_5fstatus2str',['mkldnn_status2str',['../mkldnn__debug_8h.html#a8fb45dc3a9c482dd386139170c1b63dd',1,'mkldnn_debug.h']]],

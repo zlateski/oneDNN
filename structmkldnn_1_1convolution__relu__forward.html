@@ -73,6 +73,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>A merged convolution-relu primitive for inference mode only.  
+ <a href="structmkldnn_1_1convolution__relu__forward.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="mkldnn_8hpp_source.html">mkldnn.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for mkldnn::convolution_relu_forward:</div>
@@ -102,10 +105,10 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0ff751dcaa1288bea3e3b35eaa65908e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1convolution__relu__forward.html#a0ff751dcaa1288bea3e3b35eaa65908e">convolution_relu_forward</a> (const <a class="el" href="structmkldnn_1_1convolution__relu__forward_1_1primitive__desc.html">primitive_desc</a> &amp;aprimitive_desc, const <a class="el" href="structmkldnn_1_1primitive_1_1at.html">primitive::at</a> &amp;src, const <a class="el" href="structmkldnn_1_1primitive_1_1at.html">primitive::at</a> &amp;weights, const <a class="el" href="structmkldnn_1_1primitive_1_1at.html">primitive::at</a> &amp;bias, const <a class="el" href="structmkldnn_1_1memory.html">memory</a> &amp;dst)</td></tr>
-<tr class="separator:a0ff751dcaa1288bea3e3b35eaa65908e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a965e13395408ec18544c7bd8782467d4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1convolution__relu__forward.html#a965e13395408ec18544c7bd8782467d4">convolution_relu_forward</a> (const <a class="el" href="structmkldnn_1_1convolution__relu__forward_1_1primitive__desc.html">primitive_desc</a> &amp;aprimitive_desc, const <a class="el" href="structmkldnn_1_1primitive_1_1at.html">primitive::at</a> &amp;src, const <a class="el" href="structmkldnn_1_1primitive_1_1at.html">primitive::at</a> &amp;weights, const <a class="el" href="structmkldnn_1_1memory.html">memory</a> &amp;dst)</td></tr>
-<tr class="separator:a965e13395408ec18544c7bd8782467d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb79feca879d4ce92089e865be3cedb0"><td class="memItemLeft" align="right" valign="top">MKLDNN_DEPRECATED&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1convolution__relu__forward.html#adb79feca879d4ce92089e865be3cedb0">convolution_relu_forward</a> (const <a class="el" href="structmkldnn_1_1convolution__relu__forward_1_1primitive__desc.html">primitive_desc</a> &amp;aprimitive_desc, const <a class="el" href="structmkldnn_1_1primitive_1_1at.html">primitive::at</a> &amp;src, const <a class="el" href="structmkldnn_1_1primitive_1_1at.html">primitive::at</a> &amp;weights, const <a class="el" href="structmkldnn_1_1primitive_1_1at.html">primitive::at</a> &amp;bias, const <a class="el" href="structmkldnn_1_1memory.html">memory</a> &amp;dst)</td></tr>
+<tr class="separator:adb79feca879d4ce92089e865be3cedb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4aea6eccb028d82f2f3f9227df7761d0"><td class="memItemLeft" align="right" valign="top">MKLDNN_DEPRECATED&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1convolution__relu__forward.html#a4aea6eccb028d82f2f3f9227df7761d0">convolution_relu_forward</a> (const <a class="el" href="structmkldnn_1_1convolution__relu__forward_1_1primitive__desc.html">primitive_desc</a> &amp;aprimitive_desc, const <a class="el" href="structmkldnn_1_1primitive_1_1at.html">primitive::at</a> &amp;src, const <a class="el" href="structmkldnn_1_1primitive_1_1at.html">primitive::at</a> &amp;weights, const <a class="el" href="structmkldnn_1_1memory.html">memory</a> &amp;dst)</td></tr>
+<tr class="separator:a4aea6eccb028d82f2f3f9227df7761d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classmkldnn_1_1primitive"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classmkldnn_1_1primitive')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classmkldnn_1_1primitive.html">mkldnn::primitive</a></td></tr>
 <tr class="memitem:ga2af6efd247f27cf356b511c6ea03604f inherit pub_methods_classmkldnn_1_1primitive"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__primitive__descs.html#gacf18210edd8d1816e216075fab637ce9">const_mkldnn_primitive_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__utils.html#ga2af6efd247f27cf356b511c6ea03604f">get_primitive_desc</a> () const</td></tr>
 <tr class="memdesc:ga2af6efd247f27cf356b511c6ea03604f inherit pub_methods_classmkldnn_1_1primitive"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the descriptor of the underlying C API primitive.  <a href="group__cpp__api__utils.html#ga2af6efd247f27cf356b511c6ea03604f">More...</a><br /></td></tr>
@@ -165,9 +168,12 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a98414546e5ca9f7726dc21311c6bcefc inherit pro_methods_classmkldnn_1_1handle"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmkldnn_1_1handle.html#a98414546e5ca9f7726dc21311c6bcefc">operator!=</a> (const <a class="el" href="group__c__api__types__primitive.html#gac7821f6b4a4fa0d58fe5279a1ff2fda3">mkldnn_primitive_t</a> other) const</td></tr>
 <tr class="separator:a98414546e5ca9f7726dc21311c6bcefc inherit pro_methods_classmkldnn_1_1handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a0ff751dcaa1288bea3e3b35eaa65908e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0ff751dcaa1288bea3e3b35eaa65908e">&#9670;&nbsp;</a></span>convolution_relu_forward() <span class="overload">[1/2]</span></h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A merged convolution-relu primitive for inference mode only. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000004">Deprecated:</a></b></dt><dd>consider using <a class="el" href="structmkldnn_1_1convolution__forward.html">convolution_forward</a> with <a class="el" href="structmkldnn_1_1post__ops.html">post_ops</a> (e.g. <a class="el" href="structmkldnn_1_1post__ops.html#af86d191276edcc3bd16571dd357072ec">post_ops::append_eltwise</a>(1.f, <a class="el" href="group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076a7949269c3f40dbf756f63a20e5dae2e0">eltwise_relu</a>, negative_slope, 0.f) </dd></dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="adb79feca879d4ce92089e865be3cedb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb79feca879d4ce92089e865be3cedb0">&#9670;&nbsp;</a></span>convolution_relu_forward() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -176,7 +182,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">mkldnn::convolution_relu_forward::convolution_relu_forward </td>
+          <td class="memname">MKLDNN_DEPRECATED mkldnn::convolution_relu_forward::convolution_relu_forward </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structmkldnn_1_1convolution__relu__forward_1_1primitive__desc.html">primitive_desc</a> &amp;&#160;</td>
           <td class="paramname"><em>aprimitive_desc</em>, </td>
@@ -217,11 +223,12 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000007">Deprecated:</a></b></dt><dd>consider using <a class="el" href="structmkldnn_1_1convolution__forward.html">convolution_forward</a> + <a class="el" href="structmkldnn_1_1post__ops.html">post_ops</a> </dd></dl>
 
 </div>
 </div>
-<a id="a965e13395408ec18544c7bd8782467d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a965e13395408ec18544c7bd8782467d4">&#9670;&nbsp;</a></span>convolution_relu_forward() <span class="overload">[2/2]</span></h2>
+<a id="a4aea6eccb028d82f2f3f9227df7761d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4aea6eccb028d82f2f3f9227df7761d0">&#9670;&nbsp;</a></span>convolution_relu_forward() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -230,7 +237,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">mkldnn::convolution_relu_forward::convolution_relu_forward </td>
+          <td class="memname">MKLDNN_DEPRECATED mkldnn::convolution_relu_forward::convolution_relu_forward </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structmkldnn_1_1convolution__relu__forward_1_1primitive__desc.html">primitive_desc</a> &amp;&#160;</td>
           <td class="paramname"><em>aprimitive_desc</em>, </td>
@@ -265,6 +272,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000008">Deprecated:</a></b></dt><dd>consider using <a class="el" href="structmkldnn_1_1convolution__forward.html">convolution_forward</a> + <a class="el" href="structmkldnn_1_1post__ops.html">post_ops</a> </dd></dl>
 
 </div>
 </div>

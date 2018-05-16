@@ -86,6 +86,7 @@ var searchData=
   ['mkldnn_5frnn_5fcell_5fget_5fgates_5fcount',['mkldnn_rnn_cell_get_gates_count',['../group__c__api__rnn.html#gaaa19b8f0624d36b2c0197ec547190e75',1,'mkldnn.h']]],
   ['mkldnn_5frnn_5fcell_5fget_5fstates_5fcount',['mkldnn_rnn_cell_get_states_count',['../group__c__api__rnn.html#ga5282631e9fb6733f40a1cc180825954d',1,'mkldnn.h']]],
   ['mkldnn_5frnn_5fforward_5fdesc_5finit',['mkldnn_rnn_forward_desc_init',['../group__c__api__rnn.html#ga5bfe35f13beaa9c90d3e5841d18e07d8',1,'mkldnn.h']]],
+  ['mkldnn_5fsoftmax_5fbackward_5fdesc_5finit',['mkldnn_softmax_backward_desc_init',['../group__c__api__softmax.html#ga38603b5a9da112762085deeddc92040b',1,'mkldnn.h']]],
   ['mkldnn_5fsoftmax_5fforward_5fdesc_5finit',['mkldnn_softmax_forward_desc_init',['../group__c__api__softmax.html#gaf9ea3543dc0b1d9734c7290e90ccce23',1,'mkldnn.h']]],
   ['mkldnn_5fstatus2str',['mkldnn_status2str',['../mkldnn__debug_8h.html#a8fb45dc3a9c482dd386139170c1b63dd',1,'mkldnn_debug.h']]],
   ['mkldnn_5fstream_5fcreate',['mkldnn_stream_create',['../group__c__api__stream.html#ga0c4890af6909953045b8d91127ff769b',1,'mkldnn.h']]],

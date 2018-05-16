@@ -81,6 +81,8 @@ Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>A primitive to compute element wise operations like parametric rectifier linear unit (ReLU). </p>
+<p>Both forward and backward passes support in-place operation, i.e. src and dst point to the same memory for forward, and diff_dst and diff_src point to the same memory for backward pass.</p>
+<dl class="section warning"><dt>Warning</dt><dd>Since for backward pass original src is required, in-place forward pass in general cannot be applied during training. However for some kinds of element wise operations (namely ReLU with alpha parameter equals 0) dst and src can be interchangeable for the backward pass, which allows performing in-place forward even for training. </dd></dl>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ga6f5a8f5b448140e651b14aba6a6fdd6e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga6f5a8f5b448140e651b14aba6a6fdd6e">&#9670;&nbsp;</a></span>mkldnn_eltwise_backward_desc_init()</h2>

@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
-<title>Intel(R) MKL-DNN: Convolution followed by ReLU</title>
+<title>Intel(R) MKL-DNN: Convolution followed by ReLU (deprecated)</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -63,7 +63,7 @@ $(function() {
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">Convolution followed by ReLU<div class="ingroups"><a class="el" href="group__c__api.html">C API</a> &raquo; <a class="el" href="group__c__api__primitive.html">Primitive operations</a></div></div>  </div>
+<div class="title">Convolution followed by ReLU (deprecated)<div class="ingroups"><a class="el" href="group__c__api.html">C API</a> &raquo; <a class="el" href="group__c__api__primitive.html">Primitive operations</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -112,6 +112,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initializes a merged convolution-relu descriptor <code>conv_relu_desc</code> for forward propagation (supported inference mode only) using convolution descriptor <code>conv_desc</code> and ReLU parameter <code>negative</code> slope. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000003">Deprecated:</a></b></dt><dd>use mkldnn_convolution_desc_init with mkldnn_post_ops_append_eltwise to append ReLU </dd></dl>
 
 </div>
 </div>

@@ -20,6 +20,7 @@ var searchData=
   ['size',['size',['../structmkldnn__wino__desc__t.html#a21b0565adbbb09671e0bdc91c92a2f6d',1,'mkldnn_wino_desc_t']]],
   ['softmax',['softmax',['../classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00dace2f1fbd249d24aabc07ac4488ab5b8c',1,'mkldnn::primitive']]],
   ['softmax_5faxis',['softmax_axis',['../structmkldnn__softmax__desc__t.html#a5d94f826587310a84027c88eb41e1b4f',1,'mkldnn_softmax_desc_t']]],
+  ['softmax_5fbackward',['softmax_backward',['../structmkldnn_1_1softmax__backward.html',1,'mkldnn::softmax_backward'],['../structmkldnn_1_1softmax__backward.html#abb1441d67a4373cea493f07bf8631872',1,'mkldnn::softmax_backward::softmax_backward()']]],
   ['softmax_5fd',['softmax_d',['../group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9abdb39a5fa96f35b51571bb5481ed2cc2',1,'mkldnn']]],
   ['softmax_5fforward',['softmax_forward',['../structmkldnn_1_1softmax__forward.html',1,'mkldnn::softmax_forward'],['../structmkldnn_1_1softmax__forward.html#a0c2c19e0566480132d975aa0904eadf3',1,'mkldnn::softmax_forward::softmax_forward()']]],
   ['src_5fdesc',['src_desc',['../structmkldnn__convolution__desc__t.html#ac1ac756cd9506ffaf1e7d68e334e9420',1,'mkldnn_convolution_desc_t::src_desc()'],['../structmkldnn__pooling__desc__t.html#a3145a3354e2c46b2827a645fe90c1b04',1,'mkldnn_pooling_desc_t::src_desc()'],['../structmkldnn__inner__product__desc__t.html#ab2ab25825825a88d9be4b15ca3ee6105',1,'mkldnn_inner_product_desc_t::src_desc()']]],
