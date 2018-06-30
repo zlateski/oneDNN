@@ -21,5 +21,6 @@ var searchData=
   ['goihw8i8o',['gOIhw8i8o',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea11eda3436ae582b8a28cc85adc8433c1',1,'mkldnn::memory']]],
   ['goihw8o',['gOihw8o',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea3026eb87a3233587bee2d15882e21d63',1,'mkldnn::memory']]],
   ['goihw8o16i2o',['gOIhw8o16i2o',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea924d233b52d5b5cbad3f00280e7bae61',1,'mkldnn::memory']]],
-  ['goihw8o8i',['gOIhw8o8i',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eacaf364857cd0309c67bb6dff621ee71e',1,'mkldnn::memory']]]
+  ['goihw8o8i',['gOIhw8o8i',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eacaf364857cd0309c67bb6dff621ee71e',1,'mkldnn::memory']]],
+  ['gru_5flinear_5fbefore_5freset',['gru_linear_before_reset',['../group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076aa5849021a7e673154284f5bd65597e80',1,'mkldnn']]]
 ];
