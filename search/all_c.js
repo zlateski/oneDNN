@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['nb_5fic',['nb_ic',['../structmkldnn__wino__desc__t.html#a2c24dadaca4e5f42b0e347ed61962f93',1,'mkldnn_wino_desc_t']]],
-  ['nb_5foc',['nb_oc',['../structmkldnn__wino__desc__t.html#a72198daf56aa1e114c6c9adf4cc5a5c1',1,'mkldnn_wino_desc_t']]],
   ['nc',['nc',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea4ff01f91c212576306e693c1a1ac4c12',1,'mkldnn::memory']]],
   ['ncdhw',['ncdhw',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea5dc81a175f020c19fa6c6de1b119be9a',1,'mkldnn::memory']]],
   ['ncdhw16c',['nCdhw16c',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea28f872d6caf404cfb706b2d69b2b8b64',1,'mkldnn::memory']]],

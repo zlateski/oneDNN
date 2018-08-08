@@ -1,6 +1,8 @@
 var searchData=
 [
   ['operation_20descriptors',['Operation descriptors',['../group__c__api__types__op__descs.html',1,'']]],
+  ['oc',['oc',['../structmkldnn__wino__desc__t.html#a4d1e331529273a5fe8fa5f40624f9f8a',1,'mkldnn_wino_desc_t']]],
+  ['oc2_5fblock',['oc2_block',['../structmkldnn__wino__desc__t.html#a5e62e2882a9163b7eff96d36b50b9c97',1,'mkldnn_wino_desc_t']]],
   ['oc_5fblock',['oc_block',['../structmkldnn__wino__desc__t.html#a47b3d2a7106931317f6d78102afd1215',1,'mkldnn_wino_desc_t']]],
   ['odhwi16o',['Odhwi16o',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eafe5531230831268fe4924777e8d714a4',1,'mkldnn::memory']]],
   ['offset_5fpadding',['offset_padding',['../structmkldnn__blocking__desc__t.html#adc8fd26e935fee00dc25bb098a204138',1,'mkldnn_blocking_desc_t']]],
