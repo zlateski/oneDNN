@@ -2,6 +2,7 @@ var searchData=
 [
   ['giohw16o16i',['gIOhw16o16i',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eaed5bd42c3c68a277cbdca346a72251fa',1,'mkldnn::memory']]],
   ['godhwi16o',['gOdhwi16o',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea4b5d3797672c5c4d2cf427b68a89fb46',1,'mkldnn::memory']]],
+  ['godhwi8o',['gOdhwi8o',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eace15960b3ccbb40e81009787fb946122',1,'mkldnn::memory']]],
   ['gohiw16o4i',['gOhIw16o4i',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea12dbcd423f39fcd621b399d494e5dfe7',1,'mkldnn::memory']]],
   ['gohwi16o',['gOhwi16o',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea5686f7dbdddd9ee3f502f7600cbe731a',1,'mkldnn::memory']]],
   ['gohwi8o',['gOhwi8o',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eae7df7db47e81d11cd459f53f46928cb9',1,'mkldnn::memory']]],
@@ -10,6 +11,8 @@ var searchData=
   ['goidhw16o',['gOidhw16o',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea36f5ee4d2f8a5bdc9e064886671cb3e1',1,'mkldnn::memory']]],
   ['goidhw16o16i',['gOIdhw16o16i',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea7db54b023c9c0850b36ffae21925abdd',1,'mkldnn::memory']]],
   ['goidhw8i16o2i',['gOIdhw8i16o2i',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea69ad7a0af41a810a57a20b1cdbcb5c3b',1,'mkldnn::memory']]],
+  ['goidhw8i8o',['gOIdhw8i8o',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ead49fda2c4b65fc929f67c95237932e91',1,'mkldnn::memory']]],
+  ['goidhw8o8i',['gOIdhw8o8i',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea1480af02d8fc0be33760c615345f952a',1,'mkldnn::memory']]],
   ['goihw',['goihw',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea19f8852dc26c175f22aed771f3f9614a',1,'mkldnn::memory']]],
   ['goihw16g',['Goihw16g',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea7c438d4874170d550a5822c60c91ebff',1,'mkldnn::memory']]],
   ['goihw16i16o',['gOIhw16i16o',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eab47a53954142e271e59e8b0b036c7797',1,'mkldnn::memory']]],
