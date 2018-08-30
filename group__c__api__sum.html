@@ -124,7 +124,16 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Creates out-of-place <code>sum_primitive_desc</code> for sum of <code>n</code> inputs multiplied by scale with resulting <code>output_desc</code> memory descriptor. </p>
-<p><code>output_desc</code> can be NULL or be specified with <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a5ae7d369fcd51464f613e51d73eae547" title="Unspecified format. ">mkldnn_any</a> format &ndash; in this case appropriate memory format would be chosen automatically. </p>
+<p><code>output_desc</code> can be NULL or be specified with <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a5ae7d369fcd51464f613e51d73eae547" title="Unspecified format. ">mkldnn_any</a> format &ndash; in this case appropriate memory format would be chosen automatically.</p>
+<p>Order of inputs:</p><ul>
+<li>input 0 (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9aa3100118ca28db99bc4fa00c6c6f6b21" title="input memory primitive desc ">mkldnn_query_input_pd</a>, 0)</li>
+<li>input 1 (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9aa3100118ca28db99bc4fa00c6c6f6b21" title="input memory primitive desc ">mkldnn_query_input_pd</a>, 1)</li>
+<li>...</li>
+<li>input <code>n</code> - 1 (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9aa3100118ca28db99bc4fa00c6c6f6b21" title="input memory primitive desc ">mkldnn_query_input_pd</a>, <code>n</code> - 1)</li>
+</ul>
+<p>Order of outputs:</p><ul>
+<li>output (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ac7133f49888b4946ac227810be0146fd" title="output memory primitive desc ">mkldnn_query_output_pd</a>, 0) </li>
+</ul>
 
 </div>
 </div>

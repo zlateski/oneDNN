@@ -116,6 +116,40 @@ Public Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A descriptor of a Local Response Normalization (LRN) operation. </p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="af40d3d325e4381bdf57119dfefd64194"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af40d3d325e4381bdf57119dfefd64194">&#9670;&nbsp;</a></span>primitive_kind</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga4f5c189c2ba9ef6444250299f1f8e973">mkldnn_primitive_kind_t</a> mkldnn_lrn_desc_t::primitive_kind</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The kind of primitive. </p>
+<p>Used for self identifying the primitive descriptor. Must be <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973ac9dbe1aea35cb16f509ad407695cb8b7" title="An LRN primitive. ">mkldnn_lrn</a>. </p>
+
+</div>
+</div>
+<a id="a5fbf21ce499720a33fad23fc6e850fba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fbf21ce499720a33fad23fc6e850fba">&#9670;&nbsp;</a></span>prop_kind</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga5b98c8059c2aff8861157bf070c3f520">mkldnn_prop_kind_t</a> mkldnn_lrn_desc_t::prop_kind</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The kind of propagation. </p>
+<p>Possible values: <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f" title="Forward data propagation (training mode). ">mkldnn_forward_training</a>, <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a58a923fb6c4e1214e1505b5fa0b1e3fa" title="Forward data propagation (inference mode). ">mkldnn_forward_inference</a>, <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a4dd1b6040ef9d067a38d8ffa407b763b" title="Backward propagation (with respect to all parameters. ">mkldnn_backward</a>, and <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520aefa8bd2da7ba52a0a0061cfab6cf3925" title="Backward data propagation. ">mkldnn_backward_data</a>. </p>
+
+</div>
+</div>
 <a id="a8044a2d8506d9432def40dfd96b5ddd6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8044a2d8506d9432def40dfd96b5ddd6">&#9670;&nbsp;</a></span>alg_kind</h2>
 
@@ -226,40 +260,6 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>LRN k parameter. </p>
-
-</div>
-</div>
-<a id="af40d3d325e4381bdf57119dfefd64194"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af40d3d325e4381bdf57119dfefd64194">&#9670;&nbsp;</a></span>primitive_kind</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga4f5c189c2ba9ef6444250299f1f8e973">mkldnn_primitive_kind_t</a> mkldnn_lrn_desc_t::primitive_kind</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The kind of primitive. </p>
-<p>Used for self identifying the primitive descriptor. Must be <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973ac9dbe1aea35cb16f509ad407695cb8b7" title="An LRN primitive. ">mkldnn_lrn</a>. </p>
-
-</div>
-</div>
-<a id="a5fbf21ce499720a33fad23fc6e850fba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5fbf21ce499720a33fad23fc6e850fba">&#9670;&nbsp;</a></span>prop_kind</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga5b98c8059c2aff8861157bf070c3f520">mkldnn_prop_kind_t</a> mkldnn_lrn_desc_t::prop_kind</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The kind of propagation. </p>
-<p>Possible values: <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f" title="Forward data propagation (training mode). ">mkldnn_forward_training</a>, <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a58a923fb6c4e1214e1505b5fa0b1e3fa" title="Forward data propagation (inference mode). ">mkldnn_forward_inference</a>, <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a4dd1b6040ef9d067a38d8ffa407b763b" title="Backward propagation (with respect to all parameters. ">mkldnn_backward</a>, and <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520aefa8bd2da7ba52a0a0061cfab6cf3925" title="Backward data propagation. ">mkldnn_backward_data</a>. </p>
 
 </div>
 </div>

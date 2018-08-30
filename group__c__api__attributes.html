@@ -110,6 +110,28 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>An extension for controlling primitive behavior. </p>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="gaa5402b9efc0a7fd3360610382f85e6de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa5402b9efc0a7fd3360610382f85e6de">&#9670;&nbsp;</a></span>mkldnn_primitive_attr_create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API mkldnn_primitive_attr_create </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__c__api__primitive__attr.html#gaeaf9bd515118e1667f7fd1846bb79de1">mkldnn_primitive_attr_t</a> *&#160;</td>
+          <td class="paramname"><em>attr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates an empty (default) <code>attr</code> attribute. </p>
+<p>All the parameters set to default values.</p>
+<p>An empty attribute is used in primitive descriptor creating whenever it is not passed explicitly, e.g. in mkldnn_primitive_desc_create. </p>
+
+</div>
+</div>
 <a id="gae07196198f1d52306bd467aee1183f4c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gae07196198f1d52306bd467aee1183f4c">&#9670;&nbsp;</a></span>mkldnn_primitive_attr_clone()</h2>
 
@@ -137,28 +159,6 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Makes a copy of an <code>existing_attr</code>. </p>
-
-</div>
-</div>
-<a id="gaa5402b9efc0a7fd3360610382f85e6de"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa5402b9efc0a7fd3360610382f85e6de">&#9670;&nbsp;</a></span>mkldnn_primitive_attr_create()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API mkldnn_primitive_attr_create </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__c__api__primitive__attr.html#gaeaf9bd515118e1667f7fd1846bb79de1">mkldnn_primitive_attr_t</a> *&#160;</td>
-          <td class="paramname"><em>attr</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Creates an empty (default) <code>attr</code> attribute. </p>
-<p>All the parameters set to default values.</p>
-<p>An empty attribute is used in primitive descriptor creating whenever it is not passed explicitly, e.g. in mkldnn_primitive_desc_create. </p>
 
 </div>
 </div>
@@ -212,6 +212,37 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="gaad8659404cefb328a47ffcf81ab904c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaad8659404cefb328a47ffcf81ab904c8">&#9670;&nbsp;</a></span>mkldnn_primitive_attr_set_int_output_round_mode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API mkldnn_primitive_attr_set_int_output_round_mode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__c__api__primitive__attr.html#gaeaf9bd515118e1667f7fd1846bb79de1">mkldnn_primitive_attr_t</a>&#160;</td>
+          <td class="paramname"><em>attr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__c__api__types__generic.html#ga825f736d520c8183d422d1aad60f2ad9">mkldnn_round_mode_t</a>&#160;</td>
+          <td class="paramname"><em>round_mode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets output rounding mode <code>round_mode</code> for integer operations for a given <code>attr</code>. </p>
+<p>The default value is <a class="el" href="group__c__api__types__generic.html#gga825f736d520c8183d422d1aad60f2ad9a55acfe2ce6cd9dff83837656b5f27686" title="Round nearest. ">mkldnn_round_nearest</a>. </p>
+
+</div>
+</div>
 <a id="ga691a3631739c12351776bec991a11c24"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga691a3631739c12351776bec991a11c24">&#9670;&nbsp;</a></span>mkldnn_primitive_attr_get_output_scales()</h2>
 
@@ -254,68 +285,6 @@ Functions</h2></td></tr>
 <dl class="section warning"><dt>Warning</dt><dd><code>scales</code> array points to the internal <code>attr</code> field, so user should not modify/destroy <code>scales</code>.</dd>
 <dd>
 The lifetime of <code>scales</code> is same as <code>attr</code> it belongs to, so it is illegal to use the <code>scales</code> after <code>attr</code> is destroyed </dd></dl>
-
-</div>
-</div>
-<a id="ga92b080aec64fb1860b280a369fc0ce1c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga92b080aec64fb1860b280a369fc0ce1c">&#9670;&nbsp;</a></span>mkldnn_primitive_attr_get_post_ops()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API mkldnn_primitive_attr_get_post_ops </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__c__api__primitive__attr.html#ga3f3780c1e4efc952e6639a2f083a8b85">const_mkldnn_primitive_attr_t</a>&#160;</td>
-          <td class="paramname"><em>attr</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__c__api__primitive__attr.html#ga9b9ffe469ad6e2c68a490c61af3bf882">const_mkldnn_post_ops_t</a> *&#160;</td>
-          <td class="paramname"><em>post_ops</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns <code>post_ops</code> for given attr. </p>
-<dl class="section warning"><dt>Warning</dt><dd><code>post_ops</code> points to the internal <code>attr</code> field, so user should not modify/destroy <code>post_ops</code>. Also the lifetime of <code>post_ops</code> is the same as <code>attr</code> it belongs to, so it is illegal to use <code>post_ops</code> once <code>attr</code> is destroyed. </dd></dl>
-
-</div>
-</div>
-<a id="gaad8659404cefb328a47ffcf81ab904c8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaad8659404cefb328a47ffcf81ab904c8">&#9670;&nbsp;</a></span>mkldnn_primitive_attr_set_int_output_round_mode()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API mkldnn_primitive_attr_set_int_output_round_mode </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__c__api__primitive__attr.html#gaeaf9bd515118e1667f7fd1846bb79de1">mkldnn_primitive_attr_t</a>&#160;</td>
-          <td class="paramname"><em>attr</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__c__api__types__generic.html#ga825f736d520c8183d422d1aad60f2ad9">mkldnn_round_mode_t</a>&#160;</td>
-          <td class="paramname"><em>round_mode</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets output rounding mode <code>round_mode</code> for integer operations for a given <code>attr</code>. </p>
-<p>The default value is <a class="el" href="group__c__api__types__generic.html#gga825f736d520c8183d422d1aad60f2ad9a55acfe2ce6cd9dff83837656b5f27686" title="Round nearest. ">mkldnn_round_nearest</a>. </p>
 
 </div>
 </div>
@@ -371,6 +340,37 @@ The lifetime of <code>scales</code> is same as <code>attr</code> it belongs to, 
 <img class="formulaDsp" alt="\[count = \prod\limits_{d \in mask} output.dims[d]\]" src="form_0.png"/>
 </p>
  
+</div>
+</div>
+<a id="ga92b080aec64fb1860b280a369fc0ce1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga92b080aec64fb1860b280a369fc0ce1c">&#9670;&nbsp;</a></span>mkldnn_primitive_attr_get_post_ops()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API mkldnn_primitive_attr_get_post_ops </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__c__api__primitive__attr.html#ga3f3780c1e4efc952e6639a2f083a8b85">const_mkldnn_primitive_attr_t</a>&#160;</td>
+          <td class="paramname"><em>attr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__c__api__primitive__attr.html#ga9b9ffe469ad6e2c68a490c61af3bf882">const_mkldnn_post_ops_t</a> *&#160;</td>
+          <td class="paramname"><em>post_ops</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns <code>post_ops</code> for given attr. </p>
+<dl class="section warning"><dt>Warning</dt><dd><code>post_ops</code> points to the internal <code>attr</code> field, so user should not modify/destroy <code>post_ops</code>. Also the lifetime of <code>post_ops</code> is the same as <code>attr</code> it belongs to, so it is illegal to use <code>post_ops</code> once <code>attr</code> is destroyed. </dd></dl>
+
 </div>
 </div>
 <a id="ga815370a5c591cfb02f66d9c276aca943"></a>

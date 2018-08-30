@@ -112,7 +112,15 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initializes a merged convolution-relu descriptor <code>conv_relu_desc</code> for forward propagation (supported inference mode only) using convolution descriptor <code>conv_desc</code> and ReLU parameter <code>negative</code> slope. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000003">Deprecated:</a></b></dt><dd>use mkldnn_convolution_desc_init with mkldnn_post_ops_append_eltwise to append ReLU </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000003">Deprecated:</a></b></dt><dd>use mkldnn_convolution_desc_init with mkldnn_post_ops_append_eltwise to append ReLU</dd></dl>
+<p>Order of inputs:</p><ul>
+<li>src (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ac17b645e3801adaaeee3107103ec8a72" title="source memory primitive desc ">mkldnn_query_src_pd</a>, 0)</li>
+<li>weights (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9aad24a528aa4e68a27da4b23063eb76ee" title="weights memory primitive descriptor desc ">mkldnn_query_weights_pd</a>, 0)</li>
+<li>bias (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9aad24a528aa4e68a27da4b23063eb76ee" title="weights memory primitive descriptor desc ">mkldnn_query_weights_pd</a>, 1), if convolution is created with bias</li>
+</ul>
+<p>Order of outputs:</p><ul>
+<li>dst (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9abb15fa8a7eb5aebfe547ac57a96c2d56" title="destination memory primitive desc ">mkldnn_query_dst_pd</a>, 0) </li>
+</ul>
 
 </div>
 </div>

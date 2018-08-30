@@ -125,20 +125,37 @@ Public Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A descriptor of a pooling operation. </p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
-<a id="a283f1330595d8bc0bd226576654ea372"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a283f1330595d8bc0bd226576654ea372">&#9670;&nbsp;</a></span>accum_data_type</h2>
+<a id="a31c30cf38b01f1514454ba5ea5b662a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31c30cf38b01f1514454ba5ea5b662a5">&#9670;&nbsp;</a></span>primitive_kind</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga826b2a9be4d94ac17f99bacac6d0cb29">mkldnn_data_type_t</a> mkldnn_pooling_desc_t::accum_data_type</td>
+          <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga4f5c189c2ba9ef6444250299f1f8e973">mkldnn_primitive_kind_t</a> mkldnn_pooling_desc_t::primitive_kind</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>The accumulator data type. </p>
-<p>Initialized automatically. </p>
+<p>The kind of primitive. </p>
+<p>Used for self identifying the primitive descriptor. Must be <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a4962b750b011e794c6a7fcebcc5a4fb2" title="A pooling primitive. ">mkldnn_pooling</a>. </p>
+
+</div>
+</div>
+<a id="a2ea858e8b663b632524019f25fae29b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ea858e8b663b632524019f25fae29b7">&#9670;&nbsp;</a></span>prop_kind</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga5b98c8059c2aff8861157bf070c3f520">mkldnn_prop_kind_t</a> mkldnn_pooling_desc_t::prop_kind</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The kind of propagation. </p>
+<p>Possible values: <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f" title="Forward data propagation (training mode). ">mkldnn_forward_training</a>, <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a58a923fb6c4e1214e1505b5fa0b1e3fa" title="Forward data propagation (inference mode). ">mkldnn_forward_inference</a>, <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a4dd1b6040ef9d067a38d8ffa407b763b" title="Backward propagation (with respect to all parameters. ">mkldnn_backward</a>, and <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520aefa8bd2da7ba52a0a0061cfab6cf3925" title="Backward data propagation. ">mkldnn_backward_data</a>. </p>
 
 </div>
 </div>
@@ -159,19 +176,19 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="acf419668917f33b7861130050805d1f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acf419668917f33b7861130050805d1f2">&#9670;&nbsp;</a></span>diff_dst_desc</h2>
+<a id="a3145a3354e2c46b2827a645fe90c1b04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3145a3354e2c46b2827a645fe90c1b04">&#9670;&nbsp;</a></span>src_desc</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_pooling_desc_t::diff_dst_desc</td>
+          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_pooling_desc_t::src_desc</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Destination gradient memory descriptor. </p>
+<p>Source memory descriptor. </p>
 
 </div>
 </div>
@@ -204,6 +221,38 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Destination memory descriptor. </p>
+
+</div>
+</div>
+<a id="acf419668917f33b7861130050805d1f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf419668917f33b7861130050805d1f2">&#9670;&nbsp;</a></span>diff_dst_desc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_pooling_desc_t::diff_dst_desc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Destination gradient memory descriptor. </p>
+
+</div>
+</div>
+<a id="a8c339dae420e12a19a4bef3c7de08948"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c339dae420e12a19a4bef3c7de08948">&#9670;&nbsp;</a></span>strides</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a> mkldnn_pooling_desc_t::strides</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pooling kernel strides for spatial dimensions. </p>
 
 </div>
 </div>
@@ -256,69 +305,20 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a31c30cf38b01f1514454ba5ea5b662a5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a31c30cf38b01f1514454ba5ea5b662a5">&#9670;&nbsp;</a></span>primitive_kind</h2>
+<a id="a283f1330595d8bc0bd226576654ea372"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a283f1330595d8bc0bd226576654ea372">&#9670;&nbsp;</a></span>accum_data_type</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga4f5c189c2ba9ef6444250299f1f8e973">mkldnn_primitive_kind_t</a> mkldnn_pooling_desc_t::primitive_kind</td>
+          <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga826b2a9be4d94ac17f99bacac6d0cb29">mkldnn_data_type_t</a> mkldnn_pooling_desc_t::accum_data_type</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>The kind of primitive. </p>
-<p>Used for self identifying the primitive descriptor. Must be <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a4962b750b011e794c6a7fcebcc5a4fb2" title="A pooling primitive. ">mkldnn_pooling</a>. </p>
-
-</div>
-</div>
-<a id="a2ea858e8b663b632524019f25fae29b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2ea858e8b663b632524019f25fae29b7">&#9670;&nbsp;</a></span>prop_kind</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga5b98c8059c2aff8861157bf070c3f520">mkldnn_prop_kind_t</a> mkldnn_pooling_desc_t::prop_kind</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The kind of propagation. </p>
-<p>Possible values: <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f" title="Forward data propagation (training mode). ">mkldnn_forward_training</a>, <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a58a923fb6c4e1214e1505b5fa0b1e3fa" title="Forward data propagation (inference mode). ">mkldnn_forward_inference</a>, <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a4dd1b6040ef9d067a38d8ffa407b763b" title="Backward propagation (with respect to all parameters. ">mkldnn_backward</a>, and <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520aefa8bd2da7ba52a0a0061cfab6cf3925" title="Backward data propagation. ">mkldnn_backward_data</a>. </p>
-
-</div>
-</div>
-<a id="a3145a3354e2c46b2827a645fe90c1b04"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3145a3354e2c46b2827a645fe90c1b04">&#9670;&nbsp;</a></span>src_desc</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_pooling_desc_t::src_desc</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Source memory descriptor. </p>
-
-</div>
-</div>
-<a id="a8c339dae420e12a19a4bef3c7de08948"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8c339dae420e12a19a4bef3c7de08948">&#9670;&nbsp;</a></span>strides</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a> mkldnn_pooling_desc_t::strides</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Pooling kernel strides for spatial dimensions. </p>
+<p>The accumulator data type. </p>
+<p>Initialized automatically. </p>
 
 </div>
 </div>

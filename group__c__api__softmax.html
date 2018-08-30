@@ -86,48 +86,6 @@ Functions</h2></td></tr>
 </p>
 <p>where <img class="formulaInl" alt="$ou, iu$" src="form_10.png"/> are outer and inner sizes repectively, defined by <code>data_desc.dims</code> and <code>softmax_axis</code>. </p>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ga38603b5a9da112762085deeddc92040b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga38603b5a9da112762085deeddc92040b">&#9670;&nbsp;</a></span>mkldnn_softmax_backward_desc_init()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API mkldnn_softmax_backward_desc_init </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structmkldnn__softmax__desc__t.html">mkldnn_softmax_desc_t</a> *&#160;</td>
-          <td class="paramname"><em>softmax_desc</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *&#160;</td>
-          <td class="paramname"><em>diff_desc</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *&#160;</td>
-          <td class="paramname"><em>data_desc</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>softmax_axis</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Initializes a <code>softmax_desc</code> for backward propagation using memory descriptors <code>diff_desc</code> and <code>data_desc</code>. </p>
-
-</div>
-</div>
 <a id="gaf9ea3543dc0b1d9734c7290e90ccce23"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaf9ea3543dc0b1d9734c7290e90ccce23">&#9670;&nbsp;</a></span>mkldnn_softmax_forward_desc_init()</h2>
 
@@ -167,6 +125,61 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initializes a <code>softmax_desc</code> for forward propagation using <code>prop_kind</code> (possible value are <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f" title="Forward data propagation (training mode). ">mkldnn_forward_training</a> or <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a58a923fb6c4e1214e1505b5fa0b1e3fa" title="Forward data propagation (inference mode). ">mkldnn_forward_inference</a>) and memory descriptor <code>data_desc</code>. </p>
+<p>Order of inputs:</p><ul>
+<li>src (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ac17b645e3801adaaeee3107103ec8a72" title="source memory primitive desc ">mkldnn_query_src_pd</a>, 0)</li>
+</ul>
+<p>Order of outputs:</p><ul>
+<li>dst (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9abb15fa8a7eb5aebfe547ac57a96c2d56" title="destination memory primitive desc ">mkldnn_query_dst_pd</a>, 0) </li>
+</ul>
+
+</div>
+</div>
+<a id="ga38603b5a9da112762085deeddc92040b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga38603b5a9da112762085deeddc92040b">&#9670;&nbsp;</a></span>mkldnn_softmax_backward_desc_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API mkldnn_softmax_backward_desc_init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmkldnn__softmax__desc__t.html">mkldnn_softmax_desc_t</a> *&#160;</td>
+          <td class="paramname"><em>softmax_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *&#160;</td>
+          <td class="paramname"><em>diff_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *&#160;</td>
+          <td class="paramname"><em>data_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>softmax_axis</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes a <code>softmax_desc</code> for backward propagation using memory descriptors <code>diff_desc</code> and <code>data_desc</code>. </p>
+<p>Order of inputs:</p><ul>
+<li>dst (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9abb15fa8a7eb5aebfe547ac57a96c2d56" title="destination memory primitive desc ">mkldnn_query_dst_pd</a>, 0)</li>
+<li>diff_dst (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9aa5b466fae3a9bda2d112db68cfd2b68e" title="destination grad. ">mkldnn_query_diff_dst_pd</a>, 0)</li>
+</ul>
+<p>Order of outputs:</p><ul>
+<li>diff_src (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ac95fbe152e97a3989dc794a70643d834" title="source gradient memory primitive desc ">mkldnn_query_diff_src_pd</a>, 0) </li>
+</ul>
 
 </div>
 </div>

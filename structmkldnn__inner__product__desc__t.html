@@ -122,119 +122,6 @@ Public Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A descriptor of an inner product operation. </p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
-<a id="a998bb7a60862961aa69e791a703ee0e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a998bb7a60862961aa69e791a703ee0e9">&#9670;&nbsp;</a></span>accum_data_type</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga826b2a9be4d94ac17f99bacac6d0cb29">mkldnn_data_type_t</a> mkldnn_inner_product_desc_t::accum_data_type</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The accumulator data type. </p>
-<p>Initialized automatically. </p>
-
-</div>
-</div>
-<a id="af3aeda5e160339054ec9ed696cf50e64"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af3aeda5e160339054ec9ed696cf50e64">&#9670;&nbsp;</a></span>bias_desc</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_inner_product_desc_t::bias_desc</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Bias memory descriptor. </p>
-
-</div>
-</div>
-<a id="a78901d3fd3a4332333f1bdb30d1190ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a78901d3fd3a4332333f1bdb30d1190ec">&#9670;&nbsp;</a></span>diff_bias_desc</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_inner_product_desc_t::diff_bias_desc</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Bias gradient memory descriptor. </p>
-
-</div>
-</div>
-<a id="a4fb32ceb2d4eddf641566f09c43515ea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4fb32ceb2d4eddf641566f09c43515ea">&#9670;&nbsp;</a></span>diff_dst_desc</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_inner_product_desc_t::diff_dst_desc</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Destination gradient memory descriptor. </p>
-
-</div>
-</div>
-<a id="a258aa5755ae7fcaee1e1829c4dbd9038"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a258aa5755ae7fcaee1e1829c4dbd9038">&#9670;&nbsp;</a></span>diff_src_desc</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_inner_product_desc_t::diff_src_desc</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Source gradient memory descriptor. </p>
-
-</div>
-</div>
-<a id="aa9421af65eb0655418730423880f3c52"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa9421af65eb0655418730423880f3c52">&#9670;&nbsp;</a></span>diff_weights_desc</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_inner_product_desc_t::diff_weights_desc</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Weights gradient memory descriptor. </p>
-
-</div>
-</div>
-<a id="abe22f70b9bcb290d09bc22e40e39f8c9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abe22f70b9bcb290d09bc22e40e39f8c9">&#9670;&nbsp;</a></span>dst_desc</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_inner_product_desc_t::dst_desc</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Destination memory descriptor. </p>
-
-</div>
-</div>
 <a id="a0d29920770b70f56df4fba205210aaa1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0d29920770b70f56df4fba205210aaa1">&#9670;&nbsp;</a></span>primitive_kind</h2>
 
@@ -285,6 +172,22 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a258aa5755ae7fcaee1e1829c4dbd9038"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a258aa5755ae7fcaee1e1829c4dbd9038">&#9670;&nbsp;</a></span>diff_src_desc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_inner_product_desc_t::diff_src_desc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Source gradient memory descriptor. </p>
+
+</div>
+</div>
 <a id="a2639f37a1b46ac5129c8368215629e34"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2639f37a1b46ac5129c8368215629e34">&#9670;&nbsp;</a></span>weights_desc</h2>
 
@@ -298,6 +201,103 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Weights memory descriptor. </p>
+
+</div>
+</div>
+<a id="aa9421af65eb0655418730423880f3c52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9421af65eb0655418730423880f3c52">&#9670;&nbsp;</a></span>diff_weights_desc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_inner_product_desc_t::diff_weights_desc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Weights gradient memory descriptor. </p>
+
+</div>
+</div>
+<a id="af3aeda5e160339054ec9ed696cf50e64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3aeda5e160339054ec9ed696cf50e64">&#9670;&nbsp;</a></span>bias_desc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_inner_product_desc_t::bias_desc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bias memory descriptor. </p>
+
+</div>
+</div>
+<a id="a78901d3fd3a4332333f1bdb30d1190ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78901d3fd3a4332333f1bdb30d1190ec">&#9670;&nbsp;</a></span>diff_bias_desc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_inner_product_desc_t::diff_bias_desc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bias gradient memory descriptor. </p>
+
+</div>
+</div>
+<a id="abe22f70b9bcb290d09bc22e40e39f8c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe22f70b9bcb290d09bc22e40e39f8c9">&#9670;&nbsp;</a></span>dst_desc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_inner_product_desc_t::dst_desc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Destination memory descriptor. </p>
+
+</div>
+</div>
+<a id="a4fb32ceb2d4eddf641566f09c43515ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fb32ceb2d4eddf641566f09c43515ea">&#9670;&nbsp;</a></span>diff_dst_desc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_inner_product_desc_t::diff_dst_desc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Destination gradient memory descriptor. </p>
+
+</div>
+</div>
+<a id="a998bb7a60862961aa69e791a703ee0e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a998bb7a60862961aa69e791a703ee0e9">&#9670;&nbsp;</a></span>accum_data_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga826b2a9be4d94ac17f99bacac6d0cb29">mkldnn_data_type_t</a> mkldnn_inner_product_desc_t::accum_data_type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The accumulator data type. </p>
+<p>Initialized automatically. </p>
 
 </div>
 </div>

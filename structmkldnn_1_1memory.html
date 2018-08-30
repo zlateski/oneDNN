@@ -566,6 +566,114 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a2b5aee608f913a4fcbfef41b63f48650"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b5aee608f913a4fcbfef41b63f48650">&#9670;&nbsp;</a></span>validate_dims()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void mkldnn::memory::validate_dims </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; T &gt;&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa5e5c4fcce2bffeef8649b4f14cfaa8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5e5c4fcce2bffeef8649b4f14cfaa8e">&#9670;&nbsp;</a></span>get_primitive_desc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmkldnn_1_1memory_1_1primitive__desc.html">primitive_desc</a> mkldnn::memory::get_primitive_desc </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the descriptor of the memory primitive. </p>
+
+</div>
+</div>
+<a id="af121ae649cfe2fa3f92be40efb22b337"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af121ae649cfe2fa3f92be40efb22b337">&#9670;&nbsp;</a></span>get_data_handle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* mkldnn::memory::get_data_handle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a handle of the data contained in the memory primitive. On the CPU engine, this is a pointer to the allocated memory. </p>
+
+</div>
+</div>
+<a id="a9e2e6e828a867debc2be1508b31bce8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e2e6e828a867debc2be1508b31bce8d">&#9670;&nbsp;</a></span>set_data_handle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mkldnn::memory::set_data_handle </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>handle</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a2f533b52ae52b2f0e98609af11b489ab"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2f533b52ae52b2f0e98609af11b489ab">&#9670;&nbsp;</a></span>convert_to_c() <span class="overload">[1/2]</span></h2>
 
@@ -606,114 +714,6 @@ Additional Inherited Members</h2></td></tr>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87e">format</a>&#160;</td>
           <td class="paramname"><em>aformat</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="af121ae649cfe2fa3f92be40efb22b337"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af121ae649cfe2fa3f92be40efb22b337">&#9670;&nbsp;</a></span>get_data_handle()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void* mkldnn::memory::get_data_handle </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns a handle of the data contained in the memory primitive. On the CPU engine, this is a pointer to the allocated memory. </p>
-
-</div>
-</div>
-<a id="aa5e5c4fcce2bffeef8649b4f14cfaa8e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa5e5c4fcce2bffeef8649b4f14cfaa8e">&#9670;&nbsp;</a></span>get_primitive_desc()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structmkldnn_1_1memory_1_1primitive__desc.html">primitive_desc</a> mkldnn::memory::get_primitive_desc </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the descriptor of the memory primitive. </p>
-
-</div>
-</div>
-<a id="a9e2e6e828a867debc2be1508b31bce8d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9e2e6e828a867debc2be1508b31bce8d">&#9670;&nbsp;</a></span>set_data_handle()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void mkldnn::memory::set_data_handle </td>
-          <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>handle</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a2b5aee608f913a4fcbfef41b63f48650"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b5aee608f913a4fcbfef41b63f48650">&#9670;&nbsp;</a></span>validate_dims()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void mkldnn::memory::validate_dims </td>
-          <td>(</td>
-          <td class="paramtype">std::vector&lt; T &gt;&#160;</td>
-          <td class="paramname"><em>v</em></td><td>)</td>
           <td></td>
         </tr>
       </table>

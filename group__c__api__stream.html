@@ -117,57 +117,6 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="gae10ec69089229b220a8123faa8ed1c99"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gae10ec69089229b220a8123faa8ed1c99">&#9670;&nbsp;</a></span>mkldnn_stream_destroy()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API mkldnn_stream_destroy </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__c__api__types__stream.html#ga45075c5015f9a5ef3b0365af92fa1529">mkldnn_stream_t</a>&#160;</td>
-          <td class="paramname"><em>stream</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Destroys an execution <code>stream</code>. </p>
-
-</div>
-</div>
-<a id="gae4fd3fc8674a031db606ad674c57a014"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gae4fd3fc8674a031db606ad674c57a014">&#9670;&nbsp;</a></span>mkldnn_stream_rerun()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API mkldnn_stream_rerun </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__c__api__types__stream.html#ga45075c5015f9a5ef3b0365af92fa1529">mkldnn_stream_t</a>&#160;</td>
-          <td class="paramname"><em>stream</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__c__api__types__primitive.html#gac7821f6b4a4fa0d58fe5279a1ff2fda3">mkldnn_primitive_t</a> *&#160;</td>
-          <td class="paramname"><em>error_primitive</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Reruns all the primitives within the <code>stream</code>. </p>
-<p>In case of an error, returns the offending <code>error_primitive</code> if it is not <code>NULL</code>. </p>
-
-</div>
-</div>
 <a id="ga2334698faa0171d95bdfe41fa99c226e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga2334698faa0171d95bdfe41fa99c226e">&#9670;&nbsp;</a></span>mkldnn_stream_submit()</h2>
 
@@ -245,6 +194,57 @@ Functions</h2></td></tr>
 
 <p>Waits for all primitives in the execution <code>stream</code> to finish. </p>
 <p>Returns immediately if <code>block</code> is zero. In case of an error, returns the offending <code>error_primitive</code> if it is not <code>NULL</code>. </p>
+
+</div>
+</div>
+<a id="gae4fd3fc8674a031db606ad674c57a014"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae4fd3fc8674a031db606ad674c57a014">&#9670;&nbsp;</a></span>mkldnn_stream_rerun()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API mkldnn_stream_rerun </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__c__api__types__stream.html#ga45075c5015f9a5ef3b0365af92fa1529">mkldnn_stream_t</a>&#160;</td>
+          <td class="paramname"><em>stream</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__c__api__types__primitive.html#gac7821f6b4a4fa0d58fe5279a1ff2fda3">mkldnn_primitive_t</a> *&#160;</td>
+          <td class="paramname"><em>error_primitive</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reruns all the primitives within the <code>stream</code>. </p>
+<p>In case of an error, returns the offending <code>error_primitive</code> if it is not <code>NULL</code>. </p>
+
+</div>
+</div>
+<a id="gae10ec69089229b220a8123faa8ed1c99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae10ec69089229b220a8123faa8ed1c99">&#9670;&nbsp;</a></span>mkldnn_stream_destroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API mkldnn_stream_destroy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__c__api__types__stream.html#ga45075c5015f9a5ef3b0365af92fa1529">mkldnn_stream_t</a>&#160;</td>
+          <td class="paramname"><em>stream</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Destroys an execution <code>stream</code>. </p>
 
 </div>
 </div>

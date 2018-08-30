@@ -68,7 +68,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>A primitive to describe data.  
+<p>A primitive to describe and store data.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
@@ -105,9 +105,60 @@ Functions</h2></td></tr>
 <tr class="separator:gabc7b0cb3ed3e54e783cb4377b8f9c1a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>A primitive to describe data. </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__c__api__memory.html">Memory</a> in <a class="el" href="group__c__api.html">C API</a> </dd></dl>
+<p>A primitive to describe and store data. </p>
+<p>For more information please refer to <a class="el" href="group__c__api__memory.html">Memory</a> in <a class="el" href="group__c__api.html">C API</a> </p>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="ga89d7937b8dfe0604a96f61019dd52813"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga89d7937b8dfe0604a96f61019dd52813">&#9670;&nbsp;</a></span>zero_md()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> mkldnn::zero_md </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga8f1285e03c10b250eca7866423317a53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8f1285e03c10b250eca7866423317a53">&#9670;&nbsp;</a></span>null_memory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmkldnn_1_1memory.html">memory</a> mkldnn::null_memory </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmkldnn_1_1engine.html">engine</a>&#160;</td>
+          <td class="paramname"><em>eng</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ga0791c1b5deab912d247f81941cded0cd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga0791c1b5deab912d247f81941cded0cd">&#9670;&nbsp;</a></span>check_num_parameters()</h2>
 
@@ -182,8 +233,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga8f1285e03c10b250eca7866423317a53"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga8f1285e03c10b250eca7866423317a53">&#9670;&nbsp;</a></span>null_memory()</h2>
+<a id="gaf571070d442c8057567f0b3b125c48a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf571070d442c8057567f0b3b125c48a9">&#9670;&nbsp;</a></span>operator==() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -192,11 +243,21 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structmkldnn_1_1memory.html">memory</a> mkldnn::null_memory </td>
+          <td class="memname">bool mkldnn::operator== </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structmkldnn_1_1engine.html">engine</a>&#160;</td>
-          <td class="paramname"><em>eng</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__c__api__types__generic.html#ga826b2a9be4d94ac17f99bacac6d0cb29">mkldnn_data_type_t</a>&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="structmkldnn_1_1memory.html#aa8a0d49cc7faaceef9d8f55d66bff57b">memory::data_type</a>&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -219,150 +280,6 @@ Functions</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">bool mkldnn::operator!= </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__c__api__types__generic.html#ga826b2a9be4d94ac17f99bacac6d0cb29">mkldnn_data_type_t</a>&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structmkldnn_1_1memory.html#aa8a0d49cc7faaceef9d8f55d66bff57b">memory::data_type</a>&#160;</td>
-          <td class="paramname"><em>b</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="gad7e115584a180164ff0ec8e6a42ccf1a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gad7e115584a180164ff0ec8e6a42ccf1a">&#9670;&nbsp;</a></span>operator!=() <span class="overload">[2/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool mkldnn::operator!= </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structmkldnn_1_1memory.html#aa8a0d49cc7faaceef9d8f55d66bff57b">memory::data_type</a>&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__c__api__types__generic.html#ga826b2a9be4d94ac17f99bacac6d0cb29">mkldnn_data_type_t</a>&#160;</td>
-          <td class="paramname"><em>b</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ga9212cee5b7beaa78d962547f9941b55d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga9212cee5b7beaa78d962547f9941b55d">&#9670;&nbsp;</a></span>operator!=() <span class="overload">[3/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool mkldnn::operator!= </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__c__api__types__generic.html#ga30a390f87ef74bf03dfa48a7b3f2fb74">mkldnn_memory_format_t</a>&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87e">memory::format</a>&#160;</td>
-          <td class="paramname"><em>b</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="gabc7b0cb3ed3e54e783cb4377b8f9c1a6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gabc7b0cb3ed3e54e783cb4377b8f9c1a6">&#9670;&nbsp;</a></span>operator!=() <span class="overload">[4/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool mkldnn::operator!= </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87e">memory::format</a>&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__c__api__types__generic.html#ga30a390f87ef74bf03dfa48a7b3f2fb74">mkldnn_memory_format_t</a>&#160;</td>
-          <td class="paramname"><em>b</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="gaf571070d442c8057567f0b3b125c48a9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf571070d442c8057567f0b3b125c48a9">&#9670;&nbsp;</a></span>operator==() <span class="overload">[1/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool mkldnn::operator== </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__c__api__types__generic.html#ga826b2a9be4d94ac17f99bacac6d0cb29">mkldnn_data_type_t</a>&#160;</td>
           <td class="paramname"><em>a</em>, </td>
@@ -424,6 +341,42 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="gad7e115584a180164ff0ec8e6a42ccf1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad7e115584a180164ff0ec8e6a42ccf1a">&#9670;&nbsp;</a></span>operator!=() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mkldnn::operator!= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmkldnn_1_1memory.html#aa8a0d49cc7faaceef9d8f55d66bff57b">memory::data_type</a>&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__c__api__types__generic.html#ga826b2a9be4d94ac17f99bacac6d0cb29">mkldnn_data_type_t</a>&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ga1922947b0e5d8f91403bd645ffb6c13c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga1922947b0e5d8f91403bd645ffb6c13c">&#9670;&nbsp;</a></span>operator==() <span class="overload">[3/4]</span></h2>
 
@@ -435,6 +388,42 @@ Functions</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">bool mkldnn::operator== </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__c__api__types__generic.html#ga30a390f87ef74bf03dfa48a7b3f2fb74">mkldnn_memory_format_t</a>&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87e">memory::format</a>&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga9212cee5b7beaa78d962547f9941b55d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9212cee5b7beaa78d962547f9941b55d">&#9670;&nbsp;</a></span>operator!=() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mkldnn::operator!= </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__c__api__types__generic.html#ga30a390f87ef74bf03dfa48a7b3f2fb74">mkldnn_memory_format_t</a>&#160;</td>
           <td class="paramname"><em>a</em>, </td>
@@ -496,8 +485,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga89d7937b8dfe0604a96f61019dd52813"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga89d7937b8dfe0604a96f61019dd52813">&#9670;&nbsp;</a></span>zero_md()</h2>
+<a id="gabc7b0cb3ed3e54e783cb4377b8f9c1a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabc7b0cb3ed3e54e783cb4377b8f9c1a6">&#9670;&nbsp;</a></span>operator!=() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -506,10 +495,21 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> mkldnn::zero_md </td>
+          <td class="memname">bool mkldnn::operator!= </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87e">memory::format</a>&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="group__c__api__types__generic.html#ga30a390f87ef74bf03dfa48a7b3f2fb74">mkldnn_memory_format_t</a>&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>

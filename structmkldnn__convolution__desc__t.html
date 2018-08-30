@@ -137,20 +137,37 @@ Public Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A descriptor of a convolution operation. </p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
-<a id="a755505cf62a730a64378562d4a96b4ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a755505cf62a730a64378562d4a96b4ee">&#9670;&nbsp;</a></span>accum_data_type</h2>
+<a id="a682c28b217c33bb555d01b934faa8778"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a682c28b217c33bb555d01b934faa8778">&#9670;&nbsp;</a></span>primitive_kind</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga826b2a9be4d94ac17f99bacac6d0cb29">mkldnn_data_type_t</a> mkldnn_convolution_desc_t::accum_data_type</td>
+          <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga4f5c189c2ba9ef6444250299f1f8e973">mkldnn_primitive_kind_t</a> mkldnn_convolution_desc_t::primitive_kind</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>The accumulator data type. </p>
-<p>Initialized automatically. </p>
+<p>The kind of primitive. </p>
+<p>Used for self identifying the primitive descriptor. Must be <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a88592adccf64d1fd271ed6e21d66b271" title="A convolution primitive. ">mkldnn_convolution</a>. </p>
+
+</div>
+</div>
+<a id="a4f644d4eadb8e4fce81023381b0f2d0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f644d4eadb8e4fce81023381b0f2d0c">&#9670;&nbsp;</a></span>prop_kind</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga5b98c8059c2aff8861157bf070c3f520">mkldnn_prop_kind_t</a> mkldnn_convolution_desc_t::prop_kind</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The kind of propagation. </p>
+<p>Possible values: <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f" title="Forward data propagation (training mode). ">mkldnn_forward_training</a>, <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a58a923fb6c4e1214e1505b5fa0b1e3fa" title="Forward data propagation (inference mode). ">mkldnn_forward_inference</a>, <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520aefa8bd2da7ba52a0a0061cfab6cf3925" title="Backward data propagation. ">mkldnn_backward_data</a>, <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a6d7c0a418ef16b8ade0b0fa1109c4b2c" title="Backward weights propagation. ">mkldnn_backward_weights</a>, and <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520aea8ef1582a476c8b2fe5741a4f7b5d23" title="Backward bias propagation. ">mkldnn_backward_bias</a>. </p>
 
 </div>
 </div>
@@ -168,6 +185,70 @@ Public Attributes</h2></td></tr>
 
 <p>The kind of the convolution algorithm. </p>
 <p>Possible values: <a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97ab90fddd0ca784280b9a37b3cc6fee0a3" title="Direct convolution. ">mkldnn_convolution_direct</a>. </p>
+
+</div>
+</div>
+<a id="ac1ac756cd9506ffaf1e7d68e334e9420"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1ac756cd9506ffaf1e7d68e334e9420">&#9670;&nbsp;</a></span>src_desc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_convolution_desc_t::src_desc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Source memory descriptor. </p>
+
+</div>
+</div>
+<a id="a537a6c0abb2c26ef244f62bc496ff6f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a537a6c0abb2c26ef244f62bc496ff6f2">&#9670;&nbsp;</a></span>diff_src_desc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_convolution_desc_t::diff_src_desc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Source gradient memory descriptor. </p>
+
+</div>
+</div>
+<a id="a182f81ea06178cdfec5f8e120918cef3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a182f81ea06178cdfec5f8e120918cef3">&#9670;&nbsp;</a></span>weights_desc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_convolution_desc_t::weights_desc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Weights memory descriptor. </p>
+
+</div>
+</div>
+<a id="abc4f1002e06bdd4d26cc9a28b9f4d863"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc4f1002e06bdd4d26cc9a28b9f4d863">&#9670;&nbsp;</a></span>diff_weights_desc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_convolution_desc_t::diff_weights_desc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Weights gradient memory descriptor. </p>
 
 </div>
 </div>
@@ -203,6 +284,22 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ab3fa681b587982780c1fd657f470ad09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3fa681b587982780c1fd657f470ad09">&#9670;&nbsp;</a></span>dst_desc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_convolution_desc_t::dst_desc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Destination memory descriptor. </p>
+
+</div>
+</div>
 <a id="a715b7110d7534dbeb695191f80f4c0a8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a715b7110d7534dbeb695191f80f4c0a8">&#9670;&nbsp;</a></span>diff_dst_desc</h2>
 
@@ -219,35 +316,19 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a537a6c0abb2c26ef244f62bc496ff6f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a537a6c0abb2c26ef244f62bc496ff6f2">&#9670;&nbsp;</a></span>diff_src_desc</h2>
+<a id="a55fa258e8e2ddc24de4c6fdf5562501f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55fa258e8e2ddc24de4c6fdf5562501f">&#9670;&nbsp;</a></span>strides</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_convolution_desc_t::diff_src_desc</td>
+          <td class="memname"><a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a> mkldnn_convolution_desc_t::strides</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Source gradient memory descriptor. </p>
-
-</div>
-</div>
-<a id="abc4f1002e06bdd4d26cc9a28b9f4d863"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abc4f1002e06bdd4d26cc9a28b9f4d863">&#9670;&nbsp;</a></span>diff_weights_desc</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_convolution_desc_t::diff_weights_desc</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Weights gradient memory descriptor. </p>
+<p>Convolution strides in each spatial dimension. </p>
 
 </div>
 </div>
@@ -264,22 +345,6 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Convolution dilates in each spatial dimension. </p>
-
-</div>
-</div>
-<a id="ab3fa681b587982780c1fd657f470ad09"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab3fa681b587982780c1fd657f470ad09">&#9670;&nbsp;</a></span>dst_desc</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_convolution_desc_t::dst_desc</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Destination memory descriptor. </p>
 
 </div>
 </div>
@@ -316,85 +381,20 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a682c28b217c33bb555d01b934faa8778"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a682c28b217c33bb555d01b934faa8778">&#9670;&nbsp;</a></span>primitive_kind</h2>
+<a id="a755505cf62a730a64378562d4a96b4ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a755505cf62a730a64378562d4a96b4ee">&#9670;&nbsp;</a></span>accum_data_type</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga4f5c189c2ba9ef6444250299f1f8e973">mkldnn_primitive_kind_t</a> mkldnn_convolution_desc_t::primitive_kind</td>
+          <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga826b2a9be4d94ac17f99bacac6d0cb29">mkldnn_data_type_t</a> mkldnn_convolution_desc_t::accum_data_type</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>The kind of primitive. </p>
-<p>Used for self identifying the primitive descriptor. Must be <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a88592adccf64d1fd271ed6e21d66b271" title="A convolution primitive. ">mkldnn_convolution</a>. </p>
-
-</div>
-</div>
-<a id="a4f644d4eadb8e4fce81023381b0f2d0c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4f644d4eadb8e4fce81023381b0f2d0c">&#9670;&nbsp;</a></span>prop_kind</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga5b98c8059c2aff8861157bf070c3f520">mkldnn_prop_kind_t</a> mkldnn_convolution_desc_t::prop_kind</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The kind of propagation. </p>
-<p>Possible values: <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f" title="Forward data propagation (training mode). ">mkldnn_forward_training</a>, <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a58a923fb6c4e1214e1505b5fa0b1e3fa" title="Forward data propagation (inference mode). ">mkldnn_forward_inference</a>, <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520aefa8bd2da7ba52a0a0061cfab6cf3925" title="Backward data propagation. ">mkldnn_backward_data</a>, <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a6d7c0a418ef16b8ade0b0fa1109c4b2c" title="Backward weights propagation. ">mkldnn_backward_weights</a>, and <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520aea8ef1582a476c8b2fe5741a4f7b5d23" title="Backward bias propagation. ">mkldnn_backward_bias</a>. </p>
-
-</div>
-</div>
-<a id="ac1ac756cd9506ffaf1e7d68e334e9420"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac1ac756cd9506ffaf1e7d68e334e9420">&#9670;&nbsp;</a></span>src_desc</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_convolution_desc_t::src_desc</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Source memory descriptor. </p>
-
-</div>
-</div>
-<a id="a55fa258e8e2ddc24de4c6fdf5562501f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a55fa258e8e2ddc24de4c6fdf5562501f">&#9670;&nbsp;</a></span>strides</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a> mkldnn_convolution_desc_t::strides</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Convolution strides in each spatial dimension. </p>
-
-</div>
-</div>
-<a id="a182f81ea06178cdfec5f8e120918cef3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a182f81ea06178cdfec5f8e120918cef3">&#9670;&nbsp;</a></span>weights_desc</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_convolution_desc_t::weights_desc</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Weights memory descriptor. </p>
+<p>The accumulator data type. </p>
+<p>Initialized automatically. </p>
 
 </div>
 </div>

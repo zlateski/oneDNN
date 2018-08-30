@@ -99,6 +99,34 @@ Public Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Description of tensor of weights for integer 8bit winograd convolution. </p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="a002eea2e1ad54a9b2aed4bf0679731e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a002eea2e1ad54a9b2aed4bf0679731e0">&#9670;&nbsp;</a></span>wino_format</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__c__api__types__memory.html#ga9b836385e37583fa1aeaf2753b25e966">mkldnn_wino_memory_format_t</a> mkldnn_wino_desc_t::wino_format</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a018396114414702f213e5dc17862ef90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a018396114414702f213e5dc17862ef90">&#9670;&nbsp;</a></span>r</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mkldnn_wino_desc_t::r</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ab2868e7787330abb5b48fa538b5b2a26"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab2868e7787330abb5b48fa538b5b2a26">&#9670;&nbsp;</a></span>alpha</h2>
 
@@ -127,14 +155,14 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a64c838a492d5fafd9806ce63f260dc74"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a64c838a492d5fafd9806ce63f260dc74">&#9670;&nbsp;</a></span>ic2_block</h2>
+<a id="a4d1e331529273a5fe8fa5f40624f9f8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d1e331529273a5fe8fa5f40624f9f8a">&#9670;&nbsp;</a></span>oc</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int mkldnn_wino_desc_t::ic2_block</td>
+          <td class="memname">int mkldnn_wino_desc_t::oc</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -155,14 +183,28 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a4d1e331529273a5fe8fa5f40624f9f8a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4d1e331529273a5fe8fa5f40624f9f8a">&#9670;&nbsp;</a></span>oc</h2>
+<a id="a47b3d2a7106931317f6d78102afd1215"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47b3d2a7106931317f6d78102afd1215">&#9670;&nbsp;</a></span>oc_block</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int mkldnn_wino_desc_t::oc</td>
+          <td class="memname">int mkldnn_wino_desc_t::oc_block</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a64c838a492d5fafd9806ce63f260dc74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64c838a492d5fafd9806ce63f260dc74">&#9670;&nbsp;</a></span>ic2_block</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mkldnn_wino_desc_t::ic2_block</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -183,34 +225,6 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a47b3d2a7106931317f6d78102afd1215"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a47b3d2a7106931317f6d78102afd1215">&#9670;&nbsp;</a></span>oc_block</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int mkldnn_wino_desc_t::oc_block</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a018396114414702f213e5dc17862ef90"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a018396114414702f213e5dc17862ef90">&#9670;&nbsp;</a></span>r</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int mkldnn_wino_desc_t::r</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a21b0565adbbb09671e0bdc91c92a2f6d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a21b0565adbbb09671e0bdc91c92a2f6d">&#9670;&nbsp;</a></span>size</h2>
 
@@ -219,20 +233,6 @@ Public Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">size_t mkldnn_wino_desc_t::size</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a002eea2e1ad54a9b2aed4bf0679731e0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a002eea2e1ad54a9b2aed4bf0679731e0">&#9670;&nbsp;</a></span>wino_format</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__c__api__types__memory.html#ga9b836385e37583fa1aeaf2753b25e966">mkldnn_wino_memory_format_t</a> mkldnn_wino_desc_t::wino_format</td>
         </tr>
       </table>
 </div><div class="memdoc">

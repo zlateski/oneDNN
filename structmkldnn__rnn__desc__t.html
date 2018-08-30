@@ -144,198 +144,6 @@ Public Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A descriptor for an rnn operation. </p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
-<a id="aceb44a20b686267983b1eee168ff7ce3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aceb44a20b686267983b1eee168ff7ce3">&#9670;&nbsp;</a></span>bias_desc</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_rnn_desc_t::bias_desc</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Bias memory descriptor. </p>
-
-</div>
-</div>
-<a id="a50b2aef792cdba38a22885634e7ade43"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a50b2aef792cdba38a22885634e7ade43">&#9670;&nbsp;</a></span>cell_desc</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structmkldnn__rnn__cell__desc__t.html">mkldnn_rnn_cell_desc_t</a> mkldnn_rnn_desc_t::cell_desc</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The RNN cell desc. </p>
-
-</div>
-</div>
-<a id="a2292179fb25e272a26b04b6732fa4f34"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2292179fb25e272a26b04b6732fa4f34">&#9670;&nbsp;</a></span>diff_bias_desc</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_rnn_desc_t::diff_bias_desc</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Bias gradient memory descriptor. </p>
-
-</div>
-</div>
-<a id="ae0ed320ce491eb24b4f5aa30dbf925a2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae0ed320ce491eb24b4f5aa30dbf925a2">&#9670;&nbsp;</a></span>diff_dst_iter_desc</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_rnn_desc_t::diff_dst_iter_desc</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Destination gradient iteration memory descriptor. </p>
-
-</div>
-</div>
-<a id="a7875827adcdd0109f77f137f2e380d5e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7875827adcdd0109f77f137f2e380d5e">&#9670;&nbsp;</a></span>diff_dst_layer_desc</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_rnn_desc_t::diff_dst_layer_desc</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Destination gradient layer memory descriptor. </p>
-
-</div>
-</div>
-<a id="a02b4cc4c12619b4d80b8c4503fe36b27"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a02b4cc4c12619b4d80b8c4503fe36b27">&#9670;&nbsp;</a></span>diff_src_iter_desc</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_rnn_desc_t::diff_src_iter_desc</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Source gradient iter memory descriptor. </p>
-
-</div>
-</div>
-<a id="a839534e88da65ccf2bd062680ca1fc1d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a839534e88da65ccf2bd062680ca1fc1d">&#9670;&nbsp;</a></span>diff_src_layer_desc</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_rnn_desc_t::diff_src_layer_desc</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Source gradient layer memory descriptor. </p>
-
-</div>
-</div>
-<a id="a151e00aec7f647881928746800018456"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a151e00aec7f647881928746800018456">&#9670;&nbsp;</a></span>diff_weights_iter_desc</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_rnn_desc_t::diff_weights_iter_desc</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Weights gradient iter memory descriptor. </p>
-
-</div>
-</div>
-<a id="a19447763ad2aa5c6b194c6ccf8a6e36c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a19447763ad2aa5c6b194c6ccf8a6e36c">&#9670;&nbsp;</a></span>diff_weights_layer_desc</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_rnn_desc_t::diff_weights_layer_desc</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Weights gradient layer memory descriptor. </p>
-
-</div>
-</div>
-<a id="aee95ea4d49aef7a368b06d6c96cb48ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aee95ea4d49aef7a368b06d6c96cb48ec">&#9670;&nbsp;</a></span>direction</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__c__api__types__memory.html#ga3cb09316c36bd985698e0eea542cb424">mkldnn_rnn_direction_t</a> mkldnn_rnn_desc_t::direction</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The direction of RNN primitive execution. </p>
-
-</div>
-</div>
-<a id="a33dcd86c922c81f6f0c9d8a65eab9ead"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a33dcd86c922c81f6f0c9d8a65eab9ead">&#9670;&nbsp;</a></span>dst_iter_desc</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_rnn_desc_t::dst_iter_desc</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Destination iter memory descriptor. </p>
-
-</div>
-</div>
-<a id="a1f788eb4d6893d26aa75d1d966546b99"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1f788eb4d6893d26aa75d1d966546b99">&#9670;&nbsp;</a></span>dst_layer_desc</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_rnn_desc_t::dst_layer_desc</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Destination layer memory descriptor. </p>
-
-</div>
-</div>
 <a id="acee22d21ac58aa1f9b490cbd03095f4f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acee22d21ac58aa1f9b490cbd03095f4f">&#9670;&nbsp;</a></span>primitive_kind</h2>
 
@@ -370,19 +178,35 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a6afddc2a8bfaae0f9a4bd8a980bc5814"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6afddc2a8bfaae0f9a4bd8a980bc5814">&#9670;&nbsp;</a></span>src_iter_desc</h2>
+<a id="a50b2aef792cdba38a22885634e7ade43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50b2aef792cdba38a22885634e7ade43">&#9670;&nbsp;</a></span>cell_desc</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_rnn_desc_t::src_iter_desc</td>
+          <td class="memname"><a class="el" href="structmkldnn__rnn__cell__desc__t.html">mkldnn_rnn_cell_desc_t</a> mkldnn_rnn_desc_t::cell_desc</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Source iteration memory descriptor. </p>
+<p>The RNN cell desc. </p>
+
+</div>
+</div>
+<a id="aee95ea4d49aef7a368b06d6c96cb48ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee95ea4d49aef7a368b06d6c96cb48ec">&#9670;&nbsp;</a></span>direction</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__c__api__types__memory.html#ga3cb09316c36bd985698e0eea542cb424">mkldnn_rnn_direction_t</a> mkldnn_rnn_desc_t::direction</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The direction of RNN primitive execution. </p>
 
 </div>
 </div>
@@ -402,19 +226,19 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ad5a51c64f1b0c001841b62ac6621a9ab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad5a51c64f1b0c001841b62ac6621a9ab">&#9670;&nbsp;</a></span>weights_iter_desc</h2>
+<a id="a6afddc2a8bfaae0f9a4bd8a980bc5814"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6afddc2a8bfaae0f9a4bd8a980bc5814">&#9670;&nbsp;</a></span>src_iter_desc</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_rnn_desc_t::weights_iter_desc</td>
+          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_rnn_desc_t::src_iter_desc</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Weights iteration memory descriptor. </p>
+<p>Source iteration memory descriptor. </p>
 
 </div>
 </div>
@@ -431,6 +255,182 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Weights layer memory descriptor. </p>
+
+</div>
+</div>
+<a id="ad5a51c64f1b0c001841b62ac6621a9ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5a51c64f1b0c001841b62ac6621a9ab">&#9670;&nbsp;</a></span>weights_iter_desc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_rnn_desc_t::weights_iter_desc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Weights iteration memory descriptor. </p>
+
+</div>
+</div>
+<a id="aceb44a20b686267983b1eee168ff7ce3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aceb44a20b686267983b1eee168ff7ce3">&#9670;&nbsp;</a></span>bias_desc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_rnn_desc_t::bias_desc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bias memory descriptor. </p>
+
+</div>
+</div>
+<a id="a1f788eb4d6893d26aa75d1d966546b99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f788eb4d6893d26aa75d1d966546b99">&#9670;&nbsp;</a></span>dst_layer_desc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_rnn_desc_t::dst_layer_desc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Destination layer memory descriptor. </p>
+
+</div>
+</div>
+<a id="a33dcd86c922c81f6f0c9d8a65eab9ead"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33dcd86c922c81f6f0c9d8a65eab9ead">&#9670;&nbsp;</a></span>dst_iter_desc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_rnn_desc_t::dst_iter_desc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Destination iter memory descriptor. </p>
+
+</div>
+</div>
+<a id="a839534e88da65ccf2bd062680ca1fc1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a839534e88da65ccf2bd062680ca1fc1d">&#9670;&nbsp;</a></span>diff_src_layer_desc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_rnn_desc_t::diff_src_layer_desc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Source gradient layer memory descriptor. </p>
+
+</div>
+</div>
+<a id="a02b4cc4c12619b4d80b8c4503fe36b27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02b4cc4c12619b4d80b8c4503fe36b27">&#9670;&nbsp;</a></span>diff_src_iter_desc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_rnn_desc_t::diff_src_iter_desc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Source gradient iter memory descriptor. </p>
+
+</div>
+</div>
+<a id="a19447763ad2aa5c6b194c6ccf8a6e36c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19447763ad2aa5c6b194c6ccf8a6e36c">&#9670;&nbsp;</a></span>diff_weights_layer_desc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_rnn_desc_t::diff_weights_layer_desc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Weights gradient layer memory descriptor. </p>
+
+</div>
+</div>
+<a id="a151e00aec7f647881928746800018456"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a151e00aec7f647881928746800018456">&#9670;&nbsp;</a></span>diff_weights_iter_desc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_rnn_desc_t::diff_weights_iter_desc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Weights gradient iter memory descriptor. </p>
+
+</div>
+</div>
+<a id="a2292179fb25e272a26b04b6732fa4f34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2292179fb25e272a26b04b6732fa4f34">&#9670;&nbsp;</a></span>diff_bias_desc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_rnn_desc_t::diff_bias_desc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bias gradient memory descriptor. </p>
+
+</div>
+</div>
+<a id="a7875827adcdd0109f77f137f2e380d5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7875827adcdd0109f77f137f2e380d5e">&#9670;&nbsp;</a></span>diff_dst_layer_desc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_rnn_desc_t::diff_dst_layer_desc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Destination gradient layer memory descriptor. </p>
+
+</div>
+</div>
+<a id="ae0ed320ce491eb24b4f5aa30dbf925a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0ed320ce491eb24b4f5aa30dbf925a2">&#9670;&nbsp;</a></span>diff_dst_iter_desc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_rnn_desc_t::diff_dst_iter_desc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Destination gradient iteration memory descriptor. </p>
 
 </div>
 </div>

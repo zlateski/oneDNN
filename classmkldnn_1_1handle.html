@@ -193,8 +193,8 @@ template&lt;typename T, typename traits = handle_traits&lt;T&gt;&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a3b8de62237162afc882d0e8218db92e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3b8de62237162afc882d0e8218db92e3">&#9670;&nbsp;</a></span>get()</h2>
+<a id="ad135afaafdc43a420a05c509d56b0d14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad135afaafdc43a420a05c509d56b0d14">&#9670;&nbsp;</a></span>operator==() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -205,20 +205,19 @@ template&lt;typename T, typename traits = handle_traits&lt;T&gt;&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">T <a class="el" href="classmkldnn_1_1handle.html">mkldnn::handle</a>&lt; T, traits &gt;::get </td>
+          <td class="memname">bool <a class="el" href="classmkldnn_1_1handle.html">mkldnn::handle</a>&lt; T, traits &gt;::operator== </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">const T&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Returns the value of the underlying C handle. </p>
 
 </div>
 </div>
@@ -250,34 +249,6 @@ template&lt;typename T, typename traits = handle_traits&lt;T&gt;&gt; </div>
 
 </div>
 </div>
-<a id="a378ad7a0860779cef5e7c4633d7bfe80"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a378ad7a0860779cef5e7c4633d7bfe80">&#9670;&nbsp;</a></span>operator!=() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T, typename traits = handle_traits&lt;T&gt;&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool <a class="el" href="classmkldnn_1_1handle.html">mkldnn::handle</a>&lt; T, traits &gt;::operator!= </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classmkldnn_1_1handle.html">handle</a>&lt; T, traits &gt; &amp;&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a09e6a786752e89ba4a7a2c4b566b1f74"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a09e6a786752e89ba4a7a2c4b566b1f74">&#9670;&nbsp;</a></span>operator=()</h2>
 
@@ -295,62 +266,6 @@ template&lt;typename T, typename traits = handle_traits&lt;T&gt;&gt; </div>
           <td class="paramtype">const <a class="el" href="classmkldnn_1_1handle.html">handle</a>&lt; T, traits &gt; &amp;&#160;</td>
           <td class="paramname"><em>other</em></td><td>)</td>
           <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ad135afaafdc43a420a05c509d56b0d14"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad135afaafdc43a420a05c509d56b0d14">&#9670;&nbsp;</a></span>operator==() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T, typename traits = handle_traits&lt;T&gt;&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool <a class="el" href="classmkldnn_1_1handle.html">mkldnn::handle</a>&lt; T, traits &gt;::operator== </td>
-          <td>(</td>
-          <td class="paramtype">const T&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a7a140b0d445190446abe5e83420d4e66"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7a140b0d445190446abe5e83420d4e66">&#9670;&nbsp;</a></span>operator==() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T, typename traits = handle_traits&lt;T&gt;&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool <a class="el" href="classmkldnn_1_1handle.html">mkldnn::handle</a>&lt; T, traits &gt;::operator== </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classmkldnn_1_1handle.html">handle</a>&lt; T, traits &gt; &amp;&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
-          <td> const</td>
         </tr>
       </table>
   </td>
@@ -406,6 +321,91 @@ template&lt;typename T, typename traits = handle_traits&lt;T&gt;&gt; </div>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a3b8de62237162afc882d0e8218db92e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b8de62237162afc882d0e8218db92e3">&#9670;&nbsp;</a></span>get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, typename traits = handle_traits&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="classmkldnn_1_1handle.html">mkldnn::handle</a>&lt; T, traits &gt;::get </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the value of the underlying C handle. </p>
+
+</div>
+</div>
+<a id="a7a140b0d445190446abe5e83420d4e66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a140b0d445190446abe5e83420d4e66">&#9670;&nbsp;</a></span>operator==() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, typename traits = handle_traits&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classmkldnn_1_1handle.html">mkldnn::handle</a>&lt; T, traits &gt;::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmkldnn_1_1handle.html">handle</a>&lt; T, traits &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a378ad7a0860779cef5e7c4633d7bfe80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a378ad7a0860779cef5e7c4633d7bfe80">&#9670;&nbsp;</a></span>operator!=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, typename traits = handle_traits&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classmkldnn_1_1handle.html">mkldnn::handle</a>&lt; T, traits &gt;::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmkldnn_1_1handle.html">handle</a>&lt; T, traits &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

@@ -116,116 +116,6 @@ Public Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A descriptor of a Batch Normalization operation. </p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
-<a id="a55e7d8aa621ad4e8ff5fd452a99e3d21"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a55e7d8aa621ad4e8ff5fd452a99e3d21">&#9670;&nbsp;</a></span>batch_norm_epsilon</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float mkldnn_batch_normalization_desc_t::batch_norm_epsilon</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Batch normalization epsilon parameter. </p>
-
-</div>
-</div>
-<a id="a2370d1407d7bade078a19da54520a27f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2370d1407d7bade078a19da54520a27f">&#9670;&nbsp;</a></span>data_desc</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_batch_normalization_desc_t::data_desc</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Source and destination memory descriptor. </p>
-
-</div>
-</div>
-<a id="a2992500f60f04446c165f874b778be3f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2992500f60f04446c165f874b778be3f">&#9670;&nbsp;</a></span>data_scaleshift_desc</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_batch_normalization_desc_t::data_scaleshift_desc</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Scale and shift data and gradient memory descriptors. </p>
-<p>Scaleshift memory descriptor uses 2D <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a2838f6827b40434fb9584eb3efe1a0ae" title="2D data tensor. ">mkldnn_nc</a> format[2,Channels]. 1-st dimension contains gamma parameter, 2-nd dimension contains beta parameter. </p>
-
-</div>
-</div>
-<a id="a2742f10a03b069e58cf2a2368976d18c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2742f10a03b069e58cf2a2368976d18c">&#9670;&nbsp;</a></span>diff_data_desc</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_batch_normalization_desc_t::diff_data_desc</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Source and destination gradient memory descriptor. </p>
-
-</div>
-</div>
-<a id="a5a30d268c38384b4f9af1ca1598d9251"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5a30d268c38384b4f9af1ca1598d9251">&#9670;&nbsp;</a></span>diff_data_scaleshift_desc</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_batch_normalization_desc_t::diff_data_scaleshift_desc</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="abb072997a29f19acc17a1b9a3a1ccfcd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb072997a29f19acc17a1b9a3a1ccfcd">&#9670;&nbsp;</a></span>flags</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">unsigned mkldnn_batch_normalization_desc_t::flags</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aa56c0bf1307a56b442a1c8381a572d8b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa56c0bf1307a56b442a1c8381a572d8b">&#9670;&nbsp;</a></span>mean_desc</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_batch_normalization_desc_t::mean_desc</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Mean and variance data memory descriptors. </p>
-<p>Mean and variance memory descriptors use 1D <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a494a09557958694ff1aece6b4667d87f" title="1D data tensor. ">mkldnn_x</a> format[Channels]. </p>
-
-</div>
-</div>
 <a id="a6deedb90264f103c78b582ec5efb66f2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6deedb90264f103c78b582ec5efb66f2">&#9670;&nbsp;</a></span>primitive_kind</h2>
 
@@ -260,6 +150,86 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a2370d1407d7bade078a19da54520a27f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2370d1407d7bade078a19da54520a27f">&#9670;&nbsp;</a></span>data_desc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_batch_normalization_desc_t::data_desc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Source and destination memory descriptor. </p>
+
+</div>
+</div>
+<a id="a2742f10a03b069e58cf2a2368976d18c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2742f10a03b069e58cf2a2368976d18c">&#9670;&nbsp;</a></span>diff_data_desc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_batch_normalization_desc_t::diff_data_desc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Source and destination gradient memory descriptor. </p>
+
+</div>
+</div>
+<a id="a2992500f60f04446c165f874b778be3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2992500f60f04446c165f874b778be3f">&#9670;&nbsp;</a></span>data_scaleshift_desc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_batch_normalization_desc_t::data_scaleshift_desc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Scale and shift data and gradient memory descriptors. </p>
+<p>Scaleshift memory descriptor uses 2D <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a2838f6827b40434fb9584eb3efe1a0ae" title="2D data tensor. ">mkldnn_nc</a> format[2,Channels]. 1-st dimension contains gamma parameter, 2-nd dimension contains beta parameter. </p>
+
+</div>
+</div>
+<a id="a5a30d268c38384b4f9af1ca1598d9251"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a30d268c38384b4f9af1ca1598d9251">&#9670;&nbsp;</a></span>diff_data_scaleshift_desc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_batch_normalization_desc_t::diff_data_scaleshift_desc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa56c0bf1307a56b442a1c8381a572d8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa56c0bf1307a56b442a1c8381a572d8b">&#9670;&nbsp;</a></span>mean_desc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_batch_normalization_desc_t::mean_desc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mean and variance data memory descriptors. </p>
+<p>Mean and variance memory descriptors use 1D <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a494a09557958694ff1aece6b4667d87f" title="1D data tensor. ">mkldnn_x</a> format[Channels]. </p>
+
+</div>
+</div>
 <a id="a0b77081ca4865c1dcd40e349b78f4d95"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0b77081ca4865c1dcd40e349b78f4d95">&#9670;&nbsp;</a></span>variance_desc</h2>
 
@@ -268,6 +238,36 @@ Public Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_batch_normalization_desc_t::variance_desc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a55e7d8aa621ad4e8ff5fd452a99e3d21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55e7d8aa621ad4e8ff5fd452a99e3d21">&#9670;&nbsp;</a></span>batch_norm_epsilon</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float mkldnn_batch_normalization_desc_t::batch_norm_epsilon</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Batch normalization epsilon parameter. </p>
+
+</div>
+</div>
+<a id="abb072997a29f19acc17a1b9a3a1ccfcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb072997a29f19acc17a1b9a3a1ccfcd">&#9670;&nbsp;</a></span>flags</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned mkldnn_batch_normalization_desc_t::flags</td>
         </tr>
       </table>
 </div><div class="memdoc">
