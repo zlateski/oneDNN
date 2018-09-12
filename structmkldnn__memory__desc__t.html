@@ -91,7 +91,7 @@ Public Attributes</h2></td></tr>
 <tr class="memdesc:a8fc71fc8a04e665573f86442bda4dc4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of dimensions.  <a href="#a8fc71fc8a04e665573f86442bda4dc4c">More...</a><br /></td></tr>
 <tr class="separator:a8fc71fc8a04e665573f86442bda4dc4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c5fde2a68d65f5e0e7701463a91de50"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__memory__desc__t.html#a0c5fde2a68d65f5e0e7701463a91de50">dims</a></td></tr>
-<tr class="memdesc:a0c5fde2a68d65f5e0e7701463a91de50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dimensions in the following order: mini-batch, channel, spatial.  <a href="#a0c5fde2a68d65f5e0e7701463a91de50">More...</a><br /></td></tr>
+<tr class="memdesc:a0c5fde2a68d65f5e0e7701463a91de50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dimensions in the following order:  <a href="#a0c5fde2a68d65f5e0e7701463a91de50">More...</a><br /></td></tr>
 <tr class="separator:a0c5fde2a68d65f5e0e7701463a91de50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a441cabfef135618e8018a473ef633bb7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga826b2a9be4d94ac17f99bacac6d0cb29">mkldnn_data_type_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__memory__desc__t.html#a441cabfef135618e8018a473ef633bb7">data_type</a></td></tr>
 <tr class="memdesc:a441cabfef135618e8018a473ef633bb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data type of the tensor elements.  <a href="#a441cabfef135618e8018a473ef633bb7">More...</a><br /></td></tr>
@@ -158,8 +158,13 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Dimensions in the following order: mini-batch, channel, spatial. </p>
-<p>For example: <code>{N, C, H, W}</code>. </p>
+<p>Dimensions in the following order: </p>
+<ul>
+<li>CNN data tensors: mini-batch, channel, spatial (<code>{N, C, [D,] H, W}</code>)</li>
+<li>CNN weight tensors: group (optional), output channel, input channel, spatial (<code>{[G,] O, I, [D,] H, W}<code>)</code></code></li>
+<li><code><code>RNN data tensors: time, mini-batch, channels (<code>{T, N, C}</code>) or layers, directions, states, mini-batch, channels (<code>{L, D, S, N, C}</code>)</code></code></li>
+<li><code><code>RNN weight tensor: layers, directions, input channel, gates, output channels (<code>{L, D, I, G, O}</code>). </code></code></li>
+</ul>
 
 </div>
 </div>

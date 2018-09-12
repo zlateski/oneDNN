@@ -558,14 +558,17 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="gga30a390f87ef74bf03dfa48a7b3f2fb74a315cfab7829564b47079d13e46dd3edc"></a>mkldnn_ldsnc&#160;</td><td class="fielddoc"><p>5D states tensor in the format (num_layers, num_directions, num_states, batch, state channels). </p>
 </td></tr>
 <tr><td class="fieldname"><a id="gga30a390f87ef74bf03dfa48a7b3f2fb74a8297cb7a081984c40f40ed9d24a4023a"></a>mkldnn_ldigo&#160;</td><td class="fielddoc"><p>5D weights tensor in the format (num_layers, num_directions, input_chanels, num_gates, output_channels). </p>
+<p>For LSTM cells, the gates order is forget, input, output and candidate gate. For GRU cells, the gates order is update, reset and output gate. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="gga30a390f87ef74bf03dfa48a7b3f2fb74aa01ef053fccf8bd78da948b9c61cc758"></a>mkldnn_ldigo_p&#160;</td><td class="fielddoc"><p>5D weights tensor in the blocked format. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="gga30a390f87ef74bf03dfa48a7b3f2fb74abd0d254bc5c97521e05c590ae9de8364"></a>mkldnn_ldgoi&#160;</td><td class="fielddoc"><p>5D weights tensor in the format (num_layers, num_directions, num_gates, output_channels, input_chanels). </p>
+<p>For LSTM cells, the gates order is forget, input, output and candidate gate. For GRU cells, the gates order is update, reset and output gate. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="gga30a390f87ef74bf03dfa48a7b3f2fb74ae3debd06f01fcfc7249e64922652ed4f"></a>mkldnn_ldgoi_p&#160;</td><td class="fielddoc"><p>5D weights tensor in the blocked format. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="gga30a390f87ef74bf03dfa48a7b3f2fb74ac5b1fb199e6e5c031766bb72dabb1859"></a>mkldnn_ldgo&#160;</td><td class="fielddoc"><p>4D bias tensor in the format (num_layers, num_directions, num_gates, output_channels). </p>
+<p>For LSTM cells, the gates order is forget, input, output and candidate gate. For GRU cells, the gates order is update, reset and output gate. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="gga30a390f87ef74bf03dfa48a7b3f2fb74a28bcfa51875bf06c8b336dcba069f5c0"></a>mkldnn_wino_fmt&#160;</td><td class="fielddoc"><p>General tensor format for integer 8bit winograd convolution. </p>
 </td></tr>
