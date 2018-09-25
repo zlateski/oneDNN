@@ -16,5 +16,6 @@ var searchData=
   ['input_5fpd',['input_pd',['../group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a508fa6b849113ef2100177d2991129fe',1,'mkldnn']]],
   ['io',['io',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eabdc33953230281d5e6413d2fb78b06ce',1,'mkldnn::memory']]],
   ['iohw16o16i',['IOhw16o16i',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eab597424c8b1e8eba637f467898809edc',1,'mkldnn::memory']]],
+  ['iow16o16i',['IOw16o16i',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eaed535314a63359a56cc57b07101adebf',1,'mkldnn::memory']]],
   ['is_5fnull_5fmemory',['is_null_memory',['../group__cpp__api__memory.html#ga2f261589e9cd70a5a46debfd5146aafd',1,'mkldnn']]]
 ];

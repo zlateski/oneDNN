@@ -19,6 +19,7 @@ var searchData=
   ['get_5fsize',['get_size',['../structmkldnn_1_1memory_1_1primitive__desc.html#ae2d72838806aabc3dd865157631f7000',1,'mkldnn::memory::primitive_desc']]],
   ['get_5fstate_5fcount',['get_state_count',['../structmkldnn_1_1rnn__cell_1_1desc.html#a211a746a38b126faccaafc6604832308',1,'mkldnn::rnn_cell::desc']]],
   ['giohw16o16i',['gIOhw16o16i',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eaed5bd42c3c68a277cbdca346a72251fa',1,'mkldnn::memory']]],
+  ['giow16o16i',['gIOw16o16i',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea2fd35c34941e7889928ccedb4be2a0d7',1,'mkldnn::memory']]],
   ['godhwi16o',['gOdhwi16o',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea4b5d3797672c5c4d2cf427b68a89fb46',1,'mkldnn::memory']]],
   ['godhwi8o',['gOdhwi8o',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eace15960b3ccbb40e81009787fb946122',1,'mkldnn::memory']]],
   ['gohiw16o4i',['gOhIw16o4i',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea12dbcd423f39fcd621b399d494e5dfe7',1,'mkldnn::memory']]],
@@ -43,5 +44,15 @@ var searchData=
   ['goihw8o',['gOihw8o',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea3026eb87a3233587bee2d15882e21d63',1,'mkldnn::memory']]],
   ['goihw8o16i2o',['gOIhw8o16i2o',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea924d233b52d5b5cbad3f00280e7bae61',1,'mkldnn::memory']]],
   ['goihw8o8i',['gOIhw8o8i',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eacaf364857cd0309c67bb6dff621ee71e',1,'mkldnn::memory']]],
+  ['goiw',['goiw',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eaeb690c293caf6de6ed3ce832d341de3d',1,'mkldnn::memory']]],
+  ['goiw16i16o',['gOIw16i16o',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eab9790d2ffba16d965d763e35e4a592bd',1,'mkldnn::memory']]],
+  ['goiw16o',['gOiw16o',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea81425d50ca1fc18583e467ce7e50153a',1,'mkldnn::memory']]],
+  ['goiw16o16i',['gOIw16o16i',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea3f917d22e2935749fb44f0cd8741d3c0',1,'mkldnn::memory']]],
+  ['goiw8i16o2i',['gOIw8i16o2i',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eaccb091227320c06ff83644170e6dce47',1,'mkldnn::memory']]],
+  ['goiw8i8o',['gOIw8i8o',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea03a23792cc967192e0f9f5f2d07fdf1d',1,'mkldnn::memory']]],
+  ['goiw8o16i2o',['gOIw8o16i2o',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea8043d9e15eeffb65152fb60958e476e5',1,'mkldnn::memory']]],
+  ['goiw8o8i',['gOIw8o8i',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eac64e94f44284fed5af0f671335eb84e3',1,'mkldnn::memory']]],
+  ['gowi16o',['gOwi16o',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea8a096a7b192d719fa8cc9af4df546c0e',1,'mkldnn::memory']]],
+  ['gowi8o',['gOwi8o',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea3385087517d8e2e46044235b848c9fa5',1,'mkldnn::memory']]],
   ['gru_5flinear_5fbefore_5freset',['gru_linear_before_reset',['../group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076aa5849021a7e673154284f5bd65597e80',1,'mkldnn']]]
 ];
