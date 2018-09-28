@@ -160,11 +160,12 @@ Public Attributes</h2></td></tr>
 
 <p>Dimensions in the following order: </p>
 <ul>
-<li>CNN data tensors: mini-batch, channel, spatial (<code>{N, C, [D,] H, W}</code>)</li>
-<li>CNN weight tensors: group (optional), output channel, input channel, spatial (<code>{[G,] O, I, [D,] H, W}<code>)</code></code></li>
-<li><code><code>RNN data tensors: time, mini-batch, channels (<code>{T, N, C}</code>) or layers, directions, states, mini-batch, channels (<code>{L, D, S, N, C}</code>)</code></code></li>
-<li><code><code>RNN weight tensor: layers, directions, input channel, gates, output channels (<code>{L, D, I, G, O}</code>). </code></code></li>
+<li>CNN data tensors: mini-batch, channel, spatial (<code>{N, C, [[D,] H,] W}</code>)</li>
+<li>CNN weight tensors: group (optional), output channel, input channel, spatial (<code>{[G,] O, I, [[D,] H,] W}</code>)</li>
+<li>RNN data tensors: time, mini-batch, channels (<code>{T, N, C}</code>) or layers, directions, states, mini-batch, channels (<code>{L, D, S, N, C}</code>)</li>
+<li>RNN weight tensor: layers, directions, input channel, gates, output channels (<code>{L, D, I, G, O}</code>).</li>
 </ul>
+<dl class="section note"><dt>Note</dt><dd>The order of dimensions does not depend on the memory format, so no matter whether the data is laid in <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74aed4a51a8db128a648b942882369a06d6" title="4D data tensor with the physical layout nchw, used in Caffe. ">mkldnn_nchw</a> or <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74adf1fb06f73cf8dd23ae620eea6516526" title="4D data tensor with the physical layout nhwc, used in TensorFlow. ">mkldnn_nhwc</a> the dims for 4D CN data tensor would be <code>{N, C, H, W}</code> </dd></dl>
 
 </div>
 </div>
