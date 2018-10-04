@@ -114,6 +114,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ga2af6efd247f27cf356b511c6ea03604f inherit pub_methods_classmkldnn_1_1primitive"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the descriptor of the underlying C API primitive.  <a href="group__cpp__api__utils.html#ga2af6efd247f27cf356b511c6ea03604f">More...</a><br /></td></tr>
 <tr class="separator:ga2af6efd247f27cf356b511c6ea03604f inherit pub_methods_classmkldnn_1_1primitive"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classmkldnn_1_1handle"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classmkldnn_1_1handle')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classmkldnn_1_1handle.html">mkldnn::handle&lt; mkldnn_primitive_t &gt;</a></td></tr>
+<tr class="memitem:a4194187ee28bdeab2b529f892e487ea3 inherit pub_methods_classmkldnn_1_1handle"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmkldnn_1_1handle.html#a4194187ee28bdeab2b529f892e487ea3">handle</a> (<a class="el" href="group__c__api__types__primitive.html#gac7821f6b4a4fa0d58fe5279a1ff2fda3">mkldnn_primitive_t</a> t=0, bool weak=false)</td></tr>
+<tr class="memdesc:a4194187ee28bdeab2b529f892e487ea3 inherit pub_methods_classmkldnn_1_1handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a C handle wrapper.  <a href="classmkldnn_1_1handle.html#a4194187ee28bdeab2b529f892e487ea3">More...</a><br /></td></tr>
+<tr class="separator:a4194187ee28bdeab2b529f892e487ea3 inherit pub_methods_classmkldnn_1_1handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc0d8bf89b381da03c8a2173896322cc inherit pub_methods_classmkldnn_1_1handle"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmkldnn_1_1handle.html#adc0d8bf89b381da03c8a2173896322cc">handle</a> (const <a class="el" href="classmkldnn_1_1handle.html">handle</a> &amp;other)</td></tr>
 <tr class="separator:adc0d8bf89b381da03c8a2173896322cc inherit pub_methods_classmkldnn_1_1handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09e6a786752e89ba4a7a2c4b566b1f74 inherit pub_methods_classmkldnn_1_1handle"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmkldnn_1_1handle.html">handle</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmkldnn_1_1handle.html#a09e6a786752e89ba4a7a2c4b566b1f74">operator=</a> (const <a class="el" href="classmkldnn_1_1handle.html">handle</a> &amp;other)</td></tr>
@@ -144,25 +147,23 @@ Additional Inherited Members</h2></td></tr>
 <a class="el" href="classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00daa9595c1c24c33b16056d2ad07e71682d">kind::convolution</a> = mkldnn_convolution, 
 <br />
 &#160;&#160;<a class="el" href="classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00da2294014fceafa2f8ca8d16ad35f25875">kind::deconvolution</a> = mkldnn_deconvolution, 
+<a class="el" href="classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00da644c45fc2b003bf415a3fb655412508d">kind::shuffle</a> = mkldnn_shuffle, 
 <a class="el" href="classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00da98b908c7d0339bb6a4832db44fc2c8da">kind::eltwise</a> = mkldnn_eltwise, 
 <a class="el" href="classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00dabc5ce62b39aff2f661146911808eadc1">kind::relu</a> = mkldnn_relu, 
-<a class="el" href="classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00dace2f1fbd249d24aabc07ac4488ab5b8c">kind::softmax</a> = mkldnn_softmax, 
 <br />
-&#160;&#160;<a class="el" href="classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00da4abcef116566139e94c82bb1bb37583f">kind::pooling</a> = mkldnn_pooling, 
+&#160;&#160;<a class="el" href="classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00dace2f1fbd249d24aabc07ac4488ab5b8c">kind::softmax</a> = mkldnn_softmax, 
+<a class="el" href="classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00da4abcef116566139e94c82bb1bb37583f">kind::pooling</a> = mkldnn_pooling, 
 <a class="el" href="classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00da7d9c7d1747abfac2c3c3ff337712f575">kind::lrn</a> = mkldnn_lrn, 
 <a class="el" href="classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00da780789647a31acedb6477412a99154bb">kind::batch_normalization</a> = mkldnn_batch_normalization, 
-<a class="el" href="classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00da30813812e3beef3eefcc2b97dc2e0783">kind::inner_product</a> = mkldnn_inner_product, 
 <br />
-&#160;&#160;<a class="el" href="classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00dae5f1605cfaaac60c3cd6af9d086e0651">kind::convolution_relu</a> = mkldnn_convolution_relu, 
+&#160;&#160;<a class="el" href="classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00da30813812e3beef3eefcc2b97dc2e0783">kind::inner_product</a> = mkldnn_inner_product, 
+<a class="el" href="classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00dae5f1605cfaaac60c3cd6af9d086e0651">kind::convolution_relu</a> = mkldnn_convolution_relu, 
 <a class="el" href="classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00da6eed45b9327120cabad6916919a9a600">kind::rnn</a> = mkldnn_rnn
 <br />
  }<tr class="memdesc:ac42347ba533ce9b531c1a29e330ac00d"><td class="mdescLeft">&#160;</td><td class="mdescRight">A proxy to C primitive kind enum.  <a href="classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00d">More...</a><br /></td></tr>
 </td></tr>
 <tr class="separator:ac42347ba533ce9b531c1a29e330ac00d inherit pub_types_classmkldnn_1_1primitive"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classmkldnn_1_1handle"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classmkldnn_1_1handle')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classmkldnn_1_1handle.html">mkldnn::handle&lt; mkldnn_primitive_t &gt;</a></td></tr>
-<tr class="memitem:a4194187ee28bdeab2b529f892e487ea3 inherit pro_methods_classmkldnn_1_1handle"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmkldnn_1_1handle.html#a4194187ee28bdeab2b529f892e487ea3">handle</a> (<a class="el" href="group__c__api__types__primitive.html#gac7821f6b4a4fa0d58fe5279a1ff2fda3">mkldnn_primitive_t</a> t=0, bool weak=false)</td></tr>
-<tr class="memdesc:a4194187ee28bdeab2b529f892e487ea3 inherit pro_methods_classmkldnn_1_1handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a C handle wrapper.  <a href="classmkldnn_1_1handle.html#a4194187ee28bdeab2b529f892e487ea3">More...</a><br /></td></tr>
-<tr class="separator:a4194187ee28bdeab2b529f892e487ea3 inherit pro_methods_classmkldnn_1_1handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad135afaafdc43a420a05c509d56b0d14 inherit pro_methods_classmkldnn_1_1handle"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmkldnn_1_1handle.html#ad135afaafdc43a420a05c509d56b0d14">operator==</a> (const <a class="el" href="group__c__api__types__primitive.html#gac7821f6b4a4fa0d58fe5279a1ff2fda3">mkldnn_primitive_t</a> other) const</td></tr>
 <tr class="separator:ad135afaafdc43a420a05c509d56b0d14 inherit pro_methods_classmkldnn_1_1handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a98414546e5ca9f7726dc21311c6bcefc inherit pro_methods_classmkldnn_1_1handle"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmkldnn_1_1handle.html#a98414546e5ca9f7726dc21311c6bcefc">operator!=</a> (const <a class="el" href="group__c__api__types__primitive.html#gac7821f6b4a4fa0d58fe5279a1ff2fda3">mkldnn_primitive_t</a> other) const</td></tr>

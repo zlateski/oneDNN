@@ -82,6 +82,9 @@ $(function() {
 , <a class="el" href="structmkldnn__rnn__cell__desc__t.html#ac7ffba7a83073b0e4f7899f8ff7f80e9">mkldnn_rnn_cell_desc_t</a>
 , <a class="el" href="structmkldnn__wino__desc__t.html#ab2868e7787330abb5b48fa538b5b2a26">mkldnn_wino_desc_t</a>
 </li>
+<li>axis
+: <a class="el" href="structmkldnn__shuffle__desc__t.html#a03e62c454b8694a9f6b8f634c99b19dc">mkldnn_shuffle_desc_t</a>
+</li>
 </ul>
 
 
@@ -149,6 +152,8 @@ $(function() {
 , <a class="el" href="structmkldnn_1_1primitive_1_1at.html#a4961f21e96c398293a16deccc2bc89b0">mkldnn::primitive::at</a>
 , <a class="el" href="structmkldnn_1_1rnn__backward_1_1desc.html#ae0712e146438587d37e404b4c747c776">mkldnn::rnn_backward::desc</a>
 , <a class="el" href="structmkldnn_1_1rnn__forward_1_1desc.html#a6b2d9098bd3f5624de19afa50e3973fa">mkldnn::rnn_forward::desc</a>
+, <a class="el" href="structmkldnn_1_1shuffle__backward_1_1desc.html#a3bf20e13e67d7f02871ce6f797e2144c">mkldnn::shuffle_backward::desc</a>
+, <a class="el" href="structmkldnn_1_1shuffle__forward_1_1desc.html#a09bf7383efe45e6127069d6a23bf6e45">mkldnn::shuffle_forward::desc</a>
 , <a class="el" href="structmkldnn_1_1softmax__backward_1_1desc.html#ac299716581aa917b4f8a5ce06ae1ac97">mkldnn::softmax_backward::desc</a>
 , <a class="el" href="structmkldnn_1_1softmax__forward_1_1desc.html#a9c897c20a09e9353ad6b9a1dd76bb54a">mkldnn::softmax_forward::desc</a>
 </li>
@@ -156,6 +161,7 @@ $(function() {
 : <a class="el" href="structmkldnn__batch__normalization__desc__t.html#a2370d1407d7bade078a19da54520a27f">mkldnn_batch_normalization_desc_t</a>
 , <a class="el" href="structmkldnn__eltwise__desc__t.html#a100ec7dcbd9cec02eeba8e9a3227998a">mkldnn_eltwise_desc_t</a>
 , <a class="el" href="structmkldnn__lrn__desc__t.html#adc017003db2bd578ecc611b8c88646a4">mkldnn_lrn_desc_t</a>
+, <a class="el" href="structmkldnn__shuffle__desc__t.html#ae33cc2cc2d5e497038f4d1ed5b7af7da">mkldnn_shuffle_desc_t</a>
 , <a class="el" href="structmkldnn__softmax__desc__t.html#ab0289861a276e80bb6e07c0fb4f7b4bf">mkldnn_softmax_desc_t</a>
 </li>
 <li>data_scaleshift_desc
@@ -253,6 +259,13 @@ $(function() {
 </ul>
 
 
+<h3><a id="index_g"></a>- g -</h3><ul>
+<li>group_size
+: <a class="el" href="structmkldnn__shuffle__desc__t.html#ab9ea74d5467ea015ec8019be53c804ed">mkldnn_shuffle_desc_t</a>
+</li>
+</ul>
+
+
 <h3><a id="index_i"></a>- i -</h3><ul>
 <li>ic
 : <a class="el" href="structmkldnn__wino__desc__t.html#aa9895356b83c7142b760c75186d55b23">mkldnn_wino_desc_t</a>
@@ -275,7 +288,7 @@ $(function() {
 
 <h3><a id="index_l"></a>- l -</h3><ul>
 <li>layout_desc
-: <a class="el" href="structmkldnn__memory__desc__t.html#ae49f98c84c36039ec2984c3ecf981c8e">mkldnn_memory_desc_t</a>
+: <a class="el" href="structmkldnn__memory__desc__t.html#ae92e4e92d5c7728bffd29ab317908f12">mkldnn_memory_desc_t</a>
 </li>
 <li>local_size
 : <a class="el" href="structmkldnn__lrn__desc__t.html#a6e4711d09762d5c3a38dac99ab4397df">mkldnn_lrn_desc_t</a>
@@ -360,6 +373,7 @@ $(function() {
 , <a class="el" href="structmkldnn__memory__desc__t.html#ae526956917623651d928b0ef87a55363">mkldnn_memory_desc_t</a>
 , <a class="el" href="structmkldnn__pooling__desc__t.html#a31c30cf38b01f1514454ba5ea5b662a5">mkldnn_pooling_desc_t</a>
 , <a class="el" href="structmkldnn__rnn__desc__t.html#acee22d21ac58aa1f9b490cbd03095f4f">mkldnn_rnn_desc_t</a>
+, <a class="el" href="structmkldnn__shuffle__desc__t.html#a49d5d6f7f56debccf0a41669e220ec03">mkldnn_shuffle_desc_t</a>
 , <a class="el" href="structmkldnn__softmax__desc__t.html#a785d79cd4e55b3a08cc6dd1d78a0246c">mkldnn_softmax_desc_t</a>
 </li>
 <li>prop_kind
@@ -370,6 +384,7 @@ $(function() {
 , <a class="el" href="structmkldnn__lrn__desc__t.html#a5fbf21ce499720a33fad23fc6e850fba">mkldnn_lrn_desc_t</a>
 , <a class="el" href="structmkldnn__pooling__desc__t.html#a2ea858e8b663b632524019f25fae29b7">mkldnn_pooling_desc_t</a>
 , <a class="el" href="structmkldnn__rnn__desc__t.html#ad00acc601846698014551650103c7232">mkldnn_rnn_desc_t</a>
+, <a class="el" href="structmkldnn__shuffle__desc__t.html#af113858e24fd9b3e5005fdf1a612d74e">mkldnn_shuffle_desc_t</a>
 , <a class="el" href="structmkldnn__softmax__desc__t.html#ae12558bf1611a74bf83ade019b2b081d">mkldnn_softmax_desc_t</a>
 </li>
 </ul>

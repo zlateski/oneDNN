@@ -22,9 +22,11 @@
 <area shape="rect" id="node23" href="$structmkldnn_1_1reorder.html" title="mkldnn::reorder" alt="" coords="428,1197,540,1224"/>
 <area shape="rect" id="node24" href="$structmkldnn_1_1rnn__backward.html" title="mkldnn::rnn_backward" alt="" coords="407,1248,561,1275"/>
 <area shape="rect" id="node25" href="$structmkldnn_1_1rnn__forward.html" title="mkldnn::rnn_forward" alt="" coords="414,1299,554,1325"/>
-<area shape="rect" id="node26" href="$structmkldnn_1_1softmax__backward.html" title="mkldnn::softmax_backward" alt="" coords="393,1349,575,1376"/>
-<area shape="rect" id="node27" href="$structmkldnn_1_1softmax__forward.html" title="mkldnn::softmax_forward" alt="" coords="399,1400,569,1427"/>
-<area shape="rect" id="node28" href="$structmkldnn_1_1sum.html" title="mkldnn::sum" alt="" coords="435,1451,533,1477"/>
-<area shape="rect" id="node29" href="$structmkldnn_1_1view.html" title="mkldnn::view" alt="" coords="435,1501,533,1528"/>
-<area shape="rect" id="node2" href="$classmkldnn_1_1handle.html" title="mkldnn::handle\&lt; mkldnn\l_primitive_t \&gt;" alt="" coords="6,813,170,854"/>
+<area shape="rect" id="node26" href="$structmkldnn_1_1shuffle__backward.html" title="mkldnn::shuffle_backward" alt="" coords="397,1349,571,1376"/>
+<area shape="rect" id="node27" href="$structmkldnn_1_1shuffle__forward.html" title="mkldnn::shuffle_forward" alt="" coords="403,1400,565,1427"/>
+<area shape="rect" id="node28" href="$structmkldnn_1_1softmax__backward.html" title="mkldnn::softmax_backward" alt="" coords="393,1451,575,1477"/>
+<area shape="rect" id="node29" href="$structmkldnn_1_1softmax__forward.html" title="mkldnn::softmax_forward" alt="" coords="399,1501,569,1528"/>
+<area shape="rect" id="node30" href="$structmkldnn_1_1sum.html" title="mkldnn::sum" alt="" coords="435,1552,533,1579"/>
+<area shape="rect" id="node31" href="$structmkldnn_1_1view.html" title="mkldnn::view" alt="" coords="435,1603,533,1629"/>
+<area shape="rect" id="node2" href="$classmkldnn_1_1handle.html" title="mkldnn::handle\&lt; mkldnn\l_primitive_t \&gt;" alt="" coords="6,878,170,919"/>
 </map>

@@ -21,6 +21,7 @@ var searchData=
   ['oihw16o',['Oihw16o',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea11e304de746e771710096ae078582838',1,'mkldnn::memory']]],
   ['oihw16o16i',['OIhw16o16i',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea82c279649f9f84c2ef9a046e7777cac0',1,'mkldnn::memory']]],
   ['oihw4i16o4i',['OIhw4i16o4i',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea1d6e70b0215713d38b885f9eb48bb882',1,'mkldnn::memory']]],
+  ['oihw4i16o4i_5fs8s8',['OIhw4i16o4i_s8s8',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea5b3f7e47ef47c71e45b2144d97cb11b7',1,'mkldnn::memory']]],
   ['oihw8i',['oIhw8i',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eaabeb598d814c8420a22243d26e6ed3c9',1,'mkldnn::memory']]],
   ['oihw8i16o2i',['OIhw8i16o2i',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eaffaad9f0dac63a0880ee0bfd9b029888',1,'mkldnn::memory']]],
   ['oihw8i8o',['OIhw8i8o',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eab1ff88a5571cab5c4495acfb07669762',1,'mkldnn::memory']]],
@@ -36,6 +37,7 @@ var searchData=
   ['oiw8o16i2o',['OIw8o16i2o',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ead57139901f5edd02d04055f8e15291df',1,'mkldnn::memory']]],
   ['oiw8o8i',['OIw8o8i',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea07e19f77f4ffe5b1004d86a81cbdfb08',1,'mkldnn::memory']]],
   ['omit_5fstats',['omit_stats',['../group__cpp__api__enums.html#gga344b5c240a7392585aba615ff4d0d7f1a030cc07467d878652fddc39b5290f2a9',1,'mkldnn']]],
+  ['op_5fd',['op_d',['../group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a28d8c4782a7d1d228fe0bee9954df493',1,'mkldnn']]],
   ['output_5fpd',['output_pd',['../group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9abab2d1abc2d37f4a1358daeb7f9a32b1',1,'mkldnn']]],
   ['owi16o',['Owi16o',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea6b734f51d0c7fe644455e99d1b5e25dd',1,'mkldnn::memory']]],
   ['owi8o',['Owi8o',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eaab9e427702cc0469f4a567104b3e06cb',1,'mkldnn::memory']]]

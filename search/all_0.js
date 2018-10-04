@@ -10,6 +10,7 @@ var searchData=
   ['append_5feltwise',['append_eltwise',['../structmkldnn_1_1post__ops.html#af86d191276edcc3bd16571dd357072ec',1,'mkldnn::post_ops']]],
   ['append_5fsum',['append_sum',['../structmkldnn_1_1post__ops.html#a0d8b8d8ebdde1e97afff489c2afcc8be',1,'mkldnn::post_ops']]],
   ['at',['at',['../structmkldnn_1_1primitive_1_1at.html',1,'mkldnn::primitive::at'],['../structmkldnn_1_1primitive_1_1at.html#a1cd6d53f6696650f834559d2b28d1d5d',1,'mkldnn::primitive::at::at()']]],
+  ['axis',['axis',['../structmkldnn__shuffle__desc__t.html#a03e62c454b8694a9f6b8f634c99b19dc',1,'mkldnn_shuffle_desc_t']]],
   ['attributes',['Attributes',['../group__c__api__attributes.html',1,'']]],
   ['auxiliary_20types_20for_20memory_20description',['Auxiliary types for memory description',['../group__c__api__types__memory.html',1,'']]],
   ['attributes',['Attributes',['../group__cpp__api__attr.html',1,'']]],

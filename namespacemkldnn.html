@@ -133,6 +133,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1primitive__attr.html">primitive_attr</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1primitive__desc.html">primitive_desc</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A base class for all primitive descriptors.  <a href="structmkldnn_1_1primitive__desc.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1reorder.html">reorder</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1rnn__backward.html">rnn_backward</a></td></tr>
@@ -140,6 +143,10 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1rnn__cell.html">rnn_cell</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1rnn__forward.html">rnn_forward</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1shuffle__backward.html">shuffle_backward</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1shuffle__forward.html">shuffle_forward</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1softmax__backward.html">softmax_backward</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -243,32 +250,34 @@ Enumerations</h2></td></tr>
 <a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a4faa2a57cddf474a9356b136ece00401">memory_consumption_s64</a> = mkldnn_query_memory_consumption_s64, 
 <a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a022fea4ccfab3e1045c7358d07de3d5e">impl_info_str</a> = mkldnn_query_impl_info_str, 
 <br />
-&#160;&#160;<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a7b7d987552be10a6654ea645cede0a95">memory_d</a> = mkldnn_query_memory_d, 
+&#160;&#160;<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a28d8c4782a7d1d228fe0bee9954df493">op_d</a> = mkldnn_query_op_d, 
+<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a7b7d987552be10a6654ea645cede0a95">memory_d</a> = mkldnn_query_memory_d, 
 <a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a13f5d72b1e5ec568b24c930e3b87641b">convolution_d</a> = mkldnn_query_convolution_d, 
 <a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9ac16184ec47dd255d2711d025eabcdc98">deconvolution_d</a> = mkldnn_query_deconvolution_d, 
+<br />
+&#160;&#160;<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a108123b01640ff9872ad7ebf4a7be850">shuffle_d</a> = mkldnn_query_shuffle_d, 
 <a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a69f238a33c9858afa87b914eb8b5ecb7">eltwise_d</a> = mkldnn_query_eltwise_d, 
-<br />
-&#160;&#160;<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a20f677933e74a40096d45a51664c5ee4">relu_d</a> = mkldnn_query_relu_d, 
+<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a20f677933e74a40096d45a51664c5ee4">relu_d</a> = mkldnn_query_relu_d, 
 <a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9abdb39a5fa96f35b51571bb5481ed2cc2">softmax_d</a> = mkldnn_query_softmax_d, 
-<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a3be3f1011debd2ee2df16b6b04a0bf77">pooling_d</a> = mkldnn_query_pooling_d, 
+<br />
+&#160;&#160;<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a3be3f1011debd2ee2df16b6b04a0bf77">pooling_d</a> = mkldnn_query_pooling_d, 
 <a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a76add43bb6bee4f897e668e2d54476a2">lrn_d</a> = mkldnn_query_lrn_d, 
-<br />
-&#160;&#160;<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a98ae1af5a25e62ffebc0ee054e0fd7c7">batch_normalization_d</a> = mkldnn_query_batch_normalization_d, 
+<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a98ae1af5a25e62ffebc0ee054e0fd7c7">batch_normalization_d</a> = mkldnn_query_batch_normalization_d, 
 <a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a4036c4c9cc32dd0f22a8903cfceeaa41">inner_product_d</a> = mkldnn_query_inner_product_d, 
-<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a83453c3a1e6a6dad19d5928ae9b9b0ee">convolution_relu_d</a> = mkldnn_query_convolution_relu_d, 
+<br />
+&#160;&#160;<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a83453c3a1e6a6dad19d5928ae9b9b0ee">convolution_relu_d</a> = mkldnn_query_convolution_relu_d, 
 <a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9ae7873bfd5ff943d02a66046bb7254c74">rnn_d</a> = mkldnn_query_rnn_d, 
-<br />
-&#160;&#160;<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a508fa6b849113ef2100177d2991129fe">input_pd</a> = mkldnn_query_input_pd, 
+<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a508fa6b849113ef2100177d2991129fe">input_pd</a> = mkldnn_query_input_pd, 
 <a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9abab2d1abc2d37f4a1358daeb7f9a32b1">output_pd</a> = mkldnn_query_output_pd, 
-<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a486100f73904f2beae1418a57cc6e0b1">src_pd</a> = mkldnn_query_src_pd, 
+<br />
+&#160;&#160;<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a486100f73904f2beae1418a57cc6e0b1">src_pd</a> = mkldnn_query_src_pd, 
 <a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a255f93a5ef35321792effc4f5d23e1e3">diff_src_pd</a> = mkldnn_query_diff_src_pd, 
-<br />
-&#160;&#160;<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a38a475450bc885f2a0fad13bf87f44b9">weights_pd</a> = mkldnn_query_weights_pd, 
+<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a38a475450bc885f2a0fad13bf87f44b9">weights_pd</a> = mkldnn_query_weights_pd, 
 <a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a7b14a983b2e690abcf176dd41da50ae1">diff_weights_pd</a> = mkldnn_query_diff_weights_pd, 
-<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a5e602b7cc44ad7373ab7212f73b3d7d4">dst_pd</a> = mkldnn_query_dst_pd, 
-<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9adb9fd0a330dc402a36de022ce82bff07">diff_dst_pd</a> = mkldnn_query_diff_dst_pd, 
 <br />
-&#160;&#160;<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a41d00a7019d406614ebaa00195d179bd">workspace_pd</a> = mkldnn_query_workspace_pd
+&#160;&#160;<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a5e602b7cc44ad7373ab7212f73b3d7d4">dst_pd</a> = mkldnn_query_dst_pd, 
+<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9adb9fd0a330dc402a36de022ce82bff07">diff_dst_pd</a> = mkldnn_query_diff_dst_pd, 
+<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a41d00a7019d406614ebaa00195d179bd">workspace_pd</a> = mkldnn_query_workspace_pd
 <br />
  }</td></tr>
 <tr class="separator:ga6d88ff11a07bae09a5c348d314c5d1d9"><td class="memSeparator" colspan="2">&#160;</td></tr>

@@ -2,7 +2,7 @@ var searchData=
 [
   ['lrn',['LRN',['../group__c__api__lrn.html',1,'']]],
   ['lrn',['LRN',['../group__cpp__api__lrn.html',1,'']]],
-  ['layout_5fdesc',['layout_desc',['../structmkldnn__memory__desc__t.html#ae49f98c84c36039ec2984c3ecf981c8e',1,'mkldnn_memory_desc_t']]],
+  ['layout_5fdesc',['layout_desc',['../structmkldnn__memory__desc__t.html#ae92e4e92d5c7728bffd29ab317908f12',1,'mkldnn_memory_desc_t']]],
   ['lazy',['lazy',['../structmkldnn_1_1stream.html#a7b46a4cd837ea0ccf835d7fa4fc37cffa02b04eb4c732cc0525e409b7e7e60498',1,'mkldnn::stream']]],
   ['ldgo',['ldgo',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eadfa306c1d0d75416ecf54352c23ee548',1,'mkldnn::memory']]],
   ['ldgoi',['ldgoi',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea4b2785a46f164ee31f3eff2c0c966a74',1,'mkldnn::memory']]],
