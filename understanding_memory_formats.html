@@ -84,7 +84,7 @@ $(function() {
 </ul>
 <h2>Data formats</h2>
 <p>Let's first focus on data formats for activations (images).</p>
-<p>Activations consist of channels (aka feature maps) and a spatial domain, either 2D or 3D. Spatial domain together with channels form an image. During the training phase images are typically grouped together in batches. Even if there is only one image, we would still assume there is a batch with batch size equal to 1. Hence, the overall dimensionality of activations is 4D (<b>N</b>, <b>C</b>, <b>H</b>, and <b>W</b>) or 5D (<b>N</b>, <b>C</b>, <b>D</b>, <b>H</b>, and <b>W</b>).</p>
+<p>Activations consist of channels (aka feature maps) and a spatial domain, 1D, 2D or 3D. Spatial domain together with channels form an image. During the training phase images are typically grouped together in batches. Even if there is only one image, we would still assume there is a batch with batch size equal to 1. Hence, the overall dimensionality of activations is 4D (<b>N</b>, <b>C</b>, <b>H</b>, and <b>W</b>) or 5D (<b>N</b>, <b>C</b>, <b>D</b>, <b>H</b>, and <b>W</b>).</p>
 <p>In this article for the sake of simplicity we will use 2D spatial only.</p>
 <h3>Plain data formats</h3>
 <p>It would be simpler to start with an example.</p>

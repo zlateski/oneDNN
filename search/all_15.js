@@ -10,5 +10,5 @@ var searchData=
   ['wino_5fformat',['wino_format',['../structmkldnn__wino__desc__t.html#a002eea2e1ad54a9b2aed4bf0679731e0',1,'mkldnn_wino_desc_t']]],
   ['wio',['wio',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea3768b23a10d360cec7585267e9a8f97e',1,'mkldnn::memory']]],
   ['workspace_5fpd',['workspace_pd',['../group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a41d00a7019d406614ebaa00195d179bd',1,'mkldnn']]],
-  ['wrap_5fc_5fapi',['wrap_c_api',['../structmkldnn_1_1error.html#a8e8ca40a348b25f0b11bc211dc4d204f',1,'mkldnn::error']]]
+  ['wrap_5fc_5fapi',['wrap_c_api',['../structmkldnn_1_1error.html#ad87cb75c7066f319524bf595bfd876b4',1,'mkldnn::error']]]
 ];

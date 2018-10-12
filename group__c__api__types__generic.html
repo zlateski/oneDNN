@@ -532,21 +532,21 @@ Enumerations</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="gga30a390f87ef74bf03dfa48a7b3f2fb74a8297cb7a081984c40f40ed9d24a4023a"></a>mkldnn_ldigo&#160;</td><td class="fielddoc"><p>5D RNN weights tensor in the format (num_layers, num_directions, input_channels, num_gates, output_channels). </p>
 <ul>
-<li>For LSTM cells, the gates order is forget, input, output and candidate gate.</li>
+<li>For LSTM cells, the gates order is input, forget, candidate and output gate.</li>
 <li>For GRU cells, the gates order is update, reset and output gate. </li>
 </ul>
 </td></tr>
 <tr><td class="fieldname"><a id="gga30a390f87ef74bf03dfa48a7b3f2fb74abd0d254bc5c97521e05c590ae9de8364"></a>mkldnn_ldgoi&#160;</td><td class="fielddoc"><p>5D RNN weights tensor in the format (num_layers, num_directions, num_gates, output_channels, input_channels). </p>
 <ul>
-<li>For LSTM cells, the gates order is forget, input, output and candidate gate.</li>
+<li>For LSTM cells, the gates order is input, forget, candidate and output gate.</li>
 <li>For GRU cells, the gates order is update, reset and output gate. </li>
 </ul>
 </td></tr>
 <tr><td class="fieldname"><a id="gga30a390f87ef74bf03dfa48a7b3f2fb74ac5b1fb199e6e5c031766bb72dabb1859"></a>mkldnn_ldgo&#160;</td><td class="fielddoc"><p>4D RNN bias tensor in the format (num_layers, num_directions, num_gates, output_channels). </p>
 <ul>
-<li>For LSTM cells, the gates order is forget, input, output and candidate gate.</li>
-<li>For GRU cells, the gates order is update, reset and output gate. </li>
+<li>For LSTM cells, the gates order is input, forget, candidate and output gate.</li>
 </ul>
+<p>For GRU cells, the gates order is update, reset and output gate. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="gga30a390f87ef74bf03dfa48a7b3f2fb74ad16816e898913f0ba93a23bf6d56104f"></a>mkldnn_nCw8c&#160;</td><td class="fielddoc"><p>blocked data format </p>
 </td></tr>
