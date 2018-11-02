@@ -97,6 +97,8 @@ var searchData=
   ['mkldnn_5fforward_5fscoring',['mkldnn_forward_scoring',['../group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a5c5df2fcee8a2e547f27e92944774a3b',1,'mkldnn_types.h']]],
   ['mkldnn_5fforward_5ftraining',['mkldnn_forward_training',['../group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f',1,'mkldnn_types.h']]],
   ['mkldnn_5ffuse_5fbn_5frelu',['mkldnn_fuse_bn_relu',['../group__c__api__types__generic.html#gga5b1f166df8eea3a306f9226baf6ca3a3a412c26d07a6f5a365db10a379f86b153',1,'mkldnn_types.h']]],
+  ['mkldnn_5fgemm_5fs8s8s32',['mkldnn_gemm_s8s8s32',['../group__c__api__blas.html#gac1869eab851b572350fb450c50c61626',1,'mkldnn.h']]],
+  ['mkldnn_5fgemm_5fs8u8s32',['mkldnn_gemm_s8u8s32',['../group__c__api__blas.html#ga40fa880be6d435facb9aafddab84d5fc',1,'mkldnn.h']]],
   ['mkldnn_5fgiohw16o16i',['mkldnn_gIOhw16o16i',['../group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a37bfc09d30cd34c0ada4f2d3f65555e1',1,'mkldnn_types.h']]],
   ['mkldnn_5fgiow16o16i',['mkldnn_gIOw16o16i',['../group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a7268a69c1d26246ea43850abc9a5607d',1,'mkldnn_types.h']]],
   ['mkldnn_5fgodhwi16o',['mkldnn_gOdhwi16o',['../group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a1c66f62007df134ba6dc73bf1b8f6489',1,'mkldnn_types.h']]],

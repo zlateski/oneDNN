@@ -27,6 +27,8 @@ var searchData=
   ['mkldnn_5fengine_5fget_5fcount',['mkldnn_engine_get_count',['../group__c__api__engine.html#ga6e53c91f2b5deb3de460df7751e7428b',1,'mkldnn.h']]],
   ['mkldnn_5fengine_5fget_5fkind',['mkldnn_engine_get_kind',['../group__c__api__engine.html#ga5b2114bfa8d837ac350e86b8999c9a3a',1,'mkldnn.h']]],
   ['mkldnn_5ffmt2str',['mkldnn_fmt2str',['../mkldnn__debug_8h.html#a6cc0ef117f68db409b560b20679b6a54',1,'mkldnn_debug.h']]],
+  ['mkldnn_5fgemm_5fs8s8s32',['mkldnn_gemm_s8s8s32',['../group__c__api__blas.html#gac1869eab851b572350fb450c50c61626',1,'mkldnn.h']]],
+  ['mkldnn_5fgemm_5fs8u8s32',['mkldnn_gemm_s8u8s32',['../group__c__api__blas.html#ga40fa880be6d435facb9aafddab84d5fc',1,'mkldnn.h']]],
   ['mkldnn_5finner_5fproduct_5fbackward_5fdata_5fdesc_5finit',['mkldnn_inner_product_backward_data_desc_init',['../group__c__api__inner__product.html#ga42908f0482b4f21c42b3f9d0d606fb1e',1,'mkldnn.h']]],
   ['mkldnn_5finner_5fproduct_5fbackward_5fweights_5fdesc_5finit',['mkldnn_inner_product_backward_weights_desc_init',['../group__c__api__inner__product.html#ga3f2bdf19f6522c0508d165b6779b53b7',1,'mkldnn.h']]],
   ['mkldnn_5finner_5fproduct_5fforward_5fdesc_5finit',['mkldnn_inner_product_forward_desc_init',['../group__c__api__inner__product.html#ga1e67b4062caeb799487a0a5db4750e4c',1,'mkldnn.h']]],
