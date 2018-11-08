@@ -14,7 +14,6 @@ var searchData=
   ['get_5fparams_5feltwise',['get_params_eltwise',['../structmkldnn_1_1post__ops.html#af29f2bff1e5dcf150388fa02e2302b7f',1,'mkldnn::post_ops']]],
   ['get_5fparams_5fsum',['get_params_sum',['../structmkldnn_1_1post__ops.html#a7b95988ea51532c2a6ae40fd679d4d52',1,'mkldnn::post_ops']]],
   ['get_5fpost_5fops',['get_post_ops',['../structmkldnn_1_1primitive__attr.html#aca8d686420fd072f4a70c7d9086ae423',1,'mkldnn::primitive_attr']]],
-  ['get_5fprimitive_5fattr',['get_primitive_attr',['../structmkldnn_1_1primitive__desc.html#a8dd994244e91bbcc46bcead8ea21f7ae',1,'mkldnn::primitive_desc']]],
   ['get_5fprimitive_5fdesc',['get_primitive_desc',['../group__cpp__api__utils.html#ga2af6efd247f27cf356b511c6ea03604f',1,'mkldnn::primitive::get_primitive_desc()'],['../structmkldnn_1_1memory.html#aa5e5c4fcce2bffeef8649b4f14cfaa8e',1,'mkldnn::memory::get_primitive_desc()']]],
   ['get_5fsize',['get_size',['../structmkldnn_1_1memory_1_1primitive__desc.html#ae2d72838806aabc3dd865157631f7000',1,'mkldnn::memory::primitive_desc']]],
   ['get_5fstate_5fcount',['get_state_count',['../structmkldnn_1_1rnn__cell_1_1desc.html#a211a746a38b126faccaafc6604832308',1,'mkldnn::rnn_cell::desc']]]
