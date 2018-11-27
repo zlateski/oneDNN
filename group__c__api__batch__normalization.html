@@ -82,10 +82,10 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>A primitive to perform batch normalization. </p>
 <p class="formulaDsp">
-<img class="formulaDsp" alt="\[dst[n][c][h][w] = \gamma[c] \frac{src[n][c][h][w] - \mu[c]} {\sqrt{\sigma[c] + eps}} + \beta[c],\]" src="form_16.png"/>
+<img class="formulaDsp" alt="\[dst[n][c][h][w] = \gamma[c] \frac{src[n][c][h][w] - \mu[c]} {\sqrt{\sigma[c] + eps}} + \beta[c],\]" src="form_15.png"/>
 </p>
-<p>where <img class="formulaInl" alt="$\gamma[c], \beta[c]$" src="form_17.png"/> are weights and bias for a channel and,</p>
-<p><img class="formulaInl" alt="$\mu[c] = \frac{1}{NHW} \sum\limits_{whn} src[n][c][h][w]$" src="form_18.png"/>, <img class="formulaInl" alt="$\sigma[c] = \frac{1}{NHW} \sum\limits_{whn} (src[n][c][h][w] - \mu[c])^2$" src="form_19.png"/>,</p>
+<p>where <img class="formulaInl" alt="$\gamma[c], \beta[c]$" src="form_16.png"/> are weights and bias for a channel and,</p>
+<p><img class="formulaInl" alt="$\mu[c] = \frac{1}{NHW} \sum\limits_{whn} src[n][c][h][w]$" src="form_17.png"/>, <img class="formulaInl" alt="$\sigma[c] = \frac{1}{NHW} \sum\limits_{whn} (src[n][c][h][w] - \mu[c])^2$" src="form_18.png"/>,</p>
 <p>and eps is a constant to improve numerical stability.</p>
 <p>Both forward and backward passes support in-place operation, i.e. src and dst point to the same memory for forward, and diff_dst and diff_src point to the same memory for backward pass.</p>
 <p>Batch normalization supports different flavors controlled by <a class="el" href="structmkldnn__batch__normalization__desc__t.html" title="A descriptor of a Batch Normalization operation. ">mkldnn_batch_normalization_desc_t</a>. For example batch normalization can compute the mean and variance on its own or can take them as inputs. It can either perform scaling and shifting using gamma and beta parameters or not. Optionally it can also perform a fused ReLU, which in case of training would also require a workspace.</p>
