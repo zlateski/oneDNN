@@ -72,7 +72,7 @@ $(function() {
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>An opaque structure for a chain of post operations. </p>
 <p><a class="el" href="structmkldnn__post__ops.html" title="An opaque structure for a chain of post operations. ">mkldnn_post_ops</a> can be used to perform some (trivial) operations like accumulation or eltwise after certain primitives like convolution.</p>
-<p>Post operations might be combined together, making a chain of post operations. For instance one can configure convolution followed by accumulation followed by eltwise (relu). This might be especially beneficial for residual learning blocks.</p>
+<p>Post operations might be combined together, making a chain of post operations. For instance one can configure convolution followed by accumulation followed by eltwise. This might be especially beneficial for residual learning blocks.</p>
 <dl class="section warning"><dt>Warning</dt><dd>Of course not all the combinations are supported, so user should handle error accordingly.</dd></dl>
 <p>Supported post operations:</p><ul>
 <li>accumulation (base primitive: convolution)</li>
