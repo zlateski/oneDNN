@@ -4,7 +4,6 @@ var searchData=
   ['mkldnn_5fbatch_5fnormalization_5fdesc_5ft',['mkldnn_batch_normalization_desc_t',['../structmkldnn__batch__normalization__desc__t.html',1,'']]],
   ['mkldnn_5fblocking_5fdesc_5ft',['mkldnn_blocking_desc_t',['../structmkldnn__blocking__desc__t.html',1,'']]],
   ['mkldnn_5fconvolution_5fdesc_5ft',['mkldnn_convolution_desc_t',['../structmkldnn__convolution__desc__t.html',1,'']]],
-  ['mkldnn_5fconvolution_5frelu_5fdesc_5ft',['mkldnn_convolution_relu_desc_t',['../structmkldnn__convolution__relu__desc__t.html',1,'']]],
   ['mkldnn_5feltwise_5fdesc_5ft',['mkldnn_eltwise_desc_t',['../structmkldnn__eltwise__desc__t.html',1,'']]],
   ['mkldnn_5fengine',['mkldnn_engine',['../structmkldnn__engine.html',1,'']]],
   ['mkldnn_5finner_5fproduct_5fdesc_5ft',['mkldnn_inner_product_desc_t',['../structmkldnn__inner__product__desc__t.html',1,'']]],

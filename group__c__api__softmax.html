@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
-   &#160;<span id="projectnumber">0.17.1</span>
+   &#160;<span id="projectnumber">0.17</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
   </td>
@@ -82,9 +82,9 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>A primitive to perform softmax. </p>
 <p class="formulaDsp">
-<img class="formulaDsp" alt="\[dst[u][c][in] = \frac{\exp(src[ou][c][in]) - \max\limits_{c}(src[ou][c][in])} {\sum\limits_{c}\{\exp(src[ou][c][in]) - \max\limits_{c}(src[ou][c][in])\}},\]" src="form_9.png"/>
+<img class="formulaDsp" alt="\[dst[u][c][in] = \frac{\exp(src[ou][c][in]) - \max\limits_{c}(src[ou][c][in])} {\sum\limits_{c}\{\exp(src[ou][c][in]) - \max\limits_{c}(src[ou][c][in])\}},\]" src="form_8.png"/>
 </p>
-<p>where <img class="formulaInl" alt="$ou, iu$" src="form_10.png"/> are outer and inner sizes repectively, defined by <code>data_desc.dims</code> and <code>softmax_axis</code>. </p>
+<p>where <img class="formulaInl" alt="$ou, iu$" src="form_9.png"/> are outer and inner sizes repectively, defined by <code>data_desc.dims</code> and <code>softmax_axis</code>. </p>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="gaf9ea3543dc0b1d9734c7290e90ccce23"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaf9ea3543dc0b1d9734c7290e90ccce23">&#9670;&nbsp;</a></span>mkldnn_softmax_forward_desc_init()</h2>
