@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['performance_20profiling',['Performance profiling',['../perf_profile.html',1,'']]]
+  ['legal_20information',['Legal Information',['../legal_information.html',1,'']]]
 ];

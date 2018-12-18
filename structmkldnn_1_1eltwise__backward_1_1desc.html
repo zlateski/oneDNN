@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
-   &#160;<span id="projectnumber">0.17</span>
+   &#160;<span id="projectnumber">0.17.1</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
   </td>
@@ -91,6 +91,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1ef4d6ce061f462b6d1c0e5d5e45f92e"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a1ef4d6ce061f462b6d1c0e5d5e45f92e"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1eltwise__backward_1_1desc.html#a1ef4d6ce061f462b6d1c0e5d5e45f92e">desc</a> (<a class="el" href="group__cpp__api__enums.html#gae45a07d6121fdd33e310782753178076">algorithm</a> alg_kind, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_data_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;data_desc, T alpha=0, T beta=0)</td></tr>
 <tr class="separator:a1ef4d6ce061f462b6d1c0e5d5e45f92e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a813a877299d67bd34c9aac132f036c3d"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a813a877299d67bd34c9aac132f036c3d"><td class="memTemplItemLeft" align="right" valign="top">MKLDNN_DEPRECATED&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1eltwise__backward_1_1desc.html#a813a877299d67bd34c9aac132f036c3d">desc</a> (const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_data_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;data_desc, T negative_slope)</td></tr>
+<tr class="separator:a813a877299d67bd34c9aac132f036c3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -99,7 +102,7 @@ Public Attributes</h2></td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a1ef4d6ce061f462b6d1c0e5d5e45f92e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1ef4d6ce061f462b6d1c0e5d5e45f92e">&#9670;&nbsp;</a></span>desc()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ef4d6ce061f462b6d1c0e5d5e45f92e">&#9670;&nbsp;</a></span>desc() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -151,6 +154,51 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a813a877299d67bd34c9aac132f036c3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a813a877299d67bd34c9aac132f036c3d">&#9670;&nbsp;</a></span>desc() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">MKLDNN_DEPRECATED mkldnn::eltwise_backward::desc::desc </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;&#160;</td>
+          <td class="paramname"><em>diff_data_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;&#160;</td>
+          <td class="paramname"><em>data_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>negative_slope</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000010">Deprecated:</a></b></dt><dd>: api backward compatibility for relu </dd></dl>
 
 </div>
 </div>

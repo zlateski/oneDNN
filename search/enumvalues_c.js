@@ -36,6 +36,7 @@ var searchData=
   ['oiw8i8o',['OIw8i8o',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eae9db232b3efbe08ef8fe78b1bf22a222',1,'mkldnn::memory']]],
   ['oiw8o16i2o',['OIw8o16i2o',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ead57139901f5edd02d04055f8e15291df',1,'mkldnn::memory']]],
   ['oiw8o8i',['OIw8o8i',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea07e19f77f4ffe5b1004d86a81cbdfb08',1,'mkldnn::memory']]],
+  ['omit_5fstats',['omit_stats',['../group__cpp__api__enums.html#gga344b5c240a7392585aba615ff4d0d7f1a030cc07467d878652fddc39b5290f2a9',1,'mkldnn']]],
   ['op_5fd',['op_d',['../group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a28d8c4782a7d1d228fe0bee9954df493',1,'mkldnn']]],
   ['output_5fpd',['output_pd',['../group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9abab2d1abc2d37f4a1358daeb7f9a32b1',1,'mkldnn']]],
   ['owi16o',['Owi16o',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea6b734f51d0c7fe644455e99d1b5e25dd',1,'mkldnn::memory']]],
