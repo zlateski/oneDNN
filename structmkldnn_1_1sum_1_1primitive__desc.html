@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
-   &#160;<span id="projectnumber">0.17.2</span>
+   &#160;<span id="projectnumber">0.17</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
   </td>
@@ -98,10 +98,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:acf3b6c1af8ff9b59939bf8722633372e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaa7ad3071acf34a2f1db2117678c8134"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1sum_1_1primitive__desc.html#aaa7ad3071acf34a2f1db2117678c8134">primitive_desc</a> (const std::vector&lt; float &gt; &amp;scales, std::vector&lt; <a class="el" href="structmkldnn_1_1memory_1_1primitive__desc.html">memory::primitive_desc</a> &gt; inputs)</td></tr>
 <tr class="separator:aaa7ad3071acf34a2f1db2117678c8134"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac86333458595488266984fced8b10939"><td class="memItemLeft" align="right" valign="top">MKLDNN_DEPRECATED&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1sum_1_1primitive__desc.html#ac86333458595488266984fced8b10939">primitive_desc</a> (const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;output, std::vector&lt; double &gt; scale, std::vector&lt; <a class="el" href="structmkldnn_1_1memory_1_1primitive__desc.html">memory::primitive_desc</a> &gt; inputs)</td></tr>
-<tr class="separator:ac86333458595488266984fced8b10939"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6c91ec63b68e0f3e3e584e2a24b19a2"><td class="memItemLeft" align="right" valign="top">MKLDNN_DEPRECATED&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1sum_1_1primitive__desc.html#ae6c91ec63b68e0f3e3e584e2a24b19a2">primitive_desc</a> (std::vector&lt; double &gt; scale, std::vector&lt; <a class="el" href="structmkldnn_1_1memory_1_1primitive__desc.html">memory::primitive_desc</a> &gt; inputs)</td></tr>
-<tr class="separator:ae6c91ec63b68e0f3e3e584e2a24b19a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a319516479af882369d2d52d0e48d9bbe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmkldnn_1_1memory_1_1primitive__desc.html">memory::primitive_desc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1sum_1_1primitive__desc.html#a319516479af882369d2d52d0e48d9bbe">dst_primitive_desc</a> () const</td></tr>
 <tr class="separator:a319516479af882369d2d52d0e48d9bbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe57059625c850ee721d699d2d9b0953"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmkldnn_1_1engine.html">engine</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1sum_1_1primitive__desc.html#abe57059625c850ee721d699d2d9b0953">get_engine</a> ()</td></tr>
@@ -135,7 +131,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="acf3b6c1af8ff9b59939bf8722633372e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acf3b6c1af8ff9b59939bf8722633372e">&#9670;&nbsp;</a></span>primitive_desc() <span class="overload">[1/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#acf3b6c1af8ff9b59939bf8722633372e">&#9670;&nbsp;</a></span>primitive_desc() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -177,7 +173,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="aaa7ad3071acf34a2f1db2117678c8134"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaa7ad3071acf34a2f1db2117678c8134">&#9670;&nbsp;</a></span>primitive_desc() <span class="overload">[2/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa7ad3071acf34a2f1db2117678c8134">&#9670;&nbsp;</a></span>primitive_desc() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -209,86 +205,6 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-</div>
-</div>
-<a id="ac86333458595488266984fced8b10939"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac86333458595488266984fced8b10939">&#9670;&nbsp;</a></span>primitive_desc() <span class="overload">[3/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">MKLDNN_DEPRECATED mkldnn::sum::primitive_desc::primitive_desc </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;&#160;</td>
-          <td class="paramname"><em>output</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::vector&lt; double &gt;&#160;</td>
-          <td class="paramname"><em>scale</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="structmkldnn_1_1memory_1_1primitive__desc.html">memory::primitive_desc</a> &gt;&#160;</td>
-          <td class="paramname"><em>inputs</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000005">Deprecated:</a></b></dt><dd>: api backwards compatibility for double scales type </dd></dl>
-
-</div>
-</div>
-<a id="ae6c91ec63b68e0f3e3e584e2a24b19a2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae6c91ec63b68e0f3e3e584e2a24b19a2">&#9670;&nbsp;</a></span>primitive_desc() <span class="overload">[4/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">MKLDNN_DEPRECATED mkldnn::sum::primitive_desc::primitive_desc </td>
-          <td>(</td>
-          <td class="paramtype">std::vector&lt; double &gt;&#160;</td>
-          <td class="paramname"><em>scale</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="structmkldnn_1_1memory_1_1primitive__desc.html">memory::primitive_desc</a> &gt;&#160;</td>
-          <td class="paramname"><em>inputs</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000006">Deprecated:</a></b></dt><dd>: api backwards compatibility for double scales type </dd></dl>
 
 </div>
 </div>

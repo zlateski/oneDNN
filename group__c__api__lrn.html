@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
-   &#160;<span id="projectnumber">0.17.2</span>
+   &#160;<span id="projectnumber">0.17</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
   </td>
@@ -82,12 +82,12 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>A primitive to perform local response normalization (LRN) across or within channels. </p>
 <p>LRN accross channels: </p><p class="formulaDsp">
-<img class="formulaDsp" alt="\[dst[n][c][h][w] = \left\{k + \frac{\alpha}{n_{l}} \sum\limits_{i=-(n_{l}-1)/2}^{(n_{l}+1)/2} (src[n][c+i][h][w])^2\right\}^{-\beta} src[n][c][h][w],\]" src="form_13.png"/>
+<img class="formulaDsp" alt="\[dst[n][c][h][w] = \left\{k + \frac{\alpha}{n_{l}} \sum\limits_{i=-(n_{l}-1)/2}^{(n_{l}+1)/2} (src[n][c+i][h][w])^2\right\}^{-\beta} src[n][c][h][w],\]" src="form_12.png"/>
 </p>
 <p>LRN within channels: </p><p class="formulaDsp">
-<img class="formulaDsp" alt="\[dst[n][c][h][w] = \left\{k + \frac{\alpha}{n_{l}} \sum\limits_{i=-(n_{l}-1)/2}^{(n_{l}+1)/2} (src[n][c][h+i][w+i])^2\right\}^{-\beta} src[n][c][h][w],\]" src="form_14.png"/>
+<img class="formulaDsp" alt="\[dst[n][c][h][w] = \left\{k + \frac{\alpha}{n_{l}} \sum\limits_{i=-(n_{l}-1)/2}^{(n_{l}+1)/2} (src[n][c][h+i][w+i])^2\right\}^{-\beta} src[n][c][h][w],\]" src="form_13.png"/>
 </p>
-<p>where <img class="formulaInl" alt="$n_{l}$" src="form_15.png"/> is the <code>local_size</code>.</p>
+<p>where <img class="formulaInl" alt="$n_{l}$" src="form_14.png"/> is the <code>local_size</code>.</p>
 <p>During training LRN might or might not require workspace on forward (<a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f" title="Forward data propagation (training mode). ">mkldnn_forward_training</a>) and backward (<a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a4dd1b6040ef9d067a38d8ffa407b763b" title="Backward propagation (with respect to all parameters. ">mkldnn_backward</a>) passes. The behavior is implementation specific. Optimized implementations typically require workspace and use it to save some intermediate results from the forward pass that accelerate computations on the backward pass.</p>
 <p>To check whether workspace is required one should query the LRN primitive descriptor for the workspace (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ad18aadd1899c151835c624d7b83edb56" title="workspace memory primitive desc ">mkldnn_query_workspace_pd</a>). Success would indicate the workspace is required and its description would be returned. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="group__c__api__primitive__common.html#gaa0ef4b91ed5cd98a19540a8182228012" title="Queries primitive descriptor. ">mkldnn_primitive_desc_query</a> and <a class="el" href="group__c__api__primitive__common.html#gaf40f6cca1ee6b96b9763c4e125785b8f" title="Queries primitive descriptor for primitive descriptor. ">mkldnn_primitive_desc_query_pd</a> </dd></dl>
 <h2 class="groupheader">Function Documentation</h2>

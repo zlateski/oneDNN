@@ -19,6 +19,7 @@ var searchData=
   ['get_5fprimitive_5fdesc',['get_primitive_desc',['../group__cpp__api__utils.html#ga2af6efd247f27cf356b511c6ea03604f',1,'mkldnn::primitive::get_primitive_desc()'],['../structmkldnn_1_1memory.html#aa5e5c4fcce2bffeef8649b4f14cfaa8e',1,'mkldnn::memory::get_primitive_desc()']]],
   ['get_5fsize',['get_size',['../structmkldnn_1_1memory_1_1primitive__desc.html#ae2d72838806aabc3dd865157631f7000',1,'mkldnn::memory::primitive_desc']]],
   ['get_5fstate_5fcount',['get_state_count',['../structmkldnn_1_1rnn__cell_1_1desc.html#a211a746a38b126faccaafc6604832308',1,'mkldnn::rnn_cell::desc']]],
+  ['giohw',['giohw',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eab9ed2c3a4602989a2896b8c90abd18b8',1,'mkldnn::memory']]],
   ['giohw16o16i',['gIOhw16o16i',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eaed5bd42c3c68a277cbdca346a72251fa',1,'mkldnn::memory']]],
   ['giow16o16i',['gIOw16o16i',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea2fd35c34941e7889928ccedb4be2a0d7',1,'mkldnn::memory']]],
   ['godhwi16o',['gOdhwi16o',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea4b5d3797672c5c4d2cf427b68a89fb46',1,'mkldnn::memory']]],
