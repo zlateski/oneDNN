@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['understanding_20memory_20formats',['Understanding Memory Formats',['../understanding_memory_formats.html',1,'']]]
+  ['winograd_20convolution',['Winograd Convolution',['../winograd_convolution.html',1,'']]]
 ];
