@@ -77,8 +77,9 @@ Collaboration diagram for mkldnn_memory_desc_t:</div>
 <div class="dyncontent">
 <div class="center"><img src="structmkldnn__memory__desc__t__coll__graph.png" border="0" usemap="#mkldnn__memory__desc__t_coll__map" alt="Collaboration graph"/></div>
 <map name="mkldnn__memory__desc__t_coll__map" id="mkldnn__memory__desc__t_coll__map">
-<area shape="rect" id="node2" href="structmkldnn__blocking__desc__t.html" title="Generic description of blocked data layout for most memory formats. " alt="" coords="5,5,171,32"/>
-<area shape="rect" id="node3" href="structmkldnn__wino__desc__t.html" title="Description of tensor of weights for winograd 2x3 convolution. " alt="" coords="195,5,339,32"/>
+<area shape="rect" id="node2" href="structmkldnn__rnn__packed__desc__t.html" title="Description of tensor of packed weights for rnn. " alt="" coords="5,5,189,32"/>
+<area shape="rect" id="node3" href="structmkldnn__blocking__desc__t.html" title="Generic description of blocked data layout for most memory formats. " alt="" coords="213,5,379,32"/>
+<area shape="rect" id="node4" href="structmkldnn__wino__desc__t.html" title="Description of tensor of weights for winograd 2x3 convolution. " alt="" coords="403,5,547,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -106,6 +107,9 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a009b48630baa3c9da935c036239b4499"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="structmkldnn__wino__desc__t.html">mkldnn_wino_desc_t</a>&#160;&#160;&#160;<a class="el" href="structmkldnn__memory__desc__t.html#aa219a8379e78fc4a553e6af998759c78">wino_desc</a></td></tr>
 <tr class="memdesc:a009b48630baa3c9da935c036239b4499"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tensor of weights for integer 8bit winograd convolution.  <a href="#a009b48630baa3c9da935c036239b4499">More...</a><br /></td></tr>
 <tr class="separator:a009b48630baa3c9da935c036239b4499"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3a11bc24d6ba9f4344ae58559183174"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="structmkldnn__rnn__packed__desc__t.html">mkldnn_rnn_packed_desc_t</a>&#160;&#160;&#160;<a class="el" href="structmkldnn__memory__desc__t.html#a3d718050430b441becacab903ae6a0aa">rnn_packed_desc</a></td></tr>
+<tr class="memdesc:ab3a11bc24d6ba9f4344ae58559183174"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tensor of packed weights for RNN.  <a href="#ab3a11bc24d6ba9f4344ae58559183174">More...</a><br /></td></tr>
+<tr class="separator:ab3a11bc24d6ba9f4344ae58559183174"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae92e4e92d5c7728bffd29ab317908f12"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__memory__desc__t.html#ae92e4e92d5c7728bffd29ab317908f12">layout_desc</a></td></tr>
 <tr class="separator:ae92e4e92d5c7728bffd29ab317908f12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -230,6 +234,22 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Tensor of weights for integer 8bit winograd convolution. </p>
+
+</div>
+</div>
+<a id="a3d718050430b441becacab903ae6a0aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d718050430b441becacab903ae6a0aa">&#9670;&nbsp;</a></span>rnn_packed_desc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmkldnn__rnn__packed__desc__t.html">mkldnn_rnn_packed_desc_t</a> mkldnn_memory_desc_t::rnn_packed_desc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tensor of packed weights for RNN. </p>
 
 </div>
 </div>

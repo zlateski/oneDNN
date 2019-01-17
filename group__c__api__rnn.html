@@ -81,6 +81,12 @@ Functions</h2></td></tr>
 <tr class="memitem:ga5282631e9fb6733f40a1cc180825954d"><td class="memItemLeft" align="right" valign="top">int MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__rnn.html#ga5282631e9fb6733f40a1cc180825954d">mkldnn_rnn_cell_get_states_count</a> (const <a class="el" href="structmkldnn__rnn__cell__desc__t.html">mkldnn_rnn_cell_desc_t</a> *rnn_cell_desc)</td></tr>
 <tr class="memdesc:ga5282631e9fb6733f40a1cc180825954d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of states of a particular <code>rnn_cell_desc</code>.  <a href="#ga5282631e9fb6733f40a1cc180825954d">More...</a><br /></td></tr>
 <tr class="separator:ga5282631e9fb6733f40a1cc180825954d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae4f871b413573f905f0995e1ee52c1df"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__rnn.html#gae4f871b413573f905f0995e1ee52c1df">mkldnn_primitive_attr_set_rnn_data_qparams</a> (<a class="el" href="group__c__api__primitive__attr.html#gaeaf9bd515118e1667f7fd1846bb79de1">mkldnn_primitive_attr_t</a> attr, const float scale, const float shift)</td></tr>
+<tr class="memdesc:gae4f871b413573f905f0995e1ee52c1df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets quantization <code>scale</code> and <code>shift</code> for RNN data tensors.  <a href="#gae4f871b413573f905f0995e1ee52c1df">More...</a><br /></td></tr>
+<tr class="separator:gae4f871b413573f905f0995e1ee52c1df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8b553d5f5e81fc095c75ba021a59daa9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__rnn.html#ga8b553d5f5e81fc095c75ba021a59daa9">mkldnn_primitive_attr_set_rnn_weights_qparams</a> (<a class="el" href="group__c__api__primitive__attr.html#gaeaf9bd515118e1667f7fd1846bb79de1">mkldnn_primitive_attr_t</a> attr, int count, int mask, const float *weights_scales)</td></tr>
+<tr class="memdesc:ga8b553d5f5e81fc095c75ba021a59daa9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets quantization scales <code>weights_scales</code> for RNN weights tensors.  <a href="#ga8b553d5f5e81fc095c75ba021a59daa9">More...</a><br /></td></tr>
+<tr class="separator:ga8b553d5f5e81fc095c75ba021a59daa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5bfe35f13beaa9c90d3e5841d18e07d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__rnn.html#ga5bfe35f13beaa9c90d3e5841d18e07d8">mkldnn_rnn_forward_desc_init</a> (<a class="el" href="structmkldnn__rnn__desc__t.html">mkldnn_rnn_desc_t</a> *rnn_desc, <a class="el" href="group__c__api__types__generic.html#ga5b98c8059c2aff8861157bf070c3f520">mkldnn_prop_kind_t</a> prop_kind, const <a class="el" href="structmkldnn__rnn__cell__desc__t.html">mkldnn_rnn_cell_desc_t</a> *rnn_cell_desc, const <a class="el" href="group__c__api__types__memory.html#ga3cb09316c36bd985698e0eea542cb424">mkldnn_rnn_direction_t</a> direction, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *src_layer_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *src_iter_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *weights_layer_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *weights_iter_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *bias_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *dst_layer_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *dst_iter_desc)</td></tr>
 <tr class="memdesc:ga5bfe35f13beaa9c90d3e5841d18e07d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a rnn descriptor <code>rnn_desc</code> for forward propagation using <code>prop_kind</code>, <code>rnn_cell_desc</code>, <code>direction</code>, and memory descriptors.  <a href="#ga5bfe35f13beaa9c90d3e5841d18e07d8">More...</a><br /></td></tr>
 <tr class="separator:ga5bfe35f13beaa9c90d3e5841d18e07d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -184,6 +190,93 @@ Functions</h2></td></tr>
 
 <p>Returns the number of states of a particular <code>rnn_cell_desc</code>. </p>
 
+</div>
+</div>
+<a id="gae4f871b413573f905f0995e1ee52c1df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae4f871b413573f905f0995e1ee52c1df">&#9670;&nbsp;</a></span>mkldnn_primitive_attr_set_rnn_data_qparams()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API mkldnn_primitive_attr_set_rnn_data_qparams </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__c__api__primitive__attr.html#gaeaf9bd515118e1667f7fd1846bb79de1">mkldnn_primitive_attr_t</a>&#160;</td>
+          <td class="paramname"><em>attr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>scale</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>shift</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets quantization <code>scale</code> and <code>shift</code> for RNN data tensors. </p>
+<p>For performance reasons, low precision configuration of RNN primitive expects input activations to have unsigned int8 data type. Scale and shift used to quantize floating point data to unsigned integer must be passed to RNN primitive using attributes. Example usage: </p><div class="fragment"><div class="line"><span class="comment">// rnn parameters</span></div><div class="line"><span class="keywordtype">int</span> l = 2, t = 2, mb = 32, sic = 32, slc = 32, dic = 32, dlc = 32;</div><div class="line"><span class="comment">// activations quantization parameters</span></div><div class="line"><span class="keywordtype">float</span> scale = ..., shift = ..;</div><div class="line"></div><div class="line"><a class="code" href="structmkldnn__primitive__attr.html">mkldnn_primitive_attr_t</a> rnn_attr;</div><div class="line"><span class="comment">// create default attributes</span></div><div class="line"><a class="code" href="group__c__api__attributes.html#gaa5402b9efc0a7fd3360610382f85e6de">mkldnn_primitive_attr_create</a>(&amp;rnn_attr);</div><div class="line"></div><div class="line"><span class="comment">// set scale and shift for int8 quantization of activation</span></div><div class="line"><a class="code" href="group__c__api__rnn.html#gae4f871b413573f905f0995e1ee52c1df">mkldnn_primitive_attr_set_rnn_data_qparams</a>(rnn_attr, scale, shift);</div><div class="line"></div><div class="line"><span class="comment">// create &amp; configure rnn op_desc</span></div><div class="line"><a class="code" href="structmkldnn__rnn__desc__t.html">mkldnn_rnn_desc_t</a> <a class="code" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9ae7873bfd5ff943d02a66046bb7254c74">rnn_d</a>;</div><div class="line"><a class="code" href="structmkldnn__primitive__desc.html">mkldnn_primitive_desc_t</a> rnn_pd;</div><div class="line"><a class="code" href="group__c__api__primitive__common.html#ga372ece6a05bc13ed4d57e2b08bed1ce3">mkldnn_primitive_desc_create_v2</a>(&amp;rnn_pd, &amp;rnn_d, attr, NULL);</div></div><!-- fragment --> <dl class="section note"><dt>Note</dt><dd>Quantization scale and shift are common for src_layer, src_iter, dst_iter and dst_layer. </dd></dl>
+
+</div>
+</div>
+<a id="ga8b553d5f5e81fc095c75ba021a59daa9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8b553d5f5e81fc095c75ba021a59daa9">&#9670;&nbsp;</a></span>mkldnn_primitive_attr_set_rnn_weights_qparams()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API mkldnn_primitive_attr_set_rnn_weights_qparams </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__c__api__primitive__attr.html#gaeaf9bd515118e1667f7fd1846bb79de1">mkldnn_primitive_attr_t</a>&#160;</td>
+          <td class="paramname"><em>attr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>mask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float *&#160;</td>
+          <td class="paramname"><em>weights_scales</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets quantization scales <code>weights_scales</code> for RNN weights tensors. </p>
+<p>Low precision configuration of RNN primitive expects input weights to have signed int8 data type. Scales used to quantize floating point data to signed integer must be passed to RNN primitive using attributes. The <code>mask</code> argument defines correspondence between output tensor dimensions and the <code>weights_scales</code> array. Set i-th bit of <code>mask</code> to 1 to use dedicated scaling factor for each slice of the output tensor over i-th dimension. Set <code>mask</code> to 0 to use common scaling factor for the whole output tensor. Example usage: </p><div class="fragment"><div class="line"><span class="comment">// rnn parameters</span></div><div class="line"><span class="keywordtype">int</span> l = 2, t = 2, mb = 32, sic = 32, slc = 32, dic = 32, dlc = 32;</div><div class="line"><span class="comment">// unique output scales per output channel</span></div><div class="line"><span class="keywordtype">float</span> weights_scales[dic * n_gates] = { ... };</div><div class="line"><span class="comment">// mask that specifies last two dimensions of ldigo format</span></div><div class="line"><span class="keywordtype">int</span> mask = 0x3;</div><div class="line"></div><div class="line"><a class="code" href="structmkldnn__primitive__attr.html">mkldnn_primitive_attr_t</a> attr;</div><div class="line"><span class="comment">// create default attributes</span></div><div class="line"><a class="code" href="group__c__api__attributes.html#gaa5402b9efc0a7fd3360610382f85e6de">mkldnn_primitive_attr_create</a>(&amp;attr);</div><div class="line"></div><div class="line"><span class="comment">// set output channel-wise weights scales</span></div><div class="line"><a class="code" href="group__c__api__rnn.html#ga8b553d5f5e81fc095c75ba021a59daa9">mkldnn_primitive_attr_set_rnn_weights_qparams</a>(attr, dic * n_gates, mask,</div><div class="line">        weights_scales);</div><div class="line"></div><div class="line"><span class="comment">// create &amp; configure rnn op_desc</span></div><div class="line"><a class="code" href="structmkldnn__rnn__desc__t.html">mkldnn_rnn_desc_t</a> <a class="code" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9ae7873bfd5ff943d02a66046bb7254c74">rnn_d</a>;</div><div class="line"><a class="code" href="structmkldnn__primitive__desc.html">mkldnn_primitive_desc_t</a> rnn_pd;</div><div class="line"><a class="code" href="group__c__api__primitive__common.html#ga372ece6a05bc13ed4d57e2b08bed1ce3">mkldnn_primitive_desc_create_v2</a>(&amp;rnn_pd, &amp;rnn_d, attr, NULL);</div></div><!-- fragment --> <dl class="section note"><dt>Note</dt><dd>The dimension order is always native and does not depend on the actual layout used. For example, 5 dimensional weights always have (l, d, i, g, o) logical dimension ordering. </dd>
+<dd>
+Quantization sales are common for weights_layer and weights_iteration </dd>
+<dd>
+There is no way to check that <code>count</code> corresponds to <code>mask</code> until an actual primitive descriptor is created, so it is user's responsibility to set proper values. The following formula must be held:</dd></dl>
+<p class="formulaDsp">
+<img class="formulaDsp" alt="\[count = \prod\limits_{d \in mask} output.dims[d]\]" src="form_0.png"/>
+</p>
+ 
 </div>
 </div>
 <a id="ga5bfe35f13beaa9c90d3e5841d18e07d8"></a>

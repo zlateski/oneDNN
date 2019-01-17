@@ -15,6 +15,8 @@ var searchData=
   ['rnn_5fd',['rnn_d',['../group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9ae7873bfd5ff943d02a66046bb7254c74',1,'mkldnn']]],
   ['rnn_5fdirection',['rnn_direction',['../group__cpp__api__enums.html#gac8d5612bc5ca7b5fb6e5bdf4e6ad0d16',1,'mkldnn']]],
   ['rnn_5fforward',['rnn_forward',['../structmkldnn_1_1rnn__forward.html',1,'mkldnn::rnn_forward'],['../structmkldnn_1_1rnn__forward.html#ac07e8b700fb3e15dd16912ce30bd3073',1,'mkldnn::rnn_forward::rnn_forward()']]],
+  ['rnn_5fpacked',['rnn_packed',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea7ed79cbb78fecce614cab9b9036ce194',1,'mkldnn::memory']]],
+  ['rnn_5fpacked_5fdesc',['rnn_packed_desc',['../structmkldnn__memory__desc__t.html#a3d718050430b441becacab903ae6a0aa',1,'mkldnn_memory_desc_t']]],
   ['round_5fdown',['round_down',['../group__cpp__api__enums.html#gga9d7c927196d96da9d2dcb0926f50845da5e31c27e1a2c7c1ac5bfe9c8026bc72e',1,'mkldnn']]],
   ['round_5fmode',['round_mode',['../group__cpp__api__enums.html#ga9d7c927196d96da9d2dcb0926f50845d',1,'mkldnn']]],
   ['round_5fnearest',['round_nearest',['../group__cpp__api__enums.html#gga9d7c927196d96da9d2dcb0926f50845dadfa185bc1c3ce87a0905475a288c58fd',1,'mkldnn']]]
