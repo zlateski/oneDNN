@@ -348,9 +348,9 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="section warning"><dt>Warning</dt><dd><a class="el" href="structmkldnn_1_1batch__normalization__forward.html">batch_normalization_forward</a> has 2 constructors with very similar signatures:<ul>
+<dl class="section warning"><dt>Warning</dt><dd><a class="el" href="structmkldnn_1_1batch__normalization__forward.html">batch_normalization_forward</a> has two constructors with very similar signatures:<ul>
 <li>(pd, src, weights, dst, mean, variance) // 2 in, 3 out</li>
-<li>(pd, src, dst, mean, variance, workspace) // 1 in, 4 out The only way to distinguish between those is to explicitly cast all input parameters to their type, i.e. to const primitive:at &amp;. </li>
+<li>(pd, src, dst, mean, variance, workspace) // 1 in, 4 out The only way to distinguish between them is to explicitly cast all input parameters to their type; that is, to const primitive:at &amp;. </li>
 </ul>
 </dd></dl>
 
@@ -533,12 +533,12 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="section warning"><dt>Warning</dt><dd><a class="el" href="structmkldnn_1_1batch__normalization__forward.html">batch_normalization_forward</a> has 2 constructors with very similar signatures:<ul>
+<dl class="section warning"><dt>Warning</dt><dd><a class="el" href="structmkldnn_1_1batch__normalization__forward.html">batch_normalization_forward</a> has two constructors with very similar signatures:<ul>
 <li>(pd, src, weights, dst, mean, variance) // 2 in, 3 out</li>
-<li>(pd, src, dst, mean, variance, workspace) // 1 in, 4 out The only way to distinguish between those is to explicitly cast all input parameters to their type, i.e. to const primitive:at &amp;. </li>
+<li>(pd, src, dst, mean, variance, workspace) // 1 in, 4 out The only way to distinguish between them is to explicitly cast all input parameters to their type; that is, to const primitive:at &amp;. </li>
 </ul>
 </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>to make users' experience a little bit better this constructor checks if whether parameters match corresponding primitive descriptor, and if they are not &ndash; call the other (proper) constructor. Yeah, this is still very ugly... </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>To make users' experience a little better, this constructor checks whether parameters match the corresponding primitive descriptor, and if not, calls the other (proper) constructor. </dd></dl>
 
 </div>
 </div>

@@ -130,7 +130,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The kind of primitive. </p>
-<p>Used for self identifying the primitive descriptor. Must be <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973aacec523f11e0ef981ef4933a60fe4fa5" title="A memory primitive. ">mkldnn_memory</a>. </p>
+<p>Used for self-identifying the primitive descriptor. Must be <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973aacec523f11e0ef981ef4933a60fe4fa5" title="A memory primitive. ">mkldnn_memory</a>. </p>
 
 </div>
 </div>
@@ -169,7 +169,7 @@ Public Attributes</h2></td></tr>
 <li>RNN data tensors: time, mini-batch, channels (<code>{T, N, C}</code>) or layers, directions, states, mini-batch, channels (<code>{L, D, S, N, C}</code>)</li>
 <li>RNN weight tensor: layers, directions, input channel, gates, output channels (<code>{L, D, I, G, O}</code>).</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>The order of dimensions does not depend on the memory format, so no matter whether the data is laid in <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74aed4a51a8db128a648b942882369a06d6" title="4D data tensor with the physical layout nchw, used in Caffe. ">mkldnn_nchw</a> or <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74adf1fb06f73cf8dd23ae620eea6516526" title="4D data tensor with the physical layout nhwc, used in TensorFlow. ">mkldnn_nhwc</a> the dims for 4D CN data tensor would be <code>{N, C, H, W}</code> </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The order of dimensions does not depend on the memory format, so whether the data is laid out in <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74aed4a51a8db128a648b942882369a06d6" title="4D data tensor with the physical layout nchw, used in Caffe. ">mkldnn_nchw</a> or <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74adf1fb06f73cf8dd23ae620eea6516526" title="4D data tensor with the physical layout nhwc, used in TensorFlow. ">mkldnn_nhwc</a> the dims for 4D CN data tensor would be <code>{N, C, H, W}</code>. </dd></dl>
 
 </div>
 </div>

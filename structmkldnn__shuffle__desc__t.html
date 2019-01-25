@@ -93,7 +93,7 @@ Public Attributes</h2></td></tr>
 <tr class="memdesc:af113858e24fd9b3e5005fdf1a612d74e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The kind of propagation.  <a href="#af113858e24fd9b3e5005fdf1a612d74e">More...</a><br /></td></tr>
 <tr class="separator:af113858e24fd9b3e5005fdf1a612d74e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae33cc2cc2d5e497038f4d1ed5b7af7da"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__shuffle__desc__t.html#ae33cc2cc2d5e497038f4d1ed5b7af7da">data_desc</a></td></tr>
-<tr class="memdesc:ae33cc2cc2d5e497038f4d1ed5b7af7da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Source and destination memory descriptor.  <a href="#ae33cc2cc2d5e497038f4d1ed5b7af7da">More...</a><br /></td></tr>
+<tr class="memdesc:ae33cc2cc2d5e497038f4d1ed5b7af7da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Source and destination memory descriptor, and source and destination gradient memory descriptor.  <a href="#ae33cc2cc2d5e497038f4d1ed5b7af7da">More...</a><br /></td></tr>
 <tr class="separator:ae33cc2cc2d5e497038f4d1ed5b7af7da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a03e62c454b8694a9f6b8f634c99b19dc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__shuffle__desc__t.html#a03e62c454b8694a9f6b8f634c99b19dc">axis</a></td></tr>
 <tr class="memdesc:a03e62c454b8694a9f6b8f634c99b19dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">axis for shuffling.  <a href="#a03e62c454b8694a9f6b8f634c99b19dc">More...</a><br /></td></tr>
@@ -118,7 +118,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The kind of primitive. </p>
-<p>Used for self identifying the primitive descriptor. Must be <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a88592adccf64d1fd271ed6e21d66b271" title="A convolution primitive. ">mkldnn_convolution</a>. </p>
+<p>Used for self-identifying the primitive descriptor. Must be <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a88592adccf64d1fd271ed6e21d66b271" title="A convolution primitive. ">mkldnn_convolution</a>. </p>
 
 </div>
 </div>
@@ -135,7 +135,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The kind of propagation. </p>
-<p>Possible values: <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f" title="Forward data propagation (training mode). ">mkldnn_forward_training</a>, <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a58a923fb6c4e1214e1505b5fa0b1e3fa" title="Forward data propagation (inference mode). ">mkldnn_forward_inference</a>, <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520aefa8bd2da7ba52a0a0061cfab6cf3925" title="Backward data propagation. ">mkldnn_backward_data</a> </p>
+<p>Possible values: <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f" title="Forward data propagation (training mode). ">mkldnn_forward_training</a>, <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a58a923fb6c4e1214e1505b5fa0b1e3fa" title="Forward data propagation (inference mode). ">mkldnn_forward_inference</a>, and <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520aefa8bd2da7ba52a0a0061cfab6cf3925" title="Backward data propagation. ">mkldnn_backward_data</a>. </p>
 
 </div>
 </div>
@@ -151,8 +151,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Source and destination memory descriptor. </p>
-<p>and source and destination gradient memory descriptor. </p>
+<p>Source and destination memory descriptor, and source and destination gradient memory descriptor. </p>
 
 </div>
 </div>

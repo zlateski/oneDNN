@@ -1,5 +1,5 @@
 <map id="mkldnn::rnn_forward::desc" name="mkldnn::rnn_forward::desc">
-<area shape="rect" id="node2" href="$structmkldnn__rnn__desc__t.html" title="A descriptor for an rnn operation. " alt="" coords="110,421,244,448"/>
+<area shape="rect" id="node2" href="$structmkldnn__rnn__desc__t.html" title="A descriptor for an RNN operation. " alt="" coords="110,421,244,448"/>
 <area shape="rect" id="node3" href="$structmkldnn__rnn__cell__desc__t.html" title="mkldnn_rnn_cell_desc_t" alt="" coords="27,96,189,123"/>
 <area shape="rect" id="node4" href="$structmkldnn__memory__desc__t.html" title="Memory descriptor. " alt="" coords="214,96,377,123"/>
 <area shape="rect" id="node5" href="$structmkldnn__rnn__packed__desc__t.html" title="Description of tensor of packed weights for rnn. " alt="" coords="5,5,189,32"/>
