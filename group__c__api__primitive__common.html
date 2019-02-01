@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
-   &#160;<span id="projectnumber">0.17</span>
+   &#160;<span id="projectnumber">0.17.3</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
   </td>
@@ -79,7 +79,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga3887ba1fa83051afac8fac2b93d15ed7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterates over primitive descriptors.  <a href="#ga3887ba1fa83051afac8fac2b93d15ed7">More...</a><br /></td></tr>
 <tr class="separator:ga3887ba1fa83051afac8fac2b93d15ed7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae067e25a698f097723ee635350fd18f3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__primitive__descs.html#ga4108b6ee20cf3d2e472504c1aea67497">mkldnn_primitive_desc_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__primitive__common.html#gae067e25a698f097723ee635350fd18f3">mkldnn_primitive_desc_iterator_fetch</a> (<a class="el" href="group__c__api__primitive__desc__iterators.html#ga357e481b81862c775dff602049f40386">const_mkldnn_primitive_desc_iterator_t</a> iterator)</td></tr>
-<tr class="memdesc:gae067e25a698f097723ee635350fd18f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetches the current primitive descriptor.  <a href="#gae067e25a698f097723ee635350fd18f3">More...</a><br /></td></tr>
+<tr class="memdesc:gae067e25a698f097723ee635350fd18f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetches current primitive descriptor.  <a href="#gae067e25a698f097723ee635350fd18f3">More...</a><br /></td></tr>
 <tr class="separator:gae067e25a698f097723ee635350fd18f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8368e2a6339f2df57128b00aae74ce37"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__primitive__common.html#ga8368e2a6339f2df57128b00aae74ce37">mkldnn_primitive_desc_iterator_destroy</a> (<a class="el" href="group__c__api__primitive__desc__iterators.html#gab10071e5bb605ceee088b7e9cdbac9a2">mkldnn_primitive_desc_iterator_t</a> iterator)</td></tr>
 <tr class="memdesc:ga8368e2a6339f2df57128b00aae74ce37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes a primitive descriptor <code>iterator</code>.  <a href="#ga8368e2a6339f2df57128b00aae74ce37">More...</a><br /></td></tr>
@@ -241,7 +241,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Iterates over primitive descriptors. </p>
-<p>Returns <a class="el" href="group__c__api__types__generic.html#gga31866789b66acfb1c28b2f9bdd7bdfdda30c47def85dc1bbf8a9dda24f16c9add" title="Primitive iterator passed over last primitive descriptor. ">mkldnn_iterator_ends</a> if no more primitive descriptors are available. </p>
+<p>Returns <a class="el" href="group__c__api__types__generic.html#gga31866789b66acfb1c28b2f9bdd7bdfdda30c47def85dc1bbf8a9dda24f16c9add" title="Primitive iterator passed over last primitive descriptor. ">mkldnn_iterator_ends</a> if no more primitive descriptors are available </p>
 
 </div>
 </div>
@@ -261,8 +261,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Fetches the current primitive descriptor. </p>
-<dl class="section note"><dt>Note</dt><dd>The user should delete the fetched primitive descriptor using <a class="el" href="group__c__api__primitive__common.html#gacad44a12c7d863fb47dc02a76b4b794a" title="Deletes a primitive_desc. ">mkldnn_primitive_desc_destroy()</a> once it is no longer needed. </dd></dl>
+<p>Fetches current primitive descriptor. </p>
+<dl class="section note"><dt>Note</dt><dd>fetched primitive descriptor should be deleted by user using <a class="el" href="group__c__api__primitive__common.html#gacad44a12c7d863fb47dc02a76b4b794a" title="Deletes a primitive_desc. ">mkldnn_primitive_desc_destroy()</a> once becomes unneeded </dd></dl>
 
 </div>
 </div>
@@ -325,7 +325,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Creates a <code>primitive_desc</code> using <code>op_desc</code>, <code>engine</code>, and optionally a hint primitive descriptor from forward propagation. </p>
-<p>The call is equivalent to creating a primitive descriptor iterator, immediately fetching a primitive descriptor, and then destroying the iterator. </p>
+<p>The call is equivalent to create a primitive descriptor iterator, instantly fetch a primitive_desc and destroy the iterator. </p>
 
 </div>
 </div>
@@ -374,7 +374,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Creates a <code>primitive_desc</code> using <code>op_desc</code>, <code>attr</code>, <code>engine</code>, and optionally a hint primitive descriptor from forward propagation. </p>
-<p>The call is equivalent to creating a primitive descriptor iterator, immediately fetching a primitive descriptor, and then destroying the iterator. </p>
+<p>The call is equivalent to create a primitive descriptor iterator, instantly fetch a <code>primitive_desc</code> and destroy the iterator. </p>
 
 </div>
 </div>
@@ -435,9 +435,9 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns a constant reference to the attribute of a <code>primitive_desc</code>. </p>
-<dl class="section warning"><dt>Warning</dt><dd>The user should not destroy the obtained <code>attr</code>.</dd>
+<dl class="section warning"><dt>Warning</dt><dd>User should not destroy obtained <code>attr</code> </dd>
 <dd>
-The lifetime of an <code>attr</code> is the same as that of a <code>primitive_desc</code>, so it is illegal to use the <code>attr</code> once <code>primitive_desc</code> has been destroyed. </dd></dl>
+The lifetime of an <code>attr</code> is same as <code>primitive_desc</code>, so it is illegal to use the <code>attr</code> once <code>primitive_desc</code> is destroyed </dd></dl>
 
 </div>
 </div>
@@ -500,11 +500,11 @@ The lifetime of an <code>attr</code> is the same as that of a <code>primitive_de
 </div><div class="memdoc">
 
 <p>Queries primitive descriptor. </p>
-<p>One of the most typical use cases is to query a convolution primitive descriptor created with source, weights, and destination formats equal to <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a5ae7d369fcd51464f613e51d73eae547" title="Unspecified format. ">mkldnn_any</a> about the corresponding memory primitive descriptors (<code>what</code> equals <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ac17b645e3801adaaeee3107103ec8a72" title="source memory primitive desc ">mkldnn_query_src_pd</a>, <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9aad24a528aa4e68a27da4b23063eb76ee" title="weights memory primitive descriptor desc ">mkldnn_query_weights_pd</a>, and <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9abb15fa8a7eb5aebfe547ac57a96c2d56" title="destination memory primitive desc ">mkldnn_query_dst_pd</a> respectively) to be able to prepare memory and create reorders if required.</p>
-<p>Another quite typical use case is to query an operation primitive descriptor for a workspace (<code>what</code> equals <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ad18aadd1899c151835c624d7b83edb56" title="workspace memory primitive desc ">mkldnn_query_workspace_pd</a>). The returned status <a class="el" href="group__c__api__types__generic.html#gga31866789b66acfb1c28b2f9bdd7bdfdda9be03e267991a3e90b4a61a39ef4d353" title="Queried element is not required for given primitive. ">mkldnn_not_required</a> indicates that a workspace is not required.</p>
-<p>A few other possibilities:</p><ul>
+<p>One of the most typical use cases is to query a convolution primitive descriptor created with source, weights and destination formats equal to <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a5ae7d369fcd51464f613e51d73eae547" title="Unspecified format. ">mkldnn_any</a> about the corresponding memory primitive descriptors (<code>what</code> equals <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ac17b645e3801adaaeee3107103ec8a72" title="source memory primitive desc ">mkldnn_query_src_pd</a>, <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9aad24a528aa4e68a27da4b23063eb76ee" title="weights memory primitive descriptor desc ">mkldnn_query_weights_pd</a>, and <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9abb15fa8a7eb5aebfe547ac57a96c2d56" title="destination memory primitive desc ">mkldnn_query_dst_pd</a> respectively) to be able to prepare memory and create reorders if required.</p>
+<p>Another quite typical use case is to query an operation primitive descriptor for a workspace (<code>what</code> equals <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ad18aadd1899c151835c624d7b83edb56" title="workspace memory primitive desc ">mkldnn_query_workspace_pd</a>). Returned status <a class="el" href="group__c__api__types__generic.html#gga31866789b66acfb1c28b2f9bdd7bdfdda9be03e267991a3e90b4a61a39ef4d353" title="Queried element is not required for given primitive. ">mkldnn_not_required</a> indicates that workspace is not required.</p>
+<p>Few other possibilities:</p><ul>
 <li>query a memory primitive descriptor for the underlying memory descriptor (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a7e98c1f19c54633720dd5120b22d8809" title="memory descriptor for memory and view ">mkldnn_query_memory_d</a>)</li>
-<li>query an operation primitive descriptor for the underlying operation descriptor (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a3e1f5ad4718ad7f41916b4227e0a9964" title="convolution descriptor ">mkldnn_query_convolution_d</a>, <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a6ea3ff9ae6be79fe71a89bbfc87b4d7e" title="eltwise descriptor ">mkldnn_query_eltwise_d</a>, <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a7a567d8e61a6e0b1aeb219f5229b13de" title="rnn descriptor ">mkldnn_query_rnn_d</a>, etc.)</li>
+<li>query an operation primitive descriptor for the underlying operation descriptor (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a3e1f5ad4718ad7f41916b4227e0a9964" title="convolution descriptor ">mkldnn_query_convolution_d</a>, <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a6ea3ff9ae6be79fe71a89bbfc87b4d7e" title="eltwise descriptor ">mkldnn_query_eltwise_d</a>, <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a7a567d8e61a6e0b1aeb219f5229b13de" title="rnn descriptor ">mkldnn_query_rnn_d</a>, etc)</li>
 <li>query an operation primitive descriptor for the implementation information string (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ab92f503404fade1f402bed9c34727d9c" title="implementation name ">mkldnn_query_impl_info_str</a>)</li>
 <li>query an operation primitive descriptor for the number of inputs and outputs (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a660e903603b99e5745feba14a7ee2891" title="number of inputs expected ">mkldnn_query_num_of_inputs_s32</a> and <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9abd7a52122733cac8b3d1de8eab20f9cf" title="number of outputs expected ">mkldnn_query_num_of_outputs_s32</a> respectively)</li>
 </ul>
@@ -529,7 +529,7 @@ The lifetime of an <code>attr</code> is the same as that of a <code>primitive_de
 </div><div class="memdoc">
 
 <p>Queries primitive descriptor for memory descriptor. </p>
-<dl class="section return"><dt>Returns</dt><dd>NULL in case of any error (in particular if the queried entity is not of type <a class="el" href="structmkldnn__memory__desc__t.html" title="Memory descriptor. ">mkldnn_memory_desc_t</a>).</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>NULL in case of any error (in particular if queried entity is not of type <a class="el" href="structmkldnn__memory__desc__t.html" title="Memory descriptor. ">mkldnn_memory_desc_t</a>).</dd></dl>
 <p>This is just a specialized version of mkldnn_primitive_desc_query used for convenience. </p>
 
 </div>
@@ -567,9 +567,9 @@ The lifetime of an <code>attr</code> is the same as that of a <code>primitive_de
 </div><div class="memdoc">
 
 <p>Queries primitive descriptor for primitive descriptor. </p>
-<dl class="section return"><dt>Returns</dt><dd>NULL in case of any error (in particular if the queried entity is not of type const_mkldnn_primitive_desc_t).</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>NULL in case of any error (in particular if queried entity is not of type const_mkldnn_primitive_desc_t).</dd></dl>
 <p>This is just a specialized version of mkldnn_primitive_desc_query used for convenience.</p>
-<p>Example: Query an operation primitive descriptor for a workspace (<code>what</code> equals <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ad18aadd1899c151835c624d7b83edb56" title="workspace memory primitive desc ">mkldnn_query_workspace_pd</a>). Returned NULL indicates that the primitive does not require a workspace. Otherwise, a user should prepare the workspace and pass it to the corresponding primitive. </p>
+<p>Example: query an operation primitive descriptor for a workspace (<code>what</code> equals <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ad18aadd1899c151835c624d7b83edb56" title="workspace memory primitive desc ">mkldnn_query_workspace_pd</a>). Returned NULL indicates the primitive does not require a workspace. Otherwise a user should prepare the workspace and pass it to the corresponding primitive. </p>
 
 </div>
 </div>
@@ -606,7 +606,7 @@ The lifetime of an <code>attr</code> is the same as that of a <code>primitive_de
 </div><div class="memdoc">
 
 <p>Queries primitive descriptor for signed 32bit int. </p>
-<dl class="section return"><dt>Returns</dt><dd>0 in case of any error (in particular if the queried entity is not of type int32_t). Note that 0 might also be the actual returned value.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>0 in case of any error (in particular if queried entity is not of type int32_t). Note that 0 might also be the actual returned value.</dd></dl>
 <p>This is just a specialized version of mkldnn_primitive_desc_query used for convenience. </p>
 
 </div>
@@ -680,7 +680,7 @@ The lifetime of an <code>attr</code> is the same as that of a <code>primitive_de
 </div><div class="memdoc">
 
 <p>Retrieves a reference to the <code>primitive_desc</code> descriptor of given <code>primitive</code>. </p>
-<dl class="section warning"><dt>Warning</dt><dd>The returned object must not be destroyed by the user. The <code>const</code> qualifier of the returned object prevents such attempts. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Returned object must not be destroyed by user. 'const' qualifier of the returned object prevents such attempts. </dd></dl>
 
 </div>
 </div>
@@ -803,7 +803,7 @@ The lifetime of an <code>attr</code> is the same as that of a <code>primitive_de
 </div><div class="memdoc">
 
 <p>Creates an <a class="el" href="structmkldnn__primitive__at__t.html" title="A wrapper structure to specify a particular output of a primitive. ">mkldnn_primitive_at_t</a> structure from a <code>primitive</code> and <code>output_index</code>. </p>
-<p>This function only fills in the data structure and does not check whether arguments are correct. The actual error checking is done when the resulting <a class="el" href="group__c__api__primitive__common.html#ga8348d36b13571f3b0b1c724c35708692" title="Creates an mkldnn_primitive_at_t structure from a primitive and output_index. ">mkldnn_primitive_at</a> structure is passed to a primitive creation function. </p>
+<p>This function only fills in the data structure and does not check whether parameters are correct. The actual error checking is done when the resulting <a class="el" href="group__c__api__primitive__common.html#ga8348d36b13571f3b0b1c724c35708692" title="Creates an mkldnn_primitive_at_t structure from a primitive and output_index. ">mkldnn_primitive_at</a> structure is passed to a primitive creation function. </p>
 
 </div>
 </div>

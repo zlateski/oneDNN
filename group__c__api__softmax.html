@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
-   &#160;<span id="projectnumber">0.17</span>
+   &#160;<span id="projectnumber">0.17.3</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
   </td>
@@ -73,7 +73,7 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:gaf9ea3543dc0b1d9734c7290e90ccce23"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__softmax.html#gaf9ea3543dc0b1d9734c7290e90ccce23">mkldnn_softmax_forward_desc_init</a> (<a class="el" href="structmkldnn__softmax__desc__t.html">mkldnn_softmax_desc_t</a> *softmax_desc, <a class="el" href="group__c__api__types__generic.html#ga5b98c8059c2aff8861157bf070c3f520">mkldnn_prop_kind_t</a> prop_kind, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *data_desc, int softmax_axis)</td></tr>
-<tr class="memdesc:gaf9ea3543dc0b1d9734c7290e90ccce23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a <code>softmax_desc</code> for forward propagation using <code>prop_kind</code> (possible values are <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f" title="Forward data propagation (training mode). ">mkldnn_forward_training</a> and <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a58a923fb6c4e1214e1505b5fa0b1e3fa" title="Forward data propagation (inference mode). ">mkldnn_forward_inference</a>) and memory descriptor <code>data_desc</code>.  <a href="#gaf9ea3543dc0b1d9734c7290e90ccce23">More...</a><br /></td></tr>
+<tr class="memdesc:gaf9ea3543dc0b1d9734c7290e90ccce23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a <code>softmax_desc</code> for forward propagation using <code>prop_kind</code> (possible value are <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f" title="Forward data propagation (training mode). ">mkldnn_forward_training</a> or <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a58a923fb6c4e1214e1505b5fa0b1e3fa" title="Forward data propagation (inference mode). ">mkldnn_forward_inference</a>) and memory descriptor <code>data_desc</code>.  <a href="#gaf9ea3543dc0b1d9734c7290e90ccce23">More...</a><br /></td></tr>
 <tr class="separator:gaf9ea3543dc0b1d9734c7290e90ccce23"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga38603b5a9da112762085deeddc92040b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__softmax.html#ga38603b5a9da112762085deeddc92040b">mkldnn_softmax_backward_desc_init</a> (<a class="el" href="structmkldnn__softmax__desc__t.html">mkldnn_softmax_desc_t</a> *softmax_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *diff_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *data_desc, int softmax_axis)</td></tr>
 <tr class="memdesc:ga38603b5a9da112762085deeddc92040b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a <code>softmax_desc</code> for backward propagation using memory descriptors <code>diff_desc</code> and <code>data_desc</code>.  <a href="#ga38603b5a9da112762085deeddc92040b">More...</a><br /></td></tr>
@@ -82,9 +82,9 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>A primitive to perform softmax. </p>
 <p class="formulaDsp">
-<img class="formulaDsp" alt="\[dst[u][c][in] = \frac{\exp(src[ou][c][in]) - \max\limits_{c}(src[ou][c][in])} {\sum\limits_{c}\{\exp(src[ou][c][in]) - \max\limits_{c}(src[ou][c][in])\}},\]" src="form_8.png"/>
+<img class="formulaDsp" alt="\[dst[u][c][in] = \frac{\exp(src[ou][c][in]) - \max\limits_{c}(src[ou][c][in])} {\sum\limits_{c}\{\exp(src[ou][c][in]) - \max\limits_{c}(src[ou][c][in])\}},\]" src="form_9.png"/>
 </p>
-<p>where <img class="formulaInl" alt="$ou, iu$" src="form_9.png"/> are outer and inner sizes repectively, defined by <code>data_desc.dims</code> and <code>softmax_axis</code>. </p>
+<p>where <img class="formulaInl" alt="$ou, iu$" src="form_10.png"/> are outer and inner sizes repectively, defined by <code>data_desc.dims</code> and <code>softmax_axis</code>. </p>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="gaf9ea3543dc0b1d9734c7290e90ccce23"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaf9ea3543dc0b1d9734c7290e90ccce23">&#9670;&nbsp;</a></span>mkldnn_softmax_forward_desc_init()</h2>
@@ -124,7 +124,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Initializes a <code>softmax_desc</code> for forward propagation using <code>prop_kind</code> (possible values are <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f" title="Forward data propagation (training mode). ">mkldnn_forward_training</a> and <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a58a923fb6c4e1214e1505b5fa0b1e3fa" title="Forward data propagation (inference mode). ">mkldnn_forward_inference</a>) and memory descriptor <code>data_desc</code>. </p>
+<p>Initializes a <code>softmax_desc</code> for forward propagation using <code>prop_kind</code> (possible value are <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f" title="Forward data propagation (training mode). ">mkldnn_forward_training</a> or <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a58a923fb6c4e1214e1505b5fa0b1e3fa" title="Forward data propagation (inference mode). ">mkldnn_forward_inference</a>) and memory descriptor <code>data_desc</code>. </p>
 <p>Order of inputs:</p><ul>
 <li>src (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ac17b645e3801adaaeee3107103ec8a72" title="source memory primitive desc ">mkldnn_query_src_pd</a>, 0)</li>
 </ul>

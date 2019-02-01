@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
-   &#160;<span id="projectnumber">0.17</span>
+   &#160;<span id="projectnumber">0.17.3</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
   </td>
@@ -77,10 +77,9 @@ Collaboration diagram for mkldnn_shuffle_desc_t:</div>
 <div class="dyncontent">
 <div class="center"><img src="structmkldnn__shuffle__desc__t__coll__graph.png" border="0" usemap="#mkldnn__shuffle__desc__t_coll__map" alt="Collaboration graph"/></div>
 <map name="mkldnn__shuffle__desc__t_coll__map" id="mkldnn__shuffle__desc__t_coll__map">
-<area shape="rect" id="node2" href="structmkldnn__memory__desc__t.html" title="Memory descriptor. " alt="" coords="214,96,377,123"/>
-<area shape="rect" id="node3" href="structmkldnn__rnn__packed__desc__t.html" title="Description of tensor of packed weights for rnn. " alt="" coords="5,5,189,32"/>
-<area shape="rect" id="node4" href="structmkldnn__blocking__desc__t.html" title="Generic description of blocked data layout for most memory formats. " alt="" coords="213,5,379,32"/>
-<area shape="rect" id="node5" href="structmkldnn__wino__desc__t.html" title="Description of tensor of weights for winograd 2x3 convolution. " alt="" coords="403,5,547,32"/>
+<area shape="rect" id="node2" href="structmkldnn__memory__desc__t.html" title="Memory descriptor. " alt="" coords="95,96,259,123"/>
+<area shape="rect" id="node3" href="structmkldnn__blocking__desc__t.html" title="Generic description of blocked data layout for most memory formats. " alt="" coords="5,5,171,32"/>
+<area shape="rect" id="node4" href="structmkldnn__wino__desc__t.html" title="Description of tensor of weights for winograd 2x3 convolution. " alt="" coords="195,5,339,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -93,7 +92,7 @@ Public Attributes</h2></td></tr>
 <tr class="memdesc:af113858e24fd9b3e5005fdf1a612d74e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The kind of propagation.  <a href="#af113858e24fd9b3e5005fdf1a612d74e">More...</a><br /></td></tr>
 <tr class="separator:af113858e24fd9b3e5005fdf1a612d74e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae33cc2cc2d5e497038f4d1ed5b7af7da"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__shuffle__desc__t.html#ae33cc2cc2d5e497038f4d1ed5b7af7da">data_desc</a></td></tr>
-<tr class="memdesc:ae33cc2cc2d5e497038f4d1ed5b7af7da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Source and destination memory descriptor, and source and destination gradient memory descriptor.  <a href="#ae33cc2cc2d5e497038f4d1ed5b7af7da">More...</a><br /></td></tr>
+<tr class="memdesc:ae33cc2cc2d5e497038f4d1ed5b7af7da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Source and destination memory descriptor.  <a href="#ae33cc2cc2d5e497038f4d1ed5b7af7da">More...</a><br /></td></tr>
 <tr class="separator:ae33cc2cc2d5e497038f4d1ed5b7af7da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a03e62c454b8694a9f6b8f634c99b19dc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__shuffle__desc__t.html#a03e62c454b8694a9f6b8f634c99b19dc">axis</a></td></tr>
 <tr class="memdesc:a03e62c454b8694a9f6b8f634c99b19dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">axis for shuffling.  <a href="#a03e62c454b8694a9f6b8f634c99b19dc">More...</a><br /></td></tr>
@@ -118,7 +117,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The kind of primitive. </p>
-<p>Used for self-identifying the primitive descriptor. Must be <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a88592adccf64d1fd271ed6e21d66b271" title="A convolution primitive. ">mkldnn_convolution</a>. </p>
+<p>Used for self identifying the primitive descriptor. Must be <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a88592adccf64d1fd271ed6e21d66b271" title="A convolution primitive. ">mkldnn_convolution</a>. </p>
 
 </div>
 </div>
@@ -135,7 +134,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The kind of propagation. </p>
-<p>Possible values: <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f" title="Forward data propagation (training mode). ">mkldnn_forward_training</a>, <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a58a923fb6c4e1214e1505b5fa0b1e3fa" title="Forward data propagation (inference mode). ">mkldnn_forward_inference</a>, and <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520aefa8bd2da7ba52a0a0061cfab6cf3925" title="Backward data propagation. ">mkldnn_backward_data</a>. </p>
+<p>Possible values: <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f" title="Forward data propagation (training mode). ">mkldnn_forward_training</a>, <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a58a923fb6c4e1214e1505b5fa0b1e3fa" title="Forward data propagation (inference mode). ">mkldnn_forward_inference</a>, <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520aefa8bd2da7ba52a0a0061cfab6cf3925" title="Backward data propagation. ">mkldnn_backward_data</a> </p>
 
 </div>
 </div>
@@ -151,7 +150,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Source and destination memory descriptor, and source and destination gradient memory descriptor. </p>
+<p>Source and destination memory descriptor. </p>
+<p>and source and destination gradient memory descriptor. </p>
 
 </div>
 </div>
