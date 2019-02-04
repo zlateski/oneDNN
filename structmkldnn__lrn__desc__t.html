@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
-   &#160;<span id="projectnumber">0.17.3</span>
+   &#160;<span id="projectnumber">0.17.2</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
   </td>
@@ -77,9 +77,10 @@ Collaboration diagram for mkldnn_lrn_desc_t:</div>
 <div class="dyncontent">
 <div class="center"><img src="structmkldnn__lrn__desc__t__coll__graph.png" border="0" usemap="#mkldnn__lrn__desc__t_coll__map" alt="Collaboration graph"/></div>
 <map name="mkldnn__lrn__desc__t_coll__map" id="mkldnn__lrn__desc__t_coll__map">
-<area shape="rect" id="node2" href="structmkldnn__memory__desc__t.html" title="Memory descriptor. " alt="" coords="95,96,259,123"/>
-<area shape="rect" id="node3" href="structmkldnn__blocking__desc__t.html" title="Generic description of blocked data layout for most memory formats. " alt="" coords="5,5,171,32"/>
-<area shape="rect" id="node4" href="structmkldnn__wino__desc__t.html" title="Description of tensor of weights for winograd 2x3 convolution. " alt="" coords="195,5,339,32"/>
+<area shape="rect" id="node2" href="structmkldnn__memory__desc__t.html" title="Memory descriptor. " alt="" coords="214,96,377,123"/>
+<area shape="rect" id="node3" href="structmkldnn__rnn__packed__desc__t.html" title="Description of tensor of packed weights for rnn. " alt="" coords="5,5,189,32"/>
+<area shape="rect" id="node4" href="structmkldnn__blocking__desc__t.html" title="Generic description of blocked data layout for most memory formats. " alt="" coords="213,5,379,32"/>
+<area shape="rect" id="node5" href="structmkldnn__wino__desc__t.html" title="Description of tensor of weights for winograd 2x3 convolution. " alt="" coords="403,5,547,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -129,7 +130,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The kind of primitive. </p>
-<p>Used for self identifying the primitive descriptor. Must be <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973ac9dbe1aea35cb16f509ad407695cb8b7" title="An LRN primitive. ">mkldnn_lrn</a>. </p>
+<p>Used for self-identifying the primitive descriptor. Must be <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973ac9dbe1aea35cb16f509ad407695cb8b7" title="An LRN primitive. ">mkldnn_lrn</a>. </p>
 
 </div>
 </div>
@@ -163,7 +164,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>LRN algorithm. </p>
-<p>Possible values <a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a03714f6e5eff68bca2f4d9c9396e9ce6" title="LRN within a single channel. ">mkldnn_lrn_within_channel</a> or <a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a1ed17baabce0edc962f1dcfe83d09d5d" title="Local response normalization (LRN) across multiple channels. ">mkldnn_lrn_across_channels</a>. </p>
+<p>Possible values: <a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a03714f6e5eff68bca2f4d9c9396e9ce6" title="LRN within a single channel. ">mkldnn_lrn_within_channel</a> and <a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a1ed17baabce0edc962f1dcfe83d09d5d" title="Local response normalization (LRN) across multiple channels. ">mkldnn_lrn_across_channels</a>. </p>
 
 </div>
 </div>

@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
-   &#160;<span id="projectnumber">0.17.3</span>
+   &#160;<span id="projectnumber">0.17.2</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
   </td>
@@ -65,7 +65,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><blockquote class="doxtable">
-<p><img class="formulaInl" alt="$\dagger$" src="form_23.png"/> Disclaimer: MKLDNN Int8 primitives are a work in progress and not all definitions and configurations have been implemented or included in the documentation. Moreover, the example included in this documentation relies on int8 primitives which use the <b>MKL binary dependency</b> and is limited to MKLDNN built with the MKL binary. </p>
+<p><img class="formulaInl" alt="$\dagger$" src="form_22.png"/> Disclaimer: MKLDNN Int8 primitives are a work in progress and not all definitions and configurations have been implemented or included in the documentation. Moreover, the example included in this documentation relies on int8 primitives which use the <b>MKL binary dependency</b> and is limited to MKLDNN built with the MKL binary. </p>
 </blockquote>
 <h2>Introduction</h2>
 <p>To push higher performance during inference computations, recent work has focused on computing at a lower precision (i.e. shrinking the size of data for activations and weights) to achieve higher throughput. Eight-bit computations (referred to as int8) offer improved performance over higher precision types -because it allows packing more data into a single instruction, at the cost of reduced but acceptable accuracy.</p>
@@ -75,50 +75,50 @@ $(function() {
 <h3>Scale</h3>
 <p>The scale is usually obtained from sampling the dataset of previous executions in the original format (e.g. the activations and weights from training in fp32) and is formulated as:</p>
 <ul>
-<li><img class="formulaInl" alt="$ R_{\{\alpha,w\}} = max(abs(T_{\{\alpha,w\}}))$" src="form_24.png"/><br />
-where <img class="formulaInl" alt="$ T_{\{\alpha,w\}}$" src="form_25.png"/> is a tensor corresponding to either the weights <img class="formulaInl" alt="$w$" src="form_26.png"/> or the activations <img class="formulaInl" alt="$\alpha$" src="form_27.png"/>.</li>
+<li><img class="formulaInl" alt="$ R_{\{\alpha,w\}} = max(abs(T_{\{\alpha,w\}}))$" src="form_23.png"/><br />
+where <img class="formulaInl" alt="$ T_{\{\alpha,w\}}$" src="form_24.png"/> is a tensor corresponding to either the weights <img class="formulaInl" alt="$w$" src="form_25.png"/> or the activations <img class="formulaInl" alt="$\alpha$" src="form_26.png"/>.</li>
 </ul>
 <p>The purpose is to establish the range of values used in the computation where selecting a proper scaling factor prevents over or underflows when computing the lower precision results.</p>
 <h3>Quantization Factor</h3>
 <p>The next step is to calculate the <b>quantization factor</b> for converting the values into the corresponding int8 range. This is also known as the <b>scale</b> or <b>scaling factor</b> applied to the original high-precision values and is calculated as:</p>
 <ul>
-<li><img class="formulaInl" alt="$ Q_{\alpha} = \frac{255}{R_{\alpha}}$" src="form_28.png"/> is the quantization factor for activations with non-negative values.</li>
-<li><img class="formulaInl" alt="$ Q_{w} = \frac{127}{R_{w}}$" src="form_29.png"/> is the quantization factor for weights.</li>
+<li><img class="formulaInl" alt="$ Q_{\alpha} = \frac{255}{R_{\alpha}}$" src="form_27.png"/> is the quantization factor for activations with non-negative values.</li>
+<li><img class="formulaInl" alt="$ Q_{w} = \frac{127}{R_{w}}$" src="form_28.png"/> is the quantization factor for weights.</li>
 </ul>
 <p>The low-precision values, known as the <b>quantized</b> activation, weights, and bias values are calculated as:</p><ul>
-<li><img class="formulaInl" alt="$\alpha_{u8} = \lceil Q_{\alpha} \alpha_{f32} \rceil \in [0,255]$" src="form_30.png"/></li>
-<li><img class="formulaInl" alt="$W_{s8} = \lceil Q_{w} W_{f32} \rceil \in [-127,127]$" src="form_31.png"/></li>
-<li><img class="formulaInl" alt="$b_{s32} = \lceil Q_{\alpha} Q_{w} b_{f32} \rceil \in [-2^{31},2^{31}-1]$" src="form_32.png"/><br />
-where the function <img class="formulaInl" alt="$ \lceil \rceil $" src="form_33.png"/> rounds to the selected rounding mode.</li>
+<li><img class="formulaInl" alt="$\alpha_{u8} = \lceil Q_{\alpha} \alpha_{f32} \rceil \in [0,255]$" src="form_29.png"/></li>
+<li><img class="formulaInl" alt="$W_{s8} = \lceil Q_{w} W_{f32} \rceil \in [-127,127]$" src="form_30.png"/></li>
+<li><img class="formulaInl" alt="$b_{s32} = \lceil Q_{\alpha} Q_{w} b_{f32} \rceil \in [-2^{31},2^{31}-1]$" src="form_31.png"/><br />
+where the function <img class="formulaInl" alt="$ \lceil \rceil $" src="form_32.png"/> rounds to the selected rounding mode.</li>
 </ul>
 <p>When the destination value (e.g. from a convolution) is stored as a signed 32-bit integer, the result is bound to the same quantization <em>scaling</em> factors:</p><ul>
-<li><img class="formulaInl" alt="$ X_{s32} = W_{s8} \times \alpha{u8} + b_{s32} \approx Q_{\alpha} Q_{\omega} X_{f32}$" src="form_34.png"/></li>
-<li>where <img class="formulaInl" alt="$X_{f32} = W_{f32} \times \alpha_{f32} + b_{f32}$" src="form_35.png"/></li>
+<li><img class="formulaInl" alt="$ X_{s32} = W_{s8} \times \alpha{u8} + b_{s32} \approx Q_{\alpha} Q_{\omega} X_{f32}$" src="form_33.png"/></li>
+<li>where <img class="formulaInl" alt="$X_{f32} = W_{f32} \times \alpha_{f32} + b_{f32}$" src="form_34.png"/></li>
 </ul>
 <p>Where the approximated value is due to the rounded values.</p>
 <p>Inversely, the dequantized value is calculated as:</p><ul>
-<li><img class="formulaInl" alt="$ X_{f32} \approx \frac{1}{Q_{\alpha} Q_{\omega}} X_{s32} $" src="form_36.png"/></li>
+<li><img class="formulaInl" alt="$ X_{f32} \approx \frac{1}{Q_{\alpha} Q_{\omega}} X_{s32} $" src="form_35.png"/></li>
 </ul>
 <h3>Quantization Example</h3>
 <p>To show how the int8 parameters are obtained, suppose we first start off with a set of arbitrary high-precision input and output values. These values come from sampling a previously executed training run and are in their original 32-bit floating point format as:</p><ul>
-<li>activations: <img class="formulaInl" alt="$ T_{\alpha} = [15, 14, 15 ... 8, 11 ]$" src="form_37.png"/> where <img class="formulaInl" alt="$ max(abs(T_{\alpha})) = 15$" src="form_38.png"/></li>
-<li>weights: <img class="formulaInl" alt="$ T_{\omega} = [-5.1 , 6.8, ... -1.2, 9.8 ]$" src="form_39.png"/> where <img class="formulaInl" alt="$ max(abs(T_{\omega})) = 9.8$" src="form_40.png"/></li>
-<li>bias: <img class="formulaInl" alt="$ T_{\alpha} = [ 2.4, -5.2 ... -8 ]$" src="form_41.png"/> where <img class="formulaInl" alt="$ max(abs(T_{\alpha})) = 8$" src="form_42.png"/></li>
+<li>activations: <img class="formulaInl" alt="$ T_{\alpha} = [15, 14, 15 ... 8, 11 ]$" src="form_36.png"/> where <img class="formulaInl" alt="$ max(abs(T_{\alpha})) = 15$" src="form_37.png"/></li>
+<li>weights: <img class="formulaInl" alt="$ T_{\omega} = [-5.1 , 6.8, ... -1.2, 9.8 ]$" src="form_38.png"/> where <img class="formulaInl" alt="$ max(abs(T_{\omega})) = 9.8$" src="form_39.png"/></li>
+<li>bias: <img class="formulaInl" alt="$ T_{\alpha} = [ 2.4, -5.2 ... -8 ]$" src="form_40.png"/> where <img class="formulaInl" alt="$ max(abs(T_{\alpha})) = 8$" src="form_41.png"/></li>
 </ul>
 <p>The scaling factors are:</p>
 <ul>
-<li><img class="formulaInl" alt="$ Q_{\alpha} = \frac{255}{R_{\alpha}} = \frac{255}{15} = 17 $" src="form_43.png"/></li>
-<li><img class="formulaInl" alt="$ Q_{w} = \frac{127}{R_{w}} = \frac{127}{9.8} = 12.96$" src="form_44.png"/></li>
+<li><img class="formulaInl" alt="$ Q_{\alpha} = \frac{255}{R_{\alpha}} = \frac{255}{15} = 17 $" src="form_42.png"/></li>
+<li><img class="formulaInl" alt="$ Q_{w} = \frac{127}{R_{w}} = \frac{127}{9.8} = 12.96$" src="form_43.png"/></li>
 </ul>
 <p>Finally, the quantized input values for the 8-bit operation are calculated as:</p>
 <ul>
-<li><img class="formulaInl" alt="$\alpha_{u8} = \lceil Q_{\alpha} \alpha_{f32} \rceil$" src="form_45.png"/> <img class="formulaInl" alt="$ = \lceil 17 \times [15, 14, ... 11 ] \rceil = [255, 238, ... 187] $" src="form_46.png"/></li>
-<li><img class="formulaInl" alt="$W_{s8} = \lceil Q_{w} W_{f32} \rceil = \lceil 12.96 \times [-5.1 , 6.8, ... -1.2, 9.8 ] \rceil = [-66, 88, ... -15, 127] $" src="form_47.png"/></li>
-<li><img class="formulaInl" alt="$b_{s32} = \lceil Q_{\alpha} Q_{w} b_{f32} \rceil = \lceil 17 \times 12.96 \times [ 2.4, -5.2 ... -8 ] \rceil = [528, -1145, ... -1762] $" src="form_48.png"/></li>
+<li><img class="formulaInl" alt="$\alpha_{u8} = \lceil Q_{\alpha} \alpha_{f32} \rceil$" src="form_44.png"/> <img class="formulaInl" alt="$ = \lceil 17 \times [15, 14, ... 11 ] \rceil = [255, 238, ... 187] $" src="form_45.png"/></li>
+<li><img class="formulaInl" alt="$W_{s8} = \lceil Q_{w} W_{f32} \rceil = \lceil 12.96 \times [-5.1 , 6.8, ... -1.2, 9.8 ] \rceil = [-66, 88, ... -15, 127] $" src="form_46.png"/></li>
+<li><img class="formulaInl" alt="$b_{s32} = \lceil Q_{\alpha} Q_{w} b_{f32} \rceil = \lceil 17 \times 12.96 \times [ 2.4, -5.2 ... -8 ] \rceil = [528, -1145, ... -1762] $" src="form_47.png"/></li>
 </ul>
 <p>These arrays are the new inputs for the int8 net.</p>
 <h2>MKLDNN Support for low-precision int8 Primitives</h2>
-<p>MKLDNN supports low-precision computations for inference through the int8 primitives. Int8 primitives are ordinary MKLDNN primitives which have their input and output parameters configured to 8-bit types. Int8 primitives are optimized for high performance, one example is the use of specialized 512-bit wide low-precision instructions available through the Advanced Vector Extensions 512 (AVX512) for Intel Skylake Server Systems. Currently, the <img class="formulaInl" alt="$\dagger$" src="form_23.png"/>supported primitives are:</p><ul>
+<p>MKLDNN supports low-precision computations for inference through the int8 primitives. Int8 primitives are ordinary MKLDNN primitives which have their input and output parameters configured to 8-bit types. Int8 primitives are optimized for high performance, one example is the use of specialized 512-bit wide low-precision instructions available through the Advanced Vector Extensions 512 (AVX512) for Intel Skylake Server Systems. Currently, the <img class="formulaInl" alt="$\dagger$" src="form_22.png"/>supported primitives are:</p><ul>
 <li>convolution</li>
 <li>pooling</li>
 <li>eltwise</li>
@@ -159,9 +159,9 @@ Multi-value scaling format</div></div>
 </ul>
 <p>Fused <b>Post-Operations</b> (PostOps) allow chaining operations during the primitive computation. Note that the resulting output value from PostOps is always affected by the scaling factor. The supported operations are:</p><ul>
 <li>Accumulation where the primitive sums the resulting values from previously computed activations as:<br />
- <img class="formulaInl" alt="$ dst[ ] \leftarrow scale * dst[] + op(...); instead of dst[ ] \leftarrow op(...) $" src="form_49.png"/></li>
+ <img class="formulaInl" alt="$ dst[ ] \leftarrow scale * dst[] + op(...); instead of dst[ ] \leftarrow op(...) $" src="form_48.png"/></li>
 <li>Element-wise (eltwise) operation with kind, alpha and beta parameters as:<br />
- <img class="formulaInl" alt="$ dst[ ] \leftarrow scale * eltwise_op ( op(...) ); instead of dst[ ] \leftarrow op(...)$" src="form_50.png"/></li>
+ <img class="formulaInl" alt="$ dst[ ] \leftarrow scale * eltwise_op ( op(...) ); instead of dst[ ] \leftarrow op(...)$" src="form_49.png"/></li>
 </ul>
 <p>The list of supported eltwise operations for int8 is currently limited to ReLU. For instance, PostOps may only configure a convolution with accumulation followed by eltwise (relu).</p>
 <h2>Simple_Net.cpp Example using 8-bit and PostOps Computations</h2>

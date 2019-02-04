@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
-   &#160;<span id="projectnumber">0.17.3</span>
+   &#160;<span id="projectnumber">0.17.2</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
   </td>
@@ -82,10 +82,10 @@ Public Attributes</h2></td></tr>
 <tr class="memdesc:ada6e21a52cc3e8b0ac6f11659fbee519"><td class="mdescLeft">&#160;</td><td class="mdescRight">RNN cell flags.  <a href="#ada6e21a52cc3e8b0ac6f11659fbee519">More...</a><br /></td></tr>
 <tr class="separator:ada6e21a52cc3e8b0ac6f11659fbee519"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac7ffba7a83073b0e4f7899f8ff7f80e9"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__rnn__cell__desc__t.html#ac7ffba7a83073b0e4f7899f8ff7f80e9">alpha</a></td></tr>
-<tr class="memdesc:ac7ffba7a83073b0e4f7899f8ff7f80e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">alpha is a negative slope parameter (used only if (flags &amp; <a class="el" href="group__c__api__types__memory.html#gga62b06d91e9fcf6bd086311fd4d8ece36a55f69148433cce0b97e8edd117f6b2ed">mkldnn_rnn_cell_with_relu</a>) != 0)  <a href="#ac7ffba7a83073b0e4f7899f8ff7f80e9">More...</a><br /></td></tr>
+<tr class="memdesc:ac7ffba7a83073b0e4f7899f8ff7f80e9"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>alpha</code> is a negative slope parameter (used only if <code>(flags &amp; <a class="el" href="group__c__api__types__memory.html#gga62b06d91e9fcf6bd086311fd4d8ece36a55f69148433cce0b97e8edd117f6b2ed">mkldnn_rnn_cell_with_relu</a>) != 0</code>)  <a href="#ac7ffba7a83073b0e4f7899f8ff7f80e9">More...</a><br /></td></tr>
 <tr class="separator:ac7ffba7a83073b0e4f7899f8ff7f80e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d6c936048a7a0dc1cff86af8d7f180b"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__rnn__cell__desc__t.html#a6d6c936048a7a0dc1cff86af8d7f180b">clipping</a></td></tr>
-<tr class="memdesc:a6d6c936048a7a0dc1cff86af8d7f180b"><td class="mdescLeft">&#160;</td><td class="mdescRight">clipping parameter (used only if (flags &amp; <a class="el" href="group__c__api__types__memory.html#gga62b06d91e9fcf6bd086311fd4d8ece36a41f97c53ef51f113a259c26a8c8363ed">mkldnn_rnn_cell_with_clipping</a>) != 0)  <a href="#a6d6c936048a7a0dc1cff86af8d7f180b">More...</a><br /></td></tr>
+<tr class="memdesc:a6d6c936048a7a0dc1cff86af8d7f180b"><td class="mdescLeft">&#160;</td><td class="mdescRight">clipping parameter (used only if <code>(flags &amp; <a class="el" href="group__c__api__types__memory.html#gga62b06d91e9fcf6bd086311fd4d8ece36a41f97c53ef51f113a259c26a8c8363ed">mkldnn_rnn_cell_with_clipping</a>) != 0</code>)  <a href="#a6d6c936048a7a0dc1cff86af8d7f180b">More...</a><br /></td></tr>
 <tr class="separator:a6d6c936048a7a0dc1cff86af8d7f180b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -102,7 +102,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>RNN cell kind. </p>
-<p>Must be one of <a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a1f61363b51f29e33a64b4670e7f3a488" title="RNN cell. ">mkldnn_vanilla_rnn</a>, <a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a456ac674f7f3d7ac0d3e71bc82b832d6" title="LSTM cell. ">mkldnn_vanilla_lstm</a>, <a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97ab0c8902b2a48f9e27389d1a459f38d7d" title="GRU cell. ">mkldnn_vanilla_gru</a> or <a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a2cf2ea0c4089de4eaf331fac2bd6f1a0" title="GRU cell with linear before reset. ">mkldnn_gru_linear_before_reset</a>. </p>
+<p>Must be one of <a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a1f61363b51f29e33a64b4670e7f3a488" title="RNN cell. ">mkldnn_vanilla_rnn</a>, <a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a456ac674f7f3d7ac0d3e71bc82b832d6" title="LSTM cell. ">mkldnn_vanilla_lstm</a>, <a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97ab0c8902b2a48f9e27389d1a459f38d7d" title="GRU cell. ">mkldnn_vanilla_gru</a>, or <a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a2cf2ea0c4089de4eaf331fac2bd6f1a0" title="GRU cell with linear before reset. ">mkldnn_gru_linear_before_reset</a>. </p>
 
 </div>
 </div>
@@ -119,7 +119,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Activation function used. </p>
-<p>Must be one of <a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a66ead6848424f0b494e813745efb5548" title="Eltwise: ReLU. ">mkldnn_eltwise_relu</a>, <a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a6b50624e847783bfc94b7cf6badfa16c" title="Eltwise: hyperbolic tangent non-linearity (tanh) ">mkldnn_eltwise_tanh</a>. </p>
+<p>Must be either <a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a66ead6848424f0b494e813745efb5548" title="Eltwise: ReLU. ">mkldnn_eltwise_relu</a> or <a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a6b50624e847783bfc94b7cf6badfa16c" title="Eltwise: hyperbolic tangent non-linearity (tanh) ">mkldnn_eltwise_tanh</a>. </p>
 
 </div>
 </div>
@@ -151,7 +151,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>alpha is a negative slope parameter (used only if (flags &amp; <a class="el" href="group__c__api__types__memory.html#gga62b06d91e9fcf6bd086311fd4d8ece36a55f69148433cce0b97e8edd117f6b2ed">mkldnn_rnn_cell_with_relu</a>) != 0) </p>
+<p><code>alpha</code> is a negative slope parameter (used only if <code>(flags &amp; <a class="el" href="group__c__api__types__memory.html#gga62b06d91e9fcf6bd086311fd4d8ece36a55f69148433cce0b97e8edd117f6b2ed">mkldnn_rnn_cell_with_relu</a>) != 0</code>) </p>
 
 </div>
 </div>
@@ -167,7 +167,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>clipping parameter (used only if (flags &amp; <a class="el" href="group__c__api__types__memory.html#gga62b06d91e9fcf6bd086311fd4d8ece36a41f97c53ef51f113a259c26a8c8363ed">mkldnn_rnn_cell_with_clipping</a>) != 0) </p>
+<p>clipping parameter (used only if <code>(flags &amp; <a class="el" href="group__c__api__types__memory.html#gga62b06d91e9fcf6bd086311fd4d8ece36a41f97c53ef51f113a259c26a8c8363ed">mkldnn_rnn_cell_with_clipping</a>) != 0</code>) </p>
 
 </div>
 </div>

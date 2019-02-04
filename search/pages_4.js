@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['performance_20profiling',['Performance profiling',['../perf_profile.html',1,'']]]
+  ['simplenet_20example',['SimpleNet Example',['../ex_simplenet.html',1,'']]]
 ];
