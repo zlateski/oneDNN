@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
-   &#160;<span id="projectnumber">0.18.0</span>
+   &#160;<span id="projectnumber">0.17.3</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
   </td>
@@ -94,6 +94,8 @@ Collaboration diagram for mkldnn::rnn_backward::primitive_desc:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a2bfa103fe9042cbff36b11d659587775"><td class="memItemLeft" align="right" valign="top">MKLDNN_DEPRECATED&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1rnn__backward_1_1primitive__desc.html#a2bfa103fe9042cbff36b11d659587775">primitive_desc</a> (const <a class="el" href="structmkldnn_1_1rnn__backward_1_1desc.html">desc</a> &amp;<a class="el" href="structmkldnn_1_1rnn__backward_1_1desc.html">desc</a>, const <a class="el" href="structmkldnn_1_1engine.html">engine</a> &amp;e)</td></tr>
+<tr class="separator:a2bfa103fe9042cbff36b11d659587775"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a876a155916d0d3948628d5d237d7c5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1rnn__backward_1_1primitive__desc.html#a0a876a155916d0d3948628d5d237d7c5">primitive_desc</a> (const <a class="el" href="structmkldnn_1_1rnn__backward_1_1desc.html">desc</a> &amp;<a class="el" href="structmkldnn_1_1rnn__backward_1_1desc.html">desc</a>, const <a class="el" href="structmkldnn_1_1engine.html">engine</a> &amp;e, const <a class="el" href="structmkldnn_1_1rnn__forward_1_1primitive__desc.html">rnn_forward::primitive_desc</a> &amp;hint_fwd_pd)</td></tr>
 <tr class="separator:a0a876a155916d0d3948628d5d237d7c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a29ea91d150275b228286dd6bb134bec9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1rnn__backward_1_1primitive__desc.html#a29ea91d150275b228286dd6bb134bec9">primitive_desc</a> (const <a class="el" href="structmkldnn_1_1rnn__backward_1_1desc.html">desc</a> &amp;<a class="el" href="structmkldnn_1_1rnn__backward_1_1desc.html">desc</a>, const <a class="el" href="structmkldnn_1_1primitive__attr.html">primitive_attr</a> &amp;attr, const <a class="el" href="structmkldnn_1_1engine.html">engine</a> &amp;e, const <a class="el" href="structmkldnn_1_1rnn__forward_1_1primitive__desc.html">rnn_forward::primitive_desc</a> &amp;hint_fwd_pd)</td></tr>
@@ -172,8 +174,44 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a98414546e5ca9f7726dc21311c6bcefc inherit pro_methods_classmkldnn_1_1handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a2bfa103fe9042cbff36b11d659587775"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bfa103fe9042cbff36b11d659587775">&#9670;&nbsp;</a></span>primitive_desc() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">MKLDNN_DEPRECATED mkldnn::rnn_backward::primitive_desc::primitive_desc </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmkldnn_1_1rnn__backward_1_1desc.html">desc</a> &amp;&#160;</td>
+          <td class="paramname"><em>desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structmkldnn_1_1engine.html">engine</a> &amp;&#160;</td>
+          <td class="paramname"><em>e</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a0a876a155916d0d3948628d5d237d7c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0a876a155916d0d3948628d5d237d7c5">&#9670;&nbsp;</a></span>primitive_desc() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a876a155916d0d3948628d5d237d7c5">&#9670;&nbsp;</a></span>primitive_desc() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -215,7 +253,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a29ea91d150275b228286dd6bb134bec9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a29ea91d150275b228286dd6bb134bec9">&#9670;&nbsp;</a></span>primitive_desc() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a29ea91d150275b228286dd6bb134bec9">&#9670;&nbsp;</a></span>primitive_desc() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">

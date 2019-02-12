@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['layout_5fdesc',['layout_desc',['../structmkldnn__memory__desc__t.html#ae92e4e92d5c7728bffd29ab317908f12',1,'mkldnn_memory_desc_t']]],
-  ['local_5fsize',['local_size',['../structmkldnn__lrn__desc__t.html#a6e4711d09762d5c3a38dac99ab4397df',1,'mkldnn_lrn_desc_t']]],
-  ['lrn_5falpha',['lrn_alpha',['../structmkldnn__lrn__desc__t.html#abe1a26e98c5bf28a39722e63215b2d68',1,'mkldnn_lrn_desc_t']]],
-  ['lrn_5fbeta',['lrn_beta',['../structmkldnn__lrn__desc__t.html#ad29c3af8cae0dc599c62d3e04ebb94df',1,'mkldnn_lrn_desc_t']]],
-  ['lrn_5fk',['lrn_k',['../structmkldnn__lrn__desc__t.html#a87736331128ad8a787012b6f3eced386',1,'mkldnn_lrn_desc_t']]]
+  ['mean_5fdesc',['mean_desc',['../structmkldnn__batch__normalization__desc__t.html#aa56c0bf1307a56b442a1c8381a572d8b',1,'mkldnn_batch_normalization_desc_t']]],
+  ['message',['message',['../structmkldnn_1_1error.html#aac33c1b8a1a10d6d1acfe2ec5ce6cdcb',1,'mkldnn::error']]]
 ];

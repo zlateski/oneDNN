@@ -4,6 +4,7 @@ var searchData=
   ['mkldnn_5fbatch_5fnormalization_5fdesc_5ft',['mkldnn_batch_normalization_desc_t',['../structmkldnn__batch__normalization__desc__t.html',1,'']]],
   ['mkldnn_5fblocking_5fdesc_5ft',['mkldnn_blocking_desc_t',['../structmkldnn__blocking__desc__t.html',1,'']]],
   ['mkldnn_5fconvolution_5fdesc_5ft',['mkldnn_convolution_desc_t',['../structmkldnn__convolution__desc__t.html',1,'']]],
+  ['mkldnn_5fconvolution_5frelu_5fdesc_5ft',['mkldnn_convolution_relu_desc_t',['../structmkldnn__convolution__relu__desc__t.html',1,'']]],
   ['mkldnn_5feltwise_5fdesc_5ft',['mkldnn_eltwise_desc_t',['../structmkldnn__eltwise__desc__t.html',1,'']]],
   ['mkldnn_5fengine',['mkldnn_engine',['../structmkldnn__engine.html',1,'']]],
   ['mkldnn_5finner_5fproduct_5fdesc_5ft',['mkldnn_inner_product_desc_t',['../structmkldnn__inner__product__desc__t.html',1,'']]],
@@ -18,10 +19,8 @@ var searchData=
   ['mkldnn_5fprimitive_5fdesc_5fiterator',['mkldnn_primitive_desc_iterator',['../structmkldnn__primitive__desc__iterator.html',1,'']]],
   ['mkldnn_5frnn_5fcell_5fdesc_5ft',['mkldnn_rnn_cell_desc_t',['../structmkldnn__rnn__cell__desc__t.html',1,'']]],
   ['mkldnn_5frnn_5fdesc_5ft',['mkldnn_rnn_desc_t',['../structmkldnn__rnn__desc__t.html',1,'']]],
-  ['mkldnn_5frnn_5fpacked_5fdesc_5ft',['mkldnn_rnn_packed_desc_t',['../structmkldnn__rnn__packed__desc__t.html',1,'']]],
   ['mkldnn_5fshuffle_5fdesc_5ft',['mkldnn_shuffle_desc_t',['../structmkldnn__shuffle__desc__t.html',1,'']]],
   ['mkldnn_5fsoftmax_5fdesc_5ft',['mkldnn_softmax_desc_t',['../structmkldnn__softmax__desc__t.html',1,'']]],
   ['mkldnn_5fstream',['mkldnn_stream',['../structmkldnn__stream.html',1,'']]],
-  ['mkldnn_5fversion_5ft',['mkldnn_version_t',['../structmkldnn__version__t.html',1,'']]],
   ['mkldnn_5fwino_5fdesc_5ft',['mkldnn_wino_desc_t',['../structmkldnn__wino__desc__t.html',1,'']]]
 ];
