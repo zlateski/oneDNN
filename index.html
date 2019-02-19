@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
-   &#160;<span id="projectnumber">0.17.4</span>
+   &#160;<span id="projectnumber">0.18.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
   </td>
@@ -86,7 +86,7 @@ $(function() {
 <tr>
 <td align="left"></td><td align="left">3D inner product </td><td align="center">x </td><td align="center">x </td><td align="center"></td></tr>
 <tr>
-<td align="left">RNN (experimental)</td><td align="left">Vanilla RNN cell </td><td align="center">x </td><td align="center">x </td><td align="center"></td></tr>
+<td align="left">RNN </td><td align="left">Vanilla RNN cell </td><td align="center">x </td><td align="center">x </td><td align="center">x </td></tr>
 <tr>
 <td align="left"></td><td align="left">LSTM cell </td><td align="center">x </td><td align="center">x </td><td align="center"></td></tr>
 <tr>
@@ -181,7 +181,7 @@ $(function() {
 <li>C++: simple_training_net.cpp</li>
 </ul>
 </li>
-<li>Creation of forward propagation of GNMT topology (experimental support)<ul>
+<li>Creation of forward propagation of GNMT topology<ul>
 <li>C++: simple_rnn.cpp</li>
 </ul>
 </li>
@@ -193,6 +193,7 @@ $(function() {
 <h3>Performance Considerations</h3>
 <ul>
 <li>Convolution and inner product primitives choose the memory format when you create them with the unspecified memory format <code>any</code> for input or output. The memory format chosen is based on different circumstances such as hardware and convolutional parameters.</li>
+<li>Convolution could be executed using the <a class="el" href="winograd_convolution.html">Winograd algorithm</a> for a significant performance boost.</li>
 <li>Operation primitives (such as ReLU, LRN, or pooling) following convolution or inner product, should have input in the same memory format as the convolution or inner-product. Reordering can be an expensive operation, so you should avoid it unless it is necessary for performance in convolution, inner product, or output specifications.</li>
 <li>Pooling, concat and sum can be created with the output memory format <code>any</code>.</li>
 <li>An operation primitive (typically operations such as pooling, LRN, or softmax) might need workspace memory for storing results of intermediate operations that help with backward propagation.</li>

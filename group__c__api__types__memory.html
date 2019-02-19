@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
-   &#160;<span id="projectnumber">0.17.4</span>
+   &#160;<span id="projectnumber">0.18.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
   </td>
@@ -84,6 +84,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__wino__desc__t.html">mkldnn_wino_desc_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Description of tensor of weights for winograd 2x3 convolution.  <a href="structmkldnn__wino__desc__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__rnn__packed__desc__t.html">mkldnn_rnn_packed_desc_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Description of tensor of packed weights for rnn.  <a href="structmkldnn__rnn__packed__desc__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__convolution__desc__t.html">mkldnn_convolution_desc_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A descriptor of a convolution operation.  <a href="structmkldnn__convolution__desc__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -108,13 +111,10 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__inner__product__desc__t.html">mkldnn_inner_product_desc_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A descriptor of an inner product operation.  <a href="structmkldnn__inner__product__desc__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__convolution__relu__desc__t.html">mkldnn_convolution_relu_desc_t</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A descriptor of a convolution followed by relu operation.  <a href="structmkldnn__convolution__relu__desc__t.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__rnn__cell__desc__t.html">mkldnn_rnn_cell_desc_t</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__rnn__desc__t.html">mkldnn_rnn_desc_t</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A descriptor for an rnn operation.  <a href="structmkldnn__rnn__desc__t.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A descriptor for an RNN operation.  <a href="structmkldnn__rnn__desc__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
@@ -122,6 +122,8 @@ Macros</h2></td></tr>
 <tr class="memitem:ga4ca94c6989f339b687713b555610fb9b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#ga4ca94c6989f339b687713b555610fb9b">TENSOR_MAX_DIMS</a>&#160;&#160;&#160;12</td></tr>
 <tr class="memdesc:ga4ca94c6989f339b687713b555610fb9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of dimensions a tensor can have.  <a href="#ga4ca94c6989f339b687713b555610fb9b">More...</a><br /></td></tr>
 <tr class="separator:ga4ca94c6989f339b687713b555610fb9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga09e605320955705ff8d2561026995b47"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#ga09e605320955705ff8d2561026995b47">MKLDNN_RNN_MAX_N_PARTS</a>&#160;&#160;&#160;4</td></tr>
+<tr class="separator:ga09e605320955705ff8d2561026995b47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -134,8 +136,6 @@ Typedefs</h2></td></tr>
 <tr class="memitem:ga22892e72c09157377e6d0358273025a3"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structmkldnn__convolution__desc__t.html">mkldnn_convolution_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#ga22892e72c09157377e6d0358273025a3">mkldnn_deconvolution_desc_t</a></td></tr>
 <tr class="memdesc:ga22892e72c09157377e6d0358273025a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">A descriptor of a deconvolution operation.  <a href="#ga22892e72c09157377e6d0358273025a3">More...</a><br /></td></tr>
 <tr class="separator:ga22892e72c09157377e6d0358273025a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5472f7e013cb456d4ef7789cf8785a4c"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structmkldnn__eltwise__desc__t.html">mkldnn_eltwise_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#ga5472f7e013cb456d4ef7789cf8785a4c">mkldnn_relu_desc_t</a></td></tr>
-<tr class="separator:ga5472f7e013cb456d4ef7789cf8785a4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -149,6 +149,11 @@ Enumerations</h2></td></tr>
 <br />
  }</td></tr>
 <tr class="separator:ga9b836385e37583fa1aeaf2753b25e966"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0b72d4deb16ce5703dc1641c80e9de87"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#ga0b72d4deb16ce5703dc1641c80e9de87">mkldnn_rnn_packed_memory_format_t</a> { <a class="el" href="group__c__api__types__memory.html#gga0b72d4deb16ce5703dc1641c80e9de87a7ea620d880278e0e362f22a0dca727fc">mkldnn_packed_format_undef</a> = 0, 
+<a class="el" href="group__c__api__types__memory.html#gga0b72d4deb16ce5703dc1641c80e9de87aa01ef053fccf8bd78da948b9c61cc758">mkldnn_ldigo_p</a>, 
+<a class="el" href="group__c__api__types__memory.html#gga0b72d4deb16ce5703dc1641c80e9de87ae3debd06f01fcfc7249e64922652ed4f">mkldnn_ldgoi_p</a>
+ }</td></tr>
+<tr class="separator:ga0b72d4deb16ce5703dc1641c80e9de87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga62b06d91e9fcf6bd086311fd4d8ece36"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#ga62b06d91e9fcf6bd086311fd4d8ece36">mkldnn_rnn_cell_flags_t</a> { <a class="el" href="group__c__api__types__memory.html#gga62b06d91e9fcf6bd086311fd4d8ece36a55f69148433cce0b97e8edd117f6b2ed">mkldnn_rnn_cell_with_relu</a> = 0x1U, 
 <a class="el" href="group__c__api__types__memory.html#gga62b06d91e9fcf6bd086311fd4d8ece36a41f97c53ef51f113a259c26a8c8363ed">mkldnn_rnn_cell_with_clipping</a> = 0x2U
  }<tr class="memdesc:ga62b06d91e9fcf6bd086311fd4d8ece36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flags for RNN cell.  <a href="group__c__api__types__memory.html#ga62b06d91e9fcf6bd086311fd4d8ece36">More...</a><br /></td></tr>
@@ -182,6 +187,20 @@ Enumerations</h2></td></tr>
 
 <p>Maximum number of dimensions a tensor can have. </p>
 <p>Only restricts the amount of space used for the tensor description. Individual computational primitives may support only tensors of certain dimensions. </p>
+
+</div>
+</div>
+<a id="ga09e605320955705ff8d2561026995b47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga09e605320955705ff8d2561026995b47">&#9670;&nbsp;</a></span>MKLDNN_RNN_MAX_N_PARTS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MKLDNN_RNN_MAX_N_PARTS&#160;&#160;&#160;4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -234,20 +253,6 @@ Enumerations</h2></td></tr>
 
 </div>
 </div>
-<a id="ga5472f7e013cb456d4ef7789cf8785a4c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga5472f7e013cb456d4ef7789cf8785a4c">&#9670;&nbsp;</a></span>mkldnn_relu_desc_t</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef <a class="el" href="structmkldnn__eltwise__desc__t.html">mkldnn_eltwise_desc_t</a> <a class="el" href="group__c__api__types__memory.html#ga5472f7e013cb456d4ef7789cf8785a4c">mkldnn_relu_desc_t</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="ga9b836385e37583fa1aeaf2753b25e966"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga9b836385e37583fa1aeaf2753b25e966">&#9670;&nbsp;</a></span>mkldnn_wino_memory_format_t</h2>
@@ -269,6 +274,25 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="gga9b836385e37583fa1aeaf2753b25e966a186ab8062edcf178d218817d6ab700c3"></a>mkldnn_wino_wei_aaOBiOo&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="gga9b836385e37583fa1aeaf2753b25e966a53a0727b3e8985583f39b96c20e92d27"></a>mkldnn_wino_wei_OBaaIBOIio&#160;</td><td class="fielddoc"><p>Tensor of weights for 4x3 convolution. </p>
 </td></tr>
+</table>
+
+</div>
+</div>
+<a id="ga0b72d4deb16ce5703dc1641c80e9de87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0b72d4deb16ce5703dc1641c80e9de87">&#9670;&nbsp;</a></span>mkldnn_rnn_packed_memory_format_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__c__api__types__memory.html#ga0b72d4deb16ce5703dc1641c80e9de87">mkldnn_rnn_packed_memory_format_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga0b72d4deb16ce5703dc1641c80e9de87a7ea620d880278e0e362f22a0dca727fc"></a>mkldnn_packed_format_undef&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga0b72d4deb16ce5703dc1641c80e9de87aa01ef053fccf8bd78da948b9c61cc758"></a>mkldnn_ldigo_p&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga0b72d4deb16ce5703dc1641c80e9de87ae3debd06f01fcfc7249e64922652ed4f"></a>mkldnn_ldgoi_p&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 </div>

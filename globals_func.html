@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
-   &#160;<span id="projectnumber">0.17.4</span>
+   &#160;<span id="projectnumber">0.18.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
   </td>
@@ -83,9 +83,6 @@ $(function() {
 </li>
 <li>mkldnn_convolution_forward_desc_init()
 : <a class="el" href="group__c__api__convolution.html#ga30be3eb33fc365aedcf7f6b2aec46d87">mkldnn.h</a>
-</li>
-<li>mkldnn_convolution_relu_desc_init()
-: <a class="el" href="group__c__api__convolution__relu.html#gaffa5e11a5fc7d817193b51b596806b5d">mkldnn.h</a>
 </li>
 <li>mkldnn_deconvolution_backward_data_desc_init()
 : <a class="el" href="group__c__api__deconvolution.html#ga0fdb20fbd655e09a9f11531775ae1490">mkldnn.h</a>
@@ -240,6 +237,12 @@ $(function() {
 <li>mkldnn_primitive_attr_set_post_ops()
 : <a class="el" href="group__c__api__attributes.html#ga815370a5c591cfb02f66d9c276aca943">mkldnn.h</a>
 </li>
+<li>mkldnn_primitive_attr_set_rnn_data_qparams()
+: <a class="el" href="group__c__api__rnn.html#gae4f871b413573f905f0995e1ee52c1df">mkldnn.h</a>
+</li>
+<li>mkldnn_primitive_attr_set_rnn_weights_qparams()
+: <a class="el" href="group__c__api__rnn.html#ga8b553d5f5e81fc095c75ba021a59daa9">mkldnn.h</a>
+</li>
 <li>mkldnn_primitive_create()
 : <a class="el" href="group__c__api__primitive__common.html#gab89ca5488bf37e4b3c4f1eb0be671867">mkldnn.h</a>
 </li>
@@ -300,12 +303,6 @@ $(function() {
 <li>mkldnn_prop_kind2str()
 : <a class="el" href="mkldnn__debug_8h.html#ae075a6bd46f2f5d5819457b4998f3193">mkldnn_debug.h</a>
 </li>
-<li>mkldnn_relu_backward_desc_init()
-: <a class="el" href="group__c__api__relu.html#ga30d2d37343d3cf7b472cb14d535b0040">mkldnn.h</a>
-</li>
-<li>mkldnn_relu_forward_desc_init()
-: <a class="el" href="group__c__api__relu.html#gac1e0110c8e3c430df9e35138265767a0">mkldnn.h</a>
-</li>
 <li>mkldnn_reorder_primitive_desc_create()
 : <a class="el" href="group__c__api__reorder.html#ga8c48f471eb77e39a8f2e5e64a6336d0a">mkldnn.h</a>
 </li>
@@ -327,8 +324,17 @@ $(function() {
 <li>mkldnn_rnn_cell_get_states_count()
 : <a class="el" href="group__c__api__rnn.html#ga5282631e9fb6733f40a1cc180825954d">mkldnn.h</a>
 </li>
+<li>mkldnn_rnn_direction2str()
+: <a class="el" href="mkldnn__debug_8h.html#a2bad8464a1ae21b43c63b8f95f9f7854">mkldnn_debug.h</a>
+</li>
 <li>mkldnn_rnn_forward_desc_init()
 : <a class="el" href="group__c__api__rnn.html#ga5bfe35f13beaa9c90d3e5841d18e07d8">mkldnn.h</a>
+</li>
+<li>mkldnn_set_jit_dump()
+: <a class="el" href="group__c__api__service.html#ga6ab6dfc82232212ec2183fb72c432070">mkldnn.h</a>
+</li>
+<li>mkldnn_set_verbose()
+: <a class="el" href="group__c__api__service.html#ga67734fb7a23f0f8baae20a36f322934a">mkldnn.h</a>
 </li>
 <li>mkldnn_sgemm()
 : <a class="el" href="group__c__api__blas.html#gaa1095fb139525d51eab45ccadf426ae5">mkldnn.h</a>
@@ -366,8 +372,8 @@ $(function() {
 <li>mkldnn_sum_primitive_desc_create()
 : <a class="el" href="group__c__api__sum.html#ga01127cfec6a36871777e6ddcf9be6c1c">mkldnn.h</a>
 </li>
-<li>mkldnn_verbose_set()
-: <a class="el" href="group__c__api__service.html#ga8535deddc18f606049d798196ce0ded0">mkldnn.h</a>
+<li>mkldnn_version()
+: <a class="el" href="group__c__api__service.html#gac15d131cbfde7ff627fe0bffef2acef1">mkldnn.h</a>
 </li>
 <li>mkldnn_view_primitive_desc_create()
 : <a class="el" href="group__c__api__memory.html#gab404869f8c612df54e4734e3e2cc6353">mkldnn.h</a>

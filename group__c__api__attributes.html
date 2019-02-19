@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
-   &#160;<span id="projectnumber">0.17.4</span>
+   &#160;<span id="projectnumber">0.18.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
   </td>
@@ -74,7 +74,7 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="groups"></a>
 Modules</h2></td></tr>
 <tr class="memitem:group__c__api__attributes__post__ops"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__attributes__post__ops.html">Sequence of post operations</a></td></tr>
-<tr class="memdesc:group__c__api__attributes__post__ops"><td class="mdescLeft">&#160;</td><td class="mdescRight">An extension for performing extra operations after base operation. <br /></td></tr>
+<tr class="memdesc:group__c__api__attributes__post__ops"><td class="mdescLeft">&#160;</td><td class="mdescRight">An extension for performing extra operations after a base operation. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -95,16 +95,16 @@ Functions</h2></td></tr>
 <tr class="memdesc:gaad8659404cefb328a47ffcf81ab904c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets output rounding mode <code>round_mode</code> for integer operations for a given <code>attr</code>.  <a href="#gaad8659404cefb328a47ffcf81ab904c8">More...</a><br /></td></tr>
 <tr class="separator:gaad8659404cefb328a47ffcf81ab904c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga691a3631739c12351776bec991a11c24"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__attributes.html#ga691a3631739c12351776bec991a11c24">mkldnn_primitive_attr_get_output_scales</a> (<a class="el" href="group__c__api__primitive__attr.html#ga3f3780c1e4efc952e6639a2f083a8b85">const_mkldnn_primitive_attr_t</a> attr, int *count, int *mask, const float **scales)</td></tr>
-<tr class="memdesc:ga691a3631739c12351776bec991a11c24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>count</code>, correspondence scale <code>mask</code>, and pointer to a constant floating point array of output <code>scales</code> for given <code>attr</code>, previously set by mkldnn_primitive_attr_set_output_scales.  <a href="#ga691a3631739c12351776bec991a11c24">More...</a><br /></td></tr>
+<tr class="memdesc:ga691a3631739c12351776bec991a11c24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>count</code>, correspondence scale <code>mask</code>, and a pointer to a constant floating point array of output <code>scales</code> for given <code>attr</code>, previously set by mkldnn_primitive_attr_set_output_scales.  <a href="#ga691a3631739c12351776bec991a11c24">More...</a><br /></td></tr>
 <tr class="separator:ga691a3631739c12351776bec991a11c24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga20dc6bdefe4c709388e5a2197d69fb56"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__attributes.html#ga20dc6bdefe4c709388e5a2197d69fb56">mkldnn_primitive_attr_set_output_scales</a> (<a class="el" href="group__c__api__primitive__attr.html#gaeaf9bd515118e1667f7fd1846bb79de1">mkldnn_primitive_attr_t</a> attr, int count, int mask, const float *scales)</td></tr>
 <tr class="memdesc:ga20dc6bdefe4c709388e5a2197d69fb56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets output <code>scales</code> for primitive operations.  <a href="#ga20dc6bdefe4c709388e5a2197d69fb56">More...</a><br /></td></tr>
 <tr class="separator:ga20dc6bdefe4c709388e5a2197d69fb56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga92b080aec64fb1860b280a369fc0ce1c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__attributes.html#ga92b080aec64fb1860b280a369fc0ce1c">mkldnn_primitive_attr_get_post_ops</a> (<a class="el" href="group__c__api__primitive__attr.html#ga3f3780c1e4efc952e6639a2f083a8b85">const_mkldnn_primitive_attr_t</a> attr, <a class="el" href="group__c__api__primitive__attr.html#ga9b9ffe469ad6e2c68a490c61af3bf882">const_mkldnn_post_ops_t</a> *post_ops)</td></tr>
-<tr class="memdesc:ga92b080aec64fb1860b280a369fc0ce1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>post_ops</code> for given attr.  <a href="#ga92b080aec64fb1860b280a369fc0ce1c">More...</a><br /></td></tr>
+<tr class="memdesc:ga92b080aec64fb1860b280a369fc0ce1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>post_ops</code> for given <code>attr</code>.  <a href="#ga92b080aec64fb1860b280a369fc0ce1c">More...</a><br /></td></tr>
 <tr class="separator:ga92b080aec64fb1860b280a369fc0ce1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga815370a5c591cfb02f66d9c276aca943"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__attributes.html#ga815370a5c591cfb02f66d9c276aca943">mkldnn_primitive_attr_set_post_ops</a> (<a class="el" href="group__c__api__primitive__attr.html#gaeaf9bd515118e1667f7fd1846bb79de1">mkldnn_primitive_attr_t</a> attr, <a class="el" href="group__c__api__primitive__attr.html#ga9b9ffe469ad6e2c68a490c61af3bf882">const_mkldnn_post_ops_t</a> post_ops)</td></tr>
-<tr class="memdesc:ga815370a5c591cfb02f66d9c276aca943"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets configured <code>post_ops</code> to an attribute <code>attr</code> for future use (when primitive descriptor is being created.  <a href="#ga815370a5c591cfb02f66d9c276aca943">More...</a><br /></td></tr>
+<tr class="memdesc:ga815370a5c591cfb02f66d9c276aca943"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets configured <code>post_ops</code> to an attribute <code>attr</code> for future use (when primitive descriptor is being created).  <a href="#ga815370a5c591cfb02f66d9c276aca943">More...</a><br /></td></tr>
 <tr class="separator:ga815370a5c591cfb02f66d9c276aca943"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -127,8 +127,8 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Creates an empty (default) <code>attr</code> attribute. </p>
-<p>All the parameters set to default values.</p>
-<p>An empty attribute is used in primitive descriptor creating whenever it is not passed explicitly, e.g. in mkldnn_primitive_desc_create. </p>
+<p>All the parameters are set to default values.</p>
+<p>An empty attribute is used in primitive descriptor creation whenever it is not passed explicitly, e.g. in mkldnn_primitive_desc_create. </p>
 
 </div>
 </div>
@@ -281,10 +281,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Returns <code>count</code>, correspondence scale <code>mask</code>, and pointer to a constant floating point array of output <code>scales</code> for given <code>attr</code>, previously set by mkldnn_primitive_attr_set_output_scales. </p>
-<dl class="section warning"><dt>Warning</dt><dd><code>scales</code> array points to the internal <code>attr</code> field, so user should not modify/destroy <code>scales</code>.</dd>
+<p>Returns <code>count</code>, correspondence scale <code>mask</code>, and a pointer to a constant floating point array of output <code>scales</code> for given <code>attr</code>, previously set by mkldnn_primitive_attr_set_output_scales. </p>
+<dl class="section warning"><dt>Warning</dt><dd>The <code>scales</code> array points to the internal <code>attr</code> field, so the user should not modify or destroy <code>scales</code>.</dd>
 <dd>
-The lifetime of <code>scales</code> is same as <code>attr</code> it belongs to, so it is illegal to use the <code>scales</code> after <code>attr</code> is destroyed </dd></dl>
+The lifetime of <code>scales</code> is the same as that of the <code>attr</code> to which it belongs, so it is illegal to use <code>scales</code> after <code>attr</code> is destroyed. </dd></dl>
 
 </div>
 </div>
@@ -328,14 +328,14 @@ The lifetime of <code>scales</code> is same as <code>attr</code> it belongs to, 
 
 <p>Sets output <code>scales</code> for primitive operations. </p>
 <p>The number of elements <code>count</code> and correspondence scale <code>mask</code> are stored for future use.</p>
-<p>The <code>mask</code> argument defines correspondence between output tensor dimensions and the <code>scales</code> array. Set i-th bit of <code>mask</code> to 1 to use dedicated scaling factor for each slice of the output tensor over i-th dimension. Set <code>mask</code> to 0 to use common scaling factor for the whole output tensor.</p>
+<p>The <code>mask</code> argument defines the correspondence between the output tensor dimensions and the <code>scales</code> array. Set the i-th bit of <code>mask</code> to 1 to use a dedicated scaling factor for each slice of the output tensor over the i-th dimension. Set <code>mask</code> to 0 to use a common scaling factor for the whole output tensor.</p>
 <dl class="section note"><dt>Note</dt><dd>The dimension order is always native and does not depend on the actual layout used. Examples:<ul>
 <li>2D dimensional data the order of dimensions is always: (n, c)</li>
 <li>4D dimensional data the order is always: (n, c, h, w)</li>
 <li>5D dimensional weights the order is always: (g, oc, ic, kh, kw)</li>
 </ul>
 </dd></dl>
-<p>Example usage: </p><div class="fragment"><div class="line"><span class="keywordtype">int</span> mb = 32, oc = 32, oh = 14, ow = 14; <span class="comment">// convolution output params</span></div><div class="line"><span class="keywordtype">float</span> scales[oc] = { ... }; <span class="comment">// unique output scales per output channel</span></div><div class="line"><span class="keywordtype">int</span> oc_dim = 1; <span class="comment">// mb_dim = 0, channel_dim = 1, height_dim = 2, ...</span></div><div class="line"></div><div class="line"><a class="code" href="structmkldnn__convolution__desc__t.html">mkldnn_convolution_desc_t</a> cd; <span class="comment">// create &amp; configure convolution op_desc</span></div><div class="line"></div><div class="line"><a class="code" href="structmkldnn__primitive__attr.html">mkldnn_primitive_attr_t</a> attr;</div><div class="line"><a class="code" href="group__c__api__attributes.html#gaa5402b9efc0a7fd3360610382f85e6de">mkldnn_primitive_attr_create</a>(&amp;attr);  <span class="comment">// create default attributes</span></div><div class="line"><a class="code" href="group__c__api__attributes.html#ga20dc6bdefe4c709388e5a2197d69fb56">mkldnn_primitive_attr_set_output_scales</a>(attr, oc, 1 &lt;&lt; oc_dim, scales);</div><div class="line"></div><div class="line"><a class="code" href="structmkldnn__primitive__desc.html">mkldnn_primitive_desc_t</a> cpd;</div><div class="line"><a class="code" href="group__c__api__primitive__common.html#ga372ece6a05bc13ed4d57e2b08bed1ce3">mkldnn_primitive_desc_create_v2</a>(&amp;cpd, &amp;cd, attr, NULL);</div></div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>There is no way to check that <code>count</code> corresponds to <code>mask</code> until an actual primitive descriptor is created, so it is user's responsibility to set proper values. The following formula must be hold:</dd></dl>
+<p>Example usage: </p><div class="fragment"><div class="line"><span class="keywordtype">int</span> mb = 32, oc = 32, oh = 14, ow = 14; <span class="comment">// convolution output params</span></div><div class="line"><span class="keywordtype">float</span> scales[oc] = { ... }; <span class="comment">// unique output scales per output channel</span></div><div class="line"><span class="keywordtype">int</span> oc_dim = 1; <span class="comment">// mb_dim = 0, channel_dim = 1, height_dim = 2, ...</span></div><div class="line"></div><div class="line"><a class="code" href="structmkldnn__convolution__desc__t.html">mkldnn_convolution_desc_t</a> cd; <span class="comment">// create &amp; configure convolution op_desc</span></div><div class="line"></div><div class="line"><a class="code" href="structmkldnn__primitive__attr.html">mkldnn_primitive_attr_t</a> attr;</div><div class="line"><a class="code" href="group__c__api__attributes.html#gaa5402b9efc0a7fd3360610382f85e6de">mkldnn_primitive_attr_create</a>(&amp;attr);  <span class="comment">// create default attributes</span></div><div class="line"><a class="code" href="group__c__api__attributes.html#ga20dc6bdefe4c709388e5a2197d69fb56">mkldnn_primitive_attr_set_output_scales</a>(attr, oc, 1 &lt;&lt; oc_dim, scales);</div><div class="line"></div><div class="line"><a class="code" href="structmkldnn__primitive__desc.html">mkldnn_primitive_desc_t</a> cpd;</div><div class="line"><a class="code" href="group__c__api__primitive__common.html#ga372ece6a05bc13ed4d57e2b08bed1ce3">mkldnn_primitive_desc_create_v2</a>(&amp;cpd, &amp;cd, attr, NULL);</div></div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>There is no way to check that <code>count</code> corresponds to <code>mask</code> until an actual primitive descriptor is created, so it is the user's responsibility to set proper values. The following formula must hold:</dd></dl>
 <p class="formulaDsp">
 <img class="formulaDsp" alt="\[count = \prod\limits_{d \in mask} output.dims[d]\]" src="form_0.png"/>
 </p>
@@ -368,8 +368,8 @@ The lifetime of <code>scales</code> is same as <code>attr</code> it belongs to, 
       </table>
 </div><div class="memdoc">
 
-<p>Returns <code>post_ops</code> for given attr. </p>
-<dl class="section warning"><dt>Warning</dt><dd><code>post_ops</code> points to the internal <code>attr</code> field, so user should not modify/destroy <code>post_ops</code>. Also the lifetime of <code>post_ops</code> is the same as <code>attr</code> it belongs to, so it is illegal to use <code>post_ops</code> once <code>attr</code> is destroyed. </dd></dl>
+<p>Returns <code>post_ops</code> for given <code>attr</code>. </p>
+<dl class="section warning"><dt>Warning</dt><dd><code>post_ops</code> points to the internal <code>attr</code> field, so the user should not modify or destroy <code>post_ops</code>. Also, the lifetime of <code>post_ops</code> is the same as that of the <code>attr</code> it belongs to, so it is illegal to use <code>post_ops</code> after <code>attr</code> has been destroyed. </dd></dl>
 
 </div>
 </div>
@@ -399,8 +399,8 @@ The lifetime of <code>scales</code> is same as <code>attr</code> it belongs to, 
       </table>
 </div><div class="memdoc">
 
-<p>Sets configured <code>post_ops</code> to an attribute <code>attr</code> for future use (when primitive descriptor is being created. </p>
-<dl class="section note"><dt>Note</dt><dd>At this point of time there is no way to check whether primitive descriptor does or does not support given sequence of post operations. That means that user should handle an error that might happen at mkldnn_primitive_desc_create call. </dd></dl>
+<p>Sets configured <code>post_ops</code> to an attribute <code>attr</code> for future use (when primitive descriptor is being created). </p>
+<dl class="section note"><dt>Note</dt><dd>At this point in time, there is no way to check whether the primitive descriptor does or does not support a given sequence of post operations. Therefore the user should handle an error that might occur at the mkldnn_primitive_desc_create call. </dd></dl>
 
 </div>
 </div>

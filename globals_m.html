@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
-   &#160;<span id="projectnumber">0.17.4</span>
+   &#160;<span id="projectnumber">0.18.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
   </td>
@@ -129,6 +129,9 @@ $(function() {
 <li>mkldnn_convolution
 : <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a88592adccf64d1fd271ed6e21d66b271">mkldnn_types.h</a>
 </li>
+<li>mkldnn_convolution_auto
+: <a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a71d010c4013faf477ef171f9e7be6fb0">mkldnn_types.h</a>
+</li>
 <li>mkldnn_convolution_backward_data_desc_init()
 : <a class="el" href="group__c__api__convolution.html#gade351141b8907f6a2996734f65b42072">mkldnn.h</a>
 </li>
@@ -140,12 +143,6 @@ $(function() {
 </li>
 <li>mkldnn_convolution_forward_desc_init()
 : <a class="el" href="group__c__api__convolution.html#ga30be3eb33fc365aedcf7f6b2aec46d87">mkldnn.h</a>
-</li>
-<li>mkldnn_convolution_relu
-: <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a264d5710e0bce9795951fed76b6e34a4">mkldnn_types.h</a>
-</li>
-<li>mkldnn_convolution_relu_desc_init()
-: <a class="el" href="group__c__api__convolution__relu.html#gaffa5e11a5fc7d817193b51b596806b5d">mkldnn.h</a>
 </li>
 <li>mkldnn_convolution_winograd
 : <a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a39300e64bd67f98af2fe51154b398814">mkldnn_types.h</a>
@@ -300,6 +297,9 @@ $(function() {
 <li>mkldnn_gemm_s8u8s32()
 : <a class="el" href="group__c__api__blas.html#ga40fa880be6d435facb9aafddab84d5fc">mkldnn.h</a>
 </li>
+<li>mkldnn_giohw
+: <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74ab3134cff6e287877de7ffa7c295ea20b">mkldnn_types.h</a>
+</li>
 <li>mkldnn_gIOhw16o16i
 : <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a37bfc09d30cd34c0ada4f2d3f65555e1">mkldnn_types.h</a>
 </li>
@@ -347,6 +347,9 @@ $(function() {
 </li>
 <li>mkldnn_Goihw16g
 : <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74ab2fe945b166429473f67c7e6b00aeb10">mkldnn_types.h</a>
+</li>
+<li>mkldnn_Goihw16g_s8s8
+: <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a2081752437a1059da84dc3d29fc1b41b">mkldnn_types.h</a>
 </li>
 <li>mkldnn_gOIhw16i16o
 : <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a76404f1447b5c3caba46f62ee6362776">mkldnn_types.h</a>
@@ -447,6 +450,9 @@ $(function() {
 <li>mkldnn_io
 : <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a433ebc123e9f80c292c0e6e82715c118">mkldnn_types.h</a>
 </li>
+<li>mkldnn_iohw
+: <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a4782b8b238d13cc54a4caefa87f83e64">mkldnn_types.h</a>
+</li>
 <li>mkldnn_IOhw16o16i
 : <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a8189af032858faf66acd87ccdba7c625">mkldnn_types.h</a>
 </li>
@@ -466,13 +472,13 @@ $(function() {
 : <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74abd0d254bc5c97521e05c590ae9de8364">mkldnn_types.h</a>
 </li>
 <li>mkldnn_ldgoi_p
-: <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74ae3debd06f01fcfc7249e64922652ed4f">mkldnn_types.h</a>
+: <a class="el" href="group__c__api__types__memory.html#gga0b72d4deb16ce5703dc1641c80e9de87ae3debd06f01fcfc7249e64922652ed4f">mkldnn_types.h</a>
 </li>
 <li>mkldnn_ldigo
 : <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a8297cb7a081984c40f40ed9d24a4023a">mkldnn_types.h</a>
 </li>
 <li>mkldnn_ldigo_p
-: <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74aa01ef053fccf8bd78da948b9c61cc758">mkldnn_types.h</a>
+: <a class="el" href="group__c__api__types__memory.html#gga0b72d4deb16ce5703dc1641c80e9de87aa01ef053fccf8bd78da948b9c61cc758">mkldnn_types.h</a>
 </li>
 <li>mkldnn_ldsnc
 : <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a315cfab7829564b47079d13e46dd3edc">mkldnn_types.h</a>
@@ -672,9 +678,6 @@ $(function() {
 <li>mkldnn_OIw8o8i
 : <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a59bb882f6eade0a9e27d42385e3115e8">mkldnn_types.h</a>
 </li>
-<li>mkldnn_omit_stats
-: <a class="el" href="group__c__api__types__generic.html#gga5b1f166df8eea3a306f9226baf6ca3a3aed9afabc97b1d80c728beed60f818569">mkldnn_types.h</a>
-</li>
 <li>mkldnn_op_desc_t
 : <a class="el" href="group__c__api__types__op__descs.html#ga6ed0f70ed4c6398c24a62b49cf8d538c">mkldnn_types.h</a>
 </li>
@@ -686,6 +689,9 @@ $(function() {
 </li>
 <li>mkldnn_Owi8o
 : <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74af47940b5f4eafe1efcfccae9e4573113">mkldnn_types.h</a>
+</li>
+<li>mkldnn_packed_format_undef
+: <a class="el" href="group__c__api__types__memory.html#gga0b72d4deb16ce5703dc1641c80e9de87a7ea620d880278e0e362f22a0dca727fc">mkldnn_types.h</a>
 </li>
 <li>mkldnn_padding_kind_t
 : <a class="el" href="group__c__api__types__generic.html#ga1823708d8b9d445fe177295f2b5d74bd">mkldnn_types.h</a>
@@ -774,6 +780,12 @@ $(function() {
 <li>mkldnn_primitive_attr_set_post_ops()
 : <a class="el" href="group__c__api__attributes.html#ga815370a5c591cfb02f66d9c276aca943">mkldnn.h</a>
 </li>
+<li>mkldnn_primitive_attr_set_rnn_data_qparams()
+: <a class="el" href="group__c__api__rnn.html#gae4f871b413573f905f0995e1ee52c1df">mkldnn.h</a>
+</li>
+<li>mkldnn_primitive_attr_set_rnn_weights_qparams()
+: <a class="el" href="group__c__api__rnn.html#ga8b553d5f5e81fc095c75ba021a59daa9">mkldnn.h</a>
+</li>
 <li>mkldnn_primitive_attr_t
 : <a class="el" href="group__c__api__primitive__attr.html#gaeaf9bd515118e1667f7fd1846bb79de1">mkldnn_types.h</a>
 </li>
@@ -861,9 +873,6 @@ $(function() {
 <li>mkldnn_query_convolution_d
 : <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a3e1f5ad4718ad7f41916b4227e0a9964">mkldnn_types.h</a>
 </li>
-<li>mkldnn_query_convolution_relu_d
-: <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9aaaf2a7c677ec8412645d6ec0b7be6171">mkldnn_types.h</a>
-</li>
 <li>mkldnn_query_deconvolution_d
 : <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a43c69ed45016096444979bd659b13933">mkldnn_types.h</a>
 </li>
@@ -921,9 +930,6 @@ $(function() {
 <li>mkldnn_query_primitive_kind
 : <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a45d1398d4d2b05d009de94f05d7cf267">mkldnn_types.h</a>
 </li>
-<li>mkldnn_query_relu_d
-: <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9accaba3afad2f4cadcae200a3e4b536ae">mkldnn_types.h</a>
-</li>
 <li>mkldnn_query_rnn_d
 : <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a7a567d8e61a6e0b1aeb219f5229b13de">mkldnn_types.h</a>
 </li>
@@ -956,18 +962,6 @@ $(function() {
 </li>
 <li>mkldnn_query_workspace_pd
 : <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ad18aadd1899c151835c624d7b83edb56">mkldnn_types.h</a>
-</li>
-<li>mkldnn_relu
-: <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a8beb4159b64f50ce4a367e305c9db860">mkldnn_types.h</a>
-</li>
-<li>mkldnn_relu_backward_desc_init()
-: <a class="el" href="group__c__api__relu.html#ga30d2d37343d3cf7b472cb14d535b0040">mkldnn.h</a>
-</li>
-<li>mkldnn_relu_desc_t
-: <a class="el" href="group__c__api__types__memory.html#ga5472f7e013cb456d4ef7789cf8785a4c">mkldnn_types.h</a>
-</li>
-<li>mkldnn_relu_forward_desc_init()
-: <a class="el" href="group__c__api__relu.html#gac1e0110c8e3c430df9e35138265767a0">mkldnn.h</a>
 </li>
 <li>mkldnn_reorder
 : <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973aa30263e89f006b199b4d2229c99f0bf8">mkldnn_types.h</a>
@@ -1005,11 +999,23 @@ $(function() {
 <li>mkldnn_rnn_cell_with_relu
 : <a class="el" href="group__c__api__types__memory.html#gga62b06d91e9fcf6bd086311fd4d8ece36a55f69148433cce0b97e8edd117f6b2ed">mkldnn_types.h</a>
 </li>
+<li>mkldnn_rnn_direction2str()
+: <a class="el" href="mkldnn__debug_8h.html#a2bad8464a1ae21b43c63b8f95f9f7854">mkldnn_debug.h</a>
+</li>
 <li>mkldnn_rnn_direction_t
 : <a class="el" href="group__c__api__types__memory.html#ga3cb09316c36bd985698e0eea542cb424">mkldnn_types.h</a>
 </li>
 <li>mkldnn_rnn_forward_desc_init()
 : <a class="el" href="group__c__api__rnn.html#ga5bfe35f13beaa9c90d3e5841d18e07d8">mkldnn.h</a>
+</li>
+<li>MKLDNN_RNN_MAX_N_PARTS
+: <a class="el" href="group__c__api__types__memory.html#ga09e605320955705ff8d2561026995b47">mkldnn_types.h</a>
+</li>
+<li>mkldnn_rnn_packed
+: <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a006608941dcabebbc64b99a167eb75ac">mkldnn_types.h</a>
+</li>
+<li>mkldnn_rnn_packed_memory_format_t
+: <a class="el" href="group__c__api__types__memory.html#ga0b72d4deb16ce5703dc1641c80e9de87">mkldnn_types.h</a>
 </li>
 <li>mkldnn_round_down
 : <a class="el" href="group__c__api__types__generic.html#gga825f736d520c8183d422d1aad60f2ad9a128e155cc5ae4db261a7e366417a197c">mkldnn_types.h</a>
@@ -1031,6 +1037,12 @@ $(function() {
 </li>
 <li>mkldnn_s8
 : <a class="el" href="group__c__api__types__generic.html#gga826b2a9be4d94ac17f99bacac6d0cb29a8a09db71666549aebad36fd23d974180">mkldnn_types.h</a>
+</li>
+<li>mkldnn_set_jit_dump()
+: <a class="el" href="group__c__api__service.html#ga6ab6dfc82232212ec2183fb72c432070">mkldnn.h</a>
+</li>
+<li>mkldnn_set_verbose()
+: <a class="el" href="group__c__api__service.html#ga67734fb7a23f0f8baae20a36f322934a">mkldnn.h</a>
 </li>
 <li>mkldnn_sgemm()
 : <a class="el" href="group__c__api__blas.html#gaa1095fb139525d51eab45ccadf426ae5">mkldnn.h</a>
@@ -1131,8 +1143,8 @@ $(function() {
 <li>mkldnn_vanilla_rnn
 : <a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a1f61363b51f29e33a64b4670e7f3a488">mkldnn_types.h</a>
 </li>
-<li>mkldnn_verbose_set()
-: <a class="el" href="group__c__api__service.html#ga8535deddc18f606049d798196ce0ded0">mkldnn.h</a>
+<li>mkldnn_version()
+: <a class="el" href="group__c__api__service.html#gac15d131cbfde7ff627fe0bffef2acef1">mkldnn.h</a>
 </li>
 <li>mkldnn_view
 : <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973aa55b8d7b5839ad6ba1db77b417f4caa2">mkldnn_types.h</a>

@@ -8,6 +8,8 @@ var searchData=
   ['wino_5fdesc',['wino_desc',['../structmkldnn__memory__desc__t.html#aa219a8379e78fc4a553e6af998759c78',1,'mkldnn_memory_desc_t']]],
   ['wino_5ffmt',['wino_fmt',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea6d8ca729e011cce33cfffb518b2f6fdf',1,'mkldnn::memory']]],
   ['wino_5fformat',['wino_format',['../structmkldnn__wino__desc__t.html#a002eea2e1ad54a9b2aed4bf0679731e0',1,'mkldnn_wino_desc_t']]],
+  ['winograd_20convolution',['Winograd Convolution',['../winograd_convolution.html',1,'']]],
+  ['winograd_5fconvolution_2emd',['winograd_convolution.md',['../winograd__convolution_8md.html',1,'']]],
   ['wio',['wio',['../structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea3768b23a10d360cec7585267e9a8f97e',1,'mkldnn::memory']]],
   ['workspace_5fpd',['workspace_pd',['../group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a41d00a7019d406614ebaa00195d179bd',1,'mkldnn']]],
   ['wrap_5fc_5fapi',['wrap_c_api',['../structmkldnn_1_1error.html#ad87cb75c7066f319524bf595bfd876b4',1,'mkldnn::error']]]
