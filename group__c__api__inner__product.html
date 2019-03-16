@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
-   &#160;<span id="projectnumber">0.18.1</span>
+   &#160;<span id="projectnumber">0.90.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
   </td>
@@ -140,15 +140,15 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initializes an inner product descriptor <code>ip_desc</code> for forward propagation using <code>prop_kind</code> (possible values are <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f" title="Forward data propagation (training mode). ">mkldnn_forward_training</a> and <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a58a923fb6c4e1214e1505b5fa0b1e3fa" title="Forward data propagation (inference mode). ">mkldnn_forward_inference</a>) and memory descriptors. </p>
-<p>In order to create an inner product without bias, <code>bias_desc</code> should be either <code>NULL</code> or a pointer to a descriptor with memory format equal to <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a9a565f82425fa7a397344fb7a570aba3" title="Undefined memory format, used for empty memory descriptors. ">mkldnn_format_undef</a>.</p>
-<dl class="section note"><dt>Note</dt><dd>Memory descriptors are allowed to be initialized with <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a5ae7d369fcd51464f613e51d73eae547" title="Unspecified format. ">mkldnn_any</a> value of <code>format_kind</code>.</dd></dl>
-<p>Order of inputs:</p><ul>
-<li>src (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ac17b645e3801adaaeee3107103ec8a72" title="source memory primitive desc ">mkldnn_query_src_pd</a>, 0)</li>
-<li>weights (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9aad24a528aa4e68a27da4b23063eb76ee" title="weights memory primitive descriptor desc ">mkldnn_query_weights_pd</a>, 0)</li>
-<li>bias (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9aad24a528aa4e68a27da4b23063eb76ee" title="weights memory primitive descriptor desc ">mkldnn_query_weights_pd</a>, 1), if created with bias</li>
+<p>In order to create an inner product without bias, <code>bias_desc</code> should be either <code>NULL</code> or a pointer to a descriptor with memory format kind equals <a class="el" href="group__c__api__types__generic.html#gga1f6c390306d4c8a438c0efbff08c0539afa2ed8138654e17c7b418579d3273130" title="Undefined memory format, used for empty memory descriptors. ">mkldnn_format_kind_undef</a>.</p>
+<dl class="section note"><dt>Note</dt><dd>Memory descriptors are allowed to be initialized with <a class="el" href="group__c__api__types__generic.html#gga1f6c390306d4c8a438c0efbff08c0539a25ba80bb864a69c9fae70b4503e76167" title="Unspecified format. ">mkldnn_format_kind_any</a> value of <code>format_kind</code>.</dd></dl>
+<p>Inputs:</p><ul>
+<li>src (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a2bccd0a79be2c331227c353c294c3fbc" title="source memory desc ">mkldnn_query_src_md</a>, 0)</li>
+<li>weights (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a4d1661d6a50277029d02417f6b65435d" title="weights memory descriptor desc ">mkldnn_query_weights_md</a>, 0)</li>
+<li>bias (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a4d1661d6a50277029d02417f6b65435d" title="weights memory descriptor desc ">mkldnn_query_weights_md</a>, 1), if created with bias</li>
 </ul>
-<p>Order of outputs:</p><ul>
-<li>dst (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9abb15fa8a7eb5aebfe547ac57a96c2d56" title="destination memory primitive desc ">mkldnn_query_dst_pd</a>, 0) </li>
+<p>Outputs:</p><ul>
+<li>dst (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9adccda04151e0c287f0de64b832d33ac4" title="destination memory desc ">mkldnn_query_dst_md</a>, 0) </li>
 </ul>
 
 </div>
@@ -192,13 +192,13 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initializes an inner product descriptor <code>ip_desc</code> for backward propagation with respect to data using memory descriptors. </p>
-<dl class="section note"><dt>Note</dt><dd>Memory descriptors are allowed to be initialized with <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a5ae7d369fcd51464f613e51d73eae547" title="Unspecified format. ">mkldnn_any</a> value of <code>format_kind</code>.</dd></dl>
-<p>Order of inputs:</p><ul>
-<li>diff_dst (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9aa5b466fae3a9bda2d112db68cfd2b68e" title="destination grad. ">mkldnn_query_diff_dst_pd</a>, 0)</li>
-<li>weights (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9aad24a528aa4e68a27da4b23063eb76ee" title="weights memory primitive descriptor desc ">mkldnn_query_weights_pd</a>, 0)</li>
+<dl class="section note"><dt>Note</dt><dd>Memory descriptors are allowed to be initialized with <a class="el" href="group__c__api__types__generic.html#gga1f6c390306d4c8a438c0efbff08c0539a25ba80bb864a69c9fae70b4503e76167" title="Unspecified format. ">mkldnn_format_kind_any</a> value of <code>format_kind</code>.</dd></dl>
+<p>Inputs:</p><ul>
+<li>diff_dst (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9acfa30e38738b3de8c7d3a7f21ffc1623" title="destination grad. ">mkldnn_query_diff_dst_md</a>, 0)</li>
+<li>weights (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a4d1661d6a50277029d02417f6b65435d" title="weights memory descriptor desc ">mkldnn_query_weights_md</a>, 0)</li>
 </ul>
-<p>Order of outputs:</p><ul>
-<li>diff_src (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ac95fbe152e97a3989dc794a70643d834" title="source gradient memory primitive desc ">mkldnn_query_diff_src_pd</a>, 0) </li>
+<p>Outputs:</p><ul>
+<li>diff_src (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ad915503c92000da20088fdb93cd685b9" title="source gradient memory desc ">mkldnn_query_diff_src_md</a>, 0) </li>
 </ul>
 
 </div>
@@ -248,14 +248,14 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initializes an inner product descriptor <code>ip_desc</code> for backward propagation with respect to weights using memory descriptors. </p>
-<dl class="section note"><dt>Note</dt><dd>Memory descriptors are allowed to be initialized with <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a5ae7d369fcd51464f613e51d73eae547" title="Unspecified format. ">mkldnn_any</a> value of <code>format_kind</code>.</dd></dl>
-<p>Order of inputs:</p><ul>
-<li>src (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ac17b645e3801adaaeee3107103ec8a72" title="source memory primitive desc ">mkldnn_query_src_pd</a>, 0)</li>
-<li>diff_dst (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9aa5b466fae3a9bda2d112db68cfd2b68e" title="destination grad. ">mkldnn_query_diff_dst_pd</a>, 0)</li>
+<dl class="section note"><dt>Note</dt><dd>Memory descriptors are allowed to be initialized with <a class="el" href="group__c__api__types__generic.html#gga1f6c390306d4c8a438c0efbff08c0539a25ba80bb864a69c9fae70b4503e76167" title="Unspecified format. ">mkldnn_format_kind_any</a> value of <code>format_kind</code>.</dd></dl>
+<p>Inputs:</p><ul>
+<li>src (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a2bccd0a79be2c331227c353c294c3fbc" title="source memory desc ">mkldnn_query_src_md</a>, 0)</li>
+<li>diff_dst (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9acfa30e38738b3de8c7d3a7f21ffc1623" title="destination grad. ">mkldnn_query_diff_dst_md</a>, 0)</li>
 </ul>
-<p>Order of outputs:</p><ul>
-<li>diff_weights (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ab43b4c2b7a151bc59bddffc009abae66" title="weights grad. ">mkldnn_query_diff_weights_pd</a>, 0)</li>
-<li>diff_bias (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ab43b4c2b7a151bc59bddffc009abae66" title="weights grad. ">mkldnn_query_diff_weights_pd</a>, 1), if created with bias </li>
+<p>Outputs:</p><ul>
+<li>diff_weights (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a2c78f7a683101ff96875e8cec787ba42" title="weights grad. ">mkldnn_query_diff_weights_md</a>, 0)</li>
+<li>diff_bias (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a2c78f7a683101ff96875e8cec787ba42" title="weights grad. ">mkldnn_query_diff_weights_md</a>, 1), if created with bias </li>
 </ul>
 
 </div>

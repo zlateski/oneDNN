@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
-   &#160;<span id="projectnumber">0.18.1</span>
+   &#160;<span id="projectnumber">0.90.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
   </td>
@@ -82,7 +82,6 @@ $(function() {
 , <a class="el" href="structmkldnn_1_1memory_1_1desc.html#abeddf8909e2b4af626153c88da9f8b37">mkldnn::memory::desc</a>
 , <a class="el" href="structmkldnn_1_1pooling__backward_1_1desc.html#a3c403de448817a04fb6e6d0a5df9296d">mkldnn::pooling_backward::desc</a>
 , <a class="el" href="structmkldnn_1_1pooling__forward_1_1desc.html#ae8cab6012ec16ca9d2051a95304ac211">mkldnn::pooling_forward::desc</a>
-, <a class="el" href="structmkldnn_1_1primitive_1_1at.html#a4961f21e96c398293a16deccc2bc89b0">mkldnn::primitive::at</a>
 , <a class="el" href="structmkldnn_1_1rnn__backward_1_1desc.html#ae0712e146438587d37e404b4c747c776">mkldnn::rnn_backward::desc</a>
 , <a class="el" href="structmkldnn_1_1rnn__forward_1_1desc.html#a6b2d9098bd3f5624de19afa50e3973fa">mkldnn::rnn_forward::desc</a>
 , <a class="el" href="structmkldnn_1_1shuffle__backward_1_1desc.html#a3bf20e13e67d7f02871ce6f797e2144c">mkldnn::shuffle_backward::desc</a>
@@ -107,14 +106,20 @@ $(function() {
 <li>data_undef
 : <a class="el" href="structmkldnn_1_1memory.html#aa8a0d49cc7faaceef9d8f55d66bff57bafe36f365f50e0317a2fa5142881dc73e">mkldnn::memory</a>
 </li>
+<li>decab
+: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedad4dafe28f4d1cad98e02b3d7cebe0738">mkldnn::memory</a>
+</li>
 <li>deconvolution_backward_data()
-: <a class="el" href="structmkldnn_1_1deconvolution__backward__data.html#af595f55db56c06131b2911d836407ff7">mkldnn::deconvolution_backward_data</a>
+: <a class="el" href="structmkldnn_1_1deconvolution__backward__data.html#a56bed2dea023cd3c7037830fbc0adb43">mkldnn::deconvolution_backward_data</a>
 </li>
 <li>deconvolution_backward_weights()
-: <a class="el" href="structmkldnn_1_1deconvolution__backward__weights.html#a72592eeab46c7d91e1c6b5316531cd68">mkldnn::deconvolution_backward_weights</a>
+: <a class="el" href="structmkldnn_1_1deconvolution__backward__weights.html#affbf7f8e348e31bb7dcd6c1fe7de25f2">mkldnn::deconvolution_backward_weights</a>
 </li>
 <li>deconvolution_forward()
-: <a class="el" href="structmkldnn_1_1deconvolution__forward.html#a4a9ed26ee39fb46cf26c0cddd5ed359f">mkldnn::deconvolution_forward</a>
+: <a class="el" href="structmkldnn_1_1deconvolution__forward.html#a73914b17de63ff635d9e6e9a292664da">mkldnn::deconvolution_forward</a>
+</li>
+<li>default_flags
+: <a class="el" href="structmkldnn_1_1stream.html#ae3a74b1a98a8085a4fcbbad0eb0dae92aa0ec83242d4156c861ec2c25e1577ed0">mkldnn::stream</a>
 </li>
 <li>desc()
 : <a class="el" href="structmkldnn_1_1batch__normalization__backward_1_1desc.html#a5ae63790025c19594ee778f8837984b0">mkldnn::batch_normalization_backward::desc</a>
@@ -130,10 +135,9 @@ $(function() {
 , <a class="el" href="structmkldnn_1_1inner__product__backward__data_1_1desc.html#a8c98863d7eb06dd91c082881feb4f4fc">mkldnn::inner_product_backward_data::desc</a>
 , <a class="el" href="structmkldnn_1_1inner__product__backward__weights_1_1desc.html#a3ef5dad0931fc196056b5cabaf53c33c">mkldnn::inner_product_backward_weights::desc</a>
 , <a class="el" href="structmkldnn_1_1inner__product__forward_1_1desc.html#a20b51c45cf4c44e975fb6f2a6dd4e465">mkldnn::inner_product_forward::desc</a>
-, <a class="el" href="structmkldnn_1_1lrn__backward_1_1desc.html#a38df77e39508e351914ca4ab29783615">mkldnn::lrn_backward::desc</a>
-, <a class="el" href="structmkldnn_1_1lrn__forward_1_1desc.html#a0bf65fb47d5e1f34057e9db8851af3eb">mkldnn::lrn_forward::desc</a>
-, <a class="el" href="structmkldnn_1_1memory_1_1desc.html#ad369b767c09b54cf8e7bc2bc62d59f2a">mkldnn::memory::desc</a>
-, <a class="el" href="structmkldnn_1_1memory_1_1primitive__desc.html#a2fdb74c95905f6c14c5e82bfa7e9e1e2">mkldnn::memory::primitive_desc</a>
+, <a class="el" href="structmkldnn_1_1lrn__backward_1_1desc.html#a35703858e04a192c33d8dda984fa6d57">mkldnn::lrn_backward::desc</a>
+, <a class="el" href="structmkldnn_1_1lrn__forward_1_1desc.html#aacdb78f35d40c0e8f32eee233ef5e64f">mkldnn::lrn_forward::desc</a>
+, <a class="el" href="structmkldnn_1_1memory_1_1desc.html#a5b74c3354d9a85336973ee303c003d41">mkldnn::memory::desc</a>
 , <a class="el" href="structmkldnn_1_1pooling__backward_1_1desc.html#a3f4abeed52647c1d91afa67259de5bf0">mkldnn::pooling_backward::desc</a>
 , <a class="el" href="structmkldnn_1_1pooling__forward_1_1desc.html#acc5bfb6e905eaea24be53182b8f15eca">mkldnn::pooling_forward::desc</a>
 , <a class="el" href="structmkldnn_1_1rnn__backward_1_1desc.html#aebb98a5fa76eb9ad91b6ff794d1ca285">mkldnn::rnn_backward::desc</a>
@@ -145,7 +149,7 @@ $(function() {
 , <a class="el" href="structmkldnn_1_1softmax__forward_1_1desc.html#a86f3b6079fd48f2b8a289ed7b8419c99">mkldnn::softmax_forward::desc</a>
 </li>
 <li>dhwio
-: <a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eaebcf00c5d0f2f56bb6bed3304e9b0c32">mkldnn::memory</a>
+: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaebcf00c5d0f2f56bb6bed3304e9b0c32">mkldnn::memory</a>
 </li>
 <li>diff_bias_desc
 : <a class="el" href="structmkldnn__convolution__desc__t.html#ae5b63ecca0944dfc057495428700d665">mkldnn_convolution_desc_t</a>
@@ -198,15 +202,20 @@ $(function() {
 <li>dilates
 : <a class="el" href="structmkldnn__convolution__desc__t.html#ae06d5bc00c7d8c3febf2da9b3d93ed0c">mkldnn_convolution_desc_t</a>
 </li>
+<li>dim
+: <a class="el" href="structmkldnn_1_1memory.html#ac84929ec8bd1bba9d7c5723ad6d93906">mkldnn::memory</a>
+</li>
 <li>dims
-: <a class="el" href="structmkldnn_1_1memory.html#a0fa655354b5c62453d93c58e2f229a43">mkldnn::memory</a>
+: <a class="el" href="structmkldnn_1_1memory.html#a4b929aee34491e5140d055a9e1daf180">mkldnn::memory</a>
 , <a class="el" href="structmkldnn__memory__desc__t.html#a0c5fde2a68d65f5e0e7701463a91de50">mkldnn_memory_desc_t</a>
 </li>
 <li>direction
 : <a class="el" href="structmkldnn__rnn__desc__t.html#aee95ea4d49aef7a368b06d6c96cb48ec">mkldnn_rnn_desc_t</a>
 </li>
-<li>dst_desc
-: <a class="el" href="structmkldnn__convolution__desc__t.html#ab3fa681b587982780c1fd657f470ad09">mkldnn_convolution_desc_t</a>
+<li>dst_desc()
+: <a class="el" href="structmkldnn_1_1concat_1_1primitive__desc.html#a374f11781d568156a9b33518b2d26f1a">mkldnn::concat::primitive_desc</a>
+, <a class="el" href="structmkldnn_1_1sum_1_1primitive__desc.html#a856c4ede08240d5b3efc01c459d3fcd7">mkldnn::sum::primitive_desc</a>
+, <a class="el" href="structmkldnn__convolution__desc__t.html#ab3fa681b587982780c1fd657f470ad09">mkldnn_convolution_desc_t</a>
 , <a class="el" href="structmkldnn__inner__product__desc__t.html#abe22f70b9bcb290d09bc22e40e39f8c9">mkldnn_inner_product_desc_t</a>
 , <a class="el" href="structmkldnn__pooling__desc__t.html#a1604893839196b8da368262d83e274af">mkldnn_pooling_desc_t</a>
 </li>
@@ -215,11 +224,6 @@ $(function() {
 </li>
 <li>dst_layer_desc
 : <a class="el" href="structmkldnn__rnn__desc__t.html#a1f788eb4d6893d26aa75d1d966546b99">mkldnn_rnn_desc_t</a>
-</li>
-<li>dst_primitive_desc()
-: <a class="el" href="structmkldnn_1_1concat_1_1primitive__desc.html#a6e9c16e5aae6411abbc21abb6d7af79b">mkldnn::concat::primitive_desc</a>
-, <a class="el" href="structmkldnn_1_1sum_1_1primitive__desc.html#a319516479af882369d2d52d0e48d9bbe">mkldnn::sum::primitive_desc</a>
-, <a class="el" href="structmkldnn_1_1view_1_1primitive__desc.html#aa1602b268862d64904af0abe5bad7a66">mkldnn::view::primitive_desc</a>
 </li>
 </ul>
 </div><!-- contents -->

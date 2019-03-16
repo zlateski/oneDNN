@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
-   &#160;<span id="projectnumber">0.18.1</span>
+   &#160;<span id="projectnumber">0.90.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
   </td>
@@ -136,11 +136,11 @@ Functions</h2></td></tr>
 
 <p>Initializes an <code>eltwise_desc</code> for forward propagation using <code>prop_kind</code> (possible values are <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f" title="Forward data propagation (training mode). ">mkldnn_forward_training</a> and <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a58a923fb6c4e1214e1505b5fa0b1e3fa" title="Forward data propagation (inference mode). ">mkldnn_forward_inference</a>), <code>alg_kind</code> algorithm, memory descriptor <code>data_desc</code>, <code>alpha</code>, and <code>beta</code> parameters. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="structmkldnn__eltwise__desc__t.html" title="A descriptor of a element-wise operation. ">mkldnn_eltwise_desc_t</a> for details.</dd></dl>
-<p>Order of inputs:</p><ul>
-<li>src (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ac17b645e3801adaaeee3107103ec8a72" title="source memory primitive desc ">mkldnn_query_src_pd</a>, 0)</li>
+<p>Inputs:</p><ul>
+<li>src (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a2bccd0a79be2c331227c353c294c3fbc" title="source memory desc ">mkldnn_query_src_md</a>, 0)</li>
 </ul>
-<p>Order of outputs:</p><ul>
-<li>dst (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9abb15fa8a7eb5aebfe547ac57a96c2d56" title="destination memory primitive desc ">mkldnn_query_dst_pd</a>, 0) </li>
+<p>Outputs:</p><ul>
+<li>dst (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9adccda04151e0c287f0de64b832d33ac4" title="destination memory desc ">mkldnn_query_dst_md</a>, 0) </li>
 </ul>
 
 </div>
@@ -197,12 +197,12 @@ Functions</h2></td></tr>
 
 <p>Initializes an <code>eltwise_desc</code> for backward propagation using <code>alg_kind</code> algorithm memory descriptors <code>diff_data_desc</code> and <code>data_desc</code>, and the <code>alpha</code> and <code>beta</code> parameters. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="structmkldnn__eltwise__desc__t.html" title="A descriptor of a element-wise operation. ">mkldnn_eltwise_desc_t</a> for details.</dd></dl>
-<p>Order of inputs:</p><ul>
-<li>src (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ac17b645e3801adaaeee3107103ec8a72" title="source memory primitive desc ">mkldnn_query_src_pd</a>, 0)</li>
-<li>diff_dst (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9aa5b466fae3a9bda2d112db68cfd2b68e" title="destination grad. ">mkldnn_query_diff_dst_pd</a>, 0)</li>
+<p>Inputs:</p><ul>
+<li>src (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a2bccd0a79be2c331227c353c294c3fbc" title="source memory desc ">mkldnn_query_src_md</a>, 0)</li>
+<li>diff_dst (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9acfa30e38738b3de8c7d3a7f21ffc1623" title="destination grad. ">mkldnn_query_diff_dst_md</a>, 0)</li>
 </ul>
-<p>Order of outputs:</p><ul>
-<li>diff_src (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ac95fbe152e97a3989dc794a70643d834" title="source gradient memory primitive desc ">mkldnn_query_diff_src_pd</a>, 0) </li>
+<p>Outputs:</p><ul>
+<li>diff_src (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ad915503c92000da20088fdb93cd685b9" title="source gradient memory desc ">mkldnn_query_diff_src_md</a>, 0) </li>
 </ul>
 
 </div>

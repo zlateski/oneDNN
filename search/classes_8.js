@@ -1,27 +1,9 @@
 var searchData=
 [
-  ['memory',['memory',['../structmkldnn_1_1memory.html',1,'mkldnn']]],
-  ['mkldnn_5fbatch_5fnormalization_5fdesc_5ft',['mkldnn_batch_normalization_desc_t',['../structmkldnn__batch__normalization__desc__t.html',1,'']]],
-  ['mkldnn_5fblocking_5fdesc_5ft',['mkldnn_blocking_desc_t',['../structmkldnn__blocking__desc__t.html',1,'']]],
-  ['mkldnn_5fconvolution_5fdesc_5ft',['mkldnn_convolution_desc_t',['../structmkldnn__convolution__desc__t.html',1,'']]],
-  ['mkldnn_5feltwise_5fdesc_5ft',['mkldnn_eltwise_desc_t',['../structmkldnn__eltwise__desc__t.html',1,'']]],
-  ['mkldnn_5fengine',['mkldnn_engine',['../structmkldnn__engine.html',1,'']]],
-  ['mkldnn_5finner_5fproduct_5fdesc_5ft',['mkldnn_inner_product_desc_t',['../structmkldnn__inner__product__desc__t.html',1,'']]],
-  ['mkldnn_5flrn_5fdesc_5ft',['mkldnn_lrn_desc_t',['../structmkldnn__lrn__desc__t.html',1,'']]],
-  ['mkldnn_5fmemory_5fdesc_5ft',['mkldnn_memory_desc_t',['../structmkldnn__memory__desc__t.html',1,'']]],
-  ['mkldnn_5fpooling_5fdesc_5ft',['mkldnn_pooling_desc_t',['../structmkldnn__pooling__desc__t.html',1,'']]],
-  ['mkldnn_5fpost_5fops',['mkldnn_post_ops',['../structmkldnn__post__ops.html',1,'']]],
-  ['mkldnn_5fprimitive',['mkldnn_primitive',['../structmkldnn__primitive.html',1,'']]],
-  ['mkldnn_5fprimitive_5fat_5ft',['mkldnn_primitive_at_t',['../structmkldnn__primitive__at__t.html',1,'']]],
-  ['mkldnn_5fprimitive_5fattr',['mkldnn_primitive_attr',['../structmkldnn__primitive__attr.html',1,'']]],
-  ['mkldnn_5fprimitive_5fdesc',['mkldnn_primitive_desc',['../structmkldnn__primitive__desc.html',1,'']]],
-  ['mkldnn_5fprimitive_5fdesc_5fiterator',['mkldnn_primitive_desc_iterator',['../structmkldnn__primitive__desc__iterator.html',1,'']]],
-  ['mkldnn_5frnn_5fcell_5fdesc_5ft',['mkldnn_rnn_cell_desc_t',['../structmkldnn__rnn__cell__desc__t.html',1,'']]],
-  ['mkldnn_5frnn_5fdesc_5ft',['mkldnn_rnn_desc_t',['../structmkldnn__rnn__desc__t.html',1,'']]],
-  ['mkldnn_5frnn_5fpacked_5fdesc_5ft',['mkldnn_rnn_packed_desc_t',['../structmkldnn__rnn__packed__desc__t.html',1,'']]],
-  ['mkldnn_5fshuffle_5fdesc_5ft',['mkldnn_shuffle_desc_t',['../structmkldnn__shuffle__desc__t.html',1,'']]],
-  ['mkldnn_5fsoftmax_5fdesc_5ft',['mkldnn_softmax_desc_t',['../structmkldnn__softmax__desc__t.html',1,'']]],
-  ['mkldnn_5fstream',['mkldnn_stream',['../structmkldnn__stream.html',1,'']]],
-  ['mkldnn_5fversion_5ft',['mkldnn_version_t',['../structmkldnn__version__t.html',1,'']]],
-  ['mkldnn_5fwino_5fdesc_5ft',['mkldnn_wino_desc_t',['../structmkldnn__wino__desc__t.html',1,'']]]
+  ['pooling_5fbackward',['pooling_backward',['../structmkldnn_1_1pooling__backward.html',1,'mkldnn']]],
+  ['pooling_5fforward',['pooling_forward',['../structmkldnn_1_1pooling__forward.html',1,'mkldnn']]],
+  ['post_5fops',['post_ops',['../structmkldnn_1_1post__ops.html',1,'mkldnn']]],
+  ['primitive',['primitive',['../classmkldnn_1_1primitive.html',1,'mkldnn']]],
+  ['primitive_5fattr',['primitive_attr',['../structmkldnn_1_1primitive__attr.html',1,'mkldnn']]],
+  ['primitive_5fdesc',['primitive_desc',['../structmkldnn_1_1inner__product__backward__data_1_1primitive__desc.html',1,'mkldnn::inner_product_backward_data::primitive_desc'],['../structmkldnn_1_1shuffle__backward_1_1primitive__desc.html',1,'mkldnn::shuffle_backward::primitive_desc'],['../structmkldnn_1_1inner__product__backward__weights_1_1primitive__desc.html',1,'mkldnn::inner_product_backward_weights::primitive_desc'],['../structmkldnn_1_1deconvolution__backward__weights_1_1primitive__desc.html',1,'mkldnn::deconvolution_backward_weights::primitive_desc'],['../structmkldnn_1_1concat_1_1primitive__desc.html',1,'mkldnn::concat::primitive_desc'],['../structmkldnn_1_1eltwise__backward_1_1primitive__desc.html',1,'mkldnn::eltwise_backward::primitive_desc'],['../structmkldnn_1_1sum_1_1primitive__desc.html',1,'mkldnn::sum::primitive_desc'],['../structmkldnn_1_1deconvolution__forward_1_1primitive__desc.html',1,'mkldnn::deconvolution_forward::primitive_desc'],['../structmkldnn_1_1pooling__backward_1_1primitive__desc.html',1,'mkldnn::pooling_backward::primitive_desc'],['../structmkldnn_1_1softmax__forward_1_1primitive__desc.html',1,'mkldnn::softmax_forward::primitive_desc'],['../structmkldnn_1_1eltwise__forward_1_1primitive__desc.html',1,'mkldnn::eltwise_forward::primitive_desc'],['../structmkldnn_1_1reorder_1_1primitive__desc.html',1,'mkldnn::reorder::primitive_desc'],['../structmkldnn_1_1rnn__backward_1_1primitive__desc.html',1,'mkldnn::rnn_backward::primitive_desc'],['../structmkldnn_1_1batch__normalization__forward_1_1primitive__desc.html',1,'mkldnn::batch_normalization_forward::primitive_desc'],['../structmkldnn_1_1convolution__backward__weights_1_1primitive__desc.html',1,'mkldnn::convolution_backward_weights::primitive_desc'],['../structmkldnn_1_1shuffle__forward_1_1primitive__desc.html',1,'mkldnn::shuffle_forward::primitive_desc'],['../structmkldnn_1_1deconvolution__backward__data_1_1primitive__desc.html',1,'mkldnn::deconvolution_backward_data::primitive_desc'],['../structmkldnn_1_1convolution__forward_1_1primitive__desc.html',1,'mkldnn::convolution_forward::primitive_desc'],['../structmkldnn_1_1lrn__backward_1_1primitive__desc.html',1,'mkldnn::lrn_backward::primitive_desc'],['../structmkldnn_1_1primitive__desc.html',1,'mkldnn::primitive_desc'],['../structmkldnn_1_1softmax__backward_1_1primitive__desc.html',1,'mkldnn::softmax_backward::primitive_desc'],['../structmkldnn_1_1lrn__forward_1_1primitive__desc.html',1,'mkldnn::lrn_forward::primitive_desc'],['../structmkldnn_1_1inner__product__forward_1_1primitive__desc.html',1,'mkldnn::inner_product_forward::primitive_desc'],['../structmkldnn_1_1pooling__forward_1_1primitive__desc.html',1,'mkldnn::pooling_forward::primitive_desc'],['../structmkldnn_1_1rnn__forward_1_1primitive__desc.html',1,'mkldnn::rnn_forward::primitive_desc'],['../structmkldnn_1_1batch__normalization__backward_1_1primitive__desc.html',1,'mkldnn::batch_normalization_backward::primitive_desc'],['../structmkldnn_1_1convolution__backward__data_1_1primitive__desc.html',1,'mkldnn::convolution_backward_data::primitive_desc']]]
 ];

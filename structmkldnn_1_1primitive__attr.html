@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
-   &#160;<span id="projectnumber">0.18.1</span>
+   &#160;<span id="projectnumber">0.90.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
   </td>
@@ -94,10 +94,10 @@ Collaboration diagram for mkldnn::primitive_attr:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa91390a8208cbe9ce32e639b0594eb74"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1primitive__attr.html#aa91390a8208cbe9ce32e639b0594eb74">primitive_attr</a> ()</td></tr>
 <tr class="separator:aa91390a8208cbe9ce32e639b0594eb74"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66c72a029a3cef573f43396a282af056"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__cpp__api__enums.html#ga9d7c927196d96da9d2dcb0926f50845d">round_mode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1primitive__attr.html#a66c72a029a3cef573f43396a282af056">get_int_output_round_mode</a> () const</td></tr>
-<tr class="separator:a66c72a029a3cef573f43396a282af056"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a394a1a86d0568c201b427467603d99ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1primitive__attr.html#a394a1a86d0568c201b427467603d99ae">set_int_output_round_mode</a> (<a class="el" href="group__cpp__api__enums.html#ga9d7c927196d96da9d2dcb0926f50845d">round_mode</a> mode)</td></tr>
-<tr class="separator:a394a1a86d0568c201b427467603d99ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa766e270484f75f123d427b66ea0c50"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__cpp__api__enums.html#gadb1d0d24b9f6c0eabd3359e322add147">scratchpad_mode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1primitive__attr.html#afa766e270484f75f123d427b66ea0c50">get_scratchpad_mode</a> () const</td></tr>
+<tr class="separator:afa766e270484f75f123d427b66ea0c50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cda7750106cbdd537114152de0c97ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1primitive__attr.html#a2cda7750106cbdd537114152de0c97ba">set_scratchpad_mode</a> (<a class="el" href="group__cpp__api__enums.html#gadb1d0d24b9f6c0eabd3359e322add147">scratchpad_mode</a> mode)</td></tr>
+<tr class="separator:a2cda7750106cbdd537114152de0c97ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc90552f6edf3bca700cc25719fc3948"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1primitive__attr.html#abc90552f6edf3bca700cc25719fc3948">get_output_scales</a> (int &amp;mask, std::vector&lt; float &gt; &amp;scales) const</td></tr>
 <tr class="separator:abc90552f6edf3bca700cc25719fc3948"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c2ba432512cf9950b81febce265e35d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1primitive__attr.html#a1c2ba432512cf9950b81febce265e35d">set_output_scales</a> (int mask, const std::vector&lt; float &gt; &amp;scales)</td></tr>
@@ -164,8 +164,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a66c72a029a3cef573f43396a282af056"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a66c72a029a3cef573f43396a282af056">&#9670;&nbsp;</a></span>get_int_output_round_mode()</h2>
+<a id="afa766e270484f75f123d427b66ea0c50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa766e270484f75f123d427b66ea0c50">&#9670;&nbsp;</a></span>get_scratchpad_mode()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -174,7 +174,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__cpp__api__enums.html#ga9d7c927196d96da9d2dcb0926f50845d">round_mode</a> mkldnn::primitive_attr::get_int_output_round_mode </td>
+          <td class="memname"><a class="el" href="group__cpp__api__enums.html#gadb1d0d24b9f6c0eabd3359e322add147">scratchpad_mode</a> mkldnn::primitive_attr::get_scratchpad_mode </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -189,8 +189,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a394a1a86d0568c201b427467603d99ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a394a1a86d0568c201b427467603d99ae">&#9670;&nbsp;</a></span>set_int_output_round_mode()</h2>
+<a id="a2cda7750106cbdd537114152de0c97ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cda7750106cbdd537114152de0c97ba">&#9670;&nbsp;</a></span>set_scratchpad_mode()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -199,9 +199,9 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void mkldnn::primitive_attr::set_int_output_round_mode </td>
+          <td class="memname">void mkldnn::primitive_attr::set_scratchpad_mode </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__cpp__api__enums.html#ga9d7c927196d96da9d2dcb0926f50845d">round_mode</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__cpp__api__enums.html#gadb1d0d24b9f6c0eabd3359e322add147">scratchpad_mode</a>&#160;</td>
           <td class="paramname"><em>mode</em></td><td>)</td>
           <td></td>
         </tr>

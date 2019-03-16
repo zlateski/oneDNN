@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
-   &#160;<span id="projectnumber">0.18.1</span>
+   &#160;<span id="projectnumber">0.90.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
   </td>
@@ -90,38 +90,34 @@ Collaboration diagram for mkldnn::error:</div>
 <div class="dyncontent">
 <div class="center"><img src="structmkldnn_1_1error__coll__graph.png" border="0" usemap="#mkldnn_1_1error_coll__map" alt="Collaboration graph"/></div>
 <map name="mkldnn_1_1error_coll__map" id="mkldnn_1_1error_coll__map">
-<area shape="rect" id="node3" href="classmkldnn_1_1primitive.html" title="Base class for all computational primitives. " alt="" coords="134,99,255,125"/>
-<area shape="rect" id="node4" href="classmkldnn_1_1handle.html" title="mkldnn::handle\&lt; mkldnn\l_primitive_t \&gt;" alt="" coords="113,6,276,47"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a7812548bbce0899a64348d1a73e2f57a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1error.html#a7812548bbce0899a64348d1a73e2f57a">error</a> (<a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> astatus, std::string amessage, <a class="el" href="group__c__api__types__primitive.html#gac7821f6b4a4fa0d58fe5279a1ff2fda3">mkldnn_primitive_t</a> aerror_primitive=0)</td></tr>
-<tr class="memdesc:a7812548bbce0899a64348d1a73e2f57a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an error instance.  <a href="#a7812548bbce0899a64348d1a73e2f57a">More...</a><br /></td></tr>
-<tr class="separator:a7812548bbce0899a64348d1a73e2f57a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c6b9943b457a144566e70c8239cef2d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1error.html#a4c6b9943b457a144566e70c8239cef2d">error</a> (<a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> astatus, const char *amessage)</td></tr>
+<tr class="memdesc:a4c6b9943b457a144566e70c8239cef2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an error instance.  <a href="#a4c6b9943b457a144566e70c8239cef2d">More...</a><br /></td></tr>
+<tr class="separator:a4c6b9943b457a144566e70c8239cef2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ad87cb75c7066f319524bf595bfd876b4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1error.html#ad87cb75c7066f319524bf595bfd876b4">wrap_c_api</a> (<a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> <a class="el" href="structmkldnn_1_1error.html#a198ac0b350f00924dae2553086e90e97">status</a>, const std::string &amp;<a class="el" href="structmkldnn_1_1error.html#aac33c1b8a1a10d6d1acfe2ec5ce6cdcb">message</a>, <a class="el" href="group__c__api__types__primitive.html#gac7821f6b4a4fa0d58fe5279a1ff2fda3">mkldnn_primitive_t</a> *<a class="el" href="structmkldnn_1_1error.html#afa457ffa341634f9275610aa34a36c4c">error_primitive</a>=0)</td></tr>
-<tr class="memdesc:ad87cb75c7066f319524bf595bfd876b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">A convenience function for wrapping calls to the C API. Checks the return status and throws an <a class="el" href="structmkldnn_1_1error.html#a7812548bbce0899a64348d1a73e2f57a" title="Constructs an error instance. ">error</a> in case of failure.  <a href="#ad87cb75c7066f319524bf595bfd876b4">More...</a><br /></td></tr>
-<tr class="separator:ad87cb75c7066f319524bf595bfd876b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e318dc8b0c09726e823899670086f2d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1error.html#a8e318dc8b0c09726e823899670086f2d">wrap_c_api</a> (<a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> <a class="el" href="structmkldnn_1_1error.html#a198ac0b350f00924dae2553086e90e97">status</a>, const char *<a class="el" href="structmkldnn_1_1error.html#a0bf9ffbf630a51fb26fe9b3c20c285cb">message</a>)</td></tr>
+<tr class="memdesc:a8e318dc8b0c09726e823899670086f2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">A convenience function for wrapping calls to the C API. Checks the return status and throws an <a class="el" href="structmkldnn_1_1error.html#a4c6b9943b457a144566e70c8239cef2d" title="Constructs an error instance. ">error</a> in case of failure.  <a href="#a8e318dc8b0c09726e823899670086f2d">More...</a><br /></td></tr>
+<tr class="separator:a8e318dc8b0c09726e823899670086f2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a198ac0b350f00924dae2553086e90e97"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1error.html#a198ac0b350f00924dae2553086e90e97">status</a></td></tr>
 <tr class="separator:a198ac0b350f00924dae2553086e90e97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac33c1b8a1a10d6d1acfe2ec5ce6cdcb"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1error.html#aac33c1b8a1a10d6d1acfe2ec5ce6cdcb">message</a></td></tr>
-<tr class="separator:aac33c1b8a1a10d6d1acfe2ec5ce6cdcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa457ffa341634f9275610aa34a36c4c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmkldnn_1_1primitive.html">primitive</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1error.html#afa457ffa341634f9275610aa34a36c4c">error_primitive</a></td></tr>
-<tr class="separator:afa457ffa341634f9275610aa34a36c4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bf9ffbf630a51fb26fe9b3c20c285cb"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1error.html#a0bf9ffbf630a51fb26fe9b3c20c285cb">message</a></td></tr>
+<tr class="separator:a0bf9ffbf630a51fb26fe9b3c20c285cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Intel(R) MKL-DNN exception class. </p>
 <p>This class captures the status returned by the failed C API function, error message, and, optionally, handle of the primitive that caused the error. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a7812548bbce0899a64348d1a73e2f57a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7812548bbce0899a64348d1a73e2f57a">&#9670;&nbsp;</a></span>error()</h2>
+<a id="a4c6b9943b457a144566e70c8239cef2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c6b9943b457a144566e70c8239cef2d">&#9670;&nbsp;</a></span>error()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -138,14 +134,8 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>amessage</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__c__api__types__primitive.html#gac7821f6b4a4fa0d58fe5279a1ff2fda3">mkldnn_primitive_t</a>&#160;</td>
-          <td class="paramname"><em>aerror_primitive</em> = <code>0</code>&#160;</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>amessage</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -165,7 +155,6 @@ Public Attributes</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">astatus</td><td>The error status returned by the C API. </td></tr>
     <tr><td class="paramname">amessage</td><td>The error message. </td></tr>
-    <tr><td class="paramname">aerror_primitive</td><td>(optional) A C handle of the primitive that caused the error. </td></tr>
   </table>
   </dd>
 </dl>
@@ -173,8 +162,8 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ad87cb75c7066f319524bf595bfd876b4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad87cb75c7066f319524bf595bfd876b4">&#9670;&nbsp;</a></span>wrap_c_api()</h2>
+<a id="a8e318dc8b0c09726e823899670086f2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e318dc8b0c09726e823899670086f2d">&#9670;&nbsp;</a></span>wrap_c_api()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -191,14 +180,8 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>message</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__c__api__types__primitive.html#gac7821f6b4a4fa0d58fe5279a1ff2fda3">mkldnn_primitive_t</a> *&#160;</td>
-          <td class="paramname"><em>error_primitive</em> = <code>0</code>&#160;</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>message</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -213,12 +196,11 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>A convenience function for wrapping calls to the C API. Checks the return status and throws an <a class="el" href="structmkldnn_1_1error.html#a7812548bbce0899a64348d1a73e2f57a" title="Constructs an error instance. ">error</a> in case of failure. </p>
+<p>A convenience function for wrapping calls to the C API. Checks the return status and throws an <a class="el" href="structmkldnn_1_1error.html#a4c6b9943b457a144566e70c8239cef2d" title="Constructs an error instance. ">error</a> in case of failure. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">status</td><td>The error status returned by the C API. </td></tr>
     <tr><td class="paramname">message</td><td>The error message. </td></tr>
-    <tr><td class="paramname">error_primitive</td><td>(optional) A C handle of the primitive that caused the error. </td></tr>
   </table>
   </dd>
 </dl>
@@ -240,28 +222,14 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="aac33c1b8a1a10d6d1acfe2ec5ce6cdcb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac33c1b8a1a10d6d1acfe2ec5ce6cdcb">&#9670;&nbsp;</a></span>message</h2>
+<a id="a0bf9ffbf630a51fb26fe9b3c20c285cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bf9ffbf630a51fb26fe9b3c20c285cb">&#9670;&nbsp;</a></span>message</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::string mkldnn::error::message</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="afa457ffa341634f9275610aa34a36c4c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afa457ffa341634f9275610aa34a36c4c">&#9670;&nbsp;</a></span>error_primitive</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classmkldnn_1_1primitive.html">primitive</a> mkldnn::error::error_primitive</td>
+          <td class="memname">const char* mkldnn::error::message</td>
         </tr>
       </table>
 </div><div class="memdoc">

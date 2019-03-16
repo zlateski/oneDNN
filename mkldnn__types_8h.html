@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
-   &#160;<span id="projectnumber">0.18.1</span>
+   &#160;<span id="projectnumber">0.90.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
   </td>
@@ -90,6 +90,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__rnn__packed__desc__t.html">mkldnn_rnn_packed_desc_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Description of tensor of packed weights for rnn.  <a href="structmkldnn__rnn__packed__desc__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__memory__extra__desc__t.html">mkldnn_memory_extra_desc_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Description of extra information stored in memory.  <a href="structmkldnn__memory__extra__desc__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Memory descriptor.  <a href="structmkldnn__memory__desc__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -122,34 +125,131 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__rnn__desc__t.html">mkldnn_rnn_desc_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A descriptor for an RNN operation.  <a href="structmkldnn__rnn__desc__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__primitive__at__t.html">mkldnn_primitive_at_t</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper structure to specify a particular output of a primitive.  <a href="structmkldnn__primitive__at__t.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__exec__arg__t.html">mkldnn_exec_arg_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An auxiliary structure to specify primitive's inputs/outputs at execution.  <a href="structmkldnn__exec__arg__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ga4ca94c6989f339b687713b555610fb9b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#ga4ca94c6989f339b687713b555610fb9b">TENSOR_MAX_DIMS</a>&#160;&#160;&#160;12</td></tr>
-<tr class="memdesc:ga4ca94c6989f339b687713b555610fb9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of dimensions a tensor can have.  <a href="group__c__api__types__memory.html#ga4ca94c6989f339b687713b555610fb9b">More...</a><br /></td></tr>
-<tr class="separator:ga4ca94c6989f339b687713b555610fb9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabdefec6dd67abc44d68c97f51afbaf45"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#gabdefec6dd67abc44d68c97f51afbaf45">MKLDNN_MAX_NDIMS</a>&#160;&#160;&#160;12</td></tr>
+<tr class="memdesc:gabdefec6dd67abc44d68c97f51afbaf45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of dimensions a tensor can have.  <a href="group__c__api__types__memory.html#gabdefec6dd67abc44d68c97f51afbaf45">More...</a><br /></td></tr>
+<tr class="separator:gabdefec6dd67abc44d68c97f51afbaf45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga09e605320955705ff8d2561026995b47"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#ga09e605320955705ff8d2561026995b47">MKLDNN_RNN_MAX_N_PARTS</a>&#160;&#160;&#160;4</td></tr>
 <tr class="separator:ga09e605320955705ff8d2561026995b47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga528744670726f219d21e65ec92447346"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#ga528744670726f219d21e65ec92447346">MKLDNN_NATIVE_HANDLE_NONE</a>&#160;&#160;&#160;(NULL)</td></tr>
+<tr class="separator:ga528744670726f219d21e65ec92447346"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1d4d12f81ea957dc84ee1265db71cea9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#ga1d4d12f81ea957dc84ee1265db71cea9">MKLDNN_NATIVE_HANDLE_ALLOCATE</a>&#160;&#160;&#160;((void *)(size_t)-1)</td></tr>
+<tr class="separator:ga1d4d12f81ea957dc84ee1265db71cea9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaeb02280119a1ac25bf1e5fd8e59e5a68"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__arguments.html#gaeb02280119a1ac25bf1e5fd8e59e5a68">MKLDNN_ARG_SRC_0</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:gaeb02280119a1ac25bf1e5fd8e59e5a68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf227e0edc89d4166e5ce0ffb032a820b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__arguments.html#gaf227e0edc89d4166e5ce0ffb032a820b">MKLDNN_ARG_SRC</a>&#160;&#160;&#160;<a class="el" href="group__c__api__types__arguments.html#gaeb02280119a1ac25bf1e5fd8e59e5a68">MKLDNN_ARG_SRC_0</a></td></tr>
+<tr class="separator:gaf227e0edc89d4166e5ce0ffb032a820b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga298b6b8cbd5d7a98efed544c5e8adb9e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__arguments.html#ga298b6b8cbd5d7a98efed544c5e8adb9e">MKLDNN_ARG_SRC_LAYER</a>&#160;&#160;&#160;<a class="el" href="group__c__api__types__arguments.html#gaeb02280119a1ac25bf1e5fd8e59e5a68">MKLDNN_ARG_SRC_0</a></td></tr>
+<tr class="separator:ga298b6b8cbd5d7a98efed544c5e8adb9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf5614d223f1762c2663ba63cff5ded83"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__arguments.html#gaf5614d223f1762c2663ba63cff5ded83">MKLDNN_ARG_FROM</a>&#160;&#160;&#160;<a class="el" href="group__c__api__types__arguments.html#gaeb02280119a1ac25bf1e5fd8e59e5a68">MKLDNN_ARG_SRC_0</a></td></tr>
+<tr class="separator:gaf5614d223f1762c2663ba63cff5ded83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1a0aa2bea090b905d930ff38364b77f7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__arguments.html#ga1a0aa2bea090b905d930ff38364b77f7">MKLDNN_ARG_SRC_1</a>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:ga1a0aa2bea090b905d930ff38364b77f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7b9308af60b83f62bf5e738f8b431c3a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__arguments.html#ga7b9308af60b83f62bf5e738f8b431c3a">MKLDNN_ARG_SRC_ITER</a>&#160;&#160;&#160;<a class="el" href="group__c__api__types__arguments.html#ga1a0aa2bea090b905d930ff38364b77f7">MKLDNN_ARG_SRC_1</a></td></tr>
+<tr class="separator:ga7b9308af60b83f62bf5e738f8b431c3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4969753e12fbb9d941ac06ad3919f1ef"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__arguments.html#ga4969753e12fbb9d941ac06ad3919f1ef">MKLDNN_ARG_DST_0</a>&#160;&#160;&#160;17</td></tr>
+<tr class="separator:ga4969753e12fbb9d941ac06ad3919f1ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacb06afbc46f0663ec7fa06e2f67477ba"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__arguments.html#gacb06afbc46f0663ec7fa06e2f67477ba">MKLDNN_ARG_DST</a>&#160;&#160;&#160;<a class="el" href="group__c__api__types__arguments.html#ga4969753e12fbb9d941ac06ad3919f1ef">MKLDNN_ARG_DST_0</a></td></tr>
+<tr class="separator:gacb06afbc46f0663ec7fa06e2f67477ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga98b5cc308bcd5d042a82c282bd9d1868"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__arguments.html#ga98b5cc308bcd5d042a82c282bd9d1868">MKLDNN_ARG_TO</a>&#160;&#160;&#160;<a class="el" href="group__c__api__types__arguments.html#ga4969753e12fbb9d941ac06ad3919f1ef">MKLDNN_ARG_DST_0</a></td></tr>
+<tr class="separator:ga98b5cc308bcd5d042a82c282bd9d1868"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaccd6dfe32acbff92b95916f50d1bfa4a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__arguments.html#gaccd6dfe32acbff92b95916f50d1bfa4a">MKLDNN_ARG_DST_LAYER</a>&#160;&#160;&#160;<a class="el" href="group__c__api__types__arguments.html#ga4969753e12fbb9d941ac06ad3919f1ef">MKLDNN_ARG_DST_0</a></td></tr>
+<tr class="separator:gaccd6dfe32acbff92b95916f50d1bfa4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga12d27f0989a5324db987ce5b23ac319c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__arguments.html#ga12d27f0989a5324db987ce5b23ac319c">MKLDNN_ARG_DST_1</a>&#160;&#160;&#160;18</td></tr>
+<tr class="separator:ga12d27f0989a5324db987ce5b23ac319c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabfa28ee60c03c5430e7cad80eeba0118"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__arguments.html#gabfa28ee60c03c5430e7cad80eeba0118">MKLDNN_ARG_DST_ITER</a>&#160;&#160;&#160;<a class="el" href="group__c__api__types__arguments.html#ga12d27f0989a5324db987ce5b23ac319c">MKLDNN_ARG_DST_1</a></td></tr>
+<tr class="separator:gabfa28ee60c03c5430e7cad80eeba0118"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaef9158aae47898443e0060f78ce0b6e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__arguments.html#gaaef9158aae47898443e0060f78ce0b6e">MKLDNN_ARG_WEIGHTS_0</a>&#160;&#160;&#160;33</td></tr>
+<tr class="separator:gaaef9158aae47898443e0060f78ce0b6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae5aad3a59b6d8592988ff87fa9bb09dc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__arguments.html#gae5aad3a59b6d8592988ff87fa9bb09dc">MKLDNN_ARG_WEIGHTS</a>&#160;&#160;&#160;<a class="el" href="group__c__api__types__arguments.html#gaaef9158aae47898443e0060f78ce0b6e">MKLDNN_ARG_WEIGHTS_0</a></td></tr>
+<tr class="separator:gae5aad3a59b6d8592988ff87fa9bb09dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad217972f40c4be5d39e5aeecf31c6ffe"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__arguments.html#gad217972f40c4be5d39e5aeecf31c6ffe">MKLDNN_ARG_SCALE_SHIFT</a>&#160;&#160;&#160;<a class="el" href="group__c__api__types__arguments.html#gaaef9158aae47898443e0060f78ce0b6e">MKLDNN_ARG_WEIGHTS_0</a></td></tr>
+<tr class="separator:gad217972f40c4be5d39e5aeecf31c6ffe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga85f20333dc146a41a96a96086f377b07"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__arguments.html#ga85f20333dc146a41a96a96086f377b07">MKLDNN_ARG_WEIGHTS_LAYER</a>&#160;&#160;&#160;<a class="el" href="group__c__api__types__arguments.html#gaaef9158aae47898443e0060f78ce0b6e">MKLDNN_ARG_WEIGHTS_0</a></td></tr>
+<tr class="separator:ga85f20333dc146a41a96a96086f377b07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga89f840ee9f64c2e7b022d334bbd24372"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__arguments.html#ga89f840ee9f64c2e7b022d334bbd24372">MKLDNN_ARG_WEIGHTS_1</a>&#160;&#160;&#160;34</td></tr>
+<tr class="separator:ga89f840ee9f64c2e7b022d334bbd24372"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga06bef695002e3ace96c75ca1dd08be03"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__arguments.html#ga06bef695002e3ace96c75ca1dd08be03">MKLDNN_ARG_WEIGHTS_ITER</a>&#160;&#160;&#160;<a class="el" href="group__c__api__types__arguments.html#ga89f840ee9f64c2e7b022d334bbd24372">MKLDNN_ARG_WEIGHTS_1</a></td></tr>
+<tr class="separator:ga06bef695002e3ace96c75ca1dd08be03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaa543087caa0163eeefa876fa4faf292"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__arguments.html#gaaa543087caa0163eeefa876fa4faf292">MKLDNN_ARG_BIAS</a>&#160;&#160;&#160;41</td></tr>
+<tr class="separator:gaaa543087caa0163eeefa876fa4faf292"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaefbc90a3120cb87381d778fd744a82c1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__arguments.html#gaefbc90a3120cb87381d778fd744a82c1">MKLDNN_ARG_MEAN</a>&#160;&#160;&#160;49</td></tr>
+<tr class="separator:gaefbc90a3120cb87381d778fd744a82c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga76f05ca492c284e38ad4ce8e3f608cb8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__arguments.html#ga76f05ca492c284e38ad4ce8e3f608cb8">MKLDNN_ARG_VARIANCE</a>&#160;&#160;&#160;50</td></tr>
+<tr class="separator:ga76f05ca492c284e38ad4ce8e3f608cb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0e73611fbe3bd1aa7783ca02e8c1f20d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__arguments.html#ga0e73611fbe3bd1aa7783ca02e8c1f20d">MKLDNN_ARG_WORKSPACE</a>&#160;&#160;&#160;64</td></tr>
+<tr class="separator:ga0e73611fbe3bd1aa7783ca02e8c1f20d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga137f041fd901cbfff51ddca440bb8b04"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__arguments.html#ga137f041fd901cbfff51ddca440bb8b04">MKLDNN_ARG_SCRATCHPAD</a>&#160;&#160;&#160;80</td></tr>
+<tr class="separator:ga137f041fd901cbfff51ddca440bb8b04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac8be05fc55c377bfb09431ccb0dfce97"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__arguments.html#gac8be05fc55c377bfb09431ccb0dfce97">MKLDNN_ARG_DIFF_SRC_0</a>&#160;&#160;&#160;129</td></tr>
+<tr class="separator:gac8be05fc55c377bfb09431ccb0dfce97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5234a2011c91590795b9f5dac371c06f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__arguments.html#ga5234a2011c91590795b9f5dac371c06f">MKLDNN_ARG_DIFF_SRC</a>&#160;&#160;&#160;<a class="el" href="group__c__api__types__arguments.html#gac8be05fc55c377bfb09431ccb0dfce97">MKLDNN_ARG_DIFF_SRC_0</a></td></tr>
+<tr class="separator:ga5234a2011c91590795b9f5dac371c06f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga68e9bd8cf6ac4a2f1e5898e81b48be9a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__arguments.html#ga68e9bd8cf6ac4a2f1e5898e81b48be9a">MKLDNN_ARG_DIFF_SRC_LAYER</a>&#160;&#160;&#160;<a class="el" href="group__c__api__types__arguments.html#gac8be05fc55c377bfb09431ccb0dfce97">MKLDNN_ARG_DIFF_SRC_0</a></td></tr>
+<tr class="separator:ga68e9bd8cf6ac4a2f1e5898e81b48be9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7a88362a331a057b31565a8a46ecb94b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__arguments.html#ga7a88362a331a057b31565a8a46ecb94b">MKLDNN_ARG_DIFF_SRC_1</a>&#160;&#160;&#160;130</td></tr>
+<tr class="separator:ga7a88362a331a057b31565a8a46ecb94b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga322f595e84ab8943157e06ea2e3f38b8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__arguments.html#ga322f595e84ab8943157e06ea2e3f38b8">MKLDNN_ARG_DIFF_SRC_ITER</a>&#160;&#160;&#160;<a class="el" href="group__c__api__types__arguments.html#ga7a88362a331a057b31565a8a46ecb94b">MKLDNN_ARG_DIFF_SRC_1</a></td></tr>
+<tr class="separator:ga322f595e84ab8943157e06ea2e3f38b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga470be7fab1b500c4fd26e0b2d1ea3f67"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__arguments.html#ga470be7fab1b500c4fd26e0b2d1ea3f67">MKLDNN_ARG_DIFF_DST_0</a>&#160;&#160;&#160;145</td></tr>
+<tr class="separator:ga470be7fab1b500c4fd26e0b2d1ea3f67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga243e2979ddd41fe30503e64fa5a52d7a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__arguments.html#ga243e2979ddd41fe30503e64fa5a52d7a">MKLDNN_ARG_DIFF_DST</a>&#160;&#160;&#160;<a class="el" href="group__c__api__types__arguments.html#ga470be7fab1b500c4fd26e0b2d1ea3f67">MKLDNN_ARG_DIFF_DST_0</a></td></tr>
+<tr class="separator:ga243e2979ddd41fe30503e64fa5a52d7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaca1151d16a0add6ee3d94b3de53ad1a9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__arguments.html#gaca1151d16a0add6ee3d94b3de53ad1a9">MKLDNN_ARG_DIFF_DST_LAYER</a>&#160;&#160;&#160;<a class="el" href="group__c__api__types__arguments.html#ga470be7fab1b500c4fd26e0b2d1ea3f67">MKLDNN_ARG_DIFF_DST_0</a></td></tr>
+<tr class="separator:gaca1151d16a0add6ee3d94b3de53ad1a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga820a53723c938e863f304804ca34dd9b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__arguments.html#ga820a53723c938e863f304804ca34dd9b">MKLDNN_ARG_DIFF_DST_1</a>&#160;&#160;&#160;146</td></tr>
+<tr class="separator:ga820a53723c938e863f304804ca34dd9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga55af074f4b8e310a28cb16a3091c7391"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__arguments.html#ga55af074f4b8e310a28cb16a3091c7391">MKLDNN_ARG_DIFF_DST_ITER</a>&#160;&#160;&#160;<a class="el" href="group__c__api__types__arguments.html#ga820a53723c938e863f304804ca34dd9b">MKLDNN_ARG_DIFF_DST_1</a></td></tr>
+<tr class="separator:ga55af074f4b8e310a28cb16a3091c7391"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6292781c745758b3f44a3c6ca519eb74"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__arguments.html#ga6292781c745758b3f44a3c6ca519eb74">MKLDNN_ARG_DIFF_WEIGHTS_0</a>&#160;&#160;&#160;161</td></tr>
+<tr class="separator:ga6292781c745758b3f44a3c6ca519eb74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab5efef22dd33112f2993a399279df143"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__arguments.html#gab5efef22dd33112f2993a399279df143">MKLDNN_ARG_DIFF_WEIGHTS</a>&#160;&#160;&#160;<a class="el" href="group__c__api__types__arguments.html#ga6292781c745758b3f44a3c6ca519eb74">MKLDNN_ARG_DIFF_WEIGHTS_0</a></td></tr>
+<tr class="separator:gab5efef22dd33112f2993a399279df143"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga88542b2c39a5ae005b487aaa21549b24"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__arguments.html#ga88542b2c39a5ae005b487aaa21549b24">MKLDNN_ARG_DIFF_SCALE_SHIFT</a>&#160;&#160;&#160;<a class="el" href="group__c__api__types__arguments.html#ga6292781c745758b3f44a3c6ca519eb74">MKLDNN_ARG_DIFF_WEIGHTS_0</a></td></tr>
+<tr class="separator:ga88542b2c39a5ae005b487aaa21549b24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac8a8ee286fa6663c4e75c404d463efe6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__arguments.html#gac8a8ee286fa6663c4e75c404d463efe6">MKLDNN_ARG_DIFF_WEIGHTS_LAYER</a>&#160;&#160;&#160;<a class="el" href="group__c__api__types__arguments.html#ga6292781c745758b3f44a3c6ca519eb74">MKLDNN_ARG_DIFF_WEIGHTS_0</a></td></tr>
+<tr class="separator:gac8a8ee286fa6663c4e75c404d463efe6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga68d5c5ea2e28ea42b563ac65e7293f99"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__arguments.html#ga68d5c5ea2e28ea42b563ac65e7293f99">MKLDNN_ARG_DIFF_WEIGHTS_1</a>&#160;&#160;&#160;162</td></tr>
+<tr class="separator:ga68d5c5ea2e28ea42b563ac65e7293f99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadf06ef1497ac1459eb7b8761c86c154a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__arguments.html#gadf06ef1497ac1459eb7b8761c86c154a">MKLDNN_ARG_DIFF_WEIGHTS_ITER</a>&#160;&#160;&#160;<a class="el" href="group__c__api__types__arguments.html#ga68d5c5ea2e28ea42b563ac65e7293f99">MKLDNN_ARG_DIFF_WEIGHTS_1</a></td></tr>
+<tr class="separator:gadf06ef1497ac1459eb7b8761c86c154a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf0bd6530ccd8f6ceb2805b0b9bb10056"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__arguments.html#gaf0bd6530ccd8f6ceb2805b0b9bb10056">MKLDNN_ARG_DIFF_BIAS</a>&#160;&#160;&#160;169</td></tr>
+<tr class="separator:gaf0bd6530ccd8f6ceb2805b0b9bb10056"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4c8c9070b218c4a7160105d215aee839"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__arguments.html#ga4c8c9070b218c4a7160105d215aee839">MKLDNN_ARG_MULTIPLE_SRC</a>&#160;&#160;&#160;1024</td></tr>
+<tr class="separator:ga4c8c9070b218c4a7160105d215aee839"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa102d120470a2836d48a6eb3dc1a2817"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__arguments.html#gaa102d120470a2836d48a6eb3dc1a2817">MKLDNN_ARG_MULTIPLE_DST</a>&#160;&#160;&#160;2048</td></tr>
+<tr class="separator:gaa102d120470a2836d48a6eb3dc1a2817"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:ga9acc437c5b1f7ca760c048dc2de1c44d"><td class="memItemLeft" align="right" valign="top">typedef int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a>[<a class="el" href="group__c__api__types__memory.html#ga4ca94c6989f339b687713b555610fb9b">TENSOR_MAX_DIMS</a>]</td></tr>
-<tr class="memdesc:ga9acc437c5b1f7ca760c048dc2de1c44d"><td class="mdescLeft">&#160;</td><td class="mdescRight">A type to describe tensor dimensions.  <a href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">More...</a><br /></td></tr>
-<tr class="separator:ga9acc437c5b1f7ca760c048dc2de1c44d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae1c3c4ab1c695ca8686b8210a0bd3757"><td class="memItemLeft" align="right" valign="top">typedef ptrdiff_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#gae1c3c4ab1c695ca8686b8210a0bd3757">mkldnn_strides_t</a>[<a class="el" href="group__c__api__types__memory.html#ga4ca94c6989f339b687713b555610fb9b">TENSOR_MAX_DIMS</a>]</td></tr>
-<tr class="memdesc:gae1c3c4ab1c695ca8686b8210a0bd3757"><td class="mdescLeft">&#160;</td><td class="mdescRight">A type to describe strides within a tensor.  <a href="group__c__api__types__memory.html#gae1c3c4ab1c695ca8686b8210a0bd3757">More...</a><br /></td></tr>
-<tr class="separator:gae1c3c4ab1c695ca8686b8210a0bd3757"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga15898db3725cddbf807b85ef351ca81f"><td class="memItemLeft" align="right" valign="top">typedef int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a></td></tr>
+<tr class="memdesc:ga15898db3725cddbf807b85ef351ca81f"><td class="mdescLeft">&#160;</td><td class="mdescRight">A type to describe tensor dimension.  <a href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">More...</a><br /></td></tr>
+<tr class="separator:ga15898db3725cddbf807b85ef351ca81f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga172d58716d5d4d104a05ed79a21dfec8"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a>[<a class="el" href="group__c__api__types__memory.html#gabdefec6dd67abc44d68c97f51afbaf45">MKLDNN_MAX_NDIMS</a>]</td></tr>
+<tr class="memdesc:ga172d58716d5d4d104a05ed79a21dfec8"><td class="mdescLeft">&#160;</td><td class="mdescRight">A type to describe tensor dimensions.  <a href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">More...</a><br /></td></tr>
+<tr class="separator:ga172d58716d5d4d104a05ed79a21dfec8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad490a0ac5e5ba915e485a9261f970af0"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#gad490a0ac5e5ba915e485a9261f970af0">mkldnn_strides_t</a>[<a class="el" href="group__c__api__types__memory.html#gabdefec6dd67abc44d68c97f51afbaf45">MKLDNN_MAX_NDIMS</a>]</td></tr>
+<tr class="memdesc:gad490a0ac5e5ba915e485a9261f970af0"><td class="mdescLeft">&#160;</td><td class="mdescRight">A type to describe strides within a tensor.  <a href="group__c__api__types__memory.html#gad490a0ac5e5ba915e485a9261f970af0">More...</a><br /></td></tr>
+<tr class="separator:gad490a0ac5e5ba915e485a9261f970af0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacf7d7938936d5422bbd63ccb54efb336"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structmkldnn__memory.html">mkldnn_memory</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#gacf7d7938936d5422bbd63ccb54efb336">mkldnn_memory_t</a></td></tr>
+<tr class="memdesc:gacf7d7938936d5422bbd63ccb54efb336"><td class="mdescLeft">&#160;</td><td class="mdescRight">A memory handle.  <a href="group__c__api__types__memory.html#gacf7d7938936d5422bbd63ccb54efb336">More...</a><br /></td></tr>
+<tr class="separator:gacf7d7938936d5422bbd63ccb54efb336"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac10931d394b31cbf5d2c3b5d814f86e2"><td class="memItemLeft" align="right" valign="top">typedef const struct <a class="el" href="structmkldnn__memory.html">mkldnn_memory</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#gac10931d394b31cbf5d2c3b5d814f86e2">const_mkldnn_memory_t</a></td></tr>
+<tr class="memdesc:gac10931d394b31cbf5d2c3b5d814f86e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">A constant memory handle.  <a href="group__c__api__types__memory.html#gac10931d394b31cbf5d2c3b5d814f86e2">More...</a><br /></td></tr>
+<tr class="separator:gac10931d394b31cbf5d2c3b5d814f86e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6ed0f70ed4c6398c24a62b49cf8d538c"><td class="memItemLeft" align="right" valign="top">typedef void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__op__descs.html#ga6ed0f70ed4c6398c24a62b49cf8d538c">mkldnn_op_desc_t</a></td></tr>
 <tr class="memdesc:ga6ed0f70ed4c6398c24a62b49cf8d538c"><td class="mdescLeft">&#160;</td><td class="mdescRight">A pointer to any of the operation descriptors.  <a href="group__c__api__types__op__descs.html#ga6ed0f70ed4c6398c24a62b49cf8d538c">More...</a><br /></td></tr>
 <tr class="separator:ga6ed0f70ed4c6398c24a62b49cf8d538c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac7e49603b052255540a6f6dc072a627c"><td class="memItemLeft" align="right" valign="top">typedef const void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__op__descs.html#gac7e49603b052255540a6f6dc072a627c">const_mkldnn_op_desc_t</a></td></tr>
 <tr class="memdesc:gac7e49603b052255540a6f6dc072a627c"><td class="mdescLeft">&#160;</td><td class="mdescRight">A pointer to any of the operation descriptors (constant variant).  <a href="group__c__api__types__op__descs.html#gac7e49603b052255540a6f6dc072a627c">More...</a><br /></td></tr>
 <tr class="separator:gac7e49603b052255540a6f6dc072a627c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga22892e72c09157377e6d0358273025a3"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structmkldnn__convolution__desc__t.html">mkldnn_convolution_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#ga22892e72c09157377e6d0358273025a3">mkldnn_deconvolution_desc_t</a></td></tr>
-<tr class="memdesc:ga22892e72c09157377e6d0358273025a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">A descriptor of a deconvolution operation.  <a href="group__c__api__types__memory.html#ga22892e72c09157377e6d0358273025a3">More...</a><br /></td></tr>
+<tr class="memitem:ga22892e72c09157377e6d0358273025a3"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structmkldnn__convolution__desc__t.html">mkldnn_convolution_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__op__descs.html#ga22892e72c09157377e6d0358273025a3">mkldnn_deconvolution_desc_t</a></td></tr>
+<tr class="memdesc:ga22892e72c09157377e6d0358273025a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">A descriptor of a deconvolution operation.  <a href="group__c__api__types__op__descs.html#ga22892e72c09157377e6d0358273025a3">More...</a><br /></td></tr>
 <tr class="separator:ga22892e72c09157377e6d0358273025a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga40f5f917cdbf2215fa5324e4bf62d523"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structmkldnn__engine.html">mkldnn_engine</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__engine__types.html#ga40f5f917cdbf2215fa5324e4bf62d523">mkldnn_engine_t</a></td></tr>
 <tr class="memdesc:ga40f5f917cdbf2215fa5324e4bf62d523"><td class="mdescLeft">&#160;</td><td class="mdescRight">An engine handle.  <a href="group__c__api__engine__types.html#ga40f5f917cdbf2215fa5324e4bf62d523">More...</a><br /></td></tr>
@@ -213,167 +313,317 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga826b2a9be4d94ac17f99bacac6d0cb29a5ff46aa58e4959d52ce8079c4f92e3b5">mkldnn_data_type_undef</a> = 0, 
 <a class="el" href="group__c__api__types__generic.html#gga826b2a9be4d94ac17f99bacac6d0cb29a6d9faa3e054a4f7b7e5ab5b3d420684e">mkldnn_f32</a> = 1, 
 <a class="el" href="group__c__api__types__generic.html#gga826b2a9be4d94ac17f99bacac6d0cb29a4ceccb30ecf3a259a933028cd234701f">mkldnn_s32</a> = 2, 
-<a class="el" href="group__c__api__types__generic.html#gga826b2a9be4d94ac17f99bacac6d0cb29a52cf5da9e69d930560994e0ec28edcbb">mkldnn_s16</a> = 4, 
+<a class="el" href="group__c__api__types__generic.html#gga826b2a9be4d94ac17f99bacac6d0cb29a8a09db71666549aebad36fd23d974180">mkldnn_s8</a> = 3, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga826b2a9be4d94ac17f99bacac6d0cb29a8a09db71666549aebad36fd23d974180">mkldnn_s8</a> = 5, 
-<a class="el" href="group__c__api__types__generic.html#gga826b2a9be4d94ac17f99bacac6d0cb29aab3124c6d59328238dab14fcfaabe2fa">mkldnn_u8</a> = 6
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga826b2a9be4d94ac17f99bacac6d0cb29aab3124c6d59328238dab14fcfaabe2fa">mkldnn_u8</a> = 4
 <br />
  }<tr class="memdesc:ga826b2a9be4d94ac17f99bacac6d0cb29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data type specification.  <a href="group__c__api__types__generic.html#ga826b2a9be4d94ac17f99bacac6d0cb29">More...</a><br /></td></tr>
 </td></tr>
 <tr class="separator:ga826b2a9be4d94ac17f99bacac6d0cb29"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga825f736d520c8183d422d1aad60f2ad9"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__generic.html#ga825f736d520c8183d422d1aad60f2ad9">mkldnn_round_mode_t</a> { <a class="el" href="group__c__api__types__generic.html#gga825f736d520c8183d422d1aad60f2ad9a55acfe2ce6cd9dff83837656b5f27686">mkldnn_round_nearest</a> = 1, 
-<a class="el" href="group__c__api__types__generic.html#gga825f736d520c8183d422d1aad60f2ad9a128e155cc5ae4db261a7e366417a197c">mkldnn_round_down</a> = 2
- }<tr class="memdesc:ga825f736d520c8183d422d1aad60f2ad9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rounding mode.  <a href="group__c__api__types__generic.html#ga825f736d520c8183d422d1aad60f2ad9">More...</a><br /></td></tr>
+<tr class="memitem:ga1f6c390306d4c8a438c0efbff08c0539"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__generic.html#ga1f6c390306d4c8a438c0efbff08c0539">mkldnn_format_kind_t</a> { <br />
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga1f6c390306d4c8a438c0efbff08c0539afa2ed8138654e17c7b418579d3273130">mkldnn_format_kind_undef</a> = 0, 
+<a class="el" href="group__c__api__types__generic.html#gga1f6c390306d4c8a438c0efbff08c0539a25ba80bb864a69c9fae70b4503e76167">mkldnn_format_kind_any</a>, 
+<a class="el" href="group__c__api__types__generic.html#gga1f6c390306d4c8a438c0efbff08c0539ae7e569e4a1924f15d37971d2f785646b">mkldnn_blocked</a>, 
+<a class="el" href="group__c__api__types__generic.html#gga1f6c390306d4c8a438c0efbff08c0539a216c67cf3cb354789795618a15f657fe">mkldnn_format_kind_wino</a>, 
+<br />
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga1f6c390306d4c8a438c0efbff08c0539aed77b3b3a7b03d62108b24b63fbaba1c">mkldnn_format_kind_rnn_packed</a>
+<br />
+ }<tr class="memdesc:ga1f6c390306d4c8a438c0efbff08c0539"><td class="mdescLeft">&#160;</td><td class="mdescRight">Memory format kind.  <a href="group__c__api__types__generic.html#ga1f6c390306d4c8a438c0efbff08c0539">More...</a><br /></td></tr>
 </td></tr>
-<tr class="separator:ga825f736d520c8183d422d1aad60f2ad9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga30a390f87ef74bf03dfa48a7b3f2fb74"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__generic.html#ga30a390f87ef74bf03dfa48a7b3f2fb74">mkldnn_memory_format_t</a> { <br />
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a9a565f82425fa7a397344fb7a570aba3">mkldnn_format_undef</a> = 0, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a5ae7d369fcd51464f613e51d73eae547">mkldnn_any</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74ae7e569e4a1924f15d37971d2f785646b">mkldnn_blocked</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a494a09557958694ff1aece6b4667d87f">mkldnn_x</a>, 
+<tr class="separator:ga1f6c390306d4c8a438c0efbff08c0539"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacc2844e341ab1c4f5b7ae1c6068f2a2b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__generic.html#gacc2844e341ab1c4f5b7ae1c6068f2a2b">mkldnn_format_tag_t</a> { <br />
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba41f8375ed4b46a9eb3625e8e82dd28eb">mkldnn_format_tag_undef</a> = 0, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bab7f14a435b0c6373badb9b3f296e6c1f">mkldnn_format_tag_any</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2baf2456b23837ac7255f49440542bfe561">mkldnn_a</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba50ffa304d45d50709fdc192f6b286163">mkldnn_ab</a>, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a2838f6827b40434fb9584eb3efe1a0ae">mkldnn_nc</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74aa9593899799f130c7f511f09b5c1ea9d">mkldnn_ncw</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a23e0a15956f5406d591d776d852446a3">mkldnn_nwc</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74aed4a51a8db128a648b942882369a06d6">mkldnn_nchw</a>, 
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba3f9bf8e8dfb966d5fb76844fb8cc758d">mkldnn_abc</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba63203c48f8a6ff36dbf21e8c81bca060">mkldnn_abcd</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bab5a0a1dc7021e96ed7e174f76f8decbc">mkldnn_abcde</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba0614d8d2ebeac1daa92a4cf5e96e0ca4">mkldnn_abcdef</a>, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74adf1fb06f73cf8dd23ae620eea6516526">mkldnn_nhwc</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a2d1cd3beca16be268720538840d68ec5">mkldnn_chwn</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a55268cf202bb4367b19fd0aeb13739ce">mkldnn_ncdhw</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74afe9f8381139e749050fda6fb70808e1c">mkldnn_ndhwc</a>, 
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba40c0f1f15ca768c0b173f70384851688">mkldnn_abdec</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba975488028c2512fda82be106e36c8b35">mkldnn_acb</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2baf989a08f4e68ac6e37cdd6bb0c6be7b1">mkldnn_acbde</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba5bdb52f009d9c8b46aaf05119cf18592">mkldnn_acdb</a>, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74ae5344fffd9e1e8c46ced6403c21310b1">mkldnn_oi</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a433ebc123e9f80c292c0e6e82715c118">mkldnn_io</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a6a18734c3be6fcf4b2c0ce501816cb61">mkldnn_oiw</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a32b0c647332e8d67f0c9146a78bd2e7a">mkldnn_wio</a>, 
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bae659343dce6f6dd2eaf8f7a9455be26d">mkldnn_acdeb</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2baa1b1a627050d3f5d5477b4bf662c1f95">mkldnn_ba</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba3407910ff8ab1c36fb7ae912fcfbcd44">mkldnn_bac</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba854ed6db3fd6585107d3be9190aa3dd0">mkldnn_bacd</a>, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74acc2eeaa304a91dc0d8ec301a8a13fa4a">mkldnn_oihw</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a56fdb8a888dba3cd5bb8e5a0bd521f8f">mkldnn_hwio</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74aabd4140704b547b4a9706140255cb225">mkldnn_ihwo</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a4782b8b238d13cc54a4caefa87f83e64">mkldnn_iohw</a>, 
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bab4e4816a49b9e1afff5a0043fd1ff599">mkldnn_bcda</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2baa64ff960aa3225ad2aeef83e237d3b5f">mkldnn_cba</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba4b652226a3878ad2c7471f1519da6c41">mkldnn_cdba</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba0a04f3c51661b874c8e2fcfff1bf0019">mkldnn_cdeba</a>, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74afac4917edc105faa444307270eb0d1a5">mkldnn_oidhw</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a6669e57588b920dcd21b951ac7eb1682">mkldnn_dhwio</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74ac4ed5ec860141abb6e922d4b9db8b509">mkldnn_goiw</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74af55cbade6e10b15037abaa67e6933833">mkldnn_goihw</a>, 
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2baa1f28c19cea52b858c9fb8f30db3631c">mkldnn_decab</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba686cb8c5ec5ba70ade508c4caf1b40d9">mkldnn_Abc16a</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba5e518e82af8bed35bb5c560686b38c13">mkldnn_ABc16a16b</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba04a6262fd5321bbd8bcdb86be8934c75">mkldnn_aBc16b</a>, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74adb01b4e8fff1203545a188f05cb89caa">mkldnn_hwigo</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74ab3134cff6e287877de7ffa7c295ea20b">mkldnn_giohw</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a643d2d2b24f526447a6852940fdca46a">mkldnn_goidhw</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74affe5c26458ee8c3f3dff7c182cadd33c">mkldnn_ntc</a>, 
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bab2de5a2461310225783f7a05e02bedf0">mkldnn_ABc16b16a</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2badaf705192f585d9dce93c8fb18e6850b">mkldnn_Abc4a</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba07edda513adf3feb3c8b7054354050bc">mkldnn_aBc4b</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba37748e3228b2ec4bff09953ec8a39220">mkldnn_ABc4b16a4b</a>, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a421cac1506ecc22ca2902c2f56e7dd1b">mkldnn_tnc</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a315cfab7829564b47079d13e46dd3edc">mkldnn_ldsnc</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a8297cb7a081984c40f40ed9d24a4023a">mkldnn_ldigo</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74abd0d254bc5c97521e05c590ae9de8364">mkldnn_ldgoi</a>, 
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba7290bc9fcd5cc82e9e1f3b3de0365819">mkldnn_ABc4b4a</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bad8761ea778831afbdbd56a05d55ca155">mkldnn_ABc8a16b2a</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba0d7cb36de340cb067db0e0c6a8e4b7df">mkldnn_ABc8a8b</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba40a8cfda21938908ffd43fdd4408c55b">mkldnn_aBc8b</a>, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74ac5b1fb199e6e5c031766bb72dabb1859">mkldnn_ldgo</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74ad16816e898913f0ba93a23bf6d56104f">mkldnn_nCw8c</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a5c42ce5904b7038fa825e6d95277f627">mkldnn_nCw16c</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74acf26dda829c10d1a318c955e1d185248">mkldnn_nChw8c</a>, 
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bab5da0a83b687ddad59fe13e58c651b2f">mkldnn_ABc8b16a2b</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba9123993dbb7aab5bbe14775cb9b01bd7">mkldnn_ABc8b8a</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba89c1f431cf5da20bad151a8771fee985">mkldnn_Abcd16a</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba9dce160bd7325fc228ebbf2abebfe68b">mkldnn_ABcd16a16b</a>, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a5e2542092c6c47f27f8914de0b2d9789">mkldnn_nChw16c</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74adbbe00d3b96e9dc4549fdec6d3e390fc">mkldnn_nCdhw8c</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74ae71727c41010dc2a1498277dafd09aab">mkldnn_nCdhw16c</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74af47940b5f4eafe1efcfccae9e4573113">mkldnn_Owi8o</a>, 
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba1db9b5dd2d65b4e087c67145de4956dd">mkldnn_aBcd16b</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba278bb27ccf7ef73cfba9d84de1bafb8b">mkldnn_ABcd16b16a</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba731a9481445d7f84a7b870bd4391128e">mkldnn_aBCd16b16c</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bab1be08730f9ca0e9c28d0dfd9983a49f">mkldnn_aBCd16c16b</a>, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a7cd63bc803a09e1c99c5d1d15d71a34a">mkldnn_OIw8i8o</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a59bb882f6eade0a9e27d42385e3115e8">mkldnn_OIw8o8i</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74acf736fb64340277ac9db32778dc448e5">mkldnn_OIw16i16o</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a619e3e16e087c5d7fbcd6084a06ef83e">mkldnn_OIw16o16i</a>, 
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba12b8652df1189c0e230c4dafd059e594">mkldnn_Abcd4a</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba7f0839062b8e5b6e79a314bf0ab69638">mkldnn_aBcd4b</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba4d3602308cb6dc1ac1f5b8443635602a">mkldnn_ABcd4b16a4b</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba271ed1a3fb49dbf933ec34db530c544d">mkldnn_ABcd4b4a</a>, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a16cfd59803ff1ac07e3d957a582c30ff">mkldnn_Oiw16o</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74ac3a7747121dca961d3273a2a5c809b7b">mkldnn_Owi16o</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a68184f17fe71c1af81cad338fcc354e7">mkldnn_OIw8i16o2i</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a9dd83e17f34d248b17858ceb35c28ae3">mkldnn_OIw8o16i2o</a>, 
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba20229e74ba99c35b74b0e387e97aee74">mkldnn_aBCd4c16b4c</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2babfc0f79372456a352a5a5bdea547c583">mkldnn_aBCd4c4b</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2badda0621c076aaceb9e9d9e0c7ac033a3">mkldnn_ABcd8a16b2a</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba0bda309d9c28e97e6f6a0357e30dfe2f">mkldnn_ABcd8a8b</a>, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74afaf8708449233239c77fd0955cb15060">mkldnn_IOw16o16i</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a4a1db09610e8518b816830473ed84d1b">mkldnn_hwio_s8s8</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a70523c4d4800ba448e10b801d84a2314">mkldnn_oIhw8i</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a886c622f279ad85035bca4acbdfdb55e">mkldnn_oIhw16i</a>, 
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bae7b12175f86b2f257731f1995f6c3d10">mkldnn_aBcd8b</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bab1b3955deb17d0bbd7d3864445d11d72">mkldnn_ABcd8b16a2b</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba06ada5c169e10ad6a3f791349b860905">mkldnn_aBCd8b16c2b</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bab251d777a91f7c3a6f0cd78ec9792541">mkldnn_ABcd8b8a</a>, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a986b2f7b25d9a0c577c3e7d0957125be">mkldnn_OIhw8i8o</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a2e8a39027e0991d05a2a599df7de8ee2">mkldnn_OIhw16i16o</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74acffd0ff512dd065646f5999dae952a75">mkldnn_OIhw4i16o4i</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74af6d0b1c994364ee9b6b35e6db7471195">mkldnn_OIhw4i16o4i_s8s8</a>, 
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba80d5a4375182669350435dfc216eddec">mkldnn_aBCd8b8c</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba3858e658cc93f1ffba83ff3d52337a96">mkldnn_aBCd8c16b2c</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba321549c011866171c04762121ecce81b">mkldnn_aBCd8c8b</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba588f22c96281390c73fab35e6cfe718d">mkldnn_Abcde16a</a>, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a6340a922133c1a363627b9b2776b2179">mkldnn_OIhw8i16o2i</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74ae1031bb69291d586eda3cddf4553643a">mkldnn_OIhw8o16i2o</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a67fc35385723533fd549ed9a838d03d3">mkldnn_OIhw8o8i</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a3dc083571b83aa48a9a53c478f26b8fe">mkldnn_OIhw16o16i</a>, 
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba19ae0fbf8201d53583a29289c0740dd6">mkldnn_ABcde16a16b</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba337600daca5385879092af39bb5bcf1d">mkldnn_aBcde16b</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2baa8a642dd27982620286bffc211d0fa5e">mkldnn_ABcde16b16a</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2baefdbbf03934640f0cfbfcba55c1e4278">mkldnn_aBCde16b16c</a>, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a8189af032858faf66acd87ccdba7c625">mkldnn_IOhw16o16i</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a8011240cfa2f158e12e6f65223e88db7">mkldnn_Oihw8o</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74ae54be51d97b959489be85f61a62807da">mkldnn_Oihw16o</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a91421ad55f30d74a6b66e98d77b7bf3a">mkldnn_Ohwi8o</a>, 
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba1d0d7ac5f22be516e2889eb05d60bd4e">mkldnn_aBCde16c16b</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bab4f155fc2c6826517c22007de98804b2">mkldnn_aBCde2c8b4c</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba1955d610e32c74931b7d440e545bf208">mkldnn_Abcde4a</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2badcb9cc4f39279cd5498f5f94a5c60d61">mkldnn_aBcde4b</a>, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74aee0b7070dcf4330efdbf5d7e34f52ce0">mkldnn_Ohwi16o</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a414cfe19ec773e3ec2554b7e66323004">mkldnn_OhIw16o4i</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a67a9315079dd58ec6dc01fcb8abea715">mkldnn_oIdhw8i</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74ab8e3ea05f823802dfedc1eb9e63925cb">mkldnn_oIdhw16i</a>, 
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba7e4dd4b223d87ac9fc21cd0bfcb398c8">mkldnn_ABcde4b4a</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba7480779c2d04264cd7da7d3454257d77">mkldnn_aBCde4b4c</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba81ab6dc5c8432e4ea0dc7af51af29b1a">mkldnn_aBCde4c16b4c</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bafcbde98cb816728144e97fcc8847a437">mkldnn_aBCde4c4b</a>, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a1f83af7321c52adead15f84b58151194">mkldnn_OIdhw8i8o</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74af24d42bad90ced43e54655c74d1758ad">mkldnn_OIdhw8o8i</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a8330ea9723bca730d16b96708671def3">mkldnn_Odhwi8o</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74ac7465701385671fc16f9fbb1e6b8cb66">mkldnn_OIdhw16i16o</a>, 
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba59caba76e83901497d1296fb0d55c497">mkldnn_Abcde8a</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2baed288c50d7769a05303b2be2833821b3">mkldnn_ABcde8a8b</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba09e63568fc56f073e5e9c90ea63536c9">mkldnn_aBcde8b</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2baef8739385102c51fc4b58aaf82bffc94">mkldnn_ABcde8b16a2b</a>, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a5a12bfc303558d60c605b4bf31d2dc85">mkldnn_OIdhw16o16i</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a36093b9014ed02bdcf65ebdc782b3f7e">mkldnn_Oidhw16o</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a042484854ae729cd8296eef4b7501a15">mkldnn_Odhwi16o</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a4b9546208e70e94a72ac6e487e397fa1">mkldnn_OIdhw8i16o2i</a>, 
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba9e94bb7939f3a4d1ed6ea7d266156c28">mkldnn_aBCde8b16c2b</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2badd12ace1172c9646dafcba629daf7054">mkldnn_ABcde8b8a</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba433f526801c02d8d6e1e60606a4c31fe">mkldnn_aBCde8b8c</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2baafbb9fff0d414ccaa5be1e6b40142b98">mkldnn_aBCde8c16b2c</a>, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a6f89e1af7dc2e4aef6e42bdf015e399a">mkldnn_gOwi8o</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a8693e483c3b704d27dde4bb3969c6d86">mkldnn_gOIw8o8i</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a5928dea1894acc9b987d55b96640b609">mkldnn_gOIw8i8o</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a8415e97ecdcd862b807e5e536e5e4e94">mkldnn_gOIw16i16o</a>, 
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba2d94262ff8b0c2e276bcc37f422b724f">mkldnn_aBCde8c8b</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba176999f6c808780074478757c3bbeb78">mkldnn_aBcdef16b</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba079cd127f35c5ceaf9f0dea7656ca087">mkldnn_aBCdef16b16c</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba75d5e03bf2b7a8c0fe4cd3764f47bc13">mkldnn_aBCdef16c16b</a>, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a8c2e93e729a6afc6b7c2a049f8444cf9">mkldnn_gOIw16o16i</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a46820a5b21cd7b0b450b173d02c95bfb">mkldnn_gOiw16o</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a1cc9baa9ce95ce3083d7b1ded9c42b10">mkldnn_gOwi16o</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74ae284f814114be8b2193efef000eb4df9">mkldnn_gOIw8i16o2i</a>, 
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2baae1bcfcd513cba4c22eea3b19618835a">mkldnn_aBcdef4b</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba62b4831b7d078024eca87ff8785c2401">mkldnn_aBCdef4c4b</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2baa04bf26687b066f6458c20f28f30d451">mkldnn_aBCdef8b8c</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba49608efc22ccd92d32f366aca7c3ad25">mkldnn_aBCdef8c16b2c</a>, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a8d6d6559b0e8cf02b377cbe45304d42f">mkldnn_gOIw8o16i2o</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a7268a69c1d26246ea43850abc9a5607d">mkldnn_gIOw16o16i</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74ac10ea3eeabb4ef79a3f398838c312d67">mkldnn_hwigo_s8s8</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a5a46036083ebae85118209e8f56c79ad">mkldnn_gOIhw8i8o</a>, 
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba13f07809667b07d9a8b2395d1d192506">mkldnn_aBCdef8c8b</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba91ddb85f5f730df87bf6d9ad68fcae38">mkldnn_aBdc16b</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bae2bd19367ed4d6d678393aa310a7b9f6">mkldnn_aBdc4b</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2baaf0ffb9f5e10e2db5adf169e55824a30">mkldnn_aBdc8b</a>, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a76404f1447b5c3caba46f62ee6362776">mkldnn_gOIhw16i16o</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a6afa4ef45f60db9cc2abf31a6d8e6873">mkldnn_gOIhw4i16o4i</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74aea34f65c72b8fd0f73737a4ff229bc65">mkldnn_gOIhw4i16o4i_s8s8</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74ae394a454b0c7332b796f17375a26d834">mkldnn_gOIhw8i16o2i</a>, 
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bac7ec8c178ec8fcca3c16e07263384537">mkldnn_aBdec16b</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2baa1a5004bb438cf620004a2e3cc3dd657">mkldnn_aBdec4b</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba0e445900c1c946750dc8a49ca051fbea">mkldnn_aBdec8b</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba740fa137d2d8c51722a7412d47570a7c">mkldnn_aBdefc16b</a>, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a081252476b908392134d3e4c945639dc">mkldnn_gOIhw8o16i2o</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a004491243f1a48c8192b641469593c2e">mkldnn_gOIhw8o8i</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a065e2267defa0b583b7eaebb67fe212d">mkldnn_gOIhw16o16i</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a37bfc09d30cd34c0ada4f2d3f65555e1">mkldnn_gIOhw16o16i</a>, 
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba6c4bf40899648f974975cacb64343456">mkldnn_aBdefc4b</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba40663f4b5cc3c51505a1ce1afbefe17a">mkldnn_aBdefc8b</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba5c031eb39c34a193f1fc80ee632990df">mkldnn_Acb16a</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bafff2238a41204fb0cd881964f3807716">mkldnn_Acb4a</a>, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74acf1359a5d9d8f4404df110ef83f4e460">mkldnn_gOihw8o</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a69d30084b08b969d35b0aac969de8de6">mkldnn_gOihw16o</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a2c5607f80970a11ed31d47cc3ee935c1">mkldnn_gOhwi8o</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74abf52e6ea5bd2cd16daa7c8a6065a1770">mkldnn_gOhwi16o</a>, 
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2baaad747087dff548d282ae98eeaa610b8">mkldnn_Acb8a</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2babe9500e0e1f51ec07a8f5077120095e3">mkldnn_aCBd16b16c</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba21cec6eabefd2a6bf96cbdb10736b5c6">mkldnn_aCBde16b16c</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba03088417dcb7909bb6e8b76191df651b">mkldnn_Acdb16a</a>, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74abd74774ae5274fe2821df327673f66e9">mkldnn_Goihw8g</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74ab2fe945b166429473f67c7e6b00aeb10">mkldnn_Goihw16g</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a2081752437a1059da84dc3d29fc1b41b">mkldnn_Goihw16g_s8s8</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a92db70487560432a5b1d34fb41b28ba6">mkldnn_gOhIw16o4i</a>, 
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bae55c6e7f064796881e17e1e9a10bdeb3">mkldnn_Acdb4a</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba037a8ff29f678ff802a449466070d9c8">mkldnn_Acdb8a</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba45f7e2f1bcf7cdad05eed62f4e57400e">mkldnn_Acdeb16a</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba71accb987d91c971b283a67783e1d31b">mkldnn_Acdeb4a</a>, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a3ae8ba9de2b4dc8908c96ab845b87cf4">mkldnn_gOIdhw8i8o</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a3cc9c4cc651f47db8bbd0a47f9398b7d">mkldnn_gOIdhw8o8i</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74ae35bef5fd526e09b06184614b2954aa3">mkldnn_gOdhwi8o</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74af99218a6366e630e685d28228448c356">mkldnn_gOIdhw8i16o2i</a>, 
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba0f0691ea9173da2d753c16711c0eba5e">mkldnn_Acdeb8a</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba3cd97a75f272098aeb622c934ea12b09">mkldnn_BAc16a16b</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2babe25b1a8466914c2ea0a2d3aae2a1690">mkldnn_BAcd16a16b</a>, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba7dfe5762598cfda633ddacd78fb4a11f">mkldnn_format_tag_last</a>, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74abbbe379c84986ed49b9b833cac46b195">mkldnn_gOIdhw16i16o</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a1cae36559d8e0066e21fc12dbffbeb34">mkldnn_gOIdhw16o16i</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74ab2c4bc56c62c5d7658643647ead863e0">mkldnn_gOidhw16o</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a1c66f62007df134ba6dc73bf1b8f6489">mkldnn_gOdhwi16o</a>, 
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba494a09557958694ff1aece6b4667d87f">mkldnn_x</a> = mkldnn_a, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba2838f6827b40434fb9584eb3efe1a0ae">mkldnn_nc</a> = mkldnn_ab, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba02e2285d34f5f84490011d8b34ffb466">mkldnn_cn</a> = mkldnn_ba, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2baa9593899799f130c7f511f09b5c1ea9d">mkldnn_ncw</a> = mkldnn_abc, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a28bcfa51875bf06c8b336dcba069f5c0">mkldnn_wino_fmt</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a006608941dcabebbc64b99a167eb75ac">mkldnn_rnn_packed</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74ab2a625557c90d7e7b044bb1fcd3f4616">mkldnn_format_last</a>
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba23e0a15956f5406d591d776d852446a3">mkldnn_nwc</a> = mkldnn_acb, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2baed4a51a8db128a648b942882369a06d6">mkldnn_nchw</a> = mkldnn_abcd, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2badf1fb06f73cf8dd23ae620eea6516526">mkldnn_nhwc</a> = mkldnn_acdb, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba2d1cd3beca16be268720538840d68ec5">mkldnn_chwn</a> = mkldnn_bcda, 
 <br />
- }<tr class="memdesc:ga30a390f87ef74bf03dfa48a7b3f2fb74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Memory format specification.  <a href="group__c__api__types__generic.html#ga30a390f87ef74bf03dfa48a7b3f2fb74">More...</a><br /></td></tr>
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba55268cf202bb4367b19fd0aeb13739ce">mkldnn_ncdhw</a> = mkldnn_abcde, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bafe9f8381139e749050fda6fb70808e1c">mkldnn_ndhwc</a> = mkldnn_acdeb, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bae5344fffd9e1e8c46ced6403c21310b1">mkldnn_oi</a> = mkldnn_ab, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba433ebc123e9f80c292c0e6e82715c118">mkldnn_io</a> = mkldnn_ba, 
+<br />
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba6a18734c3be6fcf4b2c0ce501816cb61">mkldnn_oiw</a> = mkldnn_abc, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba32b0c647332e8d67f0c9146a78bd2e7a">mkldnn_wio</a> = mkldnn_cba, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bacc2eeaa304a91dc0d8ec301a8a13fa4a">mkldnn_oihw</a> = mkldnn_abcd, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba56fdb8a888dba3cd5bb8e5a0bd521f8f">mkldnn_hwio</a> = mkldnn_cdba, 
+<br />
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2baabd4140704b547b4a9706140255cb225">mkldnn_ihwo</a> = mkldnn_bcda, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba4782b8b238d13cc54a4caefa87f83e64">mkldnn_iohw</a> = mkldnn_bacd, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bafac4917edc105faa444307270eb0d1a5">mkldnn_oidhw</a> = mkldnn_abcde, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba6669e57588b920dcd21b951ac7eb1682">mkldnn_dhwio</a> = mkldnn_cdeba, 
+<br />
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bac4ed5ec860141abb6e922d4b9db8b509">mkldnn_goiw</a> = mkldnn_abcd, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2baf55cbade6e10b15037abaa67e6933833">mkldnn_goihw</a> = mkldnn_abcde, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2badb01b4e8fff1203545a188f05cb89caa">mkldnn_hwigo</a> = mkldnn_decab, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bab3134cff6e287877de7ffa7c295ea20b">mkldnn_giohw</a> = mkldnn_acbde, 
+<br />
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba643d2d2b24f526447a6852940fdca46a">mkldnn_goidhw</a> = mkldnn_abcdef, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba421cac1506ecc22ca2902c2f56e7dd1b">mkldnn_tnc</a> = mkldnn_abc, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2baffe5c26458ee8c3f3dff7c182cadd33c">mkldnn_ntc</a> = mkldnn_bac, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba315cfab7829564b47079d13e46dd3edc">mkldnn_ldsnc</a> = mkldnn_abcde, 
+<br />
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba8297cb7a081984c40f40ed9d24a4023a">mkldnn_ldigo</a> = mkldnn_abcde, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2babd0d254bc5c97521e05c590ae9de8364">mkldnn_ldgoi</a> = mkldnn_abdec, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bac5b1fb199e6e5c031766bb72dabb1859">mkldnn_ldgo</a> = mkldnn_abcd, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bae71727c41010dc2a1498277dafd09aab">mkldnn_nCdhw16c</a> = mkldnn_aBcde16b, 
+<br />
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba29bc98def6cc318af8067fe8fefe9c82">mkldnn_nCdhw4c</a> = mkldnn_aBcde4b, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2badbbe00d3b96e9dc4549fdec6d3e390fc">mkldnn_nCdhw8c</a> = mkldnn_aBcde8b, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba5e2542092c6c47f27f8914de0b2d9789">mkldnn_nChw16c</a> = mkldnn_aBcd16b, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bad81e3d361f112790f3f95c22d73d7077">mkldnn_nChw4c</a> = mkldnn_aBcd4b, 
+<br />
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bacf26dda829c10d1a318c955e1d185248">mkldnn_nChw8c</a> = mkldnn_aBcd8b, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba5c42ce5904b7038fa825e6d95277f627">mkldnn_nCw16c</a> = mkldnn_aBc16b, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba9c8a0bac096d668d175cc836a464184d">mkldnn_nCw4c</a> = mkldnn_aBc4b, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bad16816e898913f0ba93a23bf6d56104f">mkldnn_nCw8c</a> = mkldnn_aBc8b, 
+<br />
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bafaf8708449233239c77fd0955cb15060">mkldnn_IOw16o16i</a> = mkldnn_BAc16a16b, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bacf736fb64340277ac9db32778dc448e5">mkldnn_OIw16i16o</a> = mkldnn_ABc16b16a, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba619e3e16e087c5d7fbcd6084a06ef83e">mkldnn_OIw16o16i</a> = mkldnn_ABc16a16b, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba16cfd59803ff1ac07e3d957a582c30ff">mkldnn_Oiw16o</a> = mkldnn_Abc16a, 
+<br />
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bae1abeae13abc43204b74a3fdbb24ae34">mkldnn_OIw4i16o4i</a> = mkldnn_ABc4b16a4b, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba52099e608b9af27b543da691187cb25a">mkldnn_OIw4i4o</a> = mkldnn_ABc4b4a, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba0286ac28ff985fd32f172104957d0712">mkldnn_Oiw4o</a> = mkldnn_Abc4a, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba68184f17fe71c1af81cad338fcc354e7">mkldnn_OIw8i16o2i</a> = mkldnn_ABc8b16a2b, 
+<br />
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba7cd63bc803a09e1c99c5d1d15d71a34a">mkldnn_OIw8i8o</a> = mkldnn_ABc8b8a, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba9dd83e17f34d248b17858ceb35c28ae3">mkldnn_OIw8o16i2o</a> = mkldnn_ABc8a16b2a, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba59bb882f6eade0a9e27d42385e3115e8">mkldnn_OIw8o8i</a> = mkldnn_ABc8a8b, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bac3a7747121dca961d3273a2a5c809b7b">mkldnn_Owi16o</a> = mkldnn_Acb16a, 
+<br />
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba1b1af6a5818d98cd3a81199e5f21d467">mkldnn_Owi4o</a> = mkldnn_Acb4a, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2baf47940b5f4eafe1efcfccae9e4573113">mkldnn_Owi8o</a> = mkldnn_Acb8a, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba8189af032858faf66acd87ccdba7c625">mkldnn_IOhw16o16i</a> = mkldnn_BAcd16a16b, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2baee0b7070dcf4330efdbf5d7e34f52ce0">mkldnn_Ohwi16o</a> = mkldnn_Acdb16a, 
+<br />
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba43f81109e3d739f9512462bc1f6b8884">mkldnn_Ohwi4o</a> = mkldnn_Acdb4a, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba91421ad55f30d74a6b66e98d77b7bf3a">mkldnn_Ohwi8o</a> = mkldnn_Acdb8a, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba2e8a39027e0991d05a2a599df7de8ee2">mkldnn_OIhw16i16o</a> = mkldnn_ABcd16b16a, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba3dc083571b83aa48a9a53c478f26b8fe">mkldnn_OIhw16o16i</a> = mkldnn_ABcd16a16b, 
+<br />
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bae54be51d97b959489be85f61a62807da">mkldnn_Oihw16o</a> = mkldnn_Abcd16a, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bacffd0ff512dd065646f5999dae952a75">mkldnn_OIhw4i16o4i</a> = mkldnn_ABcd4b16a4b, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba4e403c0d1b12b207e61a6ec4786d3ccd">mkldnn_OIhw4i4o</a> = mkldnn_ABcd4b4a, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba6159ec1cb3b7a97fd3b72e57668d040e">mkldnn_Oihw4o</a> = mkldnn_Abcd4a, 
+<br />
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba6340a922133c1a363627b9b2776b2179">mkldnn_OIhw8i16o2i</a> = mkldnn_ABcd8b16a2b, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba986b2f7b25d9a0c577c3e7d0957125be">mkldnn_OIhw8i8o</a> = mkldnn_ABcd8b8a, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bae1031bb69291d586eda3cddf4553643a">mkldnn_OIhw8o16i2o</a> = mkldnn_ABcd8a16b2a, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba67fc35385723533fd549ed9a838d03d3">mkldnn_OIhw8o8i</a> = mkldnn_ABcd8a8b, 
+<br />
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba042484854ae729cd8296eef4b7501a15">mkldnn_Odhwi16o</a> = mkldnn_Acdeb16a, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bae82e238c806c6604ae1cf1407f7e545a">mkldnn_Odhwi4o</a> = mkldnn_Acdeb4a, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba8330ea9723bca730d16b96708671def3">mkldnn_Odhwi8o</a> = mkldnn_Acdeb8a, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bac7465701385671fc16f9fbb1e6b8cb66">mkldnn_OIdhw16i16o</a> = mkldnn_ABcde16b16a, 
+<br />
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba5a12bfc303558d60c605b4bf31d2dc85">mkldnn_OIdhw16o16i</a> = mkldnn_ABcde16a16b, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba36093b9014ed02bdcf65ebdc782b3f7e">mkldnn_Oidhw16o</a> = mkldnn_Abcde16a, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba76176156916c139c14147c0ccaf7bef0">mkldnn_OIdhw4i4o</a> = mkldnn_ABcde4b4a, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba72d74b6c894018f5211af748ccec8ed3">mkldnn_Oidhw4o</a> = mkldnn_Abcde4a, 
+<br />
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba4b9546208e70e94a72ac6e487e397fa1">mkldnn_OIdhw8i16o2i</a> = mkldnn_ABcde8b16a2b, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba1f83af7321c52adead15f84b58151194">mkldnn_OIdhw8i8o</a> = mkldnn_ABcde8b8a, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2baf24d42bad90ced43e54655c74d1758ad">mkldnn_OIdhw8o8i</a> = mkldnn_ABcde8a8b, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba1d349edb683860ca07ac663b94ea339a">mkldnn_Goiw16g</a> = mkldnn_Abcd16a, 
+<br />
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba7268a69c1d26246ea43850abc9a5607d">mkldnn_gIOw16o16i</a> = mkldnn_aCBd16b16c, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba8415e97ecdcd862b807e5e536e5e4e94">mkldnn_gOIw16i16o</a> = mkldnn_aBCd16c16b, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba8c2e93e729a6afc6b7c2a049f8444cf9">mkldnn_gOIw16o16i</a> = mkldnn_aBCd16b16c, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba46820a5b21cd7b0b450b173d02c95bfb">mkldnn_gOiw16o</a> = mkldnn_aBcd16b, 
+<br />
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bae8224e49ce26b1c81d377b4b2cf5da33">mkldnn_gOIw4i16o4i</a> = mkldnn_aBCd4c16b4c, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bad9909ede55b6f9953bc48479be198400">mkldnn_gOIw4i4o</a> = mkldnn_aBCd4c4b, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba3b9a15255603cd225400e49cc300cd4a">mkldnn_gOiw4o</a> = mkldnn_aBcd4b, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bae284f814114be8b2193efef000eb4df9">mkldnn_gOIw8i16o2i</a> = mkldnn_aBCd8c16b2c, 
+<br />
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba5928dea1894acc9b987d55b96640b609">mkldnn_gOIw8i8o</a> = mkldnn_aBCd8c8b, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba8d6d6559b0e8cf02b377cbe45304d42f">mkldnn_gOIw8o16i2o</a> = mkldnn_aBCd8b16c2b, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba8693e483c3b704d27dde4bb3969c6d86">mkldnn_gOIw8o8i</a> = mkldnn_aBCd8b8c, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba1cc9baa9ce95ce3083d7b1ded9c42b10">mkldnn_gOwi16o</a> = mkldnn_aBdc16b, 
+<br />
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba749b3c92f3867630828d1d90db259183">mkldnn_gOwi4o</a> = mkldnn_aBdc4b, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba6f89e1af7dc2e4aef6e42bdf015e399a">mkldnn_gOwi8o</a> = mkldnn_aBdc8b, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba37bfc09d30cd34c0ada4f2d3f65555e1">mkldnn_gIOhw16o16i</a> = mkldnn_aCBde16b16c, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2babf52e6ea5bd2cd16daa7c8a6065a1770">mkldnn_gOhwi16o</a> = mkldnn_aBdec16b, 
+<br />
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba8738090d841cbc2f7734540cb135357a">mkldnn_gOhwi4o</a> = mkldnn_aBdec4b, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba2c5607f80970a11ed31d47cc3ee935c1">mkldnn_gOhwi8o</a> = mkldnn_aBdec8b, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bab2fe945b166429473f67c7e6b00aeb10">mkldnn_Goihw16g</a> = mkldnn_Abcde16a, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba76404f1447b5c3caba46f62ee6362776">mkldnn_gOIhw16i16o</a> = mkldnn_aBCde16c16b, 
+<br />
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba065e2267defa0b583b7eaebb67fe212d">mkldnn_gOIhw16o16i</a> = mkldnn_aBCde16b16c, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba69d30084b08b969d35b0aac969de8de6">mkldnn_gOihw16o</a> = mkldnn_aBcde16b, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bab0c0243ac3711806c62f3bb0075eeb73">mkldnn_gOIhw2i8o4i</a> = mkldnn_aBCde2c8b4c, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba6afa4ef45f60db9cc2abf31a6d8e6873">mkldnn_gOIhw4i16o4i</a> = mkldnn_aBCde4c16b4c, 
+<br />
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba7fc056e7863eb8d70df4b01b73f9cc69">mkldnn_gOIhw4i4o</a> = mkldnn_aBCde4c4b, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2baada37f263e0ebd72347e405c957bd64e">mkldnn_gOIhw4o4i</a> = mkldnn_aBCde4b4c, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2baae30e92843715c59564bac6114f6e56a">mkldnn_gOihw4o</a> = mkldnn_aBcde4b, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2babd74774ae5274fe2821df327673f66e9">mkldnn_Goihw8g</a> = mkldnn_Abcde8a, 
+<br />
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bae394a454b0c7332b796f17375a26d834">mkldnn_gOIhw8i16o2i</a> = mkldnn_aBCde8c16b2c, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba5a46036083ebae85118209e8f56c79ad">mkldnn_gOIhw8i8o</a> = mkldnn_aBCde8c8b, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba081252476b908392134d3e4c945639dc">mkldnn_gOIhw8o16i2o</a> = mkldnn_aBCde8b16c2b, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba004491243f1a48c8192b641469593c2e">mkldnn_gOIhw8o8i</a> = mkldnn_aBCde8b8c, 
+<br />
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba1c66f62007df134ba6dc73bf1b8f6489">mkldnn_gOdhwi16o</a> = mkldnn_aBdefc16b, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2babc33293b9421fc9ed9b5f477090635f5">mkldnn_gOdhwi4o</a> = mkldnn_aBdefc4b, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bae35bef5fd526e09b06184614b2954aa3">mkldnn_gOdhwi8o</a> = mkldnn_aBdefc8b, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2babbbe379c84986ed49b9b833cac46b195">mkldnn_gOIdhw16i16o</a> = mkldnn_aBCdef16c16b, 
+<br />
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba1cae36559d8e0066e21fc12dbffbeb34">mkldnn_gOIdhw16o16i</a> = mkldnn_aBCdef16b16c, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bab2c4bc56c62c5d7658643647ead863e0">mkldnn_gOidhw16o</a> = mkldnn_aBcdef16b, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba2e65425e3390bc29df006d3eea235a8f">mkldnn_gOIdhw4i4o</a> = mkldnn_aBCdef4c4b, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba73aa325914fc6b85ce5ba6dce53b0c38">mkldnn_gOidhw4o</a> = mkldnn_aBcdef4b, 
+<br />
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2baf99218a6366e630e685d28228448c356">mkldnn_gOIdhw8i16o2i</a> = mkldnn_aBCdef8c16b2c, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba3ae8ba9de2b4dc8908c96ab845b87cf4">mkldnn_gOIdhw8i8o</a> = mkldnn_aBCdef8c8b, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba3cc9c4cc651f47db8bbd0a47f9398b7d">mkldnn_gOIdhw8o8i</a> = mkldnn_aBCdef8b8c
+<br />
+ }<tr class="memdesc:gacc2844e341ab1c4f5b7ae1c6068f2a2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Memory format tag specification.  <a href="group__c__api__types__generic.html#gacc2844e341ab1c4f5b7ae1c6068f2a2b">More...</a><br /></td></tr>
 </td></tr>
-<tr class="separator:ga30a390f87ef74bf03dfa48a7b3f2fb74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:gacc2844e341ab1c4f5b7ae1c6068f2a2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1823708d8b9d445fe177295f2b5d74bd"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__generic.html#ga1823708d8b9d445fe177295f2b5d74bd">mkldnn_padding_kind_t</a> { <a class="el" href="group__c__api__types__generic.html#gga1823708d8b9d445fe177295f2b5d74bda9f226824070bdbc4afc03c0f16302fea">mkldnn_padding_zero</a>
  }<tr class="memdesc:ga1823708d8b9d445fe177295f2b5d74bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kinds of padding.  <a href="group__c__api__types__generic.html#ga1823708d8b9d445fe177295f2b5d74bd">More...</a><br /></td></tr>
 </td></tr>
@@ -396,26 +646,22 @@ Enumerations</h2></td></tr>
 <tr class="separator:ga5b98c8059c2aff8861157bf070c3f520"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga4f5c189c2ba9ef6444250299f1f8e973"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__generic.html#ga4f5c189c2ba9ef6444250299f1f8e973">mkldnn_primitive_kind_t</a> { <br />
 &#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a1ff42641253f71e6a16f23cc5334bc2d">mkldnn_undefined_primitive</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973aacec523f11e0ef981ef4933a60fe4fa5">mkldnn_memory</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973aa55b8d7b5839ad6ba1db77b417f4caa2">mkldnn_view</a>, 
 <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973aa30263e89f006b199b4d2229c99f0bf8">mkldnn_reorder</a>, 
-<br />
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a9dac288dc708ecf000007cd3ed940d38">mkldnn_shuffle</a>, 
+<a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a9dac288dc708ecf000007cd3ed940d38">mkldnn_shuffle</a>, 
 <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a0d039bb4043fbe8fc4ba5b0f6bef9571">mkldnn_concat</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973adda5067f37b7335039f94999de8d23e6">mkldnn_concat_inplace</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a1d5a4ac349734074b150188851be19c8">mkldnn_sum</a>, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a88592adccf64d1fd271ed6e21d66b271">mkldnn_convolution</a>, 
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a1d5a4ac349734074b150188851be19c8">mkldnn_sum</a>, 
+<a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a88592adccf64d1fd271ed6e21d66b271">mkldnn_convolution</a>, 
 <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a7a0e90ea42fb73798b564210f1aba335">mkldnn_deconvolution</a>, 
 <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973ae1cbd23f0addc5270d4f8ae63e0ecc7d">mkldnn_eltwise</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973acda8db2022e0c87c016286c098f0c31e">mkldnn_softmax</a>, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a4962b750b011e794c6a7fcebcc5a4fb2">mkldnn_pooling</a>, 
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973acda8db2022e0c87c016286c098f0c31e">mkldnn_softmax</a>, 
+<a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a4962b750b011e794c6a7fcebcc5a4fb2">mkldnn_pooling</a>, 
 <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973ac9dbe1aea35cb16f509ad407695cb8b7">mkldnn_lrn</a>, 
 <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a07b76e29d8363303cb682627dc56a515">mkldnn_batch_normalization</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973ad2ae1c6b5f66bdfca8a2734ea328385f">mkldnn_inner_product</a>, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973aff4b0118f66cb37f23178a078aa7b2e8">mkldnn_rnn</a>
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973ad2ae1c6b5f66bdfca8a2734ea328385f">mkldnn_inner_product</a>, 
+<a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973aff4b0118f66cb37f23178a078aa7b2e8">mkldnn_rnn</a>
 <br />
  }<tr class="memdesc:ga4f5c189c2ba9ef6444250299f1f8e973"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kinds of primitives.  <a href="group__c__api__types__generic.html#ga4f5c189c2ba9ef6444250299f1f8e973">More...</a><br /></td></tr>
 </td></tr>
@@ -478,20 +724,25 @@ Enumerations</h2></td></tr>
 <a class="el" href="group__c__api__types__memory.html#gga0b72d4deb16ce5703dc1641c80e9de87ae3debd06f01fcfc7249e64922652ed4f">mkldnn_ldgoi_p</a>
  }</td></tr>
 <tr class="separator:ga0b72d4deb16ce5703dc1641c80e9de87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga62b06d91e9fcf6bd086311fd4d8ece36"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#ga62b06d91e9fcf6bd086311fd4d8ece36">mkldnn_rnn_cell_flags_t</a> { <a class="el" href="group__c__api__types__memory.html#gga62b06d91e9fcf6bd086311fd4d8ece36a55f69148433cce0b97e8edd117f6b2ed">mkldnn_rnn_cell_with_relu</a> = 0x1U, 
-<a class="el" href="group__c__api__types__memory.html#gga62b06d91e9fcf6bd086311fd4d8ece36a41f97c53ef51f113a259c26a8c8363ed">mkldnn_rnn_cell_with_clipping</a> = 0x2U
- }<tr class="memdesc:ga62b06d91e9fcf6bd086311fd4d8ece36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flags for RNN cell.  <a href="group__c__api__types__memory.html#ga62b06d91e9fcf6bd086311fd4d8ece36">More...</a><br /></td></tr>
+<tr class="memitem:ga16866483eb06591891e93924b19a2b73"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#ga16866483eb06591891e93924b19a2b73">mkldnn_memory_extra_flags_t</a> { <a class="el" href="group__c__api__types__memory.html#gga16866483eb06591891e93924b19a2b73a1885d99763d35b9c07ad71c286e2a28f">mkldnn_memory_extra_flag_none</a> = 0x0U, 
+<a class="el" href="group__c__api__types__memory.html#gga16866483eb06591891e93924b19a2b73a517c1e993551853f409cee04679fcb2e">mkldnn_memory_extra_flag_compensation_conv_s8s8</a> = 0x1U, 
+<a class="el" href="group__c__api__types__memory.html#gga16866483eb06591891e93924b19a2b73ab4ed583a062bc7b9943a935ac9a75c04">mkldnn_memory_extra_flag_scale_adjust</a> = 0x2U
+ }</td></tr>
+<tr class="separator:ga16866483eb06591891e93924b19a2b73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga62b06d91e9fcf6bd086311fd4d8ece36"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__op__descs.html#ga62b06d91e9fcf6bd086311fd4d8ece36">mkldnn_rnn_cell_flags_t</a> { <a class="el" href="group__c__api__types__op__descs.html#gga62b06d91e9fcf6bd086311fd4d8ece36a55f69148433cce0b97e8edd117f6b2ed">mkldnn_rnn_cell_with_relu</a> = 0x1U, 
+<a class="el" href="group__c__api__types__op__descs.html#gga62b06d91e9fcf6bd086311fd4d8ece36a41f97c53ef51f113a259c26a8c8363ed">mkldnn_rnn_cell_with_clipping</a> = 0x2U
+ }<tr class="memdesc:ga62b06d91e9fcf6bd086311fd4d8ece36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flags for RNN cell.  <a href="group__c__api__types__op__descs.html#ga62b06d91e9fcf6bd086311fd4d8ece36">More...</a><br /></td></tr>
 </td></tr>
 <tr class="separator:ga62b06d91e9fcf6bd086311fd4d8ece36"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3cb09316c36bd985698e0eea542cb424"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#ga3cb09316c36bd985698e0eea542cb424">mkldnn_rnn_direction_t</a> { <br />
-&#160;&#160;<a class="el" href="group__c__api__types__memory.html#gga3cb09316c36bd985698e0eea542cb424a704a37978225c8c03f673e34fb3dc89f">mkldnn_unidirectional_left2right</a>, 
-<a class="el" href="group__c__api__types__memory.html#gga3cb09316c36bd985698e0eea542cb424a594d74774460029d0635daaf4a7bace7">mkldnn_unidirectional_right2left</a>, 
-<a class="el" href="group__c__api__types__memory.html#gga3cb09316c36bd985698e0eea542cb424a29eacee8606bd282bc82396590c29590">mkldnn_bidirectional_concat</a>, 
-<a class="el" href="group__c__api__types__memory.html#gga3cb09316c36bd985698e0eea542cb424a41da7196bf8914d34a35ce7c1122e9bc">mkldnn_bidirectional_sum</a>, 
+<tr class="memitem:ga3cb09316c36bd985698e0eea542cb424"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__op__descs.html#ga3cb09316c36bd985698e0eea542cb424">mkldnn_rnn_direction_t</a> { <br />
+&#160;&#160;<a class="el" href="group__c__api__types__op__descs.html#gga3cb09316c36bd985698e0eea542cb424a704a37978225c8c03f673e34fb3dc89f">mkldnn_unidirectional_left2right</a>, 
+<a class="el" href="group__c__api__types__op__descs.html#gga3cb09316c36bd985698e0eea542cb424a594d74774460029d0635daaf4a7bace7">mkldnn_unidirectional_right2left</a>, 
+<a class="el" href="group__c__api__types__op__descs.html#gga3cb09316c36bd985698e0eea542cb424a29eacee8606bd282bc82396590c29590">mkldnn_bidirectional_concat</a>, 
+<a class="el" href="group__c__api__types__op__descs.html#gga3cb09316c36bd985698e0eea542cb424a41da7196bf8914d34a35ce7c1122e9bc">mkldnn_bidirectional_sum</a>, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__memory.html#gga3cb09316c36bd985698e0eea542cb424a8f20ac563a5da76af44afced57b477e1">mkldnn_unidirectional</a> = mkldnn_unidirectional_left2right
+&#160;&#160;<a class="el" href="group__c__api__types__op__descs.html#gga3cb09316c36bd985698e0eea542cb424a8f20ac563a5da76af44afced57b477e1">mkldnn_unidirectional</a> = mkldnn_unidirectional_left2right
 <br />
- }<tr class="memdesc:ga3cb09316c36bd985698e0eea542cb424"><td class="mdescLeft">&#160;</td><td class="mdescRight">A direction of RNN primitive execution.  <a href="group__c__api__types__memory.html#ga3cb09316c36bd985698e0eea542cb424">More...</a><br /></td></tr>
+ }<tr class="memdesc:ga3cb09316c36bd985698e0eea542cb424"><td class="mdescLeft">&#160;</td><td class="mdescRight">A direction of RNN primitive execution.  <a href="group__c__api__types__op__descs.html#ga3cb09316c36bd985698e0eea542cb424">More...</a><br /></td></tr>
 </td></tr>
 <tr class="separator:ga3cb09316c36bd985698e0eea542cb424"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaec8e96cbc2f19125c9def11efa98aa7e"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__engine__types.html#gaec8e96cbc2f19125c9def11efa98aa7e">mkldnn_engine_kind_t</a> { <a class="el" href="group__c__api__engine__types.html#ggaec8e96cbc2f19125c9def11efa98aa7ea33e9143910c4711e89aaacc7287e4f26">mkldnn_any_engine</a>, 
@@ -499,6 +750,11 @@ Enumerations</h2></td></tr>
  }<tr class="memdesc:gaec8e96cbc2f19125c9def11efa98aa7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kinds of engines.  <a href="group__c__api__engine__types.html#gaec8e96cbc2f19125c9def11efa98aa7e">More...</a><br /></td></tr>
 </td></tr>
 <tr class="separator:gaec8e96cbc2f19125c9def11efa98aa7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5a6c410554b43bd182668b235769d1bf"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__primitive__attr.html#ga5a6c410554b43bd182668b235769d1bf">mkldnn_scratchpad_mode_t</a> { <a class="el" href="group__c__api__primitive__attr.html#gga5a6c410554b43bd182668b235769d1bfa3cc865415485dc1be2e45edd21426aab">mkldnn_scratchpad_mode_library</a>, 
+<a class="el" href="group__c__api__primitive__attr.html#gga5a6c410554b43bd182668b235769d1bfa8b4d483d4a290b397c90a70a80796865">mkldnn_scratchpad_mode_user</a>
+ }<tr class="memdesc:ga5a6c410554b43bd182668b235769d1bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scratchpad mode.  <a href="group__c__api__primitive__attr.html#ga5a6c410554b43bd182668b235769d1bf">More...</a><br /></td></tr>
+</td></tr>
+<tr class="separator:ga5a6c410554b43bd182668b235769d1bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6eebc661a8a3437b49d9c677f8972fc9"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__query.html#ga6eebc661a8a3437b49d9c677f8972fc9">mkldnn_query_t</a> { <br />
 &#160;&#160;<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ac342bd96b1dcf20bfdd07176d87fc3b1">mkldnn_query_undef</a> = 0, 
 <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ac71b9911ec94b71ea2e98e744d614f5b">mkldnn_query_engine</a>, 
@@ -508,11 +764,11 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9abd7a52122733cac8b3d1de8eab20f9cf">mkldnn_query_num_of_outputs_s32</a>, 
 <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a052bcf260d366f5da76eda4cd807d5a3">mkldnn_query_time_estimate_f64</a>, 
 <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a1224b5177cb23277aab6f3ba17427d25">mkldnn_query_memory_consumption_s64</a>, 
-<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ab92f503404fade1f402bed9c34727d9c">mkldnn_query_impl_info_str</a>, 
+<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ae59d275ad2270361bc9bea0cbd60efe4">mkldnn_query_scratchpad_engine</a>, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a6e663244b7f359919db4b5941b63221a">mkldnn_query_some_d</a> = 64, 
+&#160;&#160;<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ab92f503404fade1f402bed9c34727d9c">mkldnn_query_impl_info_str</a>, 
+<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a6e663244b7f359919db4b5941b63221a">mkldnn_query_some_d</a> = 64, 
 <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a04f941d8d190227e583d1fe7f4a6e5d3">mkldnn_query_op_d</a>, 
-<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a7e98c1f19c54633720dd5120b22d8809">mkldnn_query_memory_d</a>, 
 <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a3e1f5ad4718ad7f41916b4227e0a9964">mkldnn_query_convolution_d</a>, 
 <br />
 &#160;&#160;<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a43c69ed45016096444979bd659b13933">mkldnn_query_deconvolution_d</a>, 
@@ -526,28 +782,25 @@ Enumerations</h2></td></tr>
 <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a079af104c4c7cd8de5833316e137fa03">mkldnn_query_inner_product_d</a>, 
 <br />
 &#160;&#160;<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a7a567d8e61a6e0b1aeb219f5229b13de">mkldnn_query_rnn_d</a>, 
-<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a58e08302e148a2f4f8e95090a89c80a8">mkldnn_query_some_pd</a> = 128, 
-<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9aa3100118ca28db99bc4fa00c6c6f6b21">mkldnn_query_input_pd</a>, 
-<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ac7133f49888b4946ac227810be0146fd">mkldnn_query_output_pd</a>, 
+<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9aea0f2677b5b41fa8ff2222b4d7ca9ab9">mkldnn_query_some_md</a> = 128, 
+<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a2bccd0a79be2c331227c353c294c3fbc">mkldnn_query_src_md</a>, 
+<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ad915503c92000da20088fdb93cd685b9">mkldnn_query_diff_src_md</a>, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ac17b645e3801adaaeee3107103ec8a72">mkldnn_query_src_pd</a>, 
-<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ac95fbe152e97a3989dc794a70643d834">mkldnn_query_diff_src_pd</a>, 
-<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9aad24a528aa4e68a27da4b23063eb76ee">mkldnn_query_weights_pd</a>, 
-<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ab43b4c2b7a151bc59bddffc009abae66">mkldnn_query_diff_weights_pd</a>, 
+&#160;&#160;<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a4d1661d6a50277029d02417f6b65435d">mkldnn_query_weights_md</a>, 
+<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a2c78f7a683101ff96875e8cec787ba42">mkldnn_query_diff_weights_md</a>, 
+<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9adccda04151e0c287f0de64b832d33ac4">mkldnn_query_dst_md</a>, 
+<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9acfa30e38738b3de8c7d3a7f21ffc1623">mkldnn_query_diff_dst_md</a>, 
 <br />
-&#160;&#160;<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9abb15fa8a7eb5aebfe547ac57a96c2d56">mkldnn_query_dst_pd</a>, 
-<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9aa5b466fae3a9bda2d112db68cfd2b68e">mkldnn_query_diff_dst_pd</a>, 
-<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ad18aadd1899c151835c624d7b83edb56">mkldnn_query_workspace_pd</a>
+&#160;&#160;<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a6f61e139512317e7f5653759e889d55d">mkldnn_query_workspace_md</a>, 
+<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a543d6dbebcadbf810f2a9d2ccbcd21be">mkldnn_query_scratchpad_md</a>
 <br />
  }<tr class="memdesc:ga6eebc661a8a3437b49d9c677f8972fc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Primitive descriptor query specification.  <a href="group__c__api__types__query.html#ga6eebc661a8a3437b49d9c677f8972fc9">More...</a><br /></td></tr>
 </td></tr>
 <tr class="separator:ga6eebc661a8a3437b49d9c677f8972fc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadd66574e231fe36721cdbe02ea47aa18"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__stream.html#gadd66574e231fe36721cdbe02ea47aa18">mkldnn_stream_kind_t</a> { <a class="el" href="group__c__api__types__stream.html#ggadd66574e231fe36721cdbe02ea47aa18a21e1070feb34b05c8f262e0b9b0705c6">mkldnn_any_stream</a>, 
-<a class="el" href="group__c__api__types__stream.html#ggadd66574e231fe36721cdbe02ea47aa18a31d72581d8e1f3e15fc78f996a43ecc2">mkldnn_eager</a>, 
-<a class="el" href="group__c__api__types__stream.html#ggadd66574e231fe36721cdbe02ea47aa18aa7a8014b794eead2d6ce7d9fe0c35241">mkldnn_lazy</a>
- }<tr class="memdesc:gadd66574e231fe36721cdbe02ea47aa18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kinds of streams.  <a href="group__c__api__types__stream.html#gadd66574e231fe36721cdbe02ea47aa18">More...</a><br /></td></tr>
+<tr class="memitem:ga99541103c9e9f6241d7a312d39d2cff2"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__stream.html#ga99541103c9e9f6241d7a312d39d2cff2">mkldnn_stream_flags_t</a> { <a class="el" href="group__c__api__types__stream.html#gga99541103c9e9f6241d7a312d39d2cff2a8048500bb95413112046344427918c2d">mkldnn_stream_default_flags</a> = 0x0U
+ }<tr class="memdesc:ga99541103c9e9f6241d7a312d39d2cff2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stream flags.  <a href="group__c__api__types__stream.html#ga99541103c9e9f6241d7a312d39d2cff2">More...</a><br /></td></tr>
 </td></tr>
-<tr class="separator:gadd66574e231fe36721cdbe02ea47aa18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:ga99541103c9e9f6241d7a312d39d2cff2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

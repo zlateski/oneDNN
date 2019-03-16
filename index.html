@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
-   &#160;<span id="projectnumber">0.18.1</span>
+   &#160;<span id="projectnumber">0.90.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
   </td>
@@ -86,11 +86,11 @@ $(function() {
 <tr>
 <td align="left"></td><td align="left">3D inner product </td><td align="center">x </td><td align="center">x </td><td align="center"></td></tr>
 <tr>
-<td align="left">RNN </td><td align="left">Vanilla RNN cell </td><td align="center">x </td><td align="center">x </td><td align="center">x </td></tr>
+<td align="left">RNN </td><td align="left">Vanilla RNN </td><td align="center">x </td><td align="center">x </td><td align="center"></td></tr>
 <tr>
-<td align="left"></td><td align="left">LSTM cell </td><td align="center">x </td><td align="center">x </td><td align="center"></td></tr>
+<td align="left"></td><td align="left">LSTM </td><td align="center">x </td><td align="center">x </td><td align="center">x </td></tr>
 <tr>
-<td align="left"></td><td align="left">GRU cell </td><td align="center">x </td><td align="center">x </td><td align="center"></td></tr>
+<td align="left"></td><td align="left">GRU </td><td align="center">x </td><td align="center">x </td><td align="center"></td></tr>
 <tr>
 <td align="left">Pooling </td><td align="left">2D maximum pooling </td><td align="center">x </td><td align="center">x </td><td align="center">x </td></tr>
 <tr>
@@ -106,19 +106,27 @@ $(function() {
 <tr>
 <td align="left"></td><td align="left">2D batch normalization </td><td align="center">x </td><td align="center">x </td><td align="center"></td></tr>
 <tr>
-<td align="left"></td><td align="left">3D Batch Normalization </td><td align="center">x </td><td align="center">x </td><td align="center"></td></tr>
+<td align="left"></td><td align="left">3D batch normalization </td><td align="center">x </td><td align="center">x </td><td align="center"></td></tr>
 <tr>
-<td align="left">Activation </td><td align="left">ReLU </td><td align="center">x </td><td align="center">x </td><td align="center">x </td></tr>
+<td align="left">Activation and </td><td align="left">ReLU </td><td align="center">x </td><td align="center">x </td><td align="center">x </td></tr>
 <tr>
-<td align="left"></td><td align="left">Tanh </td><td align="center"></td><td align="center">x </td><td align="center"></td></tr>
+<td align="left">elementwise </td><td align="left">Tanh </td><td align="center">x </td><td align="center">x </td><td align="center"></td></tr>
 <tr>
-<td align="left"></td><td align="left">ELU </td><td align="center"></td><td align="center">x </td><td align="center"></td></tr>
+<td align="left">functions </td><td align="left">ELU </td><td align="center">x </td><td align="center">x </td><td align="center"></td></tr>
 <tr>
-<td align="left"></td><td align="left">Bounded ReLU </td><td align="center"></td><td align="center">x </td><td align="center"></td></tr>
+<td align="left"></td><td align="left">Square </td><td align="center">x </td><td align="center">x </td><td align="center"></td></tr>
 <tr>
-<td align="left"></td><td align="left">Soft ReLU </td><td align="center"></td><td align="center">x </td><td align="center"></td></tr>
+<td align="left"></td><td align="left">Sqrt </td><td align="center">x </td><td align="center">x </td><td align="center"></td></tr>
 <tr>
-<td align="left"></td><td align="left">Logistic regression </td><td align="center"></td><td align="center">x </td><td align="center"></td></tr>
+<td align="left"></td><td align="left">Abs </td><td align="center">x </td><td align="center">x </td><td align="center"></td></tr>
+<tr>
+<td align="left"></td><td align="left">Linear </td><td align="center">x </td><td align="center">x </td><td align="center"></td></tr>
+<tr>
+<td align="left"></td><td align="left">Bounded ReLU </td><td align="center">x </td><td align="center">x </td><td align="center"></td></tr>
+<tr>
+<td align="left"></td><td align="left">Soft ReLU </td><td align="center">x </td><td align="center">x </td><td align="center"></td></tr>
+<tr>
+<td align="left"></td><td align="left">Logistic </td><td align="center">x </td><td align="center">x </td><td align="center"></td></tr>
 <tr>
 <td align="left"></td><td align="left">Softmax </td><td align="center">x </td><td align="center">x </td><td align="center"></td></tr>
 <tr>
@@ -128,9 +136,7 @@ $(function() {
 <tr>
 <td align="left"></td><td align="left">Concat </td><td align="center">x </td><td align="center">x </td><td align="center">x </td></tr>
 <tr>
-<td align="left"></td><td align="left">Elementwise operations </td><td align="center"></td><td align="center">x </td><td align="center"></td></tr>
-<tr>
-<td align="left"></td><td align="left">Channel Shuffle </td><td align="center">x </td><td align="center">x </td><td align="center">x </td></tr>
+<td align="left"></td><td align="left">Shuffle </td><td align="center">x </td><td align="center">x </td><td align="center">x </td></tr>
 </table>
 <h2>Programming Model</h2>
 <p>Intel MKL-DNN models memory as a primitive similar to an operation primitive. This allows reconstruction of the graph of computations at run time.</p>

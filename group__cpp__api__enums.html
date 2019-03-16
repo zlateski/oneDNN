@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
-   &#160;<span id="projectnumber">0.18.1</span>
+   &#160;<span id="projectnumber">0.90.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
   </td>
@@ -73,10 +73,10 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:ga9d7c927196d96da9d2dcb0926f50845d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__enums.html#ga9d7c927196d96da9d2dcb0926f50845d">mkldnn::round_mode</a> { <a class="el" href="group__cpp__api__enums.html#gga9d7c927196d96da9d2dcb0926f50845dadfa185bc1c3ce87a0905475a288c58fd">mkldnn::round_nearest</a> = mkldnn_round_nearest, 
-<a class="el" href="group__cpp__api__enums.html#gga9d7c927196d96da9d2dcb0926f50845da5e31c27e1a2c7c1ac5bfe9c8026bc72e">mkldnn::round_down</a> = mkldnn_round_down
+<tr class="memitem:gadb1d0d24b9f6c0eabd3359e322add147"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__enums.html#gadb1d0d24b9f6c0eabd3359e322add147">mkldnn::scratchpad_mode</a> { <a class="el" href="group__cpp__api__enums.html#ggadb1d0d24b9f6c0eabd3359e322add147aad5e7282a327d5ebb59aa8e5ac3445b1">mkldnn::scratchpad_mode_library</a> = mkldnn_scratchpad_mode_library, 
+<a class="el" href="group__cpp__api__enums.html#ggadb1d0d24b9f6c0eabd3359e322add147a76d1a232014e1db6ad9ced24b3002cca">mkldnn::scratchpad_mode_user</a> = mkldnn_scratchpad_mode_user
  }</td></tr>
-<tr class="separator:ga9d7c927196d96da9d2dcb0926f50845d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:gadb1d0d24b9f6c0eabd3359e322add147"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa1ff931b28e0a90473ad5bddd21c60fc"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__enums.html#gaa1ff931b28e0a90473ad5bddd21c60fc">mkldnn::padding_kind</a> { <a class="el" href="group__cpp__api__enums.html#ggaa1ff931b28e0a90473ad5bddd21c60fcafbabef80df01bc0a5636d0ca9189355d">mkldnn::zero</a> = mkldnn_padding_zero
  }</td></tr>
 <tr class="separator:gaa1ff931b28e0a90473ad5bddd21c60fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -146,17 +146,17 @@ Enumerations</h2></td></tr>
 <tr class="separator:gac8d5612bc5ca7b5fb6e5bdf4e6ad0d16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6d88ff11a07bae09a5c348d314c5d1d9"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__enums.html#ga6d88ff11a07bae09a5c348d314c5d1d9">mkldnn::query</a> { <br />
 &#160;&#160;<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a8d3ff637e43a48b61ad6d7855c6a9cd1">mkldnn::undef</a> = mkldnn_query_undef, 
-<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9acb4cacb193ad2274f54ae1dd6c0a3fbb">mkldnn::eengine</a> = mkldnn_query_engine, 
+<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9adcc6c392a3c6ae59d45d3c00c961991c">mkldnn::query_engine</a> = mkldnn_query_engine, 
 <a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9ab9ac6c4dbd943afffb6c80e0bcff4181">mkldnn::primitive_kind</a> = mkldnn_query_primitive_kind, 
 <a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9aa7acb3c71ec9740a93042f80b24f6110">mkldnn::num_of_inputs_s32</a> = mkldnn_query_num_of_inputs_s32, 
 <br />
 &#160;&#160;<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a031851c9746b2eb890af91a5f209e014">mkldnn::num_of_outputs_s32</a> = mkldnn_query_num_of_outputs_s32, 
 <a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a1b43385b970ea053f46e5932d574615e">mkldnn::time_estimate_f64</a> = mkldnn_query_time_estimate_f64, 
 <a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a4faa2a57cddf474a9356b136ece00401">mkldnn::memory_consumption_s64</a> = mkldnn_query_memory_consumption_s64, 
-<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a022fea4ccfab3e1045c7358d07de3d5e">mkldnn::impl_info_str</a> = mkldnn_query_impl_info_str, 
+<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9ad209a67975941574a10b219a5600a6d9">mkldnn::query_scratchpad_engine</a> = mkldnn_query_scratchpad_engine, 
 <br />
-&#160;&#160;<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a28d8c4782a7d1d228fe0bee9954df493">mkldnn::op_d</a> = mkldnn_query_op_d, 
-<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a7b7d987552be10a6654ea645cede0a95">mkldnn::memory_d</a> = mkldnn_query_memory_d, 
+&#160;&#160;<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a022fea4ccfab3e1045c7358d07de3d5e">mkldnn::impl_info_str</a> = mkldnn_query_impl_info_str, 
+<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a28d8c4782a7d1d228fe0bee9954df493">mkldnn::op_d</a> = mkldnn_query_op_d, 
 <a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a13f5d72b1e5ec568b24c930e3b87641b">mkldnn::convolution_d</a> = mkldnn_query_convolution_d, 
 <a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9ac16184ec47dd255d2711d025eabcdc98">mkldnn::deconvolution_d</a> = mkldnn_query_deconvolution_d, 
 <br />
@@ -170,25 +170,23 @@ Enumerations</h2></td></tr>
 <a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a4036c4c9cc32dd0f22a8903cfceeaa41">mkldnn::inner_product_d</a> = mkldnn_query_inner_product_d, 
 <a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9ae7873bfd5ff943d02a66046bb7254c74">mkldnn::rnn_d</a> = mkldnn_query_rnn_d, 
 <br />
-&#160;&#160;<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a508fa6b849113ef2100177d2991129fe">mkldnn::input_pd</a> = mkldnn_query_input_pd, 
-<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9abab2d1abc2d37f4a1358daeb7f9a32b1">mkldnn::output_pd</a> = mkldnn_query_output_pd, 
-<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a486100f73904f2beae1418a57cc6e0b1">mkldnn::src_pd</a> = mkldnn_query_src_pd, 
-<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a255f93a5ef35321792effc4f5d23e1e3">mkldnn::diff_src_pd</a> = mkldnn_query_diff_src_pd, 
+&#160;&#160;<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a16bfd85c6c2d6fcd75ec8e3a23834802">mkldnn::src_md</a> = mkldnn_query_src_md, 
+<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9adf9752ab1769c11d5d02f51f43010454">mkldnn::diff_src_md</a> = mkldnn_query_diff_src_md, 
+<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a73b32c813f77816a24f730f81d48ccf8">mkldnn::weights_md</a> = mkldnn_query_weights_md, 
+<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a9d5468857ee5ec42ac304536f053a024">mkldnn::diff_weights_md</a> = mkldnn_query_diff_weights_md, 
 <br />
-&#160;&#160;<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a38a475450bc885f2a0fad13bf87f44b9">mkldnn::weights_pd</a> = mkldnn_query_weights_pd, 
-<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a7b14a983b2e690abcf176dd41da50ae1">mkldnn::diff_weights_pd</a> = mkldnn_query_diff_weights_pd, 
-<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a5e602b7cc44ad7373ab7212f73b3d7d4">mkldnn::dst_pd</a> = mkldnn_query_dst_pd, 
-<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9adb9fd0a330dc402a36de022ce82bff07">mkldnn::diff_dst_pd</a> = mkldnn_query_diff_dst_pd, 
-<br />
-&#160;&#160;<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a41d00a7019d406614ebaa00195d179bd">mkldnn::workspace_pd</a> = mkldnn_query_workspace_pd
+&#160;&#160;<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a7fea99049a3603642fedf48e7427411d">mkldnn::dst_md</a> = mkldnn_query_dst_md, 
+<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9aa303b5518b34ca8ee6ec181c57b7805d">mkldnn::diff_dst_md</a> = mkldnn_query_diff_dst_md, 
+<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a9b380ca8224020a5fa767ed93eee36a5">mkldnn::workspace_md</a> = mkldnn_query_workspace_md, 
+<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a755f3322c7a8cedd2544cc5a50188fdf">mkldnn::scratchpad_md</a> = mkldnn_query_scratchpad_md
 <br />
  }</td></tr>
 <tr class="separator:ga6d88ff11a07bae09a5c348d314c5d1d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga03b0151dbe66d12dd35f9f67f59d9203"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga825f736d520c8183d422d1aad60f2ad9">mkldnn_round_mode_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__enums.html#ga03b0151dbe66d12dd35f9f67f59d9203">mkldnn::convert_to_c</a> (<a class="el" href="group__cpp__api__enums.html#ga9d7c927196d96da9d2dcb0926f50845d">round_mode</a> mode)</td></tr>
-<tr class="separator:ga03b0151dbe66d12dd35f9f67f59d9203"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5a52fd80e2ec49a374387375d01dd994"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__primitive__attr.html#ga5a6c410554b43bd182668b235769d1bf">mkldnn_scratchpad_mode_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__enums.html#ga5a52fd80e2ec49a374387375d01dd994">mkldnn::convert_to_c</a> (<a class="el" href="group__cpp__api__enums.html#gadb1d0d24b9f6c0eabd3359e322add147">scratchpad_mode</a> mode)</td></tr>
+<tr class="separator:ga5a52fd80e2ec49a374387375d01dd994"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga38bf2fbbd9d10eb42c524175de8480ba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga1823708d8b9d445fe177295f2b5d74bd">mkldnn_padding_kind_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__enums.html#ga38bf2fbbd9d10eb42c524175de8480ba">mkldnn::convert_to_c</a> (<a class="el" href="group__cpp__api__enums.html#gaa1ff931b28e0a90473ad5bddd21c60fc">padding_kind</a> kind)</td></tr>
 <tr class="separator:ga38bf2fbbd9d10eb42c524175de8480ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5721fbb011e85a530876ca8fe3b869dd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga5b98c8059c2aff8861157bf070c3f520">mkldnn_prop_kind_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__enums.html#ga5721fbb011e85a530876ca8fe3b869dd">mkldnn::convert_to_c</a> (<a class="el" href="group__cpp__api__enums.html#gaeb087eae78f70a4d249a90aefa165cf8">prop_kind</a> kind)</td></tr>
@@ -197,7 +195,7 @@ Functions</h2></td></tr>
 <tr class="separator:gaa07c515a4384e676bebc542cb9f6391f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9f64a8a99d055d96ac1403878ce41120"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga5b1f166df8eea3a306f9226baf6ca3a3">mkldnn_batch_normalization_flag_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__enums.html#ga9f64a8a99d055d96ac1403878ce41120">mkldnn::convert_to_c</a> (<a class="el" href="group__cpp__api__enums.html#ga344b5c240a7392585aba615ff4d0d7f1">batch_normalization_flag</a> aflag)</td></tr>
 <tr class="separator:ga9f64a8a99d055d96ac1403878ce41120"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1407076bcb584c18c5a343fe2f0958b3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__memory.html#ga3cb09316c36bd985698e0eea542cb424">mkldnn_rnn_direction_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__enums.html#ga1407076bcb584c18c5a343fe2f0958b3">mkldnn::convert_to_c</a> (<a class="el" href="group__cpp__api__enums.html#gac8d5612bc5ca7b5fb6e5bdf4e6ad0d16">rnn_direction</a> adir)</td></tr>
+<tr class="memitem:ga1407076bcb584c18c5a343fe2f0958b3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__op__descs.html#ga3cb09316c36bd985698e0eea542cb424">mkldnn_rnn_direction_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__enums.html#ga1407076bcb584c18c5a343fe2f0958b3">mkldnn::convert_to_c</a> (<a class="el" href="group__cpp__api__enums.html#gac8d5612bc5ca7b5fb6e5bdf4e6ad0d16">rnn_direction</a> adir)</td></tr>
 <tr class="separator:ga1407076bcb584c18c5a343fe2f0958b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga7bb17e3c54dceba9073f4abcada1d9b6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__query.html#ga6eebc661a8a3437b49d9c677f8972fc9">mkldnn_query_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__enums.html#ga7bb17e3c54dceba9073f4abcada1d9b6">mkldnn::convert_to_c</a> (<a class="el" href="group__cpp__api__enums.html#ga6d88ff11a07bae09a5c348d314c5d1d9">query</a> aquery)</td></tr>
 <tr class="separator:ga7bb17e3c54dceba9073f4abcada1d9b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -205,20 +203,20 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>A proxy to <a class="el" href="group__c__api__types.html">Types</a> in <a class="el" href="group__c__api.html">C API</a>. </p>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="ga9d7c927196d96da9d2dcb0926f50845d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga9d7c927196d96da9d2dcb0926f50845d">&#9670;&nbsp;</a></span>round_mode</h2>
+<a id="gadb1d0d24b9f6c0eabd3359e322add147"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadb1d0d24b9f6c0eabd3359e322add147">&#9670;&nbsp;</a></span>scratchpad_mode</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="group__cpp__api__enums.html#ga9d7c927196d96da9d2dcb0926f50845d">mkldnn::round_mode</a></td>
+          <td class="memname">enum <a class="el" href="group__cpp__api__enums.html#gadb1d0d24b9f6c0eabd3359e322add147">mkldnn::scratchpad_mode</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga9d7c927196d96da9d2dcb0926f50845dadfa185bc1c3ce87a0905475a288c58fd"></a>round_nearest&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="gga9d7c927196d96da9d2dcb0926f50845da5e31c27e1a2c7c1ac5bfe9c8026bc72e"></a>round_down&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ggadb1d0d24b9f6c0eabd3359e322add147aad5e7282a327d5ebb59aa8e5ac3445b1"></a>scratchpad_mode_library&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ggadb1d0d24b9f6c0eabd3359e322add147a76d1a232014e1db6ad9ced24b3002cca"></a>scratchpad_mode_user&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 </div>
@@ -359,15 +357,15 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga6d88ff11a07bae09a5c348d314c5d1d9a8d3ff637e43a48b61ad6d7855c6a9cd1"></a>undef&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="gga6d88ff11a07bae09a5c348d314c5d1d9acb4cacb193ad2274f54ae1dd6c0a3fbb"></a>eengine&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga6d88ff11a07bae09a5c348d314c5d1d9adcc6c392a3c6ae59d45d3c00c961991c"></a>query_engine&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="gga6d88ff11a07bae09a5c348d314c5d1d9ab9ac6c4dbd943afffb6c80e0bcff4181"></a>primitive_kind&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="gga6d88ff11a07bae09a5c348d314c5d1d9aa7acb3c71ec9740a93042f80b24f6110"></a>num_of_inputs_s32&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="gga6d88ff11a07bae09a5c348d314c5d1d9a031851c9746b2eb890af91a5f209e014"></a>num_of_outputs_s32&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="gga6d88ff11a07bae09a5c348d314c5d1d9a1b43385b970ea053f46e5932d574615e"></a>time_estimate_f64&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="gga6d88ff11a07bae09a5c348d314c5d1d9a4faa2a57cddf474a9356b136ece00401"></a>memory_consumption_s64&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga6d88ff11a07bae09a5c348d314c5d1d9ad209a67975941574a10b219a5600a6d9"></a>query_scratchpad_engine&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="gga6d88ff11a07bae09a5c348d314c5d1d9a022fea4ccfab3e1045c7358d07de3d5e"></a>impl_info_str&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="gga6d88ff11a07bae09a5c348d314c5d1d9a28d8c4782a7d1d228fe0bee9954df493"></a>op_d&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="gga6d88ff11a07bae09a5c348d314c5d1d9a7b7d987552be10a6654ea645cede0a95"></a>memory_d&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="gga6d88ff11a07bae09a5c348d314c5d1d9a13f5d72b1e5ec568b24c930e3b87641b"></a>convolution_d&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="gga6d88ff11a07bae09a5c348d314c5d1d9ac16184ec47dd255d2711d025eabcdc98"></a>deconvolution_d&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="gga6d88ff11a07bae09a5c348d314c5d1d9a108123b01640ff9872ad7ebf4a7be850"></a>shuffle_d&#160;</td><td class="fielddoc"></td></tr>
@@ -378,22 +376,21 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="gga6d88ff11a07bae09a5c348d314c5d1d9a98ae1af5a25e62ffebc0ee054e0fd7c7"></a>batch_normalization_d&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="gga6d88ff11a07bae09a5c348d314c5d1d9a4036c4c9cc32dd0f22a8903cfceeaa41"></a>inner_product_d&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="gga6d88ff11a07bae09a5c348d314c5d1d9ae7873bfd5ff943d02a66046bb7254c74"></a>rnn_d&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="gga6d88ff11a07bae09a5c348d314c5d1d9a508fa6b849113ef2100177d2991129fe"></a>input_pd&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="gga6d88ff11a07bae09a5c348d314c5d1d9abab2d1abc2d37f4a1358daeb7f9a32b1"></a>output_pd&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="gga6d88ff11a07bae09a5c348d314c5d1d9a486100f73904f2beae1418a57cc6e0b1"></a>src_pd&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="gga6d88ff11a07bae09a5c348d314c5d1d9a255f93a5ef35321792effc4f5d23e1e3"></a>diff_src_pd&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="gga6d88ff11a07bae09a5c348d314c5d1d9a38a475450bc885f2a0fad13bf87f44b9"></a>weights_pd&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="gga6d88ff11a07bae09a5c348d314c5d1d9a7b14a983b2e690abcf176dd41da50ae1"></a>diff_weights_pd&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="gga6d88ff11a07bae09a5c348d314c5d1d9a5e602b7cc44ad7373ab7212f73b3d7d4"></a>dst_pd&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="gga6d88ff11a07bae09a5c348d314c5d1d9adb9fd0a330dc402a36de022ce82bff07"></a>diff_dst_pd&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="gga6d88ff11a07bae09a5c348d314c5d1d9a41d00a7019d406614ebaa00195d179bd"></a>workspace_pd&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga6d88ff11a07bae09a5c348d314c5d1d9a16bfd85c6c2d6fcd75ec8e3a23834802"></a>src_md&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga6d88ff11a07bae09a5c348d314c5d1d9adf9752ab1769c11d5d02f51f43010454"></a>diff_src_md&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga6d88ff11a07bae09a5c348d314c5d1d9a73b32c813f77816a24f730f81d48ccf8"></a>weights_md&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga6d88ff11a07bae09a5c348d314c5d1d9a9d5468857ee5ec42ac304536f053a024"></a>diff_weights_md&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga6d88ff11a07bae09a5c348d314c5d1d9a7fea99049a3603642fedf48e7427411d"></a>dst_md&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga6d88ff11a07bae09a5c348d314c5d1d9aa303b5518b34ca8ee6ec181c57b7805d"></a>diff_dst_md&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga6d88ff11a07bae09a5c348d314c5d1d9a9b380ca8224020a5fa767ed93eee36a5"></a>workspace_md&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga6d88ff11a07bae09a5c348d314c5d1d9a755f3322c7a8cedd2544cc5a50188fdf"></a>scratchpad_md&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ga03b0151dbe66d12dd35f9f67f59d9203"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga03b0151dbe66d12dd35f9f67f59d9203">&#9670;&nbsp;</a></span>convert_to_c() <span class="overload">[1/7]</span></h2>
+<a id="ga5a52fd80e2ec49a374387375d01dd994"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5a52fd80e2ec49a374387375d01dd994">&#9670;&nbsp;</a></span>convert_to_c() <span class="overload">[1/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -402,9 +399,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga825f736d520c8183d422d1aad60f2ad9">mkldnn_round_mode_t</a> mkldnn::convert_to_c </td>
+          <td class="memname"><a class="el" href="group__c__api__primitive__attr.html#ga5a6c410554b43bd182668b235769d1bf">mkldnn_scratchpad_mode_t</a> mkldnn::convert_to_c </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__cpp__api__enums.html#ga9d7c927196d96da9d2dcb0926f50845d">round_mode</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__cpp__api__enums.html#gadb1d0d24b9f6c0eabd3359e322add147">scratchpad_mode</a>&#160;</td>
           <td class="paramname"><em>mode</em></td><td>)</td>
           <td></td>
         </tr>
@@ -532,7 +529,7 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__c__api__types__memory.html#ga3cb09316c36bd985698e0eea542cb424">mkldnn_rnn_direction_t</a> mkldnn::convert_to_c </td>
+          <td class="memname"><a class="el" href="group__c__api__types__op__descs.html#ga3cb09316c36bd985698e0eea542cb424">mkldnn_rnn_direction_t</a> mkldnn::convert_to_c </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__cpp__api__enums.html#gac8d5612bc5ca7b5fb6e5bdf4e6ad0d16">rnn_direction</a>&#160;</td>
           <td class="paramname"><em>adir</em></td><td>)</td>
