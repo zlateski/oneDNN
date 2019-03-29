@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['eager',['eager',['../structmkldnn_1_1stream.html#a7b46a4cd837ea0ccf835d7fa4fc37cffa6be8d548cd5645db2b66fb4eca81c854',1,'mkldnn::stream']]],
-  ['eengine',['eengine',['../group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9acb4cacb193ad2274f54ae1dd6c0a3fbb',1,'mkldnn']]],
   ['eltwise',['eltwise',['../classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00da98b908c7d0339bb6a4832db44fc2c8da',1,'mkldnn::primitive']]],
   ['eltwise_5fabs',['eltwise_abs',['../group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076ad74c080e0ccc56afdbbf1488465ca41d',1,'mkldnn']]],
   ['eltwise_5fbounded_5frelu',['eltwise_bounded_relu',['../group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076a9b795beea0fa5ea1b1ab08f978beb83b',1,'mkldnn']]],

@@ -1,10 +1,14 @@
 var searchData=
 [
-  ['wait',['wait',['../structmkldnn_1_1stream.html#a577fe98393390dc1ba646266d57566e2',1,'mkldnn::stream']]],
   ['weights_5fdesc',['weights_desc',['../structmkldnn__convolution__desc__t.html#a182f81ea06178cdfec5f8e120918cef3',1,'mkldnn_convolution_desc_t::weights_desc()'],['../structmkldnn__inner__product__desc__t.html#a2639f37a1b46ac5129c8368215629e34',1,'mkldnn_inner_product_desc_t::weights_desc()']]],
-  ['weights_5fpd',['weights_pd',['../group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a38a475450bc885f2a0fad13bf87f44b9',1,'mkldnn']]],
-  ['weights_5fprimitive_5fdesc',['weights_primitive_desc',['../structmkldnn_1_1convolution__forward_1_1primitive__desc.html#a4db0ad8184f275dc5399dd92ba5ca273',1,'mkldnn::convolution_forward::primitive_desc::weights_primitive_desc()'],['../structmkldnn_1_1convolution__backward__data_1_1primitive__desc.html#af27aa82dce4e432fc322d170eccde79f',1,'mkldnn::convolution_backward_data::primitive_desc::weights_primitive_desc()'],['../structmkldnn_1_1batch__normalization__forward_1_1primitive__desc.html#a17def286fa82dab19e97e71ca399e371',1,'mkldnn::batch_normalization_forward::primitive_desc::weights_primitive_desc()'],['../structmkldnn_1_1batch__normalization__backward_1_1primitive__desc.html#ab2e95955930d28eef5d364fc1479aeec',1,'mkldnn::batch_normalization_backward::primitive_desc::weights_primitive_desc()'],['../structmkldnn_1_1inner__product__forward_1_1primitive__desc.html#a27d9576a431ef71144e5df8bc572b335',1,'mkldnn::inner_product_forward::primitive_desc::weights_primitive_desc()'],['../structmkldnn_1_1inner__product__backward__data_1_1primitive__desc.html#ad53b804b4763195e39a0bd97d869fc9c',1,'mkldnn::inner_product_backward_data::primitive_desc::weights_primitive_desc()']]],
-  ['workspace_5fpd',['workspace_pd',['../group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a41d00a7019d406614ebaa00195d179bd',1,'mkldnn']]],
-  ['workspace_5fprimitive_5fdesc',['workspace_primitive_desc',['../structmkldnn_1_1lrn__forward_1_1primitive__desc.html#a37f958457072fb439e812ea4c368970b',1,'mkldnn::lrn_forward::primitive_desc::workspace_primitive_desc()'],['../structmkldnn_1_1lrn__backward_1_1primitive__desc.html#ae12aeae20ba1445e8118f4c24471c81d',1,'mkldnn::lrn_backward::primitive_desc::workspace_primitive_desc()'],['../structmkldnn_1_1pooling__forward_1_1primitive__desc.html#acf2f297c819138ec4dc77179b8820f63',1,'mkldnn::pooling_forward::primitive_desc::workspace_primitive_desc()']]],
-  ['wrap_5fc_5fapi',['wrap_c_api',['../structmkldnn_1_1error.html#a8e8ca40a348b25f0b11bc211dc4d204f',1,'mkldnn::error']]]
+  ['weights_5fiter_5fdesc',['weights_iter_desc',['../structmkldnn__rnn__desc__t.html#ad5a51c64f1b0c001841b62ac6621a9ab',1,'mkldnn_rnn_desc_t']]],
+  ['weights_5flayer_5fdesc',['weights_layer_desc',['../structmkldnn__rnn__desc__t.html#aa926c70548408aa7976cc3fa69302b28',1,'mkldnn_rnn_desc_t']]],
+  ['weights_5fmd',['weights_md',['../group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a73b32c813f77816a24f730f81d48ccf8',1,'mkldnn']]],
+  ['wino_5fdesc',['wino_desc',['../structmkldnn__memory__desc__t.html#aa219a8379e78fc4a553e6af998759c78',1,'mkldnn_memory_desc_t']]],
+  ['wino_5fformat',['wino_format',['../structmkldnn__wino__desc__t.html#a002eea2e1ad54a9b2aed4bf0679731e0',1,'mkldnn_wino_desc_t']]],
+  ['winograd_20convolution',['Winograd Convolution',['../winograd_convolution.html',1,'']]],
+  ['winograd_5fconvolution_2emd',['winograd_convolution.md',['../winograd__convolution_8md.html',1,'']]],
+  ['wio',['wio',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda3768b23a10d360cec7585267e9a8f97e',1,'mkldnn::memory']]],
+  ['workspace_5fmd',['workspace_md',['../group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a9b380ca8224020a5fa767ed93eee36a5',1,'mkldnn']]],
+  ['wrap_5fc_5fapi',['wrap_c_api',['../structmkldnn_1_1error.html#a8e318dc8b0c09726e823899670086f2d',1,'mkldnn::error']]]
 ];
