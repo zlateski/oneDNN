@@ -113,6 +113,12 @@ Functions</h2></td></tr>
 <tr class="memitem:ga6b50538dbdab8f767bb6f734403d79f2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__memory.html#ga6b50538dbdab8f767bb6f734403d79f2">mkldnn_memory_get_engine</a> (<a class="el" href="group__c__api__types__memory.html#ga8bccb82071165d6eefef9d46ed802730">const_mkldnn_memory_t</a> memory, <a class="el" href="group__c__api__engine__types.html#ga40f5f917cdbf2215fa5324e4bf62d523">mkldnn_engine_t</a> *engine)</td></tr>
 <tr class="memdesc:ga6b50538dbdab8f767bb6f734403d79f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an <code>engine</code> associated with <code>memory</code>.  <a href="#ga6b50538dbdab8f767bb6f734403d79f2">More...</a><br/></td></tr>
 <tr class="separator:ga6b50538dbdab8f767bb6f734403d79f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1d4cae434757c698b00c340f00323382"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__memory.html#ga1d4cae434757c698b00c340f00323382">mkldnn_memory_map_data</a> (<a class="el" href="group__c__api__types__memory.html#ga8bccb82071165d6eefef9d46ed802730">const_mkldnn_memory_t</a> memory, void **mapped_ptr)</td></tr>
+<tr class="memdesc:ga1d4cae434757c698b00c340f00323382"><td class="mdescLeft">&#160;</td><td class="mdescRight">For a <code>memory</code>, maps the data of the memory to <code>mapped_ptr</code>.  <a href="#ga1d4cae434757c698b00c340f00323382">More...</a><br/></td></tr>
+<tr class="separator:ga1d4cae434757c698b00c340f00323382"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac61b4fdaad4d6af2e1ea4e0d30ef29cb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__memory.html#gac61b4fdaad4d6af2e1ea4e0d30ef29cb">mkldnn_memory_unmap_data</a> (<a class="el" href="group__c__api__types__memory.html#ga8bccb82071165d6eefef9d46ed802730">const_mkldnn_memory_t</a> memory, void *mapped_ptr)</td></tr>
+<tr class="memdesc:gac61b4fdaad4d6af2e1ea4e0d30ef29cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">For a <code>memory</code>, unmaps a mapped pointer to the data of the memory.  <a href="#gac61b4fdaad4d6af2e1ea4e0d30ef29cb">More...</a><br/></td></tr>
+<tr class="separator:gac61b4fdaad4d6af2e1ea4e0d30ef29cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga569c83ad7ecf0d0c037e41eb7e4a3da7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__memory.html#ga569c83ad7ecf0d0c037e41eb7e4a3da7">mkldnn_memory_get_data_handle</a> (<a class="el" href="group__c__api__types__memory.html#ga8bccb82071165d6eefef9d46ed802730">const_mkldnn_memory_t</a> memory, void **handle)</td></tr>
 <tr class="memdesc:ga569c83ad7ecf0d0c037e41eb7e4a3da7"><td class="mdescLeft">&#160;</td><td class="mdescRight">For a <code>memory</code>, returns the data <code>handle</code>.  <a href="#ga569c83ad7ecf0d0c037e41eb7e4a3da7">More...</a><br/></td></tr>
 <tr class="separator:ga569c83ad7ecf0d0c037e41eb7e4a3da7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -425,6 +431,65 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns an <code>engine</code> associated with <code>memory</code>. </p>
+
+</div>
+</div>
+<a class="anchor" id="ga1d4cae434757c698b00c340f00323382"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API mkldnn_memory_map_data </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__c__api__types__memory.html#ga8bccb82071165d6eefef9d46ed802730">const_mkldnn_memory_t</a>&#160;</td>
+          <td class="paramname"><em>memory</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void **&#160;</td>
+          <td class="paramname"><em>mapped_ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>For a <code>memory</code>, maps the data of the memory to <code>mapped_ptr</code>. </p>
+<p>Mapping allows to read/write directly from/to the memory contents for backends that do not support direct accessing.</p>
+<p>Mapping is an exclusive operation - a memory object cannot be used in other operations until this memory object is unmapped. </p>
+
+</div>
+</div>
+<a class="anchor" id="gac61b4fdaad4d6af2e1ea4e0d30ef29cb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API mkldnn_memory_unmap_data </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__c__api__types__memory.html#ga8bccb82071165d6eefef9d46ed802730">const_mkldnn_memory_t</a>&#160;</td>
+          <td class="paramname"><em>memory</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>mapped_ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>For a <code>memory</code>, unmaps a mapped pointer to the data of the memory. </p>
+<p>Any changes of the mapped data are synchronized back to the memory after the call is complete. The mapped pointer must be obtained through a mkldnn_memory_map_data call. </p>
 
 </div>
 </div>

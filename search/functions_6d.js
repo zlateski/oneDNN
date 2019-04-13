@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['map_5fdata',['map_data',['../structmkldnn_1_1memory.html#a777212e66feff5169d90f006bbd645be',1,'mkldnn::memory']]],
   ['mean_5fdesc',['mean_desc',['../structmkldnn_1_1batch__normalization__forward_1_1primitive__desc.html#a1f17b3ef35d24e2aa0df605164b8c0b5',1,'mkldnn::batch_normalization_forward::primitive_desc']]],
   ['memory',['memory',['../structmkldnn_1_1memory.html#a03bd8b5d6d4b395b9fcbb61c6ec1d0fa',1,'mkldnn::memory::memory(const desc &amp;md, const engine &amp;aengine, void *ahandle)'],['../structmkldnn_1_1memory.html#a08a92418619e374b167e830e3734daea',1,'mkldnn::memory::memory(const desc &amp;md, const engine &amp;aengine)']]],
   ['mkldnn_5falg_5fkind2str',['mkldnn_alg_kind2str',['../mkldnn__debug_8h.html#a2deda56952b03042925709fcb6225fd2',1,'mkldnn_debug.h']]],
@@ -46,7 +47,9 @@ var searchData=
   ['mkldnn_5fmemory_5fget_5fdata_5fhandle',['mkldnn_memory_get_data_handle',['../group__c__api__memory.html#ga569c83ad7ecf0d0c037e41eb7e4a3da7',1,'mkldnn.h']]],
   ['mkldnn_5fmemory_5fget_5fengine',['mkldnn_memory_get_engine',['../group__c__api__memory.html#ga6b50538dbdab8f767bb6f734403d79f2',1,'mkldnn.h']]],
   ['mkldnn_5fmemory_5fget_5fmemory_5fdesc',['mkldnn_memory_get_memory_desc',['../group__c__api__memory.html#ga3b9649ef5812e7ab642aa506f02eafda',1,'mkldnn.h']]],
+  ['mkldnn_5fmemory_5fmap_5fdata',['mkldnn_memory_map_data',['../group__c__api__memory.html#ga1d4cae434757c698b00c340f00323382',1,'mkldnn.h']]],
   ['mkldnn_5fmemory_5fset_5fdata_5fhandle',['mkldnn_memory_set_data_handle',['../group__c__api__memory.html#ga759fb1b03264d81b93803b9b56588a54',1,'mkldnn.h']]],
+  ['mkldnn_5fmemory_5funmap_5fdata',['mkldnn_memory_unmap_data',['../group__c__api__memory.html#gac61b4fdaad4d6af2e1ea4e0d30ef29cb',1,'mkldnn.h']]],
   ['mkldnn_5fpooling_5fbackward_5fdesc_5finit',['mkldnn_pooling_backward_desc_init',['../group__c__api__pooling.html#ga6e1b3f77868920226ace627a71616a67',1,'mkldnn.h']]],
   ['mkldnn_5fpooling_5fforward_5fdesc_5finit',['mkldnn_pooling_forward_desc_init',['../group__c__api__pooling.html#gaa2faa999574bfac8de5294bf5c471076',1,'mkldnn.h']]],
   ['mkldnn_5fpost_5fops_5fappend_5feltwise',['mkldnn_post_ops_append_eltwise',['../group__c__api__attributes__post__ops.html#gaeed621520cde0cc21f54e28f011b304c',1,'mkldnn.h']]],
