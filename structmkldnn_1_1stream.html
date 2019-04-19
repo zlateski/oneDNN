@@ -116,7 +116,10 @@ Collaboration diagram for mkldnn::stream:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:ae3a74b1a98a8085a4fcbbad0eb0dae92"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">: unsigned { <a class="el" href="structmkldnn_1_1stream.html#ae3a74b1a98a8085a4fcbbad0eb0dae92aa0ec83242d4156c861ec2c25e1577ed0">default_flags</a> = mkldnn_stream_default_flags
+<tr class="memitem:ae3a74b1a98a8085a4fcbbad0eb0dae92"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">: unsigned { <a class="el" href="structmkldnn_1_1stream.html#ae3a74b1a98a8085a4fcbbad0eb0dae92a4b2e39a44692c6524464cc9017794a63">default_order</a> = mkldnn_stream_default_order, 
+<a class="el" href="structmkldnn_1_1stream.html#ae3a74b1a98a8085a4fcbbad0eb0dae92ab74223044059231230a33b813dd55f5e">in_order</a> = mkldnn_stream_default_order, 
+<a class="el" href="structmkldnn_1_1stream.html#ae3a74b1a98a8085a4fcbbad0eb0dae92a93a70afe2b24bc2efb07e42e8684e313">out_of_order</a> = mkldnn_stream_out_of_order, 
+<a class="el" href="structmkldnn_1_1stream.html#ae3a74b1a98a8085a4fcbbad0eb0dae92aa0ec83242d4156c861ec2c25e1577ed0">default_flags</a> = mkldnn_stream_default_flags
  }</td></tr>
 <tr class="separator:ae3a74b1a98a8085a4fcbbad0eb0dae92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -125,6 +128,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a57760181f7d2a2de4f572313475b328f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1stream.html#a57760181f7d2a2de4f572313475b328f">stream</a> (const <a class="el" href="structmkldnn_1_1engine.html">engine</a> &amp;aengine, unsigned flags=static_cast&lt; unsigned &gt;(<a class="el" href="structmkldnn_1_1stream.html#ae3a74b1a98a8085a4fcbbad0eb0dae92aa0ec83242d4156c861ec2c25e1577ed0">default_flags</a>))</td></tr>
 <tr class="memdesc:a57760181f7d2a2de4f572313475b328f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a stream.  <a href="#a57760181f7d2a2de4f572313475b328f">More...</a><br/></td></tr>
 <tr class="separator:a57760181f7d2a2de4f572313475b328f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48181ce0f5eb3bcd75778b5aa8866df6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmkldnn_1_1stream.html">stream</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1stream.html#a48181ce0f5eb3bcd75778b5aa8866df6">wait</a> ()</td></tr>
+<tr class="memdesc:a48181ce0f5eb3bcd75778b5aa8866df6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for all primitives in the stream to finish.  <a href="#a48181ce0f5eb3bcd75778b5aa8866df6">More...</a><br/></td></tr>
+<tr class="separator:a48181ce0f5eb3bcd75778b5aa8866df6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classmkldnn_1_1handle"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classmkldnn_1_1handle')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classmkldnn_1_1handle.html">mkldnn::handle&lt; mkldnn_stream_t &gt;</a></td></tr>
 <tr class="memitem:a4194187ee28bdeab2b529f892e487ea3 inherit pub_methods_classmkldnn_1_1handle"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmkldnn_1_1handle.html#a4194187ee28bdeab2b529f892e487ea3">handle</a> (mkldnn_stream_tt=0, bool weak=false)</td></tr>
 <tr class="memdesc:a4194187ee28bdeab2b529f892e487ea3 inherit pub_methods_classmkldnn_1_1handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a C handle wrapper.  <a href="#a4194187ee28bdeab2b529f892e487ea3">More...</a><br/></td></tr>
@@ -163,7 +169,13 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="ae3a74b1a98a8085a4fcbbad0eb0dae92aa0ec83242d4156c861ec2c25e1577ed0"></a>default_flags</em>&nbsp;</td><td class="fielddoc">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="ae3a74b1a98a8085a4fcbbad0eb0dae92a4b2e39a44692c6524464cc9017794a63"></a>default_order</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="ae3a74b1a98a8085a4fcbbad0eb0dae92ab74223044059231230a33b813dd55f5e"></a>in_order</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="ae3a74b1a98a8085a4fcbbad0eb0dae92a93a70afe2b24bc2efb07e42e8684e313"></a>out_of_order</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="ae3a74b1a98a8085a4fcbbad0eb0dae92aa0ec83242d4156c861ec2c25e1577ed0"></a>default_flags</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
 </table>
 
@@ -203,6 +215,32 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructs a stream. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a48181ce0f5eb3bcd75778b5aa8866df6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmkldnn_1_1stream.html">stream</a>&amp; mkldnn::stream::wait </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Waits for all primitives in the stream to finish. </p>
 
 </div>
 </div>

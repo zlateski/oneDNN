@@ -5,6 +5,8 @@ var searchData=
   ['bac16a16b',['BAc16a16b',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda290bf244edbc4869ad90c282743dae5c',1,'mkldnn::memory']]],
   ['bacd',['bacd',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda905047c1575848f7c8196b5e1a32296b',1,'mkldnn::memory']]],
   ['bacd16a16b',['BAcd16a16b',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedadc91107174232ab3e3c410464748bb11',1,'mkldnn::memory']]],
+  ['bacd16b16a',['BAcd16b16a',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda3f347912fcb25f3b769493013e3cec8f',1,'mkldnn::memory']]],
+  ['bacde16b16',['BAcde16b16',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaf65eb2722680a79f12818b4159d119a2',1,'mkldnn::memory']]],
   ['backward',['backward',['../group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a05b9d88cfffee07540a51383b29a8016',1,'mkldnn']]],
   ['backward_5fbias',['backward_bias',['../group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a2dc572d907ceb34444e7784534500e3a',1,'mkldnn']]],
   ['backward_5fdata',['backward_data',['../group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8ab81b2707fb8a509e7b4fde96d4b4e29f',1,'mkldnn']]],

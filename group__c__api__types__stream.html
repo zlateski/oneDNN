@@ -103,7 +103,10 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:ga99541103c9e9f6241d7a312d39d2cff2"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__stream.html#ga99541103c9e9f6241d7a312d39d2cff2">mkldnn_stream_flags_t</a> { <a class="el" href="group__c__api__types__stream.html#gga99541103c9e9f6241d7a312d39d2cff2a8048500bb95413112046344427918c2d">mkldnn_stream_default_flags</a> = 0x0U
+<tr class="memitem:ga99541103c9e9f6241d7a312d39d2cff2"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__stream.html#ga99541103c9e9f6241d7a312d39d2cff2">mkldnn_stream_flags_t</a> { <a class="el" href="group__c__api__types__stream.html#gga99541103c9e9f6241d7a312d39d2cff2acd478495ebc14985b6c3e85aa5468c7b">mkldnn_stream_default_order</a> = 0x1U, 
+<a class="el" href="group__c__api__types__stream.html#gga99541103c9e9f6241d7a312d39d2cff2af6aaf47bef398802637698488dc4f8ca">mkldnn_stream_in_order</a> = 0x2U, 
+<a class="el" href="group__c__api__types__stream.html#gga99541103c9e9f6241d7a312d39d2cff2a2bd998d06beca9ac9ccd57111ac90391">mkldnn_stream_out_of_order</a> = 0x4U, 
+<a class="el" href="group__c__api__types__stream.html#gga99541103c9e9f6241d7a312d39d2cff2a8048500bb95413112046344427918c2d">mkldnn_stream_default_flags</a> = mkldnn_stream_default_order
  }</td></tr>
 <tr class="memdesc:ga99541103c9e9f6241d7a312d39d2cff2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stream flags.  <a href="group__c__api__types__stream.html#ga99541103c9e9f6241d7a312d39d2cff2">More...</a><br/></td></tr>
 <tr class="separator:ga99541103c9e9f6241d7a312d39d2cff2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -151,8 +154,18 @@ Enumerations</h2></td></tr>
 
 <p>Stream flags. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="gga99541103c9e9f6241d7a312d39d2cff2a8048500bb95413112046344427918c2d"></a>mkldnn_stream_default_flags</em>&nbsp;</td><td class="fielddoc">
-<p>A default stream configuration. </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="gga99541103c9e9f6241d7a312d39d2cff2acd478495ebc14985b6c3e85aa5468c7b"></a>mkldnn_stream_default_order</em>&nbsp;</td><td class="fielddoc">
+<p>Default order execution. </p>
+<p>Either in-order or out-of-order depending on the backend. </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="gga99541103c9e9f6241d7a312d39d2cff2af6aaf47bef398802637698488dc4f8ca"></a>mkldnn_stream_in_order</em>&nbsp;</td><td class="fielddoc">
+<p>In-order execution. </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="gga99541103c9e9f6241d7a312d39d2cff2a2bd998d06beca9ac9ccd57111ac90391"></a>mkldnn_stream_out_of_order</em>&nbsp;</td><td class="fielddoc">
+<p>Out-of-order execution. </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="gga99541103c9e9f6241d7a312d39d2cff2a8048500bb95413112046344427918c2d"></a>mkldnn_stream_default_flags</em>&nbsp;</td><td class="fielddoc">
+<p>Default stream configuration. </p>
 </td></tr>
 </table>
 

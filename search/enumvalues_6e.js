@@ -1,12 +1,16 @@
 var searchData=
 [
+  ['native',['native',['../group__cpp__api__enums.html#ggae7ae677040e89f183df87f4ba3a5eb6ea8e5f3adee38c8fccc13c1f3be0143796',1,'mkldnn']]],
   ['nc',['nc',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda4ff01f91c212576306e693c1a1ac4c12',1,'mkldnn::memory']]],
   ['ncdhw',['ncdhw',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda5dc81a175f020c19fa6c6de1b119be9a',1,'mkldnn::memory']]],
   ['ncdhw16c',['nCdhw16c',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda28f872d6caf404cfb706b2d69b2b8b64',1,'mkldnn::memory']]],
+  ['ncdhw16n16c',['NCdhw16n16c',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda8e83ae02615398e1eb5b65cc6033b62b',1,'mkldnn::memory']]],
   ['ncdhw4c',['nCdhw4c',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedab16eac10fd1a3c52bbdd130592b3e475',1,'mkldnn::memory']]],
   ['ncdhw8c',['nCdhw8c',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda4d37039770dd78417346b4dc7c73188b',1,'mkldnn::memory']]],
   ['nchw',['nchw',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedafc4fd623cc6ff8ed099be6d52743200a',1,'mkldnn::memory']]],
   ['nchw16c',['nChw16c',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda7ee460916f5c04b7f46e103474c543b7',1,'mkldnn::memory']]],
+  ['nchw16n16c',['NChw16n16c',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda3dc4edb3d4b88c1382ba663a21bf650e',1,'mkldnn::memory']]],
+  ['nchw32n32c',['NChw32n32c',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedab2ae7faa58ee0c225c9c810e3df2ca9f',1,'mkldnn::memory']]],
   ['nchw4c',['nChw4c',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaf22ffd40379d8886b817c6c07d1e051e',1,'mkldnn::memory']]],
   ['nchw8c',['nChw8c',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda248862baad8f48e384015ffd20327223',1,'mkldnn::memory']]],
   ['ncw',['ncw',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaf50ea8a967a354f8850f2e21120f4bee',1,'mkldnn::memory']]],

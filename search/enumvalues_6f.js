@@ -1,9 +1,11 @@
 var searchData=
 [
+  ['ocl',['ocl',['../group__cpp__api__enums.html#ggae7ae677040e89f183df87f4ba3a5eb6ea94141f35b626ac6a1b6e430fef4cdfd2',1,'mkldnn']]],
   ['odhwi16o',['Odhwi16o',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedafe5531230831268fe4924777e8d714a4',1,'mkldnn::memory']]],
   ['odhwi4o',['Odhwi4o',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedab22867ff8cf90c72a58f9c96876803bf',1,'mkldnn::memory']]],
   ['odhwi8o',['Odhwi8o',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda9c7f1f84be8ca2891abef4a4cbea4e1f',1,'mkldnn::memory']]],
   ['ohwi16o',['Ohwi16o',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedae01c9f565ec8b7a69ad2432df340dcf0',1,'mkldnn::memory']]],
+  ['ohwi32o',['Ohwi32o',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaf3bb6a6ac77444dc1ab11facefe21cb6',1,'mkldnn::memory']]],
   ['ohwi4o',['Ohwi4o',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda0c07384900eb3a630422af20abbd5455',1,'mkldnn::memory']]],
   ['ohwi8o',['Ohwi8o',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda2f135b7d8ff60dcce96a4919722b0fad',1,'mkldnn::memory']]],
   ['oi',['oi',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda4c8c6b41aae08b78d95bb5b76d28d22b',1,'mkldnn::memory']]],
@@ -20,9 +22,11 @@ var searchData=
   ['oihw16i16o',['OIhw16i16o',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda2f7490bd350bc8d194f2e4b67213adf7',1,'mkldnn::memory']]],
   ['oihw16o',['Oihw16o',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda11e304de746e771710096ae078582838',1,'mkldnn::memory']]],
   ['oihw16o16i',['OIhw16o16i',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda82c279649f9f84c2ef9a046e7777cac0',1,'mkldnn::memory']]],
+  ['oihw2o8i8o2i',['OIhw2o8i8o2i',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda53c004fa660ecd7bf4e8e9e2f26a0e96',1,'mkldnn::memory']]],
   ['oihw4i16o4i',['OIhw4i16o4i',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda1d6e70b0215713d38b885f9eb48bb882',1,'mkldnn::memory']]],
   ['oihw4i4o',['OIhw4i4o',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda0c5c27337371a9234400ec9bee270211',1,'mkldnn::memory']]],
   ['oihw4o',['Oihw4o',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaf15525608e0f239a1d1f691d9949cf6f',1,'mkldnn::memory']]],
+  ['oihw4o8i8o4i',['OIhw4o8i8o4i',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda5ea617e28a35e088de63f25d4fdda154',1,'mkldnn::memory']]],
   ['oihw8i16o2i',['OIhw8i16o2i',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaffaad9f0dac63a0880ee0bfd9b029888',1,'mkldnn::memory']]],
   ['oihw8i8o',['OIhw8i8o',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedab1ff88a5571cab5c4495acfb07669762',1,'mkldnn::memory']]],
   ['oihw8o16i2o',['OIhw8o16i2o',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedae2907c3b58ca4186e7f6a31343b352cd',1,'mkldnn::memory']]],
@@ -39,6 +43,7 @@ var searchData=
   ['oiw8o16i2o',['OIw8o16i2o',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedad57139901f5edd02d04055f8e15291df',1,'mkldnn::memory']]],
   ['oiw8o8i',['OIw8o8i',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda07e19f77f4ffe5b1004d86a81cbdfb08',1,'mkldnn::memory']]],
   ['op_5fd',['op_d',['../group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a28d8c4782a7d1d228fe0bee9954df493',1,'mkldnn']]],
+  ['out_5fof_5forder',['out_of_order',['../structmkldnn_1_1stream.html#ae3a74b1a98a8085a4fcbbad0eb0dae92a93a70afe2b24bc2efb07e42e8684e313',1,'mkldnn::stream']]],
   ['owi16o',['Owi16o',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda6b734f51d0c7fe644455e99d1b5e25dd',1,'mkldnn::memory']]],
   ['owi4o',['Owi4o',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda897a13f5c528153d97c3722f34e26922',1,'mkldnn::memory']]],
   ['owi8o',['Owi8o',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaab9e427702cc0469f4a567104b3e06cb',1,'mkldnn::memory']]]

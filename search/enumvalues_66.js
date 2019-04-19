@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['f16',['f16',['../structmkldnn_1_1memory.html#aa8a0d49cc7faaceef9d8f55d66bff57ba0d28f28538ae75d0a7a3bf49f217b8e0',1,'mkldnn::memory']]],
   ['f32',['f32',['../structmkldnn_1_1memory.html#aa8a0d49cc7faaceef9d8f55d66bff57baaf36765775c9522f12bc84c72ea8355d',1,'mkldnn::memory']]],
   ['format_5ftag_5flast',['format_tag_last',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda2c2bc600539627cf196297686597331c',1,'mkldnn::memory']]],
   ['format_5ftag_5fundef',['format_tag_undef',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda2f47ffb463b5307faf9f8288cfcc5c3d',1,'mkldnn::memory']]],

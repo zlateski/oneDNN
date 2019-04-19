@@ -199,6 +199,11 @@ Enumerations</h2></td></tr>
 <br/>
  }</td></tr>
 <tr class="separator:ga6d88ff11a07bae09a5c348d314c5d1d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae7ae677040e89f183df87f4ba3a5eb6e"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__enums.html#gae7ae677040e89f183df87f4ba3a5eb6e">mkldnn::backend_kind</a> { <a class="el" href="group__cpp__api__enums.html#ggae7ae677040e89f183df87f4ba3a5eb6ea8e5f3adee38c8fccc13c1f3be0143796">mkldnn::backend_kind::native</a> = mkldnn_backend_native, 
+<a class="el" href="group__cpp__api__enums.html#ggae7ae677040e89f183df87f4ba3a5eb6ea94141f35b626ac6a1b6e430fef4cdfd2">mkldnn::backend_kind::ocl</a> = mkldnn_backend_ocl
+ }</td></tr>
+<tr class="memdesc:gae7ae677040e89f183df87f4ba3a5eb6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Backend kinds.  <a href="group__cpp__api__enums.html#gae7ae677040e89f183df87f4ba3a5eb6e">More...</a><br/></td></tr>
+<tr class="separator:gae7ae677040e89f183df87f4ba3a5eb6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -216,6 +221,8 @@ Functions</h2></td></tr>
 <tr class="separator:ga1407076bcb584c18c5a343fe2f0958b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga7bb17e3c54dceba9073f4abcada1d9b6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__query.html#ga6eebc661a8a3437b49d9c677f8972fc9">mkldnn_query_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__enums.html#ga7bb17e3c54dceba9073f4abcada1d9b6">mkldnn::convert_to_c</a> (query aquery)</td></tr>
 <tr class="separator:ga7bb17e3c54dceba9073f4abcada1d9b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6e6e5f9bc75c92509a05448e0c4c1032"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__engine__types.html#ga48a2030f7076aea0ea6297b5c8f31f31">mkldnn_backend_kind_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__enums.html#ga6e6e5f9bc75c92509a05448e0c4c1032">mkldnn::convert_to_c</a> (backend_kind akind)</td></tr>
+<tr class="separator:ga6e6e5f9bc75c92509a05448e0c4c1032"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>A proxy to <a class="el" href="group__c__api__types.html">Types</a> in <a class="el" href="group__c__api.html">C API</a>. </p>
@@ -464,6 +471,36 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="gae7ae677040e89f183df87f4ba3a5eb6e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__cpp__api__enums.html#gae7ae677040e89f183df87f4ba3a5eb6e">mkldnn::backend_kind</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Backend kinds. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="ggae7ae677040e89f183df87f4ba3a5eb6ea8e5f3adee38c8fccc13c1f3be0143796"></a>native</em>&nbsp;</td><td class="fielddoc">
+<p>Native backend. </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="ggae7ae677040e89f183df87f4ba3a5eb6ea94141f35b626ac6a1b6e430fef4cdfd2"></a>ocl</em>&nbsp;</td><td class="fielddoc">
+<p>OpenCL backend. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="ga5a52fd80e2ec49a374387375d01dd994"></a>
 <div class="memitem">
@@ -621,6 +658,30 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">query&#160;</td>
           <td class="paramname"><em>aquery</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ga6e6e5f9bc75c92509a05448e0c4c1032"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__c__api__engine__types.html#ga48a2030f7076aea0ea6297b5c8f31f31">mkldnn_backend_kind_t</a> mkldnn::convert_to_c </td>
+          <td>(</td>
+          <td class="paramtype">backend_kind&#160;</td>
+          <td class="paramname"><em>akind</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
