@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
-   &#160;<span id="projectnumber">0.90.0</span>
+   &#160;<span id="projectnumber">0.18.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
   </td>
@@ -89,7 +89,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="structmkldnn__memory__desc__t-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">mkldnn_memory_desc_t Struct Reference<div class="ingroups"><a class="el" href="group__c__api__types__memory.html">Memory</a></div></div>  </div>
+<div class="title">mkldnn_memory_desc_t Struct Reference<div class="ingroups"><a class="el" href="group__c__api__types__op__descs.html">Operation descriptors</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -102,51 +102,58 @@ Collaboration diagram for mkldnn_memory_desc_t:</div>
 <div class="dyncontent">
 <div class="center"><img src="structmkldnn__memory__desc__t__coll__graph.png" border="0" usemap="#mkldnn__memory__desc__t_coll__map" alt="Collaboration graph"/></div>
 <map name="mkldnn__memory__desc__t_coll__map" id="mkldnn__memory__desc__t_coll__map">
-<area shape="rect" id="node2" href="structmkldnn__memory__extra__desc__t.html" title="Description of extra information stored in memory. " alt="" coords="20,5,175,46"/><area shape="rect" id="node3" href="structmkldnn__rnn__packed__desc__t.html" title="Description of tensor of packed weights for rnn. " alt="" coords="5,71,189,97"/><area shape="rect" id="node4" href="structmkldnn__blocking__desc__t.html" title="Generic description of blocked data layout for most memory formats. " alt="" coords="15,121,180,148"/><area shape="rect" id="node5" href="structmkldnn__wino__desc__t.html" title="Description of tensor of weights for winograd 2x3 convolution. " alt="" coords="25,172,169,199"/></map>
+<area shape="rect" id="node2" href="structmkldnn__rnn__packed__desc__t.html" title="Description of tensor of packed weights for rnn. " alt="" coords="5,5,189,32"/><area shape="rect" id="node3" href="structmkldnn__blocking__desc__t.html" title="Generic description of blocked data layout for most memory formats. " alt="" coords="213,5,379,32"/><area shape="rect" id="node4" href="structmkldnn__wino__desc__t.html" title="Description of tensor of weights for winograd 2x3 convolution. " alt="" coords="403,5,547,32"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
+<tr class="memitem:ae526956917623651d928b0ef87a55363"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga4f5c189c2ba9ef6444250299f1f8e973">mkldnn_primitive_kind_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__memory__desc__t.html#ae526956917623651d928b0ef87a55363">primitive_kind</a></td></tr>
+<tr class="memdesc:ae526956917623651d928b0ef87a55363"><td class="mdescLeft">&#160;</td><td class="mdescRight">The kind of primitive.  <a href="#ae526956917623651d928b0ef87a55363">More...</a><br/></td></tr>
+<tr class="separator:ae526956917623651d928b0ef87a55363"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8fc71fc8a04e665573f86442bda4dc4c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__memory__desc__t.html#a8fc71fc8a04e665573f86442bda4dc4c">ndims</a></td></tr>
 <tr class="memdesc:a8fc71fc8a04e665573f86442bda4dc4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of dimensions.  <a href="#a8fc71fc8a04e665573f86442bda4dc4c">More...</a><br/></td></tr>
 <tr class="separator:a8fc71fc8a04e665573f86442bda4dc4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c5fde2a68d65f5e0e7701463a91de50"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__memory__desc__t.html#a0c5fde2a68d65f5e0e7701463a91de50">dims</a></td></tr>
+<tr class="memitem:a0c5fde2a68d65f5e0e7701463a91de50"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__memory__desc__t.html#a0c5fde2a68d65f5e0e7701463a91de50">dims</a></td></tr>
 <tr class="memdesc:a0c5fde2a68d65f5e0e7701463a91de50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dimensions in the following order:  <a href="#a0c5fde2a68d65f5e0e7701463a91de50">More...</a><br/></td></tr>
 <tr class="separator:a0c5fde2a68d65f5e0e7701463a91de50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a441cabfef135618e8018a473ef633bb7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga826b2a9be4d94ac17f99bacac6d0cb29">mkldnn_data_type_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__memory__desc__t.html#a441cabfef135618e8018a473ef633bb7">data_type</a></td></tr>
 <tr class="memdesc:a441cabfef135618e8018a473ef633bb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data type of the tensor elements.  <a href="#a441cabfef135618e8018a473ef633bb7">More...</a><br/></td></tr>
 <tr class="separator:a441cabfef135618e8018a473ef633bb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a658027f9bfd06e73b9ecfcee6bd13192"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__memory__desc__t.html#a658027f9bfd06e73b9ecfcee6bd13192">padded_dims</a></td></tr>
-<tr class="memdesc:a658027f9bfd06e73b9ecfcee6bd13192"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of the data including padding in each dimension.  <a href="#a658027f9bfd06e73b9ecfcee6bd13192">More...</a><br/></td></tr>
-<tr class="separator:a658027f9bfd06e73b9ecfcee6bd13192"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a14d9a3d8dc375ec6a9d0c964391c9ec4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__memory__desc__t.html#a14d9a3d8dc375ec6a9d0c964391c9ec4">padded_offsets</a></td></tr>
-<tr class="memdesc:a14d9a3d8dc375ec6a9d0c964391c9ec4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Per-dimension offset from the padding to actual data, the top-level tensor with offsets applied must lie within the padding area.  <a href="#a14d9a3d8dc375ec6a9d0c964391c9ec4">More...</a><br/></td></tr>
-<tr class="separator:a14d9a3d8dc375ec6a9d0c964391c9ec4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd563403ebe33b60eda1aaae08e77be8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__memory__desc__t.html#afd563403ebe33b60eda1aaae08e77be8">offset0</a></td></tr>
-<tr class="memdesc:afd563403ebe33b60eda1aaae08e77be8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset from memory origin to the current block, non-zero only in a description of a memory sub-block.  <a href="#afd563403ebe33b60eda1aaae08e77be8">More...</a><br/></td></tr>
-<tr class="separator:afd563403ebe33b60eda1aaae08e77be8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeeaca6c6890e9486b9f49d514ef67573"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga1f6c390306d4c8a438c0efbff08c0539">mkldnn_format_kind_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__memory__desc__t.html#aeeaca6c6890e9486b9f49d514ef67573">format_kind</a></td></tr>
-<tr class="memdesc:aeeaca6c6890e9486b9f49d514ef67573"><td class="mdescLeft">&#160;</td><td class="mdescRight">Memory format kind.  <a href="#aeeaca6c6890e9486b9f49d514ef67573">More...</a><br/></td></tr>
-<tr class="separator:aeeaca6c6890e9486b9f49d514ef67573"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a4d6ff4258a8447f00aec1d1f57b624"><td class="memItemLeft" >union {</td></tr>
-<tr class="memitem:a46efe4b37c09e86bdae9dd4ed52f65ac"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="structmkldnn__blocking__desc__t.html">mkldnn_blocking_desc_t</a>&#160;&#160;&#160;<a class="el" href="structmkldnn__memory__desc__t.html#ab93d81dc3502465caad206777389c747">blocking</a></td></tr>
-<tr class="memdesc:a46efe4b37c09e86bdae9dd4ed52f65ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Description of the data layout for memory formats that use blocking.  <a href="#a46efe4b37c09e86bdae9dd4ed52f65ac">More...</a><br/></td></tr>
-<tr class="separator:a46efe4b37c09e86bdae9dd4ed52f65ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c7f0ab540cf34de3a38f1ff3cebc431"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="structmkldnn__wino__desc__t.html">mkldnn_wino_desc_t</a>&#160;&#160;&#160;<a class="el" href="structmkldnn__memory__desc__t.html#aa219a8379e78fc4a553e6af998759c78">wino_desc</a></td></tr>
-<tr class="memdesc:a3c7f0ab540cf34de3a38f1ff3cebc431"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tensor of weights for integer 8bit winograd convolution.  <a href="#a3c7f0ab540cf34de3a38f1ff3cebc431">More...</a><br/></td></tr>
-<tr class="separator:a3c7f0ab540cf34de3a38f1ff3cebc431"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a929d08c3caf6cd9362e7d342f635253d"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="structmkldnn__rnn__packed__desc__t.html">mkldnn_rnn_packed_desc_t</a>&#160;&#160;&#160;<a class="el" href="structmkldnn__memory__desc__t.html#a3d718050430b441becacab903ae6a0aa">rnn_packed_desc</a></td></tr>
-<tr class="memdesc:a929d08c3caf6cd9362e7d342f635253d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tensor of packed weights for RNN.  <a href="#a929d08c3caf6cd9362e7d342f635253d">More...</a><br/></td></tr>
-<tr class="separator:a929d08c3caf6cd9362e7d342f635253d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a4d6ff4258a8447f00aec1d1f57b624"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__memory__desc__t.html#a1a4d6ff4258a8447f00aec1d1f57b624">format_desc</a></td></tr>
-<tr class="separator:a1a4d6ff4258a8447f00aec1d1f57b624"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca773206a808b23fee49211829ef5fc9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmkldnn__memory__extra__desc__t.html">mkldnn_memory_extra_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__memory__desc__t.html#aca773206a808b23fee49211829ef5fc9">extra</a></td></tr>
-<tr class="separator:aca773206a808b23fee49211829ef5fc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99a2a66c29171fa838d1d5535dd3fbaf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga30a390f87ef74bf03dfa48a7b3f2fb74">mkldnn_memory_format_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__memory__desc__t.html#a99a2a66c29171fa838d1d5535dd3fbaf">format</a></td></tr>
+<tr class="memdesc:a99a2a66c29171fa838d1d5535dd3fbaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Memory format.  <a href="#a99a2a66c29171fa838d1d5535dd3fbaf">More...</a><br/></td></tr>
+<tr class="separator:a99a2a66c29171fa838d1d5535dd3fbaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae92e4e92d5c7728bffd29ab317908f12"><td class="memItemLeft" >union {</td></tr>
+<tr class="memitem:a06dfd444250139a25527977ba6748792"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="structmkldnn__blocking__desc__t.html">mkldnn_blocking_desc_t</a>&#160;&#160;&#160;<a class="el" href="structmkldnn__memory__desc__t.html#ab93d81dc3502465caad206777389c747">blocking</a></td></tr>
+<tr class="memdesc:a06dfd444250139a25527977ba6748792"><td class="mdescLeft">&#160;</td><td class="mdescRight">Description of the data layout for memory formats that use blocking.  <a href="#a06dfd444250139a25527977ba6748792">More...</a><br/></td></tr>
+<tr class="separator:a06dfd444250139a25527977ba6748792"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a009b48630baa3c9da935c036239b4499"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="structmkldnn__wino__desc__t.html">mkldnn_wino_desc_t</a>&#160;&#160;&#160;<a class="el" href="structmkldnn__memory__desc__t.html#aa219a8379e78fc4a553e6af998759c78">wino_desc</a></td></tr>
+<tr class="memdesc:a009b48630baa3c9da935c036239b4499"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tensor of weights for integer 8bit winograd convolution.  <a href="#a009b48630baa3c9da935c036239b4499">More...</a><br/></td></tr>
+<tr class="separator:a009b48630baa3c9da935c036239b4499"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3a11bc24d6ba9f4344ae58559183174"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="structmkldnn__rnn__packed__desc__t.html">mkldnn_rnn_packed_desc_t</a>&#160;&#160;&#160;<a class="el" href="structmkldnn__memory__desc__t.html#a3d718050430b441becacab903ae6a0aa">rnn_packed_desc</a></td></tr>
+<tr class="memdesc:ab3a11bc24d6ba9f4344ae58559183174"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tensor of packed weights for RNN.  <a href="#ab3a11bc24d6ba9f4344ae58559183174">More...</a><br/></td></tr>
+<tr class="separator:ab3a11bc24d6ba9f4344ae58559183174"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae92e4e92d5c7728bffd29ab317908f12"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__memory__desc__t.html#ae92e4e92d5c7728bffd29ab317908f12">layout_desc</a></td></tr>
+<tr class="separator:ae92e4e92d5c7728bffd29ab317908f12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Memory descriptor. </p>
 <p>The description is based on a number of dimensions, dimensions themselves, plus information about elements type and memory format. Additionally, contains format-specific descriptions of the data layout. </p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="ae526956917623651d928b0ef87a55363"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga4f5c189c2ba9ef6444250299f1f8e973">mkldnn_primitive_kind_t</a> mkldnn_memory_desc_t::primitive_kind</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The kind of primitive. </p>
+<p>Used for self-identifying the primitive descriptor. Must be <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973aacec523f11e0ef981ef4933a60fe4fa5" title="A memory primitive. ">mkldnn_memory</a>. </p>
+
+</div>
+</div>
 <a class="anchor" id="a8fc71fc8a04e665573f86442bda4dc4c"></a>
 <div class="memitem">
 <div class="memproto">
@@ -166,7 +173,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a> mkldnn_memory_desc_t::dims</td>
+          <td class="memname"><a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a> mkldnn_memory_desc_t::dims</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -178,7 +185,7 @@ Public Attributes</h2></td></tr>
 <li>RNN data tensors: time, mini-batch, channels (<code>{T, N, C}</code>) or layers, directions, states, mini-batch, channels (<code>{L, D, S, N, C}</code>)</li>
 <li>RNN weight tensor: layers, directions, input channel, gates, output channels (<code>{L, D, I, G, O}</code>).</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>The order of dimensions does not depend on the memory format, so whether the data is laid out in <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2baed4a51a8db128a648b942882369a06d6">mkldnn_nchw</a> or <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2badf1fb06f73cf8dd23ae620eea6516526">mkldnn_nhwc</a> the dims for 4D CN data tensor would be <code>{N, C, H, W}</code>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The order of dimensions does not depend on the memory format, so whether the data is laid out in <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74aed4a51a8db128a648b942882369a06d6" title="4D data tensor with the physical layout nchw, used in Caffe. ">mkldnn_nchw</a> or <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74adf1fb06f73cf8dd23ae620eea6516526" title="4D data tensor with the physical layout nhwc, used in TensorFlow. ">mkldnn_nhwc</a> the dims for 4D CN data tensor would be <code>{N, C, H, W}</code>. </dd></dl>
 
 </div>
 </div>
@@ -196,59 +203,17 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a658027f9bfd06e73b9ecfcee6bd13192"></a>
+<a class="anchor" id="a99a2a66c29171fa838d1d5535dd3fbaf"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a> mkldnn_memory_desc_t::padded_dims</td>
+          <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga30a390f87ef74bf03dfa48a7b3f2fb74">mkldnn_memory_format_t</a> mkldnn_memory_desc_t::format</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Size of the data including padding in each dimension. </p>
-
-</div>
-</div>
-<a class="anchor" id="a14d9a3d8dc375ec6a9d0c964391c9ec4"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a> mkldnn_memory_desc_t::padded_offsets</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Per-dimension offset from the padding to actual data, the top-level tensor with offsets applied must lie within the padding area. </p>
-
-</div>
-</div>
-<a class="anchor" id="afd563403ebe33b60eda1aaae08e77be8"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a> mkldnn_memory_desc_t::offset0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Offset from memory origin to the current block, non-zero only in a description of a memory sub-block. </p>
-
-</div>
-</div>
-<a class="anchor" id="aeeaca6c6890e9486b9f49d514ef67573"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga1f6c390306d4c8a438c0efbff08c0539">mkldnn_format_kind_t</a> mkldnn_memory_desc_t::format_kind</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Memory format kind. </p>
+<p>Memory format. </p>
 
 </div>
 </div>
@@ -294,24 +259,12 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a1a4d6ff4258a8447f00aec1d1f57b624"></a>
+<a class="anchor" id="ae92e4e92d5c7728bffd29ab317908f12"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">union { ... }   mkldnn_memory_desc_t::format_desc</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="aca773206a808b23fee49211829ef5fc9"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structmkldnn__memory__extra__desc__t.html">mkldnn_memory_extra_desc_t</a> mkldnn_memory_desc_t::extra</td>
+          <td class="memname">union { ... }   mkldnn_memory_desc_t::layout_desc</td>
         </tr>
       </table>
 </div><div class="memdoc">

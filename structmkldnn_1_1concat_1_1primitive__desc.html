@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
-   &#160;<span id="projectnumber">0.90.0</span>
+   &#160;<span id="projectnumber">0.18.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
   </td>
@@ -115,16 +115,15 @@ Collaboration diagram for mkldnn::concat::primitive_desc:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2117c871db526fb22a9165c77a077501"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1concat_1_1primitive__desc.html#a2117c871db526fb22a9165c77a077501">cpp_to_c</a> (const std::vector&lt; <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &gt; &amp;srcs)</td></tr>
-<tr class="separator:a2117c871db526fb22a9165c77a077501"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f5b82cfbf2dce087926fb6ff8794e58"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1concat_1_1primitive__desc.html#a7f5b82cfbf2dce087926fb6ff8794e58">primitive_desc</a> (const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;dst, int concat_dimension, const std::vector&lt; <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &gt; &amp;srcs, const <a class="el" href="structmkldnn_1_1engine.html">engine</a> &amp;aengine)</td></tr>
-<tr class="separator:a7f5b82cfbf2dce087926fb6ff8794e58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa7222b2be3bbdcb96db2a31084f6a425"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1concat_1_1primitive__desc.html#aa7222b2be3bbdcb96db2a31084f6a425">primitive_desc</a> (int concat_dimension, const std::vector&lt; <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &gt; &amp;srcs, const <a class="el" href="structmkldnn_1_1engine.html">engine</a> &amp;aengine)</td></tr>
-<tr class="separator:aa7222b2be3bbdcb96db2a31084f6a425"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a509c7d07469cd78f41be538b0b7719f2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1concat_1_1primitive__desc.html#a509c7d07469cd78f41be538b0b7719f2">dst_desc</a> () const </td></tr>
-<tr class="separator:a509c7d07469cd78f41be538b0b7719f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4d04f3d00d54ca91d27fd5a59fda8ad"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1concat_1_1primitive__desc.html#ad4d04f3d00d54ca91d27fd5a59fda8ad">scratchpad_desc</a> () const </td></tr>
-<tr class="separator:ad4d04f3d00d54ca91d27fd5a59fda8ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac793435e6dbb7c2a3777e9aa5daf9282"><td class="memItemLeft" align="right" valign="top">std::vector<br class="typebreak"/>
+&lt; <a class="el" href="group__c__api__primitive__descs.html#ga9f002a6449ae9be775393e888698cfe0">const_mkldnn_primitive_desc_t</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1concat_1_1primitive__desc.html#ac793435e6dbb7c2a3777e9aa5daf9282">cpp_to_c</a> (std::vector&lt; <a class="el" href="structmkldnn_1_1memory_1_1primitive__desc.html">memory::primitive_desc</a> &gt; inputs)</td></tr>
+<tr class="separator:ac793435e6dbb7c2a3777e9aa5daf9282"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8be0ff3001d2bdd5b8c1e50bf53613a8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1concat_1_1primitive__desc.html#a8be0ff3001d2bdd5b8c1e50bf53613a8">primitive_desc</a> (const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;output, int concat_dimension, std::vector&lt; <a class="el" href="structmkldnn_1_1memory_1_1primitive__desc.html">memory::primitive_desc</a> &gt; inputs)</td></tr>
+<tr class="separator:a8be0ff3001d2bdd5b8c1e50bf53613a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a708b10a34b8d4cff18927a8a37a583ff"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1concat_1_1primitive__desc.html#a708b10a34b8d4cff18927a8a37a583ff">primitive_desc</a> (int concat_dimension, std::vector&lt; <a class="el" href="structmkldnn_1_1memory_1_1primitive__desc.html">memory::primitive_desc</a> &gt; inputs)</td></tr>
+<tr class="separator:a708b10a34b8d4cff18927a8a37a583ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c5daa99eb3baf8d236b573cd21199fd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmkldnn_1_1memory_1_1primitive__desc.html">memory::primitive_desc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1concat_1_1primitive__desc.html#a3c5daa99eb3baf8d236b573cd21199fd">dst_primitive_desc</a> () const </td></tr>
+<tr class="separator:a3c5daa99eb3baf8d236b573cd21199fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af78445af4c6965c97d82d63dc2310589"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmkldnn_1_1engine.html">engine</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1concat_1_1primitive__desc.html#af78445af4c6965c97d82d63dc2310589">get_engine</a> ()</td></tr>
 <tr class="separator:af78445af4c6965c97d82d63dc2310589"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classmkldnn_1_1handle"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classmkldnn_1_1handle')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classmkldnn_1_1handle.html">mkldnn::handle&lt; mkldnn_primitive_desc_t &gt;</a></td></tr>
@@ -155,7 +154,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:af25c0061b4f7372601556f571cb2b5e2 inherit pro_methods_classmkldnn_1_1handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a7f5b82cfbf2dce087926fb6ff8794e58"></a>
+<a class="anchor" id="a8be0ff3001d2bdd5b8c1e50bf53613a8"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -166,7 +165,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">mkldnn::concat::primitive_desc::primitive_desc </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;&#160;</td>
-          <td class="paramname"><em>dst</em>, </td>
+          <td class="paramname"><em>output</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -177,14 +176,8 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::vector&lt; <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>srcs</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="structmkldnn_1_1engine.html">engine</a> &amp;&#160;</td>
-          <td class="paramname"><em>aengine</em>&#160;</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="structmkldnn_1_1memory_1_1primitive__desc.html">memory::primitive_desc</a> &gt;&#160;</td>
+          <td class="paramname"><em>inputs</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -201,7 +194,7 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aa7222b2be3bbdcb96db2a31084f6a425"></a>
+<a class="anchor" id="a708b10a34b8d4cff18927a8a37a583ff"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -217,14 +210,8 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::vector&lt; <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>srcs</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="structmkldnn_1_1engine.html">engine</a> &amp;&#160;</td>
-          <td class="paramname"><em>aengine</em>&#160;</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="structmkldnn_1_1memory_1_1primitive__desc.html">memory::primitive_desc</a> &gt;&#160;</td>
+          <td class="paramname"><em>inputs</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -242,7 +229,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a2117c871db526fb22a9165c77a077501"></a>
+<a class="anchor" id="ac793435e6dbb7c2a3777e9aa5daf9282"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -250,10 +237,10 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a>&gt; mkldnn::concat::primitive_desc::cpp_to_c </td>
+          <td class="memname">std::vector&lt;<a class="el" href="group__c__api__primitive__descs.html#ga9f002a6449ae9be775393e888698cfe0">const_mkldnn_primitive_desc_t</a>&gt; mkldnn::concat::primitive_desc::cpp_to_c </td>
           <td>(</td>
-          <td class="paramtype">const std::vector&lt; <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>srcs</em></td><td>)</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="structmkldnn_1_1memory_1_1primitive__desc.html">memory::primitive_desc</a> &gt;&#160;</td>
+          <td class="paramname"><em>inputs</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -266,7 +253,7 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a509c7d07469cd78f41be538b0b7719f2"></a>
+<a class="anchor" id="a3c5daa99eb3baf8d236b573cd21199fd"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -274,30 +261,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> mkldnn::concat::primitive_desc::dst_desc </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ad4d04f3d00d54ca91d27fd5a59fda8ad"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> mkldnn::concat::primitive_desc::scratchpad_desc </td>
+          <td class="memname"><a class="el" href="structmkldnn_1_1memory_1_1primitive__desc.html">memory::primitive_desc</a> mkldnn::concat::primitive_desc::dst_primitive_desc </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>

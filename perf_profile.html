@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
-   &#160;<span id="projectnumber">0.90.0</span>
+   &#160;<span id="projectnumber">0.18.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
   </td>
@@ -111,17 +111,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <hr/>
 <p> <b>WARNING</b> Verbose mode has non-negligible performance impact especially if the output rate is high. </p>
 <hr/>
-<h2>Integration with performance profilers</h2>
-<p>When running under Intel VTune, Intel MKL-DNN notifies the Intel VTune runtime about generated code so that it is able to correctly attribute PMU events.</p>
-<p>Setting CMake option <code>MKLDNN_ENABLE_JIT_PROFILING=OFF</code> turns off integration with Intel VTune completely. Adding <code>-DMKLDNN_ENABLE_JIT_PROFILING=0</code> to the compiler flags has the same effect.</p>
-<h2>Dumping JIT-kernels</h2>
-<p>To write JIT-kernels code to files, set <code>MKLDNN_JIT_DUMP</code> environment variable to <code>1</code>. For example:</p>
+<h2>Intel(R) VTune(TM) profiling</h2>
+<p>To collect performance data of JIT-kernels set <code>VTUNEROOT</code> environment variable to path to VTune before building of Intel MKL-DNN. For example:</p>
+<p>``` $ mkdir -p build &amp;&amp; cd build &amp;&amp; cmake -DVTUNEROOT=/path/to/vtune .. &amp;&amp; make ```</p>
+<h2>Dump JIT-kernels</h2>
+<p>To dump JIT-kernels set MKLDNN_JIT_DUMP environment variable to <code>1</code>. For example:</p>
 <p>``` $ export MKLDNN_JIT_DUMP=1 $ ./simple-net-c ```</p>
-<p>This will produce the following output files:</p>
-<p>``` mkldnn_dump_jit_uni_reorder_kernel_f32.0.bin mkldnn_dump_jit_avx2_conv_fwd_kernel_f32.1.bin mkldnn_dump_jit_uni_relu_kernel_f32.2.bin mkldnn_dump_jit_uni_lrn_fwd_kernel_f32.3.bin mkldnn_dump_jit_uni_lrn_fwd_kernel_f32.4.bin mkldnn_dump_jit_uni_lrn_fwd_kernel_f32.5.bin mkldnn_dump_jit_uni_reorder_kernel_f32.6.bin mkldnn_dump_jit_uni_pool_kernel_f32.7.bin ```</p>
-<p>Use any disassembler to view the code. For example:</p>
+<p>This will produce the following output files: </p>
+<pre class="fragment">mkldnn_dump_jit_uni_reorder_kernel_f32.0.bin
+mkldnn_dump_jit_avx2_conv_fwd_kernel_f32.1.bin
+mkldnn_dump_jit_uni_relu_kernel_f32.2.bin
+mkldnn_dump_jit_uni_lrn_fwd_kernel_f32.3.bin
+mkldnn_dump_jit_uni_lrn_fwd_kernel_f32.4.bin
+mkldnn_dump_jit_uni_lrn_fwd_kernel_f32.5.bin
+mkldnn_dump_jit_uni_reorder_kernel_f32.6.bin
+mkldnn_dump_jit_uni_pool_kernel_f32.7.bin
+</pre><p>To open these files any disassembler can be used. For example:</p>
 <p>``` $ xed -64 -ir mkldnn_dump_jit_avx2_conv_fwd_kernel_f32.1.bin XDIS 0: PUSH BASE 53 push rbx XDIS 1: PUSH BASE 55 push rbp XDIS 2: PUSH BASE 4154 push r12 XDIS 4: PUSH BASE 4155 push r13 XDIS 6: PUSH BASE 4156 push r14 XDIS 8: PUSH BASE 4157 push r15 XDIS a: DATAXFER BASE 488B07 mov rax, qword ptr [rdi] XDIS d: DATAXFER BASE 488B7708 mov rsi, qword ptr [rdi+0x8] XDIS 11: DATAXFER BASE 488B5710 mov rdx, qword ptr [rdi+0x10] XDIS 15: DATAXFER BASE 488B5F18 mov rbx, qword ptr [rdi+0x18] XDIS 19: DATAXFER BASE 488B8F98000000 mov rcx, qword ptr [rdi+0x98] XDIS 20: DATAXFER BASE 448BAF00010000 mov r13d, dword ptr [rdi+0x100] XDIS 27: DATAXFER BASE 4C8BB7D0000000 mov r14, qword ptr [rdi+0xd0] XDIS 2e: BINARY BASE 4983FE04 cmp r14, 0x4 XDIS 32: COND_BR BASE 0F85EF030000 jnz 0x427 XDIS 38: LOGICAL BASE 4D31DB xor r11, r11 XDIS 3b: LOGICAL BASE 41F7C510000000 test r13d, 0x10 XDIS 42: COND_BR BASE 0F8558000000 jnz 0xa0 XDIS 48: DATAXFER AVX C5FC1006 vmovups ymm0, ymmword ptr [rsi] XDIS 4c: DATAXFER AVX C5FC104E20 vmovups ymm1, ymmword ptr [rsi+0x20] XDIS 51: DATAXFER AVX C5FC105640 vmovups ymm2, ymmword ptr [rsi+0x40] XDIS 56: DATAXFER AVX C5FC109E207A0100 vmovups ymm3, ymmword ptr [rsi+0x17a20] ... ```</p>
-<p>Or use <code>objdump -D -b binary -mi386:x86-64</code>.</p>
 <p><a class="el" href="legal_information.html">Legal information</a> </p>
 </div></div><!-- contents -->
 <!-- start footer part -->

@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
-   &#160;<span id="projectnumber">0.90.0</span>
+   &#160;<span id="projectnumber">0.18.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
   </td>
@@ -89,7 +89,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="structmkldnn__convolution__desc__t-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">mkldnn_convolution_desc_t Struct Reference<div class="ingroups"><a class="el" href="group__c__api__types__op__descs.html">Operation descriptors</a></div></div>  </div>
+<div class="title">mkldnn_convolution_desc_t Struct Reference<div class="ingroups"><a class="el" href="group__c__api__types__memory.html">Auxiliary types for memory description</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -102,7 +102,7 @@ Collaboration diagram for mkldnn_convolution_desc_t:</div>
 <div class="dyncontent">
 <div class="center"><img src="structmkldnn__convolution__desc__t__coll__graph.png" border="0" usemap="#mkldnn__convolution__desc__t_coll__map" alt="Collaboration graph"/></div>
 <map name="mkldnn__convolution__desc__t_coll__map" id="mkldnn__convolution__desc__t_coll__map">
-<area shape="rect" id="node2" href="structmkldnn__memory__desc__t.html" title="Memory descriptor. " alt="" coords="345,109,509,136"/><area shape="rect" id="node3" href="structmkldnn__memory__extra__desc__t.html" title="Description of extra information stored in memory. " alt="" coords="20,18,175,59"/><area shape="rect" id="node4" href="structmkldnn__rnn__packed__desc__t.html" title="Description of tensor of packed weights for rnn. " alt="" coords="5,84,189,111"/><area shape="rect" id="node5" href="structmkldnn__blocking__desc__t.html" title="Generic description of blocked data layout for most memory formats. " alt="" coords="15,135,180,161"/><area shape="rect" id="node6" href="structmkldnn__wino__desc__t.html" title="Description of tensor of weights for winograd 2x3 convolution. " alt="" coords="25,185,169,212"/></map>
+<area shape="rect" id="node2" href="structmkldnn__memory__desc__t.html" title="Memory descriptor. " alt="" coords="214,96,377,123"/><area shape="rect" id="node3" href="structmkldnn__rnn__packed__desc__t.html" title="Description of tensor of packed weights for rnn. " alt="" coords="5,5,189,32"/><area shape="rect" id="node4" href="structmkldnn__blocking__desc__t.html" title="Generic description of blocked data layout for most memory formats. " alt="" coords="213,5,379,32"/><area shape="rect" id="node5" href="structmkldnn__wino__desc__t.html" title="Description of tensor of weights for winograd 2x3 convolution. " alt="" coords="403,5,547,32"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -140,13 +140,13 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a715b7110d7534dbeb695191f80f4c0a8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__convolution__desc__t.html#a715b7110d7534dbeb695191f80f4c0a8">diff_dst_desc</a></td></tr>
 <tr class="memdesc:a715b7110d7534dbeb695191f80f4c0a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destination gradient memory descriptor.  <a href="#a715b7110d7534dbeb695191f80f4c0a8">More...</a><br/></td></tr>
 <tr class="separator:a715b7110d7534dbeb695191f80f4c0a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55fa258e8e2ddc24de4c6fdf5562501f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__convolution__desc__t.html#a55fa258e8e2ddc24de4c6fdf5562501f">strides</a></td></tr>
+<tr class="memitem:a55fa258e8e2ddc24de4c6fdf5562501f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__convolution__desc__t.html#a55fa258e8e2ddc24de4c6fdf5562501f">strides</a></td></tr>
 <tr class="memdesc:a55fa258e8e2ddc24de4c6fdf5562501f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convolution strides in each spatial dimension.  <a href="#a55fa258e8e2ddc24de4c6fdf5562501f">More...</a><br/></td></tr>
 <tr class="separator:a55fa258e8e2ddc24de4c6fdf5562501f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae06d5bc00c7d8c3febf2da9b3d93ed0c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__convolution__desc__t.html#ae06d5bc00c7d8c3febf2da9b3d93ed0c">dilates</a></td></tr>
+<tr class="memitem:ae06d5bc00c7d8c3febf2da9b3d93ed0c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__convolution__desc__t.html#ae06d5bc00c7d8c3febf2da9b3d93ed0c">dilates</a></td></tr>
 <tr class="memdesc:ae06d5bc00c7d8c3febf2da9b3d93ed0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convolution dilates in each spatial dimension.  <a href="#ae06d5bc00c7d8c3febf2da9b3d93ed0c">More...</a><br/></td></tr>
 <tr class="separator:ae06d5bc00c7d8c3febf2da9b3d93ed0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a17fe86eb25fef8516a92863f2a58d1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__convolution__desc__t.html#a3a17fe86eb25fef8516a92863f2a58d1">padding</a> [2]</td></tr>
+<tr class="memitem:a3a17fe86eb25fef8516a92863f2a58d1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__convolution__desc__t.html#a3a17fe86eb25fef8516a92863f2a58d1">padding</a> [2]</td></tr>
 <tr class="memdesc:a3a17fe86eb25fef8516a92863f2a58d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Padding in each spatial dimension.  <a href="#a3a17fe86eb25fef8516a92863f2a58d1">More...</a><br/></td></tr>
 <tr class="separator:a3a17fe86eb25fef8516a92863f2a58d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2801dcab800144330e52eea6ce664353"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga1823708d8b9d445fe177295f2b5d74bd">mkldnn_padding_kind_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__convolution__desc__t.html#a2801dcab800144330e52eea6ce664353">padding_kind</a></td></tr>
@@ -321,7 +321,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a> mkldnn_convolution_desc_t::strides</td>
+          <td class="memname"><a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a> mkldnn_convolution_desc_t::strides</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -335,7 +335,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a> mkldnn_convolution_desc_t::dilates</td>
+          <td class="memname"><a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a> mkldnn_convolution_desc_t::dilates</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -349,7 +349,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a> mkldnn_convolution_desc_t::padding[2]</td>
+          <td class="memname"><a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a> mkldnn_convolution_desc_t::padding[2]</td>
         </tr>
       </table>
 </div><div class="memdoc">

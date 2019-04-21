@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
-   &#160;<span id="projectnumber">0.90.0</span>
+   &#160;<span id="projectnumber">0.18.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
   </td>
@@ -119,16 +119,14 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aac63c59c43f8b1620e1e60971c087280"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf0ccbaeebffb3c73fdef669b7664626"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1deconvolution__backward__weights_1_1primitive__desc.html#acf0ccbaeebffb3c73fdef669b7664626">primitive_desc</a> (const <a class="el" href="structmkldnn_1_1deconvolution__backward__weights_1_1desc.html">desc</a> &amp;<a class="el" href="structmkldnn_1_1deconvolution__backward__weights_1_1desc.html">desc</a>, const <a class="el" href="structmkldnn_1_1primitive__attr.html">primitive_attr</a> &amp;attr, const <a class="el" href="structmkldnn_1_1engine.html">engine</a> &amp;e, const <a class="el" href="structmkldnn_1_1deconvolution__forward_1_1primitive__desc.html">deconvolution_forward::primitive_desc</a> &amp;hint_fwd_pd)</td></tr>
 <tr class="separator:acf0ccbaeebffb3c73fdef669b7664626"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65630cf2d62f7dbc980ec564e8e65b1d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1deconvolution__backward__weights_1_1primitive__desc.html#a65630cf2d62f7dbc980ec564e8e65b1d">REG_QUERY_MD</a> (src, src, 0)</td></tr>
-<tr class="separator:a65630cf2d62f7dbc980ec564e8e65b1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee65619f9cd192a3f800be38cae04719"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1deconvolution__backward__weights_1_1primitive__desc.html#aee65619f9cd192a3f800be38cae04719">REG_QUERY_MD</a> (diff_weights, diff_weights, 0)</td></tr>
-<tr class="separator:aee65619f9cd192a3f800be38cae04719"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9b91954df6cec1921d5255a12eae4fb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1deconvolution__backward__weights_1_1primitive__desc.html#aa9b91954df6cec1921d5255a12eae4fb">REG_QUERY_MD</a> (diff_bias, diff_weights, 1)</td></tr>
-<tr class="separator:aa9b91954df6cec1921d5255a12eae4fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92d448f759c576c3b6ecd016c79f4387"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1deconvolution__backward__weights_1_1primitive__desc.html#a92d448f759c576c3b6ecd016c79f4387">REG_QUERY_MD</a> (diff_dst, diff_dst, 0)</td></tr>
-<tr class="separator:a92d448f759c576c3b6ecd016c79f4387"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0e6c491821f3b5411c58f5766a96104"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1deconvolution__backward__weights_1_1primitive__desc.html#aa0e6c491821f3b5411c58f5766a96104">REG_QUERY_MD</a> (scratchpad, scratchpad, 0)</td></tr>
-<tr class="separator:aa0e6c491821f3b5411c58f5766a96104"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71ffe9222e5d4e0a69f368fd0f23f664"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1deconvolution__backward__weights_1_1primitive__desc.html#a71ffe9222e5d4e0a69f368fd0f23f664">REG_QUERY_MPD</a> (src, src, 0)</td></tr>
+<tr class="separator:a71ffe9222e5d4e0a69f368fd0f23f664"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32f54f66bd773a13163da884860bfc38"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1deconvolution__backward__weights_1_1primitive__desc.html#a32f54f66bd773a13163da884860bfc38">REG_QUERY_MPD</a> (diff_weights, diff_weights, 0)</td></tr>
+<tr class="separator:a32f54f66bd773a13163da884860bfc38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47a61ee048a0333cfc8a52113941a33c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1deconvolution__backward__weights_1_1primitive__desc.html#a47a61ee048a0333cfc8a52113941a33c">REG_QUERY_MPD</a> (diff_bias, diff_weights, 1)</td></tr>
+<tr class="separator:a47a61ee048a0333cfc8a52113941a33c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fd32ca320a7c2e9e665e02ecc9be7fc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1deconvolution__backward__weights_1_1primitive__desc.html#a6fd32ca320a7c2e9e665e02ecc9be7fc">REG_QUERY_MPD</a> (diff_dst, diff_dst, 0)</td></tr>
+<tr class="separator:a6fd32ca320a7c2e9e665e02ecc9be7fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_structmkldnn_1_1primitive__desc"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_structmkldnn_1_1primitive__desc')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="structmkldnn_1_1primitive__desc.html">mkldnn::primitive_desc</a></td></tr>
 <tr class="memitem:a3bdfcd525cc732628e65b3b867fead46 inherit pub_methods_structmkldnn_1_1primitive__desc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1primitive__desc.html#a3bdfcd525cc732628e65b3b867fead46">primitive_desc</a> (<a class="el" href="group__c__api__types__op__descs.html#gac7e49603b052255540a6f6dc072a627c">const_mkldnn_op_desc_t</a> desc, const <a class="el" href="structmkldnn_1_1primitive__attr.html">primitive_attr</a> *attr, const <a class="el" href="structmkldnn_1_1engine.html">engine</a> &amp;e, <a class="el" href="group__c__api__primitive__descs.html#ga9f002a6449ae9be775393e888698cfe0">const_mkldnn_primitive_desc_t</a> hint_fwd_pd)</td></tr>
 <tr class="separator:a3bdfcd525cc732628e65b3b867fead46 inherit pub_methods_structmkldnn_1_1primitive__desc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -139,15 +137,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a60d941535e513ca4dc60076d60351bdb inherit pub_methods_structmkldnn_1_1primitive__desc"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1primitive__desc.html#a60d941535e513ca4dc60076d60351bdb">impl_info_str</a> () const </td></tr>
 <tr class="memdesc:a60d941535e513ca4dc60076d60351bdb inherit pub_methods_structmkldnn_1_1primitive__desc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns implementation name.  <a href="#a60d941535e513ca4dc60076d60351bdb">More...</a><br/></td></tr>
 <tr class="separator:a60d941535e513ca4dc60076d60351bdb inherit pub_methods_structmkldnn_1_1primitive__desc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae4789762531751924dd4650a455a9731 inherit pub_methods_structmkldnn_1_1primitive__desc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmkldnn_1_1memory.html#ac84929ec8bd1bba9d7c5723ad6d93906">memory::dim</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1primitive__desc.html#ae4789762531751924dd4650a455a9731">query_s64</a> (<a class="el" href="group__cpp__api__enums.html#ga6d88ff11a07bae09a5c348d314c5d1d9">query</a> q) const </td></tr>
-<tr class="memdesc:ae4789762531751924dd4650a455a9731 inherit pub_methods_structmkldnn_1_1primitive__desc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queries the <a class="el" href="structmkldnn_1_1memory.html#ac84929ec8bd1bba9d7c5723ad6d93906">memory::dim</a> value (same as int64_t)  <a href="#ae4789762531751924dd4650a455a9731">More...</a><br/></td></tr>
-<tr class="separator:ae4789762531751924dd4650a455a9731 inherit pub_methods_structmkldnn_1_1primitive__desc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92fa1a8b789ab757c2cf811a74e696ef inherit pub_methods_structmkldnn_1_1primitive__desc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1primitive__desc.html#a92fa1a8b789ab757c2cf811a74e696ef">next_impl</a> ()</td></tr>
 <tr class="memdesc:a92fa1a8b789ab757c2cf811a74e696ef inherit pub_methods_structmkldnn_1_1primitive__desc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Advances the next implementation for the given op descriptor.  <a href="#a92fa1a8b789ab757c2cf811a74e696ef">More...</a><br/></td></tr>
 <tr class="separator:a92fa1a8b789ab757c2cf811a74e696ef inherit pub_methods_structmkldnn_1_1primitive__desc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab1725ad8282351d54555d6affb37428 inherit pub_methods_structmkldnn_1_1primitive__desc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1primitive__desc.html#aab1725ad8282351d54555d6affb37428">query_md</a> (<a class="el" href="group__cpp__api__enums.html#ga6d88ff11a07bae09a5c348d314c5d1d9">query</a> what, int idx=0) const </td></tr>
-<tr class="memdesc:aab1725ad8282351d54555d6affb37428 inherit pub_methods_structmkldnn_1_1primitive__desc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queries and returns requested memory descriptor.  <a href="#aab1725ad8282351d54555d6affb37428">More...</a><br/></td></tr>
-<tr class="separator:aab1725ad8282351d54555d6affb37428 inherit pub_methods_structmkldnn_1_1primitive__desc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d42a5b157c9f7c55af17f2e24a37f72 inherit pub_methods_structmkldnn_1_1primitive__desc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmkldnn_1_1memory_1_1primitive__desc.html">memory::primitive_desc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1primitive__desc.html#a8d42a5b157c9f7c55af17f2e24a37f72">query_mpd</a> (<a class="el" href="group__cpp__api__enums.html#ga6d88ff11a07bae09a5c348d314c5d1d9">query</a> what, int idx=0) const </td></tr>
+<tr class="memdesc:a8d42a5b157c9f7c55af17f2e24a37f72 inherit pub_methods_structmkldnn_1_1primitive__desc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queries and returns requested memory primitive descriptor.  <a href="#a8d42a5b157c9f7c55af17f2e24a37f72">More...</a><br/></td></tr>
+<tr class="separator:a8d42a5b157c9f7c55af17f2e24a37f72 inherit pub_methods_structmkldnn_1_1primitive__desc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classmkldnn_1_1handle"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classmkldnn_1_1handle')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classmkldnn_1_1handle.html">mkldnn::handle&lt; mkldnn_primitive_desc_t &gt;</a></td></tr>
 <tr class="memitem:a4194187ee28bdeab2b529f892e487ea3 inherit pub_methods_classmkldnn_1_1handle"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmkldnn_1_1handle.html#a4194187ee28bdeab2b529f892e487ea3">handle</a> (mkldnn_primitive_desc_tt=0, bool weak=false)</td></tr>
 <tr class="memdesc:a4194187ee28bdeab2b529f892e487ea3 inherit pub_methods_classmkldnn_1_1handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a C handle wrapper.  <a href="#a4194187ee28bdeab2b529f892e487ea3">More...</a><br/></td></tr>
@@ -263,12 +258,12 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a65630cf2d62f7dbc980ec564e8e65b1d"></a>
+<a class="anchor" id="a71ffe9222e5d4e0a69f368fd0f23f664"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">mkldnn::deconvolution_backward_weights::primitive_desc::REG_QUERY_MD </td>
+          <td class="memname">mkldnn::deconvolution_backward_weights::primitive_desc::REG_QUERY_MPD </td>
           <td>(</td>
           <td class="paramtype">src&#160;</td>
           <td class="paramname">, </td>
@@ -295,12 +290,12 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aee65619f9cd192a3f800be38cae04719"></a>
+<a class="anchor" id="a32f54f66bd773a13163da884860bfc38"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">mkldnn::deconvolution_backward_weights::primitive_desc::REG_QUERY_MD </td>
+          <td class="memname">mkldnn::deconvolution_backward_weights::primitive_desc::REG_QUERY_MPD </td>
           <td>(</td>
           <td class="paramtype">diff_weights&#160;</td>
           <td class="paramname">, </td>
@@ -327,12 +322,12 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aa9b91954df6cec1921d5255a12eae4fb"></a>
+<a class="anchor" id="a47a61ee048a0333cfc8a52113941a33c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">mkldnn::deconvolution_backward_weights::primitive_desc::REG_QUERY_MD </td>
+          <td class="memname">mkldnn::deconvolution_backward_weights::primitive_desc::REG_QUERY_MPD </td>
           <td>(</td>
           <td class="paramtype">diff_bias&#160;</td>
           <td class="paramname">, </td>
@@ -359,12 +354,12 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a92d448f759c576c3b6ecd016c79f4387"></a>
+<a class="anchor" id="a6fd32ca320a7c2e9e665e02ecc9be7fc"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">mkldnn::deconvolution_backward_weights::primitive_desc::REG_QUERY_MD </td>
+          <td class="memname">mkldnn::deconvolution_backward_weights::primitive_desc::REG_QUERY_MPD </td>
           <td>(</td>
           <td class="paramtype">diff_dst&#160;</td>
           <td class="paramname">, </td>
@@ -373,38 +368,6 @@ Additional Inherited Members</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">diff_dst&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">0&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="aa0e6c491821f3b5411c58f5766a96104"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">mkldnn::deconvolution_backward_weights::primitive_desc::REG_QUERY_MD </td>
-          <td>(</td>
-          <td class="paramtype">scratchpad&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">scratchpad&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>

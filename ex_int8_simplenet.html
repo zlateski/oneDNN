@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
-   &#160;<span id="projectnumber">0.90.0</span>
+   &#160;<span id="projectnumber">0.18.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
   </td>
@@ -89,7 +89,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>To push higher performance during inference computations, recent work has focused on computing at a lower precision (i.e. shrinking the size of data for activations and weights) to achieve higher throughput. Eight-bit computations (referred to as int8) offer improved performance over higher precision types -because it allows packing more data into a single instruction, at the cost of reduced but acceptable accuracy.</p>
 <h2>Int8 Workflow</h2>
 <h3>Quantization Process</h3>
-<p>To operate with int8 data types from a higher precision format (e.g. 32-bit floating point), data must first be <em>quantized</em>. The quantization process converts a given input into a lower-precision format. The precision and accuracy factors are determined by the scaling factors.</p>
+<p>To operate with int8 data types from a higher precision format (e.g. 32-bit floating point), data must first be <em>quantized</em>. The quantization process converts a given input into a lower-precision format. The precision and accuracy factors are determined by the scale and rounding-mode respectively.</p>
 <h3>Scale</h3>
 <p>The scale is usually obtained from sampling the dataset of previous executions in the original format (e.g. the activations and weights from training in fp32) and is formulated as:</p>
 <ul>
@@ -108,7 +108,7 @@ where <img class="formulaInl" alt="$ T_{\{\alpha,w\}}$" src="form_24.png"/> is a
 <li><img class="formulaInl" alt="$\alpha_{u8} = \lceil Q_{\alpha} \alpha_{f32} \rceil \in [0,255]$" src="form_29.png"/></li>
 <li><img class="formulaInl" alt="$W_{s8} = \lceil Q_{w} W_{f32} \rceil \in [-127,127]$" src="form_30.png"/></li>
 <li><img class="formulaInl" alt="$b_{s32} = \lceil Q_{\alpha} Q_{w} b_{f32} \rceil \in [-2^{31},2^{31}-1]$" src="form_31.png"/><br/>
-where the function <img class="formulaInl" alt="$ \lceil \rceil $" src="form_32.png"/> rounds to the selected rounding mode (typically determened by MXCSR register, the default value is RoundNearestEven).</li>
+where the function <img class="formulaInl" alt="$ \lceil \rceil $" src="form_32.png"/> rounds to the selected rounding mode.</li>
 </ul>
 <p>When the destination value (e.g. from a convolution) is stored as a signed 32-bit integer, the result is bound to the same quantization <em>scaling</em> factors:</p>
 <ul>
@@ -150,7 +150,7 @@ where the function <img class="formulaInl" alt="$ \lceil \rceil $" src="form_32.
 <li>reorder</li>
 </ul>
 <h3>MKLDNN Attributes</h3>
-<p>MKLDNN primitive behaviour may be extended for additional functionalities involving output data transformation. These additional features are configured via <b>primitive attributes</b>. The primitive attributes definition is an opaque structure for passing extra parameters to a primitive descriptor. These parameters include Scaling Factor and Fused Post-Operations (<b>PostOps</b>). All operation primitives support the attributes structure, however, not all configurations are implemented and result in <em>failed primitive creation</em>.</p>
+<p>MKLDNN primitive behaviour may be extended for additional functionalities involving output data transformation. These additional features are configured via <b>primitive attributes</b>. The primitive attributes definition is an opaque structure for passing extra parameters to a primitive descriptor. These parameters include Scaling Factor, Round Mode and Fused Post-Operations (<b>PostOps</b>). All operation primitives support the attributes structure, however, not all configurations are implemented and result in <em>failed primitive creation</em>.</p>
 <p>The <b>scaling factor</b>, as previously described, is known prior to the inference operation where the values are calculated from a set of formulas. In MKLDNN, the scaling factor is applied to the output of a primitive. Moreover, to perform input transformations (e.g. source, bias and weights), MKLDNN performs quantizing and dequantizing of data for int8 through the <b>Reorder Primitive</b>.</p>
 <p>MKLDNN has 2 formats for defining the output scaling factor, depending on the configuration set by the scaling mask, the output is either scaled uniformly across all the dimensions (<em>mask = 0</em>) or a set of scaling values are applied to specific dimension(s), as explanation below:</p>
 <ul>
@@ -176,6 +176,11 @@ Multi-value scaling format</div></div>
 <li>2D dimensional data the order of dimensions is always: (n, c)</li>
 <li>4D dimensional data the order is always: (n, c, h, w)</li>
 <li>5D dimensional weights the order is always: (g, oc, ic, kh, kw)</li>
+</ul>
+<p>The <b>Round Mode</b> in attributes specifies the form of rounding for the resulting output value. Round mode will be applied whenever the output data type is not 32-bit floating point. The two options are:</p>
+<ul>
+<li>Nearest even integer value (default and recommended)</li>
+<li>Down (or floor) to the previous largest integer value.</li>
 </ul>
 <p>Fused <b>Post-Operations</b> (PostOps) allow chaining operations during the primitive computation. Note that the resulting output value from PostOps is always affected by the scaling factor. The supported operations are:</p>
 <ul>
@@ -238,6 +243,9 @@ Multi-value scaling format</div></div>
 <li><p class="startli">Configuring int8-specific parameters in an int8 primitive is done via the Attributes Primitive. Create an attributes object for the convolution and configure it accordingly. </p>
 <div class="fragment"><div class="line">primitive_attr conv_attr;</div>
 <div class="line"></div>
+<div class="line"><span class="comment">/* Specify the rounding mode */</span></div>
+<div class="line">conv_attr.set_int_output_round_mode(<a class="code" href="group__cpp__api__enums.html#gga9d7c927196d96da9d2dcb0926f50845dadfa185bc1c3ce87a0905475a288c58fd">round_mode::round_nearest</a>);</div>
+<div class="line"></div>
 <div class="line"><span class="comment">/* Specify the scales array and corresponding mask */</span></div>
 <div class="line">conv_attr.set_output_scales(conv_mask, conv_scales);</div>
 </div><!-- fragment --><p class="startli">The ReLU layer from Alexnet is executed through the PostOps feature. Create a PostOps object and configure it to execute an <em>eltwise relu</em> operation. </p>
@@ -252,6 +260,7 @@ Multi-value scaling format</div></div>
 </div><!-- fragment --></li>
 <li>Create a memory primitive for each of the convolution’s data input parameters (source, bias, weights and destination). Using the convolution primitive descriptor as the creation parameter allows MKLDNN to configure the memory formats for the convolution. <div class="fragment"><div class="line"><span class="keyword">auto</span> conv_src_memory = memory(conv_prim_desc.src_primitive_desc());</div>
 </div><!-- fragment --> Scaling parameters are passed to the reorder primitive via the attributes primitive. <div class="fragment"><div class="line">primitive_attr src_attr;</div>
+<div class="line">src_attr.set_int_output_round_mode(<a class="code" href="group__cpp__api__enums.html#gga9d7c927196d96da9d2dcb0926f50845dadfa185bc1c3ce87a0905475a288c58fd">round_mode::round_nearest</a>);</div>
 <div class="line">src_attr.set_output_scales(src_mask, src_scales);</div>
 </div><!-- fragment --></li>
 <li>User memory must be transformed into convolution-friendly memory (for int8 and memory format). A reorder layer performs the data transformation from fp32 (the original user data) into int8 format (the data used for the convolution). In addition, the reorder will transform the user data into the required memory format (as explained in the simple_net example). <div class="fragment"><div class="line"><span class="keyword">auto</span> src_reorder_pd</div>
@@ -268,6 +277,7 @@ Multi-value scaling format</div></div>
 <div class="line">                cpu_engine },</div>
 <div class="line">        user_dst.data());</div>
 <div class="line">primitive_attr dst_attr;</div>
+<div class="line">dst_attr.set_int_output_round_mode(<a class="code" href="group__cpp__api__enums.html#gga9d7c927196d96da9d2dcb0926f50845dadfa185bc1c3ce87a0905475a288c58fd">round_mode::round_nearest</a>);</div>
 <div class="line">dst_attr.set_output_scales(dst_mask, dst_scales);</div>
 <div class="line"><span class="keyword">auto</span> dst_reorder_pd</div>
 <div class="line">        = reorder::primitive_desc(conv_dst_memory.get_primitive_desc(),</div>

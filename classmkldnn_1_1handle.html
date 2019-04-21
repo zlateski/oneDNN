@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
-   &#160;<span id="projectnumber">0.90.0</span>
+   &#160;<span id="projectnumber">0.18.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
   </td>
@@ -138,7 +138,7 @@ class mkldnn::handle&lt; T, traits &gt;</h3>
 <ul>
 <li>Newly constructed handles. <br/>
  In this case, the constructed handle uses reference counting provided by <code>std::shared_ptr</code> with a proper deleter function specified through the <code><a class="el" href="classmkldnn_1_1handle__traits.html" title="A class that provides the destructor for an Intel(R) MKL-DNN C handle. ">handle_traits</a></code> class.</li>
-<li>Pre-existing handles returned by the Intel(R) MKL-DNN C API (for example, through <a class="el" href="group__c__api__primitive__common.html#ga6ff9030a5947b4e3f9e8296c86059935" title="Retrieves a reference to the primitive_desc descriptor of given primitive. ">mkldnn_primitive_get_primitive_desc()</a>). <br/>
+<li>Pre-existing handles returned by the Intel(R) MKL-DNN C API (for example, through <a class="el" href="group__c__api__primitive__common.html#ga2b89187af27020ea016ab32c3efa69db" title="For a primitive, returns output at the index position. ">mkldnn_primitive_get_output()</a>). <br/>
  In this case, an Intel(R) MKL-DNN C API handle is wrapped without a deleter because it is assumed that the handle wrapper for the original object deletes the handle (this model is similar to <code>std::weak_ptr</code>). </li>
 </ul>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>

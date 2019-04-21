@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
-   &#160;<span id="projectnumber">0.90.0</span>
+   &#160;<span id="projectnumber">0.18.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
   </td>
@@ -89,7 +89,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="structmkldnn__batch__normalization__desc__t-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">mkldnn_batch_normalization_desc_t Struct Reference<div class="ingroups"><a class="el" href="group__c__api__types__op__descs.html">Operation descriptors</a></div></div>  </div>
+<div class="title">mkldnn_batch_normalization_desc_t Struct Reference<div class="ingroups"><a class="el" href="group__c__api__types__memory.html">Auxiliary types for memory description</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -102,7 +102,7 @@ Collaboration diagram for mkldnn_batch_normalization_desc_t:</div>
 <div class="dyncontent">
 <div class="center"><img src="structmkldnn__batch__normalization__desc__t__coll__graph.png" border="0" usemap="#mkldnn__batch__normalization__desc__t_coll__map" alt="Collaboration graph"/></div>
 <map name="mkldnn__batch__normalization__desc__t_coll__map" id="mkldnn__batch__normalization__desc__t_coll__map">
-<area shape="rect" id="node2" href="structmkldnn__memory__desc__t.html" title="Memory descriptor. " alt="" coords="345,96,509,123"/><area shape="rect" id="node3" href="structmkldnn__memory__extra__desc__t.html" title="Description of extra information stored in memory. " alt="" coords="20,5,175,46"/><area shape="rect" id="node4" href="structmkldnn__rnn__packed__desc__t.html" title="Description of tensor of packed weights for rnn. " alt="" coords="5,71,189,97"/><area shape="rect" id="node5" href="structmkldnn__blocking__desc__t.html" title="Generic description of blocked data layout for most memory formats. " alt="" coords="15,121,180,148"/><area shape="rect" id="node6" href="structmkldnn__wino__desc__t.html" title="Description of tensor of weights for winograd 2x3 convolution. " alt="" coords="25,172,169,199"/></map>
+<area shape="rect" id="node2" href="structmkldnn__memory__desc__t.html" title="Memory descriptor. " alt="" coords="214,96,377,123"/><area shape="rect" id="node3" href="structmkldnn__rnn__packed__desc__t.html" title="Description of tensor of packed weights for rnn. " alt="" coords="5,5,189,32"/><area shape="rect" id="node4" href="structmkldnn__blocking__desc__t.html" title="Generic description of blocked data layout for most memory formats. " alt="" coords="213,5,379,32"/><area shape="rect" id="node5" href="structmkldnn__wino__desc__t.html" title="Description of tensor of weights for winograd 2x3 convolution. " alt="" coords="403,5,547,32"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -207,7 +207,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Scale and shift data and gradient memory descriptors. </p>
-<p>Scaleshift memory descriptor uses 2D <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba2838f6827b40434fb9584eb3efe1a0ae">mkldnn_nc</a> format[2,Channels]. 1-st dimension contains gamma parameter, 2-nd dimension contains beta parameter. </p>
+<p>Scaleshift memory descriptor uses 2D <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a2838f6827b40434fb9584eb3efe1a0ae" title="2D data tensor. ">mkldnn_nc</a> format[2,Channels]. 1-st dimension contains gamma parameter, 2-nd dimension contains beta parameter. </p>
 
 </div>
 </div>
@@ -234,7 +234,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Mean and variance data memory descriptors. </p>
-<p>Mean and variance memory descriptors use 1D <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba494a09557958694ff1aece6b4667d87f">mkldnn_x</a> format[Channels]. </p>
+<p>Mean and variance memory descriptors use 1D <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a494a09557958694ff1aece6b4667d87f" title="1D data tensor. ">mkldnn_x</a> format[Channels]. </p>
 
 </div>
 </div>

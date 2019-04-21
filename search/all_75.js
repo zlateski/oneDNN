@@ -9,7 +9,6 @@ var searchData=
   ['unidirectional',['unidirectional',['../group__cpp__api__enums.html#ggac8d5612bc5ca7b5fb6e5bdf4e6ad0d16ab29cd3118f933d2379771ecdd4462416',1,'mkldnn']]],
   ['unidirectional_5fleft2right',['unidirectional_left2right',['../group__cpp__api__enums.html#ggac8d5612bc5ca7b5fb6e5bdf4e6ad0d16a9149eaa77d211b7754de03fc52b7cb30',1,'mkldnn']]],
   ['unidirectional_5fright2left',['unidirectional_right2left',['../group__cpp__api__enums.html#ggac8d5612bc5ca7b5fb6e5bdf4e6ad0d16a5b9a4ddbb409878881462aee8dc82ba0',1,'mkldnn']]],
-  ['unmap_5fdata',['unmap_data',['../structmkldnn_1_1memory.html#ad51d365ef8ccbe0da74609a45b1f9d4b',1,'mkldnn::memory']]],
   ['use_5fglobal_5fstats',['use_global_stats',['../group__cpp__api__enums.html#gga344b5c240a7392585aba615ff4d0d7f1a97fcd7beeed54e37e2718124d0051d5c',1,'mkldnn']]],
   ['use_5fscale_5fshift',['use_scale_shift',['../group__cpp__api__enums.html#gga344b5c240a7392585aba615ff4d0d7f1a67734f09ab5b5b5282855d52c3e62486',1,'mkldnn']]]
 ];

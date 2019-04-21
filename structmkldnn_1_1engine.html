@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
-   &#160;<span id="projectnumber">0.90.0</span>
+   &#160;<span id="projectnumber">0.18.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
   </td>
@@ -122,8 +122,7 @@ Collaboration diagram for mkldnn::engine:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:a81bcf1ea92d7f98852a2c3e187825de6"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1engine.html#a81bcf1ea92d7f98852a2c3e187825de6">kind</a> { <a class="el" href="structmkldnn_1_1engine.html#a81bcf1ea92d7f98852a2c3e187825de6af65460ef562d540de287f58445d54748">any</a> = mkldnn_any_engine, 
-<a class="el" href="structmkldnn_1_1engine.html#a81bcf1ea92d7f98852a2c3e187825de6a7e33e884a6d7eb40a73125557b14a7a7">cpu</a> = mkldnn_cpu, 
-<a class="el" href="structmkldnn_1_1engine.html#a81bcf1ea92d7f98852a2c3e187825de6a2259ccd84f018b90c59a5e9c63bd686d">gpu</a> = mkldnn_gpu
+<a class="el" href="structmkldnn_1_1engine.html#a81bcf1ea92d7f98852a2c3e187825de6a7e33e884a6d7eb40a73125557b14a7a7">cpu</a> = mkldnn_cpu
  }</td></tr>
 <tr class="memdesc:a81bcf1ea92d7f98852a2c3e187825de6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kinds of engines.  <a href="structmkldnn_1_1engine.html#a81bcf1ea92d7f98852a2c3e187825de6">More...</a><br/></td></tr>
 <tr class="separator:a81bcf1ea92d7f98852a2c3e187825de6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -137,10 +136,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aeab8a660589202ecf17ed042a69bf5d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8511af0d3b8729e1ef9edab6d68a5e0d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1engine.html#a8511af0d3b8729e1ef9edab6d68a5e0d">engine</a> (const <a class="el" href="classmkldnn_1_1handle.html">handle</a>&lt; <a class="el" href="group__c__api__primitive__descs.html#ga4108b6ee20cf3d2e472504c1aea67497">mkldnn_primitive_desc_t</a> &gt; &amp;pd)</td></tr>
 <tr class="separator:a8511af0d3b8729e1ef9edab6d68a5e0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae007548427d27534d1cfd113e37cdab8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmkldnn_1_1engine.html#a81bcf1ea92d7f98852a2c3e187825de6">kind</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1engine.html#ae007548427d27534d1cfd113e37cdab8">get_kind</a> () const </td></tr>
-<tr class="separator:ae007548427d27534d1cfd113e37cdab8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34fd304d92f0a426190b91eb60c5579d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__cpp__api__enums.html#gae7ae677040e89f183df87f4ba3a5eb6e">backend_kind</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1engine.html#a34fd304d92f0a426190b91eb60c5579d">get_backend_kind</a> () const </td></tr>
-<tr class="separator:a34fd304d92f0a426190b91eb60c5579d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classmkldnn_1_1handle"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classmkldnn_1_1handle')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classmkldnn_1_1handle.html">mkldnn::handle&lt; mkldnn_engine_t &gt;</a></td></tr>
 <tr class="memitem:a4194187ee28bdeab2b529f892e487ea3 inherit pub_methods_classmkldnn_1_1handle"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmkldnn_1_1handle.html#a4194187ee28bdeab2b529f892e487ea3">handle</a> (mkldnn_engine_tt=0, bool weak=false)</td></tr>
 <tr class="memdesc:a4194187ee28bdeab2b529f892e487ea3 inherit pub_methods_classmkldnn_1_1handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a C handle wrapper.  <a href="#a4194187ee28bdeab2b529f892e487ea3">More...</a><br/></td></tr>
@@ -202,9 +197,6 @@ Additional Inherited Members</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a81bcf1ea92d7f98852a2c3e187825de6a7e33e884a6d7eb40a73125557b14a7a7"></a>cpu</em>&nbsp;</td><td class="fielddoc">
 <p>CPU engine. </p>
-</td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a81bcf1ea92d7f98852a2c3e187825de6a2259ccd84f018b90c59a5e9c63bd686d"></a>gpu</em>&nbsp;</td><td class="fielddoc">
-<p>GPU engine. </p>
 </td></tr>
 </table>
 
@@ -332,52 +324,6 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a class="anchor" id="ae007548427d27534d1cfd113e37cdab8"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structmkldnn_1_1engine.html#a81bcf1ea92d7f98852a2c3e187825de6">kind</a> mkldnn::engine::get_kind </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a34fd304d92f0a426190b91eb60c5579d"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__cpp__api__enums.html#gae7ae677040e89f183df87f4ba3a5eb6e">backend_kind</a> mkldnn::engine::get_backend_kind </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
 
 </div>
 </div>

@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
-   &#160;<span id="projectnumber">0.90.0</span>
+   &#160;<span id="projectnumber">0.18.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
   </td>
@@ -103,13 +103,12 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:ga99541103c9e9f6241d7a312d39d2cff2"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__stream.html#ga99541103c9e9f6241d7a312d39d2cff2">mkldnn_stream_flags_t</a> { <a class="el" href="group__c__api__types__stream.html#gga99541103c9e9f6241d7a312d39d2cff2acd478495ebc14985b6c3e85aa5468c7b">mkldnn_stream_default_order</a> = 0x1U, 
-<a class="el" href="group__c__api__types__stream.html#gga99541103c9e9f6241d7a312d39d2cff2af6aaf47bef398802637698488dc4f8ca">mkldnn_stream_in_order</a> = 0x2U, 
-<a class="el" href="group__c__api__types__stream.html#gga99541103c9e9f6241d7a312d39d2cff2a2bd998d06beca9ac9ccd57111ac90391">mkldnn_stream_out_of_order</a> = 0x4U, 
-<a class="el" href="group__c__api__types__stream.html#gga99541103c9e9f6241d7a312d39d2cff2a8048500bb95413112046344427918c2d">mkldnn_stream_default_flags</a> = mkldnn_stream_default_order
+<tr class="memitem:gadd66574e231fe36721cdbe02ea47aa18"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__stream.html#gadd66574e231fe36721cdbe02ea47aa18">mkldnn_stream_kind_t</a> { <a class="el" href="group__c__api__types__stream.html#ggadd66574e231fe36721cdbe02ea47aa18a21e1070feb34b05c8f262e0b9b0705c6">mkldnn_any_stream</a>, 
+<a class="el" href="group__c__api__types__stream.html#ggadd66574e231fe36721cdbe02ea47aa18a31d72581d8e1f3e15fc78f996a43ecc2">mkldnn_eager</a>, 
+<a class="el" href="group__c__api__types__stream.html#ggadd66574e231fe36721cdbe02ea47aa18aa7a8014b794eead2d6ce7d9fe0c35241">mkldnn_lazy</a>
  }</td></tr>
-<tr class="memdesc:ga99541103c9e9f6241d7a312d39d2cff2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stream flags.  <a href="group__c__api__types__stream.html#ga99541103c9e9f6241d7a312d39d2cff2">More...</a><br/></td></tr>
-<tr class="separator:ga99541103c9e9f6241d7a312d39d2cff2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memdesc:gadd66574e231fe36721cdbe02ea47aa18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kinds of streams.  <a href="group__c__api__types__stream.html#gadd66574e231fe36721cdbe02ea47aa18">More...</a><br/></td></tr>
+<tr class="separator:gadd66574e231fe36721cdbe02ea47aa18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h2 class="groupheader">Typedef Documentation</h2>
@@ -142,30 +141,26 @@ Enumerations</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
-<a class="anchor" id="ga99541103c9e9f6241d7a312d39d2cff2"></a>
+<a class="anchor" id="gadd66574e231fe36721cdbe02ea47aa18"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="group__c__api__types__stream.html#ga99541103c9e9f6241d7a312d39d2cff2">mkldnn_stream_flags_t</a></td>
+          <td class="memname">enum <a class="el" href="group__c__api__types__stream.html#gadd66574e231fe36721cdbe02ea47aa18">mkldnn_stream_kind_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Stream flags. </p>
+<p>Kinds of streams. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="gga99541103c9e9f6241d7a312d39d2cff2acd478495ebc14985b6c3e85aa5468c7b"></a>mkldnn_stream_default_order</em>&nbsp;</td><td class="fielddoc">
-<p>Default order execution. </p>
-<p>Either in-order or out-of-order depending on the backend. </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="ggadd66574e231fe36721cdbe02ea47aa18a21e1070feb34b05c8f262e0b9b0705c6"></a>mkldnn_any_stream</em>&nbsp;</td><td class="fielddoc">
+<p>An unspecified engine. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="gga99541103c9e9f6241d7a312d39d2cff2af6aaf47bef398802637698488dc4f8ca"></a>mkldnn_stream_in_order</em>&nbsp;</td><td class="fielddoc">
-<p>In-order execution. </p>
+<tr><td class="fieldname"><em><a class="anchor" id="ggadd66574e231fe36721cdbe02ea47aa18a31d72581d8e1f3e15fc78f996a43ecc2"></a>mkldnn_eager</em>&nbsp;</td><td class="fielddoc">
+<p>Eager stream. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="gga99541103c9e9f6241d7a312d39d2cff2a2bd998d06beca9ac9ccd57111ac90391"></a>mkldnn_stream_out_of_order</em>&nbsp;</td><td class="fielddoc">
-<p>Out-of-order execution. </p>
-</td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="gga99541103c9e9f6241d7a312d39d2cff2a8048500bb95413112046344427918c2d"></a>mkldnn_stream_default_flags</em>&nbsp;</td><td class="fielddoc">
-<p>Default stream configuration. </p>
+<tr><td class="fieldname"><em><a class="anchor" id="ggadd66574e231fe36721cdbe02ea47aa18aa7a8014b794eead2d6ce7d9fe0c35241"></a>mkldnn_lazy</em>&nbsp;</td><td class="fielddoc">
+<p>Lazy stream. </p>
 </td></tr>
 </table>
 
