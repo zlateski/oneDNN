@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
-   &#160;<span id="projectnumber">0.18.0</span>
+   &#160;<span id="projectnumber">0.90.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
   </td>
@@ -78,7 +78,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Stream<div class="ingroups"><a class="el" href="group__cpp__api.html">C++ API</a></div></div>  </div>
 </div><!--header-->
@@ -91,10 +92,148 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1stream.html">mkldnn::stream</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga45c53ce676b38c7040cf4e1a336fdf81"><td class="memItemLeft" align="right" valign="top">stream::flags&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__stream.html#ga45c53ce676b38c7040cf4e1a336fdf81">mkldnn::operator|</a> (stream::flags lhs, stream::flags rhs)</td></tr>
+<tr class="separator:ga45c53ce676b38c7040cf4e1a336fdf81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5c94a6ac710a29c0a35b71a26e93b3ea"><td class="memItemLeft" align="right" valign="top">stream::flags&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__stream.html#ga5c94a6ac710a29c0a35b71a26e93b3ea">mkldnn::operator&amp;</a> (stream::flags lhs, stream::flags rhs)</td></tr>
+<tr class="separator:ga5c94a6ac710a29c0a35b71a26e93b3ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2dc8be3edc1f5e561161ad968eb0061f"><td class="memItemLeft" align="right" valign="top">stream::flags&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__stream.html#ga2dc8be3edc1f5e561161ad968eb0061f">mkldnn::operator^</a> (stream::flags lhs, stream::flags rhs)</td></tr>
+<tr class="separator:ga2dc8be3edc1f5e561161ad968eb0061f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaba56bba0de8902cc791bc44af82fa25f"><td class="memItemLeft" align="right" valign="top">stream::flags&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__stream.html#gaba56bba0de8902cc791bc44af82fa25f">mkldnn::operator~</a> (stream::flags rhs)</td></tr>
+<tr class="separator:gaba56bba0de8902cc791bc44af82fa25f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Execution stream operations. </p>
 <dl class="section see"><dt>See Also</dt><dd><a class="el" href="group__c__api__stream.html">Execution stream operations</a> in <a class="el" href="group__c__api.html">C API</a> </dd></dl>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="ga45c53ce676b38c7040cf4e1a336fdf81"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">stream::flags mkldnn::operator| </td>
+          <td>(</td>
+          <td class="paramtype">stream::flags&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">stream::flags&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ga5c94a6ac710a29c0a35b71a26e93b3ea"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">stream::flags mkldnn::operator&amp; </td>
+          <td>(</td>
+          <td class="paramtype">stream::flags&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">stream::flags&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ga2dc8be3edc1f5e561161ad968eb0061f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">stream::flags mkldnn::operator^ </td>
+          <td>(</td>
+          <td class="paramtype">stream::flags&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">stream::flags&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="gaba56bba0de8902cc791bc44af82fa25f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">stream::flags mkldnn::operator~ </td>
+          <td>(</td>
+          <td class="paramtype">stream::flags&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

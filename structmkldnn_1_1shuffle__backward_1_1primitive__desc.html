@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
-   &#160;<span id="projectnumber">0.18.0</span>
+   &#160;<span id="projectnumber">0.90.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
   </td>
@@ -115,12 +115,14 @@ Collaboration diagram for mkldnn::shuffle_backward::primitive_desc:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8c2ceb879a7f2e68eeef414c97ab3910"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1shuffle__backward_1_1primitive__desc.html#a8c2ceb879a7f2e68eeef414c97ab3910">primitive_desc</a> (const <a class="el" href="structmkldnn_1_1shuffle__backward_1_1desc.html">desc</a> &amp;<a class="el" href="structmkldnn_1_1shuffle__backward_1_1desc.html">desc</a>, const <a class="el" href="structmkldnn_1_1engine.html">engine</a> &amp;e, const <a class="el" href="structmkldnn_1_1shuffle__forward_1_1primitive__desc.html">shuffle_forward::primitive_desc</a> &amp;hint_fwd_pd)</td></tr>
-<tr class="separator:a8c2ceb879a7f2e68eeef414c97ab3910"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe2be6fbea445e70bfe2e7a0233a6e12"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1shuffle__backward_1_1primitive__desc.html#afe2be6fbea445e70bfe2e7a0233a6e12">REG_QUERY_MPD</a> (diff_src, diff_src, 0)</td></tr>
-<tr class="separator:afe2be6fbea445e70bfe2e7a0233a6e12"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a635454970e6c971dd560b9a5b218d148"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1shuffle__backward_1_1primitive__desc.html#a635454970e6c971dd560b9a5b218d148">REG_QUERY_MPD</a> (diff_dst, diff_dst, 0)</td></tr>
-<tr class="separator:a635454970e6c971dd560b9a5b218d148"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa36e54ad6024b887f9b2936afec9516a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1shuffle__backward_1_1primitive__desc.html#aa36e54ad6024b887f9b2936afec9516a">primitive_desc</a> (const <a class="el" href="structmkldnn_1_1shuffle__backward_1_1desc.html">desc</a> &amp;<a class="el" href="structmkldnn_1_1shuffle__backward_1_1desc.html">desc</a>, const <a class="el" href="structmkldnn_1_1engine.html">engine</a> &amp;e, const <a class="el" href="structmkldnn_1_1shuffle__forward_1_1primitive__desc.html">shuffle_forward::primitive_desc</a> &amp;hint_fwd_pd, const <a class="el" href="structmkldnn_1_1primitive__attr.html">primitive_attr</a> &amp;aattr=<a class="el" href="structmkldnn_1_1primitive__attr.html">primitive_attr</a>())</td></tr>
+<tr class="separator:aa36e54ad6024b887f9b2936afec9516a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cd2e38a74191e8ea19e4cc33f0ddc85"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1shuffle__backward_1_1primitive__desc.html#a0cd2e38a74191e8ea19e4cc33f0ddc85">REG_QUERY_MD</a> (diff_src, diff_src, 0)</td></tr>
+<tr class="separator:a0cd2e38a74191e8ea19e4cc33f0ddc85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c331c5de5fd9bf1815125253a48eb8a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1shuffle__backward_1_1primitive__desc.html#a5c331c5de5fd9bf1815125253a48eb8a">REG_QUERY_MD</a> (diff_dst, diff_dst, 0)</td></tr>
+<tr class="separator:a5c331c5de5fd9bf1815125253a48eb8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a2ae76bf7962c4196326e02a451bd17"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1shuffle__backward_1_1primitive__desc.html#a8a2ae76bf7962c4196326e02a451bd17">REG_QUERY_MD</a> (scratchpad, scratchpad, 0)</td></tr>
+<tr class="separator:a8a2ae76bf7962c4196326e02a451bd17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_structmkldnn_1_1primitive__desc"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_structmkldnn_1_1primitive__desc')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="structmkldnn_1_1primitive__desc.html">mkldnn::primitive_desc</a></td></tr>
 <tr class="memitem:a3bdfcd525cc732628e65b3b867fead46 inherit pub_methods_structmkldnn_1_1primitive__desc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1primitive__desc.html#a3bdfcd525cc732628e65b3b867fead46">primitive_desc</a> (<a class="el" href="group__c__api__types__op__descs.html#gac7e49603b052255540a6f6dc072a627c">const_mkldnn_op_desc_t</a> desc, const <a class="el" href="structmkldnn_1_1primitive__attr.html">primitive_attr</a> *attr, const <a class="el" href="structmkldnn_1_1engine.html">engine</a> &amp;e, <a class="el" href="group__c__api__primitive__descs.html#ga9f002a6449ae9be775393e888698cfe0">const_mkldnn_primitive_desc_t</a> hint_fwd_pd)</td></tr>
 <tr class="separator:a3bdfcd525cc732628e65b3b867fead46 inherit pub_methods_structmkldnn_1_1primitive__desc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -131,12 +133,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a60d941535e513ca4dc60076d60351bdb inherit pub_methods_structmkldnn_1_1primitive__desc"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1primitive__desc.html#a60d941535e513ca4dc60076d60351bdb">impl_info_str</a> () const </td></tr>
 <tr class="memdesc:a60d941535e513ca4dc60076d60351bdb inherit pub_methods_structmkldnn_1_1primitive__desc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns implementation name.  <a href="#a60d941535e513ca4dc60076d60351bdb">More...</a><br/></td></tr>
 <tr class="separator:a60d941535e513ca4dc60076d60351bdb inherit pub_methods_structmkldnn_1_1primitive__desc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4789762531751924dd4650a455a9731 inherit pub_methods_structmkldnn_1_1primitive__desc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmkldnn_1_1memory.html#ac84929ec8bd1bba9d7c5723ad6d93906">memory::dim</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1primitive__desc.html#ae4789762531751924dd4650a455a9731">query_s64</a> (<a class="el" href="group__cpp__api__enums.html#ga6d88ff11a07bae09a5c348d314c5d1d9">query</a> q) const </td></tr>
+<tr class="memdesc:ae4789762531751924dd4650a455a9731 inherit pub_methods_structmkldnn_1_1primitive__desc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queries the <a class="el" href="structmkldnn_1_1memory.html#ac84929ec8bd1bba9d7c5723ad6d93906">memory::dim</a> value (same as int64_t)  <a href="#ae4789762531751924dd4650a455a9731">More...</a><br/></td></tr>
+<tr class="separator:ae4789762531751924dd4650a455a9731 inherit pub_methods_structmkldnn_1_1primitive__desc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92fa1a8b789ab757c2cf811a74e696ef inherit pub_methods_structmkldnn_1_1primitive__desc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1primitive__desc.html#a92fa1a8b789ab757c2cf811a74e696ef">next_impl</a> ()</td></tr>
 <tr class="memdesc:a92fa1a8b789ab757c2cf811a74e696ef inherit pub_methods_structmkldnn_1_1primitive__desc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Advances the next implementation for the given op descriptor.  <a href="#a92fa1a8b789ab757c2cf811a74e696ef">More...</a><br/></td></tr>
 <tr class="separator:a92fa1a8b789ab757c2cf811a74e696ef inherit pub_methods_structmkldnn_1_1primitive__desc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d42a5b157c9f7c55af17f2e24a37f72 inherit pub_methods_structmkldnn_1_1primitive__desc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmkldnn_1_1memory_1_1primitive__desc.html">memory::primitive_desc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1primitive__desc.html#a8d42a5b157c9f7c55af17f2e24a37f72">query_mpd</a> (<a class="el" href="group__cpp__api__enums.html#ga6d88ff11a07bae09a5c348d314c5d1d9">query</a> what, int idx=0) const </td></tr>
-<tr class="memdesc:a8d42a5b157c9f7c55af17f2e24a37f72 inherit pub_methods_structmkldnn_1_1primitive__desc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queries and returns requested memory primitive descriptor.  <a href="#a8d42a5b157c9f7c55af17f2e24a37f72">More...</a><br/></td></tr>
-<tr class="separator:a8d42a5b157c9f7c55af17f2e24a37f72 inherit pub_methods_structmkldnn_1_1primitive__desc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab1725ad8282351d54555d6affb37428 inherit pub_methods_structmkldnn_1_1primitive__desc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1primitive__desc.html#aab1725ad8282351d54555d6affb37428">query_md</a> (<a class="el" href="group__cpp__api__enums.html#ga6d88ff11a07bae09a5c348d314c5d1d9">query</a> what, int idx=0) const </td></tr>
+<tr class="memdesc:aab1725ad8282351d54555d6affb37428 inherit pub_methods_structmkldnn_1_1primitive__desc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queries and returns requested memory descriptor.  <a href="#aab1725ad8282351d54555d6affb37428">More...</a><br/></td></tr>
+<tr class="separator:aab1725ad8282351d54555d6affb37428 inherit pub_methods_structmkldnn_1_1primitive__desc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classmkldnn_1_1handle"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classmkldnn_1_1handle')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classmkldnn_1_1handle.html">mkldnn::handle&lt; mkldnn_primitive_desc_t &gt;</a></td></tr>
 <tr class="memitem:a4194187ee28bdeab2b529f892e487ea3 inherit pub_methods_classmkldnn_1_1handle"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmkldnn_1_1handle.html#a4194187ee28bdeab2b529f892e487ea3">handle</a> (mkldnn_primitive_desc_tt=0, bool weak=false)</td></tr>
 <tr class="memdesc:a4194187ee28bdeab2b529f892e487ea3 inherit pub_methods_classmkldnn_1_1handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a C handle wrapper.  <a href="#a4194187ee28bdeab2b529f892e487ea3">More...</a><br/></td></tr>
@@ -165,7 +170,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:af25c0061b4f7372601556f571cb2b5e2 inherit pro_methods_classmkldnn_1_1handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a8c2ceb879a7f2e68eeef414c97ab3910"></a>
+<a class="anchor" id="aa36e54ad6024b887f9b2936afec9516a"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -188,7 +193,13 @@ Additional Inherited Members</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="structmkldnn_1_1shuffle__forward_1_1primitive__desc.html">shuffle_forward::primitive_desc</a> &amp;&#160;</td>
-          <td class="paramname"><em>hint_fwd_pd</em>&#160;</td>
+          <td class="paramname"><em>hint_fwd_pd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structmkldnn_1_1primitive__attr.html">primitive_attr</a> &amp;&#160;</td>
+          <td class="paramname"><em>aattr</em> = <code><a class="el" href="structmkldnn_1_1primitive__attr.html">primitive_attr</a>()</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -206,12 +217,12 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="afe2be6fbea445e70bfe2e7a0233a6e12"></a>
+<a class="anchor" id="a0cd2e38a74191e8ea19e4cc33f0ddc85"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">mkldnn::shuffle_backward::primitive_desc::REG_QUERY_MPD </td>
+          <td class="memname">mkldnn::shuffle_backward::primitive_desc::REG_QUERY_MD </td>
           <td>(</td>
           <td class="paramtype">diff_src&#160;</td>
           <td class="paramname">, </td>
@@ -238,12 +249,12 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a635454970e6c971dd560b9a5b218d148"></a>
+<a class="anchor" id="a5c331c5de5fd9bf1815125253a48eb8a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">mkldnn::shuffle_backward::primitive_desc::REG_QUERY_MPD </td>
+          <td class="memname">mkldnn::shuffle_backward::primitive_desc::REG_QUERY_MD </td>
           <td>(</td>
           <td class="paramtype">diff_dst&#160;</td>
           <td class="paramname">, </td>
@@ -252,6 +263,38 @@ Additional Inherited Members</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">diff_dst&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">0&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8a2ae76bf7962c4196326e02a451bd17"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mkldnn::shuffle_backward::primitive_desc::REG_QUERY_MD </td>
+          <td>(</td>
+          <td class="paramtype">scratchpad&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">scratchpad&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>

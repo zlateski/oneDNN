@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
-   &#160;<span id="projectnumber">0.18.0</span>
+   &#160;<span id="projectnumber">0.90.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
   </td>
@@ -89,22 +89,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gac9b55d3ead99ab0d191bebc978aef0c6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__deconvolution.html#gac9b55d3ead99ab0d191bebc978aef0c6">mkldnn_deconvolution_forward_desc_init</a> (<a class="el" href="group__c__api__types__memory.html#ga22892e72c09157377e6d0358273025a3">mkldnn_deconvolution_desc_t</a> *conv_desc, <a class="el" href="group__c__api__types__generic.html#ga5b98c8059c2aff8861157bf070c3f520">mkldnn_prop_kind_t</a> prop_kind, <a class="el" href="group__c__api__types__generic.html#gaa27d43cdd1e439cc41a9580d23ce3e97">mkldnn_alg_kind_t</a> alg_kind, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *src_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *weights_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *bias_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *dst_desc, const <a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a> strides, const <a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a> padding_l, const <a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a> padding_r, <a class="el" href="group__c__api__types__generic.html#ga1823708d8b9d445fe177295f2b5d74bd">mkldnn_padding_kind_t</a> padding_kind)</td></tr>
+<tr class="memitem:gac9b55d3ead99ab0d191bebc978aef0c6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__deconvolution.html#gac9b55d3ead99ab0d191bebc978aef0c6">mkldnn_deconvolution_forward_desc_init</a> (<a class="el" href="group__c__api__types__op__descs.html#ga22892e72c09157377e6d0358273025a3">mkldnn_deconvolution_desc_t</a> *conv_desc, <a class="el" href="group__c__api__types__generic.html#ga5b98c8059c2aff8861157bf070c3f520">mkldnn_prop_kind_t</a> prop_kind, <a class="el" href="group__c__api__types__generic.html#gaa27d43cdd1e439cc41a9580d23ce3e97">mkldnn_alg_kind_t</a> alg_kind, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *src_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *weights_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *bias_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *dst_desc, const <a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a> strides, const <a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a> padding_l, const <a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a> padding_r, <a class="el" href="group__c__api__types__generic.html#ga1823708d8b9d445fe177295f2b5d74bd">mkldnn_padding_kind_t</a> padding_kind)</td></tr>
 <tr class="memdesc:gac9b55d3ead99ab0d191bebc978aef0c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a deconvolution descriptor <code>deconv_desc</code> for forward propagation using <code>prop_kind</code> (possible values are <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f" title="Forward data propagation (training mode). ">mkldnn_forward_training</a> and <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a58a923fb6c4e1214e1505b5fa0b1e3fa" title="Forward data propagation (inference mode). ">mkldnn_forward_inference</a>), <code>alg_kind</code>, memory descriptors, <code>strides</code>, <code>padding_l</code>, <code>padding_r</code>, and <code>padding_kind</code>.  <a href="#gac9b55d3ead99ab0d191bebc978aef0c6">More...</a><br/></td></tr>
 <tr class="separator:gac9b55d3ead99ab0d191bebc978aef0c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga51d4c9dd17f1c670e0e4792088d5e016"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__deconvolution.html#ga51d4c9dd17f1c670e0e4792088d5e016">mkldnn_dilated_deconvolution_forward_desc_init</a> (<a class="el" href="group__c__api__types__memory.html#ga22892e72c09157377e6d0358273025a3">mkldnn_deconvolution_desc_t</a> *conv_desc, <a class="el" href="group__c__api__types__generic.html#ga5b98c8059c2aff8861157bf070c3f520">mkldnn_prop_kind_t</a> prop_kind, <a class="el" href="group__c__api__types__generic.html#gaa27d43cdd1e439cc41a9580d23ce3e97">mkldnn_alg_kind_t</a> alg_kind, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *src_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *weights_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *bias_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *dst_desc, const <a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a> strides, const <a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a> dilates, const <a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a> padding_l, const <a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a> padding_r, <a class="el" href="group__c__api__types__generic.html#ga1823708d8b9d445fe177295f2b5d74bd">mkldnn_padding_kind_t</a> padding_kind)</td></tr>
+<tr class="memitem:ga51d4c9dd17f1c670e0e4792088d5e016"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__deconvolution.html#ga51d4c9dd17f1c670e0e4792088d5e016">mkldnn_dilated_deconvolution_forward_desc_init</a> (<a class="el" href="group__c__api__types__op__descs.html#ga22892e72c09157377e6d0358273025a3">mkldnn_deconvolution_desc_t</a> *conv_desc, <a class="el" href="group__c__api__types__generic.html#ga5b98c8059c2aff8861157bf070c3f520">mkldnn_prop_kind_t</a> prop_kind, <a class="el" href="group__c__api__types__generic.html#gaa27d43cdd1e439cc41a9580d23ce3e97">mkldnn_alg_kind_t</a> alg_kind, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *src_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *weights_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *bias_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *dst_desc, const <a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a> strides, const <a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a> dilates, const <a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a> padding_l, const <a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a> padding_r, <a class="el" href="group__c__api__types__generic.html#ga1823708d8b9d445fe177295f2b5d74bd">mkldnn_padding_kind_t</a> padding_kind)</td></tr>
 <tr class="memdesc:ga51d4c9dd17f1c670e0e4792088d5e016"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a dilated deconvolution descriptor <code>deconv_desc</code> for forward propagation using <code>prop_kind</code> (possible values are <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f" title="Forward data propagation (training mode). ">mkldnn_forward_training</a> and <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a58a923fb6c4e1214e1505b5fa0b1e3fa" title="Forward data propagation (inference mode). ">mkldnn_forward_inference</a>), <code>alg_kind</code>, memory descriptors, <code>strides</code>, <code>dilates</code>, <code>padding_l</code>, <code>padding_r</code>, and <code>padding_kind</code>.  <a href="#ga51d4c9dd17f1c670e0e4792088d5e016">More...</a><br/></td></tr>
 <tr class="separator:ga51d4c9dd17f1c670e0e4792088d5e016"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0fdb20fbd655e09a9f11531775ae1490"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__deconvolution.html#ga0fdb20fbd655e09a9f11531775ae1490">mkldnn_deconvolution_backward_data_desc_init</a> (<a class="el" href="group__c__api__types__memory.html#ga22892e72c09157377e6d0358273025a3">mkldnn_deconvolution_desc_t</a> *conv_desc, <a class="el" href="group__c__api__types__generic.html#gaa27d43cdd1e439cc41a9580d23ce3e97">mkldnn_alg_kind_t</a> alg_kind, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *diff_src_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *weights_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *diff_dst_desc, const <a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a> strides, const <a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a> padding_l, const <a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a> padding_r, <a class="el" href="group__c__api__types__generic.html#ga1823708d8b9d445fe177295f2b5d74bd">mkldnn_padding_kind_t</a> padding_kind)</td></tr>
+<tr class="memitem:ga0fdb20fbd655e09a9f11531775ae1490"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__deconvolution.html#ga0fdb20fbd655e09a9f11531775ae1490">mkldnn_deconvolution_backward_data_desc_init</a> (<a class="el" href="group__c__api__types__op__descs.html#ga22892e72c09157377e6d0358273025a3">mkldnn_deconvolution_desc_t</a> *conv_desc, <a class="el" href="group__c__api__types__generic.html#gaa27d43cdd1e439cc41a9580d23ce3e97">mkldnn_alg_kind_t</a> alg_kind, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *diff_src_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *weights_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *diff_dst_desc, const <a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a> strides, const <a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a> padding_l, const <a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a> padding_r, <a class="el" href="group__c__api__types__generic.html#ga1823708d8b9d445fe177295f2b5d74bd">mkldnn_padding_kind_t</a> padding_kind)</td></tr>
 <tr class="memdesc:ga0fdb20fbd655e09a9f11531775ae1490"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a deconvolution descriptor <code>conv_desc</code> for backward propagation with respect to data using <code>alg_kind</code>, memory descriptors, <code>strides</code>, <code>padding_l</code>, <code>padding_r</code>, and <code>padding_kind</code>.  <a href="#ga0fdb20fbd655e09a9f11531775ae1490">More...</a><br/></td></tr>
 <tr class="separator:ga0fdb20fbd655e09a9f11531775ae1490"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga853b063f849339a538f95b4ed0a011f2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__deconvolution.html#ga853b063f849339a538f95b4ed0a011f2">mkldnn_dilated_deconvolution_backward_data_desc_init</a> (<a class="el" href="group__c__api__types__memory.html#ga22892e72c09157377e6d0358273025a3">mkldnn_deconvolution_desc_t</a> *conv_desc, <a class="el" href="group__c__api__types__generic.html#gaa27d43cdd1e439cc41a9580d23ce3e97">mkldnn_alg_kind_t</a> alg_kind, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *diff_src_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *weights_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *diff_dst_desc, const <a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a> strides, const <a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a> dilates, const <a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a> padding_l, const <a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a> padding_r, <a class="el" href="group__c__api__types__generic.html#ga1823708d8b9d445fe177295f2b5d74bd">mkldnn_padding_kind_t</a> padding_kind)</td></tr>
+<tr class="memitem:ga853b063f849339a538f95b4ed0a011f2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__deconvolution.html#ga853b063f849339a538f95b4ed0a011f2">mkldnn_dilated_deconvolution_backward_data_desc_init</a> (<a class="el" href="group__c__api__types__op__descs.html#ga22892e72c09157377e6d0358273025a3">mkldnn_deconvolution_desc_t</a> *conv_desc, <a class="el" href="group__c__api__types__generic.html#gaa27d43cdd1e439cc41a9580d23ce3e97">mkldnn_alg_kind_t</a> alg_kind, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *diff_src_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *weights_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *diff_dst_desc, const <a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a> strides, const <a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a> dilates, const <a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a> padding_l, const <a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a> padding_r, <a class="el" href="group__c__api__types__generic.html#ga1823708d8b9d445fe177295f2b5d74bd">mkldnn_padding_kind_t</a> padding_kind)</td></tr>
 <tr class="memdesc:ga853b063f849339a538f95b4ed0a011f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a dilated deconvolution descriptor <code>conv_desc</code> for backward propagation with respect to data using <code>alg_kind</code>, memory descriptors, <code>strides</code>, <code>dilates</code>, <code>padding_l</code>, <code>padding_r</code>, and <code>padding_kind</code>.  <a href="#ga853b063f849339a538f95b4ed0a011f2">More...</a><br/></td></tr>
 <tr class="separator:ga853b063f849339a538f95b4ed0a011f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad71e01f1152d6ccbb874c73327c9c96c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__deconvolution.html#gad71e01f1152d6ccbb874c73327c9c96c">mkldnn_deconvolution_backward_weights_desc_init</a> (<a class="el" href="group__c__api__types__memory.html#ga22892e72c09157377e6d0358273025a3">mkldnn_deconvolution_desc_t</a> *conv_desc, <a class="el" href="group__c__api__types__generic.html#gaa27d43cdd1e439cc41a9580d23ce3e97">mkldnn_alg_kind_t</a> alg_kind, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *src_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *diff_weights_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *diff_bias_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *diff_dst_desc, const <a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a> strides, const <a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a> padding_l, const <a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a> padding_r, <a class="el" href="group__c__api__types__generic.html#ga1823708d8b9d445fe177295f2b5d74bd">mkldnn_padding_kind_t</a> padding_kind)</td></tr>
+<tr class="memitem:gad71e01f1152d6ccbb874c73327c9c96c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__deconvolution.html#gad71e01f1152d6ccbb874c73327c9c96c">mkldnn_deconvolution_backward_weights_desc_init</a> (<a class="el" href="group__c__api__types__op__descs.html#ga22892e72c09157377e6d0358273025a3">mkldnn_deconvolution_desc_t</a> *conv_desc, <a class="el" href="group__c__api__types__generic.html#gaa27d43cdd1e439cc41a9580d23ce3e97">mkldnn_alg_kind_t</a> alg_kind, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *src_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *diff_weights_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *diff_bias_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *diff_dst_desc, const <a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a> strides, const <a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a> padding_l, const <a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a> padding_r, <a class="el" href="group__c__api__types__generic.html#ga1823708d8b9d445fe177295f2b5d74bd">mkldnn_padding_kind_t</a> padding_kind)</td></tr>
 <tr class="memdesc:gad71e01f1152d6ccbb874c73327c9c96c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a deconvolution descriptor <code>conv_desc</code> for backward propagation with respect to weights using <code>alg_kind</code>, memory descriptors, <code>strides</code>, <code>padding_l</code>, <code>padding_r</code>, and <code>padding_kind</code>.  <a href="#gad71e01f1152d6ccbb874c73327c9c96c">More...</a><br/></td></tr>
 <tr class="separator:gad71e01f1152d6ccbb874c73327c9c96c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa15a96289d4dcc0a98df8aef04b528bd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__deconvolution.html#gaa15a96289d4dcc0a98df8aef04b528bd">mkldnn_dilated_deconvolution_backward_weights_desc_init</a> (<a class="el" href="group__c__api__types__memory.html#ga22892e72c09157377e6d0358273025a3">mkldnn_deconvolution_desc_t</a> *conv_desc, <a class="el" href="group__c__api__types__generic.html#gaa27d43cdd1e439cc41a9580d23ce3e97">mkldnn_alg_kind_t</a> alg_kind, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *src_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *diff_weights_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *diff_bias_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *diff_dst_desc, const <a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a> strides, const <a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a> dilates, const <a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a> padding_l, const <a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a> padding_r, <a class="el" href="group__c__api__types__generic.html#ga1823708d8b9d445fe177295f2b5d74bd">mkldnn_padding_kind_t</a> padding_kind)</td></tr>
+<tr class="memitem:gaa15a96289d4dcc0a98df8aef04b528bd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__deconvolution.html#gaa15a96289d4dcc0a98df8aef04b528bd">mkldnn_dilated_deconvolution_backward_weights_desc_init</a> (<a class="el" href="group__c__api__types__op__descs.html#ga22892e72c09157377e6d0358273025a3">mkldnn_deconvolution_desc_t</a> *conv_desc, <a class="el" href="group__c__api__types__generic.html#gaa27d43cdd1e439cc41a9580d23ce3e97">mkldnn_alg_kind_t</a> alg_kind, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *src_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *diff_weights_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *diff_bias_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *diff_dst_desc, const <a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a> strides, const <a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a> dilates, const <a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a> padding_l, const <a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a> padding_r, <a class="el" href="group__c__api__types__generic.html#ga1823708d8b9d445fe177295f2b5d74bd">mkldnn_padding_kind_t</a> padding_kind)</td></tr>
 <tr class="memdesc:gaa15a96289d4dcc0a98df8aef04b528bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a dilated deconvolution descriptor <code>conv_desc</code> for backward propagation with respect to weights using <code>alg_kind</code>, memory descriptors, <code>strides</code>, <code>dilates</code>, <code>padding_l</code>, <code>padding_r</code>, and <code>padding_kind</code>.  <a href="#gaa15a96289d4dcc0a98df8aef04b528bd">More...</a><br/></td></tr>
 <tr class="separator:gaa15a96289d4dcc0a98df8aef04b528bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -118,7 +118,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API mkldnn_deconvolution_forward_desc_init </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__c__api__types__memory.html#ga22892e72c09157377e6d0358273025a3">mkldnn_deconvolution_desc_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__c__api__types__op__descs.html#ga22892e72c09157377e6d0358273025a3">mkldnn_deconvolution_desc_t</a> *&#160;</td>
           <td class="paramname"><em>conv_desc</em>, </td>
         </tr>
         <tr>
@@ -160,19 +160,19 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a>&#160;</td>
           <td class="paramname"><em>strides</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a>&#160;</td>
           <td class="paramname"><em>padding_l</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a>&#160;</td>
           <td class="paramname"><em>padding_r</em>, </td>
         </tr>
         <tr>
@@ -190,19 +190,19 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initializes a deconvolution descriptor <code>deconv_desc</code> for forward propagation using <code>prop_kind</code> (possible values are <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f" title="Forward data propagation (training mode). ">mkldnn_forward_training</a> and <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a58a923fb6c4e1214e1505b5fa0b1e3fa" title="Forward data propagation (inference mode). ">mkldnn_forward_inference</a>), <code>alg_kind</code>, memory descriptors, <code>strides</code>, <code>padding_l</code>, <code>padding_r</code>, and <code>padding_kind</code>. </p>
-<p>In order to create a deconvolution without bias, <code>bias_desc</code> should either be <code>NULL</code> or point to a descriptor with memory format equal to <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a9a565f82425fa7a397344fb7a570aba3" title="Undefined memory format, used for empty memory descriptors. ">mkldnn_format_undef</a>.</p>
+<p>In order to create a deconvolution without bias, <code>bias_desc</code> should either be <code>NULL</code> or point to a descriptor with memory format kind equals <a class="el" href="group__c__api__types__generic.html#gga1f6c390306d4c8a438c0efbff08c0539afa2ed8138654e17c7b418579d3273130" title="Undefined memory format, used for empty memory descriptors. ">mkldnn_format_kind_undef</a>.</p>
 <dl class="section note"><dt>Note</dt><dd>If <code>padding_r</code> is <code>NULL</code>, the padding is supposed to be symmetric.</dd>
 <dd>
-Memory descriptors are allowed to be initialized with <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a5ae7d369fcd51464f613e51d73eae547" title="Unspecified format. ">mkldnn_any</a> value of <code>format_kind</code>.</dd></dl>
-<p>Order of inputs:</p>
+Memory descriptors are allowed to be initialized with <a class="el" href="group__c__api__types__generic.html#gga1f6c390306d4c8a438c0efbff08c0539a25ba80bb864a69c9fae70b4503e76167" title="Unspecified format. ">mkldnn_format_kind_any</a> value of <code>format_kind</code>.</dd></dl>
+<p>Inputs:</p>
 <ul>
-<li>src (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ac17b645e3801adaaeee3107103ec8a72" title="source memory primitive desc ">mkldnn_query_src_pd</a>, 0)</li>
-<li>weights (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9aad24a528aa4e68a27da4b23063eb76ee" title="weights memory primitive descriptor desc ">mkldnn_query_weights_pd</a>, 0)</li>
-<li>bias (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9aad24a528aa4e68a27da4b23063eb76ee" title="weights memory primitive descriptor desc ">mkldnn_query_weights_pd</a>, 1), if created with bias</li>
+<li>src (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a2bccd0a79be2c331227c353c294c3fbc" title="source memory desc ">mkldnn_query_src_md</a>, 0)</li>
+<li>weights (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a4d1661d6a50277029d02417f6b65435d" title="weights memory descriptor desc ">mkldnn_query_weights_md</a>, 0)</li>
+<li>bias (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a4d1661d6a50277029d02417f6b65435d" title="weights memory descriptor desc ">mkldnn_query_weights_md</a>, 1), if created with bias</li>
 </ul>
-<p>Order of outputs:</p>
+<p>Outputs:</p>
 <ul>
-<li>dst (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9abb15fa8a7eb5aebfe547ac57a96c2d56" title="destination memory primitive desc ">mkldnn_query_dst_pd</a>, 0) </li>
+<li>dst (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9adccda04151e0c287f0de64b832d33ac4" title="destination memory desc ">mkldnn_query_dst_md</a>, 0) </li>
 </ul>
 
 </div>
@@ -214,7 +214,7 @@ Memory descriptors are allowed to be initialized with <a class="el" href="group_
         <tr>
           <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API mkldnn_dilated_deconvolution_forward_desc_init </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__c__api__types__memory.html#ga22892e72c09157377e6d0358273025a3">mkldnn_deconvolution_desc_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__c__api__types__op__descs.html#ga22892e72c09157377e6d0358273025a3">mkldnn_deconvolution_desc_t</a> *&#160;</td>
           <td class="paramname"><em>conv_desc</em>, </td>
         </tr>
         <tr>
@@ -256,25 +256,25 @@ Memory descriptors are allowed to be initialized with <a class="el" href="group_
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a>&#160;</td>
           <td class="paramname"><em>strides</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a>&#160;</td>
           <td class="paramname"><em>dilates</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a>&#160;</td>
           <td class="paramname"><em>padding_l</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a>&#160;</td>
           <td class="paramname"><em>padding_r</em>, </td>
         </tr>
         <tr>
@@ -292,19 +292,19 @@ Memory descriptors are allowed to be initialized with <a class="el" href="group_
 </div><div class="memdoc">
 
 <p>Initializes a dilated deconvolution descriptor <code>deconv_desc</code> for forward propagation using <code>prop_kind</code> (possible values are <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f" title="Forward data propagation (training mode). ">mkldnn_forward_training</a> and <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a58a923fb6c4e1214e1505b5fa0b1e3fa" title="Forward data propagation (inference mode). ">mkldnn_forward_inference</a>), <code>alg_kind</code>, memory descriptors, <code>strides</code>, <code>dilates</code>, <code>padding_l</code>, <code>padding_r</code>, and <code>padding_kind</code>. </p>
-<p>In order to create a dilated deconvolution without bias, <code>bias_desc</code> should either be <code>NULL</code> or point to a descriptor with memory format equal to <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a9a565f82425fa7a397344fb7a570aba3" title="Undefined memory format, used for empty memory descriptors. ">mkldnn_format_undef</a>.</p>
+<p>In order to create a dilated deconvolution without bias, <code>bias_desc</code> should either be <code>NULL</code> or point to a descriptor with memory format kind equal <a class="el" href="group__c__api__types__generic.html#gga1f6c390306d4c8a438c0efbff08c0539afa2ed8138654e17c7b418579d3273130" title="Undefined memory format, used for empty memory descriptors. ">mkldnn_format_kind_undef</a>.</p>
 <dl class="section note"><dt>Note</dt><dd>If <code>padding_r</code> is <code>NULL</code>, the padding is supposed to be symmetric.</dd>
 <dd>
-Memory descriptors are allowed to be initialized with <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a5ae7d369fcd51464f613e51d73eae547" title="Unspecified format. ">mkldnn_any</a> value of <code>format_kind</code>.</dd></dl>
-<p>Order of inputs:</p>
+Memory descriptors are allowed to be initialized with <a class="el" href="group__c__api__types__generic.html#gga1f6c390306d4c8a438c0efbff08c0539a25ba80bb864a69c9fae70b4503e76167" title="Unspecified format. ">mkldnn_format_kind_any</a> value of <code>format_kind</code>.</dd></dl>
+<p>Inputs:</p>
 <ul>
-<li>src (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ac17b645e3801adaaeee3107103ec8a72" title="source memory primitive desc ">mkldnn_query_src_pd</a>, 0)</li>
-<li>weights (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9aad24a528aa4e68a27da4b23063eb76ee" title="weights memory primitive descriptor desc ">mkldnn_query_weights_pd</a>, 0)</li>
-<li>bias (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9aad24a528aa4e68a27da4b23063eb76ee" title="weights memory primitive descriptor desc ">mkldnn_query_weights_pd</a>, 1), if created with bias</li>
+<li>src (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a2bccd0a79be2c331227c353c294c3fbc" title="source memory desc ">mkldnn_query_src_md</a>, 0)</li>
+<li>weights (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a4d1661d6a50277029d02417f6b65435d" title="weights memory descriptor desc ">mkldnn_query_weights_md</a>, 0)</li>
+<li>bias (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a4d1661d6a50277029d02417f6b65435d" title="weights memory descriptor desc ">mkldnn_query_weights_md</a>, 1), if created with bias</li>
 </ul>
-<p>Order of outputs:</p>
+<p>Outputs:</p>
 <ul>
-<li>dst (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9abb15fa8a7eb5aebfe547ac57a96c2d56" title="destination memory primitive desc ">mkldnn_query_dst_pd</a>, 0) </li>
+<li>dst (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9adccda04151e0c287f0de64b832d33ac4" title="destination memory desc ">mkldnn_query_dst_md</a>, 0) </li>
 </ul>
 
 </div>
@@ -316,7 +316,7 @@ Memory descriptors are allowed to be initialized with <a class="el" href="group_
         <tr>
           <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API mkldnn_deconvolution_backward_data_desc_init </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__c__api__types__memory.html#ga22892e72c09157377e6d0358273025a3">mkldnn_deconvolution_desc_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__c__api__types__op__descs.html#ga22892e72c09157377e6d0358273025a3">mkldnn_deconvolution_desc_t</a> *&#160;</td>
           <td class="paramname"><em>conv_desc</em>, </td>
         </tr>
         <tr>
@@ -346,19 +346,19 @@ Memory descriptors are allowed to be initialized with <a class="el" href="group_
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a>&#160;</td>
           <td class="paramname"><em>strides</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a>&#160;</td>
           <td class="paramname"><em>padding_l</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a>&#160;</td>
           <td class="paramname"><em>padding_r</em>, </td>
         </tr>
         <tr>
@@ -376,15 +376,15 @@ Memory descriptors are allowed to be initialized with <a class="el" href="group_
 </div><div class="memdoc">
 
 <p>Initializes a deconvolution descriptor <code>conv_desc</code> for backward propagation with respect to data using <code>alg_kind</code>, memory descriptors, <code>strides</code>, <code>padding_l</code>, <code>padding_r</code>, and <code>padding_kind</code>. </p>
-<dl class="section note"><dt>Note</dt><dd>Memory descriptors are allowed to be initialized with <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a5ae7d369fcd51464f613e51d73eae547" title="Unspecified format. ">mkldnn_any</a> value of <code>format_kind</code>.</dd></dl>
-<p>Order of inputs:</p>
+<dl class="section note"><dt>Note</dt><dd>Memory descriptors are allowed to be initialized with <a class="el" href="group__c__api__types__generic.html#gga1f6c390306d4c8a438c0efbff08c0539a25ba80bb864a69c9fae70b4503e76167" title="Unspecified format. ">mkldnn_format_kind_any</a> value of <code>format_kind</code>.</dd></dl>
+<p>Inputs:</p>
 <ul>
-<li>diff_dst (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9aa5b466fae3a9bda2d112db68cfd2b68e" title="destination grad. ">mkldnn_query_diff_dst_pd</a>, 0)</li>
-<li>weights (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9aad24a528aa4e68a27da4b23063eb76ee" title="weights memory primitive descriptor desc ">mkldnn_query_weights_pd</a>, 0)</li>
+<li>diff_dst (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9acfa30e38738b3de8c7d3a7f21ffc1623" title="destination grad. ">mkldnn_query_diff_dst_md</a>, 0)</li>
+<li>weights (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a4d1661d6a50277029d02417f6b65435d" title="weights memory descriptor desc ">mkldnn_query_weights_md</a>, 0)</li>
 </ul>
-<p>Order of outputs:</p>
+<p>Outputs:</p>
 <ul>
-<li>diff_src (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ac95fbe152e97a3989dc794a70643d834" title="source gradient memory primitive desc ">mkldnn_query_diff_src_pd</a>, 0) </li>
+<li>diff_src (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ad915503c92000da20088fdb93cd685b9" title="source gradient memory desc ">mkldnn_query_diff_src_md</a>, 0) </li>
 </ul>
 
 </div>
@@ -396,7 +396,7 @@ Memory descriptors are allowed to be initialized with <a class="el" href="group_
         <tr>
           <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API mkldnn_dilated_deconvolution_backward_data_desc_init </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__c__api__types__memory.html#ga22892e72c09157377e6d0358273025a3">mkldnn_deconvolution_desc_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__c__api__types__op__descs.html#ga22892e72c09157377e6d0358273025a3">mkldnn_deconvolution_desc_t</a> *&#160;</td>
           <td class="paramname"><em>conv_desc</em>, </td>
         </tr>
         <tr>
@@ -426,25 +426,25 @@ Memory descriptors are allowed to be initialized with <a class="el" href="group_
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a>&#160;</td>
           <td class="paramname"><em>strides</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a>&#160;</td>
           <td class="paramname"><em>dilates</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a>&#160;</td>
           <td class="paramname"><em>padding_l</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a>&#160;</td>
           <td class="paramname"><em>padding_r</em>, </td>
         </tr>
         <tr>
@@ -462,15 +462,15 @@ Memory descriptors are allowed to be initialized with <a class="el" href="group_
 </div><div class="memdoc">
 
 <p>Initializes a dilated deconvolution descriptor <code>conv_desc</code> for backward propagation with respect to data using <code>alg_kind</code>, memory descriptors, <code>strides</code>, <code>dilates</code>, <code>padding_l</code>, <code>padding_r</code>, and <code>padding_kind</code>. </p>
-<dl class="section note"><dt>Note</dt><dd>Memory descriptors are allowed to be initialized with <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a5ae7d369fcd51464f613e51d73eae547" title="Unspecified format. ">mkldnn_any</a> value of <code>format_kind</code>.</dd></dl>
-<p>Order of inputs:</p>
+<dl class="section note"><dt>Note</dt><dd>Memory descriptors are allowed to be initialized with <a class="el" href="group__c__api__types__generic.html#gga1f6c390306d4c8a438c0efbff08c0539a25ba80bb864a69c9fae70b4503e76167" title="Unspecified format. ">mkldnn_format_kind_any</a> value of <code>format_kind</code>.</dd></dl>
+<p>Inputs:</p>
 <ul>
-<li>diff_dst (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9aa5b466fae3a9bda2d112db68cfd2b68e" title="destination grad. ">mkldnn_query_diff_dst_pd</a>, 0)</li>
-<li>weights (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9aad24a528aa4e68a27da4b23063eb76ee" title="weights memory primitive descriptor desc ">mkldnn_query_weights_pd</a>, 0)</li>
+<li>diff_dst (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9acfa30e38738b3de8c7d3a7f21ffc1623" title="destination grad. ">mkldnn_query_diff_dst_md</a>, 0)</li>
+<li>weights (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a4d1661d6a50277029d02417f6b65435d" title="weights memory descriptor desc ">mkldnn_query_weights_md</a>, 0)</li>
 </ul>
-<p>Order of outputs:</p>
+<p>Outputs:</p>
 <ul>
-<li>diff_src (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ac95fbe152e97a3989dc794a70643d834" title="source gradient memory primitive desc ">mkldnn_query_diff_src_pd</a>, 0) </li>
+<li>diff_src (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ad915503c92000da20088fdb93cd685b9" title="source gradient memory desc ">mkldnn_query_diff_src_md</a>, 0) </li>
 </ul>
 
 </div>
@@ -482,7 +482,7 @@ Memory descriptors are allowed to be initialized with <a class="el" href="group_
         <tr>
           <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API mkldnn_deconvolution_backward_weights_desc_init </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__c__api__types__memory.html#ga22892e72c09157377e6d0358273025a3">mkldnn_deconvolution_desc_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__c__api__types__op__descs.html#ga22892e72c09157377e6d0358273025a3">mkldnn_deconvolution_desc_t</a> *&#160;</td>
           <td class="paramname"><em>conv_desc</em>, </td>
         </tr>
         <tr>
@@ -518,19 +518,19 @@ Memory descriptors are allowed to be initialized with <a class="el" href="group_
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a>&#160;</td>
           <td class="paramname"><em>strides</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a>&#160;</td>
           <td class="paramname"><em>padding_l</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a>&#160;</td>
           <td class="paramname"><em>padding_r</em>, </td>
         </tr>
         <tr>
@@ -548,16 +548,16 @@ Memory descriptors are allowed to be initialized with <a class="el" href="group_
 </div><div class="memdoc">
 
 <p>Initializes a deconvolution descriptor <code>conv_desc</code> for backward propagation with respect to weights using <code>alg_kind</code>, memory descriptors, <code>strides</code>, <code>padding_l</code>, <code>padding_r</code>, and <code>padding_kind</code>. </p>
-<dl class="section note"><dt>Note</dt><dd>Memory descriptors are allowed to be initialized with <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a5ae7d369fcd51464f613e51d73eae547" title="Unspecified format. ">mkldnn_any</a> value of <code>format_kind</code>.</dd></dl>
-<p>Order of inputs:</p>
+<dl class="section note"><dt>Note</dt><dd>Memory descriptors are allowed to be initialized with <a class="el" href="group__c__api__types__generic.html#gga1f6c390306d4c8a438c0efbff08c0539a25ba80bb864a69c9fae70b4503e76167" title="Unspecified format. ">mkldnn_format_kind_any</a> value of <code>format_kind</code>.</dd></dl>
+<p>Inputs:</p>
 <ul>
-<li>src (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ac17b645e3801adaaeee3107103ec8a72" title="source memory primitive desc ">mkldnn_query_src_pd</a>, 0)</li>
-<li>diff_dst (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9aa5b466fae3a9bda2d112db68cfd2b68e" title="destination grad. ">mkldnn_query_diff_dst_pd</a>, 0)</li>
+<li>src (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a2bccd0a79be2c331227c353c294c3fbc" title="source memory desc ">mkldnn_query_src_md</a>, 0)</li>
+<li>diff_dst (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9acfa30e38738b3de8c7d3a7f21ffc1623" title="destination grad. ">mkldnn_query_diff_dst_md</a>, 0)</li>
 </ul>
-<p>Order of outputs:</p>
+<p>Outputs:</p>
 <ul>
-<li>diff_weights (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ab43b4c2b7a151bc59bddffc009abae66" title="weights grad. ">mkldnn_query_diff_weights_pd</a>, 0)</li>
-<li>diff_bias (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ab43b4c2b7a151bc59bddffc009abae66" title="weights grad. ">mkldnn_query_diff_weights_pd</a>, 1), if created with bias </li>
+<li>diff_weights (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a2c78f7a683101ff96875e8cec787ba42" title="weights grad. ">mkldnn_query_diff_weights_md</a>, 0)</li>
+<li>diff_bias (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a2c78f7a683101ff96875e8cec787ba42" title="weights grad. ">mkldnn_query_diff_weights_md</a>, 1), if created with bias </li>
 </ul>
 
 </div>
@@ -569,7 +569,7 @@ Memory descriptors are allowed to be initialized with <a class="el" href="group_
         <tr>
           <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API mkldnn_dilated_deconvolution_backward_weights_desc_init </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__c__api__types__memory.html#ga22892e72c09157377e6d0358273025a3">mkldnn_deconvolution_desc_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__c__api__types__op__descs.html#ga22892e72c09157377e6d0358273025a3">mkldnn_deconvolution_desc_t</a> *&#160;</td>
           <td class="paramname"><em>conv_desc</em>, </td>
         </tr>
         <tr>
@@ -605,25 +605,25 @@ Memory descriptors are allowed to be initialized with <a class="el" href="group_
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a>&#160;</td>
           <td class="paramname"><em>strides</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a>&#160;</td>
           <td class="paramname"><em>dilates</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a>&#160;</td>
           <td class="paramname"><em>padding_l</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a>&#160;</td>
           <td class="paramname"><em>padding_r</em>, </td>
         </tr>
         <tr>
@@ -641,16 +641,16 @@ Memory descriptors are allowed to be initialized with <a class="el" href="group_
 </div><div class="memdoc">
 
 <p>Initializes a dilated deconvolution descriptor <code>conv_desc</code> for backward propagation with respect to weights using <code>alg_kind</code>, memory descriptors, <code>strides</code>, <code>dilates</code>, <code>padding_l</code>, <code>padding_r</code>, and <code>padding_kind</code>. </p>
-<dl class="section note"><dt>Note</dt><dd>Memory descriptors are allowed to be initialized with <a class="el" href="group__c__api__types__generic.html#gga30a390f87ef74bf03dfa48a7b3f2fb74a5ae7d369fcd51464f613e51d73eae547" title="Unspecified format. ">mkldnn_any</a> value of <code>format_kind</code>.</dd></dl>
-<p>Order of inputs:</p>
+<dl class="section note"><dt>Note</dt><dd>Memory descriptors are allowed to be initialized with <a class="el" href="group__c__api__types__generic.html#gga1f6c390306d4c8a438c0efbff08c0539a25ba80bb864a69c9fae70b4503e76167" title="Unspecified format. ">mkldnn_format_kind_any</a> value of <code>format_kind</code>.</dd></dl>
+<p>Inputs:</p>
 <ul>
-<li>src (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ac17b645e3801adaaeee3107103ec8a72" title="source memory primitive desc ">mkldnn_query_src_pd</a>, 0)</li>
-<li>diff_dst (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9aa5b466fae3a9bda2d112db68cfd2b68e" title="destination grad. ">mkldnn_query_diff_dst_pd</a>, 0)</li>
+<li>src (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a2bccd0a79be2c331227c353c294c3fbc" title="source memory desc ">mkldnn_query_src_md</a>, 0)</li>
+<li>diff_dst (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9acfa30e38738b3de8c7d3a7f21ffc1623" title="destination grad. ">mkldnn_query_diff_dst_md</a>, 0)</li>
 </ul>
-<p>Order of outputs:</p>
+<p>Outputs:</p>
 <ul>
-<li>diff_weights (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ab43b4c2b7a151bc59bddffc009abae66" title="weights grad. ">mkldnn_query_diff_weights_pd</a>, 0)</li>
-<li>diff_bias (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ab43b4c2b7a151bc59bddffc009abae66" title="weights grad. ">mkldnn_query_diff_weights_pd</a>, 1), if created with bias </li>
+<li>diff_weights (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a2c78f7a683101ff96875e8cec787ba42" title="weights grad. ">mkldnn_query_diff_weights_md</a>, 0)</li>
+<li>diff_bias (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a2c78f7a683101ff96875e8cec787ba42" title="weights grad. ">mkldnn_query_diff_weights_md</a>, 1), if created with bias </li>
 </ul>
 
 </div>

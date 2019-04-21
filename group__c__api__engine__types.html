@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
-   &#160;<span id="projectnumber">0.18.0</span>
+   &#160;<span id="projectnumber">0.90.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
   </td>
@@ -101,10 +101,16 @@ Typedefs</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
 <tr class="memitem:gaec8e96cbc2f19125c9def11efa98aa7e"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__engine__types.html#gaec8e96cbc2f19125c9def11efa98aa7e">mkldnn_engine_kind_t</a> { <a class="el" href="group__c__api__engine__types.html#ggaec8e96cbc2f19125c9def11efa98aa7ea33e9143910c4711e89aaacc7287e4f26">mkldnn_any_engine</a>, 
-<a class="el" href="group__c__api__engine__types.html#ggaec8e96cbc2f19125c9def11efa98aa7ea23ee49a2c81f9299e65252b10eed4557">mkldnn_cpu</a>
+<a class="el" href="group__c__api__engine__types.html#ggaec8e96cbc2f19125c9def11efa98aa7ea23ee49a2c81f9299e65252b10eed4557">mkldnn_cpu</a>, 
+<a class="el" href="group__c__api__engine__types.html#ggaec8e96cbc2f19125c9def11efa98aa7eaf28687c4f87b0b29b37d7fe2dfc05e2e">mkldnn_gpu</a>
  }</td></tr>
 <tr class="memdesc:gaec8e96cbc2f19125c9def11efa98aa7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kinds of engines.  <a href="group__c__api__engine__types.html#gaec8e96cbc2f19125c9def11efa98aa7e">More...</a><br/></td></tr>
 <tr class="separator:gaec8e96cbc2f19125c9def11efa98aa7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga48a2030f7076aea0ea6297b5c8f31f31"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__engine__types.html#ga48a2030f7076aea0ea6297b5c8f31f31">mkldnn_backend_kind_t</a> { <a class="el" href="group__c__api__engine__types.html#gga48a2030f7076aea0ea6297b5c8f31f31ac86051d4676af0c7d22a5ebd371670f1">mkldnn_backend_native</a>, 
+<a class="el" href="group__c__api__engine__types.html#gga48a2030f7076aea0ea6297b5c8f31f31af868f98c0576c302713ea36b591949fc">mkldnn_backend_ocl</a>
+ }</td></tr>
+<tr class="memdesc:ga48a2030f7076aea0ea6297b5c8f31f31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kinds of engine backends.  <a href="group__c__api__engine__types.html#ga48a2030f7076aea0ea6297b5c8f31f31">More...</a><br/></td></tr>
+<tr class="separator:ga48a2030f7076aea0ea6297b5c8f31f31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h2 class="groupheader">Typedef Documentation</h2>
@@ -140,6 +146,31 @@ Enumerations</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggaec8e96cbc2f19125c9def11efa98aa7ea23ee49a2c81f9299e65252b10eed4557"></a>mkldnn_cpu</em>&nbsp;</td><td class="fielddoc">
 <p>CPU engine. </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="ggaec8e96cbc2f19125c9def11efa98aa7eaf28687c4f87b0b29b37d7fe2dfc05e2e"></a>mkldnn_gpu</em>&nbsp;</td><td class="fielddoc">
+<p>GPU engine. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a class="anchor" id="ga48a2030f7076aea0ea6297b5c8f31f31"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__c__api__engine__types.html#ga48a2030f7076aea0ea6297b5c8f31f31">mkldnn_backend_kind_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Kinds of engine backends. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="gga48a2030f7076aea0ea6297b5c8f31f31ac86051d4676af0c7d22a5ebd371670f1"></a>mkldnn_backend_native</em>&nbsp;</td><td class="fielddoc">
+<p>Native backend. </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="gga48a2030f7076aea0ea6297b5c8f31f31af868f98c0576c302713ea36b591949fc"></a>mkldnn_backend_ocl</em>&nbsp;</td><td class="fielddoc">
+<p>OpenCL backend. </p>
 </td></tr>
 </table>
 

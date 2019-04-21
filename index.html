@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
-   &#160;<span id="projectnumber">0.18.0</span>
+   &#160;<span id="projectnumber">0.90.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
   </td>
@@ -82,7 +82,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>The Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN) is an open source performance library for Deep Learning (DL) applications intended for acceleration of DL frameworks on Intel(R) architecture. Intel MKL-DNN includes highly vectorized and threaded building blocks for implementation of convolutional neural networks (CNNs) and reccurent neural networks (RNNs) with C and C++ interfaces. This project is created to help the DL community innovate on the Intel(R) processor family.</p>
-<p>The library provides optimized implementations for the most common computational functions (also called primitives) used in deep neural networks covering a wide range of applications, including image recognition, object detection, semantic segmentation, neural machine translation, and speech recognition. The table below summarizes the list of supported functions and their variants.</p>
+<p>The library provides optimized implementations for the most common computational functions (also called primitives) used in deep neural networks covering a wide range of applications, including image recognition, object detection, semantic segmentation, neural machine translation, and speech recognition. The tables below summarize the list of supported functions and their variants for CPU and GPU.</p>
+<h2>CPU support</h2>
 <table class="doxtable">
 <tr>
 <th align="left">Primitive class </th><th align="left">Primitive </th><th align="center">fp32 training </th><th align="center">fp32 inference </th><th align="center">int8 inference  </th></tr>
@@ -155,6 +156,79 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr>
 <td align="left"></td><td align="left">Shuffle </td><td align="center">x </td><td align="center">x </td><td align="center">x </td></tr>
 </table>
+<h2>GPU support</h2>
+<table class="doxtable">
+<tr>
+<th align="left">Primitive class </th><th align="left">Primitive </th><th align="center">fp32 training </th><th align="center">fp32 inference </th><th align="center">fp16 inference </th><th align="center">int8 inference  </th></tr>
+<tr>
+<td align="left">Convolution </td><td align="left">1D direct convolution </td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr>
+<tr>
+<td align="left"></td><td align="left">2D direct convolution </td><td align="center">x </td><td align="center">x </td><td align="center">x </td><td align="center"></td></tr>
+<tr>
+<td align="left"></td><td align="left">2D direct deconvolution </td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr>
+<tr>
+<td align="left"></td><td align="left">2D winograd convolution </td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr>
+<tr>
+<td align="left"></td><td align="left">3D direct convolution </td><td align="center">x </td><td align="center">x </td><td align="center">x </td><td align="center"></td></tr>
+<tr>
+<td align="left"></td><td align="left">3D direct deconvolution </td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr>
+<tr>
+<td align="left">Inner Product </td><td align="left">2D inner product </td><td align="center">x </td><td align="center">x </td><td align="center">x </td><td align="center"></td></tr>
+<tr>
+<td align="left"></td><td align="left">3D inner product </td><td align="center">x </td><td align="center">x </td><td align="center">x </td><td align="center"></td></tr>
+<tr>
+<td align="left">RNN </td><td align="left">Vanilla RNN </td><td align="center"></td><td align="center">x </td><td align="center">x </td><td align="center"></td></tr>
+<tr>
+<td align="left"></td><td align="left">LSTM </td><td align="center"></td><td align="center">x </td><td align="center">x </td><td align="center"></td></tr>
+<tr>
+<td align="left"></td><td align="left">GRU </td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr>
+<tr>
+<td align="left">Pooling </td><td align="left">2D maximum pooling </td><td align="center">x </td><td align="center">x </td><td align="center">x </td><td align="center"></td></tr>
+<tr>
+<td align="left"></td><td align="left">2D average pooling </td><td align="center">x </td><td align="center">x </td><td align="center">x </td><td align="center"></td></tr>
+<tr>
+<td align="left"></td><td align="left">3D maximum pooling </td><td align="center">x </td><td align="center">x </td><td align="center">x </td><td align="center"></td></tr>
+<tr>
+<td align="left"></td><td align="left">3D average pooling </td><td align="center">x </td><td align="center">x </td><td align="center">x </td><td align="center"></td></tr>
+<tr>
+<td align="left">Normalization </td><td align="left">2D LRN (within channel) </td><td align="center"></td><td align="center">x </td><td align="center"></td><td align="center"></td></tr>
+<tr>
+<td align="left"></td><td align="left">2D LRN (across channels) </td><td align="center"></td><td align="center">x </td><td align="center"></td><td align="center"></td></tr>
+<tr>
+<td align="left"></td><td align="left">2D batch normalization </td><td align="center">x </td><td align="center">x </td><td align="center"></td><td align="center"></td></tr>
+<tr>
+<td align="left"></td><td align="left">3D batch normalization </td><td align="center">x </td><td align="center">x </td><td align="center"></td><td align="center"></td></tr>
+<tr>
+<td align="left">Activation and </td><td align="left">ReLU </td><td align="center">x </td><td align="center">x </td><td align="center">x </td><td align="center"></td></tr>
+<tr>
+<td align="left">elementwise </td><td align="left">Tanh </td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr>
+<tr>
+<td align="left">functions </td><td align="left">ELU </td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr>
+<tr>
+<td align="left"></td><td align="left">Square </td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr>
+<tr>
+<td align="left"></td><td align="left">Sqrt </td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr>
+<tr>
+<td align="left"></td><td align="left">Abs </td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr>
+<tr>
+<td align="left"></td><td align="left">Linear </td><td align="center">x </td><td align="center">x </td><td align="center">x </td><td align="center"></td></tr>
+<tr>
+<td align="left"></td><td align="left">Bounded ReLU </td><td align="center">x </td><td align="center">x </td><td align="center">x </td><td align="center"></td></tr>
+<tr>
+<td align="left"></td><td align="left">Soft ReLU </td><td align="center">x </td><td align="center">x </td><td align="center">x </td><td align="center"></td></tr>
+<tr>
+<td align="left"></td><td align="left">Logistic </td><td align="center">x </td><td align="center">x </td><td align="center">x </td><td align="center"></td></tr>
+<tr>
+<td align="left"></td><td align="left">Softmax </td><td align="center"></td><td align="center">x </td><td align="center"></td><td align="center"></td></tr>
+<tr>
+<td align="left">Data manipulation </td><td align="left">Reorder </td><td align="center">x </td><td align="center">x </td><td align="center">x </td><td align="center">x </td></tr>
+<tr>
+<td align="left"></td><td align="left">Sum </td><td align="center">x </td><td align="center">x </td><td align="center"></td><td align="center"></td></tr>
+<tr>
+<td align="left"></td><td align="left">Concat </td><td align="center">x </td><td align="center">x </td><td align="center">x </td><td align="center">x </td></tr>
+<tr>
+<td align="left"></td><td align="left">Shuffle </td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr>
+</table>
 <h2>Programming Model</h2>
 <p>Intel MKL-DNN models memory as a primitive similar to an operation primitive. This allows reconstruction of the graph of computations at run time.</p>
 <h3>Basic Terminology</h3>
@@ -192,6 +266,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>An introductory example to low-precision 8-bit computations:</p>
 <ul>
 <li><a class="el" href="ex_int8_simplenet.html">Int8 SimpleNet Example</a></li>
+</ul>
+<p>Getting started with GPU support:</p>
+<ul>
+<li><a class="el" href="getting_started_gpu.html">Getting Started with GPU Support</a></li>
 </ul>
 <p>The following examples are available in the /examples directory and provide more details about the API.</p>
 <ul>

@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
-   &#160;<span id="projectnumber">0.18.0</span>
+   &#160;<span id="projectnumber">0.90.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
   </td>
@@ -100,7 +100,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>Memory primitive that describes the data.  
+<p>Memory that describes the data.  
  <a href="structmkldnn_1_1memory.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="mkldnn_8hpp_source.html">mkldnn.hpp</a>&gt;</code></p>
@@ -109,14 +109,14 @@ Inheritance diagram for mkldnn::memory:</div>
 <div class="dyncontent">
 <div class="center"><img src="structmkldnn_1_1memory__inherit__graph.png" border="0" usemap="#mkldnn_1_1memory_inherit__map" alt="Inheritance graph"/></div>
 <map name="mkldnn_1_1memory_inherit__map" id="mkldnn_1_1memory_inherit__map">
-<area shape="rect" id="node2" href="classmkldnn_1_1primitive.html" title="Base class for all computational primitives. " alt="" coords="26,96,147,123"/><area shape="rect" id="node3" href="classmkldnn_1_1handle.html" title="mkldnn::handle\&lt; mkldnn\l_primitive_t \&gt;" alt="" coords="5,6,168,47"/></map>
+<area shape="rect" id="node2" href="classmkldnn_1_1handle.html" title="mkldnn::handle\&lt; mkldnn\l_memory_t \&gt;" alt="" coords="5,6,168,47"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for mkldnn::memory:</div>
 <div class="dyncontent">
 <div class="center"><img src="structmkldnn_1_1memory__coll__graph.png" border="0" usemap="#mkldnn_1_1memory_coll__map" alt="Collaboration graph"/></div>
 <map name="mkldnn_1_1memory_coll__map" id="mkldnn_1_1memory_coll__map">
-<area shape="rect" id="node2" href="classmkldnn_1_1primitive.html" title="Base class for all computational primitives. " alt="" coords="26,96,147,123"/><area shape="rect" id="node3" href="classmkldnn_1_1handle.html" title="mkldnn::handle\&lt; mkldnn\l_primitive_t \&gt;" alt="" coords="5,6,168,47"/></map>
+<area shape="rect" id="node2" href="classmkldnn_1_1handle.html" title="mkldnn::handle\&lt; mkldnn\l_memory_t \&gt;" alt="" coords="5,6,168,47"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
@@ -124,267 +124,380 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1memory_1_1desc.html">desc</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A memory descriptor.  <a href="structmkldnn_1_1memory_1_1desc.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1memory_1_1primitive__desc.html">primitive_desc</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A memory primitive descriptor.  <a href="structmkldnn_1_1memory_1_1primitive__desc.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:aa8a0d49cc7faaceef9d8f55d66bff57b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1memory.html#aa8a0d49cc7faaceef9d8f55d66bff57b">data_type</a> { <br/>
-&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#aa8a0d49cc7faaceef9d8f55d66bff57bafe36f365f50e0317a2fa5142881dc73e">data_undef</a> = mkldnn_data_type_undef, 
-<a class="el" href="structmkldnn_1_1memory.html#aa8a0d49cc7faaceef9d8f55d66bff57baaf36765775c9522f12bc84c72ea8355d">f32</a> = mkldnn_f32, 
-<a class="el" href="structmkldnn_1_1memory.html#aa8a0d49cc7faaceef9d8f55d66bff57baafd6316d6d009465fd42d0effc8cdac1">s32</a> = mkldnn_s32, 
-<a class="el" href="structmkldnn_1_1memory.html#aa8a0d49cc7faaceef9d8f55d66bff57ba3b210ee3077fc5a8cf09a48bd01c5f59">s16</a> = mkldnn_s16, 
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#aa8a0d49cc7faaceef9d8f55d66bff57baf31ee5e3824f1f5e5d206bdf3029f22b">data_type::undef</a> = mkldnn_data_type_undef, 
+<a class="el" href="structmkldnn_1_1memory.html#aa8a0d49cc7faaceef9d8f55d66bff57baa2449b6477c1fef79be4202906486876">data_type::f16</a> = mkldnn_f16, 
+<a class="el" href="structmkldnn_1_1memory.html#aa8a0d49cc7faaceef9d8f55d66bff57ba512dc597be7ae761876315165dc8bd2e">data_type::f32</a> = mkldnn_f32, 
+<a class="el" href="structmkldnn_1_1memory.html#aa8a0d49cc7faaceef9d8f55d66bff57baa860868d23f3a68323a2e3f6563d7f31">data_type::s32</a> = mkldnn_s32, 
 <br/>
-&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#aa8a0d49cc7faaceef9d8f55d66bff57ba4b4eb008e1bc38c0f4f2de74fdc354ab">s8</a> = mkldnn_s8, 
-<a class="el" href="structmkldnn_1_1memory.html#aa8a0d49cc7faaceef9d8f55d66bff57ba0ccb6d0e4130dfe94e06635dac6a9b11">u8</a> = mkldnn_u8
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#aa8a0d49cc7faaceef9d8f55d66bff57ba3e8d88fdd85d7153525e0647cdd97686">data_type::s8</a> = mkldnn_s8, 
+<a class="el" href="structmkldnn_1_1memory.html#aa8a0d49cc7faaceef9d8f55d66bff57ba077393852be20e37026d6281827662f2">data_type::u8</a> = mkldnn_u8
 <br/>
  }</td></tr>
 <tr class="memdesc:aa8a0d49cc7faaceef9d8f55d66bff57b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data type specification. See <a class="el" href="group__c__api__types__generic.html#ga826b2a9be4d94ac17f99bacac6d0cb29" title="Data type specification. ">mkldnn_data_type_t</a> for a detailed description.  <a href="structmkldnn_1_1memory.html#aa8a0d49cc7faaceef9d8f55d66bff57b">More...</a><br/></td></tr>
 <tr class="separator:aa8a0d49cc7faaceef9d8f55d66bff57b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a563b90355ae4fbfed12f6db8ab25a87e"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87e">format</a> { <br/>
-&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea1b7aba137f0d853dd8487fcb14fdc628">format_undef</a> = mkldnn_format_undef, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea986f069b593c7c6610bc15d678e653d9">any</a> = mkldnn_any, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea94a49fa4a564bc23f011c970383b94e3">blocked</a> = mkldnn_blocked, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eaea99de727949bed9013befda32206aeb">x</a> = mkldnn_x, 
+<tr class="memitem:a123930e31c5460c2c5f052a59c2a4ced"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ced">format_tag</a> { <br/>
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaf31ee5e3824f1f5e5d206bdf3029f22b">format_tag::undef</a> = mkldnn_format_tag_undef, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda100b8cad7cf2a56f6df78f171f97a1ec">format_tag::any</a> = mkldnn_format_tag_any, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda0cc175b9c0f1b6a831c399e269772661">format_tag::a</a> = mkldnn_a, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda187ef4436122d1cc2f40dc2b92f0eba0">format_tag::ab</a> = mkldnn_ab, 
 <br/>
-&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea4ff01f91c212576306e693c1a1ac4c12">nc</a> = mkldnn_nc, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eaf50ea8a967a354f8850f2e21120f4bee">ncw</a> = mkldnn_ncw, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea248d1514656e17887418efe321a1656b">nwc</a> = mkldnn_nwc, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eab490dcd64011784da9839a76f8b83110">nCw16c</a> = mkldnn_nCw16c, 
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda900150983cd24fb0d6963f7d28e17f72">format_tag::abc</a> = mkldnn_abc, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedae2fc714c4727ee9395f324cd2e7f331f">format_tag::abcd</a> = mkldnn_abcd, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaab56b4d92b40713acc5af89985d4b786">format_tag::abcde</a> = mkldnn_abcde, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedae80b5017098950fc58aad83c8c14978e">format_tag::abcdef</a> = mkldnn_abcdef, 
 <br/>
-&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eafc4fd623cc6ff8ed099be6d52743200a">nchw</a> = mkldnn_nchw, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea5ec50071376483f7364de8b1b85d685d">nhwc</a> = mkldnn_nhwc, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eaeab9b02510aacc27bd0043473caa6a8e">chwn</a> = mkldnn_chwn, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea2eb2c7a2e81fdfa7c14368187f5cb915">nCw4c</a> = mkldnn_nCw4c, 
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda7a05226d93263d6fc613f52400f7416d">format_tag::abdec</a> = mkldnn_abdec, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda5ff832d9bca8241d653279756f3ccd11">format_tag::acb</a> = mkldnn_acb, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedae0e56a95aff0ee48fc44e8a4faf69adb">format_tag::acbde</a> = mkldnn_acbde, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda776649ab3d00664587b889457db87da7">format_tag::acdb</a> = mkldnn_acdb, 
 <br/>
-&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea460962d0ea3081e5d730fc9cf7b33a45">nCw8c</a> = mkldnn_nCw8c, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eaf22ffd40379d8886b817c6c07d1e051e">nChw4c</a> = mkldnn_nChw4c, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea248862baad8f48e384015ffd20327223">nChw8c</a> = mkldnn_nChw8c, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea7ee460916f5c04b7f46e103474c543b7">nChw16c</a> = mkldnn_nChw16c, 
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaf95d333a023ac787b43babc5b5c480ae">format_tag::acdeb</a> = mkldnn_acdeb, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda07159c47ee1b19ae4fb9c40d480856c4">format_tag::ba</a> = mkldnn_ba, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda79ec16df80b57696a03bb364410061f3">format_tag::bac</a> = mkldnn_bac, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda5a3b732e0600663606054f6d8dfd465e">format_tag::bacd</a> = mkldnn_bacd, 
 <br/>
-&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea5dc81a175f020c19fa6c6de1b119be9a">ncdhw</a> = mkldnn_ncdhw, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eacfa425c92b15a19c476e747fab17ce1e">ndhwc</a> = mkldnn_ndhwc, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eab16eac10fd1a3c52bbdd130592b3e475">nCdhw4c</a> = mkldnn_nCdhw4c, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea4d37039770dd78417346b4dc7c73188b">nCdhw8c</a> = mkldnn_nCdhw8c, 
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda078c4e73146ba90c3e4e9daa1facac28">format_tag::bcda</a> = mkldnn_bcda, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda3944b025c9ca7eec3154b44666ae04a0">format_tag::cba</a> = mkldnn_cba, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaff2458511a39d703bd273eabbb1395d6">format_tag::cdba</a> = mkldnn_cdba, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedafafcbfdfcede01281676ab63df88a919">format_tag::cdeba</a> = mkldnn_cdeba, 
 <br/>
-&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea28f872d6caf404cfb706b2d69b2b8b64">nCdhw16c</a> = mkldnn_nCdhw16c, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea4c8c6b41aae08b78d95bb5b76d28d22b">oi</a> = mkldnn_oi, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eabdc33953230281d5e6413d2fb78b06ce">io</a> = mkldnn_io, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea70b218873ed9d069e08c851a5556e3e4">oiw</a> = mkldnn_oiw, 
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedab9a152e018d02395e6e94c5619da4a91">format_tag::decab</a> = mkldnn_decab, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda77c145adee31be0b94281ba7ebca6fcb">format_tag::Abc16a</a> = mkldnn_Abc16a, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda8adf2fda72cf03635d30469dde3640fe">format_tag::ABc16a16b</a> = mkldnn_ABc16a16b, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda7e6b87e989e2a78a5f69d2c1af35b462">format_tag::aBc16b</a> = mkldnn_aBc16b, 
 <br/>
-&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea3768b23a10d360cec7585267e9a8f97e">wio</a> = mkldnn_wio, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea897a13f5c528153d97c3722f34e26922">Owi4o</a> = mkldnn_Owi4o, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea9130912d929111f69d20c37ff20cb29c">OIw4i4o</a> = mkldnn_OIw4i4o, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eaab9e427702cc0469f4a567104b3e06cb">Owi8o</a> = mkldnn_Owi8o, 
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda4bb100f4bfde4cf12c696cd8873dc738">format_tag::ABc16b16a</a> = mkldnn_ABc16b16a, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda2a135231ba246bcff4e4a76a7783061f">format_tag::Abc4a</a> = mkldnn_Abc4a, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda84114cd99efa89c7d0d437863332a67f">format_tag::aBc4b</a> = mkldnn_aBc4b, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda8939404016732ff4ece68dfcaf40c75e">format_tag::ABc4b16a4b</a> = mkldnn_ABc4b16a4b, 
 <br/>
-&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea07e19f77f4ffe5b1004d86a81cbdfb08">OIw8o8i</a> = mkldnn_OIw8o8i, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eae9db232b3efbe08ef8fe78b1bf22a222">OIw8i8o</a> = mkldnn_OIw8i8o, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eae5e2047600c889b5329854a797712e02">OIw16i16o</a> = mkldnn_OIw16i16o, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eaf0c7173c789ea82d91f17f31182880cb">OIw16o16i</a> = mkldnn_OIw16o16i, 
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda0d815f0b88178e2f4d06b82cc23b689b">format_tag::ABc4b4a</a> = mkldnn_ABc4b4a, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda79b9870f007647a15905c0069b6ba996">format_tag::ABc8a16b2a</a> = mkldnn_ABc8a16b2a, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda2665331a935aeba5d5c76eee34fe528a">format_tag::ABc8a8b</a> = mkldnn_ABc8a8b, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedac79e8d3b22b4b6283a4d47fb29ada5ba">format_tag::aBc8b</a> = mkldnn_aBc8b, 
 <br/>
-&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eab41cc1dd6fb78744bbc21b9232ebbeaa">Oiw4o</a> = mkldnn_Oiw4o, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eaafc78eeb40e74cc0d40e595bcd6c8211">Oiw16o</a> = mkldnn_Oiw16o, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea6b734f51d0c7fe644455e99d1b5e25dd">Owi16o</a> = mkldnn_Owi16o, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea249edcb31898ab57856134568b5b8ba6">OIw8i16o2i</a> = mkldnn_OIw8i16o2i, 
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaf7b1e3bb02bcb88be3ff57d52066db29">format_tag::ABc8b16a2b</a> = mkldnn_ABc8b16a2b, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedadc1e646f5a4dbdb66a68703924f818d0">format_tag::ABc8b8a</a> = mkldnn_ABc8b8a, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedab1756ecea8a29754af14815b9cd2cdf3">format_tag::Abcd16a</a> = mkldnn_Abcd16a, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda8de48edabb9809687b4942e1b19bf326">format_tag::ABcd16a16b</a> = mkldnn_ABcd16a16b, 
 <br/>
-&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ead57139901f5edd02d04055f8e15291df">OIw8o16i2o</a> = mkldnn_OIw8o16i2o, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eaed535314a63359a56cc57b07101adebf">IOw16o16i</a> = mkldnn_IOw16o16i, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eaec8690a074cdfb14ee7356d1fe1bd29a">OIw4i16o4i</a> = mkldnn_OIw4i16o4i, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea6e96a94a0a6583ec402141b4735b0236">OIw4i16o4i_s8s8</a> = mkldnn_OIw4i16o4i_s8s8, 
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda5d55d90de66e593624aee60adb9f8540">format_tag::aBcd16b</a> = mkldnn_aBcd16b, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda32e2a00a75ff1810113dab64fff1a68f">format_tag::ABcd16b16a</a> = mkldnn_ABcd16b16a, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedacdf43d4ebfe0a9d95e8932b3e70517c7">format_tag::aBCd16b16c</a> = mkldnn_aBCd16b16c, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda1eb6b367c2ccab891bc1f002bcf445c0">format_tag::aBCd16c16b</a> = mkldnn_aBCd16c16b, 
 <br/>
-&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ead5691debf8e19e13d09e15d7d99a7ee3">oihw</a> = mkldnn_oihw, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea7fe3459cd6d4a96ee1b7374a829339d5">ihwo</a> = mkldnn_ihwo, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea1bb42cc40625761a9eeb28937d6b7d8c">hwio</a> = mkldnn_hwio, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea69bce907f389200541b806e25a8157d6">iohw</a> = mkldnn_iohw, 
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda91028d97462edc87adafecbeac0fda2a">format_tag::Abcd4a</a> = mkldnn_Abcd4a, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedac2360cf243576d4dfdc31f8eabf95e5e">format_tag::aBcd4b</a> = mkldnn_aBcd4b, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedab585b6df77eedca0785c1cda91f31e29">format_tag::ABcd4b16a4b</a> = mkldnn_ABcd4b16a4b, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedae33cdf340198dede7a5e2a5777601a05">format_tag::ABcd4b4a</a> = mkldnn_ABcd4b4a, 
 <br/>
-&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea89a26ce8c0d84f4115cd4b3cc3162c5b">hwio_s8s8</a> = mkldnn_hwio_s8s8, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eaebcf00c5d0f2f56bb6bed3304e9b0c32">dhwio</a> = mkldnn_dhwio, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea72975b1e4e79839b1821fe32a973c602">oidhw</a> = mkldnn_oidhw, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea9945d6c9c297e1ada36214b11ce15704">OIdhw4i4o</a> = mkldnn_OIdhw4i4o, 
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedae349b11785f3ab115cfd826cb3273af4">format_tag::aBCd4c16b4c</a> = mkldnn_aBCd4c16b4c, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaa34041da6e29a487758640adc3b076c8">format_tag::aBCd4c4b</a> = mkldnn_aBCd4c4b, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda6597bf8274a8f7ac8ef39e9cd61b9ec1">format_tag::ABcd8a16b2a</a> = mkldnn_ABcd8a16b2a, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedadfa7f0ee91a58b03b5d65c293125858a">format_tag::ABcd8a8b</a> = mkldnn_ABcd8a8b, 
 <br/>
-&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eab22867ff8cf90c72a58f9c96876803bf">Odhwi4o</a> = mkldnn_Odhwi4o, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eaaaf54efed17c5743a0cf16d3e46739b7">OIdhw8i8o</a> = mkldnn_OIdhw8i8o, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eae53fcf48b777b631ec71f6028a6adea7">OIdhw8o8i</a> = mkldnn_OIdhw8o8i, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea9c7f1f84be8ca2891abef4a4cbea4e1f">Odhwi8o</a> = mkldnn_Odhwi8o, 
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda448a7fc9219294ce172b0edf9498b5c4">format_tag::aBcd8b</a> = mkldnn_aBcd8b, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda0c035ab408bbad64c4599d82204eca70">format_tag::ABcd8b16a2b</a> = mkldnn_ABcd8b16a2b, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedae6c88aeae25973eaa8ea089c2a6a42f0">format_tag::aBCd8b16c2b</a> = mkldnn_aBCd8b16c2b, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedabcbce50e9c241458767871fa053e1ba0">format_tag::ABcd8b8a</a> = mkldnn_ABcd8b8a, 
 <br/>
-&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eac40a945be6be77690a88f37570fa58d0">OIdhw16i16o</a> = mkldnn_OIdhw16i16o, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea6eb0df091955635faeac2ad96f90daf9">OIdhw16o16i</a> = mkldnn_OIdhw16o16i, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea709688ff4f5a7a0c9fb273c6835033c8">Oidhw4o</a> = mkldnn_Oidhw4o, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea1ab877dcc92270edc374988c9c918e16">Oidhw16o</a> = mkldnn_Oidhw16o, 
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda22a04acd0981d3df20a6946f2d63d50e">format_tag::aBCd8b8c</a> = mkldnn_aBCd8b8c, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda2e0728bac73db59d8e0481e88f29fad1">format_tag::aBCd8c16b2c</a> = mkldnn_aBCd8c16b2c, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda2e63d893f1711440e5f8935c1d20c164">format_tag::aBCd8c8b</a> = mkldnn_aBCd8c8b, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda12db43bbe0c6b63c3b4b04d0fadd802a">format_tag::Abcde16a</a> = mkldnn_Abcde16a, 
 <br/>
-&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eafe5531230831268fe4924777e8d714a4">Odhwi16o</a> = mkldnn_Odhwi16o, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eaabeb598d814c8420a22243d26e6ed3c9">oIhw8i</a> = mkldnn_oIhw8i, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eadfb8daccb2a4b9ef406c1dfc929e2a83">oIhw16i</a> = mkldnn_oIhw16i, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea8c537f96db7cac296dfc4274e8540117">oIdhw8i</a> = mkldnn_oIdhw8i, 
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda120b9b67382c458a97a9d1cc3c4e0902">format_tag::ABcde16a16b</a> = mkldnn_ABcde16a16b, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedac45847e0e12ecd8cac5d4a98ccc6bef6">format_tag::aBcde16b</a> = mkldnn_aBcde16b, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda78e33c68c36a4f4b97cc8958a8c4aa95">format_tag::ABcde16b16a</a> = mkldnn_ABcde16b16a, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda4789d2b682a01bed34318be417e9a206">format_tag::aBCde16b16c</a> = mkldnn_aBCde16b16c, 
 <br/>
-&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eab36c291254b91fe9c0c05b1768ee1079">oIdhw16i</a> = mkldnn_oIdhw16i, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea0c5c27337371a9234400ec9bee270211">OIhw4i4o</a> = mkldnn_OIhw4i4o, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eab1ff88a5571cab5c4495acfb07669762">OIhw8i8o</a> = mkldnn_OIhw8i8o, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea2f7490bd350bc8d194f2e4b67213adf7">OIhw16i16o</a> = mkldnn_OIhw16i16o, 
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda275b87a4c6da71c18c65a691c6af2f3e">format_tag::aBCde16c16b</a> = mkldnn_aBCde16c16b, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedac59accaba01874d96f9ac65b7d66540a">format_tag::aBCde2c8b4c</a> = mkldnn_aBCde2c8b4c, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda8ecca782aa49990ab26ff202f0251e66">format_tag::Abcde4a</a> = mkldnn_Abcde4a, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaeaa37c2eca13f8a741d741640efd7656">format_tag::aBcde4b</a> = mkldnn_aBcde4b, 
 <br/>
-&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea511ae11a284c9108eeb61664ff163aea">OIhw8o8i</a> = mkldnn_OIhw8o8i, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea82c279649f9f84c2ef9a046e7777cac0">OIhw16o16i</a> = mkldnn_OIhw16o16i, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eab597424c8b1e8eba637f467898809edc">IOhw16o16i</a> = mkldnn_IOhw16o16i, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eaffaad9f0dac63a0880ee0bfd9b029888">OIhw8i16o2i</a> = mkldnn_OIhw8i16o2i, 
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda019f84e0b32929be123b952be11426db">format_tag::ABcde4b4a</a> = mkldnn_ABcde4b4a, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda0ecdca6185803e918e4544323c41d3e9">format_tag::aBCde4b4c</a> = mkldnn_aBCde4b4c, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaff14e3a6dabb2e8874b7bf36f12e5c53">format_tag::aBCde4c16b4c</a> = mkldnn_aBCde4c16b4c, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedab80d94e8f97f164b66d4b478b9410cde">format_tag::aBCde4c4b</a> = mkldnn_aBCde4c4b, 
 <br/>
-&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea06c03b359146e57c673820f4b5f184fa">OIdhw8i16o2i</a> = mkldnn_OIdhw8i16o2i, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eae2907c3b58ca4186e7f6a31343b352cd">OIhw8o16i2o</a> = mkldnn_OIhw8o16i2o, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea1d6e70b0215713d38b885f9eb48bb882">OIhw4i16o4i</a> = mkldnn_OIhw4i16o4i, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea5b3f7e47ef47c71e45b2144d97cb11b7">OIhw4i16o4i_s8s8</a> = mkldnn_OIhw4i16o4i_s8s8, 
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaf31b83b4d7bf6091d47b0f57d0e10264">format_tag::Abcde8a</a> = mkldnn_Abcde8a, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda954a31af1ed0b3b9a9e375d6f6d4257a">format_tag::ABcde8a8b</a> = mkldnn_ABcde8a8b, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda2928a5cd5c7e5e95998bcb4f24335220">format_tag::aBcde8b</a> = mkldnn_aBcde8b, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda00df0930569d6a4b9c62f3bd4c27f5a4">format_tag::ABcde8b16a2b</a> = mkldnn_ABcde8b16a2b, 
 <br/>
-&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea78d00dd56845dd40e6e271a1ffb4b438">Oihw8o</a> = mkldnn_Oihw8o, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eaf15525608e0f239a1d1f691d9949cf6f">Oihw4o</a> = mkldnn_Oihw4o, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea11e304de746e771710096ae078582838">Oihw16o</a> = mkldnn_Oihw16o, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea2f135b7d8ff60dcce96a4919722b0fad">Ohwi8o</a> = mkldnn_Ohwi8o, 
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda92f337765b473338389ce17961927d8f">format_tag::aBCde8b16c2b</a> = mkldnn_aBCde8b16c2b, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaedf9318e4c601759f4474fc94464a459">format_tag::ABcde8b8a</a> = mkldnn_ABcde8b8a, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda6390664d064e577e4c068fcfc6de9134">format_tag::aBCde8b8c</a> = mkldnn_aBCde8b8c, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda70621dffd1398acc2e78eeb8a3fcda49">format_tag::ABcd4a8b8a4b</a> = mkldnn_ABcd4a8b8a4b, 
 <br/>
-&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea0c07384900eb3a630422af20abbd5455">Ohwi4o</a> = mkldnn_Ohwi4o, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eae01c9f565ec8b7a69ad2432df340dcf0">Ohwi16o</a> = mkldnn_Ohwi16o, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea0e1f301f069a122158ac1ab3d1854a54">OhIw16o4i</a> = mkldnn_OhIw16o4i, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eaeb690c293caf6de6ed3ce832d341de3d">goiw</a> = mkldnn_goiw, 
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda750678c620c0119068dc66f751a9e43c">format_tag::ABcd2a8b8a2b</a> = mkldnn_ABcd2a8b8a2b, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda00025ae6907e34c690de6ddd60423523">format_tag::aBCde4b8c8b4c</a> = mkldnn_aBCde4b8c8b4c, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedac6c2b18886f80e76c2efd5e81018e89a">format_tag::aBCde2b8c8b2c</a> = mkldnn_aBCde2b8c8b2c, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda39dcf6c6e6061494dc3d79128a7b7e16">format_tag::aBCde8c16b2c</a> = mkldnn_aBCde8c16b2c, 
 <br/>
-&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea36a33472dcb4256d8faf5f711a6e2fbf">gOwi4o</a> = mkldnn_gOwi4o, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eac5543e965bf5203af1cd32b7b5aad9a3">gOIw4i4o</a> = mkldnn_gOIw4i4o, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea3385087517d8e2e46044235b848c9fa5">gOwi8o</a> = mkldnn_gOwi8o, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eac64e94f44284fed5af0f671335eb84e3">gOIw8o8i</a> = mkldnn_gOIw8o8i, 
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda38796ed143bff89b696b8b19eeeda44b">format_tag::aBCde8c8b</a> = mkldnn_aBCde8c8b, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda6a19babc839e184e5ca2b277f376bfaf">format_tag::aBcdef16b</a> = mkldnn_aBcdef16b, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedab0cf98561c58a11c0bde0a0a31aa3a59">format_tag::aBCdef16b16c</a> = mkldnn_aBCdef16b16c, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda36766eadad940ab2804bcccb6a7838c5">format_tag::aBCdef16c16b</a> = mkldnn_aBCdef16c16b, 
 <br/>
-&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea03a23792cc967192e0f9f5f2d07fdf1d">gOIw8i8o</a> = mkldnn_gOIw8i8o, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eab9790d2ffba16d965d763e35e4a592bd">gOIw16i16o</a> = mkldnn_gOIw16i16o, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea3f917d22e2935749fb44f0cd8741d3c0">gOIw16o16i</a> = mkldnn_gOIw16o16i, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eab28c8003ce919ae98d79fbd0c9e6223e">gOiw4o</a> = mkldnn_gOiw4o, 
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda78db8ad202df89454a921b7c5432d151">format_tag::aBcdef4b</a> = mkldnn_aBcdef4b, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda6c6f2aba250ce2441a9ff2976ab0e4ed">format_tag::aBCdef4c4b</a> = mkldnn_aBCdef4c4b, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda60e1c7bfad21352d904f80f5671d082b">format_tag::aBCdef8b8c</a> = mkldnn_aBCdef8b8c, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda10d6e2f36d793a8de7fd5ea97d2e158b">format_tag::aBCdef8c16b2c</a> = mkldnn_aBCdef8c16b2c, 
 <br/>
-&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea81425d50ca1fc18583e467ce7e50153a">gOiw16o</a> = mkldnn_gOiw16o, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea8a096a7b192d719fa8cc9af4df546c0e">gOwi16o</a> = mkldnn_gOwi16o, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eaccb091227320c06ff83644170e6dce47">gOIw8i16o2i</a> = mkldnn_gOIw8i16o2i, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea2fd35c34941e7889928ccedb4be2a0d7">gIOw16o16i</a> = mkldnn_gIOw16o16i, 
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaea3f9e57566cad20acdac5254194cf2c">format_tag::aBCdef8c8b</a> = mkldnn_aBCdef8c8b, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedafba0f9e6c5d27843e2f66bfa7e277612">format_tag::aBdc16b</a> = mkldnn_aBdc16b, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda1b1edb0117d39115ccdbb72fd13ab926">format_tag::aBdc4b</a> = mkldnn_aBdc4b, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda5e01a5405304144b1cc88bcd3921a999">format_tag::aBdc8b</a> = mkldnn_aBdc8b, 
 <br/>
-&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea8043d9e15eeffb65152fb60958e476e5">gOIw8o16i2o</a> = mkldnn_gOIw8o16i2o, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea790b48da9fc35d09c4dd3f716aa2d8fc">gOIw4i16o4i</a> = mkldnn_gOIw4i16o4i, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea77cd50f304591eed8e58b7ece13cecdf">gOIw4i16o4i_s8s8</a> = mkldnn_gOIw4i16o4i_s8s8, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea19f8852dc26c175f22aed771f3f9614a">goihw</a> = mkldnn_goihw, 
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda80c37d3114c0c477b95126c208145e24">format_tag::aBdec16b</a> = mkldnn_aBdec16b, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaefbc4428be375dd4cfe493fe397d8c65">format_tag::aBdec4b</a> = mkldnn_aBdec4b, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda8babba3825af4f9ee534ba0292918d3b">format_tag::aBdec8b</a> = mkldnn_aBdec8b, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda73c193ce0e5f20b6649fbfa89cd85806">format_tag::aBdefc16b</a> = mkldnn_aBdefc16b, 
 <br/>
-&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea73723a23545237c852092890639503bc">hwigo</a> = mkldnn_hwigo, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eab9ed2c3a4602989a2896b8c90abd18b8">giohw</a> = mkldnn_giohw, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea27960fb07eec92219cbf0f05aadba703">hwigo_s8s8</a> = mkldnn_hwigo_s8s8, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eadb9252f388f70a66f180f985a806289e">gOIdhw4i4o</a> = mkldnn_gOIdhw4i4o, 
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda7d1aa12b0392d673efe4d8fd8fa5498c">format_tag::aCBdef16c16b</a> = mkldnn_aCBdef16c16b, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda77f7431a6a7228b1d7941be09e133455">format_tag::aBdefc4b</a> = mkldnn_aBdefc4b, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedacd3979acb531a3932147cbb8fe8c480e">format_tag::aBdefc8b</a> = mkldnn_aBdefc8b, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedab0f77caa3dd94494f9a14ed5bf05b9d7">format_tag::Acb16a</a> = mkldnn_Acb16a, 
 <br/>
-&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eab4cb2a8a8ca8dcf1b5ec4a73195e0e65">gOdhwi4o</a> = mkldnn_gOdhwi4o, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ead49fda2c4b65fc929f67c95237932e91">gOIdhw8i8o</a> = mkldnn_gOIdhw8i8o, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea1480af02d8fc0be33760c615345f952a">gOIdhw8o8i</a> = mkldnn_gOIdhw8o8i, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eace15960b3ccbb40e81009787fb946122">gOdhwi8o</a> = mkldnn_gOdhwi8o, 
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda723520a2226cac57233f4e24ea6259ca">format_tag::Acb4a</a> = mkldnn_Acb4a, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaef80848cfaf08b3edbf35ba52834dd9b">format_tag::Acb8a</a> = mkldnn_Acb8a, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda2409de8f31bda21af9d61b2bfd569263">format_tag::aCBd16b16c</a> = mkldnn_aCBd16b16c, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda34f370b4d4c2f03494747d02f5d4970b">format_tag::aCBde16b16c</a> = mkldnn_aCBde16b16c, 
 <br/>
-&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea9c7ca412a09eb0d3c0babd6f306a74c3">gOIhw4i4o</a> = mkldnn_gOIhw4i4o, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea11eda3436ae582b8a28cc85adc8433c1">gOIhw8i8o</a> = mkldnn_gOIhw8i8o, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eab47a53954142e271e59e8b0b036c7797">gOIhw16i16o</a> = mkldnn_gOIhw16i16o, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea380d9e31a9703c3b520c8cc32e6ae8b9">gOIhw8i16o2i</a> = mkldnn_gOIhw8i16o2i, 
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedae1f4826029f30fa9a89284cb6109a1bd">format_tag::aCBde16c16b</a> = mkldnn_aCBde16c16b, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda5bc76df72f48c4212994f8ba890c583d">format_tag::Acdb16a</a> = mkldnn_Acdb16a, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda119cdc50aa9f3f36d7d3125c778c620c">format_tag::Acdb4a</a> = mkldnn_Acdb4a, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda650aee93cdcdcaf91e2bf0657088b864">format_tag::Acdb8a</a> = mkldnn_Acdb8a, 
 <br/>
-&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea69ad7a0af41a810a57a20b1cdbcb5c3b">gOIdhw8i16o2i</a> = mkldnn_gOIdhw8i16o2i, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea924d233b52d5b5cbad3f00280e7bae61">gOIhw8o16i2o</a> = mkldnn_gOIhw8o16i2o, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea38af36228c9d30e658abbd12a7fc586e">gOIhw4i16o4i</a> = mkldnn_gOIhw4i16o4i, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea36f91a40e054e4d7b730036d3bec4c41">gOIhw4i16o4i_s8s8</a> = mkldnn_gOIhw4i16o4i_s8s8, 
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda0cb28993934aff498bcda6f6f3cee8d6">format_tag::Acdeb16a</a> = mkldnn_Acdeb16a, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda334cd01f22c0e6f36095c76a66504543">format_tag::Acdeb4a</a> = mkldnn_Acdeb4a, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedac7f114c480275779f0ae4484d83b6f41">format_tag::Acdeb8a</a> = mkldnn_Acdeb8a, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedab1055b9db4db65014b9c0c00adddb1c7">format_tag::BAc16a16b</a> = mkldnn_BAc16a16b, 
 <br/>
-&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ead9a1070804d88b5f00708399e8f79471">gOIhw2i8o4i</a> = mkldnn_gOIhw2i8o4i, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea957593191ddd39ee23d779859f80559a">gOIhw2i8o4i_s8s8</a> = mkldnn_gOIhw2i8o4i_s8s8, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea3026eb87a3233587bee2d15882e21d63">gOihw8o</a> = mkldnn_gOihw8o, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea8be354c2071ed270eeab1c723cdc5528">gOihw4o</a> = mkldnn_gOihw4o, 
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedad98b0acb88c4867796a3cfd0c15127ed">format_tag::BAcd16a16b</a> = mkldnn_BAcd16a16b, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda7d188af63c65095e2b34ef401f752799">format_tag::BAcd16b16a</a> = mkldnn_BAcd16b16a, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedab937580442cc8b50cf459bb534876e5e">format_tag::ABcd32a32b</a> = mkldnn_ABcd32a32b, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaa158940f01b2e2e6c14ef5368cb6ed1a">format_tag::BAcde16b16</a> = mkldnn_BAcde16b16a, 
 <br/>
-&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eace32ebeb1bd36dc01d4a6aedb81505f3">gOihw16o</a> = mkldnn_gOihw16o, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eaaf5b2466bffb310c77d8e4640d0af8cf">gOhwi4o</a> = mkldnn_gOhwi4o, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eae7df7db47e81d11cd459f53f46928cb9">gOhwi8o</a> = mkldnn_gOhwi8o, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea5686f7dbdddd9ee3f502f7600cbe731a">gOhwi16o</a> = mkldnn_gOhwi16o, 
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda868c53346cf855961472b7c7516e2257">format_tag::aBdec32b</a> = mkldnn_aBdec32b, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda4f6cb73f8ac3d13ba31d78c9bfd33232">format_tag::Abcdef16a</a> = mkldnn_Abcdef16a, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedae8924313f1c545aa6d464f5d22edfe9d">format_tag::aCBde16c16</a> = mkldnn_aCBde16c16b, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedad8119b9e070a87198eaf3564122805e3">format_tag::Acdb32a</a> = mkldnn_Acdb32a, 
 <br/>
-&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea14ccb866c53d03becdcdebc3d30535e4">Goihw8g</a> = mkldnn_Goihw8g, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea3c5592c709cebec2262267992184b1b0">Goiw16g</a> = mkldnn_Goiw16g, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eafe8d94eba513554644c77f87cea4f7f5">Goiw16g_s8s8</a> = mkldnn_Goiw16g_s8s8, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea7c438d4874170d550a5822c60c91ebff">Goihw16g</a> = mkldnn_Goihw16g, 
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda3d78b4610da52a1b6bff0c40b5a02404">format_tag::format_tag_last</a> = mkldnn_format_tag_last, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda9dd4e461268c8034f5c8564e155c67a6">format_tag::x</a> = mkldnn_x, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda1e7342845e24eb3b5b3554490da1c128">format_tag::nc</a> = mkldnn_nc, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda7efdfc94655a25dcea3ec85e9bb703fa">format_tag::cn</a> = mkldnn_cn, 
 <br/>
-&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea4ba152cd750342b94b68277bfcd78bc7">Goihw16g_s8s8</a> = mkldnn_Goihw16g_s8s8, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea0b4a02859608d92b523a0c99d36be061">gOIhw4o4i</a> = mkldnn_gOIhw4o4i, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eae9528f681b7bf5f7c6e21816c6567b13">gOIhw4o4i_s8s8</a> = mkldnn_gOIhw4o4i_s8s8, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eacaf364857cd0309c67bb6dff621ee71e">gOIhw8o8i</a> = mkldnn_gOIhw8o8i, 
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedabc4eee572ad38f8a5c2534e0b2533100">format_tag::ncw</a> = mkldnn_ncw, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaccc0543dc9272f9fffd720fe55f818e4">format_tag::nwc</a> = mkldnn_nwc, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaded7ac40158367123c5467281d44cbeb">format_tag::nchw</a> = mkldnn_nchw, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda763cbf7ba1b7b8793dcdc6e2157b5c42">format_tag::nhwc</a> = mkldnn_nhwc, 
 <br/>
-&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eaa1cc9ef7726a93eaf88e6556bca94f64">gOIhw16o16i</a> = mkldnn_gOIhw16o16i, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eaed5bd42c3c68a277cbdca346a72251fa">gIOhw16o16i</a> = mkldnn_gIOhw16o16i, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea12dbcd423f39fcd621b399d494e5dfe7">gOhIw16o4i</a> = mkldnn_gOhIw16o4i, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea0f3013141c195b2f22d994861c2620a8">goidhw</a> = mkldnn_goidhw, 
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedafd2263500e815d8ce46e79e6b178a10a">format_tag::chwn</a> = mkldnn_chwn, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedae7a84f08ef10d4fe3096307c6d9770fd">format_tag::ncdhw</a> = mkldnn_ncdhw, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedad2f2770ca9883423f680fd4a29481d64">format_tag::ndhwc</a> = mkldnn_ndhwc, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaa2e63ee01401aaeca78be023dfbb8c59">format_tag::oi</a> = mkldnn_oi, 
 <br/>
-&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eaea5b468f371e0e2e4ff42ce2e731b6e9">gOIdhw16i16o</a> = mkldnn_gOIdhw16i16o, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea7db54b023c9c0850b36ffae21925abdd">gOIdhw16o16i</a> = mkldnn_gOIdhw16o16i, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eacfbe98b2e9c9143932af0840c079285e">gOidhw4o</a> = mkldnn_gOidhw4o, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea36f5ee4d2f8a5bdc9e064886671cb3e1">gOidhw16o</a> = mkldnn_gOidhw16o, 
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaf98ed07a4d5f50f7de1410d905f1477f">format_tag::io</a> = mkldnn_io, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda3a8cb832bca6da72735b742014560a5b">format_tag::oiw</a> = mkldnn_oiw, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda5b12270b2f1c52cb9ae37905880a5a6f">format_tag::wio</a> = mkldnn_wio, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda14b72a467aeefa06a5cb802ec4a7743c">format_tag::oihw</a> = mkldnn_oihw, 
 <br/>
-&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea4b5d3797672c5c4d2cf427b68a89fb46">gOdhwi16o</a> = mkldnn_gOdhwi16o, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eae11b0dd666a7c9cb2a9e40a3eddf4a26">ntc</a> = mkldnn_ntc, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea36d13dca38400b87a09634979712063c">tnc</a> = mkldnn_tnc, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea070c38c5a8fa9bec80c11de7525385c0">ldsnc</a> = mkldnn_ldsnc, 
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedadd942f902c741de7193e1869b13ba55a">format_tag::hwio</a> = mkldnn_hwio, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda56fe35ca9f339b4948384c2a2fa02de5">format_tag::ihwo</a> = mkldnn_ihwo, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedac16710619e6550753801926b5388bef8">format_tag::iohw</a> = mkldnn_iohw, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda98407962f915285419b23f5b0a223882">format_tag::oidhw</a> = mkldnn_oidhw, 
 <br/>
-&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea745128f36aae3e9a84f82eb14d7e03b4">ldigo</a> = mkldnn_ldigo, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea4b2785a46f164ee31f3eff2c0c966a74">ldgoi</a> = mkldnn_ldgoi, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87eadfa306c1d0d75416ecf54352c23ee548">ldgo</a> = mkldnn_ldgo, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea7ed79cbb78fecce614cab9b9036ce194">rnn_packed</a> = mkldnn_rnn_packed, 
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaeafcb3d831eef23cde0b46f64646327c">format_tag::dhwio</a> = mkldnn_dhwio, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda1f1bc797706732c22eb9987e3cea3e54">format_tag::goiw</a> = mkldnn_goiw, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda3dc0e53430a6368210356118196f821a">format_tag::goihw</a> = mkldnn_goihw, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedafd710c828421b3c91725b0e5aa53ecc6">format_tag::hwigo</a> = mkldnn_hwigo, 
 <br/>
-&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea6d8ca729e011cce33cfffb518b2f6fdf">wino_fmt</a> = mkldnn_wino_fmt, 
-<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87ea994f7a84efd8e8d83107b4f1f8bb25ed">format_last</a> = mkldnn_format_last
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda5f1d6f8a3a8842611d15affa574b864f">format_tag::giohw</a> = mkldnn_giohw, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaa678de4e5a5e34c9a71a632b8f334b8b">format_tag::goidhw</a> = mkldnn_goidhw, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedac775cf954921a129a65eb929476de911">format_tag::tnc</a> = mkldnn_tnc, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda6758344f9f89d390953c6718f34e9be1">format_tag::ntc</a> = mkldnn_ntc, 
+<br/>
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaf8378ff1a03fd201b6e6b8d6cde5c9b0">format_tag::ldsnc</a> = mkldnn_ldsnc, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda4e62e330c56963f9ead98490cd57ef7b">format_tag::ldigo</a> = mkldnn_ldigo, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda4c850fa02c9e56a4c20dbfde737f1f8d">format_tag::ldgoi</a> = mkldnn_ldgoi, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedab8690cd92ccee6a0ad55faccc0346aab">format_tag::ldgo</a> = mkldnn_ldgo, 
+<br/>
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda6861aaac0752cd0c618f68453416ea5e">format_tag::nCdhw16c</a> = mkldnn_nCdhw16c, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda94adcd68022f332e02475001d4fc9201">format_tag::nCdhw4c</a> = mkldnn_nCdhw4c, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedafced4a15e4acb04396e30b54955fa1a2">format_tag::nCdhw8c</a> = mkldnn_nCdhw8c, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaf0f101166691298d3aad79d7f347f2ef">format_tag::nChw16c</a> = mkldnn_nChw16c, 
+<br/>
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedad649ed0a6bf979419b24d6c7c58d97d7">format_tag::nChw4c</a> = mkldnn_nChw4c, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda1c644d98a1e2e21c610ef0eadb24d094">format_tag::nChw8c</a> = mkldnn_nChw8c, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda41e0c6dde8335c790dc7be6f28c5b845">format_tag::nCw16c</a> = mkldnn_nCw16c, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda1d5b916eac88a854f7596bb7778b5d84">format_tag::nCw4c</a> = mkldnn_nCw4c, 
+<br/>
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaa53de045f004e830b06a37f3e59fbf29">format_tag::nCw8c</a> = mkldnn_nCw8c, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedac37f342bac76c6566daec13bd5106594">format_tag::NChw16n16c</a> = mkldnn_NChw16n16c, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda62a823240787c4b65f45570772156c18">format_tag::NCdhw16n16c</a> = mkldnn_NCdhw16n16c, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedad37ac31732879264c2bce09f7caea13b">format_tag::NChw32n32c</a> = mkldnn_NChw32n32c, 
+<br/>
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedac42ef6e97425f3e97913783169c2261e">format_tag::IOhw16i16o</a> = mkldnn_IOhw16i16o, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda90759a72cc812c5345cf587c90cc9268">format_tag::Ohwi32o</a> = mkldnn_Ohwi32o, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda621bb2ac71efada565d275934a4e6c15">format_tag::IOdhw16i16o</a> = mkldnn_IOdhw16i16o, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda36c0eda0e14719c161c8181ad2d4b942">format_tag::gIOhw16i16o</a> = mkldnn_gIOhw16i16o, 
+<br/>
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaee023523d45caa828c6e5bbe8f3d188a">format_tag::gOhwi32o</a> = mkldnn_gOhwi32o, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda84f69746b0fc107edf92275009c2d4b0">format_tag::Goidhw16g</a> = mkldnn_Goidhw16g, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaaf551a573134b0970e281d247677749e">format_tag::IOw16o16i</a> = mkldnn_IOw16o16i, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaaa209bd1ce63baa9d9fdc73c5f557b8c">format_tag::OIw16i16o</a> = mkldnn_OIw16i16o, 
+<br/>
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda76ecfa744a9efaa40822abc529e73a42">format_tag::OIw16o16i</a> = mkldnn_OIw16o16i, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaf4d5683ba89a1401146d0c119c2236f1">format_tag::Oiw16o</a> = mkldnn_Oiw16o, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda018de1f2c5427248a698153211901ff3">format_tag::OIw4i16o4i</a> = mkldnn_OIw4i16o4i, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda5db05d7bcc70e711661db2d3b1d4415f">format_tag::OIw4i4o</a> = mkldnn_OIw4i4o, 
+<br/>
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaf4a06d521a3b1a21cc2b6c51c5e3d757">format_tag::Oiw4o</a> = mkldnn_Oiw4o, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaa0bfb3e88be7ef569a33f9206f36c5cb">format_tag::OIw8i16o2i</a> = mkldnn_OIw8i16o2i, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda11734e3a192668eae54d0b55a3a5f900">format_tag::OIw8i8o</a> = mkldnn_OIw8i8o, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedae100564e5659e696df92c19d87514076">format_tag::OIw8o16i2o</a> = mkldnn_OIw8o16i2o, 
+<br/>
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda9bf4142ef7541fe2440cd339d1fd78a7">format_tag::OIw8o8i</a> = mkldnn_OIw8o8i, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda09af0573ac44a98805eab5c635c173c2">format_tag::Owi16o</a> = mkldnn_Owi16o, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda12204086f4262b5c2aa029f43d30eec6">format_tag::Owi4o</a> = mkldnn_Owi4o, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda09c453d0c74291741493768ca45cf765">format_tag::Owi8o</a> = mkldnn_Owi8o, 
+<br/>
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda2be6713b0c2d362ff6e8df2a611fa876">format_tag::IOhw16o16i</a> = mkldnn_IOhw16o16i, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda25e357d03f1dfdc48bd49f573f5ec871">format_tag::Ohwi16o</a> = mkldnn_Ohwi16o, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedafb9c8980396d6ea229dac5f83b191b86">format_tag::Ohwi4o</a> = mkldnn_Ohwi4o, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedadab0df66a9483754bd555a390cb4ef0b">format_tag::Ohwi8o</a> = mkldnn_Ohwi8o, 
+<br/>
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda3376ab492bc782eecfac5dfe1671d847">format_tag::OIhw16i16o</a> = mkldnn_OIhw16i16o, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedae31366e22f0970dba5a4ca4d36e9a2d8">format_tag::OIhw16o16i</a> = mkldnn_OIhw16o16i, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda435ad696b07dd91fdb8637385284df1b">format_tag::Oihw16o</a> = mkldnn_Oihw16o, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda881d72f28db8825143b916c79b9e78b5">format_tag::OIhw4i16o4i</a> = mkldnn_OIhw4i16o4i, 
+<br/>
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda91b0da7423d9eca50e9abb61a0cd3fa2">format_tag::OIhw4i4o</a> = mkldnn_OIhw4i4o, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedac4942f3bd7aacaf3dd5aae4b79ef7093">format_tag::Oihw4o</a> = mkldnn_Oihw4o, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaa971c53f0333bb7bfe14240a2a7bb072">format_tag::OIhw8i16o2i</a> = mkldnn_OIhw8i16o2i, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda94359730df7ca59e037041533a9ac909">format_tag::OIhw8i8o</a> = mkldnn_OIhw8i8o, 
+<br/>
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda7bea00fcbf4c7b35c69ef47c16172149">format_tag::OIhw8o16i2o</a> = mkldnn_OIhw8o16i2o, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaba8ddd99732f6f7cee745a1a594a7efa">format_tag::OIhw8o8i</a> = mkldnn_OIhw8o8i, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedadfe8f0bea94fb653d49b7e97635b34a2">format_tag::Odhwi16o</a> = mkldnn_Odhwi16o, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda8982e59611d1498d8f0b66ea5e34b00d">format_tag::Odhwi4o</a> = mkldnn_Odhwi4o, 
+<br/>
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda34c681ee06dd9199cdfba6ce995e92f0">format_tag::Odhwi8o</a> = mkldnn_Odhwi8o, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda7364c31504080477789c9f0c02557409">format_tag::OIdhw16i16o</a> = mkldnn_OIdhw16i16o, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedabd4b3b295e376c89af8dfd2eb44e1b4f">format_tag::OIdhw16o16i</a> = mkldnn_OIdhw16o16i, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda44b6c29022e2781ec5cbee750d888cea">format_tag::Oidhw16o</a> = mkldnn_Oidhw16o, 
+<br/>
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda0dcda1b9e35dafea4ad166e594e28dda">format_tag::OIdhw4i4o</a> = mkldnn_OIdhw4i4o, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedad2531b0046f779044f5130c362aed248">format_tag::Oidhw4o</a> = mkldnn_Oidhw4o, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaac7db4ea6b9389481bc6797bc39016ee">format_tag::OIdhw8i16o2i</a> = mkldnn_OIdhw8i16o2i, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda90ecbec00f847951c1b2114afd877285">format_tag::OIdhw8i8o</a> = mkldnn_OIdhw8i8o, 
+<br/>
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda96f841238973a6d8d28299377a99981f">format_tag::OIdhw8o8i</a> = mkldnn_OIdhw8o8i, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedafa027d58629c684b73bcc1714a98e2c3">format_tag::gIOw16o16i</a> = mkldnn_gIOw16o16i, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda69ff0c51b99e2b3a2242c5573db75680">format_tag::gOIw16i16o</a> = mkldnn_gOIw16i16o, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedafa987d0f6bf33d361270f4fd0e4b6b5c">format_tag::gOIw16o16i</a> = mkldnn_gOIw16o16i, 
+<br/>
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda372a20447ce0335fe5c4f0126fb1d041">format_tag::gOiw16o</a> = mkldnn_gOiw16o, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda68f856a42aaec4e873e1086429cde66f">format_tag::gOIw4i16o4i</a> = mkldnn_gOIw4i16o4i, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedad056246fae702dc91c93b0acb9c5b976">format_tag::gOIw4i4o</a> = mkldnn_gOIw4i4o, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda9d932a4601f34d94dd9cc0933f4ab154">format_tag::gOiw4o</a> = mkldnn_gOiw4o, 
+<br/>
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaceb58ad5277238cb287876d1e6072736">format_tag::gOIw8i16o2i</a> = mkldnn_gOIw8i16o2i, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda9063aabfe5d944e94135c4cb67ba2584">format_tag::gOIw8i8o</a> = mkldnn_gOIw8i8o, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedac1793fd656f546c03dea8bc7baa1f305">format_tag::gOIw8o16i2o</a> = mkldnn_gOIw8o16i2o, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedafa861d36e362fc22ef0bb6d513dd9a89">format_tag::gOIw8o8i</a> = mkldnn_gOIw8o8i, 
+<br/>
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda4adc998e59225b906421a37a53881137">format_tag::gOwi16o</a> = mkldnn_gOwi16o, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda3ba5d84f4cb5f66841c2dabc7fe4fc6c">format_tag::gOwi4o</a> = mkldnn_gOwi4o, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaad638741237c3f4c2af1964459ef0997">format_tag::gOwi8o</a> = mkldnn_gOwi8o, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedab4329019d9beb50e7c0d6b4149b7a842">format_tag::gIOhw16o16i</a> = mkldnn_gIOhw16o16i, 
+<br/>
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda4d7fce02dd37cb1593cb1ad7b828ee9b">format_tag::gOhwi16o</a> = mkldnn_gOhwi16o, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda5b0706b3d8de37265ef1ca7da0c95db0">format_tag::gOhwi4o</a> = mkldnn_gOhwi4o, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda054e5fad6ff701447c1f04372f214e0b">format_tag::gOhwi8o</a> = mkldnn_gOhwi8o, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda159b2a2e896f7484ddcf9c8e4038eca0">format_tag::Goihw16g</a> = mkldnn_Goihw16g, 
+<br/>
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda1ca4dda6de1722abc8ef8bdfb642a4b0">format_tag::gOIhw16i16o</a> = mkldnn_gOIhw16i16o, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda7d79e7d651180b0e8817bcf913e8663e">format_tag::gOIhw16o16i</a> = mkldnn_gOIhw16o16i, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaed5c4dae27a0a62c9f924075927aa154">format_tag::gOihw16o</a> = mkldnn_gOihw16o, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaebd09bf00bcf64d1c79ae144e7ebe5e2">format_tag::gOIhw2i8o4i</a> = mkldnn_gOIhw2i8o4i, 
+<br/>
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedafeec7a3e52ae9e28b19c65f53edc7808">format_tag::gOIhw4i16o4i</a> = mkldnn_gOIhw4i16o4i, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda57a6611ccc3768ae5c7bdab2fbef26ac">format_tag::gOIhw4i4o</a> = mkldnn_gOIhw4i4o, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda57bdbc7a7cf1be84b5ba129959280ce4">format_tag::gOIhw4o4i</a> = mkldnn_gOIhw4o4i, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda4b845a934bc59efddf9ef1045cc0b7d9">format_tag::gOihw4o</a> = mkldnn_gOihw4o, 
+<br/>
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaaa36c1e32c51ddec41593ae43f9e080a">format_tag::Goihw8g</a> = mkldnn_Goihw8g, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda531e0d8539a3732cf3fb2cd62f0ad887">format_tag::gOIhw8i16o2i</a> = mkldnn_gOIhw8i16o2i, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda1d727cbaa05cb6f4e793e447bd7aee0d">format_tag::gOIhw8i8o</a> = mkldnn_gOIhw8i8o, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda7e2e3ba3efc10e24283753abafb2afdc">format_tag::gOIhw8o16i2o</a> = mkldnn_gOIhw8o16i2o, 
+<br/>
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedacd9391bd093a92195718626d6b3b9829">format_tag::OIhw4o8i8o4i</a> = mkldnn_OIhw4o8i8o4i, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedacfdd91de4104243541be095b2f2e0794">format_tag::OIhw2o8i8o2i</a> = mkldnn_OIhw2o8i8o2i, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda5acdc941617a90dd95110fb1d71830f4">format_tag::gOIhw4o8i8o4i</a> = mkldnn_gOIhw4o8i8o4i, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda905367adecd07519b5e12a8da02d4e04">format_tag::gOIhw2o8i8o2i</a> = mkldnn_gOIhw2o8i8o2i, 
+<br/>
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda9ba3ca93854586fcd7f3c158efd869bf">format_tag::gOIhw8o8i</a> = mkldnn_gOIhw8o8i, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda747b1b2818d0de608f236e8815ffe192">format_tag::gIOdhw16i16o</a> = mkldnn_gIOdhw16i16o, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda81e4899579f993df8c2f7d4c7fc22847">format_tag::gOdhwi16o</a> = mkldnn_gOdhwi16o, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda5eb1abc93e2027336989730c391a5498">format_tag::gOdhwi4o</a> = mkldnn_gOdhwi4o, 
+<br/>
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedafdc86aad95764f0aae1ad15c60e3da80">format_tag::gOdhwi8o</a> = mkldnn_gOdhwi8o, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda08acb28c1b80aa888ec6bb555937299f">format_tag::gOIdhw16i16o</a> = mkldnn_gOIdhw16i16o, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda38c03747d6b033b007ebfbe0fa89a1ff">format_tag::gOIdhw16o16i</a> = mkldnn_gOIdhw16o16i, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedab3ad516ad551b8436335045a1bfcb057">format_tag::gOidhw16o</a> = mkldnn_gOidhw16o, 
+<br/>
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda3ff966b4edaf4c6a88815e88db0d3e80">format_tag::gOIdhw4i4o</a> = mkldnn_gOIdhw4i4o, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda96950c8210b11b4cbf8e4d8f3aefac55">format_tag::gOidhw4o</a> = mkldnn_gOidhw4o, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedad464a542f1137020b390aa6e0348b882">format_tag::gOIdhw8i16o2i</a> = mkldnn_gOIdhw8i16o2i, 
+<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda07a5d807871093893d396b7e7e8eaddb">format_tag::gOIdhw8i8o</a> = mkldnn_gOIdhw8i8o, 
+<br/>
+&#160;&#160;<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedae59e06dff785ca742a1d78147e7cc267">format_tag::gOIdhw8o8i</a> = mkldnn_gOIdhw8o8i
 <br/>
  }</td></tr>
-<tr class="memdesc:a563b90355ae4fbfed12f6db8ab25a87e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Memory format specification. See <a class="el" href="group__c__api__types__generic.html#ga30a390f87ef74bf03dfa48a7b3f2fb74" title="Memory format specification. ">mkldnn_memory_format_t</a> for a detailed description.  <a href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87e">More...</a><br/></td></tr>
-<tr class="separator:a563b90355ae4fbfed12f6db8ab25a87e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0fa655354b5c62453d93c58e2f229a43"><td class="memItemLeft" align="right" valign="top">typedef std::vector<br class="typebreak"/>
-&lt; std::remove_extent<br class="typebreak"/>
-&lt; <a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a> &gt;::type &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1memory.html#a0fa655354b5c62453d93c58e2f229a43">dims</a></td></tr>
-<tr class="separator:a0fa655354b5c62453d93c58e2f229a43"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_types_classmkldnn_1_1primitive"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classmkldnn_1_1primitive')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classmkldnn_1_1primitive.html">mkldnn::primitive</a></td></tr>
-<tr class="memitem:ac42347ba533ce9b531c1a29e330ac00d inherit pub_types_classmkldnn_1_1primitive"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00d">kind</a> { <br/>
-&#160;&#160;<a class="el" href="classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00da0ccc39b03cadec0031217ec49ce286e2">kind::undefined_primitive</a> = mkldnn_undefined_primitive, 
-<a class="el" href="classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00dacd69b4957f06cd818d7bf3d61980e291">kind::memory</a> = mkldnn_memory, 
-<a class="el" href="classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00da1bda80f2be4d3658e0baa43fbe7ae8c1">kind::view</a> = mkldnn_view, 
-<a class="el" href="classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00da8dbc5523c131d7900138d32d1dcbf093">kind::reorder</a> = mkldnn_reorder, 
-<br/>
-&#160;&#160;<a class="el" href="classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00da414e7c8ede73a0c2c3d17699134f4080">kind::concat</a> = mkldnn_concat, 
-<a class="el" href="classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00da45489651b7e107fb0daed8a0b9a4dbe0">kind::concat_inplace</a> = mkldnn_concat_inplace, 
-<a class="el" href="classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00da1d623b89683f9ce4e074de1676d12416">kind::sum</a> = mkldnn_sum, 
-<a class="el" href="classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00daa9595c1c24c33b16056d2ad07e71682d">kind::convolution</a> = mkldnn_convolution, 
-<br/>
-&#160;&#160;<a class="el" href="classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00da2294014fceafa2f8ca8d16ad35f25875">kind::deconvolution</a> = mkldnn_deconvolution, 
-<a class="el" href="classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00da644c45fc2b003bf415a3fb655412508d">kind::shuffle</a> = mkldnn_shuffle, 
-<a class="el" href="classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00da98b908c7d0339bb6a4832db44fc2c8da">kind::eltwise</a> = mkldnn_eltwise, 
-<a class="el" href="classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00dace2f1fbd249d24aabc07ac4488ab5b8c">kind::softmax</a> = mkldnn_softmax, 
-<br/>
-&#160;&#160;<a class="el" href="classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00da4abcef116566139e94c82bb1bb37583f">kind::pooling</a> = mkldnn_pooling, 
-<a class="el" href="classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00da7d9c7d1747abfac2c3c3ff337712f575">kind::lrn</a> = mkldnn_lrn, 
-<a class="el" href="classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00da780789647a31acedb6477412a99154bb">kind::batch_normalization</a> = mkldnn_batch_normalization, 
-<a class="el" href="classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00da30813812e3beef3eefcc2b97dc2e0783">kind::inner_product</a> = mkldnn_inner_product, 
-<br/>
-&#160;&#160;<a class="el" href="classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00da6eed45b9327120cabad6916919a9a600">kind::rnn</a> = mkldnn_rnn
-<br/>
- }</td></tr>
-<tr class="memdesc:ac42347ba533ce9b531c1a29e330ac00d"><td class="mdescLeft">&#160;</td><td class="mdescRight">A proxy to C primitive kind enum.  <a href="classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00d">More...</a><br/></td></tr>
-<tr class="separator:ac42347ba533ce9b531c1a29e330ac00d inherit pub_types_classmkldnn_1_1primitive"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memdesc:a123930e31c5460c2c5f052a59c2a4ced"><td class="mdescLeft">&#160;</td><td class="mdescRight">Memory format tag specification. See <a class="el" href="group__c__api__types__generic.html#gacc2844e341ab1c4f5b7ae1c6068f2a2b" title="Memory format tag specification. ">mkldnn_format_tag_t</a> for a detailed description.  <a href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ced">More...</a><br/></td></tr>
+<tr class="separator:a123930e31c5460c2c5f052a59c2a4ced"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac84929ec8bd1bba9d7c5723ad6d93906"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1memory.html#ac84929ec8bd1bba9d7c5723ad6d93906">dim</a></td></tr>
+<tr class="separator:ac84929ec8bd1bba9d7c5723ad6d93906"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b929aee34491e5140d055a9e1daf180"><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; <a class="el" href="structmkldnn_1_1memory.html#ac84929ec8bd1bba9d7c5723ad6d93906">dim</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1memory.html#a4b929aee34491e5140d055a9e1daf180">dims</a></td></tr>
+<tr class="separator:a4b929aee34491e5140d055a9e1daf180"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a08ca6a1023e0f7a15b830ef21377ee2e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1memory.html#a08ca6a1023e0f7a15b830ef21377ee2e">memory</a> (const <a class="el" href="classmkldnn_1_1primitive.html">primitive</a> &amp;aprimitive)</td></tr>
-<tr class="memdesc:a08ca6a1023e0f7a15b830ef21377ee2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a memory primitive from a generic primitive.  <a href="#a08ca6a1023e0f7a15b830ef21377ee2e">More...</a><br/></td></tr>
-<tr class="separator:a08ca6a1023e0f7a15b830ef21377ee2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeafa876cafdfe9e90afbfdfc4385fc71"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1memory.html#aeafa876cafdfe9e90afbfdfc4385fc71">memory</a> (const <a class="el" href="structmkldnn_1_1memory_1_1primitive__desc.html">primitive_desc</a> &amp;adesc)</td></tr>
-<tr class="memdesc:aeafa876cafdfe9e90afbfdfc4385fc71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a memory primitive.  <a href="#aeafa876cafdfe9e90afbfdfc4385fc71">More...</a><br/></td></tr>
-<tr class="separator:aeafa876cafdfe9e90afbfdfc4385fc71"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acab8c4e60e163a37a03f45d09f1f071e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1memory.html#acab8c4e60e163a37a03f45d09f1f071e">memory</a> (const <a class="el" href="structmkldnn_1_1memory_1_1primitive__desc.html">primitive_desc</a> &amp;adesc, void *ahandle)</td></tr>
-<tr class="separator:acab8c4e60e163a37a03f45d09f1f071e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b32596c911a3086799d7ec85cee9260"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmkldnn_1_1memory_1_1primitive__desc.html">primitive_desc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1memory.html#a7b32596c911a3086799d7ec85cee9260">get_primitive_desc</a> () const </td></tr>
-<tr class="memdesc:a7b32596c911a3086799d7ec85cee9260"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the descriptor of the memory primitive.  <a href="#a7b32596c911a3086799d7ec85cee9260">More...</a><br/></td></tr>
-<tr class="separator:a7b32596c911a3086799d7ec85cee9260"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03bd8b5d6d4b395b9fcbb61c6ec1d0fa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1memory.html#a03bd8b5d6d4b395b9fcbb61c6ec1d0fa">memory</a> (const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">desc</a> &amp;md, const <a class="el" href="structmkldnn_1_1engine.html">engine</a> &amp;aengine, void *ahandle)</td></tr>
+<tr class="memdesc:a03bd8b5d6d4b395b9fcbb61c6ec1d0fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a memory.  <a href="#a03bd8b5d6d4b395b9fcbb61c6ec1d0fa">More...</a><br/></td></tr>
+<tr class="separator:a03bd8b5d6d4b395b9fcbb61c6ec1d0fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08a92418619e374b167e830e3734daea"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1memory.html#a08a92418619e374b167e830e3734daea">memory</a> (const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">desc</a> &amp;md, const <a class="el" href="structmkldnn_1_1engine.html">engine</a> &amp;aengine)</td></tr>
+<tr class="memdesc:a08a92418619e374b167e830e3734daea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a memory.  <a href="#a08a92418619e374b167e830e3734daea">More...</a><br/></td></tr>
+<tr class="separator:a08a92418619e374b167e830e3734daea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad39e92bb09b189c1ba6353dd631fb80"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmkldnn_1_1memory_1_1desc.html">desc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1memory.html#aad39e92bb09b189c1ba6353dd631fb80">get_desc</a> () const </td></tr>
+<tr class="memdesc:aad39e92bb09b189c1ba6353dd631fb80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the descriptor of the memory.  <a href="#aad39e92bb09b189c1ba6353dd631fb80">More...</a><br/></td></tr>
+<tr class="separator:aad39e92bb09b189c1ba6353dd631fb80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a051d447c5cd56f79001add98a0b0e0cf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmkldnn_1_1engine.html">engine</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1memory.html#a051d447c5cd56f79001add98a0b0e0cf">get_engine</a> () const </td></tr>
+<tr class="memdesc:a051d447c5cd56f79001add98a0b0e0cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the engine of the memory.  <a href="#a051d447c5cd56f79001add98a0b0e0cf">More...</a><br/></td></tr>
+<tr class="separator:a051d447c5cd56f79001add98a0b0e0cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07d67b26cdd115092f8574cc000f96fc"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1memory.html#a07d67b26cdd115092f8574cc000f96fc">get_data_handle</a> () const </td></tr>
-<tr class="memdesc:a07d67b26cdd115092f8574cc000f96fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a handle of the data contained in the memory primitive. On the CPU engine, this is a pointer to the allocated memory.  <a href="#a07d67b26cdd115092f8574cc000f96fc">More...</a><br/></td></tr>
+<tr class="memdesc:a07d67b26cdd115092f8574cc000f96fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a handle of the data contained in the memory.  <a href="#a07d67b26cdd115092f8574cc000f96fc">More...</a><br/></td></tr>
 <tr class="separator:a07d67b26cdd115092f8574cc000f96fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab40a643171be4f413ca4cfae8c672f5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1memory.html#ab40a643171be4f413ca4cfae8c672f5d">set_data_handle</a> (void *<a class="el" href="classmkldnn_1_1handle.html">handle</a>) const </td></tr>
 <tr class="separator:ab40a643171be4f413ca4cfae8c672f5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_classmkldnn_1_1primitive"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classmkldnn_1_1primitive')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classmkldnn_1_1primitive.html">mkldnn::primitive</a></td></tr>
-<tr class="memitem:gad620dea4032ae111acef2a46e0902722 inherit pub_methods_classmkldnn_1_1primitive"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__primitive__descs.html#ga9f002a6449ae9be775393e888698cfe0">const_mkldnn_primitive_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__utils.html#gad620dea4032ae111acef2a46e0902722">get_primitive_desc</a> () const </td></tr>
-<tr class="memdesc:gad620dea4032ae111acef2a46e0902722 inherit pub_methods_classmkldnn_1_1primitive"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the descriptor of the underlying C API primitive.  <a href="group__cpp__api__utils.html#gad620dea4032ae111acef2a46e0902722">More...</a><br/></td></tr>
-<tr class="separator:gad620dea4032ae111acef2a46e0902722 inherit pub_methods_classmkldnn_1_1primitive"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_classmkldnn_1_1handle"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classmkldnn_1_1handle')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classmkldnn_1_1handle.html">mkldnn::handle&lt; mkldnn_primitive_t &gt;</a></td></tr>
-<tr class="memitem:a4194187ee28bdeab2b529f892e487ea3 inherit pub_methods_classmkldnn_1_1handle"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmkldnn_1_1handle.html#a4194187ee28bdeab2b529f892e487ea3">handle</a> (mkldnn_primitive_tt=0, bool weak=false)</td></tr>
+<tr class="memitem:a777212e66feff5169d90f006bbd645be"><td class="memTemplParams" colspan="2">template&lt;typename T  = void&gt; </td></tr>
+<tr class="memitem:a777212e66feff5169d90f006bbd645be"><td class="memTemplItemLeft" align="right" valign="top">T *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1memory.html#a777212e66feff5169d90f006bbd645be">map_data</a> () const </td></tr>
+<tr class="memdesc:a777212e66feff5169d90f006bbd645be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps the data of the memory.  <a href="#a777212e66feff5169d90f006bbd645be">More...</a><br/></td></tr>
+<tr class="separator:a777212e66feff5169d90f006bbd645be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad51d365ef8ccbe0da74609a45b1f9d4b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1memory.html#ad51d365ef8ccbe0da74609a45b1f9d4b">unmap_data</a> (void *mapped_ptr) const </td></tr>
+<tr class="memdesc:ad51d365ef8ccbe0da74609a45b1f9d4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unmaps the previously mapped data for the memory.  <a href="#ad51d365ef8ccbe0da74609a45b1f9d4b">More...</a><br/></td></tr>
+<tr class="separator:ad51d365ef8ccbe0da74609a45b1f9d4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classmkldnn_1_1handle"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classmkldnn_1_1handle')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classmkldnn_1_1handle.html">mkldnn::handle&lt; mkldnn_memory_t &gt;</a></td></tr>
+<tr class="memitem:a4194187ee28bdeab2b529f892e487ea3 inherit pub_methods_classmkldnn_1_1handle"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmkldnn_1_1handle.html#a4194187ee28bdeab2b529f892e487ea3">handle</a> (mkldnn_memory_tt=0, bool weak=false)</td></tr>
 <tr class="memdesc:a4194187ee28bdeab2b529f892e487ea3 inherit pub_methods_classmkldnn_1_1handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a C handle wrapper.  <a href="#a4194187ee28bdeab2b529f892e487ea3">More...</a><br/></td></tr>
 <tr class="separator:a4194187ee28bdeab2b529f892e487ea3 inherit pub_methods_classmkldnn_1_1handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc0d8bf89b381da03c8a2173896322cc inherit pub_methods_classmkldnn_1_1handle"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmkldnn_1_1handle.html#adc0d8bf89b381da03c8a2173896322cc">handle</a> (const <a class="el" href="classmkldnn_1_1handle.html">handle</a> &amp;other)</td></tr>
@@ -395,40 +508,52 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a353488215523b9cca1b2e1ea07c2f12c inherit pub_methods_classmkldnn_1_1handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d3fcf26103f636321e4522a4fbeecd5 inherit pub_methods_classmkldnn_1_1handle"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmkldnn_1_1handle.html#a2d3fcf26103f636321e4522a4fbeecd5">operator!=</a> (const <a class="el" href="classmkldnn_1_1handle.html">handle</a> &amp;other) const</td></tr>
 <tr class="separator:a2d3fcf26103f636321e4522a4fbeecd5 inherit pub_methods_classmkldnn_1_1handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3aa9cec1c7e14dd77c9a904503960b9e inherit pub_methods_classmkldnn_1_1handle"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmkldnn_1_1handle.html#a3aa9cec1c7e14dd77c9a904503960b9e">reset</a> (mkldnn_primitive_tt, bool weak=false)</td></tr>
+<tr class="memitem:a3aa9cec1c7e14dd77c9a904503960b9e inherit pub_methods_classmkldnn_1_1handle"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmkldnn_1_1handle.html#a3aa9cec1c7e14dd77c9a904503960b9e">reset</a> (mkldnn_memory_tt, bool weak=false)</td></tr>
 <tr class="memdesc:a3aa9cec1c7e14dd77c9a904503960b9e inherit pub_methods_classmkldnn_1_1handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the value of a C handle.  <a href="#a3aa9cec1c7e14dd77c9a904503960b9e">More...</a><br/></td></tr>
 <tr class="separator:a3aa9cec1c7e14dd77c9a904503960b9e inherit pub_methods_classmkldnn_1_1handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6cff23ba3e461babe5edcff193d0c42c inherit pub_methods_classmkldnn_1_1handle"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__primitive.html#gac7821f6b4a4fa0d58fe5279a1ff2fda3">mkldnn_primitive_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmkldnn_1_1handle.html#a6cff23ba3e461babe5edcff193d0c42c">get</a> () const</td></tr>
+<tr class="memitem:a6cff23ba3e461babe5edcff193d0c42c inherit pub_methods_classmkldnn_1_1handle"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__memory.html#gacf7d7938936d5422bbd63ccb54efb336">mkldnn_memory_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmkldnn_1_1handle.html#a6cff23ba3e461babe5edcff193d0c42c">get</a> () const</td></tr>
 <tr class="memdesc:a6cff23ba3e461babe5edcff193d0c42c inherit pub_methods_classmkldnn_1_1handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value of the underlying C handle.  <a href="#a6cff23ba3e461babe5edcff193d0c42c">More...</a><br/></td></tr>
 <tr class="separator:a6cff23ba3e461babe5edcff193d0c42c inherit pub_methods_classmkldnn_1_1handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a2b5aee608f913a4fcbfef41b63f48650"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a2b5aee608f913a4fcbfef41b63f48650"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1memory.html#a2b5aee608f913a4fcbfef41b63f48650">validate_dims</a> (std::vector&lt; T &gt; v)</td></tr>
-<tr class="separator:a2b5aee608f913a4fcbfef41b63f48650"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a170722e288c14c6e59d15b1b0430deae"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a170722e288c14c6e59d15b1b0430deae"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1memory.html#a170722e288c14c6e59d15b1b0430deae">validate_dims</a> (const std::vector&lt; T &gt; &amp;v)</td></tr>
+<tr class="separator:a170722e288c14c6e59d15b1b0430deae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f533b52ae52b2f0e98609af11b489ab"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__c__api__types__generic.html#ga826b2a9be4d94ac17f99bacac6d0cb29">mkldnn_data_type_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1memory.html#a2f533b52ae52b2f0e98609af11b489ab">convert_to_c</a> (<a class="el" href="structmkldnn_1_1memory.html#aa8a0d49cc7faaceef9d8f55d66bff57b">data_type</a> adata_type)</td></tr>
 <tr class="separator:a2f533b52ae52b2f0e98609af11b489ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acde65f106d6ddc0d194e5993a01bb5c3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__c__api__types__generic.html#ga30a390f87ef74bf03dfa48a7b3f2fb74">mkldnn_memory_format_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1memory.html#acde65f106d6ddc0d194e5993a01bb5c3">convert_to_c</a> (<a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87e">format</a> aformat)</td></tr>
-<tr class="separator:acde65f106d6ddc0d194e5993a01bb5c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cbd74a8dd0b5c1d2d1988ad1ae6ca7d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__c__api__types__generic.html#gacc2844e341ab1c4f5b7ae1c6068f2a2b">mkldnn_format_tag_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1memory.html#a5cbd74a8dd0b5c1d2d1988ad1ae6ca7d">convert_to_c</a> (<a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ced">format_tag</a> aformat)</td></tr>
+<tr class="separator:a5cbd74a8dd0b5c1d2d1988ad1ae6ca7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pro_methods_classmkldnn_1_1handle"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classmkldnn_1_1handle')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classmkldnn_1_1handle.html">mkldnn::handle&lt; mkldnn_primitive_t &gt;</a></td></tr>
-<tr class="memitem:a2208b40ea4afdd37de2a4587f6b7e9f6 inherit pro_methods_classmkldnn_1_1handle"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmkldnn_1_1handle.html#a2208b40ea4afdd37de2a4587f6b7e9f6">operator==</a> (const mkldnn_primitive_tother) const</td></tr>
+<tr class="inherit_header pro_methods_classmkldnn_1_1handle"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classmkldnn_1_1handle')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classmkldnn_1_1handle.html">mkldnn::handle&lt; mkldnn_memory_t &gt;</a></td></tr>
+<tr class="memitem:a2208b40ea4afdd37de2a4587f6b7e9f6 inherit pro_methods_classmkldnn_1_1handle"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmkldnn_1_1handle.html#a2208b40ea4afdd37de2a4587f6b7e9f6">operator==</a> (const mkldnn_memory_tother) const</td></tr>
 <tr class="separator:a2208b40ea4afdd37de2a4587f6b7e9f6 inherit pro_methods_classmkldnn_1_1handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af25c0061b4f7372601556f571cb2b5e2 inherit pro_methods_classmkldnn_1_1handle"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmkldnn_1_1handle.html#af25c0061b4f7372601556f571cb2b5e2">operator!=</a> (const mkldnn_primitive_tother) const</td></tr>
+<tr class="memitem:af25c0061b4f7372601556f571cb2b5e2 inherit pro_methods_classmkldnn_1_1handle"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmkldnn_1_1handle.html#af25c0061b4f7372601556f571cb2b5e2">operator!=</a> (const mkldnn_memory_tother) const</td></tr>
 <tr class="separator:af25c0061b4f7372601556f571cb2b5e2 inherit pro_methods_classmkldnn_1_1handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Memory primitive that describes the data. </p>
+<div class="textblock"><p>Memory that describes the data. </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a class="anchor" id="a0fa655354b5c62453d93c58e2f229a43"></a>
+<a class="anchor" id="ac84929ec8bd1bba9d7c5723ad6d93906"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef std::vector&lt;std::remove_extent&lt;<a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a>&gt;::type&gt; <a class="el" href="structmkldnn_1_1memory.html#a0fa655354b5c62453d93c58e2f229a43">mkldnn::memory::dims</a></td>
+          <td class="memname">typedef <a class="el" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a> <a class="el" href="structmkldnn_1_1memory.html#ac84929ec8bd1bba9d7c5723ad6d93906">mkldnn::memory::dim</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4b929aee34491e5140d055a9e1daf180"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::vector&lt;<a class="el" href="structmkldnn_1_1memory.html#ac84929ec8bd1bba9d7c5723ad6d93906">dim</a>&gt; <a class="el" href="structmkldnn_1_1memory.html#a4b929aee34491e5140d055a9e1daf180">mkldnn::memory::dims</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -439,341 +564,579 @@ Additional Inherited Members</h2></td></tr>
 <a class="anchor" id="aa8a0d49cc7faaceef9d8f55d66bff57b"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">enum <a class="el" href="structmkldnn_1_1memory.html#aa8a0d49cc7faaceef9d8f55d66bff57b">mkldnn::memory::data_type</a></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Data type specification. See <a class="el" href="group__c__api__types__generic.html#ga826b2a9be4d94ac17f99bacac6d0cb29" title="Data type specification. ">mkldnn_data_type_t</a> for a detailed description. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="aa8a0d49cc7faaceef9d8f55d66bff57bafe36f365f50e0317a2fa5142881dc73e"></a>data_undef</em>&nbsp;</td><td class="fielddoc">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="aa8a0d49cc7faaceef9d8f55d66bff57baf31ee5e3824f1f5e5d206bdf3029f22b"></a>undef</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="aa8a0d49cc7faaceef9d8f55d66bff57baaf36765775c9522f12bc84c72ea8355d"></a>f32</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="aa8a0d49cc7faaceef9d8f55d66bff57baa2449b6477c1fef79be4202906486876"></a>f16</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="aa8a0d49cc7faaceef9d8f55d66bff57baafd6316d6d009465fd42d0effc8cdac1"></a>s32</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="aa8a0d49cc7faaceef9d8f55d66bff57ba512dc597be7ae761876315165dc8bd2e"></a>f32</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="aa8a0d49cc7faaceef9d8f55d66bff57ba3b210ee3077fc5a8cf09a48bd01c5f59"></a>s16</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="aa8a0d49cc7faaceef9d8f55d66bff57baa860868d23f3a68323a2e3f6563d7f31"></a>s32</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="aa8a0d49cc7faaceef9d8f55d66bff57ba4b4eb008e1bc38c0f4f2de74fdc354ab"></a>s8</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="aa8a0d49cc7faaceef9d8f55d66bff57ba3e8d88fdd85d7153525e0647cdd97686"></a>s8</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="aa8a0d49cc7faaceef9d8f55d66bff57ba0ccb6d0e4130dfe94e06635dac6a9b11"></a>u8</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="aa8a0d49cc7faaceef9d8f55d66bff57ba077393852be20e37026d6281827662f2"></a>u8</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
 </table>
 
 </div>
 </div>
-<a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87e"></a>
+<a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ced"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87e">mkldnn::memory::format</a></td>
+          <td class="memname">enum <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ced">mkldnn::memory::format_tag</a></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Memory format specification. See <a class="el" href="group__c__api__types__generic.html#ga30a390f87ef74bf03dfa48a7b3f2fb74" title="Memory format specification. ">mkldnn_memory_format_t</a> for a detailed description. </p>
+<p>Memory format tag specification. See <a class="el" href="group__c__api__types__generic.html#gacc2844e341ab1c4f5b7ae1c6068f2a2b" title="Memory format tag specification. ">mkldnn_format_tag_t</a> for a detailed description. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea1b7aba137f0d853dd8487fcb14fdc628"></a>format_undef</em>&nbsp;</td><td class="fielddoc">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedaf31ee5e3824f1f5e5d206bdf3029f22b"></a>undef</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea986f069b593c7c6610bc15d678e653d9"></a>any</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda100b8cad7cf2a56f6df78f171f97a1ec"></a>any</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea94a49fa4a564bc23f011c970383b94e3"></a>blocked</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda0cc175b9c0f1b6a831c399e269772661"></a>a</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eaea99de727949bed9013befda32206aeb"></a>x</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda187ef4436122d1cc2f40dc2b92f0eba0"></a>ab</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea4ff01f91c212576306e693c1a1ac4c12"></a>nc</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda900150983cd24fb0d6963f7d28e17f72"></a>abc</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eaf50ea8a967a354f8850f2e21120f4bee"></a>ncw</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedae2fc714c4727ee9395f324cd2e7f331f"></a>abcd</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea248d1514656e17887418efe321a1656b"></a>nwc</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedaab56b4d92b40713acc5af89985d4b786"></a>abcde</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eab490dcd64011784da9839a76f8b83110"></a>nCw16c</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedae80b5017098950fc58aad83c8c14978e"></a>abcdef</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eafc4fd623cc6ff8ed099be6d52743200a"></a>nchw</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda7a05226d93263d6fc613f52400f7416d"></a>abdec</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea5ec50071376483f7364de8b1b85d685d"></a>nhwc</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda5ff832d9bca8241d653279756f3ccd11"></a>acb</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eaeab9b02510aacc27bd0043473caa6a8e"></a>chwn</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedae0e56a95aff0ee48fc44e8a4faf69adb"></a>acbde</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea2eb2c7a2e81fdfa7c14368187f5cb915"></a>nCw4c</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda776649ab3d00664587b889457db87da7"></a>acdb</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea460962d0ea3081e5d730fc9cf7b33a45"></a>nCw8c</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedaf95d333a023ac787b43babc5b5c480ae"></a>acdeb</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eaf22ffd40379d8886b817c6c07d1e051e"></a>nChw4c</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda07159c47ee1b19ae4fb9c40d480856c4"></a>ba</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea248862baad8f48e384015ffd20327223"></a>nChw8c</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda79ec16df80b57696a03bb364410061f3"></a>bac</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea7ee460916f5c04b7f46e103474c543b7"></a>nChw16c</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda5a3b732e0600663606054f6d8dfd465e"></a>bacd</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea5dc81a175f020c19fa6c6de1b119be9a"></a>ncdhw</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda078c4e73146ba90c3e4e9daa1facac28"></a>bcda</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eacfa425c92b15a19c476e747fab17ce1e"></a>ndhwc</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda3944b025c9ca7eec3154b44666ae04a0"></a>cba</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eab16eac10fd1a3c52bbdd130592b3e475"></a>nCdhw4c</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedaff2458511a39d703bd273eabbb1395d6"></a>cdba</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea4d37039770dd78417346b4dc7c73188b"></a>nCdhw8c</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedafafcbfdfcede01281676ab63df88a919"></a>cdeba</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea28f872d6caf404cfb706b2d69b2b8b64"></a>nCdhw16c</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedab9a152e018d02395e6e94c5619da4a91"></a>decab</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea4c8c6b41aae08b78d95bb5b76d28d22b"></a>oi</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda77c145adee31be0b94281ba7ebca6fcb"></a>Abc16a</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eabdc33953230281d5e6413d2fb78b06ce"></a>io</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda8adf2fda72cf03635d30469dde3640fe"></a>ABc16a16b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea70b218873ed9d069e08c851a5556e3e4"></a>oiw</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda7e6b87e989e2a78a5f69d2c1af35b462"></a>aBc16b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea3768b23a10d360cec7585267e9a8f97e"></a>wio</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda4bb100f4bfde4cf12c696cd8873dc738"></a>ABc16b16a</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea897a13f5c528153d97c3722f34e26922"></a>Owi4o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda2a135231ba246bcff4e4a76a7783061f"></a>Abc4a</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea9130912d929111f69d20c37ff20cb29c"></a>OIw4i4o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda84114cd99efa89c7d0d437863332a67f"></a>aBc4b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eaab9e427702cc0469f4a567104b3e06cb"></a>Owi8o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda8939404016732ff4ece68dfcaf40c75e"></a>ABc4b16a4b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea07e19f77f4ffe5b1004d86a81cbdfb08"></a>OIw8o8i</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda0d815f0b88178e2f4d06b82cc23b689b"></a>ABc4b4a</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eae9db232b3efbe08ef8fe78b1bf22a222"></a>OIw8i8o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda79b9870f007647a15905c0069b6ba996"></a>ABc8a16b2a</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eae5e2047600c889b5329854a797712e02"></a>OIw16i16o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda2665331a935aeba5d5c76eee34fe528a"></a>ABc8a8b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eaf0c7173c789ea82d91f17f31182880cb"></a>OIw16o16i</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedac79e8d3b22b4b6283a4d47fb29ada5ba"></a>aBc8b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eab41cc1dd6fb78744bbc21b9232ebbeaa"></a>Oiw4o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedaf7b1e3bb02bcb88be3ff57d52066db29"></a>ABc8b16a2b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eaafc78eeb40e74cc0d40e595bcd6c8211"></a>Oiw16o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedadc1e646f5a4dbdb66a68703924f818d0"></a>ABc8b8a</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea6b734f51d0c7fe644455e99d1b5e25dd"></a>Owi16o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedab1756ecea8a29754af14815b9cd2cdf3"></a>Abcd16a</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea249edcb31898ab57856134568b5b8ba6"></a>OIw8i16o2i</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda8de48edabb9809687b4942e1b19bf326"></a>ABcd16a16b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ead57139901f5edd02d04055f8e15291df"></a>OIw8o16i2o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda5d55d90de66e593624aee60adb9f8540"></a>aBcd16b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eaed535314a63359a56cc57b07101adebf"></a>IOw16o16i</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda32e2a00a75ff1810113dab64fff1a68f"></a>ABcd16b16a</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eaec8690a074cdfb14ee7356d1fe1bd29a"></a>OIw4i16o4i</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedacdf43d4ebfe0a9d95e8932b3e70517c7"></a>aBCd16b16c</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea6e96a94a0a6583ec402141b4735b0236"></a>OIw4i16o4i_s8s8</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda1eb6b367c2ccab891bc1f002bcf445c0"></a>aBCd16c16b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ead5691debf8e19e13d09e15d7d99a7ee3"></a>oihw</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda91028d97462edc87adafecbeac0fda2a"></a>Abcd4a</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea7fe3459cd6d4a96ee1b7374a829339d5"></a>ihwo</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedac2360cf243576d4dfdc31f8eabf95e5e"></a>aBcd4b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea1bb42cc40625761a9eeb28937d6b7d8c"></a>hwio</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedab585b6df77eedca0785c1cda91f31e29"></a>ABcd4b16a4b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea69bce907f389200541b806e25a8157d6"></a>iohw</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedae33cdf340198dede7a5e2a5777601a05"></a>ABcd4b4a</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea89a26ce8c0d84f4115cd4b3cc3162c5b"></a>hwio_s8s8</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedae349b11785f3ab115cfd826cb3273af4"></a>aBCd4c16b4c</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eaebcf00c5d0f2f56bb6bed3304e9b0c32"></a>dhwio</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedaa34041da6e29a487758640adc3b076c8"></a>aBCd4c4b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea72975b1e4e79839b1821fe32a973c602"></a>oidhw</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda6597bf8274a8f7ac8ef39e9cd61b9ec1"></a>ABcd8a16b2a</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea9945d6c9c297e1ada36214b11ce15704"></a>OIdhw4i4o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedadfa7f0ee91a58b03b5d65c293125858a"></a>ABcd8a8b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eab22867ff8cf90c72a58f9c96876803bf"></a>Odhwi4o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda448a7fc9219294ce172b0edf9498b5c4"></a>aBcd8b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eaaaf54efed17c5743a0cf16d3e46739b7"></a>OIdhw8i8o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda0c035ab408bbad64c4599d82204eca70"></a>ABcd8b16a2b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eae53fcf48b777b631ec71f6028a6adea7"></a>OIdhw8o8i</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedae6c88aeae25973eaa8ea089c2a6a42f0"></a>aBCd8b16c2b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea9c7f1f84be8ca2891abef4a4cbea4e1f"></a>Odhwi8o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedabcbce50e9c241458767871fa053e1ba0"></a>ABcd8b8a</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eac40a945be6be77690a88f37570fa58d0"></a>OIdhw16i16o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda22a04acd0981d3df20a6946f2d63d50e"></a>aBCd8b8c</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea6eb0df091955635faeac2ad96f90daf9"></a>OIdhw16o16i</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda2e0728bac73db59d8e0481e88f29fad1"></a>aBCd8c16b2c</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea709688ff4f5a7a0c9fb273c6835033c8"></a>Oidhw4o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda2e63d893f1711440e5f8935c1d20c164"></a>aBCd8c8b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea1ab877dcc92270edc374988c9c918e16"></a>Oidhw16o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda12db43bbe0c6b63c3b4b04d0fadd802a"></a>Abcde16a</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eafe5531230831268fe4924777e8d714a4"></a>Odhwi16o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda120b9b67382c458a97a9d1cc3c4e0902"></a>ABcde16a16b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eaabeb598d814c8420a22243d26e6ed3c9"></a>oIhw8i</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedac45847e0e12ecd8cac5d4a98ccc6bef6"></a>aBcde16b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eadfb8daccb2a4b9ef406c1dfc929e2a83"></a>oIhw16i</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda78e33c68c36a4f4b97cc8958a8c4aa95"></a>ABcde16b16a</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea8c537f96db7cac296dfc4274e8540117"></a>oIdhw8i</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda4789d2b682a01bed34318be417e9a206"></a>aBCde16b16c</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eab36c291254b91fe9c0c05b1768ee1079"></a>oIdhw16i</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda275b87a4c6da71c18c65a691c6af2f3e"></a>aBCde16c16b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea0c5c27337371a9234400ec9bee270211"></a>OIhw4i4o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedac59accaba01874d96f9ac65b7d66540a"></a>aBCde2c8b4c</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eab1ff88a5571cab5c4495acfb07669762"></a>OIhw8i8o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda8ecca782aa49990ab26ff202f0251e66"></a>Abcde4a</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea2f7490bd350bc8d194f2e4b67213adf7"></a>OIhw16i16o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedaeaa37c2eca13f8a741d741640efd7656"></a>aBcde4b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea511ae11a284c9108eeb61664ff163aea"></a>OIhw8o8i</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda019f84e0b32929be123b952be11426db"></a>ABcde4b4a</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea82c279649f9f84c2ef9a046e7777cac0"></a>OIhw16o16i</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda0ecdca6185803e918e4544323c41d3e9"></a>aBCde4b4c</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eab597424c8b1e8eba637f467898809edc"></a>IOhw16o16i</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedaff14e3a6dabb2e8874b7bf36f12e5c53"></a>aBCde4c16b4c</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eaffaad9f0dac63a0880ee0bfd9b029888"></a>OIhw8i16o2i</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedab80d94e8f97f164b66d4b478b9410cde"></a>aBCde4c4b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea06c03b359146e57c673820f4b5f184fa"></a>OIdhw8i16o2i</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedaf31b83b4d7bf6091d47b0f57d0e10264"></a>Abcde8a</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eae2907c3b58ca4186e7f6a31343b352cd"></a>OIhw8o16i2o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda954a31af1ed0b3b9a9e375d6f6d4257a"></a>ABcde8a8b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea1d6e70b0215713d38b885f9eb48bb882"></a>OIhw4i16o4i</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda2928a5cd5c7e5e95998bcb4f24335220"></a>aBcde8b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea5b3f7e47ef47c71e45b2144d97cb11b7"></a>OIhw4i16o4i_s8s8</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda00df0930569d6a4b9c62f3bd4c27f5a4"></a>ABcde8b16a2b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea78d00dd56845dd40e6e271a1ffb4b438"></a>Oihw8o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda92f337765b473338389ce17961927d8f"></a>aBCde8b16c2b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eaf15525608e0f239a1d1f691d9949cf6f"></a>Oihw4o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedaedf9318e4c601759f4474fc94464a459"></a>ABcde8b8a</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea11e304de746e771710096ae078582838"></a>Oihw16o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda6390664d064e577e4c068fcfc6de9134"></a>aBCde8b8c</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea2f135b7d8ff60dcce96a4919722b0fad"></a>Ohwi8o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda70621dffd1398acc2e78eeb8a3fcda49"></a>ABcd4a8b8a4b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea0c07384900eb3a630422af20abbd5455"></a>Ohwi4o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda750678c620c0119068dc66f751a9e43c"></a>ABcd2a8b8a2b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eae01c9f565ec8b7a69ad2432df340dcf0"></a>Ohwi16o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda00025ae6907e34c690de6ddd60423523"></a>aBCde4b8c8b4c</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea0e1f301f069a122158ac1ab3d1854a54"></a>OhIw16o4i</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedac6c2b18886f80e76c2efd5e81018e89a"></a>aBCde2b8c8b2c</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eaeb690c293caf6de6ed3ce832d341de3d"></a>goiw</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda39dcf6c6e6061494dc3d79128a7b7e16"></a>aBCde8c16b2c</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea36a33472dcb4256d8faf5f711a6e2fbf"></a>gOwi4o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda38796ed143bff89b696b8b19eeeda44b"></a>aBCde8c8b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eac5543e965bf5203af1cd32b7b5aad9a3"></a>gOIw4i4o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda6a19babc839e184e5ca2b277f376bfaf"></a>aBcdef16b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea3385087517d8e2e46044235b848c9fa5"></a>gOwi8o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedab0cf98561c58a11c0bde0a0a31aa3a59"></a>aBCdef16b16c</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eac64e94f44284fed5af0f671335eb84e3"></a>gOIw8o8i</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda36766eadad940ab2804bcccb6a7838c5"></a>aBCdef16c16b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea03a23792cc967192e0f9f5f2d07fdf1d"></a>gOIw8i8o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda78db8ad202df89454a921b7c5432d151"></a>aBcdef4b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eab9790d2ffba16d965d763e35e4a592bd"></a>gOIw16i16o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda6c6f2aba250ce2441a9ff2976ab0e4ed"></a>aBCdef4c4b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea3f917d22e2935749fb44f0cd8741d3c0"></a>gOIw16o16i</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda60e1c7bfad21352d904f80f5671d082b"></a>aBCdef8b8c</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eab28c8003ce919ae98d79fbd0c9e6223e"></a>gOiw4o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda10d6e2f36d793a8de7fd5ea97d2e158b"></a>aBCdef8c16b2c</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea81425d50ca1fc18583e467ce7e50153a"></a>gOiw16o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedaea3f9e57566cad20acdac5254194cf2c"></a>aBCdef8c8b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea8a096a7b192d719fa8cc9af4df546c0e"></a>gOwi16o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedafba0f9e6c5d27843e2f66bfa7e277612"></a>aBdc16b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eaccb091227320c06ff83644170e6dce47"></a>gOIw8i16o2i</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda1b1edb0117d39115ccdbb72fd13ab926"></a>aBdc4b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea2fd35c34941e7889928ccedb4be2a0d7"></a>gIOw16o16i</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda5e01a5405304144b1cc88bcd3921a999"></a>aBdc8b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea8043d9e15eeffb65152fb60958e476e5"></a>gOIw8o16i2o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda80c37d3114c0c477b95126c208145e24"></a>aBdec16b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea790b48da9fc35d09c4dd3f716aa2d8fc"></a>gOIw4i16o4i</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedaefbc4428be375dd4cfe493fe397d8c65"></a>aBdec4b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea77cd50f304591eed8e58b7ece13cecdf"></a>gOIw4i16o4i_s8s8</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda8babba3825af4f9ee534ba0292918d3b"></a>aBdec8b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea19f8852dc26c175f22aed771f3f9614a"></a>goihw</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda73c193ce0e5f20b6649fbfa89cd85806"></a>aBdefc16b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea73723a23545237c852092890639503bc"></a>hwigo</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda7d1aa12b0392d673efe4d8fd8fa5498c"></a>aCBdef16c16b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eab9ed2c3a4602989a2896b8c90abd18b8"></a>giohw</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda77f7431a6a7228b1d7941be09e133455"></a>aBdefc4b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea27960fb07eec92219cbf0f05aadba703"></a>hwigo_s8s8</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedacd3979acb531a3932147cbb8fe8c480e"></a>aBdefc8b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eadb9252f388f70a66f180f985a806289e"></a>gOIdhw4i4o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedab0f77caa3dd94494f9a14ed5bf05b9d7"></a>Acb16a</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eab4cb2a8a8ca8dcf1b5ec4a73195e0e65"></a>gOdhwi4o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda723520a2226cac57233f4e24ea6259ca"></a>Acb4a</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ead49fda2c4b65fc929f67c95237932e91"></a>gOIdhw8i8o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedaef80848cfaf08b3edbf35ba52834dd9b"></a>Acb8a</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea1480af02d8fc0be33760c615345f952a"></a>gOIdhw8o8i</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda2409de8f31bda21af9d61b2bfd569263"></a>aCBd16b16c</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eace15960b3ccbb40e81009787fb946122"></a>gOdhwi8o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda34f370b4d4c2f03494747d02f5d4970b"></a>aCBde16b16c</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea9c7ca412a09eb0d3c0babd6f306a74c3"></a>gOIhw4i4o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedae1f4826029f30fa9a89284cb6109a1bd"></a>aCBde16c16b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea11eda3436ae582b8a28cc85adc8433c1"></a>gOIhw8i8o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda5bc76df72f48c4212994f8ba890c583d"></a>Acdb16a</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eab47a53954142e271e59e8b0b036c7797"></a>gOIhw16i16o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda119cdc50aa9f3f36d7d3125c778c620c"></a>Acdb4a</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea380d9e31a9703c3b520c8cc32e6ae8b9"></a>gOIhw8i16o2i</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda650aee93cdcdcaf91e2bf0657088b864"></a>Acdb8a</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea69ad7a0af41a810a57a20b1cdbcb5c3b"></a>gOIdhw8i16o2i</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda0cb28993934aff498bcda6f6f3cee8d6"></a>Acdeb16a</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea924d233b52d5b5cbad3f00280e7bae61"></a>gOIhw8o16i2o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda334cd01f22c0e6f36095c76a66504543"></a>Acdeb4a</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea38af36228c9d30e658abbd12a7fc586e"></a>gOIhw4i16o4i</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedac7f114c480275779f0ae4484d83b6f41"></a>Acdeb8a</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea36f91a40e054e4d7b730036d3bec4c41"></a>gOIhw4i16o4i_s8s8</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedab1055b9db4db65014b9c0c00adddb1c7"></a>BAc16a16b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ead9a1070804d88b5f00708399e8f79471"></a>gOIhw2i8o4i</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedad98b0acb88c4867796a3cfd0c15127ed"></a>BAcd16a16b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea957593191ddd39ee23d779859f80559a"></a>gOIhw2i8o4i_s8s8</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda7d188af63c65095e2b34ef401f752799"></a>BAcd16b16a</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea3026eb87a3233587bee2d15882e21d63"></a>gOihw8o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedab937580442cc8b50cf459bb534876e5e"></a>ABcd32a32b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea8be354c2071ed270eeab1c723cdc5528"></a>gOihw4o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedaa158940f01b2e2e6c14ef5368cb6ed1a"></a>BAcde16b16</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eace32ebeb1bd36dc01d4a6aedb81505f3"></a>gOihw16o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda868c53346cf855961472b7c7516e2257"></a>aBdec32b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eaaf5b2466bffb310c77d8e4640d0af8cf"></a>gOhwi4o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda4f6cb73f8ac3d13ba31d78c9bfd33232"></a>Abcdef16a</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eae7df7db47e81d11cd459f53f46928cb9"></a>gOhwi8o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedae8924313f1c545aa6d464f5d22edfe9d"></a>aCBde16c16</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea5686f7dbdddd9ee3f502f7600cbe731a"></a>gOhwi16o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedad8119b9e070a87198eaf3564122805e3"></a>Acdb32a</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea14ccb866c53d03becdcdebc3d30535e4"></a>Goihw8g</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda3d78b4610da52a1b6bff0c40b5a02404"></a>format_tag_last</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea3c5592c709cebec2262267992184b1b0"></a>Goiw16g</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda9dd4e461268c8034f5c8564e155c67a6"></a>x</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eafe8d94eba513554644c77f87cea4f7f5"></a>Goiw16g_s8s8</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda1e7342845e24eb3b5b3554490da1c128"></a>nc</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea7c438d4874170d550a5822c60c91ebff"></a>Goihw16g</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda7efdfc94655a25dcea3ec85e9bb703fa"></a>cn</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea4ba152cd750342b94b68277bfcd78bc7"></a>Goihw16g_s8s8</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedabc4eee572ad38f8a5c2534e0b2533100"></a>ncw</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea0b4a02859608d92b523a0c99d36be061"></a>gOIhw4o4i</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedaccc0543dc9272f9fffd720fe55f818e4"></a>nwc</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eae9528f681b7bf5f7c6e21816c6567b13"></a>gOIhw4o4i_s8s8</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedaded7ac40158367123c5467281d44cbeb"></a>nchw</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eacaf364857cd0309c67bb6dff621ee71e"></a>gOIhw8o8i</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda763cbf7ba1b7b8793dcdc6e2157b5c42"></a>nhwc</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eaa1cc9ef7726a93eaf88e6556bca94f64"></a>gOIhw16o16i</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedafd2263500e815d8ce46e79e6b178a10a"></a>chwn</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eaed5bd42c3c68a277cbdca346a72251fa"></a>gIOhw16o16i</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedae7a84f08ef10d4fe3096307c6d9770fd"></a>ncdhw</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea12dbcd423f39fcd621b399d494e5dfe7"></a>gOhIw16o4i</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedad2f2770ca9883423f680fd4a29481d64"></a>ndhwc</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea0f3013141c195b2f22d994861c2620a8"></a>goidhw</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedaa2e63ee01401aaeca78be023dfbb8c59"></a>oi</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eaea5b468f371e0e2e4ff42ce2e731b6e9"></a>gOIdhw16i16o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedaf98ed07a4d5f50f7de1410d905f1477f"></a>io</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea7db54b023c9c0850b36ffae21925abdd"></a>gOIdhw16o16i</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda3a8cb832bca6da72735b742014560a5b"></a>oiw</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eacfbe98b2e9c9143932af0840c079285e"></a>gOidhw4o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda5b12270b2f1c52cb9ae37905880a5a6f"></a>wio</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea36f5ee4d2f8a5bdc9e064886671cb3e1"></a>gOidhw16o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda14b72a467aeefa06a5cb802ec4a7743c"></a>oihw</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea4b5d3797672c5c4d2cf427b68a89fb46"></a>gOdhwi16o</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedadd942f902c741de7193e1869b13ba55a"></a>hwio</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eae11b0dd666a7c9cb2a9e40a3eddf4a26"></a>ntc</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda56fe35ca9f339b4948384c2a2fa02de5"></a>ihwo</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea36d13dca38400b87a09634979712063c"></a>tnc</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedac16710619e6550753801926b5388bef8"></a>iohw</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea070c38c5a8fa9bec80c11de7525385c0"></a>ldsnc</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda98407962f915285419b23f5b0a223882"></a>oidhw</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea745128f36aae3e9a84f82eb14d7e03b4"></a>ldigo</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedaeafcb3d831eef23cde0b46f64646327c"></a>dhwio</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea4b2785a46f164ee31f3eff2c0c966a74"></a>ldgoi</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda1f1bc797706732c22eb9987e3cea3e54"></a>goiw</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87eadfa306c1d0d75416ecf54352c23ee548"></a>ldgo</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda3dc0e53430a6368210356118196f821a"></a>goihw</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea7ed79cbb78fecce614cab9b9036ce194"></a>rnn_packed</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedafd710c828421b3c91725b0e5aa53ecc6"></a>hwigo</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea6d8ca729e011cce33cfffb518b2f6fdf"></a>wino_fmt</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda5f1d6f8a3a8842611d15affa574b864f"></a>giohw</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a563b90355ae4fbfed12f6db8ab25a87ea994f7a84efd8e8d83107b4f1f8bb25ed"></a>format_last</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedaa678de4e5a5e34c9a71a632b8f334b8b"></a>goidhw</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedac775cf954921a129a65eb929476de911"></a>tnc</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda6758344f9f89d390953c6718f34e9be1"></a>ntc</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedaf8378ff1a03fd201b6e6b8d6cde5c9b0"></a>ldsnc</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda4e62e330c56963f9ead98490cd57ef7b"></a>ldigo</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda4c850fa02c9e56a4c20dbfde737f1f8d"></a>ldgoi</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedab8690cd92ccee6a0ad55faccc0346aab"></a>ldgo</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda6861aaac0752cd0c618f68453416ea5e"></a>nCdhw16c</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda94adcd68022f332e02475001d4fc9201"></a>nCdhw4c</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedafced4a15e4acb04396e30b54955fa1a2"></a>nCdhw8c</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedaf0f101166691298d3aad79d7f347f2ef"></a>nChw16c</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedad649ed0a6bf979419b24d6c7c58d97d7"></a>nChw4c</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda1c644d98a1e2e21c610ef0eadb24d094"></a>nChw8c</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda41e0c6dde8335c790dc7be6f28c5b845"></a>nCw16c</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda1d5b916eac88a854f7596bb7778b5d84"></a>nCw4c</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedaa53de045f004e830b06a37f3e59fbf29"></a>nCw8c</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedac37f342bac76c6566daec13bd5106594"></a>NChw16n16c</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda62a823240787c4b65f45570772156c18"></a>NCdhw16n16c</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedad37ac31732879264c2bce09f7caea13b"></a>NChw32n32c</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedac42ef6e97425f3e97913783169c2261e"></a>IOhw16i16o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda90759a72cc812c5345cf587c90cc9268"></a>Ohwi32o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda621bb2ac71efada565d275934a4e6c15"></a>IOdhw16i16o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda36c0eda0e14719c161c8181ad2d4b942"></a>gIOhw16i16o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedaee023523d45caa828c6e5bbe8f3d188a"></a>gOhwi32o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda84f69746b0fc107edf92275009c2d4b0"></a>Goidhw16g</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedaaf551a573134b0970e281d247677749e"></a>IOw16o16i</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedaaa209bd1ce63baa9d9fdc73c5f557b8c"></a>OIw16i16o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda76ecfa744a9efaa40822abc529e73a42"></a>OIw16o16i</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedaf4d5683ba89a1401146d0c119c2236f1"></a>Oiw16o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda018de1f2c5427248a698153211901ff3"></a>OIw4i16o4i</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda5db05d7bcc70e711661db2d3b1d4415f"></a>OIw4i4o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedaf4a06d521a3b1a21cc2b6c51c5e3d757"></a>Oiw4o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedaa0bfb3e88be7ef569a33f9206f36c5cb"></a>OIw8i16o2i</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda11734e3a192668eae54d0b55a3a5f900"></a>OIw8i8o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedae100564e5659e696df92c19d87514076"></a>OIw8o16i2o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda9bf4142ef7541fe2440cd339d1fd78a7"></a>OIw8o8i</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda09af0573ac44a98805eab5c635c173c2"></a>Owi16o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda12204086f4262b5c2aa029f43d30eec6"></a>Owi4o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda09c453d0c74291741493768ca45cf765"></a>Owi8o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda2be6713b0c2d362ff6e8df2a611fa876"></a>IOhw16o16i</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda25e357d03f1dfdc48bd49f573f5ec871"></a>Ohwi16o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedafb9c8980396d6ea229dac5f83b191b86"></a>Ohwi4o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedadab0df66a9483754bd555a390cb4ef0b"></a>Ohwi8o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda3376ab492bc782eecfac5dfe1671d847"></a>OIhw16i16o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedae31366e22f0970dba5a4ca4d36e9a2d8"></a>OIhw16o16i</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda435ad696b07dd91fdb8637385284df1b"></a>Oihw16o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda881d72f28db8825143b916c79b9e78b5"></a>OIhw4i16o4i</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda91b0da7423d9eca50e9abb61a0cd3fa2"></a>OIhw4i4o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedac4942f3bd7aacaf3dd5aae4b79ef7093"></a>Oihw4o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedaa971c53f0333bb7bfe14240a2a7bb072"></a>OIhw8i16o2i</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda94359730df7ca59e037041533a9ac909"></a>OIhw8i8o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda7bea00fcbf4c7b35c69ef47c16172149"></a>OIhw8o16i2o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedaba8ddd99732f6f7cee745a1a594a7efa"></a>OIhw8o8i</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedadfe8f0bea94fb653d49b7e97635b34a2"></a>Odhwi16o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda8982e59611d1498d8f0b66ea5e34b00d"></a>Odhwi4o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda34c681ee06dd9199cdfba6ce995e92f0"></a>Odhwi8o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda7364c31504080477789c9f0c02557409"></a>OIdhw16i16o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedabd4b3b295e376c89af8dfd2eb44e1b4f"></a>OIdhw16o16i</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda44b6c29022e2781ec5cbee750d888cea"></a>Oidhw16o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda0dcda1b9e35dafea4ad166e594e28dda"></a>OIdhw4i4o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedad2531b0046f779044f5130c362aed248"></a>Oidhw4o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedaac7db4ea6b9389481bc6797bc39016ee"></a>OIdhw8i16o2i</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda90ecbec00f847951c1b2114afd877285"></a>OIdhw8i8o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda96f841238973a6d8d28299377a99981f"></a>OIdhw8o8i</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedafa027d58629c684b73bcc1714a98e2c3"></a>gIOw16o16i</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda69ff0c51b99e2b3a2242c5573db75680"></a>gOIw16i16o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedafa987d0f6bf33d361270f4fd0e4b6b5c"></a>gOIw16o16i</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda372a20447ce0335fe5c4f0126fb1d041"></a>gOiw16o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda68f856a42aaec4e873e1086429cde66f"></a>gOIw4i16o4i</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedad056246fae702dc91c93b0acb9c5b976"></a>gOIw4i4o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda9d932a4601f34d94dd9cc0933f4ab154"></a>gOiw4o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedaceb58ad5277238cb287876d1e6072736"></a>gOIw8i16o2i</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda9063aabfe5d944e94135c4cb67ba2584"></a>gOIw8i8o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedac1793fd656f546c03dea8bc7baa1f305"></a>gOIw8o16i2o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedafa861d36e362fc22ef0bb6d513dd9a89"></a>gOIw8o8i</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda4adc998e59225b906421a37a53881137"></a>gOwi16o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda3ba5d84f4cb5f66841c2dabc7fe4fc6c"></a>gOwi4o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedaad638741237c3f4c2af1964459ef0997"></a>gOwi8o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedab4329019d9beb50e7c0d6b4149b7a842"></a>gIOhw16o16i</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda4d7fce02dd37cb1593cb1ad7b828ee9b"></a>gOhwi16o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda5b0706b3d8de37265ef1ca7da0c95db0"></a>gOhwi4o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda054e5fad6ff701447c1f04372f214e0b"></a>gOhwi8o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda159b2a2e896f7484ddcf9c8e4038eca0"></a>Goihw16g</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda1ca4dda6de1722abc8ef8bdfb642a4b0"></a>gOIhw16i16o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda7d79e7d651180b0e8817bcf913e8663e"></a>gOIhw16o16i</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedaed5c4dae27a0a62c9f924075927aa154"></a>gOihw16o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedaebd09bf00bcf64d1c79ae144e7ebe5e2"></a>gOIhw2i8o4i</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedafeec7a3e52ae9e28b19c65f53edc7808"></a>gOIhw4i16o4i</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda57a6611ccc3768ae5c7bdab2fbef26ac"></a>gOIhw4i4o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda57bdbc7a7cf1be84b5ba129959280ce4"></a>gOIhw4o4i</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda4b845a934bc59efddf9ef1045cc0b7d9"></a>gOihw4o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedaaa36c1e32c51ddec41593ae43f9e080a"></a>Goihw8g</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda531e0d8539a3732cf3fb2cd62f0ad887"></a>gOIhw8i16o2i</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda1d727cbaa05cb6f4e793e447bd7aee0d"></a>gOIhw8i8o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda7e2e3ba3efc10e24283753abafb2afdc"></a>gOIhw8o16i2o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedacd9391bd093a92195718626d6b3b9829"></a>OIhw4o8i8o4i</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedacfdd91de4104243541be095b2f2e0794"></a>OIhw2o8i8o2i</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda5acdc941617a90dd95110fb1d71830f4"></a>gOIhw4o8i8o4i</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda905367adecd07519b5e12a8da02d4e04"></a>gOIhw2o8i8o2i</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda9ba3ca93854586fcd7f3c158efd869bf"></a>gOIhw8o8i</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda747b1b2818d0de608f236e8815ffe192"></a>gIOdhw16i16o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda81e4899579f993df8c2f7d4c7fc22847"></a>gOdhwi16o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda5eb1abc93e2027336989730c391a5498"></a>gOdhwi4o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedafdc86aad95764f0aae1ad15c60e3da80"></a>gOdhwi8o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda08acb28c1b80aa888ec6bb555937299f"></a>gOIdhw16i16o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda38c03747d6b033b007ebfbe0fa89a1ff"></a>gOIdhw16o16i</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedab3ad516ad551b8436335045a1bfcb057"></a>gOidhw16o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda3ff966b4edaf4c6a88815e88db0d3e80"></a>gOIdhw4i4o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda96950c8210b11b4cbf8e4d8f3aefac55"></a>gOidhw4o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedad464a542f1137020b390aa6e0348b882"></a>gOIdhw8i16o2i</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4ceda07a5d807871093893d396b7e7e8eaddb"></a>gOIdhw8i8o</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a123930e31c5460c2c5f052a59c2a4cedae59e06dff785ca742a1d78147e7cc267"></a>gOIdhw8o8i</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
 </table>
 
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a08ca6a1023e0f7a15b830ef21377ee2e"></a>
+<a class="anchor" id="a03bd8b5d6d4b395b9fcbb61c6ec1d0fa"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -783,72 +1146,14 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">mkldnn::memory::memory </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classmkldnn_1_1primitive.html">primitive</a> &amp;&#160;</td>
-          <td class="paramname"><em>aprimitive</em></td><td>)</td>
-          <td></td>
+          <td class="paramtype">const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">desc</a> &amp;&#160;</td>
+          <td class="paramname"><em>md</em>, </td>
         </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Constructs a memory primitive from a generic primitive. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">aprimitive</td><td>The primitive to treat as memory. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="aeafa876cafdfe9e90afbfdfc4385fc71"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
         <tr>
-          <td class="memname">mkldnn::memory::memory </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="structmkldnn_1_1memory_1_1primitive__desc.html">primitive_desc</a> &amp;&#160;</td>
-          <td class="paramname"><em>adesc</em></td><td>)</td>
+          <td class="paramkey"></td>
           <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Constructs a memory primitive. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">adesc</td><td>Memory primitive descriptor. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="acab8c4e60e163a37a03f45d09f1f071e"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">mkldnn::memory::memory </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="structmkldnn_1_1memory_1_1primitive__desc.html">primitive_desc</a> &amp;&#160;</td>
-          <td class="paramname"><em>adesc</em>, </td>
+          <td class="paramtype">const <a class="el" href="structmkldnn_1_1engine.html">engine</a> &amp;&#160;</td>
+          <td class="paramname"><em>aengine</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -869,10 +1174,63 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Constructs a memory. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">md</td><td>Memory descriptor. </td></tr>
+    <tr><td class="paramname">aengine</td><td>Engine. </td></tr>
+    <tr><td class="paramname">ahandle</td><td>handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a08a92418619e374b167e830e3734daea"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">mkldnn::memory::memory </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">desc</a> &amp;&#160;</td>
+          <td class="paramname"><em>md</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structmkldnn_1_1engine.html">engine</a> &amp;&#160;</td>
+          <td class="paramname"><em>aengine</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructs a memory. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">md</td><td>Memory descriptor. </td></tr>
+    <tr><td class="paramname">aengine</td><td>Engine. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a2b5aee608f913a4fcbfef41b63f48650"></a>
+<a class="anchor" id="a170722e288c14c6e59d15b1b0430deae"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -884,7 +1242,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname">static void mkldnn::memory::validate_dims </td>
           <td>(</td>
-          <td class="paramtype">std::vector&lt; T &gt;&#160;</td>
+          <td class="paramtype">const std::vector&lt; T &gt; &amp;&#160;</td>
           <td class="paramname"><em>v</em></td><td>)</td>
           <td></td>
         </tr>
@@ -898,7 +1256,7 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a7b32596c911a3086799d7ec85cee9260"></a>
+<a class="anchor" id="aad39e92bb09b189c1ba6353dd631fb80"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -906,7 +1264,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structmkldnn_1_1memory_1_1primitive__desc.html">primitive_desc</a> mkldnn::memory::get_primitive_desc </td>
+          <td class="memname"><a class="el" href="structmkldnn_1_1memory_1_1desc.html">desc</a> mkldnn::memory::get_desc </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -919,7 +1277,32 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Returns the descriptor of the memory primitive. </p>
+<p>Returns the descriptor of the memory. </p>
+
+</div>
+</div>
+<a class="anchor" id="a051d447c5cd56f79001add98a0b0e0cf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmkldnn_1_1engine.html">engine</a> mkldnn::memory::get_engine </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the engine of the memory. </p>
 
 </div>
 </div>
@@ -944,7 +1327,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Returns a handle of the data contained in the memory primitive. On the CPU engine, this is a pointer to the allocated memory. </p>
+<p>Returns a handle of the data contained in the memory. </p>
+<p>On the CPU engine, this is a pointer to the allocated memory. </p>
 
 </div>
 </div>
@@ -972,6 +1356,68 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="a777212e66feff5169d90f006bbd645be"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T  = void&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T* mkldnn::memory::map_data </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Maps the data of the memory. </p>
+<p>Mapping allows to read/write directly from/to the memory contents for backends that do not support direct accessing.</p>
+<p>Mapping is an exclusive operation - a memory object cannot be used in other operations until this memory object is unmapped. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Type of the pointer to be mapped. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ad51d365ef8ccbe0da74609a45b1f9d4b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mkldnn::memory::unmap_data </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>mapped_ptr</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Unmaps the previously mapped data for the memory. </p>
+<p>Any changes of the mapped data are synchronized back to the memory after the call is complete. The mapped pointer must be obtained through a <a class="el" href="structmkldnn_1_1memory.html#a777212e66feff5169d90f006bbd645be" title="Maps the data of the memory. ">map_data()</a> call. </p>
+
+</div>
+</div>
 <a class="anchor" id="a2f533b52ae52b2f0e98609af11b489ab"></a>
 <div class="memitem">
 <div class="memproto">
@@ -996,7 +1442,7 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="acde65f106d6ddc0d194e5993a01bb5c3"></a>
+<a class="anchor" id="a5cbd74a8dd0b5c1d2d1988ad1ae6ca7d"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1004,9 +1450,9 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__c__api__types__generic.html#ga30a390f87ef74bf03dfa48a7b3f2fb74">mkldnn_memory_format_t</a> mkldnn::memory::convert_to_c </td>
+          <td class="memname">static <a class="el" href="group__c__api__types__generic.html#gacc2844e341ab1c4f5b7ae1c6068f2a2b">mkldnn_format_tag_t</a> mkldnn::memory::convert_to_c </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87e">format</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ced">format_tag</a>&#160;</td>
           <td class="paramname"><em>aformat</em></td><td>)</td>
           <td></td>
         </tr>

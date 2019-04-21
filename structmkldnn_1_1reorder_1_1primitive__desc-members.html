@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
-   &#160;<span id="projectnumber">0.18.0</span>
+   &#160;<span id="projectnumber">0.90.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
   </td>
@@ -105,9 +105,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <tr class="even"><td class="entry"><a class="el" href="classmkldnn_1_1handle.html#a09e6a786752e89ba4a7a2c4b566b1f74">operator=</a>(const handle &amp;other)</td><td class="entry"><a class="el" href="classmkldnn_1_1handle.html">mkldnn::handle&lt; mkldnn_primitive_desc_t &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr><td class="entry"><a class="el" href="classmkldnn_1_1handle.html#a2208b40ea4afdd37de2a4587f6b7e9f6">operator==</a>(const mkldnn_primitive_desc_tother) const</td><td class="entry"><a class="el" href="classmkldnn_1_1handle.html">mkldnn::handle&lt; mkldnn_primitive_desc_t &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classmkldnn_1_1handle.html#a353488215523b9cca1b2e1ea07c2f12c">operator==</a>(const handle &amp;other) const</td><td class="entry"><a class="el" href="classmkldnn_1_1handle.html">mkldnn::handle&lt; mkldnn_primitive_desc_t &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="structmkldnn_1_1reorder_1_1primitive__desc.html#abf1e4a0db34aa8681f119e8476f4527f">primitive_desc</a>(const memory::primitive_desc &amp;input, const memory::primitive_desc &amp;output)</td><td class="entry"><a class="el" href="structmkldnn_1_1reorder_1_1primitive__desc.html">mkldnn::reorder::primitive_desc</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="structmkldnn_1_1reorder_1_1primitive__desc.html#aa6b540ac7d15ca66e58b101f81b72c99">primitive_desc</a>(const memory::primitive_desc &amp;input, const memory::primitive_desc &amp;output, const primitive_attr &amp;aattr)</td><td class="entry"><a class="el" href="structmkldnn_1_1reorder_1_1primitive__desc.html">mkldnn::reorder::primitive_desc</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="structmkldnn_1_1reorder_1_1primitive__desc.html#afd5baed35b9463d52bb3316eb759cd5a">primitive_desc</a>(const engine &amp;src_engine, const memory::desc &amp;src_md, const engine &amp;dst_engine, const memory::desc &amp;dst_md, const primitive_attr &amp;aattr=primitive_attr())</td><td class="entry"><a class="el" href="structmkldnn_1_1reorder_1_1primitive__desc.html">mkldnn::reorder::primitive_desc</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="structmkldnn_1_1reorder_1_1primitive__desc.html#a090bd748f4cbb1b29175f6bdbf078fa0">primitive_desc</a>(const memory &amp;src, const memory &amp;dst, const primitive_attr &amp;aattr=primitive_attr())</td><td class="entry"><a class="el" href="structmkldnn_1_1reorder_1_1primitive__desc.html">mkldnn::reorder::primitive_desc</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr><td class="entry"><a class="el" href="classmkldnn_1_1handle.html#a3aa9cec1c7e14dd77c9a904503960b9e">reset</a>(mkldnn_primitive_desc_tt, bool weak=false)</td><td class="entry"><a class="el" href="classmkldnn_1_1handle.html">mkldnn::handle&lt; mkldnn_primitive_desc_t &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="structmkldnn_1_1reorder_1_1primitive__desc.html#a9b8d00f53b238feb993a1797510db15d">scratchpad_desc</a>() const </td><td class="entry"><a class="el" href="structmkldnn_1_1reorder_1_1primitive__desc.html">mkldnn::reorder::primitive_desc</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="structmkldnn_1_1reorder_1_1primitive__desc.html#a55aed005e5d3e10b37cbf0fbe64f713a">scratchpad_engine</a>()</td><td class="entry"><a class="el" href="structmkldnn_1_1reorder_1_1primitive__desc.html">mkldnn::reorder::primitive_desc</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

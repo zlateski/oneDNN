@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
-   &#160;<span id="projectnumber">0.18.0</span>
+   &#160;<span id="projectnumber">0.90.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
   </td>
@@ -89,9 +89,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga67734fb7a23f0f8baae20a36f322934a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__service.html#ga67734fb7a23f0f8baae20a36f322934a">mkldnn_set_verbose</a> (int level)</td></tr>
 <tr class="memdesc:ga67734fb7a23f0f8baae20a36f322934a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets verbosity level (print information to stdout).  <a href="#ga67734fb7a23f0f8baae20a36f322934a">More...</a><br/></td></tr>
 <tr class="separator:ga67734fb7a23f0f8baae20a36f322934a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6ab6dfc82232212ec2183fb72c432070"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__service.html#ga6ab6dfc82232212ec2183fb72c432070">mkldnn_set_jit_dump</a> (int dump)</td></tr>
-<tr class="memdesc:ga6ab6dfc82232212ec2183fb72c432070"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets jit dump control.  <a href="#ga6ab6dfc82232212ec2183fb72c432070">More...</a><br/></td></tr>
-<tr class="separator:ga6ab6dfc82232212ec2183fb72c432070"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf27e629cc0ade8f788a46a9ba3e22a06"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__service.html#gaf27e629cc0ade8f788a46a9ba3e22a06">mkldnn_set_jit_dump</a> (int enable)</td></tr>
+<tr class="memdesc:gaf27e629cc0ade8f788a46a9ba3e22a06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or disables dumping of JIT-generated code.  <a href="#gaf27e629cc0ade8f788a46a9ba3e22a06">More...</a><br/></td></tr>
+<tr class="separator:gaf27e629cc0ade8f788a46a9ba3e22a06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac15d131cbfde7ff627fe0bffef2acef1"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structmkldnn__version__t.html">mkldnn_version_t</a> MKLDNN_API *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__service.html#gac15d131cbfde7ff627fe0bffef2acef1">mkldnn_version</a> ()</td></tr>
 <tr class="memdesc:gac15d131cbfde7ff627fe0bffef2acef1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets library version information.  <a href="#gac15d131cbfde7ff627fe0bffef2acef1">More...</a><br/></td></tr>
 <tr class="separator:gac15d131cbfde7ff627fe0bffef2acef1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -123,7 +123,7 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ga6ab6dfc82232212ec2183fb72c432070"></a>
+<a class="anchor" id="gaf27e629cc0ade8f788a46a9ba3e22a06"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -131,17 +131,17 @@ Functions</h2></td></tr>
           <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API mkldnn_set_jit_dump </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>dump</em></td><td>)</td>
+          <td class="paramname"><em>enable</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Sets jit dump control. </p>
-<p>dump equals:</p>
+<p>Enables or disables dumping of JIT-generated code. </p>
+<p>The enable parameter can be:</p>
 <ul>
-<li>zero &ndash; turn jit dump off (default)</li>
-<li>non-zero &ndash; turn jit dump on</li>
+<li>0 &ndash; disable</li>
+<li>any other value &ndash; enable</li>
 </ul>
 <dl class="section note"><dt>Note</dt><dd>This setting overrides the MKLDNN_JIT_DUMP environment variable. </dd></dl>
 

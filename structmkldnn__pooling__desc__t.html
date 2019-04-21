@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
-   &#160;<span id="projectnumber">0.18.0</span>
+   &#160;<span id="projectnumber">0.90.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
   </td>
@@ -89,7 +89,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="structmkldnn__pooling__desc__t-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">mkldnn_pooling_desc_t Struct Reference<div class="ingroups"><a class="el" href="group__c__api__types__memory.html">Auxiliary types for memory description</a></div></div>  </div>
+<div class="title">mkldnn_pooling_desc_t Struct Reference<div class="ingroups"><a class="el" href="group__c__api__types__op__descs.html">Operation descriptors</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -102,7 +102,7 @@ Collaboration diagram for mkldnn_pooling_desc_t:</div>
 <div class="dyncontent">
 <div class="center"><img src="structmkldnn__pooling__desc__t__coll__graph.png" border="0" usemap="#mkldnn__pooling__desc__t_coll__map" alt="Collaboration graph"/></div>
 <map name="mkldnn__pooling__desc__t_coll__map" id="mkldnn__pooling__desc__t_coll__map">
-<area shape="rect" id="node2" href="structmkldnn__memory__desc__t.html" title="Memory descriptor. " alt="" coords="214,96,377,123"/><area shape="rect" id="node3" href="structmkldnn__rnn__packed__desc__t.html" title="Description of tensor of packed weights for rnn. " alt="" coords="5,5,189,32"/><area shape="rect" id="node4" href="structmkldnn__blocking__desc__t.html" title="Generic description of blocked data layout for most memory formats. " alt="" coords="213,5,379,32"/><area shape="rect" id="node5" href="structmkldnn__wino__desc__t.html" title="Description of tensor of weights for winograd 2x3 convolution. " alt="" coords="403,5,547,32"/></map>
+<area shape="rect" id="node2" href="structmkldnn__memory__desc__t.html" title="Memory descriptor. " alt="" coords="345,96,509,123"/><area shape="rect" id="node3" href="structmkldnn__memory__extra__desc__t.html" title="Description of extra information stored in memory. " alt="" coords="20,5,175,46"/><area shape="rect" id="node4" href="structmkldnn__rnn__packed__desc__t.html" title="Description of tensor of packed weights for rnn. " alt="" coords="5,71,189,97"/><area shape="rect" id="node5" href="structmkldnn__blocking__desc__t.html" title="Generic description of blocked data layout for most memory formats. " alt="" coords="15,121,180,148"/><area shape="rect" id="node6" href="structmkldnn__wino__desc__t.html" title="Description of tensor of weights for winograd 2x3 convolution. " alt="" coords="25,172,169,199"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -128,13 +128,13 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:acf419668917f33b7861130050805d1f2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__pooling__desc__t.html#acf419668917f33b7861130050805d1f2">diff_dst_desc</a></td></tr>
 <tr class="memdesc:acf419668917f33b7861130050805d1f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destination gradient memory descriptor.  <a href="#acf419668917f33b7861130050805d1f2">More...</a><br/></td></tr>
 <tr class="separator:acf419668917f33b7861130050805d1f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c339dae420e12a19a4bef3c7de08948"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__pooling__desc__t.html#a8c339dae420e12a19a4bef3c7de08948">strides</a></td></tr>
+<tr class="memitem:a8c339dae420e12a19a4bef3c7de08948"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__pooling__desc__t.html#a8c339dae420e12a19a4bef3c7de08948">strides</a></td></tr>
 <tr class="memdesc:a8c339dae420e12a19a4bef3c7de08948"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pooling kernel strides for spatial dimensions.  <a href="#a8c339dae420e12a19a4bef3c7de08948">More...</a><br/></td></tr>
 <tr class="separator:a8c339dae420e12a19a4bef3c7de08948"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7fe4d394ee37ddfae7f196627a0b15b6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__pooling__desc__t.html#a7fe4d394ee37ddfae7f196627a0b15b6">kernel</a></td></tr>
+<tr class="memitem:a7fe4d394ee37ddfae7f196627a0b15b6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__pooling__desc__t.html#a7fe4d394ee37ddfae7f196627a0b15b6">kernel</a></td></tr>
 <tr class="memdesc:a7fe4d394ee37ddfae7f196627a0b15b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pooling kernel spatial dimensions.  <a href="#a7fe4d394ee37ddfae7f196627a0b15b6">More...</a><br/></td></tr>
 <tr class="separator:a7fe4d394ee37ddfae7f196627a0b15b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05cb2daecfa2dadd700ecfd91295500a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__pooling__desc__t.html#a05cb2daecfa2dadd700ecfd91295500a">padding</a> [2]</td></tr>
+<tr class="memitem:a05cb2daecfa2dadd700ecfd91295500a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__pooling__desc__t.html#a05cb2daecfa2dadd700ecfd91295500a">padding</a> [2]</td></tr>
 <tr class="memdesc:a05cb2daecfa2dadd700ecfd91295500a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Padding in each spatial dimension.  <a href="#a05cb2daecfa2dadd700ecfd91295500a">More...</a><br/></td></tr>
 <tr class="separator:a05cb2daecfa2dadd700ecfd91295500a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0de507f3732dacfbdb262361699092b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga1823708d8b9d445fe177295f2b5d74bd">mkldnn_padding_kind_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__pooling__desc__t.html#a0de507f3732dacfbdb262361699092b7">padding_kind</a></td></tr>
@@ -253,7 +253,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a> mkldnn_pooling_desc_t::strides</td>
+          <td class="memname"><a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a> mkldnn_pooling_desc_t::strides</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -267,7 +267,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a> mkldnn_pooling_desc_t::kernel</td>
+          <td class="memname"><a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a> mkldnn_pooling_desc_t::kernel</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -281,7 +281,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d">mkldnn_dims_t</a> mkldnn_pooling_desc_t::padding[2]</td>
+          <td class="memname"><a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a> mkldnn_pooling_desc_t::padding[2]</td>
         </tr>
       </table>
 </div><div class="memdoc">

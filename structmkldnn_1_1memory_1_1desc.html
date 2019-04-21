@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
-   &#160;<span id="projectnumber">0.18.0</span>
+   &#160;<span id="projectnumber">0.90.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
   </td>
@@ -108,17 +108,30 @@ Collaboration diagram for mkldnn::memory::desc:</div>
 <div class="dyncontent">
 <div class="center"><img src="structmkldnn_1_1memory_1_1desc__coll__graph.png" border="0" usemap="#mkldnn_1_1memory_1_1desc_coll__map" alt="Collaboration graph"/></div>
 <map name="mkldnn_1_1memory_1_1desc_coll__map" id="mkldnn_1_1memory_1_1desc_coll__map">
-<area shape="rect" id="node2" href="structmkldnn__memory__desc__t.html" title="Memory descriptor. " alt="" coords="214,96,377,123"/><area shape="rect" id="node3" href="structmkldnn__rnn__packed__desc__t.html" title="Description of tensor of packed weights for rnn. " alt="" coords="5,5,189,32"/><area shape="rect" id="node4" href="structmkldnn__blocking__desc__t.html" title="Generic description of blocked data layout for most memory formats. " alt="" coords="213,5,379,32"/><area shape="rect" id="node5" href="structmkldnn__wino__desc__t.html" title="Description of tensor of weights for winograd 2x3 convolution. " alt="" coords="403,5,547,32"/></map>
+<area shape="rect" id="node2" href="structmkldnn__memory__desc__t.html" title="Memory descriptor. " alt="" coords="345,96,509,123"/><area shape="rect" id="node3" href="structmkldnn__memory__extra__desc__t.html" title="Description of extra information stored in memory. " alt="" coords="20,5,175,46"/><area shape="rect" id="node4" href="structmkldnn__rnn__packed__desc__t.html" title="Description of tensor of packed weights for rnn. " alt="" coords="5,71,189,97"/><area shape="rect" id="node5" href="structmkldnn__blocking__desc__t.html" title="Generic description of blocked data layout for most memory formats. " alt="" coords="15,121,180,148"/><area shape="rect" id="node6" href="structmkldnn__wino__desc__t.html" title="Description of tensor of weights for winograd 2x3 convolution. " alt="" coords="25,172,169,199"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad369b767c09b54cf8e7bc2bc62d59f2a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1memory_1_1desc.html#ad369b767c09b54cf8e7bc2bc62d59f2a">desc</a> (<a class="el" href="structmkldnn_1_1memory.html#a0fa655354b5c62453d93c58e2f229a43">dims</a> adims, <a class="el" href="structmkldnn_1_1memory.html#aa8a0d49cc7faaceef9d8f55d66bff57b">data_type</a> adata_type, <a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87e">format</a> aformat)</td></tr>
-<tr class="memdesc:ad369b767c09b54cf8e7bc2bc62d59f2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a memory descriptor.  <a href="#ad369b767c09b54cf8e7bc2bc62d59f2a">More...</a><br/></td></tr>
-<tr class="separator:ad369b767c09b54cf8e7bc2bc62d59f2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b74c3354d9a85336973ee303c003d41"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1memory_1_1desc.html#a5b74c3354d9a85336973ee303c003d41">desc</a> ()</td></tr>
+<tr class="memdesc:a5b74c3354d9a85336973ee303c003d41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a zero memory descriptor.  <a href="#a5b74c3354d9a85336973ee303c003d41">More...</a><br/></td></tr>
+<tr class="separator:a5b74c3354d9a85336973ee303c003d41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28ad323a58870bc9d44a4590330df3d3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1memory_1_1desc.html#a28ad323a58870bc9d44a4590330df3d3">desc</a> (const <a class="el" href="structmkldnn_1_1memory.html#a4b929aee34491e5140d055a9e1daf180">dims</a> &amp;adims, <a class="el" href="structmkldnn_1_1memory.html#aa8a0d49cc7faaceef9d8f55d66bff57b">data_type</a> adata_type, <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ced">format_tag</a> aformat)</td></tr>
+<tr class="memdesc:a28ad323a58870bc9d44a4590330df3d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a memory descriptor.  <a href="#a28ad323a58870bc9d44a4590330df3d3">More...</a><br/></td></tr>
+<tr class="separator:a28ad323a58870bc9d44a4590330df3d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c920d7252520c2aec79b191eb85c9de"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1memory_1_1desc.html#a1c920d7252520c2aec79b191eb85c9de">desc</a> (const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> &amp;adata)</td></tr>
 <tr class="memdesc:a1c920d7252520c2aec79b191eb85c9de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a memory descriptor from a C API data structure.  <a href="#a1c920d7252520c2aec79b191eb85c9de">More...</a><br/></td></tr>
 <tr class="separator:a1c920d7252520c2aec79b191eb85c9de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58ccb996eecfe7357b616f47953ff3ad"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmkldnn_1_1memory_1_1desc.html">desc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1memory_1_1desc.html#a58ccb996eecfe7357b616f47953ff3ad">submemory_desc</a> (const <a class="el" href="structmkldnn_1_1memory.html#a4b929aee34491e5140d055a9e1daf180">dims</a> &amp;adims, const <a class="el" href="structmkldnn_1_1memory.html#a4b929aee34491e5140d055a9e1daf180">dims</a> &amp;offsets)</td></tr>
+<tr class="memdesc:a58ccb996eecfe7357b616f47953ff3ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a sub-memory descriptor.  <a href="#a58ccb996eecfe7357b616f47953ff3ad">More...</a><br/></td></tr>
+<tr class="separator:a58ccb996eecfe7357b616f47953ff3ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a273a35ba51f1ce0185e1703cc96d9dec"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1memory_1_1desc.html#a273a35ba51f1ce0185e1703cc96d9dec">get_size</a> () const </td></tr>
+<tr class="memdesc:a273a35ba51f1ce0185e1703cc96d9dec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of bytes required to allocate the memory described including the padding area.  <a href="#a273a35ba51f1ce0185e1703cc96d9dec">More...</a><br/></td></tr>
+<tr class="separator:a273a35ba51f1ce0185e1703cc96d9dec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab62c17096dbf20600ab325f3739b25e3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1memory_1_1desc.html#ab62c17096dbf20600ab325f3739b25e3">operator==</a> (const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">desc</a> &amp;other) const </td></tr>
+<tr class="separator:ab62c17096dbf20600ab325f3739b25e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ebb631c614ea1e3c03ac8d62109db49"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1memory_1_1desc.html#a4ebb631c614ea1e3c03ac8d62109db49">operator!=</a> (const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">desc</a> &amp;other) const </td></tr>
+<tr class="separator:a4ebb631c614ea1e3c03ac8d62109db49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -134,7 +147,7 @@ Friends</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A memory descriptor. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ad369b767c09b54cf8e7bc2bc62d59f2a"></a>
+<a class="anchor" id="a5b74c3354d9a85336973ee303c003d41"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -144,7 +157,32 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname">mkldnn::memory::desc::desc </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structmkldnn_1_1memory.html#a0fa655354b5c62453d93c58e2f229a43">dims</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructs a zero memory descriptor. </p>
+
+</div>
+</div>
+<a class="anchor" id="a28ad323a58870bc9d44a4590330df3d3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">mkldnn::memory::desc::desc </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmkldnn_1_1memory.html#a4b929aee34491e5140d055a9e1daf180">dims</a> &amp;&#160;</td>
           <td class="paramname"><em>adims</em>, </td>
         </tr>
         <tr>
@@ -156,7 +194,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structmkldnn_1_1memory.html#a563b90355ae4fbfed12f6db8ab25a87e">format</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ced">format_tag</a>&#160;</td>
           <td class="paramname"><em>aformat</em>&#160;</td>
         </tr>
         <tr>
@@ -177,7 +215,7 @@ Friends</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">adims</td><td>Data dimensions </td></tr>
     <tr><td class="paramname">adata_type</td><td>Data precision/type. </td></tr>
-    <tr><td class="paramname">aformat</td><td>Data layout format. </td></tr>
+    <tr><td class="paramname">aformat</td><td>Data layout format tag. </td></tr>
   </table>
   </dd>
 </dl>
@@ -213,6 +251,123 @@ Friends</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a58ccb996eecfe7357b616f47953ff3ad"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmkldnn_1_1memory_1_1desc.html">desc</a> mkldnn::memory::desc::submemory_desc </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmkldnn_1_1memory.html#a4b929aee34491e5140d055a9e1daf180">dims</a> &amp;&#160;</td>
+          <td class="paramname"><em>adims</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structmkldnn_1_1memory.html#a4b929aee34491e5140d055a9e1daf180">dims</a> &amp;&#160;</td>
+          <td class="paramname"><em>offsets</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructs a sub-memory descriptor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">adims</td><td>Sizes of a sub-memory </td></tr>
+    <tr><td class="paramname">offsets</td><td>Offsets of a sub-memory </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a273a35ba51f1ce0185e1703cc96d9dec"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t mkldnn::memory::desc::get_size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the number of bytes required to allocate the memory described including the padding area. </p>
+
+</div>
+</div>
+<a class="anchor" id="ab62c17096dbf20600ab325f3739b25e3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mkldnn::memory::desc::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">desc</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4ebb631c614ea1e3c03ac8d62109db49"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mkldnn::memory::desc::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">desc</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

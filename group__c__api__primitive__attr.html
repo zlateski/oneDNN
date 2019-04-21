@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
-   &#160;<span id="projectnumber">0.18.0</span>
+   &#160;<span id="projectnumber">0.90.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
   </td>
@@ -79,7 +79,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#typedef-members">Typedefs</a>  </div>
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle">
 <div class="title">Primitive descriptor attributes<div class="ingroups"><a class="el" href="group__c__api__types.html">Types</a></div></div>  </div>
 </div><!--header-->
@@ -110,6 +111,14 @@ Typedefs</h2></td></tr>
 <tr class="memitem:ga5eec88308014ada305584714ecc72e6b"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structmkldnn__post__ops.html">mkldnn_post_ops</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__primitive__attr.html#ga5eec88308014ada305584714ecc72e6b">const_mkldnn_post_ops_t</a></td></tr>
 <tr class="memdesc:ga5eec88308014ada305584714ecc72e6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">A constant post operation chain handle.  <a href="#ga5eec88308014ada305584714ecc72e6b">More...</a><br/></td></tr>
 <tr class="separator:ga5eec88308014ada305584714ecc72e6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:ga5a6c410554b43bd182668b235769d1bf"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__primitive__attr.html#ga5a6c410554b43bd182668b235769d1bf">mkldnn_scratchpad_mode_t</a> { <a class="el" href="group__c__api__primitive__attr.html#gga5a6c410554b43bd182668b235769d1bfa3cc865415485dc1be2e45edd21426aab">mkldnn_scratchpad_mode_library</a>, 
+<a class="el" href="group__c__api__primitive__attr.html#gga5a6c410554b43bd182668b235769d1bfa8b4d483d4a290b397c90a70a80796865">mkldnn_scratchpad_mode_user</a>
+ }</td></tr>
+<tr class="memdesc:ga5a6c410554b43bd182668b235769d1bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scratchpad mode.  <a href="group__c__api__primitive__attr.html#ga5a6c410554b43bd182668b235769d1bf">More...</a><br/></td></tr>
+<tr class="separator:ga5a6c410554b43bd182668b235769d1bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h2 class="groupheader">Typedef Documentation</h2>
@@ -166,6 +175,29 @@ Typedefs</h2></td></tr>
 </div><div class="memdoc">
 
 <p>A constant post operation chain handle. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a class="anchor" id="ga5a6c410554b43bd182668b235769d1bf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__c__api__primitive__attr.html#ga5a6c410554b43bd182668b235769d1bf">mkldnn_scratchpad_mode_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Scratchpad mode. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="gga5a6c410554b43bd182668b235769d1bfa3cc865415485dc1be2e45edd21426aab"></a>mkldnn_scratchpad_mode_library</em>&nbsp;</td><td class="fielddoc">
+<p>The library manages scratchpad (default) </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="gga5a6c410554b43bd182668b235769d1bfa8b4d483d4a290b397c90a70a80796865"></a>mkldnn_scratchpad_mode_user</em>&nbsp;</td><td class="fielddoc">
+<p>A user shall query and provide the scratchpad memory to primitives. </p>
+</td></tr>
+</table>
 
 </div>
 </div>

@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
-   &#160;<span id="projectnumber">0.18.0</span>
+   &#160;<span id="projectnumber">0.90.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
   </td>
@@ -94,16 +94,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </ul>
 <p>Create a Winograd convolution by simply creating a convolution descriptor (step 6 in <a class="el" href="ex_simplenet.html">SimpleNet Example</a>) with right algorithm. The rest of the steps for creating convolution are exactly the same as shown in the example. </p>
 <div class="fragment"><div class="line"><span class="keyword">auto</span> conv1_desc = convolution_forward::desc(</div>
-<div class="line">    <a class="code" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8ad3fbf2689723f727189276e535b0058e">prop_kind::forward_inference</a>, <a class="code" href="group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076a3fcadb2934e7f8a0a4b9dacbcf9e8e36">algorithm::convolution_winograd</a>,</div>
+<div class="line">    prop_kind::forward_inference, algorithm::convolution_winograd,</div>
 <div class="line">    conv1_src_md, conv1_weights_md, conv1_bias_md, conv1_dst_md,</div>
-<div class="line">    conv1_strides, conv1_padding, <a class="code" href="group__cpp__api__enums.html#ggaa1ff931b28e0a90473ad5bddd21c60fcafbabef80df01bc0a5636d0ca9189355d">padding_kind::zero</a>);</div>
+<div class="line">    conv1_strides, conv1_padding, padding_kind::zero);</div>
 </div><!-- fragment --><h2>Auto dispatching of convolution algorithm</h2>
 <p>Instead of choosing a convolution algorithm for each and every convolution in a topology, a user could simply ask MKLDNN to make the choice.</p>
 <p>Creating a convolution by using <code>convolution_auto</code> allows MKLDNN to dispatch the <em>best</em> algorithm. </p>
 <div class="fragment"><div class="line"><span class="keyword">auto</span> conv1_desc = convolution_forward::desc(</div>
-<div class="line">    <a class="code" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8ad3fbf2689723f727189276e535b0058e">prop_kind::forward_inference</a>, <a class="code" href="group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076a7f2458b493b72f9e9099082c5be09e58">algorithm::convolution_auto</a>,</div>
+<div class="line">    prop_kind::forward_inference, algorithm::convolution_auto,</div>
 <div class="line">    conv1_src_md, conv1_weights_md, conv1_bias_md, conv1_dst_md,</div>
-<div class="line">    conv1_strides, conv1_padding, <a class="code" href="group__cpp__api__enums.html#ggaa1ff931b28e0a90473ad5bddd21c60fcafbabef80df01bc0a5636d0ca9189355d">padding_kind::zero</a>);</div>
+<div class="line">    conv1_strides, conv1_padding, padding_kind::zero);</div>
 </div><!-- fragment --><p>MKLDNN would choose the algorithm which will potentially give <em>best performance</em> based on</p>
 <ul>
 <li>convolution dimensions</li>
@@ -116,7 +116,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line">mkldnn implementation: jit_wino_4x3:avx512_core</div>
 <div class="line">...</div>
-<div class="line">mkldnn_verbose,exec,convolution,jit_wino_4x3:avx512_core,<a class="code" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8ab8c420aeb9f94fb04b4c8eadeb35b75c">backward_weights</a>,fsrc:nChw16c fwei:gOIhw16i16o fbia:x fdst:nChw16c,alg:<a class="code" href="group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076a3fcadb2934e7f8a0a4b9dacbcf9e8e36">convolution_winograd</a>,mb112_g1ic64oc64_ih300oh300kh3sh1dh0ph1_iw300ow300kw3sw1dw0pw1,61.32</div>
+<div class="line">mkldnn_verbose,exec,convolution,jit_wino_4x3:avx512_core,<a class="code" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a1a002980f340e61153a9f7de4f794cf6">backward_weights</a>,fsrc:nChw16c fwei:gOIhw16i16o fbia:x fdst:nChw16c,alg:<a class="code" href="group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076a6a73ed41c67672f76f53a69e96c31ed4">convolution_winograd</a>,mb112_g1ic64oc64_ih300oh300kh3sh1dh0ph1_iw300ow300kw3sw1dw0pw1,61.32</div>
 <div class="line">...</div>
 <div class="line">perf,ssd_300_voc0712:conv1_2,--dir=BWD_WB --alg=<span class="keyword">auto</span> mb112ic64ih300oc64oh300kh3ph1nssd_300_voc0712:conv1_2,739.879,0,61.332,12063.5,62.503,11837.5</div>
 </div><!-- fragment --><p>In the above test-case <code>convolution_auto</code> choses winograd convolution (using a heuristic based on the convolution sizes and number of threads), as winograd convolution is faster than direct in this case. </p>
@@ -124,7 +124,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line">mkldnn implementation: jit:avx512_common</div>
 <div class="line">...</div>
-<div class="line">mkldnn_verbose,exec,convolution,jit:avx512_common,<a class="code" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8ab8c420aeb9f94fb04b4c8eadeb35b75c">backward_weights</a>,fsrc:nchw fwei:gOhwi16o fbia:x fdst:nChw16c,alg:<a class="code" href="group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076a7c32719b6310ede805768dfbe7c909a8">convolution_direct</a>,mb112_g1ic64oc64_ih300oh300kh3sh1dh0ph1_iw300ow300kw3sw1dw0pw1,176.10</div>
+<div class="line">mkldnn_verbose,exec,convolution,jit:avx512_common,backward_weights,fsrc:nchw fwei:gOhwi16o fbia:x fdst:nChw16c,alg:<a class="code" href="group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076a5028ad8f818a45333a8a0eefad35c5c0">convolution_direct</a>,mb112_g1ic64oc64_ih300oh300kh3sh1dh0ph1_iw300ow300kw3sw1dw0pw1,176.10</div>
 <div class="line">...</div>
 <div class="line">perf,ssd_300_voc0712:conv1_2,--dir=BWD_WB mb112ic64ih300oc64oh300kh3ph1nssd_300_voc0712:conv1_2,739.879,0,175.422,4217.7,180.315,4103.26</div>
 </div><!-- fragment --><p><br/>
@@ -134,13 +134,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line">mkldnn implementation: jit:avx512_common</div>
 <div class="line">...</div>
-<div class="line">mkldnn_verbose,exec,convolution,jit:avx512_common,<a class="code" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8ab8c420aeb9f94fb04b4c8eadeb35b75c">backward_weights</a>,fsrc:nChw16c fwei:gOIhw16i16o fbia:x fdst:nChw16c,alg:<a class="code" href="group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076a7c32719b6310ede805768dfbe7c909a8">convolution_direct</a>,mb112_g1ic64oc64_ih28oh28kh3sh1dh0ph1_iw28ow28kw3sw1dw0pw1,1.13</div>
+<div class="line">mkldnn_verbose,exec,convolution,jit:avx512_common,backward_weights,fsrc:nChw16c fwei:gOIhw16i16o fbia:x fdst:nChw16c,alg:<a class="code" href="group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076a5028ad8f818a45333a8a0eefad35c5c0">convolution_direct</a>,mb112_g1ic64oc64_ih28oh28kh3sh1dh0ph1_iw28ow28kw3sw1dw0pw1,1.13</div>
 <div class="line">perf,googlenet_v2:inception_3a/3x3,--dir=BWD_WB --alg=<span class="keyword">auto</span> mb112ic64ih28oc64oh28kh3ph1ngooglenet_v2:inception_3a/3x3,6.1693,0,1.04272,5916.52,1.13284,5445.88</div>
 </div><!-- fragment --> <div class="fragment"><div class="line">OMP_NUM_THREADS=56 KMP_AFFINITY=granularity=fine,compact tests/benchdnn/benchdnn --mode=p --conv -v5 --alg=wino --dir=BWD_WB mb112ic64ih28oc64oh28kh3ph1n<span class="stringliteral">&quot;googlenet_v2:inception_3a/3x3&quot;</span></div>
 <div class="line"></div>
 <div class="line">mkldnn implementation: jit_wino_4x3:avx512_core</div>
 <div class="line">...</div>
-<div class="line">mkldnn_verbose,exec,convolution,jit_wino_4x3:avx512_core,<a class="code" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8ab8c420aeb9f94fb04b4c8eadeb35b75c">backward_weights</a>,fsrc:nChw16c fwei:gOIhw16i16o fbia:x fdst:nChw16c,alg:<a class="code" href="group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076a3fcadb2934e7f8a0a4b9dacbcf9e8e36">convolution_winograd</a>,mb112_g1ic64oc64_ih28oh28kh3sh1dh0ph1_iw28ow28kw3sw1dw0pw1,2.15</div>
+<div class="line">mkldnn_verbose,exec,convolution,jit_wino_4x3:avx512_core,backward_weights,fsrc:nChw16c fwei:gOIhw16i16o fbia:x fdst:nChw16c,alg:<a class="code" href="group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076a6a73ed41c67672f76f53a69e96c31ed4">convolution_winograd</a>,mb112_g1ic64oc64_ih28oh28kh3sh1dh0ph1_iw28ow28kw3sw1dw0pw1,2.15</div>
 <div class="line">...</div>
 <div class="line">perf,googlenet_v2:inception_3a/3x3,--dir=BWD_WB --alg=wino mb112ic64ih28oc64oh28kh3ph1ngooglenet_v2:inception_3a/3x3,6.1693,0,2.14404,2877.41,2.20445,2798.56</div>
 </div><!-- fragment --><h2>Other considerations when using Winograd</h2>

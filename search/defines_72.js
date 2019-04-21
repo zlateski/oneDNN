@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['reg_5fquery_5fmpd',['REG_QUERY_MPD',['../mkldnn_8hpp.html#a8fe2c81d11187f4d1b4b7fb83dca7a42',1,'mkldnn.hpp']]]
+  ['reg_5fquery_5fmd',['REG_QUERY_MD',['../mkldnn_8hpp.html#a0801ac7752170ecb67c6abb580f53a13',1,'mkldnn.hpp']]]
 ];

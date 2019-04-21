@@ -1,14 +1,15 @@
 var searchData=
 [
   ['utils',['Utils',['../group__cpp__api__utils.html',1,'']]],
-  ['u8',['u8',['../structmkldnn_1_1memory.html#aa8a0d49cc7faaceef9d8f55d66bff57ba0ccb6d0e4130dfe94e06635dac6a9b11',1,'mkldnn::memory']]],
-  ['undef',['undef',['../group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a8d3ff637e43a48b61ad6d7855c6a9cd1',1,'mkldnn']]],
-  ['undefined_5fprimitive',['undefined_primitive',['../classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00da0ccc39b03cadec0031217ec49ce286e2',1,'mkldnn::primitive']]],
+  ['u8',['u8',['../structmkldnn_1_1memory.html#aa8a0d49cc7faaceef9d8f55d66bff57ba077393852be20e37026d6281827662f2',1,'mkldnn::memory']]],
+  ['undef',['undef',['../classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00daf31ee5e3824f1f5e5d206bdf3029f22b',1,'mkldnn::primitive::undef()'],['../structmkldnn_1_1memory.html#aa8a0d49cc7faaceef9d8f55d66bff57baf31ee5e3824f1f5e5d206bdf3029f22b',1,'mkldnn::memory::undef()'],['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaf31ee5e3824f1f5e5d206bdf3029f22b',1,'mkldnn::memory::undef()'],['../group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076af31ee5e3824f1f5e5d206bdf3029f22b',1,'mkldnn::undef()'],['../group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9af31ee5e3824f1f5e5d206bdf3029f22b',1,'mkldnn::undef()']]],
   ['understanding_20memory_20formats',['Understanding Memory Formats',['../understanding_memory_formats.html',1,'']]],
   ['understanding_5fmemory_5fformats_2emd',['understanding_memory_formats.md',['../understanding__memory__formats_8md.html',1,'']]],
-  ['unidirectional',['unidirectional',['../group__cpp__api__enums.html#ggac8d5612bc5ca7b5fb6e5bdf4e6ad0d16ab29cd3118f933d2379771ecdd4462416',1,'mkldnn']]],
-  ['unidirectional_5fleft2right',['unidirectional_left2right',['../group__cpp__api__enums.html#ggac8d5612bc5ca7b5fb6e5bdf4e6ad0d16a9149eaa77d211b7754de03fc52b7cb30',1,'mkldnn']]],
-  ['unidirectional_5fright2left',['unidirectional_right2left',['../group__cpp__api__enums.html#ggac8d5612bc5ca7b5fb6e5bdf4e6ad0d16a5b9a4ddbb409878881462aee8dc82ba0',1,'mkldnn']]],
-  ['use_5fglobal_5fstats',['use_global_stats',['../group__cpp__api__enums.html#gga344b5c240a7392585aba615ff4d0d7f1a97fcd7beeed54e37e2718124d0051d5c',1,'mkldnn']]],
-  ['use_5fscale_5fshift',['use_scale_shift',['../group__cpp__api__enums.html#gga344b5c240a7392585aba615ff4d0d7f1a67734f09ab5b5b5282855d52c3e62486',1,'mkldnn']]]
+  ['unidirectional',['unidirectional',['../group__cpp__api__enums.html#ggac8d5612bc5ca7b5fb6e5bdf4e6ad0d16aa0c3ef5c69c32081a31c33df63192cda',1,'mkldnn']]],
+  ['unidirectional_5fleft2right',['unidirectional_left2right',['../group__cpp__api__enums.html#ggac8d5612bc5ca7b5fb6e5bdf4e6ad0d16a04f4bf4bc6a47e30f0353597e244c44a',1,'mkldnn']]],
+  ['unidirectional_5fright2left',['unidirectional_right2left',['../group__cpp__api__enums.html#ggac8d5612bc5ca7b5fb6e5bdf4e6ad0d16a0b694765eed7cf5a48e18c1d05b74118',1,'mkldnn']]],
+  ['unmap_5fdata',['unmap_data',['../structmkldnn_1_1memory.html#ad51d365ef8ccbe0da74609a45b1f9d4b',1,'mkldnn::memory']]],
+  ['use_5fglobal_5fstats',['use_global_stats',['../group__cpp__api__enums.html#gga419a01acbcd7b2ff4b233f5d75cdb7cca95768ff8afb8ee75dc24be0d307627f8',1,'mkldnn']]],
+  ['use_5fscale_5fshift',['use_scale_shift',['../group__cpp__api__enums.html#gga419a01acbcd7b2ff4b233f5d75cdb7cca0cbad8a346551ec47da7ff1afb1e1f76',1,'mkldnn']]],
+  ['user',['user',['../group__cpp__api__enums.html#ggadb1d0d24b9f6c0eabd3359e322add147aee11cbb19052e40b07aac0ca060c23ee',1,'mkldnn']]]
 ];
