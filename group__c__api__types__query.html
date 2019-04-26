@@ -145,7 +145,7 @@ Enumerations</h2></td></tr>
 <p>Primitive descriptor query specification. </p>
 <p>For generic function <a class="el" href="group__c__api__primitive__common.html#gaa0ef4b91ed5cd98a19540a8182228012" title="Queries primitive descriptor. ">mkldnn_primitive_desc_query()</a>, the type of result must agree with the queried argument. The correspondence table: </p>
 <h2>Query | type of result </h2>
-<p><a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ac71b9911ec94b71ea2e98e744d614f5b" title="execution engine ">mkldnn_query_engine</a> | mkldnn_engine_t * <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ae59d275ad2270361bc9bea0cbd60efe4" title="scratchpad engine – engine to be used for creating scratchpad memory ">mkldnn_query_scratchpad_engine</a> | mkldnn_engine_t * <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a45d1398d4d2b05d009de94f05d7cf267" title="primitive kind ">mkldnn_query_primitive_kind</a> | mkldnn_primitive_kind_t * *_s32 | int * *_s64 | mkldnn_dim_t * (same as int64_t *) *_f64 | double * *_str | const char ** <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a04f941d8d190227e583d1fe7f4a6e5d3" title="op descriptor ">mkldnn_query_op_d</a> | const_mkldnn_op_desc_t * *_md | const <a class="el" href="structmkldnn__memory__desc__t.html" title="Memory descriptor. ">mkldnn_memory_desc_t</a> ** *_${op}_d | const mkldnn_${op}_desc_t ** *_pd | const_mkldnn_primitive_desc_t *</p>
+<p><a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ac71b9911ec94b71ea2e98e744d614f5b" title="execution engine ">mkldnn_query_engine</a> | mkldnn_engine_t * <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ae59d275ad2270361bc9bea0cbd60efe4" title="scratchpad engine – engine to be used for creating scratchpad memory ">mkldnn_query_scratchpad_engine</a> | mkldnn_engine_t * <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a45d1398d4d2b05d009de94f05d7cf267" title="primitive kind ">mkldnn_query_primitive_kind</a> | mkldnn_primitive_kind_t * *_s32 | int * *_s64 | mkldnn_dim_t * (same as int64_t *) *_f64 | double * *_str | const char ** <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a04f941d8d190227e583d1fe7f4a6e5d3" title="op descriptor ">mkldnn_query_op_d</a> | const_mkldnn_op_desc_t * *_md | const <a class="el" href="structmkldnn__memory__desc__t.html" title="Memory descriptor. The description is based on a number of dimensions, dimensions themselves...">mkldnn_memory_desc_t</a> ** *_${op}_d | const mkldnn_${op}_desc_t ** *_pd | const_mkldnn_primitive_desc_t *</p>
 <dl class="section note"><dt>Note</dt><dd>Rule of thumb: all opaque types and structures are returned by reference. All numbers are returned by value.</dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>All returned references point to constant objects and are valid only during the lifetime of the queried primitive descriptor. Returned objects must not be destroyed by the user. If you need to keep the object longer than the lifetime of the queried primitive descriptor, use <a class="el" href="group__c__api__primitive__common.html#ga0b9555bd267ce2add362ee18cdaadd73" title="Makes a copy of a primitive_desc. ">mkldnn_primitive_desc_clone()</a> to make a copy. </dd></dl>
 <table class="fieldtable">
@@ -228,15 +228,13 @@ Enumerations</h2></td></tr>
 <p>weights memory descriptor desc </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga6eebc661a8a3437b49d9c677f8972fc9a2c78f7a683101ff96875e8cec787ba42"></a>mkldnn_query_diff_weights_md</em>&nbsp;</td><td class="fielddoc">
-<p>weights grad. </p>
-<p>memory desc </p>
+<p>weights grad. memory desc </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga6eebc661a8a3437b49d9c677f8972fc9adccda04151e0c287f0de64b832d33ac4"></a>mkldnn_query_dst_md</em>&nbsp;</td><td class="fielddoc">
 <p>destination memory desc </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga6eebc661a8a3437b49d9c677f8972fc9acfa30e38738b3de8c7d3a7f21ffc1623"></a>mkldnn_query_diff_dst_md</em>&nbsp;</td><td class="fielddoc">
-<p>destination grad. </p>
-<p>memory desc </p>
+<p>destination grad. memory desc </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga6eebc661a8a3437b49d9c677f8972fc9a6f61e139512317e7f5653759e889d55d"></a>mkldnn_query_workspace_md</em>&nbsp;</td><td class="fielddoc">
 <p>workspace memory desc </p>

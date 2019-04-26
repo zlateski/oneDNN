@@ -93,7 +93,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>Memory descriptor.  
+<p>Memory descriptor. The description is based on a number of dimensions, dimensions themselves, plus information about elements type and memory format. Additionally, contains format-specific descriptions of the data layout.  
  <a href="structmkldnn__memory__desc__t.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="mkldnn__types_8h_source.html">mkldnn_types.h</a>&gt;</code></p>
@@ -144,8 +144,7 @@ Public Attributes</h2></td></tr>
 <tr class="separator:aca773206a808b23fee49211829ef5fc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Memory descriptor. </p>
-<p>The description is based on a number of dimensions, dimensions themselves, plus information about elements type and memory format. Additionally, contains format-specific descriptions of the data layout. </p>
+<div class="textblock"><p>Memory descriptor. The description is based on a number of dimensions, dimensions themselves, plus information about elements type and memory format. Additionally, contains format-specific descriptions of the data layout. </p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
 <a class="anchor" id="a8fc71fc8a04e665573f86442bda4dc4c"></a>
 <div class="memitem">
@@ -178,7 +177,7 @@ Public Attributes</h2></td></tr>
 <li>RNN data tensors: time, mini-batch, channels (<code>{T, N, C}</code>) or layers, directions, states, mini-batch, channels (<code>{L, D, S, N, C}</code>)</li>
 <li>RNN weight tensor: layers, directions, input channel, gates, output channels (<code>{L, D, I, G, O}</code>).</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>The order of dimensions does not depend on the memory format, so whether the data is laid out in <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2baed4a51a8db128a648b942882369a06d6">mkldnn_nchw</a> or <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2badf1fb06f73cf8dd23ae620eea6516526">mkldnn_nhwc</a> the dims for 4D CN data tensor would be <code>{N, C, H, W}</code>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The order of dimensions does not depend on the memory format, so whether the data is laid out in <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2baed4a51a8db128a648b942882369a06d6" title="3D CNN activations tensor, an alias to mkldnn_abcd ">mkldnn_nchw</a> or <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2badf1fb06f73cf8dd23ae620eea6516526" title="4D CNN activations tensor, an alias to mkldnn_acdb ">mkldnn_nhwc</a> the dims for 4D CN data tensor would be <code>{N, C, H, W}</code>. </dd></dl>
 
 </div>
 </div>

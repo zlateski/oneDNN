@@ -131,20 +131,20 @@ Activations</div></div>
 <p>Note: It is just a coincidence that <code>offset_nchw()</code> is the same as <code>value()</code> in this example.</p>
 <p></p>
 </blockquote>
-<p>One can create memory with <b>NCHW</b> data layout using <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2baed4a51a8db128a648b942882369a06d6">mkldnn_nchw</a> of the enum type <a class="el" href="group__c__api__types__generic.html#gacc2844e341ab1c4f5b7ae1c6068f2a2b" title="Memory format tag specification. ">mkldnn_format_tag_t</a> defined in <a href="https://github.com/intel/mkl-dnn/blob/master/include/mkldnn_types.h">mkldnn_types.h</a> for C API and mkldnn::memory::nchw defined in <a href="https://github.com/intel/mkl-dnn/blob/master/include/mkldnn.hpp">mkldnn.hpp</a> for C++ API.</p>
+<p>One can create memory with <b>NCHW</b> data layout using <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2baed4a51a8db128a648b942882369a06d6" title="3D CNN activations tensor, an alias to mkldnn_abcd ">mkldnn_nchw</a> of the enum type <a class="el" href="group__c__api__types__generic.html#gacc2844e341ab1c4f5b7ae1c6068f2a2b" title="Memory format tag specification. ">mkldnn_format_tag_t</a> defined in <a href="https://github.com/intel/mkl-dnn/blob/master/include/mkldnn_types.h">mkldnn_types.h</a> for C API and mkldnn::memory::nchw defined in <a href="https://github.com/intel/mkl-dnn/blob/master/include/mkldnn.hpp">mkldnn.hpp</a> for C++ API.</p>
 <h4>NHWC</h4>
 <p>Another quite popular data format is <b>NHWC</b> and it uses the following offset function: </p>
 <div class="fragment"><div class="line">offset_nhwc(n, c, h, w) = n * HWC + h * WC + w * C + c</div>
 </div><!-- fragment --><p>In this case the inner-most dimension is channels (<code>[b:0]</code>) that is followed by width (<code>[b:1]</code>), height (<code>[b:2]</code>), and finally batch (<code>[b:3]</code>).</p>
 <p>For a single image (<b>N</b> = 1), this format is very similar to how <a href="https://en.wikipedia.org/wiki/BMP_file_format">BMP-file format</a> works, where the image is kept pixel by pixel and every pixel contains all required information about colors (for instance 3 channels for 24bit BMP).</p>
 <p>NHWC data format is the default one for <a href="https://www.tensorflow.org/performance/performance_guide#data_formats">TensorFlow</a>.</p>
-<p>This layout corresponds to <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2badf1fb06f73cf8dd23ae620eea6516526">mkldnn_nhwc</a> or mkldnn::memory::nhwc.</p>
+<p>This layout corresponds to <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2badf1fb06f73cf8dd23ae620eea6516526" title="4D CNN activations tensor, an alias to mkldnn_acdb ">mkldnn_nhwc</a> or mkldnn::memory::nhwc.</p>
 <h4>CHWN</h4>
 <p>The last example here for the plain data layout is <b>CHWN</b> which is used by <a href="https://neon.nervanasys.com/index.html/design.html#data-layout">Neon</a>. This layout might be very interesting from a vectorization perspective if an appropriate batch size is used, but on the other hand users cannot always have <em>good</em> batch size (e.g. in case of real-time inference batch is typically 1).</p>
 <p>The dimensions order is (from inner-most to outer-most): batch (<code>[c:0]</code>), width (<code>[c:1]</code>), height (<code>[c:2]</code>), channels (<code>[c:3]</code>).</p>
 <p>The offset function for <b>CHWN</b> format is defined as: </p>
 <div class="fragment"><div class="line">offset_chwn(n, c, h, w) = c * HWN + h * WN + w * N + n</div>
-</div><!-- fragment --><p>This layout corresponds to <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba2d1cd3beca16be268720538840d68ec5">mkldnn_chwn</a> or mkldnn::memory::chwn.</p>
+</div><!-- fragment --><p>This layout corresponds to <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba2d1cd3beca16be268720538840d68ec5" title="4D CNN activations tensor, an alias to mkldnn_bcda ">mkldnn_chwn</a> or mkldnn::memory::chwn.</p>
 <div class="image">
 <img src="mem_fmt_img2.png" alt="mem_fmt_img2.png"/>
 <div class="caption">
@@ -178,7 +178,7 @@ Strides</div></div>
 <div class="line">md.layout_desc.blocking.strides[0] = {</div>
 <div class="line">    stride_n, stride_c, stride_h, stride_w</div>
 <div class="line">};</div>
-</div><!-- fragment --><p> In particular whenever a user creates memory with <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2baed4a51a8db128a648b942882369a06d6">mkldnn_nchw</a> format MKL-DNN computes the strides and fills the structure on behalf of the user. That can be done manually though.</p>
+</div><!-- fragment --><p> In particular whenever a user creates memory with <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2baed4a51a8db128a648b942882369a06d6" title="3D CNN activations tensor, an alias to mkldnn_abcd ">mkldnn_nchw</a> format MKL-DNN computes the strides and fills the structure on behalf of the user. That can be done manually though.</p>
 <h2>Blocked layout</h2>
 <p>Plain layouts give great flexibility and are very convenient for use. That's why most of the frameworks and applications use either <b>NCHW</b> or <b>NHWC</b> layouts. However depending on the operation that is performed on data it might turn out that those layouts are sub-optimal from performance perspective.</p>
 <p>In order to achieve better vectorization and cache re-usage Intel MKL-DNN introduces blocked layout that splits one or several dimensions into the blocks of fixed size. The most popular Intel MKL-DNN data format is <b>nChw16c</b> on AVX512+ systems and <b>nChw8c</b> on SSE4.1+ systems. As one might guess from the name the only dimension that is blocked is channels and the block size is either 16 in the former case or 8 in the later case.</p>

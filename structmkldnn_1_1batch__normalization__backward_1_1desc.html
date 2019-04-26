@@ -98,19 +98,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
+<p>Descriptor for batch normalization backward propagation.  
+ <a href="structmkldnn_1_1batch__normalization__backward_1_1desc.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="mkldnn_8hpp_source.html">mkldnn.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for mkldnn::batch_normalization_backward::desc:</div>
 <div class="dyncontent">
 <div class="center"><img src="structmkldnn_1_1batch__normalization__backward_1_1desc__coll__graph.png" border="0" usemap="#mkldnn_1_1batch__normalization__backward_1_1desc_coll__map" alt="Collaboration graph"/></div>
 <map name="mkldnn_1_1batch__normalization__backward_1_1desc_coll__map" id="mkldnn_1_1batch__normalization__backward_1_1desc_coll__map">
-<area shape="rect" id="node2" href="structmkldnn__batch__normalization__desc__t.html" title="A descriptor of a Batch Normalization operation. " alt="" coords="685,89,872,130"/><area shape="rect" id="node3" href="structmkldnn__memory__desc__t.html" title="Memory descriptor. " alt="" coords="345,96,509,123"/><area shape="rect" id="node4" href="structmkldnn__memory__extra__desc__t.html" title="Description of extra information stored in memory. " alt="" coords="20,5,175,46"/><area shape="rect" id="node5" href="structmkldnn__rnn__packed__desc__t.html" title="Description of tensor of packed weights for rnn. " alt="" coords="5,71,189,97"/><area shape="rect" id="node6" href="structmkldnn__blocking__desc__t.html" title="Generic description of blocked data layout for most memory formats. " alt="" coords="15,121,180,148"/><area shape="rect" id="node7" href="structmkldnn__wino__desc__t.html" title="Description of tensor of weights for winograd 2x3 convolution. " alt="" coords="25,172,169,199"/></map>
+<area shape="rect" id="node2" href="structmkldnn__batch__normalization__desc__t.html" title="A descriptor of a Batch Normalization operation. " alt="" coords="685,89,872,130"/><area shape="rect" id="node3" href="structmkldnn__memory__desc__t.html" title="Memory descriptor. The description is based on a number of dimensions, dimensions themselves..." alt="" coords="345,96,509,123"/><area shape="rect" id="node4" href="structmkldnn__memory__extra__desc__t.html" title="Description of extra information stored in memory. " alt="" coords="20,5,175,46"/><area shape="rect" id="node5" href="structmkldnn__rnn__packed__desc__t.html" title="Description of tensor of packed weights for rnn. " alt="" coords="5,71,189,97"/><area shape="rect" id="node6" href="structmkldnn__blocking__desc__t.html" title="Generic description of blocked data layout for most memory formats. " alt="" coords="15,121,180,148"/><area shape="rect" id="node7" href="structmkldnn__wino__desc__t.html" title="Description of tensor of weights for winograd 2x3 convolution. " alt="" coords="25,172,169,199"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa58ef46642182a3f11982adf344a49bc"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:aa58ef46642182a3f11982adf344a49bc"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1batch__normalization__backward_1_1desc.html#aa58ef46642182a3f11982adf344a49bc">desc</a> (<a class="el" href="group__cpp__api__enums.html#gaeb087eae78f70a4d249a90aefa165cf8">prop_kind</a> aprop_kind, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_data_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;data_desc, T epsilon, <a class="el" href="group__cpp__api__enums.html#ga419a01acbcd7b2ff4b233f5d75cdb7cc">batch_normalization_flags</a> flags)</td></tr>
+<tr class="memdesc:aa58ef46642182a3f11982adf344a49bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a batch normalization descriptor for backward propagation with respect to data and scale-shift parameters using memory descriptors <code>data_desc</code> and <code>diff_data_desc</code>, normalization parameter <code>epsilon</code>, and <code>flags</code> set using bit flags of type <a class="el" href="structmkldnn__batch__normalization__desc__t.html" title="A descriptor of a Batch Normalization operation. ">mkldnn_batch_normalization_desc_t</a>.  <a href="#aa58ef46642182a3f11982adf344a49bc">More...</a><br/></td></tr>
 <tr class="separator:aa58ef46642182a3f11982adf344a49bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -118,7 +122,9 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:aebfd6852378609f93ab3fdd5bce94c57"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmkldnn__batch__normalization__desc__t.html">mkldnn_batch_normalization_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1batch__normalization__backward_1_1desc.html#aebfd6852378609f93ab3fdd5bce94c57">data</a></td></tr>
 <tr class="separator:aebfd6852378609f93ab3fdd5bce94c57"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Descriptor for batch normalization backward propagation. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aa58ef46642182a3f11982adf344a49bc"></a>
 <div class="memitem">
 <div class="memproto">
@@ -170,6 +176,9 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Initializes a batch normalization descriptor for backward propagation with respect to data and scale-shift parameters using memory descriptors <code>data_desc</code> and <code>diff_data_desc</code>, normalization parameter <code>epsilon</code>, and <code>flags</code> set using bit flags of type <a class="el" href="structmkldnn__batch__normalization__desc__t.html" title="A descriptor of a Batch Normalization operation. ">mkldnn_batch_normalization_desc_t</a>. </p>
+<dl class="section note"><dt>Note</dt><dd>In-place operation is supported; that is, diff_src points to the same memory as diff_dst. </dd></dl>
 
 </div>
 </div>

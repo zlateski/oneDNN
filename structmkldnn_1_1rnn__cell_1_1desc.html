@@ -98,6 +98,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
+<p>Descriptor for recurrent cell.  
+ <a href="structmkldnn_1_1rnn__cell_1_1desc.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="mkldnn_8hpp_source.html">mkldnn.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for mkldnn::rnn_cell::desc:</div>
@@ -110,6 +113,7 @@ Collaboration diagram for mkldnn::rnn_cell::desc:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a34088658ae6ae3e743f6134848484ff6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1rnn__cell_1_1desc.html#a34088658ae6ae3e743f6134848484ff6">desc</a> (<a class="el" href="group__cpp__api__enums.html#gae45a07d6121fdd33e310782753178076">algorithm</a> kind, <a class="el" href="group__cpp__api__enums.html#gae45a07d6121fdd33e310782753178076">algorithm</a> activation_f)</td></tr>
+<tr class="memdesc:a34088658ae6ae3e743f6134848484ff6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a recurrent cell descriptor using <code>rnn_cell_desc</code>, <code>kind</code> (possible values are <a class="el" href="group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076ab2b3bfcaad515fd1bf0245e8ae6bd407">mkldnn::algorithn::vanilla_rnn</a>, <a class="el" href="group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076a716a71a7a6ec13785b552dc2412380ce">mkldnn::algorithm::vanilla_lstm</a>, <a class="el" href="group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076a272fa682d36b810a24ec89202b7a31f7">mkldnn::algorithm::vanilla_gru</a>, and <a class="el" href="group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076adfd8d073556d6343e62dbbc2f6f3547c">mkldnn::algorithm::gru_linear_before_reset</a>), <code>activation_f</code> (possible values are <a class="el" href="group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076aba09bebb742494255b90b43871c01c69">mkldnn::algorithm::eltwise_relu</a> and <a class="el" href="group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076a38dd7159307eab45742c78e72f06abb0">mkldnn::algorithm::eltwise_tanh</a>).  <a href="#a34088658ae6ae3e743f6134848484ff6">More...</a><br/></td></tr>
 <tr class="separator:a34088658ae6ae3e743f6134848484ff6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac44d33837d16d0e35e52b3f64e62df4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1rnn__cell_1_1desc.html#aac44d33837d16d0e35e52b3f64e62df4">desc</a> (<a class="el" href="group__cpp__api__enums.html#gae45a07d6121fdd33e310782753178076">algorithm</a> kind)</td></tr>
 <tr class="separator:aac44d33837d16d0e35e52b3f64e62df4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -128,8 +132,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8a7d01fe2581acf780b3590a97f12942"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1rnn__cell_1_1desc.html#a8a7d01fe2581acf780b3590a97f12942">set_clipping</a> (float clipping)</td></tr>
 <tr class="separator:a8a7d01fe2581acf780b3590a97f12942"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa3f6d748b490a5fcd1e68f28839f64cb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1rnn__cell_1_1desc.html#aa3f6d748b490a5fcd1e68f28839f64cb">get_gates_count</a> () const </td></tr>
+<tr class="memdesc:aa3f6d748b490a5fcd1e68f28839f64cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of states of a particular RNN cell descriptor.  <a href="#aa3f6d748b490a5fcd1e68f28839f64cb">More...</a><br/></td></tr>
 <tr class="separator:aa3f6d748b490a5fcd1e68f28839f64cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a946fb556d79ddb9fd983ac9aea49cf79"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1rnn__cell_1_1desc.html#a946fb556d79ddb9fd983ac9aea49cf79">get_state_count</a> () const </td></tr>
+<tr class="memdesc:a946fb556d79ddb9fd983ac9aea49cf79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of states of a particular RNN cell descriptor.  <a href="#a946fb556d79ddb9fd983ac9aea49cf79">More...</a><br/></td></tr>
 <tr class="separator:a946fb556d79ddb9fd983ac9aea49cf79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -137,7 +143,9 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a0620e1f9e62150404d682647b23ce5ae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmkldnn__rnn__cell__desc__t.html">mkldnn_rnn_cell_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1rnn__cell_1_1desc.html#a0620e1f9e62150404d682647b23ce5ae">c_rnn_cell_</a></td></tr>
 <tr class="separator:a0620e1f9e62150404d682647b23ce5ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Descriptor for recurrent cell. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a34088658ae6ae3e743f6134848484ff6"></a>
 <div class="memitem">
 <div class="memproto">
@@ -169,6 +177,8 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Initializes a recurrent cell descriptor using <code>rnn_cell_desc</code>, <code>kind</code> (possible values are <a class="el" href="group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076ab2b3bfcaad515fd1bf0245e8ae6bd407">mkldnn::algorithn::vanilla_rnn</a>, <a class="el" href="group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076a716a71a7a6ec13785b552dc2412380ce">mkldnn::algorithm::vanilla_lstm</a>, <a class="el" href="group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076a272fa682d36b810a24ec89202b7a31f7">mkldnn::algorithm::vanilla_gru</a>, and <a class="el" href="group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076adfd8d073556d6343e62dbbc2f6f3547c">mkldnn::algorithm::gru_linear_before_reset</a>), <code>activation_f</code> (possible values are <a class="el" href="group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076aba09bebb742494255b90b43871c01c69">mkldnn::algorithm::eltwise_relu</a> and <a class="el" href="group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076a38dd7159307eab45742c78e72f06abb0">mkldnn::algorithm::eltwise_tanh</a>). </p>
 
 </div>
 </div>
@@ -381,6 +391,8 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns the number of states of a particular RNN cell descriptor. </p>
+
 </div>
 </div>
 <a class="anchor" id="a946fb556d79ddb9fd983ac9aea49cf79"></a>
@@ -403,6 +415,8 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns the number of states of a particular RNN cell descriptor. </p>
 
 </div>
 </div>

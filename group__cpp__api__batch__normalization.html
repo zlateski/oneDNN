@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>Intel(R) MKL-DNN: Reorder</title>
+<title>Intel(R) MKL-DNN: Batch normalization</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -80,24 +80,29 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#nested-classes">Classes</a>  </div>
   <div class="headertitle">
-<div class="title">Reorder<div class="ingroups"><a class="el" href="group__cpp__api__memory__related.html">Memory and memory related operations</a></div></div>  </div>
+<div class="title">Batch normalization<div class="ingroups"><a class="el" href="group__cpp__api__primitives.html">Primitives</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>A primitive to copy data between memory formats.  
+<p>A primitive to perform batch normalization.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1reorder.html">mkldnn::reorder</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a reorder primitive using the description of the source (<code>src_engine</code> and <code>src_md</code>) and destination (<code>dst_engine</code> and <code>dst_md</code>) memory, and an <code>attr</code> attribute.  <a href="structmkldnn_1_1reorder.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1batch__normalization__forward.html">mkldnn::batch_normalization_forward</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Batch normalization for forward propagation. Implements descriptor, primitive descriptor, and primitive.  <a href="structmkldnn_1_1batch__normalization__forward.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1batch__normalization__backward.html">mkldnn::batch_normalization_backward</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Batch normalization backward propagation. Implements descriptor, primitive descriptor, and primitive.  <a href="structmkldnn_1_1batch__normalization__backward.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>A primitive to copy data between memory formats. </p>
-<dl class="section see"><dt>See Also</dt><dd>dev_guide_reorder in developer guide </dd>
+<p>A primitive to perform batch normalization. </p>
+<p>Both forward and backward passes support in-place operation; that is, src and dst point to the same memory for forward pass, and diff_dst and diff_src point to the same memory for backward pass.</p>
+<p>Batch normalization supports different flavors controlled by <a class="el" href="structmkldnn__batch__normalization__desc__t.html" title="A descriptor of a Batch Normalization operation. ">mkldnn_batch_normalization_desc_t</a>. For example, batch normalization can compute the mean and variance on its own or take them as inputs. It can either perform scaling and shifting using gamma and beta parameters or not. Optionally, it can also perform a fused ReLU, which in case of training would also require a workspace.</p>
+<dl class="section see"><dt>See Also</dt><dd>dev_guide_batch_normalization in developer guide </dd>
 <dd>
-<a class="el" href="group__c__api__reorder.html">Reorder</a> in <a class="el" href="group__c__api.html">C API</a> </dd></dl>
+<a class="el" href="group__c__api__batch__normalization.html">Batch Normalization</a> in <a class="el" href="group__c__api.html">C API</a> </dd></dl>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

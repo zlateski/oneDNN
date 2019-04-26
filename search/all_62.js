@@ -28,5 +28,5 @@ var searchData=
   ['blocking',['blocking',['../structmkldnn__memory__desc__t.html#ab93d81dc3502465caad206777389c747',1,'mkldnn_memory_desc_t']]],
   ['batch_20normalization',['Batch Normalization',['../group__c__api__batch__normalization.html',1,'']]],
   ['blas_20functions',['BLAS functions',['../group__c__api__blas.html',1,'']]],
-  ['batch_20normalization',['Batch normalization',['../group__cpp__api__batch__norm.html',1,'']]]
+  ['batch_20normalization',['Batch normalization',['../group__cpp__api__batch__normalization.html',1,'']]]
 ];

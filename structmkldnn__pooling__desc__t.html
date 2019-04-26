@@ -102,19 +102,19 @@ Collaboration diagram for mkldnn_pooling_desc_t:</div>
 <div class="dyncontent">
 <div class="center"><img src="structmkldnn__pooling__desc__t__coll__graph.png" border="0" usemap="#mkldnn__pooling__desc__t_coll__map" alt="Collaboration graph"/></div>
 <map name="mkldnn__pooling__desc__t_coll__map" id="mkldnn__pooling__desc__t_coll__map">
-<area shape="rect" id="node2" href="structmkldnn__memory__desc__t.html" title="Memory descriptor. " alt="" coords="345,96,509,123"/><area shape="rect" id="node3" href="structmkldnn__memory__extra__desc__t.html" title="Description of extra information stored in memory. " alt="" coords="20,5,175,46"/><area shape="rect" id="node4" href="structmkldnn__rnn__packed__desc__t.html" title="Description of tensor of packed weights for rnn. " alt="" coords="5,71,189,97"/><area shape="rect" id="node5" href="structmkldnn__blocking__desc__t.html" title="Generic description of blocked data layout for most memory formats. " alt="" coords="15,121,180,148"/><area shape="rect" id="node6" href="structmkldnn__wino__desc__t.html" title="Description of tensor of weights for winograd 2x3 convolution. " alt="" coords="25,172,169,199"/></map>
+<area shape="rect" id="node2" href="structmkldnn__memory__desc__t.html" title="Memory descriptor. The description is based on a number of dimensions, dimensions themselves..." alt="" coords="345,96,509,123"/><area shape="rect" id="node3" href="structmkldnn__memory__extra__desc__t.html" title="Description of extra information stored in memory. " alt="" coords="20,5,175,46"/><area shape="rect" id="node4" href="structmkldnn__rnn__packed__desc__t.html" title="Description of tensor of packed weights for rnn. " alt="" coords="5,71,189,97"/><area shape="rect" id="node5" href="structmkldnn__blocking__desc__t.html" title="Generic description of blocked data layout for most memory formats. " alt="" coords="15,121,180,148"/><area shape="rect" id="node6" href="structmkldnn__wino__desc__t.html" title="Description of tensor of weights for winograd 2x3 convolution. " alt="" coords="25,172,169,199"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a31c30cf38b01f1514454ba5ea5b662a5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga4f5c189c2ba9ef6444250299f1f8e973">mkldnn_primitive_kind_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__pooling__desc__t.html#a31c30cf38b01f1514454ba5ea5b662a5">primitive_kind</a></td></tr>
-<tr class="memdesc:a31c30cf38b01f1514454ba5ea5b662a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The kind of primitive.  <a href="#a31c30cf38b01f1514454ba5ea5b662a5">More...</a><br/></td></tr>
+<tr class="memdesc:a31c30cf38b01f1514454ba5ea5b662a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The kind of primitive. Used for self-identifying the primitive descriptor. Must be <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a4962b750b011e794c6a7fcebcc5a4fb2" title="A pooling primitive. ">mkldnn_pooling</a>.  <a href="#a31c30cf38b01f1514454ba5ea5b662a5">More...</a><br/></td></tr>
 <tr class="separator:a31c30cf38b01f1514454ba5ea5b662a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ea858e8b663b632524019f25fae29b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga5b98c8059c2aff8861157bf070c3f520">mkldnn_prop_kind_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__pooling__desc__t.html#a2ea858e8b663b632524019f25fae29b7">prop_kind</a></td></tr>
-<tr class="memdesc:a2ea858e8b663b632524019f25fae29b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The kind of propagation.  <a href="#a2ea858e8b663b632524019f25fae29b7">More...</a><br/></td></tr>
+<tr class="memdesc:a2ea858e8b663b632524019f25fae29b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The kind of propagation. Possible values: <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f" title="Forward data propagation (training mode). In this mode primitives perform computations necessary for ...">mkldnn_forward_training</a>, <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a58a923fb6c4e1214e1505b5fa0b1e3fa" title="Forward data propagation (inference mode). In this mode primitives perform only computations that are...">mkldnn_forward_inference</a>, <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a4dd1b6040ef9d067a38d8ffa407b763b" title="Backward propagation (with respect to all parameters). ">mkldnn_backward</a>, and <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520aefa8bd2da7ba52a0a0061cfab6cf3925" title="Backward data propagation. ">mkldnn_backward_data</a>.  <a href="#a2ea858e8b663b632524019f25fae29b7">More...</a><br/></td></tr>
 <tr class="separator:a2ea858e8b663b632524019f25fae29b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa16febdd2a678f5f1d77ed4b2022dd3b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#gaa27d43cdd1e439cc41a9580d23ce3e97">mkldnn_alg_kind_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__pooling__desc__t.html#aa16febdd2a678f5f1d77ed4b2022dd3b">alg_kind</a></td></tr>
-<tr class="memdesc:aa16febdd2a678f5f1d77ed4b2022dd3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The kind of pooling algorithm.  <a href="#aa16febdd2a678f5f1d77ed4b2022dd3b">More...</a><br/></td></tr>
+<tr class="memdesc:aa16febdd2a678f5f1d77ed4b2022dd3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The kind of pooling algorithm. Possible values: <a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a38644ce471217d36eab206d0bc144e57" title="Max pooling. ">mkldnn_pooling_max</a>, <a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97ae81aeeb0b887c9d903daffabcffac422" title="Average pooling include padding. ">mkldnn_pooling_avg_include_padding</a>, and <a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a134808cee6fb8aeb7f0927c1666605b4" title="Average pooling exclude padding. ">mkldnn_pooling_avg_exclude_padding</a>.  <a href="#aa16febdd2a678f5f1d77ed4b2022dd3b">More...</a><br/></td></tr>
 <tr class="separator:aa16febdd2a678f5f1d77ed4b2022dd3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3145a3354e2c46b2827a645fe90c1b04"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__pooling__desc__t.html#a3145a3354e2c46b2827a645fe90c1b04">src_desc</a></td></tr>
 <tr class="memdesc:a3145a3354e2c46b2827a645fe90c1b04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Source memory descriptor.  <a href="#a3145a3354e2c46b2827a645fe90c1b04">More...</a><br/></td></tr>
@@ -135,13 +135,13 @@ Public Attributes</h2></td></tr>
 <tr class="memdesc:a7fe4d394ee37ddfae7f196627a0b15b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pooling kernel spatial dimensions.  <a href="#a7fe4d394ee37ddfae7f196627a0b15b6">More...</a><br/></td></tr>
 <tr class="separator:a7fe4d394ee37ddfae7f196627a0b15b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05cb2daecfa2dadd700ecfd91295500a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__pooling__desc__t.html#a05cb2daecfa2dadd700ecfd91295500a">padding</a> [2]</td></tr>
-<tr class="memdesc:a05cb2daecfa2dadd700ecfd91295500a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Padding in each spatial dimension.  <a href="#a05cb2daecfa2dadd700ecfd91295500a">More...</a><br/></td></tr>
+<tr class="memdesc:a05cb2daecfa2dadd700ecfd91295500a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Padding in each spatial dimension. padding[0] is a padding in the beginning (<code>padding_l</code>), padding[1] is a padding in the end (<code>padding_r</code>).  <a href="#a05cb2daecfa2dadd700ecfd91295500a">More...</a><br/></td></tr>
 <tr class="separator:a05cb2daecfa2dadd700ecfd91295500a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0de507f3732dacfbdb262361699092b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga1823708d8b9d445fe177295f2b5d74bd">mkldnn_padding_kind_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__pooling__desc__t.html#a0de507f3732dacfbdb262361699092b7">padding_kind</a></td></tr>
 <tr class="memdesc:a0de507f3732dacfbdb262361699092b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The kind of padding to use.  <a href="#a0de507f3732dacfbdb262361699092b7">More...</a><br/></td></tr>
 <tr class="separator:a0de507f3732dacfbdb262361699092b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a283f1330595d8bc0bd226576654ea372"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga826b2a9be4d94ac17f99bacac6d0cb29">mkldnn_data_type_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__pooling__desc__t.html#a283f1330595d8bc0bd226576654ea372">accum_data_type</a></td></tr>
-<tr class="memdesc:a283f1330595d8bc0bd226576654ea372"><td class="mdescLeft">&#160;</td><td class="mdescRight">The accumulator data type.  <a href="#a283f1330595d8bc0bd226576654ea372">More...</a><br/></td></tr>
+<tr class="memdesc:a283f1330595d8bc0bd226576654ea372"><td class="mdescLeft">&#160;</td><td class="mdescRight">The accumulator data type. Initialized automatically.  <a href="#a283f1330595d8bc0bd226576654ea372">More...</a><br/></td></tr>
 <tr class="separator:a283f1330595d8bc0bd226576654ea372"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -157,8 +157,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>The kind of primitive. </p>
-<p>Used for self-identifying the primitive descriptor. Must be <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a4962b750b011e794c6a7fcebcc5a4fb2" title="A pooling primitive. ">mkldnn_pooling</a>. </p>
+<p>The kind of primitive. Used for self-identifying the primitive descriptor. Must be <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a4962b750b011e794c6a7fcebcc5a4fb2" title="A pooling primitive. ">mkldnn_pooling</a>. </p>
 
 </div>
 </div>
@@ -172,8 +171,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>The kind of propagation. </p>
-<p>Possible values: <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f" title="Forward data propagation (training mode). ">mkldnn_forward_training</a>, <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a58a923fb6c4e1214e1505b5fa0b1e3fa" title="Forward data propagation (inference mode). ">mkldnn_forward_inference</a>, <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a4dd1b6040ef9d067a38d8ffa407b763b" title="Backward propagation (with respect to all parameters. ">mkldnn_backward</a>, and <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520aefa8bd2da7ba52a0a0061cfab6cf3925" title="Backward data propagation. ">mkldnn_backward_data</a>. </p>
+<p>The kind of propagation. Possible values: <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f" title="Forward data propagation (training mode). In this mode primitives perform computations necessary for ...">mkldnn_forward_training</a>, <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a58a923fb6c4e1214e1505b5fa0b1e3fa" title="Forward data propagation (inference mode). In this mode primitives perform only computations that are...">mkldnn_forward_inference</a>, <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a4dd1b6040ef9d067a38d8ffa407b763b" title="Backward propagation (with respect to all parameters). ">mkldnn_backward</a>, and <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520aefa8bd2da7ba52a0a0061cfab6cf3925" title="Backward data propagation. ">mkldnn_backward_data</a>. </p>
 
 </div>
 </div>
@@ -187,8 +185,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>The kind of pooling algorithm. </p>
-<p>Possible values: <a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a38644ce471217d36eab206d0bc144e57" title="Max pooling. ">mkldnn_pooling_max</a> and <a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a69461b64295cd2bff5fef4eac3f3383a">mkldnn_pooling_avg</a>. </p>
+<p>The kind of pooling algorithm. Possible values: <a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a38644ce471217d36eab206d0bc144e57" title="Max pooling. ">mkldnn_pooling_max</a>, <a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97ae81aeeb0b887c9d903daffabcffac422" title="Average pooling include padding. ">mkldnn_pooling_avg_include_padding</a>, and <a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a134808cee6fb8aeb7f0927c1666605b4" title="Average pooling exclude padding. ">mkldnn_pooling_avg_exclude_padding</a>. </p>
 
 </div>
 </div>
@@ -286,8 +283,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Padding in each spatial dimension. </p>
-<p>padding[0] is a padding in the beginning (<code>padding_l</code>), padding[1] is a padding in the end (<code>padding_r</code>). </p>
+<p>Padding in each spatial dimension. padding[0] is a padding in the beginning (<code>padding_l</code>), padding[1] is a padding in the end (<code>padding_r</code>). </p>
 
 </div>
 </div>
@@ -315,8 +311,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>The accumulator data type. </p>
-<p>Initialized automatically. </p>
+<p>The accumulator data type. Initialized automatically. </p>
 
 </div>
 </div>

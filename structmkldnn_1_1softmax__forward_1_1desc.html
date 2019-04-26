@@ -98,18 +98,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
+<p>Descriptor for softmax forward propagation.  
+ <a href="structmkldnn_1_1softmax__forward_1_1desc.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="mkldnn_8hpp_source.html">mkldnn.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for mkldnn::softmax_forward::desc:</div>
 <div class="dyncontent">
 <div class="center"><img src="structmkldnn_1_1softmax__forward_1_1desc__coll__graph.png" border="0" usemap="#mkldnn_1_1softmax__forward_1_1desc_coll__map" alt="Collaboration graph"/></div>
 <map name="mkldnn_1_1softmax__forward_1_1desc_coll__map" id="mkldnn_1_1softmax__forward_1_1desc_coll__map">
-<area shape="rect" id="node2" href="structmkldnn__softmax__desc__t.html" title="A descriptor of a Softmax operation. " alt="" coords="625,96,789,123"/><area shape="rect" id="node3" href="structmkldnn__memory__desc__t.html" title="Memory descriptor. " alt="" coords="345,96,509,123"/><area shape="rect" id="node4" href="structmkldnn__memory__extra__desc__t.html" title="Description of extra information stored in memory. " alt="" coords="20,5,175,46"/><area shape="rect" id="node5" href="structmkldnn__rnn__packed__desc__t.html" title="Description of tensor of packed weights for rnn. " alt="" coords="5,71,189,97"/><area shape="rect" id="node6" href="structmkldnn__blocking__desc__t.html" title="Generic description of blocked data layout for most memory formats. " alt="" coords="15,121,180,148"/><area shape="rect" id="node7" href="structmkldnn__wino__desc__t.html" title="Description of tensor of weights for winograd 2x3 convolution. " alt="" coords="25,172,169,199"/></map>
+<area shape="rect" id="node2" href="structmkldnn__softmax__desc__t.html" title="A descriptor of a Softmax operation. " alt="" coords="625,96,789,123"/><area shape="rect" id="node3" href="structmkldnn__memory__desc__t.html" title="Memory descriptor. The description is based on a number of dimensions, dimensions themselves..." alt="" coords="345,96,509,123"/><area shape="rect" id="node4" href="structmkldnn__memory__extra__desc__t.html" title="Description of extra information stored in memory. " alt="" coords="20,5,175,46"/><area shape="rect" id="node5" href="structmkldnn__rnn__packed__desc__t.html" title="Description of tensor of packed weights for rnn. " alt="" coords="5,71,189,97"/><area shape="rect" id="node6" href="structmkldnn__blocking__desc__t.html" title="Generic description of blocked data layout for most memory formats. " alt="" coords="15,121,180,148"/><area shape="rect" id="node7" href="structmkldnn__wino__desc__t.html" title="Description of tensor of weights for winograd 2x3 convolution. " alt="" coords="25,172,169,199"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a86f3b6079fd48f2b8a289ed7b8419c99"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1softmax__forward_1_1desc.html#a86f3b6079fd48f2b8a289ed7b8419c99">desc</a> (<a class="el" href="group__cpp__api__enums.html#gaeb087eae78f70a4d249a90aefa165cf8">prop_kind</a> aprop_kind, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;data_desc, int softmax_axis)</td></tr>
+<tr class="memdesc:a86f3b6079fd48f2b8a289ed7b8419c99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a softmax descriptor for forward propagation using <code>prop_kind</code> (possible values are <a class="el" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a24775787fab8f13aa4809e1ce8f82aeb">mkldnn::forward_training</a> and <a class="el" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a3b9fad4f80d45368f856b5403198ac4c">mkldnn::forward_inference</a>) and memory descriptor <code>data_desc</code>.  <a href="#a86f3b6079fd48f2b8a289ed7b8419c99">More...</a><br/></td></tr>
 <tr class="separator:a86f3b6079fd48f2b8a289ed7b8419c99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -117,7 +121,9 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a9c897c20a09e9353ad6b9a1dd76bb54a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmkldnn__softmax__desc__t.html">mkldnn_softmax_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1softmax__forward_1_1desc.html#a9c897c20a09e9353ad6b9a1dd76bb54a">data</a></td></tr>
 <tr class="separator:a9c897c20a09e9353ad6b9a1dd76bb54a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Descriptor for softmax forward propagation. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a86f3b6079fd48f2b8a289ed7b8419c99"></a>
 <div class="memitem">
 <div class="memproto">
@@ -155,6 +161,8 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Initializes a softmax descriptor for forward propagation using <code>prop_kind</code> (possible values are <a class="el" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a24775787fab8f13aa4809e1ce8f82aeb">mkldnn::forward_training</a> and <a class="el" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a3b9fad4f80d45368f856b5403198ac4c">mkldnn::forward_inference</a>) and memory descriptor <code>data_desc</code>. </p>
 
 </div>
 </div>

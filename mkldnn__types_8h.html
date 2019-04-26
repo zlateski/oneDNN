@@ -97,12 +97,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
+<p>C API types definitions.  
+<a href="#details">More...</a></p>
+
 <p><a href="mkldnn__types_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__version__t.html">mkldnn_version_t</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Intel(R) MKL-DNN Version type.  <a href="structmkldnn__version__t.html#details">More...</a><br/></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Version type.  <a href="structmkldnn__version__t.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__blocking__desc__t.html">mkldnn_blocking_desc_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic description of blocked data layout for most memory formats.  <a href="structmkldnn__blocking__desc__t.html#details">More...</a><br/></td></tr>
@@ -117,7 +120,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Description of extra information stored in memory.  <a href="structmkldnn__memory__extra__desc__t.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Memory descriptor.  <a href="structmkldnn__memory__desc__t.html#details">More...</a><br/></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Memory descriptor. The description is based on a number of dimensions, dimensions themselves, plus information about elements type and memory format. Additionally, contains format-specific descriptions of the data layout.  <a href="structmkldnn__memory__desc__t.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__convolution__desc__t.html">mkldnn_convolution_desc_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A descriptor of a convolution operation.  <a href="structmkldnn__convolution__desc__t.html#details">More...</a><br/></td></tr>
@@ -155,9 +158,10 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:gabdefec6dd67abc44d68c97f51afbaf45"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#gabdefec6dd67abc44d68c97f51afbaf45">MKLDNN_MAX_NDIMS</a>&#160;&#160;&#160;12</td></tr>
-<tr class="memdesc:gabdefec6dd67abc44d68c97f51afbaf45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of dimensions a tensor can have.  <a href="group__c__api__types__memory.html#gabdefec6dd67abc44d68c97f51afbaf45">More...</a><br/></td></tr>
+<tr class="memdesc:gabdefec6dd67abc44d68c97f51afbaf45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of dimensions a tensor can have. Only restricts the amount of space used for the tensor description. Individual computational primitives may support only tensors of certain dimensions.  <a href="group__c__api__types__memory.html#gabdefec6dd67abc44d68c97f51afbaf45">More...</a><br/></td></tr>
 <tr class="separator:gabdefec6dd67abc44d68c97f51afbaf45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga09e605320955705ff8d2561026995b47"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#ga09e605320955705ff8d2561026995b47">MKLDNN_RNN_MAX_N_PARTS</a>&#160;&#160;&#160;4</td></tr>
+<tr class="memdesc:ga09e605320955705ff8d2561026995b47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of parts of RNN weights tensor that require separate computation.  <a href="group__c__api__types__memory.html#ga09e605320955705ff8d2561026995b47">More...</a><br/></td></tr>
 <tr class="separator:ga09e605320955705ff8d2561026995b47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga09728eba6ccd8efeff3a6d91129cd6ef"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#ga09728eba6ccd8efeff3a6d91129cd6ef">MKLDNN_MEMORY_NONE</a>&#160;&#160;&#160;(NULL)</td></tr>
 <tr class="separator:ga09728eba6ccd8efeff3a6d91129cd6ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -336,7 +340,7 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga31866789b66acfb1c28b2f9bdd7bdfdda9be03e267991a3e90b4a61a39ef4d353">mkldnn_not_required</a> = 8
 <br/>
  }</td></tr>
-<tr class="memdesc:ga31866789b66acfb1c28b2f9bdd7bdfdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Status values returned by Intel(R) MKL-DNN functions.  <a href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">More...</a><br/></td></tr>
+<tr class="memdesc:ga31866789b66acfb1c28b2f9bdd7bdfdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Status values returned by the library functions.  <a href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">More...</a><br/></td></tr>
 <tr class="separator:ga31866789b66acfb1c28b2f9bdd7bdfdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga826b2a9be4d94ac17f99bacac6d0cb29"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__generic.html#ga826b2a9be4d94ac17f99bacac6d0cb29">mkldnn_data_type_t</a> { <br/>
 &#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga826b2a9be4d94ac17f99bacac6d0cb29a5ff46aa58e4959d52ce8079c4f92e3b5">mkldnn_data_type_undef</a> = 0, 
@@ -689,7 +693,7 @@ Enumerations</h2></td></tr>
 <tr class="separator:gacc2844e341ab1c4f5b7ae1c6068f2a2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1823708d8b9d445fe177295f2b5d74bd"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__generic.html#ga1823708d8b9d445fe177295f2b5d74bd">mkldnn_padding_kind_t</a> { <a class="el" href="group__c__api__types__generic.html#gga1823708d8b9d445fe177295f2b5d74bda9f226824070bdbc4afc03c0f16302fea">mkldnn_padding_zero</a>
  }</td></tr>
-<tr class="memdesc:ga1823708d8b9d445fe177295f2b5d74bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kinds of padding.  <a href="group__c__api__types__generic.html#ga1823708d8b9d445fe177295f2b5d74bd">More...</a><br/></td></tr>
+<tr class="memdesc:ga1823708d8b9d445fe177295f2b5d74bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kinds of padding. Define how to interpret the data in padding regions.  <a href="group__c__api__types__generic.html#ga1823708d8b9d445fe177295f2b5d74bd">More...</a><br/></td></tr>
 <tr class="separator:ga1823708d8b9d445fe177295f2b5d74bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5b98c8059c2aff8861157bf070c3f520"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__generic.html#ga5b98c8059c2aff8861157bf070c3f520">mkldnn_prop_kind_t</a> { <br/>
 &#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a89ba6630224f447949d1bed1562f20c6">mkldnn_prop_kind_undef</a> = 0, 
@@ -728,7 +732,7 @@ Enumerations</h2></td></tr>
 <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973aeebca2a6226b2a499514cb435266bf79">mkldnn_gemm</a>
 <br/>
  }</td></tr>
-<tr class="memdesc:ga4f5c189c2ba9ef6444250299f1f8e973"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kinds of primitives.  <a href="group__c__api__types__generic.html#ga4f5c189c2ba9ef6444250299f1f8e973">More...</a><br/></td></tr>
+<tr class="memdesc:ga4f5c189c2ba9ef6444250299f1f8e973"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kinds of primitives. Used to implement a way to extend the library with new primitives without changing the ABI.  <a href="group__c__api__types__generic.html#ga4f5c189c2ba9ef6444250299f1f8e973">More...</a><br/></td></tr>
 <tr class="separator:ga4f5c189c2ba9ef6444250299f1f8e973"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa27d43cdd1e439cc41a9580d23ce3e97"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__generic.html#gaa27d43cdd1e439cc41a9580d23ce3e97">mkldnn_alg_kind_t</a> { <br/>
 &#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a9453bf0f5c4fd3498e44fde663af14ba">mkldnn_alg_kind_undef</a>, 
@@ -782,6 +786,7 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="group__c__api__types__memory.html#gga9b836385e37583fa1aeaf2753b25e966a53a0727b3e8985583f39b96c20e92d27">mkldnn_wino_wei_OBaaIBOIio</a>
 <br/>
  }</td></tr>
+<tr class="memdesc:ga9b836385e37583fa1aeaf2753b25e966"><td class="mdescLeft">&#160;</td><td class="mdescRight">Winograd-specific formats.  <a href="group__c__api__types__memory.html#ga9b836385e37583fa1aeaf2753b25e966">More...</a><br/></td></tr>
 <tr class="separator:ga9b836385e37583fa1aeaf2753b25e966"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0b72d4deb16ce5703dc1641c80e9de87"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#ga0b72d4deb16ce5703dc1641c80e9de87">mkldnn_rnn_packed_memory_format_t</a> { <a class="el" href="group__c__api__types__memory.html#gga0b72d4deb16ce5703dc1641c80e9de87a7ea620d880278e0e362f22a0dca727fc">mkldnn_packed_format_undef</a> = 0, 
 <a class="el" href="group__c__api__types__memory.html#gga0b72d4deb16ce5703dc1641c80e9de87aa01ef053fccf8bd78da948b9c61cc758">mkldnn_ldigo_p</a>, 
@@ -792,6 +797,7 @@ Enumerations</h2></td></tr>
 <a class="el" href="group__c__api__types__memory.html#gga16866483eb06591891e93924b19a2b73a517c1e993551853f409cee04679fcb2e">mkldnn_memory_extra_flag_compensation_conv_s8s8</a> = 0x1U, 
 <a class="el" href="group__c__api__types__memory.html#gga16866483eb06591891e93924b19a2b73ab4ed583a062bc7b9943a935ac9a75c04">mkldnn_memory_extra_flag_scale_adjust</a> = 0x2U
  }</td></tr>
+<tr class="memdesc:ga16866483eb06591891e93924b19a2b73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flags for memory special features.  <a href="group__c__api__types__memory.html#ga16866483eb06591891e93924b19a2b73">More...</a><br/></td></tr>
 <tr class="separator:ga16866483eb06591891e93924b19a2b73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga62b06d91e9fcf6bd086311fd4d8ece36"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__op__descs.html#ga62b06d91e9fcf6bd086311fd4d8ece36">mkldnn_rnn_cell_flags_t</a> { <a class="el" href="group__c__api__types__op__descs.html#gga62b06d91e9fcf6bd086311fd4d8ece36a55f69148433cce0b97e8edd117f6b2ed">mkldnn_rnn_cell_with_relu</a> = 0x1U, 
 <a class="el" href="group__c__api__types__op__descs.html#gga62b06d91e9fcf6bd086311fd4d8ece36a41f97c53ef51f113a259c26a8c8363ed">mkldnn_rnn_cell_with_clipping</a> = 0x2U
@@ -881,7 +887,9 @@ Enumerations</h2></td></tr>
 <tr class="memdesc:ga99541103c9e9f6241d7a312d39d2cff2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stream flags.  <a href="group__c__api__types__stream.html#ga99541103c9e9f6241d7a312d39d2cff2">More...</a><br/></td></tr>
 <tr class="separator:ga99541103c9e9f6241d7a312d39d2cff2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>C API types definitions. </p>
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

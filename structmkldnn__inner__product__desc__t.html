@@ -102,16 +102,16 @@ Collaboration diagram for mkldnn_inner_product_desc_t:</div>
 <div class="dyncontent">
 <div class="center"><img src="structmkldnn__inner__product__desc__t__coll__graph.png" border="0" usemap="#mkldnn__inner__product__desc__t_coll__map" alt="Collaboration graph"/></div>
 <map name="mkldnn__inner__product__desc__t_coll__map" id="mkldnn__inner__product__desc__t_coll__map">
-<area shape="rect" id="node2" href="structmkldnn__memory__desc__t.html" title="Memory descriptor. " alt="" coords="345,109,509,136"/><area shape="rect" id="node3" href="structmkldnn__memory__extra__desc__t.html" title="Description of extra information stored in memory. " alt="" coords="20,18,175,59"/><area shape="rect" id="node4" href="structmkldnn__rnn__packed__desc__t.html" title="Description of tensor of packed weights for rnn. " alt="" coords="5,84,189,111"/><area shape="rect" id="node5" href="structmkldnn__blocking__desc__t.html" title="Generic description of blocked data layout for most memory formats. " alt="" coords="15,135,180,161"/><area shape="rect" id="node6" href="structmkldnn__wino__desc__t.html" title="Description of tensor of weights for winograd 2x3 convolution. " alt="" coords="25,185,169,212"/></map>
+<area shape="rect" id="node2" href="structmkldnn__memory__desc__t.html" title="Memory descriptor. The description is based on a number of dimensions, dimensions themselves..." alt="" coords="345,109,509,136"/><area shape="rect" id="node3" href="structmkldnn__memory__extra__desc__t.html" title="Description of extra information stored in memory. " alt="" coords="20,18,175,59"/><area shape="rect" id="node4" href="structmkldnn__rnn__packed__desc__t.html" title="Description of tensor of packed weights for rnn. " alt="" coords="5,84,189,111"/><area shape="rect" id="node5" href="structmkldnn__blocking__desc__t.html" title="Generic description of blocked data layout for most memory formats. " alt="" coords="15,135,180,161"/><area shape="rect" id="node6" href="structmkldnn__wino__desc__t.html" title="Description of tensor of weights for winograd 2x3 convolution. " alt="" coords="25,185,169,212"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a0d29920770b70f56df4fba205210aaa1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga4f5c189c2ba9ef6444250299f1f8e973">mkldnn_primitive_kind_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__inner__product__desc__t.html#a0d29920770b70f56df4fba205210aaa1">primitive_kind</a></td></tr>
-<tr class="memdesc:a0d29920770b70f56df4fba205210aaa1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The kind of primitive.  <a href="#a0d29920770b70f56df4fba205210aaa1">More...</a><br/></td></tr>
+<tr class="memdesc:a0d29920770b70f56df4fba205210aaa1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The kind of primitive. Used for self-identifying the primitive descriptor. Must be <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973ad2ae1c6b5f66bdfca8a2734ea328385f" title="An inner product primitive. ">mkldnn_inner_product</a>.  <a href="#a0d29920770b70f56df4fba205210aaa1">More...</a><br/></td></tr>
 <tr class="separator:a0d29920770b70f56df4fba205210aaa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a74c31fa4fbf4c0c73702e4cde866e2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga5b98c8059c2aff8861157bf070c3f520">mkldnn_prop_kind_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__inner__product__desc__t.html#a9a74c31fa4fbf4c0c73702e4cde866e2">prop_kind</a></td></tr>
-<tr class="memdesc:a9a74c31fa4fbf4c0c73702e4cde866e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The kind of propagation.  <a href="#a9a74c31fa4fbf4c0c73702e4cde866e2">More...</a><br/></td></tr>
+<tr class="memdesc:a9a74c31fa4fbf4c0c73702e4cde866e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The kind of propagation. Possible values: <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f" title="Forward data propagation (training mode). In this mode primitives perform computations necessary for ...">mkldnn_forward_training</a>, <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a58a923fb6c4e1214e1505b5fa0b1e3fa" title="Forward data propagation (inference mode). In this mode primitives perform only computations that are...">mkldnn_forward_inference</a>, <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520aefa8bd2da7ba52a0a0061cfab6cf3925" title="Backward data propagation. ">mkldnn_backward_data</a>, <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a6d7c0a418ef16b8ade0b0fa1109c4b2c" title="Backward weights propagation. ">mkldnn_backward_weights</a>, and <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520aea8ef1582a476c8b2fe5741a4f7b5d23" title="Backward bias propagation. ">mkldnn_backward_bias</a>.  <a href="#a9a74c31fa4fbf4c0c73702e4cde866e2">More...</a><br/></td></tr>
 <tr class="separator:a9a74c31fa4fbf4c0c73702e4cde866e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2ab25825825a88d9be4b15ca3ee6105"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__inner__product__desc__t.html#ab2ab25825825a88d9be4b15ca3ee6105">src_desc</a></td></tr>
 <tr class="memdesc:ab2ab25825825a88d9be4b15ca3ee6105"><td class="mdescLeft">&#160;</td><td class="mdescRight">Source memory descriptor.  <a href="#ab2ab25825825a88d9be4b15ca3ee6105">More...</a><br/></td></tr>
@@ -138,7 +138,7 @@ Public Attributes</h2></td></tr>
 <tr class="memdesc:a4fb32ceb2d4eddf641566f09c43515ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destination gradient memory descriptor.  <a href="#a4fb32ceb2d4eddf641566f09c43515ea">More...</a><br/></td></tr>
 <tr class="separator:a4fb32ceb2d4eddf641566f09c43515ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a998bb7a60862961aa69e791a703ee0e9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga826b2a9be4d94ac17f99bacac6d0cb29">mkldnn_data_type_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__inner__product__desc__t.html#a998bb7a60862961aa69e791a703ee0e9">accum_data_type</a></td></tr>
-<tr class="memdesc:a998bb7a60862961aa69e791a703ee0e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The accumulator data type.  <a href="#a998bb7a60862961aa69e791a703ee0e9">More...</a><br/></td></tr>
+<tr class="memdesc:a998bb7a60862961aa69e791a703ee0e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The accumulator data type. Initialized automatically.  <a href="#a998bb7a60862961aa69e791a703ee0e9">More...</a><br/></td></tr>
 <tr class="separator:a998bb7a60862961aa69e791a703ee0e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -154,8 +154,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>The kind of primitive. </p>
-<p>Used for self-identifying the primitive descriptor. Must be <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973ad2ae1c6b5f66bdfca8a2734ea328385f" title="An inner product primitive. ">mkldnn_inner_product</a>. </p>
+<p>The kind of primitive. Used for self-identifying the primitive descriptor. Must be <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973ad2ae1c6b5f66bdfca8a2734ea328385f" title="An inner product primitive. ">mkldnn_inner_product</a>. </p>
 
 </div>
 </div>
@@ -169,8 +168,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>The kind of propagation. </p>
-<p>Possible values: <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f" title="Forward data propagation (training mode). ">mkldnn_forward_training</a>, <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a58a923fb6c4e1214e1505b5fa0b1e3fa" title="Forward data propagation (inference mode). ">mkldnn_forward_inference</a>, <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520aefa8bd2da7ba52a0a0061cfab6cf3925" title="Backward data propagation. ">mkldnn_backward_data</a>, <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a6d7c0a418ef16b8ade0b0fa1109c4b2c" title="Backward weights propagation. ">mkldnn_backward_weights</a>, and <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520aea8ef1582a476c8b2fe5741a4f7b5d23" title="Backward bias propagation. ">mkldnn_backward_bias</a>. </p>
+<p>The kind of propagation. Possible values: <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f" title="Forward data propagation (training mode). In this mode primitives perform computations necessary for ...">mkldnn_forward_training</a>, <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a58a923fb6c4e1214e1505b5fa0b1e3fa" title="Forward data propagation (inference mode). In this mode primitives perform only computations that are...">mkldnn_forward_inference</a>, <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520aefa8bd2da7ba52a0a0061cfab6cf3925" title="Backward data propagation. ">mkldnn_backward_data</a>, <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a6d7c0a418ef16b8ade0b0fa1109c4b2c" title="Backward weights propagation. ">mkldnn_backward_weights</a>, and <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520aea8ef1582a476c8b2fe5741a4f7b5d23" title="Backward bias propagation. ">mkldnn_backward_bias</a>. </p>
 
 </div>
 </div>
@@ -296,8 +294,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>The accumulator data type. </p>
-<p>Initialized automatically. </p>
+<p>The accumulator data type. Initialized automatically. </p>
 
 </div>
 </div>

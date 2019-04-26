@@ -88,7 +88,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__version__t.html">mkldnn_version_t</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Intel(R) MKL-DNN Version type.  <a href="structmkldnn__version__t.html#details">More...</a><br/></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Version type.  <a href="structmkldnn__version__t.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
@@ -107,7 +107,7 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga31866789b66acfb1c28b2f9bdd7bdfdda9be03e267991a3e90b4a61a39ef4d353">mkldnn_not_required</a> = 8
 <br/>
  }</td></tr>
-<tr class="memdesc:ga31866789b66acfb1c28b2f9bdd7bdfdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Status values returned by Intel(R) MKL-DNN functions.  <a href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">More...</a><br/></td></tr>
+<tr class="memdesc:ga31866789b66acfb1c28b2f9bdd7bdfdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Status values returned by the library functions.  <a href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">More...</a><br/></td></tr>
 <tr class="separator:ga31866789b66acfb1c28b2f9bdd7bdfdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga826b2a9be4d94ac17f99bacac6d0cb29"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__generic.html#ga826b2a9be4d94ac17f99bacac6d0cb29">mkldnn_data_type_t</a> { <br/>
 &#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga826b2a9be4d94ac17f99bacac6d0cb29a5ff46aa58e4959d52ce8079c4f92e3b5">mkldnn_data_type_undef</a> = 0, 
@@ -460,7 +460,7 @@ Enumerations</h2></td></tr>
 <tr class="separator:gacc2844e341ab1c4f5b7ae1c6068f2a2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1823708d8b9d445fe177295f2b5d74bd"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__generic.html#ga1823708d8b9d445fe177295f2b5d74bd">mkldnn_padding_kind_t</a> { <a class="el" href="group__c__api__types__generic.html#gga1823708d8b9d445fe177295f2b5d74bda9f226824070bdbc4afc03c0f16302fea">mkldnn_padding_zero</a>
  }</td></tr>
-<tr class="memdesc:ga1823708d8b9d445fe177295f2b5d74bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kinds of padding.  <a href="group__c__api__types__generic.html#ga1823708d8b9d445fe177295f2b5d74bd">More...</a><br/></td></tr>
+<tr class="memdesc:ga1823708d8b9d445fe177295f2b5d74bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kinds of padding. Define how to interpret the data in padding regions.  <a href="group__c__api__types__generic.html#ga1823708d8b9d445fe177295f2b5d74bd">More...</a><br/></td></tr>
 <tr class="separator:ga1823708d8b9d445fe177295f2b5d74bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5b98c8059c2aff8861157bf070c3f520"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__generic.html#ga5b98c8059c2aff8861157bf070c3f520">mkldnn_prop_kind_t</a> { <br/>
 &#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a89ba6630224f447949d1bed1562f20c6">mkldnn_prop_kind_undef</a> = 0, 
@@ -499,7 +499,7 @@ Enumerations</h2></td></tr>
 <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973aeebca2a6226b2a499514cb435266bf79">mkldnn_gemm</a>
 <br/>
  }</td></tr>
-<tr class="memdesc:ga4f5c189c2ba9ef6444250299f1f8e973"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kinds of primitives.  <a href="group__c__api__types__generic.html#ga4f5c189c2ba9ef6444250299f1f8e973">More...</a><br/></td></tr>
+<tr class="memdesc:ga4f5c189c2ba9ef6444250299f1f8e973"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kinds of primitives. Used to implement a way to extend the library with new primitives without changing the ABI.  <a href="group__c__api__types__generic.html#ga4f5c189c2ba9ef6444250299f1f8e973">More...</a><br/></td></tr>
 <tr class="separator:ga4f5c189c2ba9ef6444250299f1f8e973"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa27d43cdd1e439cc41a9580d23ce3e97"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__generic.html#gaa27d43cdd1e439cc41a9580d23ce3e97">mkldnn_alg_kind_t</a> { <br/>
 &#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a9453bf0f5c4fd3498e44fde663af14ba">mkldnn_alg_kind_undef</a>, 
@@ -557,7 +557,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Status values returned by Intel(R) MKL-DNN functions. </p>
+<p>Status values returned by the library functions. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="gga31866789b66acfb1c28b2f9bdd7bdfddab50eb3f75584f0495802ffb5e0a9884f"></a>mkldnn_success</em>&nbsp;</td><td class="fielddoc">
 <p>The operation was successful. </p>
@@ -640,12 +640,10 @@ Enumerations</h2></td></tr>
 <p>Undefined memory format, used for empty memory descriptors. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga1f6c390306d4c8a438c0efbff08c0539a25ba80bb864a69c9fae70b4503e76167"></a>mkldnn_format_kind_any</em>&nbsp;</td><td class="fielddoc">
-<p>Unspecified format. </p>
-<p>The primitive selects a format automatically. </p>
+<p>Unspecified format. The primitive selects a format automatically. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga1f6c390306d4c8a438c0efbff08c0539ae7e569e4a1924f15d37971d2f785646b"></a>mkldnn_blocked</em>&nbsp;</td><td class="fielddoc">
-<p>A tensor in a generic format described by the stride and blocking values in each dimension. </p>
-<p>See <a class="el" href="structmkldnn__blocking__desc__t.html" title="Generic description of blocked data layout for most memory formats. ">mkldnn_blocking_desc_t</a> for more information. </p>
+<p>A tensor in a generic format described by the stride and blocking values in each dimension. See <a class="el" href="structmkldnn__blocking__desc__t.html" title="Generic description of blocked data layout for most memory formats. ">mkldnn_blocking_desc_t</a> for more information. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga1f6c390306d4c8a438c0efbff08c0539a216c67cf3cb354789795618a15f657fe"></a>mkldnn_format_kind_wino</em>&nbsp;</td><td class="fielddoc">
 <p>Weights format used in 8bit Winograd convolution. </p>
@@ -668,8 +666,8 @@ Enumerations</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Memory format tag specification. </p>
-<p>Intel MKL-DNN formats describe physical data layout. The physical layout is described as a sequence of the dimensions as they are laid out in the memory (from the outer-most to the inner-most). Note that this order doesn't affect the logical order of the dimensions that is kept in the <code>dims</code> field of the <a class="el" href="structmkldnn__memory__desc__t.html" title="Memory descriptor. ">mkldnn_memory_desc_t</a> structure. The logical order of the dimensions is specified by the type of tensor.</p>
-<p>For example, CNN 5D tensor always has its logical dimensions in the order <code>(batch, channels, depth, height, width)</code>, while the physical layout might be <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba55268cf202bb4367b19fd0aeb13739ce">mkldnn_ncdhw</a> or <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bafe9f8381139e749050fda6fb70808e1c">mkldnn_ndhwc</a>:</p>
+<p>Intel MKL-DNN formats describe physical data layout. The physical layout is described as a sequence of the dimensions as they are laid out in the memory (from the outer-most to the inner-most). Note that this order doesn't affect the logical order of the dimensions that is kept in the <code>dims</code> field of the <a class="el" href="structmkldnn__memory__desc__t.html" title="Memory descriptor. The description is based on a number of dimensions, dimensions themselves...">mkldnn_memory_desc_t</a> structure. The logical order of the dimensions is specified by the primitive that uses the tensor.</p>
+<p>For example, CNN 5D tensor always has its logical dimensions in the order <code>(batch, channels, depth, height, width)</code>, while the physical layout might be <code>NCDHW</code> (corresponds to <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba55268cf202bb4367b19fd0aeb13739ce" title="5D CNN activations tensor, an alias to mkldnn_abcde ">mkldnn_ncdhw</a> format tag) or <code>NDHWC</code> (corresponds to <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bafe9f8381139e749050fda6fb70808e1c" title="5D CNN activations tensor, an alias to mkldnn_acdeb ">mkldnn_ndhwc</a> format tag).</p>
 <div class="fragment"><div class="line"><span class="keywordtype">int</span> batch = 2, channels = 16, depth = 13, height = 13, width = 13;</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">int</span> ndims = 5; <span class="comment">// 5D tensor</span></div>
@@ -682,73 +680,97 @@ Enumerations</h2></td></tr>
 <div class="line"><a class="code" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> data_in_ndhwc;</div>
 <div class="line"><a class="code" href="group__c__api__memory.html#gaa8895ff6e661d8fe1cdeae76e6e20bbc">mkldnn_memory_desc_init_by_tag</a>(</div>
 <div class="line">     &amp;data_in_ndhwc, 5, dims, <a class="code" href="group__c__api__types__generic.html#gga826b2a9be4d94ac17f99bacac6d0cb29a6d9faa3e054a4f7b7e5ab5b3d420684e">mkldnn_f32</a>, <a class="code" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bafe9f8381139e749050fda6fb70808e1c">mkldnn_ndhwc</a>);</div>
-</div><!-- fragment --><p>The following notation applies to memory format names:</p>
+</div><!-- fragment --><p>Memory format tags can be further divided into two categories:</p>
+<ul>
+<li>Domain-agnostic names, i.e. names the do not depend on the tensor usage in the specific primitive. These names use letters from <code>a</code> to <code>l</code> to denote logical dimension from 1 to 12, and form the order in which the dimensions are laid in memory. For instance, <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba50ffa304d45d50709fdc192f6b286163" title="plain 2D tensor ">mkldnn_ab</a> is used to denote 2D tensor where the second logical dimension (aka <code>b</code>) is the innermost, i.e. has stride = 1, and the first logical dimension (<code>a</code>) laid out in memory with stride equal to the size of second dimension. On the other hand, <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2baa1b1a627050d3f5d5477b4bf662c1f95" title="permuted 2D tensor ">mkldnn_ba</a> is just transposed version of the same tensor: the first dimension (<code>a</code>) becomes the innermost one.</li>
+<li>Domain-specific names, i.e. names that make sense only in the context of a certain domain, such as CNN. This names are just aliases to the corresponding domain-agnostic tags and used mostly for the convenience. For example, <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba2838f6827b40434fb9584eb3efe1a0ae" title="2D CNN activations tensor, an alias to mkldnn_ab ">mkldnn_nc</a> is used to denote 2D CNN activations tensor memory format, where channels are the innermost dimension and batch is an outermost one. Moreover, <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba2838f6827b40434fb9584eb3efe1a0ae" title="2D CNN activations tensor, an alias to mkldnn_ab ">mkldnn_nc</a> is just an alias to <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba50ffa304d45d50709fdc192f6b286163" title="plain 2D tensor ">mkldnn_ab</a>, since for Intel MKL-DNN CNN primitives the logical dimensions of activations tensors come in order: batch, channels, spatial. In other words, batch corresponds to the first logical dimension (<code>a</code>), channels correspond to the second one (<code>b</code>).</li>
+</ul>
+<p>The following domain-specific notation applies to memory format tags:</p>
 <ul>
 <li><code>'n'</code> denotes the mini-batch dimension</li>
 <li><code>'c'</code> denotes a channels dimension</li>
 <li>When there are multiple channel dimensions (for example, in convolution weights tensor), <code>'i'</code> and <code>'o'</code> denote dimensions of input and output channels</li>
 <li><code>'d'</code>, <code>'h'</code>, and <code>'w'</code> denote spatial depth, height, and width respectively</li>
-<li>Upper-case letters indicate that the data is laid out in blocks for a particular dimension. In such cases, the format name contains both upper- and lower-case letters for that dimension with a lower-case letter preceded by the block size. For example: <code>'mkldnn_nChw8c'</code> describes a format where the outermost dimension is mini-batch, followed by the channel block number, followed by the spatial height and width, and finally followed by 8-element channel blocks.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>Channel designations can be different. For example, both the <code>'mkldnn_nc'</code> and <code>'mkldnn_io'</code> formats can be used to describe a 2D tensor.</dd></dl>
+<p>Upper-case letters indicate that the data is laid out in blocks for a particular dimension. In such cases, the format name contains both upper- and lower-case letters for that dimension with a lower-case letter preceded by the block size. For example: <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bacf26dda829c10d1a318c955e1d185248" title="4D CNN activations tensor blocked by channels with block size 8, an alias to mkldnn_aBcd8b ...">mkldnn_nChw8c</a> describes a format where the outermost dimension is mini-batch, followed by the channel block number, followed by the spatial height and width, and finally followed by 8-element channel blocks.</p>
 <dl class="section see"><dt>See Also</dt><dd><a class="el" href="understanding_memory_formats.html">Understanding Memory Formats</a> </dd></dl>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2ba41f8375ed4b46a9eb3625e8e82dd28eb"></a>mkldnn_format_tag_undef</em>&nbsp;</td><td class="fielddoc">
 <p>Undefined memory format tag. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2bab7f14a435b0c6373badb9b3f296e6c1f"></a>mkldnn_format_tag_any</em>&nbsp;</td><td class="fielddoc">
-<p>Undefined memory format tag. </p>
-<p>The primitive selects a format automatically. </p>
+<p>Undefined memory format tag. The primitive selects a format automatically. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2baf2456b23837ac7255f49440542bfe561"></a>mkldnn_a</em>&nbsp;</td><td class="fielddoc">
+<p>plain 1D tensor </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2ba50ffa304d45d50709fdc192f6b286163"></a>mkldnn_ab</em>&nbsp;</td><td class="fielddoc">
+<p>plain 2D tensor </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2ba3f9bf8e8dfb966d5fb76844fb8cc758d"></a>mkldnn_abc</em>&nbsp;</td><td class="fielddoc">
+<p>plain 3D tensor </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2ba63203c48f8a6ff36dbf21e8c81bca060"></a>mkldnn_abcd</em>&nbsp;</td><td class="fielddoc">
+<p>plain 4D tensor </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2bab5a0a1dc7021e96ed7e174f76f8decbc"></a>mkldnn_abcde</em>&nbsp;</td><td class="fielddoc">
+<p>plain 5D tensor </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2ba0614d8d2ebeac1daa92a4cf5e96e0ca4"></a>mkldnn_abcdef</em>&nbsp;</td><td class="fielddoc">
+<p>plain 6D tensor </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2ba40c0f1f15ca768c0b173f70384851688"></a>mkldnn_abdec</em>&nbsp;</td><td class="fielddoc">
+<p>permuted 5D tensor </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2ba975488028c2512fda82be106e36c8b35"></a>mkldnn_acb</em>&nbsp;</td><td class="fielddoc">
+<p>permuted 3D tensor </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2baf989a08f4e68ac6e37cdd6bb0c6be7b1"></a>mkldnn_acbde</em>&nbsp;</td><td class="fielddoc">
+<p>permuted 5D tensor </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2ba5bdb52f009d9c8b46aaf05119cf18592"></a>mkldnn_acdb</em>&nbsp;</td><td class="fielddoc">
+<p>permuted 4D tensor </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2bae659343dce6f6dd2eaf8f7a9455be26d"></a>mkldnn_acdeb</em>&nbsp;</td><td class="fielddoc">
+<p>permuted 5D tensor </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2baa1b1a627050d3f5d5477b4bf662c1f95"></a>mkldnn_ba</em>&nbsp;</td><td class="fielddoc">
+<p>permuted 2D tensor </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2ba3407910ff8ab1c36fb7ae912fcfbcd44"></a>mkldnn_bac</em>&nbsp;</td><td class="fielddoc">
+<p>permuted 3D tensor </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2ba854ed6db3fd6585107d3be9190aa3dd0"></a>mkldnn_bacd</em>&nbsp;</td><td class="fielddoc">
+<p>permuted 4D tensor </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2bab4e4816a49b9e1afff5a0043fd1ff599"></a>mkldnn_bcda</em>&nbsp;</td><td class="fielddoc">
+<p>permuted 4D tensor </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2baa64ff960aa3225ad2aeef83e237d3b5f"></a>mkldnn_cba</em>&nbsp;</td><td class="fielddoc">
+<p>permuted 3D tensor </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2ba4b652226a3878ad2c7471f1519da6c41"></a>mkldnn_cdba</em>&nbsp;</td><td class="fielddoc">
+<p>permuted 4D tensor </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2ba0a04f3c51661b874c8e2fcfff1bf0019"></a>mkldnn_cdeba</em>&nbsp;</td><td class="fielddoc">
+<p>permuted 5D tensor </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2baa1f28c19cea52b858c9fb8f30db3631c"></a>mkldnn_decab</em>&nbsp;</td><td class="fielddoc">
+<p>permuted 5D tensor </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2ba686cb8c5ec5ba70ade508c4caf1b40d9"></a>mkldnn_Abc16a</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2ba5e518e82af8bed35bb5c560686b38c13"></a>mkldnn_ABc16a16b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2ba04a6262fd5321bbd8bcdb86be8934c75"></a>mkldnn_aBc16b</em>&nbsp;</td><td class="fielddoc">
+<p>3D tensor blocked by 2nd dimension with block size 16 </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2bab2de5a2461310225783f7a05e02bedf0"></a>mkldnn_ABc16b16a</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2badaf705192f585d9dce93c8fb18e6850b"></a>mkldnn_Abc4a</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2ba07edda513adf3feb3c8b7054354050bc"></a>mkldnn_aBc4b</em>&nbsp;</td><td class="fielddoc">
+<p>3D tensor blocked by 2nd dimension with block size 4 </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2ba37748e3228b2ec4bff09953ec8a39220"></a>mkldnn_ABc4b16a4b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
@@ -759,6 +781,7 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2ba0d7cb36de340cb067db0e0c6a8e4b7df"></a>mkldnn_ABc8a8b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2ba40a8cfda21938908ffd43fdd4408c55b"></a>mkldnn_aBc8b</em>&nbsp;</td><td class="fielddoc">
+<p>3D tensor blocked by 2nd dimension with block size 8 </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2bab5da0a83b687ddad59fe13e58c651b2f"></a>mkldnn_ABc8b16a2b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
@@ -771,6 +794,7 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2ba1844c075bee760eb5ee53ca4bed73861"></a>mkldnn_ABcd32a32b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2ba1db9b5dd2d65b4e087c67145de4956dd"></a>mkldnn_aBcd16b</em>&nbsp;</td><td class="fielddoc">
+<p>4D tensor blocked by 2nd dimension with block size 16 </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2ba278bb27ccf7ef73cfba9d84de1bafb8b"></a>mkldnn_ABcd16b16a</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
@@ -781,6 +805,7 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2ba12b8652df1189c0e230c4dafd059e594"></a>mkldnn_Abcd4a</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2ba7f0839062b8e5b6e79a314bf0ab69638"></a>mkldnn_aBcd4b</em>&nbsp;</td><td class="fielddoc">
+<p>4D tensor blocked by 2nd dimension with block size 4 </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2ba4d3602308cb6dc1ac1f5b8443635602a"></a>mkldnn_ABcd4b16a4b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
@@ -795,6 +820,7 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2ba0bda309d9c28e97e6f6a0357e30dfe2f"></a>mkldnn_ABcd8a8b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2bae7b12175f86b2f257731f1995f6c3d10"></a>mkldnn_aBcd8b</em>&nbsp;</td><td class="fielddoc">
+<p>4D tensor blocked by 2nd dimension with block size 8 </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2bab1b3955deb17d0bbd7d3864445d11d72"></a>mkldnn_ABcd8b16a2b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
@@ -813,6 +839,7 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2ba19ae0fbf8201d53583a29289c0740dd6"></a>mkldnn_ABcde16a16b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2ba337600daca5385879092af39bb5bcf1d"></a>mkldnn_aBcde16b</em>&nbsp;</td><td class="fielddoc">
+<p>5D tensor blocked by 2nd dimension with block size 16 </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2baa8a642dd27982620286bffc211d0fa5e"></a>mkldnn_ABcde16b16a</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
@@ -825,6 +852,7 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2ba1955d610e32c74931b7d440e545bf208"></a>mkldnn_Abcde4a</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2badcb9cc4f39279cd5498f5f94a5c60d61"></a>mkldnn_aBcde4b</em>&nbsp;</td><td class="fielddoc">
+<p>5D tensor blocked by 2nd dimension with block size 4 </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2ba7e4dd4b223d87ac9fc21cd0bfcb398c8"></a>mkldnn_ABcde4b4a</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
@@ -841,6 +869,7 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2baea219a997d9fb0721903c71e1960af12"></a>mkldnn_BAcde16b16a</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2ba09e63568fc56f073e5e9c90ea63536c9"></a>mkldnn_aBcde8b</em>&nbsp;</td><td class="fielddoc">
+<p>5D tensor blocked by 2nd dimension with block size 8 </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2baef8739385102c51fc4b58aaf82bffc94"></a>mkldnn_ABcde8b16a2b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
@@ -863,12 +892,14 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2ba2d94262ff8b0c2e276bcc37f422b724f"></a>mkldnn_aBCde8c8b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2ba176999f6c808780074478757c3bbeb78"></a>mkldnn_aBcdef16b</em>&nbsp;</td><td class="fielddoc">
+<p>6D tensor blocked by 2nd dimension with block size 16 </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2ba079cd127f35c5ceaf9f0dea7656ca087"></a>mkldnn_aBCdef16b16c</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2ba75d5e03bf2b7a8c0fe4cd3764f47bc13"></a>mkldnn_aBCdef16c16b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2baae1bcfcd513cba4c22eea3b19618835a"></a>mkldnn_aBcdef4b</em>&nbsp;</td><td class="fielddoc">
+<p>6D tensor blocked by 2nd dimension with block size 4 </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2ba62b4831b7d078024eca87ff8785c2401"></a>mkldnn_aBCdef4c4b</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
@@ -935,28 +966,37 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2bac1276dad652d33f774104509befed715"></a>mkldnn_BAcd16b16a</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2ba7dfe5762598cfda633ddacd78fb4a11f"></a>mkldnn_format_tag_last</em>&nbsp;</td><td class="fielddoc">
-<p>Just a sentinel, not real memory format tag. </p>
-<p>Must be changed after new format tag is added. </p>
+<p>Just a sentinel, not real memory format tag. Must be changed after new format tag is added. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2ba494a09557958694ff1aece6b4667d87f"></a>mkldnn_x</em>&nbsp;</td><td class="fielddoc">
+<p>1D tensor, an alias to <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2baf2456b23837ac7255f49440542bfe561" title="plain 1D tensor ">mkldnn_a</a> </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2ba2838f6827b40434fb9584eb3efe1a0ae"></a>mkldnn_nc</em>&nbsp;</td><td class="fielddoc">
+<p>2D CNN activations tensor, an alias to <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba50ffa304d45d50709fdc192f6b286163" title="plain 2D tensor ">mkldnn_ab</a> </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2ba02e2285d34f5f84490011d8b34ffb466"></a>mkldnn_cn</em>&nbsp;</td><td class="fielddoc">
+<p>2D CNN activations tensor, an alias to <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2baa1b1a627050d3f5d5477b4bf662c1f95" title="permuted 2D tensor ">mkldnn_ba</a> </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2baa9593899799f130c7f511f09b5c1ea9d"></a>mkldnn_ncw</em>&nbsp;</td><td class="fielddoc">
+<p>3D CNN activations tensor, an alias to <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba3f9bf8e8dfb966d5fb76844fb8cc758d" title="plain 3D tensor ">mkldnn_abc</a> </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2ba23e0a15956f5406d591d776d852446a3"></a>mkldnn_nwc</em>&nbsp;</td><td class="fielddoc">
+<p>3D CNN activations tensor, an alias to <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba975488028c2512fda82be106e36c8b35" title="permuted 3D tensor ">mkldnn_acb</a> </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2baed4a51a8db128a648b942882369a06d6"></a>mkldnn_nchw</em>&nbsp;</td><td class="fielddoc">
+<p>3D CNN activations tensor, an alias to <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba63203c48f8a6ff36dbf21e8c81bca060" title="plain 4D tensor ">mkldnn_abcd</a> </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2badf1fb06f73cf8dd23ae620eea6516526"></a>mkldnn_nhwc</em>&nbsp;</td><td class="fielddoc">
+<p>4D CNN activations tensor, an alias to <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba5bdb52f009d9c8b46aaf05119cf18592" title="permuted 4D tensor ">mkldnn_acdb</a> </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2ba2d1cd3beca16be268720538840d68ec5"></a>mkldnn_chwn</em>&nbsp;</td><td class="fielddoc">
+<p>4D CNN activations tensor, an alias to <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bab4e4816a49b9e1afff5a0043fd1ff599" title="permuted 4D tensor ">mkldnn_bcda</a> </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2ba55268cf202bb4367b19fd0aeb13739ce"></a>mkldnn_ncdhw</em>&nbsp;</td><td class="fielddoc">
+<p>5D CNN activations tensor, an alias to <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bab5a0a1dc7021e96ed7e174f76f8decbc" title="plain 5D tensor ">mkldnn_abcde</a> </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2bafe9f8381139e749050fda6fb70808e1c"></a>mkldnn_ndhwc</em>&nbsp;</td><td class="fielddoc">
+<p>5D CNN activations tensor, an alias to <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bae659343dce6f6dd2eaf8f7a9455be26d" title="permuted 5D tensor ">mkldnn_acdeb</a> </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2bae5344fffd9e1e8c46ced6403c21310b1"></a>mkldnn_oi</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
@@ -1019,22 +1059,31 @@ Enumerations</h2></td></tr>
 </ul>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2bae71727c41010dc2a1498277dafd09aab"></a>mkldnn_nCdhw16c</em>&nbsp;</td><td class="fielddoc">
+<p>5D CNN activations tensor blocked by channels with block size 16, an alias to <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba337600daca5385879092af39bb5bcf1d" title="5D tensor blocked by 2nd dimension with block size 16 ">mkldnn_aBcde16b</a> </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2ba29bc98def6cc318af8067fe8fefe9c82"></a>mkldnn_nCdhw4c</em>&nbsp;</td><td class="fielddoc">
+<p>5D CNN activations tensor blocked by channels with block size 4, an alias to <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2badcb9cc4f39279cd5498f5f94a5c60d61" title="5D tensor blocked by 2nd dimension with block size 4 ">mkldnn_aBcde4b</a> </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2badbbe00d3b96e9dc4549fdec6d3e390fc"></a>mkldnn_nCdhw8c</em>&nbsp;</td><td class="fielddoc">
+<p>5D CNN activations tensor blocked by channels with block size 8, an alias to <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba09e63568fc56f073e5e9c90ea63536c9" title="5D tensor blocked by 2nd dimension with block size 8 ">mkldnn_aBcde8b</a> </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2ba5e2542092c6c47f27f8914de0b2d9789"></a>mkldnn_nChw16c</em>&nbsp;</td><td class="fielddoc">
+<p>4D CNN activations tensor blocked by channels with block size 16, an alias to <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba1db9b5dd2d65b4e087c67145de4956dd" title="4D tensor blocked by 2nd dimension with block size 16 ">mkldnn_aBcd16b</a> </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2bad81e3d361f112790f3f95c22d73d7077"></a>mkldnn_nChw4c</em>&nbsp;</td><td class="fielddoc">
+<p>4D CNN activations tensor blocked by channels with block size 4, an alias to <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba7f0839062b8e5b6e79a314bf0ab69638" title="4D tensor blocked by 2nd dimension with block size 4 ">mkldnn_aBcd4b</a> </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2bacf26dda829c10d1a318c955e1d185248"></a>mkldnn_nChw8c</em>&nbsp;</td><td class="fielddoc">
+<p>4D CNN activations tensor blocked by channels with block size 8, an alias to <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bae7b12175f86b2f257731f1995f6c3d10" title="4D tensor blocked by 2nd dimension with block size 8 ">mkldnn_aBcd8b</a> </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2ba5c42ce5904b7038fa825e6d95277f627"></a>mkldnn_nCw16c</em>&nbsp;</td><td class="fielddoc">
+<p>3D CNN activations tensor blocked by channels with block size 16, an alias to <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba04a6262fd5321bbd8bcdb86be8934c75" title="3D tensor blocked by 2nd dimension with block size 16 ">mkldnn_aBc16b</a> </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2ba9c8a0bac096d668d175cc836a464184d"></a>mkldnn_nCw4c</em>&nbsp;</td><td class="fielddoc">
+<p>3D CNN activations tensor blocked by channels with block size 4, an alias to <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba07edda513adf3feb3c8b7054354050bc" title="3D tensor blocked by 2nd dimension with block size 4 ">mkldnn_aBc4b</a> </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2bad16816e898913f0ba93a23bf6d56104f"></a>mkldnn_nCw8c</em>&nbsp;</td><td class="fielddoc">
+<p>3D CNN activations tensor blocked by channels with block size 8, an alias to <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba40a8cfda21938908ffd43fdd4408c55b" title="3D tensor blocked by 2nd dimension with block size 8 ">mkldnn_aBc8b</a> </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacc2844e341ab1c4f5b7ae1c6068f2a2ba13994fe0d8d7dbf3ff20cae3b95ee44a"></a>mkldnn_NCdhw16n16c</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
@@ -1244,8 +1293,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Kinds of padding. </p>
-<p>Define how to interpret the data in padding regions. </p>
+<p>Kinds of padding. Define how to interpret the data in padding regions. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="gga1823708d8b9d445fe177295f2b5d74bda9f226824070bdbc4afc03c0f16302fea"></a>mkldnn_padding_zero</em>&nbsp;</td><td class="fielddoc">
 <p>The data in padding regions is zero. </p>
@@ -1270,21 +1318,19 @@ Enumerations</h2></td></tr>
 <p>Undefined propagation type. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f"></a>mkldnn_forward_training</em>&nbsp;</td><td class="fielddoc">
-<p>Forward data propagation (training mode). </p>
-<p>In this mode primitives perform computations necessary for subsequent backward propagation. </p>
+<p>Forward data propagation (training mode). In this mode primitives perform computations necessary for subsequent backward propagation. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga5b98c8059c2aff8861157bf070c3f520a58a923fb6c4e1214e1505b5fa0b1e3fa"></a>mkldnn_forward_inference</em>&nbsp;</td><td class="fielddoc">
-<p>Forward data propagation (inference mode). </p>
-<p>In this mode primitives perform only computations that are necessary for inference and omit computations that are necessary only for backward propagation. </p>
+<p>Forward data propagation (inference mode). In this mode primitives perform only computations that are necessary for inference and omit computations that are necessary only for backward propagation. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga5b98c8059c2aff8861157bf070c3f520a5c5df2fcee8a2e547f27e92944774a3b"></a>mkldnn_forward_scoring</em>&nbsp;</td><td class="fielddoc">
-<p>Forward data propagation (alias for <code>mkldnn_forward_inference</code>) </p>
+<p>Forward data propagation (alias for <code>mkldnn_forward_inference</code>). </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga5b98c8059c2aff8861157bf070c3f520a941ed539f3fbf685d3dd787c255c76f9"></a>mkldnn_forward</em>&nbsp;</td><td class="fielddoc">
-<p>Forward data propagation (alias for <code>mkldnn_forward_training</code>) </p>
+<p>Forward data propagation (alias for <code>mkldnn_forward_training</code>). </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga5b98c8059c2aff8861157bf070c3f520a4dd1b6040ef9d067a38d8ffa407b763b"></a>mkldnn_backward</em>&nbsp;</td><td class="fielddoc">
-<p>Backward propagation (with respect to all parameters. </p>
+<p>Backward propagation (with respect to all parameters). </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga5b98c8059c2aff8861157bf070c3f520aefa8bd2da7ba52a0a0061cfab6cf3925"></a>mkldnn_backward_data</em>&nbsp;</td><td class="fielddoc">
 <p>Backward data propagation. </p>
@@ -1309,11 +1355,10 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Kinds of primitives. </p>
-<p>Used to implement a way to extend the library with new primitives without changing the ABI. </p>
+<p>Kinds of primitives. Used to implement a way to extend the library with new primitives without changing the ABI. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="gga4f5c189c2ba9ef6444250299f1f8e973a1ff42641253f71e6a16f23cc5334bc2d"></a>mkldnn_undefined_primitive</em>&nbsp;</td><td class="fielddoc">
-<p>Undefined primitive (XXX: why do we have it?). </p>
+<p>Undefined primitive. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga4f5c189c2ba9ef6444250299f1f8e973aa30263e89f006b199b4d2229c99f0bf8"></a>mkldnn_reorder</em>&nbsp;</td><td class="fielddoc">
 <p>A reorder primitive. </p>
@@ -1337,7 +1382,7 @@ Enumerations</h2></td></tr>
 <p>An element-wise primitive. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga4f5c189c2ba9ef6444250299f1f8e973acda8db2022e0c87c016286c098f0c31e"></a>mkldnn_softmax</em>&nbsp;</td><td class="fielddoc">
-<p>A Softmax primitive. </p>
+<p>A softmax primitive. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga4f5c189c2ba9ef6444250299f1f8e973a4962b750b011e794c6a7fcebcc5a4fb2"></a>mkldnn_pooling</em>&nbsp;</td><td class="fielddoc">
 <p>A pooling primitive. </p>
@@ -1450,9 +1495,9 @@ Enumerations</h2></td></tr>
 <p>GRU cell with linear before reset. </p>
 <p>Modification of original GRU cell. Differs from <a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97ab0c8902b2a48f9e27389d1a459f38d7d" title="GRU cell. ">mkldnn_vanilla_gru</a> in how the new memory gate is calculated: </p>
 <p class="formulaDsp">
-<img class="formulaDsp" alt="\[ c_t = tanh(W_c*x_t + b_{c_x} + r_t*(U_c*h_{t-1}+b_{c_h})) \]" src="form_20.png"/>
+<img class="formulaDsp" alt="\[ c_t = tanh(W_c*x_t + b_{c_x} + r_t*(U_c*h_{t-1}+b_{c_h})) \]" src="form_1.png"/>
 </p>
-<p> Primitive expects 4 biases on input: <img class="formulaInl" alt="$[b_{u}, b_{r}, b_{c_x}, b_{c_h}]$" src="form_21.png"/> </p>
+<p> Primitive expects 4 biases on input: <img class="formulaInl" alt="$[b_{u}, b_{r}, b_{c_x}, b_{c_h}]$" src="form_2.png"/> </p>
 </td></tr>
 </table>
 
@@ -1488,11 +1533,11 @@ Enumerations</h2></td></tr>
 <p>If specified:</p>
 <ul>
 <li>on forward propagation use scale and shift (aka scale and bias) for the batch normalization results</li>
-<li>on backward propagation (for prop_kind == <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a4dd1b6040ef9d067a38d8ffa407b763b" title="Backward propagation (with respect to all parameters. ">mkldnn_backward</a>) compute diff wrt to scale and shift (hence one extra output used)</li>
+<li>on backward propagation (for prop_kind == <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a4dd1b6040ef9d067a38d8ffa407b763b" title="Backward propagation (with respect to all parameters). ">mkldnn_backward</a>) compute diff wrt to scale and shift (hence one extra output used)</li>
 </ul>
 <p>If no specified:</p>
 <ul>
-<li>on backward propagation prop_kind == <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520aefa8bd2da7ba52a0a0061cfab6cf3925" title="Backward data propagation. ">mkldnn_backward_data</a> has the same behavior as prop_kind == <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a4dd1b6040ef9d067a38d8ffa407b763b" title="Backward propagation (with respect to all parameters. ">mkldnn_backward</a> </li>
+<li>on backward propagation prop_kind == <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520aefa8bd2da7ba52a0a0061cfab6cf3925" title="Backward data propagation. ">mkldnn_backward_data</a> has the same behavior as prop_kind == <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a4dd1b6040ef9d067a38d8ffa407b763b" title="Backward propagation (with respect to all parameters). ">mkldnn_backward</a> </li>
 </ul>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggaffe856d00e669123c95572c61cbe4162a412c26d07a6f5a365db10a379f86b153"></a>mkldnn_fuse_bn_relu</em>&nbsp;</td><td class="fielddoc">

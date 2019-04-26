@@ -102,19 +102,19 @@ Collaboration diagram for mkldnn_convolution_desc_t:</div>
 <div class="dyncontent">
 <div class="center"><img src="structmkldnn__convolution__desc__t__coll__graph.png" border="0" usemap="#mkldnn__convolution__desc__t_coll__map" alt="Collaboration graph"/></div>
 <map name="mkldnn__convolution__desc__t_coll__map" id="mkldnn__convolution__desc__t_coll__map">
-<area shape="rect" id="node2" href="structmkldnn__memory__desc__t.html" title="Memory descriptor. " alt="" coords="345,109,509,136"/><area shape="rect" id="node3" href="structmkldnn__memory__extra__desc__t.html" title="Description of extra information stored in memory. " alt="" coords="20,18,175,59"/><area shape="rect" id="node4" href="structmkldnn__rnn__packed__desc__t.html" title="Description of tensor of packed weights for rnn. " alt="" coords="5,84,189,111"/><area shape="rect" id="node5" href="structmkldnn__blocking__desc__t.html" title="Generic description of blocked data layout for most memory formats. " alt="" coords="15,135,180,161"/><area shape="rect" id="node6" href="structmkldnn__wino__desc__t.html" title="Description of tensor of weights for winograd 2x3 convolution. " alt="" coords="25,185,169,212"/></map>
+<area shape="rect" id="node2" href="structmkldnn__memory__desc__t.html" title="Memory descriptor. The description is based on a number of dimensions, dimensions themselves..." alt="" coords="345,109,509,136"/><area shape="rect" id="node3" href="structmkldnn__memory__extra__desc__t.html" title="Description of extra information stored in memory. " alt="" coords="20,18,175,59"/><area shape="rect" id="node4" href="structmkldnn__rnn__packed__desc__t.html" title="Description of tensor of packed weights for rnn. " alt="" coords="5,84,189,111"/><area shape="rect" id="node5" href="structmkldnn__blocking__desc__t.html" title="Generic description of blocked data layout for most memory formats. " alt="" coords="15,135,180,161"/><area shape="rect" id="node6" href="structmkldnn__wino__desc__t.html" title="Description of tensor of weights for winograd 2x3 convolution. " alt="" coords="25,185,169,212"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a682c28b217c33bb555d01b934faa8778"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga4f5c189c2ba9ef6444250299f1f8e973">mkldnn_primitive_kind_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__convolution__desc__t.html#a682c28b217c33bb555d01b934faa8778">primitive_kind</a></td></tr>
-<tr class="memdesc:a682c28b217c33bb555d01b934faa8778"><td class="mdescLeft">&#160;</td><td class="mdescRight">The kind of primitive.  <a href="#a682c28b217c33bb555d01b934faa8778">More...</a><br/></td></tr>
+<tr class="memdesc:a682c28b217c33bb555d01b934faa8778"><td class="mdescLeft">&#160;</td><td class="mdescRight">The kind of primitive. Used for self-identifying the primitive descriptor. Must be <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a88592adccf64d1fd271ed6e21d66b271" title="A convolution primitive. ">mkldnn_convolution</a>.  <a href="#a682c28b217c33bb555d01b934faa8778">More...</a><br/></td></tr>
 <tr class="separator:a682c28b217c33bb555d01b934faa8778"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f644d4eadb8e4fce81023381b0f2d0c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga5b98c8059c2aff8861157bf070c3f520">mkldnn_prop_kind_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__convolution__desc__t.html#a4f644d4eadb8e4fce81023381b0f2d0c">prop_kind</a></td></tr>
-<tr class="memdesc:a4f644d4eadb8e4fce81023381b0f2d0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The kind of propagation.  <a href="#a4f644d4eadb8e4fce81023381b0f2d0c">More...</a><br/></td></tr>
+<tr class="memdesc:a4f644d4eadb8e4fce81023381b0f2d0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The kind of propagation. Possible values: <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f" title="Forward data propagation (training mode). In this mode primitives perform computations necessary for ...">mkldnn_forward_training</a>, <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a58a923fb6c4e1214e1505b5fa0b1e3fa" title="Forward data propagation (inference mode). In this mode primitives perform only computations that are...">mkldnn_forward_inference</a>, <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520aefa8bd2da7ba52a0a0061cfab6cf3925" title="Backward data propagation. ">mkldnn_backward_data</a>, <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a6d7c0a418ef16b8ade0b0fa1109c4b2c" title="Backward weights propagation. ">mkldnn_backward_weights</a>, and <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520aea8ef1582a476c8b2fe5741a4f7b5d23" title="Backward bias propagation. ">mkldnn_backward_bias</a>.  <a href="#a4f644d4eadb8e4fce81023381b0f2d0c">More...</a><br/></td></tr>
 <tr class="separator:a4f644d4eadb8e4fce81023381b0f2d0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9433e7ea4660fdc9ce3602065fd3ee6c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#gaa27d43cdd1e439cc41a9580d23ce3e97">mkldnn_alg_kind_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__convolution__desc__t.html#a9433e7ea4660fdc9ce3602065fd3ee6c">alg_kind</a></td></tr>
-<tr class="memdesc:a9433e7ea4660fdc9ce3602065fd3ee6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The kind of the convolution algorithm.  <a href="#a9433e7ea4660fdc9ce3602065fd3ee6c">More...</a><br/></td></tr>
+<tr class="memdesc:a9433e7ea4660fdc9ce3602065fd3ee6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The kind of the convolution algorithm. Possible values: <a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97ab90fddd0ca784280b9a37b3cc6fee0a3" title="Direct convolution. ">mkldnn_convolution_direct</a>.  <a href="#a9433e7ea4660fdc9ce3602065fd3ee6c">More...</a><br/></td></tr>
 <tr class="separator:a9433e7ea4660fdc9ce3602065fd3ee6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1ac756cd9506ffaf1e7d68e334e9420"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__convolution__desc__t.html#ac1ac756cd9506ffaf1e7d68e334e9420">src_desc</a></td></tr>
 <tr class="memdesc:ac1ac756cd9506ffaf1e7d68e334e9420"><td class="mdescLeft">&#160;</td><td class="mdescRight">Source memory descriptor.  <a href="#ac1ac756cd9506ffaf1e7d68e334e9420">More...</a><br/></td></tr>
@@ -147,13 +147,13 @@ Public Attributes</h2></td></tr>
 <tr class="memdesc:ae06d5bc00c7d8c3febf2da9b3d93ed0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convolution dilates in each spatial dimension.  <a href="#ae06d5bc00c7d8c3febf2da9b3d93ed0c">More...</a><br/></td></tr>
 <tr class="separator:ae06d5bc00c7d8c3febf2da9b3d93ed0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a17fe86eb25fef8516a92863f2a58d1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__convolution__desc__t.html#a3a17fe86eb25fef8516a92863f2a58d1">padding</a> [2]</td></tr>
-<tr class="memdesc:a3a17fe86eb25fef8516a92863f2a58d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Padding in each spatial dimension.  <a href="#a3a17fe86eb25fef8516a92863f2a58d1">More...</a><br/></td></tr>
+<tr class="memdesc:a3a17fe86eb25fef8516a92863f2a58d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Padding in each spatial dimension. padding[0] is a padding in the beginning (<code>padding_l</code>), padding[1] is a padding in the end (<code>padding_r</code>).  <a href="#a3a17fe86eb25fef8516a92863f2a58d1">More...</a><br/></td></tr>
 <tr class="separator:a3a17fe86eb25fef8516a92863f2a58d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2801dcab800144330e52eea6ce664353"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga1823708d8b9d445fe177295f2b5d74bd">mkldnn_padding_kind_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__convolution__desc__t.html#a2801dcab800144330e52eea6ce664353">padding_kind</a></td></tr>
 <tr class="memdesc:a2801dcab800144330e52eea6ce664353"><td class="mdescLeft">&#160;</td><td class="mdescRight">The kind of padding to use.  <a href="#a2801dcab800144330e52eea6ce664353">More...</a><br/></td></tr>
 <tr class="separator:a2801dcab800144330e52eea6ce664353"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a755505cf62a730a64378562d4a96b4ee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga826b2a9be4d94ac17f99bacac6d0cb29">mkldnn_data_type_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__convolution__desc__t.html#a755505cf62a730a64378562d4a96b4ee">accum_data_type</a></td></tr>
-<tr class="memdesc:a755505cf62a730a64378562d4a96b4ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">The accumulator data type.  <a href="#a755505cf62a730a64378562d4a96b4ee">More...</a><br/></td></tr>
+<tr class="memdesc:a755505cf62a730a64378562d4a96b4ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">The accumulator data type. Initialized automatically.  <a href="#a755505cf62a730a64378562d4a96b4ee">More...</a><br/></td></tr>
 <tr class="separator:a755505cf62a730a64378562d4a96b4ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -169,8 +169,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>The kind of primitive. </p>
-<p>Used for self-identifying the primitive descriptor. Must be <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a88592adccf64d1fd271ed6e21d66b271" title="A convolution primitive. ">mkldnn_convolution</a>. </p>
+<p>The kind of primitive. Used for self-identifying the primitive descriptor. Must be <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a88592adccf64d1fd271ed6e21d66b271" title="A convolution primitive. ">mkldnn_convolution</a>. </p>
 
 </div>
 </div>
@@ -184,8 +183,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>The kind of propagation. </p>
-<p>Possible values: <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f" title="Forward data propagation (training mode). ">mkldnn_forward_training</a>, <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a58a923fb6c4e1214e1505b5fa0b1e3fa" title="Forward data propagation (inference mode). ">mkldnn_forward_inference</a>, <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520aefa8bd2da7ba52a0a0061cfab6cf3925" title="Backward data propagation. ">mkldnn_backward_data</a>, <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a6d7c0a418ef16b8ade0b0fa1109c4b2c" title="Backward weights propagation. ">mkldnn_backward_weights</a>, and <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520aea8ef1582a476c8b2fe5741a4f7b5d23" title="Backward bias propagation. ">mkldnn_backward_bias</a>. </p>
+<p>The kind of propagation. Possible values: <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f" title="Forward data propagation (training mode). In this mode primitives perform computations necessary for ...">mkldnn_forward_training</a>, <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a58a923fb6c4e1214e1505b5fa0b1e3fa" title="Forward data propagation (inference mode). In this mode primitives perform only computations that are...">mkldnn_forward_inference</a>, <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520aefa8bd2da7ba52a0a0061cfab6cf3925" title="Backward data propagation. ">mkldnn_backward_data</a>, <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a6d7c0a418ef16b8ade0b0fa1109c4b2c" title="Backward weights propagation. ">mkldnn_backward_weights</a>, and <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520aea8ef1582a476c8b2fe5741a4f7b5d23" title="Backward bias propagation. ">mkldnn_backward_bias</a>. </p>
 
 </div>
 </div>
@@ -199,8 +197,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>The kind of the convolution algorithm. </p>
-<p>Possible values: <a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97ab90fddd0ca784280b9a37b3cc6fee0a3" title="Direct convolution. ">mkldnn_convolution_direct</a>. </p>
+<p>The kind of the convolution algorithm. Possible values: <a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97ab90fddd0ca784280b9a37b3cc6fee0a3" title="Direct convolution. ">mkldnn_convolution_direct</a>. </p>
 
 </div>
 </div>
@@ -354,8 +351,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Padding in each spatial dimension. </p>
-<p>padding[0] is a padding in the beginning (<code>padding_l</code>), padding[1] is a padding in the end (<code>padding_r</code>). </p>
+<p>Padding in each spatial dimension. padding[0] is a padding in the beginning (<code>padding_l</code>), padding[1] is a padding in the end (<code>padding_r</code>). </p>
 
 </div>
 </div>
@@ -383,8 +379,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>The accumulator data type. </p>
-<p>Initialized automatically. </p>
+<p>The accumulator data type. Initialized automatically. </p>
 
 </div>
 </div>
