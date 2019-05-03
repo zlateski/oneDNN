@@ -14,6 +14,7 @@
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
+<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -43,6 +44,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="examples.html"><span>Examples</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -74,10 +76,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions.html"><span>All</span></a></li>
       <li class="current"><a href="functions_func.html"><span>Functions</span></a></li>
       <li><a href="functions_vars.html"><span>Variables</span></a></li>
-      <li><a href="functions_type.html"><span>Typedefs</span></a></li>
       <li><a href="functions_enum.html"><span>Enumerations</span></a></li>
       <li><a href="functions_eval.html"><span>Enumerator</span></a></li>
-      <li><a href="functions_rela.html"><span>Related&#160;Functions</span></a></li>
     </ul>
   </div>
   <div id="navrow4" class="tabs3">
@@ -94,7 +94,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions_func_0x6c.html#index_l"><span>l</span></a></li>
       <li><a href="functions_func_0x6d.html#index_m"><span>m</span></a></li>
       <li><a href="functions_func_0x6e.html#index_n"><span>n</span></a></li>
-      <li><a href="functions_func_0x6f.html#index_o"><span>o</span></a></li>
       <li><a href="functions_func_0x70.html#index_p"><span>p</span></a></li>
       <li><a href="functions_func_0x71.html#index_q"><span>q</span></a></li>
       <li><a href="functions_func_0x72.html#index_r"><span>r</span></a></li>
@@ -110,7 +109,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -126,21 +125,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>get()
 : <a class="el" href="classmkldnn_1_1handle.html#a169ef3354e8037660489fe3ec1b876a0">mkldnn::handle&lt; T, traits &gt;</a>
 </li>
-<li>get_activation()
-: <a class="el" href="structmkldnn_1_1rnn__cell_1_1desc.html#ad37386809746ee573cc5a7c99bc4f889">mkldnn::rnn_cell::desc</a>
-</li>
-<li>get_alpha()
-: <a class="el" href="structmkldnn_1_1rnn__cell_1_1desc.html#ad2140b5821334486cb97838f99907049">mkldnn::rnn_cell::desc</a>
-</li>
-<li>get_backend_kind()
-: <a class="el" href="structmkldnn_1_1engine.html#a34fd304d92f0a426190b91eb60c5579d">mkldnn::engine</a>
-</li>
-<li>get_cell_kind()
-: <a class="el" href="structmkldnn_1_1rnn__cell_1_1desc.html#a1ee375dd4a82a09e30ad8519a16611b5">mkldnn::rnn_cell::desc</a>
-</li>
-<li>get_clipping()
-: <a class="el" href="structmkldnn_1_1rnn__cell_1_1desc.html#a949947bc80b1bc401fdd0d71c5d1022f">mkldnn::rnn_cell::desc</a>
-</li>
 <li>get_count()
 : <a class="el" href="structmkldnn_1_1engine.html#a27e38cf2b95a0e29713c726ed702fe70">mkldnn::engine</a>
 </li>
@@ -152,16 +136,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>get_engine()
 : <a class="el" href="structmkldnn_1_1memory.html#a051d447c5cd56f79001add98a0b0e0cf">mkldnn::memory</a>
-, <a class="el" href="structmkldnn_1_1reorder_1_1primitive__desc.html#a885ba6e92afdd245508a50bbbd46d1ad">mkldnn::reorder::primitive_desc</a>
-, <a class="el" href="structmkldnn_1_1concat_1_1primitive__desc.html#af78445af4c6965c97d82d63dc2310589">mkldnn::concat::primitive_desc</a>
-, <a class="el" href="structmkldnn_1_1sum_1_1primitive__desc.html#abe57059625c850ee721d699d2d9b0953">mkldnn::sum::primitive_desc</a>
-, <a class="el" href="structmkldnn_1_1primitive__desc.html#a03a573d2661461686d4317a2e02e6e51">mkldnn::primitive_desc</a>
-</li>
-<li>get_gates_count()
-: <a class="el" href="structmkldnn_1_1rnn__cell_1_1desc.html#aa3f6d748b490a5fcd1e68f28839f64cb">mkldnn::rnn_cell::desc</a>
-</li>
-<li>get_kind()
-: <a class="el" href="structmkldnn_1_1engine.html#ae007548427d27534d1cfd113e37cdab8">mkldnn::engine</a>
 </li>
 <li>get_output_scales()
 : <a class="el" href="structmkldnn_1_1primitive__attr.html#aa91e6f5640f7fb0e5da943e0e45dab3f">mkldnn::primitive_attr</a>
@@ -175,9 +149,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>get_post_ops()
 : <a class="el" href="structmkldnn_1_1primitive__attr.html#a999c92505cbdd4e381a988920307806b">mkldnn::primitive_attr</a>
 </li>
-<li>get_primitive_attr()
-: <a class="el" href="structmkldnn_1_1primitive__desc.html#a7441aaa81ef6fa1e489916d9487c5c21">mkldnn::primitive_desc</a>
-</li>
 <li>get_primitive_desc()
 : <a class="el" href="group__cpp__api__utils.html#gad620dea4032ae111acef2a46e0902722">mkldnn::primitive</a>
 </li>
@@ -186,9 +157,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>get_size()
 : <a class="el" href="structmkldnn_1_1memory_1_1desc.html#a273a35ba51f1ce0185e1703cc96d9dec">mkldnn::memory::desc</a>
-</li>
-<li>get_state_count()
-: <a class="el" href="structmkldnn_1_1rnn__cell_1_1desc.html#a946fb556d79ddb9fd983ac9aea49cf79">mkldnn::rnn_cell::desc</a>
 </li>
 </ul>
 </div><!-- contents -->

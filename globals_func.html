@@ -14,6 +14,7 @@
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
+<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -43,6 +44,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li><a href="examples.html"><span>Examples</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -88,7 +90,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -101,9 +103,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 &#160;
 
 <h3><a class="anchor" id="index_m"></a>- m -</h3><ul>
-<li>mkldnn_alg_kind2str()
-: <a class="el" href="mkldnn__debug_8h.html#a2deda56952b03042925709fcb6225fd2">mkldnn_debug.h</a>
-</li>
 <li>mkldnn_batch_normalization_backward_desc_init()
 : <a class="el" href="group__c__api__batch__normalization.html#ga04b42bb3b0185826bde30fbfc94e965e">mkldnn.h</a>
 </li>
@@ -149,9 +148,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>mkldnn_dilated_deconvolution_forward_desc_init()
 : <a class="el" href="group__c__api__deconvolution.html#ga1685811c6843a0f50a3abc8584996c98">mkldnn.h</a>
 </li>
-<li>mkldnn_dt2str()
-: <a class="el" href="mkldnn__debug_8h.html#aacb9e9cd34c3c907795372985647b046">mkldnn_debug.h</a>
-</li>
 <li>mkldnn_eltwise_backward_desc_init()
 : <a class="el" href="group__c__api__eltwise.html#ga6f5a8f5b448140e651b14aba6a6fdd6e">mkldnn.h</a>
 </li>
@@ -176,17 +172,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>mkldnn_engine_get_kind()
 : <a class="el" href="group__c__api__engine.html#ga5b2114bfa8d837ac350e86b8999c9a3a">mkldnn.h</a>
 </li>
-<li>mkldnn_fmt_kind2str()
-: <a class="el" href="mkldnn__debug_8h.html#ab11ef053624afbe9f0c153d3b9403ba2">mkldnn_debug.h</a>
-</li>
-<li>mkldnn_fmt_tag2str()
-: <a class="el" href="mkldnn__debug_8h.html#a9c42787318d9f6cd56f31c9c48470acd">mkldnn_debug.h</a>
-</li>
-<li>mkldnn_gemm_s8s8s32()
-: <a class="el" href="group__c__api__blas.html#gaccea9d2294cb09f2119f6b17c0aefde0">mkldnn.h</a>
-</li>
 <li>mkldnn_gemm_s8u8s32()
 : <a class="el" href="group__c__api__blas.html#ga6c91c22f4490ce79d8fbc7e4a28511fe">mkldnn.h</a>
+</li>
+<li>mkldnn_gru_backward_desc_init()
+: <a class="el" href="group__c__api__rnn.html#ga22776feb440a0a83cc085361d85f4856">mkldnn.h</a>
+</li>
+<li>mkldnn_gru_forward_desc_init()
+: <a class="el" href="group__c__api__rnn.html#ga7ddb30530dad0771b2d9b269051b4a6b">mkldnn.h</a>
 </li>
 <li>mkldnn_inner_product_backward_data_desc_init()
 : <a class="el" href="group__c__api__inner__product.html#ga42908f0482b4f21c42b3f9d0d606fb1e">mkldnn.h</a>
@@ -197,11 +190,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>mkldnn_inner_product_forward_desc_init()
 : <a class="el" href="group__c__api__inner__product.html#ga1e67b4062caeb799487a0a5db4750e4c">mkldnn.h</a>
 </li>
+<li>mkldnn_lbr_gru_backward_desc_init()
+: <a class="el" href="group__c__api__rnn.html#ga768485cea58c3805aa50206728c85ba4">mkldnn.h</a>
+</li>
+<li>mkldnn_lbr_gru_forward_desc_init()
+: <a class="el" href="group__c__api__rnn.html#ga1d0bf5956c12c3e6ce2f484b78ff9308">mkldnn.h</a>
+</li>
 <li>mkldnn_lrn_backward_desc_init()
 : <a class="el" href="group__c__api__lrn.html#gaa8845e92565d29c33c144423852277a7">mkldnn.h</a>
 </li>
 <li>mkldnn_lrn_forward_desc_init()
 : <a class="el" href="group__c__api__lrn.html#ga45738935851797f2c4ef374df53d9ef5">mkldnn.h</a>
+</li>
+<li>mkldnn_lstm_backward_desc_init()
+: <a class="el" href="group__c__api__rnn.html#gacd875722750afb2bf5118e6d215aca0c">mkldnn.h</a>
+</li>
+<li>mkldnn_lstm_forward_desc_init()
+: <a class="el" href="group__c__api__rnn.html#ga4fcb8859057c24dab3c485775c913841">mkldnn.h</a>
 </li>
 <li>mkldnn_md2dim_str()
 : <a class="el" href="mkldnn__debug_8h.html#a648e51611e1ff731536e903cb93c35b3">mkldnn_debug.h</a>
@@ -248,15 +253,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>mkldnn_memory_unmap_data()
 : <a class="el" href="group__c__api__memory.html#gac61b4fdaad4d6af2e1ea4e0d30ef29cb">mkldnn.h</a>
 </li>
-<li>mkldnn_mkldnn_backend_kind_t2str()
-: <a class="el" href="mkldnn__debug_8h.html#a36e5797c57662c6bc3feae0076be8d73">mkldnn_debug.h</a>
-</li>
-<li>mkldnn_mkldnn_scratchpad_mode_t2str()
-: <a class="el" href="mkldnn__debug_8h.html#acdbef6e3188a430ee69813c77693e363">mkldnn_debug.h</a>
-</li>
-<li>mkldnn_mkldnn_transpose_t2str()
-: <a class="el" href="mkldnn__debug_8h.html#a01b6c27211a339e4fccc261f704009b8">mkldnn_debug.h</a>
-</li>
 <li>mkldnn_pooling_backward_desc_init()
 : <a class="el" href="group__c__api__pooling.html#gaa2da5d62e503bcb81a841d9f911e6ea1">mkldnn.h</a>
 </li>
@@ -286,9 +282,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>mkldnn_post_ops_len()
 : <a class="el" href="group__c__api__attributes__post__ops.html#gae8387e036f328963f24918af855f46d9">mkldnn.h</a>
-</li>
-<li>mkldnn_prim_kind2str()
-: <a class="el" href="mkldnn__debug_8h.html#a89c004cf1e4ab56041820f0f794622f2">mkldnn_debug.h</a>
 </li>
 <li>mkldnn_primitive_attr_clone()
 : <a class="el" href="group__c__api__attributes.html#gae07196198f1d52306bd467aee1183f4c">mkldnn.h</a>
@@ -368,29 +361,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>mkldnn_primitive_get_primitive_desc()
 : <a class="el" href="group__c__api__primitive__common.html#ga6ff9030a5947b4e3f9e8296c86059935">mkldnn.h</a>
 </li>
-<li>mkldnn_prop_kind2str()
-: <a class="el" href="mkldnn__debug_8h.html#ae075a6bd46f2f5d5819457b4998f3193">mkldnn_debug.h</a>
-</li>
 <li>mkldnn_reorder_primitive_desc_create()
 : <a class="el" href="group__c__api__reorder.html#ga042687f1527f4a08eb50cbac86b99ba4">mkldnn.h</a>
-</li>
-<li>mkldnn_rnn_backward_desc_init()
-: <a class="el" href="group__c__api__rnn.html#ga4f0dbc9d0a8e2b71ad366cf86b7a2cba">mkldnn.h</a>
-</li>
-<li>mkldnn_rnn_cell_desc_init()
-: <a class="el" href="group__c__api__rnn.html#ga9f7ffb1f6f362bbe5975700c916b6a7e">mkldnn.h</a>
-</li>
-<li>mkldnn_rnn_cell_get_gates_count()
-: <a class="el" href="group__c__api__rnn.html#gaaa19b8f0624d36b2c0197ec547190e75">mkldnn.h</a>
-</li>
-<li>mkldnn_rnn_cell_get_states_count()
-: <a class="el" href="group__c__api__rnn.html#ga5282631e9fb6733f40a1cc180825954d">mkldnn.h</a>
-</li>
-<li>mkldnn_rnn_direction2str()
-: <a class="el" href="mkldnn__debug_8h.html#a2bad8464a1ae21b43c63b8f95f9f7854">mkldnn_debug.h</a>
-</li>
-<li>mkldnn_rnn_forward_desc_init()
-: <a class="el" href="group__c__api__rnn.html#ga5bfe35f13beaa9c90d3e5841d18e07d8">mkldnn.h</a>
 </li>
 <li>mkldnn_set_jit_dump()
 : <a class="el" href="group__c__api__service.html#gaf27e629cc0ade8f788a46a9ba3e22a06">mkldnn.h</a>
@@ -413,9 +385,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>mkldnn_softmax_forward_desc_init()
 : <a class="el" href="group__c__api__softmax.html#gaf9ea3543dc0b1d9734c7290e90ccce23">mkldnn.h</a>
 </li>
-<li>mkldnn_status2str()
-: <a class="el" href="mkldnn__debug_8h.html#a4195f89352a78c299665715f7e688e46">mkldnn_debug.h</a>
-</li>
 <li>mkldnn_stream_create()
 : <a class="el" href="group__c__api__stream.html#ga762c9bc77e3d25fb30ece922c1545df7">mkldnn.h</a>
 </li>
@@ -427,6 +396,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>mkldnn_sum_primitive_desc_create()
 : <a class="el" href="group__c__api__sum.html#ga9a6ce5cde255dd11bfd1e2ba900c5c16">mkldnn.h</a>
+</li>
+<li>mkldnn_vanilla_rnn_backward_desc_init()
+: <a class="el" href="group__c__api__rnn.html#gaf47dc86ad2309e42fdbc87e9948895f5">mkldnn.h</a>
+</li>
+<li>mkldnn_vanilla_rnn_forward_desc_init()
+: <a class="el" href="group__c__api__rnn.html#ga33a1440422a7cb5dc714a4b1884782be">mkldnn.h</a>
 </li>
 <li>mkldnn_version()
 : <a class="el" href="group__c__api__service.html#gac15d131cbfde7ff627fe0bffef2acef1">mkldnn.h</a>

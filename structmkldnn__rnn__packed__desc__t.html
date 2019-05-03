@@ -14,6 +14,7 @@
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
+<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -43,6 +44,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="examples.html"><span>Examples</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -74,7 +76,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -86,7 +88,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="structmkldnn__rnn__packed__desc__t-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">mkldnn_rnn_packed_desc_t Struct Reference<div class="ingroups"><a class="el" href="group__c__api__types__memory.html">Memory</a></div></div>  </div>
@@ -97,112 +98,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
  <a href="structmkldnn__rnn__packed__desc__t.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="mkldnn__types_8h_source.html">mkldnn_types.h</a>&gt;</code></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:aa1353607b9e8ce334c39929e5e1080a6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__memory.html#ga0b72d4deb16ce5703dc1641c80e9de87">mkldnn_rnn_packed_memory_format_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__rnn__packed__desc__t.html#aa1353607b9e8ce334c39929e5e1080a6">format</a></td></tr>
-<tr class="separator:aa1353607b9e8ce334c39929e5e1080a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3455db9fa85140ba598877f0f501d56c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__rnn__packed__desc__t.html#a3455db9fa85140ba598877f0f501d56c">n_parts</a></td></tr>
-<tr class="separator:a3455db9fa85140ba598877f0f501d56c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b2944bc5d3701332ad68c4e654e1e0d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__rnn__packed__desc__t.html#a8b2944bc5d3701332ad68c4e654e1e0d">n</a></td></tr>
-<tr class="separator:a8b2944bc5d3701332ad68c4e654e1e0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a14bb6c0c06787505602b7f2eb968bbfd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__rnn__packed__desc__t.html#a14bb6c0c06787505602b7f2eb968bbfd">parts</a> [<a class="el" href="group__c__api__types__memory.html#ga09e605320955705ff8d2561026995b47">MKLDNN_RNN_MAX_N_PARTS</a>]</td></tr>
-<tr class="separator:a14bb6c0c06787505602b7f2eb968bbfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77d5aacb2722fff65a8c72075b61b715"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__rnn__packed__desc__t.html#a77d5aacb2722fff65a8c72075b61b715">part_pack_size</a> [<a class="el" href="group__c__api__types__memory.html#ga09e605320955705ff8d2561026995b47">MKLDNN_RNN_MAX_N_PARTS</a>]</td></tr>
-<tr class="separator:a77d5aacb2722fff65a8c72075b61b715"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0653d6ce8928edd52e8326c444d8b8db"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__rnn__packed__desc__t.html#a0653d6ce8928edd52e8326c444d8b8db">offset_compensation</a></td></tr>
-<tr class="separator:a0653d6ce8928edd52e8326c444d8b8db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d28710f39fd0b5c0d2d9fae1cad7591"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__rnn__packed__desc__t.html#a6d28710f39fd0b5c0d2d9fae1cad7591">size</a></td></tr>
-<tr class="separator:a6d28710f39fd0b5c0d2d9fae1cad7591"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Description of tensor of packed weights for rnn. </p>
-</div><h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="aa1353607b9e8ce334c39929e5e1080a6"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__c__api__types__memory.html#ga0b72d4deb16ce5703dc1641c80e9de87">mkldnn_rnn_packed_memory_format_t</a> mkldnn_rnn_packed_desc_t::format</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a3455db9fa85140ba598877f0f501d56c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int mkldnn_rnn_packed_desc_t::n_parts</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a8b2944bc5d3701332ad68c4e654e1e0d"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int mkldnn_rnn_packed_desc_t::n</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a14bb6c0c06787505602b7f2eb968bbfd"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int mkldnn_rnn_packed_desc_t::parts[<a class="el" href="group__c__api__types__memory.html#ga09e605320955705ff8d2561026995b47">MKLDNN_RNN_MAX_N_PARTS</a>]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a77d5aacb2722fff65a8c72075b61b715"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">size_t mkldnn_rnn_packed_desc_t::part_pack_size[<a class="el" href="group__c__api__types__memory.html#ga09e605320955705ff8d2561026995b47">MKLDNN_RNN_MAX_N_PARTS</a>]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a0653d6ce8928edd52e8326c444d8b8db"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">size_t mkldnn_rnn_packed_desc_t::offset_compensation</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a6d28710f39fd0b5c0d2d9fae1cad7591"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">size_t mkldnn_rnn_packed_desc_t::size</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<hr/>The documentation for this struct was generated from the following file:<ul>
+</div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li>include/<a class="el" href="mkldnn__types_8h_source.html">mkldnn_types.h</a></li>
 </ul>
 </div><!-- contents -->

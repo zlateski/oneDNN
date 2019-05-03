@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['simplenet_20example',['SimpleNet Example',['../ex_simplenet.html',1,'']]]
+  ['shuffle',['Shuffle',['../dev_guide_shuffle.html',1,'']]],
+  ['softmax',['Softmax',['../dev_guide_softmax.html',1,'']]],
+  ['sum',['Sum',['../dev_guide_sum.html',1,'']]]
 ];

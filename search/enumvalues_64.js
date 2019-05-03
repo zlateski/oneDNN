@@ -7,7 +7,6 @@ var searchData=
   ['deconvolution_5fwinograd',['deconvolution_winograd',['../group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076aeb5da82914413424bf941fa04eb065aa',1,'mkldnn']]],
   ['default_5fflags',['default_flags',['../structmkldnn_1_1stream.html#ac0920a906daeabd4ff290eb4aa9067c7aeffb2d149f637ca450767d77cd927108',1,'mkldnn::stream']]],
   ['default_5forder',['default_order',['../structmkldnn_1_1stream.html#ac0920a906daeabd4ff290eb4aa9067c7aeedb23e15d8dfa33877588b9bcf9df8c',1,'mkldnn::stream']]],
-  ['dhwio',['dhwio',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaeafcb3d831eef23cde0b46f64646327c',1,'mkldnn::memory']]],
   ['diff_5fdst_5fmd',['diff_dst_md',['../group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9ab731735b7280a17b7b03c964cf9b1967',1,'mkldnn']]],
   ['diff_5fsrc_5fmd',['diff_src_md',['../group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a8f85b9dfff73532e30d8aab798020233',1,'mkldnn']]],
   ['diff_5fweights_5fmd',['diff_weights_md',['../group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a345e134a47299ca126f8cc4aeeeb05ac',1,'mkldnn']]],

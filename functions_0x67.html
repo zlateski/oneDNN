@@ -14,6 +14,7 @@
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
+<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -43,6 +44,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="examples.html"><span>Examples</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -74,10 +76,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li class="current"><a href="functions.html"><span>All</span></a></li>
       <li><a href="functions_func.html"><span>Functions</span></a></li>
       <li><a href="functions_vars.html"><span>Variables</span></a></li>
-      <li><a href="functions_type.html"><span>Typedefs</span></a></li>
       <li><a href="functions_enum.html"><span>Enumerations</span></a></li>
       <li><a href="functions_eval.html"><span>Enumerator</span></a></li>
-      <li><a href="functions_rela.html"><span>Related&#160;Functions</span></a></li>
     </ul>
   </div>
   <div id="navrow4" class="tabs3">
@@ -100,11 +100,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions_0x71.html#index_q"><span>q</span></a></li>
       <li><a href="functions_0x72.html#index_r"><span>r</span></a></li>
       <li><a href="functions_0x73.html#index_s"><span>s</span></a></li>
-      <li><a href="functions_0x74.html#index_t"><span>t</span></a></li>
       <li><a href="functions_0x75.html#index_u"><span>u</span></a></li>
       <li><a href="functions_0x76.html#index_v"><span>v</span></a></li>
       <li><a href="functions_0x77.html#index_w"><span>w</span></a></li>
-      <li><a href="functions_0x78.html#index_x"><span>x</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -113,7 +111,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -123,26 +121,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 
 <div class="contents">
-<div class="textblock">Here is a list of all class members with links to the classes they belong to:</div>
+<div class="textblock">Here is a list of all documented class members with links to the class documentation for each member:</div>
 
 <h3><a class="anchor" id="index_g"></a>- g -</h3><ul>
 <li>get()
 : <a class="el" href="classmkldnn_1_1handle.html#a169ef3354e8037660489fe3ec1b876a0">mkldnn::handle&lt; T, traits &gt;</a>
-</li>
-<li>get_activation()
-: <a class="el" href="structmkldnn_1_1rnn__cell_1_1desc.html#ad37386809746ee573cc5a7c99bc4f889">mkldnn::rnn_cell::desc</a>
-</li>
-<li>get_alpha()
-: <a class="el" href="structmkldnn_1_1rnn__cell_1_1desc.html#ad2140b5821334486cb97838f99907049">mkldnn::rnn_cell::desc</a>
-</li>
-<li>get_backend_kind()
-: <a class="el" href="structmkldnn_1_1engine.html#a34fd304d92f0a426190b91eb60c5579d">mkldnn::engine</a>
-</li>
-<li>get_cell_kind()
-: <a class="el" href="structmkldnn_1_1rnn__cell_1_1desc.html#a1ee375dd4a82a09e30ad8519a16611b5">mkldnn::rnn_cell::desc</a>
-</li>
-<li>get_clipping()
-: <a class="el" href="structmkldnn_1_1rnn__cell_1_1desc.html#a949947bc80b1bc401fdd0d71c5d1022f">mkldnn::rnn_cell::desc</a>
 </li>
 <li>get_count()
 : <a class="el" href="structmkldnn_1_1engine.html#a27e38cf2b95a0e29713c726ed702fe70">mkldnn::engine</a>
@@ -155,16 +138,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>get_engine()
 : <a class="el" href="structmkldnn_1_1memory.html#a051d447c5cd56f79001add98a0b0e0cf">mkldnn::memory</a>
-, <a class="el" href="structmkldnn_1_1reorder_1_1primitive__desc.html#a885ba6e92afdd245508a50bbbd46d1ad">mkldnn::reorder::primitive_desc</a>
-, <a class="el" href="structmkldnn_1_1concat_1_1primitive__desc.html#af78445af4c6965c97d82d63dc2310589">mkldnn::concat::primitive_desc</a>
-, <a class="el" href="structmkldnn_1_1sum_1_1primitive__desc.html#abe57059625c850ee721d699d2d9b0953">mkldnn::sum::primitive_desc</a>
-, <a class="el" href="structmkldnn_1_1primitive__desc.html#a03a573d2661461686d4317a2e02e6e51">mkldnn::primitive_desc</a>
-</li>
-<li>get_gates_count()
-: <a class="el" href="structmkldnn_1_1rnn__cell_1_1desc.html#aa3f6d748b490a5fcd1e68f28839f64cb">mkldnn::rnn_cell::desc</a>
-</li>
-<li>get_kind()
-: <a class="el" href="structmkldnn_1_1engine.html#ae007548427d27534d1cfd113e37cdab8">mkldnn::engine</a>
 </li>
 <li>get_output_scales()
 : <a class="el" href="structmkldnn_1_1primitive__attr.html#aa91e6f5640f7fb0e5da943e0e45dab3f">mkldnn::primitive_attr</a>
@@ -178,9 +151,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>get_post_ops()
 : <a class="el" href="structmkldnn_1_1primitive__attr.html#a999c92505cbdd4e381a988920307806b">mkldnn::primitive_attr</a>
 </li>
-<li>get_primitive_attr()
-: <a class="el" href="structmkldnn_1_1primitive__desc.html#a7441aaa81ef6fa1e489916d9487c5c21">mkldnn::primitive_desc</a>
-</li>
 <li>get_primitive_desc()
 : <a class="el" href="group__cpp__api__utils.html#gad620dea4032ae111acef2a46e0902722">mkldnn::primitive</a>
 </li>
@@ -189,168 +159,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>get_size()
 : <a class="el" href="structmkldnn_1_1memory_1_1desc.html#a273a35ba51f1ce0185e1703cc96d9dec">mkldnn::memory::desc</a>
-</li>
-<li>get_state_count()
-: <a class="el" href="structmkldnn_1_1rnn__cell_1_1desc.html#a946fb556d79ddb9fd983ac9aea49cf79">mkldnn::rnn_cell::desc</a>
-</li>
-<li>gIOdhw16i16o
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda747b1b2818d0de608f236e8815ffe192">mkldnn::memory</a>
-</li>
-<li>giohw
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda5f1d6f8a3a8842611d15affa574b864f">mkldnn::memory</a>
-</li>
-<li>gIOhw16i16o
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda36c0eda0e14719c161c8181ad2d4b942">mkldnn::memory</a>
-</li>
-<li>gIOhw16o16i
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedab4329019d9beb50e7c0d6b4149b7a842">mkldnn::memory</a>
-</li>
-<li>gIOw16o16i
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedafa027d58629c684b73bcc1714a98e2c3">mkldnn::memory</a>
-</li>
-<li>gOdhwi16o
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda81e4899579f993df8c2f7d4c7fc22847">mkldnn::memory</a>
-</li>
-<li>gOdhwi4o
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda5eb1abc93e2027336989730c391a5498">mkldnn::memory</a>
-</li>
-<li>gOdhwi8o
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedafdc86aad95764f0aae1ad15c60e3da80">mkldnn::memory</a>
-</li>
-<li>gOhwi16o
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda4d7fce02dd37cb1593cb1ad7b828ee9b">mkldnn::memory</a>
-</li>
-<li>gOhwi32o
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaee023523d45caa828c6e5bbe8f3d188a">mkldnn::memory</a>
-</li>
-<li>gOhwi4o
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda5b0706b3d8de37265ef1ca7da0c95db0">mkldnn::memory</a>
-</li>
-<li>gOhwi8o
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda054e5fad6ff701447c1f04372f214e0b">mkldnn::memory</a>
-</li>
-<li>goidhw
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaa678de4e5a5e34c9a71a632b8f334b8b">mkldnn::memory</a>
-</li>
-<li>Goidhw16g
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda84f69746b0fc107edf92275009c2d4b0">mkldnn::memory</a>
-</li>
-<li>gOIdhw16i16o
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda08acb28c1b80aa888ec6bb555937299f">mkldnn::memory</a>
-</li>
-<li>gOidhw16o
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedab3ad516ad551b8436335045a1bfcb057">mkldnn::memory</a>
-</li>
-<li>gOIdhw16o16i
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda38c03747d6b033b007ebfbe0fa89a1ff">mkldnn::memory</a>
-</li>
-<li>gOIdhw4i4o
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda3ff966b4edaf4c6a88815e88db0d3e80">mkldnn::memory</a>
-</li>
-<li>gOidhw4o
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda96950c8210b11b4cbf8e4d8f3aefac55">mkldnn::memory</a>
-</li>
-<li>gOIdhw8i16o2i
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedad464a542f1137020b390aa6e0348b882">mkldnn::memory</a>
-</li>
-<li>gOIdhw8i8o
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda07a5d807871093893d396b7e7e8eaddb">mkldnn::memory</a>
-</li>
-<li>gOIdhw8o8i
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedae59e06dff785ca742a1d78147e7cc267">mkldnn::memory</a>
-</li>
-<li>goihw
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda3dc0e53430a6368210356118196f821a">mkldnn::memory</a>
-</li>
-<li>Goihw16g
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda159b2a2e896f7484ddcf9c8e4038eca0">mkldnn::memory</a>
-</li>
-<li>gOIhw16i16o
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda1ca4dda6de1722abc8ef8bdfb642a4b0">mkldnn::memory</a>
-</li>
-<li>gOihw16o
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaed5c4dae27a0a62c9f924075927aa154">mkldnn::memory</a>
-</li>
-<li>gOIhw16o16i
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda7d79e7d651180b0e8817bcf913e8663e">mkldnn::memory</a>
-</li>
-<li>gOIhw2i8o4i
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaebd09bf00bcf64d1c79ae144e7ebe5e2">mkldnn::memory</a>
-</li>
-<li>gOIhw2o8i8o2i
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda905367adecd07519b5e12a8da02d4e04">mkldnn::memory</a>
-</li>
-<li>gOIhw4i16o4i
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedafeec7a3e52ae9e28b19c65f53edc7808">mkldnn::memory</a>
-</li>
-<li>gOIhw4i4o
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda57a6611ccc3768ae5c7bdab2fbef26ac">mkldnn::memory</a>
-</li>
-<li>gOihw4o
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda4b845a934bc59efddf9ef1045cc0b7d9">mkldnn::memory</a>
-</li>
-<li>gOIhw4o4i
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda57bdbc7a7cf1be84b5ba129959280ce4">mkldnn::memory</a>
-</li>
-<li>gOIhw4o8i8o4i
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda5acdc941617a90dd95110fb1d71830f4">mkldnn::memory</a>
-</li>
-<li>Goihw8g
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaaa36c1e32c51ddec41593ae43f9e080a">mkldnn::memory</a>
-</li>
-<li>gOIhw8i16o2i
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda531e0d8539a3732cf3fb2cd62f0ad887">mkldnn::memory</a>
-</li>
-<li>gOIhw8i8o
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda1d727cbaa05cb6f4e793e447bd7aee0d">mkldnn::memory</a>
-</li>
-<li>gOIhw8o16i2o
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda7e2e3ba3efc10e24283753abafb2afdc">mkldnn::memory</a>
-</li>
-<li>gOIhw8o8i
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda9ba3ca93854586fcd7f3c158efd869bf">mkldnn::memory</a>
-</li>
-<li>goiw
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda1f1bc797706732c22eb9987e3cea3e54">mkldnn::memory</a>
-</li>
-<li>gOIw16i16o
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda69ff0c51b99e2b3a2242c5573db75680">mkldnn::memory</a>
-</li>
-<li>gOiw16o
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda372a20447ce0335fe5c4f0126fb1d041">mkldnn::memory</a>
-</li>
-<li>gOIw16o16i
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedafa987d0f6bf33d361270f4fd0e4b6b5c">mkldnn::memory</a>
-</li>
-<li>gOIw4i16o4i
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda68f856a42aaec4e873e1086429cde66f">mkldnn::memory</a>
-</li>
-<li>gOIw4i4o
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedad056246fae702dc91c93b0acb9c5b976">mkldnn::memory</a>
-</li>
-<li>gOiw4o
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda9d932a4601f34d94dd9cc0933f4ab154">mkldnn::memory</a>
-</li>
-<li>gOIw8i16o2i
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaceb58ad5277238cb287876d1e6072736">mkldnn::memory</a>
-</li>
-<li>gOIw8i8o
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda9063aabfe5d944e94135c4cb67ba2584">mkldnn::memory</a>
-</li>
-<li>gOIw8o16i2o
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedac1793fd656f546c03dea8bc7baa1f305">mkldnn::memory</a>
-</li>
-<li>gOIw8o8i
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedafa861d36e362fc22ef0bb6d513dd9a89">mkldnn::memory</a>
-</li>
-<li>gOwi16o
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda4adc998e59225b906421a37a53881137">mkldnn::memory</a>
-</li>
-<li>gOwi4o
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda3ba5d84f4cb5f66841c2dabc7fe4fc6c">mkldnn::memory</a>
-</li>
-<li>gOwi8o
-: <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaad638741237c3f4c2af1964459ef0997">mkldnn::memory</a>
 </li>
 <li>gpu
 : <a class="el" href="structmkldnn_1_1engine.html#a81bcf1ea92d7f98852a2c3e187825de6a0aa0be2a866411d9ff03515227454947">mkldnn::engine</a>

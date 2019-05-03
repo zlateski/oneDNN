@@ -14,6 +14,7 @@
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
+<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -43,6 +44,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="examples.html"><span>Examples</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -74,7 +76,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -85,13 +87,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="namespacemkldnn.html">mkldnn</a></li><li class="navelem"><a class="el" href="structmkldnn_1_1lrn__forward.html">lrn_forward</a></li><li class="navelem"><a class="el" href="structmkldnn_1_1lrn__forward_1_1desc.html">desc</a></li>  </ul>
+<li class="navelem"><b>mkldnn</b></li><li class="navelem"><a class="el" href="structmkldnn_1_1lrn__forward.html">lrn_forward</a></li><li class="navelem"><a class="el" href="structmkldnn_1_1lrn__forward_1_1desc.html">desc</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="structmkldnn_1_1lrn__forward_1_1desc-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">mkldnn::lrn_forward::desc Struct Reference</div>  </div>
@@ -107,23 +108,19 @@ Collaboration diagram for mkldnn::lrn_forward::desc:</div>
 <div class="dyncontent">
 <div class="center"><img src="structmkldnn_1_1lrn__forward_1_1desc__coll__graph.png" border="0" usemap="#mkldnn_1_1lrn__forward_1_1desc_coll__map" alt="Collaboration graph"/></div>
 <map name="mkldnn_1_1lrn__forward_1_1desc_coll__map" id="mkldnn_1_1lrn__forward_1_1desc_coll__map">
-<area shape="rect" id="node2" href="structmkldnn__lrn__desc__t.html" title="A descriptor of a Local Response Normalization (LRN) operation. " alt="" coords="643,96,773,123"/><area shape="rect" id="node3" href="structmkldnn__memory__desc__t.html" title="Memory descriptor. The description is based on a number of dimensions, dimensions themselves..." alt="" coords="345,96,509,123"/><area shape="rect" id="node4" href="structmkldnn__memory__extra__desc__t.html" title="Description of extra information stored in memory. " alt="" coords="20,5,175,46"/><area shape="rect" id="node5" href="structmkldnn__rnn__packed__desc__t.html" title="Description of tensor of packed weights for rnn. " alt="" coords="5,71,189,97"/><area shape="rect" id="node6" href="structmkldnn__blocking__desc__t.html" title="Generic description of blocked data layout for most memory formats. " alt="" coords="15,121,180,148"/><area shape="rect" id="node7" href="structmkldnn__wino__desc__t.html" title="Description of tensor of weights for winograd 2x3 convolution. " alt="" coords="25,172,169,199"/></map>
+<area shape="rect" id="node2" href="structmkldnn__lrn__desc__t.html" title="A descriptor of a Local Response Normalization (LRN) operation. " alt="" coords="643,96,773,123"/><area shape="rect" id="node3" href="structmkldnn__memory__desc__t.html" title="Memory descriptor. " alt="" coords="345,96,509,123"/><area shape="rect" id="node4" href="structmkldnn__memory__extra__desc__t.html" title="Description of extra information stored in memory. " alt="" coords="20,5,175,46"/><area shape="rect" id="node5" href="structmkldnn__rnn__packed__desc__t.html" title="Description of tensor of packed weights for rnn. " alt="" coords="5,71,189,97"/><area shape="rect" id="node6" href="structmkldnn__blocking__desc__t.html" title="Generic description of blocked data layout for most memory formats. " alt="" coords="15,121,180,148"/><area shape="rect" id="node7" href="structmkldnn__wino__desc__t.html" title="Description of tensor of weights for winograd 2x3 convolution. " alt="" coords="25,172,169,199"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aacdb78f35d40c0e8f32eee233ef5e64f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1lrn__forward_1_1desc.html#aacdb78f35d40c0e8f32eee233ef5e64f">desc</a> (<a class="el" href="group__cpp__api__enums.html#gaeb087eae78f70a4d249a90aefa165cf8">prop_kind</a> aprop_kind, <a class="el" href="group__cpp__api__enums.html#gae45a07d6121fdd33e310782753178076">algorithm</a> aalgorithm, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;src_desc, <a class="el" href="structmkldnn_1_1memory.html#ac84929ec8bd1bba9d7c5723ad6d93906">memory::dim</a> local_size, float alpha, float beta, float k=1.f)</td></tr>
-<tr class="memdesc:aacdb78f35d40c0e8f32eee233ef5e64f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a descriptor for forward propagation using <code>prop_kind</code> (possible values are <a class="el" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a24775787fab8f13aa4809e1ce8f82aeb">mkldnn::forward_training</a> and <a class="el" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a3b9fad4f80d45368f856b5403198ac4c">mkldnn::forward_inference</a>), <code>aalgorithm</code>, memory descriptor <code>data_desc</code>, and regularization parameters <code>local_size</code>, <code>alpha</code>, <code>beta</code>, and <code>k</code>.  <a href="#aacdb78f35d40c0e8f32eee233ef5e64f">More...</a><br/></td></tr>
+<tr class="memitem:aacdb78f35d40c0e8f32eee233ef5e64f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1lrn__forward_1_1desc.html#aacdb78f35d40c0e8f32eee233ef5e64f">desc</a> (<a class="el" href="group__cpp__api__enums.html#gaeb087eae78f70a4d249a90aefa165cf8">prop_kind</a> aprop_kind, <a class="el" href="group__cpp__api__enums.html#gae45a07d6121fdd33e310782753178076">algorithm</a> aalgorithm, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;src_desc, memory::dim local_size, float alpha, float beta, float k=1.f)</td></tr>
+<tr class="memdesc:aacdb78f35d40c0e8f32eee233ef5e64f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a descriptor for forward propagation using <code>prop_kind</code> (possible values are <a class="el" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a24775787fab8f13aa4809e1ce8f82aeb" title="Forward data propagation (training mode). ">mkldnn::forward_training</a> and <a class="el" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a3b9fad4f80d45368f856b5403198ac4c" title="Forward data propagation (inference mode). ">mkldnn::forward_inference</a>), <code>aalgorithm</code>, memory descriptor <code>data_desc</code>, and regularization parameters <code>local_size</code>, <code>alpha</code>, <code>beta</code>, and <code>k</code>.  <a href="#aacdb78f35d40c0e8f32eee233ef5e64f">More...</a><br/></td></tr>
 <tr class="separator:aacdb78f35d40c0e8f32eee233ef5e64f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:ae9e14265c9d3fbd67ea04dd8241d995e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmkldnn__lrn__desc__t.html">mkldnn_lrn_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1lrn__forward_1_1desc.html#ae9e14265c9d3fbd67ea04dd8241d995e">data</a></td></tr>
-<tr class="separator:ae9e14265c9d3fbd67ea04dd8241d995e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Descriptor for local response normalization forward propagation. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cnn_inference_fp32_8cpp-example.html#_a19">cnn_inference_fp32.cpp</a>, and <a class="el" href="cnn_training_fp32_8cpp-example.html#_a18">cnn_training_fp32.cpp</a>.</dd>
+</dl></div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aacdb78f35d40c0e8f32eee233ef5e64f"></a>
 <div class="memitem">
 <div class="memproto">
@@ -152,7 +149,7 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structmkldnn_1_1memory.html#ac84929ec8bd1bba9d7c5723ad6d93906">memory::dim</a>&#160;</td>
+          <td class="paramtype">memory::dim&#160;</td>
           <td class="paramname"><em>local_size</em>, </td>
         </tr>
         <tr>
@@ -186,20 +183,7 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Initializes a descriptor for forward propagation using <code>prop_kind</code> (possible values are <a class="el" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a24775787fab8f13aa4809e1ce8f82aeb">mkldnn::forward_training</a> and <a class="el" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a3b9fad4f80d45368f856b5403198ac4c">mkldnn::forward_inference</a>), <code>aalgorithm</code>, memory descriptor <code>data_desc</code>, and regularization parameters <code>local_size</code>, <code>alpha</code>, <code>beta</code>, and <code>k</code>. </p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="ae9e14265c9d3fbd67ea04dd8241d995e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structmkldnn__lrn__desc__t.html">mkldnn_lrn_desc_t</a> mkldnn::lrn_forward::desc::data</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Initializes a descriptor for forward propagation using <code>prop_kind</code> (possible values are <a class="el" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a24775787fab8f13aa4809e1ce8f82aeb" title="Forward data propagation (training mode). ">mkldnn::forward_training</a> and <a class="el" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a3b9fad4f80d45368f856b5403198ac4c" title="Forward data propagation (inference mode). ">mkldnn::forward_inference</a>), <code>aalgorithm</code>, memory descriptor <code>data_desc</code>, and regularization parameters <code>local_size</code>, <code>alpha</code>, <code>beta</code>, and <code>k</code>. </p>
 
 </div>
 </div>

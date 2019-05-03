@@ -4,7 +4,6 @@ var searchData=
   ['cdba',['cdba',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaff2458511a39d703bd273eabbb1395d6',1,'mkldnn::memory']]],
   ['cdeba',['cdeba',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedafafcbfdfcede01281676ab63df88a919',1,'mkldnn::memory']]],
   ['chwn',['chwn',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedafd2263500e815d8ce46e79e6b178a10a',1,'mkldnn::memory']]],
-  ['cn',['cn',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda7efdfc94655a25dcea3ec85e9bb703fa',1,'mkldnn::memory']]],
   ['concat',['concat',['../classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00da414e7c8ede73a0c2c3d17699134f4080',1,'mkldnn::primitive']]],
   ['convolution',['convolution',['../classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00daa9595c1c24c33b16056d2ad07e71682d',1,'mkldnn::primitive']]],
   ['convolution_5fauto',['convolution_auto',['../group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076acfdececd63a8bc0cfe1021ad614e2ded',1,'mkldnn']]],

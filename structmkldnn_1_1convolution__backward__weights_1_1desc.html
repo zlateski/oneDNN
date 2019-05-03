@@ -14,6 +14,7 @@
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
+<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -43,6 +44,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="examples.html"><span>Examples</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -74,7 +76,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -85,13 +87,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="namespacemkldnn.html">mkldnn</a></li><li class="navelem"><a class="el" href="structmkldnn_1_1convolution__backward__weights.html">convolution_backward_weights</a></li><li class="navelem"><a class="el" href="structmkldnn_1_1convolution__backward__weights_1_1desc.html">desc</a></li>  </ul>
+<li class="navelem"><b>mkldnn</b></li><li class="navelem"><a class="el" href="structmkldnn_1_1convolution__backward__weights.html">convolution_backward_weights</a></li><li class="navelem"><a class="el" href="structmkldnn_1_1convolution__backward__weights_1_1desc.html">desc</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="structmkldnn_1_1convolution__backward__weights_1_1desc-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">mkldnn::convolution_backward_weights::desc Struct Reference</div>  </div>
@@ -107,32 +108,28 @@ Collaboration diagram for mkldnn::convolution_backward_weights::desc:</div>
 <div class="dyncontent">
 <div class="center"><img src="structmkldnn_1_1convolution__backward__weights_1_1desc__coll__graph.png" border="0" usemap="#mkldnn_1_1convolution__backward__weights_1_1desc_coll__map" alt="Collaboration graph"/></div>
 <map name="mkldnn_1_1convolution__backward__weights_1_1desc_coll__map" id="mkldnn_1_1convolution__backward__weights_1_1desc_coll__map">
-<area shape="rect" id="node2" href="structmkldnn__convolution__desc__t.html" title="A descriptor of a convolution operation. " alt="" coords="665,102,802,143"/><area shape="rect" id="node3" href="structmkldnn__memory__desc__t.html" title="Memory descriptor. The description is based on a number of dimensions, dimensions themselves..." alt="" coords="345,109,509,136"/><area shape="rect" id="node4" href="structmkldnn__memory__extra__desc__t.html" title="Description of extra information stored in memory. " alt="" coords="20,18,175,59"/><area shape="rect" id="node5" href="structmkldnn__rnn__packed__desc__t.html" title="Description of tensor of packed weights for rnn. " alt="" coords="5,84,189,111"/><area shape="rect" id="node6" href="structmkldnn__blocking__desc__t.html" title="Generic description of blocked data layout for most memory formats. " alt="" coords="15,135,180,161"/><area shape="rect" id="node7" href="structmkldnn__wino__desc__t.html" title="Description of tensor of weights for winograd 2x3 convolution. " alt="" coords="25,185,169,212"/></map>
+<area shape="rect" id="node2" href="structmkldnn__convolution__desc__t.html" title="A descriptor of a convolution operation. " alt="" coords="665,102,802,143"/><area shape="rect" id="node3" href="structmkldnn__memory__desc__t.html" title="Memory descriptor. " alt="" coords="345,109,509,136"/><area shape="rect" id="node4" href="structmkldnn__memory__extra__desc__t.html" title="Description of extra information stored in memory. " alt="" coords="20,18,175,59"/><area shape="rect" id="node5" href="structmkldnn__rnn__packed__desc__t.html" title="Description of tensor of packed weights for rnn. " alt="" coords="5,84,189,111"/><area shape="rect" id="node6" href="structmkldnn__blocking__desc__t.html" title="Generic description of blocked data layout for most memory formats. " alt="" coords="15,135,180,161"/><area shape="rect" id="node7" href="structmkldnn__wino__desc__t.html" title="Description of tensor of weights for winograd 2x3 convolution. " alt="" coords="25,185,169,212"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a92ef537e51717d33ab7f8d77514b62ff"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1convolution__backward__weights_1_1desc.html#a92ef537e51717d33ab7f8d77514b62ff">desc</a> (<a class="el" href="group__cpp__api__enums.html#gae45a07d6121fdd33e310782753178076">algorithm</a> aalgorithm, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;src_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_weights_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_bias_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_dst_desc, const <a class="el" href="structmkldnn_1_1memory.html#a4b929aee34491e5140d055a9e1daf180">memory::dims</a> strides, const <a class="el" href="structmkldnn_1_1memory.html#a4b929aee34491e5140d055a9e1daf180">memory::dims</a> padding_l, const <a class="el" href="structmkldnn_1_1memory.html#a4b929aee34491e5140d055a9e1daf180">memory::dims</a> padding_r)</td></tr>
+<tr class="memitem:a92ef537e51717d33ab7f8d77514b62ff"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1convolution__backward__weights_1_1desc.html#a92ef537e51717d33ab7f8d77514b62ff">desc</a> (<a class="el" href="group__cpp__api__enums.html#gae45a07d6121fdd33e310782753178076">algorithm</a> aalgorithm, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;src_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_weights_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_bias_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_dst_desc, const memory::dims strides, const memory::dims padding_l, const memory::dims padding_r)</td></tr>
 <tr class="memdesc:a92ef537e51717d33ab7f8d77514b62ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a descriptor for convolution weight update with bias using <code>aalgorithm</code>, memory descriptors, <code>strides</code>, <code>padding_l</code>, and <code>padding_r</code>.  <a href="#a92ef537e51717d33ab7f8d77514b62ff">More...</a><br/></td></tr>
 <tr class="separator:a92ef537e51717d33ab7f8d77514b62ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65888c8d8f37ba044614fbd3133fcae8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1convolution__backward__weights_1_1desc.html#a65888c8d8f37ba044614fbd3133fcae8">desc</a> (<a class="el" href="group__cpp__api__enums.html#gae45a07d6121fdd33e310782753178076">algorithm</a> aalgorithm, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;src_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_weights_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_dst_desc, const <a class="el" href="structmkldnn_1_1memory.html#a4b929aee34491e5140d055a9e1daf180">memory::dims</a> strides, const <a class="el" href="structmkldnn_1_1memory.html#a4b929aee34491e5140d055a9e1daf180">memory::dims</a> padding_l, const <a class="el" href="structmkldnn_1_1memory.html#a4b929aee34491e5140d055a9e1daf180">memory::dims</a> padding_r)</td></tr>
+<tr class="memitem:a65888c8d8f37ba044614fbd3133fcae8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1convolution__backward__weights_1_1desc.html#a65888c8d8f37ba044614fbd3133fcae8">desc</a> (<a class="el" href="group__cpp__api__enums.html#gae45a07d6121fdd33e310782753178076">algorithm</a> aalgorithm, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;src_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_weights_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_dst_desc, const memory::dims strides, const memory::dims padding_l, const memory::dims padding_r)</td></tr>
 <tr class="memdesc:a65888c8d8f37ba044614fbd3133fcae8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a descriptor for convolution weight update without bias using <code>aalgorithm</code>, memory descriptors, <code>strides</code>, <code>padding_l</code>, and <code>padding_r</code>.  <a href="#a65888c8d8f37ba044614fbd3133fcae8">More...</a><br/></td></tr>
 <tr class="separator:a65888c8d8f37ba044614fbd3133fcae8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e8018887580a62ea0f8d20b43e31e79"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1convolution__backward__weights_1_1desc.html#a8e8018887580a62ea0f8d20b43e31e79">desc</a> (<a class="el" href="group__cpp__api__enums.html#gae45a07d6121fdd33e310782753178076">algorithm</a> aalgorithm, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;src_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_weights_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_bias_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_dst_desc, const <a class="el" href="structmkldnn_1_1memory.html#a4b929aee34491e5140d055a9e1daf180">memory::dims</a> strides, const <a class="el" href="structmkldnn_1_1memory.html#a4b929aee34491e5140d055a9e1daf180">memory::dims</a> dilates, const <a class="el" href="structmkldnn_1_1memory.html#a4b929aee34491e5140d055a9e1daf180">memory::dims</a> padding_l, const <a class="el" href="structmkldnn_1_1memory.html#a4b929aee34491e5140d055a9e1daf180">memory::dims</a> padding_r)</td></tr>
+<tr class="memitem:a8e8018887580a62ea0f8d20b43e31e79"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1convolution__backward__weights_1_1desc.html#a8e8018887580a62ea0f8d20b43e31e79">desc</a> (<a class="el" href="group__cpp__api__enums.html#gae45a07d6121fdd33e310782753178076">algorithm</a> aalgorithm, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;src_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_weights_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_bias_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_dst_desc, const memory::dims strides, const memory::dims dilates, const memory::dims padding_l, const memory::dims padding_r)</td></tr>
 <tr class="memdesc:a8e8018887580a62ea0f8d20b43e31e79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a descriptor for dilated convolution weight update with bias using <code>aalgorithm</code>, memory descriptors, <code>strides</code>, <code>dilates</code> <code>padding_l</code>, and <code>padding_r</code>.  <a href="#a8e8018887580a62ea0f8d20b43e31e79">More...</a><br/></td></tr>
 <tr class="separator:a8e8018887580a62ea0f8d20b43e31e79"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3faf771f5b482062e15fa48dc4a5dbf4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1convolution__backward__weights_1_1desc.html#a3faf771f5b482062e15fa48dc4a5dbf4">desc</a> (<a class="el" href="group__cpp__api__enums.html#gae45a07d6121fdd33e310782753178076">algorithm</a> aalgorithm, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;src_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_weights_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_dst_desc, const <a class="el" href="structmkldnn_1_1memory.html#a4b929aee34491e5140d055a9e1daf180">memory::dims</a> strides, const <a class="el" href="structmkldnn_1_1memory.html#a4b929aee34491e5140d055a9e1daf180">memory::dims</a> dilates, const <a class="el" href="structmkldnn_1_1memory.html#a4b929aee34491e5140d055a9e1daf180">memory::dims</a> padding_l, const <a class="el" href="structmkldnn_1_1memory.html#a4b929aee34491e5140d055a9e1daf180">memory::dims</a> padding_r)</td></tr>
+<tr class="memitem:a3faf771f5b482062e15fa48dc4a5dbf4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1convolution__backward__weights_1_1desc.html#a3faf771f5b482062e15fa48dc4a5dbf4">desc</a> (<a class="el" href="group__cpp__api__enums.html#gae45a07d6121fdd33e310782753178076">algorithm</a> aalgorithm, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;src_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_weights_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_dst_desc, const memory::dims strides, const memory::dims dilates, const memory::dims padding_l, const memory::dims padding_r)</td></tr>
 <tr class="memdesc:a3faf771f5b482062e15fa48dc4a5dbf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a descriptor for dilated convolution weight update without bias using <code>aalgorithm</code>, memory descriptors, <code>strides</code>, <code>dilates</code> <code>padding_l</code>, and <code>padding_r</code>.  <a href="#a3faf771f5b482062e15fa48dc4a5dbf4">More...</a><br/></td></tr>
 <tr class="separator:a3faf771f5b482062e15fa48dc4a5dbf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a1e03f8de02a6b42539d991ff0d011d61"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmkldnn__convolution__desc__t.html">mkldnn_convolution_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1convolution__backward__weights_1_1desc.html#a1e03f8de02a6b42539d991ff0d011d61">data</a></td></tr>
-<tr class="separator:a1e03f8de02a6b42539d991ff0d011d61"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Descriptor for convolution weight update. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cnn_training_fp32_8cpp-example.html#_a34">cnn_training_fp32.cpp</a>.</dd>
+</dl></div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a92ef537e51717d33ab7f8d77514b62ff"></a>
 <div class="memitem">
 <div class="memproto">
@@ -173,19 +170,19 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structmkldnn_1_1memory.html#a4b929aee34491e5140d055a9e1daf180">memory::dims</a>&#160;</td>
+          <td class="paramtype">const memory::dims&#160;</td>
           <td class="paramname"><em>strides</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structmkldnn_1_1memory.html#a4b929aee34491e5140d055a9e1daf180">memory::dims</a>&#160;</td>
+          <td class="paramtype">const memory::dims&#160;</td>
           <td class="paramname"><em>padding_l</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structmkldnn_1_1memory.html#a4b929aee34491e5140d055a9e1daf180">memory::dims</a>&#160;</td>
+          <td class="paramtype">const memory::dims&#160;</td>
           <td class="paramname"><em>padding_r</em>&#160;</td>
         </tr>
         <tr>
@@ -202,7 +199,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initializes a descriptor for convolution weight update with bias using <code>aalgorithm</code>, memory descriptors, <code>strides</code>, <code>padding_l</code>, and <code>padding_r</code>. </p>
-<dl class="section note"><dt>Note</dt><dd>Memory descriptors are allowed to be initialized with <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. The primitive selects a format automatically. ">mkldnn::memory::format_tag::any</a> value of <code>format_kind</code>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Memory descriptors are allowed to be initialized with <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">mkldnn::memory::format_tag::any</a> value of <code>format_kind</code>. </dd></dl>
 
 </div>
 </div>
@@ -240,19 +237,19 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structmkldnn_1_1memory.html#a4b929aee34491e5140d055a9e1daf180">memory::dims</a>&#160;</td>
+          <td class="paramtype">const memory::dims&#160;</td>
           <td class="paramname"><em>strides</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structmkldnn_1_1memory.html#a4b929aee34491e5140d055a9e1daf180">memory::dims</a>&#160;</td>
+          <td class="paramtype">const memory::dims&#160;</td>
           <td class="paramname"><em>padding_l</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structmkldnn_1_1memory.html#a4b929aee34491e5140d055a9e1daf180">memory::dims</a>&#160;</td>
+          <td class="paramtype">const memory::dims&#160;</td>
           <td class="paramname"><em>padding_r</em>&#160;</td>
         </tr>
         <tr>
@@ -269,7 +266,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initializes a descriptor for convolution weight update without bias using <code>aalgorithm</code>, memory descriptors, <code>strides</code>, <code>padding_l</code>, and <code>padding_r</code>. </p>
-<dl class="section note"><dt>Note</dt><dd>Memory descriptors are allowed to be initialized with <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. The primitive selects a format automatically. ">mkldnn::memory::format_tag::any</a> value of <code>format_kind</code>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Memory descriptors are allowed to be initialized with <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">mkldnn::memory::format_tag::any</a> value of <code>format_kind</code>. </dd></dl>
 
 </div>
 </div>
@@ -313,25 +310,25 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structmkldnn_1_1memory.html#a4b929aee34491e5140d055a9e1daf180">memory::dims</a>&#160;</td>
+          <td class="paramtype">const memory::dims&#160;</td>
           <td class="paramname"><em>strides</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structmkldnn_1_1memory.html#a4b929aee34491e5140d055a9e1daf180">memory::dims</a>&#160;</td>
+          <td class="paramtype">const memory::dims&#160;</td>
           <td class="paramname"><em>dilates</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structmkldnn_1_1memory.html#a4b929aee34491e5140d055a9e1daf180">memory::dims</a>&#160;</td>
+          <td class="paramtype">const memory::dims&#160;</td>
           <td class="paramname"><em>padding_l</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structmkldnn_1_1memory.html#a4b929aee34491e5140d055a9e1daf180">memory::dims</a>&#160;</td>
+          <td class="paramtype">const memory::dims&#160;</td>
           <td class="paramname"><em>padding_r</em>&#160;</td>
         </tr>
         <tr>
@@ -348,7 +345,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initializes a descriptor for dilated convolution weight update with bias using <code>aalgorithm</code>, memory descriptors, <code>strides</code>, <code>dilates</code> <code>padding_l</code>, and <code>padding_r</code>. </p>
-<dl class="section note"><dt>Note</dt><dd>Memory descriptors are allowed to be initialized with <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. The primitive selects a format automatically. ">mkldnn::memory::format_tag::any</a> value of <code>format_kind</code>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Memory descriptors are allowed to be initialized with <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">mkldnn::memory::format_tag::any</a> value of <code>format_kind</code>. </dd></dl>
 
 </div>
 </div>
@@ -386,25 +383,25 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structmkldnn_1_1memory.html#a4b929aee34491e5140d055a9e1daf180">memory::dims</a>&#160;</td>
+          <td class="paramtype">const memory::dims&#160;</td>
           <td class="paramname"><em>strides</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structmkldnn_1_1memory.html#a4b929aee34491e5140d055a9e1daf180">memory::dims</a>&#160;</td>
+          <td class="paramtype">const memory::dims&#160;</td>
           <td class="paramname"><em>dilates</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structmkldnn_1_1memory.html#a4b929aee34491e5140d055a9e1daf180">memory::dims</a>&#160;</td>
+          <td class="paramtype">const memory::dims&#160;</td>
           <td class="paramname"><em>padding_l</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structmkldnn_1_1memory.html#a4b929aee34491e5140d055a9e1daf180">memory::dims</a>&#160;</td>
+          <td class="paramtype">const memory::dims&#160;</td>
           <td class="paramname"><em>padding_r</em>&#160;</td>
         </tr>
         <tr>
@@ -421,20 +418,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initializes a descriptor for dilated convolution weight update without bias using <code>aalgorithm</code>, memory descriptors, <code>strides</code>, <code>dilates</code> <code>padding_l</code>, and <code>padding_r</code>. </p>
-<dl class="section note"><dt>Note</dt><dd>Memory descriptors are allowed to be initialized with <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. The primitive selects a format automatically. ">mkldnn::memory::format_tag::any</a> value of <code>format_kind</code>. </dd></dl>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a1e03f8de02a6b42539d991ff0d011d61"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structmkldnn__convolution__desc__t.html">mkldnn_convolution_desc_t</a> mkldnn::convolution_backward_weights::desc::data</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<dl class="section note"><dt>Note</dt><dd>Memory descriptors are allowed to be initialized with <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">mkldnn::memory::format_tag::any</a> value of <code>format_kind</code>. </dd></dl>
 
 </div>
 </div>

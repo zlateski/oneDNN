@@ -14,6 +14,7 @@
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
+<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -43,6 +44,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="examples.html"><span>Examples</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -67,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -90,7 +92,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ga9cf5980e26f537653e5f0d4e00f984c7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__eltwise.html#ga9cf5980e26f537653e5f0d4e00f984c7">mkldnn_eltwise_forward_desc_init</a> (<a class="el" href="structmkldnn__eltwise__desc__t.html">mkldnn_eltwise_desc_t</a> *eltwise_desc, <a class="el" href="group__c__api__types__generic.html#ga5b98c8059c2aff8861157bf070c3f520">mkldnn_prop_kind_t</a> prop_kind, <a class="el" href="group__c__api__types__generic.html#gaa27d43cdd1e439cc41a9580d23ce3e97">mkldnn_alg_kind_t</a> alg_kind, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *data_desc, float alpha, float beta)</td></tr>
-<tr class="memdesc:ga9cf5980e26f537653e5f0d4e00f984c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes an <code>eltwise_desc</code> for forward propagation using <code>prop_kind</code> (possible values are <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f" title="Forward data propagation (training mode). In this mode primitives perform computations necessary for ...">mkldnn_forward_training</a> and <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a58a923fb6c4e1214e1505b5fa0b1e3fa" title="Forward data propagation (inference mode). In this mode primitives perform only computations that are...">mkldnn_forward_inference</a>), <code>alg_kind</code> algorithm, memory descriptor <code>data_desc</code>, <code>alpha</code>, and <code>beta</code> parameters.  <a href="#ga9cf5980e26f537653e5f0d4e00f984c7">More...</a><br/></td></tr>
+<tr class="memdesc:ga9cf5980e26f537653e5f0d4e00f984c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes an <code>eltwise_desc</code> for forward propagation using <code>prop_kind</code> (possible values are <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f" title="Forward data propagation (training mode). ">mkldnn_forward_training</a> and <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a58a923fb6c4e1214e1505b5fa0b1e3fa" title="Forward data propagation (inference mode). ">mkldnn_forward_inference</a>), <code>alg_kind</code> algorithm, memory descriptor <code>data_desc</code>, <code>alpha</code>, and <code>beta</code> parameters.  <a href="#ga9cf5980e26f537653e5f0d4e00f984c7">More...</a><br/></td></tr>
 <tr class="separator:ga9cf5980e26f537653e5f0d4e00f984c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6f5a8f5b448140e651b14aba6a6fdd6e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__eltwise.html#ga6f5a8f5b448140e651b14aba6a6fdd6e">mkldnn_eltwise_backward_desc_init</a> (<a class="el" href="structmkldnn__eltwise__desc__t.html">mkldnn_eltwise_desc_t</a> *eltwise_desc, <a class="el" href="group__c__api__types__generic.html#gaa27d43cdd1e439cc41a9580d23ce3e97">mkldnn_alg_kind_t</a> alg_kind, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *diff_data_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *data_desc, float alpha, float beta)</td></tr>
 <tr class="memdesc:ga6f5a8f5b448140e651b14aba6a6fdd6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes an <code>eltwise_desc</code> for backward propagation using <code>alg_kind</code> algorithm memory descriptors <code>diff_data_desc</code> and <code>data_desc</code>, and the <code>alpha</code> and <code>beta</code> parameters.  <a href="#ga6f5a8f5b448140e651b14aba6a6fdd6e">More...</a><br/></td></tr>
@@ -100,7 +102,7 @@ Functions</h2></td></tr>
 <p>A primitive to compute element-wise operations such as parametric rectifier linear unit (ReLU). </p>
 <p>Both forward and backward passes support in-place operation; that is, src and dst point to the same memory for forward pass, and diff_dst and diff_src point to the same memory for backward pass.</p>
 <dl class="section warning"><dt>Warning</dt><dd>Because the original src is required for backward pass, in-place forward pass in general cannot be applied during training. However, for some kinds of element-wise operations (namely ReLU with alpha parameter equals 0), dst and src can be interchangeable for the backward pass, which enables performance of in-place forward even for training.</dd></dl>
-<dl class="section see"><dt>See Also</dt><dd>dev_guide_eltwise in developer guide </dd>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="dev_guide_eltwise.html">Eltwise</a> in developer guide </dd>
 <dd>
 <a class="el" href="group__cpp__api__eltwise.html">Eltwise</a> in <a class="el" href="group__cpp__api.html">C++ API</a> </dd></dl>
 <h2 class="groupheader">Function Documentation</h2>
@@ -152,7 +154,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Initializes an <code>eltwise_desc</code> for forward propagation using <code>prop_kind</code> (possible values are <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f" title="Forward data propagation (training mode). In this mode primitives perform computations necessary for ...">mkldnn_forward_training</a> and <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a58a923fb6c4e1214e1505b5fa0b1e3fa" title="Forward data propagation (inference mode). In this mode primitives perform only computations that are...">mkldnn_forward_inference</a>), <code>alg_kind</code> algorithm, memory descriptor <code>data_desc</code>, <code>alpha</code>, and <code>beta</code> parameters. </p>
+<p>Initializes an <code>eltwise_desc</code> for forward propagation using <code>prop_kind</code> (possible values are <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f" title="Forward data propagation (training mode). ">mkldnn_forward_training</a> and <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a58a923fb6c4e1214e1505b5fa0b1e3fa" title="Forward data propagation (inference mode). ">mkldnn_forward_inference</a>), <code>alg_kind</code> algorithm, memory descriptor <code>data_desc</code>, <code>alpha</code>, and <code>beta</code> parameters. </p>
 <dl class="section see"><dt>See Also</dt><dd><a class="el" href="structmkldnn__eltwise__desc__t.html" title="A descriptor of a element-wise operation. ">mkldnn_eltwise_desc_t</a> for details.</dd></dl>
 <p>Inputs:</p>
 <ul>
@@ -162,7 +164,8 @@ Functions</h2></td></tr>
 <ul>
 <li>dst (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9adccda04151e0c287f0de64b832d33ac4" title="destination memory desc ">mkldnn_query_dst_md</a>, 0) </li>
 </ul>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cnn_inference_fp32_8c-example.html#a34">cnn_inference_fp32.c</a>, <a class="el" href="cnn_training_fp32_8c-example.html#a34">cnn_training_fp32.c</a>, and <a class="el" href="gpu_getting_started_8c-example.html#a17">gpu_getting_started.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ga6f5a8f5b448140e651b14aba6a6fdd6e"></a>
@@ -224,7 +227,8 @@ Functions</h2></td></tr>
 <ul>
 <li>diff_src (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ad915503c92000da20088fdb93cd685b9" title="source gradient memory desc ">mkldnn_query_diff_src_md</a>, 0) </li>
 </ul>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cnn_training_fp32_8c-example.html#a46">cnn_training_fp32.c</a>.</dd>
+</dl>
 </div>
 </div>
 </div><!-- contents -->

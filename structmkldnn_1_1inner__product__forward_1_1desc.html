@@ -14,6 +14,7 @@
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
+<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -43,6 +44,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="examples.html"><span>Examples</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -74,7 +76,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -85,20 +87,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="namespacemkldnn.html">mkldnn</a></li><li class="navelem"><a class="el" href="structmkldnn_1_1inner__product__forward.html">inner_product_forward</a></li><li class="navelem"><a class="el" href="structmkldnn_1_1inner__product__forward_1_1desc.html">desc</a></li>  </ul>
+<li class="navelem"><b>mkldnn</b></li><li class="navelem"><a class="el" href="structmkldnn_1_1inner__product__forward.html">inner_product_forward</a></li><li class="navelem"><a class="el" href="structmkldnn_1_1inner__product__forward_1_1desc.html">desc</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="structmkldnn_1_1inner__product__forward_1_1desc-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">mkldnn::inner_product_forward::desc Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Initializes an inner product descriptor for forward propagation using <code>prop_kind</code> (possible values are <a class="el" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a24775787fab8f13aa4809e1ce8f82aeb">mkldnn::forward_training</a> and <a class="el" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a3b9fad4f80d45368f856b5403198ac4c">mkldnn::forward_inference</a>) and memory descriptors. In order to create an inner product without bias, <code>bias_desc</code> should refer to a descriptor with memory format kind set to <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaf31ee5e3824f1f5e5d206bdf3029f22b">mkldnn::memory::format_tag::undef</a>.  
+<p>Initializes an inner product descriptor for forward propagation using <code>prop_kind</code> (possible values are <a class="el" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a24775787fab8f13aa4809e1ce8f82aeb" title="Forward data propagation (training mode). ">mkldnn::prop_kind::forward_training</a> and <a class="el" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a3b9fad4f80d45368f856b5403198ac4c" title="Forward data propagation (inference mode). ">mkldnn::prop_kind::forward_inference</a>) and memory descriptors.  
  <a href="structmkldnn_1_1inner__product__forward_1_1desc.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="mkldnn_8hpp_source.html">mkldnn.hpp</a>&gt;</code></p>
@@ -107,137 +107,14 @@ Collaboration diagram for mkldnn::inner_product_forward::desc:</div>
 <div class="dyncontent">
 <div class="center"><img src="structmkldnn_1_1inner__product__forward_1_1desc__coll__graph.png" border="0" usemap="#mkldnn_1_1inner__product__forward_1_1desc_coll__map" alt="Collaboration graph"/></div>
 <map name="mkldnn_1_1inner__product__forward_1_1desc_coll__map" id="mkldnn_1_1inner__product__forward_1_1desc_coll__map">
-<area shape="rect" id="node2" href="structmkldnn__inner__product__desc__t.html" title="A descriptor of an inner product operation. " alt="" coords="664,102,813,143"/><area shape="rect" id="node3" href="structmkldnn__memory__desc__t.html" title="Memory descriptor. The description is based on a number of dimensions, dimensions themselves..." alt="" coords="345,109,509,136"/><area shape="rect" id="node4" href="structmkldnn__memory__extra__desc__t.html" title="Description of extra information stored in memory. " alt="" coords="20,18,175,59"/><area shape="rect" id="node5" href="structmkldnn__rnn__packed__desc__t.html" title="Description of tensor of packed weights for rnn. " alt="" coords="5,84,189,111"/><area shape="rect" id="node6" href="structmkldnn__blocking__desc__t.html" title="Generic description of blocked data layout for most memory formats. " alt="" coords="15,135,180,161"/><area shape="rect" id="node7" href="structmkldnn__wino__desc__t.html" title="Description of tensor of weights for winograd 2x3 convolution. " alt="" coords="25,185,169,212"/></map>
+<area shape="rect" id="node2" href="structmkldnn__inner__product__desc__t.html" title="A descriptor of an inner product operation. " alt="" coords="664,102,813,143"/><area shape="rect" id="node3" href="structmkldnn__memory__desc__t.html" title="Memory descriptor. " alt="" coords="345,109,509,136"/><area shape="rect" id="node4" href="structmkldnn__memory__extra__desc__t.html" title="Description of extra information stored in memory. " alt="" coords="20,18,175,59"/><area shape="rect" id="node5" href="structmkldnn__rnn__packed__desc__t.html" title="Description of tensor of packed weights for rnn. " alt="" coords="5,84,189,111"/><area shape="rect" id="node6" href="structmkldnn__blocking__desc__t.html" title="Generic description of blocked data layout for most memory formats. " alt="" coords="15,135,180,161"/><area shape="rect" id="node7" href="structmkldnn__wino__desc__t.html" title="Description of tensor of weights for winograd 2x3 convolution. " alt="" coords="25,185,169,212"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a20b51c45cf4c44e975fb6f2a6dd4e465"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1inner__product__forward_1_1desc.html#a20b51c45cf4c44e975fb6f2a6dd4e465">desc</a> (<a class="el" href="group__cpp__api__enums.html#gaeb087eae78f70a4d249a90aefa165cf8">prop_kind</a> aprop_kind, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;src_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;weights_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;bias_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;dst_desc)</td></tr>
-<tr class="separator:a20b51c45cf4c44e975fb6f2a6dd4e465"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b30be56209816e08951b3e73022e19a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1inner__product__forward_1_1desc.html#a3b30be56209816e08951b3e73022e19a">desc</a> (<a class="el" href="group__cpp__api__enums.html#gaeb087eae78f70a4d249a90aefa165cf8">prop_kind</a> aprop_kind, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;src_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;weights_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;dst_desc)</td></tr>
-<tr class="separator:a3b30be56209816e08951b3e73022e19a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a59b6030e4823c0df000a9314e7b09d2a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmkldnn__inner__product__desc__t.html">mkldnn_inner_product_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1inner__product__forward_1_1desc.html#a59b6030e4823c0df000a9314e7b09d2a">data</a></td></tr>
-<tr class="separator:a59b6030e4823c0df000a9314e7b09d2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Initializes an inner product descriptor for forward propagation using <code>prop_kind</code> (possible values are <a class="el" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a24775787fab8f13aa4809e1ce8f82aeb">mkldnn::forward_training</a> and <a class="el" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a3b9fad4f80d45368f856b5403198ac4c">mkldnn::forward_inference</a>) and memory descriptors. In order to create an inner product without bias, <code>bias_desc</code> should refer to a descriptor with memory format kind set to <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaf31ee5e3824f1f5e5d206bdf3029f22b">mkldnn::memory::format_tag::undef</a>. </p>
-<dl class="section note"><dt>Note</dt><dd>Memory descriptors are allowed to be initialized with <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. The primitive selects a format automatically. ">mkldnn::memory::format_tag::any</a> value of <code>format_kind</code>. </dd></dl>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a20b51c45cf4c44e975fb6f2a6dd4e465"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">mkldnn::inner_product_forward::desc::desc </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__cpp__api__enums.html#gaeb087eae78f70a4d249a90aefa165cf8">prop_kind</a>&#160;</td>
-          <td class="paramname"><em>aprop_kind</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;&#160;</td>
-          <td class="paramname"><em>src_desc</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;&#160;</td>
-          <td class="paramname"><em>weights_desc</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;&#160;</td>
-          <td class="paramname"><em>bias_desc</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;&#160;</td>
-          <td class="paramname"><em>dst_desc</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a3b30be56209816e08951b3e73022e19a"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">mkldnn::inner_product_forward::desc::desc </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__cpp__api__enums.html#gaeb087eae78f70a4d249a90aefa165cf8">prop_kind</a>&#160;</td>
-          <td class="paramname"><em>aprop_kind</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;&#160;</td>
-          <td class="paramname"><em>src_desc</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;&#160;</td>
-          <td class="paramname"><em>weights_desc</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;&#160;</td>
-          <td class="paramname"><em>dst_desc</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a59b6030e4823c0df000a9314e7b09d2a"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structmkldnn__inner__product__desc__t.html">mkldnn_inner_product_desc_t</a> mkldnn::inner_product_forward::desc::data</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<hr/>The documentation for this struct was generated from the following file:<ul>
+<div class="textblock"><p>Initializes an inner product descriptor for forward propagation using <code>prop_kind</code> (possible values are <a class="el" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a24775787fab8f13aa4809e1ce8f82aeb" title="Forward data propagation (training mode). ">mkldnn::prop_kind::forward_training</a> and <a class="el" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a3b9fad4f80d45368f856b5403198ac4c" title="Forward data propagation (inference mode). ">mkldnn::prop_kind::forward_inference</a>) and memory descriptors. </p>
+<p>In order to create an inner product without bias, <code>bias_desc</code> should refer to a descriptor with memory format kind set to <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaf31ee5e3824f1f5e5d206bdf3029f22b" title="Undefined memory format tag. ">mkldnn::memory::format_tag::undef</a>.</p>
+<dl class="section note"><dt>Note</dt><dd>Memory descriptors are allowed to be initialized with <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">mkldnn::memory::format_tag::any</a> value of <code>format_kind</code>. </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cnn_inference_fp32_8cpp-example.html#_a27">cnn_inference_fp32.cpp</a>.</dd>
+</dl></div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li>include/<a class="el" href="mkldnn_8hpp_source.html">mkldnn.hpp</a></li>
 </ul>
 </div><!-- contents -->

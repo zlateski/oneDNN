@@ -14,6 +14,7 @@
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
+<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -43,6 +44,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="examples.html"><span>Examples</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -74,7 +76,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -102,48 +104,56 @@ Collaboration diagram for mkldnn_pooling_desc_t:</div>
 <div class="dyncontent">
 <div class="center"><img src="structmkldnn__pooling__desc__t__coll__graph.png" border="0" usemap="#mkldnn__pooling__desc__t_coll__map" alt="Collaboration graph"/></div>
 <map name="mkldnn__pooling__desc__t_coll__map" id="mkldnn__pooling__desc__t_coll__map">
-<area shape="rect" id="node2" href="structmkldnn__memory__desc__t.html" title="Memory descriptor. The description is based on a number of dimensions, dimensions themselves..." alt="" coords="345,96,509,123"/><area shape="rect" id="node3" href="structmkldnn__memory__extra__desc__t.html" title="Description of extra information stored in memory. " alt="" coords="20,5,175,46"/><area shape="rect" id="node4" href="structmkldnn__rnn__packed__desc__t.html" title="Description of tensor of packed weights for rnn. " alt="" coords="5,71,189,97"/><area shape="rect" id="node5" href="structmkldnn__blocking__desc__t.html" title="Generic description of blocked data layout for most memory formats. " alt="" coords="15,121,180,148"/><area shape="rect" id="node6" href="structmkldnn__wino__desc__t.html" title="Description of tensor of weights for winograd 2x3 convolution. " alt="" coords="25,172,169,199"/></map>
+<area shape="rect" id="node2" href="structmkldnn__memory__desc__t.html" title="Memory descriptor. " alt="" coords="345,96,509,123"/><area shape="rect" id="node3" href="structmkldnn__memory__extra__desc__t.html" title="Description of extra information stored in memory. " alt="" coords="20,5,175,46"/><area shape="rect" id="node4" href="structmkldnn__rnn__packed__desc__t.html" title="Description of tensor of packed weights for rnn. " alt="" coords="5,71,189,97"/><area shape="rect" id="node5" href="structmkldnn__blocking__desc__t.html" title="Generic description of blocked data layout for most memory formats. " alt="" coords="15,121,180,148"/><area shape="rect" id="node6" href="structmkldnn__wino__desc__t.html" title="Description of tensor of weights for winograd 2x3 convolution. " alt="" coords="25,172,169,199"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a31c30cf38b01f1514454ba5ea5b662a5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga4f5c189c2ba9ef6444250299f1f8e973">mkldnn_primitive_kind_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__pooling__desc__t.html#a31c30cf38b01f1514454ba5ea5b662a5">primitive_kind</a></td></tr>
-<tr class="memdesc:a31c30cf38b01f1514454ba5ea5b662a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The kind of primitive. Used for self-identifying the primitive descriptor. Must be <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a4962b750b011e794c6a7fcebcc5a4fb2" title="A pooling primitive. ">mkldnn_pooling</a>.  <a href="#a31c30cf38b01f1514454ba5ea5b662a5">More...</a><br/></td></tr>
+<tr class="memdesc:a31c30cf38b01f1514454ba5ea5b662a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The kind of primitive.  <a href="#a31c30cf38b01f1514454ba5ea5b662a5">More...</a><br/></td></tr>
 <tr class="separator:a31c30cf38b01f1514454ba5ea5b662a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ea858e8b663b632524019f25fae29b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga5b98c8059c2aff8861157bf070c3f520">mkldnn_prop_kind_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__pooling__desc__t.html#a2ea858e8b663b632524019f25fae29b7">prop_kind</a></td></tr>
-<tr class="memdesc:a2ea858e8b663b632524019f25fae29b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The kind of propagation. Possible values: <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f" title="Forward data propagation (training mode). In this mode primitives perform computations necessary for ...">mkldnn_forward_training</a>, <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a58a923fb6c4e1214e1505b5fa0b1e3fa" title="Forward data propagation (inference mode). In this mode primitives perform only computations that are...">mkldnn_forward_inference</a>, <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a4dd1b6040ef9d067a38d8ffa407b763b" title="Backward propagation (with respect to all parameters). ">mkldnn_backward</a>, and <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520aefa8bd2da7ba52a0a0061cfab6cf3925" title="Backward data propagation. ">mkldnn_backward_data</a>.  <a href="#a2ea858e8b663b632524019f25fae29b7">More...</a><br/></td></tr>
+<tr class="memdesc:a2ea858e8b663b632524019f25fae29b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The kind of propagation.  <a href="#a2ea858e8b663b632524019f25fae29b7">More...</a><br/></td></tr>
 <tr class="separator:a2ea858e8b663b632524019f25fae29b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa16febdd2a678f5f1d77ed4b2022dd3b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#gaa27d43cdd1e439cc41a9580d23ce3e97">mkldnn_alg_kind_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__pooling__desc__t.html#aa16febdd2a678f5f1d77ed4b2022dd3b">alg_kind</a></td></tr>
-<tr class="memdesc:aa16febdd2a678f5f1d77ed4b2022dd3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The kind of pooling algorithm. Possible values: <a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a38644ce471217d36eab206d0bc144e57" title="Max pooling. ">mkldnn_pooling_max</a>, <a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97ae81aeeb0b887c9d903daffabcffac422" title="Average pooling include padding. ">mkldnn_pooling_avg_include_padding</a>, and <a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a134808cee6fb8aeb7f0927c1666605b4" title="Average pooling exclude padding. ">mkldnn_pooling_avg_exclude_padding</a>.  <a href="#aa16febdd2a678f5f1d77ed4b2022dd3b">More...</a><br/></td></tr>
+<tr class="memdesc:aa16febdd2a678f5f1d77ed4b2022dd3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The kind of pooling algorithm.  <a href="#aa16febdd2a678f5f1d77ed4b2022dd3b">More...</a><br/></td></tr>
 <tr class="separator:aa16febdd2a678f5f1d77ed4b2022dd3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3145a3354e2c46b2827a645fe90c1b04"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__pooling__desc__t.html#a3145a3354e2c46b2827a645fe90c1b04">src_desc</a></td></tr>
-<tr class="memdesc:a3145a3354e2c46b2827a645fe90c1b04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Source memory descriptor.  <a href="#a3145a3354e2c46b2827a645fe90c1b04">More...</a><br/></td></tr>
+<tr class="memitem:a3145a3354e2c46b2827a645fe90c1b04"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3145a3354e2c46b2827a645fe90c1b04"></a>
+<a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__pooling__desc__t.html#a3145a3354e2c46b2827a645fe90c1b04">src_desc</a></td></tr>
+<tr class="memdesc:a3145a3354e2c46b2827a645fe90c1b04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Source memory descriptor. <br/></td></tr>
 <tr class="separator:a3145a3354e2c46b2827a645fe90c1b04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab553c85b19f00966b617a5468a98cfa9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__pooling__desc__t.html#ab553c85b19f00966b617a5468a98cfa9">diff_src_desc</a></td></tr>
-<tr class="memdesc:ab553c85b19f00966b617a5468a98cfa9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Source gradient memory descriptor.  <a href="#ab553c85b19f00966b617a5468a98cfa9">More...</a><br/></td></tr>
+<tr class="memitem:ab553c85b19f00966b617a5468a98cfa9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab553c85b19f00966b617a5468a98cfa9"></a>
+<a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__pooling__desc__t.html#ab553c85b19f00966b617a5468a98cfa9">diff_src_desc</a></td></tr>
+<tr class="memdesc:ab553c85b19f00966b617a5468a98cfa9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Source gradient memory descriptor. <br/></td></tr>
 <tr class="separator:ab553c85b19f00966b617a5468a98cfa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1604893839196b8da368262d83e274af"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__pooling__desc__t.html#a1604893839196b8da368262d83e274af">dst_desc</a></td></tr>
-<tr class="memdesc:a1604893839196b8da368262d83e274af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destination memory descriptor.  <a href="#a1604893839196b8da368262d83e274af">More...</a><br/></td></tr>
+<tr class="memitem:a1604893839196b8da368262d83e274af"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1604893839196b8da368262d83e274af"></a>
+<a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__pooling__desc__t.html#a1604893839196b8da368262d83e274af">dst_desc</a></td></tr>
+<tr class="memdesc:a1604893839196b8da368262d83e274af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destination memory descriptor. <br/></td></tr>
 <tr class="separator:a1604893839196b8da368262d83e274af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf419668917f33b7861130050805d1f2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__pooling__desc__t.html#acf419668917f33b7861130050805d1f2">diff_dst_desc</a></td></tr>
-<tr class="memdesc:acf419668917f33b7861130050805d1f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destination gradient memory descriptor.  <a href="#acf419668917f33b7861130050805d1f2">More...</a><br/></td></tr>
+<tr class="memitem:acf419668917f33b7861130050805d1f2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acf419668917f33b7861130050805d1f2"></a>
+<a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__pooling__desc__t.html#acf419668917f33b7861130050805d1f2">diff_dst_desc</a></td></tr>
+<tr class="memdesc:acf419668917f33b7861130050805d1f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destination gradient memory descriptor. <br/></td></tr>
 <tr class="separator:acf419668917f33b7861130050805d1f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c339dae420e12a19a4bef3c7de08948"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__pooling__desc__t.html#a8c339dae420e12a19a4bef3c7de08948">strides</a></td></tr>
-<tr class="memdesc:a8c339dae420e12a19a4bef3c7de08948"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pooling kernel strides for spatial dimensions.  <a href="#a8c339dae420e12a19a4bef3c7de08948">More...</a><br/></td></tr>
+<tr class="memitem:a8c339dae420e12a19a4bef3c7de08948"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8c339dae420e12a19a4bef3c7de08948"></a>
+<a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__pooling__desc__t.html#a8c339dae420e12a19a4bef3c7de08948">strides</a></td></tr>
+<tr class="memdesc:a8c339dae420e12a19a4bef3c7de08948"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pooling kernel strides for spatial dimensions. <br/></td></tr>
 <tr class="separator:a8c339dae420e12a19a4bef3c7de08948"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7fe4d394ee37ddfae7f196627a0b15b6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__pooling__desc__t.html#a7fe4d394ee37ddfae7f196627a0b15b6">kernel</a></td></tr>
-<tr class="memdesc:a7fe4d394ee37ddfae7f196627a0b15b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pooling kernel spatial dimensions.  <a href="#a7fe4d394ee37ddfae7f196627a0b15b6">More...</a><br/></td></tr>
+<tr class="memitem:a7fe4d394ee37ddfae7f196627a0b15b6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7fe4d394ee37ddfae7f196627a0b15b6"></a>
+<a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__pooling__desc__t.html#a7fe4d394ee37ddfae7f196627a0b15b6">kernel</a></td></tr>
+<tr class="memdesc:a7fe4d394ee37ddfae7f196627a0b15b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pooling kernel spatial dimensions. <br/></td></tr>
 <tr class="separator:a7fe4d394ee37ddfae7f196627a0b15b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05cb2daecfa2dadd700ecfd91295500a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__pooling__desc__t.html#a05cb2daecfa2dadd700ecfd91295500a">padding</a> [2]</td></tr>
-<tr class="memdesc:a05cb2daecfa2dadd700ecfd91295500a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Padding in each spatial dimension. padding[0] is a padding in the beginning (<code>padding_l</code>), padding[1] is a padding in the end (<code>padding_r</code>).  <a href="#a05cb2daecfa2dadd700ecfd91295500a">More...</a><br/></td></tr>
+<tr class="memdesc:a05cb2daecfa2dadd700ecfd91295500a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Padding in each spatial dimension.  <a href="#a05cb2daecfa2dadd700ecfd91295500a">More...</a><br/></td></tr>
 <tr class="separator:a05cb2daecfa2dadd700ecfd91295500a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a283f1330595d8bc0bd226576654ea372"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga826b2a9be4d94ac17f99bacac6d0cb29">mkldnn_data_type_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__pooling__desc__t.html#a283f1330595d8bc0bd226576654ea372">accum_data_type</a></td></tr>
-<tr class="memdesc:a283f1330595d8bc0bd226576654ea372"><td class="mdescLeft">&#160;</td><td class="mdescRight">The accumulator data type. Initialized automatically.  <a href="#a283f1330595d8bc0bd226576654ea372">More...</a><br/></td></tr>
+<tr class="memitem:a283f1330595d8bc0bd226576654ea372"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a283f1330595d8bc0bd226576654ea372"></a>
+<a class="el" href="group__c__api__types__generic.html#ga826b2a9be4d94ac17f99bacac6d0cb29">mkldnn_data_type_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__pooling__desc__t.html#a283f1330595d8bc0bd226576654ea372">accum_data_type</a></td></tr>
+<tr class="memdesc:a283f1330595d8bc0bd226576654ea372"><td class="mdescLeft">&#160;</td><td class="mdescRight">The accumulator data type. Initialized automatically. <br/></td></tr>
 <tr class="separator:a283f1330595d8bc0bd226576654ea372"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A descriptor of a pooling operation. </p>
-</div><h2 class="groupheader">Member Data Documentation</h2>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cnn_inference_fp32_8c-example.html#_a40">cnn_inference_fp32.c</a>, and <a class="el" href="cnn_training_fp32_8c-example.html#_a40">cnn_training_fp32.c</a>.</dd>
+</dl></div><h2 class="groupheader">Member Data Documentation</h2>
 <a class="anchor" id="a31c30cf38b01f1514454ba5ea5b662a5"></a>
 <div class="memitem">
 <div class="memproto">
@@ -154,7 +164,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>The kind of primitive. Used for self-identifying the primitive descriptor. Must be <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a4962b750b011e794c6a7fcebcc5a4fb2" title="A pooling primitive. ">mkldnn_pooling</a>. </p>
+<p>The kind of primitive. </p>
+<p>Used for self-identifying the primitive descriptor. Must be <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a4962b750b011e794c6a7fcebcc5a4fb2" title="A pooling primitive. ">mkldnn_pooling</a>. </p>
 
 </div>
 </div>
@@ -168,7 +179,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>The kind of propagation. Possible values: <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f" title="Forward data propagation (training mode). In this mode primitives perform computations necessary for ...">mkldnn_forward_training</a>, <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a58a923fb6c4e1214e1505b5fa0b1e3fa" title="Forward data propagation (inference mode). In this mode primitives perform only computations that are...">mkldnn_forward_inference</a>, <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a4dd1b6040ef9d067a38d8ffa407b763b" title="Backward propagation (with respect to all parameters). ">mkldnn_backward</a>, and <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520aefa8bd2da7ba52a0a0061cfab6cf3925" title="Backward data propagation. ">mkldnn_backward_data</a>. </p>
+<p>The kind of propagation. </p>
+<p>Possible values: <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f" title="Forward data propagation (training mode). ">mkldnn_forward_training</a>, <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a58a923fb6c4e1214e1505b5fa0b1e3fa" title="Forward data propagation (inference mode). ">mkldnn_forward_inference</a>, <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a4dd1b6040ef9d067a38d8ffa407b763b" title="Backward propagation (with respect to all parameters). ">mkldnn_backward</a>, and <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520aefa8bd2da7ba52a0a0061cfab6cf3925" title="Backward data propagation. ">mkldnn_backward_data</a>. </p>
 
 </div>
 </div>
@@ -182,91 +194,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>The kind of pooling algorithm. Possible values: <a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a38644ce471217d36eab206d0bc144e57" title="Max pooling. ">mkldnn_pooling_max</a>, <a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97ae81aeeb0b887c9d903daffabcffac422" title="Average pooling include padding. ">mkldnn_pooling_avg_include_padding</a>, and <a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a134808cee6fb8aeb7f0927c1666605b4" title="Average pooling exclude padding. ">mkldnn_pooling_avg_exclude_padding</a>. </p>
-
-</div>
-</div>
-<a class="anchor" id="a3145a3354e2c46b2827a645fe90c1b04"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_pooling_desc_t::src_desc</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Source memory descriptor. </p>
-
-</div>
-</div>
-<a class="anchor" id="ab553c85b19f00966b617a5468a98cfa9"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_pooling_desc_t::diff_src_desc</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Source gradient memory descriptor. </p>
-
-</div>
-</div>
-<a class="anchor" id="a1604893839196b8da368262d83e274af"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_pooling_desc_t::dst_desc</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Destination memory descriptor. </p>
-
-</div>
-</div>
-<a class="anchor" id="acf419668917f33b7861130050805d1f2"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> mkldnn_pooling_desc_t::diff_dst_desc</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Destination gradient memory descriptor. </p>
-
-</div>
-</div>
-<a class="anchor" id="a8c339dae420e12a19a4bef3c7de08948"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a> mkldnn_pooling_desc_t::strides</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Pooling kernel strides for spatial dimensions. </p>
-
-</div>
-</div>
-<a class="anchor" id="a7fe4d394ee37ddfae7f196627a0b15b6"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a> mkldnn_pooling_desc_t::kernel</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Pooling kernel spatial dimensions. </p>
+<p>The kind of pooling algorithm. </p>
+<p>Possible values: <a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a38644ce471217d36eab206d0bc144e57" title="Max pooling. ">mkldnn_pooling_max</a>, <a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97ae81aeeb0b887c9d903daffabcffac422" title="Average pooling include padding. ">mkldnn_pooling_avg_include_padding</a>, and <a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a134808cee6fb8aeb7f0927c1666605b4" title="Average pooling exclude padding. ">mkldnn_pooling_avg_exclude_padding</a>. </p>
 
 </div>
 </div>
@@ -280,21 +209,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Padding in each spatial dimension. padding[0] is a padding in the beginning (<code>padding_l</code>), padding[1] is a padding in the end (<code>padding_r</code>). </p>
-
-</div>
-</div>
-<a class="anchor" id="a283f1330595d8bc0bd226576654ea372"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga826b2a9be4d94ac17f99bacac6d0cb29">mkldnn_data_type_t</a> mkldnn_pooling_desc_t::accum_data_type</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The accumulator data type. Initialized automatically. </p>
+<p>Padding in each spatial dimension. </p>
+<p>padding[0] is a padding in the beginning (<code>padding_l</code>), padding[1] is a padding in the end (<code>padding_r</code>). </p>
 
 </div>
 </div>

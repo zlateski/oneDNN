@@ -14,6 +14,7 @@
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
+<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -43,6 +44,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="examples.html"><span>Examples</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -67,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -102,7 +104,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Description of extra information stored in memory.  <a href="structmkldnn__memory__extra__desc__t.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Memory descriptor. The description is based on a number of dimensions, dimensions themselves, plus information about elements type and memory format. Additionally, contains format-specific descriptions of the data layout.  <a href="structmkldnn__memory__desc__t.html#details">More...</a><br/></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Memory descriptor.  <a href="structmkldnn__memory__desc__t.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__memory.html">mkldnn_memory</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An opaque structure to describe a memory.  <a href="structmkldnn__memory.html#details">More...</a><br/></td></tr>
@@ -111,32 +113,29 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:gabdefec6dd67abc44d68c97f51afbaf45"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#gabdefec6dd67abc44d68c97f51afbaf45">MKLDNN_MAX_NDIMS</a>&#160;&#160;&#160;12</td></tr>
-<tr class="memdesc:gabdefec6dd67abc44d68c97f51afbaf45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of dimensions a tensor can have. Only restricts the amount of space used for the tensor description. Individual computational primitives may support only tensors of certain dimensions.  <a href="#gabdefec6dd67abc44d68c97f51afbaf45">More...</a><br/></td></tr>
+<tr class="memdesc:gabdefec6dd67abc44d68c97f51afbaf45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of dimensions a tensor can have.  <a href="#gabdefec6dd67abc44d68c97f51afbaf45">More...</a><br/></td></tr>
 <tr class="separator:gabdefec6dd67abc44d68c97f51afbaf45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga09e605320955705ff8d2561026995b47"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#ga09e605320955705ff8d2561026995b47">MKLDNN_RNN_MAX_N_PARTS</a>&#160;&#160;&#160;4</td></tr>
 <tr class="memdesc:ga09e605320955705ff8d2561026995b47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of parts of RNN weights tensor that require separate computation.  <a href="#ga09e605320955705ff8d2561026995b47">More...</a><br/></td></tr>
 <tr class="separator:ga09e605320955705ff8d2561026995b47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga09728eba6ccd8efeff3a6d91129cd6ef"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#ga09728eba6ccd8efeff3a6d91129cd6ef">MKLDNN_MEMORY_NONE</a>&#160;&#160;&#160;(NULL)</td></tr>
-<tr class="separator:ga09728eba6ccd8efeff3a6d91129cd6ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae4437cbe3d3475d735279dd2eedca7dd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#gae4437cbe3d3475d735279dd2eedca7dd">MKLDNN_MEMORY_ALLOCATE</a>&#160;&#160;&#160;((void *)(size_t)-1)</td></tr>
-<tr class="separator:gae4437cbe3d3475d735279dd2eedca7dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:ga15898db3725cddbf807b85ef351ca81f"><td class="memItemLeft" align="right" valign="top">typedef int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a></td></tr>
-<tr class="memdesc:ga15898db3725cddbf807b85ef351ca81f"><td class="mdescLeft">&#160;</td><td class="mdescRight">A type to describe tensor dimension.  <a href="#ga15898db3725cddbf807b85ef351ca81f">More...</a><br/></td></tr>
+<tr class="memitem:ga15898db3725cddbf807b85ef351ca81f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga15898db3725cddbf807b85ef351ca81f"></a>
+typedef int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a></td></tr>
+<tr class="memdesc:ga15898db3725cddbf807b85ef351ca81f"><td class="mdescLeft">&#160;</td><td class="mdescRight">A type to describe tensor dimension. <br/></td></tr>
 <tr class="separator:ga15898db3725cddbf807b85ef351ca81f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga172d58716d5d4d104a05ed79a21dfec8"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a> [<a class="el" href="group__c__api__types__memory.html#gabdefec6dd67abc44d68c97f51afbaf45">MKLDNN_MAX_NDIMS</a>]</td></tr>
-<tr class="memdesc:ga172d58716d5d4d104a05ed79a21dfec8"><td class="mdescLeft">&#160;</td><td class="mdescRight">A type to describe tensor dimensions.  <a href="#ga172d58716d5d4d104a05ed79a21dfec8">More...</a><br/></td></tr>
+<tr class="memitem:ga172d58716d5d4d104a05ed79a21dfec8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga172d58716d5d4d104a05ed79a21dfec8"></a>
+typedef <a class="el" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#ga172d58716d5d4d104a05ed79a21dfec8">mkldnn_dims_t</a> [<a class="el" href="group__c__api__types__memory.html#gabdefec6dd67abc44d68c97f51afbaf45">MKLDNN_MAX_NDIMS</a>]</td></tr>
+<tr class="memdesc:ga172d58716d5d4d104a05ed79a21dfec8"><td class="mdescLeft">&#160;</td><td class="mdescRight">A type to describe tensor dimensions. <br/></td></tr>
 <tr class="separator:ga172d58716d5d4d104a05ed79a21dfec8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad490a0ac5e5ba915e485a9261f970af0"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#gad490a0ac5e5ba915e485a9261f970af0">mkldnn_strides_t</a> [<a class="el" href="group__c__api__types__memory.html#gabdefec6dd67abc44d68c97f51afbaf45">MKLDNN_MAX_NDIMS</a>]</td></tr>
-<tr class="memdesc:gad490a0ac5e5ba915e485a9261f970af0"><td class="mdescLeft">&#160;</td><td class="mdescRight">A type to describe strides within a tensor.  <a href="#gad490a0ac5e5ba915e485a9261f970af0">More...</a><br/></td></tr>
-<tr class="separator:gad490a0ac5e5ba915e485a9261f970af0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacf7d7938936d5422bbd63ccb54efb336"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structmkldnn__memory.html">mkldnn_memory</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#gacf7d7938936d5422bbd63ccb54efb336">mkldnn_memory_t</a></td></tr>
-<tr class="memdesc:gacf7d7938936d5422bbd63ccb54efb336"><td class="mdescLeft">&#160;</td><td class="mdescRight">A memory handle.  <a href="#gacf7d7938936d5422bbd63ccb54efb336">More...</a><br/></td></tr>
+<tr class="memitem:gacf7d7938936d5422bbd63ccb54efb336"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gacf7d7938936d5422bbd63ccb54efb336"></a>
+typedef struct <a class="el" href="structmkldnn__memory.html">mkldnn_memory</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#gacf7d7938936d5422bbd63ccb54efb336">mkldnn_memory_t</a></td></tr>
+<tr class="memdesc:gacf7d7938936d5422bbd63ccb54efb336"><td class="mdescLeft">&#160;</td><td class="mdescRight">A memory handle. <br/></td></tr>
 <tr class="separator:gacf7d7938936d5422bbd63ccb54efb336"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8bccb82071165d6eefef9d46ed802730"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structmkldnn__memory.html">mkldnn_memory</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#ga8bccb82071165d6eefef9d46ed802730">const_mkldnn_memory_t</a></td></tr>
-<tr class="memdesc:ga8bccb82071165d6eefef9d46ed802730"><td class="mdescLeft">&#160;</td><td class="mdescRight">A constant memory handle.  <a href="#ga8bccb82071165d6eefef9d46ed802730">More...</a><br/></td></tr>
+<tr class="memitem:ga8bccb82071165d6eefef9d46ed802730"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga8bccb82071165d6eefef9d46ed802730"></a>
+typedef struct <a class="el" href="structmkldnn__memory.html">mkldnn_memory</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#ga8bccb82071165d6eefef9d46ed802730">const_mkldnn_memory_t</a></td></tr>
+<tr class="memdesc:ga8bccb82071165d6eefef9d46ed802730"><td class="mdescLeft">&#160;</td><td class="mdescRight">A constant memory handle. <br/></td></tr>
 <tr class="separator:ga8bccb82071165d6eefef9d46ed802730"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
@@ -152,14 +151,7 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:ga9b836385e37583fa1aeaf2753b25e966"><td class="mdescLeft">&#160;</td><td class="mdescRight">Winograd-specific formats.  <a href="group__c__api__types__memory.html#ga9b836385e37583fa1aeaf2753b25e966">More...</a><br/></td></tr>
 <tr class="separator:ga9b836385e37583fa1aeaf2753b25e966"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0b72d4deb16ce5703dc1641c80e9de87"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#ga0b72d4deb16ce5703dc1641c80e9de87">mkldnn_rnn_packed_memory_format_t</a> { <a class="el" href="group__c__api__types__memory.html#gga0b72d4deb16ce5703dc1641c80e9de87a7ea620d880278e0e362f22a0dca727fc">mkldnn_packed_format_undef</a> = 0, 
-<a class="el" href="group__c__api__types__memory.html#gga0b72d4deb16ce5703dc1641c80e9de87aa01ef053fccf8bd78da948b9c61cc758">mkldnn_ldigo_p</a>, 
-<a class="el" href="group__c__api__types__memory.html#gga0b72d4deb16ce5703dc1641c80e9de87ae3debd06f01fcfc7249e64922652ed4f">mkldnn_ldgoi_p</a>
- }</td></tr>
-<tr class="separator:ga0b72d4deb16ce5703dc1641c80e9de87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga16866483eb06591891e93924b19a2b73"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#ga16866483eb06591891e93924b19a2b73">mkldnn_memory_extra_flags_t</a> { <a class="el" href="group__c__api__types__memory.html#gga16866483eb06591891e93924b19a2b73a1885d99763d35b9c07ad71c286e2a28f">mkldnn_memory_extra_flag_none</a> = 0x0U, 
-<a class="el" href="group__c__api__types__memory.html#gga16866483eb06591891e93924b19a2b73a517c1e993551853f409cee04679fcb2e">mkldnn_memory_extra_flag_compensation_conv_s8s8</a> = 0x1U, 
-<a class="el" href="group__c__api__types__memory.html#gga16866483eb06591891e93924b19a2b73ab4ed583a062bc7b9943a935ac9a75c04">mkldnn_memory_extra_flag_scale_adjust</a> = 0x2U
+<tr class="memitem:ga16866483eb06591891e93924b19a2b73"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#ga16866483eb06591891e93924b19a2b73">mkldnn_memory_extra_flags_t</a> { , <a class="el" href="group__c__api__types__memory.html#gga16866483eb06591891e93924b19a2b73a517c1e993551853f409cee04679fcb2e">mkldnn_memory_extra_flag_compensation_conv_s8s8</a> = 0x1U
  }</td></tr>
 <tr class="memdesc:ga16866483eb06591891e93924b19a2b73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flags for memory special features.  <a href="group__c__api__types__memory.html#ga16866483eb06591891e93924b19a2b73">More...</a><br/></td></tr>
 <tr class="separator:ga16866483eb06591891e93924b19a2b73"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -176,7 +168,8 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Maximum number of dimensions a tensor can have. Only restricts the amount of space used for the tensor description. Individual computational primitives may support only tensors of certain dimensions. </p>
+<p>Maximum number of dimensions a tensor can have. </p>
+<p>Only restricts the amount of space used for the tensor description. Individual computational primitives may support only tensors of certain dimensions. </p>
 
 </div>
 </div>
@@ -191,101 +184,6 @@ Enumerations</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Maximum number of parts of RNN weights tensor that require separate computation. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga09728eba6ccd8efeff3a6d91129cd6ef"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define MKLDNN_MEMORY_NONE&#160;&#160;&#160;(NULL)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="gae4437cbe3d3475d735279dd2eedca7dd"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define MKLDNN_MEMORY_ALLOCATE&#160;&#160;&#160;((void *)(size_t)-1)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Typedef Documentation</h2>
-<a class="anchor" id="ga15898db3725cddbf807b85ef351ca81f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef int64_t <a class="el" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>A type to describe tensor dimension. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga172d58716d5d4d104a05ed79a21dfec8"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef <a class="el" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a> mkldnn_dims_t[<a class="el" href="group__c__api__types__memory.html#gabdefec6dd67abc44d68c97f51afbaf45">MKLDNN_MAX_NDIMS</a>]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>A type to describe tensor dimensions. </p>
-
-</div>
-</div>
-<a class="anchor" id="gad490a0ac5e5ba915e485a9261f970af0"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef <a class="el" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a> mkldnn_strides_t[<a class="el" href="group__c__api__types__memory.html#gabdefec6dd67abc44d68c97f51afbaf45">MKLDNN_MAX_NDIMS</a>]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>A type to describe strides within a tensor. </p>
-
-</div>
-</div>
-<a class="anchor" id="gacf7d7938936d5422bbd63ccb54efb336"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef struct <a class="el" href="structmkldnn__memory.html">mkldnn_memory</a>* <a class="el" href="group__c__api__types__memory.html#gacf7d7938936d5422bbd63ccb54efb336">mkldnn_memory_t</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>A memory handle. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga8bccb82071165d6eefef9d46ed802730"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef struct <a class="el" href="structmkldnn__memory.html">mkldnn_memory</a>* <a class="el" href="group__c__api__types__memory.html#ga8bccb82071165d6eefef9d46ed802730">const_mkldnn_memory_t</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>A constant memory handle. </p>
 
 </div>
 </div>
@@ -321,26 +219,6 @@ Enumerations</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ga0b72d4deb16ce5703dc1641c80e9de87"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="group__c__api__types__memory.html#ga0b72d4deb16ce5703dc1641c80e9de87">mkldnn_rnn_packed_memory_format_t</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="gga0b72d4deb16ce5703dc1641c80e9de87a7ea620d880278e0e362f22a0dca727fc"></a>mkldnn_packed_format_undef</em>&nbsp;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="gga0b72d4deb16ce5703dc1641c80e9de87aa01ef053fccf8bd78da948b9c61cc758"></a>mkldnn_ldigo_p</em>&nbsp;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="gga0b72d4deb16ce5703dc1641c80e9de87ae3debd06f01fcfc7249e64922652ed4f"></a>mkldnn_ldgoi_p</em>&nbsp;</td><td class="fielddoc">
-</td></tr>
-</table>
-
-</div>
-</div>
 <a class="anchor" id="ga16866483eb06591891e93924b19a2b73"></a>
 <div class="memitem">
 <div class="memproto">
@@ -353,13 +231,9 @@ Enumerations</h2></td></tr>
 
 <p>Flags for memory special features. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="gga16866483eb06591891e93924b19a2b73a1885d99763d35b9c07ad71c286e2a28f"></a>mkldnn_memory_extra_flag_none</em>&nbsp;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="gga16866483eb06591891e93924b19a2b73a517c1e993551853f409cee04679fcb2e"></a>mkldnn_memory_extra_flag_compensation_conv_s8s8</em>&nbsp;</td><td class="fielddoc">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="gga16866483eb06591891e93924b19a2b73a517c1e993551853f409cee04679fcb2e"></a>mkldnn_memory_extra_flag_compensation_conv_s8s8</em>&nbsp;</td><td class="fielddoc">
 <p>Indicates the weights have an additional buffer, that depends on the <code>compensation_mask</code>. </p>
 <p>For instance, in 4D case with the compensation mask equals (1 &lt;&lt; 0) the additional buffer would consist of OC values: O[oc : 0,OC] = -128 * SUM(ic : 0,IC; kh : 0,KH; kw : 0,KW){ weights(oc, ic, kh, kw) } </p>
-</td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="gga16866483eb06591891e93924b19a2b73ab4ed583a062bc7b9943a935ac9a75c04"></a>mkldnn_memory_extra_flag_scale_adjust</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
 </table>
 

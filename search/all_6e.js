@@ -1,30 +1,12 @@
 var searchData=
 [
-  ['n',['n',['../structmkldnn__rnn__packed__desc__t.html#a8b2944bc5d3701332ad68c4e654e1e0d',1,'mkldnn_rnn_packed_desc_t']]],
-  ['n_5fparts',['n_parts',['../structmkldnn__rnn__packed__desc__t.html#a3455db9fa85140ba598877f0f501d56c',1,'mkldnn_rnn_packed_desc_t']]],
+  ['naming_20conventions',['Naming Conventions',['../dev_guide_conventions.html',1,'']]],
   ['native',['native',['../group__cpp__api__enums.html#ggae7ae677040e89f183df87f4ba3a5eb6ea8e5f3adee38c8fccc13c1f3be0143796',1,'mkldnn']]],
   ['nc',['nc',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda1e7342845e24eb3b5b3554490da1c128',1,'mkldnn::memory']]],
-  ['ncdhw',['ncdhw',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedae7a84f08ef10d4fe3096307c6d9770fd',1,'mkldnn::memory']]],
-  ['ncdhw16c',['nCdhw16c',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda6861aaac0752cd0c618f68453416ea5e',1,'mkldnn::memory']]],
-  ['ncdhw16n16c',['NCdhw16n16c',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda62a823240787c4b65f45570772156c18',1,'mkldnn::memory']]],
-  ['ncdhw4c',['nCdhw4c',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda94adcd68022f332e02475001d4fc9201',1,'mkldnn::memory']]],
-  ['ncdhw8c',['nCdhw8c',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedafced4a15e4acb04396e30b54955fa1a2',1,'mkldnn::memory']]],
   ['nchw',['nchw',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaded7ac40158367123c5467281d44cbeb',1,'mkldnn::memory']]],
-  ['nchw16c',['nChw16c',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaf0f101166691298d3aad79d7f347f2ef',1,'mkldnn::memory']]],
-  ['nchw16n16c',['NChw16n16c',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedac37f342bac76c6566daec13bd5106594',1,'mkldnn::memory']]],
-  ['nchw32n32c',['NChw32n32c',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedad37ac31732879264c2bce09f7caea13b',1,'mkldnn::memory']]],
-  ['nchw4c',['nChw4c',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedad649ed0a6bf979419b24d6c7c58d97d7',1,'mkldnn::memory']]],
-  ['nchw8c',['nChw8c',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda1c644d98a1e2e21c610ef0eadb24d094',1,'mkldnn::memory']]],
-  ['ncw',['ncw',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedabc4eee572ad38f8a5c2534e0b2533100',1,'mkldnn::memory']]],
-  ['ncw16c',['nCw16c',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda41e0c6dde8335c790dc7be6f28c5b845',1,'mkldnn::memory']]],
-  ['ncw4c',['nCw4c',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda1d5b916eac88a854f7596bb7778b5d84',1,'mkldnn::memory']]],
-  ['ncw8c',['nCw8c',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaa53de045f004e830b06a37f3e59fbf29',1,'mkldnn::memory']]],
-  ['ndhwc',['ndhwc',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedad2f2770ca9883423f680fd4a29481d64',1,'mkldnn::memory']]],
   ['ndims',['ndims',['../structmkldnn__memory__desc__t.html#a8fc71fc8a04e665573f86442bda4dc4c',1,'mkldnn_memory_desc_t']]],
   ['next_5fimpl',['next_impl',['../structmkldnn_1_1primitive__desc.html#a92fa1a8b789ab757c2cf811a74e696ef',1,'mkldnn::primitive_desc']]],
   ['nhwc',['nhwc',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda763cbf7ba1b7b8793dcdc6e2157b5c42',1,'mkldnn::memory']]],
-  ['ntc',['ntc',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda6758344f9f89d390953c6718f34e9be1',1,'mkldnn::memory']]],
   ['num_5fof_5finputs_5fs32',['num_of_inputs_s32',['../group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a8e76d4a603e890128e5205c75581f80b',1,'mkldnn']]],
-  ['num_5fof_5foutputs_5fs32',['num_of_outputs_s32',['../group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a60ba192a313fabc2c91f5295d1422491',1,'mkldnn']]],
-  ['nwc',['nwc',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaccc0543dc9272f9fffd720fe55f818e4',1,'mkldnn::memory']]]
+  ['num_5fof_5foutputs_5fs32',['num_of_outputs_s32',['../group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a60ba192a313fabc2c91f5295d1422491',1,'mkldnn']]]
 ];

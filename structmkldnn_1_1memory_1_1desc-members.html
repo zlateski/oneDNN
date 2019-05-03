@@ -14,6 +14,7 @@
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
+<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -43,6 +44,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="examples.html"><span>Examples</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -74,7 +76,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -85,7 +87,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="namespacemkldnn.html">mkldnn</a></li><li class="navelem"><a class="el" href="structmkldnn_1_1memory.html">memory</a></li><li class="navelem"><a class="el" href="structmkldnn_1_1memory_1_1desc.html">desc</a></li>  </ul>
+<li class="navelem"><b>mkldnn</b></li><li class="navelem"><a class="el" href="structmkldnn_1_1memory.html">memory</a></li><li class="navelem"><a class="el" href="structmkldnn_1_1memory_1_1desc.html">desc</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -99,11 +101,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <tr class="even"><td class="entry"><a class="el" href="structmkldnn_1_1memory_1_1desc.html#abeddf8909e2b4af626153c88da9f8b37">data</a></td><td class="entry"><a class="el" href="structmkldnn_1_1memory_1_1desc.html">mkldnn::memory::desc</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="structmkldnn_1_1memory_1_1desc.html#a5b74c3354d9a85336973ee303c003d41">desc</a>()</td><td class="entry"><a class="el" href="structmkldnn_1_1memory_1_1desc.html">mkldnn::memory::desc</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="structmkldnn_1_1memory_1_1desc.html#a28ad323a58870bc9d44a4590330df3d3">desc</a>(const dims &amp;adims, data_type adata_type, format_tag aformat)</td><td class="entry"><a class="el" href="structmkldnn_1_1memory_1_1desc.html">mkldnn::memory::desc</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="structmkldnn_1_1memory_1_1desc.html#a1c920d7252520c2aec79b191eb85c9de">desc</a>(const mkldnn_memory_desc_t &amp;adata)</td><td class="entry"><a class="el" href="structmkldnn_1_1memory_1_1desc.html">mkldnn::memory::desc</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="structmkldnn_1_1memory_1_1desc.html#a273a35ba51f1ce0185e1703cc96d9dec">get_size</a>() const </td><td class="entry"><a class="el" href="structmkldnn_1_1memory_1_1desc.html">mkldnn::memory::desc</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="structmkldnn_1_1memory_1_1desc.html#a3fffd0434d0204bd2c10e36f44781995">memory</a></td><td class="entry"><a class="el" href="structmkldnn_1_1memory_1_1desc.html">mkldnn::memory::desc</a></td><td class="entry"><span class="mlabel">friend</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="structmkldnn_1_1memory_1_1desc.html#a4ebb631c614ea1e3c03ac8d62109db49">operator!=</a>(const desc &amp;other) const </td><td class="entry"><a class="el" href="structmkldnn_1_1memory_1_1desc.html">mkldnn::memory::desc</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="structmkldnn_1_1memory_1_1desc.html#ab62c17096dbf20600ab325f3739b25e3">operator==</a>(const desc &amp;other) const </td><td class="entry"><a class="el" href="structmkldnn_1_1memory_1_1desc.html">mkldnn::memory::desc</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="structmkldnn_1_1memory_1_1desc.html#a0030c4bc00707ae19286f9e5ccd7124b">desc</a>(const dims &amp;adims, data_type adata_type, const dims &amp;astrides)</td><td class="entry"><a class="el" href="structmkldnn_1_1memory_1_1desc.html">mkldnn::memory::desc</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="structmkldnn_1_1memory_1_1desc.html#a1c920d7252520c2aec79b191eb85c9de">desc</a>(const mkldnn_memory_desc_t &amp;adata)</td><td class="entry"><a class="el" href="structmkldnn_1_1memory_1_1desc.html">mkldnn::memory::desc</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="structmkldnn_1_1memory_1_1desc.html#a273a35ba51f1ce0185e1703cc96d9dec">get_size</a>() const </td><td class="entry"><a class="el" href="structmkldnn_1_1memory_1_1desc.html">mkldnn::memory::desc</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="structmkldnn_1_1memory_1_1desc.html#a58ccb996eecfe7357b616f47953ff3ad">submemory_desc</a>(const dims &amp;adims, const dims &amp;offsets)</td><td class="entry"><a class="el" href="structmkldnn_1_1memory_1_1desc.html">mkldnn::memory::desc</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->

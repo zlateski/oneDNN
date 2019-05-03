@@ -14,6 +14,7 @@
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
+<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -43,6 +44,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="examples.html"><span>Examples</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -67,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -89,20 +91,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga468da77f1370969ada09bdb3ecb7cad0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__attributes__post__ops.html#ga468da77f1370969ada09bdb3ecb7cad0">mkldnn_post_ops_create</a> (<a class="el" href="group__c__api__primitive__attr.html#ga4429ed6c73260d02cc54744a74989807">mkldnn_post_ops_t</a> *post_ops)</td></tr>
-<tr class="memdesc:ga468da77f1370969ada09bdb3ecb7cad0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an empty sequence of post operations <code>post_ops</code>.  <a href="#ga468da77f1370969ada09bdb3ecb7cad0">More...</a><br/></td></tr>
+<tr class="memitem:ga468da77f1370969ada09bdb3ecb7cad0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga468da77f1370969ada09bdb3ecb7cad0"></a>
+<a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__attributes__post__ops.html#ga468da77f1370969ada09bdb3ecb7cad0">mkldnn_post_ops_create</a> (<a class="el" href="group__c__api__primitive__attr.html#ga4429ed6c73260d02cc54744a74989807">mkldnn_post_ops_t</a> *post_ops)</td></tr>
+<tr class="memdesc:ga468da77f1370969ada09bdb3ecb7cad0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an empty sequence of post operations <code>post_ops</code>. <br/></td></tr>
 <tr class="separator:ga468da77f1370969ada09bdb3ecb7cad0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gade98465c485bf77a4afa13b65e2ecdf5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__attributes__post__ops.html#gade98465c485bf77a4afa13b65e2ecdf5">mkldnn_post_ops_destroy</a> (<a class="el" href="group__c__api__primitive__attr.html#ga4429ed6c73260d02cc54744a74989807">mkldnn_post_ops_t</a> post_ops)</td></tr>
-<tr class="memdesc:gade98465c485bf77a4afa13b65e2ecdf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes a <code>post_ops</code> sequence.  <a href="#gade98465c485bf77a4afa13b65e2ecdf5">More...</a><br/></td></tr>
+<tr class="memitem:gade98465c485bf77a4afa13b65e2ecdf5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gade98465c485bf77a4afa13b65e2ecdf5"></a>
+<a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__attributes__post__ops.html#gade98465c485bf77a4afa13b65e2ecdf5">mkldnn_post_ops_destroy</a> (<a class="el" href="group__c__api__primitive__attr.html#ga4429ed6c73260d02cc54744a74989807">mkldnn_post_ops_t</a> post_ops)</td></tr>
+<tr class="memdesc:gade98465c485bf77a4afa13b65e2ecdf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes a <code>post_ops</code> sequence. <br/></td></tr>
 <tr class="separator:gade98465c485bf77a4afa13b65e2ecdf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae8387e036f328963f24918af855f46d9"><td class="memItemLeft" align="right" valign="top">int MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__attributes__post__ops.html#gae8387e036f328963f24918af855f46d9">mkldnn_post_ops_len</a> (<a class="el" href="group__c__api__primitive__attr.html#ga5eec88308014ada305584714ecc72e6b">const_mkldnn_post_ops_t</a> post_ops)</td></tr>
-<tr class="memdesc:gae8387e036f328963f24918af855f46d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <code>length</code> of post operations for given <code>post_ops</code>.  <a href="#gae8387e036f328963f24918af855f46d9">More...</a><br/></td></tr>
+<tr class="memitem:gae8387e036f328963f24918af855f46d9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gae8387e036f328963f24918af855f46d9"></a>
+int MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__attributes__post__ops.html#gae8387e036f328963f24918af855f46d9">mkldnn_post_ops_len</a> (<a class="el" href="group__c__api__primitive__attr.html#ga5eec88308014ada305584714ecc72e6b">const_mkldnn_post_ops_t</a> post_ops)</td></tr>
+<tr class="memdesc:gae8387e036f328963f24918af855f46d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <code>length</code> of post operations for given <code>post_ops</code>. <br/></td></tr>
 <tr class="separator:gae8387e036f328963f24918af855f46d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae3a7ee2c5d62473aff9a0ef6a8a28a9b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga4f5c189c2ba9ef6444250299f1f8e973">mkldnn_primitive_kind_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__attributes__post__ops.html#gae3a7ee2c5d62473aff9a0ef6a8a28a9b">mkldnn_post_ops_get_kind</a> (<a class="el" href="group__c__api__primitive__attr.html#ga5eec88308014ada305584714ecc72e6b">const_mkldnn_post_ops_t</a> post_ops, int index)</td></tr>
-<tr class="memdesc:gae3a7ee2c5d62473aff9a0ef6a8a28a9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the type of post operation with index <code>index</code> in given <code>post_ops</code>. In case of error, returns <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a1ff42641253f71e6a16f23cc5334bc2d" title="Undefined primitive. ">mkldnn_undefined_primitive</a>.  <a href="#gae3a7ee2c5d62473aff9a0ef6a8a28a9b">More...</a><br/></td></tr>
+<tr class="memdesc:gae3a7ee2c5d62473aff9a0ef6a8a28a9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the kind of post operation with index <code>index</code> in given <code>post_ops</code>.  <a href="#gae3a7ee2c5d62473aff9a0ef6a8a28a9b">More...</a><br/></td></tr>
 <tr class="separator:gae3a7ee2c5d62473aff9a0ef6a8a28a9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga172931a133db5d1a3605495ad877d364"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__attributes__post__ops.html#ga172931a133db5d1a3605495ad877d364">mkldnn_post_ops_append_sum</a> (<a class="el" href="group__c__api__primitive__attr.html#ga4429ed6c73260d02cc54744a74989807">mkldnn_post_ops_t</a> post_ops, float scale)</td></tr>
-<tr class="memdesc:ga172931a133db5d1a3605495ad877d364"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends accumulation (sum) post operation to the <code>post_ops</code>. Prior to accumulating the result, the previous value would be multiplied by <code>scale</code>.  <a href="#ga172931a133db5d1a3605495ad877d364">More...</a><br/></td></tr>
+<tr class="memdesc:ga172931a133db5d1a3605495ad877d364"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends accumulation (sum) post operation to the <code>post_ops</code>.  <a href="#ga172931a133db5d1a3605495ad877d364">More...</a><br/></td></tr>
 <tr class="separator:ga172931a133db5d1a3605495ad877d364"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga35a2ee66eeed134fbbbf43e88c16a19b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__attributes__post__ops.html#ga35a2ee66eeed134fbbbf43e88c16a19b">mkldnn_post_ops_get_params_sum</a> (<a class="el" href="group__c__api__primitive__attr.html#ga5eec88308014ada305584714ecc72e6b">const_mkldnn_post_ops_t</a> post_ops, int index, float *scale)</td></tr>
 <tr class="memdesc:ga35a2ee66eeed134fbbbf43e88c16a19b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the parameters of the accumulation (sum) post operation with index <code>index</code> in the sequence of <code>post_ops</code>.  <a href="#ga35a2ee66eeed134fbbbf43e88c16a19b">More...</a><br/></td></tr>
@@ -117,60 +122,6 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>An extension for performing extra operations after a base operation. </p>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="ga468da77f1370969ada09bdb3ecb7cad0"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API mkldnn_post_ops_create </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__c__api__primitive__attr.html#ga4429ed6c73260d02cc54744a74989807">mkldnn_post_ops_t</a> *&#160;</td>
-          <td class="paramname"><em>post_ops</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Creates an empty sequence of post operations <code>post_ops</code>. </p>
-
-</div>
-</div>
-<a class="anchor" id="gade98465c485bf77a4afa13b65e2ecdf5"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API mkldnn_post_ops_destroy </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__c__api__primitive__attr.html#ga4429ed6c73260d02cc54744a74989807">mkldnn_post_ops_t</a>&#160;</td>
-          <td class="paramname"><em>post_ops</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Deletes a <code>post_ops</code> sequence. </p>
-
-</div>
-</div>
-<a class="anchor" id="gae8387e036f328963f24918af855f46d9"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int MKLDNN_API mkldnn_post_ops_len </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__c__api__primitive__attr.html#ga5eec88308014ada305584714ecc72e6b">const_mkldnn_post_ops_t</a>&#160;</td>
-          <td class="paramname"><em>post_ops</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the <code>length</code> of post operations for given <code>post_ops</code>. </p>
-
-</div>
-</div>
 <a class="anchor" id="gae3a7ee2c5d62473aff9a0ef6a8a28a9b"></a>
 <div class="memitem">
 <div class="memproto">
@@ -195,7 +146,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Returns the type of post operation with index <code>index</code> in given <code>post_ops</code>. In case of error, returns <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a1ff42641253f71e6a16f23cc5334bc2d" title="Undefined primitive. ">mkldnn_undefined_primitive</a>. </p>
+<p>Returns the kind of post operation with index <code>index</code> in given <code>post_ops</code>. </p>
+<p>In case of error, returns <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a1ff42641253f71e6a16f23cc5334bc2d" title="Undefined primitive. ">mkldnn_undefined_primitive</a>. </p>
 
 </div>
 </div>
@@ -223,7 +175,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Appends accumulation (sum) post operation to the <code>post_ops</code>. Prior to accumulating the result, the previous value would be multiplied by <code>scale</code>. </p>
+<p>Appends accumulation (sum) post operation to the <code>post_ops</code>. </p>
+<p>Prior to accumulating the result, the previous value would be multiplied by <code>scale</code>.</p>
 <p>The kind of this post operation is <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a1d5a4ac349734074b150188851be19c8" title="A sum primitive. ">mkldnn_sum</a>.</p>
 <p>This feature might improve performance for cases like residual learning blocks, where the result of convolution is accumulated to the previously computed activations. The parameter <code>scale</code> might be extreme for the integer-based computations when the result and previous activations have different logical scaling factors.</p>
 <p>In the simplest case when the accumulation is the only post operation, the computations would be: dst[] &lt;- scale * dst[] + op(...) // instead of dst[] &lt;- op(...)</p>

@@ -14,6 +14,7 @@
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
+<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -43,6 +44,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="examples.html"><span>Examples</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -74,10 +76,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions.html"><span>All</span></a></li>
       <li><a href="functions_func.html"><span>Functions</span></a></li>
       <li class="current"><a href="functions_vars.html"><span>Variables</span></a></li>
-      <li><a href="functions_type.html"><span>Typedefs</span></a></li>
       <li><a href="functions_enum.html"><span>Enumerations</span></a></li>
       <li><a href="functions_eval.html"><span>Enumerator</span></a></li>
-      <li><a href="functions_rela.html"><span>Related&#160;Functions</span></a></li>
     </ul>
   </div>
   <div id="navrow4" class="tabs3">
@@ -86,10 +86,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="#index_b"><span>b</span></a></li>
       <li><a href="#index_c"><span>c</span></a></li>
       <li><a href="#index_d"><span>d</span></a></li>
-      <li><a href="#index_e"><span>e</span></a></li>
       <li><a href="#index_f"><span>f</span></a></li>
       <li><a href="#index_g"><span>g</span></a></li>
-      <li><a href="#index_h"><span>h</span></a></li>
       <li><a href="#index_i"><span>i</span></a></li>
       <li><a href="#index_k"><span>k</span></a></li>
       <li><a href="#index_l"><span>l</span></a></li>
@@ -99,7 +97,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="#index_p"><span>p</span></a></li>
       <li><a href="#index_r"><span>r</span></a></li>
       <li><a href="#index_s"><span>s</span></a></li>
-      <li><a href="#index_v"><span>v</span></a></li>
       <li><a href="#index_w"><span>w</span></a></li>
     </ul>
   </div>
@@ -109,7 +106,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -128,21 +125,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 , <a class="el" href="structmkldnn__inner__product__desc__t.html#a998bb7a60862961aa69e791a703ee0e9">mkldnn_inner_product_desc_t</a>
 </li>
 <li>activation_kind
-: <a class="el" href="structmkldnn__rnn__cell__desc__t.html#ac59aa7f6bd889d2b15fa60b8e0c77bb8">mkldnn_rnn_cell_desc_t</a>
-</li>
-<li>adj_scale
-: <a class="el" href="structmkldnn__wino__desc__t.html#acb50a77a8e0ae6dabc3d61d01215b26b">mkldnn_wino_desc_t</a>
+: <a class="el" href="structmkldnn__rnn__desc__t.html#a57a9fa19f5839927ee463c3f20b21a37">mkldnn_rnn_desc_t</a>
 </li>
 <li>alg_kind
-: <a class="el" href="structmkldnn__pooling__desc__t.html#aa16febdd2a678f5f1d77ed4b2022dd3b">mkldnn_pooling_desc_t</a>
-, <a class="el" href="structmkldnn__lrn__desc__t.html#a8044a2d8506d9432def40dfd96b5ddd6">mkldnn_lrn_desc_t</a>
+: <a class="el" href="structmkldnn__lrn__desc__t.html#a8044a2d8506d9432def40dfd96b5ddd6">mkldnn_lrn_desc_t</a>
+, <a class="el" href="structmkldnn__pooling__desc__t.html#aa16febdd2a678f5f1d77ed4b2022dd3b">mkldnn_pooling_desc_t</a>
 , <a class="el" href="structmkldnn__convolution__desc__t.html#a9433e7ea4660fdc9ce3602065fd3ee6c">mkldnn_convolution_desc_t</a>
 , <a class="el" href="structmkldnn__eltwise__desc__t.html#a6cc3a589674fb7c80c4a37a61a01de74">mkldnn_eltwise_desc_t</a>
 </li>
 <li>alpha
 : <a class="el" href="structmkldnn__eltwise__desc__t.html#ae651978c5c026c832a037d876025192c">mkldnn_eltwise_desc_t</a>
-, <a class="el" href="structmkldnn__wino__desc__t.html#ab2868e7787330abb5b48fa538b5b2a26">mkldnn_wino_desc_t</a>
-, <a class="el" href="structmkldnn__rnn__cell__desc__t.html#ac7ffba7a83073b0e4f7899f8ff7f80e9">mkldnn_rnn_cell_desc_t</a>
 </li>
 <li>arg
 : <a class="el" href="structmkldnn__exec__arg__t.html#a0330f69c98f9c662795bc570c92999dd">mkldnn_exec_arg_t</a>
@@ -157,13 +149,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>batch_norm_epsilon
 : <a class="el" href="structmkldnn__batch__normalization__desc__t.html#a55e7d8aa621ad4e8ff5fd452a99e3d21">mkldnn_batch_normalization_desc_t</a>
 </li>
-<li>beta
-: <a class="el" href="structmkldnn__eltwise__desc__t.html#aee63a41cfaeb845f7d32b67a382dacc2">mkldnn_eltwise_desc_t</a>
-</li>
 <li>bias_desc
-: <a class="el" href="structmkldnn__rnn__desc__t.html#aceb44a20b686267983b1eee168ff7ce3">mkldnn_rnn_desc_t</a>
+: <a class="el" href="structmkldnn__convolution__desc__t.html#a85514df41a27f8482bef7add2c85a0b9">mkldnn_convolution_desc_t</a>
+, <a class="el" href="structmkldnn__rnn__desc__t.html#aceb44a20b686267983b1eee168ff7ce3">mkldnn_rnn_desc_t</a>
 , <a class="el" href="structmkldnn__inner__product__desc__t.html#af3aeda5e160339054ec9ed696cf50e64">mkldnn_inner_product_desc_t</a>
-, <a class="el" href="structmkldnn__convolution__desc__t.html#a85514df41a27f8482bef7add2c85a0b9">mkldnn_convolution_desc_t</a>
 </li>
 <li>blocking
 : <a class="el" href="structmkldnn__memory__desc__t.html#ab93d81dc3502465caad206777389c747">mkldnn_memory_desc_t</a>
@@ -172,17 +161,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <h3><a class="anchor" id="index_c"></a>- c -</h3><ul>
-<li>c_rnn_cell_
-: <a class="el" href="structmkldnn_1_1rnn__cell_1_1desc.html#a0620e1f9e62150404d682647b23ce5ae">mkldnn::rnn_cell::desc</a>
-</li>
-<li>cell_desc
-: <a class="el" href="structmkldnn__rnn__desc__t.html#a50b2aef792cdba38a22885634e7ade43">mkldnn_rnn_desc_t</a>
-</li>
 <li>cell_kind
-: <a class="el" href="structmkldnn__rnn__cell__desc__t.html#a9bef54e3d3390acd98eb089121833a12">mkldnn_rnn_cell_desc_t</a>
-</li>
-<li>clipping
-: <a class="el" href="structmkldnn__rnn__cell__desc__t.html#a6d6c936048a7a0dc1cff86af8d7f180b">mkldnn_rnn_cell_desc_t</a>
+: <a class="el" href="structmkldnn__rnn__desc__t.html#a52f3ac624851dce3729b1cb7bdefddd7">mkldnn_rnn_desc_t</a>
 </li>
 <li>compensation_mask
 : <a class="el" href="structmkldnn__memory__extra__desc__t.html#af4850a2655045618f0bab3ea8d2c41de">mkldnn_memory_extra_desc_t</a>
@@ -193,35 +173,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h3><a class="anchor" id="index_d"></a>- d -</h3><ul>
 <li>data
 : <a class="el" href="structmkldnn_1_1memory_1_1desc.html#abeddf8909e2b4af626153c88da9f8b37">mkldnn::memory::desc</a>
-, <a class="el" href="structmkldnn_1_1convolution__forward_1_1desc.html#a0ea88a5e59efc5ceef38549be00f0788">mkldnn::convolution_forward::desc</a>
-, <a class="el" href="structmkldnn_1_1convolution__backward__weights_1_1desc.html#a1e03f8de02a6b42539d991ff0d011d61">mkldnn::convolution_backward_weights::desc</a>
-, <a class="el" href="structmkldnn_1_1lrn__forward_1_1desc.html#ae9e14265c9d3fbd67ea04dd8241d995e">mkldnn::lrn_forward::desc</a>
-, <a class="el" href="structmkldnn_1_1batch__normalization__forward_1_1desc.html#a77a416b8a2518f020ed2d0b8b8c07d8f">mkldnn::batch_normalization_forward::desc</a>
-, <a class="el" href="structmkldnn_1_1batch__normalization__backward_1_1desc.html#aebfd6852378609f93ab3fdd5bce94c57">mkldnn::batch_normalization_backward::desc</a>
-, <a class="el" href="structmkldnn_1_1lrn__backward_1_1desc.html#a9b8640a231c4894c9684861fb26345bd">mkldnn::lrn_backward::desc</a>
-, <a class="el" href="structmkldnn_1_1inner__product__forward_1_1desc.html#a59b6030e4823c0df000a9314e7b09d2a">mkldnn::inner_product_forward::desc</a>
-, <a class="el" href="structmkldnn_1_1inner__product__backward__data_1_1desc.html#a399a117fd034667f1b036eb00aa195c0">mkldnn::inner_product_backward_data::desc</a>
-, <a class="el" href="structmkldnn_1_1deconvolution__forward_1_1desc.html#a63bdc195fc35a3d0906254dd6f73919e">mkldnn::deconvolution_forward::desc</a>
-, <a class="el" href="structmkldnn_1_1pooling__forward_1_1desc.html#ae8cab6012ec16ca9d2051a95304ac211">mkldnn::pooling_forward::desc</a>
-, <a class="el" href="structmkldnn_1_1inner__product__backward__weights_1_1desc.html#a6123bbb5cbd84ad0d6e989dbe43f99f6">mkldnn::inner_product_backward_weights::desc</a>
-, <a class="el" href="structmkldnn_1_1rnn__forward_1_1desc.html#a6b2d9098bd3f5624de19afa50e3973fa">mkldnn::rnn_forward::desc</a>
-, <a class="el" href="structmkldnn_1_1pooling__backward_1_1desc.html#a3c403de448817a04fb6e6d0a5df9296d">mkldnn::pooling_backward::desc</a>
-, <a class="el" href="structmkldnn_1_1rnn__backward_1_1desc.html#ae0712e146438587d37e404b4c747c776">mkldnn::rnn_backward::desc</a>
-, <a class="el" href="structmkldnn_1_1shuffle__forward_1_1desc.html#a09bf7383efe45e6127069d6a23bf6e45">mkldnn::shuffle_forward::desc</a>
-, <a class="el" href="structmkldnn_1_1convolution__backward__data_1_1desc.html#a8d9a44245d964fdd0d7c7a609f84b666">mkldnn::convolution_backward_data::desc</a>
-, <a class="el" href="structmkldnn_1_1deconvolution__backward__data_1_1desc.html#a6bca4f494976ec75f6373e1b2cc2756d">mkldnn::deconvolution_backward_data::desc</a>
-, <a class="el" href="structmkldnn_1_1eltwise__forward_1_1desc.html#ae026c9756e872ce3f3e5d36a1627d687">mkldnn::eltwise_forward::desc</a>
-, <a class="el" href="structmkldnn_1_1shuffle__backward_1_1desc.html#a3bf20e13e67d7f02871ce6f797e2144c">mkldnn::shuffle_backward::desc</a>
-, <a class="el" href="structmkldnn_1_1eltwise__backward_1_1desc.html#a5ec9abe07651be1f683382201e22fcf5">mkldnn::eltwise_backward::desc</a>
-, <a class="el" href="structmkldnn_1_1deconvolution__backward__weights_1_1desc.html#a3b3935352dacbc40674537cd66976155">mkldnn::deconvolution_backward_weights::desc</a>
-, <a class="el" href="structmkldnn_1_1softmax__forward_1_1desc.html#a9c897c20a09e9353ad6b9a1dd76bb54a">mkldnn::softmax_forward::desc</a>
-, <a class="el" href="structmkldnn_1_1softmax__backward_1_1desc.html#ac299716581aa917b4f8a5ce06ae1ac97">mkldnn::softmax_backward::desc</a>
 </li>
 <li>data_desc
 : <a class="el" href="structmkldnn__shuffle__desc__t.html#ae33cc2cc2d5e497038f4d1ed5b7af7da">mkldnn_shuffle_desc_t</a>
-, <a class="el" href="structmkldnn__eltwise__desc__t.html#a100ec7dcbd9cec02eeba8e9a3227998a">mkldnn_eltwise_desc_t</a>
 , <a class="el" href="structmkldnn__softmax__desc__t.html#ab0289861a276e80bb6e07c0fb4f7b4bf">mkldnn_softmax_desc_t</a>
 , <a class="el" href="structmkldnn__lrn__desc__t.html#adc017003db2bd578ecc611b8c88646a4">mkldnn_lrn_desc_t</a>
+, <a class="el" href="structmkldnn__eltwise__desc__t.html#a100ec7dcbd9cec02eeba8e9a3227998a">mkldnn_eltwise_desc_t</a>
 , <a class="el" href="structmkldnn__batch__normalization__desc__t.html#a2370d1407d7bade078a19da54520a27f">mkldnn_batch_normalization_desc_t</a>
 </li>
 <li>data_scaleshift_desc
@@ -240,9 +197,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 , <a class="el" href="structmkldnn__lrn__desc__t.html#a84c6a3a4babb8bd608a6500ac3cb06a4">mkldnn_lrn_desc_t</a>
 , <a class="el" href="structmkldnn__batch__normalization__desc__t.html#a2742f10a03b069e58cf2a2368976d18c">mkldnn_batch_normalization_desc_t</a>
 </li>
-<li>diff_data_scaleshift_desc
-: <a class="el" href="structmkldnn__batch__normalization__desc__t.html#a5a30d268c38384b4f9af1ca1598d9251">mkldnn_batch_normalization_desc_t</a>
-</li>
 <li>diff_desc
 : <a class="el" href="structmkldnn__softmax__desc__t.html#a424190d01751fc5b4508f4a4459b323a">mkldnn_softmax_desc_t</a>
 </li>
@@ -256,6 +210,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>diff_dst_layer_desc
 : <a class="el" href="structmkldnn__rnn__desc__t.html#a7875827adcdd0109f77f137f2e380d5e">mkldnn_rnn_desc_t</a>
+</li>
+<li>diff_placeholder_desc
+: <a class="el" href="structmkldnn__rnn__desc__t.html#a7f974ad5bba42ab6890993d910a1eb9a">mkldnn_rnn_desc_t</a>
 </li>
 <li>diff_src_desc
 : <a class="el" href="structmkldnn__pooling__desc__t.html#ab553c85b19f00966b617a5468a98cfa9">mkldnn_pooling_desc_t</a>
@@ -288,8 +245,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="structmkldnn__rnn__desc__t.html#aee95ea4d49aef7a368b06d6c96cb48ec">mkldnn_rnn_desc_t</a>
 </li>
 <li>dst_desc
-: <a class="el" href="structmkldnn__inner__product__desc__t.html#abe22f70b9bcb290d09bc22e40e39f8c9">mkldnn_inner_product_desc_t</a>
-, <a class="el" href="structmkldnn__convolution__desc__t.html#ab3fa681b587982780c1fd657f470ad09">mkldnn_convolution_desc_t</a>
+: <a class="el" href="structmkldnn__convolution__desc__t.html#ab3fa681b587982780c1fd657f470ad09">mkldnn_convolution_desc_t</a>
+, <a class="el" href="structmkldnn__inner__product__desc__t.html#abe22f70b9bcb290d09bc22e40e39f8c9">mkldnn_inner_product_desc_t</a>
 , <a class="el" href="structmkldnn__pooling__desc__t.html#a1604893839196b8da368262d83e274af">mkldnn_pooling_desc_t</a>
 </li>
 <li>dst_iter_desc
@@ -301,24 +258,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </ul>
 
 
-<h3><a class="anchor" id="index_e"></a>- e -</h3><ul>
-<li>extra
-: <a class="el" href="structmkldnn__memory__desc__t.html#aca773206a808b23fee49211829ef5fc9">mkldnn_memory_desc_t</a>
-</li>
-</ul>
-
-
 <h3><a class="anchor" id="index_f"></a>- f -</h3><ul>
 <li>flags
 : <a class="el" href="structmkldnn__memory__extra__desc__t.html#ad644ce609b4fbc21da11beb4fff40777">mkldnn_memory_extra_desc_t</a>
-, <a class="el" href="structmkldnn__batch__normalization__desc__t.html#abb072997a29f19acc17a1b9a3a1ccfcd">mkldnn_batch_normalization_desc_t</a>
-, <a class="el" href="structmkldnn__rnn__cell__desc__t.html#ada6e21a52cc3e8b0ac6f11659fbee519">mkldnn_rnn_cell_desc_t</a>
-</li>
-<li>format
-: <a class="el" href="structmkldnn__rnn__packed__desc__t.html#aa1353607b9e8ce334c39929e5e1080a6">mkldnn_rnn_packed_desc_t</a>
-</li>
-<li>format_desc
-: <a class="el" href="structmkldnn__memory__desc__t.html#a4aed2d2b8b0e4302ebb8818c28fd74e8">mkldnn_memory_desc_t</a>
+, <a class="el" href="structmkldnn__rnn__desc__t.html#ab7966336fe29f5a5cf2c45f0d64c09d0">mkldnn_rnn_desc_t</a>
 </li>
 <li>format_kind
 : <a class="el" href="structmkldnn__memory__desc__t.html#aeeaca6c6890e9486b9f49d514ef67573">mkldnn_memory_desc_t</a>
@@ -333,23 +276,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </ul>
 
 
-<h3><a class="anchor" id="index_h"></a>- h -</h3><ul>
-<li>hash
-: <a class="el" href="structmkldnn__version__t.html#a9bfdfc422467a2537d7f69e792dedd6c">mkldnn_version_t</a>
-</li>
-</ul>
-
-
 <h3><a class="anchor" id="index_i"></a>- i -</h3><ul>
-<li>ic
-: <a class="el" href="structmkldnn__wino__desc__t.html#aa9895356b83c7142b760c75186d55b23">mkldnn_wino_desc_t</a>
-</li>
-<li>ic2_block
-: <a class="el" href="structmkldnn__wino__desc__t.html#a64c838a492d5fafd9806ce63f260dc74">mkldnn_wino_desc_t</a>
-</li>
-<li>ic_block
-: <a class="el" href="structmkldnn__wino__desc__t.html#abc0b42d8f3d2d97753df87cb90e06556">mkldnn_wino_desc_t</a>
-</li>
 <li>inner_blks
 : <a class="el" href="structmkldnn__blocking__desc__t.html#a10ee7bf64f0318ebfe4855a3b21a3901">mkldnn_blocking_desc_t</a>
 </li>
@@ -386,31 +313,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <h3><a class="anchor" id="index_m"></a>- m -</h3><ul>
-<li>major
-: <a class="el" href="structmkldnn__version__t.html#acb5a29c46d1a0c1075f45dcadf6ef826">mkldnn_version_t</a>
-</li>
 <li>mean_desc
 : <a class="el" href="structmkldnn__batch__normalization__desc__t.html#aa56c0bf1307a56b442a1c8381a572d8b">mkldnn_batch_normalization_desc_t</a>
 </li>
 <li>memory
 : <a class="el" href="structmkldnn__exec__arg__t.html#a435bc6c683e834196b7cb3065fec0722">mkldnn_exec_arg_t</a>
 </li>
-<li>message
-: <a class="el" href="structmkldnn_1_1error.html#a0bf9ffbf630a51fb26fe9b3c20c285cb">mkldnn::error</a>
-</li>
-<li>minor
-: <a class="el" href="structmkldnn__version__t.html#a605011a39fe943cae9289cf33dd37dfc">mkldnn_version_t</a>
-</li>
 </ul>
 
 
 <h3><a class="anchor" id="index_n"></a>- n -</h3><ul>
-<li>n
-: <a class="el" href="structmkldnn__rnn__packed__desc__t.html#a8b2944bc5d3701332ad68c4e654e1e0d">mkldnn_rnn_packed_desc_t</a>
-</li>
-<li>n_parts
-: <a class="el" href="structmkldnn__rnn__packed__desc__t.html#a3455db9fa85140ba598877f0f501d56c">mkldnn_rnn_packed_desc_t</a>
-</li>
 <li>ndims
 : <a class="el" href="structmkldnn__memory__desc__t.html#a8fc71fc8a04e665573f86442bda4dc4c">mkldnn_memory_desc_t</a>
 </li>
@@ -418,20 +330,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <h3><a class="anchor" id="index_o"></a>- o -</h3><ul>
-<li>oc
-: <a class="el" href="structmkldnn__wino__desc__t.html#a4d1e331529273a5fe8fa5f40624f9f8a">mkldnn_wino_desc_t</a>
-</li>
-<li>oc2_block
-: <a class="el" href="structmkldnn__wino__desc__t.html#a5e62e2882a9163b7eff96d36b50b9c97">mkldnn_wino_desc_t</a>
-</li>
-<li>oc_block
-: <a class="el" href="structmkldnn__wino__desc__t.html#a47b3d2a7106931317f6d78102afd1215">mkldnn_wino_desc_t</a>
-</li>
 <li>offset0
 : <a class="el" href="structmkldnn__memory__desc__t.html#afd563403ebe33b60eda1aaae08e77be8">mkldnn_memory_desc_t</a>
-</li>
-<li>offset_compensation
-: <a class="el" href="structmkldnn__rnn__packed__desc__t.html#a0653d6ce8928edd52e8326c444d8b8db">mkldnn_rnn_packed_desc_t</a>
 </li>
 </ul>
 
@@ -447,44 +347,35 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="structmkldnn__pooling__desc__t.html#a05cb2daecfa2dadd700ecfd91295500a">mkldnn_pooling_desc_t</a>
 , <a class="el" href="structmkldnn__convolution__desc__t.html#a3a17fe86eb25fef8516a92863f2a58d1">mkldnn_convolution_desc_t</a>
 </li>
-<li>part_pack_size
-: <a class="el" href="structmkldnn__rnn__packed__desc__t.html#a77d5aacb2722fff65a8c72075b61b715">mkldnn_rnn_packed_desc_t</a>
-</li>
-<li>parts
-: <a class="el" href="structmkldnn__rnn__packed__desc__t.html#a14bb6c0c06787505602b7f2eb968bbfd">mkldnn_rnn_packed_desc_t</a>
-</li>
-<li>patch
-: <a class="el" href="structmkldnn__version__t.html#a897cd73bfa50695278da7643f371b667">mkldnn_version_t</a>
+<li>placeholder_desc
+: <a class="el" href="structmkldnn__rnn__desc__t.html#adeaee5541fd34b8a37622bb99421d539">mkldnn_rnn_desc_t</a>
 </li>
 <li>primitive_kind
-: <a class="el" href="structmkldnn__convolution__desc__t.html#a682c28b217c33bb555d01b934faa8778">mkldnn_convolution_desc_t</a>
-, <a class="el" href="structmkldnn__rnn__desc__t.html#acee22d21ac58aa1f9b490cbd03095f4f">mkldnn_rnn_desc_t</a>
-, <a class="el" href="structmkldnn__shuffle__desc__t.html#a49d5d6f7f56debccf0a41669e220ec03">mkldnn_shuffle_desc_t</a>
-, <a class="el" href="structmkldnn__eltwise__desc__t.html#a3e7911bcf624d442dd304d6b1689e138">mkldnn_eltwise_desc_t</a>
-, <a class="el" href="structmkldnn__inner__product__desc__t.html#a0d29920770b70f56df4fba205210aaa1">mkldnn_inner_product_desc_t</a>
+: <a class="el" href="structmkldnn__eltwise__desc__t.html#a3e7911bcf624d442dd304d6b1689e138">mkldnn_eltwise_desc_t</a>
 , <a class="el" href="structmkldnn__softmax__desc__t.html#a785d79cd4e55b3a08cc6dd1d78a0246c">mkldnn_softmax_desc_t</a>
 , <a class="el" href="structmkldnn__pooling__desc__t.html#a31c30cf38b01f1514454ba5ea5b662a5">mkldnn_pooling_desc_t</a>
 , <a class="el" href="structmkldnn__lrn__desc__t.html#af40d3d325e4381bdf57119dfefd64194">mkldnn_lrn_desc_t</a>
+, <a class="el" href="structmkldnn__convolution__desc__t.html#a682c28b217c33bb555d01b934faa8778">mkldnn_convolution_desc_t</a>
+, <a class="el" href="structmkldnn__rnn__desc__t.html#acee22d21ac58aa1f9b490cbd03095f4f">mkldnn_rnn_desc_t</a>
 , <a class="el" href="structmkldnn__batch__normalization__desc__t.html#a6deedb90264f103c78b582ec5efb66f2">mkldnn_batch_normalization_desc_t</a>
+, <a class="el" href="structmkldnn__inner__product__desc__t.html#a0d29920770b70f56df4fba205210aaa1">mkldnn_inner_product_desc_t</a>
+, <a class="el" href="structmkldnn__shuffle__desc__t.html#a49d5d6f7f56debccf0a41669e220ec03">mkldnn_shuffle_desc_t</a>
 </li>
 <li>prop_kind
 : <a class="el" href="structmkldnn__inner__product__desc__t.html#a9a74c31fa4fbf4c0c73702e4cde866e2">mkldnn_inner_product_desc_t</a>
-, <a class="el" href="structmkldnn__eltwise__desc__t.html#a907b3674ac5ee79b8427398e57c1bf15">mkldnn_eltwise_desc_t</a>
 , <a class="el" href="structmkldnn__lrn__desc__t.html#a5fbf21ce499720a33fad23fc6e850fba">mkldnn_lrn_desc_t</a>
-, <a class="el" href="structmkldnn__batch__normalization__desc__t.html#a56c1a093cdfb5bbd79f0f50d637e3932">mkldnn_batch_normalization_desc_t</a>
-, <a class="el" href="structmkldnn__softmax__desc__t.html#ae12558bf1611a74bf83ade019b2b081d">mkldnn_softmax_desc_t</a>
 , <a class="el" href="structmkldnn__rnn__desc__t.html#ad00acc601846698014551650103c7232">mkldnn_rnn_desc_t</a>
-, <a class="el" href="structmkldnn__shuffle__desc__t.html#af113858e24fd9b3e5005fdf1a612d74e">mkldnn_shuffle_desc_t</a>
+, <a class="el" href="structmkldnn__batch__normalization__desc__t.html#a56c1a093cdfb5bbd79f0f50d637e3932">mkldnn_batch_normalization_desc_t</a>
 , <a class="el" href="structmkldnn__convolution__desc__t.html#a4f644d4eadb8e4fce81023381b0f2d0c">mkldnn_convolution_desc_t</a>
+, <a class="el" href="structmkldnn__eltwise__desc__t.html#a907b3674ac5ee79b8427398e57c1bf15">mkldnn_eltwise_desc_t</a>
 , <a class="el" href="structmkldnn__pooling__desc__t.html#a2ea858e8b663b632524019f25fae29b7">mkldnn_pooling_desc_t</a>
+, <a class="el" href="structmkldnn__softmax__desc__t.html#ae12558bf1611a74bf83ade019b2b081d">mkldnn_softmax_desc_t</a>
+, <a class="el" href="structmkldnn__shuffle__desc__t.html#af113858e24fd9b3e5005fdf1a612d74e">mkldnn_shuffle_desc_t</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_r"></a>- r -</h3><ul>
-<li>r
-: <a class="el" href="structmkldnn__wino__desc__t.html#a018396114414702f213e5dc17862ef90">mkldnn_wino_desc_t</a>
-</li>
 <li>reserved
 : <a class="el" href="structmkldnn__memory__extra__desc__t.html#afc19066973364367c9be1fec1758b822">mkldnn_memory_extra_desc_t</a>
 </li>
@@ -498,17 +389,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>scale_adjust
 : <a class="el" href="structmkldnn__memory__extra__desc__t.html#abc5112a4526d2d4cb35d6fc256194c73">mkldnn_memory_extra_desc_t</a>
 </li>
-<li>size
-: <a class="el" href="structmkldnn__wino__desc__t.html#a21b0565adbbb09671e0bdc91c92a2f6d">mkldnn_wino_desc_t</a>
-, <a class="el" href="structmkldnn__rnn__packed__desc__t.html#a6d28710f39fd0b5c0d2d9fae1cad7591">mkldnn_rnn_packed_desc_t</a>
-</li>
 <li>softmax_axis
 : <a class="el" href="structmkldnn__softmax__desc__t.html#a5d94f826587310a84027c88eb41e1b4f">mkldnn_softmax_desc_t</a>
 </li>
 <li>src_desc
-: <a class="el" href="structmkldnn__convolution__desc__t.html#ac1ac756cd9506ffaf1e7d68e334e9420">mkldnn_convolution_desc_t</a>
-, <a class="el" href="structmkldnn__pooling__desc__t.html#a3145a3354e2c46b2827a645fe90c1b04">mkldnn_pooling_desc_t</a>
+: <a class="el" href="structmkldnn__pooling__desc__t.html#a3145a3354e2c46b2827a645fe90c1b04">mkldnn_pooling_desc_t</a>
 , <a class="el" href="structmkldnn__inner__product__desc__t.html#ab2ab25825825a88d9be4b15ca3ee6105">mkldnn_inner_product_desc_t</a>
+, <a class="el" href="structmkldnn__convolution__desc__t.html#ac1ac756cd9506ffaf1e7d68e334e9420">mkldnn_convolution_desc_t</a>
 </li>
 <li>src_iter_desc
 : <a class="el" href="structmkldnn__rnn__desc__t.html#a6afddc2a8bfaae0f9a4bd8a980bc5814">mkldnn_rnn_desc_t</a>
@@ -516,20 +403,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>src_layer_desc
 : <a class="el" href="structmkldnn__rnn__desc__t.html#a5f6cd0b14dd42bd90f72df70aea1ec68">mkldnn_rnn_desc_t</a>
 </li>
-<li>status
-: <a class="el" href="structmkldnn_1_1error.html#a198ac0b350f00924dae2553086e90e97">mkldnn::error</a>
-</li>
 <li>strides
-: <a class="el" href="structmkldnn__blocking__desc__t.html#ae81e7500c43ffacb8e0b10f81a2ed91e">mkldnn_blocking_desc_t</a>
-, <a class="el" href="structmkldnn__pooling__desc__t.html#a8c339dae420e12a19a4bef3c7de08948">mkldnn_pooling_desc_t</a>
+: <a class="el" href="structmkldnn__pooling__desc__t.html#a8c339dae420e12a19a4bef3c7de08948">mkldnn_pooling_desc_t</a>
 , <a class="el" href="structmkldnn__convolution__desc__t.html#a55fa258e8e2ddc24de4c6fdf5562501f">mkldnn_convolution_desc_t</a>
-</li>
-</ul>
-
-
-<h3><a class="anchor" id="index_v"></a>- v -</h3><ul>
-<li>variance_desc
-: <a class="el" href="structmkldnn__batch__normalization__desc__t.html#a0b77081ca4865c1dcd40e349b78f4d95">mkldnn_batch_normalization_desc_t</a>
+, <a class="el" href="structmkldnn__blocking__desc__t.html#ae81e7500c43ffacb8e0b10f81a2ed91e">mkldnn_blocking_desc_t</a>
 </li>
 </ul>
 
@@ -547,9 +424,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>wino_desc
 : <a class="el" href="structmkldnn__memory__desc__t.html#aa219a8379e78fc4a553e6af998759c78">mkldnn_memory_desc_t</a>
-</li>
-<li>wino_format
-: <a class="el" href="structmkldnn__wino__desc__t.html#a002eea2e1ad54a9b2aed4bf0679731e0">mkldnn_wino_desc_t</a>
 </li>
 </ul>
 </div><!-- contents -->

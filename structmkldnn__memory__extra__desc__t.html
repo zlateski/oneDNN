@@ -14,6 +14,7 @@
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
+<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -43,6 +44,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="examples.html"><span>Examples</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -74,7 +76,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -103,14 +105,17 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:ad644ce609b4fbc21da11beb4fff40777"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__memory__extra__desc__t.html#ad644ce609b4fbc21da11beb4fff40777">flags</a></td></tr>
 <tr class="memdesc:ad644ce609b4fbc21da11beb4fff40777"><td class="mdescLeft">&#160;</td><td class="mdescRight">The flags contain arbitrary extra information, such as compensation.  <a href="#ad644ce609b4fbc21da11beb4fff40777">More...</a><br/></td></tr>
 <tr class="separator:ad644ce609b4fbc21da11beb4fff40777"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af4850a2655045618f0bab3ea8d2c41de"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__memory__extra__desc__t.html#af4850a2655045618f0bab3ea8d2c41de">compensation_mask</a></td></tr>
-<tr class="memdesc:af4850a2655045618f0bab3ea8d2c41de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compensation mask.  <a href="#af4850a2655045618f0bab3ea8d2c41de">More...</a><br/></td></tr>
+<tr class="memitem:af4850a2655045618f0bab3ea8d2c41de"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af4850a2655045618f0bab3ea8d2c41de"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__memory__extra__desc__t.html#af4850a2655045618f0bab3ea8d2c41de">compensation_mask</a></td></tr>
+<tr class="memdesc:af4850a2655045618f0bab3ea8d2c41de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compensation mask. <br/></td></tr>
 <tr class="separator:af4850a2655045618f0bab3ea8d2c41de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc5112a4526d2d4cb35d6fc256194c73"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__memory__extra__desc__t.html#abc5112a4526d2d4cb35d6fc256194c73">scale_adjust</a></td></tr>
-<tr class="memdesc:abc5112a4526d2d4cb35d6fc256194c73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scale applied to the data.  <a href="#abc5112a4526d2d4cb35d6fc256194c73">More...</a><br/></td></tr>
+<tr class="memitem:abc5112a4526d2d4cb35d6fc256194c73"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abc5112a4526d2d4cb35d6fc256194c73"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__memory__extra__desc__t.html#abc5112a4526d2d4cb35d6fc256194c73">scale_adjust</a></td></tr>
+<tr class="memdesc:abc5112a4526d2d4cb35d6fc256194c73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scale applied to the data. <br/></td></tr>
 <tr class="separator:abc5112a4526d2d4cb35d6fc256194c73"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc19066973364367c9be1fec1758b822"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__memory__extra__desc__t.html#afc19066973364367c9be1fec1758b822">reserved</a> [64]</td></tr>
-<tr class="memdesc:afc19066973364367c9be1fec1758b822"><td class="mdescLeft">&#160;</td><td class="mdescRight">For future backwards compatibility.  <a href="#afc19066973364367c9be1fec1758b822">More...</a><br/></td></tr>
+<tr class="memitem:afc19066973364367c9be1fec1758b822"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afc19066973364367c9be1fec1758b822"></a>
+char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__memory__extra__desc__t.html#afc19066973364367c9be1fec1758b822">reserved</a> [64]</td></tr>
+<tr class="memdesc:afc19066973364367c9be1fec1758b822"><td class="mdescLeft">&#160;</td><td class="mdescRight">For future backwards compatibility. <br/></td></tr>
 <tr class="separator:afc19066973364367c9be1fec1758b822"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -128,48 +133,6 @@ Public Attributes</h2></td></tr>
 
 <p>The flags contain arbitrary extra information, such as compensation. </p>
 <dl class="section see"><dt>See Also</dt><dd><a class="el" href="group__c__api__types__memory.html#ga16866483eb06591891e93924b19a2b73" title="Flags for memory special features. ">mkldnn_memory_extra_flags_t</a> </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="af4850a2655045618f0bab3ea8d2c41de"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int mkldnn_memory_extra_desc_t::compensation_mask</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Compensation mask. </p>
-
-</div>
-</div>
-<a class="anchor" id="abc5112a4526d2d4cb35d6fc256194c73"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float mkldnn_memory_extra_desc_t::scale_adjust</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Scale applied to the data. </p>
-
-</div>
-</div>
-<a class="anchor" id="afc19066973364367c9be1fec1758b822"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char mkldnn_memory_extra_desc_t::reserved[64]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>For future backwards compatibility. </p>
 
 </div>
 </div>

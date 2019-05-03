@@ -2,11 +2,7 @@ var searchData=
 [
   ['ba',['ba',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda07159c47ee1b19ae4fb9c40d480856c4',1,'mkldnn::memory']]],
   ['bac',['bac',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda79ec16df80b57696a03bb364410061f3',1,'mkldnn::memory']]],
-  ['bac16a16b',['BAc16a16b',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedab1055b9db4db65014b9c0c00adddb1c7',1,'mkldnn::memory']]],
   ['bacd',['bacd',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda5a3b732e0600663606054f6d8dfd465e',1,'mkldnn::memory']]],
-  ['bacd16a16b',['BAcd16a16b',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedad98b0acb88c4867796a3cfd0c15127ed',1,'mkldnn::memory']]],
-  ['bacd16b16a',['BAcd16b16a',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda7d188af63c65095e2b34ef401f752799',1,'mkldnn::memory']]],
-  ['bacde16b16',['BAcde16b16',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaa158940f01b2e2e6c14ef5368cb6ed1a',1,'mkldnn::memory']]],
   ['backward',['backward',['../group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a195fe59b6f103787a914aead0f3db502',1,'mkldnn']]],
   ['backward_5fbias',['backward_bias',['../group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8ab6b02795407dc7897e390e48f1d0ea02',1,'mkldnn']]],
   ['backward_5fdata',['backward_data',['../group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8aa12627cacf73ecb7ef088beedd650e96',1,'mkldnn']]],
@@ -14,6 +10,5 @@ var searchData=
   ['batch_5fnormalization',['batch_normalization',['../classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00da780789647a31acedb6477412a99154bb',1,'mkldnn::primitive']]],
   ['batch_5fnormalization_5fd',['batch_normalization_d',['../group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a045eb225315e70a20e0b8c6d9700f642',1,'mkldnn']]],
   ['bcda',['bcda',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda078c4e73146ba90c3e4e9daa1facac28',1,'mkldnn::memory']]],
-  ['bidirectional_5fconcat',['bidirectional_concat',['../group__cpp__api__enums.html#ggac8d5612bc5ca7b5fb6e5bdf4e6ad0d16a7a1bb9f8699e8c03cbe4bd681fb50830',1,'mkldnn']]],
-  ['bidirectional_5fsum',['bidirectional_sum',['../group__cpp__api__enums.html#ggac8d5612bc5ca7b5fb6e5bdf4e6ad0d16aa6199c5b651803844c8c054b11e88d8c',1,'mkldnn']]]
+  ['blocked',['blocked',['../structmkldnn_1_1memory.html#a6466170ecf3556eb6ab15da9dcd51aa2a61326117ed4a9ddf3f754e71e119e5b3',1,'mkldnn::memory']]]
 ];
