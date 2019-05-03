@@ -112,9 +112,9 @@ Collaboration diagram for mkldnn::pooling_backward::desc:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3f4abeed52647c1d91afa67259de5bf0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1pooling__backward_1_1desc.html#a3f4abeed52647c1d91afa67259de5bf0">desc</a> (<a class="el" href="group__cpp__api__enums.html#gae45a07d6121fdd33e310782753178076">algorithm</a> aalgorithm, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_src_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_dst_desc, const <a class="el" href="structmkldnn_1_1memory.html#a4b929aee34491e5140d055a9e1daf180">memory::dims</a> &amp;strides, const <a class="el" href="structmkldnn_1_1memory.html#a4b929aee34491e5140d055a9e1daf180">memory::dims</a> &amp;kernel, const <a class="el" href="structmkldnn_1_1memory.html#a4b929aee34491e5140d055a9e1daf180">memory::dims</a> &amp;padding_l, const <a class="el" href="structmkldnn_1_1memory.html#a4b929aee34491e5140d055a9e1daf180">memory::dims</a> &amp;padding_r, const <a class="el" href="group__cpp__api__enums.html#gaa1ff931b28e0a90473ad5bddd21c60fc">padding_kind</a> apadding_kind)</td></tr>
-<tr class="memdesc:a3f4abeed52647c1d91afa67259de5bf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a pooling descriptor for backward propagation using <code>aalgorithm</code>, memory descriptors, and pooling parameters in the spatial domain: <code>strides</code>, <code>kernel</code> sizes, <code>padding_l</code>, <code>padding_r</code>, and <code>apadding_kind</code>.  <a href="#a3f4abeed52647c1d91afa67259de5bf0">More...</a><br/></td></tr>
-<tr class="separator:a3f4abeed52647c1d91afa67259de5bf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d164472953fd71d4be0167c7e193fce"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1pooling__backward_1_1desc.html#a5d164472953fd71d4be0167c7e193fce">desc</a> (<a class="el" href="group__cpp__api__enums.html#gae45a07d6121fdd33e310782753178076">algorithm</a> aalgorithm, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_src_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_dst_desc, const <a class="el" href="structmkldnn_1_1memory.html#a4b929aee34491e5140d055a9e1daf180">memory::dims</a> &amp;strides, const <a class="el" href="structmkldnn_1_1memory.html#a4b929aee34491e5140d055a9e1daf180">memory::dims</a> &amp;kernel, const <a class="el" href="structmkldnn_1_1memory.html#a4b929aee34491e5140d055a9e1daf180">memory::dims</a> &amp;padding_l, const <a class="el" href="structmkldnn_1_1memory.html#a4b929aee34491e5140d055a9e1daf180">memory::dims</a> &amp;padding_r)</td></tr>
+<tr class="memdesc:a5d164472953fd71d4be0167c7e193fce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a pooling descriptor for backward propagation using <code>aalgorithm</code>, memory descriptors, and pooling parameters in the spatial domain: <code>strides</code>, <code>kernel</code> sizes, <code>padding_l</code>, and <code>padding_r</code>.  <a href="#a5d164472953fd71d4be0167c7e193fce">More...</a><br/></td></tr>
+<tr class="separator:a5d164472953fd71d4be0167c7e193fce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -124,7 +124,7 @@ Public Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Descriptor for pooling backward propagation. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a3f4abeed52647c1d91afa67259de5bf0"></a>
+<a class="anchor" id="a5d164472953fd71d4be0167c7e193fce"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -171,13 +171,7 @@ Public Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="structmkldnn_1_1memory.html#a4b929aee34491e5140d055a9e1daf180">memory::dims</a> &amp;&#160;</td>
-          <td class="paramname"><em>padding_r</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="group__cpp__api__enums.html#gaa1ff931b28e0a90473ad5bddd21c60fc">padding_kind</a>&#160;</td>
-          <td class="paramname"><em>apadding_kind</em>&#160;</td>
+          <td class="paramname"><em>padding_r</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -192,7 +186,7 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Initializes a pooling descriptor for backward propagation using <code>aalgorithm</code>, memory descriptors, and pooling parameters in the spatial domain: <code>strides</code>, <code>kernel</code> sizes, <code>padding_l</code>, <code>padding_r</code>, and <code>apadding_kind</code>. </p>
+<p>Initializes a pooling descriptor for backward propagation using <code>aalgorithm</code>, memory descriptors, and pooling parameters in the spatial domain: <code>strides</code>, <code>kernel</code> sizes, <code>padding_l</code>, and <code>padding_r</code>. </p>
 
 </div>
 </div>

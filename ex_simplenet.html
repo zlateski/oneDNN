@@ -112,7 +112,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>Create a convolution descriptor by specifying the algorithm(<a class="el" href="winograd_convolution.html">convolution algorithms</a>, propagation kind, shapes of input, weights, bias, output, convolution strides, padding, and kind of padding. Propagation kind is set to <em>forward_inference</em> -optimized for inference execution and omits computations that are only necessary for backward propagation. */ <div class="fragment"><div class="line"><span class="keyword">auto</span> conv1_desc = convolution_forward::desc(</div>
 <div class="line">    prop_kind::forward_inference, algorithm::convolution_direct,</div>
 <div class="line">    conv1_src_md, conv1_weights_md, conv1_bias_md, conv1_dst_md,</div>
-<div class="line">    conv1_strides, conv1_padding, padding_kind::zero);</div>
+<div class="line">    conv1_strides, conv1_padding);</div>
 </div><!-- fragment --></li>
 <li>Create a descriptor of the convolution primitive. Once created, this descriptor has specific formats instead of the <code>any</code> format specified in the convolution descriptor. <div class="fragment"><div class="line"><span class="keyword">auto</span> conv1_prim_desc = convolution_forward::primitive_desc(conv1_desc, cpu_engine);</div>
 </div><!-- fragment --></li>

@@ -232,8 +232,7 @@ Multi-value scaling format</div></div>
 </div><!-- fragment --></li>
 <li>Create a convolution descriptor passing the int8 memory descriptors as parameters. <div class="fragment"><div class="line"><span class="keyword">auto</span> conv_desc = convolution_forward::desc(prop_kind::forward,</div>
 <div class="line">        convolution_direct, conv_src_md, conv_weights_md, conv_bias_md,</div>
-<div class="line">        conv_dst_md, conv_strides, conv_padding, conv_padding,</div>
-<div class="line">        padding_kind::zero);</div>
+<div class="line">        conv_dst_md, conv_strides, conv_padding, conv_padding);</div>
 </div><!-- fragment --></li>
 <li><p class="startli">Configuring int8-specific parameters in an int8 primitive is done via the Attributes Primitive. Create an attributes object for the convolution and configure it accordingly. </p>
 <div class="fragment"><div class="line">primitive_attr conv_attr;</div>

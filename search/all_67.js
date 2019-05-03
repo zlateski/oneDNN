@@ -1,7 +1,7 @@
 var searchData=
 [
   ['generic',['Generic',['../group__c__api__types__generic.html',1,'']]],
-  ['get',['get',['../classmkldnn_1_1handle.html#a6cff23ba3e461babe5edcff193d0c42c',1,'mkldnn::handle']]],
+  ['get',['get',['../classmkldnn_1_1handle.html#a169ef3354e8037660489fe3ec1b876a0',1,'mkldnn::handle']]],
   ['get_5factivation',['get_activation',['../structmkldnn_1_1rnn__cell_1_1desc.html#ad37386809746ee573cc5a7c99bc4f889',1,'mkldnn::rnn_cell::desc']]],
   ['get_5falpha',['get_alpha',['../structmkldnn_1_1rnn__cell_1_1desc.html#ad2140b5821334486cb97838f99907049',1,'mkldnn::rnn_cell::desc']]],
   ['get_5fbackend_5fkind',['get_backend_kind',['../structmkldnn_1_1engine.html#a34fd304d92f0a426190b91eb60c5579d',1,'mkldnn::engine']]],

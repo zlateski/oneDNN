@@ -10,11 +10,11 @@ var searchData=
   ['set_5frnn_5fdata_5fqparams',['set_rnn_data_qparams',['../structmkldnn_1_1primitive__attr.html#ac2c60f2aa3829b5a47c99c2e8de15cda',1,'mkldnn::primitive_attr']]],
   ['set_5frnn_5fweights_5fqparams',['set_rnn_weights_qparams',['../structmkldnn_1_1primitive__attr.html#a01ad9f8c0b0518c2e77c8c9e4ab346f9',1,'mkldnn::primitive_attr']]],
   ['set_5fscratchpad_5fmode',['set_scratchpad_mode',['../structmkldnn_1_1primitive__attr.html#a2cda7750106cbdd537114152de0c97ba',1,'mkldnn::primitive_attr']]],
-  ['shuffle_5fbackward',['shuffle_backward',['../structmkldnn_1_1shuffle__backward.html#a153aea035630086712839623c5ec006a',1,'mkldnn::shuffle_backward']]],
-  ['shuffle_5fforward',['shuffle_forward',['../structmkldnn_1_1shuffle__forward.html#ada567c0bf4e8fbbf67121d328d0ca3ab',1,'mkldnn::shuffle_forward']]],
-  ['softmax_5fbackward',['softmax_backward',['../structmkldnn_1_1softmax__backward.html#a498abf71aa2d5d5bdd8a15b9629dcb65',1,'mkldnn::softmax_backward']]],
-  ['softmax_5fforward',['softmax_forward',['../structmkldnn_1_1softmax__forward.html#aaa4f713e99ef517336abbfacfac14a4b',1,'mkldnn::softmax_forward']]],
-  ['stream',['stream',['../structmkldnn_1_1stream.html#a8d28252a8c61f40220891ab78f24b990',1,'mkldnn::stream']]],
+  ['shuffle_5fbackward',['shuffle_backward',['../structmkldnn_1_1shuffle__backward.html#a8bae18b964a9c64b179740376d9457cb',1,'mkldnn::shuffle_backward::shuffle_backward()=default'],['../structmkldnn_1_1shuffle__backward.html#a153aea035630086712839623c5ec006a',1,'mkldnn::shuffle_backward::shuffle_backward(const primitive_desc &amp;pd)']]],
+  ['shuffle_5fforward',['shuffle_forward',['../structmkldnn_1_1shuffle__forward.html#a6e94e9fceb76df6115e09c0f46b2e52e',1,'mkldnn::shuffle_forward::shuffle_forward()=default'],['../structmkldnn_1_1shuffle__forward.html#ada567c0bf4e8fbbf67121d328d0ca3ab',1,'mkldnn::shuffle_forward::shuffle_forward(const primitive_desc &amp;pd)']]],
+  ['softmax_5fbackward',['softmax_backward',['../structmkldnn_1_1softmax__backward.html#a7d7cb70a15356cdfc46291d55d7612e7',1,'mkldnn::softmax_backward::softmax_backward()=default'],['../structmkldnn_1_1softmax__backward.html#a498abf71aa2d5d5bdd8a15b9629dcb65',1,'mkldnn::softmax_backward::softmax_backward(const primitive_desc &amp;pd)']]],
+  ['softmax_5fforward',['softmax_forward',['../structmkldnn_1_1softmax__forward.html#a47258bcd163afcab31313eea1a1dfca7',1,'mkldnn::softmax_forward::softmax_forward()=default'],['../structmkldnn_1_1softmax__forward.html#aaa4f713e99ef517336abbfacfac14a4b',1,'mkldnn::softmax_forward::softmax_forward(const primitive_desc &amp;pd)']]],
+  ['stream',['stream',['../structmkldnn_1_1stream.html#a698adbe3867f3603602e10ce22ed2bf3',1,'mkldnn::stream::stream()=default'],['../structmkldnn_1_1stream.html#a8d28252a8c61f40220891ab78f24b990',1,'mkldnn::stream::stream(const engine &amp;aengine, flags aflags=flags::default_flags)']]],
   ['submemory_5fdesc',['submemory_desc',['../structmkldnn_1_1memory_1_1desc.html#a58ccb996eecfe7357b616f47953ff3ad',1,'mkldnn::memory::desc']]],
-  ['sum',['sum',['../structmkldnn_1_1sum.html#a917a4883f15ae15de80285e187b80e4a',1,'mkldnn::sum']]]
+  ['sum',['sum',['../structmkldnn_1_1sum.html#a7be5d098423757191639a2831260f4e6',1,'mkldnn::sum::sum()=default'],['../structmkldnn_1_1sum.html#a917a4883f15ae15de80285e187b80e4a',1,'mkldnn::sum::sum(const primitive_desc &amp;pd)']]]
 ];

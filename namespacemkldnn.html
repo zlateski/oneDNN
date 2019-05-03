@@ -93,6 +93,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1error.html">error</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Intel(R) MKL-DNN exception class.  <a href="structmkldnn_1_1error.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmkldnn_1_1handle__traits.html">handle_traits</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A class that provides the destructor for an Intel(R) MKL-DNN C handle.  <a href="classmkldnn_1_1handle__traits.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -101,9 +104,6 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmkldnn_1_1primitive.html">primitive</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for all computational primitives.  <a href="classmkldnn_1_1primitive.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1error.html">error</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Intel(R) MKL-DNN exception class.  <a href="structmkldnn_1_1error.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1post__ops.html">post_ops</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Post operations.  <a href="structmkldnn_1_1post__ops.html#details">More...</a><br/></td></tr>
@@ -210,9 +210,6 @@ Enumerations</h2></td></tr>
 <a class="el" href="group__cpp__api__enums.html#ggadb1d0d24b9f6c0eabd3359e322add147aee11cbb19052e40b07aac0ca060c23ee">scratchpad_mode::user</a> = mkldnn_scratchpad_mode_user
  }</td></tr>
 <tr class="separator:gadb1d0d24b9f6c0eabd3359e322add147"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa1ff931b28e0a90473ad5bddd21c60fc"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__enums.html#gaa1ff931b28e0a90473ad5bddd21c60fc">padding_kind</a> { <a class="el" href="group__cpp__api__enums.html#ggaa1ff931b28e0a90473ad5bddd21c60fcad02c4c4cde7ae76252540d116a40f23a">padding_kind::zero</a> = mkldnn_padding_zero
- }</td></tr>
-<tr class="separator:gaa1ff931b28e0a90473ad5bddd21c60fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaeb087eae78f70a4d249a90aefa165cf8"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__enums.html#gaeb087eae78f70a4d249a90aefa165cf8">prop_kind</a> { <br/>
 &#160;&#160;<a class="el" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a24775787fab8f13aa4809e1ce8f82aeb">prop_kind::forward_training</a> = mkldnn_forward_training, 
 <a class="el" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a4f2df7bab0115f1ddbe25392e3a71542">prop_kind::forward_scoring</a> = mkldnn_forward_scoring, 
@@ -328,8 +325,6 @@ Functions</h2></td></tr>
 <tr class="separator:ga1088a189678ef68181e156541625fbd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5a52fd80e2ec49a374387375d01dd994"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__primitive__attr.html#ga5a6c410554b43bd182668b235769d1bf">mkldnn_scratchpad_mode_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__enums.html#ga5a52fd80e2ec49a374387375d01dd994">convert_to_c</a> (<a class="el" href="group__cpp__api__enums.html#gadb1d0d24b9f6c0eabd3359e322add147">scratchpad_mode</a> mode)</td></tr>
 <tr class="separator:ga5a52fd80e2ec49a374387375d01dd994"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga38bf2fbbd9d10eb42c524175de8480ba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga1823708d8b9d445fe177295f2b5d74bd">mkldnn_padding_kind_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__enums.html#ga38bf2fbbd9d10eb42c524175de8480ba">convert_to_c</a> (<a class="el" href="group__cpp__api__enums.html#gaa1ff931b28e0a90473ad5bddd21c60fc">padding_kind</a> kind)</td></tr>
-<tr class="separator:ga38bf2fbbd9d10eb42c524175de8480ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5721fbb011e85a530876ca8fe3b869dd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga5b98c8059c2aff8861157bf070c3f520">mkldnn_prop_kind_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__enums.html#ga5721fbb011e85a530876ca8fe3b869dd">convert_to_c</a> (<a class="el" href="group__cpp__api__enums.html#gaeb087eae78f70a4d249a90aefa165cf8">prop_kind</a> kind)</td></tr>
 <tr class="separator:ga5721fbb011e85a530876ca8fe3b869dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa07c515a4384e676bebc542cb9f6391f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#gaa27d43cdd1e439cc41a9580d23ce3e97">mkldnn_alg_kind_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__enums.html#gaa07c515a4384e676bebc542cb9f6391f">convert_to_c</a> (<a class="el" href="group__cpp__api__enums.html#gae45a07d6121fdd33e310782753178076">algorithm</a> aalgorithm)</td></tr>

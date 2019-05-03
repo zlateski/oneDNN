@@ -3,7 +3,6 @@ var searchData=
   ['padded_5fdims',['padded_dims',['../structmkldnn__memory__desc__t.html#a658027f9bfd06e73b9ecfcee6bd13192',1,'mkldnn_memory_desc_t']]],
   ['padded_5foffsets',['padded_offsets',['../structmkldnn__memory__desc__t.html#a14d9a3d8dc375ec6a9d0c964391c9ec4',1,'mkldnn_memory_desc_t']]],
   ['padding',['padding',['../structmkldnn__convolution__desc__t.html#a3a17fe86eb25fef8516a92863f2a58d1',1,'mkldnn_convolution_desc_t::padding()'],['../structmkldnn__pooling__desc__t.html#a05cb2daecfa2dadd700ecfd91295500a',1,'mkldnn_pooling_desc_t::padding()']]],
-  ['padding_5fkind',['padding_kind',['../structmkldnn__convolution__desc__t.html#a2801dcab800144330e52eea6ce664353',1,'mkldnn_convolution_desc_t::padding_kind()'],['../structmkldnn__pooling__desc__t.html#a0de507f3732dacfbdb262361699092b7',1,'mkldnn_pooling_desc_t::padding_kind()']]],
   ['part_5fpack_5fsize',['part_pack_size',['../structmkldnn__rnn__packed__desc__t.html#a77d5aacb2722fff65a8c72075b61b715',1,'mkldnn_rnn_packed_desc_t']]],
   ['parts',['parts',['../structmkldnn__rnn__packed__desc__t.html#a14bb6c0c06787505602b7f2eb968bbfd',1,'mkldnn_rnn_packed_desc_t']]],
   ['patch',['patch',['../structmkldnn__version__t.html#a897cd73bfa50695278da7643f371b667',1,'mkldnn_version_t']]],

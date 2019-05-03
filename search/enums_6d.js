@@ -8,7 +8,6 @@ var searchData=
   ['mkldnn_5fformat_5fkind_5ft',['mkldnn_format_kind_t',['../group__c__api__types__generic.html#ga1f6c390306d4c8a438c0efbff08c0539',1,'mkldnn_types.h']]],
   ['mkldnn_5fformat_5ftag_5ft',['mkldnn_format_tag_t',['../group__c__api__types__generic.html#gacc2844e341ab1c4f5b7ae1c6068f2a2b',1,'mkldnn_types.h']]],
   ['mkldnn_5fmemory_5fextra_5fflags_5ft',['mkldnn_memory_extra_flags_t',['../group__c__api__types__memory.html#ga16866483eb06591891e93924b19a2b73',1,'mkldnn_types.h']]],
-  ['mkldnn_5fpadding_5fkind_5ft',['mkldnn_padding_kind_t',['../group__c__api__types__generic.html#ga1823708d8b9d445fe177295f2b5d74bd',1,'mkldnn_types.h']]],
   ['mkldnn_5fprimitive_5fkind_5ft',['mkldnn_primitive_kind_t',['../group__c__api__types__generic.html#ga4f5c189c2ba9ef6444250299f1f8e973',1,'mkldnn_types.h']]],
   ['mkldnn_5fprop_5fkind_5ft',['mkldnn_prop_kind_t',['../group__c__api__types__generic.html#ga5b98c8059c2aff8861157bf070c3f520',1,'mkldnn_types.h']]],
   ['mkldnn_5fquery_5ft',['mkldnn_query_t',['../group__c__api__types__query.html#ga6eebc661a8a3437b49d9c677f8972fc9',1,'mkldnn_types.h']]],

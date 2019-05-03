@@ -96,14 +96,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="fragment"><div class="line"><span class="keyword">auto</span> conv1_desc = convolution_forward::desc(</div>
 <div class="line">    prop_kind::forward_inference, algorithm::convolution_winograd,</div>
 <div class="line">    conv1_src_md, conv1_weights_md, conv1_bias_md, conv1_dst_md,</div>
-<div class="line">    conv1_strides, conv1_padding, padding_kind::zero);</div>
+<div class="line">    conv1_strides, conv1_padding);</div>
 </div><!-- fragment --><h2>Auto dispatching of convolution algorithm</h2>
 <p>Instead of choosing a convolution algorithm for each and every convolution in a topology, a user could simply ask MKLDNN to make the choice.</p>
 <p>Creating a convolution by using <code>convolution_auto</code> allows MKLDNN to dispatch the <em>best</em> algorithm. </p>
 <div class="fragment"><div class="line"><span class="keyword">auto</span> conv1_desc = convolution_forward::desc(</div>
 <div class="line">    prop_kind::forward_inference, algorithm::convolution_auto,</div>
 <div class="line">    conv1_src_md, conv1_weights_md, conv1_bias_md, conv1_dst_md,</div>
-<div class="line">    conv1_strides, conv1_padding, padding_kind::zero);</div>
+<div class="line">    conv1_strides, conv1_padding);</div>
 </div><!-- fragment --><p>MKLDNN would choose the algorithm which will potentially give <em>best performance</em> based on</p>
 <ul>
 <li>convolution dimensions</li>
