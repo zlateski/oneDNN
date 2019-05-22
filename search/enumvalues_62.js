@@ -10,5 +10,6 @@ var searchData=
   ['batch_5fnormalization',['batch_normalization',['../classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00da780789647a31acedb6477412a99154bb',1,'mkldnn::primitive']]],
   ['batch_5fnormalization_5fd',['batch_normalization_d',['../group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a045eb225315e70a20e0b8c6d9700f642',1,'mkldnn']]],
   ['bcda',['bcda',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda078c4e73146ba90c3e4e9daa1facac28',1,'mkldnn::memory']]],
+  ['bf16',['bf16',['../structmkldnn_1_1memory.html#aa8a0d49cc7faaceef9d8f55d66bff57bafe2904d9fb3b0f4a81c92b03dec11424',1,'mkldnn::memory']]],
   ['blocked',['blocked',['../structmkldnn_1_1memory.html#a6466170ecf3556eb6ab15da9dcd51aa2a61326117ed4a9ddf3f754e71e119e5b3',1,'mkldnn::memory']]]
 ];
