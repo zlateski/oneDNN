@@ -230,7 +230,7 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Memory that describes the data. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cnn_inference_fp32_8cpp-example.html#_a5">cnn_inference_fp32.cpp</a>, <a class="el" href="cnn_inference_int8_8cpp-example.html#_a5">cnn_inference_int8.cpp</a>, <a class="el" href="cnn_training_fp32_8cpp-example.html#_a5">cnn_training_fp32.cpp</a>, <a class="el" href="getting_started_8cpp-example.html#_a7">getting_started.cpp</a>, <a class="el" href="gpu_getting_started_8cpp-example.html#_a0">gpu_getting_started.cpp</a>, <a class="el" href="memory_format_propagation_8cpp-example.html#_a11">memory_format_propagation.cpp</a>, <a class="el" href="rnn_inference_fp32_8cpp-example.html#_a6">rnn_inference_fp32.cpp</a>, <a class="el" href="rnn_inference_int8_8cpp-example.html#_a7">rnn_inference_int8.cpp</a>, and <a class="el" href="rnn_training_fp32_8cpp-example.html#_a8">rnn_training_fp32.cpp</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cpu_cnn_inference_fp32_8cpp-example.html#_a5">cpu_cnn_inference_fp32.cpp</a>, <a class="el" href="cpu_cnn_inference_int8_8cpp-example.html#_a5">cpu_cnn_inference_int8.cpp</a>, <a class="el" href="cpu_cnn_training_fp32_8cpp-example.html#_a5">cpu_cnn_training_fp32.cpp</a>, <a class="el" href="cpu_getting_started_8cpp-example.html#_a7">cpu_getting_started.cpp</a>, <a class="el" href="cpu_memory_format_propagation_8cpp-example.html#_a11">cpu_memory_format_propagation.cpp</a>, <a class="el" href="cpu_rnn_inference_fp32_8cpp-example.html#_a6">cpu_rnn_inference_fp32.cpp</a>, <a class="el" href="cpu_rnn_inference_int8_8cpp-example.html#_a7">cpu_rnn_inference_int8.cpp</a>, <a class="el" href="cpu_rnn_training_fp32_8cpp-example.html#_a8">cpu_rnn_training_fp32.cpp</a>, and <a class="el" href="gpu_getting_started_8cpp-example.html#_a3">gpu_getting_started.cpp</a>.</dd>
 </dl></div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a class="anchor" id="aa8a0d49cc7faaceef9d8f55d66bff57b"></a>
 <div class="memitem">
@@ -274,7 +274,7 @@ Public Member Functions</h2></td></tr>
 <p>8-bit unsigned integer. </p>
 </td></tr>
 </table>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cnn_inference_fp32_8cpp-example.html#a1">cnn_inference_fp32.cpp</a>, <a class="el" href="cnn_inference_int8_8cpp-example.html#a1">cnn_inference_int8.cpp</a>, <a class="el" href="cnn_training_fp32_8cpp-example.html#a1">cnn_training_fp32.cpp</a>, and <a class="el" href="rnn_training_fp32_8cpp-example.html#a1">rnn_training_fp32.cpp</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cpu_cnn_inference_fp32_8cpp-example.html#a1">cpu_cnn_inference_fp32.cpp</a>, <a class="el" href="cpu_cnn_inference_int8_8cpp-example.html#a1">cpu_cnn_inference_int8.cpp</a>, <a class="el" href="cpu_cnn_training_fp32_8cpp-example.html#a1">cpu_cnn_training_fp32.cpp</a>, and <a class="el" href="cpu_rnn_training_fp32_8cpp-example.html#a1">cpu_rnn_training_fp32.cpp</a>.</dd>
 </dl>
 </div>
 </div>
@@ -423,7 +423,7 @@ Public Member Functions</h2></td></tr>
 <p>4D CNN activations tensor, an alias to <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda078c4e73146ba90c3e4e9daa1facac28" title="permuted 4D tensor ">mkldnn::memory::format_tag::bcda</a> </p>
 </td></tr>
 </table>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cnn_inference_fp32_8cpp-example.html#a0">cnn_inference_fp32.cpp</a>, <a class="el" href="cnn_inference_int8_8cpp-example.html#a0">cnn_inference_int8.cpp</a>, <a class="el" href="cnn_training_fp32_8cpp-example.html#a0">cnn_training_fp32.cpp</a>, and <a class="el" href="rnn_training_fp32_8cpp-example.html#a0">rnn_training_fp32.cpp</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cpu_cnn_inference_fp32_8cpp-example.html#a0">cpu_cnn_inference_fp32.cpp</a>, <a class="el" href="cpu_cnn_inference_int8_8cpp-example.html#a0">cpu_cnn_inference_int8.cpp</a>, <a class="el" href="cpu_cnn_training_fp32_8cpp-example.html#a0">cpu_cnn_training_fp32.cpp</a>, and <a class="el" href="cpu_rnn_training_fp32_8cpp-example.html#a0">cpu_rnn_training_fp32.cpp</a>.</dd>
 </dl>
 </div>
 </div>
@@ -545,7 +545,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Returns a handle of the data contained in the memory. </p>
 <p>On the CPU engine, this is a pointer to the allocated memory. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="getting_started_8cpp-example.html#a14">getting_started.cpp</a>, <a class="el" href="rnn_inference_fp32_8cpp-example.html#a15">rnn_inference_fp32.cpp</a>, and <a class="el" href="rnn_inference_int8_8cpp-example.html#a24">rnn_inference_int8.cpp</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cpu_getting_started_8cpp-example.html#a14">cpu_getting_started.cpp</a>, <a class="el" href="cpu_rnn_inference_fp32_8cpp-example.html#a15">cpu_rnn_inference_fp32.cpp</a>, and <a class="el" href="cpu_rnn_inference_int8_8cpp-example.html#a24">cpu_rnn_inference_int8.cpp</a>.</dd>
 </dl>
 </div>
 </div>
@@ -581,7 +581,8 @@ template&lt;typename T  = void&gt; </div>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="gpu_getting_started_8cpp-example.html#a1">gpu_getting_started.cpp</a>.</dd>
+<dl class="section note"><dt>Note</dt><dd>Any primitives working with the memory should be completed before </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="gpu_getting_started_8cpp-example.html#a4">gpu_getting_started.cpp</a>.</dd>
 </dl>
 </div>
 </div>
@@ -609,7 +610,7 @@ template&lt;typename T  = void&gt; </div>
 
 <p>Unmaps the previously mapped data for the memory. </p>
 <p>Any changes of the mapped data are synchronized back to the memory after the call is complete. The mapped pointer must be obtained through a <a class="el" href="structmkldnn_1_1memory.html#a777212e66feff5169d90f006bbd645be" title="Maps the data of the memory. ">map_data()</a> call. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="gpu_getting_started_8cpp-example.html#a2">gpu_getting_started.cpp</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="gpu_getting_started_8cpp-example.html#a5">gpu_getting_started.cpp</a>.</dd>
 </dl>
 </div>
 </div>

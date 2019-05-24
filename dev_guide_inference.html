@@ -90,7 +90,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Use the <a class="el" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a3b9fad4f80d45368f856b5403198ac4c" title="Forward data propagation (inference mode). ">mkldnn::prop_kind::forward_inference</a> argument at creation of the <b>operation descriptor</b>, as in this convolution example: </p>
 <div class="fragment"><div class="line"><span class="keyword">auto</span> conv_descr = convolution_forward::desc(prop_kind::forward_inference, ...);</div>
 </div><!-- fragment --><p><b>Layout Propagation</b></p>
-<p>Compute-intensive Intel MKL-DNN primitives execute with highest performance on CPU-friendly data formats. Please see description of data formats <a class="el" href="memory_format_propagation_cpp.html">here</a>.</p>
+<p>Compute-intensive Intel MKL-DNN primitives execute with highest performance on CPU-friendly data formats. Please see description of data formats here.</p>
 <p>Performance gains are maximized by reordering once, and then propagating the CPU-friendly format through as many layers as possible in your topology. Intel MKL-DNN provides the <code>format_tag=any</code> for memory descriptors that will be passed to compute-intensive primitives. The compute-intensive primitive types in Intel MKL-DNN are <a class="el" href="dev_guide_convolution.html">Convolution</a>, <a class="el" href="dev_guide_inner_product.html">Inner Product</a>, and <a class="el" href="dev_guide_rnn.html">RNN</a>.</p>
 <p>To accomplish this propagation in a robust manner, its is recommended to follow these steps:</p>
 <p>A. On compute-intensive operations:</p>

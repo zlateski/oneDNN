@@ -268,7 +268,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li><em>Memory consumption</em>. Winograd implementation in MKL-DNN requires additional scratchpad memory to store intermediate results. As more convolutions using Winograd are added to the topology, the amount of memory required can grow significantly. This growth can be controlled if the scratchpad memory can be reused across multiple primitives. See <a class="el" href="dev_guide_attributes_scratchpad.html">Primitive Attributes: Scratchpad</a> for more details.</li>
 <li><em>Accuracy</em>. In some cases Winograd convolution produce results that are significantly less accurate than results from the direct convolution.</li>
 </ul>
-<p>Create a Winograd convolution by simply creating a convolution descriptor (step 6 in <a class="el" href="cnn_inference_fp32_cpp.html">simple network example</a> specifying the Winograd algorithm. The rest of the steps are exactly the same.</p>
+<p>Create a Winograd convolution by simply creating a convolution descriptor (step 6 in simple network example specifying the Winograd algorithm. The rest of the steps are exactly the same.</p>
 <div class="fragment"><div class="line"><span class="keyword">auto</span> conv1_desc = convolution_forward::desc(</div>
 <div class="line">    prop_kind::forward_inference, algorithm::convolution_winograd,</div>
 <div class="line">    conv1_src_md, conv1_weights_md, conv1_bias_md, conv1_dst_md,</div>

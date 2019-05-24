@@ -109,23 +109,23 @@ Collaboration diagram for mkldnn::deconvolution_forward::desc:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac35872101989393e51ba8f6d94fe1470"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1deconvolution__forward_1_1desc.html#ac35872101989393e51ba8f6d94fe1470">desc</a> (<a class="el" href="group__cpp__api__enums.html#gaeb087eae78f70a4d249a90aefa165cf8">prop_kind</a> aprop_kind, <a class="el" href="group__cpp__api__enums.html#gae45a07d6121fdd33e310782753178076">algorithm</a> aalgorithm, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;src_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;weights_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;bias_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;dst_desc, const memory::dims strides, const memory::dims padding_l, const memory::dims padding_r)</td></tr>
-<tr class="memdesc:ac35872101989393e51ba8f6d94fe1470"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a descriptor for deconvolution forward propagation with bias using <code>prop_kind</code> (possible values are <a class="el" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a24775787fab8f13aa4809e1ce8f82aeb" title="Forward data propagation (training mode). ">mkldnn::forward_training</a> and <a class="el" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a3b9fad4f80d45368f856b5403198ac4c" title="Forward data propagation (inference mode). ">mkldnn::forward_inference</a>), <code>aalgorithm</code>, memory descriptors, <code>strides</code>, <code>padding_l</code>, and <code>padding_r</code>.  <a href="#ac35872101989393e51ba8f6d94fe1470">More...</a><br/></td></tr>
-<tr class="separator:ac35872101989393e51ba8f6d94fe1470"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a554870c92a0514813be9ddf6487c228b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1deconvolution__forward_1_1desc.html#a554870c92a0514813be9ddf6487c228b">desc</a> (<a class="el" href="group__cpp__api__enums.html#gaeb087eae78f70a4d249a90aefa165cf8">prop_kind</a> aprop_kind, <a class="el" href="group__cpp__api__enums.html#gae45a07d6121fdd33e310782753178076">algorithm</a> aalgorithm, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;src_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;weights_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;dst_desc, const memory::dims strides, const memory::dims padding_l, const memory::dims padding_r)</td></tr>
-<tr class="memdesc:a554870c92a0514813be9ddf6487c228b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a descriptor for deconvolution forward propagation without bias using <code>prop_kind</code> (possible values are <a class="el" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a24775787fab8f13aa4809e1ce8f82aeb" title="Forward data propagation (training mode). ">mkldnn::forward_training</a> and <a class="el" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a3b9fad4f80d45368f856b5403198ac4c" title="Forward data propagation (inference mode). ">mkldnn::forward_inference</a>), <code>aalgorithm</code>, memory descriptors, <code>strides</code>, <code>padding_l</code>, and <code>padding_r</code>.  <a href="#a554870c92a0514813be9ddf6487c228b">More...</a><br/></td></tr>
-<tr class="separator:a554870c92a0514813be9ddf6487c228b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2240a859ec3e778ddc9ba5c150cf6f65"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1deconvolution__forward_1_1desc.html#a2240a859ec3e778ddc9ba5c150cf6f65">desc</a> (<a class="el" href="group__cpp__api__enums.html#gaeb087eae78f70a4d249a90aefa165cf8">prop_kind</a> aprop_kind, <a class="el" href="group__cpp__api__enums.html#gae45a07d6121fdd33e310782753178076">algorithm</a> aalgorithm, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;src_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;weights_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;bias_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;dst_desc, const memory::dims strides, const memory::dims dilates, const memory::dims padding_l, const memory::dims padding_r)</td></tr>
-<tr class="memdesc:a2240a859ec3e778ddc9ba5c150cf6f65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a descriptor for dilated deconvolution forward propagation with bias using <code>aprop_kind</code> (possible values are <a class="el" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a24775787fab8f13aa4809e1ce8f82aeb" title="Forward data propagation (training mode). ">mkldnn::forward_training</a> and <a class="el" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a3b9fad4f80d45368f856b5403198ac4c" title="Forward data propagation (inference mode). ">mkldnn::forward_inference</a>), <code>aalgorithm</code> memory descriptors, <code>strides</code>, <code>dilates</code>, <code>padding_l</code>, and <code>padding_r</code>.  <a href="#a2240a859ec3e778ddc9ba5c150cf6f65">More...</a><br/></td></tr>
-<tr class="separator:a2240a859ec3e778ddc9ba5c150cf6f65"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f3c69682662c5e708ef5a7d1a410891"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1deconvolution__forward_1_1desc.html#a1f3c69682662c5e708ef5a7d1a410891">desc</a> (<a class="el" href="group__cpp__api__enums.html#gaeb087eae78f70a4d249a90aefa165cf8">prop_kind</a> aprop_kind, <a class="el" href="group__cpp__api__enums.html#gae45a07d6121fdd33e310782753178076">algorithm</a> aalgorithm, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;src_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;weights_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;dst_desc, const memory::dims strides, const memory::dims dilates, const memory::dims padding_l, const memory::dims padding_r)</td></tr>
-<tr class="memdesc:a1f3c69682662c5e708ef5a7d1a410891"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a descriptor for dilated deconvolution forward propagation without bias using <code>aprop_kind</code> (possible values are <a class="el" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a24775787fab8f13aa4809e1ce8f82aeb" title="Forward data propagation (training mode). ">mkldnn::forward_training</a> and <a class="el" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a3b9fad4f80d45368f856b5403198ac4c" title="Forward data propagation (inference mode). ">mkldnn::forward_inference</a>), <code>aalgorithm</code>, memory descriptors, <code>strides</code>, <code>dilates</code>, <code>padding_l</code>, and <code>padding_r</code>.  <a href="#a1f3c69682662c5e708ef5a7d1a410891">More...</a><br/></td></tr>
-<tr class="separator:a1f3c69682662c5e708ef5a7d1a410891"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a058e21fb6d7f2a812b2bec7d2ae4bb9f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1deconvolution__forward_1_1desc.html#a058e21fb6d7f2a812b2bec7d2ae4bb9f">desc</a> (<a class="el" href="group__cpp__api__enums.html#gaeb087eae78f70a4d249a90aefa165cf8">prop_kind</a> aprop_kind, <a class="el" href="group__cpp__api__enums.html#gae45a07d6121fdd33e310782753178076">algorithm</a> aalgorithm, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;src_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;weights_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;bias_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;dst_desc, const memory::dims &amp;strides, const memory::dims &amp;padding_l, const memory::dims &amp;padding_r)</td></tr>
+<tr class="memdesc:a058e21fb6d7f2a812b2bec7d2ae4bb9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a descriptor for deconvolution forward propagation with bias using <code>prop_kind</code> (possible values are <a class="el" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a24775787fab8f13aa4809e1ce8f82aeb" title="Forward data propagation (training mode). ">mkldnn::forward_training</a> and <a class="el" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a3b9fad4f80d45368f856b5403198ac4c" title="Forward data propagation (inference mode). ">mkldnn::forward_inference</a>), <code>aalgorithm</code>, memory descriptors, <code>strides</code>, <code>padding_l</code>, and <code>padding_r</code>.  <a href="#a058e21fb6d7f2a812b2bec7d2ae4bb9f">More...</a><br/></td></tr>
+<tr class="separator:a058e21fb6d7f2a812b2bec7d2ae4bb9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6e10b6049148d315afd8ecca4b8d370"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1deconvolution__forward_1_1desc.html#ab6e10b6049148d315afd8ecca4b8d370">desc</a> (<a class="el" href="group__cpp__api__enums.html#gaeb087eae78f70a4d249a90aefa165cf8">prop_kind</a> aprop_kind, <a class="el" href="group__cpp__api__enums.html#gae45a07d6121fdd33e310782753178076">algorithm</a> aalgorithm, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;src_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;weights_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;dst_desc, const memory::dims &amp;strides, const memory::dims &amp;padding_l, const memory::dims &amp;padding_r)</td></tr>
+<tr class="memdesc:ab6e10b6049148d315afd8ecca4b8d370"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a descriptor for deconvolution forward propagation without bias using <code>prop_kind</code> (possible values are <a class="el" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a24775787fab8f13aa4809e1ce8f82aeb" title="Forward data propagation (training mode). ">mkldnn::forward_training</a> and <a class="el" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a3b9fad4f80d45368f856b5403198ac4c" title="Forward data propagation (inference mode). ">mkldnn::forward_inference</a>), <code>aalgorithm</code>, memory descriptors, <code>strides</code>, <code>padding_l</code>, and <code>padding_r</code>.  <a href="#ab6e10b6049148d315afd8ecca4b8d370">More...</a><br/></td></tr>
+<tr class="separator:ab6e10b6049148d315afd8ecca4b8d370"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76fb2c1b06c596e7e76f71e8706e9cc3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1deconvolution__forward_1_1desc.html#a76fb2c1b06c596e7e76f71e8706e9cc3">desc</a> (<a class="el" href="group__cpp__api__enums.html#gaeb087eae78f70a4d249a90aefa165cf8">prop_kind</a> aprop_kind, <a class="el" href="group__cpp__api__enums.html#gae45a07d6121fdd33e310782753178076">algorithm</a> aalgorithm, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;src_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;weights_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;bias_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;dst_desc, const memory::dims &amp;strides, const memory::dims &amp;dilates, const memory::dims &amp;padding_l, const memory::dims &amp;padding_r)</td></tr>
+<tr class="memdesc:a76fb2c1b06c596e7e76f71e8706e9cc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a descriptor for dilated deconvolution forward propagation with bias using <code>aprop_kind</code> (possible values are <a class="el" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a24775787fab8f13aa4809e1ce8f82aeb" title="Forward data propagation (training mode). ">mkldnn::forward_training</a> and <a class="el" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a3b9fad4f80d45368f856b5403198ac4c" title="Forward data propagation (inference mode). ">mkldnn::forward_inference</a>), <code>aalgorithm</code> memory descriptors, <code>strides</code>, <code>dilates</code>, <code>padding_l</code>, and <code>padding_r</code>.  <a href="#a76fb2c1b06c596e7e76f71e8706e9cc3">More...</a><br/></td></tr>
+<tr class="separator:a76fb2c1b06c596e7e76f71e8706e9cc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a804353132eabc0bdedd25fd4780bde59"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1deconvolution__forward_1_1desc.html#a804353132eabc0bdedd25fd4780bde59">desc</a> (<a class="el" href="group__cpp__api__enums.html#gaeb087eae78f70a4d249a90aefa165cf8">prop_kind</a> aprop_kind, <a class="el" href="group__cpp__api__enums.html#gae45a07d6121fdd33e310782753178076">algorithm</a> aalgorithm, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;src_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;weights_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;dst_desc, const memory::dims &amp;strides, const memory::dims &amp;dilates, const memory::dims &amp;padding_l, const memory::dims &amp;padding_r)</td></tr>
+<tr class="memdesc:a804353132eabc0bdedd25fd4780bde59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a descriptor for dilated deconvolution forward propagation without bias using <code>aprop_kind</code> (possible values are <a class="el" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a24775787fab8f13aa4809e1ce8f82aeb" title="Forward data propagation (training mode). ">mkldnn::forward_training</a> and <a class="el" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a3b9fad4f80d45368f856b5403198ac4c" title="Forward data propagation (inference mode). ">mkldnn::forward_inference</a>), <code>aalgorithm</code>, memory descriptors, <code>strides</code>, <code>dilates</code>, <code>padding_l</code>, and <code>padding_r</code>.  <a href="#a804353132eabc0bdedd25fd4780bde59">More...</a><br/></td></tr>
+<tr class="separator:a804353132eabc0bdedd25fd4780bde59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Descriptor for convolution forward propagation. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ac35872101989393e51ba8f6d94fe1470"></a>
+<a class="anchor" id="a058e21fb6d7f2a812b2bec7d2ae4bb9f"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -171,19 +171,19 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const memory::dims&#160;</td>
+          <td class="paramtype">const memory::dims &amp;&#160;</td>
           <td class="paramname"><em>strides</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const memory::dims&#160;</td>
+          <td class="paramtype">const memory::dims &amp;&#160;</td>
           <td class="paramname"><em>padding_l</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const memory::dims&#160;</td>
+          <td class="paramtype">const memory::dims &amp;&#160;</td>
           <td class="paramname"><em>padding_r</em>&#160;</td>
         </tr>
         <tr>
@@ -204,7 +204,7 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a554870c92a0514813be9ddf6487c228b"></a>
+<a class="anchor" id="ab6e10b6049148d315afd8ecca4b8d370"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -244,19 +244,19 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const memory::dims&#160;</td>
+          <td class="paramtype">const memory::dims &amp;&#160;</td>
           <td class="paramname"><em>strides</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const memory::dims&#160;</td>
+          <td class="paramtype">const memory::dims &amp;&#160;</td>
           <td class="paramname"><em>padding_l</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const memory::dims&#160;</td>
+          <td class="paramtype">const memory::dims &amp;&#160;</td>
           <td class="paramname"><em>padding_r</em>&#160;</td>
         </tr>
         <tr>
@@ -277,7 +277,7 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a2240a859ec3e778ddc9ba5c150cf6f65"></a>
+<a class="anchor" id="a76fb2c1b06c596e7e76f71e8706e9cc3"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -323,25 +323,25 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const memory::dims&#160;</td>
+          <td class="paramtype">const memory::dims &amp;&#160;</td>
           <td class="paramname"><em>strides</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const memory::dims&#160;</td>
+          <td class="paramtype">const memory::dims &amp;&#160;</td>
           <td class="paramname"><em>dilates</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const memory::dims&#160;</td>
+          <td class="paramtype">const memory::dims &amp;&#160;</td>
           <td class="paramname"><em>padding_l</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const memory::dims&#160;</td>
+          <td class="paramtype">const memory::dims &amp;&#160;</td>
           <td class="paramname"><em>padding_r</em>&#160;</td>
         </tr>
         <tr>
@@ -362,7 +362,7 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a1f3c69682662c5e708ef5a7d1a410891"></a>
+<a class="anchor" id="a804353132eabc0bdedd25fd4780bde59"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -402,25 +402,25 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const memory::dims&#160;</td>
+          <td class="paramtype">const memory::dims &amp;&#160;</td>
           <td class="paramname"><em>strides</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const memory::dims&#160;</td>
+          <td class="paramtype">const memory::dims &amp;&#160;</td>
           <td class="paramname"><em>dilates</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const memory::dims&#160;</td>
+          <td class="paramtype">const memory::dims &amp;&#160;</td>
           <td class="paramname"><em>padding_l</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const memory::dims&#160;</td>
+          <td class="paramtype">const memory::dims &amp;&#160;</td>
           <td class="paramname"><em>padding_r</em>&#160;</td>
         </tr>
         <tr>

@@ -109,15 +109,15 @@ Collaboration diagram for mkldnn::pooling_forward::desc:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a01fbe978d1ba093707bc07e8a9bae1ba"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1pooling__forward_1_1desc.html#a01fbe978d1ba093707bc07e8a9bae1ba">desc</a> (<a class="el" href="group__cpp__api__enums.html#gaeb087eae78f70a4d249a90aefa165cf8">prop_kind</a> aprop_kind, <a class="el" href="group__cpp__api__enums.html#gae45a07d6121fdd33e310782753178076">algorithm</a> aalgorithm, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;src_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;dst_desc, const memory::dims strides, const memory::dims kernel, const memory::dims padding_l, const memory::dims padding_r)</td></tr>
-<tr class="memdesc:a01fbe978d1ba093707bc07e8a9bae1ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a pooling descriptor for forward propagation using <code>aprop_kind</code> (possible values are <a class="el" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a24775787fab8f13aa4809e1ce8f82aeb" title="Forward data propagation (training mode). ">mkldnn::forward_training</a> and <a class="el" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a3b9fad4f80d45368f856b5403198ac4c" title="Forward data propagation (inference mode). ">mkldnn::forward_inference</a>), <code>aalgorithm</code>, memory descriptors, and pooling parameters in the spatial domain: <code>strides</code>, <code>kernel</code> sizes, <code>padding_l</code>, and <code>padding_r</code>.  <a href="#a01fbe978d1ba093707bc07e8a9bae1ba">More...</a><br/></td></tr>
-<tr class="separator:a01fbe978d1ba093707bc07e8a9bae1ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcc92fa0c15023f5719add331b94cc28"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1pooling__forward_1_1desc.html#abcc92fa0c15023f5719add331b94cc28">desc</a> (<a class="el" href="group__cpp__api__enums.html#gaeb087eae78f70a4d249a90aefa165cf8">prop_kind</a> aprop_kind, <a class="el" href="group__cpp__api__enums.html#gae45a07d6121fdd33e310782753178076">algorithm</a> aalgorithm, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;src_desc, const <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> &amp;dst_desc, const memory::dims &amp;strides, const memory::dims &amp;kernel, const memory::dims &amp;padding_l, const memory::dims &amp;padding_r)</td></tr>
+<tr class="memdesc:abcc92fa0c15023f5719add331b94cc28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a pooling descriptor for forward propagation using <code>aprop_kind</code> (possible values are <a class="el" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a24775787fab8f13aa4809e1ce8f82aeb" title="Forward data propagation (training mode). ">mkldnn::forward_training</a> and <a class="el" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a3b9fad4f80d45368f856b5403198ac4c" title="Forward data propagation (inference mode). ">mkldnn::forward_inference</a>), <code>aalgorithm</code>, memory descriptors, and pooling parameters in the spatial domain: <code>strides</code>, <code>kernel</code> sizes, <code>padding_l</code>, and <code>padding_r</code>.  <a href="#abcc92fa0c15023f5719add331b94cc28">More...</a><br/></td></tr>
+<tr class="separator:abcc92fa0c15023f5719add331b94cc28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Descriptor for pooling forward propagation. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cnn_inference_fp32_8cpp-example.html#_a23">cnn_inference_fp32.cpp</a>, and <a class="el" href="cnn_training_fp32_8cpp-example.html#_a22">cnn_training_fp32.cpp</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cpu_cnn_inference_fp32_8cpp-example.html#_a23">cpu_cnn_inference_fp32.cpp</a>, and <a class="el" href="cpu_cnn_training_fp32_8cpp-example.html#_a22">cpu_cnn_training_fp32.cpp</a>.</dd>
 </dl></div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a01fbe978d1ba093707bc07e8a9bae1ba"></a>
+<a class="anchor" id="abcc92fa0c15023f5719add331b94cc28"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -151,25 +151,25 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const memory::dims&#160;</td>
+          <td class="paramtype">const memory::dims &amp;&#160;</td>
           <td class="paramname"><em>strides</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const memory::dims&#160;</td>
+          <td class="paramtype">const memory::dims &amp;&#160;</td>
           <td class="paramname"><em>kernel</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const memory::dims&#160;</td>
+          <td class="paramtype">const memory::dims &amp;&#160;</td>
           <td class="paramname"><em>padding_l</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const memory::dims&#160;</td>
+          <td class="paramtype">const memory::dims &amp;&#160;</td>
           <td class="paramname"><em>padding_r</em>&#160;</td>
         </tr>
         <tr>

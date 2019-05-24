@@ -4,6 +4,9 @@ var searchData=
   ['rnn',['RNN',['../group__c__api__rnn.html',1,'']]],
   ['reorder',['Reorder',['../group__cpp__api__reorder.html',1,'']]],
   ['rnn',['RNN',['../group__cpp__api__rnn.html',1,'']]],
+  ['rnn_20fp32_20inference_20example',['RNN fp32 inference example',['../cpu_rnn_inference_fp32_cpp.html',1,'']]],
+  ['rnn_20int8_20inference_20example',['RNN int8 inference example',['../cpu_rnn_inference_int8_cpp.html',1,'']]],
+  ['rnn_20fp32_20training_20example',['RNN fp32 training example',['../cpu_rnn_training_fp32_cpp.html',1,'']]],
   ['reorder',['Reorder',['../dev_guide_reorder.html',1,'']]],
   ['rnn',['RNN',['../dev_guide_rnn.html',1,'']]],
   ['reorder',['reorder',['../structmkldnn_1_1reorder.html',1,'mkldnn']]],
@@ -14,8 +17,5 @@ var searchData=
   ['rnn_5fbackward',['rnn_backward',['../structmkldnn_1_1rnn__backward.html',1,'mkldnn']]],
   ['rnn_5fd',['rnn_d',['../group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a5bada9b07803d3e657d5bdc592f7fc52',1,'mkldnn']]],
   ['rnn_5fforward',['rnn_forward',['../structmkldnn_1_1rnn__forward.html',1,'mkldnn']]],
-  ['rnn_20fp32_20inference_20example',['RNN fp32 inference example',['../rnn_inference_fp32_cpp.html',1,'']]],
-  ['rnn_20int8_20inference_20example',['RNN int8 inference example',['../rnn_inference_int8_cpp.html',1,'']]],
-  ['rnn_5fpacked_5fdesc',['rnn_packed_desc',['../structmkldnn__memory__desc__t.html#a3d718050430b441becacab903ae6a0aa',1,'mkldnn_memory_desc_t']]],
-  ['rnn_20fp32_20training_20example',['RNN fp32 training example',['../rnn_training_fp32_cpp.html',1,'']]]
+  ['rnn_5fpacked_5fdesc',['rnn_packed_desc',['../structmkldnn__memory__desc__t.html#a3d718050430b441becacab903ae6a0aa',1,'mkldnn_memory_desc_t']]]
 ];

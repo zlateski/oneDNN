@@ -166,7 +166,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stru
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Primitive attributes. </p>
 <dl class="section see"><dt>See Also</dt><dd><a class="el" href="dev_guide_attributes.html">Primitive Attributes</a> </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cnn_inference_int8_8cpp-example.html#_a10">cnn_inference_int8.cpp</a>, and <a class="el" href="rnn_inference_int8_8cpp-example.html#_a17">rnn_inference_int8.cpp</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cpu_cnn_inference_int8_8cpp-example.html#_a10">cpu_cnn_inference_int8.cpp</a>, and <a class="el" href="cpu_rnn_inference_int8_8cpp-example.html#_a17">cpu_rnn_inference_int8.cpp</a>.</dd>
 </dl></div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="aa91e6f5640f7fb0e5da943e0e45dab3f"></a>
 <div class="memitem">
@@ -245,7 +245,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stru
 <li>5D dimensional weights the order is always: (g, oc, ic, kh, kw) </li>
 </ul>
 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cnn_inference_int8_8cpp-example.html#a11">cnn_inference_int8.cpp</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cpu_cnn_inference_int8_8cpp-example.html#a11">cpu_cnn_inference_int8.cpp</a>.</dd>
 </dl>
 </div>
 </div>
@@ -284,7 +284,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stru
 <p>Sets quantization <code>scale</code> and <code>shift</code> for RNN data tensors. </p>
 <p>For performance reasons, the low-precision configuration of the RNN primitive expects input activations to have the unsigned int8 data type. Scale and shift used to quantize floating-point data to unsigned integer must be passed to the RNN primitive using attributes. </p>
 <dl class="section note"><dt>Note</dt><dd>Quantization scale and shift are common for src_layer, src_iter, dst_iter, and dst_layer. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="rnn_inference_int8_8cpp-example.html#a18">rnn_inference_int8.cpp</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cpu_rnn_inference_int8_8cpp-example.html#a18">cpu_rnn_inference_int8.cpp</a>.</dd>
 </dl>
 </div>
 </div>
@@ -330,7 +330,7 @@ There is no way to check whether <code>count</code> corresponds to <code>mask</c
 <p class="formulaDsp">
 \[count = \prod\limits_{d \in mask} output.dims[d]\]
 </p>
- <dl><dt><b>Examples: </b></dt><dd><a class="el" href="rnn_inference_int8_8cpp-example.html#a19">rnn_inference_int8.cpp</a>.</dd>
+ <dl><dt><b>Examples: </b></dt><dd><a class="el" href="cpu_rnn_inference_int8_8cpp-example.html#a19">cpu_rnn_inference_int8.cpp</a>.</dd>
 </dl>
 </div>
 </div>

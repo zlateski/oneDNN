@@ -1,7 +1,6 @@
 var searchData=
 [
   ['naming_20conventions',['Naming Conventions',['../dev_guide_conventions.html',1,'']]],
-  ['native',['native',['../group__cpp__api__enums.html#ggae7ae677040e89f183df87f4ba3a5eb6ea8e5f3adee38c8fccc13c1f3be0143796',1,'mkldnn']]],
   ['nc',['nc',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda1e7342845e24eb3b5b3554490da1c128',1,'mkldnn::memory']]],
   ['nchw',['nchw',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaded7ac40158367123c5467281d44cbeb',1,'mkldnn::memory']]],
   ['ndims',['ndims',['../structmkldnn__memory__desc__t.html#a8fc71fc8a04e665573f86442bda4dc4c',1,'mkldnn_memory_desc_t']]],
