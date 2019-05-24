@@ -135,9 +135,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr>
 <td align="left">3D </td><td align="left">NCDHW </td><td align="left">1 (C) </td><td align="left"><a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba55268cf202bb4367b19fd0aeb13739ce" title="5D CNN activations tensor, an alias to mkldnn_abcde ">mkldnn_ncdhw</a> (<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bab5a0a1dc7021e96ed7e174f76f8decbc" title="plain 5D tensor ">mkldnn_abcde</a>), <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bafe9f8381139e749050fda6fb70808e1c" title="5D CNN activations tensor, an alias to mkldnn_acdeb ">mkldnn_ndhwc</a> (<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bae659343dce6f6dd2eaf8f7a9455be26d" title="permuted 5D tensor ">mkldnn_acdeb</a>), <em>optimized^</em> </td></tr>
 </table>
-<p>Here <em>optimized^</em> means the format that comes out of any preceding compute-intensive primitive.</p>
+<p>Here <em>optimized^</em> means the format that <a class="el" href="cpu_memory_format_propagation_cpp.html">comes out</a> of any preceding compute-intensive primitive.</p>
 <h3>Post-ops and Attributes</h3>
-<p>The LRN primitive doesn't support any post-ops or attributes.</p>
+<p>The shuffle primitive doesn't support any post-ops or attributes.</p>
 <p><a class="anchor" id="dg_shuffle_impl_limits"></a></p>
 <h2>Implementation Limitations</h2>
 <ol type="1">

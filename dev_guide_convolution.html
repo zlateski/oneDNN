@@ -92,7 +92,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h3>Forward</h3>
 <h4>Regular Convolution</h4>
 <p class="formulaDsp">
-\[dst(n, oc, oh, ow) = bias(oc) + \\ + \sum_{ic=0}^{IC}\sum_{kh=0}^{KH}\sum_{kw=0}^{KW} src(n, ic, oh \cdot SH + kh - ph_0, ow \cdot SW + kw - pw_0) \cdot weights(oc, ic, kh, kw).\]
+\[dst(n, oc, oh, ow) = bias(oc) + \\ + \sum_{ic=0}^{IC-1}\sum_{kh=0}^{KH-1}\sum_{kw=0}^{KW-1} src(n, ic, oh \cdot SH + kh - ph_0, ow \cdot SW + kw - pw_0) \cdot weights(oc, ic, kh, kw).\]
 </p>
 <p>Here:</p>
 <ul>
@@ -102,7 +102,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h4>Convolution with Groups</h4>
 <p>In the API, Intel MKL-DNN adds a separate groups dimension to memory objects representing weights tensors and represents weights as \(G \times OC_G \times IC_G \times KH \times KW \) 5D tensors for 2D convolutions with groups.</p>
 <p class="formulaDsp">
-\[ dst(n, g \cdot OC_G + oc_g, oh, ow) = bias(g \cdot OC_G + oc_g) + \\ + \sum_{ic_g=0}^{IC_G}\sum_{kh=0}^{KH}\sum_{kw=0}^{KW} src(n, g \cdot IC_G + ic_g, oh + kh - ph_0, ow + kw - pw_0) \cdot weights(g, oc_g, ic_g, kh, kw), \]
+\[ dst(n, g \cdot OC_G + oc_g, oh, ow) = bias(g \cdot OC_G + oc_g) + \\ + \sum_{ic_g=0}^{IC_G-1}\sum_{kh=0}^{KH-1}\sum_{kw=0}^{KW-1} src(n, g \cdot IC_G + ic_g, oh + kh - ph_0, ow + kw - pw_0) \cdot weights(g, oc_g, ic_g, kh, kw), \]
 </p>
 <p>where</p>
 <ul>
@@ -114,7 +114,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>The case when \(OC_G = IC_G = 1\) is also known as <em>a depthwise convolution</em>.</p>
 <h4>Convolution with Dilation</h4>
 <p class="formulaDsp">
-\[ dst(n, oc, oh, ow) = bias(oc) + \\ + \sum_{ic=0}^{IC}\sum_{kh=0}^{KH}\sum_{kw=0}^{KW} src(n, ic, oh + kh \cdot dh - ph_0, ow + kw \cdot dw - pw_0) \cdot weights(oc, ic, kh, kw). \]
+\[ dst(n, oc, oh, ow) = bias(oc) + \\ + \sum_{ic=0}^{IC-1}\sum_{kh=0}^{KH-1}\sum_{kw=0}^{KW-1} src(n, ic, oh + kh \cdot dh - ph_0, ow + kw \cdot dw - pw_0) \cdot weights(oc, ic, kh, kw). \]
 </p>
 <p>Here:</p>
 <ul>
@@ -138,11 +138,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr>
 <th align="left">Propagation </th><th align="left">Source </th><th align="left">Weights </th><th align="left">Destination </th><th align="left">Bias  </th></tr>
 <tr>
-<td align="left">forward / backward </td><td align="left">fp32 </td><td align="left">fp32 </td><td align="left">fp32 </td><td align="left">fp32 </td></tr>
+<td align="left">forward / backward </td><td align="left">f32 </td><td align="left">f32 </td><td align="left">f32 </td><td align="left">f32 </td></tr>
 <tr>
-<td align="left">forward </td><td align="left">fp16 </td><td align="left">fp16 </td><td align="left">fp16 </td><td align="left">fp16 </td></tr>
+<td align="left">forward </td><td align="left">f16 </td><td align="left">f16 </td><td align="left">f16 </td><td align="left">f16 </td></tr>
 <tr>
-<td align="left">forward </td><td align="left">u8, s8 </td><td align="left">s8 </td><td align="left">u8, s8, s32, fp32 </td><td align="left">u8, s8, s32, fp32 </td></tr>
+<td align="left">forward </td><td align="left">u8, s8 </td><td align="left">s8 </td><td align="left">u8, s8, s32, f32 </td><td align="left">u8, s8, s32, f32 </td></tr>
 </table>
 <dl class="section warning"><dt>Warning</dt><dd>There might be hardware and/or implementation specific restrictions. Check <a class="el" href="dev_guide_convolution.html#dg_conv_impl_limits">Implementation Limitations</a> section below.</dd></dl>
 <h3>Data Representation</h3>
@@ -268,7 +268,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li><em>Memory consumption</em>. Winograd implementation in MKL-DNN requires additional scratchpad memory to store intermediate results. As more convolutions using Winograd are added to the topology, the amount of memory required can grow significantly. This growth can be controlled if the scratchpad memory can be reused across multiple primitives. See <a class="el" href="dev_guide_attributes_scratchpad.html">Primitive Attributes: Scratchpad</a> for more details.</li>
 <li><em>Accuracy</em>. In some cases Winograd convolution produce results that are significantly less accurate than results from the direct convolution.</li>
 </ul>
-<p>Create a Winograd convolution by simply creating a convolution descriptor (step 6 in simple network example specifying the Winograd algorithm. The rest of the steps are exactly the same.</p>
+<p>Create a Winograd convolution by simply creating a convolution descriptor (step 6 in <a class="el" href="cpu_cnn_inference_fp32_cpp.html">simple network example</a> specifying the Winograd algorithm. The rest of the steps are exactly the same.</p>
 <div class="fragment"><div class="line"><span class="keyword">auto</span> conv1_desc = convolution_forward::desc(</div>
 <div class="line">    prop_kind::forward_inference, algorithm::convolution_winograd,</div>
 <div class="line">    conv1_src_md, conv1_weights_md, conv1_bias_md, conv1_dst_md,</div>
@@ -285,7 +285,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li><b>GPU</b><ul>
 <li>No support for Winograd algorithm</li>
-<li>No deconvolution support</li>
+<li>No support for backward propagation for deconvolution</li>
 </ul>
 </li>
 </ol>

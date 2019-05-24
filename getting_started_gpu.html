@@ -106,7 +106,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">memory::desc mem_d(tz_dims, memory::data_type::f32, memory::format_tag::nchw);</div>
 <div class="line">memory mem(mem_d, eng);</div>
 </div><!-- fragment --><h2>Initialize the data executing a custom OpenCL kernel</h2>
-<p>We are going to create an OpenCL kernel that will initialize our data. It requries writing a bit of C code to create an OpenCL program from a string literal source, build it and extract the kernel. The kernel initializes the data by the <code>0, -1, 2, -3, ...</code> sequence: <code>data[i] = (-1)^i * i</code>.</p>
+<p>We are going to create an OpenCL kernel that will initialize our data. It requires writing a bit of C code to create an OpenCL program from a string literal source, build it and extract the kernel. The kernel initializes the data by the <code>0, -1, 2, -3, ...</code> sequence: <code>data[i] = (-1)^i * i</code>.</p>
 <div class="fragment"><div class="line"><span class="keyword">const</span> <span class="keywordtype">char</span> *ocl_code</div>
 <div class="line">        = <span class="stringliteral">&quot;__kernel void init(__global float *data) {&quot;</span></div>
 <div class="line">          <span class="stringliteral">&quot;    int id = get_global_id(0);&quot;</span></div>
@@ -130,7 +130,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>Create a primitive descriptor</li>
 <li>Create a primitive</li>
 </ul>
-<p>Let's create the primitive to perform ReLU (recitified linear unit) operation: <code>x = max(0, x)</code>.</p>
+<p>Let's create the primitive to perform ReLU (rectified linear unit) operation: <code>x = max(0, x)</code>.</p>
 <div class="fragment"><div class="line"><span class="keyword">auto</span> relu_d = eltwise_forward::desc(prop_kind::forward, algorithm::eltwise_relu,</div>
 <div class="line">                                    mem_d, 0.0f);</div>
 <div class="line"><span class="keyword">auto</span> relu_pd = eltwise_forward::primitive_desc(relu_d, eng);</div>
@@ -141,7 +141,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="fragment"><div class="line">relu.execute(strm, { { MKLDNN_ARG_SRC, mem }, { MKLDNN_ARG_DST, mem } });</div>
 </div><!-- fragment --><p>Note, primitive submission on GPU is asynchronous. But user can call <code>stream::wait()</code> to synchronize the stream and ensure that all previously submitted primitives are completed.</p>
 <h2>Validating the results</h2>
-<p>The simplest way to access the OpenCL memory is to map it to the host using <code>memory::map_data()</code> and <code>memory::unmap_data()</code> APIs. After mapping this data is directly accessible (reading/writing) on the host. Whlie the data is mapped, any GPU-side operations on this data are not allowed. The data should be unmapped to release all resources associated with mapping.</p>
+<p>The simplest way to access the OpenCL memory is to map it to the host using <code>memory::map_data()</code> and <code>memory::unmap_data()</code> APIs. After mapping this data is directly accessible (reading/writing) on the host. While the data is mapped, any GPU-side operations on this data are not allowed. The data should be unmapped to release all resources associated with mapping.</p>
 <div class="fragment"><div class="line"><span class="keywordtype">float</span> *mapped_data = mem.map_data&lt;<span class="keywordtype">float</span>&gt;();</div>
 <div class="line"><span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; N; i++) {</div>
 <div class="line">    <span class="keywordtype">float</span> expected = (i % 2) ? 0.0f : (<span class="keywordtype">float</span>)i;</div>

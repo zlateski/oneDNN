@@ -92,11 +92,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>See <a class="el" href="dev_guide_build_options.html">Build Options</a> for detailed description of build-time configuration options.</p>
 <h3>Linux/macOS</h3>
 <ul>
-<li>Generate makefile <div class="fragment"><div class="line">mkdir -p build &amp;&amp; cd build &amp;&amp; cmake ..</div>
+<li>Generate makefile: <div class="fragment"><div class="line">mkdir -p build &amp;&amp; cd build &amp;&amp; cmake ..</div>
 </div><!-- fragment --></li>
-<li>Build the library <div class="fragment"><div class="line">make -j</div>
+<li>Build the library: <div class="fragment"><div class="line">make -j</div>
 </div><!-- fragment --></li>
-<li>Build the documentation <div class="fragment"><div class="line">make doc</div>
+<li>Build the documentation: <div class="fragment"><div class="line">make doc</div>
 </div><!-- fragment --></li>
 <li>Install the library, headers, and documentation: <div class="fragment"><div class="line">make install</div>
 </div><!-- fragment --></li>
@@ -106,7 +106,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>Generate a Microsoft Visual Studio solution: <div class="fragment"><div class="line">mkdir build &amp;&amp; cd build &amp;&amp; cmake -G <span class="stringliteral">&quot;Visual Studio 15 2017 Win64&quot;</span> ..</div>
 </div><!-- fragment --> For the solution to use the Intel C++ Compiler, select the corresponding toolchain using the cmake <code>-T</code> switch: <div class="fragment"><div class="line">cmake -G <span class="stringliteral">&quot;Visual Studio 15 2017 Win64&quot;</span> -T <span class="stringliteral">&quot;Intel C++ Compiler 19.0&quot;</span> ..</div>
 </div><!-- fragment --></li>
-<li>Build the library <div class="fragment"><div class="line">cmake --build .</div>
+<li>Build the library: <div class="fragment"><div class="line">cmake --build .</div>
 </div><!-- fragment --> You can also use the <code>msbuild</code> command-line tool directly (here <code>/p:Configuration</code> selects the build configuration which can be different from the one specified in <code>CMAKE_BUILD_TYPE</code>, and <code>/m</code> enables a parallel build): <div class="fragment"><div class="line">msbuild <span class="stringliteral">&quot;Intel(R) MKL-DNN.sln&quot;</span> /p:Configuration=Release /m</div>
 </div><!-- fragment --></li>
 <li>Build the documentation <div class="fragment"><div class="line">cmake --build . --target DOC</div>

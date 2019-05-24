@@ -87,7 +87,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>The inner product primitive (sometimes called fully connected) treats each activation in the minibatch as a vector and computes its product with a weights 2D tensor producing a 2D tensor as an output.</p>
 <p>More precisely, let \(src\), \(weights\), \(bias\) and \(dst\) be \(N \times IC\), \(OC \times IC\), \(OC\), \(N \times OC\) tensors (the variable names follow the standard <a class="el" href="dev_guide_conventions.html">Naming Conventions</a>). Then:</p>
 <p class="formulaDsp">
-\[dst(n, oc) = bias(oc) + \sum_{ic=0}^{IC} src(n, ic) \cdot weights(oc, ic)\]
+\[dst(n, oc) = bias(oc) + \sum_{ic=0}^{IC-1} src(n, ic) \cdot weights(oc, ic)\]
 </p>
 <p>In case when the \(src\) tensor has spatial dimension it is flattened to 2D. For example, if it is a 4D \(N \times IC&#39; \times IH \times IW\) tensor, then the formula above is applied with \(IC = IC&#39; \cdot IH \cdot IW\).</p>
 <h4>Difference Between <a href="#mkldnn::forward_training">Forward Training</a> and <a href="#mkldnn::forward_inference">Forward Inference</a></h4>

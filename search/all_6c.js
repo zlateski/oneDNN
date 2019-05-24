@@ -3,7 +3,7 @@ var searchData=
   ['lrn',['LRN',['../group__c__api__lrn.html',1,'']]],
   ['lrn',['LRN',['../group__cpp__api__lrn.html',1,'']]],
   ['linking_20to_20the_20library',['Linking to the Library',['../dev_guide_link.html',1,'']]],
-  ['linear_20response_20normalization_20_28lrn_29',['Linear Response Normalization (LRN)',['../dev_guide_lrn.html',1,'']]],
+  ['local_20response_20normalization_20_28lrn_29',['Local Response Normalization (LRN)',['../dev_guide_lrn.html',1,'']]],
   ['lbr_5fgru',['lbr_gru',['../group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076a792e966b14bd4e16625ee4df357a0723',1,'mkldnn']]],
   ['lbr_5fgru_5fbackward',['lbr_gru_backward',['../structmkldnn_1_1lbr__gru__backward.html',1,'mkldnn']]],
   ['legal_20information',['Legal Information',['../legal_information.html',1,'']]],

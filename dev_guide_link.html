@@ -147,7 +147,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>The examples below assume that Intel MKL-DNN is installed in the directory defined in the <code>MKLDNNROOT</code> environment variable.</p>
 <h3>Linux/macOS</h3>
 <div class="fragment"><div class="line">g++ -std=c++11 -I${MKLDNNROOT}/include -L${MKLDNNROOT}/lib simple_net.cpp -lmkldnn</div>
-<div class="line">clang -std=c++11 -I${MKLDNNROOT}/include -L${MKLDNNROOT}/lib simple_net.cpp -lmkldnn</div>
+<div class="line">clang++ -std=c++11 -I${MKLDNNROOT}/include -L${MKLDNNROOT}/lib simple_net.cpp -lmkldnn</div>
 <div class="line">icpc -std=c++11 -I${MKLDNNROOT}/include -L${MKLDNNROOT}/lib simple_net.cpp -lmkldnn</div>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>Applications linked dynamically will resolve the dependencies at runtime. Make sure that the dependencies are available in the standard locations defined by the operating system, in the locations listed in the <code>LD_LIBRARY_PATH</code> (Linux) or <code>DYLD_LIBRARY_PATH</code> (macOS) environment variable or the <code>rpath</code> mechanism.</dd></dl>
 <h3>Windows</h3>

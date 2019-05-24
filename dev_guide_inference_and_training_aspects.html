@@ -116,8 +116,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </ol>
 <p>Most of these techniques are shown in the following examples:</p>
 <ul>
-<li>cnn_inference_fp32_cpp</li>
-<li>cnn_inference_int8_cpp</li>
+<li><a class="el" href="cpu_cnn_inference_fp32_cpp.html">CNN fp32 inference example</a></li>
+<li><a class="el" href="cpu_cnn_inference_int8_cpp.html">CNN int8 inference example</a></li>
 </ul>
 <p><a class="anchor" id="dev_guide_inference_and_training_aspects_training"></a></p>
 <h2>Training-Specific Aspects</h2>
@@ -138,7 +138,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </ol>
 <p>Most of these techniques are shown in the following examples:</p>
 <ul>
-<li>cnn_training_fp32_cpp</li>
+<li><a class="el" href="cpu_cnn_training_fp32_cpp.html">CNN fp32 training example</a></li>
 </ul>
 <p><a class="anchor" id="dev_guide_inference_and_training_aspects_workspace"></a></p>
 <h2>Workspace</h2>
@@ -147,7 +147,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <ol type="1">
 <li>When creating a primitive for the forward propagation, query the primitive descriptor about the workspace requirement using <code>.workspace_desc()</code>.<ul>
 <li>If the returned memory descriptor is essentially empty (i.e. is equal to <code><a class="el" href="structmkldnn_1_1memory_1_1desc.html" title="A memory descriptor. ">mkldnn::memory::desc()</a></code> or for which <a class="el" href="structmkldnn_1_1memory_1_1desc.html#a273a35ba51f1ce0185e1703cc96d9dec">mkldnn::memory::desc::get_size()</a> returns 0), no extra action is required&ndash;the workspace is not required for this primitive in this configuration.</li>
-<li>Otherwise, create a workspace memory based on the memory descriptor obtained and pass it to the execution function with <code>MKLDNN_ARG_WORKSPACE</code> tag:</li>
+<li>Otherwise, create a workspace memory based on the memory descriptor obtained and pass it to the execution function with <code>MKLDNN_ARG_WORKSPACE</code> tag.</li>
 </ul>
 </li>
 <li>On backward propagation, attach that same workspace memory during the execution as well. The state of the workspace memory after backward computations are done is undefined.</li>

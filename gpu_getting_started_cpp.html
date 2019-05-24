@@ -94,8 +94,12 @@ Public headers</h1>
 <p>To start using Intel MKL-DNN, we must first include the <a class="el" href="mkldnn_8hpp.html">mkldnn.hpp</a> header file in the application. We also include <a class="el" href="mkldnn__debug_8h.html">mkldnn_debug.h</a>, which contains some debugging facilities such as returning a string representation for common Intel MKL-DNN C types.</p>
 <p>All C++ API types and functions reside in the <code>mkldnn</code> namespace. For simplicity of the example we import this namespace.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;sstream&gt;</span></div>
 <div class="line"></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="mkldnn_8hpp.html">mkldnn.hpp</a>&quot;</span></div>
+<div class="line"></div>
+<div class="line"><span class="comment">// Optional header to access debug functions like `mkldnn_status2str()`</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="mkldnn__debug_8h.html">mkldnn_debug.h</a>&quot;</span></div>
 <div class="line"></div>
 <div class="line"><span class="keyword">using namespace </span>mkldnn;</div>
 <div class="line"></div>

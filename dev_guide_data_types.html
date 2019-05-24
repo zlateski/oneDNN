@@ -84,11 +84,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr>
 <th align="left">Data type </th><th align="left">Description  </th></tr>
 <tr>
-<td align="left">fp32 </td><td align="left"><a href="https://en.wikipedia.org/wiki/Single-precision_floating-point_format#IEEE_754_single-precision_binary_floating-point_format:_binary32">IEEE single precision floating point</a> </td></tr>
+<td align="left">f32 </td><td align="left"><a href="https://en.wikipedia.org/wiki/Single-precision_floating-point_format#IEEE_754_single-precision_binary_floating-point_format:_binary32">IEEE single precision floating point</a> </td></tr>
 <tr>
 <td align="left">bf16 </td><td align="left"><a href="https://software.intel.com/en-us/download/bfloat16-hardware-numerics-definition">non-IEEE 16-bit floating point</a> </td></tr>
 <tr>
-<td align="left">fp16 </td><td align="left"><a href="https://en.wikipedia.org/wiki/Half-precision_floating-point_format#IEEE_754_half-precision_binary_floating-point_format:_binary16">IEEE half precision floating point</a> </td></tr>
+<td align="left">f16 </td><td align="left"><a href="https://en.wikipedia.org/wiki/Half-precision_floating-point_format#IEEE_754_half-precision_binary_floating-point_format:_binary16">IEEE half precision floating point</a> </td></tr>
 <tr>
 <td align="left">s8/u8 </td><td align="left">signed/unsigned 8-bit integer </td></tr>
 </table>
@@ -98,9 +98,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr>
 <th align="left">Usage mode </th><th align="left">CPU </th><th align="left">GPU  </th></tr>
 <tr>
-<td align="left">Inference </td><td align="left">fp32, bfp16, s8/u8 </td><td align="left">fp32, fp16 </td></tr>
+<td align="left">Inference </td><td align="left">f32, bf16, s8/u8 </td><td align="left">f32, f16 </td></tr>
 <tr>
-<td align="left">Training </td><td align="left">fp32, bfp16 </td><td align="left">fp32 </td></tr>
+<td align="left">Training </td><td align="left">f32, bf16 </td><td align="left">f32 </td></tr>
 </table>
 <p>Note, that using lower precision arithmetic requires changes in the deep learning model implementation. See topics for the corresponding data types for the details:</p>
 <ul>
@@ -117,11 +117,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr>
 <th align="left">Data type </th><th align="left">CPU </th><th align="left">GPU  </th></tr>
 <tr>
-<td align="left">fp32 </td><td align="left">any </td><td align="left">any </td></tr>
+<td align="left">f32 </td><td align="left">any </td><td align="left">any </td></tr>
 <tr>
-<td align="left">bfloat16 </td><td align="left">Intel(R) DL-Boost with bfloat16 </td><td align="left">not supported </td></tr>
+<td align="left">bf16 </td><td align="left">Intel(R) DL-Boost with bfloat16 </td><td align="left">not supported </td></tr>
 <tr>
-<td align="left">fp16 </td><td align="left">not supported </td><td align="left">any </td></tr>
+<td align="left">f16 </td><td align="left">not supported </td><td align="left">any </td></tr>
 <tr>
 <td align="left">s8, u8 </td><td align="left">Intel(R) AVX512, Intel DL-Boost </td><td align="left">not supported </td></tr>
 </table>

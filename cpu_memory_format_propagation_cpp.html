@@ -95,7 +95,7 @@ Introduction to the tutorial</h1>
 <li>How to configure primitives to use optimized memory formats.</li>
 <li>How to determine whether data needs to be reordered from/to optimized memory formats.</li>
 </ul>
-<p>This tutorial assumes that the reader has already reviewed the getting_started_cpp tutorial.</p>
+<p>This tutorial assumes that the reader has already reviewed the <a class="el" href="cpu_getting_started_cpp.html">Getting started</a> tutorial.</p>
 <p>The example is built around a CNN consisting of a convolution followed by a pooling and consists of the following steps:</p>
 <ol type="1">
 <li>Create a pooling primitive descriptor based on the memory format chosen by the convolution primitive.</li>
@@ -167,7 +167,7 @@ Allocate intermediate buffers if necessary</h2>
 </div><!-- fragment --> <h2><a class="anchor" id="cpu_memory_format_propagation_sub5"></a>
 Perform reorders for source data if necessary</h2>
 <p>Now we get to the part where we actually start executing things. We check if reorders are necessary based on the flags computed before and create and execute them immediately.</p>
-<dl class="section note"><dt>Note</dt><dd>we call <a class="el" href="structmkldnn_1_1stream.html#a48181ce0f5eb3bcd75778b5aa8866df6">mkldnn::stream::wait()</a> before reorder primitives get out of scope and destroyed to accommodate for potentially asynchronous execution.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>We call <a class="el" href="structmkldnn_1_1stream.html#a48181ce0f5eb3bcd75778b5aa8866df6">mkldnn::stream::wait()</a> before reorder primitives get out of scope and destroyed to accommodate for potentially asynchronous execution.</dd></dl>
 <div class="fragment"><div class="line">    <span class="keywordflow">if</span> (need_reorder_src) {</div>
 <div class="line">        <span class="keyword">auto</span> reorder_src = reorder(src_mem, conv_src_mem);</div>
 <div class="line">        reorder_src.execute(cpu_stream, {</div>
