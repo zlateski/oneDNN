@@ -104,12 +104,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <td align="left">lib/libmkldnn.so </td><td align="left">Intel MKL-DNN dynamic library </td></tr>
 <tr>
 <td align="left">lib/libmkldnn.a </td><td align="left">Intel MKL-DNN static library (if built with <code>MKLDNN_LIBRARY_TYPE=STATIC</code>) </td></tr>
-<tr>
-<td align="left">lib/libiomp5.so </td><td align="left">Intel OpenMP* runtime library (if built with <code>MKLDNN_USE_MKL=ML</code>) </td></tr>
-<tr>
-<td align="left">lib/libmklml_gnu.so </td><td align="left">Intel MKL small library for GNU OpenMP runtime (if built with <code>MKLDNN_USE_MKL=ML</code>) </td></tr>
-<tr>
-<td align="left">lib/libmklml_intel.so </td><td align="left">Intel MKL small library for Intel OpenMP runtime (if built with <code>MKLDNN_USE_MKL=ML</code>) </td></tr>
 </table>
 <h3>macOS</h3>
 <table class="doxtable">
@@ -119,12 +113,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <td align="left">lib/libmkldnn.dylib </td><td align="left">Intel MKL-DNN dynamic library </td></tr>
 <tr>
 <td align="left">lib/libmkldnn.a </td><td align="left">Intel MKL-DNN static library (if built with <code>MKLDNN_LIBRARY_TYPE=STATIC</code>) </td></tr>
-<tr>
-<td align="left">lib/libiomp5.dylib </td><td align="left">Intel OpenMP* runtime library (if built with <code>MKLDNN_USE_MKL=ML</code>) </td></tr>
-<tr>
-<td align="left">lib/libmklml_gnu.dylib </td><td align="left">Intel MKL small library for GNU OpenMP runtime (if built with <code>MKLDNN_USE_MKL=ML</code>) </td></tr>
-<tr>
-<td align="left">lib/libmklml_intel.dylib </td><td align="left">Intel MKL small library for Intel OpenMP runtime (if built with <code>MKLDNN_USE_MKL=ML</code>) </td></tr>
 </table>
 <h3>Windows</h3>
 <table class="doxtable">
@@ -133,15 +121,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr>
 <td align="left">bin\libmkldnn.dll </td><td align="left">Intel MKL-DNN dynamic library </td></tr>
 <tr>
-<td align="left">bin\libiomp5.dll </td><td align="left">Intel OpenMP* runtime library (if built with <code>MKLDNN_USE_MKL=ML</code>) </td></tr>
-<tr>
-<td align="left">bin\libmklml.dll </td><td align="left">Intel MKL small library (if built with <code>MKLDNN_USE_MKL=ML</code>) </td></tr>
-<tr>
 <td align="left">lib\libmkldnn.lib </td><td align="left">Intel MKL-DNN import library </td></tr>
-<tr>
-<td align="left">lib\libiomp5.lib </td><td align="left">Intel OpenMP* runtime import library (if built with <code>MKLDNN_USE_MKL=ML</code>) </td></tr>
-<tr>
-<td align="left">lib\libmklml.lib </td><td align="left">Intel MKL small library import library (if built with <code>MKLDNN_USE_MKL=ML</code>) </td></tr>
 </table>
 <h2>Linking to Intel MKL-DNN</h2>
 <p>The examples below assume that Intel MKL-DNN is installed in the directory defined in the <code>MKLDNNROOT</code> environment variable.</p>

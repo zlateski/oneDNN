@@ -100,7 +100,7 @@ Collaboration diagram for mkldnn_rnn_desc_t:</div>
 <div class="dyncontent">
 <div class="center"><img src="structmkldnn__rnn__desc__t__coll__graph.png" border="0" usemap="#mkldnn__rnn__desc__t_coll__map" alt="Collaboration graph"/></div>
 <map name="mkldnn__rnn__desc__t_coll__map" id="mkldnn__rnn__desc__t_coll__map">
-<area shape="rect" id="node2" href="structmkldnn__memory__desc__t.html" title="Memory descriptor. " alt="" coords="345,256,509,283"/><area shape="rect" id="node3" href="structmkldnn__memory__extra__desc__t.html" title="Description of extra information stored in memory. " alt="" coords="20,165,175,206"/><area shape="rect" id="node4" href="structmkldnn__rnn__packed__desc__t.html" title="Description of tensor of packed weights for rnn. " alt="" coords="5,231,189,257"/><area shape="rect" id="node5" href="structmkldnn__blocking__desc__t.html" title="Generic description of blocked data layout for most memory formats. " alt="" coords="15,281,180,308"/><area shape="rect" id="node6" href="structmkldnn__wino__desc__t.html" title="Description of tensor of weights for winograd 2x3 convolution. " alt="" coords="25,332,169,359"/></map>
+<area shape="rect" id="node2" href="structmkldnn__memory__desc__t.html" title="Memory descriptor. " alt="" coords="345,153,509,180"/><area shape="rect" id="node3" href="structmkldnn__memory__extra__desc__t.html" title="Description of extra information stored in memory. " alt="" coords="20,62,175,103"/><area shape="rect" id="node4" href="structmkldnn__rnn__packed__desc__t.html" title="Description of tensor of packed weights for rnn. " alt="" coords="5,128,189,155"/><area shape="rect" id="node5" href="structmkldnn__blocking__desc__t.html" title="Generic description of blocked data layout for most memory formats. " alt="" coords="15,179,180,205"/><area shape="rect" id="node6" href="structmkldnn__wino__desc__t.html" title="Description of tensor of weights for winograd 2x3 convolution. " alt="" coords="25,229,169,256"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -124,8 +124,12 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a5f6cd0b14dd42bd90f72df70aea1ec68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6afddc2a8bfaae0f9a4bd8a980bc5814"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6afddc2a8bfaae0f9a4bd8a980bc5814"></a>
 <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__rnn__desc__t.html#a6afddc2a8bfaae0f9a4bd8a980bc5814">src_iter_desc</a></td></tr>
-<tr class="memdesc:a6afddc2a8bfaae0f9a4bd8a980bc5814"><td class="mdescLeft">&#160;</td><td class="mdescRight">Source iteration memory descriptor. <br/></td></tr>
+<tr class="memdesc:a6afddc2a8bfaae0f9a4bd8a980bc5814"><td class="mdescLeft">&#160;</td><td class="mdescRight">Source iteration memory descriptor for hidden state. <br/></td></tr>
 <tr class="separator:a6afddc2a8bfaae0f9a4bd8a980bc5814"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8aef54870d1e7cd5d280e0371ce0a839"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8aef54870d1e7cd5d280e0371ce0a839"></a>
+<a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__rnn__desc__t.html#a8aef54870d1e7cd5d280e0371ce0a839">src_iter_c_desc</a></td></tr>
+<tr class="memdesc:a8aef54870d1e7cd5d280e0371ce0a839"><td class="mdescLeft">&#160;</td><td class="mdescRight">Source iteration memory descriptor for cell state. <br/></td></tr>
+<tr class="separator:a8aef54870d1e7cd5d280e0371ce0a839"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa926c70548408aa7976cc3fa69302b28"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa926c70548408aa7976cc3fa69302b28"></a>
 <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__rnn__desc__t.html#aa926c70548408aa7976cc3fa69302b28">weights_layer_desc</a></td></tr>
 <tr class="memdesc:aa926c70548408aa7976cc3fa69302b28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Weights layer memory descriptor. <br/></td></tr>
@@ -144,8 +148,12 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a1f788eb4d6893d26aa75d1d966546b99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33dcd86c922c81f6f0c9d8a65eab9ead"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a33dcd86c922c81f6f0c9d8a65eab9ead"></a>
 <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__rnn__desc__t.html#a33dcd86c922c81f6f0c9d8a65eab9ead">dst_iter_desc</a></td></tr>
-<tr class="memdesc:a33dcd86c922c81f6f0c9d8a65eab9ead"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destination iter memory descriptor. <br/></td></tr>
+<tr class="memdesc:a33dcd86c922c81f6f0c9d8a65eab9ead"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destination iter memory descriptor for hidden state. <br/></td></tr>
 <tr class="separator:a33dcd86c922c81f6f0c9d8a65eab9ead"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affc76e6c318bd905dc25aab6cab761af"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="affc76e6c318bd905dc25aab6cab761af"></a>
+<a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__rnn__desc__t.html#affc76e6c318bd905dc25aab6cab761af">dst_iter_c_desc</a></td></tr>
+<tr class="memdesc:affc76e6c318bd905dc25aab6cab761af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destination iter memory descriptor for cell state. <br/></td></tr>
+<tr class="separator:affc76e6c318bd905dc25aab6cab761af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adeaee5541fd34b8a37622bb99421d539"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adeaee5541fd34b8a37622bb99421d539"></a>
 <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__rnn__desc__t.html#adeaee5541fd34b8a37622bb99421d539">placeholder_desc</a></td></tr>
 <tr class="memdesc:adeaee5541fd34b8a37622bb99421d539"><td class="mdescLeft">&#160;</td><td class="mdescRight">Placeholders. <br/></td></tr>
@@ -156,8 +164,12 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a839534e88da65ccf2bd062680ca1fc1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02b4cc4c12619b4d80b8c4503fe36b27"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a02b4cc4c12619b4d80b8c4503fe36b27"></a>
 <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__rnn__desc__t.html#a02b4cc4c12619b4d80b8c4503fe36b27">diff_src_iter_desc</a></td></tr>
-<tr class="memdesc:a02b4cc4c12619b4d80b8c4503fe36b27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Source gradient iter memory descriptor. <br/></td></tr>
+<tr class="memdesc:a02b4cc4c12619b4d80b8c4503fe36b27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Source gradient iter memory descriptor for hidden state. <br/></td></tr>
 <tr class="separator:a02b4cc4c12619b4d80b8c4503fe36b27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af29408951189967bdc475fca3be400a3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af29408951189967bdc475fca3be400a3"></a>
+<a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__rnn__desc__t.html#af29408951189967bdc475fca3be400a3">diff_src_iter_c_desc</a></td></tr>
+<tr class="memdesc:af29408951189967bdc475fca3be400a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Source gradient iter memory descriptor for cell state. <br/></td></tr>
+<tr class="separator:af29408951189967bdc475fca3be400a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a19447763ad2aa5c6b194c6ccf8a6e36c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a19447763ad2aa5c6b194c6ccf8a6e36c"></a>
 <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__rnn__desc__t.html#a19447763ad2aa5c6b194c6ccf8a6e36c">diff_weights_layer_desc</a></td></tr>
 <tr class="memdesc:a19447763ad2aa5c6b194c6ccf8a6e36c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Weights gradient layer memory descriptor. <br/></td></tr>
@@ -176,8 +188,12 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a7875827adcdd0109f77f137f2e380d5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae0ed320ce491eb24b4f5aa30dbf925a2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae0ed320ce491eb24b4f5aa30dbf925a2"></a>
 <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__rnn__desc__t.html#ae0ed320ce491eb24b4f5aa30dbf925a2">diff_dst_iter_desc</a></td></tr>
-<tr class="memdesc:ae0ed320ce491eb24b4f5aa30dbf925a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destination gradient iteration memory descriptor. <br/></td></tr>
+<tr class="memdesc:ae0ed320ce491eb24b4f5aa30dbf925a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destination gradient iteration memory descriptor for hidden state. <br/></td></tr>
 <tr class="separator:ae0ed320ce491eb24b4f5aa30dbf925a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65379e8f79f7f48ef26a1599ad5d0f49"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a65379e8f79f7f48ef26a1599ad5d0f49"></a>
+<a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__rnn__desc__t.html#a65379e8f79f7f48ef26a1599ad5d0f49">diff_dst_iter_c_desc</a></td></tr>
+<tr class="memdesc:a65379e8f79f7f48ef26a1599ad5d0f49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destination gradient iteration memory descriptor for cell state. <br/></td></tr>
+<tr class="separator:a65379e8f79f7f48ef26a1599ad5d0f49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f974ad5bba42ab6890993d910a1eb9a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7f974ad5bba42ab6890993d910a1eb9a"></a>
 <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__rnn__desc__t.html#a7f974ad5bba42ab6890993d910a1eb9a">diff_placeholder_desc</a></td></tr>
 <tr class="memdesc:a7f974ad5bba42ab6890993d910a1eb9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Placeholders. <br/></td></tr>

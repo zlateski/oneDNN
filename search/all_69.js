@@ -16,5 +16,6 @@ var searchData=
   ['inner_5fproduct_5fbackward_5fdata',['inner_product_backward_data',['../structmkldnn_1_1inner__product__backward__data.html',1,'mkldnn']]],
   ['inner_5fproduct_5fbackward_5fweights',['inner_product_backward_weights',['../structmkldnn_1_1inner__product__backward__weights.html',1,'mkldnn']]],
   ['inner_5fproduct_5fd',['inner_product_d',['../group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9aded69e5210888fc8315d2f7e90d7ba15',1,'mkldnn']]],
-  ['inner_5fproduct_5fforward',['inner_product_forward',['../structmkldnn_1_1inner__product__forward.html',1,'mkldnn']]]
+  ['inner_5fproduct_5fforward',['inner_product_forward',['../structmkldnn_1_1inner__product__forward.html',1,'mkldnn']]],
+  ['is_5fzero',['is_zero',['../structmkldnn_1_1memory_1_1desc.html#aca829108c2c7b5a8f484c8c6f5b896ad',1,'mkldnn::memory::desc']]]
 ];

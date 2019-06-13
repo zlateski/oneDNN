@@ -134,15 +134,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><span class="keyword">const</span> dim_t dec_n_layers = 8;</div>
 <div class="line"></div>
 <div class="line"><span class="keyword">const</span> <span class="keywordtype">int</span> lstm_n_gates = 4;</div>
-<div class="line"><span class="keyword">const</span> <span class="keywordtype">int</span> lstm_n_states = 2;</div>
+<div class="line"></div>
 <div class="line">std::vector&lt;int32_t&gt; weighted_src_layer(batch *feature_size, 1);</div>
 <div class="line">std::vector&lt;float&gt; alignment_model(</div>
 <div class="line">        src_seq_length_max *batch *feature_size, 1.0f);</div>
 <div class="line">std::vector&lt;float&gt; alignments(src_seq_length_max *batch, 1.0f);</div>
 <div class="line">std::vector&lt;float&gt; exp_sums(batch, 1.0f);</div>
-<div class="line"></div>
-<div class="line"><span class="keyword">const</span> <span class="keywordtype">float</span> onef = 1.0, zerof = 0.0;</div>
-<div class="line"><span class="keyword">const</span> dim_t onei = 1;</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">void</span> compute_weighted_annotations(<span class="keywordtype">float</span> *weighted_annotations,</div>
 <div class="line">        dim_t src_seq_length_max, dim_t batch, dim_t feature_size,</div>
@@ -152,9 +149,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line">    dim_t num_weighted_annotations = src_seq_length_max * batch;</div>
 <div class="line">    <span class="comment">// annotation[i] = GEMM(weights_annot, enc_dst_layer[i]);</span></div>
-<div class="line">    <a class="code" href="group__c__api__blas.html#ga3c2b678d82972c669c1259f458ff31e8">mkldnn_sgemm</a>(<span class="stringliteral">&quot;N&quot;</span>, <span class="stringliteral">&quot;N&quot;</span>, &amp;feature_size, &amp;num_weighted_annotations,</div>
-<div class="line">            &amp;feature_size, &amp;onef, weights_annot, &amp;feature_size, annotations,</div>
-<div class="line">            &amp;feature_size, &amp;zerof, weighted_annotations, &amp;feature_size);</div>
+<div class="line">    <a class="code" href="group__c__api__blas.html#ga870f4c4d4b48422fbcfe77fc308edc65">mkldnn_sgemm</a>(<span class="charliteral">&#39;N&#39;</span>, <span class="charliteral">&#39;N&#39;</span>, num_weighted_annotations, feature_size, feature_size,</div>
+<div class="line">            1.f, annotations, feature_size, weights_annot, feature_size,</div>
+<div class="line">            0.f, weighted_annotations, feature_size);</div>
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">void</span> compute_sum_of_rows(</div>
@@ -187,13 +184,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="comment">// p is (n, 1)</span></div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// first we precompute the weighted_dec_src_layer</span></div>
-<div class="line">    int8_t ao = 0;</div>
-<div class="line">    int8_t bo = 0;</div>
 <div class="line">    int32_t co = 0;</div>
-<div class="line">    <a class="code" href="group__c__api__blas.html#ga6c91c22f4490ce79d8fbc7e4a28511fe">mkldnn_gemm_s8u8s32</a>(<span class="stringliteral">&quot;N&quot;</span>, <span class="stringliteral">&quot;N&quot;</span>, <span class="stringliteral">&quot;F&quot;</span>, &amp;feature_size, &amp;batch, &amp;feature_size,</div>
-<div class="line">            &amp;onef, weights_src_layer, &amp;feature_size, &amp;ao, dec_src_layer,</div>
-<div class="line">            &amp;feature_size, &amp;bo, &amp;zerof, weighted_src_layer.data(),</div>
-<div class="line">            &amp;feature_size, &amp;co);</div>
+<div class="line">    <a class="code" href="group__c__api__blas.html#gaea88ce38665acb91bdc2c99ba1bc8f36">mkldnn_gemm_u8s8s32</a>(<span class="charliteral">&#39;N&#39;</span>, <span class="charliteral">&#39;N&#39;</span>, <span class="charliteral">&#39;F&#39;</span>, batch, feature_size, feature_size,</div>
+<div class="line">            1.f,</div>
+<div class="line">            dec_src_layer, feature_size, 0,</div>
+<div class="line">            weights_src_layer, feature_size, 0,</div>
+<div class="line">            0.f, weighted_src_layer.data(), feature_size, &amp;co);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// then we compute the alignment model</span></div>
 <div class="line">    <span class="keywordtype">float</span> *alignment_model_ptr = alignment_model.data();</div>
@@ -217,9 +213,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line">    <span class="comment">// gemv with alignments weights. the resulting alignments are in alignments</span></div>
 <div class="line">    dim_t num_weighted_annotations = src_seq_length_max * batch;</div>
-<div class="line">    <a class="code" href="group__c__api__blas.html#ga3c2b678d82972c669c1259f458ff31e8">mkldnn_sgemm</a>(<span class="stringliteral">&quot;N&quot;</span>, <span class="stringliteral">&quot;N&quot;</span>, &amp;onei, &amp;num_weighted_annotations, &amp;feature_size,</div>
-<div class="line">            &amp;onef, weights_alignments, &amp;onei, alignment_model_ptr,</div>
-<div class="line">            &amp;feature_size, &amp;zerof, alignments.data(), &amp;onei);</div>
+<div class="line">    <a class="code" href="group__c__api__blas.html#ga870f4c4d4b48422fbcfe77fc308edc65">mkldnn_sgemm</a>(<span class="charliteral">&#39;N&#39;</span>, <span class="charliteral">&#39;N&#39;</span>, num_weighted_annotations, 1, feature_size,</div>
+<div class="line">            1.f, alignment_model_ptr, feature_size, weights_alignments, 1,</div>
+<div class="line">            0.f, alignments.data(), 1);</div>
 <div class="line"></div>
 <div class="line"><span class="comment">// softmax on alignments. the resulting context weights are in alignments</span></div>
 <div class="line"><span class="preprocessor">#ifdef _OPENMP</span></div>
@@ -269,7 +265,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">                                  / dec_src_layer_scale);</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">void</span> copy_context(<span class="keywordtype">float</span> *src_iter, dim_t n_layers, dim_t n_states, dim_t batch,</div>
+<div class="line"><span class="keywordtype">void</span> copy_context(<span class="keywordtype">float</span> *src_iter, dim_t n_layers, dim_t batch,</div>
 <div class="line">        dim_t feature_size) {</div>
 <div class="line"><span class="comment">// we copy the context from the first layer to all other layers</span></div>
 <div class="line"><span class="preprocessor">#ifdef _OPENMP</span></div>
@@ -278,7 +274,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><span class="preprocessor"></span>    <span class="keywordflow">for</span> (dim_t k = 1; k &lt; n_layers; k++)</div>
 <div class="line">        <span class="keywordflow">for</span> (dim_t j = 0; j &lt; batch; j++)</div>
 <div class="line">            <span class="keywordflow">for</span> (dim_t i = 0; i &lt; feature_size; i++)</div>
-<div class="line">                src_iter[(k * n_states * batch + j)</div>
+<div class="line">                src_iter[(k * batch + j)</div>
 <div class="line">                                * (feature_size + feature_size)</div>
 <div class="line">                        + i]</div>
 <div class="line">                        = src_iter[j * (feature_size + feature_size) + i];</div>
@@ -382,8 +378,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="keywordflow">try</span> {</div>
 <div class="line">        <a class="code" href="structmkldnn_1_1lstm__forward_1_1desc.html">lstm_forward::desc</a> bi_layer_desc(<a class="code" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a3b9fad4f80d45368f856b5403198ac4c">prop_kind::forward_inference</a>,</div>
 <div class="line">                rnn_direction::bidirectional_concat, enc_bidir_src_layer_md,</div>
-<div class="line">                <a class="code" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>(), enc_bidir_wei_layer_md, enc_bidir_wei_iter_md,</div>
-<div class="line">                user_enc_bidir_bias_md, enc_bidir_dst_layer_md, <a class="code" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>());</div>
+<div class="line">                <a class="code" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>(), <a class="code" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>(), enc_bidir_wei_layer_md,</div>
+<div class="line">                enc_bidir_wei_iter_md, user_enc_bidir_bias_md,</div>
+<div class="line">                enc_bidir_dst_layer_md, <a class="code" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>(), <a class="code" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>());</div>
 <div class="line">    } <span class="keywordflow">catch</span> (<a class="code" href="structmkldnn_1_1error.html">error</a> &amp;e) {</div>
 <div class="line">        <span class="keywordflow">if</span> (e.status == <a class="code" href="group__c__api__types__generic.html#gga31866789b66acfb1c28b2f9bdd7bdfdda253b1d7923a77456485a19734788b220">mkldnn_unimplemented</a>) {</div>
 <div class="line">            std::cerr</div>
@@ -397,8 +394,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="comment">//[create rnn desc]</span></div>
 <div class="line">    <a class="code" href="structmkldnn_1_1lstm__forward_1_1desc.html">lstm_forward::desc</a> bi_layer_desc(<a class="code" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a3b9fad4f80d45368f856b5403198ac4c">prop_kind::forward_inference</a>,</div>
 <div class="line">            rnn_direction::bidirectional_concat, enc_bidir_src_layer_md,</div>
-<div class="line">            <a class="code" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>(), enc_bidir_wei_layer_md, enc_bidir_wei_iter_md,</div>
-<div class="line">            user_enc_bidir_bias_md, enc_bidir_dst_layer_md, <a class="code" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>());</div>
+<div class="line">            <a class="code" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>(), <a class="code" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>(), enc_bidir_wei_layer_md, enc_bidir_wei_iter_md,</div>
+<div class="line">            user_enc_bidir_bias_md, enc_bidir_dst_layer_md, <a class="code" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>(), <a class="code" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>());</div>
 <div class="line">    <span class="comment">//[create rnn desc]</span></div>
 <div class="line"></div>
 <div class="line">    <span class="comment">//[RNN attri]</span></div>
@@ -500,9 +497,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line">    <a class="code" href="structmkldnn_1_1lstm__forward_1_1desc.html">lstm_forward::desc</a> enc_uni_first_layer_desc(<a class="code" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a3b9fad4f80d45368f856b5403198ac4c">prop_kind::forward_inference</a>,</div>
 <div class="line">            rnn_direction::unidirectional_left2right,</div>
-<div class="line">            enc_bidir_dst_layer_md, <a class="code" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>(), enc_uni_first_wei_layer_md,</div>
+<div class="line">            enc_bidir_dst_layer_md, <a class="code" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>(), <a class="code" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>(), enc_uni_first_wei_layer_md,</div>
 <div class="line">            enc_uni_first_wei_iter_md, user_enc_uni_first_bias_md,</div>
-<div class="line">            enc_uni_first_dst_layer_md, <a class="code" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>());</div>
+<div class="line">            enc_uni_first_dst_layer_md, <a class="code" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>(), <a class="code" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>());</div>
 <div class="line"></div>
 <div class="line">    <span class="keyword">auto</span> enc_uni_first_prim_desc = <a class="code" href="structmkldnn_1_1lstm__forward_1_1primitive__desc.html">lstm_forward::primitive_desc</a>(</div>
 <div class="line">            enc_uni_first_layer_desc, attr, cpu_engine);</div>
@@ -579,9 +576,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line">    <a class="code" href="structmkldnn_1_1lstm__forward_1_1desc.html">lstm_forward::desc</a> enc_uni_layer_desc(<a class="code" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a3b9fad4f80d45368f856b5403198ac4c">prop_kind::forward_inference</a>,</div>
 <div class="line">            rnn_direction::unidirectional_left2right,</div>
-<div class="line">            enc_uni_first_dst_layer_md, <a class="code" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>(), enc_uni_wei_layer_md,</div>
+<div class="line">            enc_uni_first_dst_layer_md, <a class="code" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>(), <a class="code" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>(), enc_uni_wei_layer_md,</div>
 <div class="line">            enc_uni_wei_iter_md, user_enc_uni_bias_md, enc_dst_layer_md,</div>
-<div class="line">            <a class="code" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>());</div>
+<div class="line">            <a class="code" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>(), <a class="code" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>());</div>
 <div class="line">    <span class="keyword">auto</span> enc_uni_prim_desc</div>
 <div class="line">            = <a class="code" href="structmkldnn_1_1lstm__forward_1_1primitive__desc.html">lstm_forward::primitive_desc</a>(enc_uni_layer_desc, attr, cpu_engine);</div>
 <div class="line">    <span class="comment">//[create uni rnn]</span></div>
@@ -641,6 +638,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">            = { dec_n_layers, 1, lstm_n_gates, feature_size };</div>
 <div class="line">    memory::dims dec_src_layer_dims = { 1, batch, feature_size };</div>
 <div class="line">    memory::dims dec_dst_layer_dims = { 1, batch, feature_size };</div>
+<div class="line">    memory::dims dec_dst_iter_c_dims = { dec_n_layers, 1, batch,</div>
+<div class="line">        feature_size };</div>
 <div class="line">    <span class="comment">//[dec mem dim]</span></div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// We will use the same memory for dec_src_iter and dec_dst_iter</span></div>
@@ -653,10 +652,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="comment">// feature_size values. However, we do not compute or</span></div>
 <div class="line">    <span class="comment">// access those.</span></div>
 <div class="line"><span class="comment"></span>    <span class="comment">//[noctx mem dim]</span></div>
-<div class="line">    memory::dims dec_dst_iter_dims = { dec_n_layers, 1, lstm_n_states, batch,</div>
+<div class="line">    memory::dims dec_dst_iter_dims = { dec_n_layers, 1, batch,</div>
 <div class="line">        feature_size + feature_size };</div>
 <div class="line">    memory::dims dec_dst_iter_noctx_dims</div>
-<div class="line">            = { dec_n_layers, 1, lstm_n_states, batch, feature_size };</div>
+<div class="line">            = { dec_n_layers, 1, batch, feature_size };</div>
 <div class="line">    <span class="comment">//[noctx mem dim]</span></div>
 <div class="line"></div>
 <div class="line">    <span class="comment">//[dec mem desc]</span></div>
@@ -671,7 +670,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="keyword">auto</span> dec_dst_layer_md = <a class="code" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>({ dec_dst_layer_dims },</div>
 <div class="line">            <a class="code" href="structmkldnn_1_1memory.html#aa8a0d49cc7faaceef9d8f55d66bff57ba077393852be20e37026d6281827662f2">memory::data_type::u8</a>, memory::format_tag::tnc);</div>
 <div class="line">    <span class="keyword">auto</span> dec_dst_iter_md = <a class="code" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>({ dec_dst_iter_dims },</div>
-<div class="line">            <a class="code" href="structmkldnn_1_1memory.html#aa8a0d49cc7faaceef9d8f55d66bff57ba512dc597be7ae761876315165dc8bd2e">memory::data_type::f32</a>, memory::format_tag::ldsnc);</div>
+<div class="line">            <a class="code" href="structmkldnn_1_1memory.html#aa8a0d49cc7faaceef9d8f55d66bff57ba512dc597be7ae761876315165dc8bd2e">memory::data_type::f32</a>, memory::format_tag::ldnc);</div>
+<div class="line">    <span class="keyword">auto</span> dec_dst_iter_c_md = <a class="code" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>({ dec_dst_iter_c_dims },</div>
+<div class="line">            <a class="code" href="structmkldnn_1_1memory.html#aa8a0d49cc7faaceef9d8f55d66bff57ba512dc597be7ae761876315165dc8bd2e">memory::data_type::f32</a>, memory::format_tag::ldnc);</div>
 <div class="line">    <span class="comment">//[dec mem desc]</span></div>
 <div class="line"></div>
 <div class="line">    <span class="comment">//[create dec memory]</span></div>
@@ -684,6 +685,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="keyword">auto</span> dec_src_layer_memory = memory(dec_src_layer_md, cpu_engine);</div>
 <div class="line">    <span class="keyword">auto</span> dec_dst_layer_memory</div>
 <div class="line">            = memory(dec_dst_layer_md, cpu_engine, dec_dst.<a class="code" href="structmkldnn_1_1memory_1_1desc.html#abeddf8909e2b4af626153c88da9f8b37">data</a>());</div>
+<div class="line">    <span class="keyword">auto</span> dec_dst_iter_c_memory = memory(dec_dst_iter_c_md, cpu_engine);</div>
 <div class="line">    <span class="comment">//[create dec memory]</span></div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Create memory descriptors for RNN data w/o specified layout</span></div>
@@ -700,8 +702,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line">    <a class="code" href="structmkldnn_1_1lstm__forward_1_1desc.html">lstm_forward::desc</a> dec_ctx_desc(<a class="code" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a3b9fad4f80d45368f856b5403198ac4c">prop_kind::forward_inference</a>,</div>
 <div class="line">            rnn_direction::unidirectional_left2right, dec_src_layer_md,</div>
-<div class="line">            dec_dst_iter_md, dec_wei_layer_md, dec_wei_iter_md,</div>
-<div class="line">            user_dec_bias_md, dec_dst_layer_md, dec_dst_iter_noctx_md);</div>
+<div class="line">            dec_dst_iter_md, dec_dst_iter_c_md, dec_wei_layer_md,</div>
+<div class="line">            dec_wei_iter_md, user_dec_bias_md, dec_dst_layer_md,</div>
+<div class="line">            dec_dst_iter_noctx_md, dec_dst_iter_c_md);</div>
 <div class="line">    <span class="keyword">auto</span> dec_ctx_prim_desc</div>
 <div class="line">            = <a class="code" href="structmkldnn_1_1lstm__forward_1_1primitive__desc.html">lstm_forward::primitive_desc</a>(dec_ctx_desc, attr, cpu_engine);</div>
 <div class="line"></div>
@@ -724,11 +727,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    decoder_net.push_back(lstm_forward(dec_ctx_prim_desc));</div>
 <div class="line">    decoder_net_args.push_back({ { MKLDNN_ARG_SRC_LAYER, dec_src_layer_memory },</div>
 <div class="line">            { MKLDNN_ARG_SRC_ITER, dec_dst_iter_memory },</div>
+<div class="line">            { MKLDNN_ARG_SRC_ITER_C, dec_dst_iter_c_memory },</div>
 <div class="line">            { MKLDNN_ARG_WEIGHTS_LAYER, dec_wei_layer_memory },</div>
 <div class="line">            { MKLDNN_ARG_WEIGHTS_ITER, dec_wei_iter_memory },</div>
 <div class="line">            { MKLDNN_ARG_BIAS, user_dec_bias_memory },</div>
 <div class="line">            { MKLDNN_ARG_DST_LAYER, dec_dst_layer_memory },</div>
-<div class="line">            { MKLDNN_ARG_DST_ITER, dec_dst_iter_memory } });</div>
+<div class="line">            { MKLDNN_ARG_DST_ITER, dec_dst_iter_memory },</div>
+<div class="line">            { MKLDNN_ARG_DST_ITER_C, dec_dst_iter_c_memory } });</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Allocating temporary buffers for attention mechanism</span></div>
 <div class="line">    std::vector&lt;float&gt; weighted_annotations(</div>
@@ -778,8 +783,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">            <span class="comment">//[att ctx]</span></div>
 <div class="line"></div>
 <div class="line">            <span class="comment">//[cp ctx]</span></div>
-<div class="line">            copy_context(src_att_iter_handle, dec_n_layers, lstm_n_states,</div>
-<div class="line">                    batch, feature_size);</div>
+<div class="line">            copy_context(src_att_iter_handle, dec_n_layers, batch,</div>
+<div class="line">                    feature_size);</div>
 <div class="line">            <span class="comment">//[cp ctx]</span></div>
 <div class="line"></div>
 <div class="line">            assert(decoder_net.size() == decoder_net_args.size()</div>
@@ -801,7 +806,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    };</div>
 <div class="line"></div>
 <div class="line">    execute();</div>
-<div class="line">    s.wait();</div>
+<div class="line">    s.<a class="code" href="structmkldnn_1_1stream.html#a48181ce0f5eb3bcd75778b5aa8866df6">wait</a>();</div>
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv) {</div>
@@ -884,8 +889,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --><p>Create bidirectional RNN</p>
 <div class="fragment"><div class="line">    lstm_forward::desc bi_layer_desc(prop_kind::forward_inference,</div>
 <div class="line">            rnn_direction::bidirectional_concat, enc_bidir_src_layer_md,</div>
-<div class="line">            memory::desc(), enc_bidir_wei_layer_md, enc_bidir_wei_iter_md,</div>
-<div class="line">            user_enc_bidir_bias_md, enc_bidir_dst_layer_md, memory::desc());</div>
+<div class="line">            memory::desc(), memory::desc(), enc_bidir_wei_layer_md, enc_bidir_wei_iter_md,</div>
+<div class="line">            user_enc_bidir_bias_md, enc_bidir_dst_layer_md, memory::desc(), memory::desc());</div>
 </div><!-- fragment --><p>Define RNN attributes that store quantization parameters </p>
 <div class="fragment"><div class="line">    primitive_attr attr;</div>
 <div class="line">    attr.<a class="code" href="structmkldnn_1_1primitive__attr.html#ae968faf51e83a2674464fbec6ebdb2f7">set_rnn_data_qparams</a>(data_scale, data_shift);</div>
@@ -922,9 +927,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="fragment"><div class="line"></div>
 <div class="line">    lstm_forward::desc enc_uni_first_layer_desc(prop_kind::forward_inference,</div>
 <div class="line">            rnn_direction::unidirectional_left2right,</div>
-<div class="line">            enc_bidir_dst_layer_md, memory::desc(), enc_uni_first_wei_layer_md,</div>
+<div class="line">            enc_bidir_dst_layer_md, memory::desc(), memory::desc(), enc_uni_first_wei_layer_md,</div>
 <div class="line">            enc_uni_first_wei_iter_md, user_enc_uni_first_bias_md,</div>
-<div class="line">            enc_uni_first_dst_layer_md, memory::desc());</div>
+<div class="line">            enc_uni_first_dst_layer_md, memory::desc(), memory::desc());</div>
 <div class="line"></div>
 <div class="line">    <span class="keyword">auto</span> enc_uni_first_prim_desc = lstm_forward::primitive_desc(</div>
 <div class="line">            enc_uni_first_layer_desc, attr, cpu_engine);</div>
@@ -949,9 +954,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="fragment"><div class="line"></div>
 <div class="line">    lstm_forward::desc enc_uni_layer_desc(prop_kind::forward_inference,</div>
 <div class="line">            rnn_direction::unidirectional_left2right,</div>
-<div class="line">            enc_uni_first_dst_layer_md, memory::desc(), enc_uni_wei_layer_md,</div>
+<div class="line">            enc_uni_first_dst_layer_md, memory::desc(), memory::desc(), enc_uni_wei_layer_md,</div>
 <div class="line">            enc_uni_wei_iter_md, user_enc_uni_bias_md, enc_dst_layer_md,</div>
-<div class="line">            memory::desc());</div>
+<div class="line">            memory::desc(), memory::desc());</div>
 <div class="line">    <span class="keyword">auto</span> enc_uni_prim_desc</div>
 <div class="line">            = lstm_forward::primitive_desc(enc_uni_layer_desc, attr, cpu_engine);</div>
 </div><!-- fragment --><p>Encoder : add the unidirectional rnn primitive with related arguments into encoder_net </p>
@@ -990,10 +995,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">            = { dec_n_layers, 1, lstm_n_gates, feature_size };</div>
 <div class="line">    memory::dims dec_src_layer_dims = { 1, batch, feature_size };</div>
 <div class="line">    memory::dims dec_dst_layer_dims = { 1, batch, feature_size };</div>
-</div><!-- fragment --><div class="fragment"><div class="line">    memory::dims dec_dst_iter_dims = { dec_n_layers, 1, lstm_n_states, batch,</div>
+<div class="line">    memory::dims dec_dst_iter_c_dims = { dec_n_layers, 1, batch,</div>
+<div class="line">        feature_size };</div>
+</div><!-- fragment --><div class="fragment"><div class="line">    memory::dims dec_dst_iter_dims = { dec_n_layers, 1, batch,</div>
 <div class="line">        feature_size + feature_size };</div>
 <div class="line">    memory::dims dec_dst_iter_noctx_dims</div>
-<div class="line">            = { dec_n_layers, 1, lstm_n_states, batch, feature_size };</div>
+<div class="line">            = { dec_n_layers, 1, batch, feature_size };</div>
 </div><!-- fragment --><p>Decoder : create memory description Create memory descriptors for RNN data w/o specified layout </p>
 <div class="fragment"><div class="line">    <span class="keyword">auto</span> user_dec_wei_layer_md = memory::desc({ user_dec_wei_layer_dims },</div>
 <div class="line">            memory::data_type::f32, memory::format_tag::ldigo);</div>
@@ -1006,7 +1013,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="keyword">auto</span> dec_dst_layer_md = memory::desc({ dec_dst_layer_dims },</div>
 <div class="line">            memory::data_type::u8, memory::format_tag::tnc);</div>
 <div class="line">    <span class="keyword">auto</span> dec_dst_iter_md = memory::desc({ dec_dst_iter_dims },</div>
-<div class="line">            memory::data_type::f32, memory::format_tag::ldsnc);</div>
+<div class="line">            memory::data_type::f32, memory::format_tag::ldnc);</div>
+<div class="line">    <span class="keyword">auto</span> dec_dst_iter_c_md = memory::desc({ dec_dst_iter_c_dims },</div>
+<div class="line">            memory::data_type::f32, memory::format_tag::ldnc);</div>
 </div><!-- fragment --><p>Decoder : Create memory </p>
 <div class="fragment"><div class="line">    <span class="keyword">auto</span> user_dec_wei_layer_memory = memory(</div>
 <div class="line">            user_dec_wei_layer_md, cpu_engine, user_dec_wei_layer.data());</div>
@@ -1017,6 +1026,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="keyword">auto</span> dec_src_layer_memory = memory(dec_src_layer_md, cpu_engine);</div>
 <div class="line">    <span class="keyword">auto</span> dec_dst_layer_memory</div>
 <div class="line">            = memory(dec_dst_layer_md, cpu_engine, dec_dst.data());</div>
+<div class="line">    <span class="keyword">auto</span> dec_dst_iter_c_memory = memory(dec_dst_iter_c_md, cpu_engine);</div>
 </div><!-- fragment --><p>Decoder : As mentioned above, we create a view without context out of the memory with context. </p>
 <div class="fragment"><div class="line">    <span class="keyword">auto</span> dec_dst_iter_memory = memory(dec_dst_iter_md, cpu_engine);</div>
 <div class="line">    <span class="keyword">auto</span> dec_dst_iter_noctx_md = dec_dst_iter_md.submemory_desc(</div>
@@ -1053,8 +1063,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">                    weighted_annotations.data(),</div>
 <div class="line">                    user_weights_alignments.data());</div>
 </div><!-- fragment --><p>copy the context vectors to all layers of src_iter </p>
-<div class="fragment"><div class="line">            copy_context(src_att_iter_handle, dec_n_layers, lstm_n_states,</div>
-<div class="line">                    batch, feature_size);</div>
+<div class="fragment"><div class="line">            copy_context(src_att_iter_handle, dec_n_layers, batch,</div>
+<div class="line">                    feature_size);</div>
 </div><!-- fragment --><p>run the decoder iteration </p>
 <div class="fragment"><div class="line">            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> p = 0; p &lt; decoder_net.size(); ++p)</div>
 <div class="line">                decoder_net.at(p).execute(s, decoder_net_args.at(p));</div>

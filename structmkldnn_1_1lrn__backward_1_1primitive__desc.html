@@ -124,9 +124,8 @@ Public Member Functions</h2></td></tr>
 <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1lrn__backward_1_1primitive__desc.html#ac2758338b20212f2d4248e96b5a35062">diff_dst_desc</a> () const </td></tr>
 <tr class="memdesc:ac2758338b20212f2d4248e96b5a35062"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queries diff destination memory descriptor. <br/></td></tr>
 <tr class="separator:ac2758338b20212f2d4248e96b5a35062"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab98f36114cac66bc43fa757cbbac1b0a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab98f36114cac66bc43fa757cbbac1b0a"></a>
-<a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1lrn__backward_1_1primitive__desc.html#ab98f36114cac66bc43fa757cbbac1b0a">workspace_desc</a> () const </td></tr>
-<tr class="memdesc:ab98f36114cac66bc43fa757cbbac1b0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queries workspace memory descriptor. <br/></td></tr>
+<tr class="memitem:ab98f36114cac66bc43fa757cbbac1b0a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1lrn__backward_1_1primitive__desc.html#ab98f36114cac66bc43fa757cbbac1b0a">workspace_desc</a> () const </td></tr>
+<tr class="memdesc:ab98f36114cac66bc43fa757cbbac1b0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queries workspace memory descriptor.  <a href="#ab98f36114cac66bc43fa757cbbac1b0a">More...</a><br/></td></tr>
 <tr class="separator:ab98f36114cac66bc43fa757cbbac1b0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_structmkldnn_1_1primitive__desc"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_structmkldnn_1_1primitive__desc')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="structmkldnn_1_1primitive__desc.html">mkldnn::primitive_desc</a></td></tr>
 <tr class="memitem:a3bdfcd525cc732628e65b3b867fead46 inherit pub_methods_structmkldnn_1_1primitive__desc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1primitive__desc.html#a3bdfcd525cc732628e65b3b867fead46">primitive_desc</a> (<a class="el" href="group__c__api__types__op__descs.html#gac7e49603b052255540a6f6dc072a627c">const_mkldnn_op_desc_t</a> desc, const <a class="el" href="structmkldnn_1_1primitive__attr.html">primitive_attr</a> *attr, const <a class="el" href="structmkldnn_1_1engine.html">engine</a> &amp;e, <a class="el" href="group__c__api__primitive__descs.html#ga9f002a6449ae9be775393e888698cfe0">const_mkldnn_primitive_desc_t</a> hint_fwd_pd)</td></tr>
@@ -168,7 +167,34 @@ memory::dim&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Primitive descriptor for local response normalization backward propagation. </p>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="cpu_cnn_training_fp32_8cpp-example.html#_a29">cpu_cnn_training_fp32.cpp</a>.</dd>
-</dl></div><hr/>The documentation for this struct was generated from the following file:<ul>
+</dl></div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ab98f36114cac66bc43fa757cbbac1b0a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> mkldnn::lrn_backward::primitive_desc::workspace_desc </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Queries workspace memory descriptor. </p>
+<p>Returns a zero_md if no worspace is required. </p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li>include/<a class="el" href="mkldnn_8hpp_source.html">mkldnn.hpp</a></li>
 </ul>
 </div><!-- contents -->

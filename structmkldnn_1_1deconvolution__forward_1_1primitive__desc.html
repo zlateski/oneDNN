@@ -130,9 +130,8 @@ Public Member Functions</h2></td></tr>
 <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1deconvolution__forward_1_1primitive__desc.html#a6a01f42e54c0ea4db6300b02a7818507">weights_desc</a> () const </td></tr>
 <tr class="memdesc:a6a01f42e54c0ea4db6300b02a7818507"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queries weights memory descriptor. <br/></td></tr>
 <tr class="separator:a6a01f42e54c0ea4db6300b02a7818507"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f2cfea0433f78cab9b929362a90dde1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6f2cfea0433f78cab9b929362a90dde1"></a>
-<a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1deconvolution__forward_1_1primitive__desc.html#a6f2cfea0433f78cab9b929362a90dde1">bias_desc</a> () const </td></tr>
-<tr class="memdesc:a6f2cfea0433f78cab9b929362a90dde1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queries bias memory descriptor. <br/></td></tr>
+<tr class="memitem:a6f2cfea0433f78cab9b929362a90dde1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1deconvolution__forward_1_1primitive__desc.html#a6f2cfea0433f78cab9b929362a90dde1">bias_desc</a> () const </td></tr>
+<tr class="memdesc:a6f2cfea0433f78cab9b929362a90dde1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queries bias memory descriptor.  <a href="#a6f2cfea0433f78cab9b929362a90dde1">More...</a><br/></td></tr>
 <tr class="separator:a6f2cfea0433f78cab9b929362a90dde1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b42377f34a26e8c2a4a65472fb0f70d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4b42377f34a26e8c2a4a65472fb0f70d"></a>
 <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1deconvolution__forward_1_1primitive__desc.html#a4b42377f34a26e8c2a4a65472fb0f70d">dst_desc</a> () const </td></tr>
@@ -253,6 +252,33 @@ memory::dim&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 </div><div class="memdoc">
 
 <p>Initializes primitive descriptor for deconvolution forward propagation with attributes defined by <code>attr</code>. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a6f2cfea0433f78cab9b929362a90dde1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> mkldnn::deconvolution_forward::primitive_desc::bias_desc </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Queries bias memory descriptor. </p>
+<p>Returns a zero_md if no bias was specified at op_desc creation time. </p>
 
 </div>
 </div>

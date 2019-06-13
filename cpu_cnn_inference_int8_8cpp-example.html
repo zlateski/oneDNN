@@ -268,7 +268,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    dst_reorder.execute(s, conv_dst_memory, user_dst_memory);</div>
 <div class="line"><span class="comment">//[Dequantize the result]</span></div>
 <div class="line"></div>
-<div class="line">    s.wait();</div>
+<div class="line">    s.<a name="a23"></a><a class="code" href="structmkldnn_1_1stream.html#a48181ce0f5eb3bcd75778b5aa8866df6">wait</a>();</div>
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv) {</div>
@@ -277,7 +277,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;Simple-net-int8 example passed!&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">    } <span class="keywordflow">catch</span> (<a class="code" href="structmkldnn_1_1error.html">error</a> &amp;e) {</div>
 <div class="line">        std::cerr &lt;&lt; <span class="stringliteral">&quot;status: &quot;</span> &lt;&lt; e.status &lt;&lt; std::endl;</div>
-<div class="line">        std::cerr &lt;&lt; <span class="stringliteral">&quot;message: &quot;</span> &lt;&lt; e.<a name="a23"></a>message &lt;&lt; std::endl;</div>
+<div class="line">        std::cerr &lt;&lt; <span class="stringliteral">&quot;message: &quot;</span> &lt;&lt; e.<a name="a24"></a>message &lt;&lt; std::endl;</div>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>

@@ -230,7 +230,7 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Memory that describes the data. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cpu_cnn_inference_fp32_8cpp-example.html#_a5">cpu_cnn_inference_fp32.cpp</a>, <a class="el" href="cpu_cnn_inference_int8_8cpp-example.html#_a5">cpu_cnn_inference_int8.cpp</a>, <a class="el" href="cpu_cnn_training_fp32_8cpp-example.html#_a5">cpu_cnn_training_fp32.cpp</a>, <a class="el" href="cpu_getting_started_8cpp-example.html#_a7">cpu_getting_started.cpp</a>, <a class="el" href="cpu_memory_format_propagation_8cpp-example.html#_a11">cpu_memory_format_propagation.cpp</a>, <a class="el" href="cpu_rnn_inference_fp32_8cpp-example.html#_a6">cpu_rnn_inference_fp32.cpp</a>, <a class="el" href="cpu_rnn_inference_int8_8cpp-example.html#_a7">cpu_rnn_inference_int8.cpp</a>, <a class="el" href="cpu_rnn_training_fp32_8cpp-example.html#_a8">cpu_rnn_training_fp32.cpp</a>, and <a class="el" href="gpu_getting_started_8cpp-example.html#_a3">gpu_getting_started.cpp</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cpu_cnn_inference_fp32_8cpp-example.html#_a5">cpu_cnn_inference_fp32.cpp</a>, <a class="el" href="cpu_cnn_inference_int8_8cpp-example.html#_a5">cpu_cnn_inference_int8.cpp</a>, <a class="el" href="cpu_cnn_training_fp32_8cpp-example.html#_a5">cpu_cnn_training_fp32.cpp</a>, <a class="el" href="cpu_getting_started_8cpp-example.html#_a7">cpu_getting_started.cpp</a>, <a class="el" href="cpu_memory_format_propagation_8cpp-example.html#_a11">cpu_memory_format_propagation.cpp</a>, <a class="el" href="cpu_performance_profiling_8cpp-example.html#_a3">cpu_performance_profiling.cpp</a>, <a class="el" href="cpu_rnn_inference_fp32_8cpp-example.html#_a6">cpu_rnn_inference_fp32.cpp</a>, <a class="el" href="cpu_rnn_inference_int8_8cpp-example.html#_a7">cpu_rnn_inference_int8.cpp</a>, <a class="el" href="cpu_rnn_training_fp32_8cpp-example.html#_a8">cpu_rnn_training_fp32.cpp</a>, and <a class="el" href="gpu_getting_started_8cpp-example.html#_a3">gpu_getting_started.cpp</a>.</dd>
 </dl></div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a class="anchor" id="aa8a0d49cc7faaceef9d8f55d66bff57b"></a>
 <div class="memitem">
@@ -545,7 +545,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Returns a handle of the data contained in the memory. </p>
 <p>On the CPU engine, this is a pointer to the allocated memory. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cpu_getting_started_8cpp-example.html#a14">cpu_getting_started.cpp</a>, <a class="el" href="cpu_rnn_inference_fp32_8cpp-example.html#a15">cpu_rnn_inference_fp32.cpp</a>, and <a class="el" href="cpu_rnn_inference_int8_8cpp-example.html#a24">cpu_rnn_inference_int8.cpp</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cpu_getting_started_8cpp-example.html#a14">cpu_getting_started.cpp</a>, <a class="el" href="cpu_performance_profiling_8cpp-example.html#a4">cpu_performance_profiling.cpp</a>, <a class="el" href="cpu_rnn_inference_fp32_8cpp-example.html#a15">cpu_rnn_inference_fp32.cpp</a>, and <a class="el" href="cpu_rnn_inference_int8_8cpp-example.html#a24">cpu_rnn_inference_int8.cpp</a>.</dd>
 </dl>
 </div>
 </div>
@@ -573,7 +573,7 @@ template&lt;typename T  = void&gt; </div>
 </div><div class="memdoc">
 
 <p>Maps the data of the memory. </p>
-<p>Mapping allows to read/write directly from/to the memory contents for backends that do not support direct accessing.</p>
+<p>Mapping allows to read/write directly from/to the memory contents for engines that do not support direct memory access.</p>
 <p>Mapping is an exclusive operation - a memory object cannot be used in other operations until this memory object is unmapped. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">

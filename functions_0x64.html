@@ -185,9 +185,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 , <a class="el" href="structmkldnn_1_1rnn__forward_1_1desc.html#acd96ffbbc475870ba1a8d70d025fda74">mkldnn::rnn_forward::desc</a>
 , <a class="el" href="structmkldnn_1_1convolution__backward__data_1_1desc.html#a5eb0fd5e20cf95f6a3ed51232d61c347">mkldnn::convolution_backward_data::desc</a>
 , <a class="el" href="structmkldnn_1_1rnn__backward_1_1desc.html#aeb51591ebf5a352db2400cb6dbabf533">mkldnn::rnn_backward::desc</a>
-, <a class="el" href="structmkldnn_1_1lstm__forward_1_1desc.html#a8595ae31d6215be319ce9bc674471851">mkldnn::lstm_forward::desc</a>
+, <a class="el" href="structmkldnn_1_1lstm__forward_1_1desc.html#a7117d7a9e9d10cbda5f250eeab5b4ff4">mkldnn::lstm_forward::desc</a>
 , <a class="el" href="structmkldnn_1_1convolution__backward__data_1_1desc.html#a99272eddc85a52e7781e225dd3653680">mkldnn::convolution_backward_data::desc</a>
-, <a class="el" href="structmkldnn_1_1lstm__backward_1_1desc.html#a20bc3a2730233ad0b360fca515c85b1e">mkldnn::lstm_backward::desc</a>
+, <a class="el" href="structmkldnn_1_1lstm__backward_1_1desc.html#ab7ff3aef8488aa8878ba0b3f9502ae69">mkldnn::lstm_backward::desc</a>
 , <a class="el" href="structmkldnn_1_1gru__forward_1_1desc.html#a9c2d969b85ac34805ef771b2197a8a93">mkldnn::gru_forward::desc</a>
 , <a class="el" href="structmkldnn_1_1convolution__backward__weights_1_1desc.html#a23d85dd10daa4b754aa36510c3f16418">mkldnn::convolution_backward_weights::desc</a>
 , <a class="el" href="structmkldnn_1_1gru__backward_1_1desc.html#ad6adf9bc23e2b8cc0d9b148a99d38881">mkldnn::gru_backward::desc</a>
@@ -234,70 +234,78 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 , <a class="el" href="structmkldnn_1_1inner__product__backward__data_1_1primitive__desc.html#a0455b4bee25155c6b958a65cf9958e82">mkldnn::inner_product_backward_data::primitive_desc</a>
 , <a class="el" href="structmkldnn_1_1inner__product__backward__weights_1_1primitive__desc.html#aaf574bdb5950ff6b08557461fd7f586a">mkldnn::inner_product_backward_weights::primitive_desc</a>
 </li>
-<li>diff_dst_iter_desc
-: <a class="el" href="structmkldnn__rnn__desc__t.html#ae0ed320ce491eb24b4f5aa30dbf925a2">mkldnn_rnn_desc_t</a>
+<li>diff_dst_iter_c_desc
+: <a class="el" href="structmkldnn__rnn__desc__t.html#a65379e8f79f7f48ef26a1599ad5d0f49">mkldnn_rnn_desc_t</a>
+, <a class="el" href="structmkldnn_1_1lstm__backward_1_1primitive__desc.html#a6f88d74abc6c7e9f1e0df922fdce91da">mkldnn::lstm_backward::primitive_desc</a>
+</li>
+<li>diff_dst_iter_desc()
+: <a class="el" href="structmkldnn_1_1gru__backward_1_1primitive__desc.html#af8c4b5196ddb413dc66cfa7f0cc1fe3a">mkldnn::gru_backward::primitive_desc</a>
+, <a class="el" href="structmkldnn__rnn__desc__t.html#ae0ed320ce491eb24b4f5aa30dbf925a2">mkldnn_rnn_desc_t</a>
 , <a class="el" href="structmkldnn_1_1rnn__backward_1_1primitive__desc.html#a898bc0149c683fe6d223a50ce32ce136">mkldnn::rnn_backward::primitive_desc</a>
 , <a class="el" href="structmkldnn_1_1lstm__backward_1_1primitive__desc.html#af37315f8f304c658e207c5de4fbebfc0">mkldnn::lstm_backward::primitive_desc</a>
-, <a class="el" href="structmkldnn_1_1gru__backward_1_1primitive__desc.html#af8c4b5196ddb413dc66cfa7f0cc1fe3a">mkldnn::gru_backward::primitive_desc</a>
 , <a class="el" href="structmkldnn_1_1lbr__gru__backward_1_1primitive__desc.html#a57f12362c2231bd9184321a7b603af5c">mkldnn::lbr_gru_backward::primitive_desc</a>
 </li>
 <li>diff_dst_layer_desc()
-: <a class="el" href="structmkldnn_1_1lbr__gru__backward_1_1primitive__desc.html#a0457d928f61b9dbfbb4af4b539df28ab">mkldnn::lbr_gru_backward::primitive_desc</a>
+: <a class="el" href="structmkldnn_1_1lstm__backward_1_1primitive__desc.html#ad970ec4539bd15c6b4415b2fc211c76e">mkldnn::lstm_backward::primitive_desc</a>
 , <a class="el" href="structmkldnn__rnn__desc__t.html#a7875827adcdd0109f77f137f2e380d5e">mkldnn_rnn_desc_t</a>
 , <a class="el" href="structmkldnn_1_1rnn__backward_1_1primitive__desc.html#acf60b1b9298d81b03345bc08713b4a7f">mkldnn::rnn_backward::primitive_desc</a>
-, <a class="el" href="structmkldnn_1_1lstm__backward_1_1primitive__desc.html#ad970ec4539bd15c6b4415b2fc211c76e">mkldnn::lstm_backward::primitive_desc</a>
 , <a class="el" href="structmkldnn_1_1gru__backward_1_1primitive__desc.html#a261fb4c4593718dbf9bbb0d18bb24944">mkldnn::gru_backward::primitive_desc</a>
+, <a class="el" href="structmkldnn_1_1lbr__gru__backward_1_1primitive__desc.html#a0457d928f61b9dbfbb4af4b539df28ab">mkldnn::lbr_gru_backward::primitive_desc</a>
 </li>
 <li>diff_placeholder_desc
 : <a class="el" href="structmkldnn__rnn__desc__t.html#a7f974ad5bba42ab6890993d910a1eb9a">mkldnn_rnn_desc_t</a>
 </li>
 <li>diff_src_desc()
-: <a class="el" href="structmkldnn_1_1pooling__backward_1_1primitive__desc.html#abd6302166216d79050dfcfdb1cdf7203">mkldnn::pooling_backward::primitive_desc</a>
+: <a class="el" href="structmkldnn_1_1softmax__backward_1_1primitive__desc.html#a716f88a577c9fbcec68c8ecc7dd03798">mkldnn::softmax_backward::primitive_desc</a>
+, <a class="el" href="structmkldnn_1_1deconvolution__backward__data_1_1primitive__desc.html#ad187409d511b061e6c3eb712bd765b06">mkldnn::deconvolution_backward_data::primitive_desc</a>
 , <a class="el" href="structmkldnn__convolution__desc__t.html#a537a6c0abb2c26ef244f62bc496ff6f2">mkldnn_convolution_desc_t</a>
 , <a class="el" href="structmkldnn__pooling__desc__t.html#ab553c85b19f00966b617a5468a98cfa9">mkldnn_pooling_desc_t</a>
 , <a class="el" href="structmkldnn__inner__product__desc__t.html#a258aa5755ae7fcaee1e1829c4dbd9038">mkldnn_inner_product_desc_t</a>
 , <a class="el" href="structmkldnn_1_1convolution__backward__data_1_1primitive__desc.html#a8eb81fb0f54947fbd8289af8773b29c4">mkldnn::convolution_backward_data::primitive_desc</a>
-, <a class="el" href="structmkldnn_1_1deconvolution__backward__data_1_1primitive__desc.html#ad187409d511b061e6c3eb712bd765b06">mkldnn::deconvolution_backward_data::primitive_desc</a>
 , <a class="el" href="structmkldnn_1_1lrn__backward_1_1primitive__desc.html#a8389d8caa3a9ba3bbc73733497a7e1b4">mkldnn::lrn_backward::primitive_desc</a>
+, <a class="el" href="structmkldnn_1_1pooling__backward_1_1primitive__desc.html#abd6302166216d79050dfcfdb1cdf7203">mkldnn::pooling_backward::primitive_desc</a>
 , <a class="el" href="structmkldnn_1_1eltwise__backward_1_1primitive__desc.html#aa8555cc5893ff111b4c708309dfcf8f9">mkldnn::eltwise_backward::primitive_desc</a>
-, <a class="el" href="structmkldnn_1_1softmax__backward_1_1primitive__desc.html#a716f88a577c9fbcec68c8ecc7dd03798">mkldnn::softmax_backward::primitive_desc</a>
 , <a class="el" href="structmkldnn_1_1batch__normalization__backward_1_1primitive__desc.html#a2dd0c894d091b3178e6ee2cb320e8261">mkldnn::batch_normalization_backward::primitive_desc</a>
 , <a class="el" href="structmkldnn_1_1inner__product__backward__data_1_1primitive__desc.html#a87368afe6d473f60a5a3ee7fbdbc096b">mkldnn::inner_product_backward_data::primitive_desc</a>
 </li>
-<li>diff_src_iter_desc()
-: <a class="el" href="structmkldnn_1_1gru__backward_1_1primitive__desc.html#a349841cae9a8e8b19aaaa8b384902ca9">mkldnn::gru_backward::primitive_desc</a>
-, <a class="el" href="structmkldnn__rnn__desc__t.html#a02b4cc4c12619b4d80b8c4503fe36b27">mkldnn_rnn_desc_t</a>
+<li>diff_src_iter_c_desc
+: <a class="el" href="structmkldnn__rnn__desc__t.html#af29408951189967bdc475fca3be400a3">mkldnn_rnn_desc_t</a>
+, <a class="el" href="structmkldnn_1_1lstm__backward_1_1primitive__desc.html#a776ac44ed73746f80665aa86992a0374">mkldnn::lstm_backward::primitive_desc</a>
+</li>
+<li>diff_src_iter_desc
+: <a class="el" href="structmkldnn__rnn__desc__t.html#a02b4cc4c12619b4d80b8c4503fe36b27">mkldnn_rnn_desc_t</a>
 , <a class="el" href="structmkldnn_1_1rnn__backward_1_1primitive__desc.html#a3ace743a2ebd13e5fb5992b255f1a8aa">mkldnn::rnn_backward::primitive_desc</a>
 , <a class="el" href="structmkldnn_1_1lstm__backward_1_1primitive__desc.html#ae67f8a23b03eb6e1bf184886b8e73bb5">mkldnn::lstm_backward::primitive_desc</a>
 , <a class="el" href="structmkldnn_1_1lbr__gru__backward_1_1primitive__desc.html#abed3c01fc1483254b9d1f91a0104ee0b">mkldnn::lbr_gru_backward::primitive_desc</a>
+, <a class="el" href="structmkldnn_1_1gru__backward_1_1primitive__desc.html#a349841cae9a8e8b19aaaa8b384902ca9">mkldnn::gru_backward::primitive_desc</a>
 </li>
 <li>diff_src_layer_desc()
-: <a class="el" href="structmkldnn_1_1lbr__gru__backward_1_1primitive__desc.html#aacbcfc7f6f9e25c2900f54cd77174187">mkldnn::lbr_gru_backward::primitive_desc</a>
+: <a class="el" href="structmkldnn_1_1lstm__backward_1_1primitive__desc.html#a41a121a7109658fb746377b1371ac207">mkldnn::lstm_backward::primitive_desc</a>
 , <a class="el" href="structmkldnn__rnn__desc__t.html#a839534e88da65ccf2bd062680ca1fc1d">mkldnn_rnn_desc_t</a>
+, <a class="el" href="structmkldnn_1_1lbr__gru__backward_1_1primitive__desc.html#aacbcfc7f6f9e25c2900f54cd77174187">mkldnn::lbr_gru_backward::primitive_desc</a>
 , <a class="el" href="structmkldnn_1_1rnn__backward_1_1primitive__desc.html#a27a31230a64b31da1ecafc66486fa6bd">mkldnn::rnn_backward::primitive_desc</a>
 , <a class="el" href="structmkldnn_1_1gru__backward_1_1primitive__desc.html#a16025b89ac06e326f8d6509f792c5ec5">mkldnn::gru_backward::primitive_desc</a>
-, <a class="el" href="structmkldnn_1_1lstm__backward_1_1primitive__desc.html#a41a121a7109658fb746377b1371ac207">mkldnn::lstm_backward::primitive_desc</a>
 </li>
 <li>diff_weights_desc()
-: <a class="el" href="structmkldnn_1_1batch__normalization__backward_1_1primitive__desc.html#a375157d8e376c55eac3c892320537cdb">mkldnn::batch_normalization_backward::primitive_desc</a>
-, <a class="el" href="structmkldnn_1_1inner__product__backward__weights_1_1primitive__desc.html#a55a22d94df07574a91dfe4db03f52d1a">mkldnn::inner_product_backward_weights::primitive_desc</a>
+: <a class="el" href="structmkldnn_1_1convolution__backward__weights_1_1primitive__desc.html#a489b565442ac921e7b5e5e023c908a7a">mkldnn::convolution_backward_weights::primitive_desc</a>
 , <a class="el" href="structmkldnn_1_1deconvolution__backward__weights_1_1primitive__desc.html#a0de42b7e4c06e9bbab32b56bf6cc7bb7">mkldnn::deconvolution_backward_weights::primitive_desc</a>
-, <a class="el" href="structmkldnn__inner__product__desc__t.html#aa9421af65eb0655418730423880f3c52">mkldnn_inner_product_desc_t</a>
-, <a class="el" href="structmkldnn_1_1convolution__backward__weights_1_1primitive__desc.html#a489b565442ac921e7b5e5e023c908a7a">mkldnn::convolution_backward_weights::primitive_desc</a>
+, <a class="el" href="structmkldnn_1_1inner__product__backward__weights_1_1primitive__desc.html#a55a22d94df07574a91dfe4db03f52d1a">mkldnn::inner_product_backward_weights::primitive_desc</a>
+, <a class="el" href="structmkldnn_1_1batch__normalization__backward_1_1primitive__desc.html#a375157d8e376c55eac3c892320537cdb">mkldnn::batch_normalization_backward::primitive_desc</a>
 , <a class="el" href="structmkldnn__convolution__desc__t.html#abc4f1002e06bdd4d26cc9a28b9f4d863">mkldnn_convolution_desc_t</a>
+, <a class="el" href="structmkldnn__inner__product__desc__t.html#aa9421af65eb0655418730423880f3c52">mkldnn_inner_product_desc_t</a>
 </li>
 <li>diff_weights_iter_desc()
 : <a class="el" href="structmkldnn_1_1rnn__backward_1_1primitive__desc.html#acf08601530e3e660f22a6f9c573ff6cf">mkldnn::rnn_backward::primitive_desc</a>
-, <a class="el" href="structmkldnn_1_1lbr__gru__backward_1_1primitive__desc.html#a5141e9a992ee56b99bef8a1f3b691107">mkldnn::lbr_gru_backward::primitive_desc</a>
 , <a class="el" href="structmkldnn_1_1gru__backward_1_1primitive__desc.html#a64e076072b3ff02ef8b8cf397e2848f0">mkldnn::gru_backward::primitive_desc</a>
 , <a class="el" href="structmkldnn__rnn__desc__t.html#a151e00aec7f647881928746800018456">mkldnn_rnn_desc_t</a>
+, <a class="el" href="structmkldnn_1_1lbr__gru__backward_1_1primitive__desc.html#a5141e9a992ee56b99bef8a1f3b691107">mkldnn::lbr_gru_backward::primitive_desc</a>
 , <a class="el" href="structmkldnn_1_1lstm__backward_1_1primitive__desc.html#abd50df57aeb38df309c0c47e7abadf53">mkldnn::lstm_backward::primitive_desc</a>
 </li>
-<li>diff_weights_layer_desc
-: <a class="el" href="structmkldnn__rnn__desc__t.html#a19447763ad2aa5c6b194c6ccf8a6e36c">mkldnn_rnn_desc_t</a>
-, <a class="el" href="structmkldnn_1_1lstm__backward_1_1primitive__desc.html#a17ee106f4e75249fca489a9da47bfc41">mkldnn::lstm_backward::primitive_desc</a>
+<li>diff_weights_layer_desc()
+: <a class="el" href="structmkldnn_1_1gru__backward_1_1primitive__desc.html#a2c7036bfff947bcc3400caf1477b4b78">mkldnn::gru_backward::primitive_desc</a>
 , <a class="el" href="structmkldnn_1_1lbr__gru__backward_1_1primitive__desc.html#a7febdf24e56a4b4ba1da6135feee59a3">mkldnn::lbr_gru_backward::primitive_desc</a>
-, <a class="el" href="structmkldnn_1_1gru__backward_1_1primitive__desc.html#a2c7036bfff947bcc3400caf1477b4b78">mkldnn::gru_backward::primitive_desc</a>
+, <a class="el" href="structmkldnn_1_1lstm__backward_1_1primitive__desc.html#a17ee106f4e75249fca489a9da47bfc41">mkldnn::lstm_backward::primitive_desc</a>
+, <a class="el" href="structmkldnn__rnn__desc__t.html#a19447763ad2aa5c6b194c6ccf8a6e36c">mkldnn_rnn_desc_t</a>
 , <a class="el" href="structmkldnn_1_1rnn__backward_1_1primitive__desc.html#ad3aa02d8e6963aead632bcc8842a3c78">mkldnn::rnn_backward::primitive_desc</a>
 </li>
 <li>dilates
@@ -310,42 +318,47 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="structmkldnn__rnn__desc__t.html#aee95ea4d49aef7a368b06d6c96cb48ec">mkldnn_rnn_desc_t</a>
 </li>
 <li>dst_desc()
-: <a class="el" href="structmkldnn_1_1convolution__forward_1_1primitive__desc.html#aff1b45278a2440ed34227aef233bcf15">mkldnn::convolution_forward::primitive_desc</a>
-, <a class="el" href="structmkldnn_1_1batch__normalization__forward_1_1primitive__desc.html#a75bb13faa9117811059ede56327a511e">mkldnn::batch_normalization_forward::primitive_desc</a>
-, <a class="el" href="structmkldnn__pooling__desc__t.html#a1604893839196b8da368262d83e274af">mkldnn_pooling_desc_t</a>
-, <a class="el" href="structmkldnn_1_1softmax__forward_1_1primitive__desc.html#a8afa8bfeb5e9f07b233e6955200aa28e">mkldnn::softmax_forward::primitive_desc</a>
-, <a class="el" href="structmkldnn_1_1eltwise__forward_1_1primitive__desc.html#a3ee4ab73f8419f0cda0e1ad107113d5a">mkldnn::eltwise_forward::primitive_desc</a>
+: <a class="el" href="structmkldnn_1_1eltwise__forward_1_1primitive__desc.html#a3ee4ab73f8419f0cda0e1ad107113d5a">mkldnn::eltwise_forward::primitive_desc</a>
+, <a class="el" href="structmkldnn__convolution__desc__t.html#ab3fa681b587982780c1fd657f470ad09">mkldnn_convolution_desc_t</a>
+, <a class="el" href="structmkldnn_1_1convolution__forward_1_1primitive__desc.html#aff1b45278a2440ed34227aef233bcf15">mkldnn::convolution_forward::primitive_desc</a>
+, <a class="el" href="structmkldnn_1_1deconvolution__forward_1_1primitive__desc.html#a4b42377f34a26e8c2a4a65472fb0f70d">mkldnn::deconvolution_forward::primitive_desc</a>
 , <a class="el" href="structmkldnn_1_1batch__normalization__backward_1_1primitive__desc.html#a3d8c4daf28cbec0d3e08b80c8a9e2333">mkldnn::batch_normalization_backward::primitive_desc</a>
+, <a class="el" href="structmkldnn_1_1softmax__forward_1_1primitive__desc.html#a8afa8bfeb5e9f07b233e6955200aa28e">mkldnn::softmax_forward::primitive_desc</a>
+, <a class="el" href="structmkldnn_1_1softmax__backward_1_1primitive__desc.html#a8c74d7c5da61604501a9ca68f59392dd">mkldnn::softmax_backward::primitive_desc</a>
 , <a class="el" href="structmkldnn__inner__product__desc__t.html#abe22f70b9bcb290d09bc22e40e39f8c9">mkldnn_inner_product_desc_t</a>
 , <a class="el" href="structmkldnn_1_1pooling__forward_1_1primitive__desc.html#a0cd8d4596c1a31dd782f32c0f672a9e9">mkldnn::pooling_forward::primitive_desc</a>
-, <a class="el" href="structmkldnn__convolution__desc__t.html#ab3fa681b587982780c1fd657f470ad09">mkldnn_convolution_desc_t</a>
-, <a class="el" href="structmkldnn_1_1shuffle__forward_1_1primitive__desc.html#a7d598edfd19c1ba3cffe969c6808591b">mkldnn::shuffle_forward::primitive_desc</a>
 , <a class="el" href="structmkldnn_1_1inner__product__forward_1_1primitive__desc.html#a229e85ed6030ee5c2462b9ef5fc290d3">mkldnn::inner_product_forward::primitive_desc</a>
-, <a class="el" href="structmkldnn_1_1deconvolution__forward_1_1primitive__desc.html#a4b42377f34a26e8c2a4a65472fb0f70d">mkldnn::deconvolution_forward::primitive_desc</a>
-, <a class="el" href="structmkldnn_1_1softmax__backward_1_1primitive__desc.html#a8c74d7c5da61604501a9ca68f59392dd">mkldnn::softmax_backward::primitive_desc</a>
+, <a class="el" href="structmkldnn__pooling__desc__t.html#a1604893839196b8da368262d83e274af">mkldnn_pooling_desc_t</a>
+, <a class="el" href="structmkldnn_1_1shuffle__forward_1_1primitive__desc.html#a7d598edfd19c1ba3cffe969c6808591b">mkldnn::shuffle_forward::primitive_desc</a>
+, <a class="el" href="structmkldnn_1_1batch__normalization__forward_1_1primitive__desc.html#a75bb13faa9117811059ede56327a511e">mkldnn::batch_normalization_forward::primitive_desc</a>
 , <a class="el" href="structmkldnn_1_1lrn__forward_1_1primitive__desc.html#a6d54a43702a95c3ba269c0e28398857e">mkldnn::lrn_forward::primitive_desc</a>
 </li>
+<li>dst_iter_c_desc()
+: <a class="el" href="structmkldnn_1_1lstm__backward_1_1primitive__desc.html#a3df30859b5a4288bb081aadef211011d">mkldnn::lstm_backward::primitive_desc</a>
+, <a class="el" href="structmkldnn__rnn__desc__t.html#affc76e6c318bd905dc25aab6cab761af">mkldnn_rnn_desc_t</a>
+, <a class="el" href="structmkldnn_1_1lstm__forward_1_1primitive__desc.html#a182541f0bfe790f1f9efb3d2abe051d3">mkldnn::lstm_forward::primitive_desc</a>
+</li>
 <li>dst_iter_desc()
-: <a class="el" href="structmkldnn_1_1lbr__gru__forward_1_1primitive__desc.html#a001013157b7ce673cdc578844b2abdd5">mkldnn::lbr_gru_forward::primitive_desc</a>
-, <a class="el" href="structmkldnn_1_1gru__backward_1_1primitive__desc.html#aa09d8307ba3f0dcd0c83c9882a52be7a">mkldnn::gru_backward::primitive_desc</a>
-, <a class="el" href="structmkldnn_1_1rnn__backward_1_1primitive__desc.html#a62de69caf28f4db9bafb46fc3f66f84b">mkldnn::rnn_backward::primitive_desc</a>
+: <a class="el" href="structmkldnn_1_1gru__backward_1_1primitive__desc.html#aa09d8307ba3f0dcd0c83c9882a52be7a">mkldnn::gru_backward::primitive_desc</a>
+, <a class="el" href="structmkldnn_1_1lbr__gru__forward_1_1primitive__desc.html#a001013157b7ce673cdc578844b2abdd5">mkldnn::lbr_gru_forward::primitive_desc</a>
+, <a class="el" href="structmkldnn__rnn__desc__t.html#a33dcd86c922c81f6f0c9d8a65eab9ead">mkldnn_rnn_desc_t</a>
+, <a class="el" href="structmkldnn_1_1rnn__forward_1_1primitive__desc.html#ac838a9555be56a42fe21d19126707a0c">mkldnn::rnn_forward::primitive_desc</a>
 , <a class="el" href="structmkldnn_1_1gru__forward_1_1primitive__desc.html#a5503cbb9c350947a943bf58aa0b03729">mkldnn::gru_forward::primitive_desc</a>
 , <a class="el" href="structmkldnn_1_1lstm__forward_1_1primitive__desc.html#ae0b1e94e01f5082d3f5d06a262332f6d">mkldnn::lstm_forward::primitive_desc</a>
-, <a class="el" href="structmkldnn_1_1lstm__backward_1_1primitive__desc.html#af3e4cfe48a6e1da99701e0c7de71eac4">mkldnn::lstm_backward::primitive_desc</a>
-, <a class="el" href="structmkldnn_1_1rnn__forward_1_1primitive__desc.html#ac838a9555be56a42fe21d19126707a0c">mkldnn::rnn_forward::primitive_desc</a>
-, <a class="el" href="structmkldnn__rnn__desc__t.html#a33dcd86c922c81f6f0c9d8a65eab9ead">mkldnn_rnn_desc_t</a>
 , <a class="el" href="structmkldnn_1_1lbr__gru__backward_1_1primitive__desc.html#ab2ff213f1f61b3515a01f8f14bbbc6f3">mkldnn::lbr_gru_backward::primitive_desc</a>
+, <a class="el" href="structmkldnn_1_1rnn__backward_1_1primitive__desc.html#a62de69caf28f4db9bafb46fc3f66f84b">mkldnn::rnn_backward::primitive_desc</a>
+, <a class="el" href="structmkldnn_1_1lstm__backward_1_1primitive__desc.html#af3e4cfe48a6e1da99701e0c7de71eac4">mkldnn::lstm_backward::primitive_desc</a>
 </li>
 <li>dst_layer_desc()
-: <a class="el" href="structmkldnn_1_1lstm__forward_1_1primitive__desc.html#adb5f3a6f942fa29de5314bb3459fbd8e">mkldnn::lstm_forward::primitive_desc</a>
+: <a class="el" href="structmkldnn_1_1gru__backward_1_1primitive__desc.html#a884c18355fd1b9790587d665e4eb2f4f">mkldnn::gru_backward::primitive_desc</a>
 , <a class="el" href="structmkldnn_1_1lstm__backward_1_1primitive__desc.html#a3e33fcc8c6974aedaa732b4da8081bb6">mkldnn::lstm_backward::primitive_desc</a>
-, <a class="el" href="structmkldnn_1_1lbr__gru__backward_1_1primitive__desc.html#a72d281ab5d78e971b244fd49e97c8d62">mkldnn::lbr_gru_backward::primitive_desc</a>
-, <a class="el" href="structmkldnn_1_1gru__backward_1_1primitive__desc.html#a884c18355fd1b9790587d665e4eb2f4f">mkldnn::gru_backward::primitive_desc</a>
-, <a class="el" href="structmkldnn_1_1gru__forward_1_1primitive__desc.html#a1663c19d84c9d9e4e5670c869da15be9">mkldnn::gru_forward::primitive_desc</a>
-, <a class="el" href="structmkldnn__rnn__desc__t.html#a1f788eb4d6893d26aa75d1d966546b99">mkldnn_rnn_desc_t</a>
 , <a class="el" href="structmkldnn_1_1lbr__gru__forward_1_1primitive__desc.html#abbf834aec5450ce613ebfde2acae98ce">mkldnn::lbr_gru_forward::primitive_desc</a>
-, <a class="el" href="structmkldnn_1_1rnn__forward_1_1primitive__desc.html#a4d81c220f7ae7e5190ed03d6b18643bf">mkldnn::rnn_forward::primitive_desc</a>
+, <a class="el" href="structmkldnn__rnn__desc__t.html#a1f788eb4d6893d26aa75d1d966546b99">mkldnn_rnn_desc_t</a>
 , <a class="el" href="structmkldnn_1_1rnn__backward_1_1primitive__desc.html#a484a14501a2b07a2e3643555196d7450">mkldnn::rnn_backward::primitive_desc</a>
+, <a class="el" href="structmkldnn_1_1rnn__forward_1_1primitive__desc.html#a4d81c220f7ae7e5190ed03d6b18643bf">mkldnn::rnn_forward::primitive_desc</a>
+, <a class="el" href="structmkldnn_1_1gru__forward_1_1primitive__desc.html#a1663c19d84c9d9e4e5670c869da15be9">mkldnn::gru_forward::primitive_desc</a>
+, <a class="el" href="structmkldnn_1_1lstm__forward_1_1primitive__desc.html#adb5f3a6f942fa29de5314bb3459fbd8e">mkldnn::lstm_forward::primitive_desc</a>
+, <a class="el" href="structmkldnn_1_1lbr__gru__backward_1_1primitive__desc.html#a72d281ab5d78e971b244fd49e97c8d62">mkldnn::lbr_gru_backward::primitive_desc</a>
 </li>
 </ul>
 </div><!-- contents -->

@@ -137,11 +137,12 @@ Figure 1: Example of stacked recurrent cells unrolled over the time dimension an
 <div class="line">    aprop, direction, src_layer_desc, src_iter_h_desc, src_iter_c_desc,</div>
 <div class="line">    weights_layer_desc, weights_iter_desc, bias_desc, dst_layer_desc,</div>
 <div class="line">    dst_iter_h_desc, dst_iter_c_desc);</div>
-</div><!-- fragment --><p>Note that for all tensors with a dimension depending on the gates number, we implicitly require the order of these gates to be <code>i</code>, <code>f</code>, <code>o</code>, and <code>c</code>. The following equation gives the mathematical description of these gates and output for the forward pass:</p>
+</div><!-- fragment --><p>Note that for all tensors with a dimension depending on the gates number, we implicitly require the order of these gates to be <code>i</code>, <code>f</code>, \(\tilde c\), and <code>o</code>. The following equation gives the mathematical description of these gates and output for the forward pass:</p>
 <p class="formulaDsp">
 \[ \begin{align} i_t &amp;= \sigma(W_i \cdot h_{t,l-1} + U_i \cdot h_{t-1, l} + B_i) \\ f_t &amp;= \sigma(W_f \cdot h_{t,l-1} + U_f \cdot h_{t-1, l} + B_f) \\ \tilde c_t &amp;= tanh(W_{\tilde c} \cdot h_{t,l-1} + U_{\tilde c} \cdot h_{t-1, l} + B_{\tilde c}) \\ o_t &amp;= \sigma(W_o \cdot h_{t,l-1} + U_o \cdot h_{t-1, l} + B_o) \\ \\ c_t &amp;= f_t * c_{t-1} + i_t * \tilde c_t \\ h_t &amp;= tanh(c_t) * o_t \end{align} \]
 </p>
 <p>where \(W_*\) are stored in <code>weights_layer</code>, \(U_*\) are stored in <code>weights_iter</code> and \(B_*\) are stored in <code>bias</code>.</p>
+<dl class="section note"><dt>Note</dt><dd>In order for the dimensions to be consistent, we require \(channels(src\_iter\_c) = channels(dst\_iter\_c) = channels(dst\_iter)\).</dd></dl>
 <h2>GRU</h2>
 <p>A three-gate gated recurrent unit cell, initialized with <code>gru_forward::desc</code> or <code>gru_backward::desc</code> as in the following example. </p>
 <div class="fragment"><div class="line"><span class="keyword">auto</span> gru_desc = gru_forward::desc(</div>

@@ -99,12 +99,12 @@ Functions</h2></td></tr>
 <tr class="memitem:gaf47dc86ad2309e42fdbc87e9948895f5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__rnn.html#gaf47dc86ad2309e42fdbc87e9948895f5">mkldnn_vanilla_rnn_backward_desc_init</a> (<a class="el" href="structmkldnn__rnn__desc__t.html">mkldnn_rnn_desc_t</a> *rnn_desc, <a class="el" href="group__c__api__types__generic.html#ga5b98c8059c2aff8861157bf070c3f520">mkldnn_prop_kind_t</a> prop_kind, const <a class="el" href="group__c__api__types__generic.html#gaa27d43cdd1e439cc41a9580d23ce3e97">mkldnn_alg_kind_t</a> activation, const <a class="el" href="group__c__api__types__op__descs.html#ga3cb09316c36bd985698e0eea542cb424">mkldnn_rnn_direction_t</a> direction, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *src_layer_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *src_iter_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *weights_layer_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *weights_iter_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *bias_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *dst_layer_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *dst_iter_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *diff_src_layer_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *diff_src_iter_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *diff_weights_layer_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *diff_weights_iter_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *diff_bias_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *diff_dst_layer_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *diff_dst_iter_desc, unsigned flags, float alpha, float beta)</td></tr>
 <tr class="memdesc:gaf47dc86ad2309e42fdbc87e9948895f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes an RNN descriptor <code>rnn_desc</code> for backward propagation using <code>prop_kind</code>, <code>activation</code>, <code>direction</code>, and memory descriptors.  <a href="#gaf47dc86ad2309e42fdbc87e9948895f5">More...</a><br/></td></tr>
 <tr class="separator:gaf47dc86ad2309e42fdbc87e9948895f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4fcb8859057c24dab3c485775c913841"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__rnn.html#ga4fcb8859057c24dab3c485775c913841">mkldnn_lstm_forward_desc_init</a> (<a class="el" href="structmkldnn__rnn__desc__t.html">mkldnn_rnn_desc_t</a> *rnn_desc, <a class="el" href="group__c__api__types__generic.html#ga5b98c8059c2aff8861157bf070c3f520">mkldnn_prop_kind_t</a> prop_kind, <a class="el" href="group__c__api__types__op__descs.html#ga3cb09316c36bd985698e0eea542cb424">mkldnn_rnn_direction_t</a> direction, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *src_layer_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *src_iter_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *weights_layer_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *weights_iter_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *bias_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *dst_layer_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *dst_iter_desc, unsigned flags)</td></tr>
-<tr class="memdesc:ga4fcb8859057c24dab3c485775c913841"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes an LSTM descriptor <code>rnn_desc</code> for forward propagation using <code>prop_kind</code>, <code>direction</code>, and memory descriptors.  <a href="#ga4fcb8859057c24dab3c485775c913841">More...</a><br/></td></tr>
-<tr class="separator:ga4fcb8859057c24dab3c485775c913841"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacd875722750afb2bf5118e6d215aca0c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__rnn.html#gacd875722750afb2bf5118e6d215aca0c">mkldnn_lstm_backward_desc_init</a> (<a class="el" href="structmkldnn__rnn__desc__t.html">mkldnn_rnn_desc_t</a> *rnn_desc, <a class="el" href="group__c__api__types__generic.html#ga5b98c8059c2aff8861157bf070c3f520">mkldnn_prop_kind_t</a> prop_kind, <a class="el" href="group__c__api__types__op__descs.html#ga3cb09316c36bd985698e0eea542cb424">mkldnn_rnn_direction_t</a> direction, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *src_layer_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *src_iter_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *weights_layer_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *weights_iter_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *bias_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *dst_layer_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *dst_iter_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *diff_src_layer_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *diff_src_iter_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *diff_weights_layer_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *diff_weights_iter_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *diff_bias_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *diff_dst_layer_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *diff_dst_iter_desc, unsigned flags)</td></tr>
-<tr class="memdesc:gacd875722750afb2bf5118e6d215aca0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes an LSTM descriptor <code>rnn_desc</code> for backward propagation using <code>prop_kind</code>, <code>direction</code>, and memory descriptors.  <a href="#gacd875722750afb2bf5118e6d215aca0c">More...</a><br/></td></tr>
-<tr class="separator:gacd875722750afb2bf5118e6d215aca0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaadc3358de256c75ee19db6d2707869fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__rnn.html#gaadc3358de256c75ee19db6d2707869fe">mkldnn_lstm_forward_desc_init</a> (<a class="el" href="structmkldnn__rnn__desc__t.html">mkldnn_rnn_desc_t</a> *rnn_desc, <a class="el" href="group__c__api__types__generic.html#ga5b98c8059c2aff8861157bf070c3f520">mkldnn_prop_kind_t</a> prop_kind, <a class="el" href="group__c__api__types__op__descs.html#ga3cb09316c36bd985698e0eea542cb424">mkldnn_rnn_direction_t</a> direction, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *src_layer_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *src_iter_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *src_iter_c_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *weights_layer_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *weights_iter_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *bias_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *dst_layer_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *dst_iter_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *dst_iter_c_desc, unsigned flags)</td></tr>
+<tr class="memdesc:gaadc3358de256c75ee19db6d2707869fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes an LSTM descriptor <code>rnn_desc</code> for forward propagation using <code>prop_kind</code>, <code>direction</code>, and memory descriptors.  <a href="#gaadc3358de256c75ee19db6d2707869fe">More...</a><br/></td></tr>
+<tr class="separator:gaadc3358de256c75ee19db6d2707869fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7fbf533152f93be74bcddab34e9b4820"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__rnn.html#ga7fbf533152f93be74bcddab34e9b4820">mkldnn_lstm_backward_desc_init</a> (<a class="el" href="structmkldnn__rnn__desc__t.html">mkldnn_rnn_desc_t</a> *rnn_desc, <a class="el" href="group__c__api__types__generic.html#ga5b98c8059c2aff8861157bf070c3f520">mkldnn_prop_kind_t</a> prop_kind, <a class="el" href="group__c__api__types__op__descs.html#ga3cb09316c36bd985698e0eea542cb424">mkldnn_rnn_direction_t</a> direction, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *src_layer_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *src_iter_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *src_iter_c_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *weights_layer_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *weights_iter_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *bias_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *dst_layer_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *dst_iter_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *dst_iter_c_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *diff_src_layer_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *diff_src_iter_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *diff_src_iter_c_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *diff_weights_layer_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *diff_weights_iter_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *diff_bias_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *diff_dst_layer_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *diff_dst_iter_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *diff_dst_iter_c_desc, unsigned flags)</td></tr>
+<tr class="memdesc:ga7fbf533152f93be74bcddab34e9b4820"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes an LSTM descriptor <code>rnn_desc</code> for backward propagation using <code>prop_kind</code>, <code>direction</code>, and memory descriptors.  <a href="#ga7fbf533152f93be74bcddab34e9b4820">More...</a><br/></td></tr>
+<tr class="separator:ga7fbf533152f93be74bcddab34e9b4820"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga7ddb30530dad0771b2d9b269051b4a6b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__rnn.html#ga7ddb30530dad0771b2d9b269051b4a6b">mkldnn_gru_forward_desc_init</a> (<a class="el" href="structmkldnn__rnn__desc__t.html">mkldnn_rnn_desc_t</a> *rnn_desc, <a class="el" href="group__c__api__types__generic.html#ga5b98c8059c2aff8861157bf070c3f520">mkldnn_prop_kind_t</a> prop_kind, <a class="el" href="group__c__api__types__op__descs.html#ga3cb09316c36bd985698e0eea542cb424">mkldnn_rnn_direction_t</a> direction, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *src_layer_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *src_iter_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *weights_layer_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *weights_iter_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *bias_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *dst_layer_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *dst_iter_desc, unsigned flags)</td></tr>
 <tr class="memdesc:ga7ddb30530dad0771b2d9b269051b4a6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a GRU descriptor <code>rnn_desc</code> for forward propagation using <code>prop_kind</code>, <code>direction</code>, and memory descriptors.  <a href="#ga7ddb30530dad0771b2d9b269051b4a6b">More...</a><br/></td></tr>
 <tr class="separator:ga7ddb30530dad0771b2d9b269051b4a6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -542,7 +542,7 @@ There is no way to check that <code>count</code> corresponds to <code>mask</code
 
 </div>
 </div>
-<a class="anchor" id="ga4fcb8859057c24dab3c485775c913841"></a>
+<a class="anchor" id="gaadc3358de256c75ee19db6d2707869fe"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -580,6 +580,12 @@ There is no way to check that <code>count</code> corresponds to <code>mask</code
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *&#160;</td>
+          <td class="paramname"><em>src_iter_c_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *&#160;</td>
           <td class="paramname"><em>weights_layer_desc</em>, </td>
         </tr>
         <tr>
@@ -609,6 +615,12 @@ There is no way to check that <code>count</code> corresponds to <code>mask</code
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *&#160;</td>
+          <td class="paramname"><em>dst_iter_c_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">unsigned&#160;</td>
           <td class="paramname"><em>flags</em>&#160;</td>
         </tr>
@@ -632,6 +644,7 @@ There is no way to check that <code>count</code> corresponds to <code>mask</code
 <ul>
 <li>src_layer (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a2bccd0a79be2c331227c353c294c3fbc" title="source memory desc ">mkldnn_query_src_md</a>, 0)</li>
 <li>src_iter (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a2bccd0a79be2c331227c353c294c3fbc" title="source memory desc ">mkldnn_query_src_md</a>, 1), if used</li>
+<li>src_iter_c (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a2bccd0a79be2c331227c353c294c3fbc" title="source memory desc ">mkldnn_query_src_md</a>, 2), if used</li>
 <li>weights_layer (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a4d1661d6a50277029d02417f6b65435d" title="weights memory descriptor desc ">mkldnn_query_weights_md</a>, 0)</li>
 <li>weights_iter (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a4d1661d6a50277029d02417f6b65435d" title="weights memory descriptor desc ">mkldnn_query_weights_md</a>, 1)</li>
 <li>bias (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a4d1661d6a50277029d02417f6b65435d" title="weights memory descriptor desc ">mkldnn_query_weights_md</a>, 2), if used</li>
@@ -640,12 +653,13 @@ There is no way to check that <code>count</code> corresponds to <code>mask</code
 <ul>
 <li>dst_layer (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9adccda04151e0c287f0de64b832d33ac4" title="destination memory desc ">mkldnn_query_dst_md</a>, 0)</li>
 <li>dst_iter (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9adccda04151e0c287f0de64b832d33ac4" title="destination memory desc ">mkldnn_query_dst_md</a>, 1), if used</li>
+<li>dst_iter_c (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9adccda04151e0c287f0de64b832d33ac4" title="destination memory desc ">mkldnn_query_dst_md</a>, 2), if used</li>
 <li>workspace (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a6f61e139512317e7f5653759e889d55d" title="workspace memory desc ">mkldnn_query_workspace_md</a>, 0), if <code>prop_kind</code> equals <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f" title="Forward data propagation (training mode). ">mkldnn_forward_training</a> </li>
 </ul>
 
 </div>
 </div>
-<a class="anchor" id="gacd875722750afb2bf5118e6d215aca0c"></a>
+<a class="anchor" id="ga7fbf533152f93be74bcddab34e9b4820"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -683,6 +697,12 @@ There is no way to check that <code>count</code> corresponds to <code>mask</code
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *&#160;</td>
+          <td class="paramname"><em>src_iter_c_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *&#160;</td>
           <td class="paramname"><em>weights_layer_desc</em>, </td>
         </tr>
         <tr>
@@ -713,6 +733,12 @@ There is no way to check that <code>count</code> corresponds to <code>mask</code
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *&#160;</td>
+          <td class="paramname"><em>dst_iter_c_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *&#160;</td>
           <td class="paramname"><em>diff_src_layer_desc</em>, </td>
         </tr>
         <tr>
@@ -720,6 +746,12 @@ There is no way to check that <code>count</code> corresponds to <code>mask</code
           <td></td>
           <td class="paramtype">const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *&#160;</td>
           <td class="paramname"><em>diff_src_iter_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *&#160;</td>
+          <td class="paramname"><em>diff_src_iter_c_desc</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -754,6 +786,12 @@ There is no way to check that <code>count</code> corresponds to <code>mask</code
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *&#160;</td>
+          <td class="paramname"><em>diff_dst_iter_c_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">unsigned&#160;</td>
           <td class="paramname"><em>flags</em>&#160;</td>
         </tr>
@@ -776,19 +814,23 @@ There is no way to check that <code>count</code> corresponds to <code>mask</code
 <ul>
 <li>src_layer (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a2bccd0a79be2c331227c353c294c3fbc" title="source memory desc ">mkldnn_query_src_md</a>, 0)</li>
 <li>src_iter (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a2bccd0a79be2c331227c353c294c3fbc" title="source memory desc ">mkldnn_query_src_md</a>, 1), if used</li>
+<li>src_iter_c (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a2bccd0a79be2c331227c353c294c3fbc" title="source memory desc ">mkldnn_query_src_md</a>, 2), if used</li>
 <li>weights_layer (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a4d1661d6a50277029d02417f6b65435d" title="weights memory descriptor desc ">mkldnn_query_weights_md</a>, 0)</li>
 <li>weights_iter (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a4d1661d6a50277029d02417f6b65435d" title="weights memory descriptor desc ">mkldnn_query_weights_md</a>, 1)</li>
 <li>bias (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a4d1661d6a50277029d02417f6b65435d" title="weights memory descriptor desc ">mkldnn_query_weights_md</a>, 2), if used</li>
 <li>dst_layer (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9adccda04151e0c287f0de64b832d33ac4" title="destination memory desc ">mkldnn_query_dst_md</a>, 0)</li>
 <li>dst_iter (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9adccda04151e0c287f0de64b832d33ac4" title="destination memory desc ">mkldnn_query_dst_md</a>, 1), if used</li>
+<li>dst_iter_c (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9adccda04151e0c287f0de64b832d33ac4" title="destination memory desc ">mkldnn_query_dst_md</a>, 2), if used</li>
 <li>diff_dst_layer (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9acfa30e38738b3de8c7d3a7f21ffc1623" title="destination grad. memory desc ">mkldnn_query_diff_dst_md</a>, 0)</li>
 <li>diff_dst_iter (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9acfa30e38738b3de8c7d3a7f21ffc1623" title="destination grad. memory desc ">mkldnn_query_diff_dst_md</a>, 1), if used</li>
+<li>diff_dst_iter_c (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9acfa30e38738b3de8c7d3a7f21ffc1623" title="destination grad. memory desc ">mkldnn_query_diff_dst_md</a>, 2), if used</li>
 <li>workspace (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a6f61e139512317e7f5653759e889d55d" title="workspace memory desc ">mkldnn_query_workspace_md</a>, 0)</li>
 </ul>
 <p>Outputs:</p>
 <ul>
 <li>diff_src_layer (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ad915503c92000da20088fdb93cd685b9" title="source gradient memory desc ">mkldnn_query_diff_src_md</a>, 0)</li>
 <li>diff_src_iter (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ad915503c92000da20088fdb93cd685b9" title="source gradient memory desc ">mkldnn_query_diff_src_md</a>, 1), if used</li>
+<li>diff_src_iter_c (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ad915503c92000da20088fdb93cd685b9" title="source gradient memory desc ">mkldnn_query_diff_src_md</a>, 2), if used</li>
 <li>diff_weights_layer (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a2c78f7a683101ff96875e8cec787ba42" title="weights grad. memory desc ">mkldnn_query_diff_weights_md</a>, 0)</li>
 <li>diff_weights_iter (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a2c78f7a683101ff96875e8cec787ba42" title="weights grad. memory desc ">mkldnn_query_diff_weights_md</a>, 1)</li>
 <li>diff_bias (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a2c78f7a683101ff96875e8cec787ba42" title="weights grad. memory desc ">mkldnn_query_diff_weights_md</a>, 2), if used </li>

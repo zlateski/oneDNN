@@ -146,9 +146,8 @@ Public Member Functions</h2></td></tr>
 <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1batch__normalization__backward_1_1primitive__desc.html#ad326a289709b9efd6f851d2ae1cbf229">diff_dst_desc</a> () const </td></tr>
 <tr class="memdesc:ad326a289709b9efd6f851d2ae1cbf229"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queries diff destination memory descriptor. <br/></td></tr>
 <tr class="separator:ad326a289709b9efd6f851d2ae1cbf229"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adcae8b8e032b1180e98b1c8aaa8fe055"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adcae8b8e032b1180e98b1c8aaa8fe055"></a>
-<a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1batch__normalization__backward_1_1primitive__desc.html#adcae8b8e032b1180e98b1c8aaa8fe055">workspace_desc</a> () const </td></tr>
-<tr class="memdesc:adcae8b8e032b1180e98b1c8aaa8fe055"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queries workspace memory descriptor. <br/></td></tr>
+<tr class="memitem:adcae8b8e032b1180e98b1c8aaa8fe055"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1batch__normalization__backward_1_1primitive__desc.html#adcae8b8e032b1180e98b1c8aaa8fe055">workspace_desc</a> () const </td></tr>
+<tr class="memdesc:adcae8b8e032b1180e98b1c8aaa8fe055"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queries workspace memory descriptor.  <a href="#adcae8b8e032b1180e98b1c8aaa8fe055">More...</a><br/></td></tr>
 <tr class="separator:adcae8b8e032b1180e98b1c8aaa8fe055"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2dd0c894d091b3178e6ee2cb320e8261"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2dd0c894d091b3178e6ee2cb320e8261"></a>
 <a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1batch__normalization__backward_1_1primitive__desc.html#a2dd0c894d091b3178e6ee2cb320e8261">diff_src_desc</a> () const </td></tr>
@@ -285,6 +284,33 @@ memory::dim&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 </div><div class="memdoc">
 
 <p>Initializes a primitive descriptor for batch normalization backward propagation with attributes defined by <code>attr</code>. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="adcae8b8e032b1180e98b1c8aaa8fe055"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a> mkldnn::batch_normalization_backward::primitive_desc::workspace_desc </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Queries workspace memory descriptor. </p>
+<p>Returns a zero_md if no worspace is required. </p>
 
 </div>
 </div>

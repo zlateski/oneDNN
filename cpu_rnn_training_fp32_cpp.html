@@ -139,7 +139,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><span class="comment">// RNN primitive characteristics</span></div>
 <div class="line"><span class="keyword">const</span> <span class="keywordtype">int</span> common_n_layers = 1;</div>
 <div class="line"><span class="keyword">const</span> <span class="keywordtype">int</span> lstm_n_gates = 4;</div>
-<div class="line"><span class="keyword">const</span> <span class="keywordtype">int</span> lstm_n_states = 2;</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">void</span> simple_net() {</div>
 <div class="line">    <span class="keyword">using</span> tag = <a class="code" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ced">memory::format_tag</a>;</div>
@@ -217,14 +216,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    memory::dims leftmost_dst_iter_dims = {</div>
 <div class="line">        common_n_layers,    <span class="comment">// layers</span></div>
 <div class="line">        1,                  <span class="comment">// directions</span></div>
-<div class="line">        lstm_n_states,      <span class="comment">// states</span></div>
+<div class="line">        leftmost_batch,     <span class="comment">// n</span></div>
+<div class="line">        common_feature_size <span class="comment">// c</span></div>
+<div class="line">    };</div>
+<div class="line">    memory::dims leftmost_dst_iter_c_dims = {</div>
+<div class="line">        common_n_layers,    <span class="comment">// layers</span></div>
+<div class="line">        1,                  <span class="comment">// directions</span></div>
 <div class="line">        leftmost_batch,     <span class="comment">// n</span></div>
 <div class="line">        common_feature_size <span class="comment">// c</span></div>
 <div class="line">    };</div>
 <div class="line">    memory::dims rightmost_src_iter_dims = {</div>
 <div class="line">        common_n_layers,    <span class="comment">// layers</span></div>
 <div class="line">        1,                  <span class="comment">// directions</span></div>
-<div class="line">        lstm_n_states,      <span class="comment">// states</span></div>
+<div class="line">        rightmost_batch,    <span class="comment">// n</span></div>
+<div class="line">        common_feature_size <span class="comment">// c</span></div>
+<div class="line">    };</div>
+<div class="line">    memory::dims rightmost_src_iter_c_dims = {</div>
+<div class="line">        common_n_layers,    <span class="comment">// layers</span></div>
+<div class="line">        1,                  <span class="comment">// directions</span></div>
 <div class="line">        rightmost_batch,    <span class="comment">// n</span></div>
 <div class="line">        common_feature_size <span class="comment">// c</span></div>
 <div class="line">    };</div>
@@ -321,11 +330,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">        rnn_direction::unidirectional_left2right, <span class="comment">// direction</span></div>
 <div class="line">        user_leftmost_src_layer_md, <span class="comment">// src_layer_desc</span></div>
 <div class="line">        <a class="code" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>(), <span class="comment">// src_iter_desc</span></div>
+<div class="line">        <a class="code" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>(), <span class="comment">// src_iter_c_desc</span></div>
 <div class="line">        generic_md(common_weights_layer_dims), <span class="comment">// weights_layer_desc</span></div>
 <div class="line">        generic_md(common_weights_iter_dims), <span class="comment">// weights_iter_desc</span></div>
 <div class="line">        generic_md(common_bias_dims), <span class="comment">// bias_desc</span></div>
 <div class="line">        formatted_md(leftmost_dst_layer_dims, tag::tnc), <span class="comment">// dst_layer_desc</span></div>
-<div class="line">        generic_md(leftmost_dst_iter_dims) <span class="comment">// dst_iter_desc</span></div>
+<div class="line">        generic_md(leftmost_dst_iter_dims), <span class="comment">// dst_iter_desc</span></div>
+<div class="line">        generic_md(leftmost_dst_iter_c_dims) <span class="comment">// dst_iter_c_desc</span></div>
 <div class="line">    );</div>
 <div class="line">    <span class="comment">// Describe primitive</span></div>
 <div class="line">    <span class="keyword">auto</span> leftmost_prim_desc = <a class="code" href="structmkldnn_1_1lstm__forward_1_1primitive__desc.html">mkldnn::lstm_forward::primitive_desc</a>(</div>
@@ -335,17 +346,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="comment">// Need to connect leftmost and rightmost via &quot;iter&quot; parameters.</span></div>
 <div class="line">    <span class="comment">// We allocate memory here based on the shapes provided by RNN primitive.</span></div>
 <div class="line">    <span class="comment">//</span></div>
-<div class="line"></div>
 <div class="line">    <span class="keyword">auto</span> leftmost_dst_iter_memory</div>
 <div class="line">            = <a class="code" href="structmkldnn_1_1memory.html">mkldnn::memory</a>(leftmost_prim_desc.dst_iter_desc(), cpu_engine);</div>
+<div class="line">    <span class="keyword">auto</span> leftmost_dst_iter_c_memory</div>
+<div class="line">            = <a class="code" href="structmkldnn_1_1memory.html">mkldnn::memory</a>(leftmost_prim_desc.dst_iter_c_desc(), cpu_engine);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// rightmost src_iter will be a sub-memory of dst_iter of leftmost</span></div>
 <div class="line">    <span class="keyword">auto</span> rightmost_src_iter_md</div>
 <div class="line">            = leftmost_dst_iter_memory.<a class="code" href="structmkldnn_1_1memory.html#aad39e92bb09b189c1ba6353dd631fb80">get_desc</a>().<a class="code" href="structmkldnn_1_1memory_1_1desc.html#a58ccb996eecfe7357b616f47953ff3ad">submemory_desc</a>(</div>
 <div class="line">                    rightmost_src_iter_dims,</div>
-<div class="line">                    { 0, 0, 0, 0, 0 }); <span class="comment">// l, d, s, n, c offsets</span></div>
-<div class="line"></div>
+<div class="line">                    { 0, 0, 0, 0 }); <span class="comment">// l, d, n, c offsets</span></div>
 <div class="line">    <span class="keyword">auto</span> rightmost_src_iter_memory = leftmost_dst_iter_memory;</div>
+<div class="line"></div>
+<div class="line">    <span class="keyword">auto</span> rightmost_src_iter_c_md</div>
+<div class="line">            = leftmost_dst_iter_c_memory.<a class="code" href="structmkldnn_1_1memory.html#aad39e92bb09b189c1ba6353dd631fb80">get_desc</a>().<a class="code" href="structmkldnn_1_1memory_1_1desc.html#a58ccb996eecfe7357b616f47953ff3ad">submemory_desc</a>(</div>
+<div class="line">                    rightmost_src_iter_c_dims,</div>
+<div class="line">                    { 0, 0, 0, 0 }); <span class="comment">// l, d, n, c offsets</span></div>
+<div class="line">    <span class="keyword">auto</span> rightmost_src_iter_c_memory = leftmost_dst_iter_c_memory;</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Now rightmost primitive</span></div>
 <div class="line">    <span class="comment">// There are no primitives to the right from here,</span></div>
@@ -355,11 +372,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">        rnn_direction::unidirectional_left2right, <span class="comment">// direction</span></div>
 <div class="line">        user_rightmost_src_layer_md, <span class="comment">// src_layer_desc</span></div>
 <div class="line">        rightmost_src_iter_md, <span class="comment">// src_iter_desc</span></div>
+<div class="line">        rightmost_src_iter_c_md, <span class="comment">// src_iter_c_desc</span></div>
 <div class="line">        generic_md(common_weights_layer_dims), <span class="comment">// weights_layer_desc</span></div>
 <div class="line">        generic_md(common_weights_iter_dims), <span class="comment">// weights_iter_desc</span></div>
 <div class="line">        generic_md(common_bias_dims), <span class="comment">// bias_desc</span></div>
 <div class="line">        formatted_md(rightmost_dst_layer_dims, tag::tnc), <span class="comment">// dst_layer_desc</span></div>
-<div class="line">        <a class="code" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>() <span class="comment">// dst_iter_desc</span></div>
+<div class="line">        <a class="code" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>(), <span class="comment">// dst_iter_desc</span></div>
+<div class="line">        <a class="code" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>() <span class="comment">// dst_iter_c_desc</span></div>
 <div class="line">    );</div>
 <div class="line">    <span class="keyword">auto</span> rightmost_prim_desc = <a class="code" href="structmkldnn_1_1lstm__forward_1_1primitive__desc.html">lstm_forward::primitive_desc</a>(</div>
 <div class="line">            rightmost_layer_desc, cpu_engine);</div>
@@ -442,12 +461,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">                    { MKLDNN_ARG_BIAS, common_bias_memory },</div>
 <div class="line">                    { MKLDNN_ARG_DST_LAYER, leftmost_dst_layer_memory },</div>
 <div class="line">                    { MKLDNN_ARG_DST_ITER, leftmost_dst_iter_memory },</div>
+<div class="line">                    { MKLDNN_ARG_DST_ITER_C, leftmost_dst_iter_c_memory },</div>
 <div class="line">                    { MKLDNN_ARG_WORKSPACE, leftmost_workspace_memory } });</div>
 <div class="line"></div>
 <div class="line">    lstm_forward rightmost_layer(rightmost_prim_desc);</div>
 <div class="line">    rightmost_layer.execute(s,</div>
 <div class="line">            { { MKLDNN_ARG_SRC_LAYER, rightmost_src_layer_memory },</div>
 <div class="line">                    { MKLDNN_ARG_SRC_ITER, rightmost_src_iter_memory },</div>
+<div class="line">                    { MKLDNN_ARG_SRC_ITER_C, rightmost_src_iter_c_memory },</div>
 <div class="line">                    { MKLDNN_ARG_WEIGHTS_LAYER, common_weights_layer_memory },</div>
 <div class="line">                    { MKLDNN_ARG_WEIGHTS_ITER, common_weights_iter_memory },</div>
 <div class="line">                    { MKLDNN_ARG_BIAS, common_bias_memory },</div>
@@ -524,18 +545,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">        rnn_direction::unidirectional_left2right, <span class="comment">// direction</span></div>
 <div class="line">        user_leftmost_src_layer_md, <span class="comment">// src_layer_desc</span></div>
 <div class="line">        <a class="code" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>(), <span class="comment">// src_iter_desc</span></div>
+<div class="line">        <a class="code" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>(), <span class="comment">// src_iter_c_desc</span></div>
 <div class="line">        generic_md(common_weights_layer_dims), <span class="comment">// weights_layer_desc</span></div>
 <div class="line">        generic_md(common_weights_iter_dims), <span class="comment">// weights_iter_desc</span></div>
 <div class="line">        generic_md(common_bias_dims), <span class="comment">// bias_desc</span></div>
 <div class="line">        formatted_md(leftmost_dst_layer_dims, tag::tnc), <span class="comment">// dst_layer_desc</span></div>
 <div class="line">        generic_md(leftmost_dst_iter_dims), <span class="comment">// dst_iter_desc</span></div>
+<div class="line">        generic_md(leftmost_dst_iter_c_dims), <span class="comment">// dst_iter_c_desc</span></div>
 <div class="line">        user_leftmost_diff_src_layer_md, <span class="comment">// diff_src_layer_desc</span></div>
 <div class="line">        <a class="code" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>(), <span class="comment">// diff_src_iter_desc</span></div>
+<div class="line">        <a class="code" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>(), <span class="comment">// diff_src_iter_c_desc</span></div>
 <div class="line">        generic_md(common_weights_layer_dims), <span class="comment">// diff_weights_layer_desc</span></div>
 <div class="line">        generic_md(common_weights_iter_dims), <span class="comment">// diff_weights_iter_desc</span></div>
 <div class="line">        generic_md(common_bias_dims), <span class="comment">// diff_bias_desc</span></div>
 <div class="line">        user_leftmost_diff_dst_layer_md, <span class="comment">// diff_dst_layer_desc</span></div>
-<div class="line">        generic_md(leftmost_dst_iter_dims) <span class="comment">// diff_dst_iter_desc</span></div>
+<div class="line">        generic_md(leftmost_dst_iter_dims), <span class="comment">// diff_dst_iter_desc</span></div>
+<div class="line">        generic_md(leftmost_dst_iter_c_dims) <span class="comment">// diff_dst_iter_c_desc</span></div>
 <div class="line">    );</div>
 <div class="line">    <span class="keyword">auto</span> leftmost_bwd_prim_desc = <a class="code" href="structmkldnn_1_1lstm__backward_1_1primitive__desc.html">lstm_backward::primitive_desc</a>(</div>
 <div class="line">            leftmost_layer_bwd_desc, cpu_engine, leftmost_prim_desc);</div>
@@ -545,13 +570,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="comment">// be a sub-memory of leftmost.</span></div>
 <div class="line">    <span class="keyword">auto</span> leftmost_diff_dst_iter_memory = <a class="code" href="structmkldnn_1_1memory.html">mkldnn::memory</a>(</div>
 <div class="line">            leftmost_bwd_prim_desc.diff_dst_iter_desc(), cpu_engine);</div>
+<div class="line">    <span class="keyword">auto</span> leftmost_diff_dst_iter_c_memory = <a class="code" href="structmkldnn_1_1memory.html">mkldnn::memory</a>(</div>
+<div class="line">            leftmost_bwd_prim_desc.diff_dst_iter_c_desc(), cpu_engine);</div>
 <div class="line"></div>
 <div class="line">    <span class="keyword">auto</span> rightmost_diff_src_iter_md</div>
 <div class="line">            = leftmost_diff_dst_iter_memory.<a class="code" href="structmkldnn_1_1memory.html#aad39e92bb09b189c1ba6353dd631fb80">get_desc</a>().<a class="code" href="structmkldnn_1_1memory_1_1desc.html#a58ccb996eecfe7357b616f47953ff3ad">submemory_desc</a>(</div>
 <div class="line">                    rightmost_src_iter_dims,</div>
-<div class="line">                    { 0, 0, 0, 0, 0 });  <span class="comment">// l, d, s, n, c offsets</span></div>
-<div class="line"></div>
+<div class="line">                    { 0, 0, 0, 0 });  <span class="comment">// l, d, n, c offsets</span></div>
 <div class="line">    <span class="keyword">auto</span> rightmost_diff_src_iter_memory = leftmost_diff_dst_iter_memory;</div>
+<div class="line"></div>
+<div class="line">    <span class="keyword">auto</span> rightmost_diff_src_iter_c_md</div>
+<div class="line">            = leftmost_diff_dst_iter_c_memory.<a class="code" href="structmkldnn_1_1memory.html#aad39e92bb09b189c1ba6353dd631fb80">get_desc</a>().<a class="code" href="structmkldnn_1_1memory_1_1desc.html#a58ccb996eecfe7357b616f47953ff3ad">submemory_desc</a>(</div>
+<div class="line">                    rightmost_src_iter_c_dims,</div>
+<div class="line">                    { 0, 0, 0, 0 });  <span class="comment">// l, d, n, c offsets</span></div>
+<div class="line">    <span class="keyword">auto</span> rightmost_diff_src_iter_c_memory = leftmost_diff_dst_iter_c_memory;</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Backward rightmost primitive descriptor</span></div>
 <div class="line">    <a class="code" href="structmkldnn_1_1lstm__backward_1_1desc.html">lstm_backward::desc</a> rightmost_layer_bwd_desc(</div>
@@ -559,18 +591,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">        rnn_direction::unidirectional_left2right, <span class="comment">// direction</span></div>
 <div class="line">        user_rightmost_src_layer_md, <span class="comment">// src_layer_desc</span></div>
 <div class="line">        generic_md(rightmost_src_iter_dims), <span class="comment">// src_iter_desc</span></div>
+<div class="line">        generic_md(rightmost_src_iter_c_dims), <span class="comment">// src_iter_c_desc</span></div>
 <div class="line">        generic_md(common_weights_layer_dims), <span class="comment">// weights_layer_desc</span></div>
 <div class="line">        generic_md(common_weights_iter_dims), <span class="comment">// weights_iter_desc</span></div>
 <div class="line">        generic_md(common_bias_dims), <span class="comment">// bias_desc</span></div>
 <div class="line">        formatted_md(rightmost_dst_layer_dims, tag::tnc), <span class="comment">// dst_layer_desc</span></div>
 <div class="line">        <a class="code" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>(), <span class="comment">// dst_iter_desc</span></div>
+<div class="line">        <a class="code" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>(), <span class="comment">// dst_iter_c_desc</span></div>
 <div class="line">        user_rightmost_diff_src_layer_md, <span class="comment">// diff_src_layer_desc</span></div>
 <div class="line">        rightmost_diff_src_iter_md, <span class="comment">// diff_src_iter_desc</span></div>
+<div class="line">        rightmost_diff_src_iter_c_md, <span class="comment">// diff_src_iter_c_desc</span></div>
 <div class="line">        generic_md(common_weights_layer_dims), <span class="comment">// diff_weights_layer_desc</span></div>
 <div class="line">        generic_md(common_weights_iter_dims), <span class="comment">// diff_weights_iter_desc</span></div>
 <div class="line">        generic_md(common_bias_dims), <span class="comment">// diff_bias_desc</span></div>
 <div class="line">        user_rightmost_diff_dst_layer_md, <span class="comment">// diff_dst_layer_desc</span></div>
-<div class="line">        <a class="code" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>() <span class="comment">// diff_dst_iter_desc</span></div>
+<div class="line">        <a class="code" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>(), <span class="comment">// diff_dst_iter_desc</span></div>
+<div class="line">        <a class="code" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>() <span class="comment">// diff_dst_iter_c_desc</span></div>
 <div class="line">    );</div>
 <div class="line">    <span class="keyword">auto</span> rightmost_bwd_prim_desc = <a class="code" href="structmkldnn_1_1lstm__backward_1_1primitive__desc.html">lstm_backward::primitive_desc</a>(</div>
 <div class="line">            rightmost_layer_bwd_desc, cpu_engine, rightmost_prim_desc);</div>
@@ -670,11 +706,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">                        leftmost_dst_iter_bwd_memory);</div>
 <div class="line">    }</div>
 <div class="line"></div>
+<div class="line">    <span class="keyword">auto</span> leftmost_dst_iter_c_bwd_memory = leftmost_dst_iter_c_memory;</div>
+<div class="line">    <span class="keywordflow">if</span> (leftmost_bwd_prim_desc.dst_iter_c_desc()</div>
+<div class="line">            != leftmost_dst_iter_c_bwd_memory.get_desc()) {</div>
+<div class="line">        leftmost_dst_iter_c_bwd_memory = <a class="code" href="structmkldnn_1_1memory.html">mkldnn::memory</a>(</div>
+<div class="line">                leftmost_bwd_prim_desc.dst_iter_c_desc(), cpu_engine);</div>
+<div class="line">        reorder(leftmost_dst_iter_c_memory, leftmost_dst_iter_c_bwd_memory)</div>
+<div class="line">                .execute(s, leftmost_dst_iter_c_memory,</div>
+<div class="line">                        leftmost_dst_iter_c_bwd_memory);</div>
+<div class="line">    }</div>
+<div class="line"></div>
 <div class="line">    <span class="comment">// Construct the RNN primitive objects for backward</span></div>
 <div class="line">    <a class="code" href="structmkldnn_1_1lstm__backward.html">lstm_backward</a> rightmost_layer_bwd(rightmost_bwd_prim_desc);</div>
 <div class="line">    rightmost_layer_bwd.execute(s,</div>
 <div class="line">            { { MKLDNN_ARG_SRC_LAYER, rightmost_src_layer_bwd_memory },</div>
 <div class="line">                    { MKLDNN_ARG_SRC_ITER, rightmost_src_iter_memory },</div>
+<div class="line">                    { MKLDNN_ARG_SRC_ITER_C, rightmost_src_iter_c_memory },</div>
 <div class="line">                    { MKLDNN_ARG_WEIGHTS_LAYER,</div>
 <div class="line">                            common_weights_layer_bwd_memory },</div>
 <div class="line">                    { MKLDNN_ARG_WEIGHTS_ITER, common_weights_iter_bwd_memory },</div>
@@ -684,6 +731,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">                            rightmost_diff_src_layer_memory },</div>
 <div class="line">                    { MKLDNN_ARG_DIFF_SRC_ITER,</div>
 <div class="line">                            rightmost_diff_src_iter_memory },</div>
+<div class="line">                    { MKLDNN_ARG_DIFF_SRC_ITER_C,</div>
+<div class="line">                            rightmost_diff_src_iter_c_memory },</div>
 <div class="line">                    { MKLDNN_ARG_DIFF_WEIGHTS_LAYER,</div>
 <div class="line">                            common_diff_weights_layer_memory },</div>
 <div class="line">                    { MKLDNN_ARG_DIFF_WEIGHTS_ITER,</div>
@@ -702,6 +751,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">                    { MKLDNN_ARG_BIAS, common_bias_bwd_memory },</div>
 <div class="line">                    { MKLDNN_ARG_DST_LAYER, leftmost_dst_layer_bwd_memory },</div>
 <div class="line">                    { MKLDNN_ARG_DST_ITER, leftmost_dst_iter_bwd_memory },</div>
+<div class="line">                    { MKLDNN_ARG_DST_ITER_C, leftmost_dst_iter_c_bwd_memory },</div>
 <div class="line">                    { MKLDNN_ARG_DIFF_SRC_LAYER,</div>
 <div class="line">                            leftmost_diff_src_layer_memory },</div>
 <div class="line">                    { MKLDNN_ARG_DIFF_WEIGHTS_LAYER,</div>
@@ -712,6 +762,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">                    { MKLDNN_ARG_DIFF_DST_LAYER,</div>
 <div class="line">                            leftmost_diff_dst_layer_memory },</div>
 <div class="line">                    { MKLDNN_ARG_DIFF_DST_ITER, leftmost_diff_dst_iter_memory },</div>
+<div class="line">                    { MKLDNN_ARG_DIFF_DST_ITER_C, leftmost_diff_dst_iter_c_memory },</div>
 <div class="line">                    { MKLDNN_ARG_WORKSPACE, leftmost_workspace_memory } });</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (reorder_common_diff_weights_layer) {</div>
@@ -731,7 +782,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="comment">// User updates weights and bias using diffs</span></div>
 <div class="line">    <span class="comment">//</span></div>
 <div class="line"></div>
-<div class="line">    s.wait();</div>
+<div class="line">    s.<a class="code" href="structmkldnn_1_1stream.html#a48181ce0f5eb3bcd75778b5aa8866df6">wait</a>();</div>
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv) {</div>

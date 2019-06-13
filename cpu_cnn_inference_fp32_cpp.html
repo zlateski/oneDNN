@@ -108,13 +108,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">                    conv1_weights.data());</div>
 <div class="line">    <span class="keyword">auto</span> conv1_user_bias_memory = memory(</div>
 <div class="line">            { { conv1_bias_tz }, dt::f32, tag::x }, eng, conv1_bias.data());</div>
-</div><!-- fragment --><p> Create memory descriptors with layout tag::any. The <code>any</code> format enables the convolution primitive to choose the data format that will result in best performance based on for its input parameters (convolution kernel sizes, strides, padding, and so on). If the resulting format is different from <code>nchw</code>, the user data must be transformed to the format required for the convolution (as explained below). </p>
+</div><!-- fragment --><p> Create memory descriptors with layout tag::any. The <code>any</code> format enables the convolution primitive to choose the data format that will result in best performance based on its input parameters (convolution kernel sizes, strides, padding, and so on). If the resulting format is different from <code>nchw</code>, the user data must be transformed to the format required for the convolution (as explained below). </p>
 <div class="fragment"><div class="line">    <span class="keyword">auto</span> conv1_src_md = memory::desc({ conv1_src_tz }, dt::f32, tag::any);</div>
 <div class="line">    <span class="keyword">auto</span> conv1_bias_md = memory::desc({ conv1_bias_tz }, dt::f32, tag::any);</div>
 <div class="line">    <span class="keyword">auto</span> conv1_weights_md</div>
 <div class="line">            = memory::desc({ conv1_weights_tz }, dt::f32, tag::any);</div>
 <div class="line">    <span class="keyword">auto</span> conv1_dst_md = memory::desc({ conv1_dst_tz }, dt::f32, tag::any);</div>
-</div><!-- fragment --><p> Create a convolution descriptor by specifying the algorithm(<a class="el" href="dev_guide_convolution.html">convolution algorithms</a>, propagation kind, shapes of input, weights, bias, output, convolution strides, padding, and kind of padding. Propagation kind is set to prop_kind::forward_inference to optimize for inference execution and omit computations that are necessary only for backward propagation. </p>
+</div><!-- fragment --><p> Create a convolution descriptor by specifying propagation kind, <a class="el" href="dev_guide_convolution.html">convolution algorithm</a>, shapes of input, weights, bias, output, convolution strides, padding, and kind of padding. Propagation kind is set to prop_kind::forward_inference to optimize for inference execution and omit computations that are necessary only for backward propagation. </p>
 <div class="fragment"><div class="line">    <span class="keyword">auto</span> conv1_desc = convolution_forward::desc(prop_kind::forward_inference,</div>
 <div class="line">            algorithm::convolution_direct, conv1_src_md, conv1_weights_md, conv1_bias_md,</div>
 <div class="line">            conv1_dst_md, conv1_strides, conv1_padding, conv1_padding);</div>

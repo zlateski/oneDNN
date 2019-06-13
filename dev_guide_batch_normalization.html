@@ -134,6 +134,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr>
 <td align="left">forward / backward </td><td align="left">f32 </td><td align="left">f32 </td></tr>
 <tr>
+<td align="left">forward </td><td align="left">f16 </td><td align="left">f32 </td></tr>
+<tr>
 <td align="left">forward </td><td align="left">s8 </td><td align="left">f32 </td></tr>
 </table>
 <dl class="section warning"><dt>Warning</dt><dd>There might be hardware and/or implementation specific restrictions. Check <a class="el" href="dev_guide_batch_normalization.html#dg_bnorm_impl_limits">Implementation Limitations</a> section below.</dd></dl>
@@ -170,7 +172,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p><a class="anchor" id="dg_bnorm_impl_limits"></a></p>
 <h2>Implementation Limitations</h2>
 <ol type="1">
-<li>No primitive specific limitations. Refer to <a class="el" href="dev_guide_data_types.html">Data Types</a> for limitations related to data types support.</li>
+<li>Refer to <a class="el" href="dev_guide_data_types.html">Data Types</a> for limitations related to data types support.</li>
+<li>For the data types that have forward propagation support only, mean and variance must be provided by a user (i.e., <a class="el" href="group__c__api__types__generic.html#ggaffe856d00e669123c95572c61cbe4162a106c7b376858470c79facbfc48755644" title="Use global statistics. ">mkldnn_use_global_stats</a> is not set).</li>
 </ol>
 <h2>Performance Tips</h2>
 <ol type="1">
