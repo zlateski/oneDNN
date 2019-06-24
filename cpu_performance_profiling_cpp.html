@@ -79,10 +79,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Performance Profiling Example </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Full example text: <a class="el" href="cpu_performance_profiling_8cpp-example.html">cpu_performance_profiling.cpp</a></p>
-<h1><a class="anchor" id="cpu_performance_profiling_cpp_intro"></a>
-Introduction</h1>
-<p>This example uses <a class="el" href="dev_guide_verbose.html">MKLDNN_VERBOSE</a> trace output to tune Intel(R) MKL-DNN code to align with the <a class="el" href="dev_guide_inference.html">best practices</a>.</p>
+<div class="textblock"><blockquote class="doxtable">
+<p>Example code: <a class="el" href="cpu_performance_profiling_8cpp-example.html">cpu_performance_profiling.cpp</a> </p>
+</blockquote>
+<p>This example uses <a class="el" href="dev_guide_verbose.html">MKLDNN_VERBOSE</a> trace output to tune Intel MKL-DNN code to align with the <a class="el" href="dev_guide_inference.html">best practices</a>.</p>
 <p>It will assume knowledge of memory formats and their usage in Intel MKL-DNN. You can read more about this topic <a class="el" href="cpu_memory_format_propagation_cpp.html">here</a>.</p>
 <p>The example has three different implementations of the mathematical operation:</p>
 <ol type="1">
@@ -252,7 +252,7 @@ Fused Implementation</h1>
 <div class="line">            {MKLDNN_ARG_SRC, conv_src},</div>
 <div class="line">            {MKLDNN_ARG_WEIGHTS, conv_wei},</div>
 <div class="line">            {MKLDNN_ARG_DST, conv_dst}});</div>
-</div><!-- fragment --><p> This implementation complies with best practices for fp32 inference by using the Intel MKL-DNN recommended blocked format for convolution and adding ReLU as a post-op to execute a fused version of conv + ReLU. The consequence to following best practices can be seen in the execution time of the fused primitive of 103.9 milliseconds.</p>
+</div><!-- fragment --><p> This implementation complies with best practices for f32 inference by using the Intel MKL-DNN recommended blocked format for convolution and adding ReLU as a post-op to execute a fused version of conv + ReLU. The consequence to following best practices can be seen in the execution time of the fused primitive of 103.9 milliseconds.</p>
 <p><em>MKLDNN_VERBOSE output (see configuration notice*):</em> </p>
 <div class="fragment"><div class="line">mkldnn_verbose,exec,convolution,jit:avx512_common,forward_inference,</div>
 <div class="line">        src_f32::blocked:abcd:f0 wei_f32::blocked:Acdb16a:f0</div>

@@ -7,6 +7,7 @@ var searchData=
   ['int8_20inference',['Int8 Inference',['../dev_guide_inference_int8.html',1,'']]],
   ['inner_20product',['Inner Product',['../dev_guide_inner_product.html',1,'']]],
   ['inspecting_20jit_20code',['Inspecting JIT Code',['../dev_guide_inspecting_jit.html',1,'']]],
+  ['int8_20computation_20aspects',['Int8 Computation Aspects',['../dev_guide_int8_computations.html',1,'']]],
   ['impl_5finfo_5fstr',['impl_info_str',['../structmkldnn_1_1primitive__desc.html#a60d941535e513ca4dc60076d60351bdb',1,'mkldnn::primitive_desc::impl_info_str()'],['../group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a2c6dbd26a5e4bd5689bdcbfdf00e35cf',1,'mkldnn::impl_info_str()']]],
   ['in_5forder',['in_order',['../structmkldnn_1_1stream.html#ac0920a906daeabd4ff290eb4aa9067c7af51b25ca6f591d130cd0b575bf7821b3',1,'mkldnn::stream']]],
   ['inner_5fblks',['inner_blks',['../structmkldnn__blocking__desc__t.html#a10ee7bf64f0318ebfe4855a3b21a3901',1,'mkldnn_blocking_desc_t']]],

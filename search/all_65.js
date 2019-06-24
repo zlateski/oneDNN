@@ -16,6 +16,7 @@ var searchData=
   ['eltwise_5felu',['eltwise_elu',['../group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076a690376cad4a7f001e967a6a40d04da3a',1,'mkldnn']]],
   ['eltwise_5fexp',['eltwise_exp',['../group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076a6506e1f0284a4bb8cb999b49c6142599',1,'mkldnn']]],
   ['eltwise_5fforward',['eltwise_forward',['../structmkldnn_1_1eltwise__forward.html',1,'mkldnn']]],
+  ['eltwise_5fgelu',['eltwise_gelu',['../group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076a8320b34de5fed32c795cd92a7fbf4749',1,'mkldnn']]],
   ['eltwise_5flinear',['eltwise_linear',['../group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076a21aba6844d2de47b92ab1d110f561945',1,'mkldnn']]],
   ['eltwise_5flogistic',['eltwise_logistic',['../group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076a282836cce833348ee509b0ecd764d217',1,'mkldnn']]],
   ['eltwise_5frelu',['eltwise_relu',['../group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076aba09bebb742494255b90b43871c01c69',1,'mkldnn']]],
@@ -23,8 +24,8 @@ var searchData=
   ['eltwise_5fsqrt',['eltwise_sqrt',['../group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076a83b978b280304349860c7cdc3519865f',1,'mkldnn']]],
   ['eltwise_5fsquare',['eltwise_square',['../group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076a448fc250a28e651c02966142f7f66cce',1,'mkldnn']]],
   ['eltwise_5ftanh',['eltwise_tanh',['../group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076a38dd7159307eab45742c78e72f06abb0',1,'mkldnn']]],
-  ['engine',['engine',['../structmkldnn_1_1engine.html#acfa129c9cf572d121c3b1748fc8444fa',1,'mkldnn::engine::engine()'],['../group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9aad1943a9fd6d3d7ee1e6af41a5b0d3e7',1,'mkldnn::engine()']]],
   ['engine',['engine',['../structmkldnn_1_1engine.html',1,'mkldnn']]],
+  ['engine',['engine',['../structmkldnn_1_1engine.html#acfa129c9cf572d121c3b1748fc8444fa',1,'mkldnn::engine::engine(kind akind, size_t index)'],['../structmkldnn_1_1engine.html#aeab8a660589202ecf17ed042a69bf5d5',1,'mkldnn::engine::engine(const mkldnn_engine_t &amp;aengine)'],['../structmkldnn_1_1engine.html#a8511af0d3b8729e1ef9edab6d68a5e0d',1,'mkldnn::engine::engine(const handle&lt; mkldnn_primitive_desc_t &gt; &amp;pd)'],['../group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9aad1943a9fd6d3d7ee1e6af41a5b0d3e7',1,'mkldnn::engine()']]],
   ['error',['error',['../structmkldnn_1_1error.html',1,'mkldnn']]],
   ['error',['error',['../structmkldnn_1_1error.html#a4c6b9943b457a144566e70c8239cef2d',1,'mkldnn::error']]]
 ];

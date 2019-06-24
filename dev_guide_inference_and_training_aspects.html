@@ -94,7 +94,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>Use computed gradients to modify the weights according to the chosen solver to improve the accuracy of the model.</li>
 </ol>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000003">Todo:</a></b></dt><dd>It would be nice to have a picture here.</dd></dl>
 <h3>Difference Between Forward Propagation on Training and Inference</h3>
 <p><a class="anchor" id="dev_guide_inference_and_training_forward_training_vs_inference"></a> Even though, mathematically, the forward propagation that happens during training and inference should be the same, in practice there are some differences mostly due to the performance considerations.</p>
 <p>When executing inference, one may not care about values in the intermediate buffers during a model execution; hence one can reuse them as desired. However, if this is a forward propagation of a training it is beneficial to preserve input data, output data, or sometimes some intermediate data, that will later be used at the backward propagation to compute the gradients.</p>
@@ -116,7 +115,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </ol>
 <p>Most of these techniques are shown in the following examples:</p>
 <ul>
-<li><a class="el" href="cpu_cnn_inference_fp32_cpp.html">CNN fp32 inference example</a></li>
+<li><a class="el" href="cpu_cnn_inference_f32_cpp.html">cpu_cnn_inference_f32_cpp</a></li>
 <li><a class="el" href="cpu_cnn_inference_int8_cpp.html">CNN int8 inference example</a></li>
 </ul>
 <p><a class="anchor" id="dev_guide_inference_and_training_aspects_training"></a></p>
@@ -135,10 +134,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>For the memory bandwidth bound primitives like <a class="el" href="dev_guide_eltwise.html">Eltwise</a>, <a class="el" href="dev_guide_pooling.html">Pooling</a>, and <a class="el" href="dev_guide_batch_normalization.html">Batch Normalization</a>, it is highly recommended to make <code>diff_dst</code> memory format the same as the original <code>dst</code>. The mismatch of the formats would be handled correctly, but it might lead to highly suboptimal performance.</li>
 <li>Some primitives require an additional tensor to be passed between forward and backward propagation, which is called <a class="el" href="dev_guide_inference_and_training_aspects.html#dev_guide_inference_and_training_aspects_workspace">Workspace</a>.</li>
 <li>When creating primitive descriptors on backward propagation, you might need to pass a primitive descriptor of the corresponding primitive from the forward propagation (in the API this primitive descriptor is typically called <em>hint</em>). This hint is required for the primitive to choose a proper implementation that would correspond to the one from the forward propagation. This is required only for the primitives that produce <code>workspace</code>, because it might be different for different implementations.</li>
+<li>When creating your working memory and mkl-dnn memory descriptor, specify the type of memory you want to work with. This can be either 16-bit Brain Float (bf16) or 32-bit Floating Point (fp32). More details about using bf16 for training are detailed in the section <a class="el" href="dev_guide_training_bf16.html">Bfloat16 Training</a>.</li>
 </ol>
 <p>Most of these techniques are shown in the following examples:</p>
 <ul>
-<li><a class="el" href="cpu_cnn_training_fp32_cpp.html">CNN fp32 training example</a></li>
+<li><a class="el" href="cpu_cnn_training_f32_cpp.html">CNN f32 training example</a></li>
+<li><a class="el" href="cpu_cnn_training_bf16_cpp.html">CNN bf16 training example</a></li>
 </ul>
 <p><a class="anchor" id="dev_guide_inference_and_training_aspects_workspace"></a></p>
 <h2>Workspace</h2>

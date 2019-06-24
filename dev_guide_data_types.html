@@ -102,15 +102,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr>
 <td align="left">Training </td><td align="left">f32, bf16 </td><td align="left">f32 </td></tr>
 </table>
-<p>Note, that using lower precision arithmetic requires changes in the deep learning model implementation. See topics for the corresponding data types for the details:</p>
+<dl class="section note"><dt>Note</dt><dd>Using lower precision arithmetic may require changes in the deep learning model implementation.</dd></dl>
+<p>See topics for the corresponding data types details:</p>
 <ul>
 <li><a class="el" href="dev_guide_inference_int8.html">Int8 Inference</a><ul>
 <li><a class="el" href="dev_guide_attributes_quantization.html">Primitive Attributes: Quantization</a></li>
 </ul>
 </li>
-<li><a class="el" href="dev_guide_training_bfp16.html">bfp16 Training</a></li>
+<li><a class="el" href="dev_guide_training_bf16.html">Bfloat16 Training</a></li>
 </ul>
-<p>Individual primitives may have additional limitations with respect to data type support based on the precision requirements. The list of data types supported by each primitive is included into corresponding sections of the developer guide.</p>
+<p>Individual primitives may have additional limitations with respect to data type support based on the precision requirements. The list of data types supported by each primitive is included in the corresponding sections of the developer guide.</p>
 <h2>Hardware Limitations</h2>
 <p>While all the platforms Intel MKL-DNN supports have hardware acceleration for fp32 arithmetics, that is not the case for other data types. Considering that performance is the main purpose of the low precision data types support, Intel MKL-DNN implements this functionality only for the platforms that have hardware acceleration for these data types. The table below summarizes the current support matrix:</p>
 <table class="doxtable">

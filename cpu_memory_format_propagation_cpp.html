@@ -80,9 +80,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>Upon compiling and run the example the output should be just:</p>
-<p>Full example text: <a class="el" href="cpu_memory_format_propagation_8cpp-example.html">cpu_memory_format_propagation.cpp</a></p>
-<h1><a class="anchor" id="cpu_memory_format_propagation_general"></a>
-General notes</h1>
+<blockquote class="doxtable">
+<p>Example code: <a class="el" href="cpu_memory_format_propagation_8cpp-example.html">cpu_memory_format_propagation.cpp</a> </p>
+</blockquote>
 <p>Format propagation is one of the central notions that needs to be well-understood to use Intel MKL-DNN correctly.</p>
 <p>Convolution and inner product primitives choose the memory format when you create them with the placeholder memory format <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ceda100b8cad7cf2a56f6df78f171f97a1ec">mkldnn::memory::format_tag::any</a> for input or output. The memory format chosen is based on different circumstances such as hardware and convolutional parameters. Using the placeholder memory format is the recommended practice for convolutions, since they are the most compute-intensive operations in most topologies where they are present.</p>
 <p>Other primitives, such as ReLU, LRN, batch normalization and other, should use the same memory format as the preceding layer thus propagating the memory format through multiple Intel MKL-DNN primitives. This avoids unnecessary reorders which may be expensive and should be avoided unless a compute-intensive primitive requires a different format.</p>

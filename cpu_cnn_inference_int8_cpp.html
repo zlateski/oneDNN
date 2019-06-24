@@ -79,8 +79,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">CNN int8 inference example </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Full example text: <a class="el" href="cpu_cnn_inference_int8_8cpp-example.html">cpu_cnn_inference_int8.cpp</a></p>
-<p>This C++ API example demonstrates how to run AlexNet's conv3 and relu3 with int8 data type.</p>
+<div class="textblock"><p>This C++ API example demonstrates how to run AlexNet's conv3 and relu3 with int8 data type.</p>
+<blockquote class="doxtable">
+<p>Example code: <a class="el" href="cpu_cnn_inference_int8_8cpp-example.html">cpu_cnn_inference_int8.cpp</a> </p>
+</blockquote>
 <p>Configure tensor shapes </p>
 <div class="fragment"><div class="line">    <span class="comment">// AlexNet: conv3</span></div>
 <div class="line">    <span class="comment">// {batch, 256, 13, 13} (x)  {384, 256, 3, 3}; -&gt; {batch, 384, 13, 13}</span></div>
@@ -91,7 +93,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    memory::dims conv_dst_tz = { batch, 384, 13, 13 };</div>
 <div class="line">    memory::dims conv_strides = { 1, 1 };</div>
 <div class="line">    memory::dims conv_padding = { 1, 1 };</div>
-</div><!-- fragment --><p> Next, the example configures the scales used to quantize fp32 data into int8. For this example, the scaling value is chosen as an arbitrary number, although in a realistic scenario, it should be calculated from a set of precomputed values as previously mentioned. </p>
+</div><!-- fragment --><p> Next, the example configures the scales used to quantize f32 data into int8. For this example, the scaling value is chosen as an arbitrary number, although in a realistic scenario, it should be calculated from a set of precomputed values as previously mentioned. </p>
 <div class="fragment"><div class="line">    <span class="comment">// Choose scaling factors for input, weight, output and bias quantization</span></div>
 <div class="line">    <span class="keyword">const</span> std::vector&lt;float&gt; src_scales = { 1.8f };</div>
 <div class="line">    <span class="keyword">const</span> std::vector&lt;float&gt; weight_scales = { 2.0f };</div>
@@ -149,7 +151,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">            conv_desc, conv_attr, cpu_engine);</div>
 </div><!-- fragment --><p> Create a memory for each of the convolution's data input parameters (source, bias, weights, and destination). Using the convolution primitive descriptor as the creation parameter enables Intel MKL-DNN to configure the memory formats for the convolution.</p>
 <p>Scaling parameters are passed to the reorder primitive via the attributes primitive.</p>
-<p>User memory must be transformed into convolution-friendly memory (for int8 and memory format). A reorder layer performs the data transformation from fp32 (the original user data) into int8 format (the data used for the convolution). In addition, the reorder transforms the user data into the required memory format (as explained in the simple_net example).</p>
+<p>User memory must be transformed into convolution-friendly memory (for int8 and memory format). A reorder layer performs the data transformation from f32 (the original user data) into int8 format (the data used for the convolution). In addition, the reorder transforms the user data into the required memory format (as explained in the simple_net example).</p>
 <div class="fragment"><div class="line">    <span class="keyword">auto</span> conv_src_memory = memory(conv_prim_desc.src_desc(), cpu_engine);</div>
 <div class="line">    primitive_attr src_attr;</div>
 <div class="line">    src_attr.set_output_scales(src_mask, src_scales);</div>
@@ -184,7 +186,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">                    { MKLDNN_ARG_WEIGHTS, conv_weights_memory },</div>
 <div class="line">                    { MKLDNN_ARG_BIAS, conv_bias_memory },</div>
 <div class="line">                    { MKLDNN_ARG_DST, conv_dst_memory } });</div>
-</div><!-- fragment --><p>Finally, <em>dst memory</em> may be dequantized from int8 into the original fp32 format. Create a memory primitive for the user data in the original 32-bit floating point format and then apply a reorder to transform the computation output data. </p>
+</div><!-- fragment --><p>Finally, <em>dst memory</em> may be dequantized from int8 into the original f32 format. Create a memory primitive for the user data in the original 32-bit floating point format and then apply a reorder to transform the computation output data. </p>
 <div class="fragment"><div class="line">    <span class="keyword">auto</span> user_dst_memory = memory({ { conv_dst_tz }, dt::f32, tag::nchw },</div>
 <div class="line">            cpu_engine, user_dst.data());</div>
 <div class="line">    primitive_attr dst_attr;</div>

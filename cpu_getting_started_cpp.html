@@ -80,9 +80,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><b></b></p>
-<p>Full example text: <a class="el" href="cpu_getting_started_8cpp-example.html">cpu_getting_started.cpp</a></p>
-<h1><a class="anchor" id="cpu_getting_started_cpp_intro"></a>
-Introduction</h1>
+<blockquote class="doxtable">
+<p>Example code: <a class="el" href="cpu_getting_started_8cpp-example.html">cpu_getting_started.cpp</a> </p>
+</blockquote>
 <p>This C++ API example demonstrates basics of Intel MKL-DNN programming model:</p>
 <ul>
 <li>How to create Intel MKL-DNN memory objects.<ul>
@@ -341,7 +341,7 @@ main() function</h1>
 </div><!-- fragment --><p>with</p>
 <div class="fragment"><div class="line">relu.execute(cpu_stream, {</div>
 <div class="line">        {MKLDNN_ARG_SRC, src_mem},</div>
-<div class="line">        <span class="comment">// {MKLDNN_ARG_DST, dst_mem}, // Opps, forgot about this one</span></div>
+<div class="line">        <span class="comment">// {MKLDNN_ARG_DST, dst_mem}, // Oops, forgot about this one</span></div>
 <div class="line">    });</div>
 </div><!-- fragment --><p>we should get the following output:</p>
 <div class="fragment"><div class="line">Intel MKL-DNN error: could not execute a primitive</div>

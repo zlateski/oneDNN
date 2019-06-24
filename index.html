@@ -96,6 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li><a class="el" href="dev_guide_inference_and_training_aspects.html">Inference and Training Aspects</a><ul>
 <li><a class="el" href="dev_guide_inference.html">Inference</a></li>
 <li><a class="el" href="dev_guide_inference_int8.html">Int8 Inference</a></li>
+<li><a class="el" href="dev_guide_training_bf16.html">Bfloat16 Training</a></li>
 </ul>
 </li>
 <li><a class="el" href="dev_guide_attributes.html">Primitive Attributes</a><ul>
@@ -106,6 +107,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li><a class="el" href="dev_guide_data_types.html">Data Types</a></li>
 <li><a class="el" href="dev_guide_c_and_cpp_apis.html">C and C++ APIs</a></li>
+<li><a class="el" href="dev_guide_opencl_interoperability.html">OpenCL Interoperability</a></li>
 </ul>
 <h1>Primitives</h1>
 <p>Compute intensive operations:</p>
@@ -139,28 +141,38 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </ul>
 <h1>Advanced topics</h1>
 <ul>
+<li><a class="el" href="dev_guide_transition_to_v1.html">Version 1.0 Transition Guide</a></li>
 <li><a class="el" href="dev_guide_understanding_memory_formats.html">Understanding Memory Formats</a></li>
+<li><a class="el" href="dev_guide_int8_computations.html">Int8 Computation Aspects</a></li>
 </ul>
 <h1>Examples</h1>
 <table class="doxtable">
 <tr>
-<th align="left">Scenario </th><th align="left">Platform </th><th align="left">C++ API </th><th align="left">C API  </th></tr>
+<th align="left">Topic </th><th align="left">Engine </th><th align="left">C++ API </th><th align="left">C API  </th></tr>
 <tr>
-<td align="left">Introduction </td><td align="left">CPU </td><td align="left"><a class="el" href="cpu_getting_started_cpp.html">Getting started</a> </td><td align="left"></td></tr>
+<td align="left">Tutorials </td><td align="left">CPU </td><td align="left"><a class="el" href="cpu_getting_started_cpp.html">Getting started</a> </td><td align="left"></td></tr>
+<tr>
+<td align="left"></td><td align="left"></td><td align="left"><a class="el" href="cpu_memory_format_propagation_cpp.html">Memory format propagation</a> </td><td align="left"></td></tr>
+<tr>
+<td align="left"></td><td align="left"></td><td align="left"><a class="el" href="cpu_performance_profiling_cpp.html">Performance Profiling Example</a> </td><td align="left"></td></tr>
 <tr>
 <td align="left"></td><td align="left">GPU </td><td align="left"><a class="el" href="gpu_getting_started_cpp.html">Getting started on GPU</a> </td><td align="left"><a class="el" href="gpu_getting_started_c.html">Getting started on GPU</a> </td></tr>
 <tr>
-<td align="left">fp32 inference </td><td align="left">CPU </td><td align="left"><a class="el" href="cpu_cnn_inference_fp32_cpp.html">CNN fp32 inference example</a> </td><td align="left"><a class="el" href="cpu_cnn_inference_fp32_c.html">CNN fp32 inference example</a> </td></tr>
+<td align="left"></td><td align="left">GPU </td><td align="left"><a class="el" href="gpu_opencl_interop_cpp.html">Getting started on GPU with OpenCL extensions API</a> </td><td align="left"></td></tr>
 <tr>
-<td align="left"></td><td align="left"></td><td align="left"><a class="el" href="cpu_rnn_inference_fp32_cpp.html">RNN fp32 inference example</a> </td><td align="left"></td></tr>
+<td align="left">f32 inference </td><td align="left">CPU </td><td align="left"><a class="el" href="cpu_cnn_inference_f32_cpp.html">cpu_cnn_inference_f32_cpp</a> </td><td align="left"><a class="el" href="cpu_cnn_inference_f32_c.html">CNN f32 inference example</a> </td></tr>
+<tr>
+<td align="left"></td><td align="left">CPU </td><td align="left"><a class="el" href="cpu_rnn_inference_f32_cpp.html">RNN f32 inference example</a> </td><td align="left"></td></tr>
 <tr>
 <td align="left">int8 inference </td><td align="left">CPU </td><td align="left"><a class="el" href="cpu_cnn_inference_int8_cpp.html">CNN int8 inference example</a> </td><td align="left"></td></tr>
 <tr>
-<td align="left"></td><td align="left"></td><td align="left"><a class="el" href="cpu_rnn_inference_int8_cpp.html">RNN int8 inference example</a> </td><td align="left"></td></tr>
+<td align="left"></td><td align="left">CPU </td><td align="left"><a class="el" href="cpu_rnn_inference_int8_cpp.html">RNN int8 inference example</a> </td><td align="left"></td></tr>
 <tr>
-<td align="left">training </td><td align="left">CPU </td><td align="left"><a class="el" href="cpu_cnn_training_fp32_cpp.html">CNN fp32 training example</a> </td><td align="left"><a class="el" href="cpu_cnn_training_fp32_c.html">CNN fp32 training example</a> </td></tr>
+<td align="left">f32 training </td><td align="left">CPU </td><td align="left"><a class="el" href="cpu_cnn_training_f32_cpp.html">CNN f32 training example</a> </td><td align="left"><a class="el" href="cpu_cnn_training_f32_c.html">CNN f32 training example</a> </td></tr>
 <tr>
-<td align="left"></td><td align="left">CPU </td><td align="left"><a class="el" href="cpu_rnn_training_fp32_cpp.html">RNN fp32 training example</a> </td><td align="left"></td></tr>
+<td align="left"></td><td align="left">CPU </td><td align="left"><a class="el" href="cpu_rnn_training_f32_cpp.html">RNN f32 training example</a> </td><td align="left"></td></tr>
+<tr>
+<td align="left">bf16 training </td><td align="left">CPU </td><td align="left"><a class="el" href="cpu_cnn_training_bf16_cpp.html">CNN bf16 training example</a> </td><td align="left"></td></tr>
 </table>
 </div></div><!-- contents -->
 <div class="footer">

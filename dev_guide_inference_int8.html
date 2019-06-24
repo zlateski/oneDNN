@@ -137,16 +137,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h2>Intel MKL-DNN Support for Low-Precision int8 Primitives</h2>
 <p>Intel MKL-DNN supports low-precision computations for inference through the int8 primitives. int8 primitives are ordinary Intel MKL-DNN primitives that have their input and output parameters configured to 8-bit types. int8 primitives are optimized for high performance on the compatible hardware (see <a class="el" href="dev_guide_data_types.html">Data Types</a>).</p>
 <h3>Intel MKL-DNN Attributes</h3>
-<p>Intel MKL-DNN primitive behaviour may be extended for additional functionalities involving output data transformation. These additional features are configured via <b>primitive attributes</b>. The primitive attributes definition is an opaque structure for passing extra parameters to a primitive descriptor. These parameters include Scaling Factor and Fused Post-Operations (<b>PostOps</b>). All operation primitives support the attributes structure; however, some configurations are not implemented and result in <em>failed primitive creation</em>.</p>
+<p>Intel MKL-DNN primitive behaviour may be extended for additional functionalities involving output data transformation. These additional features are configured via <b>primitive attributes</b>. The primitive attributes definition is an opaque structure for passing extra parameters to a primitive descriptor. These parameters include a scaling factor and fused post-ops. All operation primitives support the attributes structure; however, some configurations are not implemented and result in <em>failed primitive creation</em>.</p>
 <p>The <b>scaling factor</b>, as previously described, is known prior to the inference operation where the values are calculated from a set of formulas. In Intel MKL-DNN, the scaling factor is applied to the output of a primitive. Moreover, to perform input transformations (for example, source, bias, and weights), Intel MKL-DNN performs quantizing and dequantizing of data for int8 through the <b>Reorder Primitive</b>.</p>
 <p>Intel MKL-DNN has two formats for defining the output scaling factor. Depending on the configuration set by the scaling mask, either the output is scaled uniformly across all the dimensions (<em>mask = 0</em>) or a set of scaling values is applied to specific dimensions, as explained below:</p>
 <ul>
-<li>A <em>single float-value</em> shared across the tensor <div class="image">
+<li>A <em>single floating point value</em> shared across the tensor <div class="image">
 <img src="img_singlescalar.png" alt="img_singlescalar.png"/>
 <div class="caption">
 Single-value scaling format</div></div>
 </li>
-<li>An array of float values each corresponding to a specific output channel <div class="image">
+<li>An array of floating point values each corresponding to a specific output channel <div class="image">
 <img src="img_multiscalar.png" alt="img_multiscalar.png"/>
 <div class="caption">
 Multi-value scaling format</div></div>
@@ -164,7 +164,7 @@ Multi-value scaling format</div></div>
 <li>4D dimensional data the order is always: (n, c, h, w)</li>
 <li>5D dimensional weights the order is always: (g, oc, ic, kh, kw)</li>
 </ul>
-<p>Fused <b>Post-Operations</b> (PostOps) allow chaining operations during the primitive computation. Note that the resulting output value from PostOps is always affected by the scaling factor. The supported operations are:</p>
+<p>Fused <b>post-ops</b> allow chaining operations during the primitive computation. Note that the resulting output value from post-ops is always affected by the scaling factor. The supported operations are:</p>
 <ul>
 <li>Accumulation where the primitive sums the resulting values from previously computed activations as:<ul>
 <li>\(dst[ ] \leftarrow scale * dst[] + op(...)\), instead of</li>
@@ -177,7 +177,7 @@ Multi-value scaling format</div></div>
 </ul>
 </li>
 </ul>
-<p>The list of supported eltwise operations for int8 is currently limited to ReLU. For instance, PostOps may only configure a convolution with accumulation followed by eltwise (relu).</p>
+<p>The list of supported eltwise operations for int8 is currently limited to ReLU. For instance, post-ops may only configure a convolution with accumulation followed by eltwise (relu).</p>
 <h2>Example</h2>
 <p><a class="el" href="cpu_cnn_inference_int8_cpp.html">CNN int8 inference example</a> example walks through the steps of int8 inference. </p>
 </div></div><!-- contents -->

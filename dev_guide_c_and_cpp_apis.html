@@ -104,6 +104,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <ul>
 <li>Not-a-number (NaN) floating point values</li>
 <li>Large <code>u8</code> or <code>s8</code> inputs may lead to accumulator overflow</li>
+<li>While the <code>bf16</code> 16-bit floating point data type has range close to 32-bit floating point data type, there is a significant reduction in precision.</li>
 </ul>
 <p>As Intel MKL-DNN API accepts raw pointers as parameters it's the calling code responsibility to</p>
 <ul>

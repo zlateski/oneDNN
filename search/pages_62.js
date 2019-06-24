@@ -5,5 +5,5 @@ var searchData=
   ['benchmarking_20performance',['Benchmarking Performance',['../dev_guide_benchdnn.html',1,'']]],
   ['build_20from_20source',['Build from Source',['../dev_guide_build.html',1,'']]],
   ['build_20options',['Build Options',['../dev_guide_build_options.html',1,'']]],
-  ['bfp16_20training',['bfp16 Training',['../dev_guide_training_bfp16.html',1,'']]]
+  ['bfloat16_20training',['Bfloat16 Training',['../dev_guide_training_bf16.html',1,'']]]
 ];

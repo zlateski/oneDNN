@@ -22,10 +22,10 @@
 <area shape="rect" id="node23" href="$structmkldnn_1_1lstm__forward_1_1primitive__desc.html" title="Primitive descriptor for LSTM forward propagation. " alt="" coords="465,1311,612,1353"/>
 <area shape="rect" id="node24" href="$structmkldnn_1_1pooling__backward_1_1primitive__desc.html" title="Primitive descriptor for pooling backward propagation. " alt="" coords="451,1377,627,1418"/>
 <area shape="rect" id="node25" href="$structmkldnn_1_1pooling__forward_1_1primitive__desc.html" title="Primitive descriptor for pooling forward propagation. " alt="" coords="457,1442,620,1483"/>
-<area shape="rect" id="node26" href="$structmkldnn_1_1rnn__backward_1_1primitive__desc.html" title="Primitive descriptor for RNN backward propagation. " alt="" coords="462,1507,615,1549"/>
-<area shape="rect" id="node27" href="$structmkldnn_1_1rnn__forward_1_1primitive__desc.html" title="Primitive descriptor for RNN forward propagation. " alt="" coords="469,1573,609,1614"/>
-<area shape="rect" id="node28" href="$structmkldnn_1_1shuffle__forward_1_1primitive__desc.html" title="Primitive descriptor for shuffle forward propagation. " alt="" coords="458,1638,619,1679"/>
-<area shape="rect" id="node29" href="$structmkldnn_1_1softmax__backward_1_1primitive__desc.html" title="Primitive descriptor for softmax backward propagation. " alt="" coords="447,1703,630,1745"/>
-<area shape="rect" id="node30" href="$structmkldnn_1_1softmax__forward_1_1primitive__desc.html" title="Primitive descriptor for softmax forward propagation. " alt="" coords="454,1769,623,1810"/>
+<area shape="rect" id="node26" href="$structmkldnn_1_1shuffle__forward_1_1primitive__desc.html" title="Primitive descriptor for shuffle forward propagation. " alt="" coords="458,1507,619,1549"/>
+<area shape="rect" id="node27" href="$structmkldnn_1_1softmax__backward_1_1primitive__desc.html" title="Primitive descriptor for softmax backward propagation. " alt="" coords="447,1573,630,1614"/>
+<area shape="rect" id="node28" href="$structmkldnn_1_1softmax__forward_1_1primitive__desc.html" title="Primitive descriptor for softmax forward propagation. " alt="" coords="454,1638,623,1679"/>
+<area shape="rect" id="node29" href="$structmkldnn_1_1vanilla__rnn__backward_1_1primitive__desc.html" title="Primitive descriptor for RNN backward propagation. " alt="" coords="450,1703,627,1745"/>
+<area shape="rect" id="node30" href="$structmkldnn_1_1vanilla__rnn__forward_1_1primitive__desc.html" title="Primitive descriptor for RNN forward propagation. " alt="" coords="457,1769,621,1810"/>
 <area shape="rect" id="node2" href="$classmkldnn_1_1handle.html" title="mkldnn::handle\&lt; mkldnn\l_primitive_desc_t \&gt;" alt="" coords="6,887,170,929"/>
 </map>

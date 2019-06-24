@@ -81,18 +81,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="dgaq_intro"></a></p>
 <h2>Introduction</h2>
-<p>Some primitives in the library support input/output tensors with INT8 (either signed or unsigned) data type. The primary goal is to support reduced precision inference on the compatible hardware.</p>
+<p>Some primitives in the library support input/output tensors with the INT8 (either signed or unsigned) data type. The primary goal is to support reduced precision inference on the compatible hardware.</p>
 <p>Related materials:</p>
 <ul>
 <li><a href="https://software.intel.com/en-us/articles/lower-numerical-precision-deep-learning-inference-and-training">Lower Numerical Precision Deep Learning Inference and Training</a></li>
 <li>An example with annotations: <a class="el" href="dev_guide_inference_int8.html">Int8 Inference</a></li>
 </ul>
 <h2>Quantization Model</h2>
-<p>The primary quantization model the library assumes is the following: </p>
+<p>The primary quantization model that the library assumes is the following: </p>
 <p class="formulaDsp">
 \[ x_{f32}(:) = scale_{f32} \cdot (x_{int8}(:) - 0_{x\_int8}) \]
 </p>
-<p>where \(scale_{f32}\) is somehow known in advance (typically, the process of obtaining these scale factors is called <em>calibration</em> process). This might be counter-intuitive, but the library cannot compute any of the scale factors at run-time dynamically. Hence, the model is sometimes called <em>static</em> quantization model. The main rationale to support only <em>static</em> quantization out-of-the-box is higher performance. Those who want to use <em>dynamic</em> quantization can do that in a few steps:</p>
+<p>where \(scale_{f32}\) is somehow known in advance (typically, the process of obtaining these scale factors is called the <em>calibration</em> process). This might be counter-intuitive, but the library cannot compute any of the scale factors at run-time dynamically. Hence, the model is sometimes called a <em>static</em> quantization model. The main rationale to support only <em>static</em> quantization out-of-the-box is higher performance. Those who want to use <em>dynamic</em> quantization can do so in a few steps:</p>
 <ol type="1">
 <li>Compute the result in higher precision, like <a class="el" href="structmkldnn_1_1memory.html#aa8a0d49cc7faaceef9d8f55d66bff57baa860868d23f3a68323a2e3f6563d7f31" title="32-bit signed integer. ">mkldnn::memory::data_type::s32</a>.</li>
 <li>Find the required characteristics, like min and max values, and derive the scale factor.</li>
@@ -100,6 +100,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </ol>
 <p>It is also worth mentioning that the library supports fixed zero position. For most of the primitives, real zero value is mapped to zero for quantized values; that is, \(0_{x\_int8} = 0\). For example, this is the only model that <a class="el" href="dev_guide_convolution.html">Convolution</a> and <a class="el" href="dev_guide_inner_product.html">Inner Product</a> currently support. The <a class="el" href="dev_guide_rnn.html">RNN</a> primitives have limited support of shifted zero (for details, refer to the corresponding section in <a class="el" href="dev_guide_rnn.html">RNN</a>).</p>
 <p>For the rest of this guide, we will assume that \(0_{x\_int8} = 0\).</p>
+<dl class="section warning"><dt>Warning</dt><dd>Depending on the architecture, the behavior of int8 computations might slightly vary. For more details, refer to <a class="el" href="dev_guide_int8_computations.html">Int8 Computation Aspects</a>.</dd></dl>
 <p>This guide doesn't cover how the appropriate scaling factor can be found. Refer to the materials in the <a class="el" href="dev_guide_attributes_quantization.html#dgaq_intro">Introduction</a>.</p>
 <h3>Example: Convolution Quantization Workflow</h3>
 <p>Let's consider a simple example: a convolution without bias. The tensors are represented as:</p>
@@ -118,7 +119,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <ul>
 <li>\(output\_scale := \frac{scale_{src} \cdot scale_{weights}}{scale_{dst}}\);</li>
 <li>\(conv_{s32}\) is just a regular convolution which takes source and weights with INT8 data type and compute the result in INT32 data type (INT32 is chosen to avoid overflows during the computations);</li>
-<li>\(downconvert\_f32\_to\_s8()\) converts F32 value to INT8 with potential saturation if the values are out of the range of the INT8 data type.</li>
+<li>\(downconvert\_f32\_to\_s8()\) converts an <code>f32</code> value to <code>s8</code> with potential saturation if the values are out of the range of the INT8 data type.</li>
 </ul>
 <p>Note that in order to perform the operation, one doesn't need to know the exact scaling factors for all the tensors; it is enough to know only the \(output\_scale\). The library utilizes this fact; a user needs to provide only this one extra parameter (see the <a class="el" href="dev_guide_attributes_quantization.html#dev_guide_attributes_quantization_output_scare">Output Scaling Attribute</a> section below) to perform the convolution.</p>
 <h3>Per-Channel Scaling</h3>
@@ -200,7 +201,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line"><span class="comment">// ...</span></div>
 <div class="line"></div>
-<div class="line"><span class="comment">// Int8 convolution primitive descriptor (will create it in the next example)</span></div>
+<div class="line"><span class="comment">// int8 convolution primitive descriptor (will create it in the next example)</span></div>
 <div class="line"><a class="code" href="structmkldnn_1_1convolution__forward_1_1primitive__desc.html">mkldnn::convolution_forward::primitive_desc</a> conv_pd(...);</div>
 <div class="line"></div>
 <div class="line"></div>
@@ -296,7 +297,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>As you can see:</p>
 <ul>
 <li>The convolution output scales are now \(conv\_output\_scale = scale_{src} \cdot scale_{weights}\), i.e. no division by \(scale_{dst}\);</li>
-<li>And the post ops scale for \(\tanh\) is set to \(scale\_tanh\_post\_op = \frac{1}{scale_{dst}}\). </li>
+<li>And the post-ops scale for \(\tanh\) is set to \(scale\_tanh\_post\_op = \frac{1}{scale_{dst}}\). </li>
 </ul>
 </div></div><!-- contents -->
 <div class="footer">
