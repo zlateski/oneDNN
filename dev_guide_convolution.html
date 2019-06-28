@@ -145,9 +145,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <td align="left">forward </td><td align="left">u8, s8 </td><td align="left">s8 </td><td align="left">u8, s8, s32, f32 </td><td align="left">u8, s8, s32, f32 </td></tr>
 <tr>
 <td align="left">forward </td><td align="left">bf16 </td><td align="left">bf16 </td><td align="left">f32, bf16 </td><td align="left">f32, bf16 </td></tr>
-<tr>
-<td align="left">backward </td><td align="left">f32, bf16</td><td align="left">f32, bf16 </td><td align="left">bf16 </td><td align="left">f32, bf16 </td></tr>
 </table>
+<p>| backward | f32, bf16 | bf16 | bf16 | | weights update | bf16 | f32, bf16 | bf16 | f32, bf16</p>
 <dl class="section warning"><dt>Warning</dt><dd>There might be hardware and/or implementation specific restrictions. Check <a class="el" href="dev_guide_convolution.html#dg_conv_impl_limits">Implementation Limitations</a> section below.</dd></dl>
 <h3>Data Representation</h3>
 <p>Like other CNN primitives, the convolution primitive expects the following tensors:</p>

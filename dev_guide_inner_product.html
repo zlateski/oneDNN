@@ -110,7 +110,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <td align="left">forward </td><td align="left">f16 </td><td align="left">f16 </td><td align="left">f16 </td><td align="left">f16 </td></tr>
 <tr>
 <td align="left">forward </td><td align="left">u8, s8 </td><td align="left">s8 </td><td align="left">u8, s8, s32, f32 </td><td align="left">u8, s8, s32, f32 </td></tr>
+<tr>
+<td align="left">forward </td><td align="left">bf16 </td><td align="left">bf16 </td><td align="left">f32, bf16 </td><td align="left">f32, bf16 </td></tr>
 </table>
+<p>| backward | f32, bf16 | bf16 | bf16 | | weights update | bf16 | f32, bf16 | bf16 | f32, bf16</p>
 <h3>Data Representation</h3>
 <p>Like other CNN primitives, the inner product primitive expects the following tensors:</p>
 <table class="doxtable">
