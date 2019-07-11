@@ -116,6 +116,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr>
 <td align="left">square </td><td align="left"><a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97af4f3e47ddb2105e7c2ddf1bbd8434d02" title="Eltwise: square. ">mkldnn_eltwise_square</a> </td><td align="left">\( f(x) = x^2 \) </td></tr>
 <tr>
+<td align="left">swish </td><td align="left"><a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97adb1d95d2da42700409424b061a06b8bd" title="Eltwise: swish. ">mkldnn_eltwise_swish</a> </td><td align="left">\( f(x) = x \frac{1}{1+e^{-\alpha x}} \) </td></tr>
+<tr>
 <td align="left">tanh </td><td align="left"><a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a6b50624e847783bfc94b7cf6badfa16c" title="Eltwise: hyperbolic tangent non-linearity (tanh) ">mkldnn_eltwise_tanh</a> </td><td align="left">\( f(x) = \frac{e^z - e^{-z}}{e^z + e^{-z}} \) </td></tr>
 </table>
 <h4>Difference Between <a href="#mkldnn_forward_training">Forward Training</a> and <a href="#mkldnn_forward_inference">Forward Inference</a></h4>
@@ -152,7 +154,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p><a class="anchor" id="dg_eltwise_impl_limits"></a></p>
 <h2>Implementation Limitations</h2>
 <ol type="1">
-<li>No primitive specific limitations. Refer to <a class="el" href="dev_guide_data_types.html">Data Types</a> for limitations related to data types support.</li>
+<li>Refer to <a class="el" href="dev_guide_data_types.html">Data Types</a> for limitations related to data types support.</li>
+<li><b>GPU</b><ul>
+<li>No support for swish (<a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97adb1d95d2da42700409424b061a06b8bd" title="Eltwise: swish. ">mkldnn_eltwise_swish</a>) operation</li>
+</ul>
+</li>
 </ol>
 <h2>Performance Tips</h2>
 <ol type="1">

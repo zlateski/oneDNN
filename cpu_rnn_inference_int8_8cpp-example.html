@@ -802,6 +802,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line">    };</div>
 <div class="line"></div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Parameters:&quot;</span> &lt;&lt; std::endl</div>
+<div class="line">        &lt;&lt; <span class="stringliteral">&quot; batch = &quot;</span> &lt;&lt; batch &lt;&lt; std::endl</div>
+<div class="line">        &lt;&lt; <span class="stringliteral">&quot; feature size = &quot;</span> &lt;&lt; feature_size &lt;&lt; std::endl</div>
+<div class="line">        &lt;&lt; <span class="stringliteral">&quot; maximum source sequence length = &quot;</span></div>
+<div class="line">        &lt;&lt; src_seq_length_max &lt;&lt; std::endl</div>
+<div class="line">        &lt;&lt; <span class="stringliteral">&quot; maximum target sequence length = &quot;</span></div>
+<div class="line">        &lt;&lt; tgt_seq_length_max &lt;&lt; std::endl</div>
+<div class="line">        &lt;&lt; <span class="stringliteral">&quot; number of layers of the bidirectional encoder = &quot;</span></div>
+<div class="line">        &lt;&lt; enc_bidir_n_layers &lt;&lt; std::endl</div>
+<div class="line">        &lt;&lt; <span class="stringliteral">&quot; number of layers of the unidirectional encoder = &quot;</span></div>
+<div class="line">        &lt;&lt; enc_unidir_n_layers &lt;&lt; std::endl</div>
+<div class="line">        &lt;&lt; <span class="stringliteral">&quot; number of layers of the decoder = &quot;</span> &lt;&lt; dec_n_layers &lt;&lt; std::endl;</div>
+<div class="line"></div>
 <div class="line">    execute();</div>
 <div class="line">    s.<a name="a29"></a><a class="code" href="structmkldnn_1_1stream.html#a48181ce0f5eb3bcd75778b5aa8866df6">wait</a>();</div>
 <div class="line">}</div>
