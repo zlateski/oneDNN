@@ -37,6 +37,7 @@ var searchData=
   ['common_20data_20types_20and_20enumerations',['Common data types and enumerations',['../group__cpp__api__enums.html',1,'']]],
   ['cpu',['cpu',['../structmkldnn_1_1engine.html#a81bcf1ea92d7f98852a2c3e187825de6ad9747e2da342bdb995f6389533ad1a3d',1,'mkldnn::engine']]],
   ['cnn_20f32_20inference_20example',['CNN f32 inference example',['../cpu_cnn_inference_f32_c.html',1,'']]],
+  ['cnn_20f32_20inference_20example',['CNN f32 inference example',['../cpu_cnn_inference_f32_cpp.html',1,'']]],
   ['cnn_20int8_20inference_20example',['CNN int8 inference example',['../cpu_cnn_inference_int8_cpp.html',1,'']]],
   ['cnn_20bf16_20training_20example',['CNN bf16 training example',['../cpu_cnn_training_bf16_cpp.html',1,'']]],
   ['cnn_20f32_20training_20example',['CNN f32 training example',['../cpu_cnn_training_f32_c.html',1,'']]],

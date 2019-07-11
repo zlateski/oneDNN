@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>Intel(R) MKL-DNN: $title</title>
+<title>Intel(R) MKL-DNN: CNN f32 inference example</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -74,8 +74,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 
 </div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">CNN f32 inference example </div>  </div>
+</div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Initialize a CPU engine and stream. The last parameter in the call represents the index of the engine. </p>
+<div class="textblock"><p>This C++ API example demonstrates how to build an AlexNet neural network topology for forward-pass inference.</p>
+<blockquote class="doxtable">
+<p>Example code: <a class="el" href="cpu_cnn_inference_f32_8cpp-example.html">cpu_cnn_inference_f32.cpp</a></p>
+<p></p>
+</blockquote>
+<p>Some key take-aways include:</p>
+<ul>
+<li>How tensors are implemented and submitted to primitives.</li>
+<li>How primitives are created.</li>
+<li>How primitives are sequentially submitted to the network, where the output from primitives is passed as input to the next primitive. The latter specifies a dependency between the primitive input and output data.</li>
+<li>Specific 'inference-only' configurations.</li>
+<li>Limiting the number of reorders performed that are detrimental to performance.</li>
+</ul>
+<p>The example implements the AlexNet layers as numbered primitives (for example, conv1, pool1, conv2).</p>
+<p>Initialize a CPU engine and stream. The last parameter in the call represents the index of the engine. </p>
 <div class="fragment"><div class="line">    engine eng(engine::kind::cpu, 0);</div>
 <div class="line">    stream s(eng);</div>
 </div><!-- fragment --><p> Create a vector for the primitives and a vector to hold memory that will be used as arguments. </p>

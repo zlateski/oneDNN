@@ -218,8 +218,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Intel MKL-DNN provides three GEMM-like functions:</p>
 <ul>
 <li><a class="el" href="group__c__api__blas.html#ga870f4c4d4b48422fbcfe77fc308edc65" title="SGEMM performs a matrix-matrix multiplication operation defined as. ">mkldnn_sgemm()</a> &ndash; Single precision matrix-matrix multiply</li>
-<li><a class="el" href="group__c__api__blas.html#gaea88ce38665acb91bdc2c99ba1bc8f36" title="gemm_s8u8s32 and gemm_s8s8s32 perform a matrix-matrix multiplication operation and add the result to ...">mkldnn_gemm_u8s8s32()</a> &ndash; u8/s8 integer matrix-matrix multiply</li>
-<li><a class="el" href="group__c__api__blas.html#ga7089a6c8c007c57a146c6197082b2671" title="gemm_s8u8s32 and gemm_s8s8s32 perform a matrix-matrix multiplication operation and add the result to ...">mkldnn_gemm_s8s8s32()</a> &ndash; s8/s8 integer matrix-matrix multiply</li>
+<li><a class="el" href="group__c__api__blas.html#gaea88ce38665acb91bdc2c99ba1bc8f36" title="mkldnn_gemm_u8s8s32() and mkldnn_gemm_s8s8s32() perform a matrix-matrix multiplication operation and ...">mkldnn_gemm_u8s8s32()</a> &ndash; u8/s8 integer matrix-matrix multiply</li>
+<li><a class="el" href="group__c__api__blas.html#ga7089a6c8c007c57a146c6197082b2671" title="mkldnn_gemm_u8s8s32() and mkldnn_gemm_s8s8s32() perform a matrix-matrix multiplication operation and ...">mkldnn_gemm_s8s8s32()</a> &ndash; s8/s8 integer matrix-matrix multiply</li>
 </ul>
 <p>With version 1.0 we switched from a Fortran-style to a C-style API, meaning that the parameters are passed by value rather than by address, and matrices are assumed to be in row-major format rather than column-major format.</p>
 <p>Moreover, to broaden the applicability of integer matrix-matrix multiply functions we changed the formula from: </p>
@@ -230,7 +230,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p class="formulaDsp">
 \[ C_{s32} = \alpha \cdot (op(A_{i8}) - o_A) \cdot (op(B_{s8}) - o_B) + \beta \cdot C_{s32} + o_C \]
 </p>
-<p>where for both <a class="el" href="group__c__api__blas.html#gaea88ce38665acb91bdc2c99ba1bc8f36" title="gemm_s8u8s32 and gemm_s8s8s32 perform a matrix-matrix multiplication operation and add the result to ...">mkldnn_gemm_u8s8s32()</a> and <a class="el" href="group__c__api__blas.html#ga7089a6c8c007c57a146c6197082b2671" title="gemm_s8u8s32 and gemm_s8s8s32 perform a matrix-matrix multiplication operation and add the result to ...">mkldnn_gemm_s8s8s32()</a> the types of offsets for matrices A and B correspond to the type of the matrices themselves; that is:</p>
+<p>where for both <a class="el" href="group__c__api__blas.html#gaea88ce38665acb91bdc2c99ba1bc8f36" title="mkldnn_gemm_u8s8s32() and mkldnn_gemm_s8s8s32() perform a matrix-matrix multiplication operation and ...">mkldnn_gemm_u8s8s32()</a> and <a class="el" href="group__c__api__blas.html#ga7089a6c8c007c57a146c6197082b2671" title="mkldnn_gemm_u8s8s32() and mkldnn_gemm_s8s8s32() perform a matrix-matrix multiplication operation and ...">mkldnn_gemm_s8s8s32()</a> the types of offsets for matrices A and B correspond to the type of the matrices themselves; that is:</p>
 <ul>
 <li><code>typeof(o_A) == typeof(*A)</code> and</li>
 <li><code>typeof(o_B) == typeof(*B)</code>.</li>

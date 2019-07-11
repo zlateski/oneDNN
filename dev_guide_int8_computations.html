@@ -83,7 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>This document uses <b>int8</b> to denote 8-bit integer no matter whether it is signed or unsigned. To emphasize the signedness of the data type <b>u8</b> (<code>uint8_t</code>) or <b>s8</b> (<code>int8_t</code>) are used. In particular, if a primitive has two inputs the types would be written using "/". For instance:</p>
 <ul>
 <li>int8 GEMM denotes any integer GEMM with 8-bit integer inputs, while</li>
-<li>u8/s8 GEMM denotes <a class="el" href="group__c__api__blas.html#gaea88ce38665acb91bdc2c99ba1bc8f36" title="gemm_s8u8s32 and gemm_s8s8s32 perform a matrix-matrix multiplication operation and add the result to ...">mkldnn_gemm_u8s8s32()</a> only.</li>
+<li>u8/s8 GEMM denotes <a class="el" href="group__c__api__blas.html#gaea88ce38665acb91bdc2c99ba1bc8f36" title="mkldnn_gemm_u8s8s32() and mkldnn_gemm_s8s8s32() perform a matrix-matrix multiplication operation and ...">mkldnn_gemm_u8s8s32()</a> only.</li>
 </ul>
 <p></p>
 </blockquote>
@@ -96,7 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Using an s32 accumulator is especially important for matrix-multiply such as operation primitives that have chains of multiplication and accumulation of int8 values. These primitives are:</p>
 <ul>
 <li><a class="el" href="dev_guide_convolution.html">Convolution</a></li>
-<li>Int8 GEMMs: <a class="el" href="group__c__api__blas.html#ga7089a6c8c007c57a146c6197082b2671" title="gemm_s8u8s32 and gemm_s8s8s32 perform a matrix-matrix multiplication operation and add the result to ...">mkldnn_gemm_s8s8s32()</a> and <a class="el" href="group__c__api__blas.html#gaea88ce38665acb91bdc2c99ba1bc8f36" title="gemm_s8u8s32 and gemm_s8s8s32 perform a matrix-matrix multiplication operation and add the result to ...">mkldnn_gemm_u8s8s32()</a></li>
+<li>Int8 GEMMs: <a class="el" href="group__c__api__blas.html#ga7089a6c8c007c57a146c6197082b2671" title="mkldnn_gemm_u8s8s32() and mkldnn_gemm_s8s8s32() perform a matrix-matrix multiplication operation and ...">mkldnn_gemm_s8s8s32()</a> and <a class="el" href="group__c__api__blas.html#gaea88ce38665acb91bdc2c99ba1bc8f36" title="mkldnn_gemm_u8s8s32() and mkldnn_gemm_s8s8s32() perform a matrix-matrix multiplication operation and ...">mkldnn_gemm_u8s8s32()</a></li>
 <li><a class="el" href="dev_guide_inner_product.html">Inner Product</a></li>
 <li><a class="el" href="dev_guide_rnn.html">LSTM</a></li>
 </ul>
@@ -226,7 +226,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Different primitives solve the potential overflow differently. The overview of the implementations are given below:</p>
 <ol type="1">
 <li><b>Convolution</b> primitive. The source is treated as <code>X_s8</code>, which would be shifted during the execution. The compensation is precomputed by a reorder during quantization of the weights, and embedded into them. Finally, when the Intel AVX512 Instruction Set is used the reorder additionally scales the weights by 0.5 to overcome the potential overflow issue. During the convolution execution, the result would be re-scaled back. This rescaling introduces an error that might insignificantly affect the inference accuracy (compared to a platform with the Intel DL Boost Instruction Set).</li>
-<li><p class="startli"><b>s8/s8 GEMM</b> (<a class="el" href="group__c__api__blas.html#ga7089a6c8c007c57a146c6197082b2671" title="gemm_s8u8s32 and gemm_s8s8s32 perform a matrix-matrix multiplication operation and add the result to ...">mkldnn_gemm_s8s8s32()</a>) does nothing to handle the overflow issue. It is up to the user to prepare the data so that the overflow/saturation doesn't occur. For instance, the user can specify s7 <code>[-64, 63]</code> instead of s8 for the second input.</p>
+<li><p class="startli"><b>s8/s8 GEMM</b> (<a class="el" href="group__c__api__blas.html#ga7089a6c8c007c57a146c6197082b2671" title="mkldnn_gemm_u8s8s32() and mkldnn_gemm_s8s8s32() perform a matrix-matrix multiplication operation and ...">mkldnn_gemm_s8s8s32()</a>) does nothing to handle the overflow issue. It is up to the user to prepare the data so that the overflow/saturation doesn't occur. For instance, the user can specify s7 <code>[-64, 63]</code> instead of s8 for the second input.</p>
 <dl class="section warning"><dt>Warning</dt><dd>It would not be enough to use s7 <code>[-64, 63]</code> for the first input. The only possible way to avoid overflow by shrinking the range of the first input would be to use the range <code>[-128, -1]</code>, which is most likely meaningless.</dd></dl>
 </li>
 <li>The <b>inner product</b> primitive directly calls s8/s8 GEMM, so it inherits the behavior of the latter. The user should consider using the appropriate scaling factors to avoid potential issues.</li>

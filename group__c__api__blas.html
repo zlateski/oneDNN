@@ -91,10 +91,10 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga870f4c4d4b48422fbcfe77fc308edc65"><td class="mdescLeft">&#160;</td><td class="mdescRight">SGEMM performs a matrix-matrix multiplication operation defined as.  <a href="#ga870f4c4d4b48422fbcfe77fc308edc65">More...</a><br/></td></tr>
 <tr class="separator:ga870f4c4d4b48422fbcfe77fc308edc65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaea88ce38665acb91bdc2c99ba1bc8f36"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__blas.html#gaea88ce38665acb91bdc2c99ba1bc8f36">mkldnn_gemm_u8s8s32</a> (char transa, char transb, char offsetc, <a class="el" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a> M, <a class="el" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a> N, <a class="el" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a> K, float alpha, const uint8_t *A, <a class="el" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a> lda, uint8_t ao, const int8_t *B, <a class="el" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a> ldb, int8_t bo, float beta, int32_t *C, <a class="el" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a> ldc, const int32_t *co)</td></tr>
-<tr class="memdesc:gaea88ce38665acb91bdc2c99ba1bc8f36"><td class="mdescLeft">&#160;</td><td class="mdescRight">gemm_s8u8s32 and gemm_s8s8s32 perform a matrix-matrix multiplication operation and add the result to a scalar-matrix product.  <a href="#gaea88ce38665acb91bdc2c99ba1bc8f36">More...</a><br/></td></tr>
+<tr class="memdesc:gaea88ce38665acb91bdc2c99ba1bc8f36"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="group__c__api__blas.html#gaea88ce38665acb91bdc2c99ba1bc8f36" title="mkldnn_gemm_u8s8s32() and mkldnn_gemm_s8s8s32() perform a matrix-matrix multiplication operation and ...">mkldnn_gemm_u8s8s32()</a> and <a class="el" href="group__c__api__blas.html#ga7089a6c8c007c57a146c6197082b2671" title="mkldnn_gemm_u8s8s32() and mkldnn_gemm_s8s8s32() perform a matrix-matrix multiplication operation and ...">mkldnn_gemm_s8s8s32()</a> perform a matrix-matrix multiplication operation and add the result to a scalar-matrix product.  <a href="#gaea88ce38665acb91bdc2c99ba1bc8f36">More...</a><br/></td></tr>
 <tr class="separator:gaea88ce38665acb91bdc2c99ba1bc8f36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga7089a6c8c007c57a146c6197082b2671"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__blas.html#ga7089a6c8c007c57a146c6197082b2671">mkldnn_gemm_s8s8s32</a> (char transa, char transb, char offsetc, <a class="el" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a> M, <a class="el" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a> N, <a class="el" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a> K, float alpha, const int8_t *A, <a class="el" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a> lda, int8_t ao, const int8_t *B, <a class="el" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a> ldb, int8_t bo, float beta, int32_t *C, <a class="el" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a> ldc, const int32_t *co)</td></tr>
-<tr class="memdesc:ga7089a6c8c007c57a146c6197082b2671"><td class="mdescLeft">&#160;</td><td class="mdescRight">gemm_s8u8s32 and gemm_s8s8s32 perform a matrix-matrix multiplication operation and add the result to a scalar-matrix product.  <a href="#ga7089a6c8c007c57a146c6197082b2671">More...</a><br/></td></tr>
+<tr class="memdesc:ga7089a6c8c007c57a146c6197082b2671"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="group__c__api__blas.html#gaea88ce38665acb91bdc2c99ba1bc8f36" title="mkldnn_gemm_u8s8s32() and mkldnn_gemm_s8s8s32() perform a matrix-matrix multiplication operation and ...">mkldnn_gemm_u8s8s32()</a> and <a class="el" href="group__c__api__blas.html#ga7089a6c8c007c57a146c6197082b2671" title="mkldnn_gemm_u8s8s32() and mkldnn_gemm_s8s8s32() perform a matrix-matrix multiplication operation and ...">mkldnn_gemm_s8s8s32()</a> perform a matrix-matrix multiplication operation and add the result to a scalar-matrix product.  <a href="#ga7089a6c8c007c57a146c6197082b2671">More...</a><br/></td></tr>
 <tr class="separator:ga7089a6c8c007c57a146c6197082b2671"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -318,24 +318,28 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>gemm_s8u8s32 and gemm_s8s8s32 perform a matrix-matrix multiplication operation and add the result to a scalar-matrix product. </p>
-<p>For the final result, a vector is added to each row or column of the output matrix. The operation is defined as:</p>
-<p>C := alpha*(op(A) - A_offset) * (op(B) - B_offset) + beta*C + C_offset</p>
+<p><a class="el" href="group__c__api__blas.html#gaea88ce38665acb91bdc2c99ba1bc8f36" title="mkldnn_gemm_u8s8s32() and mkldnn_gemm_s8s8s32() perform a matrix-matrix multiplication operation and ...">mkldnn_gemm_u8s8s32()</a> and <a class="el" href="group__c__api__blas.html#ga7089a6c8c007c57a146c6197082b2671" title="mkldnn_gemm_u8s8s32() and mkldnn_gemm_s8s8s32() perform a matrix-matrix multiplication operation and ...">mkldnn_gemm_s8s8s32()</a> perform a matrix-matrix multiplication operation and add the result to a scalar-matrix product. </p>
+<p>For the final result, a vector is added to each row or column of the output matrix.</p>
+<p>The operation is defined as:</p>
+<ul>
+<li><code>C := alpha*(op(A) - A_offset) * (op(B) - B_offset) + beta*C + C_offset</code></li>
+</ul>
 <p>where</p>
 <ul>
-<li>op( X ) = X or op( X ) = X**T,</li>
-<li>A_offset is an m-by-k matrix with every element equal to the value oa,</li>
-<li>B_offset is an k-by-n matrix with every element equal to the value ob,</li>
-<li>C_offset is an m-by-n matrix defined by the oc array, size len:<ul>
-<li>if offsetc = F: len must be at least 1</li>
-<li>if offsetc = C: len must be at least max(1, m)</li>
-<li>if offsetc = R: len must be at least max(1, n)</li>
+<li><code>op( X ) = X</code> or <code>op( X ) = X**T</code>,</li>
+<li><code>A_offset</code> is an m-by-k matrix with every element equal to the value <code>ao</code>,</li>
+<li><code>B_offset</code> is an k-by-n matrix with every element equal to the value <code>bo</code>,</li>
+<li><code>C_offset</code> is an m-by-n matrix defined by the <code>co</code> array of size <code>len</code>:<ul>
+<li>if <code>offsetc = F</code>: <code>len</code> must be at least <code>1</code>,</li>
+<li>if <code>offsetc = C</code>: <code>len</code> must be at least <code>max(1, m)</code>,</li>
+<li>if <code>offsetc = R</code>: <code>len</code> must be at least <code>max(1, n)</code>,</li>
 </ul>
 </li>
-<li>alpha and beta are scalars, and A, B and C are matrices, with op( A ) an m-by-k matrix, op( B ) a k-by-n matrix and C an m-by-n matrix.</li>
+<li><code>alpha</code> and <code>beta</code> are scalars, and</li>
+<li><code>A</code>, <code>B</code> and <code>C</code> are matrices, with <code>op( A )</code> an m-by-k matrix, <code>op( B )</code> a k-by-n matrix and <code>C</code> an m-by-n matrix.</li>
 </ul>
-<p>The matrices are assumed to be stored in column-major order (the elements in a matrix columns are contiguous in memory).</p>
-<dl class="section note"><dt>Note</dt><dd>The API is different compared with the standard BLAS routine because it returns mkldnn_status_t for error handling. XERBLA is not supported: no error message will be printed in case of incorrect parameters.</dd></dl>
+<p>The matrices are assumed to be stored in row-major order (the elements in a matrix rows are contiguous in memory).</p>
+<dl class="section note"><dt>Note</dt><dd>The API is different compared with the standard BLAS routine. In particular, the function returns <a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> for error handling. XERBLA is not supported: no error message will be printed in case of incorrect parameters.</dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>On some architectures the intermediate saturation might happen, which would lead to unexpected results. For more details, refer to <a class="el" href="dev_guide_int8_computations.html">Int8 Computation Aspects</a>. </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="cpu_rnn_inference_int8_8cpp-example.html#a1">cpu_rnn_inference_int8.cpp</a>.</dd>
 </dl>
@@ -455,10 +459,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>gemm_s8u8s32 and gemm_s8s8s32 perform a matrix-matrix multiplication operation and add the result to a scalar-matrix product. </p>
+<p><a class="el" href="group__c__api__blas.html#gaea88ce38665acb91bdc2c99ba1bc8f36" title="mkldnn_gemm_u8s8s32() and mkldnn_gemm_s8s8s32() perform a matrix-matrix multiplication operation and ...">mkldnn_gemm_u8s8s32()</a> and <a class="el" href="group__c__api__blas.html#ga7089a6c8c007c57a146c6197082b2671" title="mkldnn_gemm_u8s8s32() and mkldnn_gemm_s8s8s32() perform a matrix-matrix multiplication operation and ...">mkldnn_gemm_s8s8s32()</a> perform a matrix-matrix multiplication operation and add the result to a scalar-matrix product. </p>
 <p>For the final result, a vector is added to each row or column of the output matrix.</p>
-<p>For full description, see <a class="el" href="group__c__api__blas.html#gaea88ce38665acb91bdc2c99ba1bc8f36" title="gemm_s8u8s32 and gemm_s8s8s32 perform a matrix-matrix multiplication operation and add the result to ...">mkldnn_gemm_u8s8s32()</a>.</p>
-<dl class="section see"><dt>See Also</dt><dd>dev_guide_int8_computations </dd></dl>
+<p>For full description, see <a class="el" href="group__c__api__blas.html#gaea88ce38665acb91bdc2c99ba1bc8f36" title="mkldnn_gemm_u8s8s32() and mkldnn_gemm_s8s8s32() perform a matrix-matrix multiplication operation and ...">mkldnn_gemm_u8s8s32()</a>.</p>
+<dl class="section warning"><dt>Warning</dt><dd>On some architectures the intermediate saturation might happen, which would lead to unexpected results. For more details, refer to <a class="el" href="dev_guide_int8_computations.html">Int8 Computation Aspects</a>. </dd></dl>
 
 </div>
 </div>
