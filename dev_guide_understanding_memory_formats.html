@@ -169,11 +169,11 @@ Strides</div></div>
 <div class="line"></div>
 <div class="line"><span class="comment">// logical description, layout independent</span></div>
 <div class="line">md.<a class="code" href="structmkldnn__memory__desc__t.html#a8fc71fc8a04e665573f86442bda4dc4c">ndims</a> = 4;           <span class="comment">// # dimensions</span></div>
-<div class="line">md.dims = {N, C, H, W}; <span class="comment">// dimensions themselves</span></div>
+<div class="line">md.<a class="code" href="structmkldnn__memory__desc__t.html#a0c5fde2a68d65f5e0e7701463a91de50">dims</a> = {N, C, H, W}; <span class="comment">// dimensions themselves</span></div>
 <div class="line"></div>
 <div class="line"><span class="comment">// physical description</span></div>
-<div class="line">md.format_kind = <a class="code" href="group__c__api__types__generic.html#gga1f6c390306d4c8a438c0efbff08c0539ae7e569e4a1924f15d37971d2f785646b">mkldnn_blocked</a>; <span class="comment">// generic blocked format</span></div>
-<div class="line">md.format_desc.blocking.strides = {</div>
+<div class="line">md.<a class="code" href="structmkldnn__memory__desc__t.html#aeeaca6c6890e9486b9f49d514ef67573">format_kind</a> = <a class="code" href="group__c__api__types__generic.html#gga1f6c390306d4c8a438c0efbff08c0539ae7e569e4a1924f15d37971d2f785646b">mkldnn_blocked</a>; <span class="comment">// generic blocked format</span></div>
+<div class="line">md.format_desc.<a class="code" href="structmkldnn__memory__desc__t.html#ab93d81dc3502465caad206777389c747">blocking</a>.<a class="code" href="structmkldnn__blocking__desc__t.html#ae81e7500c43ffacb8e0b10f81a2ed91e">strides</a> = {</div>
 <div class="line">    stride_n, stride_c, stride_h, stride_w</div>
 <div class="line">};</div>
 </div><!-- fragment --><p> In particular, whenever a user creates memory with the <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2baed4a51a8db128a648b942882369a06d6" title="4D CNN activations tensor, an alias to mkldnn_abcd ">mkldnn_nchw</a> format, Intel MKL-DNN computes the strides and fills the structure on behalf of the user.</p>
@@ -196,7 +196,7 @@ nChw8c format</div></div>
 <p>Intel MKL-DNN describes this type of memory via blocking structure as well. The pseudo-code is: </p>
 <div class="fragment"><div class="line">memory_desc_t md;</div>
 <div class="line"><span class="comment">// logical description, layout independent</span></div>
-<div class="line">md.ndims = 4;           <span class="comment">// # dimensions</span></div>
+<div class="line">md.<a class="code" href="structmkldnn__memory__desc__t.html#a8fc71fc8a04e665573f86442bda4dc4c">ndims</a> = 4;           <span class="comment">// # dimensions</span></div>
 <div class="line">md.dims = {N, C, H, W}; <span class="comment">// dimensions themselves</span></div>
 <div class="line"></div>
 <div class="line"><span class="comment">// physical description</span></div>
