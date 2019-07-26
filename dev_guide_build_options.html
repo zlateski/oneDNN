@@ -107,12 +107,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>For GNU* Compiler 5.0 and newer, the default options are <code>-march=native -mtune=native</code>.</p>
 <dl class="section warning"><dt>Warning</dt><dd>While use of <code>MKLDNN_ARCH_OPT_FLAGS</code> option gives better performance, the resulting library can be run only on systems that have instruction set compatible with the target instruction set. Therefore, <code>ARCH_OPT_FLAGS</code> should be set to an empty string (<code>""</code>) if the resulting library needs to be portable.</dd></dl>
 <h3>Runtimes</h3>
-<p>CPU engine can use OpenMP or TBB threading runtime. OpenMP threading is the default build mode and is recommended for the best performance. TBB support is experimental. This behavior is controlled by the <code>MKLDNN_CPU_RUNTIME</code> CMake option.</p>
+<p>CPU engine can use OpenMP or TBB threading runtime. OpenMP threading is the default build mode and is recommended for the best performance. This behavior is controlled by the <code>MKLDNN_CPU_RUNTIME</code> CMake option.</p>
 <h4>OpenMP</h4>
 <p>Intel MKL-DNN uses OpenMP runtime library provided by the compiler.</p>
 <dl class="section warning"><dt>Warning</dt><dd>Because different OpenMP runtimes may not be binary-compatible, it's important to ensure that only one OpenMP runtime is used throughout the application. Having more than one OpenMP runtime linked to an executable may lead to undefined behavior including incorrect results or crashes. However as long as both the library and the application use the same or compatible compilers there would be no conflicts.</dd></dl>
 <h4>TBB</h4>
-<p>TBB support is experimental.</p>
 <p>To build Intel MKL-DNN with TBB support, set the <code>TBBROOT</code> environmental variable to point to the TBB installation path or pass the path directly to cmake:</p>
 <div class="fragment"><div class="line">$ cmake -DMKLDNN_CPU_RUNTIME=TBB -DTBBROOT=/opt/intel/path/tbb ..</div>
 </div><!-- fragment --><p>Intel MKL-DNN has limited optimizations for Intel TBB and has some functional limitations if built with Intel TBB.</p>
