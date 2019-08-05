@@ -141,6 +141,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__batch__normalization__desc__t.html">mkldnn_batch_normalization_desc_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A descriptor of a Batch Normalization operation.  <a href="structmkldnn__batch__normalization__desc__t.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__layer__normalization__desc__t.html">mkldnn_layer_normalization_desc_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A descriptor of a Layer Normalization operation.  <a href="structmkldnn__layer__normalization__desc__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__inner__product__desc__t.html">mkldnn_inner_product_desc_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A descriptor of an inner product operation.  <a href="structmkldnn__inner__product__desc__t.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -336,59 +339,61 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba494a09557958694ff1aece6b4667d87f">mkldnn_x</a> = mkldnn_a, 
 <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba2838f6827b40434fb9584eb3efe1a0ae">mkldnn_nc</a> = mkldnn_ab, 
 <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba02e2285d34f5f84490011d8b34ffb466">mkldnn_cn</a> = mkldnn_ba, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bac65802bc49a0a4455b2ff8a5e6f3695c">mkldnn_tn</a> = mkldnn_ab, 
+<br/>
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba21523681690a67736f966069432394b7">mkldnn_nt</a> = mkldnn_ba, 
 <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2baa9593899799f130c7f511f09b5c1ea9d">mkldnn_ncw</a> = mkldnn_abc, 
-<br/>
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba23e0a15956f5406d591d776d852446a3">mkldnn_nwc</a> = mkldnn_acb, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba23e0a15956f5406d591d776d852446a3">mkldnn_nwc</a> = mkldnn_acb, 
 <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2baed4a51a8db128a648b942882369a06d6">mkldnn_nchw</a> = mkldnn_abcd, 
-<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2badf1fb06f73cf8dd23ae620eea6516526">mkldnn_nhwc</a> = mkldnn_acdb, 
+<br/>
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2badf1fb06f73cf8dd23ae620eea6516526">mkldnn_nhwc</a> = mkldnn_acdb, 
 <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba2d1cd3beca16be268720538840d68ec5">mkldnn_chwn</a> = mkldnn_bcda, 
-<br/>
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba55268cf202bb4367b19fd0aeb13739ce">mkldnn_ncdhw</a> = mkldnn_abcde, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba55268cf202bb4367b19fd0aeb13739ce">mkldnn_ncdhw</a> = mkldnn_abcde, 
 <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bafe9f8381139e749050fda6fb70808e1c">mkldnn_ndhwc</a> = mkldnn_acdeb, 
-<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bae5344fffd9e1e8c46ced6403c21310b1">mkldnn_oi</a> = mkldnn_ab, 
+<br/>
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bae5344fffd9e1e8c46ced6403c21310b1">mkldnn_oi</a> = mkldnn_ab, 
 <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba433ebc123e9f80c292c0e6e82715c118">mkldnn_io</a> = mkldnn_ba, 
-<br/>
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba6a18734c3be6fcf4b2c0ce501816cb61">mkldnn_oiw</a> = mkldnn_abc, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba6a18734c3be6fcf4b2c0ce501816cb61">mkldnn_oiw</a> = mkldnn_abc, 
 <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2baac9c432c15d8f30dc87a09c553338efd">mkldnn_owi</a> = mkldnn_acb, 
-<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba32b0c647332e8d67f0c9146a78bd2e7a">mkldnn_wio</a> = mkldnn_cba, 
+<br/>
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba32b0c647332e8d67f0c9146a78bd2e7a">mkldnn_wio</a> = mkldnn_cba, 
 <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba9a03424a62bec9ee2c295d4182a483cd">mkldnn_iwo</a> = mkldnn_bca, 
-<br/>
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bacc2eeaa304a91dc0d8ec301a8a13fa4a">mkldnn_oihw</a> = mkldnn_abcd, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bacc2eeaa304a91dc0d8ec301a8a13fa4a">mkldnn_oihw</a> = mkldnn_abcd, 
 <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba56fdb8a888dba3cd5bb8e5a0bd521f8f">mkldnn_hwio</a> = mkldnn_cdba, 
-<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba4987933ae883116f5d8d563cb51daa55">mkldnn_ohwi</a> = mkldnn_acdb, 
+<br/>
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba4987933ae883116f5d8d563cb51daa55">mkldnn_ohwi</a> = mkldnn_acdb, 
 <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2baabd4140704b547b4a9706140255cb225">mkldnn_ihwo</a> = mkldnn_bcda, 
-<br/>
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba4782b8b238d13cc54a4caefa87f83e64">mkldnn_iohw</a> = mkldnn_bacd, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba4782b8b238d13cc54a4caefa87f83e64">mkldnn_iohw</a> = mkldnn_bacd, 
 <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bafac4917edc105faa444307270eb0d1a5">mkldnn_oidhw</a> = mkldnn_abcde, 
-<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba6669e57588b920dcd21b951ac7eb1682">mkldnn_dhwio</a> = mkldnn_cdeba, 
+<br/>
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba6669e57588b920dcd21b951ac7eb1682">mkldnn_dhwio</a> = mkldnn_cdeba, 
 <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2baec03e72261337738c4dc9d86d94dfd67">mkldnn_odhwi</a> = mkldnn_acdeb, 
-<br/>
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba817f89f7639915caf4746830dcfa1a98">mkldnn_idhwo</a> = mkldnn_bcdea, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba817f89f7639915caf4746830dcfa1a98">mkldnn_idhwo</a> = mkldnn_bcdea, 
 <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bac4ed5ec860141abb6e922d4b9db8b509">mkldnn_goiw</a> = mkldnn_abcd, 
-<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2baf55cbade6e10b15037abaa67e6933833">mkldnn_goihw</a> = mkldnn_abcde, 
+<br/>
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2baf55cbade6e10b15037abaa67e6933833">mkldnn_goihw</a> = mkldnn_abcde, 
 <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2badb01b4e8fff1203545a188f05cb89caa">mkldnn_hwigo</a> = mkldnn_decab, 
-<br/>
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bab3134cff6e287877de7ffa7c295ea20b">mkldnn_giohw</a> = mkldnn_acbde, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bab3134cff6e287877de7ffa7c295ea20b">mkldnn_giohw</a> = mkldnn_acbde, 
 <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba643d2d2b24f526447a6852940fdca46a">mkldnn_goidhw</a> = mkldnn_abcdef, 
-<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba421cac1506ecc22ca2902c2f56e7dd1b">mkldnn_tnc</a> = mkldnn_abc, 
+<br/>
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba421cac1506ecc22ca2902c2f56e7dd1b">mkldnn_tnc</a> = mkldnn_abc, 
 <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2baffe5c26458ee8c3f3dff7c182cadd33c">mkldnn_ntc</a> = mkldnn_bac, 
-<br/>
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba2568614310a2ab7b9694f7950d8e8d19">mkldnn_ldnc</a> = mkldnn_abcd, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba2568614310a2ab7b9694f7950d8e8d19">mkldnn_ldnc</a> = mkldnn_abcd, 
 <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba8297cb7a081984c40f40ed9d24a4023a">mkldnn_ldigo</a> = mkldnn_abcde, 
-<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2babd0d254bc5c97521e05c590ae9de8364">mkldnn_ldgoi</a> = mkldnn_abdec, 
+<br/>
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2babd0d254bc5c97521e05c590ae9de8364">mkldnn_ldgoi</a> = mkldnn_abdec, 
 <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bac5b1fb199e6e5c031766bb72dabb1859">mkldnn_ldgo</a> = mkldnn_abcd, 
-<br/>
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bae71727c41010dc2a1498277dafd09aab">mkldnn_nCdhw16c</a> = mkldnn_aBcde16b, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bae71727c41010dc2a1498277dafd09aab">mkldnn_nCdhw16c</a> = mkldnn_aBcde16b, 
 <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba29bc98def6cc318af8067fe8fefe9c82">mkldnn_nCdhw4c</a> = mkldnn_aBcde4b, 
-<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2badbbe00d3b96e9dc4549fdec6d3e390fc">mkldnn_nCdhw8c</a> = mkldnn_aBcde8b, 
+<br/>
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2badbbe00d3b96e9dc4549fdec6d3e390fc">mkldnn_nCdhw8c</a> = mkldnn_aBcde8b, 
 <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba5e2542092c6c47f27f8914de0b2d9789">mkldnn_nChw16c</a> = mkldnn_aBcd16b, 
-<br/>
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bad81e3d361f112790f3f95c22d73d7077">mkldnn_nChw4c</a> = mkldnn_aBcd4b, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bad81e3d361f112790f3f95c22d73d7077">mkldnn_nChw4c</a> = mkldnn_aBcd4b, 
 <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bacf26dda829c10d1a318c955e1d185248">mkldnn_nChw8c</a> = mkldnn_aBcd8b, 
-<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba5c42ce5904b7038fa825e6d95277f627">mkldnn_nCw16c</a> = mkldnn_aBc16b, 
-<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba9c8a0bac096d668d175cc836a464184d">mkldnn_nCw4c</a> = mkldnn_aBc4b, 
 <br/>
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bad16816e898913f0ba93a23bf6d56104f">mkldnn_nCw8c</a> = mkldnn_aBc8b
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba5c42ce5904b7038fa825e6d95277f627">mkldnn_nCw16c</a> = mkldnn_aBc16b, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba9c8a0bac096d668d175cc836a464184d">mkldnn_nCw4c</a> = mkldnn_aBc4b, 
+<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bad16816e898913f0ba93a23bf6d56104f">mkldnn_nCw8c</a> = mkldnn_aBc8b
 <br/>
  }</td></tr>
 <tr class="memdesc:gacc2844e341ab1c4f5b7ae1c6068f2a2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Memory format tag specification.  <a href="group__c__api__types__generic.html#gacc2844e341ab1c4f5b7ae1c6068f2a2b">More...</a><br/></td></tr>
@@ -425,7 +430,8 @@ Enumerations</h2></td></tr>
 <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973ac9dbe1aea35cb16f509ad407695cb8b7">mkldnn_lrn</a>, 
 <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a07b76e29d8363303cb682627dc56a515">mkldnn_batch_normalization</a>, 
 <br/>
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973ad2ae1c6b5f66bdfca8a2734ea328385f">mkldnn_inner_product</a>, 
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973a38b028ffb3e403be805169671286413a">mkldnn_layer_normalization</a>, 
+<a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973ad2ae1c6b5f66bdfca8a2734ea328385f">mkldnn_inner_product</a>, 
 <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973aff4b0118f66cb37f23178a078aa7b2e8">mkldnn_rnn</a>, 
 <a class="el" href="group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973aeebca2a6226b2a499514cb435266bf79">mkldnn_gemm</a>
 <br/>
@@ -536,19 +542,20 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a0623ff58865a6d4e3a1a3cda27a563dd">mkldnn_query_pooling_d</a>, 
 <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a8cd41fba74cf7a570ae98e03e22f9043">mkldnn_query_lrn_d</a>, 
 <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a2d5736954ae78ef9e2cf4e354829e874">mkldnn_query_batch_normalization_d</a>, 
-<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a079af104c4c7cd8de5833316e137fa03">mkldnn_query_inner_product_d</a>, 
+<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a78a91e9057b08906a48655406797fb89">mkldnn_query_layer_normalization_d</a>, 
 <br/>
-&#160;&#160;<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a7a567d8e61a6e0b1aeb219f5229b13de">mkldnn_query_rnn_d</a>, 
+&#160;&#160;<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a079af104c4c7cd8de5833316e137fa03">mkldnn_query_inner_product_d</a>, 
+<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a7a567d8e61a6e0b1aeb219f5229b13de">mkldnn_query_rnn_d</a>, 
 <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a2c91434adbb5f4f039fb01ac3065a2c9">mkldnn_query_gemm_d</a>, 
 <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9aea0f2677b5b41fa8ff2222b4d7ca9ab9">mkldnn_query_some_md</a> = 128, 
-<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a2bccd0a79be2c331227c353c294c3fbc">mkldnn_query_src_md</a>, 
 <br/>
-&#160;&#160;<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ad915503c92000da20088fdb93cd685b9">mkldnn_query_diff_src_md</a>, 
+&#160;&#160;<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a2bccd0a79be2c331227c353c294c3fbc">mkldnn_query_src_md</a>, 
+<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ad915503c92000da20088fdb93cd685b9">mkldnn_query_diff_src_md</a>, 
 <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a4d1661d6a50277029d02417f6b65435d">mkldnn_query_weights_md</a>, 
 <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a2c78f7a683101ff96875e8cec787ba42">mkldnn_query_diff_weights_md</a>, 
-<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9adccda04151e0c287f0de64b832d33ac4">mkldnn_query_dst_md</a>, 
 <br/>
-&#160;&#160;<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9acfa30e38738b3de8c7d3a7f21ffc1623">mkldnn_query_diff_dst_md</a>, 
+&#160;&#160;<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9adccda04151e0c287f0de64b832d33ac4">mkldnn_query_dst_md</a>, 
+<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9acfa30e38738b3de8c7d3a7f21ffc1623">mkldnn_query_diff_dst_md</a>, 
 <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a6f61e139512317e7f5653759e889d55d">mkldnn_query_workspace_md</a>, 
 <a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a543d6dbebcadbf810f2a9d2ccbcd21be">mkldnn_query_scratchpad_md</a>
 <br/>

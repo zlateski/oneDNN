@@ -8,6 +8,7 @@ var searchData=
   ['mkldnn_5fengine',['mkldnn_engine',['../structmkldnn__engine.html',1,'']]],
   ['mkldnn_5fexec_5farg_5ft',['mkldnn_exec_arg_t',['../structmkldnn__exec__arg__t.html',1,'']]],
   ['mkldnn_5finner_5fproduct_5fdesc_5ft',['mkldnn_inner_product_desc_t',['../structmkldnn__inner__product__desc__t.html',1,'']]],
+  ['mkldnn_5flayer_5fnormalization_5fdesc_5ft',['mkldnn_layer_normalization_desc_t',['../structmkldnn__layer__normalization__desc__t.html',1,'']]],
   ['mkldnn_5flrn_5fdesc_5ft',['mkldnn_lrn_desc_t',['../structmkldnn__lrn__desc__t.html',1,'']]],
   ['mkldnn_5fmemory',['mkldnn_memory',['../structmkldnn__memory.html',1,'']]],
   ['mkldnn_5fmemory_5fdesc_5ft',['mkldnn_memory_desc_t',['../structmkldnn__memory__desc__t.html',1,'']]],

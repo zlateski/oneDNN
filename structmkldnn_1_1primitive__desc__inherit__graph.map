@@ -14,18 +14,20 @@
 <area shape="rect" id="node15" href="$structmkldnn_1_1inner__product__backward__data_1_1primitive__desc.html" title="Primitive descriptor for inner product backward propagation with respect to data. ..." alt="" coords="434,789,643,830"/>
 <area shape="rect" id="node16" href="$structmkldnn_1_1inner__product__backward__weights_1_1primitive__desc.html" title="Primitive descriptor for inner product backward propagation with respect to weights. " alt="" coords="424,854,653,895"/>
 <area shape="rect" id="node17" href="$structmkldnn_1_1inner__product__forward_1_1primitive__desc.html" title="Primitive descriptor for inner product forward propagation. " alt="" coords="457,919,621,961"/>
-<area shape="rect" id="node18" href="$structmkldnn_1_1lbr__gru__backward_1_1primitive__desc.html" title="Primitive descriptor for LBR_GRU backward propagation. " alt="" coords="451,985,626,1026"/>
-<area shape="rect" id="node19" href="$structmkldnn_1_1lbr__gru__forward_1_1primitive__desc.html" title="Primitive descriptor for LBR_GRU forward propagation. " alt="" coords="458,1050,619,1091"/>
-<area shape="rect" id="node20" href="$structmkldnn_1_1lrn__backward_1_1primitive__desc.html" title="Primitive descriptor for local response normalization backward propagation. " alt="" coords="464,1115,613,1157"/>
-<area shape="rect" id="node21" href="$structmkldnn_1_1lrn__forward_1_1primitive__desc.html" title="Primitive descriptor for local response normalization forward propagation. " alt="" coords="471,1181,607,1222"/>
-<area shape="rect" id="node22" href="$structmkldnn_1_1lstm__backward_1_1primitive__desc.html" title="Primitive descriptor for LSTM backward propagation. " alt="" coords="459,1246,619,1287"/>
-<area shape="rect" id="node23" href="$structmkldnn_1_1lstm__forward_1_1primitive__desc.html" title="Primitive descriptor for LSTM forward propagation. " alt="" coords="465,1311,612,1353"/>
-<area shape="rect" id="node24" href="$structmkldnn_1_1pooling__backward_1_1primitive__desc.html" title="Primitive descriptor for pooling backward propagation. " alt="" coords="451,1377,627,1418"/>
-<area shape="rect" id="node25" href="$structmkldnn_1_1pooling__forward_1_1primitive__desc.html" title="Primitive descriptor for pooling forward propagation. " alt="" coords="457,1442,620,1483"/>
-<area shape="rect" id="node26" href="$structmkldnn_1_1shuffle__forward_1_1primitive__desc.html" title="Primitive descriptor for shuffle forward propagation. " alt="" coords="458,1507,619,1549"/>
-<area shape="rect" id="node27" href="$structmkldnn_1_1softmax__backward_1_1primitive__desc.html" title="Primitive descriptor for softmax backward propagation. " alt="" coords="447,1573,630,1614"/>
-<area shape="rect" id="node28" href="$structmkldnn_1_1softmax__forward_1_1primitive__desc.html" title="Primitive descriptor for softmax forward propagation. " alt="" coords="454,1638,623,1679"/>
-<area shape="rect" id="node29" href="$structmkldnn_1_1vanilla__rnn__backward_1_1primitive__desc.html" title="Primitive descriptor for RNN backward propagation. " alt="" coords="450,1703,627,1745"/>
-<area shape="rect" id="node30" href="$structmkldnn_1_1vanilla__rnn__forward_1_1primitive__desc.html" title="Primitive descriptor for RNN forward propagation. " alt="" coords="457,1769,621,1810"/>
-<area shape="rect" id="node2" href="$classmkldnn_1_1handle.html" title="mkldnn::handle\&lt; mkldnn\l_primitive_desc_t \&gt;" alt="" coords="6,887,170,929"/>
+<area shape="rect" id="node18" href="$structmkldnn_1_1layer__normalization__backward_1_1primitive__desc.html" title="Primitive descriptor for layer normalization backward propagation. " alt="" coords="447,985,631,1026"/>
+<area shape="rect" id="node19" href="$structmkldnn_1_1layer__normalization__forward_1_1primitive__desc.html" title="Primitive descriptor for layer normalization forward propagation. " alt="" coords="447,1050,631,1091"/>
+<area shape="rect" id="node20" href="$structmkldnn_1_1lbr__gru__backward_1_1primitive__desc.html" title="Primitive descriptor for LBR_GRU backward propagation. " alt="" coords="451,1115,626,1157"/>
+<area shape="rect" id="node21" href="$structmkldnn_1_1lbr__gru__forward_1_1primitive__desc.html" title="Primitive descriptor for LBR_GRU forward propagation. " alt="" coords="458,1181,619,1222"/>
+<area shape="rect" id="node22" href="$structmkldnn_1_1lrn__backward_1_1primitive__desc.html" title="Primitive descriptor for local response normalization backward propagation. " alt="" coords="464,1246,613,1287"/>
+<area shape="rect" id="node23" href="$structmkldnn_1_1lrn__forward_1_1primitive__desc.html" title="Primitive descriptor for local response normalization forward propagation. " alt="" coords="471,1311,607,1353"/>
+<area shape="rect" id="node24" href="$structmkldnn_1_1lstm__backward_1_1primitive__desc.html" title="Primitive descriptor for LSTM backward propagation. " alt="" coords="459,1377,619,1418"/>
+<area shape="rect" id="node25" href="$structmkldnn_1_1lstm__forward_1_1primitive__desc.html" title="Primitive descriptor for LSTM forward propagation. " alt="" coords="465,1442,612,1483"/>
+<area shape="rect" id="node26" href="$structmkldnn_1_1pooling__backward_1_1primitive__desc.html" title="Primitive descriptor for pooling backward propagation. " alt="" coords="451,1507,627,1549"/>
+<area shape="rect" id="node27" href="$structmkldnn_1_1pooling__forward_1_1primitive__desc.html" title="Primitive descriptor for pooling forward propagation. " alt="" coords="457,1573,620,1614"/>
+<area shape="rect" id="node28" href="$structmkldnn_1_1shuffle__forward_1_1primitive__desc.html" title="Primitive descriptor for shuffle forward propagation. " alt="" coords="458,1638,619,1679"/>
+<area shape="rect" id="node29" href="$structmkldnn_1_1softmax__backward_1_1primitive__desc.html" title="Primitive descriptor for softmax backward propagation. " alt="" coords="447,1703,630,1745"/>
+<area shape="rect" id="node30" href="$structmkldnn_1_1softmax__forward_1_1primitive__desc.html" title="Primitive descriptor for softmax forward propagation. " alt="" coords="454,1769,623,1810"/>
+<area shape="rect" id="node31" href="$structmkldnn_1_1vanilla__rnn__backward_1_1primitive__desc.html" title="Primitive descriptor for RNN backward propagation. " alt="" coords="450,1834,627,1875"/>
+<area shape="rect" id="node32" href="$structmkldnn_1_1vanilla__rnn__forward_1_1primitive__desc.html" title="Primitive descriptor for RNN forward propagation. " alt="" coords="457,1899,621,1941"/>
+<area shape="rect" id="node2" href="$classmkldnn_1_1handle.html" title="mkldnn::handle\&lt; mkldnn\l_primitive_desc_t \&gt;" alt="" coords="6,953,170,994"/>
 </map>

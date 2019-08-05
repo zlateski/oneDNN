@@ -284,6 +284,24 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1batch__normalization__backward_1_1primitive__desc.html">mkldnn::batch_normalization_backward::primitive_desc</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Primitive descriptor for batch normalization backward propagation.  <a href="structmkldnn_1_1batch__normalization__backward_1_1primitive__desc.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1layer__normalization__forward.html">mkldnn::layer_normalization_forward</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">layer normalization for forward propagation.  <a href="structmkldnn_1_1layer__normalization__forward.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1layer__normalization__forward_1_1desc.html">mkldnn::layer_normalization_forward::desc</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Descriptor for layer normalization forward propagation.  <a href="structmkldnn_1_1layer__normalization__forward_1_1desc.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1layer__normalization__forward_1_1primitive__desc.html">mkldnn::layer_normalization_forward::primitive_desc</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Primitive descriptor for layer normalization forward propagation.  <a href="structmkldnn_1_1layer__normalization__forward_1_1primitive__desc.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1layer__normalization__backward.html">mkldnn::layer_normalization_backward</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">layer normalization backward propagation.  <a href="structmkldnn_1_1layer__normalization__backward.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1layer__normalization__backward_1_1desc.html">mkldnn::layer_normalization_backward::desc</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Descriptor for layer normalization backward propagation.  <a href="structmkldnn_1_1layer__normalization__backward_1_1desc.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1layer__normalization__backward_1_1primitive__desc.html">mkldnn::layer_normalization_backward::primitive_desc</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Primitive descriptor for layer normalization backward propagation.  <a href="structmkldnn_1_1layer__normalization__backward_1_1primitive__desc.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn_1_1inner__product__forward.html">mkldnn::inner_product_forward</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inner product for forward propagation.  <a href="structmkldnn_1_1inner__product__forward.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -485,18 +503,20 @@ Enumerations</h2></td></tr>
 <br/>
 &#160;&#160;<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9adfe43d0a7bd9b03655ad7bcbdeba3b49">mkldnn::query::lrn_d</a> = mkldnn_query_lrn_d, 
 <a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a045eb225315e70a20e0b8c6d9700f642">mkldnn::query::batch_normalization_d</a> = mkldnn_query_batch_normalization_d, 
+<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a867a57dd825838fe593a8ef3a07cfa60">mkldnn::query::layer_normalization_d</a> = mkldnn_query_layer_normalization_d, 
 <a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9aded69e5210888fc8315d2f7e90d7ba15">mkldnn::query::inner_product_d</a> = mkldnn_query_inner_product_d, 
-<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a5bada9b07803d3e657d5bdc592f7fc52">mkldnn::query::rnn_d</a> = mkldnn_query_rnn_d, 
 <br/>
-&#160;&#160;<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a90a729e395453e1d9411ad416c796819">mkldnn::query::src_md</a> = mkldnn_query_src_md, 
+&#160;&#160;<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a5bada9b07803d3e657d5bdc592f7fc52">mkldnn::query::rnn_d</a> = mkldnn_query_rnn_d, 
+<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a90a729e395453e1d9411ad416c796819">mkldnn::query::src_md</a> = mkldnn_query_src_md, 
 <a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a8f85b9dfff73532e30d8aab798020233">mkldnn::query::diff_src_md</a> = mkldnn_query_diff_src_md, 
 <a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a06ba7b00a8c95dcf3a90e16d00eeb0e9">mkldnn::query::weights_md</a> = mkldnn_query_weights_md, 
-<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a345e134a47299ca126f8cc4aeeeb05ac">mkldnn::query::diff_weights_md</a> = mkldnn_query_diff_weights_md, 
 <br/>
-&#160;&#160;<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a701158248eed4e5fc84610f2f6026493">mkldnn::query::dst_md</a> = mkldnn_query_dst_md, 
+&#160;&#160;<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a345e134a47299ca126f8cc4aeeeb05ac">mkldnn::query::diff_weights_md</a> = mkldnn_query_diff_weights_md, 
+<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a701158248eed4e5fc84610f2f6026493">mkldnn::query::dst_md</a> = mkldnn_query_dst_md, 
 <a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9ab731735b7280a17b7b03c964cf9b1967">mkldnn::query::diff_dst_md</a> = mkldnn_query_diff_dst_md, 
 <a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a3874c56bb4069607213666573dff2a96">mkldnn::query::workspace_md</a> = mkldnn_query_workspace_md, 
-<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a9cbdd03b65c030ef560b5555be1a86c2">mkldnn::query::scratchpad_md</a> = mkldnn_query_scratchpad_md
+<br/>
+&#160;&#160;<a class="el" href="group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a9cbdd03b65c030ef560b5555be1a86c2">mkldnn::query::scratchpad_md</a> = mkldnn_query_scratchpad_md
 <br/>
  }</td></tr>
 <tr class="memdesc:ga6d88ff11a07bae09a5c348d314c5d1d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Primitive descriptor query specification.  <a href="group__cpp__api__enums.html#ga6d88ff11a07bae09a5c348d314c5d1d9">More...</a><br/></td></tr>

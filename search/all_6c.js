@@ -1,9 +1,17 @@
 var searchData=
 [
+  ['layer_20normalization',['Layer Normalization',['../group__c__api__layer__normalization.html',1,'']]],
   ['lrn',['LRN',['../group__c__api__lrn.html',1,'']]],
+  ['layer_20normalization',['layer normalization',['../group__cpp__api__layer__normalization.html',1,'']]],
   ['lrn',['LRN',['../group__cpp__api__lrn.html',1,'']]],
+  ['layer_20normalization',['Layer Normalization',['../dev_guide_layer_normalization.html',1,'']]],
   ['linking_20to_20the_20library',['Linking to the Library',['../dev_guide_link.html',1,'']]],
   ['local_20response_20normalization_20_28lrn_29',['Local Response Normalization (LRN)',['../dev_guide_lrn.html',1,'']]],
+  ['layer_5fnorm_5fepsilon',['layer_norm_epsilon',['../structmkldnn__layer__normalization__desc__t.html#ab7bd23bf190281a417f409f71c83a84e',1,'mkldnn_layer_normalization_desc_t']]],
+  ['layer_5fnormalization',['layer_normalization',['../classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00da40f3d68401fd64071877b5263c3d8706',1,'mkldnn::primitive']]],
+  ['layer_5fnormalization_5fbackward',['layer_normalization_backward',['../structmkldnn_1_1layer__normalization__backward.html',1,'mkldnn']]],
+  ['layer_5fnormalization_5fd',['layer_normalization_d',['../group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a867a57dd825838fe593a8ef3a07cfa60',1,'mkldnn']]],
+  ['layer_5fnormalization_5fforward',['layer_normalization_forward',['../structmkldnn_1_1layer__normalization__forward.html',1,'mkldnn']]],
   ['lbr_5fgru',['lbr_gru',['../group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076a792e966b14bd4e16625ee4df357a0723',1,'mkldnn']]],
   ['lbr_5fgru_5fbackward',['lbr_gru_backward',['../structmkldnn_1_1lbr__gru__backward.html',1,'mkldnn']]],
   ['lbr_5fgru_5fforward',['lbr_gru_forward',['../structmkldnn_1_1lbr__gru__forward.html',1,'mkldnn']]],

@@ -88,18 +88,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>The batch normalization operation is defined by the following formulas. We show formulas only for 2D spatial data which are straightforward to generalize to cases of higher and lower dimensions. Variable names follow the standard <a class="el" href="dev_guide_conventions.html">Naming Conventions</a>.</p>
 <h3>Forward</h3>
 <p class="formulaDsp">
-\[ dst(n, c, h, w) = \gamma(c) \cdot \frac{src(n, c, h, w) - \mu(c)} {\sqrt{\sigma(c) + \varepsilon}} + \beta(c), \]
+\[ dst(n, c, h, w) = \gamma(c) \cdot \frac{src(n, c, h, w) - \mu(c)} {\sqrt{\sigma^2(c) + \varepsilon}} + \beta(c), \]
 </p>
 <p>where</p>
 <ul>
 <li>\(\gamma(c), \beta(c)\) are optional scale and shift for a channel (see <a class="el" href="group__c__api__types__generic.html#gga0aaaba92ad942f46a96ff0b7f6ed230caa839d67dd3809f4068e915a112ce618c" title="Use scale and shift parameters. ">mkldnn_use_scaleshift</a> flag),</li>
-<li>\(\mu(c), \sigma(c)\) are computed at run-time or provided by a user mean and variance for channel (see <a class="el" href="group__c__api__types__generic.html#gga0aaaba92ad942f46a96ff0b7f6ed230ca106c7b376858470c79facbfc48755644" title="Use global statistics. ">mkldnn_use_global_stats</a> flag), and</li>
+<li>\(\mu(c), \sigma^2(c)\) are computed at run-time or provided by a user mean and variance for channel (see <a class="el" href="group__c__api__types__generic.html#gga0aaaba92ad942f46a96ff0b7f6ed230ca106c7b376858470c79facbfc48755644" title="Use global statistics. ">mkldnn_use_global_stats</a> flag), and</li>
 <li>\(\varepsilon\) is a constant to improve numerical stability.</li>
 </ul>
 <p>When mean and variance are computed at a run-time the following formulas are used:</p>
 <ul>
 <li>\(\mu(c) = \frac{1}{NHW} \sum\limits_{nhw} src(n, c, h, w)_{}\),</li>
-<li>\(\sigma(c) = \frac{1}{NHW} \sum\limits_{nhw} {}_{} (src(n, c, h, w) - \mu(c))^2\).</li>
+<li>\(\sigma^2(c) = \frac{1}{NHW} \sum\limits_{nhw} {}_{} (src(n, c, h, w) - \mu(c))^2\).</li>
 </ul>
 <p>The \(\gamma(c)\) and \(\beta(c)\) tensors are considered learnable.</p>
 <p>In training mode the primitive also optionally supports fusion with ReLU activation applied to the result (see <a class="el" href="group__c__api__types__generic.html#gga0aaaba92ad942f46a96ff0b7f6ed230caf7a1ef171414fc88ecc3c5fb631f58d2" title="Fuse with ReLU. ">mkldnn_fuse_norm_relu</a> flag).</p>
@@ -109,7 +109,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>If batch normalization is created with ReLU fusion (i.e., <a class="el" href="group__c__api__types__generic.html#gga0aaaba92ad942f46a96ff0b7f6ed230caf7a1ef171414fc88ecc3c5fb631f58d2" title="Fuse with ReLU. ">mkldnn_fuse_norm_relu</a> is set), for the propagation kind <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f" title="Forward data propagation (training mode). ">mkldnn_forward_training</a> the primitive would produce a <code>workspace</code> memory as one extra output. This memory is required to compute the backward propagation. When the primitive is executed with propagation kind <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a58a923fb6c4e1214e1505b5fa0b1e3fa" title="Forward data propagation (inference mode). ">mkldnn_forward_inference</a>, the workspace is not produced. Behavior would be the same as creating a batch normalization primitive with ReLU as a post-op (see section below).</li>
 </ul>
 <h3>Backward</h3>
-<p>The backward propagation computes \(diff\_src(n, c, h, w)\), \(diff\_\gamma(c)^*\), and \(diff\_\beta(c)^*\) based on \(diff\_dst(n, c, h, w)\), \(src(n, c, h, w)\), \(\mu(c)\), \(\sigma(c)\), \(\gamma(c) ^*\), and \(\beta(c) ^*\).</p>
+<p>The backward propagation computes \(diff\_src(n, c, h, w)\), \(diff\_\gamma(c)^*\), and \(diff\_\beta(c)^*\) based on \(diff\_dst(n, c, h, w)\), \(src(n, c, h, w)\), \(\mu(c)\), \(\sigma^2(c)\), \(\gamma(c) ^*\), and \(\beta(c) ^*\).</p>
 <p>The tensors marked with an asterisk are used only when the primitive is configured to use \(\gamma(c)\), and \(\beta(c)\) (i.e., <a class="el" href="group__c__api__types__generic.html#gga0aaaba92ad942f46a96ff0b7f6ed230caa839d67dd3809f4068e915a112ce618c" title="Use scale and shift parameters. ">mkldnn_use_scaleshift</a> is set).</p>
 <h2>Execution Arguments</h2>
 <p>Depending on the <a class="el" href="group__c__api__types__generic.html#ga0aaaba92ad942f46a96ff0b7f6ed230c">flags</a> and <a class="el" href="group__c__api__types__generic.html#ga5b98c8059c2aff8861157bf070c3f520">propagation kind</a>, the batch normalization primitive requires different inputs and outputs. For clarity, the summary table is shown below.</p>
@@ -141,7 +141,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <dl class="section warning"><dt>Warning</dt><dd>There might be hardware and/or implementation specific restrictions. Check <a class="el" href="dev_guide_batch_normalization.html#dg_bnorm_impl_limits">Implementation Limitations</a> section below.</dd></dl>
 <h3>Data Representation</h3>
 <h4>Mean and Variance</h4>
-<p>The mean ( \(\mu\)) and variance ( \(\sigma\)) are separate 1D tensors of size \(C\).</p>
+<p>The mean ( \(\mu\)) and variance ( \(\sigma^2\)) are separate 1D tensors of size \(C\).</p>
 <p>The format of the corresponding memory object must be <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba494a09557958694ff1aece6b4667d87f" title="1D tensor, an alias to mkldnn_a ">mkldnn_x</a> (<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2baf2456b23837ac7255f49440542bfe561" title="plain 1D tensor ">mkldnn_a</a>).</p>
 <h4>Scale and Shift</h4>
 <p>If used, the scale ( \(\gamma\)) and shift ( \(\beta\)) are combined in a single 2D tensor of shape \(2 \times C\).</p>

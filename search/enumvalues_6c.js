@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['layer_5fnormalization',['layer_normalization',['../classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00da40f3d68401fd64071877b5263c3d8706',1,'mkldnn::primitive']]],
+  ['layer_5fnormalization_5fd',['layer_normalization_d',['../group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a867a57dd825838fe593a8ef3a07cfa60',1,'mkldnn']]],
   ['lbr_5fgru',['lbr_gru',['../group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076a792e966b14bd4e16625ee4df357a0723',1,'mkldnn']]],
   ['library',['library',['../group__cpp__api__enums.html#ggadb1d0d24b9f6c0eabd3359e322add147ad521f765a49c72507257a2620612ee96',1,'mkldnn']]],
   ['lrn',['lrn',['../classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00da7d9c7d1747abfac2c3c3ff337712f575',1,'mkldnn::primitive']]],

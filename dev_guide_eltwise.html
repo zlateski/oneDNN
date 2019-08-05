@@ -94,9 +94,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr>
 <th align="left">Operation </th><th align="left">MKL-DNN algorithm kind </th><th align="left">Formula  </th></tr>
 <tr>
-<td align="left">abs </td><td align="left"><a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97acdc9ab2cd85eae9d8ad1fa11db97543e" title="Eltwise: abs. ">mkldnn_eltwise_abs</a> </td><td align="left">\( f(x) = \begin{cases} x &amp; \text{if}\ x &gt; 0 \\ \alpha -x &amp; \text{if}\ x \leq 0 \end{cases} \) </td></tr>
+<td align="left">abs </td><td align="left"><a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97acdc9ab2cd85eae9d8ad1fa11db97543e" title="Eltwise: abs. ">mkldnn_eltwise_abs</a> </td><td align="left">\( f(x) = \begin{cases} x &amp; \text{if}\ x &gt; 0 \\ -x &amp; \text{if}\ x \leq 0 \end{cases} \) </td></tr>
 <tr>
-<td align="left">bounded_relu </td><td align="left"><a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a7e86d17d0b611f2c80d299668d883bad" title="Eltwise: bounded_relu. ">mkldnn_eltwise_bounded_relu</a> </td><td align="left">\( f(x) = \begin{cases} \alpha &amp; \text{if}\ x &gt; \alpha \\ \alpha x &amp; \text{if}\ x \leq \alpha \end{cases} \) </td></tr>
+<td align="left">bounded_relu </td><td align="left"><a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a7e86d17d0b611f2c80d299668d883bad" title="Eltwise: bounded_relu. ">mkldnn_eltwise_bounded_relu</a> </td><td align="left">\( f(x) = \begin{cases} \alpha &amp; \text{if}\ x &gt; \alpha \\ x &amp; \text{if}\ 0 &lt; x \leq \alpha \\ 0 &amp; \text{if}\ x \leq 0 \end{cases} \) </td></tr>
 <tr>
 <td align="left">elu </td><td align="left"><a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a9d438b0d2d277674da5f54990e029015" title="Eltwise: parametric exponential linear unit (elu) ">mkldnn_eltwise_elu</a> </td><td align="left">\( f(x) = \begin{cases} x &amp; \text{if}\ x &gt; 0 \\ \alpha (e^x - 1) &amp; \text{if}\ x \leq 0 \end{cases} \) </td></tr>
 <tr>
@@ -116,7 +116,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr>
 <td align="left">square </td><td align="left"><a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97af4f3e47ddb2105e7c2ddf1bbd8434d02" title="Eltwise: square. ">mkldnn_eltwise_square</a> </td><td align="left">\( f(x) = x^2 \) </td></tr>
 <tr>
-<td align="left">swish </td><td align="left"><a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97adb1d95d2da42700409424b061a06b8bd" title="Eltwise: swish. ">mkldnn_eltwise_swish</a> </td><td align="left">\( f(x) = x \frac{1}{1+e^{-\alpha x}} \) </td></tr>
+<td align="left">swish </td><td align="left"><a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97adb1d95d2da42700409424b061a06b8bd" title="Eltwise: swish. ">mkldnn_eltwise_swish</a> </td><td align="left">\( f(x) = \frac{x}{1+e^{-\alpha x}} \) </td></tr>
 <tr>
 <td align="left">tanh </td><td align="left"><a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a6b50624e847783bfc94b7cf6badfa16c" title="Eltwise: hyperbolic tangent non-linearity (tanh) ">mkldnn_eltwise_tanh</a> </td><td align="left">\( f(x) = \frac{e^z - e^{-z}}{e^z + e^{-z}} \) </td></tr>
 </table>

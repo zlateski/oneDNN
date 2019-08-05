@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['layer_5fnormalization_5fbackward',['layer_normalization_backward',['../structmkldnn_1_1layer__normalization__backward.html',1,'mkldnn']]],
+  ['layer_5fnormalization_5fforward',['layer_normalization_forward',['../structmkldnn_1_1layer__normalization__forward.html',1,'mkldnn']]],
   ['lbr_5fgru_5fbackward',['lbr_gru_backward',['../structmkldnn_1_1lbr__gru__backward.html',1,'mkldnn']]],
   ['lbr_5fgru_5fforward',['lbr_gru_forward',['../structmkldnn_1_1lbr__gru__forward.html',1,'mkldnn']]],
   ['lrn_5fbackward',['lrn_backward',['../structmkldnn_1_1lrn__backward.html',1,'mkldnn']]],

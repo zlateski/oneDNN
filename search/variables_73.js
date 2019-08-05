@@ -6,6 +6,6 @@ var searchData=
   ['src_5fiter_5fc_5fdesc',['src_iter_c_desc',['../structmkldnn__rnn__desc__t.html#a8aef54870d1e7cd5d280e0371ce0a839',1,'mkldnn_rnn_desc_t']]],
   ['src_5fiter_5fdesc',['src_iter_desc',['../structmkldnn__rnn__desc__t.html#a6afddc2a8bfaae0f9a4bd8a980bc5814',1,'mkldnn_rnn_desc_t']]],
   ['src_5flayer_5fdesc',['src_layer_desc',['../structmkldnn__rnn__desc__t.html#a5f6cd0b14dd42bd90f72df70aea1ec68',1,'mkldnn_rnn_desc_t']]],
-  ['stat_5fdesc',['stat_desc',['../structmkldnn__batch__normalization__desc__t.html#add24ed26eebd2f1ef67bad055132c2f6',1,'mkldnn_batch_normalization_desc_t']]],
+  ['stat_5fdesc',['stat_desc',['../structmkldnn__batch__normalization__desc__t.html#add24ed26eebd2f1ef67bad055132c2f6',1,'mkldnn_batch_normalization_desc_t::stat_desc()'],['../structmkldnn__layer__normalization__desc__t.html#a408e78a6bef941ad6d9131d8b3cc8e90',1,'mkldnn_layer_normalization_desc_t::stat_desc()']]],
   ['strides',['strides',['../structmkldnn__blocking__desc__t.html#ae81e7500c43ffacb8e0b10f81a2ed91e',1,'mkldnn_blocking_desc_t::strides()'],['../structmkldnn__convolution__desc__t.html#a55fa258e8e2ddc24de4c6fdf5562501f',1,'mkldnn_convolution_desc_t::strides()'],['../structmkldnn__pooling__desc__t.html#a8c339dae420e12a19a4bef3c7de08948',1,'mkldnn_pooling_desc_t::strides()']]]
 ];
