@@ -138,8 +138,9 @@ Data preparation (code outside of Intel MKL-DNN)</h2>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">int</span> stride_C = 1;</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// An auxiliary function that maps logical index to the physical offset</span></div>
-<div class="line">    <span class="keyword">auto</span> offset = [=](<span class="keywordtype">int</span> n, <span class="keywordtype">int</span> h, <span class="keywordtype">int</span> w, <span class="keywordtype">int</span> c)</div>
-<div class="line">    { <span class="keywordflow">return</span> n * stride_N + h * stride_H + w * stride_W + c * stride_C; };</div>
+<div class="line">    <span class="keyword">auto</span> offset = [=](<span class="keywordtype">int</span> n, <span class="keywordtype">int</span> h, <span class="keywordtype">int</span> w, <span class="keywordtype">int</span> c) {</div>
+<div class="line">        <span class="keywordflow">return</span> n * stride_N + h * stride_H + w * stride_W + c * stride_C;</div>
+<div class="line">    };</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// The image size</span></div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">int</span> image_size = N * H * W * C;</div>
@@ -149,12 +150,13 @@ Data preparation (code outside of Intel MKL-DNN)</h2>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Initialize the image with some values</span></div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; N; ++n)</div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> h = 0; h &lt; H; ++h)</div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> w = 0; w &lt; W; ++w)</div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> c = 0; c &lt; C; ++c) {</div>
-<div class="line">        <span class="keywordtype">int</span> off = offset(n, h, w, c); <span class="comment">// Get the physical offset of a pixel</span></div>
-<div class="line">        image[off] = -std::cos(off / 10.f);</div>
-<div class="line">    }</div>
+<div class="line">        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> h = 0; h &lt; H; ++h)</div>
+<div class="line">            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> w = 0; w &lt; W; ++w)</div>
+<div class="line">                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> c = 0; c &lt; C; ++c) {</div>
+<div class="line">                    <span class="keywordtype">int</span> off = offset(</div>
+<div class="line">                            n, h, w, c); <span class="comment">// Get the physical offset of a pixel</span></div>
+<div class="line">                    image[off] = -std::cos(off / 10.f);</div>
+<div class="line">                }</div>
 </div><!-- fragment --> <h2><a class="anchor" id="cpu_getting_started_cpp_sub3"></a>
 Wrapping data into Intel MKL-DNN memory object</h2>
 <p>Now, having the image ready, let's wrap it in an <a class="el" href="structmkldnn_1_1memory.html">mkldnn::memory</a> object to be able to pass the data to Intel MKL-DNN primitives.</p>
@@ -177,9 +179,9 @@ Memory descriptor</h3>
 <p>The code: </p>
 <div class="fragment"><div class="line">    <span class="keyword">auto</span> src_md = memory::desc(</div>
 <div class="line">            {N, C, H, W}, <span class="comment">// logical dims, the order is defined by a primitive</span></div>
-<div class="line">            memory::data_type::f32,     <span class="comment">// tensor&#39;s data type</span></div>
-<div class="line">            memory::format_tag::nhwc    <span class="comment">// memory format, NHWC in this case</span></div>
-<div class="line">            );</div>
+<div class="line">            memory::data_type::f32, <span class="comment">// tensor&#39;s data type</span></div>
+<div class="line">            memory::format_tag::nhwc <span class="comment">// memory format, NHWC in this case</span></div>
+<div class="line">    );</div>
 </div><!-- fragment --><p> The first thing to notice here is that we pass dimensions as <code>{N, C, H, W}</code> while it might seem more natural to pass <code>{N, H, W, C}</code>, which better corresponds to the user's code. This is because Intel MKL-DNN CNN primitives like ReLU always expect tensors in the following form:</p>
 <table class="doxtable">
 <tr>
@@ -206,9 +208,9 @@ Alternative way to create a memory descriptor</h4>
 <p>Before we continue with memory creation, let us show the alternative way to create the same memory descriptor: instead of using the <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ced">mkldnn::memory::format_tag</a> we can directly specify the strides of each tensor dimension: </p>
 <div class="fragment"><div class="line">    <span class="keyword">auto</span> alt_src_md = memory::desc(</div>
 <div class="line">            {N, C, H, W}, <span class="comment">// logical dims, the order is defined by a primitive</span></div>
-<div class="line">            memory::data_type::f32,                     <span class="comment">// tensor&#39;s data type</span></div>
-<div class="line">            {stride_N, stride_C, stride_H, stride_W}    <span class="comment">// the strides</span></div>
-<div class="line">            );</div>
+<div class="line">            memory::data_type::f32, <span class="comment">// tensor&#39;s data type</span></div>
+<div class="line">            {stride_N, stride_C, stride_H, stride_W} <span class="comment">// the strides</span></div>
+<div class="line">    );</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Sanity check: the memory descriptors should be the same</span></div>
 <div class="line">    <span class="keywordflow">if</span> (src_md != alt_src_md)</div>
@@ -246,18 +248,17 @@ Creating a ReLU primitive</h2>
 <p>The code: </p>
 <div class="fragment"><div class="line">    <span class="comment">//  ReLU op descriptor (no engine- or implementation-specific information)</span></div>
 <div class="line">    <span class="keyword">auto</span> relu_d = eltwise_forward::desc(</div>
-<div class="line">            prop_kind::forward_inference,</div>
-<div class="line">            algorithm::eltwise_relu,</div>
+<div class="line">            prop_kind::forward_inference, algorithm::eltwise_relu,</div>
 <div class="line">            src_md, <span class="comment">// the memory descriptor for an operation to work on</span></div>
-<div class="line">            0.f,    <span class="comment">// alpha parameter means negative slope in case of ReLU</span></div>
-<div class="line">            0.f     <span class="comment">// beta parameter is ignored in case of ReLU</span></div>
-<div class="line">            );</div>
+<div class="line">            0.f, <span class="comment">// alpha parameter means negative slope in case of ReLU</span></div>
+<div class="line">            0.f <span class="comment">// beta parameter is ignored in case of ReLU</span></div>
+<div class="line">    );</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// ReLU primitive descriptor, which corresponds to a particular</span></div>
 <div class="line">    <span class="comment">// implementation in the library</span></div>
-<div class="line">    <span class="keyword">auto</span> relu_pd = eltwise_forward::primitive_desc(</div>
-<div class="line">            relu_d,     <span class="comment">// an operation descriptor</span></div>
-<div class="line">            cpu_engine  <span class="comment">// an engine the primitive will be created for</span></div>
+<div class="line">    <span class="keyword">auto</span> relu_pd</div>
+<div class="line">            = eltwise_forward::primitive_desc(relu_d, <span class="comment">// an operation descriptor</span></div>
+<div class="line">                    cpu_engine <span class="comment">// an engine the primitive will be created for</span></div>
 <div class="line">            );</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// ReLU primitive</span></div>
@@ -271,11 +272,11 @@ Executing the ReLU primitive</h2>
 <p>The input and output memory objects are passed to the <code>execute()</code> method using a &lt;tag, memory&gt; map. Each tag specifies what kind of tensor each memory object represents. All <a class="el" href="dev_guide_eltwise.html">Eltwise</a> primitives require the map to have two elements: a source memory object (input) and a destination memory (output).</p>
 <p>A primitive is executed in a stream (the first parameter of the <code>execute()</code> method). Depending on a stream kind an execution might be blocking or non-blocking. This means that we need to call <a class="el" href="structmkldnn_1_1stream.html#a48181ce0f5eb3bcd75778b5aa8866df6">mkldnn::stream::wait</a> before accessing the results.</p>
 <div class="fragment"><div class="line">    <span class="comment">// Execute ReLU (out-of-place)</span></div>
-<div class="line">    relu.execute(</div>
-<div class="line">            cpu_stream, <span class="comment">// The execution stream</span></div>
-<div class="line">            {           <span class="comment">// A map with all inputs and outputs</span></div>
-<div class="line">                {MKLDNN_ARG_SRC, src_mem}, <span class="comment">// Source tag and memory obj</span></div>
-<div class="line">                {MKLDNN_ARG_DST, dst_mem}, <span class="comment">// Destination tag and memory obj</span></div>
+<div class="line">    relu.execute(cpu_stream, <span class="comment">// The execution stream</span></div>
+<div class="line">            {</div>
+<div class="line">                    <span class="comment">// A map with all inputs and outputs</span></div>
+<div class="line">                    {MKLDNN_ARG_SRC, src_mem}, <span class="comment">// Source tag and memory obj</span></div>
+<div class="line">                    {MKLDNN_ARG_DST, dst_mem}, <span class="comment">// Destination tag and memory obj</span></div>
 <div class="line">            });</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Wait the stream to complete the execution</span></div>
@@ -297,20 +298,23 @@ Obtaining the result and validation</h2>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Check the results</span></div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; N; ++n)</div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> h = 0; h &lt; H; ++h)</div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> w = 0; w &lt; W; ++w)</div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> c = 0; c &lt; C; ++c) {</div>
-<div class="line">        <span class="keywordtype">int</span> off = offset(n, h, w, c); <span class="comment">// get the physical offset of a pixel</span></div>
-<div class="line">        <span class="keywordtype">float</span> expected = image[off] &lt; 0 ? 0.f : image[off]; <span class="comment">// expected value</span></div>
-<div class="line">        <span class="keywordflow">if</span> (relu_image[off] != expected) {</div>
-<div class="line">            std::stringstream ss;</div>
-<div class="line">            ss &lt;&lt; <span class="stringliteral">&quot;Unexpected output at index(&quot;</span></div>
-<div class="line">                &lt;&lt; n &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; c &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; h &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; w &lt;&lt; <span class="stringliteral">&quot;): &quot;</span></div>
-<div class="line">                &lt;&lt; <span class="stringliteral">&quot;Expect &quot;</span> &lt;&lt; expected &lt;&lt; <span class="stringliteral">&quot; &quot;</span></div>
-<div class="line">                &lt;&lt; <span class="stringliteral">&quot;Got &quot;</span> &lt;&lt; relu_image[off];</div>
-<div class="line">            <span class="keywordflow">throw</span> ss.str();</div>
-<div class="line">        }</div>
-<div class="line">    }</div>
+<div class="line">        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> h = 0; h &lt; H; ++h)</div>
+<div class="line">            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> w = 0; w &lt; W; ++w)</div>
+<div class="line">                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> c = 0; c &lt; C; ++c) {</div>
+<div class="line">                    <span class="keywordtype">int</span> off = offset(</div>
+<div class="line">                            n, h, w, c); <span class="comment">// get the physical offset of a pixel</span></div>
+<div class="line">                    <span class="keywordtype">float</span> expected = image[off] &lt; 0</div>
+<div class="line">                            ? 0.f</div>
+<div class="line">                            : image[off]; <span class="comment">// expected value</span></div>
+<div class="line">                    <span class="keywordflow">if</span> (relu_image[off] != expected) {</div>
+<div class="line">                        std::stringstream ss;</div>
+<div class="line">                        ss &lt;&lt; <span class="stringliteral">&quot;Unexpected output at index(&quot;</span> &lt;&lt; n &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; c</div>
+<div class="line">                           &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; h &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; w &lt;&lt; <span class="stringliteral">&quot;): &quot;</span></div>
+<div class="line">                           &lt;&lt; <span class="stringliteral">&quot;Expect &quot;</span> &lt;&lt; expected &lt;&lt; <span class="stringliteral">&quot; &quot;</span></div>
+<div class="line">                           &lt;&lt; <span class="stringliteral">&quot;Got &quot;</span> &lt;&lt; relu_image[off];</div>
+<div class="line">                        <span class="keywordflow">throw</span> ss.str();</div>
+<div class="line">                    }</div>
+<div class="line">                }</div>
 </div><!-- fragment --> <h1><a class="anchor" id="cpu_getting_started_cpp_main"></a>
 main() function</h1>
 <p>We now just call everything we prepared earlier.</p>
@@ -320,7 +324,8 @@ main() function</h1>
 <div class="line">        cpu_getting_started_tutorial();</div>
 <div class="line">    } <span class="keywordflow">catch</span> (<a class="code" href="structmkldnn_1_1error.html">mkldnn::error</a> &amp;e) {</div>
 <div class="line">        std::cerr &lt;&lt; <span class="stringliteral">&quot;Intel MKL-DNN error: &quot;</span> &lt;&lt; e.<a class="code" href="structmkldnn_1_1error.html#a8a8609a79dbe152572de37c50d36af96">what</a>() &lt;&lt; std::endl</div>
-<div class="line">            &lt;&lt; <span class="stringliteral">&quot;Error status: &quot;</span> &lt;&lt; mkldnn_status2str(e.status) &lt;&lt; std::endl;</div>
+<div class="line">                  &lt;&lt; <span class="stringliteral">&quot;Error status: &quot;</span> &lt;&lt; mkldnn_status2str(e.status)</div>
+<div class="line">                  &lt;&lt; std::endl;</div>
 <div class="line">        <span class="keywordflow">return</span> 1;</div>
 <div class="line">    } <span class="keywordflow">catch</span> (std::string &amp;e) {</div>
 <div class="line">        std::cerr &lt;&lt; <span class="stringliteral">&quot;Error in the example: &quot;</span> &lt;&lt; e &lt;&lt; std::endl;</div>

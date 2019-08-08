@@ -102,11 +102,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><span class="comment">// Required for posix_memalign</span></div>
 <div class="line"><span class="preprocessor">#define _POSIX_C_SOURCE 200112L</span></div>
 <div class="line"><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="mkldnn_8h.html">mkldnn.h</a>&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;math.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="mkldnn_8h.html">mkldnn.h</a>&quot;</span></div>
 <div class="line"></div>
 <div class="line"><span class="preprocessor">#define BATCH 32</span></div>
 <div class="line"><span class="preprocessor"></span><span class="preprocessor">#define IC 3</span></div>
@@ -122,23 +122,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><span class="preprocessor"></span><span class="preprocessor">#define POOL_STRIDE 2</span></div>
 <div class="line"><span class="preprocessor"></span><span class="preprocessor">#define POOL_PAD 0</span></div>
 <div class="line"><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define CHECK(f)                                                             \</span></div>
-<div class="line"><span class="preprocessor">    do {                                                                     \</span></div>
-<div class="line"><span class="preprocessor">        mkldnn_status_t s = f;                                               \</span></div>
-<div class="line"><span class="preprocessor">        if (s != mkldnn_success) {                                           \</span></div>
+<div class="line"><span class="preprocessor">#define CHECK(f) \</span></div>
+<div class="line"><span class="preprocessor">    do { \</span></div>
+<div class="line"><span class="preprocessor">        mkldnn_status_t s = f; \</span></div>
+<div class="line"><span class="preprocessor">        if (s != mkldnn_success) { \</span></div>
 <div class="line"><span class="preprocessor">            printf(&quot;[%s:%d] error: %s returns %d\n&quot;, __FILE__, __LINE__, #f, \</span></div>
-<div class="line"><span class="preprocessor">                    s);                                                      \</span></div>
-<div class="line"><span class="preprocessor">            exit(2);                                                         \</span></div>
-<div class="line"><span class="preprocessor">        }                                                                    \</span></div>
+<div class="line"><span class="preprocessor">                    s); \</span></div>
+<div class="line"><span class="preprocessor">            exit(2); \</span></div>
+<div class="line"><span class="preprocessor">        } \</span></div>
 <div class="line"><span class="preprocessor">    } while (0)</span></div>
 <div class="line"><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define CHECK_TRUE(expr)                                              \</span></div>
-<div class="line"><span class="preprocessor">    do {                                                              \</span></div>
-<div class="line"><span class="preprocessor">        int e_ = expr;                                                \</span></div>
-<div class="line"><span class="preprocessor">        if (!e_) {                                                    \</span></div>
+<div class="line"><span class="preprocessor">#define CHECK_TRUE(expr) \</span></div>
+<div class="line"><span class="preprocessor">    do { \</span></div>
+<div class="line"><span class="preprocessor">        int e_ = expr; \</span></div>
+<div class="line"><span class="preprocessor">        if (!e_) { \</span></div>
 <div class="line"><span class="preprocessor">            printf(&quot;[%s:%d] %s failed\n&quot;, __FILE__, __LINE__, #expr); \</span></div>
-<div class="line"><span class="preprocessor">            exit(2);                                                  \</span></div>
-<div class="line"><span class="preprocessor">        }                                                             \</span></div>
+<div class="line"><span class="preprocessor">            exit(2); \</span></div>
+<div class="line"><span class="preprocessor">        } \</span></div>
 <div class="line"><span class="preprocessor">    } while (0)</span></div>
 <div class="line"><span class="preprocessor"></span></div>
 <div class="line"><span class="keyword">static</span> <span class="keywordtype">size_t</span> product(<a class="code" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a> *arr, <span class="keywordtype">size_t</span> size) {</div>
@@ -199,8 +199,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">        <span class="keywordtype">int</span> dir_is_user_to_prim, </div>
 <div class="line">        <a class="code" href="structmkldnn__memory.html">mkldnn_memory_t</a> *prim_memory, </div>
 <div class="line">        <a class="code" href="structmkldnn__primitive.html">mkldnn_primitive_t</a> *reorder, </div>
-<div class="line">        uint32_t *</div>
-<div class="line">                net_index, </div>
+<div class="line">        uint32_t *net_index, </div>
 <div class="line">        <a class="code" href="structmkldnn__primitive.html">mkldnn_primitive_t</a> *net, args_t *net_args) {</div>
 <div class="line">    <span class="keyword">const</span> <a class="code" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *user_memory_md;</div>
 <div class="line">    <a class="code" href="group__c__api__memory.html#ga3b9649ef5812e7ab642aa506f02eafda">mkldnn_memory_get_memory_desc</a>(*user_memory, &amp;user_memory_md);</div>
@@ -233,8 +232,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">                dir_is_user_to_prim ? *prim_memory : *user_memory);</div>
 <div class="line">        (*net_index)++;</div>
 <div class="line">    } <span class="keywordflow">else</span> {</div>
-<div class="line">       *prim_memory = NULL;</div>
-<div class="line">       *reorder = NULL;</div>
+<div class="line">        *prim_memory = NULL;</div>
+<div class="line">        *reorder = NULL;</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="group__c__api__types__generic.html#gga31866789b66acfb1c28b2f9bdd7bdfddab50eb3f75584f0495802ffb5e0a9884f">mkldnn_success</a>;</div>
@@ -249,8 +248,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <a class="code" href="structmkldnn__primitive.html">mkldnn_primitive_t</a> net_fwd[10], net_bwd[10];</div>
 <div class="line">    args_t net_fwd_args[10], net_bwd_args[10];</div>
 <div class="line"></div>
-<div class="line">    <a class="code" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a> net_src_sizes[4] = { BATCH, IC, CONV_IH, CONV_IW };</div>
-<div class="line">    <a class="code" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a> net_dst_sizes[4] = { BATCH, OC, POOL_OH, POOL_OW };</div>
+<div class="line">    <a class="code" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a> net_src_sizes[4] = {BATCH, IC, CONV_IH, CONV_IW};</div>
+<div class="line">    <a class="code" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a> net_dst_sizes[4] = {BATCH, OC, POOL_OH, POOL_OW};</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordtype">float</span> *net_src = (<span class="keywordtype">float</span> *)malloc(product(net_src_sizes, 4) * <span class="keyword">sizeof</span>(float));</div>
 <div class="line">    <span class="keywordtype">float</span> *net_dst = (<span class="keywordtype">float</span> *)malloc(product(net_dst_sizes, 4) * <span class="keyword">sizeof</span>(float));</div>
@@ -265,11 +264,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="comment">// {BATCH, OC, CONV_OH, CONV_OW}</span></div>
 <div class="line">    <span class="comment">// strides: {CONV_STRIDE, CONV_STRIDE}</span></div>
 <div class="line">    <a class="code" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a> *conv_user_src_sizes = net_src_sizes;</div>
-<div class="line">    <a class="code" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a> conv_user_weights_sizes[4] = { OC, IC, 11, 11 };</div>
-<div class="line">    <a class="code" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a> conv_bias_sizes[4] = { OC };</div>
-<div class="line">    <a class="code" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a> conv_user_dst_sizes[4] = { BATCH, OC, CONV_OH, CONV_OW };</div>
-<div class="line">    <a class="code" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a> conv_strides[2] = { CONV_STRIDE, CONV_STRIDE };</div>
-<div class="line">    <a class="code" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a> conv_padding[2] = { CONV_PAD, CONV_PAD };</div>
+<div class="line">    <a class="code" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a> conv_user_weights_sizes[4] = {OC, IC, 11, 11};</div>
+<div class="line">    <a class="code" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a> conv_bias_sizes[4] = {OC};</div>
+<div class="line">    <a class="code" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a> conv_user_dst_sizes[4] = {BATCH, OC, CONV_OH, CONV_OW};</div>
+<div class="line">    <a class="code" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a> conv_strides[2] = {CONV_STRIDE, CONV_STRIDE};</div>
+<div class="line">    <a class="code" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a> conv_padding[2] = {CONV_PAD, CONV_PAD};</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordtype">float</span> *conv_src = net_src;</div>
 <div class="line">    <span class="keywordtype">float</span> *conv_weights = (<span class="keywordtype">float</span> *)malloc(</div>
@@ -342,12 +341,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">            &amp;conv_internal_weights_memory, &amp;conv_reorder_weights, &amp;n_fwd,</div>
 <div class="line">            net_fwd, net_fwd_args));</div>
 <div class="line"></div>
-<div class="line">    <a class="code" href="structmkldnn__memory.html">mkldnn_memory_t</a> conv_src_memory = conv_internal_src_memory ?</div>
-<div class="line">            conv_internal_src_memory :</div>
-<div class="line">            conv_user_src_memory;</div>
-<div class="line">    <a class="code" href="structmkldnn__memory.html">mkldnn_memory_t</a> conv_weights_memory = conv_internal_weights_memory ?</div>
-<div class="line">            conv_internal_weights_memory :</div>
-<div class="line">            conv_user_weights_memory;</div>
+<div class="line">    <a class="code" href="structmkldnn__memory.html">mkldnn_memory_t</a> conv_src_memory = conv_internal_src_memory</div>
+<div class="line">            ? conv_internal_src_memory</div>
+<div class="line">            : conv_user_src_memory;</div>
+<div class="line">    <a class="code" href="structmkldnn__memory.html">mkldnn_memory_t</a> conv_weights_memory = conv_internal_weights_memory</div>
+<div class="line">            ? conv_internal_weights_memory</div>
+<div class="line">            : conv_user_weights_memory;</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// finally create a convolution primitive</span></div>
 <div class="line">    <a class="code" href="structmkldnn__primitive.html">mkldnn_primitive_t</a> conv;</div>
@@ -385,8 +384,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <a class="code" href="structmkldnn__memory.html">mkldnn_memory_t</a> relu_dst_memory;</div>
 <div class="line">    <span class="keyword">const</span> <a class="code" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *relu_dst_md</div>
 <div class="line">            = <a class="code" href="group__c__api__primitive__common.html#ga9e14963d6bdb1aed934ffb059421fcfc">mkldnn_primitive_desc_query_md</a>(relu_pd, <a class="code" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9adccda04151e0c287f0de64b832d33ac4">mkldnn_query_dst_md</a>, 0);</div>
-<div class="line">    CHECK(<a class="code" href="group__c__api__memory.html#ga16a5d3f01dd47973868ef49241a2d4ef">mkldnn_memory_create</a>(&amp;relu_dst_memory, relu_dst_md, engine,</div>
-<div class="line">            MKLDNN_MEMORY_ALLOCATE));</div>
+<div class="line">    CHECK(<a class="code" href="group__c__api__memory.html#ga16a5d3f01dd47973868ef49241a2d4ef">mkldnn_memory_create</a>(</div>
+<div class="line">            &amp;relu_dst_memory, relu_dst_md, engine, MKLDNN_MEMORY_ALLOCATE));</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// finally create a relu primitive</span></div>
 <div class="line">    <a class="code" href="structmkldnn__primitive.html">mkldnn_primitive_t</a> relu;</div>
@@ -427,8 +426,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line">    <span class="keyword">const</span> <a class="code" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *lrn_dst_md</div>
 <div class="line">            = <a class="code" href="group__c__api__primitive__common.html#ga9e14963d6bdb1aed934ffb059421fcfc">mkldnn_primitive_desc_query_md</a>(lrn_pd, <a class="code" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9adccda04151e0c287f0de64b832d33ac4">mkldnn_query_dst_md</a>, 0);</div>
-<div class="line">    CHECK(<a class="code" href="group__c__api__memory.html#ga16a5d3f01dd47973868ef49241a2d4ef">mkldnn_memory_create</a>(&amp;lrn_dst_memory, lrn_dst_md, engine,</div>
-<div class="line">            MKLDNN_MEMORY_ALLOCATE));</div>
+<div class="line">    CHECK(<a class="code" href="group__c__api__memory.html#ga16a5d3f01dd47973868ef49241a2d4ef">mkldnn_memory_create</a>(</div>
+<div class="line">            &amp;lrn_dst_memory, lrn_dst_md, engine, MKLDNN_MEMORY_ALLOCATE));</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// create workspace only in training and only for forward primitive</span></div>
 <div class="line">    <span class="comment">// query lrn_pd for workspace, this memory will be shared with forward lrn</span></div>
@@ -452,9 +451,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="comment">// kernel: {3, 3}</span></div>
 <div class="line">    <span class="comment">// strides: {POOL_STRIDE, POOL_STRIDE}</span></div>
 <div class="line">    <a class="code" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a> *pool_dst_sizes = net_dst_sizes;</div>
-<div class="line">    <a class="code" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a> pool_kernel[2] = { 3, 3 };</div>
-<div class="line">    <a class="code" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a> pool_strides[2] = { POOL_STRIDE, POOL_STRIDE };</div>
-<div class="line">    <a class="code" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a> pool_padding[2] = { POOL_PAD, POOL_PAD };</div>
+<div class="line">    <a class="code" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a> pool_kernel[2] = {3, 3};</div>
+<div class="line">    <a class="code" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a> pool_strides[2] = {POOL_STRIDE, POOL_STRIDE};</div>
+<div class="line">    <a class="code" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a> pool_padding[2] = {POOL_PAD, POOL_PAD};</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// create memory for user dst data</span></div>
 <div class="line">    <a class="code" href="structmkldnn__memory.html">mkldnn_memory_t</a> pool_user_dst_memory;</div>
@@ -487,8 +486,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <a class="code" href="structmkldnn__memory.html">mkldnn_memory_t</a> pool_ws_memory;</div>
 <div class="line">    <span class="keyword">const</span> <a class="code" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *pool_ws_md = <a class="code" href="group__c__api__primitive__common.html#ga9e14963d6bdb1aed934ffb059421fcfc">mkldnn_primitive_desc_query_md</a>(</div>
 <div class="line">            pool_pd, <a class="code" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a6f61e139512317e7f5653759e889d55d">mkldnn_query_workspace_md</a>, 0);</div>
-<div class="line">    CHECK(<a class="code" href="group__c__api__memory.html#ga16a5d3f01dd47973868ef49241a2d4ef">mkldnn_memory_create</a>(&amp;pool_ws_memory, pool_ws_md, engine,</div>
-<div class="line">            MKLDNN_MEMORY_ALLOCATE));</div>
+<div class="line">    CHECK(<a class="code" href="group__c__api__memory.html#ga16a5d3f01dd47973868ef49241a2d4ef">mkldnn_memory_create</a>(</div>
+<div class="line">            &amp;pool_ws_memory, pool_ws_md, engine, MKLDNN_MEMORY_ALLOCATE));</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// create reorder primitives between pooling dsts and user format dst</span></div>
 <div class="line">    <span class="comment">// if required</span></div>
@@ -497,15 +496,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="keyword">const</span> <a class="code" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *pool_dst_md</div>
 <div class="line">            = <a class="code" href="group__c__api__primitive__common.html#ga9e14963d6bdb1aed934ffb059421fcfc">mkldnn_primitive_desc_query_md</a>(pool_pd, <a class="code" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9adccda04151e0c287f0de64b832d33ac4">mkldnn_query_dst_md</a>, 0);</div>
 <div class="line">    n_fwd += 1; <span class="comment">// tentative workaround: preserve space for pooling that should</span></div>
-<div class="line">                <span class="comment">// happen before the reorder</span></div>
+<div class="line">            <span class="comment">// happen before the reorder</span></div>
 <div class="line">    CHECK(prepare_reorder(&amp;pool_user_dst_memory, pool_dst_md, engine, 0,</div>
 <div class="line">            &amp;pool_internal_dst_memory, &amp;pool_reorder_dst, &amp;n_fwd, net_fwd,</div>
 <div class="line">            net_fwd_args));</div>
 <div class="line">    n_fwd -= pool_reorder_dst ? 2 : 1;</div>
 <div class="line"></div>
-<div class="line">    <a class="code" href="structmkldnn__memory.html">mkldnn_memory_t</a> pool_dst_memory = pool_internal_dst_memory ?</div>
-<div class="line">            pool_internal_dst_memory :</div>
-<div class="line">            pool_user_dst_memory;</div>
+<div class="line">    <a class="code" href="structmkldnn__memory.html">mkldnn_memory_t</a> pool_dst_memory = pool_internal_dst_memory</div>
+<div class="line">            ? pool_internal_dst_memory</div>
+<div class="line">            : pool_user_dst_memory;</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// finally create a pooling primitive</span></div>
 <div class="line">    <a class="code" href="structmkldnn__primitive.html">mkldnn_primitive_t</a> pool;</div>
@@ -517,8 +516,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    set_arg(&amp;net_fwd_args[n_fwd].args[2], MKLDNN_ARG_WORKSPACE, pool_ws_memory);</div>
 <div class="line">    n_fwd++;</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (pool_reorder_dst)</div>
-<div class="line">        n_fwd += 1;</div>
+<div class="line">    <span class="keywordflow">if</span> (pool_reorder_dst) n_fwd += 1;</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">//-----------------------------------------------------------------------</span></div>
 <div class="line">    <span class="comment">//----------------- Backward Stream -------------------------------------</span></div>
@@ -561,9 +559,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">            1, &amp;pool_internal_diff_dst_memory, &amp;pool_reorder_diff_dst, &amp;n_bwd,</div>
 <div class="line">            net_bwd, net_bwd_args));</div>
 <div class="line"></div>
-<div class="line">    pool_diff_dst_memory = pool_internal_diff_dst_memory ?</div>
-<div class="line">            pool_internal_diff_dst_memory :</div>
-<div class="line">            pool_user_diff_dst_memory;</div>
+<div class="line">    pool_diff_dst_memory = pool_internal_diff_dst_memory</div>
+<div class="line">            ? pool_internal_diff_dst_memory</div>
+<div class="line">            : pool_user_diff_dst_memory;</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// create memory for pool diff src data</span></div>
 <div class="line">    <a class="code" href="structmkldnn__memory.html">mkldnn_memory_t</a> pool_diff_src_memory;</div>
@@ -705,9 +703,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">            &amp;conv_bwd_internal_src_memory, &amp;conv_bwd_reorder_src, &amp;n_bwd,</div>
 <div class="line">            net_bwd, net_bwd_args));</div>
 <div class="line"></div>
-<div class="line">    <a class="code" href="structmkldnn__memory.html">mkldnn_memory_t</a> conv_bwd_weights_src_memory = conv_bwd_internal_src_memory ?</div>
-<div class="line">            conv_bwd_internal_src_memory :</div>
-<div class="line">            conv_src_memory;</div>
+<div class="line">    <a class="code" href="structmkldnn__memory.html">mkldnn_memory_t</a> conv_bwd_weights_src_memory = conv_bwd_internal_src_memory</div>
+<div class="line">            ? conv_bwd_internal_src_memory</div>
+<div class="line">            : conv_src_memory;</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// create reorder primitives for diff_dst between diff_src from relu_bwd</span></div>
 <div class="line">    <span class="comment">// and format preferred by conv_diff_weights</span></div>
@@ -721,9 +719,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">            &amp;conv_internal_diff_dst_memory, &amp;conv_reorder_diff_dst, &amp;n_bwd,</div>
 <div class="line">            net_bwd, net_bwd_args));</div>
 <div class="line"></div>
-<div class="line">    <a class="code" href="structmkldnn__memory.html">mkldnn_memory_t</a> conv_diff_dst_memory = conv_internal_diff_dst_memory ?</div>
-<div class="line">            conv_internal_diff_dst_memory :</div>
-<div class="line">            relu_diff_src_memory;</div>
+<div class="line">    <a class="code" href="structmkldnn__memory.html">mkldnn_memory_t</a> conv_diff_dst_memory = conv_internal_diff_dst_memory</div>
+<div class="line">            ? conv_internal_diff_dst_memory</div>
+<div class="line">            : relu_diff_src_memory;</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// create reorder primitives for conv diff weights memory</span></div>
 <div class="line">    <a class="code" href="structmkldnn__primitive.html">mkldnn_primitive_t</a> conv_reorder_diff_weights;</div>
@@ -732,17 +730,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">            = <a class="code" href="group__c__api__primitive__common.html#ga9e14963d6bdb1aed934ffb059421fcfc">mkldnn_primitive_desc_query_md</a>(</div>
 <div class="line">                    conv_bwd_weights_pd, <a class="code" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a2c78f7a683101ff96875e8cec787ba42">mkldnn_query_diff_weights_md</a>, 0);</div>
 <div class="line">    n_bwd += 1; <span class="comment">// tentative workaround: preserve space for conv_bwd_weights</span></div>
-<div class="line">                <span class="comment">// that should happen before the reorder</span></div>
+<div class="line">            <span class="comment">// that should happen before the reorder</span></div>
 <div class="line"></div>
 <div class="line">    CHECK(prepare_reorder(&amp;conv_user_diff_weights_memory, conv_diff_weights_md,</div>
 <div class="line">            engine, 0, &amp;conv_internal_diff_weights_memory,</div>
 <div class="line">            &amp;conv_reorder_diff_weights, &amp;n_bwd, net_bwd, net_bwd_args));</div>
 <div class="line">    n_bwd -= conv_reorder_diff_weights ? 2 : 1;</div>
 <div class="line"></div>
-<div class="line">    <a class="code" href="structmkldnn__memory.html">mkldnn_memory_t</a> conv_diff_weights_memory</div>
-<div class="line">            = conv_internal_diff_weights_memory ?</div>
-<div class="line">            conv_internal_diff_weights_memory :</div>
-<div class="line">            conv_user_diff_weights_memory;</div>
+<div class="line">    <a class="code" href="structmkldnn__memory.html">mkldnn_memory_t</a> conv_diff_weights_memory = conv_internal_diff_weights_memory</div>
+<div class="line">            ? conv_internal_diff_weights_memory</div>
+<div class="line">            : conv_user_diff_weights_memory;</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// create memory for diff bias memory</span></div>
 <div class="line">    <a class="code" href="structmkldnn__memory.html">mkldnn_memory_t</a> conv_diff_bias_memory;</div>
@@ -769,8 +766,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">            conv_diff_bias_memory);</div>
 <div class="line">    n_bwd++;</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (conv_reorder_diff_weights)</div>
-<div class="line">        n_bwd += 1;</div>
+<div class="line">    <span class="keywordflow">if</span> (conv_reorder_diff_weights) n_bwd += 1;</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// output from backward stream</span></div>
 <div class="line">    <span class="keywordtype">void</span> *net_diff_weights = NULL;</div>

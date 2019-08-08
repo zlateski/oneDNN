@@ -156,13 +156,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="comment">// [Initialize stream]</span></div>
 <div class="line"></div>
 <div class="line">    <span class="comment">//  [reorder cpu2gpu]</span></div>
-<div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span> tz = memory::dims{ 2, 16, 1, 1 };</div>
-<div class="line">    <span class="keyword">auto</span> m_cpu = <a class="code" href="structmkldnn_1_1memory.html">memory</a>(</div>
-<div class="line">            { { tz }, <a name="a7"></a><a class="code" href="structmkldnn_1_1memory.html#aa8a0d49cc7faaceef9d8f55d66bff57ba512dc597be7ae761876315165dc8bd2e">memory::data_type::f32</a>, <a name="a8"></a><a class="code" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaded7ac40158367123c5467281d44cbeb">memory::format_tag::nchw</a> },</div>
-<div class="line">            cpu_engine);</div>
-<div class="line">    <span class="keyword">auto</span> m_gpu = <a class="code" href="structmkldnn_1_1memory.html">memory</a>(</div>
-<div class="line">            { { tz }, <a class="code" href="structmkldnn_1_1memory.html#aa8a0d49cc7faaceef9d8f55d66bff57ba512dc597be7ae761876315165dc8bd2e">memory::data_type::f32</a>, <a class="code" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaded7ac40158367123c5467281d44cbeb">memory::format_tag::nchw</a> },</div>
-<div class="line">            gpu_engine);</div>
+<div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span> tz = memory::dims {2, 16, 1, 1};</div>
+<div class="line">    <span class="keyword">auto</span> m_cpu</div>
+<div class="line">            = <a class="code" href="structmkldnn_1_1memory.html">memory</a>({{tz}, <a name="a7"></a><a class="code" href="structmkldnn_1_1memory.html#aa8a0d49cc7faaceef9d8f55d66bff57ba512dc597be7ae761876315165dc8bd2e">memory::data_type::f32</a>, <a name="a8"></a><a class="code" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaded7ac40158367123c5467281d44cbeb">memory::format_tag::nchw</a>},</div>
+<div class="line">                    cpu_engine);</div>
+<div class="line">    <span class="keyword">auto</span> m_gpu</div>
+<div class="line">            = <a class="code" href="structmkldnn_1_1memory.html">memory</a>({{tz}, <a class="code" href="structmkldnn_1_1memory.html#aa8a0d49cc7faaceef9d8f55d66bff57ba512dc597be7ae761876315165dc8bd2e">memory::data_type::f32</a>, <a class="code" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaded7ac40158367123c5467281d44cbeb">memory::format_tag::nchw</a>},</div>
+<div class="line">                    gpu_engine);</div>
 <div class="line">    fill(m_cpu, tz);</div>
 <div class="line">    <span class="keyword">auto</span> r1 = <a name="_a9"></a><a class="code" href="structmkldnn_1_1reorder.html">reorder</a>(m_cpu, m_gpu);</div>
 <div class="line">    <span class="comment">//  [reorder cpu2gpu]</span></div>
@@ -188,8 +188,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="comment">// wrap source data from CPU to GPU</span></div>
 <div class="line">    r1.execute(stream_gpu, m_cpu, m_gpu);</div>
 <div class="line">    <span class="comment">// Execute ReLU on a GPU stream</span></div>
-<div class="line">    relu.execute(stream_gpu,</div>
-<div class="line">            { { MKLDNN_ARG_SRC, m_gpu }, { MKLDNN_ARG_DST, m_gpu } });</div>
+<div class="line">    relu.execute(</div>
+<div class="line">            stream_gpu, {{MKLDNN_ARG_SRC, m_gpu}, {MKLDNN_ARG_DST, m_gpu}});</div>
 <div class="line">    <span class="comment">// Get result data from GPU to CPU</span></div>
 <div class="line">    r2.execute(stream_gpu, m_gpu, m_cpu);</div>
 <div class="line"></div>
@@ -199,7 +199,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="comment">// [Check the results]</span></div>
 <div class="line">    <span class="keywordflow">if</span> (find_negative(m_cpu, tz) != 0) {</div>
 <div class="line">        std::stringstream ss;</div>
-<div class="line">        ss &lt;&lt; <span class="stringliteral">&quot;Unexpected output, find a negative value after the ReLU execution&quot;</span>;</div>
+<div class="line">        ss &lt;&lt; <span class="stringliteral">&quot;Unexpected output, find a negative value after the ReLU &quot;</span></div>
+<div class="line">              <span class="stringliteral">&quot;execution&quot;</span>;</div>
 <div class="line">        <span class="keywordflow">throw</span> ss.str();</div>
 <div class="line">    }</div>
 <div class="line">    <span class="comment">// [Check the results]</span></div>
@@ -212,7 +213,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">        gpu_getting_started_tutorial();</div>
 <div class="line">    } <span class="keywordflow">catch</span> (<a name="_a16"></a><a class="code" href="structmkldnn_1_1error.html">mkldnn::error</a> &amp;e) {</div>
 <div class="line">        std::cerr &lt;&lt; <span class="stringliteral">&quot;Intel MKL-DNN error: &quot;</span> &lt;&lt; e.<a name="a17"></a><a class="code" href="structmkldnn_1_1error.html#a8a8609a79dbe152572de37c50d36af96">what</a>() &lt;&lt; std::endl</div>
-<div class="line">            &lt;&lt; <span class="stringliteral">&quot;Error status: &quot;</span> &lt;&lt; mkldnn_status2str(e.<a name="a18"></a>status) &lt;&lt; std::endl;</div>
+<div class="line">                  &lt;&lt; <span class="stringliteral">&quot;Error status: &quot;</span> &lt;&lt; mkldnn_status2str(e.<a name="a18"></a>status)</div>
+<div class="line">                  &lt;&lt; std::endl;</div>
 <div class="line">        <span class="keywordflow">return</span> 1;</div>
 <div class="line">    } <span class="keywordflow">catch</span> (std::string &amp;e) {</div>
 <div class="line">        std::cerr &lt;&lt; <span class="stringliteral">&quot;Error in the example: &quot;</span> &lt;&lt; e &lt;&lt; std::endl;</div>

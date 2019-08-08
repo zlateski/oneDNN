@@ -106,11 +106,14 @@ Walkthrough</h1>
 </div><!-- fragment --> <div class="fragment"><div class="line">    <span class="comment">// create MKL-DNN memory objects for user&#39;s tensors (in nchw and oihw formats)</span></div>
 <div class="line">    <span class="comment">// @note here the library allocates memory</span></div>
 <div class="line">    <span class="keyword">auto</span> user_src = memory({{BATCH, IC, IH, IW}, memory::data_type::f32,</div>
-<div class="line">                    memory::format_tag::nchw}, cpu);</div>
+<div class="line">                                   memory::format_tag::nchw},</div>
+<div class="line">            cpu);</div>
 <div class="line">    <span class="keyword">auto</span> user_wei = memory({{OC, IC, KH, KW}, memory::data_type::f32,</div>
-<div class="line">                    memory::format_tag::oihw}, cpu);</div>
+<div class="line">                                   memory::format_tag::oihw},</div>
+<div class="line">            cpu);</div>
 <div class="line">    <span class="keyword">auto</span> user_dst = memory({{BATCH, OC, OH, OW}, memory::data_type::f32,</div>
-<div class="line">                    memory::format_tag::nchw}, cpu);</div>
+<div class="line">                                   memory::format_tag::nchw},</div>
+<div class="line">            cpu);</div>
 </div><!-- fragment --> <dl class="section note"><dt>Note</dt><dd>You can change the batch size to easily increase/decrease the workload.</dd></dl>
 <p>The following descriptions of each implementation will reference each other, and are meant to be read in order.</p>
 <h1><a class="anchor" id="cpu_performance_profiling_cpp_implementation1"></a>
@@ -124,20 +127,18 @@ Naive Implementation</h1>
 <div class="line">    <span class="keyword">auto</span> conv_wei_md = memory::desc(user_wei.get_desc());</div>
 <div class="line">    <span class="keyword">auto</span> conv_dst_md = memory::desc(user_dst.get_desc());</div>
 </div><!-- fragment --> <div class="fragment"><div class="line">    <span class="comment">// create a convolution descriptor</span></div>
-<div class="line">    <span class="keyword">auto</span> conv_d = convolution_forward::desc(</div>
-<div class="line">            prop_kind::forward_inference, algorithm::convolution_direct,</div>
-<div class="line">            conv_src_md, conv_wei_md, conv_dst_md,</div>
-<div class="line">            strides, padding, padding);</div>
+<div class="line">    <span class="keyword">auto</span> conv_d = convolution_forward::desc(prop_kind::forward_inference,</div>
+<div class="line">            algorithm::convolution_direct, conv_src_md, conv_wei_md,</div>
+<div class="line">            conv_dst_md, strides, padding, padding);</div>
 </div><!-- fragment --><p> Next the program creates a convolution primitive descriptor <code>conv_pd</code> and convolution primitive <code>conv</code>. These structs will inherit NCHW format from <code>md</code> by way of the <code>conv_d</code>. Finally it creates the convolution primitive <code>conv</code> and adds it to the stream <code>s</code>, and then executes the <code>create_and_execute_relu(user_dst)</code> function.</p>
 <div class="fragment"><div class="line">    <span class="comment">// create a convolution primitive descriptor</span></div>
 <div class="line">    <span class="keyword">auto</span> conv_pd = convolution_forward::primitive_desc(conv_d, cpu);</div>
 </div><!-- fragment --> <div class="fragment"><div class="line">    <span class="comment">// create convolution primitive</span></div>
 <div class="line">    <span class="keyword">auto</span> conv = convolution_forward(conv_pd);</div>
 </div><!-- fragment --> <div class="fragment"><div class="line">    <span class="comment">// execute convolution by adding it to the stream s</span></div>
-<div class="line">    conv.execute(s, {</div>
-<div class="line">            {MKLDNN_ARG_SRC, user_src},</div>
-<div class="line">            {MKLDNN_ARG_WEIGHTS, user_wei},</div>
-<div class="line">            {MKLDNN_ARG_DST, user_dst}});</div>
+<div class="line">    conv.execute(s,</div>
+<div class="line">            {{MKLDNN_ARG_SRC, user_src}, {MKLDNN_ARG_WEIGHTS, user_wei},</div>
+<div class="line">                    {MKLDNN_ARG_DST, user_dst}});</div>
 </div><!-- fragment --><div class="fragment"><div class="line">    <span class="comment">// execute relu (on convolution&#39;s destination format, whatever it is)</span></div>
 <div class="line">    create_and_execute_relu(user_dst);</div>
 </div><!-- fragment --> <dl class="section note"><dt>Note</dt><dd>The function for creation and execution of ReLU primitive is defined elsewhere to keep this example clean. It is an non-intensive operation, so the <code>create_and_execute_relu()</code> function uses whatever the input data format is at the time it is called.</dd></dl>
@@ -166,10 +167,9 @@ Blocked format implementation</h1>
 <div class="line">    conv_wei_md.data.format_kind = <a class="code" href="group__c__api__types__generic.html#gga1f6c390306d4c8a438c0efbff08c0539a25ba80bb864a69c9fae70b4503e76167">mkldnn_format_kind_any</a>;</div>
 <div class="line">    conv_dst_md.data.format_kind = <a class="code" href="group__c__api__types__generic.html#gga1f6c390306d4c8a438c0efbff08c0539a25ba80bb864a69c9fae70b4503e76167">mkldnn_format_kind_any</a>;</div>
 </div><!-- fragment --> <div class="fragment"><div class="line">    <span class="comment">// create a convolution descriptor</span></div>
-<div class="line">    <span class="keyword">auto</span> conv_d = convolution_forward::desc(</div>
-<div class="line">            prop_kind::forward_inference, algorithm::convolution_direct,</div>
-<div class="line">            conv_src_md, conv_wei_md, conv_dst_md,</div>
-<div class="line">            strides, padding, padding);</div>
+<div class="line">    <span class="keyword">auto</span> conv_d = convolution_forward::desc(prop_kind::forward_inference,</div>
+<div class="line">            algorithm::convolution_direct, conv_src_md, conv_wei_md,</div>
+<div class="line">            conv_dst_md, strides, padding, padding);</div>
 </div><!-- fragment --><p> Next the program creates a convolution primitive descriptor conv_pd and convolution primitive conv as in naive implementation. However, in this implementation the structs will inherit blocked format from md by way of the conv_d.</p>
 <div class="fragment"><div class="line">    <span class="comment">// create a convolution primitive descriptor and primitive</span></div>
 <div class="line">    <span class="keyword">auto</span> conv_pd = convolution_forward::primitive_desc(conv_d, cpu);</div>
@@ -199,10 +199,9 @@ Blocked format implementation</h1>
 <div class="fragment"><div class="line">    <span class="comment">// create convolution primitive</span></div>
 <div class="line">    <span class="keyword">auto</span> conv = convolution_forward(conv_pd);</div>
 </div><!-- fragment --> <div class="fragment"><div class="line">    <span class="comment">// execute convolution by adding it to the stream s</span></div>
-<div class="line">    conv.execute(s, {</div>
-<div class="line">            {MKLDNN_ARG_SRC, conv_src},</div>
-<div class="line">            {MKLDNN_ARG_WEIGHTS, conv_wei},</div>
-<div class="line">            {MKLDNN_ARG_DST, conv_dst}});</div>
+<div class="line">    conv.execute(s,</div>
+<div class="line">            {{MKLDNN_ARG_SRC, conv_src}, {MKLDNN_ARG_WEIGHTS, conv_wei},</div>
+<div class="line">                    {MKLDNN_ARG_DST, conv_dst}});</div>
 </div><!-- fragment --> <div class="fragment"><div class="line">    <span class="comment">// execute relu (on convolution&#39;s destination format, whatever it is)</span></div>
 <div class="line">    create_and_execute_relu(conv_dst);</div>
 </div><!-- fragment --><p> Blocked memory format is recommended for Intel MKL-DNN primitive execution and provides better performance, as shown in the MKLDNN_VERBOSE output by the convolution and relu execution times of 119.6 and 34.4 milliseconds (down from 235.9 and 100.3 in <em>naive implementation</em>), respectively. In this implementation, there is an additional reorder operation that executes before and after the the conv + relu. This small cost is worth the gain from executing in blocked format. If fact, it becomes negligible when chaining together multiple Intel Mkl-DNN operations in succession. In these situations, you can do one reorder at the beginning and one at the end of the chain, and only pay the reorder penalty at those points in the execution.</p>
@@ -248,10 +247,9 @@ Fused Implementation</h1>
 <div class="fragment"><div class="line">    <span class="comment">// create convolution primitive</span></div>
 <div class="line">    <span class="keyword">auto</span> conv = convolution_forward(conv_pd);</div>
 </div><!-- fragment --> <div class="fragment"><div class="line">    <span class="comment">// execute convolution by adding it to the stream s</span></div>
-<div class="line">    conv.execute(s, {</div>
-<div class="line">            {MKLDNN_ARG_SRC, conv_src},</div>
-<div class="line">            {MKLDNN_ARG_WEIGHTS, conv_wei},</div>
-<div class="line">            {MKLDNN_ARG_DST, conv_dst}});</div>
+<div class="line">    conv.execute(s,</div>
+<div class="line">            {{MKLDNN_ARG_SRC, conv_src}, {MKLDNN_ARG_WEIGHTS, conv_wei},</div>
+<div class="line">                    {MKLDNN_ARG_DST, conv_dst}});</div>
 </div><!-- fragment --><p> This implementation complies with best practices for f32 inference by using the Intel MKL-DNN recommended blocked format for convolution and adding ReLU as a post-op to execute a fused version of conv + ReLU. The consequence to following best practices can be seen in the execution time of the fused primitive of 103.9 milliseconds.</p>
 <p><em>MKLDNN_VERBOSE output (see configuration notice*):</em> </p>
 <div class="fragment"><div class="line">mkldnn_verbose,exec,convolution,jit:avx512_common,forward_inference,</div>

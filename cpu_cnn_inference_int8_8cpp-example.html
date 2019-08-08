@@ -101,10 +101,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line"></div>
 <div class="line"></div>
-<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="mkldnn_8hpp.html">mkldnn.hpp</a>&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;numeric&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="mkldnn_8hpp.html">mkldnn.hpp</a>&quot;</span></div>
 <div class="line"></div>
 <div class="line"><span class="keyword">using namespace </span>mkldnn;</div>
 <div class="line"></div>
@@ -122,39 +122,39 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">int</span> batch = 8;</div>
 <div class="line"></div>
-<div class="line"><span class="comment">//[Configure tensor shapes]</span></div>
+<div class="line">    <span class="comment">//[Configure tensor shapes]</span></div>
 <div class="line">    <span class="comment">// AlexNet: conv3</span></div>
 <div class="line">    <span class="comment">// {batch, 256, 13, 13} (x)  {384, 256, 3, 3}; -&gt; {batch, 384, 13, 13}</span></div>
 <div class="line">    <span class="comment">// strides: {1, 1}</span></div>
-<div class="line">    memory::dims conv_src_tz = { batch, 256, 13, 13 };</div>
-<div class="line">    memory::dims conv_weights_tz = { 384, 256, 3, 3 };</div>
-<div class="line">    memory::dims conv_bias_tz = { 384 };</div>
-<div class="line">    memory::dims conv_dst_tz = { batch, 384, 13, 13 };</div>
-<div class="line">    memory::dims conv_strides = { 1, 1 };</div>
-<div class="line">    memory::dims conv_padding = { 1, 1 };</div>
-<div class="line"><span class="comment">//[Configure tensor shapes]</span></div>
+<div class="line">    memory::dims conv_src_tz = {batch, 256, 13, 13};</div>
+<div class="line">    memory::dims conv_weights_tz = {384, 256, 3, 3};</div>
+<div class="line">    memory::dims conv_bias_tz = {384};</div>
+<div class="line">    memory::dims conv_dst_tz = {batch, 384, 13, 13};</div>
+<div class="line">    memory::dims conv_strides = {1, 1};</div>
+<div class="line">    memory::dims conv_padding = {1, 1};</div>
+<div class="line">    <span class="comment">//[Configure tensor shapes]</span></div>
 <div class="line"></div>
-<div class="line"><span class="comment">//[Choose scaling factors]</span></div>
+<div class="line">    <span class="comment">//[Choose scaling factors]</span></div>
 <div class="line">    <span class="comment">// Choose scaling factors for input, weight, output and bias quantization</span></div>
-<div class="line">    <span class="keyword">const</span> std::vector&lt;float&gt; src_scales = { 1.8f };</div>
-<div class="line">    <span class="keyword">const</span> std::vector&lt;float&gt; weight_scales = { 2.0f };</div>
-<div class="line">    <span class="keyword">const</span> std::vector&lt;float&gt; bias_scales = { 1.0f };</div>
-<div class="line">    <span class="keyword">const</span> std::vector&lt;float&gt; dst_scales = { 0.55f };</div>
+<div class="line">    <span class="keyword">const</span> std::vector&lt;float&gt; src_scales = {1.8f};</div>
+<div class="line">    <span class="keyword">const</span> std::vector&lt;float&gt; weight_scales = {2.0f};</div>
+<div class="line">    <span class="keyword">const</span> std::vector&lt;float&gt; bias_scales = {1.0f};</div>
+<div class="line">    <span class="keyword">const</span> std::vector&lt;float&gt; dst_scales = {0.55f};</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Choose channel-wise scaling factors for convolution</span></div>
 <div class="line">    std::vector&lt;float&gt; conv_scales(384);</div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">int</span> scales_half = 384 / 2;</div>
 <div class="line">    std::fill(conv_scales.begin(), conv_scales.begin() + scales_half, 0.3f);</div>
 <div class="line">    std::fill(conv_scales.begin() + scales_half + 1, conv_scales.end(), 0.8f);</div>
-<div class="line"><span class="comment">//[Choose scaling factors]</span></div>
+<div class="line">    <span class="comment">//[Choose scaling factors]</span></div>
 <div class="line"></div>
-<div class="line"><span class="comment">//[Set scaling mask]</span></div>
+<div class="line">    <span class="comment">//[Set scaling mask]</span></div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">int</span> src_mask = 0;</div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">int</span> weight_mask = 0;</div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">int</span> bias_mask = 0;</div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">int</span> dst_mask = 0;</div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">int</span> conv_mask = 2; <span class="comment">// 1 &lt;&lt; output_channel_dim</span></div>
-<div class="line"><span class="comment">//[Set scaling mask]</span></div>
+<div class="line">    <span class="comment">//[Set scaling mask]</span></div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Allocate input and output buffers for user data</span></div>
 <div class="line">    std::vector&lt;float&gt; user_src(batch * 256 * 13 * 13);</div>
@@ -164,42 +164,42 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    std::vector&lt;float&gt; conv_weights(product(conv_weights_tz));</div>
 <div class="line">    std::vector&lt;float&gt; conv_bias(product(conv_bias_tz));</div>
 <div class="line"></div>
-<div class="line"><span class="comment">//[Allocate buffers]</span></div>
-<div class="line">    <span class="keyword">auto</span> user_src_memory = <a name="_a5"></a><a class="code" href="structmkldnn_1_1memory.html">memory</a>({ { conv_src_tz }, dt::f32, tag::nchw },</div>
-<div class="line">            cpu_engine, user_src.data());</div>
-<div class="line">    <span class="keyword">auto</span> user_weights_memory</div>
-<div class="line">            = <a class="code" href="structmkldnn_1_1memory.html">memory</a>({ { conv_weights_tz }, dt::f32, tag::oihw }, cpu_engine,</div>
-<div class="line">                    conv_weights.data());</div>
-<div class="line">    <span class="keyword">auto</span> user_bias_memory = <a class="code" href="structmkldnn_1_1memory.html">memory</a>({ { conv_bias_tz }, dt::f32, tag::x },</div>
-<div class="line">            cpu_engine, conv_bias.data());</div>
-<div class="line"><span class="comment">//[Allocate buffers]</span></div>
+<div class="line">    <span class="comment">//[Allocate buffers]</span></div>
+<div class="line">    <span class="keyword">auto</span> user_src_memory = <a name="_a5"></a><a class="code" href="structmkldnn_1_1memory.html">memory</a>(</div>
+<div class="line">            {{conv_src_tz}, dt::f32, tag::nchw}, cpu_engine, user_src.data());</div>
+<div class="line">    <span class="keyword">auto</span> user_weights_memory = <a class="code" href="structmkldnn_1_1memory.html">memory</a>({{conv_weights_tz}, dt::f32, tag::oihw},</div>
+<div class="line">            cpu_engine, conv_weights.data());</div>
+<div class="line">    <span class="keyword">auto</span> user_bias_memory = <a class="code" href="structmkldnn_1_1memory.html">memory</a>(</div>
+<div class="line">            {{conv_bias_tz}, dt::f32, tag::x}, cpu_engine, conv_bias.data());</div>
+<div class="line">    <span class="comment">//[Allocate buffers]</span></div>
 <div class="line"></div>
-<div class="line"><span class="comment">//[Create convolution memory descriptors]</span></div>
-<div class="line">    <span class="keyword">auto</span> conv_src_md = <a name="_a6"></a><a class="code" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>({ conv_src_tz }, dt::u8, tag::any);</div>
-<div class="line">    <span class="keyword">auto</span> conv_bias_md = <a class="code" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>({ conv_bias_tz }, dt::s8, tag::any);</div>
-<div class="line">    <span class="keyword">auto</span> conv_weights_md = <a class="code" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>({ conv_weights_tz }, dt::s8, tag::any);</div>
-<div class="line">    <span class="keyword">auto</span> conv_dst_md = <a class="code" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>({ conv_dst_tz }, dt::u8, tag::any);</div>
-<div class="line"><span class="comment">//[Create convolution memory descriptors]</span></div>
+<div class="line">    <span class="comment">//[Create convolution memory descriptors]</span></div>
+<div class="line">    <span class="keyword">auto</span> conv_src_md = <a name="_a6"></a><a class="code" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>({conv_src_tz}, dt::u8, tag::any);</div>
+<div class="line">    <span class="keyword">auto</span> conv_bias_md = <a class="code" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>({conv_bias_tz}, dt::s8, tag::any);</div>
+<div class="line">    <span class="keyword">auto</span> conv_weights_md = <a class="code" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>({conv_weights_tz}, dt::s8, tag::any);</div>
+<div class="line">    <span class="keyword">auto</span> conv_dst_md = <a class="code" href="structmkldnn_1_1memory_1_1desc.html">memory::desc</a>({conv_dst_tz}, dt::u8, tag::any);</div>
+<div class="line">    <span class="comment">//[Create convolution memory descriptors]</span></div>
 <div class="line"></div>
-<div class="line"><span class="comment">//[Create convolution descriptor]</span></div>
+<div class="line">    <span class="comment">//[Create convolution descriptor]</span></div>
 <div class="line">    <span class="keyword">auto</span> conv_desc = <a name="_a7"></a><a class="code" href="structmkldnn_1_1convolution__forward_1_1desc.html">convolution_forward::desc</a>(<a name="a8"></a><a class="code" href="group__cpp__api__enums.html#ggaeb087eae78f70a4d249a90aefa165cf8a965dbaac085fc891bfbbd4f9d145bbc8">prop_kind::forward</a>,</div>
-<div class="line">            <a name="a9"></a><a class="code" href="group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076a5028ad8f818a45333a8a0eefad35c5c0">algorithm::convolution_direct</a>, conv_src_md, conv_weights_md, conv_bias_md,</div>
-<div class="line">            conv_dst_md, conv_strides, conv_padding, conv_padding);</div>
-<div class="line"><span class="comment">//[Create convolution descriptor]</span></div>
+<div class="line">            <a name="a9"></a><a class="code" href="group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076a5028ad8f818a45333a8a0eefad35c5c0">algorithm::convolution_direct</a>, conv_src_md, conv_weights_md,</div>
+<div class="line">            conv_bias_md, conv_dst_md, conv_strides, conv_padding,</div>
+<div class="line">            conv_padding);</div>
+<div class="line">    <span class="comment">//[Create convolution descriptor]</span></div>
 <div class="line"></div>
-<div class="line"><span class="comment">//[Configure scaling]</span></div>
+<div class="line">    <span class="comment">//[Configure scaling]</span></div>
 <div class="line">    <a name="_a10"></a><a class="code" href="structmkldnn_1_1primitive__attr.html">primitive_attr</a> conv_attr;</div>
 <div class="line">    conv_attr.<a name="a11"></a><a class="code" href="structmkldnn_1_1primitive__attr.html#a1c2ba432512cf9950b81febce265e35d">set_output_scales</a>(conv_mask, conv_scales);</div>
-<div class="line"><span class="comment">//[Configure scaling]</span></div>
+<div class="line">    <span class="comment">//[Configure scaling]</span></div>
 <div class="line"></div>
-<div class="line"><span class="comment">//[Configure post-ops]</span></div>
+<div class="line">    <span class="comment">//[Configure post-ops]</span></div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">float</span> ops_scale = 1.f;</div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">float</span> ops_alpha = 0.f; <span class="comment">// relu negative slope</span></div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">float</span> ops_beta = 0.f;</div>
 <div class="line">    <a name="_a12"></a><a class="code" href="structmkldnn_1_1post__ops.html">post_ops</a> ops;</div>
 <div class="line">    ops.<a name="a13"></a><a class="code" href="structmkldnn_1_1post__ops.html#af86d191276edcc3bd16571dd357072ec">append_eltwise</a>(ops_scale, <a name="a14"></a><a class="code" href="group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076aba09bebb742494255b90b43871c01c69">algorithm::eltwise_relu</a>, ops_alpha, ops_beta);</div>
 <div class="line">    conv_attr.<a name="a15"></a><a class="code" href="structmkldnn_1_1primitive__attr.html#a4730acedb91c4cd93616bb69c3df90a7">set_post_ops</a>(ops);</div>
-<div class="line"><span class="comment">//[Configure post-ops]</span></div>
+<div class="line">    <span class="comment">//[Configure post-ops]</span></div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// check if int8 convolution is supported</span></div>
 <div class="line">    <span class="keywordflow">try</span> {</div>
@@ -208,24 +208,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    } <span class="keywordflow">catch</span> (<a name="_a17"></a><a class="code" href="structmkldnn_1_1error.html">error</a> &amp;e) {</div>
 <div class="line">        <span class="keywordflow">if</span> (e.<a name="a18"></a>status == <a name="a19"></a><a class="code" href="group__c__api__types__generic.html#gga31866789b66acfb1c28b2f9bdd7bdfdda253b1d7923a77456485a19734788b220">mkldnn_unimplemented</a>) {</div>
 <div class="line">            std::cerr &lt;&lt; <span class="stringliteral">&quot;Intel MKL-DNN does not have int8 convolution &quot;</span></div>
-<div class="line">            <span class="stringliteral">&quot;implementation that supports this system. Please refer to &quot;</span></div>
-<div class="line">            <span class="stringliteral">&quot;the developer guide for details.&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">                         <span class="stringliteral">&quot;implementation that supports this system. Please &quot;</span></div>
+<div class="line">                         <span class="stringliteral">&quot;refer to &quot;</span></div>
+<div class="line">                         <span class="stringliteral">&quot;the developer guide for details.&quot;</span></div>
+<div class="line">                      &lt;&lt; std::endl;</div>
 <div class="line">        }</div>
 <div class="line">        <span class="keywordflow">throw</span>;</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line"><span class="comment">//[Create convolution primitive descriptor]</span></div>
+<div class="line">    <span class="comment">//[Create convolution primitive descriptor]</span></div>
 <div class="line">    <span class="keyword">auto</span> conv_prim_desc = <a class="code" href="structmkldnn_1_1convolution__forward_1_1primitive__desc.html">convolution_forward::primitive_desc</a>(</div>
 <div class="line">            conv_desc, conv_attr, cpu_engine);</div>
-<div class="line"><span class="comment">//[Create convolution primitive descriptor]</span></div>
+<div class="line">    <span class="comment">//[Create convolution primitive descriptor]</span></div>
 <div class="line"></div>
-<div class="line"><span class="comment">//[Quantize data and weights]</span></div>
+<div class="line">    <span class="comment">//[Quantize data and weights]</span></div>
 <div class="line">    <span class="keyword">auto</span> conv_src_memory = <a class="code" href="structmkldnn_1_1memory.html">memory</a>(conv_prim_desc.src_desc(), cpu_engine);</div>
 <div class="line">    <a class="code" href="structmkldnn_1_1primitive__attr.html">primitive_attr</a> src_attr;</div>
 <div class="line">    src_attr.<a class="code" href="structmkldnn_1_1primitive__attr.html#a1c2ba432512cf9950b81febce265e35d">set_output_scales</a>(src_mask, src_scales);</div>
-<div class="line">    <span class="keyword">auto</span> src_reorder_pd = reorder::primitive_desc(cpu_engine,</div>
-<div class="line">            user_src_memory.get_desc(), cpu_engine,</div>
-<div class="line">            conv_src_memory.get_desc(), src_attr);</div>
+<div class="line">    <span class="keyword">auto</span> src_reorder_pd</div>
+<div class="line">            = reorder::primitive_desc(cpu_engine, user_src_memory.get_desc(),</div>
+<div class="line">                    cpu_engine, conv_src_memory.get_desc(), src_attr);</div>
 <div class="line">    <span class="keyword">auto</span> src_reorder = <a name="_a20"></a><a class="code" href="structmkldnn_1_1reorder.html">reorder</a>(src_reorder_pd);</div>
 <div class="line">    src_reorder.execute(s, user_src_memory, conv_src_memory);</div>
 <div class="line"></div>
@@ -242,35 +244,35 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="keyword">auto</span> conv_bias_memory = <a class="code" href="structmkldnn_1_1memory.html">memory</a>(conv_prim_desc.bias_desc(), cpu_engine);</div>
 <div class="line">    <a class="code" href="structmkldnn_1_1primitive__attr.html">primitive_attr</a> bias_attr;</div>
 <div class="line">    bias_attr.<a class="code" href="structmkldnn_1_1primitive__attr.html#a1c2ba432512cf9950b81febce265e35d">set_output_scales</a>(bias_mask, bias_scales);</div>
-<div class="line">    <span class="keyword">auto</span> bias_reorder_pd = reorder::primitive_desc(cpu_engine,</div>
-<div class="line">            user_bias_memory.<a class="code" href="structmkldnn_1_1memory.html#aad39e92bb09b189c1ba6353dd631fb80">get_desc</a>(), cpu_engine,</div>
-<div class="line">            conv_bias_memory.get_desc(), bias_attr);</div>
+<div class="line">    <span class="keyword">auto</span> bias_reorder_pd</div>
+<div class="line">            = reorder::primitive_desc(cpu_engine, user_bias_memory.<a class="code" href="structmkldnn_1_1memory.html#aad39e92bb09b189c1ba6353dd631fb80">get_desc</a>(),</div>
+<div class="line">                    cpu_engine, conv_bias_memory.get_desc(), bias_attr);</div>
 <div class="line">    <span class="keyword">auto</span> bias_reorder = <a class="code" href="structmkldnn_1_1reorder.html">reorder</a>(bias_reorder_pd);</div>
 <div class="line">    bias_reorder.execute(s, user_bias_memory, conv_bias_memory);</div>
-<div class="line"><span class="comment">//[Quantize data and weights]</span></div>
+<div class="line">    <span class="comment">//[Quantize data and weights]</span></div>
 <div class="line"></div>
 <div class="line">    <span class="keyword">auto</span> conv_dst_memory = <a class="code" href="structmkldnn_1_1memory.html">memory</a>(conv_prim_desc.dst_desc(), cpu_engine);</div>
 <div class="line"></div>
-<div class="line"><span class="comment">//[Create convolution primitive]</span></div>
+<div class="line">    <span class="comment">//[Create convolution primitive]</span></div>
 <div class="line">    <span class="keyword">auto</span> conv = <a name="_a22"></a><a class="code" href="structmkldnn_1_1convolution__forward.html">convolution_forward</a>(conv_prim_desc);</div>
 <div class="line">    conv.execute(s,</div>
-<div class="line">            { { MKLDNN_ARG_SRC, conv_src_memory },</div>
-<div class="line">                    { MKLDNN_ARG_WEIGHTS, conv_weights_memory },</div>
-<div class="line">                    { MKLDNN_ARG_BIAS, conv_bias_memory },</div>
-<div class="line">                    { MKLDNN_ARG_DST, conv_dst_memory } });</div>
-<div class="line"><span class="comment">//[Create convolution primitive]</span></div>
+<div class="line">            {{MKLDNN_ARG_SRC, conv_src_memory},</div>
+<div class="line">                    {MKLDNN_ARG_WEIGHTS, conv_weights_memory},</div>
+<div class="line">                    {MKLDNN_ARG_BIAS, conv_bias_memory},</div>
+<div class="line">                    {MKLDNN_ARG_DST, conv_dst_memory}});</div>
+<div class="line">    <span class="comment">//[Create convolution primitive]</span></div>
 <div class="line"></div>
-<div class="line"><span class="comment">//[Dequantize the result]</span></div>
-<div class="line">    <span class="keyword">auto</span> user_dst_memory = <a class="code" href="structmkldnn_1_1memory.html">memory</a>({ { conv_dst_tz }, dt::f32, tag::nchw },</div>
-<div class="line">            cpu_engine, user_dst.data());</div>
+<div class="line">    <span class="comment">//[Dequantize the result]</span></div>
+<div class="line">    <span class="keyword">auto</span> user_dst_memory = <a class="code" href="structmkldnn_1_1memory.html">memory</a>(</div>
+<div class="line">            {{conv_dst_tz}, dt::f32, tag::nchw}, cpu_engine, user_dst.data());</div>
 <div class="line">    <a class="code" href="structmkldnn_1_1primitive__attr.html">primitive_attr</a> dst_attr;</div>
 <div class="line">    dst_attr.<a class="code" href="structmkldnn_1_1primitive__attr.html#a1c2ba432512cf9950b81febce265e35d">set_output_scales</a>(dst_mask, dst_scales);</div>
-<div class="line">    <span class="keyword">auto</span> dst_reorder_pd = reorder::primitive_desc(cpu_engine,</div>
-<div class="line">            conv_dst_memory.get_desc(), cpu_engine,</div>
-<div class="line">            user_dst_memory.get_desc(), dst_attr);</div>
+<div class="line">    <span class="keyword">auto</span> dst_reorder_pd</div>
+<div class="line">            = reorder::primitive_desc(cpu_engine, conv_dst_memory.get_desc(),</div>
+<div class="line">                    cpu_engine, user_dst_memory.get_desc(), dst_attr);</div>
 <div class="line">    <span class="keyword">auto</span> dst_reorder = <a class="code" href="structmkldnn_1_1reorder.html">reorder</a>(dst_reorder_pd);</div>
 <div class="line">    dst_reorder.execute(s, conv_dst_memory, user_dst_memory);</div>
-<div class="line"><span class="comment">//[Dequantize the result]</span></div>
+<div class="line">    <span class="comment">//[Dequantize the result]</span></div>
 <div class="line"></div>
 <div class="line">    s.<a name="a23"></a><a class="code" href="structmkldnn_1_1stream.html#a48181ce0f5eb3bcd75778b5aa8866df6">wait</a>();</div>
 <div class="line">}</div>
