@@ -103,6 +103,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </ul>
 <p>The \(\gamma(c)\) and \(\beta(c)\) tensors are considered learnable.</p>
 <p>In training mode the primitive also optionally supports fusion with ReLU activation applied to the result (see <a class="el" href="group__c__api__types__generic.html#gga0aaaba92ad942f46a96ff0b7f6ed230caf7a1ef171414fc88ecc3c5fb631f58d2" title="Fuse with ReLU. ">mkldnn_fuse_norm_relu</a> flag).</p>
+<dl class="section note"><dt>Note</dt><dd><ul>
+<li>The batch normalization primitive computes population mean and variance and not their sample or unbiased versions that are typically used to compute running mean and variance.</li>
+<li>Using the mean and variance computed by the batch normalization primitive, running mean and variance \(\hat\mu\) and \(\hat\sigma^2\) can be computed as <p class="formulaDsp">
+\[ \hat\mu := \alpha \cdot \hat\mu + (1 - \alpha) \cdot \mu, \\ \hat\sigma^2 := \alpha \cdot \hat\sigma^2 + (1 - \alpha) \cdot \sigma^2. \]
+</p>
+</li>
+</ul>
+</dd></dl>
 <h4>Difference Between <a href="#mkldnn_forward_training">Forward Training</a> and <a href="#mkldnn_forward_inference">Forward Inference</a></h4>
 <ul>
 <li>If mean and variance are computed at run-time (i.e., <a class="el" href="group__c__api__types__generic.html#gga0aaaba92ad942f46a96ff0b7f6ed230ca106c7b376858470c79facbfc48755644" title="Use global statistics. ">mkldnn_use_global_stats</a> is not set), they become outputs for the propagation kind <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f" title="Forward data propagation (training mode). ">mkldnn_forward_training</a> (since they would be required during the backward propagation) and are not exposed for the propagation kind <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a58a923fb6c4e1214e1505b5fa0b1e3fa" title="Forward data propagation (inference mode). ">mkldnn_forward_inference</a>.</li>
