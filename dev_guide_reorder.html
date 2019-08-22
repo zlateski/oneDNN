@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>Intel(R) MKL-DNN: Reorder</title>
+<title>DNNL: Reorder</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,7 +24,7 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-   <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
+   <div id="projectname">Deep Neural Network Library (DNNL)
    &#160;<span id="projectnumber">1.0.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
@@ -95,9 +95,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <ol type="1">
 <li>The reorder primitive requires the source and destination tensors to have the same shape. Implicit broadcasting is not supported.</li>
 <li>While in most of the cases the reorder should be able to handle arbitrary source and destination memory formats and data types it might happen than some combinations are not implemented. For instance:<ul>
-<li>Reorder implementations between weights in non-plain memory formats might be limited (but if encountered in real practice should be treated as a bug and reported to the Intel MKL-DNN team);</li>
+<li>Reorder implementations between weights in non-plain memory formats might be limited (but if encountered in real practice should be treated as a bug and reported to the DNNL team);</li>
 <li>Weights in one Winograd format cannot be reordered to the weights of the other Winograd format;</li>
-<li>Quantized weights for convolution with <a class="el" href="group__c__api__types__generic.html#gga826b2a9be4d94ac17f99bacac6d0cb29a8a09db71666549aebad36fd23d974180" title="8-bit signed integer. ">mkldnn_s8</a> source data type cannot be dequantized back to the <a class="el" href="group__c__api__types__generic.html#gga826b2a9be4d94ac17f99bacac6d0cb29a6d9faa3e054a4f7b7e5ab5b3d420684e" title="32-bit/single-precision floating point. ">mkldnn_f32</a> data type;</li>
+<li>Quantized weights for convolution with <a class="el" href="group__c__api__types__generic.html#gga012ba1c84ff24bdd068f9d2f9b26a130a9638cfbcb7d50834a608ffae644d76b4" title="8-bit signed integer. ">dnnl_s8</a> source data type cannot be dequantized back to the <a class="el" href="group__c__api__types__generic.html#gga012ba1c84ff24bdd068f9d2f9b26a130a6b33889946b183311c39cc1bd0656ae9" title="32-bit/single-precision floating point. ">dnnl_f32</a> data type;</li>
 </ul>
 </li>
 <li>To alleviate the problem a user may rely on fact that the reorder from original plain memory format and user's data type to the <em>optimized</em> format with chosen data type should be always implemented.</li>
@@ -118,9 +118,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr>
 <th align="left">Attributes / Post-ops </th><th align="left">Meaning  </th></tr>
 <tr>
-<td align="left"><a class="el" href="group__c__api__attributes.html#ga415451b28b726c0641c3d32b98815fc2">Output scales</a> </td><td align="left">Copy and scale the data according to the scaling factors </td></tr>
+<td align="left"><a class="el" href="group__c__api__attributes.html#gae3ff1fe9449f2d9b1cd02ad864b57057">Output scales</a> </td><td align="left">Copy and scale the data according to the scaling factors </td></tr>
 <tr>
-<td align="left"><a class="el" href="group__c__api__attributes__post__ops.html#ga172931a133db5d1a3605495ad877d364">Sum post-op</a> </td><td align="left">Instead of copy the data accumulate it to the previous data </td></tr>
+<td align="left"><a class="el" href="group__c__api__attributes__post__ops.html#ga7175edf83658bd14dd5d7cd9e9193e92">Sum post-op</a> </td><td align="left">Instead of copy the data accumulate it to the previous data </td></tr>
 </table>
 <p>For instance, the following pseudo-code</p>
 <div class="fragment"><div class="line">reorder(</div>

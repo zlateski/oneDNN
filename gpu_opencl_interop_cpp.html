@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>Intel(R) MKL-DNN: Getting started on GPU with OpenCL extensions API</title>
+<title>DNNL: Getting started on GPU with OpenCL extensions API</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,7 +24,7 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-   <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
+   <div id="projectname">Deep Neural Network Library (DNNL)
    &#160;<span id="projectnumber">1.0.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
@@ -81,7 +81,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><p><b></b></p>
 <p>Full example text: <a class="el" href="gpu_opencl_interop_8cpp-example.html">gpu_opencl_interop.cpp</a></p>
-<p>This C++ API example demonstrates programming for Intel(R) Processor Graphics with OpenCL* extensions API in Intel MKL-DNN. The workflow includes following steps:</p>
+<p>This C++ API example demonstrates programming for Intel(R) Processor Graphics with OpenCL* extensions API in DNNL. The workflow includes following steps:</p>
 <ul>
 <li>Create a GPU engine. It uses OpenCL as the runtime in this sample.</li>
 <li>Create a GPU memory descriptor/object.</li>
@@ -95,31 +95,31 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </ul>
 <h1><a class="anchor" id="gpu_opencl_interop_cpp_headers"></a>
 Public headers</h1>
-<p>To start using Intel MKL-DNN, we must first include the <a class="el" href="mkldnn_8hpp.html">mkldnn.hpp</a> header file in the application. We also include CL/cl.h for using OpenCL APIs and <a class="el" href="mkldnn__debug_8h.html">mkldnn_debug.h</a>, which contains some debugging facilities such as returning a string representation for common Intel MKL-DNN C types. All C++ API types and functions reside in the <code>mkldnn</code> namespace. For simplicity of the example we import this namespace.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="mkldnn_8hpp.html">mkldnn.hpp</a>&gt;</span></div>
+<p>To start using DNNL, we must first include the <a class="el" href="dnnl_8hpp.html">dnnl.hpp</a> header file in the application. We also include CL/cl.h for using OpenCL APIs and <a class="el" href="dnnl__debug_8h.html">dnnl_debug.h</a>, which contains some debugging facilities such as returning a string representation for common DNNL C types. All C++ API types and functions reside in the <code>dnnl</code> namespace. For simplicity of the example we import this namespace.</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="dnnl_8hpp.html">dnnl.hpp</a>&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;CL/cl.h&gt;</span></div>
-<div class="line"><span class="comment">// Optional header to access debug functions like `mkldnn_status2str()`</span></div>
-<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="mkldnn__debug_8h.html">mkldnn_debug.h</a>&quot;</span></div>
+<div class="line"><span class="comment">// Optional header to access debug functions like `dnnl_status2str()`</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="dnnl__debug_8h.html">dnnl_debug.h</a>&quot;</span></div>
 <div class="line"></div>
 <div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;numeric&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;sstream&gt;</span></div>
 <div class="line"></div>
-<div class="line"><span class="keyword">using namespace </span>mkldnn;</div>
+<div class="line"><span class="keyword">using namespace </span>dnnl;</div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 </div><!-- fragment --> <h1><a class="anchor" id="gpu_opencl_interop_cpp_tutorial"></a>
 gpu_opencl_interop_tutorial() function</h1>
 <h2><a class="anchor" id="gpu_opencl_interop_cpp_sub1"></a>
 Engine and stream</h2>
-<p>All Intel MKL-DNN primitives and memory objects are attached to a particular <a class="el" href="structmkldnn_1_1engine.html">mkldnn::engine</a>, which is an abstraction of a computational device (see also <a class="el" href="dev_guide_basic_concepts.html">Basic Concepts</a>). The primitives are created and optimized for the device to which they are attached, and the memory objects refer to memory residing on the corresponding device. In particular, that means neither memory objects nor primitives that were created for one engine can be used on another.</p>
-<p>To create engines, we must specify the <a class="el" href="structmkldnn_1_1engine.html#a81bcf1ea92d7f98852a2c3e187825de6">mkldnn::engine::kind</a> and the index of the device of the given kind. In this example we use the first available GPU engine, so the index for the engine is 0. This example assumes OpenCL being a runtime for GPU. In such case, during engine creation, an OpenCL context is also created and attaches to the created engine.</p>
+<p>All DNNL primitives and memory objects are attached to a particular <a class="el" href="structdnnl_1_1engine.html">dnnl::engine</a>, which is an abstraction of a computational device (see also <a class="el" href="dev_guide_basic_concepts.html">Basic Concepts</a>). The primitives are created and optimized for the device to which they are attached, and the memory objects refer to memory residing on the corresponding device. In particular, that means neither memory objects nor primitives that were created for one engine can be used on another.</p>
+<p>To create engines, we must specify the <a class="el" href="structdnnl_1_1engine.html#a2635da16314dcbdb9bd9ea431316bb1a">dnnl::engine::kind</a> and the index of the device of the given kind. In this example we use the first available GPU engine, so the index for the engine is 0. This example assumes OpenCL being a runtime for GPU. In such case, during engine creation, an OpenCL context is also created and attaches to the created engine.</p>
 <div class="fragment"><div class="line">    engine eng(engine::kind::gpu, 0);</div>
-</div><!-- fragment --><p> In addition to an engine, all primitives require a <a class="el" href="structmkldnn_1_1stream.html">mkldnn::stream</a> for the execution. The stream encapsulates an execution context and is tied to a particular engine.</p>
+</div><!-- fragment --><p> In addition to an engine, all primitives require a <a class="el" href="structdnnl_1_1stream.html">dnnl::stream</a> for the execution. The stream encapsulates an execution context and is tied to a particular engine.</p>
 <p>In this example, a GPU stream is created. This example assumes OpenCL being a runtime for GPU. During stream creation, an OpenCL command queue is also created and attaches to this stream.</p>
-<div class="fragment"><div class="line">    <a class="code" href="structmkldnn_1_1stream.html">mkldnn::stream</a> strm(eng);</div>
+<div class="fragment"><div class="line">    <a class="code" href="structdnnl_1_1stream.html">dnnl::stream</a> strm(eng);</div>
 </div><!-- fragment --> <h2><a class="anchor" id="gpu_opencl_interop_cpp_sub2"></a>
-Wrapping data into Intel MKL-DNN memory object</h2>
-<p>Next, we create a memory object. We need to specify dimensions of our memory by passing a memory::dims object. Then we create a memory descriptor with these dimensions, with the <a class="el" href="structmkldnn_1_1memory.html#aa8a0d49cc7faaceef9d8f55d66bff57ba512dc597be7ae761876315165dc8bd2e" title="32-bit/single-precision floating point. ">mkldnn::memory::data_type::f32</a> data type, and with the <a class="el" href="structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4cedaded7ac40158367123c5467281d44cbeb" title="4D CNN activations tensor, an alias to mkldnn::memory::format_tag::abcd ">mkldnn::memory::format_tag::nchw</a> memory format. Finally, we construct a memory object and pass the memory descriptor. The library allocates memory internally. </p>
+Wrapping data into DNNL memory object</h2>
+<p>Next, we create a memory object. We need to specify dimensions of our memory by passing a memory::dims object. Then we create a memory descriptor with these dimensions, with the <a class="el" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e" title="32-bit/single-precision floating point. ">dnnl::memory::data_type::f32</a> data type, and with the <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3faded7ac40158367123c5467281d44cbeb" title="4D CNN activations tensor, an alias to dnnl::memory::format_tag::abcd ">dnnl::memory::format_tag::nchw</a> memory format. Finally, we construct a memory object and pass the memory descriptor. The library allocates memory internally. </p>
 <div class="fragment"><div class="line">    memory::dims tz_dims = {2, 3, 4, 5};</div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">size_t</span> N = std::accumulate(tz_dims.begin(), tz_dims.end(), (size_t)1,</div>
 <div class="line">            std::multiplies&lt;size_t&gt;());</div>
@@ -140,7 +140,7 @@ Initialize the data by executing a custom OpenCL kernel</h2>
 <div class="fragment"><div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span> *kernel_name = <span class="stringliteral">&quot;init&quot;</span>;</div>
 <div class="line">    cl_kernel ocl_init_kernel = create_init_opencl_kernel(</div>
 <div class="line">            eng.get_ocl_context(), kernel_name, ocl_code);</div>
-</div><!-- fragment --><p> The next step is to execute our OpenCL kernel by setting its arguments and enqueueing to an OpenCL queue. You can extract the underlying OpenCL buffer from the memory object using the interoperability interface: mkldnn::memory::get_ocl_mem_object() . For simplicity we can just construct a stream, extract the underlying OpenCL queue, and enqueue the kernel to this queue. </p>
+</div><!-- fragment --><p> The next step is to execute our OpenCL kernel by setting its arguments and enqueueing to an OpenCL queue. You can extract the underlying OpenCL buffer from the memory object using the interoperability interface: dnnl::memory::get_ocl_mem_object() . For simplicity we can just construct a stream, extract the underlying OpenCL queue, and enqueue the kernel to this queue. </p>
 <div class="fragment"><div class="line">    cl_mem ocl_buf = mem.get_ocl_mem_object();</div>
 <div class="line">    OCL_CHECK(clSetKernelArg(ocl_init_kernel, 0, <span class="keyword">sizeof</span>(ocl_buf), &amp;ocl_buf));</div>
 <div class="line"></div>
@@ -149,7 +149,7 @@ Initialize the data by executing a custom OpenCL kernel</h2>
 <div class="line">            <span class="keyword">nullptr</span>, 0, <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>));</div>
 </div><!-- fragment --> <h2><a class="anchor" id="gpu_opencl_interop_cpp_sub4"></a>
 Create and execute a primitive</h2>
-<p>There are three steps to create an operation primitive in Intel MKL-DNN:</p>
+<p>There are three steps to create an operation primitive in DNNL:</p>
 <ol type="1">
 <li>Create an operation descriptor.</li>
 <li>Create a primitive descriptor.</li>
@@ -161,14 +161,14 @@ Create and execute a primitive</h2>
 <div class="line">    <span class="keyword">auto</span> relu_pd = eltwise_forward::primitive_desc(relu_d, eng);</div>
 <div class="line">    <span class="keyword">auto</span> relu = eltwise_forward(relu_pd);</div>
 </div><!-- fragment --><p> Next, execute the primitive. </p>
-<div class="fragment"><div class="line">    relu.execute(strm, {{MKLDNN_ARG_SRC, mem}, {MKLDNN_ARG_DST, mem}});</div>
+<div class="fragment"><div class="line">    relu.execute(strm, {{DNNL_ARG_SRC, mem}, {DNNL_ARG_DST, mem}});</div>
 <div class="line">    strm.wait();</div>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>Our primitive mem serves as both input and output parameter.</dd>
 <dd>
-Primitive submission on GPU is asynchronous; However, the user can call mkldnn:stream::wait() to synchronize the stream and ensure that all previously submitted primitives are completed.</dd></dl>
+Primitive submission on GPU is asynchronous; However, the user can call dnnl:stream::wait() to synchronize the stream and ensure that all previously submitted primitives are completed.</dd></dl>
 <h2><a class="anchor" id="gpu_opencl_interop_cpp_sub5"></a>
 Validate the results</h2>
-<p>Before running validation codes, we need to access the OpenCL memory on the host. The simplest way to access the OpenCL memory is to map it to the host using the <a class="el" href="structmkldnn_1_1memory.html#a777212e66feff5169d90f006bbd645be" title="Maps the data of the memory. ">mkldnn::memory::map_data()</a> and <a class="el" href="structmkldnn_1_1memory.html#ad51d365ef8ccbe0da74609a45b1f9d4b" title="Unmaps the previously mapped data for the memory. ">mkldnn::memory::unmap_data()</a> APIs. After mapping, this data is directly accessible for reading or writing on the host. We can run validation codes on the host accordingly. While the data is mapped, no GPU-side operations on this data are allowed. The data should be unmapped to release all resources associated with mapping. </p>
+<p>Before running validation codes, we need to access the OpenCL memory on the host. The simplest way to access the OpenCL memory is to map it to the host using the <a class="el" href="structdnnl_1_1memory.html#ad11ae4ffa08379b58eb096d15304739a" title="Maps the data of the memory. ">dnnl::memory::map_data()</a> and <a class="el" href="structdnnl_1_1memory.html#a9e68837f42415aca5e141a6d8a97996e" title="Unmaps the previously mapped data for the memory. ">dnnl::memory::unmap_data()</a> APIs. After mapping, this data is directly accessible for reading or writing on the host. We can run validation codes on the host accordingly. While the data is mapped, no GPU-side operations on this data are allowed. The data should be unmapped to release all resources associated with mapping. </p>
 <div class="fragment"><div class="line">    <span class="keywordtype">float</span> *mapped_data = mem.map_data&lt;<span class="keywordtype">float</span>&gt;();</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; N; i++) {</div>
 <div class="line">        <span class="keywordtype">float</span> expected = (i % 2) ? 0.0f : (<span class="keywordtype">float</span>)i;</div>
@@ -181,14 +181,13 @@ Validate the results</h2>
 </div><!-- fragment --> <h1><a class="anchor" id="gpu_opencl_interop_cpp_main"></a>
 main() function</h1>
 <p>We now just call everything we prepared earlier.</p>
-<p>Because we are using the Intel MKL-DNN C++ API, we use exceptions to handle errors (see <a class="el" href="dev_guide_c_and_cpp_apis.html">C and C++ APIs</a>). The Intel MKL-DNN C++ API throws exceptions of type <a class="el" href="structmkldnn_1_1error.html">mkldnn::error</a>, which contains the error status (of type <a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a>) and a human-readable error message accessible through the regular <code>what()</code> method.</p>
+<p>Because we are using the DNNL C++ API, we use exceptions to handle errors (see <a class="el" href="dev_guide_c_and_cpp_apis.html">C and C++ APIs</a>). The DNNL C++ API throws exceptions of type <a class="el" href="structdnnl_1_1error.html">dnnl::error</a>, which contains the error status (of type <a class="el" href="group__c__api__types__generic.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a>) and a human-readable error message accessible through the regular <code>what()</code> method.</p>
 <div class="fragment"><div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv) {</div>
 <div class="line">    <span class="keywordflow">try</span> {</div>
 <div class="line">        gpu_opencl_interop_tutorial();</div>
-<div class="line">    } <span class="keywordflow">catch</span> (<a class="code" href="structmkldnn_1_1error.html">mkldnn::error</a> &amp;e) {</div>
-<div class="line">        std::cerr &lt;&lt; <span class="stringliteral">&quot;Intel MKL-DNN error: &quot;</span> &lt;&lt; e.<a class="code" href="structmkldnn_1_1error.html#a8a8609a79dbe152572de37c50d36af96">what</a>() &lt;&lt; std::endl</div>
-<div class="line">                  &lt;&lt; <span class="stringliteral">&quot;Error status: &quot;</span> &lt;&lt; mkldnn_status2str(e.status)</div>
-<div class="line">                  &lt;&lt; std::endl;</div>
+<div class="line">    } <span class="keywordflow">catch</span> (<a class="code" href="structdnnl_1_1error.html">dnnl::error</a> &amp;e) {</div>
+<div class="line">        std::cerr &lt;&lt; <span class="stringliteral">&quot;DNNL error: &quot;</span> &lt;&lt; e.<a class="code" href="structdnnl_1_1error.html#adfc1a2bf4e31aa1751b38e8e1dbcba2b">what</a>() &lt;&lt; std::endl</div>
+<div class="line">                  &lt;&lt; <span class="stringliteral">&quot;Error status: &quot;</span> &lt;&lt; dnnl_status2str(e.status) &lt;&lt; std::endl;</div>
 <div class="line">        <span class="keywordflow">return</span> 1;</div>
 <div class="line">    } <span class="keywordflow">catch</span> (std::string &amp;e) {</div>
 <div class="line">        std::cerr &lt;&lt; <span class="stringliteral">&quot;Error in the example: &quot;</span> &lt;&lt; e &lt;&lt; std::endl;</div>

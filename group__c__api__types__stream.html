@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>Intel(R) MKL-DNN: Execution stream</title>
+<title>DNNL: Execution stream</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,7 +24,7 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-   <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
+   <div id="projectname">Deep Neural Network Library (DNNL)
    &#160;<span id="projectnumber">1.0.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
@@ -86,56 +86,56 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmkldnn__stream.html">mkldnn_stream</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An opaque structure to describe an execution stream.  <a href="structmkldnn__stream.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl__stream.html">dnnl_stream</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An opaque structure to describe an execution stream.  <a href="structdnnl__stream.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:ga45075c5015f9a5ef3b0365af92fa1529"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga45075c5015f9a5ef3b0365af92fa1529"></a>
-typedef struct <a class="el" href="structmkldnn__stream.html">mkldnn_stream</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__stream.html#ga45075c5015f9a5ef3b0365af92fa1529">mkldnn_stream_t</a></td></tr>
-<tr class="memdesc:ga45075c5015f9a5ef3b0365af92fa1529"><td class="mdescLeft">&#160;</td><td class="mdescRight">An execution stream handle. <br/></td></tr>
-<tr class="separator:ga45075c5015f9a5ef3b0365af92fa1529"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga558d30430fc476ef78cd8d2371a7d5f3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga558d30430fc476ef78cd8d2371a7d5f3"></a>
-typedef struct <a class="el" href="structmkldnn__stream.html">mkldnn_stream</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__stream.html#ga558d30430fc476ef78cd8d2371a7d5f3">const_mkldnn_stream_t</a></td></tr>
-<tr class="memdesc:ga558d30430fc476ef78cd8d2371a7d5f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">A constant execution stream handle. <br/></td></tr>
-<tr class="separator:ga558d30430fc476ef78cd8d2371a7d5f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga735eb19cfd205c108c468b5657de4eca"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga735eb19cfd205c108c468b5657de4eca"></a>
+typedef struct <a class="el" href="structdnnl__stream.html">dnnl_stream</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__stream.html#ga735eb19cfd205c108c468b5657de4eca">dnnl_stream_t</a></td></tr>
+<tr class="memdesc:ga735eb19cfd205c108c468b5657de4eca"><td class="mdescLeft">&#160;</td><td class="mdescRight">An execution stream handle. <br/></td></tr>
+<tr class="separator:ga735eb19cfd205c108c468b5657de4eca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga06049a9f0b80366e5f2f54b10b9be956"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga06049a9f0b80366e5f2f54b10b9be956"></a>
+typedef struct <a class="el" href="structdnnl__stream.html">dnnl_stream</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__stream.html#ga06049a9f0b80366e5f2f54b10b9be956">const_dnnl_stream_t</a></td></tr>
+<tr class="memdesc:ga06049a9f0b80366e5f2f54b10b9be956"><td class="mdescLeft">&#160;</td><td class="mdescRight">A constant execution stream handle. <br/></td></tr>
+<tr class="separator:ga06049a9f0b80366e5f2f54b10b9be956"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:ga99541103c9e9f6241d7a312d39d2cff2"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__stream.html#ga99541103c9e9f6241d7a312d39d2cff2">mkldnn_stream_flags_t</a> { <a class="el" href="group__c__api__types__stream.html#gga99541103c9e9f6241d7a312d39d2cff2acd478495ebc14985b6c3e85aa5468c7b">mkldnn_stream_default_order</a> = 0x1U, 
-<a class="el" href="group__c__api__types__stream.html#gga99541103c9e9f6241d7a312d39d2cff2af6aaf47bef398802637698488dc4f8ca">mkldnn_stream_in_order</a> = 0x2U, 
-<a class="el" href="group__c__api__types__stream.html#gga99541103c9e9f6241d7a312d39d2cff2a2bd998d06beca9ac9ccd57111ac90391">mkldnn_stream_out_of_order</a> = 0x4U, 
-<a class="el" href="group__c__api__types__stream.html#gga99541103c9e9f6241d7a312d39d2cff2a8048500bb95413112046344427918c2d">mkldnn_stream_default_flags</a> = mkldnn_stream_default_order
+<tr class="memitem:ga3d74cfed8fe92b0e4498a1f2bdab5547"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__stream.html#ga3d74cfed8fe92b0e4498a1f2bdab5547">dnnl_stream_flags_t</a> { <a class="el" href="group__c__api__types__stream.html#gga3d74cfed8fe92b0e4498a1f2bdab5547a3be21155a3c838376548722c9f9af1a8">dnnl_stream_default_order</a> = 0x1U, 
+<a class="el" href="group__c__api__types__stream.html#gga3d74cfed8fe92b0e4498a1f2bdab5547a4cb57d18d4769548e671aaff38a80478">dnnl_stream_in_order</a> = 0x2U, 
+<a class="el" href="group__c__api__types__stream.html#gga3d74cfed8fe92b0e4498a1f2bdab5547a8e9e057b28a7898a9b52120b8c7bd356">dnnl_stream_out_of_order</a> = 0x4U, 
+<a class="el" href="group__c__api__types__stream.html#gga3d74cfed8fe92b0e4498a1f2bdab5547acf05c543bccebd58e6d4e0db7137fb92">dnnl_stream_default_flags</a> = dnnl_stream_default_order
  }</td></tr>
-<tr class="memdesc:ga99541103c9e9f6241d7a312d39d2cff2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stream flags.  <a href="group__c__api__types__stream.html#ga99541103c9e9f6241d7a312d39d2cff2">More...</a><br/></td></tr>
-<tr class="separator:ga99541103c9e9f6241d7a312d39d2cff2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memdesc:ga3d74cfed8fe92b0e4498a1f2bdab5547"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stream flags.  <a href="group__c__api__types__stream.html#ga3d74cfed8fe92b0e4498a1f2bdab5547">More...</a><br/></td></tr>
+<tr class="separator:ga3d74cfed8fe92b0e4498a1f2bdab5547"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
-<a class="anchor" id="ga99541103c9e9f6241d7a312d39d2cff2"></a>
+<a class="anchor" id="ga3d74cfed8fe92b0e4498a1f2bdab5547"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="group__c__api__types__stream.html#ga99541103c9e9f6241d7a312d39d2cff2">mkldnn_stream_flags_t</a></td>
+          <td class="memname">enum <a class="el" href="group__c__api__types__stream.html#ga3d74cfed8fe92b0e4498a1f2bdab5547">dnnl_stream_flags_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Stream flags. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="gga99541103c9e9f6241d7a312d39d2cff2acd478495ebc14985b6c3e85aa5468c7b"></a>mkldnn_stream_default_order</em>&nbsp;</td><td class="fielddoc">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="gga3d74cfed8fe92b0e4498a1f2bdab5547a3be21155a3c838376548722c9f9af1a8"></a>dnnl_stream_default_order</em>&nbsp;</td><td class="fielddoc">
 <p>Default order execution. </p>
 <p>Either in-order or out-of-order depending on the runtime. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="gga99541103c9e9f6241d7a312d39d2cff2af6aaf47bef398802637698488dc4f8ca"></a>mkldnn_stream_in_order</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="gga3d74cfed8fe92b0e4498a1f2bdab5547a4cb57d18d4769548e671aaff38a80478"></a>dnnl_stream_in_order</em>&nbsp;</td><td class="fielddoc">
 <p>In-order execution. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="gga99541103c9e9f6241d7a312d39d2cff2a2bd998d06beca9ac9ccd57111ac90391"></a>mkldnn_stream_out_of_order</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="gga3d74cfed8fe92b0e4498a1f2bdab5547a8e9e057b28a7898a9b52120b8c7bd356"></a>dnnl_stream_out_of_order</em>&nbsp;</td><td class="fielddoc">
 <p>Out-of-order execution. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="gga99541103c9e9f6241d7a312d39d2cff2a8048500bb95413112046344427918c2d"></a>mkldnn_stream_default_flags</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="gga3d74cfed8fe92b0e4498a1f2bdab5547acf05c543bccebd58e6d4e0db7137fb92"></a>dnnl_stream_default_flags</em>&nbsp;</td><td class="fielddoc">
 <p>Default stream configuration. </p>
 </td></tr>
 </table>

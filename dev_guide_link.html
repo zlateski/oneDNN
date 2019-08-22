@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>Intel(R) MKL-DNN: Linking to the Library</title>
+<title>DNNL: Linking to the Library</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,7 +24,7 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-   <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
+   <div id="projectname">Deep Neural Network Library (DNNL)
    &#160;<span id="projectnumber">1.0.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
@@ -79,21 +79,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Linking to the Library </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN) includes several header files providing C and C++ APIs for the functionality and one or several libraries depending on how Intel MKL-DNN was built.</p>
+<div class="textblock"><p>Deep Neural Network Library (DNNL) includes several header files providing C and C++ APIs for the functionality and one or several libraries depending on how DNNL was built.</p>
 <h2>Header Files</h2>
 <table class="doxtable">
 <tr>
 <th align="left">File </th><th align="left">Description  </th></tr>
 <tr>
-<td align="left"><a class="el" href="mkldnn_8h.html" title="C API. ">include/mkldnn.h</a> </td><td align="left">C header </td></tr>
+<td align="left"><a class="el" href="dnnl_8h.html" title="C API. ">include/dnnl.h</a> </td><td align="left">C header </td></tr>
 <tr>
-<td align="left"><a class="el" href="mkldnn_8hpp.html" title="C++ API. ">include/mkldnn.hpp</a> </td><td align="left">C++ header </td></tr>
+<td align="left"><a class="el" href="dnnl_8hpp.html" title="C++ API. ">include/dnnl.hpp</a> </td><td align="left">C++ header </td></tr>
 <tr>
-<td align="left"><a class="el" href="mkldnn__types_8h.html" title="C API types definitions. ">include/mkldnn_types.h</a> </td><td align="left">Auxiliary C header </td></tr>
+<td align="left"><a class="el" href="dnnl__types_8h.html" title="C API types definitions. ">include/dnnl_types.h</a> </td><td align="left">Auxiliary C header </td></tr>
 <tr>
-<td align="left">include/mkldnn_config.h </td><td align="left">Auxiliary C header </td></tr>
+<td align="left">include/dnnl_config.h </td><td align="left">Auxiliary C header </td></tr>
 <tr>
-<td align="left">include/mkldnn_version.h </td><td align="left">C header with version information </td></tr>
+<td align="left">include/dnnl_version.h </td><td align="left">C header with version information </td></tr>
 </table>
 <h2>Libraries</h2>
 <h3>Linux</h3>
@@ -101,39 +101,39 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr>
 <th align="left">File </th><th align="left">Description  </th></tr>
 <tr>
-<td align="left">lib/libmkldnn.so </td><td align="left">Intel MKL-DNN dynamic library </td></tr>
+<td align="left">lib/libdnnl.so </td><td align="left">DNNL dynamic library </td></tr>
 <tr>
-<td align="left">lib/libmkldnn.a </td><td align="left">Intel MKL-DNN static library (if built with <code>MKLDNN_LIBRARY_TYPE=STATIC</code>) </td></tr>
+<td align="left">lib/libdnnl.a </td><td align="left">DNNL static library (if built with <code>DNNL_LIBRARY_TYPE=STATIC</code>) </td></tr>
 </table>
 <h3>macOS</h3>
 <table class="doxtable">
 <tr>
 <th align="left">File </th><th align="left">Description  </th></tr>
 <tr>
-<td align="left">lib/libmkldnn.dylib </td><td align="left">Intel MKL-DNN dynamic library </td></tr>
+<td align="left">lib/libdnnl.dylib </td><td align="left">DNNL dynamic library </td></tr>
 <tr>
-<td align="left">lib/libmkldnn.a </td><td align="left">Intel MKL-DNN static library (if built with <code>MKLDNN_LIBRARY_TYPE=STATIC</code>) </td></tr>
+<td align="left">lib/libdnnl.a </td><td align="left">DNNL static library (if built with <code>DNNL_LIBRARY_TYPE=STATIC</code>) </td></tr>
 </table>
 <h3>Windows</h3>
 <table class="doxtable">
 <tr>
 <th align="left">File </th><th align="left">Description  </th></tr>
 <tr>
-<td align="left">bin\libmkldnn.dll </td><td align="left">Intel MKL-DNN dynamic library </td></tr>
+<td align="left">bin\libdnnl.dll </td><td align="left">DNNL dynamic library </td></tr>
 <tr>
-<td align="left">lib\libmkldnn.lib </td><td align="left">Intel MKL-DNN import library </td></tr>
+<td align="left">lib\libdnnl.lib </td><td align="left">DNNL import library </td></tr>
 </table>
-<h2>Linking to Intel MKL-DNN</h2>
-<p>The examples below assume that Intel MKL-DNN is installed in the directory defined in the <code>MKLDNNROOT</code> environment variable.</p>
+<h2>Linking to DNNL</h2>
+<p>The examples below assume that DNNL is installed in the directory defined in the <code>DNNLROOT</code> environment variable.</p>
 <h3>Linux/macOS</h3>
-<div class="fragment"><div class="line">g++ -std=c++11 -I${MKLDNNROOT}/include -L${MKLDNNROOT}/lib simple_net.cpp -lmkldnn</div>
-<div class="line">clang++ -std=c++11 -I${MKLDNNROOT}/include -L${MKLDNNROOT}/lib simple_net.cpp -lmkldnn</div>
-<div class="line">icpc -std=c++11 -I${MKLDNNROOT}/include -L${MKLDNNROOT}/lib simple_net.cpp -lmkldnn</div>
+<div class="fragment"><div class="line">g++ -std=c++11 -I${DNNLROOT}/include -L${DNNLROOT}/lib simple_net.cpp -ldnnl</div>
+<div class="line">clang++ -std=c++11 -I${DNNLROOT}/include -L${DNNLROOT}/lib simple_net.cpp -ldnnl</div>
+<div class="line">icpc -std=c++11 -I${DNNLROOT}/include -L${DNNLROOT}/lib simple_net.cpp -ldnnl</div>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>Applications linked dynamically will resolve the dependencies at runtime. Make sure that the dependencies are available in the standard locations defined by the operating system, in the locations listed in the <code>LD_LIBRARY_PATH</code> (Linux) or <code>DYLD_LIBRARY_PATH</code> (macOS) environment variable or the <code>rpath</code> mechanism.</dd></dl>
 <h3>Windows</h3>
-<p>To link the application from the command line, set up the <code>LIB</code> and <code>INCLUDE</code> environment variables to point to the locations of the Intel MKL-DNN headers and libraries.</p>
-<div class="fragment"><div class="line">icl /I%MKLDNNROOT%\include /Qstd=c++11 /qopenmp simple_net.cpp %MKLDNNROOT%\lib\mkldnn.lib</div>
-<div class="line">cl /I%MKLDNNROOT%\include simple_net.cpp %MKLDNNROOT%\lib\mkldnn.lib</div>
+<p>To link the application from the command line, set up the <code>LIB</code> and <code>INCLUDE</code> environment variables to point to the locations of the DNNL headers and libraries.</p>
+<div class="fragment"><div class="line">icl /I%DNNLROOT%\include /Qstd=c++11 /qopenmp simple_net.cpp %DNNLROOT%\lib\dnnl.lib</div>
+<div class="line">cl /I%DNNLROOT%\include simple_net.cpp %DNNLROOT%\lib\dnnl.lib</div>
 </div><!-- fragment --><p>Refer to the <a href="https://docs.microsoft.com/en-us/cpp/build/walkthrough-creating-and-using-a-dynamic-link-library-cpp?view=vs-2017">Microsoft Visual Studio documentation</a> on linking the application using MSVS solutions.</p>
 <dl class="section note"><dt>Note</dt><dd>Applications linked dynamically will resolve the dependencies at runtime. Make sure that the dependencies are available in the standard locations defined by the operating system or in the locations listed in the <code>PATH</code> environment variable. </dd></dl>
 </div></div><!-- contents -->

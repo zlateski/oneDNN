@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>Intel(R) MKL-DNN: Layer Normalization</title>
+<title>DNNL: Layer Normalization</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,7 +24,7 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-   <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
+   <div id="projectname">Deep Neural Network Library (DNNL)
    &#160;<span id="projectnumber">1.0.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
@@ -87,50 +87,50 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gaf5b681ad90cba642da31393a8ec07926"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__layer__normalization.html#gaf5b681ad90cba642da31393a8ec07926">mkldnn_layer_normalization_forward_desc_init</a> (<a class="el" href="structmkldnn__layer__normalization__desc__t.html">mkldnn_layer_normalization_desc_t</a> *lnrm_desc, <a class="el" href="group__c__api__types__generic.html#ga5b98c8059c2aff8861157bf070c3f520">mkldnn_prop_kind_t</a> prop_kind, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *data_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *stat_desc, float epsilon, unsigned flags)</td></tr>
-<tr class="memdesc:gaf5b681ad90cba642da31393a8ec07926"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a layer normalization descriptor <code>lnrm_desc</code> for forward propagation using <code>prop_kind</code> (possible values are <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f" title="Forward data propagation (training mode). ">mkldnn_forward_training</a> and <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a58a923fb6c4e1214e1505b5fa0b1e3fa" title="Forward data propagation (inference mode). ">mkldnn_forward_inference</a>), memory descriptor <code>data_desc</code>, normalization parameter <code>epsilon</code>, and <code>flags</code> set using bit flags of type <a class="el" href="structmkldnn__layer__normalization__desc__t.html" title="A descriptor of a Layer Normalization operation. ">mkldnn_layer_normalization_desc_t</a>.  <a href="#gaf5b681ad90cba642da31393a8ec07926">More...</a><br/></td></tr>
-<tr class="separator:gaf5b681ad90cba642da31393a8ec07926"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8db8f95324441af8e903662725812cbd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__layer__normalization.html#ga8db8f95324441af8e903662725812cbd">mkldnn_layer_normalization_backward_desc_init</a> (<a class="el" href="structmkldnn__layer__normalization__desc__t.html">mkldnn_layer_normalization_desc_t</a> *lnrm_desc, <a class="el" href="group__c__api__types__generic.html#ga5b98c8059c2aff8861157bf070c3f520">mkldnn_prop_kind_t</a> prop_kind, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *diff_data_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *data_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *stat_desc, float epsilon, unsigned flags)</td></tr>
-<tr class="memdesc:ga8db8f95324441af8e903662725812cbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a layer normalization descriptor <code>lnrm_desc</code> for backward propagation with respect to data and scale-shift parameters using memory descriptors <code>data_desc</code> and <code>diff_data_desc</code>, normalization parameter <code>epsilon</code>, and <code>flags</code> set using bit flags of type <a class="el" href="structmkldnn__layer__normalization__desc__t.html" title="A descriptor of a Layer Normalization operation. ">mkldnn_layer_normalization_desc_t</a>.  <a href="#ga8db8f95324441af8e903662725812cbd">More...</a><br/></td></tr>
-<tr class="separator:ga8db8f95324441af8e903662725812cbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafc38935e49742897454f5009ea9a10f1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__layer__normalization.html#gafc38935e49742897454f5009ea9a10f1">dnnl_layer_normalization_forward_desc_init</a> (<a class="el" href="structdnnl__layer__normalization__desc__t.html">dnnl_layer_normalization_desc_t</a> *lnrm_desc, <a class="el" href="group__c__api__types__generic.html#gae3c1f22ae55645782923fbfd8b07d0c4">dnnl_prop_kind_t</a> prop_kind, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *data_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *stat_desc, float epsilon, unsigned flags)</td></tr>
+<tr class="memdesc:gafc38935e49742897454f5009ea9a10f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a layer normalization descriptor <code>lnrm_desc</code> for forward propagation using <code>prop_kind</code> (possible values are <a class="el" href="group__c__api__types__generic.html#ggae3c1f22ae55645782923fbfd8b07d0c4a992e03bebfe623ac876b3636333bbce0" title="Forward data propagation (training mode). ">dnnl_forward_training</a> and <a class="el" href="group__c__api__types__generic.html#ggae3c1f22ae55645782923fbfd8b07d0c4a2f77a568a675dec649eb0450c997856d" title="Forward data propagation (inference mode). ">dnnl_forward_inference</a>), memory descriptor <code>data_desc</code>, normalization parameter <code>epsilon</code>, and <code>flags</code> set using bit flags of type <a class="el" href="structdnnl__layer__normalization__desc__t.html" title="A descriptor of a Layer Normalization operation. ">dnnl_layer_normalization_desc_t</a>.  <a href="#gafc38935e49742897454f5009ea9a10f1">More...</a><br/></td></tr>
+<tr class="separator:gafc38935e49742897454f5009ea9a10f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaca22d67e529c86a61fbfa1571d19ca4f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__layer__normalization.html#gaca22d67e529c86a61fbfa1571d19ca4f">dnnl_layer_normalization_backward_desc_init</a> (<a class="el" href="structdnnl__layer__normalization__desc__t.html">dnnl_layer_normalization_desc_t</a> *lnrm_desc, <a class="el" href="group__c__api__types__generic.html#gae3c1f22ae55645782923fbfd8b07d0c4">dnnl_prop_kind_t</a> prop_kind, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *diff_data_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *data_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *stat_desc, float epsilon, unsigned flags)</td></tr>
+<tr class="memdesc:gaca22d67e529c86a61fbfa1571d19ca4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a layer normalization descriptor <code>lnrm_desc</code> for backward propagation with respect to data and scale-shift parameters using memory descriptors <code>data_desc</code> and <code>diff_data_desc</code>, normalization parameter <code>epsilon</code>, and <code>flags</code> set using bit flags of type <a class="el" href="structdnnl__layer__normalization__desc__t.html" title="A descriptor of a Layer Normalization operation. ">dnnl_layer_normalization_desc_t</a>.  <a href="#gaca22d67e529c86a61fbfa1571d19ca4f">More...</a><br/></td></tr>
+<tr class="separator:gaca22d67e529c86a61fbfa1571d19ca4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>A primitive to perform layer normalization. </p>
 <p>Normalization is performed over the last logical axis of data tensor.</p>
 <p>Both forward and backward passes support in-place operation; that is, src and dst point to the same memory for forward pass, and diff_dst and diff_src point to the same memory for backward pass.</p>
-<p>Layer normalization supports different flavors controlled by <a class="el" href="structmkldnn__layer__normalization__desc__t.html" title="A descriptor of a Layer Normalization operation. ">mkldnn_layer_normalization_desc_t</a>. For example, layer normalization can compute the mean and variance on its own or take them as inputs. It can either perform scaling and shifting using gamma and beta parameters or not.</p>
-<dl class="section see"><dt>See Also</dt><dd><a class="el" href="structmkldnn__layer__normalization__desc__t.html" title="A descriptor of a Layer Normalization operation. ">mkldnn_layer_normalization_desc_t</a></dd>
+<p>Layer normalization supports different flavors controlled by <a class="el" href="structdnnl__layer__normalization__desc__t.html" title="A descriptor of a Layer Normalization operation. ">dnnl_layer_normalization_desc_t</a>. For example, layer normalization can compute the mean and variance on its own or take them as inputs. It can either perform scaling and shifting using gamma and beta parameters or not.</p>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="structdnnl__layer__normalization__desc__t.html" title="A descriptor of a Layer Normalization operation. ">dnnl_layer_normalization_desc_t</a></dd>
 <dd>
 <a class="el" href="dev_guide_layer_normalization.html">Layer Normalization</a> in developer guide </dd>
 <dd>
 <a class="el" href="group__cpp__api__layer__normalization.html">layer normalization</a> in <a class="el" href="group__cpp__api.html">C++ API</a> </dd></dl>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="gaf5b681ad90cba642da31393a8ec07926"></a>
+<a class="anchor" id="gafc38935e49742897454f5009ea9a10f1"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API mkldnn_layer_normalization_forward_desc_init </td>
+          <td class="memname"><a class="el" href="group__c__api__types__generic.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API dnnl_layer_normalization_forward_desc_init </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structmkldnn__layer__normalization__desc__t.html">mkldnn_layer_normalization_desc_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="structdnnl__layer__normalization__desc__t.html">dnnl_layer_normalization_desc_t</a> *&#160;</td>
           <td class="paramname"><em>lnrm_desc</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__c__api__types__generic.html#ga5b98c8059c2aff8861157bf070c3f520">mkldnn_prop_kind_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__c__api__types__generic.html#gae3c1f22ae55645782923fbfd8b07d0c4">dnnl_prop_kind_t</a>&#160;</td>
           <td class="paramname"><em>prop_kind</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *&#160;</td>
           <td class="paramname"><em>data_desc</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *&#160;</td>
           <td class="paramname"><em>stat_desc</em>, </td>
         </tr>
         <tr>
@@ -153,57 +153,57 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Initializes a layer normalization descriptor <code>lnrm_desc</code> for forward propagation using <code>prop_kind</code> (possible values are <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f" title="Forward data propagation (training mode). ">mkldnn_forward_training</a> and <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a58a923fb6c4e1214e1505b5fa0b1e3fa" title="Forward data propagation (inference mode). ">mkldnn_forward_inference</a>), memory descriptor <code>data_desc</code>, normalization parameter <code>epsilon</code>, and <code>flags</code> set using bit flags of type <a class="el" href="structmkldnn__layer__normalization__desc__t.html" title="A descriptor of a Layer Normalization operation. ">mkldnn_layer_normalization_desc_t</a>. </p>
+<p>Initializes a layer normalization descriptor <code>lnrm_desc</code> for forward propagation using <code>prop_kind</code> (possible values are <a class="el" href="group__c__api__types__generic.html#ggae3c1f22ae55645782923fbfd8b07d0c4a992e03bebfe623ac876b3636333bbce0" title="Forward data propagation (training mode). ">dnnl_forward_training</a> and <a class="el" href="group__c__api__types__generic.html#ggae3c1f22ae55645782923fbfd8b07d0c4a2f77a568a675dec649eb0450c997856d" title="Forward data propagation (inference mode). ">dnnl_forward_inference</a>), memory descriptor <code>data_desc</code>, normalization parameter <code>epsilon</code>, and <code>flags</code> set using bit flags of type <a class="el" href="structdnnl__layer__normalization__desc__t.html" title="A descriptor of a Layer Normalization operation. ">dnnl_layer_normalization_desc_t</a>. </p>
 <p>Inputs:</p>
 <ul>
-<li>src (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a2bccd0a79be2c331227c353c294c3fbc" title="source memory desc ">mkldnn_query_src_md</a>, 0)</li>
-<li>mean (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a2bccd0a79be2c331227c353c294c3fbc" title="source memory desc ">mkldnn_query_src_md</a>, 1), if <a class="el" href="group__c__api__types__generic.html#gga0aaaba92ad942f46a96ff0b7f6ed230ca106c7b376858470c79facbfc48755644" title="Use global statistics. ">mkldnn_use_global_stats</a> bit-flags is set in <code>flags</code> </li>
-<li>variance (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a2bccd0a79be2c331227c353c294c3fbc" title="source memory desc ">mkldnn_query_src_md</a>, 2), if <a class="el" href="group__c__api__types__generic.html#gga0aaaba92ad942f46a96ff0b7f6ed230ca106c7b376858470c79facbfc48755644" title="Use global statistics. ">mkldnn_use_global_stats</a> bit-flags is set in <code>flags</code> </li>
-<li>scale_and_shift (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a4d1661d6a50277029d02417f6b65435d" title="weights memory descriptor desc ">mkldnn_query_weights_md</a>, 0), if <a class="el" href="group__c__api__types__generic.html#gga0aaaba92ad942f46a96ff0b7f6ed230caa839d67dd3809f4068e915a112ce618c" title="Use scale and shift parameters. ">mkldnn_use_scaleshift</a> bit-flags is set in <code>flags</code> </li>
+<li>src (<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, 0)</li>
+<li>mean (<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, 1), if <a class="el" href="group__c__api__types__generic.html#gga301f673522a400c7c1e75f518431c9a3aec04425c28af752c0f8b4dc5ae11fb19" title="Use global statistics. ">dnnl_use_global_stats</a> bit-flags is set in <code>flags</code> </li>
+<li>variance (<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, 2), if <a class="el" href="group__c__api__types__generic.html#gga301f673522a400c7c1e75f518431c9a3aec04425c28af752c0f8b4dc5ae11fb19" title="Use global statistics. ">dnnl_use_global_stats</a> bit-flags is set in <code>flags</code> </li>
+<li>scale_and_shift (<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, 0), if <a class="el" href="group__c__api__types__generic.html#gga301f673522a400c7c1e75f518431c9a3aeba5189d91e23448d706fb027867ae55" title="Use scale and shift parameters. ">dnnl_use_scaleshift</a> bit-flags is set in <code>flags</code> </li>
 </ul>
 <p>Outputs:</p>
 <ul>
-<li>dst (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9adccda04151e0c287f0de64b832d33ac4" title="destination memory desc ">mkldnn_query_dst_md</a>, 0)</li>
-<li>mean (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9adccda04151e0c287f0de64b832d33ac4" title="destination memory desc ">mkldnn_query_dst_md</a>, 1), if <a class="el" href="group__c__api__types__generic.html#gga0aaaba92ad942f46a96ff0b7f6ed230ca106c7b376858470c79facbfc48755644" title="Use global statistics. ">mkldnn_use_global_stats</a> bit-flags is not set in <code>flags</code> <code>prop_kind</code> = <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f" title="Forward data propagation (training mode). ">mkldnn_forward_training</a></li>
-<li>variance (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9adccda04151e0c287f0de64b832d33ac4" title="destination memory desc ">mkldnn_query_dst_md</a>, 2), if <a class="el" href="group__c__api__types__generic.html#gga0aaaba92ad942f46a96ff0b7f6ed230ca106c7b376858470c79facbfc48755644" title="Use global statistics. ">mkldnn_use_global_stats</a> bit-flags is not set in <code>flags</code> and <code>prop_kind</code> = <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f" title="Forward data propagation (training mode). ">mkldnn_forward_training</a></li>
+<li>dst (<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598" title="destination memory desc ">dnnl_query_dst_md</a>, 0)</li>
+<li>mean (<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598" title="destination memory desc ">dnnl_query_dst_md</a>, 1), if <a class="el" href="group__c__api__types__generic.html#gga301f673522a400c7c1e75f518431c9a3aec04425c28af752c0f8b4dc5ae11fb19" title="Use global statistics. ">dnnl_use_global_stats</a> bit-flags is not set in <code>flags</code> <code>prop_kind</code> = <a class="el" href="group__c__api__types__generic.html#ggae3c1f22ae55645782923fbfd8b07d0c4a992e03bebfe623ac876b3636333bbce0" title="Forward data propagation (training mode). ">dnnl_forward_training</a></li>
+<li>variance (<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598" title="destination memory desc ">dnnl_query_dst_md</a>, 2), if <a class="el" href="group__c__api__types__generic.html#gga301f673522a400c7c1e75f518431c9a3aec04425c28af752c0f8b4dc5ae11fb19" title="Use global statistics. ">dnnl_use_global_stats</a> bit-flags is not set in <code>flags</code> and <code>prop_kind</code> = <a class="el" href="group__c__api__types__generic.html#ggae3c1f22ae55645782923fbfd8b07d0c4a992e03bebfe623ac876b3636333bbce0" title="Forward data propagation (training mode). ">dnnl_forward_training</a></li>
 </ul>
 <dl class="section note"><dt>Note</dt><dd>In-place operation is supported; that is, dst points to the same memory as src.</dd></dl>
-<dl class="section see"><dt>See Also</dt><dd><a class="el" href="structmkldnn__layer__normalization__desc__t.html" title="A descriptor of a Layer Normalization operation. ">mkldnn_layer_normalization_desc_t</a> </dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="structdnnl__layer__normalization__desc__t.html" title="A descriptor of a Layer Normalization operation. ">dnnl_layer_normalization_desc_t</a> </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga8db8f95324441af8e903662725812cbd"></a>
+<a class="anchor" id="gaca22d67e529c86a61fbfa1571d19ca4f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API mkldnn_layer_normalization_backward_desc_init </td>
+          <td class="memname"><a class="el" href="group__c__api__types__generic.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API dnnl_layer_normalization_backward_desc_init </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structmkldnn__layer__normalization__desc__t.html">mkldnn_layer_normalization_desc_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="structdnnl__layer__normalization__desc__t.html">dnnl_layer_normalization_desc_t</a> *&#160;</td>
           <td class="paramname"><em>lnrm_desc</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__c__api__types__generic.html#ga5b98c8059c2aff8861157bf070c3f520">mkldnn_prop_kind_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__c__api__types__generic.html#gae3c1f22ae55645782923fbfd8b07d0c4">dnnl_prop_kind_t</a>&#160;</td>
           <td class="paramname"><em>prop_kind</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *&#160;</td>
           <td class="paramname"><em>diff_data_desc</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *&#160;</td>
           <td class="paramname"><em>data_desc</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *&#160;</td>
           <td class="paramname"><em>stat_desc</em>, </td>
         </tr>
         <tr>
@@ -226,22 +226,22 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Initializes a layer normalization descriptor <code>lnrm_desc</code> for backward propagation with respect to data and scale-shift parameters using memory descriptors <code>data_desc</code> and <code>diff_data_desc</code>, normalization parameter <code>epsilon</code>, and <code>flags</code> set using bit flags of type <a class="el" href="structmkldnn__layer__normalization__desc__t.html" title="A descriptor of a Layer Normalization operation. ">mkldnn_layer_normalization_desc_t</a>. </p>
+<p>Initializes a layer normalization descriptor <code>lnrm_desc</code> for backward propagation with respect to data and scale-shift parameters using memory descriptors <code>data_desc</code> and <code>diff_data_desc</code>, normalization parameter <code>epsilon</code>, and <code>flags</code> set using bit flags of type <a class="el" href="structdnnl__layer__normalization__desc__t.html" title="A descriptor of a Layer Normalization operation. ">dnnl_layer_normalization_desc_t</a>. </p>
 <p>Inputs:</p>
 <ul>
-<li>src (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a2bccd0a79be2c331227c353c294c3fbc" title="source memory desc ">mkldnn_query_src_md</a>, 0)</li>
-<li>mean (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a2bccd0a79be2c331227c353c294c3fbc" title="source memory desc ">mkldnn_query_src_md</a>, 1)</li>
-<li>variance (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a2bccd0a79be2c331227c353c294c3fbc" title="source memory desc ">mkldnn_query_src_md</a>, 2)</li>
-<li>diff_dst (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9acfa30e38738b3de8c7d3a7f21ffc1623" title="destination grad. memory desc ">mkldnn_query_diff_dst_md</a>, 0)</li>
-<li>scale_and_shift (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a4d1661d6a50277029d02417f6b65435d" title="weights memory descriptor desc ">mkldnn_query_weights_md</a>, 0), if <a class="el" href="group__c__api__types__generic.html#gga0aaaba92ad942f46a96ff0b7f6ed230caa839d67dd3809f4068e915a112ce618c" title="Use scale and shift parameters. ">mkldnn_use_scaleshift</a> bit-flags is set in <code>flags</code> </li>
+<li>src (<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, 0)</li>
+<li>mean (<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, 1)</li>
+<li>variance (<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, 2)</li>
+<li>diff_dst (<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059ae28e33688bf6c55edcf108bd24eb90de" title="destination grad. memory desc ">dnnl_query_diff_dst_md</a>, 0)</li>
+<li>scale_and_shift (<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, 0), if <a class="el" href="group__c__api__types__generic.html#gga301f673522a400c7c1e75f518431c9a3aeba5189d91e23448d706fb027867ae55" title="Use scale and shift parameters. ">dnnl_use_scaleshift</a> bit-flags is set in <code>flags</code> </li>
 </ul>
 <p>Outputs:</p>
 <ul>
-<li>diff_src (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ad915503c92000da20088fdb93cd685b9" title="source gradient memory desc ">mkldnn_query_diff_src_md</a>, 0)</li>
-<li>diff_scale_and_shift (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a2c78f7a683101ff96875e8cec787ba42" title="weights grad. memory desc ">mkldnn_query_diff_weights_md</a>, 0), if <a class="el" href="group__c__api__types__generic.html#gga0aaaba92ad942f46a96ff0b7f6ed230caa839d67dd3809f4068e915a112ce618c" title="Use scale and shift parameters. ">mkldnn_use_scaleshift</a> bit-flags is set in <code>flags</code> and <code>prop_kind</code> = <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a4dd1b6040ef9d067a38d8ffa407b763b" title="Backward propagation (with respect to all parameters). ">mkldnn_backward</a></li>
+<li>diff_src (<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a2367b043da6df5d691d6038693f363d6" title="source gradient memory desc ">dnnl_query_diff_src_md</a>, 0)</li>
+<li>diff_scale_and_shift (<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a8551246c3e70fa1e420411507dbdfe32" title="weights grad. memory desc ">dnnl_query_diff_weights_md</a>, 0), if <a class="el" href="group__c__api__types__generic.html#gga301f673522a400c7c1e75f518431c9a3aeba5189d91e23448d706fb027867ae55" title="Use scale and shift parameters. ">dnnl_use_scaleshift</a> bit-flags is set in <code>flags</code> and <code>prop_kind</code> = <a class="el" href="group__c__api__types__generic.html#ggae3c1f22ae55645782923fbfd8b07d0c4a326a5e31769302972e7bded555e1cc10" title="Backward propagation (with respect to all parameters). ">dnnl_backward</a></li>
 </ul>
 <dl class="section note"><dt>Note</dt><dd>in-place operation is supported, i.e. diff_src points to the same memory as diff_dst.</dd></dl>
-<dl class="section see"><dt>See Also</dt><dd><a class="el" href="structmkldnn__layer__normalization__desc__t.html" title="A descriptor of a Layer Normalization operation. ">mkldnn_layer_normalization_desc_t</a> </dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="structdnnl__layer__normalization__desc__t.html" title="A descriptor of a Layer Normalization operation. ">dnnl_layer_normalization_desc_t</a> </dd></dl>
 
 </div>
 </div>

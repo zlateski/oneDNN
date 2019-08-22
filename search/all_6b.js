@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['kernel',['kernel',['../structmkldnn__pooling__desc__t.html#a7fe4d394ee37ddfae7f196627a0b15b6',1,'mkldnn_pooling_desc_t']]],
-  ['kind',['kind',['../classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00d',1,'mkldnn::primitive::kind()'],['../structmkldnn_1_1engine.html#a81bcf1ea92d7f98852a2c3e187825de6',1,'mkldnn::engine::kind()'],['../structmkldnn_1_1post__ops.html#a3018e4c47045ae61e087064a74860405',1,'mkldnn::post_ops::kind()']]]
+  ['kernel',['kernel',['../structdnnl__pooling__desc__t.html#a9c5ac09cf26ab0a93bd068eda066ada9',1,'dnnl_pooling_desc_t']]],
+  ['kind',['kind',['../classdnnl_1_1primitive.html#ad1ec93215a0cf3aa0a32bae0c2cd9169',1,'dnnl::primitive::kind()'],['../structdnnl_1_1engine.html#a2635da16314dcbdb9bd9ea431316bb1a',1,'dnnl::engine::kind()'],['../structdnnl_1_1post__ops.html#a79ef658c2e7ac0fddbd605c6864c19f9',1,'dnnl::post_ops::kind()']]]
 ];

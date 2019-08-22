@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['flags',['flags',['../structmkldnn_1_1stream.html#ac0920a906daeabd4ff290eb4aa9067c7',1,'mkldnn::stream']]],
-  ['format_5fkind',['format_kind',['../structmkldnn_1_1memory.html#a6466170ecf3556eb6ab15da9dcd51aa2',1,'mkldnn::memory']]],
-  ['format_5ftag',['format_tag',['../structmkldnn_1_1memory.html#a123930e31c5460c2c5f052a59c2a4ced',1,'mkldnn::memory']]]
+  ['flags',['flags',['../structdnnl_1_1stream.html#abc7ec7dfa1718f366abd8f495164de59',1,'dnnl::stream']]],
+  ['format_5fkind',['format_kind',['../structdnnl_1_1memory.html#aabcadfb0e23a36a91272fc571cff105f',1,'dnnl::memory']]],
+  ['format_5ftag',['format_tag',['../structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3f',1,'dnnl::memory']]]
 ];

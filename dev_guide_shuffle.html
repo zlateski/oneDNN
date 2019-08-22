@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>Intel(R) MKL-DNN: Shuffle</title>
+<title>DNNL: Shuffle</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,7 +24,7 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-   <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
+   <div id="projectname">Deep Neural Network Library (DNNL)
    &#160;<span id="projectnumber">1.0.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
@@ -103,15 +103,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 </ul>
 <p>Here, \(u \in [0, \frac{C}{G})\) and \(v \in [0, G)\).</p>
-<h4>Difference Between <a href="#mkldnn_forward_training">Forward Training</a> and <a href="#mkldnn_forward_inference">Forward Inference</a></h4>
-<p>There is no difference between the <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f" title="Forward data propagation (training mode). ">mkldnn_forward_training</a> and <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a58a923fb6c4e1214e1505b5fa0b1e3fa" title="Forward data propagation (inference mode). ">mkldnn_forward_inference</a> propagation kinds.</p>
+<h4>Difference Between <a href="#dnnl_forward_training">Forward Training</a> and <a href="#dnnl_forward_inference">Forward Inference</a></h4>
+<p>There is no difference between the <a class="el" href="group__c__api__types__generic.html#ggae3c1f22ae55645782923fbfd8b07d0c4a992e03bebfe623ac876b3636333bbce0" title="Forward data propagation (training mode). ">dnnl_forward_training</a> and <a class="el" href="group__c__api__types__generic.html#ggae3c1f22ae55645782923fbfd8b07d0c4a2f77a568a675dec649eb0450c997856d" title="Forward data propagation (inference mode). ">dnnl_forward_inference</a> propagation kinds.</p>
 <h3>Backward</h3>
 <p>The backward propagation computes \(diff\_src(ou, c, in)\), based on \(diff\_dst(ou, c, in)\).</p>
 <p>Essentially, backward propagation is the same as forward propagation with \(g\) replaced by \(C / g\).</p>
 <h2>Implementation Details</h2>
 <h3>General Notes</h3>
 <ol type="1">
-<li>The memory format and data type for <code>src</code> and <code>dst</code> are assumed to be the same, and in the API are typically referred as <code>data</code> (e.g., see <code>data_desc</code> in <a class="el" href="structmkldnn_1_1shuffle__forward_1_1desc.html#a859299b914c48c41eb255236d4a81b5e" title="Initializes a shuffle descriptor for forward propagation using prop_kind, memory descriptor data_desc...">mkldnn::shuffle_forward::desc::desc()</a>). The same holds for <code>diff_src</code> and <code>diff_dst</code>. The corresponding memory descriptors are referred to as <code>diff_data_desc</code>.</li>
+<li>The memory format and data type for <code>src</code> and <code>dst</code> are assumed to be the same, and in the API are typically referred as <code>data</code> (e.g., see <code>data_desc</code> in <a class="el" href="structdnnl_1_1shuffle__forward_1_1desc.html#a7b52a213fb4a9da6170965dba994bf27" title="Initializes a shuffle descriptor for forward propagation using prop_kind, memory descriptor data_desc...">dnnl::shuffle_forward::desc::desc()</a>). The same holds for <code>diff_src</code> and <code>diff_dst</code>. The corresponding memory descriptors are referred to as <code>diff_data_desc</code>.</li>
 </ol>
 <h2>Data Types</h2>
 <p>The shuffle primitive supports the following combinations of data types:</p>
@@ -131,9 +131,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr>
 <th align="left">Spatial </th><th align="left">Logical tensor </th><th align="left">Shuffle Axis </th><th align="left">Implementations optimized for memory formats  </th></tr>
 <tr>
-<td align="left">2D </td><td align="left">NCHW </td><td align="left">1 (C) </td><td align="left"><a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2baed4a51a8db128a648b942882369a06d6" title="4D CNN activations tensor, an alias to mkldnn_abcd ">mkldnn_nchw</a> (<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba63203c48f8a6ff36dbf21e8c81bca060" title="plain 4D tensor ">mkldnn_abcd</a>), <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2badf1fb06f73cf8dd23ae620eea6516526" title="4D CNN activations tensor, an alias to mkldnn_acdb ">mkldnn_nhwc</a> (<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba5bdb52f009d9c8b46aaf05119cf18592" title="permuted 4D tensor ">mkldnn_acdb</a>), <em>optimized^</em> </td></tr>
+<td align="left">2D </td><td align="left">NCHW </td><td align="left">1 (C) </td><td align="left"><a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da83a751aedeb59613312339d0f8b90f54" title="4D CNN activations tensor, an alias to dnnl_abcd ">dnnl_nchw</a> (<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da6e669cc61278663a5ddbd3d0b25c6c5c" title="plain 4D tensor ">dnnl_abcd</a>), <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091dae50c534446b3c18cc018b3946b3cebd7" title="4D CNN activations tensor, an alias to dnnl_acdb ">dnnl_nhwc</a> (<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da8fcce5dd7260b5b0740e3b37b1e9ad41" title="permuted 4D tensor ">dnnl_acdb</a>), <em>optimized^</em> </td></tr>
 <tr>
-<td align="left">3D </td><td align="left">NCDHW </td><td align="left">1 (C) </td><td align="left"><a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba55268cf202bb4367b19fd0aeb13739ce" title="5D CNN activations tensor, an alias to mkldnn_abcde ">mkldnn_ncdhw</a> (<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bab5a0a1dc7021e96ed7e174f76f8decbc" title="plain 5D tensor ">mkldnn_abcde</a>), <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bafe9f8381139e749050fda6fb70808e1c" title="5D CNN activations tensor, an alias to mkldnn_acdeb ">mkldnn_ndhwc</a> (<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bae659343dce6f6dd2eaf8f7a9455be26d" title="permuted 5D tensor ">mkldnn_acdeb</a>), <em>optimized^</em> </td></tr>
+<td align="left">3D </td><td align="left">NCDHW </td><td align="left">1 (C) </td><td align="left"><a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091dae33b8c6790e5d37324f18a019658d464" title="5D CNN activations tensor, an alias to dnnl_abcde ">dnnl_ncdhw</a> (<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da30d5d3c9de2931f06d265af81787ada3" title="plain 5D tensor ">dnnl_abcde</a>), <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091daa0d8b24eefd029e214080d3787114fc2" title="5D CNN activations tensor, an alias to dnnl_acdeb ">dnnl_ndhwc</a> (<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da0cfe86402763786b9b4d73062cfd2f05" title="permuted 5D tensor ">dnnl_acdeb</a>), <em>optimized^</em> </td></tr>
 </table>
 <p>Here <em>optimized^</em> means the format that <a class="el" href="cpu_memory_format_propagation_cpp.html">comes out</a> of any preceding compute-intensive primitive.</p>
 <h3>Post-ops and Attributes</h3>

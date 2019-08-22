@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['memory',['memory',['../structmkldnn__exec__arg__t.html#a435bc6c683e834196b7cb3065fec0722',1,'mkldnn_exec_arg_t']]]
+  ['memory',['memory',['../structdnnl__exec__arg__t.html#a048f23e80b923636267c4dece912cd0d',1,'dnnl_exec_arg_t']]]
 ];

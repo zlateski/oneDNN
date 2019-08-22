@@ -1,16 +1,16 @@
 var searchData=
 [
-  ['get',['get',['../classmkldnn_1_1handle.html#a169ef3354e8037660489fe3ec1b876a0',1,'mkldnn::handle']]],
-  ['get_5fcount',['get_count',['../structmkldnn_1_1engine.html#a27e38cf2b95a0e29713c726ed702fe70',1,'mkldnn::engine']]],
-  ['get_5fdata_5fhandle',['get_data_handle',['../structmkldnn_1_1memory.html#a07d67b26cdd115092f8574cc000f96fc',1,'mkldnn::memory']]],
-  ['get_5fdesc',['get_desc',['../structmkldnn_1_1memory.html#aad39e92bb09b189c1ba6353dd631fb80',1,'mkldnn::memory']]],
-  ['get_5fengine',['get_engine',['../structmkldnn_1_1memory.html#a051d447c5cd56f79001add98a0b0e0cf',1,'mkldnn::memory']]],
-  ['get_5fkind',['get_kind',['../structmkldnn_1_1engine.html#ae007548427d27534d1cfd113e37cdab8',1,'mkldnn::engine']]],
-  ['get_5foutput_5fscales',['get_output_scales',['../structmkldnn_1_1primitive__attr.html#aa91e6f5640f7fb0e5da943e0e45dab3f',1,'mkldnn::primitive_attr']]],
-  ['get_5fparams_5feltwise',['get_params_eltwise',['../structmkldnn_1_1post__ops.html#afd6bac6c340916607dc5654318555e5a',1,'mkldnn::post_ops']]],
-  ['get_5fparams_5fsum',['get_params_sum',['../structmkldnn_1_1post__ops.html#abdb12fcea0d833e5338164713683581b',1,'mkldnn::post_ops']]],
-  ['get_5fpost_5fops',['get_post_ops',['../structmkldnn_1_1primitive__attr.html#a999c92505cbdd4e381a988920307806b',1,'mkldnn::primitive_attr']]],
-  ['get_5fprimitive_5fdesc',['get_primitive_desc',['../group__cpp__api__utils.html#gad620dea4032ae111acef2a46e0902722',1,'mkldnn::primitive']]],
-  ['get_5fscratchpad_5fmode',['get_scratchpad_mode',['../structmkldnn_1_1primitive__attr.html#a5a639507e9f16ac3d6e71bdc19e06845',1,'mkldnn::primitive_attr']]],
-  ['get_5fsize',['get_size',['../structmkldnn_1_1memory_1_1desc.html#a273a35ba51f1ce0185e1703cc96d9dec',1,'mkldnn::memory::desc']]]
+  ['get',['get',['../classdnnl_1_1handle.html#a0cebb2104786aceec21ba6a43a0ff3db',1,'dnnl::handle']]],
+  ['get_5fcount',['get_count',['../structdnnl_1_1engine.html#a4377c19abca7fc5d761bb5e512c732d1',1,'dnnl::engine']]],
+  ['get_5fdata_5fhandle',['get_data_handle',['../structdnnl_1_1memory.html#a1b81db911a391cefc31e35bbe9ca95fe',1,'dnnl::memory']]],
+  ['get_5fdesc',['get_desc',['../structdnnl_1_1memory.html#a6bfc99db50d87d133c6b3b4f438b967a',1,'dnnl::memory']]],
+  ['get_5fengine',['get_engine',['../structdnnl_1_1memory.html#a4494aca5ff97774b73e707f4f951972d',1,'dnnl::memory']]],
+  ['get_5fkind',['get_kind',['../structdnnl_1_1engine.html#a6e9bb6ada8b2ccd815c42e3577b2f2b8',1,'dnnl::engine']]],
+  ['get_5foutput_5fscales',['get_output_scales',['../structdnnl_1_1primitive__attr.html#a11f7ce246239d1416ce9ff8d81ff7f5f',1,'dnnl::primitive_attr']]],
+  ['get_5fparams_5feltwise',['get_params_eltwise',['../structdnnl_1_1post__ops.html#ae9d1bcf7e16f9cabe9332e30e98e13d9',1,'dnnl::post_ops']]],
+  ['get_5fparams_5fsum',['get_params_sum',['../structdnnl_1_1post__ops.html#a80a7b5900334d558aa5abbf9f1f1661a',1,'dnnl::post_ops']]],
+  ['get_5fpost_5fops',['get_post_ops',['../structdnnl_1_1primitive__attr.html#a8f6b7226d2a1ccaf11142553faa17f1b',1,'dnnl::primitive_attr']]],
+  ['get_5fprimitive_5fdesc',['get_primitive_desc',['../group__cpp__api__utils.html#ga1fa3eca53abce941ace7d28f9af1ec61',1,'dnnl::primitive']]],
+  ['get_5fscratchpad_5fmode',['get_scratchpad_mode',['../structdnnl_1_1primitive__attr.html#a05ff5d73eae0eba28b341b5d2b6186a7',1,'dnnl::primitive_attr']]],
+  ['get_5fsize',['get_size',['../structdnnl_1_1memory_1_1desc.html#a3a12698f833b44ed55af9fc6621c4917',1,'dnnl::memory::desc']]]
 ];

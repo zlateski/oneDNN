@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>Intel(R) MKL-DNN: OpenCL Interoperability</title>
+<title>DNNL: OpenCL Interoperability</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,7 +24,7 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-   <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
+   <div id="projectname">Deep Neural Network Library (DNNL)
    &#160;<span id="projectnumber">1.0.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
@@ -79,16 +79,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">OpenCL Interoperability </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Intel MKL-DNN uses the OpenCL runtime for GPU engines to interact with the GPU. Users may need to use Intel MKL-DNN with other code that uses OpenCL. For that purpose, the library provides API extensions to interoperate with underlying OpenCL objects.</p>
+<div class="textblock"><p>DNNL uses the OpenCL runtime for GPU engines to interact with the GPU. Users may need to use DNNL with other code that uses OpenCL. For that purpose, the library provides API extensions to interoperate with underlying OpenCL objects.</p>
 <p>The interoperability API is provided for two scenarios:</p>
 <ul>
-<li>Construction of Intel MKL-DNN objects based on existing OpenCL objects</li>
-<li>Accessing OpenCL objects for existing Intel MKL-DNN objects</li>
+<li>Construction of DNNL objects based on existing OpenCL objects</li>
+<li>Accessing OpenCL objects for existing DNNL objects</li>
 </ul>
-<p>The mapping between Intel MKL-DNN and OpenCL objects is provided in the following table:</p>
+<p>The mapping between DNNL and OpenCL objects is provided in the following table:</p>
 <table class="doxtable">
 <tr>
-<th align="left">Intel MKL-DNN object </th><th align="left">OpenCL object(s)  </th></tr>
+<th align="left">DNNL object </th><th align="left">OpenCL object(s)  </th></tr>
 <tr>
 <td align="left">Engine </td><td align="left"><code>cl_device_id</code> and <code>cl_context</code> </td></tr>
 <tr>
@@ -97,52 +97,52 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <td align="left">Memory </td><td align="left"><code>cl_mem</code> </td></tr>
 </table>
 <h2>C++ API Extensions for Interoperability with OpenCL</h2>
-<h3>API to Construct Intel MKL-DNN Objects</h3>
+<h3>API to Construct DNNL Objects</h3>
 <table class="doxtable">
 <tr>
-<th align="left">Intel MKL-DNN object </th><th align="left">API to construct Intel MKL-DNN object  </th></tr>
+<th align="left">DNNL object </th><th align="left">API to construct DNNL object  </th></tr>
 <tr>
-<td align="left">Engine </td><td align="left"><a class="el" href="structmkldnn_1_1engine.html">mkldnn::engine(kind, ocl_dev, ocl_ctx)</a> </td></tr>
+<td align="left">Engine </td><td align="left"><a class="el" href="structdnnl_1_1engine.html">dnnl::engine(kind, ocl_dev, ocl_ctx)</a> </td></tr>
 <tr>
-<td align="left">Stream </td><td align="left"><a class="el" href="structmkldnn_1_1stream.html">mkldnn::stream(engine, ocl_queue)</a> </td></tr>
+<td align="left">Stream </td><td align="left"><a class="el" href="structdnnl_1_1stream.html">dnnl::stream(engine, ocl_queue)</a> </td></tr>
 <tr>
-<td align="left">Memory </td><td align="left"><a class="el" href="structmkldnn_1_1memory.html">mkldnn::memory(memory_desc, engine, ocl_mem)</a> </td></tr>
+<td align="left">Memory </td><td align="left"><a class="el" href="structdnnl_1_1memory.html">dnnl::memory(memory_desc, engine, ocl_mem)</a> </td></tr>
 </table>
-<dl class="section note"><dt>Note</dt><dd>Intel MKL-DNN follows retain/release OpenCL semantics when using OpenCL objects during construction. An OpenCL object is retained on construction and released on destruction - that ensures that the OpenCL object will not be destroyed while the Intel MKL-DNN object stores a reference to it.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>DNNL follows retain/release OpenCL semantics when using OpenCL objects during construction. An OpenCL object is retained on construction and released on destruction - that ensures that the OpenCL object will not be destroyed while the DNNL object stores a reference to it.</dd></dl>
 <h3>API to Access OpenCL Objects</h3>
 <table class="doxtable">
 <tr>
-<th align="left">Intel MKL-DNN object </th><th align="left">API to access OpenCL object(s)  </th></tr>
+<th align="left">DNNL object </th><th align="left">API to access OpenCL object(s)  </th></tr>
 <tr>
-<td align="left">Engine </td><td align="left">mkldnn::engine::get_ocl_device() and mkldnn::engine::get_ocl_context() </td></tr>
+<td align="left">Engine </td><td align="left">dnnl::engine::get_ocl_device() and dnnl::engine::get_ocl_context() </td></tr>
 <tr>
-<td align="left">Stream </td><td align="left">mkldnn::stream::get_ocl_command_queue() </td></tr>
+<td align="left">Stream </td><td align="left">dnnl::stream::get_ocl_command_queue() </td></tr>
 <tr>
-<td align="left">Memory </td><td align="left">mkldnn::memory::get_ocl_mem_object() </td></tr>
+<td align="left">Memory </td><td align="left">dnnl::memory::get_ocl_mem_object() </td></tr>
 </table>
 <dl class="section note"><dt>Note</dt><dd>The access interfaces do not retain the OpenCL object. It is the user's responsibility to retain the returned OpenCL object if necessary.</dd></dl>
 <h2>C API Extensions for Interoperability with OpenCL</h2>
-<h3>API to Construct Intel MKL-DNN Objects</h3>
+<h3>API to Construct DNNL Objects</h3>
 <table class="doxtable">
 <tr>
-<th align="left">Intel MKL-DNN object </th><th align="left">API to construct Intel MKL-DNN object  </th></tr>
+<th align="left">DNNL object </th><th align="left">API to construct DNNL object  </th></tr>
 <tr>
-<td align="left">Engine </td><td align="left">mkldnn_engine_create_ocl(&amp;engine, kind, ocl_dev, ocl_ctx) </td></tr>
+<td align="left">Engine </td><td align="left">dnnl_engine_create_ocl(&amp;engine, kind, ocl_dev, ocl_ctx) </td></tr>
 <tr>
-<td align="left">Stream </td><td align="left">mkldnn_stream_create_ocl(&amp;stream, engine, ocl_queue) </td></tr>
+<td align="left">Stream </td><td align="left">dnnl_stream_create_ocl(&amp;stream, engine, ocl_queue) </td></tr>
 <tr>
-<td align="left">Memory </td><td align="left"><a class="el" href="group__c__api__memory.html#ga16a5d3f01dd47973868ef49241a2d4ef">mkldnn_memory_create(&amp;memory, memory_desc, engine, &amp;ocl_mem)</a> </td></tr>
+<td align="left">Memory </td><td align="left"><a class="el" href="group__c__api__memory.html#ga52a9246bd7f4e498b08d61e75e689a0c">dnnl_memory_create(&amp;memory, memory_desc, engine, &amp;ocl_mem)</a> </td></tr>
 </table>
 <h3>API to Access OpenCL Objects</h3>
 <table class="doxtable">
 <tr>
-<th align="left">Intel MKL-DNN object </th><th align="left">API to access OpenCL object(s)  </th></tr>
+<th align="left">DNNL object </th><th align="left">API to access OpenCL object(s)  </th></tr>
 <tr>
-<td align="left">Engine </td><td align="left">mkldnn_engine_get_ocl_device() and mkldnn_engine_get_ocl_context() </td></tr>
+<td align="left">Engine </td><td align="left">dnnl_engine_get_ocl_device() and dnnl_engine_get_ocl_context() </td></tr>
 <tr>
-<td align="left">Stream </td><td align="left">mkldnn_stream_get_ocl_command_queue() </td></tr>
+<td align="left">Stream </td><td align="left">dnnl_stream_get_ocl_command_queue() </td></tr>
 <tr>
-<td align="left">Memory </td><td align="left">mkldnn_memory_get_ocl_mem_object() </td></tr>
+<td align="left">Memory </td><td align="left">dnnl_memory_get_ocl_mem_object() </td></tr>
 </table>
 </div></div><!-- contents -->
 <div class="footer">

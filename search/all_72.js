@@ -6,14 +6,15 @@ var searchData=
   ['rnn',['RNN',['../group__cpp__api__rnn.html',1,'']]],
   ['rnn_20f32_20inference_20example',['RNN f32 inference example',['../cpu_rnn_inference_f32_cpp.html',1,'']]],
   ['rnn_20int8_20inference_20example',['RNN int8 inference example',['../cpu_rnn_inference_int8_cpp.html',1,'']]],
-  ['rnn_20f32_20training_20example',['RNN f32 training example',['../cpu_rnn_training_f32_cpp.html',1,'']]],
+  ['reorder_20between_20cpu_20and_20gpu_20engines',['Reorder between CPU and GPU engines',['../cross_engine_reorder_c.html',1,'']]],
   ['reorder',['Reorder',['../dev_guide_reorder.html',1,'']]],
   ['rnn',['RNN',['../dev_guide_rnn.html',1,'']]],
-  ['reorder',['reorder',['../structmkldnn_1_1reorder.html',1,'mkldnn']]],
-  ['reorder',['reorder',['../classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00da8dbc5523c131d7900138d32d1dcbf093',1,'mkldnn::primitive']]],
-  ['reserved',['reserved',['../structmkldnn__memory__extra__desc__t.html#afc19066973364367c9be1fec1758b822',1,'mkldnn_memory_extra_desc_t']]],
-  ['reset',['reset',['../classmkldnn_1_1handle.html#a3aa9cec1c7e14dd77c9a904503960b9e',1,'mkldnn::handle']]],
-  ['rnn',['rnn',['../classmkldnn_1_1primitive.html#ac42347ba533ce9b531c1a29e330ac00da6eed45b9327120cabad6916919a9a600',1,'mkldnn::primitive']]],
-  ['rnn_5fd',['rnn_d',['../group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a5bada9b07803d3e657d5bdc592f7fc52',1,'mkldnn']]],
-  ['rnn_5fpacked_5fdesc',['rnn_packed_desc',['../structmkldnn__memory__desc__t.html#a3d718050430b441becacab903ae6a0aa',1,'mkldnn_memory_desc_t']]]
+  ['reorder',['reorder',['../structdnnl_1_1reorder.html',1,'dnnl']]],
+  ['reorder',['reorder',['../classdnnl_1_1primitive.html#ad1ec93215a0cf3aa0a32bae0c2cd9169a8dbc5523c131d7900138d32d1dcbf093',1,'dnnl::primitive']]],
+  ['reserved',['reserved',['../structdnnl__memory__extra__desc__t.html#a174a1f0d7fddfd508465a940e0c6e875',1,'dnnl_memory_extra_desc_t']]],
+  ['reset',['reset',['../classdnnl_1_1handle.html#a8862ef3d31c3b19bd88395e0b1373909',1,'dnnl::handle']]],
+  ['rnn',['rnn',['../classdnnl_1_1primitive.html#ad1ec93215a0cf3aa0a32bae0c2cd9169a6eed45b9327120cabad6916919a9a600',1,'dnnl::primitive']]],
+  ['rnn_5fd',['rnn_d',['../group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1a5bada9b07803d3e657d5bdc592f7fc52',1,'dnnl']]],
+  ['rnn_5fpacked_5fdesc',['rnn_packed_desc',['../structdnnl__memory__desc__t.html#ac8e3fced428d7d7a762cddcbfadadbbf',1,'dnnl_memory_desc_t']]],
+  ['rnn_20f32_20training_20example',['RNN f32 training example',['../rnn_training_f32_cpp.html',1,'']]]
 ];

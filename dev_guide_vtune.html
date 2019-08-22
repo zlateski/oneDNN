@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>Intel(R) MKL-DNN: Profiling with Intel(R) VTune Amplifier</title>
+<title>DNNL: Profiling with Intel(R) VTune Amplifier</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,7 +24,7 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-   <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
+   <div id="projectname">Deep Neural Network Library (DNNL)
    &#160;<span id="projectnumber">1.0.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
@@ -79,13 +79,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Profiling with Intel(R) VTune Amplifier </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Intel MKL-DNN uses just-in-time compilation (JIT) to generate optimal code for some functions based on input parameters and instruction set supported by the system. The library uses Intel SEAPI interface to annotate the generated code for Intel VTune Amplifier, so that it can correctly attribute processor monitoring unit (PMU) events to the code.</p>
-<p>The behavior is controlled with build time option <code>MKLDNN_ENABLE_JIT_PROFILING</code></p>
+<div class="textblock"><p>DNNL uses just-in-time compilation (JIT) to generate optimal code for some functions based on input parameters and instruction set supported by the system. The library uses Intel SEAPI interface to annotate the generated code for Intel VTune Amplifier, so that it can correctly attribute processor monitoring unit (PMU) events to the code.</p>
+<p>The behavior is controlled with build time option <code>DNNL_ENABLE_JIT_PROFILING</code></p>
 <table class="doxtable">
 <tr>
 <th align="left">Option </th><th align="left">Possible Values (defaults in bold) </th><th align="left">Description  </th></tr>
 <tr>
-<td align="left">MKLDNN_ENABLE_JIT_PROFILING </td><td align="left"><b>ON</b>, OFF </td><td align="left">Enables integration with Intel(R) VTune(TM) Amplifier </td></tr>
+<td align="left">DNNL_ENABLE_JIT_PROFILING </td><td align="left"><b>ON</b>, OFF </td><td align="left">Enables integration with Intel(R) VTune(TM) Amplifier </td></tr>
 </table>
 </div></div><!-- contents -->
 <div class="footer">

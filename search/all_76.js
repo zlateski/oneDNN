@@ -2,10 +2,10 @@ var searchData=
 [
   ['version_201_2e0_20transition_20guide',['Version 1.0 Transition Guide',['../dev_guide_transition_to_v1.html',1,'']]],
   ['verbose_20mode',['Verbose Mode',['../dev_guide_verbose.html',1,'']]],
-  ['vanilla_5fgru',['vanilla_gru',['../group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076a272fa682d36b810a24ec89202b7a31f7',1,'mkldnn']]],
-  ['vanilla_5flstm',['vanilla_lstm',['../group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076a716a71a7a6ec13785b552dc2412380ce',1,'mkldnn']]],
-  ['vanilla_5frnn',['vanilla_rnn',['../group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076ab2b3bfcaad515fd1bf0245e8ae6bd407',1,'mkldnn']]],
-  ['vanilla_5frnn_5fbackward',['vanilla_rnn_backward',['../structmkldnn_1_1vanilla__rnn__backward.html',1,'mkldnn']]],
-  ['vanilla_5frnn_5fforward',['vanilla_rnn_forward',['../structmkldnn_1_1vanilla__rnn__forward.html',1,'mkldnn']]],
-  ['variance_5fdesc',['variance_desc',['../structmkldnn_1_1batch__normalization__forward_1_1primitive__desc.html#a6c3d7687071b6e0e8d9e91cf84bdf6ca',1,'mkldnn::batch_normalization_forward::primitive_desc::variance_desc()'],['../structmkldnn_1_1batch__normalization__backward_1_1primitive__desc.html#a958e25d887ac0e8ad88cdc2cc02a62b0',1,'mkldnn::batch_normalization_backward::primitive_desc::variance_desc()'],['../structmkldnn_1_1layer__normalization__forward_1_1primitive__desc.html#af4bba65f8eb4fd68cd43654b8dd2c307',1,'mkldnn::layer_normalization_forward::primitive_desc::variance_desc()'],['../structmkldnn_1_1layer__normalization__backward_1_1primitive__desc.html#afb6b386a588a92715f9b1a6f152f6e9c',1,'mkldnn::layer_normalization_backward::primitive_desc::variance_desc()']]]
+  ['vanilla_5fgru',['vanilla_gru',['../group__cpp__api__enums.html#gga00377dd4982333e42e8ae1d09a309640a272fa682d36b810a24ec89202b7a31f7',1,'dnnl']]],
+  ['vanilla_5flstm',['vanilla_lstm',['../group__cpp__api__enums.html#gga00377dd4982333e42e8ae1d09a309640a716a71a7a6ec13785b552dc2412380ce',1,'dnnl']]],
+  ['vanilla_5frnn',['vanilla_rnn',['../group__cpp__api__enums.html#gga00377dd4982333e42e8ae1d09a309640ab2b3bfcaad515fd1bf0245e8ae6bd407',1,'dnnl']]],
+  ['vanilla_5frnn_5fbackward',['vanilla_rnn_backward',['../structdnnl_1_1vanilla__rnn__backward.html',1,'dnnl']]],
+  ['vanilla_5frnn_5fforward',['vanilla_rnn_forward',['../structdnnl_1_1vanilla__rnn__forward.html',1,'dnnl']]],
+  ['variance_5fdesc',['variance_desc',['../structdnnl_1_1batch__normalization__forward_1_1primitive__desc.html#ac55768265e8c0fe52ebf322e3bd60ff1',1,'dnnl::batch_normalization_forward::primitive_desc::variance_desc()'],['../structdnnl_1_1batch__normalization__backward_1_1primitive__desc.html#a2c93302f66a4db7fdc439b73f6458f98',1,'dnnl::batch_normalization_backward::primitive_desc::variance_desc()'],['../structdnnl_1_1layer__normalization__forward_1_1primitive__desc.html#ac4cfa9cce96c0ebb8b93c854e3fb9c2c',1,'dnnl::layer_normalization_forward::primitive_desc::variance_desc()'],['../structdnnl_1_1layer__normalization__backward_1_1primitive__desc.html#a41865957bd162825abfa39c45df10ff2',1,'dnnl::layer_normalization_backward::primitive_desc::variance_desc()']]]
 ];

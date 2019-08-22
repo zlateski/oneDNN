@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['normalization_5fflags',['normalization_flags',['../group__cpp__api__enums.html#ga82ccc5032f2b9b3c139deb7a09824096',1,'mkldnn']]]
+  ['normalization_5fflags',['normalization_flags',['../group__cpp__api__enums.html#gad8ef0fcbb7b10cae3d67dd46892002be',1,'dnnl']]]
 ];

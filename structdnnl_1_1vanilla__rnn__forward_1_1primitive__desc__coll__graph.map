@@ -1,0 +1,4 @@
+<map id="dnnl::vanilla_rnn_forward::primitive_desc" name="dnnl::vanilla_rnn_forward::primitive_desc">
+<area shape="rect" id="node2" href="$structdnnl_1_1primitive__desc.html" title="A base class for all primitive descriptors. " alt="" coords="19,96,157,123"/>
+<area shape="rect" id="node3" href="$classdnnl_1_1handle.html" title="dnnl::handle\&lt; dnnl\l_primitive_desc_t \&gt;" alt="" coords="20,6,156,47"/>
+</map>

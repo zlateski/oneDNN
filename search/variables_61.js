@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['accum_5fdata_5ftype',['accum_data_type',['../structmkldnn__convolution__desc__t.html#a755505cf62a730a64378562d4a96b4ee',1,'mkldnn_convolution_desc_t::accum_data_type()'],['../structmkldnn__pooling__desc__t.html#a283f1330595d8bc0bd226576654ea372',1,'mkldnn_pooling_desc_t::accum_data_type()'],['../structmkldnn__inner__product__desc__t.html#a998bb7a60862961aa69e791a703ee0e9',1,'mkldnn_inner_product_desc_t::accum_data_type()']]],
-  ['activation_5fkind',['activation_kind',['../structmkldnn__rnn__desc__t.html#a57a9fa19f5839927ee463c3f20b21a37',1,'mkldnn_rnn_desc_t']]],
-  ['alg_5fkind',['alg_kind',['../structmkldnn__convolution__desc__t.html#a9433e7ea4660fdc9ce3602065fd3ee6c',1,'mkldnn_convolution_desc_t::alg_kind()'],['../structmkldnn__eltwise__desc__t.html#a6cc3a589674fb7c80c4a37a61a01de74',1,'mkldnn_eltwise_desc_t::alg_kind()'],['../structmkldnn__pooling__desc__t.html#aa16febdd2a678f5f1d77ed4b2022dd3b',1,'mkldnn_pooling_desc_t::alg_kind()'],['../structmkldnn__lrn__desc__t.html#a8044a2d8506d9432def40dfd96b5ddd6',1,'mkldnn_lrn_desc_t::alg_kind()']]],
-  ['alpha',['alpha',['../structmkldnn__eltwise__desc__t.html#ae651978c5c026c832a037d876025192c',1,'mkldnn_eltwise_desc_t']]],
-  ['arg',['arg',['../structmkldnn__exec__arg__t.html#a0330f69c98f9c662795bc570c92999dd',1,'mkldnn_exec_arg_t']]],
-  ['axis',['axis',['../structmkldnn__shuffle__desc__t.html#a03e62c454b8694a9f6b8f634c99b19dc',1,'mkldnn_shuffle_desc_t']]]
+  ['accum_5fdata_5ftype',['accum_data_type',['../structdnnl__convolution__desc__t.html#a09ca2f54dc7a24ab71ab3e178f519dcd',1,'dnnl_convolution_desc_t::accum_data_type()'],['../structdnnl__pooling__desc__t.html#add70bfb59910284ac5600554560c8e55',1,'dnnl_pooling_desc_t::accum_data_type()'],['../structdnnl__inner__product__desc__t.html#a8fd7ff28b94fc9d485371536f6a2a1c8',1,'dnnl_inner_product_desc_t::accum_data_type()']]],
+  ['activation_5fkind',['activation_kind',['../structdnnl__rnn__desc__t.html#ac25cfdc16c19ba5d2b3c1eba086e8a75',1,'dnnl_rnn_desc_t']]],
+  ['alg_5fkind',['alg_kind',['../structdnnl__convolution__desc__t.html#a9a82a0415d9052264a259dd3f9ccaaf1',1,'dnnl_convolution_desc_t::alg_kind()'],['../structdnnl__eltwise__desc__t.html#ae5d386bea1a4c651880ab304a7044fe4',1,'dnnl_eltwise_desc_t::alg_kind()'],['../structdnnl__pooling__desc__t.html#a6dc1371eb776111b66334f0f0aea2a4c',1,'dnnl_pooling_desc_t::alg_kind()'],['../structdnnl__lrn__desc__t.html#ac85e412ee28f0318187b361c9bb8785c',1,'dnnl_lrn_desc_t::alg_kind()']]],
+  ['alpha',['alpha',['../structdnnl__eltwise__desc__t.html#a10784684fa814edcb365c0a8fecdef59',1,'dnnl_eltwise_desc_t']]],
+  ['arg',['arg',['../structdnnl__exec__arg__t.html#a46c7f77870713b8af3fd37dc66e9690b',1,'dnnl_exec_arg_t']]],
+  ['axis',['axis',['../structdnnl__shuffle__desc__t.html#a1bb136f69743fc7381990f4406bf7fe2',1,'dnnl_shuffle_desc_t']]]
 ];

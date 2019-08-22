@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['kind',['kind',['../structmkldnn_1_1post__ops.html#a3018e4c47045ae61e087064a74860405',1,'mkldnn::post_ops']]]
+  ['kind',['kind',['../structdnnl_1_1post__ops.html#a79ef658c2e7ac0fddbd605c6864c19f9',1,'dnnl::post_ops']]]
 ];

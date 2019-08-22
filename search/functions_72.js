@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['reset',['reset',['../classmkldnn_1_1handle.html#a3aa9cec1c7e14dd77c9a904503960b9e',1,'mkldnn::handle']]]
+  ['reset',['reset',['../classdnnl_1_1handle.html#a8862ef3d31c3b19bd88395e0b1373909',1,'dnnl::handle']]]
 ];

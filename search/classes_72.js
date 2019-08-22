@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['reorder',['reorder',['../structmkldnn_1_1reorder.html',1,'mkldnn']]]
+  ['reorder',['reorder',['../structdnnl_1_1reorder.html',1,'dnnl']]]
 ];

@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>Intel(R) MKL-DNN: C and C++ APIs</title>
+<title>DNNL: C and C++ APIs</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,7 +24,7 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-   <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
+   <div id="projectname">Deep Neural Network Library (DNNL)
    &#160;<span id="projectnumber">1.0.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
@@ -79,7 +79,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">C and C++ APIs </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN) has both <b>C</b> and <b>C++ APIs</b> available to users for convenience. There is almost a one-to-one correspondence as far as features are concerned, so users can choose based on language preference and switch back and forth in their projects if they desire. Most of the users choose <b>C++ API</b> though.</p>
+<div class="textblock"><p>Deep Neural Network Library (DNNL) has both <b>C</b> and <b>C++ APIs</b> available to users for convenience. There is almost a one-to-one correspondence as far as features are concerned, so users can choose based on language preference and switch back and forth in their projects if they desire. Most of the users choose <b>C++ API</b> though.</p>
 <p>The differences are shown in the table below.</p>
 <table class="doxtable">
 <tr>
@@ -89,7 +89,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr>
 <td align="left">Functional coverage </td><td align="left">Full </td><td align="left">Some of the features may require involving <b>C API</b> </td></tr>
 <tr>
-<td align="left">Error handling </td><td align="left">Functions return <a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">status</a> </td><td align="left">Functions throw <a class="el" href="structmkldnn_1_1error.html">exceptions</a> </td></tr>
+<td align="left">Error handling </td><td align="left">Functions return <a class="el" href="group__c__api__types__generic.html#gad24f9ded06e34d3ee71e7fc4b408d57a">status</a> </td><td align="left">Functions throw <a class="el" href="structdnnl_1_1error.html">exceptions</a> </td></tr>
 <tr>
 <td align="left">Verbosity </td><td align="left">High </td><td align="left">Medium </td></tr>
 <tr>
@@ -100,13 +100,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <td align="left">Target audience </td><td align="left">Experienced users, FFI </td><td align="left">Most of the users and framework developers </td></tr>
 </table>
 <h2>Input validation notes</h2>
-<p>Intel MKL-DNN performs limited input validation to minimize the performance overheads. The user application is responsible for sanitizing inputs passed to the library. Examples of the inputs that may result in unexpected consequences:</p>
+<p>DNNL performs limited input validation to minimize the performance overheads. The user application is responsible for sanitizing inputs passed to the library. Examples of the inputs that may result in unexpected consequences:</p>
 <ul>
 <li>Not-a-number (NaN) floating point values</li>
 <li>Large <code>u8</code> or <code>s8</code> inputs may lead to accumulator overflow</li>
 <li>While the <code>bf16</code> 16-bit floating point data type has range close to 32-bit floating point data type, there is a significant reduction in precision.</li>
 </ul>
-<p>As Intel MKL-DNN API accepts raw pointers as parameters it's the calling code responsibility to</p>
+<p>As DNNL API accepts raw pointers as parameters it's the calling code responsibility to</p>
 <ul>
 <li>Allocate memory and validate the buffer sizes before passing them to the library</li>
 <li>Ensure that the data buffers do not overlap unless the functionality explicitly permits in-place computations </li>

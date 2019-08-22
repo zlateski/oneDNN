@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>Intel(R) MKL-DNN: Build Options</title>
+<title>DNNL: Build Options</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,7 +24,7 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-   <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
+   <div id="projectname">Deep Neural Network Library (DNNL)
    &#160;<span id="projectnumber">1.0.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
@@ -79,42 +79,42 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Build Options </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Intel MKL-DNN supports the following build-time options.</p>
+<div class="textblock"><p>DNNL supports the following build-time options.</p>
 <table class="doxtable">
 <tr>
 <th align="left">Option </th><th align="left">Supported values (defaults in bold) </th><th align="left">Description  </th></tr>
 <tr>
-<td align="left">MKLDNN_LIBRARY_TYPE </td><td align="left"><b>SHARED</b>, STATIC </td><td align="left">Defines the resulting library type </td></tr>
+<td align="left">DNNL_LIBRARY_TYPE </td><td align="left"><b>SHARED</b>, STATIC </td><td align="left">Defines the resulting library type </td></tr>
 <tr>
-<td align="left">MKLDNN_CPU_RUNTIME </td><td align="left"><b>OMP</b>, TBB </td><td align="left">Defines the threading runtime for CPU engines </td></tr>
+<td align="left">DNNL_CPU_RUNTIME </td><td align="left"><b>OMP</b>, TBB </td><td align="left">Defines the threading runtime for CPU engines </td></tr>
 <tr>
-<td align="left">MKLDNN_GPU_RUNTIME </td><td align="left"><b>NONE</b>, OCL </td><td align="left">Defines the offload runtime for GPU engines </td></tr>
+<td align="left">DNNL_GPU_RUNTIME </td><td align="left"><b>NONE</b>, OCL </td><td align="left">Defines the offload runtime for GPU engines </td></tr>
 <tr>
-<td align="left">MKLDNN_BUILD_EXAMPLES </td><td align="left"><b>ON</b>, OFF </td><td align="left">Controls building the examples </td></tr>
+<td align="left">DNNL_BUILD_EXAMPLES </td><td align="left"><b>ON</b>, OFF </td><td align="left">Controls building the examples </td></tr>
 <tr>
-<td align="left">MKLDNN_BUILD_TESTS </td><td align="left"><b>ON</b>, OFF </td><td align="left">Controls building the tests </td></tr>
+<td align="left">DNNL_BUILD_TESTS </td><td align="left"><b>ON</b>, OFF </td><td align="left">Controls building the tests </td></tr>
 <tr>
-<td align="left">MKLDNN_ARCH_OPT_FLAGS </td><td align="left"><em>compiler flags</em> </td><td align="left">Specifies compiler optimization flags (see warning note below) </td></tr>
+<td align="left">DNNL_ARCH_OPT_FLAGS </td><td align="left"><em>compiler flags</em> </td><td align="left">Specifies compiler optimization flags (see warning note below) </td></tr>
 <tr>
-<td align="left">MKLDNN_ENABLE_JIT_PROFILING </td><td align="left"><b>ON</b>, OFF </td><td align="left">Enables integration with Intel(R) VTune(TM) Amplifier </td></tr>
+<td align="left">DNNL_ENABLE_JIT_PROFILING </td><td align="left"><b>ON</b>, OFF </td><td align="left">Enables integration with Intel(R) VTune(TM) Amplifier </td></tr>
 </table>
 <p>All other building options that can be found in CMake files are dedicated for the development/debug purposes and are subject to change without any notice. Please avoid using them.</p>
 <h2>CPU Options</h2>
-<p>Intel Architecture Processors and compatible devices are supported by Intel MKL-DNN CPU engine. The CPU engine is built by default and cannot be disabled at build time.</p>
+<p>Intel Architecture Processors and compatible devices are supported by DNNL CPU engine. The CPU engine is built by default and cannot be disabled at build time.</p>
 <h3>Targeting Specific Architecture</h3>
-<p>Intel MKL-DNN uses JIT code generation to implement most of its functionality and will choose the best code based on detected processor features. However, some Intel MKL-DNN functionality will still benefit from targeting a specific processor architecture at build time. You can use <code>MKLDNN_ARCH_OPT_FLAGS</code> CMake option for this.</p>
+<p>DNNL uses JIT code generation to implement most of its functionality and will choose the best code based on detected processor features. However, some DNNL functionality will still benefit from targeting a specific processor architecture at build time. You can use <code>DNNL_ARCH_OPT_FLAGS</code> CMake option for this.</p>
 <p>For Intel(R) C++ Compilers, the default option is <code>-xHOST</code>, which instructs the compiler to generate the code for the architecture of the processor where the build is occurring. This option would not allow you to run the library on older processor architectures.</p>
 <p>For GNU* Compiler 5.0 and newer, the default options are <code>-march=native -mtune=native</code>.</p>
-<dl class="section warning"><dt>Warning</dt><dd>While use of <code>MKLDNN_ARCH_OPT_FLAGS</code> option gives better performance, the resulting library can be run only on systems that have instruction set compatible with the target instruction set. Therefore, <code>ARCH_OPT_FLAGS</code> should be set to an empty string (<code>""</code>) if the resulting library needs to be portable.</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>While use of <code>DNNL_ARCH_OPT_FLAGS</code> option gives better performance, the resulting library can be run only on systems that have instruction set compatible with the target instruction set. Therefore, <code>ARCH_OPT_FLAGS</code> should be set to an empty string (<code>""</code>) if the resulting library needs to be portable.</dd></dl>
 <h3>Runtimes</h3>
-<p>CPU engine can use OpenMP or TBB threading runtime. OpenMP threading is the default build mode and is recommended for the best performance. This behavior is controlled by the <code>MKLDNN_CPU_RUNTIME</code> CMake option.</p>
+<p>CPU engine can use OpenMP or TBB threading runtime. OpenMP threading is the default build mode and is recommended for the best performance. This behavior is controlled by the <code>DNNL_CPU_RUNTIME</code> CMake option.</p>
 <h4>OpenMP</h4>
-<p>Intel MKL-DNN uses OpenMP runtime library provided by the compiler.</p>
+<p>DNNL uses OpenMP runtime library provided by the compiler.</p>
 <dl class="section warning"><dt>Warning</dt><dd>Because different OpenMP runtimes may not be binary-compatible, it's important to ensure that only one OpenMP runtime is used throughout the application. Having more than one OpenMP runtime linked to an executable may lead to undefined behavior including incorrect results or crashes. However as long as both the library and the application use the same or compatible compilers there would be no conflicts.</dd></dl>
 <h4>TBB</h4>
-<p>To build Intel MKL-DNN with TBB support, set the <code>TBBROOT</code> environmental variable to point to the TBB installation path or pass the path directly to cmake:</p>
-<div class="fragment"><div class="line">$ cmake -DMKLDNN_CPU_RUNTIME=TBB -DTBBROOT=/opt/intel/path/tbb ..</div>
-</div><!-- fragment --><p>Intel MKL-DNN has limited optimizations for Intel TBB and has some functional limitations if built with Intel TBB.</p>
+<p>To build DNNL with TBB support, set the <code>TBBROOT</code> environmental variable to point to the TBB installation path or pass the path directly to cmake:</p>
+<div class="fragment"><div class="line">$ cmake -DDNNL_CPU_RUNTIME=TBB -DTBBROOT=/opt/intel/path/tbb ..</div>
+</div><!-- fragment --><p>DNNL has limited optimizations for Intel TBB and has some functional limitations if built with Intel TBB.</p>
 <p>Functional limitations:</p>
 <ul>
 <li>Winograd convolution algorithm is not supported.</li>
@@ -125,15 +125,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>Convolution backward by weights,</li>
 <li>Inner product,</li>
 <li>Layer normalization,</li>
-<li><code>mkldnn_*gemm()</code>.</li>
+<li><code>dnnl_*gemm()</code>.</li>
 </ul>
 <h2>GPU Options</h2>
-<p>Intel Processor Graphics is supported by Intel MKL-DNNs GPU engine. GPU engine is disabled in the default build configuration.</p>
+<p>Intel Processor Graphics is supported by DNNLs GPU engine. GPU engine is disabled in the default build configuration.</p>
 <h3>Runtimes</h3>
-<p>To enable GPU support you need to specify the GPU runtime by setting <code>MKLDNN_GPU_RUNTIME</code> CMake option. The default value is <code>"NONE"</code> which corresponds to no GPU support in the library.</p>
+<p>To enable GPU support you need to specify the GPU runtime by setting <code>DNNL_GPU_RUNTIME</code> CMake option. The default value is <code>"NONE"</code> which corresponds to no GPU support in the library.</p>
 <h4>OpenCL*</h4>
 <p>OpenCL runtime requires Intel(R) SDK for OpenCL* applications. You can explicitly specify the path to the SDK using <code>-DOPENCLROOT</code> CMake option.</p>
-<div class="fragment"><div class="line">cmake -DMKLDNN_GPU_RUNTIME=OCL -DOPENCLROOT=/path/to/opencl/sdk ..</div>
+<div class="fragment"><div class="line">cmake -DDNNL_GPU_RUNTIME=OCL -DOPENCLROOT=/path/to/opencl/sdk ..</div>
 </div><!-- fragment --> </div></div><!-- contents -->
 <div class="footer">
     <div class="footer-wrapper">

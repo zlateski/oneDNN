@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['handle',['handle',['../classmkldnn_1_1handle.html#a57cb88c1c75f3a299e34dc163426b075',1,'mkldnn::handle::handle(T t, bool weak=false)'],['../classmkldnn_1_1handle.html#aab4a95747932f68a64b57defda68a094',1,'mkldnn::handle::handle()']]]
+  ['handle',['handle',['../classdnnl_1_1handle.html#a9c408c09fce1278f5cb0d1fa9818fc86',1,'dnnl::handle::handle(T t, bool weak=false)'],['../classdnnl_1_1handle.html#af6b3f203a378e3d8215643e1c4ca8150',1,'dnnl::handle::handle()']]]
 ];

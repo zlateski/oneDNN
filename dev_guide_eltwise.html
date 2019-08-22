@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>Intel(R) MKL-DNN: Eltwise</title>
+<title>DNNL: Eltwise</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,7 +24,7 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-   <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
+   <div id="projectname">Deep Neural Network Library (DNNL)
    &#160;<span id="projectnumber">1.0.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
@@ -92,43 +92,43 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>The following operations are supported:</p>
 <table class="doxtable">
 <tr>
-<th align="left">Operation </th><th align="left">MKL-DNN algorithm kind </th><th align="left">Formula  </th></tr>
+<th align="left">Operation </th><th align="left">DNNL algorithm kind </th><th align="left">Formula  </th></tr>
 <tr>
-<td align="left">abs </td><td align="left"><a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97acdc9ab2cd85eae9d8ad1fa11db97543e" title="Eltwise: abs. ">mkldnn_eltwise_abs</a> </td><td align="left">\( f(x) = \begin{cases} x &amp; \text{if}\ x &gt; 0 \\ -x &amp; \text{if}\ x \leq 0 \end{cases} \) </td></tr>
+<td align="left">abs </td><td align="left"><a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a2ac04aed39c46f6d6356744d9d12df43" title="Eltwise: abs. ">dnnl_eltwise_abs</a> </td><td align="left">\( f(x) = \begin{cases} x &amp; \text{if}\ x &gt; 0 \\ -x &amp; \text{if}\ x \leq 0 \end{cases} \) </td></tr>
 <tr>
-<td align="left">bounded_relu </td><td align="left"><a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a7e86d17d0b611f2c80d299668d883bad" title="Eltwise: bounded_relu. ">mkldnn_eltwise_bounded_relu</a> </td><td align="left">\( f(x) = \begin{cases} \alpha &amp; \text{if}\ x &gt; \alpha \\ x &amp; \text{if}\ 0 &lt; x \leq \alpha \\ 0 &amp; \text{if}\ x \leq 0 \end{cases} \) </td></tr>
+<td align="left">bounded_relu </td><td align="left"><a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23aed5e7f85cc5d7dfeacefe6a7a5032502" title="Eltwise: bounded_relu. ">dnnl_eltwise_bounded_relu</a> </td><td align="left">\( f(x) = \begin{cases} \alpha &amp; \text{if}\ x &gt; \alpha \\ x &amp; \text{if}\ 0 &lt; x \leq \alpha \\ 0 &amp; \text{if}\ x \leq 0 \end{cases} \) </td></tr>
 <tr>
-<td align="left">elu </td><td align="left"><a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a9d438b0d2d277674da5f54990e029015" title="Eltwise: parametric exponential linear unit (elu) ">mkldnn_eltwise_elu</a> </td><td align="left">\( f(x) = \begin{cases} x &amp; \text{if}\ x &gt; 0 \\ \alpha (e^x - 1) &amp; \text{if}\ x \leq 0 \end{cases} \) </td></tr>
+<td align="left">elu </td><td align="left"><a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a7afda2aa9bac4a229909522235f461b5" title="Eltwise: parametric exponential linear unit (elu) ">dnnl_eltwise_elu</a> </td><td align="left">\( f(x) = \begin{cases} x &amp; \text{if}\ x &gt; 0 \\ \alpha (e^x - 1) &amp; \text{if}\ x \leq 0 \end{cases} \) </td></tr>
 <tr>
-<td align="left">exp </td><td align="left"><a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a0edb1d73453a748b0b4e5fe705e8311e" title="Eltwise: exponent. ">mkldnn_eltwise_exp</a> </td><td align="left">\( f(x) = e^x \) </td></tr>
+<td align="left">exp </td><td align="left"><a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a4859f1326783a273500ef294bb7c7d5c" title="Eltwise: exponent. ">dnnl_eltwise_exp</a> </td><td align="left">\( f(x) = e^x \) </td></tr>
 <tr>
-<td align="left">gelu </td><td align="left"><a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97af446cf3eadfdb070bbbeb237f2ae94fe" title="Eltwise: gelu. ">mkldnn_eltwise_gelu</a> </td><td align="left">\( f(x) = 0.5 x (1 + tanh[\sqrt{\frac{2}{\pi}} (x + 0.044715 x^3)])\) </td></tr>
+<td align="left">gelu </td><td align="left"><a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a4dd9cf08e3bebffb5d14e24c7d513f64" title="Eltwise: gelu. ">dnnl_eltwise_gelu</a> </td><td align="left">\( f(x) = 0.5 x (1 + tanh[\sqrt{\frac{2}{\pi}} (x + 0.044715 x^3)])\) </td></tr>
 <tr>
-<td align="left">linear </td><td align="left"><a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a32f9fc43254ed1896e45cfcb6808d807" title="Eltwise: linear. ">mkldnn_eltwise_linear</a> </td><td align="left">\( f(x) = \alpha x + \beta \) </td></tr>
+<td align="left">linear </td><td align="left"><a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23aed5eec69000ddfe6ac96e161b0d723b4" title="Eltwise: linear. ">dnnl_eltwise_linear</a> </td><td align="left">\( f(x) = \alpha x + \beta \) </td></tr>
 <tr>
-<td align="left">logistic </td><td align="left"><a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a4bd7b82c022d4cf43c474e5bf476cb24" title="Eltwise: logistic. ">mkldnn_eltwise_logistic</a> </td><td align="left">\( f(x) = \frac{1}{1+e^{-x}} \) </td></tr>
+<td align="left">logistic </td><td align="left"><a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23ab560981bee9e7711017423e29ba46071" title="Eltwise: logistic. ">dnnl_eltwise_logistic</a> </td><td align="left">\( f(x) = \frac{1}{1+e^{-x}} \) </td></tr>
 <tr>
-<td align="left">relu </td><td align="left"><a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a66ead6848424f0b494e813745efb5548" title="Eltwise: ReLU. ">mkldnn_eltwise_relu</a> </td><td align="left">\( f(x) = \begin{cases} x &amp; \text{if}\ x &gt; 0 \\ \alpha x &amp; \text{if}\ x \leq 0 \end{cases} \) </td></tr>
+<td align="left">relu </td><td align="left"><a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a5e37643fec6531331e2e38df68d4c65a" title="Eltwise: ReLU. ">dnnl_eltwise_relu</a> </td><td align="left">\( f(x) = \begin{cases} x &amp; \text{if}\ x &gt; 0 \\ \alpha x &amp; \text{if}\ x \leq 0 \end{cases} \) </td></tr>
 <tr>
-<td align="left">soft_relu </td><td align="left"><a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97ac99f9e82b0c4c4583856664870469016" title="Eltwise: soft_relu. ">mkldnn_eltwise_soft_relu</a> </td><td align="left">\( f(x) = \log_{e}(1+e^x) \) </td></tr>
+<td align="left">soft_relu </td><td align="left"><a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a82d95f7071af086d4b1652160d9a972f" title="Eltwise: soft_relu. ">dnnl_eltwise_soft_relu</a> </td><td align="left">\( f(x) = \log_{e}(1+e^x) \) </td></tr>
 <tr>
-<td align="left">sqrt </td><td align="left"><a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97aca916768654a670e8bfdb0cf41b8a1a7" title="Eltwise: square root. ">mkldnn_eltwise_sqrt</a> </td><td align="left">\( f(x) = \sqrt{x} \) </td></tr>
+<td align="left">sqrt </td><td align="left"><a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a2152d4664761b356bbceed3d9afe2189" title="Eltwise: square root. ">dnnl_eltwise_sqrt</a> </td><td align="left">\( f(x) = \sqrt{x} \) </td></tr>
 <tr>
-<td align="left">square </td><td align="left"><a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97af4f3e47ddb2105e7c2ddf1bbd8434d02" title="Eltwise: square. ">mkldnn_eltwise_square</a> </td><td align="left">\( f(x) = x^2 \) </td></tr>
+<td align="left">square </td><td align="left"><a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a4da34cea03ccb7cc2701b2f2023bcc2e" title="Eltwise: square. ">dnnl_eltwise_square</a> </td><td align="left">\( f(x) = x^2 \) </td></tr>
 <tr>
-<td align="left">swish </td><td align="left"><a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97adb1d95d2da42700409424b061a06b8bd" title="Eltwise: swish. ">mkldnn_eltwise_swish</a> </td><td align="left">\( f(x) = \frac{x}{1+e^{-\alpha x}} \) </td></tr>
+<td align="left">swish </td><td align="left"><a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a63447dedf2e45ab535f1365502ff3240" title="Eltwise: swish. ">dnnl_eltwise_swish</a> </td><td align="left">\( f(x) = \frac{x}{1+e^{-\alpha x}} \) </td></tr>
 <tr>
-<td align="left">tanh </td><td align="left"><a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a6b50624e847783bfc94b7cf6badfa16c" title="Eltwise: hyperbolic tangent non-linearity (tanh) ">mkldnn_eltwise_tanh</a> </td><td align="left">\( f(x) = \frac{e^z - e^{-z}}{e^z + e^{-z}} \) </td></tr>
+<td align="left">tanh </td><td align="left"><a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a81b20d8f0b54c7114024186a9fbb698e" title="Eltwise: hyperbolic tangent non-linearity (tanh) ">dnnl_eltwise_tanh</a> </td><td align="left">\( f(x) = \frac{e^z - e^{-z}}{e^z + e^{-z}} \) </td></tr>
 </table>
-<h4>Difference Between <a href="#mkldnn_forward_training">Forward Training</a> and <a href="#mkldnn_forward_inference">Forward Inference</a></h4>
-<p>There is no difference between the <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f" title="Forward data propagation (training mode). ">mkldnn_forward_training</a> and <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a58a923fb6c4e1214e1505b5fa0b1e3fa" title="Forward data propagation (inference mode). ">mkldnn_forward_inference</a> propagation kinds.</p>
+<h4>Difference Between <a href="#dnnl_forward_training">Forward Training</a> and <a href="#dnnl_forward_inference">Forward Inference</a></h4>
+<p>There is no difference between the <a class="el" href="group__c__api__types__generic.html#ggae3c1f22ae55645782923fbfd8b07d0c4a992e03bebfe623ac876b3636333bbce0" title="Forward data propagation (training mode). ">dnnl_forward_training</a> and <a class="el" href="group__c__api__types__generic.html#ggae3c1f22ae55645782923fbfd8b07d0c4a2f77a568a675dec649eb0450c997856d" title="Forward data propagation (inference mode). ">dnnl_forward_inference</a> propagation kinds.</p>
 <h3>Backward</h3>
 <p>The backward propagation computes \(diff\_src(\overline{x})\), based on \(diff\_dst(\overline{x})\) and \(src(\overline{x})\).</p>
 <h2>Implementation Details</h2>
 <h3>General Notes</h3>
 <ol type="1">
-<li>All eltwise primitives have a common initialization function (e.g., mkldnn::eltwise_forward::desc::desc()) which takes both parameters \(\alpha\), and \(\beta\). These parameters are ignored if they are unused.</li>
-<li>The memory format and data type for <code>src</code> and <code>dst</code> are assumed to be the same, and in the API are typically referred as <code>data</code> (e.g., see <code>data_desc</code> in mkldnn::eltwise_forward::desc::desc()). The same holds for <code>diff_src</code> and <code>diff_dst</code>. The corresponding memory descriptors are referred to as <code>diff_data_desc</code>.</li>
+<li>All eltwise primitives have a common initialization function (e.g., dnnl::eltwise_forward::desc::desc()) which takes both parameters \(\alpha\), and \(\beta\). These parameters are ignored if they are unused.</li>
+<li>The memory format and data type for <code>src</code> and <code>dst</code> are assumed to be the same, and in the API are typically referred as <code>data</code> (e.g., see <code>data_desc</code> in dnnl::eltwise_forward::desc::desc()). The same holds for <code>diff_src</code> and <code>diff_dst</code>. The corresponding memory descriptors are referred to as <code>diff_data_desc</code>.</li>
 <li>Both forward and backward propagation support in-place operations, meaning that <code>src</code> can be used as input and output for forward propagation, and <code>diff_dst</code> can be used as input and output for backward propagation. In case of in-place operation, the original data will be overwritten.</li>
 <li>For some operations it might be performance beneficial to compute backward propagation based on \(dst(\overline{x})\), rather than on \(src(\overline{x})\). However, for some other operations this is simply impossible. So for generality the library always requires \(src\).</li>
 </ol>
@@ -156,7 +156,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <ol type="1">
 <li>Refer to <a class="el" href="dev_guide_data_types.html">Data Types</a> for limitations related to data types support.</li>
 <li><b>GPU</b><ul>
-<li>No support for swish (<a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97adb1d95d2da42700409424b061a06b8bd" title="Eltwise: swish. ">mkldnn_eltwise_swish</a>) operation</li>
+<li>No support for swish (<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a63447dedf2e45ab535f1365502ff3240" title="Eltwise: swish. ">dnnl_eltwise_swish</a>) operation</li>
 </ul>
 </li>
 </ol>

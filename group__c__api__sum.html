@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>Intel(R) MKL-DNN: Sum</title>
+<title>DNNL: Sum</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,7 +24,7 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-   <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
+   <div id="projectname">Deep Neural Network Library (DNNL)
    &#160;<span id="projectnumber">1.0.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
@@ -87,9 +87,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga9a6ce5cde255dd11bfd1e2ba900c5c16"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__sum.html#ga9a6ce5cde255dd11bfd1e2ba900c5c16">mkldnn_sum_primitive_desc_create</a> (<a class="el" href="group__c__api__primitive__descs.html#ga4108b6ee20cf3d2e472504c1aea67497">mkldnn_primitive_desc_t</a> *sum_primitive_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *dst_mds, int n, const float *scales, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *src_mds, <a class="el" href="group__c__api__primitive__attr.html#ga46ed0b1e4ce02ec90570c80b5a69701f">const_mkldnn_primitive_attr_t</a> attr, <a class="el" href="group__c__api__engine__types.html#ga40f5f917cdbf2215fa5324e4bf62d523">mkldnn_engine_t</a> engine)</td></tr>
-<tr class="memdesc:ga9a6ce5cde255dd11bfd1e2ba900c5c16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates out-of-place <code>sum_primitive_desc</code> for sum of <code>n</code> inputs multiplied by scale with resulting <code>output_desc</code> memory descriptor.  <a href="#ga9a6ce5cde255dd11bfd1e2ba900c5c16">More...</a><br/></td></tr>
-<tr class="separator:ga9a6ce5cde255dd11bfd1e2ba900c5c16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gace24958311def25e48774e03d772204b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__sum.html#gace24958311def25e48774e03d772204b">dnnl_sum_primitive_desc_create</a> (<a class="el" href="group__c__api__primitive__descs.html#gaabde3e27edf071b62b39f47bace7efd6">dnnl_primitive_desc_t</a> *sum_primitive_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *dst_mds, int n, const float *scales, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *src_mds, <a class="el" href="group__c__api__primitive__attr.html#gab7ba17dbb2692c0f5ee2a3e102c707d9">const_dnnl_primitive_attr_t</a> attr, <a class="el" href="group__c__api__engine__types.html#ga1ce7843660e8203ed6e1af9bfd23e14f">dnnl_engine_t</a> engine)</td></tr>
+<tr class="memdesc:gace24958311def25e48774e03d772204b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates out-of-place <code>sum_primitive_desc</code> for sum of <code>n</code> inputs multiplied by scale with resulting <code>output_desc</code> memory descriptor.  <a href="#gace24958311def25e48774e03d772204b">More...</a><br/></td></tr>
+<tr class="separator:gace24958311def25e48774e03d772204b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>A primitive to sum data. </p>
@@ -97,20 +97,20 @@ Functions</h2></td></tr>
 <dd>
 <a class="el" href="group__cpp__api__sum.html">Sum</a> in <a class="el" href="group__cpp__api.html">C++ API</a> </dd></dl>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="ga9a6ce5cde255dd11bfd1e2ba900c5c16"></a>
+<a class="anchor" id="gace24958311def25e48774e03d772204b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API mkldnn_sum_primitive_desc_create </td>
+          <td class="memname"><a class="el" href="group__c__api__types__generic.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API dnnl_sum_primitive_desc_create </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__c__api__primitive__descs.html#ga4108b6ee20cf3d2e472504c1aea67497">mkldnn_primitive_desc_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__c__api__primitive__descs.html#gaabde3e27edf071b62b39f47bace7efd6">dnnl_primitive_desc_t</a> *&#160;</td>
           <td class="paramname"><em>sum_primitive_desc</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *&#160;</td>
           <td class="paramname"><em>dst_mds</em>, </td>
         </tr>
         <tr>
@@ -128,19 +128,19 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *&#160;</td>
           <td class="paramname"><em>src_mds</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__c__api__primitive__attr.html#ga46ed0b1e4ce02ec90570c80b5a69701f">const_mkldnn_primitive_attr_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__c__api__primitive__attr.html#gab7ba17dbb2692c0f5ee2a3e102c707d9">const_dnnl_primitive_attr_t</a>&#160;</td>
           <td class="paramname"><em>attr</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__c__api__engine__types.html#ga40f5f917cdbf2215fa5324e4bf62d523">mkldnn_engine_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__c__api__engine__types.html#ga1ce7843660e8203ed6e1af9bfd23e14f">dnnl_engine_t</a>&#160;</td>
           <td class="paramname"><em>engine</em>&#160;</td>
         </tr>
         <tr>
@@ -152,17 +152,17 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Creates out-of-place <code>sum_primitive_desc</code> for sum of <code>n</code> inputs multiplied by scale with resulting <code>output_desc</code> memory descriptor. </p>
-<p><code>output_desc</code> can be NULL or specified with the <a class="el" href="group__c__api__types__generic.html#gga1f6c390306d4c8a438c0efbff08c0539a25ba80bb864a69c9fae70b4503e76167" title="Unspecified format kind. ">mkldnn_format_kind_any</a> format kind &ndash; in this case, the appropriate memory format would be chosen automatically.</p>
+<p><code>output_desc</code> can be NULL or specified with the <a class="el" href="group__c__api__types__generic.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83" title="Unspecified format kind. ">dnnl_format_kind_any</a> format kind &ndash; in this case, the appropriate memory format would be chosen automatically.</p>
 <p>Inputs:</p>
 <ul>
-<li>src 0 (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a2bccd0a79be2c331227c353c294c3fbc" title="source memory desc ">mkldnn_query_src_md</a>, 0)</li>
-<li>src 1 (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a2bccd0a79be2c331227c353c294c3fbc" title="source memory desc ">mkldnn_query_src_md</a>, 1)</li>
+<li>src 0 (<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, 0)</li>
+<li>src 1 (<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, 1)</li>
 <li>...</li>
-<li>src <code>n</code> - 1 (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a2bccd0a79be2c331227c353c294c3fbc" title="source memory desc ">mkldnn_query_src_md</a>, <code>n</code> - 1)</li>
+<li>src <code>n</code> - 1 (<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, <code>n</code> - 1)</li>
 </ul>
 <p>Outputs:</p>
 <ul>
-<li>output (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9adccda04151e0c287f0de64b832d33ac4" title="destination memory desc ">mkldnn_query_dst_md</a>, 0) </li>
+<li>output (<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598" title="destination memory desc ">dnnl_query_dst_md</a>, 0) </li>
 </ul>
 
 </div>

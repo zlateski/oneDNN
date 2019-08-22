@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>Intel(R) MKL-DNN: Pooling</title>
+<title>DNNL: Pooling</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,7 +24,7 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-   <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
+   <div id="projectname">Deep Neural Network Library (DNNL)
    &#160;<span id="projectnumber">1.0.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
@@ -98,24 +98,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>where \(ph_0, pw_0\) are <code>padding_l[0]</code> and <code>padding_l[1]</code> respectively, and output spatial dimensions are calculated similarly to how they are done in convolution.</p>
 <p>Average pooling supports two algorithms:</p>
 <ul>
-<li><a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97ae81aeeb0b887c9d903daffabcffac422" title="Average pooling include padding. ">mkldnn_pooling_avg_include_padding</a>, in which case \(DENOM = KH \cdot KW\),</li>
-<li><a class="el" href="group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a134808cee6fb8aeb7f0927c1666605b4" title="Average pooling exclude padding. ">mkldnn_pooling_avg_exclude_padding</a>, in which case \(DENOM\) equals to the size of overlap between an averaging window and images.</li>
+<li><a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23ac13a4cc7c0dc1edfcbf1bac23391d5cb" title="Average pooling include padding. ">dnnl_pooling_avg_include_padding</a>, in which case \(DENOM = KH \cdot KW\),</li>
+<li><a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a00156580493fd7c2f4cdbaaf9fcbde79" title="Average pooling exclude padding. ">dnnl_pooling_avg_exclude_padding</a>, in which case \(DENOM\) equals to the size of overlap between an averaging window and images.</li>
 </ul>
 <blockquote class="doxtable">
 <p>TODO: a picture would be nice here.</p>
 <p></p>
 </blockquote>
-<h4>Difference Between <a href="#mkldnn_forward_training">Forward Training</a> and <a href="#mkldnn_forward_inference">Forward Inference</a></h4>
+<h4>Difference Between <a href="#dnnl_forward_training">Forward Training</a> and <a href="#dnnl_forward_inference">Forward Inference</a></h4>
 <ul>
-<li>Max pooling requires <code>workspace</code> output for the <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f" title="Forward data propagation (training mode). ">mkldnn_forward_training</a> propagation kind, and doesn't require it for <a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a58a923fb6c4e1214e1505b5fa0b1e3fa" title="Forward data propagation (inference mode). ">mkldnn_forward_inference</a> (see details below).</li>
+<li>Max pooling requires <code>workspace</code> output for the <a class="el" href="group__c__api__types__generic.html#ggae3c1f22ae55645782923fbfd8b07d0c4a992e03bebfe623ac876b3636333bbce0" title="Forward data propagation (training mode). ">dnnl_forward_training</a> propagation kind, and doesn't require it for <a class="el" href="group__c__api__types__generic.html#ggae3c1f22ae55645782923fbfd8b07d0c4a2f77a568a675dec649eb0450c997856d" title="Forward data propagation (inference mode). ">dnnl_forward_inference</a> (see details below).</li>
 </ul>
 <h3>Backward</h3>
 <p>The backward propagation computes \(diff\_src(n, c, h, w)\), based on \(diff\_dst(n, c, h, w)\) and (in case of max pooling) <code>workspace</code>.</p>
 <h2>Implementation Details</h2>
 <h3>General Notes</h3>
 <ol type="1">
-<li>During training, max pooling requires a workspace on forward (<a class="el" href="group__c__api__types__generic.html#gga5b98c8059c2aff8861157bf070c3f520a0bb8fb5a8f3ae67cf8d9c8d13667507f" title="Forward data propagation (training mode). ">mkldnn_forward_training</a>) and backward passes to save indices where a maximum was found. The workspace format is opaque, and the indices cannot be restored from it. However, one can use backward pooling to perform up-sampling (used in some detection topologies).</li>
-<li>A user can use memory format tag <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bab7f14a435b0c6373badb9b3f296e6c1f" title="Undefined memory format tag. ">mkldnn_format_tag_any</a> for <code>dst</code> memory descriptor when creating pooling forward propagation. The library would derive the appropriate format from the <code>src</code> memory descriptor. However, the <code>src</code> itself must be defined. Similarly, a user can use memory format tag <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bab7f14a435b0c6373badb9b3f296e6c1f" title="Undefined memory format tag. ">mkldnn_format_tag_any</a> for the<code>diff_src</code> memory descriptor when creating pooling backward propagation.</li>
+<li>During training, max pooling requires a workspace on forward (<a class="el" href="group__c__api__types__generic.html#ggae3c1f22ae55645782923fbfd8b07d0c4a992e03bebfe623ac876b3636333bbce0" title="Forward data propagation (training mode). ">dnnl_forward_training</a>) and backward passes to save indices where a maximum was found. The workspace format is opaque, and the indices cannot be restored from it. However, one can use backward pooling to perform up-sampling (used in some detection topologies).</li>
+<li>A user can use memory format tag <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091dafee39ac6fff0325cae43cd66495c18ac" title="Undefined memory format tag. ">dnnl_format_tag_any</a> for <code>dst</code> memory descriptor when creating pooling forward propagation. The library would derive the appropriate format from the <code>src</code> memory descriptor. However, the <code>src</code> itself must be defined. Similarly, a user can use memory format tag <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091dafee39ac6fff0325cae43cd66495c18ac" title="Undefined memory format tag. ">dnnl_format_tag_any</a> for the<code>diff_src</code> memory descriptor when creating pooling backward propagation.</li>
 </ol>
 <h3>Data Type Support</h3>
 <p>The pooling primitive supports the following combinations of data types:</p>
@@ -138,13 +138,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr>
 <th align="left">Spatial </th><th align="left">Logical tensor </th><th align="left">Data type </th><th align="left">Implementations optimized for memory formats  </th></tr>
 <tr>
-<td align="left">2D </td><td align="left">NCHW </td><td align="left">f32 </td><td align="left"><a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2baed4a51a8db128a648b942882369a06d6" title="4D CNN activations tensor, an alias to mkldnn_abcd ">mkldnn_nchw</a> (<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba63203c48f8a6ff36dbf21e8c81bca060" title="plain 4D tensor ">mkldnn_abcd</a>), <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2badf1fb06f73cf8dd23ae620eea6516526" title="4D CNN activations tensor, an alias to mkldnn_acdb ">mkldnn_nhwc</a> (<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba5bdb52f009d9c8b46aaf05119cf18592" title="permuted 4D tensor ">mkldnn_acdb</a>), <em>optimized^</em> </td></tr>
+<td align="left">2D </td><td align="left">NCHW </td><td align="left">f32 </td><td align="left"><a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da83a751aedeb59613312339d0f8b90f54" title="4D CNN activations tensor, an alias to dnnl_abcd ">dnnl_nchw</a> (<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da6e669cc61278663a5ddbd3d0b25c6c5c" title="plain 4D tensor ">dnnl_abcd</a>), <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091dae50c534446b3c18cc018b3946b3cebd7" title="4D CNN activations tensor, an alias to dnnl_acdb ">dnnl_nhwc</a> (<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da8fcce5dd7260b5b0740e3b37b1e9ad41" title="permuted 4D tensor ">dnnl_acdb</a>), <em>optimized^</em> </td></tr>
 <tr>
-<td align="left">2D </td><td align="left">NCHW </td><td align="left">s32, s8, u8 </td><td align="left"><a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2badf1fb06f73cf8dd23ae620eea6516526" title="4D CNN activations tensor, an alias to mkldnn_acdb ">mkldnn_nhwc</a> (<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba5bdb52f009d9c8b46aaf05119cf18592" title="permuted 4D tensor ">mkldnn_acdb</a>), <em>optimized^</em> </td></tr>
+<td align="left">2D </td><td align="left">NCHW </td><td align="left">s32, s8, u8 </td><td align="left"><a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091dae50c534446b3c18cc018b3946b3cebd7" title="4D CNN activations tensor, an alias to dnnl_acdb ">dnnl_nhwc</a> (<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da8fcce5dd7260b5b0740e3b37b1e9ad41" title="permuted 4D tensor ">dnnl_acdb</a>), <em>optimized^</em> </td></tr>
 <tr>
-<td align="left">3D </td><td align="left">NCDHW </td><td align="left">f32 </td><td align="left"><a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2ba55268cf202bb4367b19fd0aeb13739ce" title="5D CNN activations tensor, an alias to mkldnn_abcde ">mkldnn_ncdhw</a> (<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bab5a0a1dc7021e96ed7e174f76f8decbc" title="plain 5D tensor ">mkldnn_abcde</a>), <a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bafe9f8381139e749050fda6fb70808e1c" title="5D CNN activations tensor, an alias to mkldnn_acdeb ">mkldnn_ndhwc</a> (<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bae659343dce6f6dd2eaf8f7a9455be26d" title="permuted 5D tensor ">mkldnn_acdeb</a>), <em>optimized^</em> </td></tr>
+<td align="left">3D </td><td align="left">NCDHW </td><td align="left">f32 </td><td align="left"><a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091dae33b8c6790e5d37324f18a019658d464" title="5D CNN activations tensor, an alias to dnnl_abcde ">dnnl_ncdhw</a> (<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da30d5d3c9de2931f06d265af81787ada3" title="plain 5D tensor ">dnnl_abcde</a>), <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091daa0d8b24eefd029e214080d3787114fc2" title="5D CNN activations tensor, an alias to dnnl_acdeb ">dnnl_ndhwc</a> (<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da0cfe86402763786b9b4d73062cfd2f05" title="permuted 5D tensor ">dnnl_acdeb</a>), <em>optimized^</em> </td></tr>
 <tr>
-<td align="left">3D </td><td align="left">NCDHW </td><td align="left">s32, s8, u8 </td><td align="left"><a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bafe9f8381139e749050fda6fb70808e1c" title="5D CNN activations tensor, an alias to mkldnn_acdeb ">mkldnn_ndhwc</a> (<a class="el" href="group__c__api__types__generic.html#ggacc2844e341ab1c4f5b7ae1c6068f2a2bae659343dce6f6dd2eaf8f7a9455be26d" title="permuted 5D tensor ">mkldnn_acdeb</a>), <em>optimized^</em> </td></tr>
+<td align="left">3D </td><td align="left">NCDHW </td><td align="left">s32, s8, u8 </td><td align="left"><a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091daa0d8b24eefd029e214080d3787114fc2" title="5D CNN activations tensor, an alias to dnnl_acdeb ">dnnl_ndhwc</a> (<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da0cfe86402763786b9b4d73062cfd2f05" title="permuted 5D tensor ">dnnl_acdeb</a>), <em>optimized^</em> </td></tr>
 </table>
 <p>Here <em>optimized^</em> means the format that <a class="el" href="cpu_memory_format_propagation_cpp.html">comes out</a> of any preceding compute-intensive primitive.</p>
 <h3>Post-ops and Attributes</h3>

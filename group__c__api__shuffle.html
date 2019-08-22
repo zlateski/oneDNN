@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>Intel(R) MKL-DNN: Shuffle</title>
+<title>DNNL: Shuffle</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,7 +24,7 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-   <div id="projectname">Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)
+   <div id="projectname">Deep Neural Network Library (DNNL)
    &#160;<span id="projectnumber">1.0.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
@@ -87,12 +87,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga92c75138b8fe5dab0cf4039afe4cc7c7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__shuffle.html#ga92c75138b8fe5dab0cf4039afe4cc7c7">mkldnn_shuffle_forward_desc_init</a> (<a class="el" href="structmkldnn__shuffle__desc__t.html">mkldnn_shuffle_desc_t</a> *shuffle_desc, <a class="el" href="group__c__api__types__generic.html#ga5b98c8059c2aff8861157bf070c3f520">mkldnn_prop_kind_t</a> prop_kind, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *data_desc, int axis, <a class="el" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a> group_size)</td></tr>
-<tr class="memdesc:ga92c75138b8fe5dab0cf4039afe4cc7c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a <code>shuffle_desc</code> for forward propagation using <code>prop_kind</code>, memory descriptor <code>data_desc</code>, <code>axis</code>, and <code>group_size</code>.  <a href="#ga92c75138b8fe5dab0cf4039afe4cc7c7">More...</a><br/></td></tr>
-<tr class="separator:ga92c75138b8fe5dab0cf4039afe4cc7c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga788d2158d2b11e4b3ab208e8d7a242a8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__shuffle.html#ga788d2158d2b11e4b3ab208e8d7a242a8">mkldnn_shuffle_backward_desc_init</a> (<a class="el" href="structmkldnn__shuffle__desc__t.html">mkldnn_shuffle_desc_t</a> *shuffle_desc, const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *diff_data_desc, int axis, <a class="el" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a> group_size)</td></tr>
-<tr class="memdesc:ga788d2158d2b11e4b3ab208e8d7a242a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a <code>shuffle_desc</code> for backward propagation using memory descriptor <code>diff_data_desc</code>, <code>axis</code>, and <code>group_size</code>.  <a href="#ga788d2158d2b11e4b3ab208e8d7a242a8">More...</a><br/></td></tr>
-<tr class="separator:ga788d2158d2b11e4b3ab208e8d7a242a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga394497dcdf8de4028302170a59763453"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__shuffle.html#ga394497dcdf8de4028302170a59763453">dnnl_shuffle_forward_desc_init</a> (<a class="el" href="structdnnl__shuffle__desc__t.html">dnnl_shuffle_desc_t</a> *shuffle_desc, <a class="el" href="group__c__api__types__generic.html#gae3c1f22ae55645782923fbfd8b07d0c4">dnnl_prop_kind_t</a> prop_kind, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *data_desc, int axis, <a class="el" href="group__c__api__types__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> group_size)</td></tr>
+<tr class="memdesc:ga394497dcdf8de4028302170a59763453"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a <code>shuffle_desc</code> for forward propagation using <code>prop_kind</code>, memory descriptor <code>data_desc</code>, <code>axis</code>, and <code>group_size</code>.  <a href="#ga394497dcdf8de4028302170a59763453">More...</a><br/></td></tr>
+<tr class="separator:ga394497dcdf8de4028302170a59763453"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac9df6d5739e8010e13eff37337c0ddf2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__shuffle.html#gac9df6d5739e8010e13eff37337c0ddf2">dnnl_shuffle_backward_desc_init</a> (<a class="el" href="structdnnl__shuffle__desc__t.html">dnnl_shuffle_desc_t</a> *shuffle_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *diff_data_desc, int axis, <a class="el" href="group__c__api__types__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> group_size)</td></tr>
+<tr class="memdesc:gac9df6d5739e8010e13eff37337c0ddf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a <code>shuffle_desc</code> for backward propagation using memory descriptor <code>diff_data_desc</code>, <code>axis</code>, and <code>group_size</code>.  <a href="#gac9df6d5739e8010e13eff37337c0ddf2">More...</a><br/></td></tr>
+<tr class="separator:gac9df6d5739e8010e13eff37337c0ddf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>A primitive to shuffle data along the axis. </p>
@@ -100,26 +100,26 @@ Functions</h2></td></tr>
 <dd>
 <a class="el" href="group__cpp__api__shuffle.html">Shuffle</a> in <a class="el" href="group__cpp__api.html">C++ API</a> </dd></dl>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="ga92c75138b8fe5dab0cf4039afe4cc7c7"></a>
+<a class="anchor" id="ga394497dcdf8de4028302170a59763453"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API mkldnn_shuffle_forward_desc_init </td>
+          <td class="memname"><a class="el" href="group__c__api__types__generic.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API dnnl_shuffle_forward_desc_init </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structmkldnn__shuffle__desc__t.html">mkldnn_shuffle_desc_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="structdnnl__shuffle__desc__t.html">dnnl_shuffle_desc_t</a> *&#160;</td>
           <td class="paramname"><em>shuffle_desc</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__c__api__types__generic.html#ga5b98c8059c2aff8861157bf070c3f520">mkldnn_prop_kind_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__c__api__types__generic.html#gae3c1f22ae55645782923fbfd8b07d0c4">dnnl_prop_kind_t</a>&#160;</td>
           <td class="paramname"><em>prop_kind</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *&#160;</td>
           <td class="paramname"><em>data_desc</em>, </td>
         </tr>
         <tr>
@@ -131,7 +131,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__c__api__types__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a>&#160;</td>
           <td class="paramname"><em>group_size</em>&#160;</td>
         </tr>
         <tr>
@@ -145,29 +145,29 @@ Functions</h2></td></tr>
 <p>Initializes a <code>shuffle_desc</code> for forward propagation using <code>prop_kind</code>, memory descriptor <code>data_desc</code>, <code>axis</code>, and <code>group_size</code>. </p>
 <p>Inputs:</p>
 <ul>
-<li>src (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9a2bccd0a79be2c331227c353c294c3fbc" title="source memory desc ">mkldnn_query_src_md</a>, 0)</li>
+<li>src (<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, 0)</li>
 </ul>
 <p>Outputs:</p>
 <ul>
-<li>dst (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9adccda04151e0c287f0de64b832d33ac4" title="destination memory desc ">mkldnn_query_dst_md</a>, 0) </li>
+<li>dst (<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598" title="destination memory desc ">dnnl_query_dst_md</a>, 0) </li>
 </ul>
 
 </div>
 </div>
-<a class="anchor" id="ga788d2158d2b11e4b3ab208e8d7a242a8"></a>
+<a class="anchor" id="gac9df6d5739e8010e13eff37337c0ddf2"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__c__api__types__generic.html#ga31866789b66acfb1c28b2f9bdd7bdfdd">mkldnn_status_t</a> MKLDNN_API mkldnn_shuffle_backward_desc_init </td>
+          <td class="memname"><a class="el" href="group__c__api__types__generic.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API dnnl_shuffle_backward_desc_init </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structmkldnn__shuffle__desc__t.html">mkldnn_shuffle_desc_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="structdnnl__shuffle__desc__t.html">dnnl_shuffle_desc_t</a> *&#160;</td>
           <td class="paramname"><em>shuffle_desc</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structmkldnn__memory__desc__t.html">mkldnn_memory_desc_t</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *&#160;</td>
           <td class="paramname"><em>diff_data_desc</em>, </td>
         </tr>
         <tr>
@@ -179,7 +179,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__c__api__types__memory.html#ga15898db3725cddbf807b85ef351ca81f">mkldnn_dim_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__c__api__types__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a>&#160;</td>
           <td class="paramname"><em>group_size</em>&#160;</td>
         </tr>
         <tr>
@@ -193,11 +193,11 @@ Functions</h2></td></tr>
 <p>Initializes a <code>shuffle_desc</code> for backward propagation using memory descriptor <code>diff_data_desc</code>, <code>axis</code>, and <code>group_size</code>. </p>
 <p>Inputs:</p>
 <ul>
-<li>diff_dst (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9acfa30e38738b3de8c7d3a7f21ffc1623" title="destination grad. memory desc ">mkldnn_query_diff_dst_md</a>, 0)</li>
+<li>diff_dst (<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059ae28e33688bf6c55edcf108bd24eb90de" title="destination grad. memory desc ">dnnl_query_diff_dst_md</a>, 0)</li>
 </ul>
 <p>Outputs:</p>
 <ul>
-<li>diff_src (<a class="el" href="group__c__api__types__query.html#gga6eebc661a8a3437b49d9c677f8972fc9ad915503c92000da20088fdb93cd685b9" title="source gradient memory desc ">mkldnn_query_diff_src_md</a>, 0) </li>
+<li>diff_src (<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a2367b043da6df5d691d6038693f363d6" title="source gradient memory desc ">dnnl_query_diff_src_md</a>, 0) </li>
 </ul>
 
 </div>
