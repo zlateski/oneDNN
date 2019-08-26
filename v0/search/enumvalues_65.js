@@ -8,6 +8,7 @@ var searchData=
   ['eltwise_5fd',['eltwise_d',['../group__cpp__api__enums.html#gga6d88ff11a07bae09a5c348d314c5d1d9a69f238a33c9858afa87b914eb8b5ecb7',1,'mkldnn']]],
   ['eltwise_5felu',['eltwise_elu',['../group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076a69bd24cf8965e1bc499cb1722c12a597',1,'mkldnn']]],
   ['eltwise_5fexp',['eltwise_exp',['../group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076a9d5d91f421d4252baa0376332c445f10',1,'mkldnn']]],
+  ['eltwise_5fgelu',['eltwise_gelu',['../group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076a1fd0ce62fae7a2c329e0d3d9d3295660',1,'mkldnn']]],
   ['eltwise_5flinear',['eltwise_linear',['../group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076aa400a0c599327e4ac606af461533df32',1,'mkldnn']]],
   ['eltwise_5flogistic',['eltwise_logistic',['../group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076acdf3d961f51fa67b6f20bfd765bd95cd',1,'mkldnn']]],
   ['eltwise_5frelu',['eltwise_relu',['../group__cpp__api__enums.html#ggae45a07d6121fdd33e310782753178076a7949269c3f40dbf756f63a20e5dae2e0',1,'mkldnn']]],

@@ -103,8 +103,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Intel Architecture Processors and compatible devices are supported by DNNL CPU engine. The CPU engine is built by default and cannot be disabled at build time.</p>
 <h3>Targeting Specific Architecture</h3>
 <p>DNNL uses JIT code generation to implement most of its functionality and will choose the best code based on detected processor features. However, some DNNL functionality will still benefit from targeting a specific processor architecture at build time. You can use <code>DNNL_ARCH_OPT_FLAGS</code> CMake option for this.</p>
-<p>For Intel(R) C++ Compilers, the default option is <code>-xHOST</code>, which instructs the compiler to generate the code for the architecture of the processor where the build is occurring. This option would not allow you to run the library on older processor architectures.</p>
-<p>For GNU* Compiler 5.0 and newer, the default options are <code>-march=native -mtune=native</code>.</p>
+<p>For Intel(R) C++ Compilers, the default option is <code>-xSSE4.1</code>, which instructs the compiler to generate the code for the processors that support SSE4.1 instructions. This option would not allow you to run the library on older processor architectures.</p>
+<p>For GNU* Compilers and Clang, the default option is <code>-msse4.1</code>.</p>
 <dl class="section warning"><dt>Warning</dt><dd>While use of <code>DNNL_ARCH_OPT_FLAGS</code> option gives better performance, the resulting library can be run only on systems that have instruction set compatible with the target instruction set. Therefore, <code>ARCH_OPT_FLAGS</code> should be set to an empty string (<code>""</code>) if the resulting library needs to be portable.</dd></dl>
 <h3>Runtimes</h3>
 <p>CPU engine can use OpenMP or TBB threading runtime. OpenMP threading is the default build mode and is recommended for the best performance. This behavior is controlled by the <code>DNNL_CPU_RUNTIME</code> CMake option.</p>

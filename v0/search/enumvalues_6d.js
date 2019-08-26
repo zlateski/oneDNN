@@ -35,6 +35,7 @@ var searchData=
   ['mkldnn_5feltwise_5fbounded_5frelu',['mkldnn_eltwise_bounded_relu',['../group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a7e86d17d0b611f2c80d299668d883bad',1,'mkldnn_types.h']]],
   ['mkldnn_5feltwise_5felu',['mkldnn_eltwise_elu',['../group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a9d438b0d2d277674da5f54990e029015',1,'mkldnn_types.h']]],
   ['mkldnn_5feltwise_5fexp',['mkldnn_eltwise_exp',['../group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a0edb1d73453a748b0b4e5fe705e8311e',1,'mkldnn_types.h']]],
+  ['mkldnn_5feltwise_5fgelu',['mkldnn_eltwise_gelu',['../group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97af446cf3eadfdb070bbbeb237f2ae94fe',1,'mkldnn_types.h']]],
   ['mkldnn_5feltwise_5flinear',['mkldnn_eltwise_linear',['../group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a32f9fc43254ed1896e45cfcb6808d807',1,'mkldnn_types.h']]],
   ['mkldnn_5feltwise_5flogistic',['mkldnn_eltwise_logistic',['../group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a4bd7b82c022d4cf43c474e5bf476cb24',1,'mkldnn_types.h']]],
   ['mkldnn_5feltwise_5frelu',['mkldnn_eltwise_relu',['../group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97a66ead6848424f0b494e813745efb5548',1,'mkldnn_types.h']]],

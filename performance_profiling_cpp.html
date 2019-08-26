@@ -79,7 +79,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Example code: <a class="el" href="performance_profiling_8cpp-example.html">performance_profiling.cpp</a> </p>
 </blockquote>
 <p>This example uses <a class="el" href="dev_guide_verbose.html">DNNL_VERBOSE</a> trace output to tune DNNL code to align with the <a class="el" href="dev_guide_inference.html">best practices</a>.</p>
-<p>It will assume knowledge of memory formats and their usage in DNNL. You can read more about this topic <a class="el" href="cpu_memory_format_propagation_cpp.html">here</a>.</p>
+<p>It will assume knowledge of memory formats and their usage in DNNL. You can read more about this topic <a class="el" href="memory_format_propagation_cpp.html">here</a>.</p>
 <p>The example has three different implementations of the mathematical operation:</p>
 <ol type="1">
 <li><em>Naive implementation</em> executes 2D convolution followed by ReLU on the data in <b>NCHW</b> format. This implementation does not align with DNNL best practices and results in suboptimal performance.</li>
