@@ -102,7 +102,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>\(\sigma^2(c) = \frac{1}{NHW} \sum\limits_{nhw} {}_{} (src(n, c, h, w) - \mu(c))^2\).</li>
 </ul>
 <p>The \(\gamma(c)\) and \(\beta(c)\) tensors are considered learnable.</p>
-<p>In training mode the primitive also optionally supports fusion with ReLU activation applied to the result (see <a class="el" href="group__c__api__types__generic.html#gga301f673522a400c7c1e75f518431c9a3a7150bdb66ef194e6ee11fbaa85a34ada" title="Fuse with ReLU. ">dnnl_fuse_norm_relu</a> flag).</p>
+<p>In training mode the primitive also optionally supports fusion with ReLU activation with zero negative slope applied to the result (see <a class="el" href="group__c__api__types__generic.html#gga301f673522a400c7c1e75f518431c9a3a7150bdb66ef194e6ee11fbaa85a34ada" title="Fuse with ReLU. ">dnnl_fuse_norm_relu</a> flag).</p>
 <dl class="section note"><dt>Note</dt><dd><ul>
 <li>The batch normalization primitive computes population mean and variance and not their sample or unbiased versions that are typically used to compute running mean and variance.</li>
 <li>Using the mean and variance computed by the batch normalization primitive, running mean and variance \(\hat\mu\) and \(\hat\sigma^2\) can be computed as <p class="formulaDsp">

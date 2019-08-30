@@ -11,5 +11,9 @@ var searchData=
   ['batch_5fnormalization_5fd',['batch_normalization_d',['../group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1a045eb225315e70a20e0b8c6d9700f642',1,'dnnl']]],
   ['bcda',['bcda',['../structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa078c4e73146ba90c3e4e9daa1facac28',1,'dnnl::memory']]],
   ['bf16',['bf16',['../structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dceafe2904d9fb3b0f4a81c92b03dec11424',1,'dnnl::memory']]],
+  ['binary',['binary',['../classdnnl_1_1primitive.html#ad1ec93215a0cf3aa0a32bae0c2cd9169a9d7183f16acce70658f686ae7f1a4d20',1,'dnnl::primitive']]],
+  ['binary_5fadd',['binary_add',['../group__cpp__api__enums.html#gga00377dd4982333e42e8ae1d09a309640ab2c3faf084cf82b5603946995f637b35',1,'dnnl']]],
+  ['binary_5fd',['binary_d',['../group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1ab63c80112add4f3a967c6a08c2d4884b',1,'dnnl']]],
+  ['binary_5fmul',['binary_mul',['../group__cpp__api__enums.html#gga00377dd4982333e42e8ae1d09a309640a0905fc5c22e79a8eed0988681eb6a0ae',1,'dnnl']]],
   ['blocked',['blocked',['../structdnnl_1_1memory.html#aabcadfb0e23a36a91272fc571cff105fa61326117ed4a9ddf3f754e71e119e5b3',1,'dnnl::memory']]]
 ];

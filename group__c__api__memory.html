@@ -96,6 +96,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga21b56f5755bb767c60b4f1b3dfc34445"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__memory.html#ga21b56f5755bb767c60b4f1b3dfc34445">dnnl_memory_desc_init_submemory</a> (<a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *memory_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *parent_memory_desc, const <a class="el" href="group__c__api__types__memory.html#ga8331e1160e52a5d4babe96736464095a">dnnl_dims_t</a> dims, const <a class="el" href="group__c__api__types__memory.html#ga8331e1160e52a5d4babe96736464095a">dnnl_dims_t</a> offsets)</td></tr>
 <tr class="memdesc:ga21b56f5755bb767c60b4f1b3dfc34445"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a <code>memory_desc</code> for a given <code>parent_memory_desc</code>, with <code>dims</code> sizes and <code>offsets</code>.  <a href="#ga21b56f5755bb767c60b4f1b3dfc34445">More...</a><br/></td></tr>
 <tr class="separator:ga21b56f5755bb767c60b4f1b3dfc34445"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5994f41ff7305a203aacce192d4eac35"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__memory.html#ga5994f41ff7305a203aacce192d4eac35">dnnl_memory_desc_reshape</a> (<a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *out_memory_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *in_memory_desc, int ndims, const <a class="el" href="group__c__api__types__memory.html#ga8331e1160e52a5d4babe96736464095a">dnnl_dims_t</a> dims)</td></tr>
+<tr class="memdesc:ga5994f41ff7305a203aacce192d4eac35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes an <code>out_memory_desc</code> with new <code>ndims</code> and <code>dims</code> from a <code>in_memory_desc</code>.  <a href="#ga5994f41ff7305a203aacce192d4eac35">More...</a><br/></td></tr>
+<tr class="separator:ga5994f41ff7305a203aacce192d4eac35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa734e01591b567ed6378df1f404058e2"><td class="memItemLeft" align="right" valign="top">int DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__memory.html#gaa734e01591b567ed6378df1f404058e2">dnnl_memory_desc_equal</a> (const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *lhs, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *rhs)</td></tr>
 <tr class="memdesc:gaa734e01591b567ed6378df1f404058e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares two memory descriptors.  <a href="#gaa734e01591b567ed6378df1f404058e2">More...</a><br/></td></tr>
 <tr class="separator:gaa734e01591b567ed6378df1f404058e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -141,7 +144,7 @@ size_t DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 </ol>
 <p>Along with ordinary memory with all dimensions being positive, Intel DNNL supports <em>zero-volume</em> memory with one or more dimensions set to zero. This is to support the NumPy* convention. If a <em>zero-volume</em> memory is passed to a primitive, the primitive does not perform any computations on this memory. For example:</p>
 <ul>
-<li>Convolution with <code>(0 batch, 3 input channels, 13 height, 13 width)</code> source and <code>(16 output channels, 3 inputs, channel, 3 height, 3 width)</code> weights would produce <code>(0 batch, 16 output channels, 11 height, 11 width)</code> destination (assuming strides are <code>1</code> and paddings are zero) and perform zero multiply-add operations.</li>
+<li>Convolution with <code>(0 batch, 3 input channels, 13 height, 13 width)</code> source and <code>(16 output channels, 3 input channels, 3 height, 3 width)</code> weights would produce <code>(0 batch, 16 output channels, 11 height, 11 width)</code> destination (assuming strides are <code>1</code> and paddings are zero) and perform zero multiply-add operations.</li>
 <li>Concatenation of three memories of shapes <code>(3, 4, 13, 13)</code>, <code>(3, 0, 13, 13)</code>, and <code>(3, 1, 13, 13)</code> along the second axis would produce the output of the shape <code>(3, 5, 13, 13)</code>, effectively ignoring the second input (however, if the user created a concatenation primitive descriptor with three inputs they should also provide all three memories to the concatenation primitive, including the one with zero second dimension).</li>
 <li>However, DNNL would return an error when attempting to create a convolution with <em>zero-volume</em> memory passed for weights because such a convolution is not well-defined: <div class="fragment"><div class="line">dst(1, 16, 11, 11) &lt;-- src(1, 0, 13, 13) (*) wei(16, 0, 3, 3)</div>
 </div><!-- fragment --> Should the values in the destination be zeroes or just not accessed at all? Moreover, backward pass w.r.t. weights in such cases is also not well-defined.</li>
@@ -283,6 +286,48 @@ size_t DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 
 <p>Initializes a <code>memory_desc</code> for a given <code>parent_memory_desc</code>, with <code>dims</code> sizes and <code>offsets</code>. </p>
 <p>May fail if layout used does not allow obtain desired submemory. In this case consider using <code>extract</code> or <code>insert</code> primitive </p>
+
+</div>
+</div>
+<a class="anchor" id="ga5994f41ff7305a203aacce192d4eac35"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__c__api__types__generic.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API dnnl_memory_desc_reshape </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *&#160;</td>
+          <td class="paramname"><em>out_memory_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *&#160;</td>
+          <td class="paramname"><em>in_memory_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ndims</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__c__api__types__memory.html#ga8331e1160e52a5d4babe96736464095a">dnnl_dims_t</a>&#160;</td>
+          <td class="paramname"><em>dims</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes an <code>out_memory_desc</code> with new <code>ndims</code> and <code>dims</code> from a <code>in_memory_desc</code>. </p>
+<p>If <code>in_memory_desc</code> and <code>out_memory_desc</code> point to the same memory descriptor, then <code>in_memory_desc</code> is re-initialized with new values. <code>out_memory_desc</code> inherits data type from <code>in_memory_desc</code> and has same blocked format_kind. Others format_kind's are not supported.</p>
+<dl class="section note"><dt>Note</dt><dd>Limitation: the only currently supported reshape operation is appending 1-sized dimensions to the end. </dd></dl>
 
 </div>
 </div>

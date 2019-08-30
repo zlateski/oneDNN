@@ -150,6 +150,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl__rnn__desc__t.html">dnnl_rnn_desc_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A descriptor for an RNN operation.  <a href="structdnnl__rnn__desc__t.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl__binary__desc__t.html">dnnl_binary_desc_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A descriptor of a binary operation.  <a href="structdnnl__binary__desc__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl__exec__arg__t.html">dnnl_exec_arg_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An auxiliary structure to specify primitive's inputs/outputs at execution.  <a href="structdnnl__exec__arg__t.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -433,7 +436,9 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga9878f4795e53ad8443e5c0a29e53286aa8fe4eac2a079b1278abbc80cf0d90aff">dnnl_layer_normalization</a>, 
 <a class="el" href="group__c__api__types__generic.html#gga9878f4795e53ad8443e5c0a29e53286aa443fbc5518e5e47cd97d43339a2c4987">dnnl_inner_product</a>, 
 <a class="el" href="group__c__api__types__generic.html#gga9878f4795e53ad8443e5c0a29e53286aaf383485481e1d188df5b59c5424ee3ea">dnnl_rnn</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga9878f4795e53ad8443e5c0a29e53286aa3b0a4f28c65ae19ceb17f8cc9c4a1ad8">dnnl_gemm</a>
+<a class="el" href="group__c__api__types__generic.html#gga9878f4795e53ad8443e5c0a29e53286aa3b0a4f28c65ae19ceb17f8cc9c4a1ad8">dnnl_gemm</a>, 
+<br/>
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga9878f4795e53ad8443e5c0a29e53286aa1d51705e2642ce2ce19a3e163bb25f93">dnnl_binary</a>
 <br/>
  }</td></tr>
 <tr class="memdesc:ga9878f4795e53ad8443e5c0a29e53286a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kinds of primitives.  <a href="group__c__api__types__generic.html#ga9878f4795e53ad8443e5c0a29e53286a">More...</a><br/></td></tr>
@@ -471,7 +476,10 @@ Enumerations</h2></td></tr>
 <br/>
 &#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a765cecdcf6f7c524833a241ecc9bf41d">dnnl_vanilla_lstm</a> = 0x2fff, 
 <a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a7ba4a460b8bff80dcdf1240d7ad34208">dnnl_vanilla_gru</a> = 0x3fff, 
-<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a7cd2e2970fefcdeb255415d0363279e2">dnnl_lbr_gru</a> = 0x4fff
+<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a7cd2e2970fefcdeb255415d0363279e2">dnnl_lbr_gru</a> = 0x4fff, 
+<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23ad4c6d69ac6f6b443449923d51325886d">dnnl_binary_add</a> = 0x1fff0, 
+<br/>
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23ade272a5bcb8af2b2cb0bc691c78b4e36">dnnl_binary_mul</a> = 0x1fff1
 <br/>
  }</td></tr>
 <tr class="memdesc:ga96946c805f6c4922c38c37049ab95d23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kinds of algorithms.  <a href="group__c__api__types__generic.html#ga96946c805f6c4922c38c37049ab95d23">More...</a><br/></td></tr>
@@ -547,17 +555,19 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a361b37db79b77c4f14c107e051cad4dc">dnnl_query_inner_product_d</a>, 
 <a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059ad78b3945c7d4da7938ca77daa425afab">dnnl_query_rnn_d</a>, 
 <a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a983136e74f9746f470ed80d6337a147e">dnnl_query_gemm_d</a>, 
-<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a0c4a1096638c39c0771db9a4cb2a3336">dnnl_query_some_md</a> = 128, 
+<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a1c3379cb10acf363b9d50e8eb6e40010">dnnl_query_binary_d</a>, 
 <br/>
-&#160;&#160;<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5">dnnl_query_src_md</a>, 
+&#160;&#160;<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a0c4a1096638c39c0771db9a4cb2a3336">dnnl_query_some_md</a> = 128, 
+<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5">dnnl_query_src_md</a>, 
 <a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a2367b043da6df5d691d6038693f363d6">dnnl_query_diff_src_md</a>, 
 <a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355">dnnl_query_weights_md</a>, 
-<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a8551246c3e70fa1e420411507dbdfe32">dnnl_query_diff_weights_md</a>, 
 <br/>
-&#160;&#160;<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598">dnnl_query_dst_md</a>, 
+&#160;&#160;<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a8551246c3e70fa1e420411507dbdfe32">dnnl_query_diff_weights_md</a>, 
+<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598">dnnl_query_dst_md</a>, 
 <a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059ae28e33688bf6c55edcf108bd24eb90de">dnnl_query_diff_dst_md</a>, 
 <a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a1c465006660aabe46e644e6df7d36e8a">dnnl_query_workspace_md</a>, 
-<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a2ef0eedf44417ce40237f6f459347663">dnnl_query_scratchpad_md</a>
+<br/>
+&#160;&#160;<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a2ef0eedf44417ce40237f6f459347663">dnnl_query_scratchpad_md</a>
 <br/>
  }</td></tr>
 <tr class="memdesc:ga9e5235563cf7cfc10fa89f415de98059"><td class="mdescLeft">&#160;</td><td class="mdescRight">Primitive descriptor query specification.  <a href="group__c__api__types__query.html#ga9e5235563cf7cfc10fa89f415de98059">More...</a><br/></td></tr>

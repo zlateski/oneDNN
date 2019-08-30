@@ -271,7 +271,9 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga9878f4795e53ad8443e5c0a29e53286aa8fe4eac2a079b1278abbc80cf0d90aff">dnnl_layer_normalization</a>, 
 <a class="el" href="group__c__api__types__generic.html#gga9878f4795e53ad8443e5c0a29e53286aa443fbc5518e5e47cd97d43339a2c4987">dnnl_inner_product</a>, 
 <a class="el" href="group__c__api__types__generic.html#gga9878f4795e53ad8443e5c0a29e53286aaf383485481e1d188df5b59c5424ee3ea">dnnl_rnn</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga9878f4795e53ad8443e5c0a29e53286aa3b0a4f28c65ae19ceb17f8cc9c4a1ad8">dnnl_gemm</a>
+<a class="el" href="group__c__api__types__generic.html#gga9878f4795e53ad8443e5c0a29e53286aa3b0a4f28c65ae19ceb17f8cc9c4a1ad8">dnnl_gemm</a>, 
+<br/>
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga9878f4795e53ad8443e5c0a29e53286aa1d51705e2642ce2ce19a3e163bb25f93">dnnl_binary</a>
 <br/>
  }</td></tr>
 <tr class="memdesc:ga9878f4795e53ad8443e5c0a29e53286a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kinds of primitives.  <a href="group__c__api__types__generic.html#ga9878f4795e53ad8443e5c0a29e53286a">More...</a><br/></td></tr>
@@ -309,7 +311,10 @@ Enumerations</h2></td></tr>
 <br/>
 &#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a765cecdcf6f7c524833a241ecc9bf41d">dnnl_vanilla_lstm</a> = 0x2fff, 
 <a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a7ba4a460b8bff80dcdf1240d7ad34208">dnnl_vanilla_gru</a> = 0x3fff, 
-<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a7cd2e2970fefcdeb255415d0363279e2">dnnl_lbr_gru</a> = 0x4fff
+<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a7cd2e2970fefcdeb255415d0363279e2">dnnl_lbr_gru</a> = 0x4fff, 
+<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23ad4c6d69ac6f6b443449923d51325886d">dnnl_binary_add</a> = 0x1fff0, 
+<br/>
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23ade272a5bcb8af2b2cb0bc691c78b4e36">dnnl_binary_mul</a> = 0x1fff1
 <br/>
  }</td></tr>
 <tr class="memdesc:ga96946c805f6c4922c38c37049ab95d23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kinds of algorithms.  <a href="group__c__api__types__generic.html#ga96946c805f6c4922c38c37049ab95d23">More...</a><br/></td></tr>
@@ -843,6 +848,9 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga9878f4795e53ad8443e5c0a29e53286aa3b0a4f28c65ae19ceb17f8cc9c4a1ad8"></a>dnnl_gemm</em>&nbsp;</td><td class="fielddoc">
 <p>A matrix multiplication primitive. </p>
 </td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="gga9878f4795e53ad8443e5c0a29e53286aa1d51705e2642ce2ce19a3e163bb25f93"></a>dnnl_binary</em>&nbsp;</td><td class="fielddoc">
+<p>A binary primitive. </p>
+</td></tr>
 </table>
 
 </div>
@@ -946,6 +954,12 @@ Enumerations</h2></td></tr>
 </p>
 <p> Primitive expects 4 biases on input: \([b_{u}, b_{r}, b_{c_x}, b_{c_h}]\) </p>
 </td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="gga96946c805f6c4922c38c37049ab95d23ad4c6d69ac6f6b443449923d51325886d"></a>dnnl_binary_add</em>&nbsp;</td><td class="fielddoc">
+<p>Binary add. </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="gga96946c805f6c4922c38c37049ab95d23ade272a5bcb8af2b2cb0bc691c78b4e36"></a>dnnl_binary_mul</em>&nbsp;</td><td class="fielddoc">
+<p>Binary mul. </p>
+</td></tr>
 </table>
 
 </div>
@@ -989,9 +1003,10 @@ Enumerations</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga301f673522a400c7c1e75f518431c9a3a7150bdb66ef194e6ee11fbaa85a34ada"></a>dnnl_fuse_norm_relu</em>&nbsp;</td><td class="fielddoc">
 <p>Fuse with ReLU. </p>
+<p>The flag implies negative slope being 0. On training this is the only configuration supported. For inference, to use non-zero negative slope consider using <a class="el" href="dev_guide_attributes_post_ops.html">Primitive Attributes: Post-ops</a>.</p>
 <p>If specified:</p>
 <ul>
-<li>on inference this option behaves the same as if the primitive were fused with ReLU via post ops API</li>
+<li>on inference this option behaves the same as if the primitive were fused with ReLU using post ops API with zero negative slope.</li>
 <li>on training primitive requires workspace (required to be able to perform backward pass) </li>
 </ul>
 </td></tr>
