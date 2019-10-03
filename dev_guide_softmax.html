@@ -107,7 +107,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>The backward propagation computes \(diff\_src(ou, c, in)\), based on \(diff\_dst(ou, c, in)\) and \(dst(ou, c, in)\).</p>
 <h2>Implementation Details</h2>
 <h3>General Notes</h3>
-<p>N/A</p>
+<ol type="1">
+<li>Both forward and backward propagation support in-place operations, meaning that <code>src</code> can be used as input and output for forward propagation, and <code>diff_dst</code> can be used as input and output for backward propagation. In case of in-place operation, the original data will be overwritten.</li>
+</ol>
 <h3>Post-ops and Attributes</h3>
 <p>The softmax primitive doesn't support any post-ops or attributes.</p>
 <h3>Data Type Support</h3>
@@ -128,7 +130,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>No primitive specific limitations. Refer to <a class="el" href="dev_guide_data_types.html">Data Types</a> for limitations related to data types support.</li>
 </ol>
 <h2>Performance Tips</h2>
-<ul>
+<ol type="1">
+<li>Use in-place operations whenever possible.</li>
 <li>Currently the softmax primitive is optimized for the cases where the dimension of the softmax axis is physically dense. For instance:<ul>
 <li>Optimized: 2D case, tensor \(A \times B\), softmax axis 1 (B), format tag <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da1bd907fc29344dfe7ba88336960dcf53" title="plain 2D tensor ">dnnl_ab</a></li>
 <li>Optimized: 4D case, tensor \(A \times B \times C \times D\), softmax axis 3 (D), format tag <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da6e669cc61278663a5ddbd3d0b25c6c5c" title="plain 4D tensor ">dnnl_abcd</a></li>
@@ -138,7 +141,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>Non-optimized: 4D case, tensor \(A \times B\), softmax axis 2 (C), format tag <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da8fcce5dd7260b5b0740e3b37b1e9ad41" title="permuted 4D tensor ">dnnl_acdb</a>, and and \(D \cdot B \ne 1\) </li>
 </ul>
 </li>
-</ul>
+</ol>
 </div></div><!-- contents -->
 <div class="footer">
     <div class="footer-wrapper">
