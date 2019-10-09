@@ -87,7 +87,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#enum-members">Enumerations</a>  </div>
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">dnnl.hpp File Reference</div>  </div>
 </div><!--header-->
@@ -96,6 +97,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>C++ API.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;dnnl_config.h&quot;</code><br/>
+<code>#include &lt;cstdio&gt;</code><br/>
 </div>
 <p><a href="dnnl_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -135,13 +137,19 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The base class for all primitive descriptors.  <a href="structdnnl_1_1primitive__desc__base.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1reorder.html">dnnl::reorder</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a reorder primitive using the description of the source (<code>src_engine</code> and <code>src_md</code>) and destination (<code>dst_engine</code> and <code>dst_md</code>) memory, and an <code>attr</code> attribute.  <a href="structdnnl_1_1reorder.html#details">More...</a><br/></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A primitive to copy data between memory formats.  <a href="structdnnl_1_1reorder.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1reorder_1_1primitive__desc.html">dnnl::reorder::primitive_desc</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A reorder primitive descriptor.  <a href="structdnnl_1_1reorder_1_1primitive__desc.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1concat.html">dnnl::concat</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implements primitive descriptor and primitive for concat.  <a href="structdnnl_1_1concat.html#details">More...</a><br/></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A concat primitive.  <a href="structdnnl_1_1concat.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1sum.html">dnnl::sum</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an out-of-place sum primitive descriptor for sum of <code>n</code> inputs multiplied by the scale with resulting <code>output_desc</code> memory descriptor.  <a href="structdnnl_1_1sum.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1concat_1_1primitive__desc.html">dnnl::concat::primitive_desc</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A concat primitive descriptor.  <a href="structdnnl_1_1concat_1_1primitive__desc.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1sum_1_1primitive__desc.html">dnnl::sum::primitive_desc</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A sum primitive descriptor.  <a href="structdnnl_1_1sum_1_1primitive__desc.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1primitive__desc.html">dnnl::primitive_desc</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A base class for descriptors of all primitives that have an operation descriptor and that support iteration over multiple implementations.  <a href="structdnnl_1_1primitive__desc.html#details">More...</a><br/></td></tr>
@@ -288,7 +296,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Primitive descriptor for batch normalization backward propagation.  <a href="structdnnl_1_1batch__normalization__backward_1_1primitive__desc.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1layer__normalization__forward.html">dnnl::layer_normalization_forward</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">layer normalization for forward propagation.  <a href="structdnnl_1_1layer__normalization__forward.html#details">More...</a><br/></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Layer normalization forward propagation primitive.  <a href="structdnnl_1_1layer__normalization__forward.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1layer__normalization__forward_1_1desc.html">dnnl::layer_normalization_forward::desc</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Descriptor for layer normalization forward propagation.  <a href="structdnnl_1_1layer__normalization__forward_1_1desc.html#details">More...</a><br/></td></tr>
@@ -297,7 +305,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Primitive descriptor for layer normalization forward propagation.  <a href="structdnnl_1_1layer__normalization__forward_1_1primitive__desc.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1layer__normalization__backward.html">dnnl::layer_normalization_backward</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">layer normalization backward propagation.  <a href="structdnnl_1_1layer__normalization__backward.html#details">More...</a><br/></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Layer normalization backward propagation primitive.  <a href="structdnnl_1_1layer__normalization__backward.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1layer__normalization__backward_1_1desc.html">dnnl::layer_normalization_backward::desc</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Descriptor for layer normalization backward propagation.  <a href="structdnnl_1_1layer__normalization__backward_1_1desc.html#details">More...</a><br/></td></tr>
@@ -331,6 +339,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1inner__product__backward__weights_1_1primitive__desc.html">dnnl::inner_product_backward_weights::primitive_desc</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Primitive descriptor for inner product backward propagation with respect to weights.  <a href="structdnnl_1_1inner__product__backward__weights_1_1primitive__desc.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1rnn__primitive__desc__base.html">dnnl::rnn_primitive_desc_base</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for RNN primitive descriptors.  <a href="structdnnl_1_1rnn__primitive__desc__base.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1vanilla__rnn__forward.html">dnnl::vanilla_rnn_forward</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vanilla RNN for forward propagation.  <a href="structdnnl_1_1vanilla__rnn__forward.html#details">More...</a><br/></td></tr>
@@ -416,11 +427,20 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1shuffle__backward.html">dnnl::shuffle_backward</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shuffle for backward propagation.  <a href="structdnnl_1_1shuffle__backward.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1shuffle__backward_1_1desc.html">dnnl::shuffle_backward::desc</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Descriptor for shuffle backward propagation.  <a href="structdnnl_1_1shuffle__backward_1_1desc.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1shuffle__backward_1_1primitive__desc.html">dnnl::shuffle_backward::primitive_desc</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Primitive descriptor for shuffle backward propagation.  <a href="structdnnl_1_1shuffle__backward_1_1primitive__desc.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1binary.html">dnnl::binary</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implements descriptor, primitive descriptor, and primitive for the binary.  <a href="structdnnl_1_1binary.html#details">More...</a><br/></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Primitive for binary operation.  <a href="structdnnl_1_1binary.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1binary_1_1desc.html">dnnl::binary::desc</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Descriptor for binary.  <a href="structdnnl_1_1binary_1_1desc.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1binary_1_1primitive__desc.html">dnnl::binary::primitive_desc</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Primitive descriptor for binary.  <a href="structdnnl_1_1binary_1_1primitive__desc.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
@@ -494,6 +514,21 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:gad8ef0fcbb7b10cae3d67dd46892002be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flags for batch normalization primitive.  <a href="group__cpp__api__enums.html#gad8ef0fcbb7b10cae3d67dd46892002be">More...</a><br/></td></tr>
 <tr class="separator:gad8ef0fcbb7b10cae3d67dd46892002be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad27d0db2a86ae3072207769f5c2ddd1e"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__enums.html#gad27d0db2a86ae3072207769f5c2ddd1e">dnnl::rnn_flags</a> : unsigned { <a class="el" href="group__cpp__api__enums.html#ggad27d0db2a86ae3072207769f5c2ddd1eaf31ee5e3824f1f5e5d206bdf3029f22b">dnnl::rnn_flags::undef</a> = dnnl_rnn_flags_undef
+ }</td></tr>
+<tr class="memdesc:gad27d0db2a86ae3072207769f5c2ddd1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flags for RNN cell.  <a href="group__cpp__api__enums.html#gad27d0db2a86ae3072207769f5c2ddd1e">More...</a><br/></td></tr>
+<tr class="separator:gad27d0db2a86ae3072207769f5c2ddd1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga33315cf335d1cbe26fd6b70d956e23d5"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__enums.html#ga33315cf335d1cbe26fd6b70d956e23d5">dnnl::rnn_direction</a> { <br/>
+&#160;&#160;<a class="el" href="group__cpp__api__enums.html#gga33315cf335d1cbe26fd6b70d956e23d5a04f4bf4bc6a47e30f0353597e244c44a">dnnl::rnn_direction::unidirectional_left2right</a> = dnnl_unidirectional_left2right, 
+<a class="el" href="group__cpp__api__enums.html#gga33315cf335d1cbe26fd6b70d956e23d5a0b694765eed7cf5a48e18c1d05b74118">dnnl::rnn_direction::unidirectional_right2left</a> = dnnl_unidirectional_right2left, 
+<a class="el" href="group__cpp__api__enums.html#gga33315cf335d1cbe26fd6b70d956e23d5aa0c3ef5c69c32081a31c33df63192cda">dnnl::rnn_direction::unidirectional</a> = dnnl_unidirectional, 
+<a class="el" href="group__cpp__api__enums.html#gga33315cf335d1cbe26fd6b70d956e23d5a7a1bb9f8699e8c03cbe4bd681fb50830">dnnl::rnn_direction::bidirectional_concat</a> = dnnl_bidirectional_concat, 
+<br/>
+&#160;&#160;<a class="el" href="group__cpp__api__enums.html#gga33315cf335d1cbe26fd6b70d956e23d5aa6199c5b651803844c8c054b11e88d8c">dnnl::rnn_direction::bidirectional_sum</a> = dnnl_bidirectional_sum
+<br/>
+ }</td></tr>
+<tr class="memdesc:ga33315cf335d1cbe26fd6b70d956e23d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">A direction of RNN primitive execution.  <a href="group__cpp__api__enums.html#ga33315cf335d1cbe26fd6b70d956e23d5">More...</a><br/></td></tr>
+<tr class="separator:ga33315cf335d1cbe26fd6b70d956e23d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga94efdd650364f4d9776cfb9b711cbdc1"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__enums.html#ga94efdd650364f4d9776cfb9b711cbdc1">dnnl::query</a> { <br/>
 &#160;&#160;<a class="el" href="group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1af31ee5e3824f1f5e5d206bdf3029f22b">dnnl::query::undef</a> = dnnl_query_undef, 
 <a class="el" href="group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1aad1943a9fd6d3d7ee1e6af41a5b0d3e7">dnnl::query::engine</a> = dnnl_query_engine, 
@@ -508,36 +543,74 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1a783fb4ccfa962b218a2acbd35dd7ec27">dnnl::query::reorder_src_engine</a> = dnnl_query_reorder_src_engine, 
 <a class="el" href="group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1aa08e784e657998224809d67bde0787ce">dnnl::query::reorder_dst_engine</a> = dnnl_query_reorder_dst_engine, 
 <a class="el" href="group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1a2c6dbd26a5e4bd5689bdcbfdf00e35cf">dnnl::query::impl_info_str</a> = dnnl_query_impl_info_str, 
-<a class="el" href="group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1a80d6826f84ba733d4bd57ca0812d1d24">dnnl::query::op_d</a> = dnnl_query_op_d, 
+<a class="el" href="group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1a2ba5356a73a761f488b6d9e5f028134f">dnnl::query::prop_kind</a> = dnnl_query_prop_kind, 
 <br/>
-&#160;&#160;<a class="el" href="group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1aae384e1cebb4565bd9a57ff4a19145a7">dnnl::query::convolution_d</a> = dnnl_query_convolution_d, 
+&#160;&#160;<a class="el" href="group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1a80d6826f84ba733d4bd57ca0812d1d24">dnnl::query::op_d</a> = dnnl_query_op_d, 
+<a class="el" href="group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1aae384e1cebb4565bd9a57ff4a19145a7">dnnl::query::convolution_d</a> = dnnl_query_convolution_d, 
 <a class="el" href="group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1a2c191a4c2f3830f7960fd2d7eff440ff">dnnl::query::deconvolution_d</a> = dnnl_query_deconvolution_d, 
 <a class="el" href="group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1a22964f067fb5f173218eb8aa9f6c22c2">dnnl::query::shuffle_d</a> = dnnl_query_shuffle_d, 
-<a class="el" href="group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1a43bc6c42da7ccfcbc6ef6a26035ed932">dnnl::query::eltwise_d</a> = dnnl_query_eltwise_d, 
 <br/>
-&#160;&#160;<a class="el" href="group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1a5be7596ca77ae38c8f14dd9d29c55760">dnnl::query::softmax_d</a> = dnnl_query_softmax_d, 
+&#160;&#160;<a class="el" href="group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1a43bc6c42da7ccfcbc6ef6a26035ed932">dnnl::query::eltwise_d</a> = dnnl_query_eltwise_d, 
+<a class="el" href="group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1a5be7596ca77ae38c8f14dd9d29c55760">dnnl::query::softmax_d</a> = dnnl_query_softmax_d, 
 <a class="el" href="group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1a8c55c4b147af6d6e1de777e25e519bd4">dnnl::query::pooling_d</a> = dnnl_query_pooling_d, 
 <a class="el" href="group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1adfe43d0a7bd9b03655ad7bcbdeba3b49">dnnl::query::lrn_d</a> = dnnl_query_lrn_d, 
-<a class="el" href="group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1a045eb225315e70a20e0b8c6d9700f642">dnnl::query::batch_normalization_d</a> = dnnl_query_batch_normalization_d, 
 <br/>
-&#160;&#160;<a class="el" href="group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1a867a57dd825838fe593a8ef3a07cfa60">dnnl::query::layer_normalization_d</a> = dnnl_query_layer_normalization_d, 
+&#160;&#160;<a class="el" href="group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1a045eb225315e70a20e0b8c6d9700f642">dnnl::query::batch_normalization_d</a> = dnnl_query_batch_normalization_d, 
+<a class="el" href="group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1a867a57dd825838fe593a8ef3a07cfa60">dnnl::query::layer_normalization_d</a> = dnnl_query_layer_normalization_d, 
 <a class="el" href="group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1aded69e5210888fc8315d2f7e90d7ba15">dnnl::query::inner_product_d</a> = dnnl_query_inner_product_d, 
 <a class="el" href="group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1a5bada9b07803d3e657d5bdc592f7fc52">dnnl::query::rnn_d</a> = dnnl_query_rnn_d, 
-<a class="el" href="group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1ab63c80112add4f3a967c6a08c2d4884b">dnnl::query::binary_d</a> = dnnl_query_binary_d, 
 <br/>
-&#160;&#160;<a class="el" href="group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1a90a729e395453e1d9411ad416c796819">dnnl::query::src_md</a> = dnnl_query_src_md, 
+&#160;&#160;<a class="el" href="group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1ab63c80112add4f3a967c6a08c2d4884b">dnnl::query::binary_d</a> = dnnl_query_binary_d, 
+<a class="el" href="group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1a90a729e395453e1d9411ad416c796819">dnnl::query::src_md</a> = dnnl_query_src_md, 
 <a class="el" href="group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1a8f85b9dfff73532e30d8aab798020233">dnnl::query::diff_src_md</a> = dnnl_query_diff_src_md, 
 <a class="el" href="group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1a06ba7b00a8c95dcf3a90e16d00eeb0e9">dnnl::query::weights_md</a> = dnnl_query_weights_md, 
-<a class="el" href="group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1a345e134a47299ca126f8cc4aeeeb05ac">dnnl::query::diff_weights_md</a> = dnnl_query_diff_weights_md, 
 <br/>
-&#160;&#160;<a class="el" href="group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1a701158248eed4e5fc84610f2f6026493">dnnl::query::dst_md</a> = dnnl_query_dst_md, 
+&#160;&#160;<a class="el" href="group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1a345e134a47299ca126f8cc4aeeeb05ac">dnnl::query::diff_weights_md</a> = dnnl_query_diff_weights_md, 
+<a class="el" href="group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1a701158248eed4e5fc84610f2f6026493">dnnl::query::dst_md</a> = dnnl_query_dst_md, 
 <a class="el" href="group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1ab731735b7280a17b7b03c964cf9b1967">dnnl::query::diff_dst_md</a> = dnnl_query_diff_dst_md, 
 <a class="el" href="group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1a3874c56bb4069607213666573dff2a96">dnnl::query::workspace_md</a> = dnnl_query_workspace_md, 
-<a class="el" href="group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1a9cbdd03b65c030ef560b5555be1a86c2">dnnl::query::scratchpad_md</a> = dnnl_query_scratchpad_md
+<br/>
+&#160;&#160;<a class="el" href="group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1a9cbdd03b65c030ef560b5555be1a86c2">dnnl::query::scratchpad_md</a> = dnnl_query_scratchpad_md, 
+<a class="el" href="group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1ad531896cf1d66c4832790f428623f164">dnnl::query::exec_arg_md</a> = dnnl_query_exec_arg_md
 <br/>
  }</td></tr>
 <tr class="memdesc:ga94efdd650364f4d9776cfb9b711cbdc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Primitive descriptor query specification.  <a href="group__cpp__api__enums.html#ga94efdd650364f4d9776cfb9b711cbdc1">More...</a><br/></td></tr>
 <tr class="separator:ga94efdd650364f4d9776cfb9b711cbdc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:gaaa215c424a2a5c5f734600216dfb8873"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gaaa215c424a2a5c5f734600216dfb8873"></a>
+<a class="el" href="group__c__api__types__generic.html#ga9878f4795e53ad8443e5c0a29e53286a">dnnl_primitive_kind_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__utils.html#gaaa215c424a2a5c5f734600216dfb8873">dnnl::convert_to_c</a> (primitive::kind akind)</td></tr>
+<tr class="memdesc:gaaa215c424a2a5c5f734600216dfb8873"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a C++ primitive kind enum value <code>akind</code> to its C counterpart. <br/></td></tr>
+<tr class="separator:gaaa215c424a2a5c5f734600216dfb8873"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa30f540e1ed09b2865f153fd599c967b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gaa30f540e1ed09b2865f153fd599c967b"></a>
+<a class="el" href="group__c__api__primitive__attr.html#gacda323181ab267e571c31435b0817de4">dnnl_scratchpad_mode_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__enums.html#gaa30f540e1ed09b2865f153fd599c967b">dnnl::convert_to_c</a> (scratchpad_mode mode)</td></tr>
+<tr class="memdesc:gaa30f540e1ed09b2865f153fd599c967b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a C++ scratchpad <code>mode</code> enum value to its C counterpart. <br/></td></tr>
+<tr class="separator:gaa30f540e1ed09b2865f153fd599c967b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaf09c9867f08afe9bd59135f1dda9f6e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gaaf09c9867f08afe9bd59135f1dda9f6e"></a>
+<a class="el" href="group__c__api__types__generic.html#gae3c1f22ae55645782923fbfd8b07d0c4">dnnl_prop_kind_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__enums.html#gaaf09c9867f08afe9bd59135f1dda9f6e">dnnl::convert_to_c</a> (prop_kind kind)</td></tr>
+<tr class="memdesc:gaaf09c9867f08afe9bd59135f1dda9f6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a C++ propagation <code>kind</code> enum value to its C counterpart. <br/></td></tr>
+<tr class="separator:gaaf09c9867f08afe9bd59135f1dda9f6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad4c07d30e46391ce7ce0900d18cbfa30"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gad4c07d30e46391ce7ce0900d18cbfa30"></a>
+<a class="el" href="group__c__api__types__generic.html#ga96946c805f6c4922c38c37049ab95d23">dnnl_alg_kind_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__enums.html#gad4c07d30e46391ce7ce0900d18cbfa30">dnnl::convert_to_c</a> (algorithm aalgorithm)</td></tr>
+<tr class="memdesc:gad4c07d30e46391ce7ce0900d18cbfa30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a C++ algorithm enum value <code>aalgorithm</code> to its C counterpart. <br/></td></tr>
+<tr class="separator:gad4c07d30e46391ce7ce0900d18cbfa30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8e83176cb3d0cdb61257191b0d52b5bd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga8e83176cb3d0cdb61257191b0d52b5bd"></a>
+<a class="el" href="group__c__api__types__generic.html#ga301f673522a400c7c1e75f518431c9a3">dnnl_normalization_flags_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__enums.html#ga8e83176cb3d0cdb61257191b0d52b5bd">dnnl::convert_to_c</a> (normalization_flags aflag)</td></tr>
+<tr class="memdesc:ga8e83176cb3d0cdb61257191b0d52b5bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a C++ normalization flags enum value <code>aflag</code> to its C counterpart. <br/></td></tr>
+<tr class="separator:ga8e83176cb3d0cdb61257191b0d52b5bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0ce5be3911c933ba75b377ba9f56b5fd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga0ce5be3911c933ba75b377ba9f56b5fd"></a>
+<a class="el" href="group__c__api__types__op__descs.html#ga3e71b827ee442f0302111d214a6d35b5">dnnl_rnn_flags_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__enums.html#ga0ce5be3911c933ba75b377ba9f56b5fd">dnnl::convert_to_c</a> (rnn_flags aflag)</td></tr>
+<tr class="memdesc:ga0ce5be3911c933ba75b377ba9f56b5fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a C++ RNN cell flags enum value <code>aflag</code> to its C counterpart. <br/></td></tr>
+<tr class="separator:ga0ce5be3911c933ba75b377ba9f56b5fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac676f5fdc851132f46a193efb00dd0be"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gac676f5fdc851132f46a193efb00dd0be"></a>
+<a class="el" href="group__c__api__types__op__descs.html#ga629de1827647bf1824361a276c5169f0">dnnl_rnn_direction_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__enums.html#gac676f5fdc851132f46a193efb00dd0be">dnnl::convert_to_c</a> (rnn_direction adir)</td></tr>
+<tr class="memdesc:gac676f5fdc851132f46a193efb00dd0be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a C++ RNN direction enum value <code>adir</code> to its C counterpart. <br/></td></tr>
+<tr class="separator:gac676f5fdc851132f46a193efb00dd0be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga01d8a1881875cdb94e230db4e53ccb97"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga01d8a1881875cdb94e230db4e53ccb97"></a>
+<a class="el" href="group__c__api__types__query.html#ga9e5235563cf7cfc10fa89f415de98059">dnnl_query_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__enums.html#ga01d8a1881875cdb94e230db4e53ccb97">dnnl::convert_to_c</a> (query aquery)</td></tr>
+<tr class="memdesc:ga01d8a1881875cdb94e230db4e53ccb97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a C++ query enum value <code>aquery</code> to its C counterpart. <br/></td></tr>
+<tr class="separator:ga01d8a1881875cdb94e230db4e53ccb97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>C++ API. </p>

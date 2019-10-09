@@ -328,7 +328,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="comment">// There are no primitives to the left from here,</span></div>
 <div class="line">    <span class="comment">// so src_iter_desc needs to be zero memory desc</span></div>
 <div class="line">    <a class="code" href="structdnnl_1_1lstm__forward_1_1desc.html">lstm_forward::desc</a> leftmost_layer_desc(fwd_inf_train, <span class="comment">// aprop_kind</span></div>
-<div class="line">            rnn_direction::unidirectional_left2right, <span class="comment">// direction</span></div>
+<div class="line">            <a class="code" href="group__cpp__api__enums.html#gga33315cf335d1cbe26fd6b70d956e23d5a04f4bf4bc6a47e30f0353597e244c44a">rnn_direction::unidirectional_left2right</a>, <span class="comment">// direction</span></div>
 <div class="line">            user_leftmost_src_layer_md, <span class="comment">// src_layer_desc</span></div>
 <div class="line">            <a class="code" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a>(), <span class="comment">// src_iter_desc</span></div>
 <div class="line">            <a class="code" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a>(), <span class="comment">// src_iter_c_desc</span></div>
@@ -369,7 +369,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="comment">// There are no primitives to the right from here,</span></div>
 <div class="line">    <span class="comment">// so dst_iter_desc is explicit zero memory desc</span></div>
 <div class="line">    <a class="code" href="structdnnl_1_1lstm__forward_1_1desc.html">lstm_forward::desc</a> rightmost_layer_desc(fwd_inf_train, <span class="comment">// aprop_kind</span></div>
-<div class="line">            rnn_direction::unidirectional_left2right, <span class="comment">// direction</span></div>
+<div class="line">            <a class="code" href="group__cpp__api__enums.html#gga33315cf335d1cbe26fd6b70d956e23d5a04f4bf4bc6a47e30f0353597e244c44a">rnn_direction::unidirectional_left2right</a>, <span class="comment">// direction</span></div>
 <div class="line">            user_rightmost_src_layer_md, <span class="comment">// src_layer_desc</span></div>
 <div class="line">            rightmost_src_iter_md, <span class="comment">// src_iter_desc</span></div>
 <div class="line">            rightmost_src_iter_c_md, <span class="comment">// src_iter_c_desc</span></div>
@@ -541,7 +541,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="comment">// Backward leftmost primitive descriptor</span></div>
 <div class="line">    <a class="code" href="structdnnl_1_1lstm__backward_1_1desc.html">lstm_backward::desc</a> leftmost_layer_bwd_desc(</div>
 <div class="line">            <a class="code" href="group__cpp__api__enums.html#ggac7db48f6583aa9903e54c2a39d65438fa195fe59b6f103787a914aead0f3db502">prop_kind::backward</a>, <span class="comment">// aprop_kind</span></div>
-<div class="line">            rnn_direction::unidirectional_left2right, <span class="comment">// direction</span></div>
+<div class="line">            <a class="code" href="group__cpp__api__enums.html#gga33315cf335d1cbe26fd6b70d956e23d5a04f4bf4bc6a47e30f0353597e244c44a">rnn_direction::unidirectional_left2right</a>, <span class="comment">// direction</span></div>
 <div class="line">            user_leftmost_src_layer_md, <span class="comment">// src_layer_desc</span></div>
 <div class="line">            <a class="code" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a>(), <span class="comment">// src_iter_desc</span></div>
 <div class="line">            <a class="code" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a>(), <span class="comment">// src_iter_c_desc</span></div>
@@ -587,7 +587,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="comment">// Backward rightmost primitive descriptor</span></div>
 <div class="line">    <a class="code" href="structdnnl_1_1lstm__backward_1_1desc.html">lstm_backward::desc</a> rightmost_layer_bwd_desc(</div>
 <div class="line">            <a class="code" href="group__cpp__api__enums.html#ggac7db48f6583aa9903e54c2a39d65438fa195fe59b6f103787a914aead0f3db502">prop_kind::backward</a>, <span class="comment">// aprop_kind</span></div>
-<div class="line">            rnn_direction::unidirectional_left2right, <span class="comment">// direction</span></div>
+<div class="line">            <a class="code" href="group__cpp__api__enums.html#gga33315cf335d1cbe26fd6b70d956e23d5a04f4bf4bc6a47e30f0353597e244c44a">rnn_direction::unidirectional_left2right</a>, <span class="comment">// direction</span></div>
 <div class="line">            user_rightmost_src_layer_md, <span class="comment">// src_layer_desc</span></div>
 <div class="line">            generic_md(rightmost_src_iter_dims), <span class="comment">// src_iter_desc</span></div>
 <div class="line">            generic_md(rightmost_src_iter_c_dims), <span class="comment">// src_iter_c_desc</span></div>

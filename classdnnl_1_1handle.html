@@ -115,6 +115,19 @@ Public Member Functions</h2></td></tr>
 T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdnnl_1_1handle.html#a0cebb2104786aceec21ba6a43a0ff3db">get</a> (bool allow_emtpy=false) const </td></tr>
 <tr class="memdesc:a0cebb2104786aceec21ba6a43a0ff3db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value of the underlying C handle. <br/></td></tr>
 <tr class="separator:a0cebb2104786aceec21ba6a43a0ff3db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3560c3d12724f48e9fdbe47077ff342"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdnnl_1_1handle.html#ab3560c3d12724f48e9fdbe47077ff342">operator T</a> () const </td></tr>
+<tr class="memdesc:ab3560c3d12724f48e9fdbe47077ff342"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a handle to the underlying C handle type.  <a href="#ab3560c3d12724f48e9fdbe47077ff342">More...</a><br/></td></tr>
+<tr class="separator:ab3560c3d12724f48e9fdbe47077ff342"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af014b68c14db64b9bb6a2034fe04440e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af014b68c14db64b9bb6a2034fe04440e"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdnnl_1_1handle.html#af014b68c14db64b9bb6a2034fe04440e">operator bool</a> () const </td></tr>
+<tr class="memdesc:af014b68c14db64b9bb6a2034fe04440e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a handle to bool: returns whether the object is empty. <br/></td></tr>
+<tr class="separator:af014b68c14db64b9bb6a2034fe04440e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d60a4ca4384c359d198c5b6f1187b64"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdnnl_1_1handle.html#a0d60a4ca4384c359d198c5b6f1187b64">operator==</a> (const <a class="el" href="classdnnl_1_1handle.html">handle</a> &amp;other) const </td></tr>
+<tr class="memdesc:a0d60a4ca4384c359d198c5b6f1187b64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if this handle is equal to the <code>other</code> handle.  <a href="#a0d60a4ca4384c359d198c5b6f1187b64">More...</a><br/></td></tr>
+<tr class="separator:a0d60a4ca4384c359d198c5b6f1187b64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4aaa512672b0ed203ef78be4ceac025e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdnnl_1_1handle.html#a4aaa512672b0ed203ef78be4ceac025e">operator!=</a> (const <a class="el" href="classdnnl_1_1handle.html">handle</a> &amp;other) const </td></tr>
+<tr class="memdesc:a4aaa512672b0ed203ef78be4ceac025e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if this handle is not equal to the <code>other</code> handle.  <a href="#a4aaa512672b0ed203ef78be4ceac025e">More...</a><br/></td></tr>
+<tr class="separator:a4aaa512672b0ed203ef78be4ceac025e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename T, typename traits = handle_traits&lt;T&gt;&gt;<br/>
@@ -246,6 +259,92 @@ template&lt;typename T, typename traits = handle_traits&lt;T&gt;&gt; </div>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a class="anchor" id="ab3560c3d12724f48e9fdbe47077ff342"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, typename traits = handle_traits&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classdnnl_1_1handle.html">dnnl::handle</a>&lt; T, traits &gt;::operator T </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts a handle to the underlying C handle type. </p>
+<p>Throws when the object is empty. </p>
+
+</div>
+</div>
+<a class="anchor" id="a0d60a4ca4384c359d198c5b6f1187b64"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, typename traits = handle_traits&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classdnnl_1_1handle.html">dnnl::handle</a>&lt; T, traits &gt;::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classdnnl_1_1handle.html">handle</a>&lt; T, traits &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks if this handle is equal to the <code>other</code> handle. </p>
+<p>Two handles are considered to be equal if they manage the same underlying C handle. </p>
+
+</div>
+</div>
+<a class="anchor" id="a4aaa512672b0ed203ef78be4ceac025e"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, typename traits = handle_traits&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classdnnl_1_1handle.html">dnnl::handle</a>&lt; T, traits &gt;::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classdnnl_1_1handle.html">handle</a>&lt; T, traits &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks if this handle is not equal to the <code>other</code> handle. </p>
+<p>Two handles are considered to be not equal if they manage different underlying C handles. </p>
 
 </div>
 </div>

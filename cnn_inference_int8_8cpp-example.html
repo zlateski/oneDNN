@@ -226,16 +226,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <a class="code" href="structdnnl_1_1primitive__attr.html">primitive_attr</a> src_attr;</div>
 <div class="line">    src_attr.<a class="code" href="structdnnl_1_1primitive__attr.html#a4b81acc8e48886313154f75c1708ae02">set_output_scales</a>(src_mask, src_scales);</div>
 <div class="line">    <span class="keyword">auto</span> src_reorder_pd</div>
-<div class="line">            = reorder::primitive_desc(eng, user_src_memory.get_desc(), eng,</div>
+<div class="line">            = <a name="_a19"></a><a class="code" href="structdnnl_1_1reorder_1_1primitive__desc.html">reorder::primitive_desc</a>(eng, user_src_memory.get_desc(), eng,</div>
 <div class="line">                    conv_src_memory.get_desc(), src_attr);</div>
-<div class="line">    <span class="keyword">auto</span> src_reorder = <a name="_a19"></a><a class="code" href="structdnnl_1_1reorder.html">reorder</a>(src_reorder_pd);</div>
+<div class="line">    <span class="keyword">auto</span> src_reorder = <a name="_a20"></a><a class="code" href="structdnnl_1_1reorder.html">reorder</a>(src_reorder_pd);</div>
 <div class="line">    src_reorder.execute(s, user_src_memory, conv_src_memory);</div>
 <div class="line"></div>
 <div class="line">    <span class="keyword">auto</span> conv_weights_memory = <a class="code" href="structdnnl_1_1memory.html">memory</a>(conv_prim_desc.weights_desc(), eng);</div>
 <div class="line">    <a class="code" href="structdnnl_1_1primitive__attr.html">primitive_attr</a> weight_attr;</div>
 <div class="line">    weight_attr.<a class="code" href="structdnnl_1_1primitive__attr.html#a4b81acc8e48886313154f75c1708ae02">set_output_scales</a>(weight_mask, weight_scales);</div>
 <div class="line">    <span class="keyword">auto</span> weight_reorder_pd</div>
-<div class="line">            = reorder::primitive_desc(eng, user_weights_memory.get_desc(), eng,</div>
+<div class="line">            = <a class="code" href="structdnnl_1_1reorder_1_1primitive__desc.html">reorder::primitive_desc</a>(eng, user_weights_memory.get_desc(), eng,</div>
 <div class="line">                    conv_weights_memory.get_desc(), weight_attr);</div>
 <div class="line">    <span class="keyword">auto</span> weight_reorder = <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(weight_reorder_pd);</div>
 <div class="line">    weight_reorder.execute(s, user_weights_memory, conv_weights_memory);</div>
@@ -244,7 +244,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <a class="code" href="structdnnl_1_1primitive__attr.html">primitive_attr</a> bias_attr;</div>
 <div class="line">    bias_attr.<a class="code" href="structdnnl_1_1primitive__attr.html#a4b81acc8e48886313154f75c1708ae02">set_output_scales</a>(bias_mask, bias_scales);</div>
 <div class="line">    <span class="keyword">auto</span> bias_reorder_pd</div>
-<div class="line">            = reorder::primitive_desc(eng, user_bias_memory.get_desc(), eng,</div>
+<div class="line">            = <a class="code" href="structdnnl_1_1reorder_1_1primitive__desc.html">reorder::primitive_desc</a>(eng, user_bias_memory.get_desc(), eng,</div>
 <div class="line">                    conv_bias_memory.get_desc(), bias_attr);</div>
 <div class="line">    <span class="keyword">auto</span> bias_reorder = <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(bias_reorder_pd);</div>
 <div class="line">    bias_reorder.execute(s, user_bias_memory, conv_bias_memory);</div>
@@ -253,7 +253,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="keyword">auto</span> conv_dst_memory = <a class="code" href="structdnnl_1_1memory.html">memory</a>(conv_prim_desc.dst_desc(), eng);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">//[Create convolution primitive]</span></div>
-<div class="line">    <span class="keyword">auto</span> conv = <a name="_a20"></a><a class="code" href="structdnnl_1_1convolution__forward.html">convolution_forward</a>(conv_prim_desc);</div>
+<div class="line">    <span class="keyword">auto</span> conv = <a name="_a21"></a><a class="code" href="structdnnl_1_1convolution__forward.html">convolution_forward</a>(conv_prim_desc);</div>
 <div class="line">    conv.execute(s,</div>
 <div class="line">            {{DNNL_ARG_SRC, conv_src_memory},</div>
 <div class="line">                    {DNNL_ARG_WEIGHTS, conv_weights_memory},</div>
@@ -266,7 +266,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <a class="code" href="structdnnl_1_1primitive__attr.html">primitive_attr</a> dst_attr;</div>
 <div class="line">    dst_attr.<a class="code" href="structdnnl_1_1primitive__attr.html#a4b81acc8e48886313154f75c1708ae02">set_output_scales</a>(dst_mask, dst_scales);</div>
 <div class="line">    <span class="keyword">auto</span> dst_reorder_pd</div>
-<div class="line">            = reorder::primitive_desc(eng, conv_dst_memory.get_desc(), eng,</div>
+<div class="line">            = <a class="code" href="structdnnl_1_1reorder_1_1primitive__desc.html">reorder::primitive_desc</a>(eng, conv_dst_memory.get_desc(), eng,</div>
 <div class="line">                    user_dst_memory.get_desc(), dst_attr);</div>
 <div class="line">    <span class="keyword">auto</span> dst_reorder = <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(dst_reorder_pd);</div>
 <div class="line">    dst_reorder.execute(s, conv_dst_memory, user_dst_memory);</div>
@@ -281,7 +281,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;Simple net int8 inference example passed!&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">    } <span class="keywordflow">catch</span> (<a class="code" href="structdnnl_1_1error.html">error</a> &amp;e) {</div>
 <div class="line">        std::cerr &lt;&lt; <span class="stringliteral">&quot;status: &quot;</span> &lt;&lt; e.status &lt;&lt; std::endl;</div>
-<div class="line">        std::cerr &lt;&lt; <span class="stringliteral">&quot;message: &quot;</span> &lt;&lt; e.<a name="a21"></a>message &lt;&lt; std::endl;</div>
+<div class="line">        std::cerr &lt;&lt; <span class="stringliteral">&quot;message: &quot;</span> &lt;&lt; e.<a name="a22"></a>message &lt;&lt; std::endl;</div>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>

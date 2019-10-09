@@ -223,16 +223,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <a class="code" href="structdnnl_1_1memory.html">memory</a> conv_src = user_src;</div>
 <div class="line">    <span class="keywordflow">if</span> (conv_pd.src_desc() != user_src.<a class="code" href="structdnnl_1_1memory.html#a6bfc99db50d87d133c6b3b4f438b967a">get_desc</a>()) {</div>
 <div class="line">        conv_src = <a class="code" href="structdnnl_1_1memory.html">memory</a>(conv_pd.src_desc(), eng);</div>
-<div class="line">        <span class="keyword">auto</span> r_pd = reorder::primitive_desc(user_src, conv_src);</div>
-<div class="line">        <a name="_a22"></a><a class="code" href="structdnnl_1_1reorder.html">reorder</a>(r_pd).<a name="a23"></a>execute(s, user_src, conv_src);</div>
+<div class="line">        <span class="keyword">auto</span> r_pd = <a name="_a22"></a><a class="code" href="structdnnl_1_1reorder_1_1primitive__desc.html">reorder::primitive_desc</a>(user_src, conv_src);</div>
+<div class="line">        <a name="_a23"></a><a class="code" href="structdnnl_1_1reorder.html">reorder</a>(r_pd).<a name="a24"></a><a class="code" href="structdnnl_1_1reorder.html#a8336412c960a254fdb808c6b167d6d93">execute</a>(s, user_src, conv_src);</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// prepare convolution weights</span></div>
 <div class="line">    <a class="code" href="structdnnl_1_1memory.html">memory</a> conv_wei = user_wei;</div>
 <div class="line">    <span class="keywordflow">if</span> (conv_pd.weights_desc() != user_wei.<a class="code" href="structdnnl_1_1memory.html#a6bfc99db50d87d133c6b3b4f438b967a">get_desc</a>()) {</div>
 <div class="line">        conv_wei = <a class="code" href="structdnnl_1_1memory.html">memory</a>(conv_pd.weights_desc(), eng);</div>
-<div class="line">        <span class="keyword">auto</span> r_pd = reorder::primitive_desc(user_wei, conv_wei);</div>
-<div class="line">        <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(r_pd).execute(s, user_wei, conv_wei);</div>
+<div class="line">        <span class="keyword">auto</span> r_pd = <a class="code" href="structdnnl_1_1reorder_1_1primitive__desc.html">reorder::primitive_desc</a>(user_wei, conv_wei);</div>
+<div class="line">        <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(r_pd).<a class="code" href="structdnnl_1_1reorder.html#a8336412c960a254fdb808c6b167d6d93">execute</a>(s, user_wei, conv_wei);</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// prepare convolution destination</span></div>
@@ -255,8 +255,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    create_and_execute_relu(conv_dst, eng, s);</div>
 <div class="line">    <span class="comment">// [Create and execute relu implementation2]</span></div>
 <div class="line">    <span class="keywordflow">if</span> (conv_pd.dst_desc() != user_dst.<a class="code" href="structdnnl_1_1memory.html#a6bfc99db50d87d133c6b3b4f438b967a">get_desc</a>()) {</div>
-<div class="line">        <span class="keyword">auto</span> r_pd = reorder::primitive_desc(conv_dst, user_dst);</div>
-<div class="line">        <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(r_pd).execute(s, conv_dst, user_dst);</div>
+<div class="line">        <span class="keyword">auto</span> r_pd = <a class="code" href="structdnnl_1_1reorder_1_1primitive__desc.html">reorder::primitive_desc</a>(conv_dst, user_dst);</div>
+<div class="line">        <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(r_pd).<a class="code" href="structdnnl_1_1reorder.html#a8336412c960a254fdb808c6b167d6d93">execute</a>(s, conv_dst, user_dst);</div>
 <div class="line">    }</div>
 <div class="line">    <span class="comment">// reorder data to the user&#39;s format if needed.</span></div>
 <div class="line">}</div>
@@ -293,16 +293,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <a class="code" href="structdnnl_1_1memory.html">memory</a> conv_src = user_src;</div>
 <div class="line">    <span class="keywordflow">if</span> (conv_pd.src_desc() != user_src.<a class="code" href="structdnnl_1_1memory.html#a6bfc99db50d87d133c6b3b4f438b967a">get_desc</a>()) {</div>
 <div class="line">        conv_src = <a class="code" href="structdnnl_1_1memory.html">memory</a>(conv_pd.src_desc(), eng);</div>
-<div class="line">        <span class="keyword">auto</span> r_pd = reorder::primitive_desc(user_src, conv_src);</div>
-<div class="line">        <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(r_pd).execute(s, user_src, conv_src);</div>
+<div class="line">        <span class="keyword">auto</span> r_pd = <a class="code" href="structdnnl_1_1reorder_1_1primitive__desc.html">reorder::primitive_desc</a>(user_src, conv_src);</div>
+<div class="line">        <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(r_pd).<a class="code" href="structdnnl_1_1reorder.html#a8336412c960a254fdb808c6b167d6d93">execute</a>(s, user_src, conv_src);</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// prepare convolution weights</span></div>
 <div class="line">    <a class="code" href="structdnnl_1_1memory.html">memory</a> conv_wei = user_wei;</div>
 <div class="line">    <span class="keywordflow">if</span> (conv_pd.weights_desc() != user_wei.<a class="code" href="structdnnl_1_1memory.html#a6bfc99db50d87d133c6b3b4f438b967a">get_desc</a>()) {</div>
 <div class="line">        conv_wei = <a class="code" href="structdnnl_1_1memory.html">memory</a>(conv_pd.weights_desc(), eng);</div>
-<div class="line">        <span class="keyword">auto</span> r_pd = reorder::primitive_desc(user_wei, conv_wei);</div>
-<div class="line">        <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(r_pd).execute(s, user_wei, conv_wei);</div>
+<div class="line">        <span class="keyword">auto</span> r_pd = <a class="code" href="structdnnl_1_1reorder_1_1primitive__desc.html">reorder::primitive_desc</a>(user_wei, conv_wei);</div>
+<div class="line">        <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(r_pd).<a class="code" href="structdnnl_1_1reorder.html#a8336412c960a254fdb808c6b167d6d93">execute</a>(s, user_wei, conv_wei);</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// prepare convolution destination</span></div>
@@ -321,8 +321,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="comment">// [Add to stream implementation3]</span></div>
 <div class="line">    <span class="comment">// reorder data to user&#39;s format if needed</span></div>
 <div class="line">    <span class="keywordflow">if</span> (conv_pd.dst_desc() != user_dst.<a class="code" href="structdnnl_1_1memory.html#a6bfc99db50d87d133c6b3b4f438b967a">get_desc</a>()) {</div>
-<div class="line">        <span class="keyword">auto</span> r_pd = reorder::primitive_desc(conv_dst, user_dst);</div>
-<div class="line">        <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(r_pd).execute(s, conv_dst, user_dst);</div>
+<div class="line">        <span class="keyword">auto</span> r_pd = <a class="code" href="structdnnl_1_1reorder_1_1primitive__desc.html">reorder::primitive_desc</a>(conv_dst, user_dst);</div>
+<div class="line">        <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(r_pd).<a class="code" href="structdnnl_1_1reorder.html#a8336412c960a254fdb808c6b167d6d93">execute</a>(s, conv_dst, user_dst);</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 <div class="line"></div>
@@ -345,8 +345,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="comment">// [Create memory objects]</span></div>
 <div class="line">    <span class="comment">// create DNNL memory objects for user&#39;s tensors (in nchw and oihw formats)</span></div>
 <div class="line">    <span class="comment">// @note here the library allocates memory</span></div>
-<div class="line">    <span class="keyword">auto</span> user_src = <a class="code" href="structdnnl_1_1memory.html">memory</a>({{BATCH, IC, IH, IW}, <a name="a24"></a><a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e">memory::data_type::f32</a>,</div>
-<div class="line">                                   <a name="a25"></a><a class="code" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3faded7ac40158367123c5467281d44cbeb">memory::format_tag::nchw</a>},</div>
+<div class="line">    <span class="keyword">auto</span> user_src = <a class="code" href="structdnnl_1_1memory.html">memory</a>({{BATCH, IC, IH, IW}, <a name="a25"></a><a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e">memory::data_type::f32</a>,</div>
+<div class="line">                                   <a name="a26"></a><a class="code" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3faded7ac40158367123c5467281d44cbeb">memory::format_tag::nchw</a>},</div>
 <div class="line">            eng);</div>
 <div class="line">    <span class="keyword">auto</span> user_wei = <a class="code" href="structdnnl_1_1memory.html">memory</a>({{OC, IC, KH, KW}, <a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e">memory::data_type::f32</a>,</div>
 <div class="line">                                   memory::format_tag::oihw},</div>

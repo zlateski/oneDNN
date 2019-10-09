@@ -15,5 +15,6 @@ var searchData=
   ['eltwise_5fsquare',['eltwise_square',['../group__cpp__api__enums.html#gga00377dd4982333e42e8ae1d09a309640a448fc250a28e651c02966142f7f66cce',1,'dnnl']]],
   ['eltwise_5fswish',['eltwise_swish',['../group__cpp__api__enums.html#gga00377dd4982333e42e8ae1d09a309640a97395201ce1744f18c19d243d24fbd13',1,'dnnl']]],
   ['eltwise_5ftanh',['eltwise_tanh',['../group__cpp__api__enums.html#gga00377dd4982333e42e8ae1d09a309640a38dd7159307eab45742c78e72f06abb0',1,'dnnl']]],
-  ['engine',['engine',['../group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1aad1943a9fd6d3d7ee1e6af41a5b0d3e7',1,'dnnl']]]
+  ['engine',['engine',['../group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1aad1943a9fd6d3d7ee1e6af41a5b0d3e7',1,'dnnl']]],
+  ['exec_5farg_5fmd',['exec_arg_md',['../group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1ad531896cf1d66c4832790f428623f164',1,'dnnl']]]
 ];

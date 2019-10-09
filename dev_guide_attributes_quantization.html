@@ -223,7 +223,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><span class="comment">// create reorder that would perform:</span></div>
 <div class="line"><span class="comment">//   wei_s8(g, oc, ic, kh, kw) &lt;- 1/scale(g, oc) * wei_f32(g, oc, ic, kh, kw)</span></div>
 <div class="line"><span class="comment">// including the data format transformation.</span></div>
-<div class="line"><span class="keyword">auto</span> wei_reorder_pd = dnnl::reorder::primitive_desc(</div>
+<div class="line"><span class="keyword">auto</span> wei_reorder_pd = <a class="code" href="structdnnl_1_1reorder_1_1primitive__desc.html">dnnl::reorder::primitive_desc</a>(</div>
 <div class="line">        wei_user_f32_md, engine, <span class="comment">// source</span></div>
 <div class="line">        wei_conv_s8_md, engine, <span class="comment">// destination,</span></div>
 <div class="line">        attr);</div>

@@ -137,19 +137,43 @@ typedef <a class="el" href="structdnnl__convolution__desc__t.html">dnnl_convolut
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:ga3e71b827ee442f0302111d214a6d35b5"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__op__descs.html#ga3e71b827ee442f0302111d214a6d35b5">dnnl_rnn_flags_t</a> </td></tr>
-<tr class="memdesc:ga3e71b827ee442f0302111d214a6d35b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flags for RNN cell. <br/></td></tr>
+<tr class="memitem:ga3e71b827ee442f0302111d214a6d35b5"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__op__descs.html#ga3e71b827ee442f0302111d214a6d35b5">dnnl_rnn_flags_t</a> { <a class="el" href="group__c__api__types__op__descs.html#gga3e71b827ee442f0302111d214a6d35b5a4e084e191fb407938352e828314d012f">dnnl_rnn_flags_undef</a> = 0x0
+ }</td></tr>
+<tr class="memdesc:ga3e71b827ee442f0302111d214a6d35b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flags for RNN cell.  <a href="group__c__api__types__op__descs.html#ga3e71b827ee442f0302111d214a6d35b5">More...</a><br/></td></tr>
 <tr class="separator:ga3e71b827ee442f0302111d214a6d35b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga629de1827647bf1824361a276c5169f0"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__op__descs.html#ga629de1827647bf1824361a276c5169f0">dnnl_rnn_direction_t</a> { <a class="el" href="group__c__api__types__op__descs.html#gga629de1827647bf1824361a276c5169f0a97cbdb39a208127cc83a9249517c5180">dnnl_unidirectional_left2right</a>, 
+<tr class="memitem:ga629de1827647bf1824361a276c5169f0"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__op__descs.html#ga629de1827647bf1824361a276c5169f0">dnnl_rnn_direction_t</a> { <br/>
+&#160;&#160;<a class="el" href="group__c__api__types__op__descs.html#gga629de1827647bf1824361a276c5169f0a97cbdb39a208127cc83a9249517c5180">dnnl_unidirectional_left2right</a>, 
 <a class="el" href="group__c__api__types__op__descs.html#gga629de1827647bf1824361a276c5169f0ad95dd744e0485467b82aacdbbe4590a1">dnnl_unidirectional_right2left</a>, 
 <a class="el" href="group__c__api__types__op__descs.html#gga629de1827647bf1824361a276c5169f0a69299415608e015c7334dc342d52743d">dnnl_bidirectional_concat</a>, 
-<a class="el" href="group__c__api__types__op__descs.html#gga629de1827647bf1824361a276c5169f0a6b39b772b540368ef1c80eee3ef1ff27">dnnl_bidirectional_sum</a>
+<a class="el" href="group__c__api__types__op__descs.html#gga629de1827647bf1824361a276c5169f0a6b39b772b540368ef1c80eee3ef1ff27">dnnl_bidirectional_sum</a>, 
+<br/>
+&#160;&#160;<a class="el" href="group__c__api__types__op__descs.html#gga629de1827647bf1824361a276c5169f0a65fff35b8f3a06151f3cbfa660e558a4">dnnl_unidirectional</a> = dnnl_unidirectional_left2right
+<br/>
  }</td></tr>
 <tr class="memdesc:ga629de1827647bf1824361a276c5169f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">A direction of RNN primitive execution.  <a href="group__c__api__types__op__descs.html#ga629de1827647bf1824361a276c5169f0">More...</a><br/></td></tr>
 <tr class="separator:ga629de1827647bf1824361a276c5169f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
+<a class="anchor" id="ga3e71b827ee442f0302111d214a6d35b5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__c__api__types__op__descs.html#ga3e71b827ee442f0302111d214a6d35b5">dnnl_rnn_flags_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Flags for RNN cell. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="gga3e71b827ee442f0302111d214a6d35b5a4e084e191fb407938352e828314d012f"></a>dnnl_rnn_flags_undef</em>&nbsp;</td><td class="fielddoc">
+<p>Undefined RNN flags. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
 <a class="anchor" id="ga629de1827647bf1824361a276c5169f0"></a>
 <div class="memitem">
 <div class="memproto">
@@ -173,6 +197,9 @@ Enumerations</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga629de1827647bf1824361a276c5169f0a6b39b772b540368ef1c80eee3ef1ff27"></a>dnnl_bidirectional_sum</em>&nbsp;</td><td class="fielddoc">
 <p>Bidirectional execution of RNN primitive with summation of the results. </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="gga629de1827647bf1824361a276c5169f0a65fff35b8f3a06151f3cbfa660e558a4"></a>dnnl_unidirectional</em>&nbsp;</td><td class="fielddoc">
+<p>Alias for <a class="el" href="group__c__api__types__op__descs.html#gga629de1827647bf1824361a276c5169f0a97cbdb39a208127cc83a9249517c5180" title="Unidirectional execution of RNN primitive from left to right. ">dnnl_unidirectional_left2right</a>. </p>
 </td></tr>
 </table>
 

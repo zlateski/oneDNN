@@ -7,5 +7,6 @@ var searchData=
   ['pooling_5favg_5finclude_5fpadding',['pooling_avg_include_padding',['../group__cpp__api__enums.html#gga00377dd4982333e42e8ae1d09a309640ad62617dd43972a6bbff8d263a5c4462c',1,'dnnl']]],
   ['pooling_5fd',['pooling_d',['../group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1a8c55c4b147af6d6e1de777e25e519bd4',1,'dnnl']]],
   ['pooling_5fmax',['pooling_max',['../group__cpp__api__enums.html#gga00377dd4982333e42e8ae1d09a309640a8c73d4bb88a0497586a74256bb338e88',1,'dnnl']]],
-  ['primitive_5fkind',['primitive_kind',['../group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1a6e115efac481dc815e442e6ff181f7e2',1,'dnnl']]]
+  ['primitive_5fkind',['primitive_kind',['../group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1a6e115efac481dc815e442e6ff181f7e2',1,'dnnl']]],
+  ['prop_5fkind',['prop_kind',['../group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1a2ba5356a73a761f488b6d9e5f028134f',1,'dnnl']]]
 ];

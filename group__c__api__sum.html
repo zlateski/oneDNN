@@ -88,7 +88,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:gace24958311def25e48774e03d772204b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__sum.html#gace24958311def25e48774e03d772204b">dnnl_sum_primitive_desc_create</a> (<a class="el" href="group__c__api__primitive__descs.html#gaabde3e27edf071b62b39f47bace7efd6">dnnl_primitive_desc_t</a> *sum_primitive_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *dst_mds, int n, const float *scales, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *src_mds, <a class="el" href="group__c__api__primitive__attr.html#gab7ba17dbb2692c0f5ee2a3e102c707d9">const_dnnl_primitive_attr_t</a> attr, <a class="el" href="group__c__api__engine__types.html#ga1ce7843660e8203ed6e1af9bfd23e14f">dnnl_engine_t</a> engine)</td></tr>
-<tr class="memdesc:gace24958311def25e48774e03d772204b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates out-of-place <code>sum_primitive_desc</code> for sum of <code>n</code> inputs multiplied by scale with resulting <code>output_desc</code> memory descriptor.  <a href="#gace24958311def25e48774e03d772204b">More...</a><br/></td></tr>
+<tr class="memdesc:gace24958311def25e48774e03d772204b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an out-of-place <code>sum_primitive_desc</code> on <code>engine</code> for sum of <code>n</code> sources multiplied by respective elements of the <code>scales</code> array.  <a href="#gace24958311def25e48774e03d772204b">More...</a><br/></td></tr>
 <tr class="separator:gace24958311def25e48774e03d772204b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -151,8 +151,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Creates out-of-place <code>sum_primitive_desc</code> for sum of <code>n</code> inputs multiplied by scale with resulting <code>output_desc</code> memory descriptor. </p>
-<p><code>output_desc</code> can be NULL or specified with the <a class="el" href="group__c__api__types__generic.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83" title="Unspecified format kind. ">dnnl_format_kind_any</a> format kind &ndash; in this case, the appropriate memory format would be chosen automatically.</p>
+<p>Creates an out-of-place <code>sum_primitive_desc</code> on <code>engine</code> for sum of <code>n</code> sources multiplied by respective elements of the <code>scales</code> array. </p>
+<p>The source memory objects are described by <code>src_mds</code> memory descriptors, and the destination by <code>dst_md</code> memory descriptor. The <code>dst_desc</code> can be NULL or specified with the <a class="el" href="group__c__api__types__generic.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83" title="Unspecified format kind. ">dnnl_format_kind_any</a> format kind; in this case, the appropriate memory format would be chosen automatically.</p>
 <p>Inputs:</p>
 <ul>
 <li>src 0 (<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, 0)</li>

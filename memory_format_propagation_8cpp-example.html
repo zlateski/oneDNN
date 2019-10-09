@@ -169,7 +169,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line">    <span class="comment">// [Determine if weights and destination need to be reordered]</span></div>
 <div class="line">    <span class="keywordtype">bool</span> need_reorder_weights</div>
-<div class="line">            = conv_pd.weights_desc() != weights_mem.<a name="a12"></a><a class="code" href="structdnnl_1_1memory.html#a6bfc99db50d87d133c6b3b4f438b967a">get_desc</a>();</div>
+<div class="line">            = conv_pd.<a name="a12"></a><a class="code" href="structdnnl_1_1primitive__desc__base.html#a35b7fb7725959ab336db58dd05e14d20">weights_desc</a>() != weights_mem.<a name="a13"></a><a class="code" href="structdnnl_1_1memory.html#a6bfc99db50d87d133c6b3b4f438b967a">get_desc</a>();</div>
 <div class="line">    <span class="keywordtype">bool</span> need_reorder_dst = conv_pd.dst_desc() != dst_mem.<a class="code" href="structdnnl_1_1memory.html#a6bfc99db50d87d133c6b3b4f438b967a">get_desc</a>();</div>
 <div class="line">    <span class="comment">// [Determine if weights and destination need to be reordered]</span></div>
 <div class="line"></div>
@@ -181,15 +181,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">            : weights_mem;</div>
 <div class="line">    <span class="keyword">auto</span> conv_dst_mem = <a class="code" href="structdnnl_1_1memory.html">memory</a>(conv_pd.dst_desc(), eng);</div>
 <div class="line">    <span class="keyword">auto</span> pool_dst_mem</div>
-<div class="line">            = need_reorder_dst ? <a class="code" href="structdnnl_1_1memory.html">memory</a>(pool_pd.<a name="a13"></a><a class="code" href="structdnnl_1_1convolution__forward_1_1primitive__desc.html#a35dd3a81d18046e7f505705c131fe26d">dst_desc</a>(), eng) : dst_mem;</div>
+<div class="line">            = need_reorder_dst ? <a class="code" href="structdnnl_1_1memory.html">memory</a>(pool_pd.<a name="a14"></a><a class="code" href="structdnnl_1_1convolution__forward_1_1primitive__desc.html#a35dd3a81d18046e7f505705c131fe26d">dst_desc</a>(), eng) : dst_mem;</div>
 <div class="line">    <span class="comment">// [Allocate intermediate buffers if necessary]</span></div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// [Perform reorders for source data if necessary]</span></div>
 <div class="line">    <span class="keywordflow">if</span> (need_reorder_src) {</div>
-<div class="line">        <span class="keyword">auto</span> reorder_src = <a name="_a14"></a><a class="code" href="structdnnl_1_1reorder.html">reorder</a>(src_mem, conv_src_mem);</div>
+<div class="line">        <span class="keyword">auto</span> reorder_src = <a name="_a15"></a><a class="code" href="structdnnl_1_1reorder.html">reorder</a>(src_mem, conv_src_mem);</div>
 <div class="line">        reorder_src.execute(</div>
 <div class="line">                s, {{DNNL_ARG_FROM, src_mem}, {DNNL_ARG_TO, conv_src_mem}});</div>
-<div class="line">        s.<a name="a15"></a><a class="code" href="structdnnl_1_1stream.html#a59985fa8746436057cf51a820ef8929c">wait</a>(); <span class="comment">// wait for the reorder to complete</span></div>
+<div class="line">        s.<a name="a16"></a><a class="code" href="structdnnl_1_1stream.html#a59985fa8746436057cf51a820ef8929c">wait</a>(); <span class="comment">// wait for the reorder to complete</span></div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (need_reorder_weights) {</div>
@@ -203,12 +203,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line">    <span class="comment">// [Create and execute convolution and pooling primitives]</span></div>
 <div class="line">    <span class="keyword">auto</span> conv_scratchpad_mem = <a class="code" href="structdnnl_1_1memory.html">memory</a>(conv_pd.scratchpad_desc(), eng);</div>
-<div class="line">    <span class="keyword">auto</span> conv = <a name="_a16"></a><a class="code" href="structdnnl_1_1convolution__forward.html">convolution_forward</a>(conv_pd);</div>
+<div class="line">    <span class="keyword">auto</span> conv = <a name="_a17"></a><a class="code" href="structdnnl_1_1convolution__forward.html">convolution_forward</a>(conv_pd);</div>
 <div class="line">    conv.execute(s,</div>
 <div class="line">            {{DNNL_ARG_SRC, conv_src_mem}, {DNNL_ARG_WEIGHTS, conv_weights_mem},</div>
 <div class="line">                    {DNNL_ARG_DST, conv_dst_mem}});</div>
-<div class="line">    <span class="keyword">auto</span> pool_scratchpad_mem = <a class="code" href="structdnnl_1_1memory.html">memory</a>(pool_pd.<a name="a17"></a><a class="code" href="structdnnl_1_1primitive__desc__base.html#af8bb36148b4bb356ae61cf48353910fb">scratchpad_desc</a>(), eng);</div>
-<div class="line">    <span class="keyword">auto</span> pool = <a name="_a18"></a><a class="code" href="structdnnl_1_1pooling__forward.html">pooling_forward</a>(pool_pd);</div>
+<div class="line">    <span class="keyword">auto</span> pool_scratchpad_mem = <a class="code" href="structdnnl_1_1memory.html">memory</a>(pool_pd.<a name="a18"></a><a class="code" href="structdnnl_1_1primitive__desc__base.html#af8bb36148b4bb356ae61cf48353910fb">scratchpad_desc</a>(), eng);</div>
+<div class="line">    <span class="keyword">auto</span> pool = <a name="_a19"></a><a class="code" href="structdnnl_1_1pooling__forward.html">pooling_forward</a>(pool_pd);</div>
 <div class="line">    pool.execute(</div>
 <div class="line">            s, {{DNNL_ARG_SRC, conv_dst_mem}, {DNNL_ARG_DST, pool_dst_mem}});</div>
 <div class="line">    s.<a class="code" href="structdnnl_1_1stream.html#a59985fa8746436057cf51a820ef8929c">wait</a>();</div>
@@ -227,9 +227,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv) {</div>
 <div class="line">    <span class="keywordflow">try</span> {</div>
 <div class="line">        memory_format_propagation_tutorial(parse_engine_kind(argc, argv));</div>
-<div class="line">    } <span class="keywordflow">catch</span> (<a name="_a19"></a><a class="code" href="structdnnl_1_1error.html">dnnl::error</a> &amp;e) {</div>
-<div class="line">        std::cerr &lt;&lt; <span class="stringliteral">&quot;DNNL error: &quot;</span> &lt;&lt; e.<a name="a20"></a><a class="code" href="structdnnl_1_1error.html#adfc1a2bf4e31aa1751b38e8e1dbcba2b">what</a>() &lt;&lt; std::endl</div>
-<div class="line">                  &lt;&lt; <span class="stringliteral">&quot;Error status: &quot;</span> &lt;&lt; dnnl_status2str(e.<a name="a21"></a>status) &lt;&lt; std::endl;</div>
+<div class="line">    } <span class="keywordflow">catch</span> (<a name="_a20"></a><a class="code" href="structdnnl_1_1error.html">dnnl::error</a> &amp;e) {</div>
+<div class="line">        std::cerr &lt;&lt; <span class="stringliteral">&quot;DNNL error: &quot;</span> &lt;&lt; e.<a name="a21"></a><a class="code" href="structdnnl_1_1error.html#adfc1a2bf4e31aa1751b38e8e1dbcba2b">what</a>() &lt;&lt; std::endl</div>
+<div class="line">                  &lt;&lt; <span class="stringliteral">&quot;Error status: &quot;</span> &lt;&lt; dnnl_status2str(e.<a name="a22"></a>status) &lt;&lt; std::endl;</div>
 <div class="line">        <span class="keywordflow">return</span> 1;</div>
 <div class="line">    } <span class="keywordflow">catch</span> (std::string &amp;e) {</div>
 <div class="line">        std::cerr &lt;&lt; <span class="stringliteral">&quot;Error in the example: &quot;</span> &lt;&lt; e &lt;&lt; std::endl;</div>
