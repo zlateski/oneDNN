@@ -19,5 +19,7 @@ var searchData=
   ['inner_5fproduct_5fbackward_5fweights',['inner_product_backward_weights',['../structdnnl_1_1inner__product__backward__weights.html',1,'dnnl']]],
   ['inner_5fproduct_5fd',['inner_product_d',['../group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1aded69e5210888fc8315d2f7e90d7ba15',1,'dnnl']]],
   ['inner_5fproduct_5fforward',['inner_product_forward',['../structdnnl_1_1inner__product__forward.html',1,'dnnl']]],
-  ['is_5fzero',['is_zero',['../structdnnl_1_1memory_1_1desc.html#a517663e910e8c1795b3a935f49579652',1,'dnnl::memory::desc']]]
+  ['invalid_5farguments',['invalid_arguments',['../group__cpp__api__service.html#gga7acc4d3516304ae68a1289551d8f2cdda242ac674d98ee2191f0bbf6de851d2d0',1,'dnnl']]],
+  ['is_5fzero',['is_zero',['../structdnnl_1_1memory_1_1desc.html#a517663e910e8c1795b3a935f49579652',1,'dnnl::memory::desc']]],
+  ['iterator_5fends',['iterator_ends',['../group__cpp__api__service.html#gga7acc4d3516304ae68a1289551d8f2cddaeea82822a38c56f5e03aae6ae1775adb',1,'dnnl']]]
 ];

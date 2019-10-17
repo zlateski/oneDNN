@@ -102,9 +102,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl__version__t.html">dnnl_version_t</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Version type.  <a href="structdnnl__version__t.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl__blocking__desc__t.html">dnnl_blocking_desc_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic description of blocked data layout for most memory formats.  <a href="structdnnl__blocking__desc__t.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -156,6 +153,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl__exec__arg__t.html">dnnl_exec_arg_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An auxiliary structure to specify primitive's inputs/outputs at execution.  <a href="structdnnl__exec__arg__t.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl__version__t.html">dnnl_version_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure containing version information as per <a href="https://semver.org">Semantic Versioning</a>  <a href="structdnnl__version__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
@@ -165,6 +165,29 @@ Macros</h2></td></tr>
 <tr class="memitem:ga13d8eca8d5e6c94573e1154b3407407f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#ga13d8eca8d5e6c94573e1154b3407407f">DNNL_RNN_MAX_N_PARTS</a>&#160;&#160;&#160;4</td></tr>
 <tr class="memdesc:ga13d8eca8d5e6c94573e1154b3407407f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of parts of RNN weights tensor that require separate computation.  <a href="group__c__api__types__memory.html#ga13d8eca8d5e6c94573e1154b3407407f">More...</a><br/></td></tr>
 <tr class="separator:ga13d8eca8d5e6c94573e1154b3407407f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7ceacd6430988ed4bf58f5b01cd9c5a4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga7ceacd6430988ed4bf58f5b01cd9c5a4"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__service.html#ga7ceacd6430988ed4bf58f5b01cd9c5a4">DNNL_JIT_PROFILE_NONE</a>&#160;&#160;&#160;0u</td></tr>
+<tr class="memdesc:ga7ceacd6430988ed4bf58f5b01cd9c5a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable profiling completely. <br/></td></tr>
+<tr class="separator:ga7ceacd6430988ed4bf58f5b01cd9c5a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga137013d98ef736973ebbe1ecd4a4b2c9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga137013d98ef736973ebbe1ecd4a4b2c9"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__service.html#ga137013d98ef736973ebbe1ecd4a4b2c9">DNNL_JIT_PROFILE_VTUNE</a>&#160;&#160;&#160;1u</td></tr>
+<tr class="memdesc:ga137013d98ef736973ebbe1ecd4a4b2c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable VTune integration. <br/></td></tr>
+<tr class="separator:ga137013d98ef736973ebbe1ecd4a4b2c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacb5b174589525cce34589ef4ef56462f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gacb5b174589525cce34589ef4ef56462f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__service.html#gacb5b174589525cce34589ef4ef56462f">DNNL_JIT_PROFILE_LINUX_PERFMAP</a>&#160;&#160;&#160;2u</td></tr>
+<tr class="memdesc:gacb5b174589525cce34589ef4ef56462f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable Linux perf integration via perfmap files. <br/></td></tr>
+<tr class="separator:gacb5b174589525cce34589ef4ef56462f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5afb7d615d8507b8d5469553e6dde2a7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga5afb7d615d8507b8d5469553e6dde2a7"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__service.html#ga5afb7d615d8507b8d5469553e6dde2a7">DNNL_JIT_PROFILE_LINUX_JITDUMP</a>&#160;&#160;&#160;4u</td></tr>
+<tr class="memdesc:ga5afb7d615d8507b8d5469553e6dde2a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable Linux perf integration via jitdump files. <br/></td></tr>
+<tr class="separator:ga5afb7d615d8507b8d5469553e6dde2a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga66a48a940ab2916d360b0bb677a70e5f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__service.html#ga66a48a940ab2916d360b0bb677a70e5f">DNNL_JIT_PROFILE_LINUX_JITDUMP_USE_TSC</a>&#160;&#160;&#160;8u</td></tr>
+<tr class="memdesc:ga66a48a940ab2916d360b0bb677a70e5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instruct Linux perf integration via jitdump files to use TSC.  <a href="group__c__api__types__service.html#ga66a48a940ab2916d360b0bb677a70e5f">More...</a><br/></td></tr>
+<tr class="separator:ga66a48a940ab2916d360b0bb677a70e5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5a1d61af9d5b15dbc6d7d33f0f3e22bc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga5a1d61af9d5b15dbc6d7d33f0f3e22bc"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__service.html#ga5a1d61af9d5b15dbc6d7d33f0f3e22bc">DNNL_JIT_PROFILE_LINUX_PERF</a>&#160;&#160;&#160;(<a class="el" href="group__c__api__types__service.html#ga5afb7d615d8507b8d5469553e6dde2a7">DNNL_JIT_PROFILE_LINUX_JITDUMP</a> | <a class="el" href="group__c__api__types__service.html#gacb5b174589525cce34589ef4ef56462f">DNNL_JIT_PROFILE_LINUX_PERFMAP</a>)</td></tr>
+<tr class="memdesc:ga5a1d61af9d5b15dbc6d7d33f0f3e22bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable Linux perf integration (both jitdump and perfmap) <br/></td></tr>
+<tr class="separator:ga5a1d61af9d5b15dbc6d7d33f0f3e22bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>

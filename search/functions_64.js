@@ -112,6 +112,8 @@ var searchData=
   ['dnnl_5fprimitive_5fget_5fprimitive_5fdesc',['dnnl_primitive_get_primitive_desc',['../group__c__api__primitive__common.html#ga8324e883e41c0b1b9b95bdb7718d35f9',1,'dnnl.h']]],
   ['dnnl_5freorder_5fprimitive_5fdesc_5fcreate',['dnnl_reorder_primitive_desc_create',['../group__c__api__reorder.html#ga91f0f23c4540d5677fba85ffff0d6351',1,'dnnl.h']]],
   ['dnnl_5fset_5fjit_5fdump',['dnnl_set_jit_dump',['../group__c__api__service.html#ga03c8f4af3d01f76060f98e78039837fc',1,'dnnl.h']]],
+  ['dnnl_5fset_5fjit_5fprofiling_5fflags',['dnnl_set_jit_profiling_flags',['../group__c__api__service.html#ga51ef634e4f201a12d32e573955943f48',1,'dnnl.h']]],
+  ['dnnl_5fset_5fjit_5fprofiling_5fjitdumpdir',['dnnl_set_jit_profiling_jitdumpdir',['../group__c__api__service.html#gafb0fb0d37d72bc58386ba97bb858f8f7',1,'dnnl.h']]],
   ['dnnl_5fset_5fverbose',['dnnl_set_verbose',['../group__c__api__service.html#ga14cc3b56337322e1e5132c5ee0c84856',1,'dnnl.h']]],
   ['dnnl_5fsgemm',['dnnl_sgemm',['../group__c__api__blas.html#ga75ee119765bdac249200fda42c0617f8',1,'dnnl.h']]],
   ['dnnl_5fshuffle_5fbackward_5fdesc_5finit',['dnnl_shuffle_backward_desc_init',['../group__c__api__shuffle.html#gac9df6d5739e8010e13eff37337c0ddf2',1,'dnnl.h']]],

@@ -150,50 +150,52 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">if</span> (eng.<a class="code" href="structdnnl_1_1engine.html#a6e9bb6ada8b2ccd815c42e3577b2f2b8">get_kind</a>() == <a class="code" href="structdnnl_1_1engine.html#a2635da16314dcbdb9bd9ea431316bb1aad9747e2da342bdb995f6389533ad1a3d">dnnl::engine::kind::cpu</a>) {</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        uint8_t *src = <span class="keyword">static_cast&lt;</span>uint8_t *<span class="keyword">&gt;</span>(mem.<a class="code" href="structdnnl_1_1memory.html#a1b81db911a391cefc31e35bbe9ca95fe">get_data_handle</a>());</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        std::copy(src, src + bytes, (uint8_t *)handle);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#if DNNL_GPU_RUNTIME == DNNL_RUNTIME_OCL</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor"></span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (eng.<a class="code" href="structdnnl_1_1engine.html#a6e9bb6ada8b2ccd815c42e3577b2f2b8">get_kind</a>() == <a class="code" href="structdnnl_1_1engine.html#a2635da16314dcbdb9bd9ea431316bb1aa0aa0be2a866411d9ff03515227454947">dnnl::engine::kind::gpu</a>) {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <a class="code" href="structdnnl_1_1stream.html">dnnl::stream</a> s(eng);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        cl_command_queue q = s.get_ocl_command_queue();</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        cl_mem m = mem.<a class="code" href="structdnnl_1_1memory.html#a9767b76689ed4a9c8fbb96e443e374d4">get_ocl_mem_object</a>();</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        cl_int ret = clEnqueueReadBuffer(</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                q, m, CL_TRUE, 0, bytes, handle, 0, NULL, NULL);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordflow">if</span> (ret != CL_SUCCESS)</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;clEnqueueReadBuffer failed. Status Code: &quot;</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                    + std::to_string(ret) + <span class="stringliteral">&quot;\n&quot;</span>);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor"></span>}</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">// Read from handle, write to memory</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> write_to_dnnl_memory(<span class="keywordtype">void</span> *handle, <a class="code" href="structdnnl_1_1memory.html">dnnl::memory</a> &amp;mem) {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="structdnnl_1_1engine.html">dnnl::engine</a> eng = mem.<a class="code" href="structdnnl_1_1memory.html#a4494aca5ff97774b73e707f4f951972d">get_engine</a>();</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">size_t</span> bytes = mem.<a class="code" href="structdnnl_1_1memory.html#a6bfc99db50d87d133c6b3b4f438b967a">get_desc</a>().<a class="code" href="structdnnl_1_1memory_1_1desc.html#a3a12698f833b44ed55af9fc6621c4917">get_size</a>();</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">if</span> (eng.<a class="code" href="structdnnl_1_1engine.html#a6e9bb6ada8b2ccd815c42e3577b2f2b8">get_kind</a>() == <a class="code" href="structdnnl_1_1engine.html#a2635da16314dcbdb9bd9ea431316bb1aad9747e2da342bdb995f6389533ad1a3d">dnnl::engine::kind::cpu</a>) {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        uint8_t *dst = <span class="keyword">static_cast&lt;</span>uint8_t *<span class="keyword">&gt;</span>(mem.<a class="code" href="structdnnl_1_1memory.html#a1b81db911a391cefc31e35bbe9ca95fe">get_data_handle</a>());</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        std::copy((uint8_t *)handle, (uint8_t *)handle + bytes, dst);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#if DNNL_GPU_RUNTIME == DNNL_RUNTIME_OCL</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor"></span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (eng.<a class="code" href="structdnnl_1_1engine.html#a6e9bb6ada8b2ccd815c42e3577b2f2b8">get_kind</a>() == <a class="code" href="structdnnl_1_1engine.html#a2635da16314dcbdb9bd9ea431316bb1aa0aa0be2a866411d9ff03515227454947">dnnl::engine::kind::gpu</a>) {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <a class="code" href="structdnnl_1_1stream.html">dnnl::stream</a> s(eng);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        cl_command_queue q = s.get_ocl_command_queue();</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        cl_mem m = mem.<a class="code" href="structdnnl_1_1memory.html#a9767b76689ed4a9c8fbb96e443e374d4">get_ocl_mem_object</a>();</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordtype">size_t</span> bytes = mem.<a class="code" href="structdnnl_1_1memory.html#a6bfc99db50d87d133c6b3b4f438b967a">get_desc</a>().<a class="code" href="structdnnl_1_1memory_1_1desc.html#a3a12698f833b44ed55af9fc6621c4917">get_size</a>();</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        cl_int ret = clEnqueueWriteBuffer(</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                q, m, CL_TRUE, 0, bytes, handle, 0, NULL, NULL);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">if</span> (ret != CL_SUCCESS)</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <span class="keywordflow">throw</span> std::runtime_error(</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                    <span class="stringliteral">&quot;clEnqueueWriteBuffer failed. Status Code: &quot;</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                    + std::to_string(ret) + <span class="stringliteral">&quot;\n&quot;</span>);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    }</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor"></span>}</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; bytes; ++i)</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            ((uint8_t *)handle)[i] = src[i];</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#if DNNL_GPU_RUNTIME == DNNL_RUNTIME_OCL</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor"></span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (eng.<a class="code" href="structdnnl_1_1engine.html#a6e9bb6ada8b2ccd815c42e3577b2f2b8">get_kind</a>() == <a class="code" href="structdnnl_1_1engine.html#a2635da16314dcbdb9bd9ea431316bb1aa0aa0be2a866411d9ff03515227454947">dnnl::engine::kind::gpu</a>) {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <a class="code" href="structdnnl_1_1stream.html">dnnl::stream</a> s(eng);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        cl_command_queue q = s.get_ocl_command_queue();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        cl_mem m = mem.<a class="code" href="structdnnl_1_1memory.html#a9767b76689ed4a9c8fbb96e443e374d4">get_ocl_mem_object</a>();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        cl_int ret = clEnqueueReadBuffer(</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                q, m, CL_TRUE, 0, bytes, handle, 0, NULL, NULL);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">if</span> (ret != CL_SUCCESS)</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;clEnqueueReadBuffer failed. Status Code: &quot;</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                    + std::to_string(ret) + <span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor"></span>}</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">// Read from handle, write to memory</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> write_to_dnnl_memory(<span class="keywordtype">void</span> *handle, <a class="code" href="structdnnl_1_1memory.html">dnnl::memory</a> &amp;mem) {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="structdnnl_1_1engine.html">dnnl::engine</a> eng = mem.<a class="code" href="structdnnl_1_1memory.html#a4494aca5ff97774b73e707f4f951972d">get_engine</a>();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">size_t</span> bytes = mem.<a class="code" href="structdnnl_1_1memory.html#a6bfc99db50d87d133c6b3b4f438b967a">get_desc</a>().<a class="code" href="structdnnl_1_1memory_1_1desc.html#a3a12698f833b44ed55af9fc6621c4917">get_size</a>();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">if</span> (eng.<a class="code" href="structdnnl_1_1engine.html#a6e9bb6ada8b2ccd815c42e3577b2f2b8">get_kind</a>() == <a class="code" href="structdnnl_1_1engine.html#a2635da16314dcbdb9bd9ea431316bb1aad9747e2da342bdb995f6389533ad1a3d">dnnl::engine::kind::cpu</a>) {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        uint8_t *dst = <span class="keyword">static_cast&lt;</span>uint8_t *<span class="keyword">&gt;</span>(mem.<a class="code" href="structdnnl_1_1memory.html#a1b81db911a391cefc31e35bbe9ca95fe">get_data_handle</a>());</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; bytes; ++i)</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            dst[i] = ((uint8_t *)handle)[i];</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#if DNNL_GPU_RUNTIME == DNNL_RUNTIME_OCL</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor"></span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (eng.<a class="code" href="structdnnl_1_1engine.html#a6e9bb6ada8b2ccd815c42e3577b2f2b8">get_kind</a>() == <a class="code" href="structdnnl_1_1engine.html#a2635da16314dcbdb9bd9ea431316bb1aa0aa0be2a866411d9ff03515227454947">dnnl::engine::kind::gpu</a>) {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <a class="code" href="structdnnl_1_1stream.html">dnnl::stream</a> s(eng);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        cl_command_queue q = s.get_ocl_command_queue();</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        cl_mem m = mem.<a class="code" href="structdnnl_1_1memory.html#a9767b76689ed4a9c8fbb96e443e374d4">get_ocl_mem_object</a>();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordtype">size_t</span> bytes = mem.<a class="code" href="structdnnl_1_1memory.html#a6bfc99db50d87d133c6b3b4f438b967a">get_desc</a>().<a class="code" href="structdnnl_1_1memory_1_1desc.html#a3a12698f833b44ed55af9fc6621c4917">get_size</a>();</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        cl_int ret = clEnqueueWriteBuffer(</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                q, m, CL_TRUE, 0, bytes, handle, 0, NULL, NULL);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">if</span> (ret != CL_SUCCESS)</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <span class="keywordflow">throw</span> std::runtime_error(</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                    <span class="stringliteral">&quot;clEnqueueWriteBuffer failed. Status Code: &quot;</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                    + std::to_string(ret) + <span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="preprocessor"></span>}</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="structdnnl_1_1engine_html_a4377c19abca7fc5d761bb5e512c732d1"><div class="ttname"><a href="structdnnl_1_1engine.html#a4377c19abca7fc5d761bb5e512c732d1">dnnl::engine::get_count</a></div><div class="ttdeci">static size_t get_count(kind akind)</div><div class="ttdoc">Returns the number of engines of a certain kind. </div><div class="ttdef"><b>Definition:</b> dnnl.hpp:840</div></div>
 <div class="ttc" id="dnnl_8hpp_html"><div class="ttname"><a href="dnnl_8hpp.html">dnnl.hpp</a></div><div class="ttdoc">C++ API. </div></div>
 <div class="ttc" id="structdnnl_1_1engine_html"><div class="ttname"><a href="structdnnl_1_1engine.html">dnnl::engine</a></div><div class="ttdoc">An execution engine. </div><div class="ttdef"><b>Definition:</b> dnnl.hpp:821</div></div>

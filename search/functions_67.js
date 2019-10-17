@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['gemm_5fs8s8s32',['gemm_s8s8s32',['../group__cpp__api__blas.html#ga6bb7da88545097f097bbcd5778787826',1,'dnnl']]],
+  ['gemm_5fu8s8s32',['gemm_u8s8s32',['../group__cpp__api__blas.html#ga454c26361de7d3a29f6e23c641380fb0',1,'dnnl']]],
   ['get',['get',['../classdnnl_1_1handle.html#a0cebb2104786aceec21ba6a43a0ff3db',1,'dnnl::handle']]],
   ['get_5fcount',['get_count',['../structdnnl_1_1engine.html#a4377c19abca7fc5d761bb5e512c732d1',1,'dnnl::engine']]],
   ['get_5fdata_5fhandle',['get_data_handle',['../structdnnl_1_1memory.html#a1b81db911a391cefc31e35bbe9ca95fe',1,'dnnl::memory']]],

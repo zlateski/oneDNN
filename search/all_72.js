@@ -23,5 +23,6 @@ var searchData=
   ['rnn_5fpacked_5fdesc',['rnn_packed_desc',['../structdnnl__memory__desc__t.html#ac8e3fced428d7d7a762cddcbfadadbbf',1,'dnnl_memory_desc_t']]],
   ['rnn_5fprimitive_5fdesc_5fbase',['rnn_primitive_desc_base',['../structdnnl_1_1rnn__primitive__desc__base.html#a1c16b1a6f9f31d0b86fc71a16b47fb5e',1,'dnnl::rnn_primitive_desc_base']]],
   ['rnn_5fprimitive_5fdesc_5fbase',['rnn_primitive_desc_base',['../structdnnl_1_1rnn__primitive__desc__base.html',1,'dnnl']]],
-  ['rnn_20f32_20training_20example',['RNN f32 training example',['../rnn_training_f32_cpp.html',1,'']]]
+  ['rnn_20f32_20training_20example',['RNN f32 training example',['../rnn_training_f32_cpp.html',1,'']]],
+  ['runtime_5ferror',['runtime_error',['../group__cpp__api__service.html#gga7acc4d3516304ae68a1289551d8f2cdda5b32065884bcc1f2ed126c47e6410808',1,'dnnl']]]
 ];

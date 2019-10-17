@@ -87,6 +87,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
@@ -147,6 +148,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1concat_1_1primitive__desc.html">dnnl::concat::primitive_desc</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A concat primitive descriptor.  <a href="structdnnl_1_1concat_1_1primitive__desc.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1sum.html">dnnl::sum</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A sum primitive.  <a href="structdnnl_1_1sum.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1sum_1_1primitive__desc.html">dnnl::sum::primitive_desc</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A sum primitive descriptor.  <a href="structdnnl_1_1sum_1_1primitive__desc.html#details">More...</a><br/></td></tr>
@@ -443,6 +447,12 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Primitive descriptor for binary.  <a href="structdnnl_1_1binary_1_1primitive__desc.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ga7b6ec8722f5ad94170755b8be0cdd3af"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__service.html#ga7b6ec8722f5ad94170755b8be0cdd3af">dnnl::version_t</a> = <a class="el" href="structdnnl__version__t.html">dnnl_version_t</a></td></tr>
+<tr class="memdesc:ga7b6ec8722f5ad94170755b8be0cdd3af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure containing version information as per <a href="https://semver.org">Semantic Versioning</a>  <a href="group__cpp__api__service.html#ga7b6ec8722f5ad94170755b8be0cdd3af">More...</a><br/></td></tr>
+<tr class="separator:ga7b6ec8722f5ad94170755b8be0cdd3af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
 <tr class="memitem:gac24d40ceea0256c7d6cc3a383a0fa07f"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__enums.html#gac24d40ceea0256c7d6cc3a383a0fa07f">dnnl::scratchpad_mode</a> { <a class="el" href="group__cpp__api__enums.html#ggac24d40ceea0256c7d6cc3a383a0fa07fad521f765a49c72507257a2620612ee96">dnnl::scratchpad_mode::library</a> = dnnl_scratchpad_mode_library, 
@@ -576,6 +586,19 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:ga94efdd650364f4d9776cfb9b711cbdc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Primitive descriptor query specification.  <a href="group__cpp__api__enums.html#ga94efdd650364f4d9776cfb9b711cbdc1">More...</a><br/></td></tr>
 <tr class="separator:ga94efdd650364f4d9776cfb9b711cbdc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7acc4d3516304ae68a1289551d8f2cdd"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__service.html#ga7acc4d3516304ae68a1289551d8f2cdd">dnnl::status</a> { <br/>
+&#160;&#160;<a class="el" href="group__cpp__api__service.html#gga7acc4d3516304ae68a1289551d8f2cdda260ca9dd8a4577fc00b7bd5810298076">dnnl::status::success</a> = dnnl_success, 
+<a class="el" href="group__cpp__api__service.html#gga7acc4d3516304ae68a1289551d8f2cdda5ea42cc8dbd653d9afd96c1d2fd147e2">dnnl::status::out_of_memory</a> = dnnl_out_of_memory, 
+<a class="el" href="group__cpp__api__service.html#gga7acc4d3516304ae68a1289551d8f2cdda242ac674d98ee2191f0bbf6de851d2d0">dnnl::status::invalid_arguments</a> = dnnl_invalid_arguments, 
+<a class="el" href="group__cpp__api__service.html#gga7acc4d3516304ae68a1289551d8f2cdda4316423dfe3ade85c292aa38185f9817">dnnl::status::unimplemented</a> = dnnl_unimplemented, 
+<br/>
+&#160;&#160;<a class="el" href="group__cpp__api__service.html#gga7acc4d3516304ae68a1289551d8f2cddaeea82822a38c56f5e03aae6ae1775adb">dnnl::status::iterator_ends</a> = dnnl_iterator_ends, 
+<a class="el" href="group__cpp__api__service.html#gga7acc4d3516304ae68a1289551d8f2cdda5b32065884bcc1f2ed126c47e6410808">dnnl::status::runtime_error</a> = dnnl_runtime_error, 
+<a class="el" href="group__cpp__api__service.html#gga7acc4d3516304ae68a1289551d8f2cdda20ab085a3c46af7db87fc1806865b329">dnnl::status::not_required</a> = dnnl_not_required
+<br/>
+ }</td></tr>
+<tr class="memdesc:ga7acc4d3516304ae68a1289551d8f2cdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Status values returned by the library functions.  <a href="group__cpp__api__service.html#ga7acc4d3516304ae68a1289551d8f2cdd">More...</a><br/></td></tr>
+<tr class="separator:ga7acc4d3516304ae68a1289551d8f2cdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -611,6 +634,30 @@ Functions</h2></td></tr>
 <a class="el" href="group__c__api__types__query.html#ga9e5235563cf7cfc10fa89f415de98059">dnnl_query_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__enums.html#ga01d8a1881875cdb94e230db4e53ccb97">dnnl::convert_to_c</a> (query aquery)</td></tr>
 <tr class="memdesc:ga01d8a1881875cdb94e230db4e53ccb97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a C++ query enum value <code>aquery</code> to its C counterpart. <br/></td></tr>
 <tr class="separator:ga01d8a1881875cdb94e230db4e53ccb97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga37bcab6f832df551a9fc418e48743b15"><td class="memItemLeft" align="right" valign="top">status&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__service.html#ga37bcab6f832df551a9fc418e48743b15">dnnl::set_verbose</a> (int level)</td></tr>
+<tr class="memdesc:ga37bcab6f832df551a9fc418e48743b15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets verbosity level (print information to stdout).  <a href="group__cpp__api__service.html#ga37bcab6f832df551a9fc418e48743b15">More...</a><br/></td></tr>
+<tr class="separator:ga37bcab6f832df551a9fc418e48743b15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaad8292408620d0296f22bdf65afb752d"><td class="memItemLeft" align="right" valign="top">const version_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__service.html#gaad8292408620d0296f22bdf65afb752d">dnnl::version</a> ()</td></tr>
+<tr class="memdesc:gaad8292408620d0296f22bdf65afb752d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets library version information.  <a href="group__cpp__api__service.html#gaad8292408620d0296f22bdf65afb752d">More...</a><br/></td></tr>
+<tr class="separator:gaad8292408620d0296f22bdf65afb752d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2344639528a341878d2ce46fe1c1ac83"><td class="memItemLeft" align="right" valign="top">status&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__service.html#ga2344639528a341878d2ce46fe1c1ac83">dnnl::set_jit_dump</a> (int enable)</td></tr>
+<tr class="memdesc:ga2344639528a341878d2ce46fe1c1ac83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or disables dumping of JIT-generated code.  <a href="group__cpp__api__service.html#ga2344639528a341878d2ce46fe1c1ac83">More...</a><br/></td></tr>
+<tr class="separator:ga2344639528a341878d2ce46fe1c1ac83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga966c54ccb1d9ff33d20c4ea47e34675d"><td class="memItemLeft" align="right" valign="top">status&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__service.html#ga966c54ccb1d9ff33d20c4ea47e34675d">dnnl::set_jit_profiling_flags</a> (unsigned flags)</td></tr>
+<tr class="memdesc:ga966c54ccb1d9ff33d20c4ea47e34675d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets library profiling flags.  <a href="group__cpp__api__service.html#ga966c54ccb1d9ff33d20c4ea47e34675d">More...</a><br/></td></tr>
+<tr class="separator:ga966c54ccb1d9ff33d20c4ea47e34675d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga533341aaf1402e27d1225d1a59819a62"><td class="memItemLeft" align="right" valign="top">status&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__service.html#ga533341aaf1402e27d1225d1a59819a62">dnnl::set_jit_profiling_jitdumpdir</a> (const std::string &amp;dir)</td></tr>
+<tr class="memdesc:ga533341aaf1402e27d1225d1a59819a62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets library profiling flags.  <a href="group__cpp__api__service.html#ga533341aaf1402e27d1225d1a59819a62">More...</a><br/></td></tr>
+<tr class="separator:ga533341aaf1402e27d1225d1a59819a62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gace5cc61273dc46ccd9c08eee76d4057b"><td class="memItemLeft" align="right" valign="top">status&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__blas.html#gace5cc61273dc46ccd9c08eee76d4057b">dnnl::sgemm</a> (char transa, char transb, <a class="el" href="group__c__api__types__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> M, <a class="el" href="group__c__api__types__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> N, <a class="el" href="group__c__api__types__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> K, float alpha, const float *A, <a class="el" href="group__c__api__types__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> lda, const float *B, <a class="el" href="group__c__api__types__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> ldb, float beta, float *C, <a class="el" href="group__c__api__types__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> ldc)</td></tr>
+<tr class="memdesc:gace5cc61273dc46ccd9c08eee76d4057b"><td class="mdescLeft">&#160;</td><td class="mdescRight">SGEMM performs a matrix-matrix multiplication operation defined as.  <a href="group__cpp__api__blas.html#gace5cc61273dc46ccd9c08eee76d4057b">More...</a><br/></td></tr>
+<tr class="separator:gace5cc61273dc46ccd9c08eee76d4057b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga454c26361de7d3a29f6e23c641380fb0"><td class="memItemLeft" align="right" valign="top">status&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__blas.html#ga454c26361de7d3a29f6e23c641380fb0">dnnl::gemm_u8s8s32</a> (char transa, char transb, char offsetc, <a class="el" href="group__c__api__types__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> M, <a class="el" href="group__c__api__types__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> N, <a class="el" href="group__c__api__types__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> K, float alpha, const uint8_t *A, <a class="el" href="group__c__api__types__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> lda, uint8_t ao, const int8_t *B, <a class="el" href="group__c__api__types__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> ldb, int8_t bo, float beta, int32_t *C, <a class="el" href="group__c__api__types__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> ldc, const int32_t *co)</td></tr>
+<tr class="memdesc:ga454c26361de7d3a29f6e23c641380fb0"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="group__c__api__blas.html#gaef24848fd198d8a178d3ad95a78c1767" title="dnnl_gemm_u8s8s32() and dnnl_gemm_s8s8s32() perform a matrix-matrix multiplication operation and add ...">dnnl_gemm_u8s8s32()</a> and <a class="el" href="group__c__api__blas.html#ga2b763b7629846913507d88fba875cc26" title="dnnl_gemm_u8s8s32() and dnnl_gemm_s8s8s32() perform a matrix-matrix multiplication operation and add ...">dnnl_gemm_s8s8s32()</a> perform a matrix-matrix multiplication operation and add the result to a scalar-matrix product.  <a href="group__cpp__api__blas.html#ga454c26361de7d3a29f6e23c641380fb0">More...</a><br/></td></tr>
+<tr class="separator:ga454c26361de7d3a29f6e23c641380fb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6bb7da88545097f097bbcd5778787826"><td class="memItemLeft" align="right" valign="top">status&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__blas.html#ga6bb7da88545097f097bbcd5778787826">dnnl::gemm_s8s8s32</a> (char transa, char transb, char offsetc, <a class="el" href="group__c__api__types__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> M, <a class="el" href="group__c__api__types__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> N, <a class="el" href="group__c__api__types__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> K, float alpha, const int8_t *A, <a class="el" href="group__c__api__types__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> lda, int8_t ao, const int8_t *B, <a class="el" href="group__c__api__types__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> ldb, int8_t bo, float beta, int32_t *C, <a class="el" href="group__c__api__types__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> ldc, const int32_t *co)</td></tr>
+<tr class="memdesc:ga6bb7da88545097f097bbcd5778787826"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="group__c__api__blas.html#gaef24848fd198d8a178d3ad95a78c1767" title="dnnl_gemm_u8s8s32() and dnnl_gemm_s8s8s32() perform a matrix-matrix multiplication operation and add ...">dnnl_gemm_u8s8s32()</a> and <a class="el" href="group__c__api__blas.html#ga2b763b7629846913507d88fba875cc26" title="dnnl_gemm_u8s8s32() and dnnl_gemm_s8s8s32() perform a matrix-matrix multiplication operation and add ...">dnnl_gemm_s8s8s32()</a> perform a matrix-matrix multiplication operation and add the result to a scalar-matrix product.  <a href="group__cpp__api__blas.html#ga6bb7da88545097f097bbcd5778787826">More...</a><br/></td></tr>
+<tr class="separator:ga6bb7da88545097f097bbcd5778787826"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>C++ API. </p>

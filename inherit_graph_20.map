@@ -1,6 +1,6 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classdnnl_1_1handle.html" title="dnnl::handle\&lt; dnnl\l_primitive_t \&gt;" alt="" coords="5,937,133,978"/>
-<area shape="rect" id="node2" href="$classdnnl_1_1primitive.html" title="Base class for all computational primitives. " alt="" coords="182,944,285,971"/>
+<area shape="rect" id="node1" href="$classdnnl_1_1handle.html" title="dnnl::handle\&lt; dnnl\l_primitive_t \&gt;" alt="" coords="5,970,133,1011"/>
+<area shape="rect" id="node2" href="$classdnnl_1_1primitive.html" title="Base class for all computational primitives. " alt="" coords="182,977,285,1004"/>
 <area shape="rect" id="node3" href="$structdnnl_1_1batch__normalization__backward.html" title="Batch normalization backward propagation. " alt="" coords="356,5,527,46"/>
 <area shape="rect" id="node4" href="$structdnnl_1_1batch__normalization__forward.html" title="Batch normalization for forward propagation. " alt="" coords="356,70,527,111"/>
 <area shape="rect" id="node5" href="$structdnnl_1_1binary.html" title="Primitive for binary operation. " alt="" coords="397,136,486,163"/>
@@ -32,6 +32,7 @@
 <area shape="rect" id="node31" href="$structdnnl_1_1shuffle__forward.html" title="Shuffle for forward propagation. " alt="" coords="370,1589,513,1616"/>
 <area shape="rect" id="node32" href="$structdnnl_1_1softmax__backward.html" title="Softmax for backward propagation. " alt="" coords="359,1640,523,1667"/>
 <area shape="rect" id="node33" href="$structdnnl_1_1softmax__forward.html" title="Softmax for forward propagation. " alt="" coords="366,1691,517,1717"/>
-<area shape="rect" id="node34" href="$structdnnl_1_1vanilla__rnn__backward.html" title="Vanilla RNN for backward propagation. " alt="" coords="352,1741,531,1768"/>
-<area shape="rect" id="node35" href="$structdnnl_1_1vanilla__rnn__forward.html" title="Vanilla RNN for forward propagation. " alt="" coords="358,1792,525,1819"/>
+<area shape="rect" id="node34" href="$structdnnl_1_1sum.html" title="A sum primitive. " alt="" coords="402,1741,481,1768"/>
+<area shape="rect" id="node35" href="$structdnnl_1_1vanilla__rnn__backward.html" title="Vanilla RNN for backward propagation. " alt="" coords="352,1792,531,1819"/>
+<area shape="rect" id="node36" href="$structdnnl_1_1vanilla__rnn__forward.html" title="Vanilla RNN for forward propagation. " alt="" coords="358,1843,525,1869"/>
 </map>

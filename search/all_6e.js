@@ -7,6 +7,7 @@ var searchData=
   ['next_5fimpl',['next_impl',['../structdnnl_1_1primitive__desc.html#a841df469ca54c3de2d233e46f48322b2',1,'dnnl::primitive_desc']]],
   ['nhwc',['nhwc',['../structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa763cbf7ba1b7b8793dcdc6e2157b5c42',1,'dnnl::memory']]],
   ['normalization_5fflags',['normalization_flags',['../group__cpp__api__enums.html#gad8ef0fcbb7b10cae3d67dd46892002be',1,'dnnl']]],
+  ['not_5frequired',['not_required',['../group__cpp__api__service.html#gga7acc4d3516304ae68a1289551d8f2cdda20ab085a3c46af7db87fc1806865b329',1,'dnnl']]],
   ['num_5fof_5finputs_5fs32',['num_of_inputs_s32',['../group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1a8e76d4a603e890128e5205c75581f80b',1,'dnnl']]],
   ['num_5fof_5foutputs_5fs32',['num_of_outputs_s32',['../group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1a60ba192a313fabc2c91f5295d1422491',1,'dnnl']]]
 ];

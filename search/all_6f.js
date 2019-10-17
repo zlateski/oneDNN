@@ -8,5 +8,6 @@ var searchData=
   ['operator_20t',['operator T',['../classdnnl_1_1handle.html#ab3560c3d12724f48e9fdbe47077ff342',1,'dnnl::handle']]],
   ['operator_21_3d',['operator!=',['../classdnnl_1_1handle.html#a4aaa512672b0ed203ef78be4ceac025e',1,'dnnl::handle']]],
   ['operator_3d_3d',['operator==',['../classdnnl_1_1handle.html#a0d60a4ca4384c359d198c5b6f1187b64',1,'dnnl::handle']]],
+  ['out_5fof_5fmemory',['out_of_memory',['../group__cpp__api__service.html#gga7acc4d3516304ae68a1289551d8f2cdda5ea42cc8dbd653d9afd96c1d2fd147e2',1,'dnnl']]],
   ['out_5fof_5forder',['out_of_order',['../structdnnl_1_1stream.html#abc7ec7dfa1718f366abd8f495164de59a6f68b64d0cb895344cb033c850457f0b',1,'dnnl::stream']]]
 ];

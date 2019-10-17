@@ -93,6 +93,12 @@ Functions</h2></td></tr>
 <tr class="memitem:ga3a5fbaf64f33c4d9b96816f6976bcaf9"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structdnnl__version__t.html">dnnl_version_t</a> DNNL_API *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__service.html#ga3a5fbaf64f33c4d9b96816f6976bcaf9">dnnl_version</a> ()</td></tr>
 <tr class="memdesc:ga3a5fbaf64f33c4d9b96816f6976bcaf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets library version information.  <a href="#ga3a5fbaf64f33c4d9b96816f6976bcaf9">More...</a><br/></td></tr>
 <tr class="separator:ga3a5fbaf64f33c4d9b96816f6976bcaf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga51ef634e4f201a12d32e573955943f48"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__service.html#ga51ef634e4f201a12d32e573955943f48">dnnl_set_jit_profiling_flags</a> (unsigned flags)</td></tr>
+<tr class="memdesc:ga51ef634e4f201a12d32e573955943f48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets library profiling flags.  <a href="#ga51ef634e4f201a12d32e573955943f48">More...</a><br/></td></tr>
+<tr class="separator:ga51ef634e4f201a12d32e573955943f48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafb0fb0d37d72bc58386ba97bb858f8f7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__service.html#gafb0fb0d37d72bc58386ba97bb858f8f7">dnnl_set_jit_profiling_jitdumpdir</a> (const char *dir)</td></tr>
+<tr class="memdesc:gafb0fb0d37d72bc58386ba97bb858f8f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets jit dump output path to <code>dir</code>.  <a href="#gafb0fb0d37d72bc58386ba97bb858f8f7">More...</a><br/></td></tr>
+<tr class="separator:gafb0fb0d37d72bc58386ba97bb858f8f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h2 class="groupheader">Function Documentation</h2>
@@ -166,6 +172,54 @@ Functions</h2></td></tr>
 <li>patch &ndash; patch release number</li>
 <li>hash &ndash; git commit hash </li>
 </ul>
+
+</div>
+</div>
+<a class="anchor" id="ga51ef634e4f201a12d32e573955943f48"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__c__api__types__generic.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API dnnl_set_jit_profiling_flags </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>flags</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets library profiling flags. </p>
+<p>The flags define which profilers are supported. The flags can contain the following bits:</p>
+<ul>
+<li><a class="el" href="group__c__api__types__service.html#ga137013d98ef736973ebbe1ecd4a4b2c9">DNNL_JIT_PROFILE_VTUNE</a> &ndash; integration with VTune (on by default)</li>
+<li><a class="el" href="group__c__api__types__service.html#ga5afb7d615d8507b8d5469553e6dde2a7">DNNL_JIT_PROFILE_LINUX_JITDUMP</a> &ndash; produce Linux-specific jit-pid.dump output (off by default). The location of the output is controlled via JITDUMPDIR environment variable or via <a class="el" href="group__c__api__service.html#gafb0fb0d37d72bc58386ba97bb858f8f7" title="Sets jit dump output path to dir. ">dnnl_set_jit_profiling_jitdumpdir()</a> function.</li>
+<li><a class="el" href="group__c__api__types__service.html#gacb5b174589525cce34589ef4ef56462f">DNNL_JIT_PROFILE_LINUX_PERFMAP</a> &ndash; produce Linux-specific perf-pid.map output (off by default). The output is always placed into /tmp.</li>
+</ul>
+<p>Passing <a class="el" href="group__c__api__types__service.html#ga7ceacd6430988ed4bf58f5b01cd9c5a4">DNNL_JIT_PROFILE_NONE</a> disables profiling completely.</p>
+<p>See also <a class="el" href="dev_guide_profilers.html">Profiling DNNL performance</a> </p>
+
+</div>
+</div>
+<a class="anchor" id="gafb0fb0d37d72bc58386ba97bb858f8f7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__c__api__types__generic.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API dnnl_set_jit_profiling_jitdumpdir </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>dir</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets jit dump output path to <code>dir</code>. </p>
+<p>Only applicable to Linux and is only used when profiling flags have DNNL_JIT_PROFILE_LINUX_PERF bit set.</p>
+<p>This function takes precedence over the environment variable $JITDUMPDIR. If $JITDUMPDIR is not set, and this function is never called, the path defaults to $HOME. Passing NULL reverts the value to default.</p>
+<p>After the first jit kernel is generated, the jitdump output will be placed into temporary directory created using the mkdtemp template 'dir/.debug/jit/dnnl.XXXXXX'.</p>
+<p>See also <a class="el" href="dev_guide_profilers.html">Profiling DNNL performance</a> </p>
 
 </div>
 </div>

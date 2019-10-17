@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hash',['hash',['../structmkldnn__version__t.html#a9bfdfc422467a2537d7f69e792dedd6c',1,'mkldnn_version_t']]]
+  ['hash',['hash',['../structdnnl__version__t.html#a1c2a7e8b3f26ed376b537dd511feccad',1,'dnnl_version_t']]]
 ];
