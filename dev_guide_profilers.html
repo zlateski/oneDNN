@@ -103,28 +103,61 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h2>Example: profiling with Intel VTune Amplifier</h2>
 <p>Assuming that environment is set up already.</p>
 <p>Collect profiling data:</p>
-<p>``` bash $ amplxe-cl -collect hotspots -q -no-summary -knob sampling-mode=hw -r dnnl-vtune ./benchdnn &ndash;mode=P mb1ic32ih14oc32oh14kh3ph1n"resnet_50:res4a_branch2b*6" amplxe: Warning: To enable hardware event-base sampling, VTune Amplifier has disabled the NMI watchdog timer. The watchdog timer will be re-enabled after collection completes. Output template: perf,engine%,name%,desc%,Gops%,Gfreq%,%-time%,%-Gflops%,%0time%,%0Gflops% perf,cpu,resnet_50:res4a_branch2b*6,&ndash;conv mb1ic32ih14oc32oh14kh3ph1nresnet_50:res4a_branch2b*6,0.0032768,0,2.13525,1.53462,4.32546,0.757561 tests:1 passed:0 skipped:0 mistrusted:0 unimplemented:0 failed:0 listed:0 total perf: min(ms):2.13525 avg(ms):4.32546 ```</p>
-<dl class="section note"><dt>Note</dt><dd>You don't need to set <code>DNNL_JIT_PROFILE</code> environment variable.</dd></dl>
+<div class="fragment"><div class="line">$ amplxe-cl -collect hotspots -q -no-summary -knob sampling-mode=hw -r dnnl-vtune ./benchdnn --mode=P mb1ic32ih14oc32oh14kh3ph1n<span class="stringliteral">&quot;resnet_50:res4a_branch2b*6&quot;</span></div>
+<div class="line">amplxe: Warning: To enable hardware <span class="keyword">event</span>-base sampling, VTune Amplifier has disabled the NMI watchdog timer. The watchdog timer will be re-enabled after collection completes.</div>
+<div class="line">Output <span class="keyword">template</span>: perf,%<a class="code" href="group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1aad1943a9fd6d3d7ee1e6af41a5b0d3e7">engine</a>%,%name%,%desc%,%Gops%,%Gfreq%,%-time%,%-Gflops%,%0time%,%0Gflops%</div>
+<div class="line">perf,cpu,resnet_50:res4a_branch2b*6,--conv mb1ic32ih14oc32oh14kh3ph1nresnet_50:res4a_branch2b*6,0.0032768,0,2.13525,1.53462,4.32546,0.757561</div>
+<div class="line">tests:1 passed:0 skipped:0 mistrusted:0 <a class="code" href="group__cpp__api__service.html#gga7acc4d3516304ae68a1289551d8f2cdda4316423dfe3ade85c292aa38185f9817">unimplemented</a>:0 failed:0 listed:0</div>
+<div class="line">total perf: min(ms):2.13525 avg(ms):4.32546</div>
+</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>You don't need to set <code>DNNL_JIT_PROFILE</code> environment variable.</dd></dl>
 <p>Display top 10 hotspots using command-line interface:</p>
-<p>``` bash $ amplxe-cl -report hotspots -q -r dnnl-vtune -format csv -csv-delimiter ';' -group-by process,module,function -column 'CPU Time:Self' | head -n 10 | column -t -s';' Column filter is ON. Process Module Function CPU Time benchdnn libgomp.so.1.0.0 do_spin 54.796608 benchdnn libgomp.so.1.0.0 do_spin 52.075321 benchdnn libgomp.so.1.0.0 cpu_relax 3.979194 benchdnn libgomp.so.1.0.0 cpu_relax 3.838870 benchdnn [Dynamic code] jit_avx2_conv_fwd_kernel_f32 2.355442 benchdnn vmlinux __lock_acquire 0.801853 benchdnn vmlinux do_raw_spin_lock 0.290672 benchdnn libdnnl.so.1.1 dnnl::impl::cpu::jit_avx2_convolution_fwd_t::execute_forward(dnnl::impl::exec_ctx_t const&amp;) const::{lambda(intint)#1}::operator() 0.260602 benchdnn vmlinux plist_check_prev_next 0.115266 ```</p>
-<p>The JIT-ed function <code>jit_avx2_conv_fwd_kernel_f32</code> is shown as belonging to the <code>[Dynamic code]</code> module.</p>
+<div class="fragment"><div class="line">$ amplxe-cl -report hotspots -q -r dnnl-vtune -format csv -csv-delimiter <span class="charliteral">&#39;;&#39;</span> -group-by process,module,<span class="keyword">function</span> -column <span class="stringliteral">&#39;CPU Time:Self&#39;</span> | head -n 10 | column -t -s<span class="charliteral">&#39;;&#39;</span></div>
+<div class="line">Column filter is ON.</div>
+<div class="line">Process   Module            Function                                                                                                                           CPU Time</div>
+<div class="line">benchdnn  libgomp.so.1.0.0  do_spin                                                                                                                            54.796608</div>
+<div class="line">benchdnn  libgomp.so.1.0.0  do_spin                                                                                                                            52.075321</div>
+<div class="line">benchdnn  libgomp.so.1.0.0  cpu_relax                                                                                                                          3.979194</div>
+<div class="line">benchdnn  libgomp.so.1.0.0  cpu_relax                                                                                                                          3.838870</div>
+<div class="line">benchdnn  [Dynamic code]    jit_avx2_conv_fwd_kernel_f32                                                                                                       2.355442</div>
+<div class="line">benchdnn  vmlinux           __lock_acquire                                                                                                                     0.801853</div>
+<div class="line">benchdnn  vmlinux           do_raw_spin_lock                                                                                                                   0.290672</div>
+<div class="line">benchdnn  libdnnl.so.1.1    dnnl::impl::cpu::jit_avx2_convolution_fwd_t::execute_forward(dnnl::impl::exec_ctx_t <span class="keyword">const</span>&amp;) const::{lambda(intint)<span class="preprocessor">#1}::operator()  0.260602</span></div>
+<div class="line"><span class="preprocessor">benchdnn  vmlinux           plist_check_prev_next                                                                                                              0.115266</span></div>
+</div><!-- fragment --><p>The JIT-ed function <code>jit_avx2_conv_fwd_kernel_f32</code> is shown as belonging to the <code>[Dynamic code]</code> module.</p>
 <p>See more examples in the <a href="https://software.intel.com/en-us/vtune-amplifier-help-tutorials-and-samples">Intel VTune Amplifier User Guide</a></p>
 <h2>Example: profiling with Linux perf</h2>
-<p>The following command instructs DNNL to enable both jitdump and perfmap profiling modes and write jitdump files into <code>.debug</code> directory in the current directory by setting environment variable <code>JITDUMPDIR=.</code>.</p>
-<p>``` bash $ JITDUMPDIR=. DNNL_JIT_PROFILE=6 perf record -k1 ./tests/benchdnn/benchdnn &ndash;mode=P mb1ic32ih14oc32oh14kh3ph1n"resnet_50:res4a_branch2b*6" Output template: perf,engine%,name%,desc%,Gops%,Gfreq%,%-time%,%-Gflops%,%0time%,%0Gflops% perf,cpu,resnet_50:res4a_branch2b*6,&ndash;conv mb1ic32ih14oc32oh14kh3ph1nresnet_50:res4a_branch2b*6,0.0032768,0,0.0131836,248.551,0.0262988,124.599 tests:1 passed:0 skipped:0 mistrusted:0 unimplemented:0 failed:0 listed:0 total perf: min(ms):0.0131836 avg(ms):0.0262988 [ perf record: Woken up 1 times to write data ] [ perf record: Captured and wrote 0.884 MB perf.data (23102 samples) ] ```</p>
-<p>Inject the information from the jitdump files into the performance data: ``` bash $ perf inject -j -i perf.data -o perf.data.j ```</p>
-<p>Display top hotspots: ``` bash $ perf report -i perf.data.j &ndash;stdio | head -n20 </p>
-<h1>To display the perf.data header info, please use &ndash;header/&ndash;header-only options.</h1>
-<p># # </p>
-<h1>Total Lost Samples: 0</h1>
-<p># </p>
-<h1>Samples: 23K of event 'cpu-clock:uhH'</h1>
-<h1>Event count (approx.): 5775500000</h1>
-<p># </p>
-<h1>Overhead Command Shared Object Symbol</h1>
-<h1>........ ........ ................... ......................................................................................................................................................................................................................................................................................................................................................................................................</h1>
-<p># 39.33% benchdnn libgomp.so.1.0.0 [.] 0x000000000001d8ba 29.41% benchdnn jitted-31475-0.so [.] jit_avx2_conv_fwd_kernel_f32 20.49% benchdnn libgomp.so.1.0.0 [.] 0x000000000001d712 3.47% benchdnn libdnnl.so.1.1 [.] dnnl::impl::cpu::jit_avx2_convolution_fwd_t::execute_forward(dnnl::impl::exec_ctx_t const&amp;) const::{lambda(int, int)#1}::operator() 1.52% benchdnn libgomp.so.1.0.0 [.] 0x000000000001d8be 0.93% benchdnn libgomp.so.1.0.0 [.] 0x000000000001d716 0.75% benchdnn libgomp.so.1.0.0 [.] 0x000000000001d8c5 0.55% benchdnn libgomp.so.1.0.0 [.] 0x000000000001d8c3 0.46% benchdnn libgomp.so.1.0.0 [.] 0x000000000001d71d ```</p>
-<dl class="section note"><dt>Note</dt><dd>Not every kernel / distribution support displaying detailed profiling information. Symbol resolution (usually) works as long as the perfmap mode is enabled, but annotating a JIT-ed functions disassembly, which requires jitdump, seems to often fail on kernels before 5.x.</dd></dl>
+<p>The following command instructs DNNL to enable both jitdump and perfmap profiling modes and write jitdump files into <code>.debug</code> directory in the current directory by setting environment variable <code>JITDUMPDIR</code> to point to the current directory.</p>
+<div class="fragment"><div class="line">$ JITDUMPDIR=. DNNL_JIT_PROFILE=6 perf record -k1 ./tests/benchdnn/benchdnn --mode=P mb1ic32ih14oc32oh14kh3ph1n<span class="stringliteral">&quot;resnet_50:res4a_branch2b*6&quot;</span></div>
+<div class="line">Output <span class="keyword">template</span>: perf,%<a class="code" href="group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1aad1943a9fd6d3d7ee1e6af41a5b0d3e7">engine</a>%,%name%,%desc%,%Gops%,%Gfreq%,%-time%,%-Gflops%,%0time%,%0Gflops%</div>
+<div class="line">perf,cpu,resnet_50:res4a_branch2b*6,--conv mb1ic32ih14oc32oh14kh3ph1nresnet_50:res4a_branch2b*6,0.0032768,0,0.0131836,248.551,0.0262988,124.599</div>
+<div class="line">tests:1 passed:0 skipped:0 mistrusted:0 <a class="code" href="group__cpp__api__service.html#gga7acc4d3516304ae68a1289551d8f2cdda4316423dfe3ade85c292aa38185f9817">unimplemented</a>:0 failed:0 listed:0</div>
+<div class="line">total perf: min(ms):0.0131836 avg(ms):0.0262988</div>
+<div class="line">[ perf record: Woken up 1 times to write data ]</div>
+<div class="line">[ perf record: Captured and wrote 0.884 MB perf.data (23102 samples) ]</div>
+</div><!-- fragment --><p>The following command injects the information from the jitdump files into the performance data: </p>
+<div class="fragment"><div class="line">$ perf inject -j -i perf.data -o perf.data.j</div>
+</div><!-- fragment --><p>The following command displays the top hotspots: </p>
+<div class="fragment"><div class="line">$ perf report -i perf.data.j --stdio | head -n20</div>
+<div class="line"><span class="preprocessor"># To display the perf.data header info, please use --header/--header-only options.</span></div>
+<div class="line"><span class="preprocessor"></span><span class="preprocessor">#</span></div>
+<div class="line"><span class="preprocessor"></span><span class="preprocessor">#</span></div>
+<div class="line"><span class="preprocessor"></span><span class="preprocessor"># Total Lost Samples: 0</span></div>
+<div class="line"><span class="preprocessor"></span><span class="preprocessor">#</span></div>
+<div class="line"><span class="preprocessor"></span><span class="preprocessor"># Samples: 23K of event &#39;cpu-clock:uhH&#39;</span></div>
+<div class="line"><span class="preprocessor"></span><span class="preprocessor"># Event count (approx.): 5775500000</span></div>
+<div class="line"><span class="preprocessor"></span><span class="preprocessor">#</span></div>
+<div class="line"><span class="preprocessor"></span><span class="preprocessor"># Overhead  Command   Shared Object        Symbol</span></div>
+<div class="line"><span class="preprocessor"></span><span class="preprocessor">#</span></div>
+<div class="line"><span class="preprocessor"></span>    39.33%  benchdnn  libgomp.so.1.0.0     [.] 0x000000000001d8ba</div>
+<div class="line">    29.41%  benchdnn  jitted-31475-0.so    [.] jit_avx2_conv_fwd_kernel_f32</div>
+<div class="line">    20.49%  benchdnn  libgomp.so.1.0.0     [.] 0x000000000001d712</div>
+<div class="line">     3.47%  benchdnn  libdnnl.so.1.1       [.] dnnl::impl::cpu::jit_avx2_convolution_fwd_t::execute_forward(dnnl::impl::exec_ctx_t <span class="keyword">const</span>&amp;) const::{lambda(<span class="keywordtype">int</span>, <span class="keywordtype">int</span>)<span class="preprocessor">#1}::operator()</span></div>
+<div class="line"><span class="preprocessor"></span>     1.52%  benchdnn  libgomp.so.1.0.0     [.] 0x000000000001d8be</div>
+<div class="line">     0.93%  benchdnn  libgomp.so.1.0.0     [.] 0x000000000001d716</div>
+<div class="line">     0.75%  benchdnn  libgomp.so.1.0.0     [.] 0x000000000001d8c5</div>
+<div class="line">     0.55%  benchdnn  libgomp.so.1.0.0     [.] 0x000000000001d8c3</div>
+<div class="line">     0.46%  benchdnn  libgomp.so.1.0.0     [.] 0x000000000001d71d</div>
+</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>Not every kernel / distribution support displaying detailed profiling information. Symbol resolution (usually) works as long as the perfmap mode is enabled, but annotating a JIT-ed functions disassembly, which requires jitdump, seems to often fail on kernels before 5.x.</dd></dl>
 <p>See more on the <a href="http://www.brendangregg.com/perf.html">Brendan Gregg's excellent perf examples page</a> </p>
 </div></div><!-- contents -->
 <div class="footer">
