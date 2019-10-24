@@ -219,6 +219,9 @@ typedef const void *&#160;</td><td class="memItemRight" valign="bottom"><a class
 typedef <a class="el" href="structdnnl__convolution__desc__t.html">dnnl_convolution_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__op__descs.html#gafd99fc7c70359ba9434d6a9933d566c3">dnnl_deconvolution_desc_t</a></td></tr>
 <tr class="memdesc:gafd99fc7c70359ba9434d6a9933d566c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">A descriptor of a deconvolution operation. <br/></td></tr>
 <tr class="separator:gafd99fc7c70359ba9434d6a9933d566c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga312b4653a7712a595c96e23cddd7b8d8"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structdnnl__softmax__desc__t.html">dnnl_softmax_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__op__descs.html#ga312b4653a7712a595c96e23cddd7b8d8">dnnl_logsoftmax_desc_t</a></td></tr>
+<tr class="memdesc:ga312b4653a7712a595c96e23cddd7b8d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">A descriptor of a LogSoftmax operation.  <a href="group__c__api__types__op__descs.html#ga312b4653a7712a595c96e23cddd7b8d8">More...</a><br/></td></tr>
+<tr class="separator:ga312b4653a7712a595c96e23cddd7b8d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1ce7843660e8203ed6e1af9bfd23e14f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga1ce7843660e8203ed6e1af9bfd23e14f"></a>
 typedef struct <a class="el" href="structdnnl__engine.html">dnnl_engine</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__engine__types.html#ga1ce7843660e8203ed6e1af9bfd23e14f">dnnl_engine_t</a></td></tr>
 <tr class="memdesc:ga1ce7843660e8203ed6e1af9bfd23e14f"><td class="mdescLeft">&#160;</td><td class="mdescRight">An engine handle. <br/></td></tr>
@@ -461,7 +464,8 @@ Enumerations</h2></td></tr>
 <a class="el" href="group__c__api__types__generic.html#gga9878f4795e53ad8443e5c0a29e53286aaf383485481e1d188df5b59c5424ee3ea">dnnl_rnn</a>, 
 <a class="el" href="group__c__api__types__generic.html#gga9878f4795e53ad8443e5c0a29e53286aa3b0a4f28c65ae19ceb17f8cc9c4a1ad8">dnnl_gemm</a>, 
 <br/>
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga9878f4795e53ad8443e5c0a29e53286aa1d51705e2642ce2ce19a3e163bb25f93">dnnl_binary</a>
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga9878f4795e53ad8443e5c0a29e53286aa1d51705e2642ce2ce19a3e163bb25f93">dnnl_binary</a>, 
+<a class="el" href="group__c__api__types__generic.html#gga9878f4795e53ad8443e5c0a29e53286aabe23960b7972fb6776b8c85131fd3724">dnnl_logsoftmax</a>
 <br/>
  }</td></tr>
 <tr class="memdesc:ga9878f4795e53ad8443e5c0a29e53286a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kinds of primitives.  <a href="group__c__api__types__generic.html#ga9878f4795e53ad8443e5c0a29e53286a">More...</a><br/></td></tr>
@@ -489,20 +493,21 @@ Enumerations</h2></td></tr>
 <br/>
 &#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a4dd9cf08e3bebffb5d14e24c7d513f64">dnnl_eltwise_gelu</a> = 0xcf, 
 <a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a63447dedf2e45ab535f1365502ff3240">dnnl_eltwise_swish</a> = 0xdf, 
+<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a8ea10785816fd41353b49445852e0b74">dnnl_eltwise_log</a> = 0xef, 
 <a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23acf3529ba1c4761c0da90eb6750def6c7">dnnl_pooling_max</a> = 0x1ff, 
-<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23ac13a4cc7c0dc1edfcbf1bac23391d5cb">dnnl_pooling_avg_include_padding</a> = 0x2ff, 
 <br/>
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a00156580493fd7c2f4cdbaaf9fcbde79">dnnl_pooling_avg_exclude_padding</a> = 0x3ff
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23ac13a4cc7c0dc1edfcbf1bac23391d5cb">dnnl_pooling_avg_include_padding</a> = 0x2ff, 
+<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a00156580493fd7c2f4cdbaaf9fcbde79">dnnl_pooling_avg_exclude_padding</a> = 0x3ff
 , <a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a540b116253bf1290b9536929198d18fd">dnnl_lrn_across_channels</a> = 0xaff, 
 <a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a922fdd348b6a3e6bbe589025691d7171">dnnl_lrn_within_channel</a> = 0xbff, 
-<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a65d20a62fd39cfe09b3deb2e35752449">dnnl_vanilla_rnn</a> = 0x1fff, 
 <br/>
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a765cecdcf6f7c524833a241ecc9bf41d">dnnl_vanilla_lstm</a> = 0x2fff, 
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a65d20a62fd39cfe09b3deb2e35752449">dnnl_vanilla_rnn</a> = 0x1fff, 
+<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a765cecdcf6f7c524833a241ecc9bf41d">dnnl_vanilla_lstm</a> = 0x2fff, 
 <a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a7ba4a460b8bff80dcdf1240d7ad34208">dnnl_vanilla_gru</a> = 0x3fff, 
 <a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a7cd2e2970fefcdeb255415d0363279e2">dnnl_lbr_gru</a> = 0x4fff, 
-<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23ad4c6d69ac6f6b443449923d51325886d">dnnl_binary_add</a> = 0x1fff0, 
 <br/>
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23ade272a5bcb8af2b2cb0bc691c78b4e36">dnnl_binary_mul</a> = 0x1fff1
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23ad4c6d69ac6f6b443449923d51325886d">dnnl_binary_add</a> = 0x1fff0, 
+<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23ade272a5bcb8af2b2cb0bc691c78b4e36">dnnl_binary_mul</a> = 0x1fff1
 <br/>
  }</td></tr>
 <tr class="memdesc:ga96946c805f6c4922c38c37049ab95d23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kinds of algorithms.  <a href="group__c__api__types__generic.html#ga96946c805f6c4922c38c37049ab95d23">More...</a><br/></td></tr>
@@ -588,19 +593,20 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059ad78b3945c7d4da7938ca77daa425afab">dnnl_query_rnn_d</a>, 
 <a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a983136e74f9746f470ed80d6337a147e">dnnl_query_gemm_d</a>, 
 <a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a1c3379cb10acf363b9d50e8eb6e40010">dnnl_query_binary_d</a>, 
-<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a0c4a1096638c39c0771db9a4cb2a3336">dnnl_query_some_md</a> = 128, 
+<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059afef5b19704b36da50f1bcfa5b66a61a2">dnnl_query_logsoftmax_d</a>, 
 <br/>
-&#160;&#160;<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5">dnnl_query_src_md</a>, 
+&#160;&#160;<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a0c4a1096638c39c0771db9a4cb2a3336">dnnl_query_some_md</a> = 128, 
+<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5">dnnl_query_src_md</a>, 
 <a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a2367b043da6df5d691d6038693f363d6">dnnl_query_diff_src_md</a>, 
 <a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355">dnnl_query_weights_md</a>, 
-<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a8551246c3e70fa1e420411507dbdfe32">dnnl_query_diff_weights_md</a>, 
 <br/>
-&#160;&#160;<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598">dnnl_query_dst_md</a>, 
+&#160;&#160;<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a8551246c3e70fa1e420411507dbdfe32">dnnl_query_diff_weights_md</a>, 
+<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598">dnnl_query_dst_md</a>, 
 <a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059ae28e33688bf6c55edcf108bd24eb90de">dnnl_query_diff_dst_md</a>, 
 <a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a1c465006660aabe46e644e6df7d36e8a">dnnl_query_workspace_md</a>, 
-<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a2ef0eedf44417ce40237f6f459347663">dnnl_query_scratchpad_md</a>, 
 <br/>
-&#160;&#160;<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059ac7ecf09260d89d54ddd7f35c51a244da">dnnl_query_exec_arg_md</a> = 255
+&#160;&#160;<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a2ef0eedf44417ce40237f6f459347663">dnnl_query_scratchpad_md</a>, 
+<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059ac7ecf09260d89d54ddd7f35c51a244da">dnnl_query_exec_arg_md</a> = 255
 <br/>
  }</td></tr>
 <tr class="memdesc:ga9e5235563cf7cfc10fa89f415de98059"><td class="mdescLeft">&#160;</td><td class="mdescRight">Primitive descriptor query specification.  <a href="group__c__api__types__query.html#ga9e5235563cf7cfc10fa89f415de98059">More...</a><br/></td></tr>

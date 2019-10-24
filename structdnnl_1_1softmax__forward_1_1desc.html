@@ -112,6 +112,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab573772b6fbaab68a2310f8238c4cce5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1softmax__forward_1_1desc.html#ab573772b6fbaab68a2310f8238c4cce5">desc</a> (<a class="el" href="group__cpp__api__enums.html#gac7db48f6583aa9903e54c2a39d65438f">prop_kind</a> aprop_kind, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;data_desc, int softmax_axis)</td></tr>
 <tr class="memdesc:ab573772b6fbaab68a2310f8238c4cce5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a softmax descriptor for forward propagation using <code>prop_kind</code> (possible values are <a class="el" href="group__cpp__api__enums.html#ggac7db48f6583aa9903e54c2a39d65438fa24775787fab8f13aa4809e1ce8f82aeb" title="Forward data propagation (training mode). ">dnnl::forward_training</a> and <a class="el" href="group__cpp__api__enums.html#ggac7db48f6583aa9903e54c2a39d65438fa3b9fad4f80d45368f856b5403198ac4c" title="Forward data propagation (inference mode). ">dnnl::forward_inference</a>) and memory descriptor <code>data_desc</code>.  <a href="#ab573772b6fbaab68a2310f8238c4cce5">More...</a><br/></td></tr>
 <tr class="separator:ab573772b6fbaab68a2310f8238c4cce5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4862ed6dde189a4ff44ab3fc14a1d29"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1softmax__forward_1_1desc.html#ac4862ed6dde189a4ff44ab3fc14a1d29">desc</a> (<a class="el" href="structdnnl__softmax__desc__t.html">dnnl_softmax_desc_t</a> adata)</td></tr>
+<tr class="memdesc:ac4862ed6dde189a4ff44ab3fc14a1d29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a softmax descriptor for forward propagation using softmax descriptor <code>adata</code>.  <a href="#ac4862ed6dde189a4ff44ab3fc14a1d29">More...</a><br/></td></tr>
+<tr class="separator:ac4862ed6dde189a4ff44ab3fc14a1d29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Descriptor for softmax forward propagation. </p>
@@ -155,6 +158,32 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initializes a softmax descriptor for forward propagation using <code>prop_kind</code> (possible values are <a class="el" href="group__cpp__api__enums.html#ggac7db48f6583aa9903e54c2a39d65438fa24775787fab8f13aa4809e1ce8f82aeb" title="Forward data propagation (training mode). ">dnnl::forward_training</a> and <a class="el" href="group__cpp__api__enums.html#ggac7db48f6583aa9903e54c2a39d65438fa3b9fad4f80d45368f856b5403198ac4c" title="Forward data propagation (inference mode). ">dnnl::forward_inference</a>) and memory descriptor <code>data_desc</code>. </p>
+
+</div>
+</div>
+<a class="anchor" id="ac4862ed6dde189a4ff44ab3fc14a1d29"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">dnnl::softmax_forward::desc::desc </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structdnnl__softmax__desc__t.html">dnnl_softmax_desc_t</a>&#160;</td>
+          <td class="paramname"><em>adata</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes a softmax descriptor for forward propagation using softmax descriptor <code>adata</code>. </p>
 
 </div>
 </div>

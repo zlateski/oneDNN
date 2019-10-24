@@ -79,20 +79,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Reorder between CPU and GPU engines </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>This C API example demonstrates programming flow when reordering memory between CPU and GPU engines</p>
-<blockquote class="doxtable">
-<p>Example code: <a class="el" href="cross_engine_reorder_8c-example.html">cross_engine_reorder.c</a></p>
-<p></p>
-</blockquote>
-<ul>
-<li>How to create DNNL memory objects.<ul>
-<li>How to get data from user's buffer into an DNNL memory object.</li>
-<li>How tensor's logical dimensions and memory object formats relate.</li>
-</ul>
-</li>
-<li>How to create DNNL primitives.</li>
-<li>How to execute the primitives.</li>
-</ul>
+<div class="textblock"><p>This C API example demonstrates programming flow when reordering memory between CPU and GPU engines.</p>
 <div class="fragment"><div class="line"><span class="comment">/*******************************************************************************</span></div>
 <div class="line"><span class="comment">* Copyright 2019 Intel Corporation</span></div>
 <div class="line"><span class="comment">*</span></div>
@@ -116,16 +103,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="dnnl_8h.html">dnnl.h</a>&quot;</span></div>
 <div class="line"></div>
-<div class="line"><span class="preprocessor">#define CHECK(f) \</span></div>
-<div class="line"><span class="preprocessor">    do { \</span></div>
-<div class="line"><span class="preprocessor">        dnnl_status_t s = f; \</span></div>
-<div class="line"><span class="preprocessor">        if (s != dnnl_success) { \</span></div>
-<div class="line"><span class="preprocessor">            printf(&quot;[%s:%d] error: %s returns %d\n&quot;, __FILE__, __LINE__, #f, \</span></div>
-<div class="line"><span class="preprocessor">                    s); \</span></div>
-<div class="line"><span class="preprocessor">            exit(2); \</span></div>
-<div class="line"><span class="preprocessor">        } \</span></div>
-<div class="line"><span class="preprocessor">    } while (0)</span></div>
-<div class="line"><span class="preprocessor"></span></div>
+<div class="line"><span class="preprocessor">#include &quot;example_utils.h&quot;</span></div>
+<div class="line"></div>
 <div class="line"><span class="keywordtype">size_t</span> product(<span class="keywordtype">int</span> n_dims, <span class="keyword">const</span> <a class="code" href="group__c__api__types__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> dims[]) {</div>
 <div class="line">    <span class="keywordtype">size_t</span> n_elems = 1;</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> d = 0; d &lt; n_dims; ++d) {</div>
@@ -135,30 +114,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">void</span> fill(<a class="code" href="structdnnl__memory.html">dnnl_memory_t</a> mem, <span class="keywordtype">int</span> n_dims, <span class="keyword">const</span> <a class="code" href="group__c__api__types__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> dims[]) {</div>
-<div class="line">    <span class="keywordtype">float</span> *array;</div>
-<div class="line">    CHECK(<a class="code" href="group__c__api__memory.html#gac9006cdf6816b8bef7be3455ab0ceb49">dnnl_memory_map_data</a>(mem, (<span class="keywordtype">void</span> **)&amp;array));</div>
-<div class="line"></div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">size_t</span> n_elems = product(n_dims, dims);</div>
+<div class="line">    <span class="keywordtype">float</span> *array = (<span class="keywordtype">float</span> *)malloc(n_elems * <span class="keyword">sizeof</span>(<span class="keywordtype">float</span>));</div>
+<div class="line"></div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> e = 0; e &lt; n_elems; ++e) {</div>
 <div class="line">        array[e] = e % 7 ? 1.0f : -1.0f;</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    CHECK(<a class="code" href="group__c__api__memory.html#ga46dd4eb02eade91cadd0b9f85b4eccd4">dnnl_memory_unmap_data</a>(mem, array));</div>
+<div class="line">    write_to_dnnl_memory(array, mem);</div>
+<div class="line">    free(array);</div>
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">int</span> find_negative(<a class="code" href="structdnnl__memory.html">dnnl_memory_t</a> mem, <span class="keywordtype">int</span> n_dims, <span class="keyword">const</span> <a class="code" href="group__c__api__types__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> dims[]) {</div>
-<div class="line">    <span class="keywordtype">int</span> negs = 0;</div>
-<div class="line"></div>
-<div class="line">    <span class="keywordtype">float</span> *array;</div>
-<div class="line">    CHECK(<a class="code" href="group__c__api__memory.html#gac9006cdf6816b8bef7be3455ab0ceb49">dnnl_memory_map_data</a>(mem, (<span class="keywordtype">void</span> **)&amp;array));</div>
-<div class="line"></div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">size_t</span> n_elems = product(n_dims, dims);</div>
+<div class="line">    <span class="keywordtype">float</span> *array = (<span class="keywordtype">float</span> *)malloc(n_elems * <span class="keyword">sizeof</span>(<span class="keywordtype">float</span>));</div>
+<div class="line">    read_from_dnnl_memory(array, mem);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordtype">int</span> negs = 0;</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> e = 0; e &lt; n_elems; ++e) {</div>
 <div class="line">        negs += array[e] &lt; 0.0f;</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    CHECK(<a class="code" href="group__c__api__memory.html#ga46dd4eb02eade91cadd0b9f85b4eccd4">dnnl_memory_unmap_data</a>(mem, array));</div>
-<div class="line"></div>
+<div class="line">    free(array);</div>
 <div class="line">    <span class="keywordflow">return</span> negs;</div>
 <div class="line">}</div>
 <div class="line"></div>

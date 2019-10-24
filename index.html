@@ -79,7 +79,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">DNNL Documentation</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Deep Neural Network Library (DNNL) is an open-source performance library for deep learning applications. The library includes basic building blocks for neural networks optimized for Intel Architecture Processors and Intel Processor Graphics. DNNL is intended for deep learning applications and framework developers intersted in improving application performance on Intel CPUs and GPUs.</p>
+<div class="textblock"><p>Deep Neural Network Library (DNNL) is an open-source performance library for deep learning applications. The library includes basic building blocks for neural networks optimized for Intel Architecture Processors and Intel Processor Graphics. DNNL is intended for deep learning applications and framework developers interested in improving application performance on Intel CPUs and GPUs.</p>
 <h1>Building and Linking</h1>
 <ul>
 <li><a class="el" href="dev_guide_build.html">Build from Source</a><ul>
@@ -92,7 +92,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <ul>
 <li><a class="el" href="dev_guide_basic_concepts.html">Basic Concepts</a></li>
 <li><a class="el" href="getting_started_cpp.html">Getting started</a></li>
-<li><a class="el" href="cross_engine_reorder_cpp.html">Getting started on GPU</a></li>
 <li><a class="el" href="memory_format_propagation_cpp.html">Memory format propagation</a></li>
 <li><a class="el" href="dev_guide_inference_and_training_aspects.html">Inference and Training Aspects</a><ul>
 <li><a class="el" href="dev_guide_inference.html">Inference</a></li>
@@ -108,6 +107,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li><a class="el" href="dev_guide_data_types.html">Data Types</a></li>
 <li><a class="el" href="dev_guide_c_and_cpp_apis.html">C and C++ APIs</a></li>
+<li><a class="el" href="cross_engine_reorder_cpp.html">Reorder between CPU and GPU engines</a></li>
 </ul>
 <h1>Primitives</h1>
 <p>Compute intensive operations:</p>
@@ -118,16 +118,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </ul>
 <p>Memory bandwidth limited operations:</p>
 <ul>
-<li><a class="el" href="dev_guide_pooling.html">Pooling</a></li>
 <li><a class="el" href="dev_guide_batch_normalization.html">Batch Normalization</a></li>
+<li><a class="el" href="dev_guide_binary.html">Binary</a></li>
+<li><a class="el" href="dev_guide_concat.html">Concat</a></li>
+<li><a class="el" href="dev_guide_eltwise.html">Elementwise</a>: ReLU, Tanh, ELU, Abs, and other</li>
 <li><a class="el" href="dev_guide_layer_normalization.html">Layer Normalization</a></li>
 <li><a class="el" href="dev_guide_lrn.html">Local Response Normalization</a></li>
-<li><a class="el" href="dev_guide_softmax.html">Softmax</a></li>
-<li><a class="el" href="dev_guide_eltwise.html">Elementwise</a>: ReLU, Tanh, ELU, Abs, and other</li>
-<li><a class="el" href="dev_guide_sum.html">Sum</a></li>
-<li><a class="el" href="dev_guide_concat.html">Concat</a></li>
+<li><a class="el" href="dev_guide_logsoftmax.html">LogSoftmax</a></li>
+<li><a class="el" href="dev_guide_pooling.html">Pooling</a></li>
 <li><a class="el" href="dev_guide_shuffle.html">Shuffle</a></li>
-<li><a class="el" href="dev_guide_binary.html">Binary</a></li>
+<li><a class="el" href="dev_guide_softmax.html">Softmax</a></li>
+<li><a class="el" href="dev_guide_sum.html">Sum</a></li>
 </ul>
 <p>Data manipulation:</p>
 <ul>
@@ -161,7 +162,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr>
 <td align="left"></td><td align="left">CPU/GPU </td><td align="left"><a class="el" href="performance_profiling_cpp.html">Performance Profiling Example</a> </td><td align="left"></td></tr>
 <tr>
-<td align="left"></td><td align="left">CPU/GPU </td><td align="left"><a class="el" href="cross_engine_reorder_cpp.html">Getting started on GPU</a> </td><td align="left"><a class="el" href="cross_engine_reorder_c.html">Reorder between CPU and GPU engines</a> </td></tr>
+<td align="left"></td><td align="left">CPU/GPU </td><td align="left"><a class="el" href="cross_engine_reorder_cpp.html">Reorder between CPU and GPU engines</a> </td><td align="left"><a class="el" href="cross_engine_reorder_c.html">Reorder between CPU and GPU engines</a> </td></tr>
 <tr>
 <td align="left"></td><td align="left">GPU </td><td align="left"><a class="el" href="gpu_opencl_interop_cpp.html">Getting started on GPU with OpenCL extensions API</a> </td><td align="left"></td></tr>
 <tr>

@@ -641,8 +641,7 @@ template&lt;typename T  = void&gt; </div>
 <dl class="section note"><dt>Note</dt><dd>Any primitives working with the memory should be completed before mapping. Use <a class="el" href="structdnnl_1_1stream.html#a59985fa8746436057cf51a820ef8929c" title="Waits for all primitives executing in the stream to finish. ">stream::wait()</a> to synchronize the corresponding execution stream.</dd>
 <dd>
 Map/unmap API is provided mainly for debug/testing purposes and its performance may be suboptimal. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cross_engine_reorder_8cpp-example.html#a1">cross_engine_reorder.cpp</a>.</dd>
-</dl>
+
 </div>
 </div>
 <a class="anchor" id="a9e68837f42415aca5e141a6d8a97996e"></a>
@@ -670,8 +669,7 @@ Map/unmap API is provided mainly for debug/testing purposes and its performance 
 <p>Unmaps the previously mapped data for the memory. </p>
 <p>Any changes of the mapped data are synchronized back to the memory after the call is complete. The mapped pointer must be obtained through a <a class="el" href="structdnnl_1_1memory.html#ad11ae4ffa08379b58eb096d15304739a" title="Maps the data of the memory. ">map_data()</a> call.</p>
 <dl class="section note"><dt>Note</dt><dd>Map/unmap API is provided mainly for debug/testing purposes and its performance may be suboptimal. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cross_engine_reorder_8cpp-example.html#a2">cross_engine_reorder.cpp</a>.</dd>
-</dl>
+
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>

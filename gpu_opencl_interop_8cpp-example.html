@@ -111,6 +111,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><span class="preprocessor">#include &lt;numeric&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;sstream&gt;</span></div>
 <div class="line"></div>
+<div class="line"><span class="preprocessor">#include &quot;example_utils.hpp&quot;</span></div>
+<div class="line"></div>
 <div class="line"><span class="keyword">using namespace </span>dnnl;</div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="comment">// [Prologue]</span></div>
@@ -198,15 +200,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="comment">// [relu exec]</span></div>
 <div class="line"><span class="comment"></span></div>
 <div class="line">    <span class="comment">// [Check the results]</span></div>
-<div class="line">    <span class="keywordtype">float</span> *mapped_data = mem.map_data&lt;<span class="keywordtype">float</span>&gt;();</div>
+<div class="line">    std::vector&lt;float&gt; mem_data(N);</div>
+<div class="line">    read_from_dnnl_memory(mem_data.data(), mem);</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; N; i++) {</div>
 <div class="line">        <span class="keywordtype">float</span> expected = (i % 2) ? 0.0f : (<span class="keywordtype">float</span>)i;</div>
-<div class="line">        <span class="keywordflow">if</span> (mapped_data[i] != expected)</div>
+<div class="line">        <span class="keywordflow">if</span> (mem_data[i] != expected)</div>
 <div class="line">            <span class="keywordflow">throw</span> std::string(</div>
 <div class="line">                    <span class="stringliteral">&quot;Unexpected output, find a negative value after the ReLU &quot;</span></div>
 <div class="line">                    <span class="stringliteral">&quot;execution&quot;</span>);</div>
 <div class="line">    }</div>
-<div class="line">    mem.unmap_data(mapped_data);</div>
 <div class="line">    <span class="comment">// [Check the results]</span></div>
 <div class="line"></div>
 <div class="line">    OCL_CHECK(clReleaseKernel(ocl_init_kernel));</div>

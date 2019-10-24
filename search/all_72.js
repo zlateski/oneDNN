@@ -7,6 +7,7 @@ var searchData=
   ['rnn_20f32_20inference_20example',['RNN f32 inference example',['../cpu_rnn_inference_f32_cpp.html',1,'']]],
   ['rnn_20int8_20inference_20example',['RNN int8 inference example',['../cpu_rnn_inference_int8_cpp.html',1,'']]],
   ['reorder_20between_20cpu_20and_20gpu_20engines',['Reorder between CPU and GPU engines',['../cross_engine_reorder_c.html',1,'']]],
+  ['reorder_20between_20cpu_20and_20gpu_20engines',['Reorder between CPU and GPU engines',['../cross_engine_reorder_cpp.html',1,'']]],
   ['reorder',['Reorder',['../dev_guide_reorder.html',1,'']]],
   ['rnn',['RNN',['../dev_guide_rnn.html',1,'']]],
   ['reorder',['reorder',['../structdnnl_1_1reorder.html',1,'dnnl']]],
@@ -21,8 +22,8 @@ var searchData=
   ['rnn_5fdirection',['rnn_direction',['../group__cpp__api__enums.html#ga33315cf335d1cbe26fd6b70d956e23d5',1,'dnnl']]],
   ['rnn_5fflags',['rnn_flags',['../group__cpp__api__enums.html#gad27d0db2a86ae3072207769f5c2ddd1e',1,'dnnl']]],
   ['rnn_5fpacked_5fdesc',['rnn_packed_desc',['../structdnnl__memory__desc__t.html#ac8e3fced428d7d7a762cddcbfadadbbf',1,'dnnl_memory_desc_t']]],
-  ['rnn_5fprimitive_5fdesc_5fbase',['rnn_primitive_desc_base',['../structdnnl_1_1rnn__primitive__desc__base.html#a1c16b1a6f9f31d0b86fc71a16b47fb5e',1,'dnnl::rnn_primitive_desc_base']]],
   ['rnn_5fprimitive_5fdesc_5fbase',['rnn_primitive_desc_base',['../structdnnl_1_1rnn__primitive__desc__base.html',1,'dnnl']]],
+  ['rnn_5fprimitive_5fdesc_5fbase',['rnn_primitive_desc_base',['../structdnnl_1_1rnn__primitive__desc__base.html#a1c16b1a6f9f31d0b86fc71a16b47fb5e',1,'dnnl::rnn_primitive_desc_base']]],
   ['rnn_20f32_20training_20example',['RNN f32 training example',['../rnn_training_f32_cpp.html',1,'']]],
   ['runtime_5ferror',['runtime_error',['../group__cpp__api__service.html#gga7acc4d3516304ae68a1289551d8f2cdda5b32065884bcc1f2ed126c47e6410808',1,'dnnl']]]
 ];

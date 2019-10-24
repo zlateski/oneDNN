@@ -109,6 +109,8 @@ Public headers</h1>
 <div class="line"><span class="preprocessor">#include &lt;numeric&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;sstream&gt;</span></div>
 <div class="line"></div>
+<div class="line"><span class="preprocessor">#include &quot;example_utils.hpp&quot;</span></div>
+<div class="line"></div>
 <div class="line"><span class="keyword">using namespace </span>dnnl;</div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 </div><!-- fragment --> <h1><a class="anchor" id="gpu_opencl_interop_cpp_tutorial"></a>
@@ -172,16 +174,16 @@ Create and execute a primitive</h2>
 Primitive submission on GPU is asynchronous; However, the user can call dnnl:stream::wait() to synchronize the stream and ensure that all previously submitted primitives are completed.</dd></dl>
 <h2><a class="anchor" id="gpu_opencl_interop_cpp_sub5"></a>
 Validate the results</h2>
-<p>Before running validation codes, we need to access the OpenCL memory on the host. The simplest way to access the OpenCL memory is to map it to the host using the <a class="el" href="structdnnl_1_1memory.html#ad11ae4ffa08379b58eb096d15304739a" title="Maps the data of the memory. ">dnnl::memory::map_data()</a> and <a class="el" href="structdnnl_1_1memory.html#a9e68837f42415aca5e141a6d8a97996e" title="Unmaps the previously mapped data for the memory. ">dnnl::memory::unmap_data()</a> APIs. After mapping, this data is directly accessible for reading or writing on the host. We can run validation codes on the host accordingly. While the data is mapped, no GPU-side operations on this data are allowed. The data should be unmapped to release all resources associated with mapping. </p>
-<div class="fragment"><div class="line">    <span class="keywordtype">float</span> *mapped_data = mem.map_data&lt;<span class="keywordtype">float</span>&gt;();</div>
+<p>Before running validation codes, we need to copy the OpenCL memory to the host. This can be done using OpenCL API. For convenience, we use a utility function read_from_dnnl_memory() implementing required OpenCL API calls. After we read the data to the host, we can run validation codes on the host accordingly. </p>
+<div class="fragment"><div class="line">    std::vector&lt;float&gt; mem_data(N);</div>
+<div class="line">    read_from_dnnl_memory(mem_data.data(), mem);</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; N; i++) {</div>
 <div class="line">        <span class="keywordtype">float</span> expected = (i % 2) ? 0.0f : (<span class="keywordtype">float</span>)i;</div>
-<div class="line">        <span class="keywordflow">if</span> (mapped_data[i] != expected)</div>
+<div class="line">        <span class="keywordflow">if</span> (mem_data[i] != expected)</div>
 <div class="line">            <span class="keywordflow">throw</span> std::string(</div>
 <div class="line">                    <span class="stringliteral">&quot;Unexpected output, find a negative value after the ReLU &quot;</span></div>
 <div class="line">                    <span class="stringliteral">&quot;execution&quot;</span>);</div>
 <div class="line">    }</div>
-<div class="line">    mem.unmap_data(mapped_data);</div>
 </div><!-- fragment --> <h1><a class="anchor" id="gpu_opencl_interop_cpp_main"></a>
 main() function</h1>
 <p>We now just call everything we prepared earlier.</p>

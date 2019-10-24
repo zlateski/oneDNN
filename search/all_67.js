@@ -1,7 +1,6 @@
 var searchData=
 [
   ['generic',['Generic',['../group__c__api__types__generic.html',1,'']]],
-  ['getting_20started_20on_20gpu',['Getting started on GPU',['../cross_engine_reorder_cpp.html',1,'']]],
   ['gemm_5fs8s8s32',['gemm_s8s8s32',['../group__cpp__api__blas.html#ga6bb7da88545097f097bbcd5778787826',1,'dnnl']]],
   ['gemm_5fu8s8s32',['gemm_u8s8s32',['../group__cpp__api__blas.html#ga454c26361de7d3a29f6e23c641380fb0',1,'dnnl']]],
   ['get',['get',['../classdnnl_1_1handle.html#a0cebb2104786aceec21ba6a43a0ff3db',1,'dnnl::handle']]],

@@ -18,6 +18,7 @@ var searchData=
   ['eltwise_5fforward',['eltwise_forward',['../structdnnl_1_1eltwise__forward.html',1,'dnnl']]],
   ['eltwise_5fgelu',['eltwise_gelu',['../group__cpp__api__enums.html#gga00377dd4982333e42e8ae1d09a309640a8320b34de5fed32c795cd92a7fbf4749',1,'dnnl']]],
   ['eltwise_5flinear',['eltwise_linear',['../group__cpp__api__enums.html#gga00377dd4982333e42e8ae1d09a309640a21aba6844d2de47b92ab1d110f561945',1,'dnnl']]],
+  ['eltwise_5flog',['eltwise_log',['../group__cpp__api__enums.html#gga00377dd4982333e42e8ae1d09a309640af2a460e3ec273e904c6f6b39baa5e477',1,'dnnl']]],
   ['eltwise_5flogistic',['eltwise_logistic',['../group__cpp__api__enums.html#gga00377dd4982333e42e8ae1d09a309640a282836cce833348ee509b0ecd764d217',1,'dnnl']]],
   ['eltwise_5frelu',['eltwise_relu',['../group__cpp__api__enums.html#gga00377dd4982333e42e8ae1d09a309640aba09bebb742494255b90b43871c01c69',1,'dnnl']]],
   ['eltwise_5fsoft_5frelu',['eltwise_soft_relu',['../group__cpp__api__enums.html#gga00377dd4982333e42e8ae1d09a309640a23175afeee905a4de38e5a24b46cb6e2',1,'dnnl']]],
