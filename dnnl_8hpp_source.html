@@ -4372,7 +4372,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l05972"></a><span class="lineno"> 5972</span>&#160;    std::vector&lt;dnnl_exec_arg_t&gt; c_args;</div>
 <div class="line"><a name="l05973"></a><span class="lineno"> 5973</span>&#160;    c_args.reserve(args.size());</div>
 <div class="line"><a name="l05974"></a><span class="lineno"> 5974</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;a : args)</div>
-<div class="line"><a name="l05975"></a><span class="lineno"> 5975</span>&#160;        c_args.push_back({a.first, a.second.get()});</div>
+<div class="line"><a name="l05975"></a><span class="lineno"> 5975</span>&#160;        c_args.push_back({a.first, a.second.get(<span class="keyword">true</span>)});</div>
 <div class="line"><a name="l05976"></a><span class="lineno"> 5976</span>&#160;</div>
 <div class="line"><a name="l05977"></a><span class="lineno"> 5977</span>&#160;    error::wrap_c_api(<a class="code" href="group__c__api__primitive__common.html#ga57f8ec3a6e5b33a1068cf2236028935c">dnnl_primitive_execute</a>(<span class="keyword">get</span>(), astream.get(),</div>
 <div class="line"><a name="l05978"></a><span class="lineno"> 5978</span>&#160;                              (int)c_args.size(), c_args.data()),</div>

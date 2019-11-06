@@ -84,7 +84,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>API reference: <a class="el" href="group__c__api__lrn.html">C</a>, <a class="el" href="group__cpp__api__lrn.html">C++</a></p>
 <p></p>
 </blockquote>
-<p>The LRN primitive performs a forward or backward local response normalization operation on 2D spatial data and is defined by the following formulas:</p>
+<p>The LRN primitive performs a forward or backward local response normalization operation defined by the following formulas:</p>
 <h3>Forward</h3>
 <p>LRN <a href="#dnnl_lrn_across_channels">across channels</a>:</p>
 <p class="formulaDsp">
@@ -94,7 +94,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p class="formulaDsp">
 \[ dst(n, c, h, w) = \left\{k + \frac{\alpha}{n_{l}} \sum\limits_{i=-(n_{l}-1)/2}^{(n_{l}+1)/2-1} \sum\limits_{j=-(n_{l}-1)/2}^{(n_{l}+1)/2-1} (src(n, c, h+i, w+j))^2 \right\}^{-\beta} \cdot src(n, c, h, w), \]
 </p>
-<p>where \(n_{l}\) is the <code>local_size</code>.</p>
+<p>where \(n_{l}\) is the <code>local_size</code>. Formulas are provided for 2D spatial data case.</p>
 <h3>Backward</h3>
 <p>The backward propagation computes \(diff\_src(n, c, h, w)\), based on \(diff\_dst(n, c, h, w)\) and \(src(n, c, h, w)\).</p>
 <h2>Implementation Details</h2>
@@ -116,7 +116,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <dl class="section warning"><dt>Warning</dt><dd>There might be hardware and/or implementation specific restrictions. Check the <a class="el" href="dev_guide_lrn.html#dg_lrn_impl_limits">Implementation Limitations</a> section below.</dd></dl>
 <h3>Data Representation</h3>
 <h4>Source, Destination, and Their Gradients</h4>
-<p>The LRN primitive supports only 2D spatial data. Like other CNN primitives, the LRN primitive expects data to be \(N \times C \times H \times W\) tensor.</p>
+<p>Like most other primitives, the LRN primitive expects the following tensors:</p>
+<table class="doxtable">
+<tr>
+<th align="left">Spatial </th><th align="left">Source / Destination  </th></tr>
+<tr>
+<td align="left">0D </td><td align="left">\(N \times C\) </td></tr>
+<tr>
+<td align="left">1D </td><td align="left">\(N \times C \times W\) </td></tr>
+<tr>
+<td align="left">2D </td><td align="left">\(N \times C \times H \times W\) </td></tr>
+<tr>
+<td align="left">3D </td><td align="left">\(N \times C \times D \times H \times W\) </td></tr>
+</table>
 <p>The LRN primitive is optimized for the following memory formats:</p>
 <table class="doxtable">
 <tr>
@@ -131,6 +143,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h2>Implementation Limitations</h2>
 <ol type="1">
 <li>Refer to <a class="el" href="dev_guide_data_types.html">Data Types</a> for limitations related to data types support.</li>
+<li><b>GPU</b><ul>
+<li>Supports only 2D spatial case.</li>
+</ul>
+</li>
 </ol>
 <h2>Performance Tips</h2>
 <ol type="1">
