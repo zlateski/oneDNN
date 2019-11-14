@@ -113,7 +113,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p><a class="anchor" id="dev_guide_attributes_post_ops_eltwise"></a></p>
 <h3>Eltwise Post-op</h3>
 <p>The eltwise post-op enables fusing a primitive with a <a class="el" href="dev_guide_eltwise.html">Eltwise</a> primitive. This is probably one of the most popular kinds of fusion: an eltwise (typically an activation function) with preceding convolution or inner product.</p>
-<p>The <a class="el" href="classdnnl_1_1primitive.html#ad1ec93215a0cf3aa0a32bae0c2cd9169">dnnl::primitive::kind</a> of this post-op is <a class="el" href="classdnnl_1_1primitive.html#ad1ec93215a0cf3aa0a32bae0c2cd9169a98b908c7d0339bb6a4832db44fc2c8da" title="An element-wise primitive. ">dnnl::primitive::kind::eltwise</a>.</p>
+<p>The <a class="el" href="structdnnl_1_1primitive.html#ad1ec93215a0cf3aa0a32bae0c2cd9169">dnnl::primitive::kind</a> of this post-op is <a class="el" href="structdnnl_1_1primitive.html#ad1ec93215a0cf3aa0a32bae0c2cd9169a98b908c7d0339bb6a4832db44fc2c8da" title="An element-wise primitive. ">dnnl::primitive::kind::eltwise</a>.</p>
 <p>API:</p>
 <ul>
 <li>C: <a class="el" href="group__c__api__attributes__post__ops.html#ga3f4e1e6923df257def1b8b38113bced5">dnnl_post_ops_append_eltwise</a></li>
@@ -138,7 +138,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p><a class="anchor" id="dev_guide_attributes_post_ops_sum"></a></p>
 <h3>Sum Post-op</h3>
 <p>Appends an accumulation (sum) post-op. Prior to accumulating the result, the previous value would be multiplied by scale.</p>
-<p>The kind of this post-op is <a class="el" href="classdnnl_1_1primitive.html#ad1ec93215a0cf3aa0a32bae0c2cd9169a1d623b89683f9ce4e074de1676d12416" title="A sum primitive. ">dnnl::primitive::kind::sum</a>.</p>
+<p>The kind of this post-op is <a class="el" href="structdnnl_1_1primitive.html#ad1ec93215a0cf3aa0a32bae0c2cd9169a1d623b89683f9ce4e074de1676d12416" title="A sum primitive. ">dnnl::primitive::kind::sum</a>.</p>
 <p>This feature might improve performance for cases like residual learning blocks, where the result of a convolution is accumulated to the previously computed activations. The scale parameter can be used in <a class="el" href="dev_guide_attributes_quantization.html">INT8</a> inference only when the result and previous activations have different logical scaling factors.</p>
 <p>The sum post-op replaces </p>
 <p class="formulaDsp">

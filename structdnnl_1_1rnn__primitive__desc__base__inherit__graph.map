@@ -9,5 +9,5 @@
 <area shape="rect" id="node12" href="$structdnnl_1_1vanilla__rnn__forward_1_1primitive__desc.html" title="Primitive descriptor for RNN forward propagation. " alt="" coords="779,462,946,503"/>
 <area shape="rect" id="node2" href="$structdnnl_1_1primitive__desc.html" title="A base class for descriptors of all primitives that have an operation descriptor and that support ite..." alt="" coords="411,241,549,268"/>
 <area shape="rect" id="node3" href="$structdnnl_1_1primitive__desc__base.html" title="The base class for all primitive descriptors. " alt="" coords="189,241,363,268"/>
-<area shape="rect" id="node4" href="$classdnnl_1_1handle.html" title="dnnl::handle\&lt; dnnl\l_primitive_desc_t \&gt;" alt="" coords="5,234,141,275"/>
+<area shape="rect" id="node4" href="$structdnnl_1_1handle.html" title="dnnl::handle\&lt; dnnl\l_primitive_desc_t \&gt;" alt="" coords="5,234,141,275"/>
 </map>

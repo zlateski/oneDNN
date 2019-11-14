@@ -150,6 +150,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl__binary__desc__t.html">dnnl_binary_desc_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A descriptor of a binary operation.  <a href="structdnnl__binary__desc__t.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl__matmul__desc__t.html">dnnl_matmul_desc_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A descriptor of a matrix multiplication operation.  <a href="structdnnl__matmul__desc__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl__exec__arg__t.html">dnnl_exec_arg_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An auxiliary structure to specify primitive's inputs/outputs at execution.  <a href="structdnnl__exec__arg__t.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -162,6 +165,18 @@ Macros</h2></td></tr>
 <tr class="memitem:gaa9e648b617df0f0186143abdf78ca5f2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#gaa9e648b617df0f0186143abdf78ca5f2">DNNL_MAX_NDIMS</a>&#160;&#160;&#160;12</td></tr>
 <tr class="memdesc:gaa9e648b617df0f0186143abdf78ca5f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of dimensions a tensor can have.  <a href="group__c__api__types__memory.html#gaa9e648b617df0f0186143abdf78ca5f2">More...</a><br/></td></tr>
 <tr class="separator:gaa9e648b617df0f0186143abdf78ca5f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa596c5a6102df77a550bad98f0d5cc12"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">DNNL_RUNTIME_DIM_VAL</a>&#160;&#160;&#160;INT64_MIN</td></tr>
+<tr class="memdesc:gaa596c5a6102df77a550bad98f0d5cc12"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wildcard value for dimensions that are unknown at a primitive creation time.  <a href="group__c__api__types__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">More...</a><br/></td></tr>
+<tr class="separator:gaa596c5a6102df77a550bad98f0d5cc12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga61466fbd352b6c94b6541977fbe199b8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#ga61466fbd352b6c94b6541977fbe199b8">DNNL_RUNTIME_SIZE_VAL</a>&#160;&#160;&#160;((size_t)<a class="el" href="group__c__api__types__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">DNNL_RUNTIME_DIM_VAL</a>)</td></tr>
+<tr class="memdesc:ga61466fbd352b6c94b6541977fbe199b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <code>size_t</code> counterpart of the DNNL_RUNTIME_DIM_VAL.  <a href="group__c__api__types__memory.html#ga61466fbd352b6c94b6541977fbe199b8">More...</a><br/></td></tr>
+<tr class="separator:ga61466fbd352b6c94b6541977fbe199b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab16365c11b4dc88fbb453edb51f1979f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#gab16365c11b4dc88fbb453edb51f1979f">DNNL_RUNTIME_F32_VAL</a>&#160;&#160;&#160;(DNNL_RUNTIME_F32_VAL_REP.f)</td></tr>
+<tr class="memdesc:gab16365c11b4dc88fbb453edb51f1979f"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wildcard value for floating point values that are unknown at a primitive creation time.  <a href="group__c__api__types__memory.html#gab16365c11b4dc88fbb453edb51f1979f">More...</a><br/></td></tr>
+<tr class="separator:gab16365c11b4dc88fbb453edb51f1979f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga30139d5110e9e895ccd93fe503ca4c35"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#ga30139d5110e9e895ccd93fe503ca4c35">DNNL_RUNTIME_S32_VAL</a>&#160;&#160;&#160;DNNL_RUNTIME_S32_VAL_REP</td></tr>
+<tr class="memdesc:ga30139d5110e9e895ccd93fe503ca4c35"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wildcard value for int32_t values that are unknown at a primitive creation time.  <a href="group__c__api__types__memory.html#ga30139d5110e9e895ccd93fe503ca4c35">More...</a><br/></td></tr>
+<tr class="separator:ga30139d5110e9e895ccd93fe503ca4c35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga13d8eca8d5e6c94573e1154b3407407f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#ga13d8eca8d5e6c94573e1154b3407407f">DNNL_RNN_MAX_N_PARTS</a>&#160;&#160;&#160;4</td></tr>
 <tr class="memdesc:ga13d8eca8d5e6c94573e1154b3407407f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of parts of RNN weights tensor that require separate computation.  <a href="group__c__api__types__memory.html#ga13d8eca8d5e6c94573e1154b3407407f">More...</a><br/></td></tr>
 <tr class="separator:ga13d8eca8d5e6c94573e1154b3407407f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -465,7 +480,8 @@ Enumerations</h2></td></tr>
 <a class="el" href="group__c__api__types__generic.html#gga9878f4795e53ad8443e5c0a29e53286aa3b0a4f28c65ae19ceb17f8cc9c4a1ad8">dnnl_gemm</a>, 
 <br/>
 &#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga9878f4795e53ad8443e5c0a29e53286aa1d51705e2642ce2ce19a3e163bb25f93">dnnl_binary</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga9878f4795e53ad8443e5c0a29e53286aabe23960b7972fb6776b8c85131fd3724">dnnl_logsoftmax</a>
+<a class="el" href="group__c__api__types__generic.html#gga9878f4795e53ad8443e5c0a29e53286aabe23960b7972fb6776b8c85131fd3724">dnnl_logsoftmax</a>, 
+<a class="el" href="group__c__api__types__generic.html#gga9878f4795e53ad8443e5c0a29e53286aa9e943e8007f69f82a00e30a3079cb407">dnnl_matmul</a>
 <br/>
  }</td></tr>
 <tr class="memdesc:ga9878f4795e53ad8443e5c0a29e53286a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kinds of primitives.  <a href="group__c__api__types__generic.html#ga9878f4795e53ad8443e5c0a29e53286a">More...</a><br/></td></tr>
@@ -595,17 +611,18 @@ Enumerations</h2></td></tr>
 <a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a1c3379cb10acf363b9d50e8eb6e40010">dnnl_query_binary_d</a>, 
 <a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059afef5b19704b36da50f1bcfa5b66a61a2">dnnl_query_logsoftmax_d</a>, 
 <br/>
-&#160;&#160;<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a0c4a1096638c39c0771db9a4cb2a3336">dnnl_query_some_md</a> = 128, 
+&#160;&#160;<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a1e4a8897b0c5b3e10277ec3f39dcf942">dnnl_query_matmul_d</a>, 
+<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a0c4a1096638c39c0771db9a4cb2a3336">dnnl_query_some_md</a> = 128, 
 <a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5">dnnl_query_src_md</a>, 
 <a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a2367b043da6df5d691d6038693f363d6">dnnl_query_diff_src_md</a>, 
-<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355">dnnl_query_weights_md</a>, 
 <br/>
-&#160;&#160;<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a8551246c3e70fa1e420411507dbdfe32">dnnl_query_diff_weights_md</a>, 
+&#160;&#160;<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355">dnnl_query_weights_md</a>, 
+<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a8551246c3e70fa1e420411507dbdfe32">dnnl_query_diff_weights_md</a>, 
 <a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598">dnnl_query_dst_md</a>, 
 <a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059ae28e33688bf6c55edcf108bd24eb90de">dnnl_query_diff_dst_md</a>, 
-<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a1c465006660aabe46e644e6df7d36e8a">dnnl_query_workspace_md</a>, 
 <br/>
-&#160;&#160;<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a2ef0eedf44417ce40237f6f459347663">dnnl_query_scratchpad_md</a>, 
+&#160;&#160;<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a1c465006660aabe46e644e6df7d36e8a">dnnl_query_workspace_md</a>, 
+<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a2ef0eedf44417ce40237f6f459347663">dnnl_query_scratchpad_md</a>, 
 <a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059ac7ecf09260d89d54ddd7f35c51a244da">dnnl_query_exec_arg_md</a> = 255
 <br/>
  }</td></tr>

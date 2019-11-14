@@ -175,7 +175,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="comment">// [oclkernel create]</span></div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span> *kernel_name = <span class="stringliteral">&quot;init&quot;</span>;</div>
 <div class="line">    cl_kernel ocl_init_kernel = create_init_opencl_kernel(</div>
-<div class="line">            eng.get_ocl_context(), kernel_name, ocl_code);</div>
+<div class="line">            eng.<a name="a7"></a><a class="code" href="structdnnl_1_1engine.html#a739ba77b89cc3dc890819bc85d038198">get_ocl_context</a>(), kernel_name, ocl_code);</div>
 <div class="line">    <span class="comment">//  [oclkernel create]</span></div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// [oclexecution]</span></div>
@@ -188,10 +188,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="comment">// [oclexecution]</span></div>
 <div class="line"></div>
 <div class="line">    <span class="comment">//  [relu creation]</span></div>
-<div class="line">    <span class="keyword">auto</span> relu_d = <a name="_a7"></a><a class="code" href="structdnnl_1_1eltwise__forward_1_1desc.html">eltwise_forward::desc</a>(</div>
-<div class="line">            <a name="a8"></a><a class="code" href="group__cpp__api__enums.html#ggac7db48f6583aa9903e54c2a39d65438fa965dbaac085fc891bfbbd4f9d145bbc8">prop_kind::forward</a>, <a name="a9"></a><a class="code" href="group__cpp__api__enums.html#gga00377dd4982333e42e8ae1d09a309640aba09bebb742494255b90b43871c01c69">algorithm::eltwise_relu</a>, mem_d, 0.0f);</div>
-<div class="line">    <span class="keyword">auto</span> relu_pd = <a name="_a10"></a><a class="code" href="structdnnl_1_1eltwise__forward_1_1primitive__desc.html">eltwise_forward::primitive_desc</a>(relu_d, eng);</div>
-<div class="line">    <span class="keyword">auto</span> relu = <a name="_a11"></a><a class="code" href="structdnnl_1_1eltwise__forward.html">eltwise_forward</a>(relu_pd);</div>
+<div class="line">    <span class="keyword">auto</span> relu_d = <a name="_a8"></a><a class="code" href="structdnnl_1_1eltwise__forward_1_1desc.html">eltwise_forward::desc</a>(</div>
+<div class="line">            <a name="a9"></a><a class="code" href="group__cpp__api__enums.html#ggac7db48f6583aa9903e54c2a39d65438fa965dbaac085fc891bfbbd4f9d145bbc8">prop_kind::forward</a>, <a name="a10"></a><a class="code" href="group__cpp__api__enums.html#gga00377dd4982333e42e8ae1d09a309640aba09bebb742494255b90b43871c01c69">algorithm::eltwise_relu</a>, mem_d, 0.0f);</div>
+<div class="line">    <span class="keyword">auto</span> relu_pd = <a name="_a11"></a><a class="code" href="structdnnl_1_1eltwise__forward_1_1primitive__desc.html">eltwise_forward::primitive_desc</a>(relu_d, eng);</div>
+<div class="line">    <span class="keyword">auto</span> relu = <a name="_a12"></a><a class="code" href="structdnnl_1_1eltwise__forward.html">eltwise_forward</a>(relu_pd);</div>
 <div class="line">    <span class="comment">//  [relu creation]</span></div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// [relu exec]</span></div>
@@ -217,9 +217,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv) {</div>
 <div class="line">    <span class="keywordflow">try</span> {</div>
 <div class="line">        gpu_opencl_interop_tutorial();</div>
-<div class="line">    } <span class="keywordflow">catch</span> (<a name="_a12"></a><a class="code" href="structdnnl_1_1error.html">dnnl::error</a> &amp;e) {</div>
-<div class="line">        std::cerr &lt;&lt; <span class="stringliteral">&quot;DNNL error: &quot;</span> &lt;&lt; e.<a name="a13"></a><a class="code" href="structdnnl_1_1error.html#adfc1a2bf4e31aa1751b38e8e1dbcba2b">what</a>() &lt;&lt; std::endl</div>
-<div class="line">                  &lt;&lt; <span class="stringliteral">&quot;Error status: &quot;</span> &lt;&lt; dnnl_status2str(e.<a name="a14"></a>status) &lt;&lt; std::endl;</div>
+<div class="line">    } <span class="keywordflow">catch</span> (<a name="_a13"></a><a class="code" href="structdnnl_1_1error.html">dnnl::error</a> &amp;e) {</div>
+<div class="line">        std::cerr &lt;&lt; <span class="stringliteral">&quot;DNNL error: &quot;</span> &lt;&lt; e.<a name="a14"></a><a class="code" href="structdnnl_1_1error.html#adfc1a2bf4e31aa1751b38e8e1dbcba2b">what</a>() &lt;&lt; std::endl</div>
+<div class="line">                  &lt;&lt; <span class="stringliteral">&quot;Error status: &quot;</span> &lt;&lt; dnnl_status2str(e.<a name="a15"></a>status) &lt;&lt; std::endl;</div>
 <div class="line">        <span class="keywordflow">return</span> 1;</div>
 <div class="line">    } <span class="keywordflow">catch</span> (std::string &amp;e) {</div>
 <div class="line">        std::cerr &lt;&lt; <span class="stringliteral">&quot;Error in the example: &quot;</span> &lt;&lt; e &lt;&lt; std::endl;</div>

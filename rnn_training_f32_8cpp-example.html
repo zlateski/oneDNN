@@ -453,7 +453,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line">    <span class="comment">// Construct the RNN primitive objects</span></div>
 <div class="line">    <a name="_a15"></a><a class="code" href="structdnnl_1_1lstm__forward.html">lstm_forward</a> leftmost_layer(leftmost_prim_desc);</div>
-<div class="line">    leftmost_layer.<a name="a16"></a><a class="code" href="classdnnl_1_1primitive.html#a8a8a7d1a5ffd86032613d38a90378e3c">execute</a>(s,</div>
+<div class="line">    leftmost_layer.<a name="a16"></a><a class="code" href="structdnnl_1_1primitive.html#a8a8a7d1a5ffd86032613d38a90378e3c">execute</a>(s,</div>
 <div class="line">            {{DNNL_ARG_SRC_LAYER, leftmost_src_layer_memory},</div>
 <div class="line">                    {DNNL_ARG_WEIGHTS_LAYER, common_weights_layer_memory},</div>
 <div class="line">                    {DNNL_ARG_WEIGHTS_ITER, common_weights_iter_memory},</div>
@@ -464,7 +464,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">                    {DNNL_ARG_WORKSPACE, leftmost_workspace_memory}});</div>
 <div class="line"></div>
 <div class="line">    <a class="code" href="structdnnl_1_1lstm__forward.html">lstm_forward</a> rightmost_layer(rightmost_prim_desc);</div>
-<div class="line">    rightmost_layer.<a class="code" href="classdnnl_1_1primitive.html#a8a8a7d1a5ffd86032613d38a90378e3c">execute</a>(s,</div>
+<div class="line">    rightmost_layer.<a class="code" href="structdnnl_1_1primitive.html#a8a8a7d1a5ffd86032613d38a90378e3c">execute</a>(s,</div>
 <div class="line">            {{DNNL_ARG_SRC_LAYER, rightmost_src_layer_memory},</div>
 <div class="line">                    {DNNL_ARG_SRC_ITER, rightmost_src_iter_memory},</div>
 <div class="line">                    {DNNL_ARG_SRC_ITER_C, rightmost_src_iter_c_memory},</div>
@@ -717,7 +717,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line">    <span class="comment">// Construct the RNN primitive objects for backward</span></div>
 <div class="line">    <a name="_a20"></a><a class="code" href="structdnnl_1_1lstm__backward.html">lstm_backward</a> rightmost_layer_bwd(rightmost_bwd_prim_desc);</div>
-<div class="line">    rightmost_layer_bwd.<a class="code" href="classdnnl_1_1primitive.html#a8a8a7d1a5ffd86032613d38a90378e3c">execute</a>(s,</div>
+<div class="line">    rightmost_layer_bwd.<a class="code" href="structdnnl_1_1primitive.html#a8a8a7d1a5ffd86032613d38a90378e3c">execute</a>(s,</div>
 <div class="line">            {{DNNL_ARG_SRC_LAYER, rightmost_src_layer_bwd_memory},</div>
 <div class="line">                    {DNNL_ARG_SRC_ITER, rightmost_src_iter_memory},</div>
 <div class="line">                    {DNNL_ARG_SRC_ITER_C, rightmost_src_iter_c_memory},</div>
@@ -738,7 +738,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">                    {DNNL_ARG_WORKSPACE, rightmost_workspace_memory}});</div>
 <div class="line"></div>
 <div class="line">    <a class="code" href="structdnnl_1_1lstm__backward.html">lstm_backward</a> leftmost_layer_bwd(leftmost_bwd_prim_desc);</div>
-<div class="line">    leftmost_layer_bwd.<a class="code" href="classdnnl_1_1primitive.html#a8a8a7d1a5ffd86032613d38a90378e3c">execute</a>(s,</div>
+<div class="line">    leftmost_layer_bwd.<a class="code" href="structdnnl_1_1primitive.html#a8a8a7d1a5ffd86032613d38a90378e3c">execute</a>(s,</div>
 <div class="line">            {{DNNL_ARG_SRC_LAYER, leftmost_src_layer_bwd_memory},</div>
 <div class="line">                    {DNNL_ARG_WEIGHTS_LAYER, common_weights_layer_bwd_memory},</div>
 <div class="line">                    {DNNL_ARG_WEIGHTS_ITER, common_weights_iter_bwd_memory},</div>

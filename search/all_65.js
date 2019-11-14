@@ -8,7 +8,7 @@ var searchData=
   ['eltwise',['Eltwise',['../group__cpp__api__eltwise.html',1,'']]],
   ['engine',['Engine',['../group__cpp__api__engine.html',1,'']]],
   ['eltwise',['Eltwise',['../dev_guide_eltwise.html',1,'']]],
-  ['eltwise',['eltwise',['../classdnnl_1_1primitive.html#ad1ec93215a0cf3aa0a32bae0c2cd9169a98b908c7d0339bb6a4832db44fc2c8da',1,'dnnl::primitive']]],
+  ['eltwise',['eltwise',['../structdnnl_1_1primitive.html#ad1ec93215a0cf3aa0a32bae0c2cd9169a98b908c7d0339bb6a4832db44fc2c8da',1,'dnnl::primitive']]],
   ['eltwise_5fabs',['eltwise_abs',['../group__cpp__api__enums.html#gga00377dd4982333e42e8ae1d09a309640a30046c43b9399a7aaa4281da7cff2d5c',1,'dnnl']]],
   ['eltwise_5fbackward',['eltwise_backward',['../structdnnl_1_1eltwise__backward.html',1,'dnnl']]],
   ['eltwise_5fbounded_5frelu',['eltwise_bounded_relu',['../group__cpp__api__enums.html#gga00377dd4982333e42e8ae1d09a309640a4142c71f159526fef4c85b8c5ae78a72',1,'dnnl']]],
@@ -31,5 +31,5 @@ var searchData=
   ['error',['error',['../structdnnl_1_1error.html#a5ab2f059a14d0007df0ce378ca5d8ae3',1,'dnnl::error']]],
   ['error',['error',['../structdnnl_1_1error.html',1,'dnnl']]],
   ['exec_5farg_5fmd',['exec_arg_md',['../group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1ad531896cf1d66c4832790f428623f164',1,'dnnl']]],
-  ['execute',['execute',['../classdnnl_1_1primitive.html#a8a8a7d1a5ffd86032613d38a90378e3c',1,'dnnl::primitive::execute()'],['../structdnnl_1_1reorder.html#a8336412c960a254fdb808c6b167d6d93',1,'dnnl::reorder::execute()']]]
+  ['execute',['execute',['../structdnnl_1_1primitive.html#a8a8a7d1a5ffd86032613d38a90378e3c',1,'dnnl::primitive::execute()'],['../structdnnl_1_1reorder.html#a8336412c960a254fdb808c6b167d6d93',1,'dnnl::reorder::execute()']]]
 ];

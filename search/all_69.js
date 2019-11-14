@@ -14,7 +14,7 @@ var searchData=
   ['inner_5fblks',['inner_blks',['../structdnnl__blocking__desc__t.html#ab142704c20c4c2518488baa18cb453a5',1,'dnnl_blocking_desc_t']]],
   ['inner_5fidxs',['inner_idxs',['../structdnnl__blocking__desc__t.html#ac60774d51adba600161db81846b5ca77',1,'dnnl_blocking_desc_t']]],
   ['inner_5fnblks',['inner_nblks',['../structdnnl__blocking__desc__t.html#aa605314004fee131958a1d4cf2e1905c',1,'dnnl_blocking_desc_t']]],
-  ['inner_5fproduct',['inner_product',['../classdnnl_1_1primitive.html#ad1ec93215a0cf3aa0a32bae0c2cd9169a30813812e3beef3eefcc2b97dc2e0783',1,'dnnl::primitive']]],
+  ['inner_5fproduct',['inner_product',['../structdnnl_1_1primitive.html#ad1ec93215a0cf3aa0a32bae0c2cd9169a30813812e3beef3eefcc2b97dc2e0783',1,'dnnl::primitive']]],
   ['inner_5fproduct_5fbackward_5fdata',['inner_product_backward_data',['../structdnnl_1_1inner__product__backward__data.html',1,'dnnl']]],
   ['inner_5fproduct_5fbackward_5fweights',['inner_product_backward_weights',['../structdnnl_1_1inner__product__backward__weights.html',1,'dnnl']]],
   ['inner_5fproduct_5fd',['inner_product_d',['../group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1aded69e5210888fc8315d2f7e90d7ba15',1,'dnnl']]],
