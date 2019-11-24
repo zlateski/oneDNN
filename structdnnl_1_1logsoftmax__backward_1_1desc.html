@@ -95,7 +95,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>Descriptor for logsoftmax backward propagation.  
+<p>Descriptor for a logsoftmax backward propagation primitive.  
  <a href="structdnnl_1_1logsoftmax__backward_1_1desc.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="dnnl_8hpp_source.html">dnnl.hpp</a>&gt;</code></p>
@@ -109,15 +109,19 @@ Collaboration diagram for dnnl::logsoftmax_backward::desc:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a08c7a60efa0c72ef3f5b2e06ade71558"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a08c7a60efa0c72ef3f5b2e06ade71558"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1logsoftmax__backward_1_1desc.html#a08c7a60efa0c72ef3f5b2e06ade71558">desc</a> ()=default</td></tr>
+<tr class="memdesc:a08c7a60efa0c72ef3f5b2e06ade71558"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. Produces an empty object. <br/></td></tr>
+<tr class="separator:a08c7a60efa0c72ef3f5b2e06ade71558"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d669450594fa7c313ec16fa2471816f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1logsoftmax__backward_1_1desc.html#a9d669450594fa7c313ec16fa2471816f">desc</a> (const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;data_desc, int logsoftmax_axis)</td></tr>
-<tr class="memdesc:a9d669450594fa7c313ec16fa2471816f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a logsoftmax descriptor for backward propagation using memory descriptors <code>diff_desc</code> and <code>data_desc</code>.  <a href="#a9d669450594fa7c313ec16fa2471816f">More...</a><br/></td></tr>
+<tr class="memdesc:a9d669450594fa7c313ec16fa2471816f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a logsoftmax descriptor for backward propagation using memory descriptors <code>diff_desc</code> and <code>data_desc</code>.  <a href="#a9d669450594fa7c313ec16fa2471816f">More...</a><br/></td></tr>
 <tr class="separator:a9d669450594fa7c313ec16fa2471816f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c03c2c336ca6a418b4df155a3e8ed79"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1logsoftmax__backward_1_1desc.html#a6c03c2c336ca6a418b4df155a3e8ed79">desc</a> (<a class="el" href="group__c__api__types__op__descs.html#ga312b4653a7712a595c96e23cddd7b8d8">dnnl_logsoftmax_desc_t</a> adata)</td></tr>
-<tr class="memdesc:a6c03c2c336ca6a418b4df155a3e8ed79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a logsoftmax descriptor for backward propagation using logsoftmax descriptor <code>adata</code>.  <a href="#a6c03c2c336ca6a418b4df155a3e8ed79">More...</a><br/></td></tr>
-<tr class="separator:a6c03c2c336ca6a418b4df155a3e8ed79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae4a690e9a724c7c20411ef342003903"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1logsoftmax__backward_1_1desc.html#aae4a690e9a724c7c20411ef342003903">desc</a> (<a class="el" href="group__c__api__types__op__descs.html#ga312b4653a7712a595c96e23cddd7b8d8">dnnl_logsoftmax_desc_t</a> data)</td></tr>
+<tr class="memdesc:aae4a690e9a724c7c20411ef342003903"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a logsoftmax descriptor for backward propagation using primitive a C API logsoftmax descriptor <code>data</code>.  <a href="#aae4a690e9a724c7c20411ef342003903">More...</a><br/></td></tr>
+<tr class="separator:aae4a690e9a724c7c20411ef342003903"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Descriptor for logsoftmax backward propagation. </p>
+<div class="textblock"><p>Descriptor for a logsoftmax backward propagation primitive. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a9d669450594fa7c313ec16fa2471816f"></a>
 <div class="memitem">
@@ -157,11 +161,11 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Initializes a logsoftmax descriptor for backward propagation using memory descriptors <code>diff_desc</code> and <code>data_desc</code>. </p>
+<p>Constructs a logsoftmax descriptor for backward propagation using memory descriptors <code>diff_desc</code> and <code>data_desc</code>. </p>
 
 </div>
 </div>
-<a class="anchor" id="a6c03c2c336ca6a418b4df155a3e8ed79"></a>
+<a class="anchor" id="aae4a690e9a724c7c20411ef342003903"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -172,7 +176,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">dnnl::logsoftmax_backward::desc::desc </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__c__api__types__op__descs.html#ga312b4653a7712a595c96e23cddd7b8d8">dnnl_logsoftmax_desc_t</a>&#160;</td>
-          <td class="paramname"><em>adata</em></td><td>)</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -183,7 +187,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Initializes a logsoftmax descriptor for backward propagation using logsoftmax descriptor <code>adata</code>. </p>
+<p>Create a logsoftmax descriptor for backward propagation using primitive a C API logsoftmax descriptor <code>data</code>. </p>
 
 </div>
 </div>

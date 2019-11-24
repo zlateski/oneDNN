@@ -111,6 +111,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="dnnl_8hpp.html">dnnl.hpp</a>&quot;</span></div>
 <div class="line"></div>
+<div class="line"><span class="preprocessor">#include &quot;example_utils.hpp&quot;</span></div>
+<div class="line"></div>
 <div class="line"><span class="keyword">using namespace </span>dnnl;</div>
 <div class="line"></div>
 <div class="line"><span class="keyword">enum class</span> q10n_scheme_t { DYNAMIC, STATIC };</div>
@@ -120,7 +122,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><span class="keywordtype">void</span> init_vector(std::vector&lt;float&gt; &amp;v, <span class="keywordtype">float</span> min_value, <span class="keywordtype">float</span> max_value) {</div>
 <div class="line">    std::random_device rdev;</div>
 <div class="line">    std::mt19937 gen(rdev());</div>
-<div class="line">    std::uniform_real_distribution&lt;&gt; u(min_value, max_value);</div>
+<div class="line">    std::uniform_real_distribution&lt;float&gt; u(min_value, max_value);</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;e : v)</div>
 <div class="line">        e = u(gen);</div>
@@ -233,12 +235,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="keywordflow">if</span> (is_dynamic_q10n) {</div>
 <div class="line">        <a class="code" href="structdnnl_1_1memory.html">memory</a> scale_X_m({{1}, dt::f32, {1}}, eng, &amp;inv_scale_X);</div>
 <div class="line">        <a class="code" href="structdnnl_1_1memory.html">memory</a> zp_X_m({{1}, dt::s32, {1}}, eng, &amp;zp_X);</div>
-<div class="line">        <a name="_a14"></a><a class="code" href="structdnnl_1_1reorder.html">reorder</a>(q10n_pd).<a name="a15"></a><a class="code" href="structdnnl_1_1reorder.html#a8336412c960a254fdb808c6b167d6d93">execute</a>(s,</div>
+<div class="line">        <a name="_a14"></a><a class="code" href="structdnnl_1_1reorder.html">reorder</a>(q10n_pd).<a name="a15"></a><a class="code" href="structdnnl_1_1reorder.html#a0d551b51dd0b727253be8c88bec06a08">execute</a>(s,</div>
 <div class="line">                {{DNNL_ARG_SRC, X_f32_m}, {DNNL_ARG_DST, X_int_m},</div>
 <div class="line">                        {DNNL_ARG_ATTR_OUTPUT_SCALES, scale_X_m},</div>
 <div class="line">                        {DNNL_ARG_ATTR_ZERO_POINTS | DNNL_ARG_DST, zp_X_m}});</div>
 <div class="line">    } <span class="keywordflow">else</span> {</div>
-<div class="line">        <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(q10n_pd).<a class="code" href="structdnnl_1_1reorder.html#a8336412c960a254fdb808c6b167d6d93">execute</a>(</div>
+<div class="line">        <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(q10n_pd).<a class="code" href="structdnnl_1_1reorder.html#a0d551b51dd0b727253be8c88bec06a08">execute</a>(</div>
 <div class="line">                s, {{DNNL_ARG_SRC, X_f32_m}, {DNNL_ARG_DST, X_int_m}});</div>
 <div class="line">    }</div>
 <div class="line"></div>
@@ -411,17 +413,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    }</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">int</span> compare_f32_and_quantized_matmuls() {</div>
-<div class="line">    <span class="keywordtype">int</span> rc = 0;</div>
-<div class="line"></div>
+<div class="line"><span class="keywordtype">void</span> compare_f32_and_quantized_matmuls() {</div>
 <div class="line">    <span class="comment">// MatMul parameters</span></div>
 <div class="line">    <span class="keyword">const</span> int64_t M = 10, N = 20, K = 30;</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Data distribution for matrices A and B</span></div>
-<div class="line">    <span class="keyword">const</span> <span class="keywordtype">float</span> param_A_min_val = -2;</div>
-<div class="line">    <span class="keyword">const</span> <span class="keywordtype">float</span> param_A_max_val = 1.4;</div>
+<div class="line">    <span class="keyword">const</span> <span class="keywordtype">float</span> param_A_min_val = -2.f;</div>
+<div class="line">    <span class="keyword">const</span> <span class="keywordtype">float</span> param_A_max_val = 1.4f;</div>
 <div class="line"></div>
-<div class="line">    <span class="keyword">const</span> <span class="keywordtype">float</span> param_B_min_val = -1;</div>
+<div class="line">    <span class="keyword">const</span> <span class="keywordtype">float</span> param_B_min_val = -1.f;</div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">float</span> param_B_max_val = -param_B_min_val; <span class="comment">// B is centered around 0</span></div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Thresholds</span></div>
@@ -430,8 +430,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="comment">// than for dynamic quantization. However, we will slightly cheat on the</span></div>
 <div class="line">    <span class="comment">// guessed q10n parameters of matrix C (see below), so we will get pretty</span></div>
 <div class="line">    <span class="comment">// good accuracy as well.</span></div>
-<div class="line">    <span class="keyword">const</span> <span class="keywordtype">float</span> threshold_dynamic_q10n = 2 * 1e-2;</div>
-<div class="line">    <span class="keyword">const</span> <span class="keywordtype">float</span> threshold_static_q10n = 4 * 1e-2;</div>
+<div class="line">    <span class="keyword">const</span> <span class="keywordtype">float</span> threshold_dynamic_q10n = 2 * 1e-2f;</div>
+<div class="line">    <span class="keyword">const</span> <span class="keywordtype">float</span> threshold_static_q10n = 4 * 1e-2f;</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Prepare matrices</span></div>
 <div class="line">    std::vector&lt;float&gt; A_f32(M * K), B_f32(K * N), C_f32(M * N, 0);</div>
@@ -454,8 +454,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">                scale_C_dynamic_q10n, zp_C_dynamic_q10n);</div>
 <div class="line"></div>
 <div class="line">        <span class="comment">// Compare _true_ f32 result with dynamic q10n</span></div>
-<div class="line">        rc |= compare_vectors(C_f32, C_u8_dynamic_q10n, scale_C_dynamic_q10n,</div>
+<div class="line">        <span class="keywordtype">int</span> rc = compare_vectors(C_f32, C_u8_dynamic_q10n, scale_C_dynamic_q10n,</div>
 <div class="line">                zp_C_dynamic_q10n, threshold_dynamic_q10n);</div>
+<div class="line">        <span class="keywordflow">if</span> (rc) <span class="keywordflow">throw</span> std::logic_error(<span class="stringliteral">&quot;Dynamic quantization accuracy failed.&quot;</span>);</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Compute quantized variant (static)</span></div>
@@ -500,22 +501,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">                zp_C_static_q10n, C_u8_static_q10n);</div>
 <div class="line"></div>
 <div class="line">        <span class="comment">// Compare _true_ f32 result with static q10n</span></div>
-<div class="line">        rc |= compare_vectors(C_f32, C_u8_static_q10n, scale_C_static_q10n,</div>
+<div class="line">        <span class="keywordtype">int</span> rc = compare_vectors(C_f32, C_u8_static_q10n, scale_C_static_q10n,</div>
 <div class="line">                zp_C_static_q10n, threshold_static_q10n);</div>
+<div class="line">        <span class="keywordflow">if</span> (rc) <span class="keywordflow">throw</span> std::logic_error(<span class="stringliteral">&quot;Static quantization accuracy failed.&quot;</span>);</div>
 <div class="line">    }</div>
-<div class="line"></div>
-<div class="line">    <span class="keywordflow">return</span> rc;</div>
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv) {</div>
-<div class="line">    <span class="keywordflow">try</span> {</div>
-<div class="line">        <span class="keywordtype">int</span> rc = compare_f32_and_quantized_matmuls();</div>
-<div class="line">        std::cout &lt;&lt; (rc ? <span class="stringliteral">&quot;failed&quot;</span> : <span class="stringliteral">&quot;passed&quot;</span>) &lt;&lt; std::endl;</div>
-<div class="line">    } <span class="keywordflow">catch</span> (<a name="_a25"></a><a class="code" href="structdnnl_1_1error.html">error</a> &amp;e) {</div>
-<div class="line">        std::cerr &lt;&lt; <span class="stringliteral">&quot;status: &quot;</span> &lt;&lt; e.<a name="a26"></a>status &lt;&lt; std::endl;</div>
-<div class="line">        std::cerr &lt;&lt; <span class="stringliteral">&quot;message: &quot;</span> &lt;&lt; e.<a name="a27"></a>message &lt;&lt; std::endl;</div>
-<div class="line">    }</div>
-<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">    <span class="keywordflow">return</span> handle_example_errors(compare_f32_and_quantized_matmuls);</div>
 <div class="line">}</div>
 </div><!-- fragment --> </div><!-- contents -->
 <div class="footer">

@@ -292,7 +292,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="keyword">auto</span> dec_dst_iter_c_memory = <a class="code" href="structdnnl_1_1memory.html">dnnl::memory</a>(dec_dst_iter_c_md, cpu_engine);</div>
 </div><!-- fragment --><p>Decoder : As mentioned above, we create a view without context out of the memory with context. </p>
 <div class="fragment"><div class="line">    <span class="keyword">auto</span> dec_dst_iter_memory = <a class="code" href="structdnnl_1_1memory.html">dnnl::memory</a>(dec_dst_iter_md, cpu_engine);</div>
-<div class="line">    <span class="keyword">auto</span> dec_dst_iter_noctx_md = dec_dst_iter_md.<a class="code" href="structdnnl_1_1memory_1_1desc.html#ab369a09dee3b0eb879e0e1cbccdfe7d7">submemory_desc</a>(</div>
+<div class="line">    <span class="keyword">auto</span> dec_dst_iter_noctx_md = dec_dst_iter_md.<a class="code" href="structdnnl_1_1memory_1_1desc.html#ab51c30ca2e2ce806821871a4dbded3a2">submemory_desc</a>(</div>
 <div class="line">            dec_dst_iter_noctx_dims, {0, 0, 0, 0, 0});</div>
 </div><!-- fragment --><p>Decoder : Create RNN decoder cell </p>
 <div class="fragment"><div class="line">    lstm_forward::desc dec_ctx_desc(prop_kind::forward_inference,</div>
@@ -357,8 +357,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --><p>Move the handle on the src/dst layer to the next iteration </p>
 <div class="fragment"><div class="line">            <span class="keyword">auto</span> dst_layer_handle</div>
 <div class="line">                    = (<span class="keywordtype">float</span> *)user_dec_dst_layer_memory.<a class="code" href="structdnnl_1_1memory.html#a1b81db911a391cefc31e35bbe9ca95fe">get_data_handle</a>();</div>
-<div class="line">            dec_src_layer_memory.set_data_handle(dst_layer_handle);</div>
-<div class="line">            user_dec_dst_layer_memory.set_data_handle(</div>
+<div class="line">            dec_src_layer_memory.<a class="code" href="structdnnl_1_1memory.html#aaf3c13ed6f4af1b719ef7413ee36f63d">set_data_handle</a>(dst_layer_handle);</div>
+<div class="line">            user_dec_dst_layer_memory.<a class="code" href="structdnnl_1_1memory.html#aaf3c13ed6f4af1b719ef7413ee36f63d">set_data_handle</a>(</div>
 <div class="line">                    dst_layer_handle + batch * feature_size);</div>
 </div><!-- fragment --></div></div><!-- contents -->
 <div class="footer">

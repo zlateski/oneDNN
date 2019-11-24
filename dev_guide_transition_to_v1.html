@@ -207,7 +207,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <td align="left">mkldnn::memory::format_tag </td><td align="left">mkldnn::memory::nchw </td><td align="left"><a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3faded7ac40158367123c5467281d44cbeb">mkldnn::memory::format_tag::nchw</a> </td></tr>
 </table>
 <h3>1.7. Remove view primitive</h3>
-<p>Version 0.x had an implementation of view that was simply an alias for memory. In Intel MKL-DNN v1.0, we removed view as a type and replaced it with a memory descriptor directly. In order to initialize sub-memory, use <a class="el" href="structdnnl_1_1memory_1_1desc.html#ab369a09dee3b0eb879e0e1cbccdfe7d7">dnnl::memory::desc::submemory_desc</a>( "mkldnn::memory::desc::submemory_desc()").</p>
+<p>Version 0.x had an implementation of view that was simply an alias for memory. In Intel MKL-DNN v1.0, we removed view as a type and replaced it with a memory descriptor directly. In order to initialize sub-memory, use <a class="el" href="structdnnl_1_1memory_1_1desc.html#ab51c30ca2e2ce806821871a4dbded3a2">dnnl::memory::desc::submemory_desc</a>( "mkldnn::memory::desc::submemory_desc()").</p>
 <dl class="section see"><dt>See Also</dt><dd>For more detail, refer to section <a href="https://github.com/intel/mkl-dnn/tree/rfc-api-changes-v1.0/doc/rfc/api-v1.0#4-view-rework">4. View rework</a> of the <a href="https://github.com/intel/mkl-dnn/pull/384">RFC for v1.0</a>.</dd></dl>
 <h3>1.8. RNN-specific changes</h3>
 <p>Each type of <a class="el" href="group__cpp__api__rnn.html">RNN</a> (Vanilla RNN, LSTM, and two types of GRU) is now initialized by a separate function/operation descriptor constructor.</p>

@@ -95,7 +95,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>Descriptor for softmax backward propagation.  
+<p>Descriptor for a softmax backward propagation primitive.  
  <a href="structdnnl_1_1softmax__backward_1_1desc.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="dnnl_8hpp_source.html">dnnl.hpp</a>&gt;</code></p>
@@ -109,15 +109,19 @@ Collaboration diagram for dnnl::softmax_backward::desc:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a7f6c07b464156be2ad8946e2108fb0f8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7f6c07b464156be2ad8946e2108fb0f8"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1softmax__backward_1_1desc.html#a7f6c07b464156be2ad8946e2108fb0f8">desc</a> ()=default</td></tr>
+<tr class="memdesc:a7f6c07b464156be2ad8946e2108fb0f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. Produces an empty object. <br/></td></tr>
+<tr class="separator:a7f6c07b464156be2ad8946e2108fb0f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3a95e2baf24b315c461595a6aecf4d4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1softmax__backward_1_1desc.html#af3a95e2baf24b315c461595a6aecf4d4">desc</a> (const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;data_desc, int softmax_axis)</td></tr>
-<tr class="memdesc:af3a95e2baf24b315c461595a6aecf4d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a softmax descriptor for backward propagation using memory descriptors <code>diff_desc</code> and <code>data_desc</code>.  <a href="#af3a95e2baf24b315c461595a6aecf4d4">More...</a><br/></td></tr>
+<tr class="memdesc:af3a95e2baf24b315c461595a6aecf4d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a softmax descriptor for backward propagation using memory descriptors <code>diff_desc</code> and <code>data_desc</code>.  <a href="#af3a95e2baf24b315c461595a6aecf4d4">More...</a><br/></td></tr>
 <tr class="separator:af3a95e2baf24b315c461595a6aecf4d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af791b0d5833c9fd02a45b64d51855bc0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1softmax__backward_1_1desc.html#af791b0d5833c9fd02a45b64d51855bc0">desc</a> (<a class="el" href="structdnnl__softmax__desc__t.html">dnnl_softmax_desc_t</a> adata)</td></tr>
-<tr class="memdesc:af791b0d5833c9fd02a45b64d51855bc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a softmax descriptor for backward propagation using softmax descriptor <code>adata</code>.  <a href="#af791b0d5833c9fd02a45b64d51855bc0">More...</a><br/></td></tr>
-<tr class="separator:af791b0d5833c9fd02a45b64d51855bc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7cd14cc7e7a91f49f56be134abe72e1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1softmax__backward_1_1desc.html#af7cd14cc7e7a91f49f56be134abe72e1">desc</a> (<a class="el" href="structdnnl__softmax__desc__t.html">dnnl_softmax_desc_t</a> data)</td></tr>
+<tr class="memdesc:af7cd14cc7e7a91f49f56be134abe72e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a softmax descriptor for a softmax backward propagation primitive using a C API softmax descriptor <code>data</code>.  <a href="#af7cd14cc7e7a91f49f56be134abe72e1">More...</a><br/></td></tr>
+<tr class="separator:af7cd14cc7e7a91f49f56be134abe72e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Descriptor for softmax backward propagation. </p>
+<div class="textblock"><p>Descriptor for a softmax backward propagation primitive. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="af3a95e2baf24b315c461595a6aecf4d4"></a>
 <div class="memitem">
@@ -157,11 +161,11 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Initializes a softmax descriptor for backward propagation using memory descriptors <code>diff_desc</code> and <code>data_desc</code>. </p>
+<p>Constructs a softmax descriptor for backward propagation using memory descriptors <code>diff_desc</code> and <code>data_desc</code>. </p>
 
 </div>
 </div>
-<a class="anchor" id="af791b0d5833c9fd02a45b64d51855bc0"></a>
+<a class="anchor" id="af7cd14cc7e7a91f49f56be134abe72e1"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -172,7 +176,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">dnnl::softmax_backward::desc::desc </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structdnnl__softmax__desc__t.html">dnnl_softmax_desc_t</a>&#160;</td>
-          <td class="paramname"><em>adata</em></td><td>)</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -183,7 +187,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Initializes a softmax descriptor for backward propagation using softmax descriptor <code>adata</code>. </p>
+<p>Constructs a softmax descriptor for a softmax backward propagation primitive using a C API softmax descriptor <code>data</code>. </p>
 
 </div>
 </div>

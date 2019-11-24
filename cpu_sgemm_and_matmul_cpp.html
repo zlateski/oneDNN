@@ -84,7 +84,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <ul>
 <li>Create primitive once, use multiple times<ul>
 <li>Run-time tensor shapes: <a class="el" href="group__c__api__types__memory.html#gaa596c5a6102df77a550bad98f0d5cc12" title="A wildcard value for dimensions that are unknown at a primitive creation time. ">DNNL_RUNTIME_DIM_VAL</a></li>
-<li>Run-time output scales: <a class="el" href="structdnnl_1_1primitive__attr.html#a4b81acc8e48886313154f75c1708ae02" title="Sets output scales for primitive operations. ">dnnl::primitive_attr::set_output_scales()</a> and <a class="el" href="group__c__api__types__memory.html#gab16365c11b4dc88fbb453edb51f1979f" title="A wildcard value for floating point values that are unknown at a primitive creation time...">DNNL_RUNTIME_F32_VAL</a></li>
+<li>Run-time output scales: <a class="el" href="structdnnl_1_1primitive__attr.html#a4b81acc8e48886313154f75c1708ae02" title="Sets output scale correspondence mask and values. ">dnnl::primitive_attr::set_output_scales()</a> and <a class="el" href="group__c__api__types__memory.html#gab16365c11b4dc88fbb453edb51f1979f" title="A wildcard value for floating point values that are unknown at a primitive creation time...">DNNL_RUNTIME_F32_VAL</a></li>
 </ul>
 </li>
 </ul>
@@ -123,6 +123,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="dnnl_8hpp.html">dnnl.hpp</a>&quot;</span></div>
 <div class="line"></div>
+<div class="line"><span class="preprocessor">#include &quot;example_utils.hpp&quot;</span></div>
+<div class="line"></div>
 <div class="line"><span class="keyword">using namespace </span>dnnl;</div>
 <div class="line"></div>
 <div class="line"><span class="keyword">namespace </span>{</div>
@@ -130,14 +132,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><span class="keywordtype">void</span> init_vector(std::vector&lt;float&gt; &amp;v) {</div>
 <div class="line">    std::random_device rdev;</div>
 <div class="line">    std::mt19937 gen(rdev());</div>
-<div class="line">    std::uniform_real_distribution&lt;&gt; u(-1, 1);</div>
+<div class="line">    std::uniform_real_distribution&lt;float&gt; u(-1, 1);</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;e : v)</div>
 <div class="line">        e = u(gen);</div>
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">int</span> compare_vectors(<span class="keyword">const</span> std::vector&lt;float&gt; &amp;v1, <span class="keyword">const</span> std::vector&lt;float&gt; &amp;v2,</div>
-<div class="line">        <span class="keyword">const</span> <span class="keywordtype">char</span> *message) {</div>
+<div class="line">        int64_t K, <span class="keyword">const</span> <span class="keywordtype">char</span> *message) {</div>
 <div class="line">    <span class="keywordtype">double</span> v1_l2 = 0, diff_l2 = 0;</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> n = 0; n &lt; v1.size(); ++n) {</div>
 <div class="line">        <span class="keywordtype">float</span> diff = v1[n] - v2[n];</div>
@@ -147,7 +149,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line">    v1_l2 = std::sqrt(v1_l2);</div>
 <div class="line">    diff_l2 = std::sqrt(diff_l2);</div>
-<div class="line">    <span class="keywordtype">bool</span> ok = diff_l2 / v1_l2 &lt;= 1e-7;</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">// Finding the reasonable (tight and accurate) threshold is quite difficult</span></div>
+<div class="line">    <span class="comment">// problem.</span></div>
+<div class="line">    <span class="comment">// The implementation testing might also use special data filling to</span></div>
+<div class="line">    <span class="comment">// alleviate issues related to the finite precision arithmetic.</span></div>
+<div class="line">    <span class="comment">// However, in simple cases the machine epsilon multiplied by log(K) should</span></div>
+<div class="line">    <span class="comment">// work reasonably well.</span></div>
+<div class="line">    <span class="keyword">const</span> <span class="keywordtype">double</span> threshold = std::numeric_limits&lt;float&gt;::epsilon()</div>
+<div class="line">            * std::log(std::max(2., (<span class="keywordtype">double</span>)K));</div>
+<div class="line">    <span class="keywordtype">bool</span> ok = diff_l2 &lt;= threshold * v1_l2;</div>
 <div class="line"></div>
 <div class="line">    printf(<span class="stringliteral">&quot;%s\n\tL2 Norms&quot;</span></div>
 <div class="line">           <span class="stringliteral">&quot;\n\t\tReference matrix:%g\n\t\tError:%g\n\t\tRelative_error:%g\n&quot;</span></div>
@@ -172,13 +183,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="comment">// We assume that beta is known at the primitive creation time</span></div>
 <div class="line">    <span class="keywordtype">float</span> beta = fixed_beta;</div>
 <div class="line"></div>
-<div class="line">    memory::dims a_shape = {<a class="code" href="group__c__api__types__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">DNNL_RUNTIME_DIM_VAL</a>, <a class="code" href="group__c__api__types__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">DNNL_RUNTIME_DIM_VAL</a>};</div>
-<div class="line">    memory::dims b_shape = {<a class="code" href="group__c__api__types__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">DNNL_RUNTIME_DIM_VAL</a>, <a class="code" href="group__c__api__types__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">DNNL_RUNTIME_DIM_VAL</a>};</div>
-<div class="line">    memory::dims c_shape = {<a class="code" href="group__c__api__types__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">DNNL_RUNTIME_DIM_VAL</a>, <a class="code" href="group__c__api__types__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">DNNL_RUNTIME_DIM_VAL</a>};</div>
+<div class="line">    <a class="code" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> a_shape = {<a class="code" href="group__c__api__types__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">DNNL_RUNTIME_DIM_VAL</a>, <a class="code" href="group__c__api__types__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">DNNL_RUNTIME_DIM_VAL</a>};</div>
+<div class="line">    <a class="code" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> b_shape = {<a class="code" href="group__c__api__types__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">DNNL_RUNTIME_DIM_VAL</a>, <a class="code" href="group__c__api__types__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">DNNL_RUNTIME_DIM_VAL</a>};</div>
+<div class="line">    <a class="code" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> c_shape = {<a class="code" href="group__c__api__types__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">DNNL_RUNTIME_DIM_VAL</a>, <a class="code" href="group__c__api__types__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">DNNL_RUNTIME_DIM_VAL</a>};</div>
 <div class="line"></div>
-<div class="line">    memory::dims a_strides = {<a class="code" href="group__c__api__types__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">DNNL_RUNTIME_DIM_VAL</a>, <a class="code" href="group__c__api__types__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">DNNL_RUNTIME_DIM_VAL</a>};</div>
-<div class="line">    memory::dims b_strides = {<a class="code" href="group__c__api__types__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">DNNL_RUNTIME_DIM_VAL</a>, <a class="code" href="group__c__api__types__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">DNNL_RUNTIME_DIM_VAL</a>};</div>
-<div class="line">    memory::dims c_strides = {<a class="code" href="group__c__api__types__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">DNNL_RUNTIME_DIM_VAL</a>, 1};</div>
+<div class="line">    <a class="code" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> a_strides = {<a class="code" href="group__c__api__types__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">DNNL_RUNTIME_DIM_VAL</a>, <a class="code" href="group__c__api__types__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">DNNL_RUNTIME_DIM_VAL</a>};</div>
+<div class="line">    <a class="code" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> b_strides = {<a class="code" href="group__c__api__types__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">DNNL_RUNTIME_DIM_VAL</a>, <a class="code" href="group__c__api__types__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">DNNL_RUNTIME_DIM_VAL</a>};</div>
+<div class="line">    <a class="code" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> c_strides = {<a class="code" href="group__c__api__types__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">DNNL_RUNTIME_DIM_VAL</a>, 1};</div>
 <div class="line"></div>
 <div class="line">    <a class="code" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> a_md(a_shape, <a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e">memory::data_type::f32</a>, a_strides);</div>
 <div class="line">    <a class="code" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> b_md(b_shape, <a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e">memory::data_type::f32</a>, b_strides);</div>
@@ -190,7 +201,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="keywordflow">if</span> (beta != 0.f) {</div>
 <div class="line">        <a class="code" href="structdnnl_1_1post__ops.html">post_ops</a> po;</div>
 <div class="line">        po.<a class="code" href="structdnnl_1_1post__ops.html#a078ab8ec15423d2b3d26f3619a78ca38">append_sum</a>(beta);</div>
-<div class="line">        attr.<a class="code" href="structdnnl_1_1primitive__attr.html#a7bf5358e35bf0e99019db45ae8fad0b5">set_post_ops</a>(po);</div>
+<div class="line">        attr.<a class="code" href="structdnnl_1_1primitive__attr.html#ac830fa9f4fcf480b494d73153ad579bf">set_post_ops</a>(po);</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Create a MatMul primitive</span></div>
@@ -206,10 +217,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">        int64_t M, int64_t N, int64_t K, <span class="keywordtype">float</span> alpha, <span class="keyword">const</span> <span class="keywordtype">float</span> *A,</div>
 <div class="line">        int64_t lda, <span class="keyword">const</span> <span class="keywordtype">float</span> *B, int64_t ldb, <span class="keywordtype">float</span> beta, <span class="keywordtype">float</span> *C,</div>
 <div class="line">        int64_t ldc) {</div>
-<div class="line">    <span class="keyword">using</span> dims = memory::dims;</div>
+<div class="line">    <span class="keyword">using</span> dims = <a class="code" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a>;</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (beta != fixed_beta)</div>
-<div class="line">        <span class="keywordflow">throw</span> <a class="code" href="group__cpp__api__service.html#gga7acc4d3516304ae68a1289551d8f2cdda5b32065884bcc1f2ed126c47e6410808">std::runtime_error</a>(<span class="stringliteral">&quot;Runtime beta is not yet supported&quot;</span>);</div>
+<div class="line">        <span class="keywordflow">throw</span> std::logic_error(<span class="stringliteral">&quot;Run-time beta is not yet supported.&quot;</span>);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Translate transA and transB</span></div>
 <div class="line">    dims a_strides = tolower(transA) == <span class="charliteral">&#39;n&#39;</span> ? dims {lda, 1} : dims {1, lda};</div>
@@ -225,7 +236,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line">    <span class="comment">// Execute the MatMul primitive</span></div>
 <div class="line">    stream s(eng);</div>
-<div class="line">    matmul_p.<a class="code" href="structdnnl_1_1primitive.html#a8a8a7d1a5ffd86032613d38a90378e3c">execute</a>(s,</div>
+<div class="line">    matmul_p.<a class="code" href="structdnnl_1_1primitive.html#a4c454f3d9315ea0dc6635f26eab9a950">execute</a>(s,</div>
 <div class="line">            {{DNNL_ARG_SRC, A_m}, {DNNL_ARG_WEIGHTS, B_m}, {DNNL_ARG_DST, C_m},</div>
 <div class="line">                    {DNNL_ARG_ATTR_OUTPUT_SCALES, alpha_m}});</div>
 <div class="line">    s.wait();</div>
@@ -236,7 +247,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><span class="keywordtype">void</span> static_matmul_create_and_execute(<span class="keywordtype">char</span> transA, <span class="keywordtype">char</span> transB, int64_t M,</div>
 <div class="line">        int64_t N, int64_t K, <span class="keywordtype">float</span> alpha, <span class="keyword">const</span> <span class="keywordtype">float</span> *A, int64_t lda,</div>
 <div class="line">        <span class="keyword">const</span> <span class="keywordtype">float</span> *B, int64_t ldb, <span class="keywordtype">float</span> beta, <span class="keywordtype">float</span> *C, int64_t ldc) {</div>
-<div class="line">    <span class="keyword">using</span> dims = memory::dims;</div>
+<div class="line">    <span class="keyword">using</span> dims = <a class="code" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a>;</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Prepare strides based on the transA and transB flags: transposed</span></div>
 <div class="line">    <span class="comment">// matrices have strides swapped</span></div>
@@ -274,16 +285,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="comment">// shapes of matrices A, B, and C -- they should exactly match</span></div>
 <div class="line">    <span class="comment">// the memory descriptors passed to MatMul operation descriptor.</span></div>
 <div class="line">    stream s(eng);</div>
-<div class="line">    matmul_p.<a class="code" href="structdnnl_1_1primitive.html#a8a8a7d1a5ffd86032613d38a90378e3c">execute</a>(s,</div>
+<div class="line">    matmul_p.<a class="code" href="structdnnl_1_1primitive.html#a4c454f3d9315ea0dc6635f26eab9a950">execute</a>(s,</div>
 <div class="line">            {{DNNL_ARG_SRC, A_m}, {DNNL_ARG_WEIGHTS, B_m},</div>
 <div class="line">                    {DNNL_ARG_DST, C_m}});</div>
 <div class="line">    s.wait();</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">int</span> sgemm_and_matmul(<span class="keywordtype">char</span> transA, <span class="keywordtype">char</span> transB, int64_t M, int64_t N, int64_t K,</div>
-<div class="line">        <span class="keywordtype">float</span> alpha, <span class="keywordtype">float</span> beta) {</div>
+<div class="line"><span class="keywordtype">void</span> sgemm_and_matmul_with_params(<span class="keywordtype">char</span> transA, <span class="keywordtype">char</span> transB, int64_t M,</div>
+<div class="line">        int64_t N, int64_t K, <span class="keywordtype">float</span> alpha, <span class="keywordtype">float</span> beta) {</div>
 <div class="line">    <span class="keywordflow">if</span> (beta != fixed_beta)</div>
-<div class="line">        <span class="keywordflow">throw</span> <a class="code" href="group__cpp__api__service.html#gga7acc4d3516304ae68a1289551d8f2cdda5b32065884bcc1f2ed126c47e6410808">std::runtime_error</a>(<span class="stringliteral">&quot;Runtime beta is not yet supported&quot;</span>);</div>
+<div class="line">        <span class="keywordflow">throw</span> std::logic_error(<span class="stringliteral">&quot;Run-time beta is not yet supported.&quot;</span>);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Allocate and initialize matrices</span></div>
 <div class="line">    std::vector&lt;float&gt; A(M * K);</div>
@@ -323,21 +334,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">                ldc);</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordtype">int</span> rc = 0;</div>
-<div class="line">    rc |= compare_vectors(C_sgemm, C_dynamic_matmul, <span class="stringliteral">&quot;SGEMM vs dynamic MatMul&quot;</span>);</div>
-<div class="line">    rc |= compare_vectors(C_sgemm, C_static_matmul, <span class="stringliteral">&quot;SGEMM vs static MatMul&quot;</span>);</div>
+<div class="line">    rc |= compare_vectors(</div>
+<div class="line">            C_sgemm, C_dynamic_matmul, K, <span class="stringliteral">&quot;Compare SGEMM vs dynamic MatMul&quot;</span>);</div>
+<div class="line">    <span class="keywordflow">if</span> (rc) <span class="keywordflow">throw</span> std::logic_error(<span class="stringliteral">&quot;The resulting matrices diverged too much.&quot;</span>);</div>
+<div class="line">    rc |= compare_vectors(</div>
+<div class="line">            C_sgemm, C_static_matmul, K, <span class="stringliteral">&quot;Compare SGEMM vs static MatMul&quot;</span>);</div>
+<div class="line">    <span class="keywordflow">if</span> (rc) <span class="keywordflow">throw</span> std::logic_error(<span class="stringliteral">&quot;The resulting matrices diverged too much.&quot;</span>);</div>
+<div class="line">}</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">return</span> rc;</div>
+<div class="line"><span class="keywordtype">void</span> sgemm_and_matmul() {</div>
+<div class="line">    sgemm_and_matmul_with_params(<span class="charliteral">&#39;N&#39;</span>, <span class="charliteral">&#39;T&#39;</span>, 10, 20, 30, 1.1f, fixed_beta);</div>
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv) {</div>
-<div class="line">    <span class="keywordflow">try</span> {</div>
-<div class="line">        <span class="keywordtype">int</span> rc = sgemm_and_matmul(<span class="charliteral">&#39;N&#39;</span>, <span class="charliteral">&#39;T&#39;</span>, 10, 20, 30, 1.1f, fixed_beta);</div>
-<div class="line">        std::cout &lt;&lt; (rc ? <span class="stringliteral">&quot;failed&quot;</span> : <span class="stringliteral">&quot;passed&quot;</span>) &lt;&lt; std::endl;</div>
-<div class="line">    } <span class="keywordflow">catch</span> (<a class="code" href="structdnnl_1_1error.html">error</a> &amp;e) {</div>
-<div class="line">        std::cerr &lt;&lt; <span class="stringliteral">&quot;status: &quot;</span> &lt;&lt; e.status &lt;&lt; std::endl;</div>
-<div class="line">        std::cerr &lt;&lt; <span class="stringliteral">&quot;message: &quot;</span> &lt;&lt; e.message &lt;&lt; std::endl;</div>
-<div class="line">    }</div>
-<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">    <span class="keywordflow">return</span> handle_example_errors(sgemm_and_matmul);</div>
 <div class="line">}</div>
 </div><!-- fragment --> </div></div><!-- contents -->
 <div class="footer">

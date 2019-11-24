@@ -1,0 +1,8 @@
+var searchData=
+[
+  ['concat',['concat',['../structdnnl_1_1concat.html#a024112606be8b645b6a89cc5c93ff7e7',1,'dnnl::concat']]],
+  ['convert_5fto_5fc',['convert_to_c',['../group__cpp__api__utils.html#gaaa215c424a2a5c5f734600216dfb8873',1,'dnnl::convert_to_c(primitive::kind akind)'],['../group__cpp__api__enums.html#gaa30f540e1ed09b2865f153fd599c967b',1,'dnnl::convert_to_c(scratchpad_mode mode)'],['../group__cpp__api__enums.html#gaaf09c9867f08afe9bd59135f1dda9f6e',1,'dnnl::convert_to_c(prop_kind kind)'],['../group__cpp__api__enums.html#gad4c07d30e46391ce7ce0900d18cbfa30',1,'dnnl::convert_to_c(algorithm aalgorithm)'],['../group__cpp__api__enums.html#ga8e83176cb3d0cdb61257191b0d52b5bd',1,'dnnl::convert_to_c(normalization_flags aflag)'],['../group__cpp__api__enums.html#ga0ce5be3911c933ba75b377ba9f56b5fd',1,'dnnl::convert_to_c(rnn_flags aflag)'],['../group__cpp__api__enums.html#gac676f5fdc851132f46a193efb00dd0be',1,'dnnl::convert_to_c(rnn_direction adir)'],['../group__cpp__api__enums.html#ga01d8a1881875cdb94e230db4e53ccb97',1,'dnnl::convert_to_c(query aquery)']]],
+  ['convolution_5fbackward_5fdata',['convolution_backward_data',['../structdnnl_1_1convolution__backward__data.html#ab3feaa09f3041b77984b7446a113a473',1,'dnnl::convolution_backward_data']]],
+  ['convolution_5fbackward_5fweights',['convolution_backward_weights',['../structdnnl_1_1convolution__backward__weights.html#ac85c02892cfb3139b3e18e5a4111758d',1,'dnnl::convolution_backward_weights']]],
+  ['convolution_5fforward',['convolution_forward',['../structdnnl_1_1convolution__forward.html#a47c1106e8a332097b4e355fe743963c4',1,'dnnl::convolution_forward']]]
+];

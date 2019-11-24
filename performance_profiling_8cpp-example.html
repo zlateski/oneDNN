@@ -103,8 +103,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line"><span class="preprocessor">#include &lt;chrono&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="dnnl_8hpp.html">dnnl.hpp</a>&quot;</span></div>
 <div class="line"></div>
 <div class="line"><span class="preprocessor">#include &quot;example_utils.hpp&quot;</span></div>
 <div class="line"></div>
@@ -113,8 +115,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><span class="comment">// [Prologue]</span></div>
 <div class="line"></div>
 <div class="line"><span class="comment">// Set Strides and Padding</span></div>
-<div class="line"><span class="keyword">const</span> memory::dims strides = {4, 4};</div>
-<div class="line"><span class="keyword">const</span> memory::dims padding = {0, 0};</div>
+<div class="line"><span class="keyword">const</span> <a class="code" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> strides = {4, 4};</div>
+<div class="line"><span class="keyword">const</span> <a class="code" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> padding = {0, 0};</div>
 <div class="line"></div>
 <div class="line"><span class="comment">// [Prologue]</span></div>
 <div class="line"><span class="comment">//</span></div>
@@ -146,11 +148,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="_a10"></a><a class="code" href="structdnnl_1_1primitive__attr.html">primitive_attr</a> create_attr_with_relu_post_op() {</div>
 <div class="line">    <span class="comment">// create a post-op with relu</span></div>
 <div class="line">    <a name="_a11"></a><a class="code" href="structdnnl_1_1post__ops.html">post_ops</a> ops;</div>
-<div class="line">    ops.<a name="a12"></a><a class="code" href="structdnnl_1_1post__ops.html#a9cc93664cc11d2cd4c900f172be5703f">append_eltwise</a>(1.f, <a class="code" href="group__cpp__api__enums.html#gga00377dd4982333e42e8ae1d09a309640aba09bebb742494255b90b43871c01c69">algorithm::eltwise_relu</a>, 0.f, 0.f);</div>
+<div class="line">    ops.<a name="a12"></a><a class="code" href="structdnnl_1_1post__ops.html#a66606f08467b19091e696b52a2f789e6">append_eltwise</a>(1.f, <a class="code" href="group__cpp__api__enums.html#gga00377dd4982333e42e8ae1d09a309640aba09bebb742494255b90b43871c01c69">algorithm::eltwise_relu</a>, 0.f, 0.f);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// create an attribute and set the corresponding post op</span></div>
 <div class="line">    <a class="code" href="structdnnl_1_1primitive__attr.html">primitive_attr</a> attr;</div>
-<div class="line">    attr.<a name="a13"></a><a class="code" href="structdnnl_1_1primitive__attr.html#a7bf5358e35bf0e99019db45ae8fad0b5">set_post_ops</a>(ops);</div>
+<div class="line">    attr.<a name="a13"></a><a class="code" href="structdnnl_1_1primitive__attr.html#ac830fa9f4fcf480b494d73153ad579bf">set_post_ops</a>(ops);</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">return</span> attr;</div>
 <div class="line">}</div>
@@ -224,7 +226,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="keywordflow">if</span> (conv_pd.src_desc() != user_src.<a class="code" href="structdnnl_1_1memory.html#a6bfc99db50d87d133c6b3b4f438b967a">get_desc</a>()) {</div>
 <div class="line">        conv_src = <a class="code" href="structdnnl_1_1memory.html">memory</a>(conv_pd.src_desc(), eng);</div>
 <div class="line">        <span class="keyword">auto</span> r_pd = <a name="_a22"></a><a class="code" href="structdnnl_1_1reorder_1_1primitive__desc.html">reorder::primitive_desc</a>(user_src, conv_src);</div>
-<div class="line">        <a name="_a23"></a><a class="code" href="structdnnl_1_1reorder.html">reorder</a>(r_pd).<a name="a24"></a><a class="code" href="structdnnl_1_1reorder.html#a8336412c960a254fdb808c6b167d6d93">execute</a>(s, user_src, conv_src);</div>
+<div class="line">        <a name="_a23"></a><a class="code" href="structdnnl_1_1reorder.html">reorder</a>(r_pd).<a name="a24"></a><a class="code" href="structdnnl_1_1reorder.html#a0d551b51dd0b727253be8c88bec06a08">execute</a>(s, user_src, conv_src);</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// prepare convolution weights</span></div>
@@ -232,7 +234,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="keywordflow">if</span> (conv_pd.weights_desc() != user_wei.<a class="code" href="structdnnl_1_1memory.html#a6bfc99db50d87d133c6b3b4f438b967a">get_desc</a>()) {</div>
 <div class="line">        conv_wei = <a class="code" href="structdnnl_1_1memory.html">memory</a>(conv_pd.weights_desc(), eng);</div>
 <div class="line">        <span class="keyword">auto</span> r_pd = <a class="code" href="structdnnl_1_1reorder_1_1primitive__desc.html">reorder::primitive_desc</a>(user_wei, conv_wei);</div>
-<div class="line">        <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(r_pd).<a class="code" href="structdnnl_1_1reorder.html#a8336412c960a254fdb808c6b167d6d93">execute</a>(s, user_wei, conv_wei);</div>
+<div class="line">        <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(r_pd).<a class="code" href="structdnnl_1_1reorder.html#a0d551b51dd0b727253be8c88bec06a08">execute</a>(s, user_wei, conv_wei);</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// prepare convolution destination</span></div>
@@ -256,7 +258,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="comment">// [Create and execute relu implementation2]</span></div>
 <div class="line">    <span class="keywordflow">if</span> (conv_pd.dst_desc() != user_dst.<a class="code" href="structdnnl_1_1memory.html#a6bfc99db50d87d133c6b3b4f438b967a">get_desc</a>()) {</div>
 <div class="line">        <span class="keyword">auto</span> r_pd = <a class="code" href="structdnnl_1_1reorder_1_1primitive__desc.html">reorder::primitive_desc</a>(conv_dst, user_dst);</div>
-<div class="line">        <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(r_pd).<a class="code" href="structdnnl_1_1reorder.html#a8336412c960a254fdb808c6b167d6d93">execute</a>(s, conv_dst, user_dst);</div>
+<div class="line">        <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(r_pd).<a class="code" href="structdnnl_1_1reorder.html#a0d551b51dd0b727253be8c88bec06a08">execute</a>(s, conv_dst, user_dst);</div>
 <div class="line">    }</div>
 <div class="line">    <span class="comment">// reorder data to the user&#39;s format if needed.</span></div>
 <div class="line">}</div>
@@ -294,7 +296,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="keywordflow">if</span> (conv_pd.src_desc() != user_src.<a class="code" href="structdnnl_1_1memory.html#a6bfc99db50d87d133c6b3b4f438b967a">get_desc</a>()) {</div>
 <div class="line">        conv_src = <a class="code" href="structdnnl_1_1memory.html">memory</a>(conv_pd.src_desc(), eng);</div>
 <div class="line">        <span class="keyword">auto</span> r_pd = <a class="code" href="structdnnl_1_1reorder_1_1primitive__desc.html">reorder::primitive_desc</a>(user_src, conv_src);</div>
-<div class="line">        <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(r_pd).<a class="code" href="structdnnl_1_1reorder.html#a8336412c960a254fdb808c6b167d6d93">execute</a>(s, user_src, conv_src);</div>
+<div class="line">        <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(r_pd).<a class="code" href="structdnnl_1_1reorder.html#a0d551b51dd0b727253be8c88bec06a08">execute</a>(s, user_src, conv_src);</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// prepare convolution weights</span></div>
@@ -302,7 +304,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="keywordflow">if</span> (conv_pd.weights_desc() != user_wei.<a class="code" href="structdnnl_1_1memory.html#a6bfc99db50d87d133c6b3b4f438b967a">get_desc</a>()) {</div>
 <div class="line">        conv_wei = <a class="code" href="structdnnl_1_1memory.html">memory</a>(conv_pd.weights_desc(), eng);</div>
 <div class="line">        <span class="keyword">auto</span> r_pd = <a class="code" href="structdnnl_1_1reorder_1_1primitive__desc.html">reorder::primitive_desc</a>(user_wei, conv_wei);</div>
-<div class="line">        <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(r_pd).<a class="code" href="structdnnl_1_1reorder.html#a8336412c960a254fdb808c6b167d6d93">execute</a>(s, user_wei, conv_wei);</div>
+<div class="line">        <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(r_pd).<a class="code" href="structdnnl_1_1reorder.html#a0d551b51dd0b727253be8c88bec06a08">execute</a>(s, user_wei, conv_wei);</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// prepare convolution destination</span></div>
@@ -322,12 +324,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="comment">// reorder data to user&#39;s format if needed</span></div>
 <div class="line">    <span class="keywordflow">if</span> (conv_pd.dst_desc() != user_dst.<a class="code" href="structdnnl_1_1memory.html#a6bfc99db50d87d133c6b3b4f438b967a">get_desc</a>()) {</div>
 <div class="line">        <span class="keyword">auto</span> r_pd = <a class="code" href="structdnnl_1_1reorder_1_1primitive__desc.html">reorder::primitive_desc</a>(conv_dst, user_dst);</div>
-<div class="line">        <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(r_pd).<a class="code" href="structdnnl_1_1reorder.html#a8336412c960a254fdb808c6b167d6d93">execute</a>(s, conv_dst, user_dst);</div>
+<div class="line">        <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(r_pd).<a class="code" href="structdnnl_1_1reorder.html#a0d551b51dd0b727253be8c88bec06a08">execute</a>(s, conv_dst, user_dst);</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[]) {</div>
+<div class="line"><span class="keywordtype">void</span> performance_profiling(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv) {</div>
 <div class="line">    <span class="comment">// Initialize engine</span></div>
 <div class="line">    <a class="code" href="structdnnl_1_1engine.html#a2635da16314dcbdb9bd9ea431316bb1a">engine::kind</a> engine_kind = parse_engine_kind(argc, argv, 1);</div>
 <div class="line">    <a class="code" href="structdnnl_1_1engine.html">engine</a> eng(engine_kind, 0);</div>
@@ -336,10 +338,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <a class="code" href="structdnnl_1_1stream.html">stream</a> s(eng);</div>
 <div class="line">    <span class="comment">// [Set dimensions]</span></div>
 <div class="line">    <span class="comment">// set dimensions for synthetic data and weights</span></div>
-<div class="line">    <span class="keyword">const</span> memory::dim BATCH = 1000;</div>
-<div class="line">    <span class="keyword">const</span> memory::dim IC = 3, OC = 96;</div>
-<div class="line">    <span class="keyword">const</span> memory::dim IH = 227, KH = 11, OH = 55;</div>
-<div class="line">    <span class="keyword">const</span> memory::dim IW = 227, KW = 11, OW = 55;</div>
+<div class="line">    <span class="keyword">const</span> <a class="code" href="structdnnl_1_1memory.html#a6ad818e4699872cc913474fa5f122cd5">memory::dim</a> BATCH = 1000;</div>
+<div class="line">    <span class="keyword">const</span> <a class="code" href="structdnnl_1_1memory.html#a6ad818e4699872cc913474fa5f122cd5">memory::dim</a> IC = 3, OC = 96;</div>
+<div class="line">    <span class="keyword">const</span> <a class="code" href="structdnnl_1_1memory.html#a6ad818e4699872cc913474fa5f122cd5">memory::dim</a> IH = 227, KH = 11, OH = 55;</div>
+<div class="line">    <span class="keyword">const</span> <a class="code" href="structdnnl_1_1memory.html#a6ad818e4699872cc913474fa5f122cd5">memory::dim</a> IW = 227, KW = 11, OW = 55;</div>
 <div class="line">    <span class="comment">// [Set dimensions]</span></div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// [Create memory objects]</span></div>
@@ -378,7 +380,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot; - validation: runs all implementations\n\n&quot;</span>;</div>
 <div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;Validation will run if no parameters are specified\n\n&quot;</span>;</div>
 <div class="line"></div>
-<div class="line">        <span class="keywordflow">return</span> -1;</div>
+<div class="line">        <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Incorrect input arguments.&quot;</span>);</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (implementation == <span class="stringliteral">&quot;naive&quot;</span> || implementation == <span class="stringliteral">&quot;validation&quot;</span>) {</div>
@@ -401,8 +403,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">        conv_relu_fused(user_src, user_wei, user_dst, eng, s);</div>
 <div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;conv + relu w/ fusing completed\n&quot;</span>;</div>
 <div class="line">    }</div>
+<div class="line">}</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv) {</div>
+<div class="line">    <span class="keywordflow">return</span> handle_example_errors(performance_profiling, argc, argv);</div>
 <div class="line">}</div>
 </div><!-- fragment --> </div><!-- contents -->
 <div class="footer">

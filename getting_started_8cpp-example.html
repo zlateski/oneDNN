@@ -102,10 +102,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line"><span class="preprocessor">#include &lt;cmath&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;numeric&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;sstream&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="dnnl_8hpp.html">dnnl.hpp</a>&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="dnnl__debug_8h.html">dnnl_debug.h</a>&quot;</span></div>
+<div class="line"></div>
 <div class="line"><span class="preprocessor">#include &quot;example_utils.hpp&quot;</span></div>
 <div class="line"></div>
 <div class="line"><span class="keyword">using namespace </span>dnnl;</div>
@@ -173,7 +175,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line">    <span class="comment">// Sanity check: the memory descriptors should be the same</span></div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1a90a729e395453e1d9411ad416c796819">src_md</a> != alt_src_md)</div>
-<div class="line">        <span class="keywordflow">throw</span> std::string(<span class="stringliteral">&quot;memory descriptor initialization mismatch&quot;</span>);</div>
+<div class="line">        <span class="keywordflow">throw</span> std::logic_error(<span class="stringliteral">&quot;Memory descriptor initialization mismatch.&quot;</span>);</div>
 <div class="line">    <span class="comment">// [Init alt_src_md]</span></div>
 <div class="line"></div>
 <div class="line"></div>
@@ -246,12 +248,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">                            ? 0.f</div>
 <div class="line">                            : image[off]; <span class="comment">// expected value</span></div>
 <div class="line">                    <span class="keywordflow">if</span> (relu_image[off] != expected) {</div>
-<div class="line">                        std::stringstream ss;</div>
-<div class="line">                        ss &lt;&lt; <span class="stringliteral">&quot;Unexpected output at index(&quot;</span> &lt;&lt; n &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; c</div>
-<div class="line">                           &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; h &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; w &lt;&lt; <span class="stringliteral">&quot;): &quot;</span></div>
-<div class="line">                           &lt;&lt; <span class="stringliteral">&quot;Expect &quot;</span> &lt;&lt; expected &lt;&lt; <span class="stringliteral">&quot; &quot;</span></div>
-<div class="line">                           &lt;&lt; <span class="stringliteral">&quot;Got &quot;</span> &lt;&lt; relu_image[off];</div>
-<div class="line">                        <span class="keywordflow">throw</span> ss.str();</div>
+<div class="line">                        std::cout &lt;&lt; <span class="stringliteral">&quot;At index(&quot;</span> &lt;&lt; n &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; c &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; h</div>
+<div class="line">                                  &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; w &lt;&lt; <span class="stringliteral">&quot;) expect &quot;</span> &lt;&lt; expected</div>
+<div class="line">                                  &lt;&lt; <span class="stringliteral">&quot; but got &quot;</span> &lt;&lt; relu_image[off]</div>
+<div class="line">                                  &lt;&lt; std::endl;</div>
+<div class="line">                        <span class="keywordflow">throw</span> std::logic_error(<span class="stringliteral">&quot;Accuracy check failed.&quot;</span>);</div>
 <div class="line">                    }</div>
 <div class="line">                }</div>
 <div class="line">    <span class="comment">// [Check the results]</span></div>
@@ -259,20 +260,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line"><span class="comment">// [Main]</span></div>
 <div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv) {</div>
+<div class="line">    <span class="keywordtype">int</span> exit_code = 0;</div>
+<div class="line"></div>
 <div class="line">    <span class="keywordflow">try</span> {</div>
 <div class="line">        <a class="code" href="structdnnl_1_1engine.html#a2635da16314dcbdb9bd9ea431316bb1a">engine::kind</a> engine_kind = parse_engine_kind(argc, argv);</div>
 <div class="line">        getting_started_tutorial(engine_kind);</div>
-<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;Example passes&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">    } <span class="keywordflow">catch</span> (<a name="_a13"></a><a class="code" href="structdnnl_1_1error.html">dnnl::error</a> &amp;e) {</div>
-<div class="line">        std::cerr &lt;&lt; <span class="stringliteral">&quot;DNNL error: &quot;</span> &lt;&lt; e.<a name="a14"></a><a class="code" href="structdnnl_1_1error.html#adfc1a2bf4e31aa1751b38e8e1dbcba2b">what</a>() &lt;&lt; std::endl</div>
-<div class="line">                  &lt;&lt; <span class="stringliteral">&quot;Error status: &quot;</span> &lt;&lt; dnnl_status2str(e.<a name="a15"></a>status) &lt;&lt; std::endl;</div>
-<div class="line">        <span class="keywordflow">return</span> 1;</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;DNNL error caught: &quot;</span> &lt;&lt; std::endl</div>
+<div class="line">                  &lt;&lt; <span class="stringliteral">&quot;\tStatus: &quot;</span> &lt;&lt; dnnl_status2str(e.<a name="a14"></a>status) &lt;&lt; std::endl</div>
+<div class="line">                  &lt;&lt; <span class="stringliteral">&quot;\tMessage: &quot;</span> &lt;&lt; e.<a name="a15"></a><a class="code" href="structdnnl_1_1error.html#adfc1a2bf4e31aa1751b38e8e1dbcba2b">what</a>() &lt;&lt; std::endl;</div>
+<div class="line">        exit_code = 1;</div>
 <div class="line">    } <span class="keywordflow">catch</span> (std::string &amp;e) {</div>
-<div class="line">        std::cerr &lt;&lt; <span class="stringliteral">&quot;Error in the example: &quot;</span> &lt;&lt; e &lt;&lt; std::endl;</div>
-<div class="line">        <span class="keywordflow">return</span> 2;</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;Error in the example: &quot;</span> &lt;&lt; e &lt;&lt; std::endl;</div>
+<div class="line">        exit_code = 2;</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Example &quot;</span> &lt;&lt; (exit_code ? <span class="stringliteral">&quot;failed&quot;</span> : <span class="stringliteral">&quot;passed&quot;</span>) &lt;&lt; std::endl;</div>
+<div class="line">    <span class="keywordflow">return</span> exit_code;</div>
 <div class="line">}</div>
 <div class="line"><span class="comment">// [Main]</span></div>
 <div class="line"></div>

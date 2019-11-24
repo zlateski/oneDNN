@@ -105,9 +105,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a5ab2f059a14d0007df0ce378ca5d8ae3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1error.html#a5ab2f059a14d0007df0ce378ca5d8ae3">error</a> (<a class="el" href="group__c__api__types__generic.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> astatus, const char *amessage)</td></tr>
-<tr class="memdesc:a5ab2f059a14d0007df0ce378ca5d8ae3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an error instance.  <a href="#a5ab2f059a14d0007df0ce378ca5d8ae3">More...</a><br/></td></tr>
-<tr class="separator:a5ab2f059a14d0007df0ce378ca5d8ae3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67984998eff9083077daf1cd1a1acb01"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1error.html#a67984998eff9083077daf1cd1a1acb01">error</a> (<a class="el" href="group__c__api__types__generic.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> <a class="el" href="group__cpp__api__service.html#ga7acc4d3516304ae68a1289551d8f2cdd">status</a>, const char *message)</td></tr>
+<tr class="memdesc:a67984998eff9083077daf1cd1a1acb01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an instance of an exception class.  <a href="#a67984998eff9083077daf1cd1a1acb01">More...</a><br/></td></tr>
+<tr class="separator:a67984998eff9083077daf1cd1a1acb01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adfc1a2bf4e31aa1751b38e8e1dbcba2b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adfc1a2bf4e31aa1751b38e8e1dbcba2b"></a>
 const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1error.html#adfc1a2bf4e31aa1751b38e8e1dbcba2b">what</a> () const noexceptoverride</td></tr>
 <tr class="memdesc:adfc1a2bf4e31aa1751b38e8e1dbcba2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the explanatory string. <br/></td></tr>
@@ -116,15 +116,15 @@ const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a9d91127d0524c0b7ac1ae4ba4c79d0af"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1error.html#a9d91127d0524c0b7ac1ae4ba4c79d0af">wrap_c_api</a> (<a class="el" href="group__c__api__types__generic.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> <a class="el" href="group__cpp__api__service.html#ga7acc4d3516304ae68a1289551d8f2cdd">status</a>, const char *message)</td></tr>
-<tr class="memdesc:a9d91127d0524c0b7ac1ae4ba4c79d0af"><td class="mdescLeft">&#160;</td><td class="mdescRight">A convenience function for wrapping calls to the C API.  <a href="#a9d91127d0524c0b7ac1ae4ba4c79d0af">More...</a><br/></td></tr>
+<tr class="memdesc:a9d91127d0524c0b7ac1ae4ba4c79d0af"><td class="mdescLeft">&#160;</td><td class="mdescRight">A convenience function for wrapping calls to C API functions.  <a href="#a9d91127d0524c0b7ac1ae4ba4c79d0af">More...</a><br/></td></tr>
 <tr class="separator:a9d91127d0524c0b7ac1ae4ba4c79d0af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>DNNL exception class. </p>
-<p>This class captures the status returned by the failed C API function, error message, and, optionally, handle of the primitive that caused the error. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cnn_inference_f32_8cpp-example.html#_a28">cnn_inference_f32.cpp</a>, <a class="el" href="cnn_inference_int8_8cpp-example.html#_a16">cnn_inference_int8.cpp</a>, <a class="el" href="cnn_training_f32_8cpp-example.html#_a35">cnn_training_f32.cpp</a>, <a class="el" href="cpu_cnn_training_bf16_8cpp-example.html#_a37">cpu_cnn_training_bf16.cpp</a>, <a class="el" href="cpu_inference_int8_matmul_8cpp-example.html#_a25">cpu_inference_int8_matmul.cpp</a>, <a class="el" href="cpu_matmul_quantization_8cpp-example.html#_a25">cpu_matmul_quantization.cpp</a>, <a class="el" href="cpu_rnn_inference_f32_8cpp-example.html#_a23">cpu_rnn_inference_f32.cpp</a>, <a class="el" href="cpu_rnn_inference_int8_8cpp-example.html#_a15">cpu_rnn_inference_int8.cpp</a>, <a class="el" href="cpu_sgemm_and_matmul_8cpp-example.html#_a20">cpu_sgemm_and_matmul.cpp</a>, <a class="el" href="cross_engine_reorder_8cpp-example.html#_a14">cross_engine_reorder.cpp</a>, <a class="el" href="getting_started_8cpp-example.html#_a13">getting_started.cpp</a>, <a class="el" href="gpu_opencl_interop_8cpp-example.html#_a13">gpu_opencl_interop.cpp</a>, <a class="el" href="memory_format_propagation_8cpp-example.html#_a20">memory_format_propagation.cpp</a>, and <a class="el" href="rnn_training_f32_8cpp-example.html#_a22">rnn_training_f32.cpp</a>.</dd>
+<p>This class captures the status returned by a failed C API function and the error message from the call site. </p>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cnn_inference_int8_8cpp-example.html#_a17">cnn_inference_int8.cpp</a>, <a class="el" href="cpu_cnn_training_bf16_8cpp-example.html#_a12">cpu_cnn_training_bf16.cpp</a>, and <a class="el" href="getting_started_8cpp-example.html#_a13">getting_started.cpp</a>.</dd>
 </dl></div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a5ab2f059a14d0007df0ce378ca5d8ae3"></a>
+<a class="anchor" id="a67984998eff9083077daf1cd1a1acb01"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -135,13 +135,13 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">dnnl::error::error </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__c__api__types__generic.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a>&#160;</td>
-          <td class="paramname"><em>astatus</em>, </td>
+          <td class="paramname"><em>status</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>amessage</em>&#160;</td>
+          <td class="paramname"><em>message</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -156,11 +156,11 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Constructs an error instance. </p>
+<p>Constructs an instance of an exception class. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">astatus</td><td>The error status returned by the C API. </td></tr>
-    <tr><td class="paramname">amessage</td><td>The error message. </td></tr>
+    <tr><td class="paramname">status</td><td>The error status returned by a C API function. </td></tr>
+    <tr><td class="paramname">message</td><td>The error message. </td></tr>
   </table>
   </dd>
 </dl>
@@ -200,11 +200,11 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>A convenience function for wrapping calls to the C API. </p>
-<p>Checks the return status and throws an <a class="el" href="structdnnl_1_1error.html#a5ab2f059a14d0007df0ce378ca5d8ae3" title="Constructs an error instance. ">error</a> in case of failure.</p>
+<p>A convenience function for wrapping calls to C API functions. </p>
+<p>Checks the return status and throws an <a class="el" href="structdnnl_1_1error.html" title="DNNL exception class. ">dnnl::error</a> in case of failure.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">status</td><td>The error status returned by the C API. </td></tr>
+    <tr><td class="paramname">status</td><td>The error status returned by a C API function. </td></tr>
     <tr><td class="paramname">message</td><td>The error message. </td></tr>
   </table>
   </dd>

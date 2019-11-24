@@ -95,7 +95,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>Descriptor for convolution backward propagation.  
+<p>Descriptor for a convolution backward propagation primitive.  
  <a href="structdnnl_1_1convolution__backward__data_1_1desc.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="dnnl_8hpp_source.html">dnnl.hpp</a>&gt;</code></p>
@@ -109,17 +109,17 @@ Collaboration diagram for dnnl::convolution_backward_data::desc:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa190da119ae1cdddef55031dd0a15b6a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1convolution__backward__data_1_1desc.html#aa190da119ae1cdddef55031dd0a15b6a">desc</a> (<a class="el" href="group__cpp__api__enums.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a> aalgorithm, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_src_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;weights_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_dst_desc, const memory::dims &amp;strides, const memory::dims &amp;padding_l, const memory::dims &amp;padding_r)</td></tr>
-<tr class="memdesc:aa190da119ae1cdddef55031dd0a15b6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a descriptor for convolution backward propagation using <code>aalgorithm</code>, memory descriptors, <code>strides</code>, <code>padding_l</code>, and <code>padding_r</code>.  <a href="#aa190da119ae1cdddef55031dd0a15b6a">More...</a><br/></td></tr>
-<tr class="separator:aa190da119ae1cdddef55031dd0a15b6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0adb7b6460276ba755fbd4a32381a70f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1convolution__backward__data_1_1desc.html#a0adb7b6460276ba755fbd4a32381a70f">desc</a> (<a class="el" href="group__cpp__api__enums.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a> aalgorithm, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_src_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;weights_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_dst_desc, const memory::dims &amp;strides, const memory::dims &amp;dilates, const memory::dims &amp;padding_l, const memory::dims &amp;padding_r)</td></tr>
-<tr class="memdesc:a0adb7b6460276ba755fbd4a32381a70f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a descriptor for dilated convolution backward propagation using <code>aalgorithm</code>, memory descriptors, <code>strides</code>, <code>padding_l</code>, and <code>padding_r</code>.  <a href="#a0adb7b6460276ba755fbd4a32381a70f">More...</a><br/></td></tr>
-<tr class="separator:a0adb7b6460276ba755fbd4a32381a70f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f55ca554fa4c9497d37234e5f1949b5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1convolution__backward__data_1_1desc.html#a5f55ca554fa4c9497d37234e5f1949b5">desc</a> (<a class="el" href="group__cpp__api__enums.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a> <a class="el" href="group__cpp__api__enums.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a>, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_src_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;weights_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_dst_desc, const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;strides, const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;padding_l, const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;padding_r)</td></tr>
+<tr class="memdesc:a5f55ca554fa4c9497d37234e5f1949b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a descriptor for a convolution backward propagation primitive using <code>algorithm</code>, memory descriptors, <code>strides</code>, <code>padding_l</code>, and <code>padding_r</code>.  <a href="#a5f55ca554fa4c9497d37234e5f1949b5">More...</a><br/></td></tr>
+<tr class="separator:a5f55ca554fa4c9497d37234e5f1949b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82d0678627480f7a355ba00498a492c1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1convolution__backward__data_1_1desc.html#a82d0678627480f7a355ba00498a492c1">desc</a> (<a class="el" href="group__cpp__api__enums.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a> <a class="el" href="group__cpp__api__enums.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a>, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_src_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;weights_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_dst_desc, const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;strides, const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;dilates, const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;padding_l, const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;padding_r)</td></tr>
+<tr class="memdesc:a82d0678627480f7a355ba00498a492c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a descriptor for dilated convolution backward propagation using <code>algorithm</code>, memory descriptors, <code>strides</code>, <code>dilates</code>, <code>padding_l</code>, and <code>padding_r</code>.  <a href="#a82d0678627480f7a355ba00498a492c1">More...</a><br/></td></tr>
+<tr class="separator:a82d0678627480f7a355ba00498a492c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Descriptor for convolution backward propagation. </p>
+<div class="textblock"><p>Descriptor for a convolution backward propagation primitive. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="aa190da119ae1cdddef55031dd0a15b6a"></a>
+<a class="anchor" id="a5f55ca554fa4c9497d37234e5f1949b5"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -130,7 +130,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">dnnl::convolution_backward_data::desc::desc </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__cpp__api__enums.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a>&#160;</td>
-          <td class="paramname"><em>aalgorithm</em>, </td>
+          <td class="paramname"><em>algorithm</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -153,19 +153,19 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const memory::dims &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;&#160;</td>
           <td class="paramname"><em>strides</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const memory::dims &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;&#160;</td>
           <td class="paramname"><em>padding_l</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const memory::dims &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;&#160;</td>
           <td class="paramname"><em>padding_r</em>&#160;</td>
         </tr>
         <tr>
@@ -181,12 +181,12 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Initializes a descriptor for convolution backward propagation using <code>aalgorithm</code>, memory descriptors, <code>strides</code>, <code>padding_l</code>, and <code>padding_r</code>. </p>
-<dl class="section note"><dt>Note</dt><dd>Memory descriptors are allowed to be initialized with <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> value of <code>format_kind</code>. </dd></dl>
+<p>Constructs a descriptor for a convolution backward propagation primitive using <code>algorithm</code>, memory descriptors, <code>strides</code>, <code>padding_l</code>, and <code>padding_r</code>. </p>
+<dl class="section note"><dt>Note</dt><dd>Memory descriptors are allowed to be initialized with <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> value of <code>format_tag</code>. </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a0adb7b6460276ba755fbd4a32381a70f"></a>
+<a class="anchor" id="a82d0678627480f7a355ba00498a492c1"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -197,7 +197,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">dnnl::convolution_backward_data::desc::desc </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__cpp__api__enums.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a>&#160;</td>
-          <td class="paramname"><em>aalgorithm</em>, </td>
+          <td class="paramname"><em>algorithm</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -220,25 +220,25 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const memory::dims &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;&#160;</td>
           <td class="paramname"><em>strides</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const memory::dims &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;&#160;</td>
           <td class="paramname"><em>dilates</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const memory::dims &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;&#160;</td>
           <td class="paramname"><em>padding_l</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const memory::dims &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;&#160;</td>
           <td class="paramname"><em>padding_r</em>&#160;</td>
         </tr>
         <tr>
@@ -254,8 +254,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Initializes a descriptor for dilated convolution backward propagation using <code>aalgorithm</code>, memory descriptors, <code>strides</code>, <code>padding_l</code>, and <code>padding_r</code>. </p>
-<dl class="section note"><dt>Note</dt><dd>Memory descriptors are allowed to be initialized with <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> value of <code>format_kind</code>. </dd></dl>
+<p>Constructs a descriptor for dilated convolution backward propagation using <code>algorithm</code>, memory descriptors, <code>strides</code>, <code>dilates</code>, <code>padding_l</code>, and <code>padding_r</code>. </p>
+<dl class="section note"><dt>Note</dt><dd>Memory descriptors are allowed to be initialized with <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> value of <code>format_tag</code>. </dd></dl>
 
 </div>
 </div>

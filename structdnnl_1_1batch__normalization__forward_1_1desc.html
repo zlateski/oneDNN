@@ -95,7 +95,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>Descriptor for batch normalization forward propagation.  
+<p>Descriptor for a batch normalization forward propagation primitive.  
  <a href="structdnnl_1_1batch__normalization__forward_1_1desc.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="dnnl_8hpp_source.html">dnnl.hpp</a>&gt;</code></p>
@@ -109,14 +109,14 @@ Collaboration diagram for dnnl::batch_normalization_forward::desc:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:abb3cbd4239c50319cc24d3770bf6d8e5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1batch__normalization__forward_1_1desc.html#abb3cbd4239c50319cc24d3770bf6d8e5">desc</a> (<a class="el" href="group__cpp__api__enums.html#gac7db48f6583aa9903e54c2a39d65438f">prop_kind</a> aprop_kind, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;src_desc, float epsilon, <a class="el" href="group__cpp__api__enums.html#gad8ef0fcbb7b10cae3d67dd46892002be">normalization_flags</a> flags)</td></tr>
-<tr class="memdesc:abb3cbd4239c50319cc24d3770bf6d8e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a batch normalization descriptor for forward propagation using <code>prop_kind</code> (possible values are <a class="el" href="group__cpp__api__enums.html#ggac7db48f6583aa9903e54c2a39d65438fa24775787fab8f13aa4809e1ce8f82aeb" title="Forward data propagation (training mode). ">dnnl::forward_training</a> and <a class="el" href="group__cpp__api__enums.html#ggac7db48f6583aa9903e54c2a39d65438fa3b9fad4f80d45368f856b5403198ac4c" title="Forward data propagation (inference mode). ">dnnl::forward_inference</a>), memory descriptor <code>data_desc</code>, normalization parameter <code>epsilon</code>, and <code>flags</code> set using bit flags of type <a class="el" href="structdnnl__batch__normalization__desc__t.html" title="A descriptor of a Batch Normalization operation. ">dnnl_batch_normalization_desc_t</a>.  <a href="#abb3cbd4239c50319cc24d3770bf6d8e5">More...</a><br/></td></tr>
-<tr class="separator:abb3cbd4239c50319cc24d3770bf6d8e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f01cead9bbddce6009897b7368580b6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1batch__normalization__forward_1_1desc.html#a8f01cead9bbddce6009897b7368580b6">desc</a> (<a class="el" href="group__cpp__api__enums.html#gac7db48f6583aa9903e54c2a39d65438f">prop_kind</a> <a class="el" href="group__cpp__api__enums.html#gac7db48f6583aa9903e54c2a39d65438f">prop_kind</a>, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;src_desc, float epsilon, <a class="el" href="group__cpp__api__enums.html#gad8ef0fcbb7b10cae3d67dd46892002be">normalization_flags</a> flags)</td></tr>
+<tr class="memdesc:a8f01cead9bbddce6009897b7368580b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a batch normalization descriptor for forward propagation using <code>prop_kind</code> (acceptable values are <a class="el" href="group__cpp__api__enums.html#ggac7db48f6583aa9903e54c2a39d65438fa24775787fab8f13aa4809e1ce8f82aeb" title="Forward data propagation (training mode). ">dnnl::forward_training</a> and <a class="el" href="group__cpp__api__enums.html#ggac7db48f6583aa9903e54c2a39d65438fa3b9fad4f80d45368f856b5403198ac4c" title="Forward data propagation (inference mode). ">dnnl::forward_inference</a>), memory descriptor <code>data_desc</code>, normalization parameter <code>epsilon</code>, and flags set using bit <code>flags</code>.  <a href="#a8f01cead9bbddce6009897b7368580b6">More...</a><br/></td></tr>
+<tr class="separator:a8f01cead9bbddce6009897b7368580b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Descriptor for batch normalization forward propagation. </p>
+<div class="textblock"><p>Descriptor for a batch normalization forward propagation primitive. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="abb3cbd4239c50319cc24d3770bf6d8e5"></a>
+<a class="anchor" id="a8f01cead9bbddce6009897b7368580b6"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -127,7 +127,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">dnnl::batch_normalization_forward::desc::desc </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__cpp__api__enums.html#gac7db48f6583aa9903e54c2a39d65438f">prop_kind</a>&#160;</td>
-          <td class="paramname"><em>aprop_kind</em>, </td>
+          <td class="paramname"><em>prop_kind</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -160,8 +160,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Initializes a batch normalization descriptor for forward propagation using <code>prop_kind</code> (possible values are <a class="el" href="group__cpp__api__enums.html#ggac7db48f6583aa9903e54c2a39d65438fa24775787fab8f13aa4809e1ce8f82aeb" title="Forward data propagation (training mode). ">dnnl::forward_training</a> and <a class="el" href="group__cpp__api__enums.html#ggac7db48f6583aa9903e54c2a39d65438fa3b9fad4f80d45368f856b5403198ac4c" title="Forward data propagation (inference mode). ">dnnl::forward_inference</a>), memory descriptor <code>data_desc</code>, normalization parameter <code>epsilon</code>, and <code>flags</code> set using bit flags of type <a class="el" href="structdnnl__batch__normalization__desc__t.html" title="A descriptor of a Batch Normalization operation. ">dnnl_batch_normalization_desc_t</a>. </p>
-<dl class="section note"><dt>Note</dt><dd>In-place operation is supported; that is, dst points to the same memory as src. </dd></dl>
+<p>Constructs a batch normalization descriptor for forward propagation using <code>prop_kind</code> (acceptable values are <a class="el" href="group__cpp__api__enums.html#ggac7db48f6583aa9903e54c2a39d65438fa24775787fab8f13aa4809e1ce8f82aeb" title="Forward data propagation (training mode). ">dnnl::forward_training</a> and <a class="el" href="group__cpp__api__enums.html#ggac7db48f6583aa9903e54c2a39d65438fa3b9fad4f80d45368f856b5403198ac4c" title="Forward data propagation (inference mode). ">dnnl::forward_inference</a>), memory descriptor <code>data_desc</code>, normalization parameter <code>epsilon</code>, and flags set using bit <code>flags</code>. </p>
 
 </div>
 </div>

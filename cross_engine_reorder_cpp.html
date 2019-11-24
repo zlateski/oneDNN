@@ -160,31 +160,10 @@ Executing all primitives</h2>
 </div><!-- fragment --><h2><a class="anchor" id="cross_engine_reorder_cpp_sub6"></a>
 Validate the result</h2>
 <p>Now that we have the computed the result on CPU memory, let's validate that it is actually correct.</p>
-<div class="fragment"><div class="line">    <span class="keywordflow">if</span> (find_negative(m_cpu, tz) != 0) {</div>
-<div class="line">        std::stringstream ss;</div>
-<div class="line">        ss &lt;&lt; <span class="stringliteral">&quot;Unexpected output, find a negative value after the ReLU &quot;</span></div>
-<div class="line">              <span class="stringliteral">&quot;execution&quot;</span>;</div>
-<div class="line">        <span class="keywordflow">throw</span> ss.str();</div>
-<div class="line">    }</div>
-</div><!-- fragment --> <h1><a class="anchor" id="cross_engine_reorder_cpp_main"></a>
-main() function</h1>
-<p>We now just call everything we prepared earlier.</p>
-<p>Since we are using the DNNL C++ API, we use exceptions to handle errors (see <a class="el" href="dev_guide_c_and_cpp_apis.html">C and C++ APIs</a>). The DNNL C++ API throws exceptions of type <a class="el" href="structdnnl_1_1error.html">dnnl::error</a>, which contains the error status (of type <a class="el" href="group__c__api__types__generic.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a>) and a human-readable error message accessible through regular <code>what()</code> method. </p>
-<div class="fragment"><div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv) {</div>
-<div class="line">    <span class="keywordflow">try</span> {</div>
-<div class="line">        cross_engine_reorder_tutorial();</div>
-<div class="line">    } <span class="keywordflow">catch</span> (<a class="code" href="structdnnl_1_1error.html">dnnl::error</a> &amp;e) {</div>
-<div class="line">        std::cerr &lt;&lt; <span class="stringliteral">&quot;DNNL error: &quot;</span> &lt;&lt; e.<a class="code" href="structdnnl_1_1error.html#adfc1a2bf4e31aa1751b38e8e1dbcba2b">what</a>() &lt;&lt; std::endl</div>
-<div class="line">                  &lt;&lt; <span class="stringliteral">&quot;Error status: &quot;</span> &lt;&lt; dnnl_status2str(e.status) &lt;&lt; std::endl;</div>
-<div class="line">        <span class="keywordflow">return</span> 1;</div>
-<div class="line">    } <span class="keywordflow">catch</span> (std::string &amp;e) {</div>
-<div class="line">        std::cerr &lt;&lt; <span class="stringliteral">&quot;Error in the example: &quot;</span> &lt;&lt; e &lt;&lt; std::endl;</div>
-<div class="line">        <span class="keywordflow">return</span> 2;</div>
-<div class="line">    }</div>
-<div class="line"></div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Example passes&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line">    <span class="keywordflow">return</span> 0;</div>
-<div class="line">}</div>
+<div class="fragment"><div class="line">    <span class="keywordflow">if</span> (find_negative(m_cpu, tz) != 0)</div>
+<div class="line">        <span class="keywordflow">throw</span> std::logic_error(</div>
+<div class="line">                <span class="stringliteral">&quot;Unexpected output, find a negative value after the ReLU &quot;</span></div>
+<div class="line">                <span class="stringliteral">&quot;execution.&quot;</span>);</div>
 </div><!-- fragment --><p> <b></b></p>
 <p>Upon compiling and running the example, the output should be just:</p>
 <div class="fragment"><div class="line">Example passes</div>

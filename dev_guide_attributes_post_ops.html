@@ -90,7 +90,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr>
 <td align="left"><a class="el" href="dev_guide_attributes_post_ops.html#dev_guide_attributes_post_ops_sum">Sum</a> </td><td align="left">Partial </td><td align="left">N/A </td><td align="left">N/A </td></tr>
 </table>
-<p>Just like <a class="el" href="dev_guide_attributes.html">Primitive Attributes</a>, the post-ops are represented by an opaque structure (<a class="el" href="group__c__api__primitive__attr.html#ga7d715ce1a81606584df9dcf045976401">dnnl_post_ops_t</a> in C API and <a class="el" href="structdnnl_1_1post__ops.html">dnnl::post_ops</a> in C++ API) which is copied once it is attached to the attributes using C++ <a class="el" href="structdnnl_1_1primitive__attr.html#a7bf5358e35bf0e99019db45ae8fad0b5">dnnl::primitive_attr::set_post_ops</a> or C <a class="el" href="group__c__api__attributes.html#ga7045d42606599f156bfca69820c21ea2">dnnl_primitive_attr_set_post_ops</a> functions. These attributes then are passed to a primitive descriptor creation function to take effect. Below is a simple skeleton for C++ API:</p>
+<p>Just like <a class="el" href="dev_guide_attributes.html">Primitive Attributes</a>, the post-ops are represented by an opaque structure (<a class="el" href="group__c__api__primitive__attr.html#ga7d715ce1a81606584df9dcf045976401">dnnl_post_ops_t</a> in C API and <a class="el" href="structdnnl_1_1post__ops.html">dnnl::post_ops</a> in C++ API) which is copied once it is attached to the attributes using C++ <a class="el" href="structdnnl_1_1primitive__attr.html#ac830fa9f4fcf480b494d73153ad579bf">dnnl::primitive_attr::set_post_ops</a> or C <a class="el" href="group__c__api__attributes.html#ga7045d42606599f156bfca69820c21ea2">dnnl_primitive_attr_set_post_ops</a> functions. These attributes then are passed to a primitive descriptor creation function to take effect. Below is a simple skeleton for C++ API:</p>
 <div class="fragment"><div class="line"><a class="code" href="structdnnl_1_1post__ops.html">dnnl::post_ops</a> po; <span class="comment">// default empty post-ops</span></div>
 <div class="line">assert(po.<a class="code" href="structdnnl_1_1post__ops.html#a26d76d6a99c01b33eee312d1491c1d4e">len</a>() == 0); <span class="comment">// no post-ops attached</span></div>
 <div class="line"></div>
@@ -101,7 +101,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">assert(po.<a class="code" href="structdnnl_1_1post__ops.html#a26d76d6a99c01b33eee312d1491c1d4e">len</a>() == 2);</div>
 <div class="line"></div>
 <div class="line"><a class="code" href="structdnnl_1_1primitive__attr.html">dnnl::primitive_attr</a> attr; <span class="comment">// default attributes</span></div>
-<div class="line">attr.<a class="code" href="structdnnl_1_1primitive__attr.html#a7bf5358e35bf0e99019db45ae8fad0b5">set_post_ops</a>(po); <span class="comment">// attach the post-ops to the attr</span></div>
+<div class="line">attr.<a class="code" href="structdnnl_1_1primitive__attr.html#ac830fa9f4fcf480b494d73153ad579bf">set_post_ops</a>(po); <span class="comment">// attach the post-ops to the attr</span></div>
 <div class="line"></div>
 <div class="line"><span class="comment">// further po changes would not affect attr</span></div>
 <div class="line"></div>
@@ -117,10 +117,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>API:</p>
 <ul>
 <li>C: <a class="el" href="group__c__api__attributes__post__ops.html#ga3f4e1e6923df257def1b8b38113bced5">dnnl_post_ops_append_eltwise</a></li>
-<li>C++: <a class="el" href="structdnnl_1_1post__ops.html#a9cc93664cc11d2cd4c900f172be5703f">dnnl::post_ops::append_eltwise</a></li>
+<li>C++: <a class="el" href="structdnnl_1_1post__ops.html#a66606f08467b19091e696b52a2f789e6">dnnl::post_ops::append_eltwise</a></li>
 </ul>
 <p>The parameters (C++ API for simplicity): </p>
-<div class="fragment"><div class="line"><span class="keywordtype">void</span> <a class="code" href="structdnnl_1_1post__ops.html#a9cc93664cc11d2cd4c900f172be5703f">dnnl::post_ops::append_eltwise</a>(</div>
+<div class="fragment"><div class="line"><span class="keywordtype">void</span> <a class="code" href="structdnnl_1_1post__ops.html#a66606f08467b19091e696b52a2f789e6">dnnl::post_ops::append_eltwise</a>(</div>
 <div class="line">        <span class="keywordtype">float</span> scale, <span class="comment">// scaling factor (described below)</span></div>
 <div class="line">        <a class="code" href="group__cpp__api__enums.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a> alg, <span class="keywordtype">float</span> alpha, <span class="keywordtype">float</span> beta <span class="comment">// same as in Eltwise primitive</span></div>
 <div class="line">        );</div>
@@ -138,7 +138,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p><a class="anchor" id="dev_guide_attributes_post_ops_sum"></a></p>
 <h3>Sum Post-op</h3>
 <p>Appends an accumulation (sum) post-op. Prior to accumulating the result, the previous value would be multiplied by scale.</p>
-<p>The kind of this post-op is <a class="el" href="structdnnl_1_1primitive.html#ad1ec93215a0cf3aa0a32bae0c2cd9169a1d623b89683f9ce4e074de1676d12416" title="A sum primitive. ">dnnl::primitive::kind::sum</a>.</p>
+<p>The kind of this post-op is <a class="el" href="structdnnl_1_1primitive.html#ad1ec93215a0cf3aa0a32bae0c2cd9169a1d623b89683f9ce4e074de1676d12416" title="A summation primitive. ">dnnl::primitive::kind::sum</a>.</p>
 <p>This feature might improve performance for cases like residual learning blocks, where the result of a convolution is accumulated to the previously computed activations. The scale parameter can be used in <a class="el" href="dev_guide_attributes_quantization.html">INT8</a> inference only when the result and previous activations have different logical scaling factors.</p>
 <p>The sum post-op replaces </p>
 <p class="formulaDsp">
@@ -157,14 +157,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="fragment"><div class="line"><a class="code" href="structdnnl_1_1post__ops.html">dnnl::post_ops</a> po;</div>
 <div class="line">po.<a class="code" href="structdnnl_1_1post__ops.html#a078ab8ec15423d2b3d26f3619a78ca38">append_sum</a>(</div>
 <div class="line">        <span class="comment">/* scale = */</span> 1.f);</div>
-<div class="line">po.<a class="code" href="structdnnl_1_1post__ops.html#a9cc93664cc11d2cd4c900f172be5703f">append_eltwise</a>(</div>
+<div class="line">po.<a class="code" href="structdnnl_1_1post__ops.html#a66606f08467b19091e696b52a2f789e6">append_eltwise</a>(</div>
 <div class="line">        <span class="comment">/* scale     = */</span> 1.f</div>
 <div class="line">        <span class="comment">/* alg kind  = */</span> <a class="code" href="group__cpp__api__enums.html#gga00377dd4982333e42e8ae1d09a309640aba09bebb742494255b90b43871c01c69">dnnl::algorithm::eltwise_relu</a>,</div>
 <div class="line">        <span class="comment">/* neg slope = */</span> 0.f,</div>
 <div class="line">        <span class="comment">/* unused for relu */</span> 0.f);</div>
 <div class="line"></div>
 <div class="line"><a class="code" href="structdnnl_1_1primitive__attr.html">dnnl::primitive_attr</a> attr;</div>
-<div class="line">attr.<a class="code" href="structdnnl_1_1primitive__attr.html#a7bf5358e35bf0e99019db45ae8fad0b5">set_post_ops</a>(po);</div>
+<div class="line">attr.<a class="code" href="structdnnl_1_1primitive__attr.html#ac830fa9f4fcf480b494d73153ad579bf">set_post_ops</a>(po);</div>
 <div class="line"></div>
 <div class="line">convolution_forward::primitive_desc(conv_d, attr, engine);</div>
 </div><!-- fragment --><p>This will lead to the following primitive behavior:</p>
@@ -175,14 +175,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h3>Tanh -&gt; Sum -&gt; ScaleShift</h3>
 <p>The hypothetical example to illustrate the sequence of operations applied. We also set all the scales to non-one to as well as use <a class="el" href="structdnnl_1_1primitive__attr.html#a4b81acc8e48886313154f75c1708ae02">dnnl::primitive_attr::set_output_scales</a> which will be covered in <a class="el" href="dev_guide_attributes_quantization.html">Primitive Attributes: Quantization</a>. Unfortunately (or fortunately) the sequence is not supported by the library and is merely used to illustrate the semantics of post-ops.</p>
 <div class="fragment"><div class="line"><a class="code" href="structdnnl_1_1post__ops.html">dnnl::post_ops</a> po;</div>
-<div class="line">po.<a class="code" href="structdnnl_1_1post__ops.html#a9cc93664cc11d2cd4c900f172be5703f">append_eltwise</a>(</div>
+<div class="line">po.<a class="code" href="structdnnl_1_1post__ops.html#a66606f08467b19091e696b52a2f789e6">append_eltwise</a>(</div>
 <div class="line">        <span class="comment">/* scale     = */</span> s_tanh,</div>
 <div class="line">        <span class="comment">/* alg kind  = */</span> <a class="code" href="group__cpp__api__enums.html#gga00377dd4982333e42e8ae1d09a309640a38dd7159307eab45742c78e72f06abb0">dnnl::algorithm::eltwise_tanh</a>,</div>
 <div class="line">        <span class="comment">/* unused for tanh */</span> 0.f,</div>
 <div class="line">        <span class="comment">/* unused for tanh */</span> 0.f);</div>
 <div class="line">po.<a class="code" href="structdnnl_1_1post__ops.html#a078ab8ec15423d2b3d26f3619a78ca38">append_sum</a>(</div>
 <div class="line">        <span class="comment">/* scale     = */</span> s_sum);</div>
-<div class="line">po.<a class="code" href="structdnnl_1_1post__ops.html#a9cc93664cc11d2cd4c900f172be5703f">append_eltwise</a>(</div>
+<div class="line">po.<a class="code" href="structdnnl_1_1post__ops.html#a66606f08467b19091e696b52a2f789e6">append_eltwise</a>(</div>
 <div class="line">        <span class="comment">/* scale     = */</span> s_linear,</div>
 <div class="line">        <span class="comment">/* alg kind  = */</span> <a class="code" href="group__cpp__api__enums.html#gga00377dd4982333e42e8ae1d09a309640a21aba6844d2de47b92ab1d110f561945">dnnl::algorithm::eltwise_linear</a>,</div>
 <div class="line">        <span class="comment">/* scale     = */</span> alpha,</div>
@@ -190,7 +190,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line"><a class="code" href="structdnnl_1_1primitive__attr.html">dnnl::primitive_attr</a> attr;</div>
 <div class="line">attr.<a class="code" href="structdnnl_1_1primitive__attr.html#a4b81acc8e48886313154f75c1708ae02">set_output_scales</a>(0, {s_conv});</div>
-<div class="line">attr.<a class="code" href="structdnnl_1_1primitive__attr.html#a7bf5358e35bf0e99019db45ae8fad0b5">set_post_ops</a>(po);</div>
+<div class="line">attr.<a class="code" href="structdnnl_1_1primitive__attr.html#ac830fa9f4fcf480b494d73153ad579bf">set_post_ops</a>(po);</div>
 <div class="line"></div>
 <div class="line">convolution_forward::primitive_desc(conv_d, attr, engine);</div>
 </div><!-- fragment --><p>This will lead to the following primitive behavior (for better readability the tensors are designated by their names only; i.e., <code>(:)</code> is omitted):</p>

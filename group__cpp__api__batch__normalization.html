@@ -88,16 +88,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1batch__normalization__forward.html">dnnl::batch_normalization_forward</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Batch normalization for forward propagation.  <a href="structdnnl_1_1batch__normalization__forward.html#details">More...</a><br/></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Batch normalization forward propagation primitive.  <a href="structdnnl_1_1batch__normalization__forward.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1batch__normalization__backward.html">dnnl::batch_normalization_backward</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Batch normalization backward propagation.  <a href="structdnnl_1_1batch__normalization__backward.html#details">More...</a><br/></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Batch normalization backward propagation primitive.  <a href="structdnnl_1_1batch__normalization__backward.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>A primitive to perform batch normalization. </p>
-<p>Both forward and backward passes support in-place operation; that is, src and dst point to the same memory for forward pass, and diff_dst and diff_src point to the same memory for backward pass.</p>
-<p>Batch normalization supports different flavors controlled by <a class="el" href="structdnnl__batch__normalization__desc__t.html" title="A descriptor of a Batch Normalization operation. ">dnnl_batch_normalization_desc_t</a>. For example, batch normalization can compute the mean and variance on its own or take them as inputs. It can either perform scaling and shifting using gamma and beta parameters or not. Optionally, it can also perform a fused ReLU, which in case of training would also require a workspace.</p>
+<p>Both forward and backward passes support in-place operation; that is, src and dst can point to the same memory for forward propagation, and diff_dst and diff_src can point to the same memory for backward propagation.</p>
+<p>The layer normalization primitives computations can be controlled by specifying different dnnl::normalization_flags values. For example, batch normalization can compute the mean and variance on its own or take them as inputs. It can either perform scaling and shifting using gamma and beta parameters or not. Optionally, it can also perform a fused ReLU, which in case of training would also require a workspace.</p>
 <dl class="section see"><dt>See Also</dt><dd><a class="el" href="dev_guide_batch_normalization.html">Batch Normalization</a> in developer guide </dd>
 <dd>
 <a class="el" href="group__c__api__batch__normalization.html">Batch Normalization</a> in <a class="el" href="group__c__api.html">C API</a> </dd></dl>

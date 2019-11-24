@@ -108,7 +108,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr>
 <td align="left">f32 </td><td align="left">f32 </td><td align="left">f32 </td><td align="left">f32 </td></tr>
 <tr>
-<td align="left">u8, s8 </td><td align="left">s8 </td><td align="left">u8, s8, s32, f32 </td><td align="left">u8, s8, s32, f32 </td></tr>
+<td align="left">f16 </td><td align="left">f16 </td><td align="left">f16 </td><td align="left">f16 </td></tr>
+<tr>
+<td align="left">bf16 </td><td align="left">bf16 </td><td align="left">bf16 </td><td align="left">bf16, f32 </td></tr>
+<tr>
+<td align="left">u8, s8 </td><td align="left">s8, u8 </td><td align="left">u8, s8, s32, f32 </td><td align="left">u8, s8, s32, f32 </td></tr>
 </table>
 <h3>Data Representation</h3>
 <p>The MatMul primitive expects the following tensors:</p>
@@ -144,7 +148,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr>
 <td align="left">Attribute </td><td align="left"><a class="el" href="structdnnl_1_1primitive__attr.html#aee82deb014cf9702ceb3e725156c25a1">Zero points</a> </td><td align="left">Int8 computations only </td><td align="left">Sets zero point(s) for the corresponding tensors </td></tr>
 <tr>
-<td align="left">Post-op </td><td align="left"><a class="el" href="structdnnl_1_1post__ops.html#a9cc93664cc11d2cd4c900f172be5703f">Eltwise</a> </td><td align="left"></td><td align="left">Applies an <a class="el" href="group__c__api__eltwise.html">Eltwise</a> operation to the result </td></tr>
+<td align="left">Post-op </td><td align="left"><a class="el" href="structdnnl_1_1post__ops.html#a66606f08467b19091e696b52a2f789e6">Eltwise</a> </td><td align="left"></td><td align="left">Applies an <a class="el" href="group__c__api__eltwise.html">Eltwise</a> operation to the result </td></tr>
 <tr>
 <td align="left">Post-op </td><td align="left"><a class="el" href="structdnnl_1_1post__ops.html#a078ab8ec15423d2b3d26f3619a78ca38">Sum</a> </td><td align="left"></td><td align="left">Adds the operation result to the destination tensor instead of overwriting it </td></tr>
 </table>
@@ -157,7 +161,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h2>Implementation Limitations</h2>
 <ol type="1">
 <li>Check <a class="el" href="dev_guide_data_types.html">Data Types</a>.</li>
-<li>No GPU support</li>
+<li>CPU doesn't support bf16 yet nor does it support u8 data type for weights.</li>
 </ol>
 <h2>Performance Tips</h2>
 <ul>
@@ -173,7 +177,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <ul>
 <li>Create primitive once, use multiple times<ul>
 <li>Run-time tensor shapes: <a class="el" href="group__c__api__types__memory.html#gaa596c5a6102df77a550bad98f0d5cc12" title="A wildcard value for dimensions that are unknown at a primitive creation time. ">DNNL_RUNTIME_DIM_VAL</a></li>
-<li>Run-time output scales: <a class="el" href="structdnnl_1_1primitive__attr.html#a4b81acc8e48886313154f75c1708ae02" title="Sets output scales for primitive operations. ">dnnl::primitive_attr::set_output_scales()</a> and <a class="el" href="group__c__api__types__memory.html#gab16365c11b4dc88fbb453edb51f1979f" title="A wildcard value for floating point values that are unknown at a primitive creation time...">DNNL_RUNTIME_F32_VAL</a> </li>
+<li>Run-time output scales: <a class="el" href="structdnnl_1_1primitive__attr.html#a4b81acc8e48886313154f75c1708ae02" title="Sets output scale correspondence mask and values. ">dnnl::primitive_attr::set_output_scales()</a> and <a class="el" href="group__c__api__types__memory.html#gab16365c11b4dc88fbb453edb51f1979f" title="A wildcard value for floating point values that are unknown at a primitive creation time...">DNNL_RUNTIME_F32_VAL</a> </li>
 </ul>
 </li>
 </ul>
@@ -183,8 +187,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p class="endtd">Concepts:</p>
 <ul>
 <li>Asymmetric quantization<ul>
-<li>Run-time output scales: <a class="el" href="structdnnl_1_1primitive__attr.html#a4b81acc8e48886313154f75c1708ae02" title="Sets output scales for primitive operations. ">dnnl::primitive_attr::set_output_scales()</a> and <a class="el" href="group__c__api__types__memory.html#gab16365c11b4dc88fbb453edb51f1979f" title="A wildcard value for floating point values that are unknown at a primitive creation time...">DNNL_RUNTIME_F32_VAL</a></li>
-<li>Run-time zero points: <a class="el" href="structdnnl_1_1primitive__attr.html#aee82deb014cf9702ceb3e725156c25a1" title="Sets zero points for primitive operations for given memory argument arg. ">dnnl::primitive_attr::set_zero_points()</a> and <a class="el" href="group__c__api__types__memory.html#ga30139d5110e9e895ccd93fe503ca4c35" title="A wildcard value for int32_t values that are unknown at a primitive creation time. ">DNNL_RUNTIME_S32_VAL</a></li>
+<li>Run-time output scales: <a class="el" href="structdnnl_1_1primitive__attr.html#a4b81acc8e48886313154f75c1708ae02" title="Sets output scale correspondence mask and values. ">dnnl::primitive_attr::set_output_scales()</a> and <a class="el" href="group__c__api__types__memory.html#gab16365c11b4dc88fbb453edb51f1979f" title="A wildcard value for floating point values that are unknown at a primitive creation time...">DNNL_RUNTIME_F32_VAL</a></li>
+<li>Run-time zero points: <a class="el" href="structdnnl_1_1primitive__attr.html#aee82deb014cf9702ceb3e725156c25a1" title="Sets zero points for primitive operations for given memory argument. ">dnnl::primitive_attr::set_zero_points()</a> and <a class="el" href="group__c__api__types__memory.html#ga30139d5110e9e895ccd93fe503ca4c35" title="A wildcard value for int32_t values that are unknown at a primitive creation time. ">DNNL_RUNTIME_S32_VAL</a></li>
 </ul>
 </li>
 <li><a class="el" href="dev_guide_attributes_post_ops.html">Operation fusion</a></li>
@@ -201,8 +205,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <ul>
 <li><b>Static</b> and <b>dynamic</b> quantization</li>
 <li>Asymmetric quantization<ul>
-<li>Run-time output scales: <a class="el" href="structdnnl_1_1primitive__attr.html#a4b81acc8e48886313154f75c1708ae02" title="Sets output scales for primitive operations. ">dnnl::primitive_attr::set_output_scales()</a> and <a class="el" href="group__c__api__types__memory.html#gab16365c11b4dc88fbb453edb51f1979f" title="A wildcard value for floating point values that are unknown at a primitive creation time...">DNNL_RUNTIME_F32_VAL</a></li>
-<li>Run-time zero points: <a class="el" href="structdnnl_1_1primitive__attr.html#aee82deb014cf9702ceb3e725156c25a1" title="Sets zero points for primitive operations for given memory argument arg. ">dnnl::primitive_attr::set_zero_points()</a> and <a class="el" href="group__c__api__types__memory.html#ga30139d5110e9e895ccd93fe503ca4c35" title="A wildcard value for int32_t values that are unknown at a primitive creation time. ">DNNL_RUNTIME_S32_VAL</a> </li>
+<li>Run-time output scales: <a class="el" href="structdnnl_1_1primitive__attr.html#a4b81acc8e48886313154f75c1708ae02" title="Sets output scale correspondence mask and values. ">dnnl::primitive_attr::set_output_scales()</a> and <a class="el" href="group__c__api__types__memory.html#gab16365c11b4dc88fbb453edb51f1979f" title="A wildcard value for floating point values that are unknown at a primitive creation time...">DNNL_RUNTIME_F32_VAL</a></li>
+<li>Run-time zero points: <a class="el" href="structdnnl_1_1primitive__attr.html#aee82deb014cf9702ceb3e725156c25a1" title="Sets zero points for primitive operations for given memory argument. ">dnnl::primitive_attr::set_zero_points()</a> and <a class="el" href="group__c__api__types__memory.html#ga30139d5110e9e895ccd93fe503ca4c35" title="A wildcard value for int32_t values that are unknown at a primitive creation time. ">DNNL_RUNTIME_S32_VAL</a> </li>
 </ul>
 </li>
 </ul>

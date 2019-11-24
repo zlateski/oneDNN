@@ -89,13 +89,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="structdnnl_1_1shuffle__backward-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">dnnl::shuffle_backward Struct Reference<div class="ingroups"><a class="el" href="group__cpp__api__shuffle.html">Shuffle</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Shuffle for backward propagation.  
+<p>Shuffle backward propagation primitive.  
  <a href="structdnnl_1_1shuffle__backward.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="dnnl_8hpp_source.html">dnnl.hpp</a>&gt;</code></p>
@@ -117,11 +118,86 @@ Collaboration diagram for dnnl::shuffle_backward:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1shuffle__backward_1_1desc.html">desc</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Descriptor for shuffle backward propagation.  <a href="structdnnl_1_1shuffle__backward_1_1desc.html#details">More...</a><br/></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Descriptor for a shuffle primitive backward propagation primitive.  <a href="structdnnl_1_1shuffle__backward_1_1desc.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1shuffle__backward_1_1primitive__desc.html">primitive_desc</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Primitive descriptor for shuffle backward propagation.  <a href="structdnnl_1_1shuffle__backward_1_1primitive__desc.html#details">More...</a><br/></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Primitive descriptor for a shuffle backward propagation primitive.  <a href="structdnnl_1_1shuffle__backward_1_1primitive__desc.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a867ad6134709758db0ce9d626ae0765a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a867ad6134709758db0ce9d626ae0765a"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1shuffle__backward.html#a867ad6134709758db0ce9d626ae0765a">shuffle_backward</a> ()=default</td></tr>
+<tr class="memdesc:a867ad6134709758db0ce9d626ae0765a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. Produces an empty object. <br/></td></tr>
+<tr class="separator:a867ad6134709758db0ce9d626ae0765a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7c950680ea4d14a09b8a2fed06043a9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1shuffle__backward.html#af7c950680ea4d14a09b8a2fed06043a9">shuffle_backward</a> (const <a class="el" href="structdnnl_1_1shuffle__backward_1_1primitive__desc.html">primitive_desc</a> &amp;pd)</td></tr>
+<tr class="memdesc:af7c950680ea4d14a09b8a2fed06043a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a shuffle backward propagation primitive from a primitive descriptor <code>pd</code> of a corresponding type.  <a href="#af7c950680ea4d14a09b8a2fed06043a9">More...</a><br/></td></tr>
+<tr class="separator:af7c950680ea4d14a09b8a2fed06043a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_structdnnl_1_1primitive"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_structdnnl_1_1primitive')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="structdnnl_1_1primitive.html">dnnl::primitive</a></td></tr>
+<tr class="memitem:a4ba1e667dfc4d3abda8fa47e8bc8bbdb inherit pub_methods_structdnnl_1_1primitive"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4ba1e667dfc4d3abda8fa47e8bc8bbdb"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1primitive.html#a4ba1e667dfc4d3abda8fa47e8bc8bbdb">primitive</a> ()=default</td></tr>
+<tr class="memdesc:a4ba1e667dfc4d3abda8fa47e8bc8bbdb inherit pub_methods_structdnnl_1_1primitive"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. Constructs an empty object. <br/></td></tr>
+<tr class="separator:a4ba1e667dfc4d3abda8fa47e8bc8bbdb inherit pub_methods_structdnnl_1_1primitive"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add43d05c97c3cd96a5d7cab07d6935f4 inherit pub_methods_structdnnl_1_1primitive"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1primitive.html#add43d05c97c3cd96a5d7cab07d6935f4">primitive</a> (<a class="el" href="group__c__api__primitive__descs.html#gad48db8dee6ec426d067597ff7af232ee">const_dnnl_primitive_desc_t</a> c_pd)</td></tr>
+<tr class="memdesc:add43d05c97c3cd96a5d7cab07d6935f4 inherit pub_methods_structdnnl_1_1primitive"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a primitive from a C API primitive descriptor.  <a href="#add43d05c97c3cd96a5d7cab07d6935f4">More...</a><br/></td></tr>
+<tr class="separator:add43d05c97c3cd96a5d7cab07d6935f4 inherit pub_methods_structdnnl_1_1primitive"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac356cacc1b41b95397d2c6a8c091e700 inherit pub_methods_structdnnl_1_1primitive"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1primitive.html#ac356cacc1b41b95397d2c6a8c091e700">primitive</a> (const <a class="el" href="structdnnl_1_1primitive__desc.html">primitive_desc</a> &amp;pd)</td></tr>
+<tr class="memdesc:ac356cacc1b41b95397d2c6a8c091e700 inherit pub_methods_structdnnl_1_1primitive"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a primitive from a primitive descriptor.  <a href="#ac356cacc1b41b95397d2c6a8c091e700">More...</a><br/></td></tr>
+<tr class="separator:ac356cacc1b41b95397d2c6a8c091e700 inherit pub_methods_structdnnl_1_1primitive"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1fa3eca53abce941ace7d28f9af1ec61 inherit pub_methods_structdnnl_1_1primitive"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__primitive__descs.html#gad48db8dee6ec426d067597ff7af232ee">const_dnnl_primitive_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__primitive.html#ga1fa3eca53abce941ace7d28f9af1ec61">get_primitive_desc</a> () const </td></tr>
+<tr class="memdesc:ga1fa3eca53abce941ace7d28f9af1ec61 inherit pub_methods_structdnnl_1_1primitive"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the C API primitive descriptor of the underlying C API primitive.  <a href="group__cpp__api__primitive.html#ga1fa3eca53abce941ace7d28f9af1ec61">More...</a><br/></td></tr>
+<tr class="separator:ga1fa3eca53abce941ace7d28f9af1ec61 inherit pub_methods_structdnnl_1_1primitive"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga30c28d0cebe5b1d4758af2c24fafbdfb inherit pub_methods_structdnnl_1_1primitive"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structdnnl_1_1primitive.html#ad1ec93215a0cf3aa0a32bae0c2cd9169">kind</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__primitive.html#ga30c28d0cebe5b1d4758af2c24fafbdfb">get_kind</a> () const </td></tr>
+<tr class="memdesc:ga30c28d0cebe5b1d4758af2c24fafbdfb inherit pub_methods_structdnnl_1_1primitive"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the kind of the primitive.  <a href="group__cpp__api__primitive.html#ga30c28d0cebe5b1d4758af2c24fafbdfb">More...</a><br/></td></tr>
+<tr class="separator:ga30c28d0cebe5b1d4758af2c24fafbdfb inherit pub_methods_structdnnl_1_1primitive"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c454f3d9315ea0dc6635f26eab9a950 inherit pub_methods_structdnnl_1_1primitive"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1primitive.html#a4c454f3d9315ea0dc6635f26eab9a950">execute</a> (<a class="el" href="structdnnl_1_1stream.html">stream</a> &amp;<a class="el" href="structdnnl_1_1stream.html">stream</a>, const std::unordered_map&lt; int, <a class="el" href="structdnnl_1_1memory.html">memory</a> &gt; &amp;args) const </td></tr>
+<tr class="memdesc:a4c454f3d9315ea0dc6635f26eab9a950 inherit pub_methods_structdnnl_1_1primitive"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes computations specified by the primitive in a specified stream.  <a href="#a4c454f3d9315ea0dc6635f26eab9a950">More...</a><br/></td></tr>
+<tr class="separator:a4c454f3d9315ea0dc6635f26eab9a950 inherit pub_methods_structdnnl_1_1primitive"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_structdnnl_1_1handle"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_structdnnl_1_1handle')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="structdnnl_1_1handle.html">dnnl::handle&lt; dnnl_primitive_t &gt;</a></td></tr>
+<tr class="memitem:a8569ba9d1b62264df858f3b3316577c6 inherit pub_methods_structdnnl_1_1handle"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1handle.html#a8569ba9d1b62264df858f3b3316577c6">operator==</a> (const <a class="el" href="structdnnl_1_1handle.html">handle</a>&lt; <a class="el" href="group__c__api__types__primitive.html#ga226afc85f63f0d1029d4ea90a60cae47">dnnl_primitive_t</a>, <a class="el" href="structdnnl_1_1handle__traits.html">handle_traits</a>&lt; <a class="el" href="group__c__api__types__primitive.html#ga226afc85f63f0d1029d4ea90a60cae47">dnnl_primitive_t</a> &gt; &gt; &amp;other) const</td></tr>
+<tr class="memdesc:a8569ba9d1b62264df858f3b3316577c6 inherit pub_methods_structdnnl_1_1handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equality operator.  <a href="#a8569ba9d1b62264df858f3b3316577c6">More...</a><br/></td></tr>
+<tr class="separator:a8569ba9d1b62264df858f3b3316577c6 inherit pub_methods_structdnnl_1_1handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4aaa512672b0ed203ef78be4ceac025e inherit pub_methods_structdnnl_1_1handle"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1handle.html#a4aaa512672b0ed203ef78be4ceac025e">operator!=</a> (const <a class="el" href="structdnnl_1_1handle.html">handle</a> &amp;other) const</td></tr>
+<tr class="memdesc:a4aaa512672b0ed203ef78be4ceac025e inherit pub_methods_structdnnl_1_1handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inequality operator.  <a href="#a4aaa512672b0ed203ef78be4ceac025e">More...</a><br/></td></tr>
+<tr class="separator:a4aaa512672b0ed203ef78be4ceac025e inherit pub_methods_structdnnl_1_1handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c631f7e5e4c92a13edb8e3422d3a973 inherit pub_methods_structdnnl_1_1handle"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1handle.html#a5c631f7e5e4c92a13edb8e3422d3a973">handle</a> ()=default</td></tr>
+<tr class="memdesc:a5c631f7e5e4c92a13edb8e3422d3a973 inherit pub_methods_structdnnl_1_1handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an empty handle object.  <a href="#a5c631f7e5e4c92a13edb8e3422d3a973">More...</a><br/></td></tr>
+<tr class="separator:a5c631f7e5e4c92a13edb8e3422d3a973 inherit pub_methods_structdnnl_1_1handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a022001b5b9c8940a1326a02b61fc4860 inherit pub_methods_structdnnl_1_1handle"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a022001b5b9c8940a1326a02b61fc4860"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1handle.html#a022001b5b9c8940a1326a02b61fc4860">handle</a> (const <a class="el" href="structdnnl_1_1handle.html">handle</a>&lt; <a class="el" href="group__c__api__types__primitive.html#ga226afc85f63f0d1029d4ea90a60cae47">dnnl_primitive_t</a>, <a class="el" href="structdnnl_1_1handle__traits.html">handle_traits</a>&lt; <a class="el" href="group__c__api__types__primitive.html#ga226afc85f63f0d1029d4ea90a60cae47">dnnl_primitive_t</a> &gt; &gt; &amp;)=default</td></tr>
+<tr class="memdesc:a022001b5b9c8940a1326a02b61fc4860 inherit pub_methods_structdnnl_1_1handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor. <br/></td></tr>
+<tr class="separator:a022001b5b9c8940a1326a02b61fc4860 inherit pub_methods_structdnnl_1_1handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa13f3ecf4db240717074814412c7e70c inherit pub_methods_structdnnl_1_1handle"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa13f3ecf4db240717074814412c7e70c"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1handle.html#aa13f3ecf4db240717074814412c7e70c">handle</a> (<a class="el" href="structdnnl_1_1handle.html">handle</a>&lt; <a class="el" href="group__c__api__types__primitive.html#ga226afc85f63f0d1029d4ea90a60cae47">dnnl_primitive_t</a>, <a class="el" href="structdnnl_1_1handle__traits.html">handle_traits</a>&lt; <a class="el" href="group__c__api__types__primitive.html#ga226afc85f63f0d1029d4ea90a60cae47">dnnl_primitive_t</a> &gt; &gt; &amp;&amp;)=default</td></tr>
+<tr class="memdesc:aa13f3ecf4db240717074814412c7e70c inherit pub_methods_structdnnl_1_1handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move constructor. <br/></td></tr>
+<tr class="separator:aa13f3ecf4db240717074814412c7e70c inherit pub_methods_structdnnl_1_1handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c408c09fce1278f5cb0d1fa9818fc86 inherit pub_methods_structdnnl_1_1handle"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1handle.html#a9c408c09fce1278f5cb0d1fa9818fc86">handle</a> (dnnl_primitive_tt, bool weak=false)</td></tr>
+<tr class="memdesc:a9c408c09fce1278f5cb0d1fa9818fc86 inherit pub_methods_structdnnl_1_1handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a handle wrapper object from a C API handle.  <a href="#a9c408c09fce1278f5cb0d1fa9818fc86">More...</a><br/></td></tr>
+<tr class="separator:a9c408c09fce1278f5cb0d1fa9818fc86 inherit pub_methods_structdnnl_1_1handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ad1ff54e4aafeb560a869c49aa20b52 inherit pub_methods_structdnnl_1_1handle"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4ad1ff54e4aafeb560a869c49aa20b52"></a>
+<a class="el" href="structdnnl_1_1handle.html">handle</a>&lt; <a class="el" href="group__c__api__types__primitive.html#ga226afc85f63f0d1029d4ea90a60cae47">dnnl_primitive_t</a>, <br class="typebreak"/>
+<a class="el" href="structdnnl_1_1handle__traits.html">handle_traits</a><br class="typebreak"/>
+&lt; <a class="el" href="group__c__api__types__primitive.html#ga226afc85f63f0d1029d4ea90a60cae47">dnnl_primitive_t</a> &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1handle.html#a4ad1ff54e4aafeb560a869c49aa20b52">operator=</a> (const <a class="el" href="structdnnl_1_1handle.html">handle</a>&lt; <a class="el" href="group__c__api__types__primitive.html#ga226afc85f63f0d1029d4ea90a60cae47">dnnl_primitive_t</a>, <a class="el" href="structdnnl_1_1handle__traits.html">handle_traits</a>&lt; <a class="el" href="group__c__api__types__primitive.html#ga226afc85f63f0d1029d4ea90a60cae47">dnnl_primitive_t</a> &gt; &gt; &amp;)=default</td></tr>
+<tr class="memdesc:a4ad1ff54e4aafeb560a869c49aa20b52 inherit pub_methods_structdnnl_1_1handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment operator. <br/></td></tr>
+<tr class="separator:a4ad1ff54e4aafeb560a869c49aa20b52 inherit pub_methods_structdnnl_1_1handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3f85524f3d83abdd4917b46ce23e727 inherit pub_methods_structdnnl_1_1handle"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af3f85524f3d83abdd4917b46ce23e727"></a>
+<a class="el" href="structdnnl_1_1handle.html">handle</a>&lt; <a class="el" href="group__c__api__types__primitive.html#ga226afc85f63f0d1029d4ea90a60cae47">dnnl_primitive_t</a>, <br class="typebreak"/>
+<a class="el" href="structdnnl_1_1handle__traits.html">handle_traits</a><br class="typebreak"/>
+&lt; <a class="el" href="group__c__api__types__primitive.html#ga226afc85f63f0d1029d4ea90a60cae47">dnnl_primitive_t</a> &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1handle.html#af3f85524f3d83abdd4917b46ce23e727">operator=</a> (<a class="el" href="structdnnl_1_1handle.html">handle</a>&lt; <a class="el" href="group__c__api__types__primitive.html#ga226afc85f63f0d1029d4ea90a60cae47">dnnl_primitive_t</a>, <a class="el" href="structdnnl_1_1handle__traits.html">handle_traits</a>&lt; <a class="el" href="group__c__api__types__primitive.html#ga226afc85f63f0d1029d4ea90a60cae47">dnnl_primitive_t</a> &gt; &gt; &amp;&amp;)=default</td></tr>
+<tr class="memdesc:af3f85524f3d83abdd4917b46ce23e727 inherit pub_methods_structdnnl_1_1handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move assignment operator. <br/></td></tr>
+<tr class="separator:af3f85524f3d83abdd4917b46ce23e727 inherit pub_methods_structdnnl_1_1handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8862ef3d31c3b19bd88395e0b1373909 inherit pub_methods_structdnnl_1_1handle"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1handle.html#a8862ef3d31c3b19bd88395e0b1373909">reset</a> (dnnl_primitive_tt, bool weak=false)</td></tr>
+<tr class="memdesc:a8862ef3d31c3b19bd88395e0b1373909 inherit pub_methods_structdnnl_1_1handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the handle wrapper objects to wrap a new C API handle.  <a href="#a8862ef3d31c3b19bd88395e0b1373909">More...</a><br/></td></tr>
+<tr class="separator:a8862ef3d31c3b19bd88395e0b1373909 inherit pub_methods_structdnnl_1_1handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affb19aaf768579eebdf885edbbef7d7a inherit pub_methods_structdnnl_1_1handle"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__primitive.html#ga226afc85f63f0d1029d4ea90a60cae47">dnnl_primitive_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1handle.html#affb19aaf768579eebdf885edbbef7d7a">get</a> (bool allow_empty=false) const</td></tr>
+<tr class="memdesc:affb19aaf768579eebdf885edbbef7d7a inherit pub_methods_structdnnl_1_1handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the underlying C API handle.  <a href="#affb19aaf768579eebdf885edbbef7d7a">More...</a><br/></td></tr>
+<tr class="separator:affb19aaf768579eebdf885edbbef7d7a inherit pub_methods_structdnnl_1_1handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3560c3d12724f48e9fdbe47077ff342 inherit pub_methods_structdnnl_1_1handle"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1handle.html#ab3560c3d12724f48e9fdbe47077ff342">operator dnnl_primitive_t</a> () const</td></tr>
+<tr class="memdesc:ab3560c3d12724f48e9fdbe47077ff342 inherit pub_methods_structdnnl_1_1handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a handle to the underlying C API handle type.  <a href="#ab3560c3d12724f48e9fdbe47077ff342">More...</a><br/></td></tr>
+<tr class="separator:ab3560c3d12724f48e9fdbe47077ff342 inherit pub_methods_structdnnl_1_1handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af014b68c14db64b9bb6a2034fe04440e inherit pub_methods_structdnnl_1_1handle"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1handle.html#af014b68c14db64b9bb6a2034fe04440e">operator bool</a> () const</td></tr>
+<tr class="memdesc:af014b68c14db64b9bb6a2034fe04440e inherit pub_methods_structdnnl_1_1handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the object is empty.  <a href="#af014b68c14db64b9bb6a2034fe04440e">More...</a><br/></td></tr>
+<tr class="separator:af014b68c14db64b9bb6a2034fe04440e inherit pub_methods_structdnnl_1_1handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -153,58 +229,37 @@ Additional Inherited Members</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:ad1ec93215a0cf3aa0a32bae0c2cd9169"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kinds of primitives.  <a href="structdnnl_1_1primitive.html#ad1ec93215a0cf3aa0a32bae0c2cd9169">More...</a><br/></td></tr>
 <tr class="separator:ad1ec93215a0cf3aa0a32bae0c2cd9169 inherit pub_types_structdnnl_1_1primitive"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_structdnnl_1_1primitive"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_structdnnl_1_1primitive')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="structdnnl_1_1primitive.html">dnnl::primitive</a></td></tr>
-<tr class="memitem:add43d05c97c3cd96a5d7cab07d6935f4 inherit pub_methods_structdnnl_1_1primitive"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="add43d05c97c3cd96a5d7cab07d6935f4"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1primitive.html#add43d05c97c3cd96a5d7cab07d6935f4">primitive</a> (<a class="el" href="group__c__api__primitive__descs.html#gad48db8dee6ec426d067597ff7af232ee">const_dnnl_primitive_desc_t</a> c_pd)</td></tr>
-<tr class="memdesc:add43d05c97c3cd96a5d7cab07d6935f4 inherit pub_methods_structdnnl_1_1primitive"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a primitive from a C primitive descriptor <code>c_pd</code>. <br/></td></tr>
-<tr class="separator:add43d05c97c3cd96a5d7cab07d6935f4 inherit pub_methods_structdnnl_1_1primitive"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac356cacc1b41b95397d2c6a8c091e700 inherit pub_methods_structdnnl_1_1primitive"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac356cacc1b41b95397d2c6a8c091e700"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1primitive.html#ac356cacc1b41b95397d2c6a8c091e700">primitive</a> (const <a class="el" href="structdnnl_1_1primitive__desc.html">primitive_desc</a> &amp;pd)</td></tr>
-<tr class="memdesc:ac356cacc1b41b95397d2c6a8c091e700 inherit pub_methods_structdnnl_1_1primitive"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a primitive from a primitive descriptor <code>pd</code>. <br/></td></tr>
-<tr class="separator:ac356cacc1b41b95397d2c6a8c091e700 inherit pub_methods_structdnnl_1_1primitive"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1fa3eca53abce941ace7d28f9af1ec61 inherit pub_methods_structdnnl_1_1primitive"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga1fa3eca53abce941ace7d28f9af1ec61"></a>
-<a class="el" href="group__c__api__primitive__descs.html#gad48db8dee6ec426d067597ff7af232ee">const_dnnl_primitive_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__utils.html#ga1fa3eca53abce941ace7d28f9af1ec61">get_primitive_desc</a> () const </td></tr>
-<tr class="memdesc:ga1fa3eca53abce941ace7d28f9af1ec61 inherit pub_methods_structdnnl_1_1primitive"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the descriptor of the underlying C API primitive. <br/></td></tr>
-<tr class="separator:ga1fa3eca53abce941ace7d28f9af1ec61 inherit pub_methods_structdnnl_1_1primitive"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga30c28d0cebe5b1d4758af2c24fafbdfb inherit pub_methods_structdnnl_1_1primitive"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga30c28d0cebe5b1d4758af2c24fafbdfb"></a>
-<a class="el" href="structdnnl_1_1primitive.html#ad1ec93215a0cf3aa0a32bae0c2cd9169">kind</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpp__api__utils.html#ga30c28d0cebe5b1d4758af2c24fafbdfb">get_kind</a> () const </td></tr>
-<tr class="memdesc:ga30c28d0cebe5b1d4758af2c24fafbdfb inherit pub_methods_structdnnl_1_1primitive"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the kind of the primitive. <br/></td></tr>
-<tr class="separator:ga30c28d0cebe5b1d4758af2c24fafbdfb inherit pub_methods_structdnnl_1_1primitive"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a8a7d1a5ffd86032613d38a90378e3c inherit pub_methods_structdnnl_1_1primitive"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1primitive.html#a8a8a7d1a5ffd86032613d38a90378e3c">execute</a> (<a class="el" href="structdnnl_1_1stream.html">stream</a> &amp;astream, const std::unordered_map&lt; int, <a class="el" href="structdnnl_1_1memory.html">memory</a> &gt; &amp;args) const </td></tr>
-<tr class="memdesc:a8a8a7d1a5ffd86032613d38a90378e3c inherit pub_methods_structdnnl_1_1primitive"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the primitive in a <code>astream</code>.  <a href="#a8a8a7d1a5ffd86032613d38a90378e3c">More...</a><br/></td></tr>
-<tr class="separator:a8a8a7d1a5ffd86032613d38a90378e3c inherit pub_methods_structdnnl_1_1primitive"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_structdnnl_1_1handle"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_structdnnl_1_1handle')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="structdnnl_1_1handle.html">dnnl::handle&lt; dnnl_primitive_t &gt;</a></td></tr>
-<tr class="memitem:a0d60a4ca4384c359d198c5b6f1187b64 inherit pub_methods_structdnnl_1_1handle"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1handle.html#a0d60a4ca4384c359d198c5b6f1187b64">operator==</a> (const <a class="el" href="structdnnl_1_1handle.html">handle</a> &amp;other) const</td></tr>
-<tr class="memdesc:a0d60a4ca4384c359d198c5b6f1187b64 inherit pub_methods_structdnnl_1_1handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if this handle is equal to the <code>other</code> handle.  <a href="#a0d60a4ca4384c359d198c5b6f1187b64">More...</a><br/></td></tr>
-<tr class="separator:a0d60a4ca4384c359d198c5b6f1187b64 inherit pub_methods_structdnnl_1_1handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4aaa512672b0ed203ef78be4ceac025e inherit pub_methods_structdnnl_1_1handle"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1handle.html#a4aaa512672b0ed203ef78be4ceac025e">operator!=</a> (const <a class="el" href="structdnnl_1_1handle.html">handle</a> &amp;other) const</td></tr>
-<tr class="memdesc:a4aaa512672b0ed203ef78be4ceac025e inherit pub_methods_structdnnl_1_1handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if this handle is not equal to the <code>other</code> handle.  <a href="#a4aaa512672b0ed203ef78be4ceac025e">More...</a><br/></td></tr>
-<tr class="separator:a4aaa512672b0ed203ef78be4ceac025e inherit pub_methods_structdnnl_1_1handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c631f7e5e4c92a13edb8e3422d3a973 inherit pub_methods_structdnnl_1_1handle"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1handle.html#a5c631f7e5e4c92a13edb8e3422d3a973">handle</a> ()=default</td></tr>
-<tr class="memdesc:a5c631f7e5e4c92a13edb8e3422d3a973 inherit pub_methods_structdnnl_1_1handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Empty constructor.  <a href="#a5c631f7e5e4c92a13edb8e3422d3a973">More...</a><br/></td></tr>
-<tr class="separator:a5c631f7e5e4c92a13edb8e3422d3a973 inherit pub_methods_structdnnl_1_1handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c408c09fce1278f5cb0d1fa9818fc86 inherit pub_methods_structdnnl_1_1handle"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1handle.html#a9c408c09fce1278f5cb0d1fa9818fc86">handle</a> (dnnl_primitive_tt, bool weak=false)</td></tr>
-<tr class="memdesc:a9c408c09fce1278f5cb0d1fa9818fc86 inherit pub_methods_structdnnl_1_1handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a C handle wrapper from a C handle.  <a href="#a9c408c09fce1278f5cb0d1fa9818fc86">More...</a><br/></td></tr>
-<tr class="separator:a9c408c09fce1278f5cb0d1fa9818fc86 inherit pub_methods_structdnnl_1_1handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8862ef3d31c3b19bd88395e0b1373909 inherit pub_methods_structdnnl_1_1handle"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1handle.html#a8862ef3d31c3b19bd88395e0b1373909">reset</a> (dnnl_primitive_tt, bool weak=false)</td></tr>
-<tr class="memdesc:a8862ef3d31c3b19bd88395e0b1373909 inherit pub_methods_structdnnl_1_1handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the value of a C handle.  <a href="#a8862ef3d31c3b19bd88395e0b1373909">More...</a><br/></td></tr>
-<tr class="separator:a8862ef3d31c3b19bd88395e0b1373909 inherit pub_methods_structdnnl_1_1handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0cebb2104786aceec21ba6a43a0ff3db inherit pub_methods_structdnnl_1_1handle"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0cebb2104786aceec21ba6a43a0ff3db"></a>
-<a class="el" href="group__c__api__types__primitive.html#ga226afc85f63f0d1029d4ea90a60cae47">dnnl_primitive_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1handle.html#a0cebb2104786aceec21ba6a43a0ff3db">get</a> (bool allow_emtpy=false) const</td></tr>
-<tr class="memdesc:a0cebb2104786aceec21ba6a43a0ff3db inherit pub_methods_structdnnl_1_1handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value of the underlying C handle. <br/></td></tr>
-<tr class="separator:a0cebb2104786aceec21ba6a43a0ff3db inherit pub_methods_structdnnl_1_1handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3560c3d12724f48e9fdbe47077ff342 inherit pub_methods_structdnnl_1_1handle"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1handle.html#ab3560c3d12724f48e9fdbe47077ff342">operator dnnl_primitive_t</a> () const</td></tr>
-<tr class="memdesc:ab3560c3d12724f48e9fdbe47077ff342 inherit pub_methods_structdnnl_1_1handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a handle to the underlying C handle type.  <a href="#ab3560c3d12724f48e9fdbe47077ff342">More...</a><br/></td></tr>
-<tr class="separator:ab3560c3d12724f48e9fdbe47077ff342 inherit pub_methods_structdnnl_1_1handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af014b68c14db64b9bb6a2034fe04440e inherit pub_methods_structdnnl_1_1handle"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af014b68c14db64b9bb6a2034fe04440e"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1handle.html#af014b68c14db64b9bb6a2034fe04440e">operator bool</a> () const</td></tr>
-<tr class="memdesc:af014b68c14db64b9bb6a2034fe04440e inherit pub_methods_structdnnl_1_1handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a handle to bool: returns whether the object is empty. <br/></td></tr>
-<tr class="separator:af014b68c14db64b9bb6a2034fe04440e inherit pub_methods_structdnnl_1_1handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Shuffle for backward propagation. </p>
-<p>Implements descriptor, primitive descriptor, and primitive. </p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
+<div class="textblock"><p>Shuffle backward propagation primitive. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="af7c950680ea4d14a09b8a2fed06043a9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">dnnl::shuffle_backward::shuffle_backward </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structdnnl_1_1shuffle__backward_1_1primitive__desc.html">primitive_desc</a> &amp;&#160;</td>
+          <td class="paramname"><em>pd</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructs a shuffle backward propagation primitive from a primitive descriptor <code>pd</code> of a corresponding type. </p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li>include/<a class="el" href="dnnl_8hpp_source.html">dnnl.hpp</a></li>
 </ul>
 </div><!-- contents -->

@@ -116,6 +116,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><span class="preprocessor"></span></div>
 <div class="line"><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
 <div class="line"></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="dnnl_8h.html">dnnl.h</a>&quot;</span></div>
+<div class="line"></div>
 <div class="line"><span class="preprocessor">#include &quot;example_utils.h&quot;</span></div>
 <div class="line"></div>
 <div class="line"><span class="preprocessor">#define BATCH 8</span></div>
@@ -213,8 +215,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="group__c__api__types__generic.html#ggad24f9ded06e34d3ee71e7fc4b408d57aaa31395e9dccc103cf166cf7b38fc5b9c">dnnl_success</a>;</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><a class="code" href="group__c__api__types__generic.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> simple_net(<a class="code" href="group__c__api__engine__types.html#ga04b3dd9eba628ea02218a52c4c4363a2">dnnl_engine_kind_t</a> engine_kind) {</div>
-<div class="line"></div>
+<div class="line"><span class="keywordtype">void</span> simple_net(<a class="code" href="group__c__api__engine__types.html#ga04b3dd9eba628ea02218a52c4c4363a2">dnnl_engine_kind_t</a> engine_kind) {</div>
 <div class="line">    <a class="code" href="structdnnl__engine.html">dnnl_engine_t</a> engine;</div>
 <div class="line">    CHECK(<a class="code" href="group__c__api__engine.html#gab84f82f3011349cbfe368b61882834fd">dnnl_engine_create</a>(&amp;engine, engine_kind, 0));</div>
 <div class="line"></div>
@@ -513,16 +514,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <a class="code" href="group__c__api__primitive__common.html#gaba605c4591c2054a6ee80ec1b581659f">dnnl_primitive_destroy</a>(pool);</div>
 <div class="line"></div>
 <div class="line">    <a class="code" href="group__c__api__engine.html#ga8d6976b3792cf1ef64d01545929b4d8f">dnnl_engine_destroy</a>(engine);</div>
-<div class="line"></div>
-<div class="line">    <span class="keywordflow">return</span> <a class="code" href="group__c__api__types__generic.html#ggad24f9ded06e34d3ee71e7fc4b408d57aaa31395e9dccc103cf166cf7b38fc5b9c">dnnl_success</a>;</div>
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv) {</div>
-<div class="line">    <a class="code" href="group__c__api__types__generic.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> result = simple_net(parse_engine_kind(argc, argv));</div>
-<div class="line">    printf(<span class="stringliteral">&quot;%s\n&quot;</span>,</div>
-<div class="line">            (result == <a class="code" href="group__c__api__types__generic.html#ggad24f9ded06e34d3ee71e7fc4b408d57aaa31395e9dccc103cf166cf7b38fc5b9c">dnnl_success</a>) ? <span class="stringliteral">&quot;Simple net f32 inference passed!&quot;</span></div>
-<div class="line">                                     : <span class="stringliteral">&quot;Simple net f32 inference failed!&quot;</span>);</div>
-<div class="line">    <span class="keywordflow">return</span> result;</div>
+<div class="line">    simple_net(parse_engine_kind(argc, argv));</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Example passed\n&quot;</span>);</div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
 </div><!-- fragment --> </div></div><!-- contents -->
 <div class="footer">

@@ -95,7 +95,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>Descriptor for shuffle forward propagation.  
+<p>Descriptor for a shuffle forward propagation primitive.  
  <a href="structdnnl_1_1shuffle__forward_1_1desc.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="dnnl_8hpp_source.html">dnnl.hpp</a>&gt;</code></p>
@@ -109,14 +109,14 @@ Collaboration diagram for dnnl::shuffle_forward::desc:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a7b52a213fb4a9da6170965dba994bf27"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1shuffle__forward_1_1desc.html#a7b52a213fb4a9da6170965dba994bf27">desc</a> (<a class="el" href="group__cpp__api__enums.html#gac7db48f6583aa9903e54c2a39d65438f">prop_kind</a> aprop_kind, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;data_desc, int axis, int group_size)</td></tr>
-<tr class="memdesc:a7b52a213fb4a9da6170965dba994bf27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a shuffle descriptor for forward propagation using <code>prop_kind</code>, memory descriptor <code>data_desc</code>, <code>axis</code>, and <code>group_size</code>.  <a href="#a7b52a213fb4a9da6170965dba994bf27">More...</a><br/></td></tr>
-<tr class="separator:a7b52a213fb4a9da6170965dba994bf27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04aa3bcc3729b177a4b8aaeba66e2f60"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1shuffle__forward_1_1desc.html#a04aa3bcc3729b177a4b8aaeba66e2f60">desc</a> (<a class="el" href="group__cpp__api__enums.html#gac7db48f6583aa9903e54c2a39d65438f">prop_kind</a> <a class="el" href="group__cpp__api__enums.html#gac7db48f6583aa9903e54c2a39d65438f">prop_kind</a>, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;data_desc, int axis, int group_size)</td></tr>
+<tr class="memdesc:a04aa3bcc3729b177a4b8aaeba66e2f60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a descriptor shuffle forward propagation primitive using <code>prop_kind</code>, memory descriptor <code>data_desc</code>, <code>axis</code>, and <code>group_size</code>.  <a href="#a04aa3bcc3729b177a4b8aaeba66e2f60">More...</a><br/></td></tr>
+<tr class="separator:a04aa3bcc3729b177a4b8aaeba66e2f60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Descriptor for shuffle forward propagation. </p>
+<div class="textblock"><p>Descriptor for a shuffle forward propagation primitive. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a7b52a213fb4a9da6170965dba994bf27"></a>
+<a class="anchor" id="a04aa3bcc3729b177a4b8aaeba66e2f60"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -127,7 +127,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">dnnl::shuffle_forward::desc::desc </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__cpp__api__enums.html#gac7db48f6583aa9903e54c2a39d65438f">prop_kind</a>&#160;</td>
-          <td class="paramname"><em>aprop_kind</em>, </td>
+          <td class="paramname"><em>prop_kind</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -160,7 +160,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Initializes a shuffle descriptor for forward propagation using <code>prop_kind</code>, memory descriptor <code>data_desc</code>, <code>axis</code>, and <code>group_size</code>. </p>
+<p>Constructs a descriptor shuffle forward propagation primitive using <code>prop_kind</code>, memory descriptor <code>data_desc</code>, <code>axis</code>, and <code>group_size</code>. </p>
 
 </div>
 </div>

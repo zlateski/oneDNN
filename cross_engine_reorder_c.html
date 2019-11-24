@@ -139,7 +139,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="keywordflow">return</span> negs;</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">int</span> doit() {</div>
+<div class="line"><span class="keywordtype">void</span> cross_engine_reorder() {</div>
 <div class="line">    <a class="code" href="structdnnl__engine.html">dnnl_engine_t</a> engine_cpu, engine_gpu;</div>
 <div class="line">    CHECK(<a class="code" href="group__c__api__engine.html#gab84f82f3011349cbfe368b61882834fd">dnnl_engine_create</a>(&amp;engine_cpu, <a class="code" href="group__c__api__engine__types.html#gga04b3dd9eba628ea02218a52c4c4363a2abde7b942413dd36f8285dd360fc0c797">dnnl_cpu</a>, 0));</div>
 <div class="line">    CHECK(<a class="code" href="group__c__api__engine.html#gab84f82f3011349cbfe368b61882834fd">dnnl_engine_create</a>(&amp;engine_gpu, <a class="code" href="group__c__api__engine__types.html#gga04b3dd9eba628ea02218a52c4c4363a2a6ab900ae0fc26be67742c0e59a015438">dnnl_gpu</a>, 0));</div>
@@ -157,10 +157,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">            &amp;m_gpu, &amp;m_gpu_md, engine_gpu, DNNL_MEMORY_ALLOCATE));</div>
 <div class="line"></div>
 <div class="line">    fill(m_cpu, 4, tz);</div>
-<div class="line">    <span class="keywordflow">if</span> (find_negative(m_cpu, 4, tz) == 0) {</div>
-<div class="line">        printf(<span class="stringliteral">&quot;Please fix filling of data\n&quot;</span>);</div>
-<div class="line">        exit(2);</div>
-<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">if</span> (find_negative(m_cpu, 4, tz) == 0)</div>
+<div class="line">        COMPLAIN_EXAMPLE_ERROR_AND_EXIT(</div>
+<div class="line">                <span class="stringliteral">&quot;%s&quot;</span>, <span class="stringliteral">&quot;incorrect data fill, no negative values found&quot;</span>);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">/* reorder cpu -&gt; gpu */</span></div>
 <div class="line">    <a class="code" href="structdnnl__primitive__desc.html">dnnl_primitive_desc_t</a> r1_pd;</div>
@@ -204,7 +203,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line">    CHECK(<a class="code" href="group__c__api__stream.html#ga6a8175b9384349b1ee73a78a24b5883f">dnnl_stream_wait</a>(stream_gpu));</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (find_negative(m_cpu, 4, tz) != 0) <span class="keywordflow">return</span> 2;</div>
+<div class="line">    <span class="keywordflow">if</span> (find_negative(m_cpu, 4, tz) != 0)</div>
+<div class="line">        COMPLAIN_EXAMPLE_ERROR_AND_EXIT(</div>
+<div class="line">                <span class="stringliteral">&quot;%s&quot;</span>, <span class="stringliteral">&quot;found negative values after ReLU applied&quot;</span>);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">/* clean up */</span></div>
 <div class="line">    <a class="code" href="group__c__api__primitive__common.html#ga643938c7c73d200ac1fd3866204e7285">dnnl_primitive_desc_destroy</a>(relu_pd);</div>
@@ -221,18 +222,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line">    <a class="code" href="group__c__api__engine.html#ga8d6976b3792cf1ef64d01545929b4d8f">dnnl_engine_destroy</a>(engine_cpu);</div>
 <div class="line">    <a class="code" href="group__c__api__engine.html#ga8d6976b3792cf1ef64d01545929b4d8f">dnnl_engine_destroy</a>(engine_gpu);</div>
-<div class="line"></div>
-<div class="line">    <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">int</span> main() {</div>
-<div class="line">    <span class="keywordtype">int</span> result = doit();</div>
-<div class="line">    <span class="keywordflow">if</span> (result)</div>
-<div class="line">        printf(<span class="stringliteral">&quot;failed\n&quot;</span>);</div>
-<div class="line">    <span class="keywordflow">else</span></div>
-<div class="line">        printf(<span class="stringliteral">&quot;passed\n&quot;</span>);</div>
-<div class="line"></div>
-<div class="line">    <span class="keywordflow">return</span> result;</div>
+<div class="line">    cross_engine_reorder();</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Example passed\n&quot;</span>);</div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
 </div><!-- fragment --> </div></div><!-- contents -->
 <div class="footer">

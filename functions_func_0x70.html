@@ -72,6 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions.html"><span>All</span></a></li>
       <li class="current"><a href="functions_func.html"><span>Functions</span></a></li>
       <li><a href="functions_vars.html"><span>Variables</span></a></li>
+      <li><a href="functions_type.html"><span>Typedefs</span></a></li>
       <li><a href="functions_enum.html"><span>Enumerations</span></a></li>
       <li><a href="functions_eval.html"><span>Enumerator</span></a></li>
     </ul>
@@ -119,24 +120,33 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 &#160;
 
 <h3><a class="anchor" id="index_p"></a>- p -</h3><ul>
+<li>pooling_backward()
+: <a class="el" href="structdnnl_1_1pooling__backward.html#a39dae6fa1c4f63560e8fda5fda18543e">dnnl::pooling_backward</a>
+</li>
+<li>pooling_forward()
+: <a class="el" href="structdnnl_1_1pooling__forward.html#abccc5797009b6c1fa2f2c6f761a5faac">dnnl::pooling_forward</a>
+</li>
 <li>post_ops()
 : <a class="el" href="structdnnl_1_1post__ops.html#a8e1d47722db8f53b3689468788ec2c01">dnnl::post_ops</a>
 </li>
 <li>primitive()
-: <a class="el" href="structdnnl_1_1primitive.html#add43d05c97c3cd96a5d7cab07d6935f4">dnnl::primitive</a>
+: <a class="el" href="structdnnl_1_1primitive.html#ac356cacc1b41b95397d2c6a8c091e700">dnnl::primitive</a>
 </li>
 <li>primitive_attr()
 : <a class="el" href="structdnnl_1_1primitive__attr.html#acfbfd85b7ca82bf97e2b07c2427427de">dnnl::primitive_attr</a>
 </li>
 <li>primitive_desc()
-: <a class="el" href="structdnnl_1_1binary_1_1primitive__desc.html#abd064a6e1d78d2452611ea45b25c1105">dnnl::binary::primitive_desc</a>
+: <a class="el" href="structdnnl_1_1binary_1_1primitive__desc.html#a99e0ed1bc3cf3d6754ea737a487a9ecd">dnnl::binary::primitive_desc</a>
 , <a class="el" href="structdnnl_1_1shuffle__backward_1_1primitive__desc.html#a3d806f289c6962b56ac99bae81f8d43d">dnnl::shuffle_backward::primitive_desc</a>
 , <a class="el" href="structdnnl_1_1shuffle__forward_1_1primitive__desc.html#a2cf7ecbbd00714eeca74a1d8655cd673">dnnl::shuffle_forward::primitive_desc</a>
 , <a class="el" href="structdnnl_1_1lbr__gru__backward_1_1primitive__desc.html#a8cccd71b52176075c6775aebb10fac30">dnnl::lbr_gru_backward::primitive_desc</a>
+, <a class="el" href="structdnnl_1_1binary_1_1primitive__desc.html#a01ef067155c50ae5b25c5703d000ac9d">dnnl::binary::primitive_desc</a>
 , <a class="el" href="structdnnl_1_1lbr__gru__forward_1_1primitive__desc.html#a814deffde5f7370217108fd008681e42">dnnl::lbr_gru_forward::primitive_desc</a>
 , <a class="el" href="structdnnl_1_1gru__backward_1_1primitive__desc.html#ab1ffe57bd4a3729852dc775c57fe0c19">dnnl::gru_backward::primitive_desc</a>
 , <a class="el" href="structdnnl_1_1gru__forward_1_1primitive__desc.html#ac70554927ef2e67e86ca4220969531eb">dnnl::gru_forward::primitive_desc</a>
 , <a class="el" href="structdnnl_1_1lstm__backward_1_1primitive__desc.html#a33683f73c54c3cdfadccb169095b15a3">dnnl::lstm_backward::primitive_desc</a>
+, <a class="el" href="structdnnl_1_1matmul_1_1primitive__desc.html#a2d04b018b03dbbfe63ba8a4752288fc9">dnnl::matmul::primitive_desc</a>
+, <a class="el" href="structdnnl_1_1concat_1_1primitive__desc.html#ad2579e313096b1abad67b1631d5b75c2">dnnl::concat::primitive_desc</a>
 , <a class="el" href="structdnnl_1_1lstm__forward_1_1primitive__desc.html#a78ca609eb815bf0c6e847c5fb72dd79f">dnnl::lstm_forward::primitive_desc</a>
 , <a class="el" href="structdnnl_1_1vanilla__rnn__backward_1_1primitive__desc.html#aba50f3b1d77a244edf14368e9d07d423">dnnl::vanilla_rnn_backward::primitive_desc</a>
 , <a class="el" href="structdnnl_1_1vanilla__rnn__forward_1_1primitive__desc.html#a20ed263ada89906c644190a972c2fd6b">dnnl::vanilla_rnn_forward::primitive_desc</a>
@@ -149,31 +159,43 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 , <a class="el" href="structdnnl_1_1batch__normalization__forward_1_1primitive__desc.html#ae89505b5ad1b82cca5d8cbae56a1030c">dnnl::batch_normalization_forward::primitive_desc</a>
 , <a class="el" href="structdnnl_1_1logsoftmax__backward_1_1primitive__desc.html#a9aeb61633ba700dcf45221ae03d5ebef">dnnl::logsoftmax_backward::primitive_desc</a>
 , <a class="el" href="structdnnl_1_1logsoftmax__forward_1_1primitive__desc.html#a678a83daec364961b30a7b4bb1d6e78a">dnnl::logsoftmax_forward::primitive_desc</a>
+, <a class="el" href="structdnnl_1_1matmul_1_1primitive__desc.html#af28f8d7dd12269587b1af1e4195259f0">dnnl::matmul::primitive_desc</a>
 , <a class="el" href="structdnnl_1_1softmax__backward_1_1primitive__desc.html#a196d602f333a73661f6d83dec6305169">dnnl::softmax_backward::primitive_desc</a>
 , <a class="el" href="structdnnl_1_1softmax__forward_1_1primitive__desc.html#a7c86747ed58bcaecd3f11196dbec53e7">dnnl::softmax_forward::primitive_desc</a>
+, <a class="el" href="structdnnl_1_1lbr__gru__backward_1_1primitive__desc.html#a72261d946a2fe263c884aaabaaca2164">dnnl::lbr_gru_backward::primitive_desc</a>
 , <a class="el" href="structdnnl_1_1eltwise__backward_1_1primitive__desc.html#aeadf274f41a2aeaafb63f5b0708d86e7">dnnl::eltwise_backward::primitive_desc</a>
 , <a class="el" href="structdnnl_1_1eltwise__forward_1_1primitive__desc.html#ae5453bbf061fd8a85604b0526367de57">dnnl::eltwise_forward::primitive_desc</a>
+, <a class="el" href="structdnnl_1_1convolution__backward__weights_1_1primitive__desc.html#ac5e0c28ebaa99aa9ad3957dc64079181">dnnl::convolution_backward_weights::primitive_desc</a>
+, <a class="el" href="structdnnl_1_1eltwise__forward_1_1primitive__desc.html#a4d764f3f92306c5d9d2ad0ae68ea9950">dnnl::eltwise_forward::primitive_desc</a>
 , <a class="el" href="structdnnl_1_1pooling__backward_1_1primitive__desc.html#afe364f2f7eaee994bddee09874b3390a">dnnl::pooling_backward::primitive_desc</a>
 , <a class="el" href="structdnnl_1_1pooling__forward_1_1primitive__desc.html#a7ab03b05cdd8a3ef08170443d9727bc3">dnnl::pooling_forward::primitive_desc</a>
 , <a class="el" href="structdnnl_1_1lrn__backward_1_1primitive__desc.html#a8f262bb255d60609c04c9c0bc5d73ad1">dnnl::lrn_backward::primitive_desc</a>
 , <a class="el" href="structdnnl_1_1lrn__forward_1_1primitive__desc.html#ae7891cd97f3c008314e264ce3521249c">dnnl::lrn_forward::primitive_desc</a>
 , <a class="el" href="structdnnl_1_1deconvolution__backward__weights_1_1primitive__desc.html#a668d19c88fddcbb7177b4d03fab91221">dnnl::deconvolution_backward_weights::primitive_desc</a>
-, <a class="el" href="structdnnl_1_1reorder_1_1primitive__desc.html#a546b5b12a7524f0651ff58e6d5f1c831">dnnl::reorder::primitive_desc</a>
-, <a class="el" href="structdnnl_1_1deconvolution__backward__weights_1_1primitive__desc.html#aaa5d15261161c41f7c316d62757d63a7">dnnl::deconvolution_backward_weights::primitive_desc</a>
 , <a class="el" href="structdnnl_1_1deconvolution__backward__data_1_1primitive__desc.html#af072eb6d914f2b001ee01c419b70393f">dnnl::deconvolution_backward_data::primitive_desc</a>
+, <a class="el" href="structdnnl_1_1logsoftmax__forward_1_1primitive__desc.html#aa192fcedde074273837c74875f36293d">dnnl::logsoftmax_forward::primitive_desc</a>
 , <a class="el" href="structdnnl_1_1deconvolution__forward_1_1primitive__desc.html#a3c698a13a43520eca307861965bc4b88">dnnl::deconvolution_forward::primitive_desc</a>
+, <a class="el" href="structdnnl_1_1softmax__forward_1_1primitive__desc.html#aeba1f4d261564110151724e2499f4625">dnnl::softmax_forward::primitive_desc</a>
 , <a class="el" href="structdnnl_1_1convolution__backward__weights_1_1primitive__desc.html#a4c76ab88f4eee91cfda2eba496d7ac38">dnnl::convolution_backward_weights::primitive_desc</a>
+, <a class="el" href="structdnnl_1_1lstm__backward_1_1primitive__desc.html#a46152ef35d4c4004ae1878bef29b2775">dnnl::lstm_backward::primitive_desc</a>
 , <a class="el" href="structdnnl_1_1convolution__backward__data_1_1primitive__desc.html#a2c46a4427cf97c4967be8263dc2833c4">dnnl::convolution_backward_data::primitive_desc</a>
 , <a class="el" href="structdnnl_1_1convolution__forward_1_1primitive__desc.html#a9c2c8e357be96e74eaf4f3674c0f491a">dnnl::convolution_forward::primitive_desc</a>
-, <a class="el" href="structdnnl_1_1primitive__desc.html#a153206935a69c14f5261d36673901bb6">dnnl::primitive_desc</a>
+, <a class="el" href="structdnnl_1_1primitive__desc.html#a01f95ec4be4b7cb0a6df84413cd638ef">dnnl::primitive_desc</a>
 , <a class="el" href="structdnnl_1_1sum_1_1primitive__desc.html#aeeed702d1ff4a01b98432b3bacffaae2">dnnl::sum::primitive_desc</a>
-, <a class="el" href="structdnnl_1_1concat_1_1primitive__desc.html#a11cf6412b748dcff23eff04c320bde95">dnnl::concat::primitive_desc</a>
-, <a class="el" href="structdnnl_1_1deconvolution__backward__weights_1_1primitive__desc.html#a1c1962e1e024b230882d0566f363f50c">dnnl::deconvolution_backward_weights::primitive_desc</a>
-, <a class="el" href="structdnnl_1_1reorder_1_1primitive__desc.html#a2417134d70d83123c90188de1206125f">dnnl::reorder::primitive_desc</a>
-, <a class="el" href="structdnnl_1_1matmul_1_1primitive__desc.html#a9df85d8a1b019f70959c4ffc05f59050">dnnl::matmul::primitive_desc</a>
+, <a class="el" href="structdnnl_1_1deconvolution__backward__data_1_1primitive__desc.html#adf093e3be119f32ca73072dfec9d7446">dnnl::deconvolution_backward_data::primitive_desc</a>
+, <a class="el" href="structdnnl_1_1sum_1_1primitive__desc.html#a2710757f8e776fb3988c41ec101bd1ea">dnnl::sum::primitive_desc</a>
+, <a class="el" href="structdnnl_1_1deconvolution__forward_1_1primitive__desc.html#a9f4d214e142ef77363abeab7f48ec9c7">dnnl::deconvolution_forward::primitive_desc</a>
+, <a class="el" href="structdnnl_1_1eltwise__forward_1_1primitive__desc.html#aa5d9b6864bfde86fcb1a314027e1e3dd">dnnl::eltwise_forward::primitive_desc</a>
+, <a class="el" href="structdnnl_1_1convolution__backward__weights_1_1primitive__desc.html#a47dbe5cd9f56ea74539d96328bb76e07">dnnl::convolution_backward_weights::primitive_desc</a>
+, <a class="el" href="structdnnl_1_1concat_1_1primitive__desc.html#a99722755d6eeaf8b5fb28cb154d4ee1d">dnnl::concat::primitive_desc</a>
+, <a class="el" href="structdnnl_1_1reorder_1_1primitive__desc.html#a546b5b12a7524f0651ff58e6d5f1c831">dnnl::reorder::primitive_desc</a>
+, <a class="el" href="structdnnl_1_1sum_1_1primitive__desc.html#ac94c9eb0351f08367bfa0ae566c3f418">dnnl::sum::primitive_desc</a>
+, <a class="el" href="structdnnl_1_1concat_1_1primitive__desc.html#ac149ddacc87abc5859fcb29812eb1c22">dnnl::concat::primitive_desc</a>
+, <a class="el" href="structdnnl_1_1matmul_1_1primitive__desc.html#a8ed6b0990cde0570156d4cbad8b00303">dnnl::matmul::primitive_desc</a>
+, <a class="el" href="structdnnl_1_1binary_1_1primitive__desc.html#a747506626856c93012ac0487747a4ae3">dnnl::binary::primitive_desc</a>
 </li>
 <li>primitive_desc_base()
-: <a class="el" href="structdnnl_1_1primitive__desc__base.html#aa4853f3190cac45b653e510b6eeed97a">dnnl::primitive_desc_base</a>
+: <a class="el" href="structdnnl_1_1primitive__desc__base.html#a27780142d0880bb0ca678f7c5a1845b9">dnnl::primitive_desc_base</a>
 </li>
 </ul>
 </div><!-- contents -->

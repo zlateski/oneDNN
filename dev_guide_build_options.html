@@ -120,12 +120,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>DNNL uses OpenMP runtime library provided by the compiler.</p>
 <dl class="section warning"><dt>Warning</dt><dd>Because different OpenMP runtimes may not be binary-compatible, it's important to ensure that only one OpenMP runtime is used throughout the application. Having more than one OpenMP runtime linked to an executable may lead to undefined behavior including incorrect results or crashes. However as long as both the library and the application use the same or compatible compilers there would be no conflicts.</dd></dl>
 <h4>TBB</h4>
-<p>To build DNNL with TBB support, set the <code>TBBROOT</code> environmental variable to point to the TBB installation path or pass the path directly to cmake:</p>
+<p>To build DNNL with TBB support, set <code>DNNL_CPU_RUNTIME</code> to <code>TBB</code>:</p>
+<div class="fragment"><div class="line">$ cmake -DDNNL_CPU_RUNTIME=TBB ..</div>
+</div><!-- fragment --><p>Optionally, set the <code>TBBROOT</code> environmental variable to point to the TBB installation path or pass the path directly to CMake:</p>
 <div class="fragment"><div class="line">$ cmake -DDNNL_CPU_RUNTIME=TBB -DTBBROOT=/opt/intel/path/tbb ..</div>
 </div><!-- fragment --><p>DNNL has limited optimizations for Intel TBB and has some functional limitations if built with Intel TBB.</p>
 <p>Functional limitations:</p>
 <ul>
-<li>Winograd convolution algorithm is not supported.</li>
+<li>Winograd convolution algorithm is not supported for fp32 backward by data and backward by weights propagation.</li>
 </ul>
 <h2>GPU Options</h2>
 <p>Intel Processor Graphics is supported by DNNLs GPU engine. GPU engine is disabled in the default build configuration.</p>

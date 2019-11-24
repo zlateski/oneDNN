@@ -208,7 +208,7 @@ Create and execute convolution and pooling primitives</h2>
 <div class="line">    s.wait();</div>
 </div><!-- fragment --> <h2><a class="anchor" id="memory_format_propagation_sub7"></a>
 Reorder destination data if necessary</h2>
-<p>The only potentially remaining operation is a reorder from the pooling destination memory object to the users's one. Similarly to the reorders for the source and weights memory objects, it is performed depending on the value of the previously computed flag.</p>
+<p>The only potentially remaining operation is a reorder from the pooling destination memory object to the user's one. Similarly to the reorders for the source and weights memory objects, it is performed depending on the value of the previously computed flag.</p>
 <div class="fragment"><div class="line">    <span class="keywordflow">if</span> (need_reorder_dst) {</div>
 <div class="line">        <span class="keyword">auto</span> reorder_dst = reorder(pool_dst_mem, dst_mem);</div>
 <div class="line">        reorder_dst.execute(</div>

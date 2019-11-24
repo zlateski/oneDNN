@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['dim',['dim',['../structdnnl_1_1memory.html#a6ad818e4699872cc913474fa5f122cd5',1,'dnnl::memory']]],
+  ['dims',['dims',['../structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8',1,'dnnl::memory']]],
   ['dnnl_5fdeconvolution_5fdesc_5ft',['dnnl_deconvolution_desc_t',['../group__c__api__types__op__descs.html#gafd99fc7c70359ba9434d6a9933d566c3',1,'dnnl_types.h']]],
   ['dnnl_5fdim_5ft',['dnnl_dim_t',['../group__c__api__types__memory.html#ga872631b12a112bf43fba985cba24dd20',1,'dnnl_types.h']]],
   ['dnnl_5fdims_5ft',['dnnl_dims_t',['../group__c__api__types__memory.html#ga8331e1160e52a5d4babe96736464095a',1,'dnnl_types.h']]],

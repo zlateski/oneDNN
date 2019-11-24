@@ -110,6 +110,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="dnnl_8hpp.html">dnnl.hpp</a>&quot;</span></div>
 <div class="line"></div>
+<div class="line"><span class="preprocessor">#include &quot;example_utils.hpp&quot;</span></div>
+<div class="line"></div>
 <div class="line"><span class="keyword">using namespace </span>dnnl;</div>
 <div class="line"></div>
 <div class="line"><span class="keyword">namespace </span>{</div>
@@ -117,7 +119,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><span class="keywordtype">void</span> init_vector(std::vector&lt;float&gt; &amp;v) {</div>
 <div class="line">    std::random_device rdev;</div>
 <div class="line">    std::mt19937 gen(rdev());</div>
-<div class="line">    std::uniform_real_distribution&lt;&gt; u(0, 1);</div>
+<div class="line">    std::uniform_real_distribution&lt;float&gt; u(0, 1);</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;e : v)</div>
 <div class="line">        e = u(gen);</div>
 <div class="line">}</div>
@@ -164,7 +166,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    attr.set_zero_points(DNNL_ARG_SRC, <span class="comment">/* mask */</span> 0, {<a name="a11"></a><a class="code" href="group__c__api__types__memory.html#ga30139d5110e9e895ccd93fe503ca4c35">DNNL_RUNTIME_S32_VAL</a>});</div>
 <div class="line">    attr.set_zero_points(DNNL_ARG_DST, <span class="comment">/* mask */</span> 0, {<a class="code" href="group__c__api__types__memory.html#ga30139d5110e9e895ccd93fe503ca4c35">DNNL_RUNTIME_S32_VAL</a>});</div>
 <div class="line">    <a name="_a12"></a><a class="code" href="structdnnl_1_1post__ops.html">post_ops</a> po;</div>
-<div class="line">    po.<a name="a13"></a><a class="code" href="structdnnl_1_1post__ops.html#a9cc93664cc11d2cd4c900f172be5703f">append_eltwise</a>(1.f, <a name="a14"></a><a class="code" href="group__cpp__api__enums.html#gga00377dd4982333e42e8ae1d09a309640aba09bebb742494255b90b43871c01c69">algorithm::eltwise_relu</a>, 0.f, 0.f);</div>
+<div class="line">    po.<a name="a13"></a><a class="code" href="structdnnl_1_1post__ops.html#a66606f08467b19091e696b52a2f789e6">append_eltwise</a>(1.f, <a name="a14"></a><a class="code" href="group__cpp__api__enums.html#gga00377dd4982333e42e8ae1d09a309640aba09bebb742494255b90b43871c01c69">algorithm::eltwise_relu</a>, 0.f, 0.f);</div>
 <div class="line">    attr.set_post_ops(po);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Create a MatMul primitive descriptor</span></div>
@@ -172,7 +174,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="structdnnl_1_1matmul_1_1primitive__desc.html">matmul::primitive_desc</a>(<a class="code" href="group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1a4a7fa4b07a2f5ef2534d7159225f480d">matmul_d</a>, attr, eng);</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">int</span> infer(<span class="keyword">const</span> <a name="_a17"></a><a class="code" href="structdnnl_1_1matmul.html">matmul</a> &amp;matmul_p, int64_t M, int64_t N, int64_t K,</div>
+<div class="line"><span class="keywordtype">void</span> infer(<span class="keyword">const</span> <a name="_a17"></a><a class="code" href="structdnnl_1_1matmul.html">matmul</a> &amp;matmul_p, int64_t M, int64_t N, int64_t K,</div>
 <div class="line">        <span class="keyword">const</span> <a name="_a18"></a><a class="code" href="structdnnl_1_1memory.html">memory</a> &amp;B_s8_mem) {</div>
 <div class="line">    std::vector&lt;uint8_t&gt; A_u8(M * K), C_u8(M * N);</div>
 <div class="line">    init_vector(A_u8);</div>
@@ -192,7 +194,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line">    <a name="_a21"></a><a class="code" href="structdnnl_1_1stream.html">stream</a> s(eng);</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> run = 0; run &lt; number_of_runs; ++run)</div>
-<div class="line">        matmul_p.<a name="a22"></a><a class="code" href="structdnnl_1_1primitive.html#a8a8a7d1a5ffd86032613d38a90378e3c">execute</a>(s,</div>
+<div class="line">        matmul_p.<a name="a22"></a><a class="code" href="structdnnl_1_1primitive.html#a4c454f3d9315ea0dc6635f26eab9a950">execute</a>(s,</div>
 <div class="line">                {{DNNL_ARG_SRC, A_u8_mem}, {DNNL_ARG_WEIGHTS, B_s8_mem},</div>
 <div class="line">                        {DNNL_ARG_DST, C_u8_mem},</div>
 <div class="line">                        {DNNL_ARG_ATTR_OUTPUT_SCALES, scale_f32_mem},</div>
@@ -202,12 +204,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line">    <span class="comment">// simple check: C_u8 &gt;= zp_C</span></div>
 <div class="line">    <span class="keywordflow">for</span> (int64_t i = 0; i &lt; M * N; ++i)</div>
-<div class="line">        <span class="keywordflow">if</span> (C_u8[i] &lt; zp_C) <span class="keywordflow">return</span> 1;</div>
-<div class="line"></div>
-<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">        <span class="keywordflow">if</span> (C_u8[i] &lt; zp_C)</div>
+<div class="line">            <span class="keywordflow">throw</span> std::logic_error(</div>
+<div class="line">                    <span class="stringliteral">&quot;Smoke check failed.&quot;</span></div>
+<div class="line">                    <span class="stringliteral">&quot;\n\tQuantized value is smaller than the zero point,&quot;</span></div>
+<div class="line">                    <span class="stringliteral">&quot;\n\twhich should not happen since ReLU was applied.&quot;</span>);</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">int</span> inference_int8_matmul() {</div>
+<div class="line"><span class="keywordtype">void</span> inference_int8_matmul() {</div>
 <div class="line">    <span class="keyword">const</span> int64_t K = 96;</div>
 <div class="line">    <span class="keyword">const</span> int64_t N = 1000;</div>
 <div class="line">    <span class="keyword">auto</span> matmul_pd = matmul_pd_create(K, N);</div>
@@ -223,28 +227,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">        <a class="code" href="structdnnl_1_1memory.html">memory</a> B_f32_mem(</div>
 <div class="line">                {{K, N}, memory::data_type::f32, memory::format_tag::ab}, eng,</div>
 <div class="line">                B_f32.data());</div>
-<div class="line">        <a name="_a23"></a><a class="code" href="structdnnl_1_1reorder.html">reorder</a>(B_f32_mem, B_s8_mem).<a name="a24"></a><a class="code" href="structdnnl_1_1reorder.html#a8336412c960a254fdb808c6b167d6d93">execute</a>(s, B_f32_mem, B_s8_mem);</div>
+<div class="line">        <a name="_a23"></a><a class="code" href="structdnnl_1_1reorder.html">reorder</a>(B_f32_mem, B_s8_mem).<a name="a24"></a><a class="code" href="structdnnl_1_1reorder.html#a0d551b51dd0b727253be8c88bec06a08">execute</a>(s, B_f32_mem, B_s8_mem);</div>
 <div class="line">        s.wait();</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <a class="code" href="structdnnl_1_1matmul.html">matmul</a> matmul_p(matmul_pd);</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordtype">int</span> rc = 0;</div>
 <div class="line">    <span class="keywordflow">for</span> (int64_t M : {1, 100})</div>
-<div class="line">        rc |= infer(matmul_p, M, N, K, B_s8_mem);</div>
-<div class="line"></div>
-<div class="line">    <span class="keywordflow">return</span> rc;</div>
+<div class="line">        infer(matmul_p, M, N, K, B_s8_mem);</div>
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv) {</div>
-<div class="line">    <span class="keywordflow">try</span> {</div>
-<div class="line">        <span class="keywordtype">int</span> rc = inference_int8_matmul();</div>
-<div class="line">        std::cout &lt;&lt; (rc ? <span class="stringliteral">&quot;failed&quot;</span> : <span class="stringliteral">&quot;passed&quot;</span>) &lt;&lt; std::endl;</div>
-<div class="line">    } <span class="keywordflow">catch</span> (<a name="_a25"></a><a class="code" href="structdnnl_1_1error.html">error</a> &amp;e) {</div>
-<div class="line">        std::cerr &lt;&lt; <span class="stringliteral">&quot;status: &quot;</span> &lt;&lt; e.<a name="a26"></a>status &lt;&lt; std::endl;</div>
-<div class="line">        std::cerr &lt;&lt; <span class="stringliteral">&quot;message: &quot;</span> &lt;&lt; e.<a name="a27"></a>message &lt;&lt; std::endl;</div>
-<div class="line">    }</div>
-<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">    <span class="keywordflow">return</span> handle_example_errors(inference_int8_matmul);</div>
 <div class="line">}</div>
 </div><!-- fragment --> </div><!-- contents -->
 <div class="footer">
