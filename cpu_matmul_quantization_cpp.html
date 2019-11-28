@@ -316,7 +316,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <a class="code" href="structdnnl_1_1matmul.html">matmul</a> matmul_p(matmul_pd);</div>
 <div class="line"></div>
 <div class="line">    stream s(eng);</div>
-<div class="line">    matmul_p.<a class="code" href="structdnnl_1_1primitive.html#a4c454f3d9315ea0dc6635f26eab9a950">execute</a>(s,</div>
+<div class="line">    matmul_p.execute(s,</div>
 <div class="line">            {{DNNL_ARG_SRC, A_f32_m}, {DNNL_ARG_WEIGHTS, B_f32_m},</div>
 <div class="line">                    {DNNL_ARG_DST, C_f32_m}});</div>
 <div class="line">    s.wait();</div>
@@ -390,7 +390,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">                {{1}, <a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e">memory::data_type::f32</a>, {1}}, eng, &amp;output_scale);</div>
 <div class="line">        memory zp_A_m({{1}, <a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dceaa860868d23f3a68323a2e3f6563d7f31">memory::data_type::s32</a>, {1}}, eng, &amp;zp_A);</div>
 <div class="line"></div>
-<div class="line">        matmul_p.<a class="code" href="structdnnl_1_1primitive.html#a4c454f3d9315ea0dc6635f26eab9a950">execute</a>(s,</div>
+<div class="line">        matmul_p.execute(s,</div>
 <div class="line">                {{DNNL_ARG_SRC, A_u8_m}, {DNNL_ARG_WEIGHTS, B_s8_m},</div>
 <div class="line">                        {DNNL_ARG_DST, C_f32_m},</div>
 <div class="line">                        {DNNL_ARG_ATTR_OUTPUT_SCALES, output_scales_m},</div>
@@ -451,7 +451,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">        <a class="code" href="structdnnl_1_1matmul_1_1primitive__desc.html">matmul::primitive_desc</a> matmul_pd(<a class="code" href="group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1a4a7fa4b07a2f5ef2534d7159225f480d">matmul_d</a>, matmul_attr, eng);</div>
 <div class="line">        <a class="code" href="structdnnl_1_1matmul.html">matmul</a> matmul_p(matmul_pd);</div>
 <div class="line"></div>
-<div class="line">        matmul_p.<a class="code" href="structdnnl_1_1primitive.html#a4c454f3d9315ea0dc6635f26eab9a950">execute</a>(s,</div>
+<div class="line">        matmul_p.execute(s,</div>
 <div class="line">                {{DNNL_ARG_SRC, A_u8_m}, {DNNL_ARG_WEIGHTS, B_s8_m},</div>
 <div class="line">                        {DNNL_ARG_DST, C_u8_m}});</div>
 <div class="line">    }</div>

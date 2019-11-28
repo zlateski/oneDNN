@@ -96,7 +96,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr>
 <td align="left">abs </td><td align="left"><a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a2ac04aed39c46f6d6356744d9d12df43" title="Eltwise: abs. ">dnnl_eltwise_abs</a> </td><td align="left">\( f(x) = \begin{cases} x &amp; \text{if}\ x &gt; 0 \\ -x &amp; \text{if}\ x \leq 0 \end{cases} \) </td></tr>
 <tr>
-<td align="left">bounded_relu </td><td align="left"><a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23aed5e7f85cc5d7dfeacefe6a7a5032502" title="Eltwise: bounded_relu. ">dnnl_eltwise_bounded_relu</a> </td><td align="left">\( f(x) = \begin{cases} \alpha &amp; \text{if}\ x &gt; \alpha \\ x &amp; \text{if}\ 0 &lt; x \leq \alpha \\ 0 &amp; \text{if}\ x \leq 0 \end{cases} \) </td></tr>
+<td align="left">bounded_relu </td><td align="left"><a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23aed5e7f85cc5d7dfeacefe6a7a5032502" title="Eltwise: bounded_relu. ">dnnl_eltwise_bounded_relu</a> </td><td align="left">\( f(x) = \begin{cases} \alpha &amp; \text{if}\ x &gt; \alpha, \alpha \geq 0 \\ x &amp; \text{if}\ 0 &lt; x \leq \alpha \\ 0 &amp; \text{if}\ x \leq 0 \end{cases} \) </td></tr>
+<tr>
+<td align="left">clip </td><td align="left"><a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a026ef822b5cc28653e0730f8c8c2cf32" title="Eltwise: clip. ">dnnl_eltwise_clip</a> </td><td align="left">\( f(x) = \begin{cases} \beta &amp; \text{if}\ x &gt; \beta, \beta \geq \alpha \\ x &amp; \text{if}\ \alpha &lt; x \leq \beta \\ \alpha &amp; \text{if}\ x \leq \alpha \end{cases} \) </td></tr>
 <tr>
 <td align="left">elu </td><td align="left"><a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a7afda2aa9bac4a229909522235f461b5" title="Eltwise: parametric exponential linear unit (elu) ">dnnl_eltwise_elu</a> </td><td align="left">\( f(x) = \begin{cases} x &amp; \text{if}\ x &gt; 0 \\ \alpha (e^x - 1) &amp; \text{if}\ x \leq 0 \end{cases} \) </td></tr>
 <tr>

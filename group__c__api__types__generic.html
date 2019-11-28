@@ -301,19 +301,20 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a4dd9cf08e3bebffb5d14e24c7d513f64">dnnl_eltwise_gelu</a> = 0xcf, 
 <a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a63447dedf2e45ab535f1365502ff3240">dnnl_eltwise_swish</a> = 0xdf, 
 <a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a8ea10785816fd41353b49445852e0b74">dnnl_eltwise_log</a> = 0xef, 
-<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23acf3529ba1c4761c0da90eb6750def6c7">dnnl_pooling_max</a> = 0x1ff, 
+<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a026ef822b5cc28653e0730f8c8c2cf32">dnnl_eltwise_clip</a> = 0xff, 
 <br/>
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23ac13a4cc7c0dc1edfcbf1bac23391d5cb">dnnl_pooling_avg_include_padding</a> = 0x2ff, 
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23acf3529ba1c4761c0da90eb6750def6c7">dnnl_pooling_max</a> = 0x1ff, 
+<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23ac13a4cc7c0dc1edfcbf1bac23391d5cb">dnnl_pooling_avg_include_padding</a> = 0x2ff, 
 <a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a00156580493fd7c2f4cdbaaf9fcbde79">dnnl_pooling_avg_exclude_padding</a> = 0x3ff
 , <a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a540b116253bf1290b9536929198d18fd">dnnl_lrn_across_channels</a> = 0xaff, 
-<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a922fdd348b6a3e6bbe589025691d7171">dnnl_lrn_within_channel</a> = 0xbff, 
 <br/>
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a65d20a62fd39cfe09b3deb2e35752449">dnnl_vanilla_rnn</a> = 0x1fff, 
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a922fdd348b6a3e6bbe589025691d7171">dnnl_lrn_within_channel</a> = 0xbff, 
+<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a65d20a62fd39cfe09b3deb2e35752449">dnnl_vanilla_rnn</a> = 0x1fff, 
 <a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a765cecdcf6f7c524833a241ecc9bf41d">dnnl_vanilla_lstm</a> = 0x2fff, 
 <a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a7ba4a460b8bff80dcdf1240d7ad34208">dnnl_vanilla_gru</a> = 0x3fff, 
-<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a7cd2e2970fefcdeb255415d0363279e2">dnnl_lbr_gru</a> = 0x4fff, 
 <br/>
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23ad4c6d69ac6f6b443449923d51325886d">dnnl_binary_add</a> = 0x1fff0, 
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a7cd2e2970fefcdeb255415d0363279e2">dnnl_lbr_gru</a> = 0x4fff, 
+<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23ad4c6d69ac6f6b443449923d51325886d">dnnl_binary_add</a> = 0x1fff0, 
 <a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23ade272a5bcb8af2b2cb0bc691c78b4e36">dnnl_binary_mul</a> = 0x1fff1
 <br/>
  }</td></tr>
@@ -939,6 +940,9 @@ Enumerations</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga96946c805f6c4922c38c37049ab95d23a8ea10785816fd41353b49445852e0b74"></a>dnnl_eltwise_log</em>&nbsp;</td><td class="fielddoc">
 <p>Eltwise: natural logarithm. </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="gga96946c805f6c4922c38c37049ab95d23a026ef822b5cc28653e0730f8c8c2cf32"></a>dnnl_eltwise_clip</em>&nbsp;</td><td class="fielddoc">
+<p>Eltwise: clip. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga96946c805f6c4922c38c37049ab95d23acf3529ba1c4761c0da90eb6750def6c7"></a>dnnl_pooling_max</em>&nbsp;</td><td class="fielddoc">
 <p>Max pooling. </p>
