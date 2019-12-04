@@ -9,6 +9,7 @@ var searchData=
   ['profiling_20dnnl_20performance',['Profiling DNNL performance',['../dev_guide_profilers.html',1,'']]],
   ['profiling_20with_20intel_28r_29_20vtune_20amplifier',['Profiling with Intel(R) VTune Amplifier',['../dev_guide_vtune.html',1,'']]],
   ['pooling',['Pooling',['../group__dnnl__api__pooling.html',1,'']]],
+  ['primitives',['Primitives',['../group__dnnl__api__primitives.html',1,'']]],
   ['packed',['packed',['../structdnnl_1_1memory.html#aabcadfb0e23a36a91272fc571cff105faf59dcd306ec32930f1e78a1d82280b48',1,'dnnl::memory']]],
   ['padded_5fdims',['padded_dims',['../structdnnl__memory__desc__t.html#abd9c8bd4bc17b924e21b21ed919a52f9',1,'dnnl_memory_desc_t']]],
   ['padded_5foffsets',['padded_offsets',['../structdnnl__memory__desc__t.html#a7061897266dca53429b1ea3b8672218f',1,'dnnl_memory_desc_t']]],
