@@ -111,6 +111,18 @@ Macros</h2></td></tr>
 <tr class="memitem:gaa9e648b617df0f0186143abdf78ca5f2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#gaa9e648b617df0f0186143abdf78ca5f2">DNNL_MAX_NDIMS</a>&#160;&#160;&#160;12</td></tr>
 <tr class="memdesc:gaa9e648b617df0f0186143abdf78ca5f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of dimensions a tensor can have.  <a href="#gaa9e648b617df0f0186143abdf78ca5f2">More...</a><br/></td></tr>
 <tr class="separator:gaa9e648b617df0f0186143abdf78ca5f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa596c5a6102df77a550bad98f0d5cc12"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">DNNL_RUNTIME_DIM_VAL</a>&#160;&#160;&#160;INT64_MIN</td></tr>
+<tr class="memdesc:gaa596c5a6102df77a550bad98f0d5cc12"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wildcard value for dimensions that are unknown at a primitive creation time.  <a href="#gaa596c5a6102df77a550bad98f0d5cc12">More...</a><br/></td></tr>
+<tr class="separator:gaa596c5a6102df77a550bad98f0d5cc12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga61466fbd352b6c94b6541977fbe199b8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#ga61466fbd352b6c94b6541977fbe199b8">DNNL_RUNTIME_SIZE_VAL</a>&#160;&#160;&#160;((size_t)<a class="el" href="group__c__api__types__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">DNNL_RUNTIME_DIM_VAL</a>)</td></tr>
+<tr class="memdesc:ga61466fbd352b6c94b6541977fbe199b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <code>size_t</code> counterpart of the DNNL_RUNTIME_DIM_VAL.  <a href="#ga61466fbd352b6c94b6541977fbe199b8">More...</a><br/></td></tr>
+<tr class="separator:ga61466fbd352b6c94b6541977fbe199b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab16365c11b4dc88fbb453edb51f1979f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#gab16365c11b4dc88fbb453edb51f1979f">DNNL_RUNTIME_F32_VAL</a>&#160;&#160;&#160;(DNNL_RUNTIME_F32_VAL_REP.f)</td></tr>
+<tr class="memdesc:gab16365c11b4dc88fbb453edb51f1979f"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wildcard value for floating point values that are unknown at a primitive creation time.  <a href="#gab16365c11b4dc88fbb453edb51f1979f">More...</a><br/></td></tr>
+<tr class="separator:gab16365c11b4dc88fbb453edb51f1979f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga30139d5110e9e895ccd93fe503ca4c35"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#ga30139d5110e9e895ccd93fe503ca4c35">DNNL_RUNTIME_S32_VAL</a>&#160;&#160;&#160;DNNL_RUNTIME_S32_VAL_REP</td></tr>
+<tr class="memdesc:ga30139d5110e9e895ccd93fe503ca4c35"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wildcard value for int32_t values that are unknown at a primitive creation time.  <a href="#ga30139d5110e9e895ccd93fe503ca4c35">More...</a><br/></td></tr>
+<tr class="separator:ga30139d5110e9e895ccd93fe503ca4c35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga13d8eca8d5e6c94573e1154b3407407f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#ga13d8eca8d5e6c94573e1154b3407407f">DNNL_RNN_MAX_N_PARTS</a>&#160;&#160;&#160;4</td></tr>
 <tr class="memdesc:ga13d8eca8d5e6c94573e1154b3407407f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of parts of RNN weights tensor that require separate computation.  <a href="#ga13d8eca8d5e6c94573e1154b3407407f">More...</a><br/></td></tr>
 <tr class="separator:ga13d8eca8d5e6c94573e1154b3407407f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -167,6 +179,66 @@ Enumerations</h2></td></tr>
 <p>Maximum number of dimensions a tensor can have. </p>
 <p>Only restricts the amount of space used for the tensor description. Individual computational primitives may support only tensors of certain dimensions. </p>
 
+</div>
+</div>
+<a class="anchor" id="gaa596c5a6102df77a550bad98f0d5cc12"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DNNL_RUNTIME_DIM_VAL&#160;&#160;&#160;INT64_MIN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A wildcard value for dimensions that are unknown at a primitive creation time. </p>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cpu_inference_int8_matmul_8cpp-example.html#a3">cpu_inference_int8_matmul.cpp</a>, and <a class="el" href="cpu_sgemm_and_matmul_8cpp-example.html#a3">cpu_sgemm_and_matmul.cpp</a>.</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="ga61466fbd352b6c94b6541977fbe199b8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DNNL_RUNTIME_SIZE_VAL&#160;&#160;&#160;((size_t)<a class="el" href="group__c__api__types__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">DNNL_RUNTIME_DIM_VAL</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A <code>size_t</code> counterpart of the DNNL_RUNTIME_DIM_VAL. </p>
+<p>For instance, this value is returned by <a class="el" href="group__c__api__memory.html#gaed039afa75d9f56763e2c1321f1563c4" title="Returns the size (in bytes) that is required for given memory_desc. ">dnnl_memory_desc_get_size()</a> if either of the dimensions or strides equal to <a class="el" href="group__c__api__types__memory.html#gaa596c5a6102df77a550bad98f0d5cc12" title="A wildcard value for dimensions that are unknown at a primitive creation time. ">DNNL_RUNTIME_DIM_VAL</a>. </p>
+
+</div>
+</div>
+<a class="anchor" id="gab16365c11b4dc88fbb453edb51f1979f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DNNL_RUNTIME_F32_VAL&#160;&#160;&#160;(DNNL_RUNTIME_F32_VAL_REP.f)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A wildcard value for floating point values that are unknown at a primitive creation time. </p>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cpu_inference_int8_matmul_8cpp-example.html#a10">cpu_inference_int8_matmul.cpp</a>, <a class="el" href="cpu_matmul_quantization_8cpp-example.html#a10">cpu_matmul_quantization.cpp</a>, and <a class="el" href="cpu_sgemm_and_matmul_8cpp-example.html#a8">cpu_sgemm_and_matmul.cpp</a>.</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="ga30139d5110e9e895ccd93fe503ca4c35"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DNNL_RUNTIME_S32_VAL&#160;&#160;&#160;DNNL_RUNTIME_S32_VAL_REP</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A wildcard value for int32_t values that are unknown at a primitive creation time. </p>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cpu_inference_int8_matmul_8cpp-example.html#a11">cpu_inference_int8_matmul.cpp</a>, and <a class="el" href="cpu_matmul_quantization_8cpp-example.html#a11">cpu_matmul_quantization.cpp</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ga13d8eca8d5e6c94573e1154b3407407f"></a>

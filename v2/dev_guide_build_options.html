@@ -96,6 +96,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr>
 <td align="left">DNNL_ARCH_OPT_FLAGS </td><td align="left"><em>compiler flags</em> </td><td align="left">Specifies compiler optimization flags (see warning note below) </td></tr>
 <tr>
+<td align="left">DNNL_ENABLE_CONCURRENT_EXEC </td><td align="left">ON, <b>OFF</b> </td><td align="left">Disables sharing a common scratchpad between primitives in <a class="el" href="group__cpp__api__enums.html#ggac24d40ceea0256c7d6cc3a383a0fa07fad521f765a49c72507257a2620612ee96" title="The library manages the scratchpad allocation according to the policy specified by the DNNL_ENABLE_CO...">dnnl::scratchpad_mode::library</a> mode </td></tr>
+<tr>
 <td align="left">DNNL_ENABLE_JIT_PROFILING </td><td align="left"><b>ON</b>, OFF </td><td align="left">Enables integration with Intel(R) VTune(TM) Amplifier </td></tr>
 <tr>
 <td align="left">DNNL_ENABLE_PRIMITIVE_CACHE </td><td align="left">ON, <b>OFF</b> </td><td align="left">Enables primitive cache </td></tr>
@@ -123,7 +125,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --><p>DNNL has limited optimizations for Intel TBB and has some functional limitations if built with Intel TBB.</p>
 <p>Functional limitations:</p>
 <ul>
-<li>Winograd convolution algorithm is not supported.</li>
+<li>Winograd convolution algorithm is not supported for fp32 backward by data and backward by weights propogation.</li>
 </ul>
 <h2>GPU Options</h2>
 <p>Intel Processor Graphics is supported by DNNLs GPU engine. GPU engine is disabled in the default build configuration.</p>

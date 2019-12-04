@@ -160,7 +160,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <ul>
 <li>\(data_{f32}(:) = \frac{1}{scale}(data_{u8}(:) - shift)\).</li>
 </ul>
-<p>But similarly to the other primitives, the LSTM primitive doesn't handle potential overflows automatically. It is up to the user to specify the appropriate quantization parameters (see <a class="el" href="structdnnl_1_1primitive__attr.html#a39ce5aa8b06ed331d8e2158108cc8324" title="Sets quantization scale and shift for RNN data tensors. ">dnnl::primitive_attr::set_rnn_data_qparams()</a> and <a class="el" href="structdnnl_1_1primitive__attr.html#a61bd70f97baa628fd49b2c8b334b913e" title="Sets quantization scales weights_scales for RNN weights tensors. ">dnnl::primitive_attr::set_rnn_weights_qparams()</a>). The recommended ones are:</p>
+<p>But similarly to the other primitives, the LSTM primitive doesn't handle potential overflows automatically. It is up to the user to specify the appropriate quantization parameters (see <a class="el" href="structdnnl_1_1primitive__attr.html#a39ce5aa8b06ed331d8e2158108cc8324" title="Sets quantization scale and shift parameters for RNN data tensors. ">dnnl::primitive_attr::set_rnn_data_qparams()</a> and <a class="el" href="structdnnl_1_1primitive__attr.html#a61bd70f97baa628fd49b2c8b334b913e" title="Sets quantization scaling factors for RNN weights tensors. ">dnnl::primitive_attr::set_rnn_weights_qparams()</a>). The recommended ones are:</p>
 <ul>
 <li>Data (hidden states) use <code>scale = 127</code>, and <code>shift = 128</code>.</li>
 <li>Weights use <code>scale = 63 / W_max</code>, where <code>W_max</code> is \(\max | W_{f32}(:)| {}_{} \).</li>

@@ -118,19 +118,21 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059ad78b3945c7d4da7938ca77daa425afab">dnnl_query_rnn_d</a>, 
 <a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a983136e74f9746f470ed80d6337a147e">dnnl_query_gemm_d</a>, 
 <a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a1c3379cb10acf363b9d50e8eb6e40010">dnnl_query_binary_d</a>, 
+<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059afef5b19704b36da50f1bcfa5b66a61a2">dnnl_query_logsoftmax_d</a>, 
+<br/>
+&#160;&#160;<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a1e4a8897b0c5b3e10277ec3f39dcf942">dnnl_query_matmul_d</a>, 
 <a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a0c4a1096638c39c0771db9a4cb2a3336">dnnl_query_some_md</a> = 128, 
-<br/>
-&#160;&#160;<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5">dnnl_query_src_md</a>, 
+<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5">dnnl_query_src_md</a>, 
 <a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a2367b043da6df5d691d6038693f363d6">dnnl_query_diff_src_md</a>, 
-<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355">dnnl_query_weights_md</a>, 
+<br/>
+&#160;&#160;<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355">dnnl_query_weights_md</a>, 
 <a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a8551246c3e70fa1e420411507dbdfe32">dnnl_query_diff_weights_md</a>, 
-<br/>
-&#160;&#160;<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598">dnnl_query_dst_md</a>, 
+<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598">dnnl_query_dst_md</a>, 
 <a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059ae28e33688bf6c55edcf108bd24eb90de">dnnl_query_diff_dst_md</a>, 
-<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a1c465006660aabe46e644e6df7d36e8a">dnnl_query_workspace_md</a>, 
-<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a2ef0eedf44417ce40237f6f459347663">dnnl_query_scratchpad_md</a>, 
 <br/>
-&#160;&#160;<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059ac7ecf09260d89d54ddd7f35c51a244da">dnnl_query_exec_arg_md</a> = 255
+&#160;&#160;<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a1c465006660aabe46e644e6df7d36e8a">dnnl_query_workspace_md</a>, 
+<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a2ef0eedf44417ce40237f6f459347663">dnnl_query_scratchpad_md</a>, 
+<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059ac7ecf09260d89d54ddd7f35c51a244da">dnnl_query_exec_arg_md</a> = 255
 <br/>
  }</td></tr>
 <tr class="memdesc:ga9e5235563cf7cfc10fa89f415de98059"><td class="mdescLeft">&#160;</td><td class="mdescRight">Primitive descriptor query specification.  <a href="group__c__api__types__query.html#ga9e5235563cf7cfc10fa89f415de98059">More...</a><br/></td></tr>
@@ -233,10 +235,16 @@ Enumerations</h2></td></tr>
 <p>rnn descriptor </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga9e5235563cf7cfc10fa89f415de98059a983136e74f9746f470ed80d6337a147e"></a>dnnl_query_gemm_d</em>&nbsp;</td><td class="fielddoc">
-<p>GEMM descriptor. </p>
+<p>GEMM descriptor (internal) </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga9e5235563cf7cfc10fa89f415de98059a1c3379cb10acf363b9d50e8eb6e40010"></a>dnnl_query_binary_d</em>&nbsp;</td><td class="fielddoc">
 <p>binary descriptor </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="gga9e5235563cf7cfc10fa89f415de98059afef5b19704b36da50f1bcfa5b66a61a2"></a>dnnl_query_logsoftmax_d</em>&nbsp;</td><td class="fielddoc">
+<p>logsoftmax descriptor </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="gga9e5235563cf7cfc10fa89f415de98059a1e4a8897b0c5b3e10277ec3f39dcf942"></a>dnnl_query_matmul_d</em>&nbsp;</td><td class="fielddoc">
+<p>matrix multiplication (matmul) descriptor </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga9e5235563cf7cfc10fa89f415de98059a0c4a1096638c39c0771db9a4cb2a3336"></a>dnnl_query_some_md</em>&nbsp;</td><td class="fielddoc">
 <p>stub </p>

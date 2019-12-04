@@ -151,10 +151,12 @@ Enumerations</h2></td></tr>
 <p>Scratchpad mode. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="ggacda323181ab267e571c31435b0817de4ac6aab09a2f8ef442a6a59800549b0487"></a>dnnl_scratchpad_mode_library</em>&nbsp;</td><td class="fielddoc">
-<p>The library manages scratchpad (default) </p>
+<p>The library manages scratchpad (default) The allocation policy is controlled by the DNNL_ENABLE_CONCURRENT_EXEC build option (<a class="el" href="dev_guide_build_options.html">Build Options</a>). </p>
+<p>When DNNL_ENABLE_CONCURRENT_EXEC=OFF (default), the library scratchpad is common to all primitives to reduce the memory footprint. This configuration comes with limited thread-safety properties, namely different primitives can be created and executed in parallel but cannot migrate between threads (in other words, each primitive should be executed in the same thread it was created in).</p>
+<p>When DNNL_ENABLE_CONCURRENT_EXEC=ON, the library scratchpad is private to each primitive. The memory footprint is larger than when using DNNL_ENABLE_CONCURRENT_EXEC=OFF but different primitives can be created and run concurrently (the same primitive cannot be run concurrently from two different threads though). </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacda323181ab267e571c31435b0817de4a7e9d97b9ceefc5e47512d83c097d6927"></a>dnnl_scratchpad_mode_user</em>&nbsp;</td><td class="fielddoc">
-<p>A user shall query and provide the scratchpad memory to primitives. </p>
+<p>A user shall query and provide the scratchpad memory to primitives This mode is thread-safe as long as the scratchpad buffers are not used concurrently by two primitive executions. </p>
 </td></tr>
 </table>
 

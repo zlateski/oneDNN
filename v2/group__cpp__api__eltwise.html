@@ -88,16 +88,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1eltwise__forward.html">dnnl::eltwise_forward</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Element-wise operations for forward propagation.  <a href="structdnnl_1_1eltwise__forward.html#details">More...</a><br/></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elementwise unary operation forward propagation primitive.  <a href="structdnnl_1_1eltwise__forward.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1eltwise__backward.html">dnnl::eltwise_backward</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Element-wise operations for backward propagation.  <a href="structdnnl_1_1eltwise__backward.html#details">More...</a><br/></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elementwise unary operation backward propagation primitive.  <a href="structdnnl_1_1eltwise__backward.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>A primitive to compute element-wise operations such as rectified linear unit (ReLU). </p>
-<p>Both forward and backward passes support in-place operation; that is, src and dst point to the same memory for forward pass, and diff_dst and diff_src point to the same memory for backward pass.</p>
-<dl class="section warning"><dt>Warning</dt><dd>Because the original src is required for backward pass, in-place forward pass in general cannot be applied during training. However, for some kinds of element-wise operations (namely ReLU with alpha parameter equals 0), dst and src can be interchangeable for the backward pass, which enables performance of in-place forward even for training.</dd></dl>
+<p>Both forward and backward propagation primitives support in-place operation; that is, src and dst can point to the same memory for forward propagation, and diff_dst and diff_src can point to the same memory for backward propagation.</p>
+<dl class="section warning"><dt>Warning</dt><dd>Because the original source data is required for traning backward propagation, in-place training forward propagation is not generally supported. However, for some kinds of element-wise operations (namely ReLU with alpha parameter equals 0), dst and src can be interchangeable for the backward propagation, which enables performance of in-place forward even for training.</dd></dl>
 <dl class="section see"><dt>See Also</dt><dd><a class="el" href="dev_guide_eltwise.html">Eltwise</a> in developer guide </dd>
 <dd>
 <a class="el" href="group__c__api__eltwise.html">Eltwise</a> in <a class="el" href="group__c__api.html">C API</a> </dd></dl>

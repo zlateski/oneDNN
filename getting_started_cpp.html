@@ -64,7 +64,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -272,8 +272,8 @@ Executing the ReLU primitive</h2>
 <div class="line">    relu.execute(engine_stream, <span class="comment">// The execution stream</span></div>
 <div class="line">            {</div>
 <div class="line">                    <span class="comment">// A map with all inputs and outputs</span></div>
-<div class="line">                    {DNNL_ARG_SRC, src_mem}, <span class="comment">// Source tag and memory obj</span></div>
-<div class="line">                    {DNNL_ARG_DST, dst_mem}, <span class="comment">// Destination tag and memory obj</span></div>
+<div class="line">                    {<a class="code" href="group__dnnl__api__primitives__common.html#gac37ad67b48edeb9e742af0e50b70fe09">DNNL_ARG_SRC</a>, src_mem}, <span class="comment">// Source tag and memory obj</span></div>
+<div class="line">                    {<a class="code" href="group__dnnl__api__primitives__common.html#ga3ca217e4a06d42a0ede3c018383c388f">DNNL_ARG_DST</a>, dst_mem}, <span class="comment">// Destination tag and memory obj</span></div>
 <div class="line">            });</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Wait the stream to complete the execution</span></div>
@@ -315,7 +315,7 @@ Obtaining the result and validation</h2>
 </div><!-- fragment --> <h1><a class="anchor" id="getting_started_cpp_main"></a>
 main() function</h1>
 <p>We now just call everything we prepared earlier.</p>
-<p>Since we are using DNNL C++ API we use exception to handle errors (see <a class="el" href="dev_guide_c_and_cpp_apis.html">C and C++ APIs</a>). The DNNL C++ API throws exceptions of type <a class="el" href="structdnnl_1_1error.html">dnnl::error</a>, which contains the error status (of type <a class="el" href="group__c__api__types__generic.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a>) and a human-readable error message accessible through regular <code>what()</code> method.</p>
+<p>Since we are using DNNL C++ API we use exception to handle errors (see <a class="el" href="dev_guide_c_and_cpp_apis.html">API</a>). The DNNL C++ API throws exceptions of type <a class="el" href="structdnnl_1_1error.html">dnnl::error</a>, which contains the error status (of type <a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a>) and a human-readable error message accessible through regular <code>what()</code> method.</p>
 <div class="fragment"><div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv) {</div>
 <div class="line">    <span class="keywordtype">int</span> exit_code = 0;</div>
 <div class="line"></div>
@@ -340,17 +340,17 @@ main() function</h1>
 <div class="fragment"><div class="line">Example passes</div>
 </div><!-- fragment --><p>Users are encouraged to experiment with the code to familiarize themselves with the concepts. In particular, one of the changes that might be of interest is to spoil some of the library calls to check how error handling happens. For instance, if we replace</p>
 <div class="fragment"><div class="line">relu.execute(engine_stream, {</div>
-<div class="line">        {DNNL_ARG_SRC, src_mem},</div>
-<div class="line">        {DNNL_ARG_DST, dst_mem},</div>
+<div class="line">        {<a class="code" href="group__dnnl__api__primitives__common.html#gac37ad67b48edeb9e742af0e50b70fe09">DNNL_ARG_SRC</a>, src_mem},</div>
+<div class="line">        {<a class="code" href="group__dnnl__api__primitives__common.html#ga3ca217e4a06d42a0ede3c018383c388f">DNNL_ARG_DST</a>, dst_mem},</div>
 <div class="line">    });</div>
 </div><!-- fragment --><p>with</p>
 <div class="fragment"><div class="line">relu.execute(engine_stream, {</div>
-<div class="line">        {DNNL_ARG_SRC, src_mem},</div>
+<div class="line">        {<a class="code" href="group__dnnl__api__primitives__common.html#gac37ad67b48edeb9e742af0e50b70fe09">DNNL_ARG_SRC</a>, src_mem},</div>
 <div class="line">        <span class="comment">// {DNNL_ARG_DST, dst_mem}, // Oops, forgot about this one</span></div>
 <div class="line">    });</div>
 </div><!-- fragment --><p>we should get the following output:</p>
 <div class="fragment"><div class="line">DNNL error: could not execute a primitive</div>
-<div class="line">Error <a class="code" href="group__cpp__api__service.html#ga7acc4d3516304ae68a1289551d8f2cdd">status</a>: <a class="code" href="group__cpp__api__service.html#gga7acc4d3516304ae68a1289551d8f2cdda242ac674d98ee2191f0bbf6de851d2d0">invalid_arguments</a></div>
+<div class="line">Error <a class="code" href="group__dnnl__api__service.html#ga7acc4d3516304ae68a1289551d8f2cdd">status</a>: <a class="code" href="group__dnnl__api__service.html#gga7acc4d3516304ae68a1289551d8f2cdda242ac674d98ee2191f0bbf6de851d2d0">invalid_arguments</a></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 <div class="footer">
     <div class="footer-wrapper">

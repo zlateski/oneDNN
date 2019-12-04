@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['a_20performance_20library_20for_20deep_20learning',['A Performance Library for Deep Learning',['../index.html',1,'']]]
+  ['api',['API',['../dev_guide_c_and_cpp_apis.html',1,'']]]
 ];

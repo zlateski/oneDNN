@@ -79,7 +79,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">gpu_opencl_interop.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<p>Annotated version: <a class="el" href="gpu_opencl_interop_cpp.html">Getting started on GPU with OpenCL extensions API</a></p>
+<p>This C++ API example demonstrates programming for Intel(R) Processor Graphics with OpenCL* extensions API in DNNL. </p>
+<blockquote class="doxtable">
+<p>Annotated version: <a class="el" href="gpu_opencl_interop_cpp.html">Getting started on GPU with OpenCL extensions API</a> </p>
+</blockquote>
 <div class="fragment"><div class="line"><span class="comment">/*******************************************************************************</span></div>
 <div class="line"><span class="comment">* Copyright 2019 Intel Corporation</span></div>
 <div class="line"><span class="comment">*</span></div>
@@ -97,15 +100,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><span class="comment">*******************************************************************************/</span></div>
 <div class="line"></div>
 <div class="line"></div>
-<div class="line"><span class="comment">// [Prologue]</span></div>
-<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="dnnl_8hpp.html">dnnl.hpp</a>&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;CL/cl.h&gt;</span></div>
-<div class="line"><span class="comment">// Optional header to access debug functions like `dnnl_status2str()`</span></div>
-<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="dnnl__debug_8h.html">dnnl_debug.h</a>&quot;</span></div>
 <div class="line"></div>
+<div class="line"><span class="comment">// [Prologue]</span></div>
 <div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;numeric&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;sstream&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
+<div class="line"></div>
+<div class="line"><span class="preprocessor">#include &lt;CL/cl.h&gt;</span></div>
+<div class="line"></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="dnnl_8hpp.html">dnnl.hpp</a>&quot;</span></div>
+<div class="line"></div>
+<div class="line"><span class="preprocessor">#include &quot;example_utils.hpp&quot;</span></div>
 <div class="line"></div>
 <div class="line"><span class="keyword">using namespace </span>dnnl;</div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
@@ -115,7 +120,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><span class="preprocessor">    do { \</span></div>
 <div class="line"><span class="preprocessor">        cl_int s = (x); \</span></div>
 <div class="line"><span class="preprocessor">        if (s != CL_SUCCESS) { \</span></div>
-<div class="line"><span class="preprocessor">            printf(&quot;OpenCL error: %d at %s:%d\n&quot;, s, __FILE__, __LINE__); \</span></div>
+<div class="line"><span class="preprocessor">            std::cout &lt;&lt; &quot;[&quot; &lt;&lt; __FILE__ &lt;&lt; &quot;:&quot; &lt;&lt; __LINE__ &lt;&lt; &quot;] &#39;&quot; &lt;&lt; #x \</span></div>
+<div class="line"><span class="preprocessor">                      &lt;&lt; &quot;&#39; failed (status code: &quot; &lt;&lt; s &lt;&lt; &quot;)&quot; &lt;&lt; std::endl; \</span></div>
 <div class="line"><span class="preprocessor">            exit(1); \</span></div>
 <div class="line"><span class="preprocessor">        } \</span></div>
 <div class="line"><span class="preprocessor">    } while (0)</span></div>
@@ -148,7 +154,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="comment">// [Initialize stream]</span></div>
 <div class="line"></div>
 <div class="line">    <span class="comment">//  [memory alloc]</span></div>
-<div class="line">    memory::dims tz_dims = {2, 3, 4, 5};</div>
+<div class="line">    <a class="code" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> tz_dims = {2, 3, 4, 5};</div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">size_t</span> N = std::accumulate(tz_dims.begin(), tz_dims.end(), (size_t)1,</div>
 <div class="line">            std::multiplies&lt;size_t&gt;());</div>
 <div class="line"></div>
@@ -169,7 +175,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="comment">// [oclkernel create]</span></div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span> *kernel_name = <span class="stringliteral">&quot;init&quot;</span>;</div>
 <div class="line">    cl_kernel ocl_init_kernel = create_init_opencl_kernel(</div>
-<div class="line">            eng.get_ocl_context(), kernel_name, ocl_code);</div>
+<div class="line">            eng.<a name="a7"></a><a class="code" href="structdnnl_1_1engine.html#a739ba77b89cc3dc890819bc85d038198">get_ocl_context</a>(), kernel_name, ocl_code);</div>
 <div class="line">    <span class="comment">//  [oclkernel create]</span></div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// [oclexecution]</span></div>
@@ -182,10 +188,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="comment">// [oclexecution]</span></div>
 <div class="line"></div>
 <div class="line">    <span class="comment">//  [relu creation]</span></div>
-<div class="line">    <span class="keyword">auto</span> relu_d = <a name="_a7"></a><a class="code" href="structdnnl_1_1eltwise__forward_1_1desc.html">eltwise_forward::desc</a>(</div>
-<div class="line">            <a name="a8"></a><a class="code" href="group__cpp__api__enums.html#ggac7db48f6583aa9903e54c2a39d65438fa965dbaac085fc891bfbbd4f9d145bbc8">prop_kind::forward</a>, <a name="a9"></a><a class="code" href="group__cpp__api__enums.html#gga00377dd4982333e42e8ae1d09a309640aba09bebb742494255b90b43871c01c69">algorithm::eltwise_relu</a>, mem_d, 0.0f);</div>
-<div class="line">    <span class="keyword">auto</span> relu_pd = <a name="_a10"></a><a class="code" href="structdnnl_1_1eltwise__forward_1_1primitive__desc.html">eltwise_forward::primitive_desc</a>(relu_d, eng);</div>
-<div class="line">    <span class="keyword">auto</span> relu = <a name="_a11"></a><a class="code" href="structdnnl_1_1eltwise__forward.html">eltwise_forward</a>(relu_pd);</div>
+<div class="line">    <span class="keyword">auto</span> relu_d = <a name="_a8"></a><a class="code" href="structdnnl_1_1eltwise__forward_1_1desc.html">eltwise_forward::desc</a>(</div>
+<div class="line">            <a name="a9"></a><a class="code" href="group__cpp__api__enums.html#ggac7db48f6583aa9903e54c2a39d65438fa965dbaac085fc891bfbbd4f9d145bbc8">prop_kind::forward</a>, <a name="a10"></a><a class="code" href="group__cpp__api__enums.html#gga00377dd4982333e42e8ae1d09a309640aba09bebb742494255b90b43871c01c69">algorithm::eltwise_relu</a>, mem_d, 0.0f);</div>
+<div class="line">    <span class="keyword">auto</span> relu_pd = <a name="_a11"></a><a class="code" href="structdnnl_1_1eltwise__forward_1_1primitive__desc.html">eltwise_forward::primitive_desc</a>(relu_d, eng);</div>
+<div class="line">    <span class="keyword">auto</span> relu = <a name="_a12"></a><a class="code" href="structdnnl_1_1eltwise__forward.html">eltwise_forward</a>(relu_pd);</div>
 <div class="line">    <span class="comment">//  [relu creation]</span></div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// [relu exec]</span></div>
@@ -194,36 +200,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="comment">// [relu exec]</span></div>
 <div class="line"><span class="comment"></span></div>
 <div class="line">    <span class="comment">// [Check the results]</span></div>
-<div class="line">    <span class="keywordtype">float</span> *mapped_data = mem.map_data&lt;<span class="keywordtype">float</span>&gt;();</div>
+<div class="line">    std::vector&lt;float&gt; mem_data(N);</div>
+<div class="line">    read_from_dnnl_memory(mem_data.data(), mem);</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; N; i++) {</div>
 <div class="line">        <span class="keywordtype">float</span> expected = (i % 2) ? 0.0f : (<span class="keywordtype">float</span>)i;</div>
-<div class="line">        <span class="keywordflow">if</span> (mapped_data[i] != expected)</div>
-<div class="line">            <span class="keywordflow">throw</span> std::string(</div>
-<div class="line">                    <span class="stringliteral">&quot;Unexpected output, find a negative value after the ReLU &quot;</span></div>
-<div class="line">                    <span class="stringliteral">&quot;execution&quot;</span>);</div>
+<div class="line">        <span class="keywordflow">if</span> (mem_data[i] != expected) {</div>
+<div class="line">            std::cout &lt;&lt; <span class="stringliteral">&quot;Expect &quot;</span> &lt;&lt; expected &lt;&lt; <span class="stringliteral">&quot; but got &quot;</span> &lt;&lt; mem_data[i]</div>
+<div class="line">                      &lt;&lt; std::endl;</div>
+<div class="line">            <span class="keywordflow">throw</span> std::logic_error(<span class="stringliteral">&quot;Accuracy check failed.&quot;</span>);</div>
+<div class="line">        }</div>
 <div class="line">    }</div>
-<div class="line">    mem.unmap_data(mapped_data);</div>
 <div class="line">    <span class="comment">// [Check the results]</span></div>
 <div class="line"></div>
 <div class="line">    OCL_CHECK(clReleaseKernel(ocl_init_kernel));</div>
 <div class="line">}</div>
-<div class="line"><span class="comment">// [Main]</span></div>
-<div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv) {</div>
-<div class="line">    <span class="keywordflow">try</span> {</div>
-<div class="line">        gpu_opencl_interop_tutorial();</div>
-<div class="line">    } <span class="keywordflow">catch</span> (<a name="_a12"></a><a class="code" href="structdnnl_1_1error.html">dnnl::error</a> &amp;e) {</div>
-<div class="line">        std::cerr &lt;&lt; <span class="stringliteral">&quot;DNNL error: &quot;</span> &lt;&lt; e.<a name="a13"></a><a class="code" href="structdnnl_1_1error.html#adfc1a2bf4e31aa1751b38e8e1dbcba2b">what</a>() &lt;&lt; std::endl</div>
-<div class="line">                  &lt;&lt; <span class="stringliteral">&quot;Error status: &quot;</span> &lt;&lt; dnnl_status2str(e.<a name="a14"></a>status) &lt;&lt; std::endl;</div>
-<div class="line">        <span class="keywordflow">return</span> 1;</div>
-<div class="line">    } <span class="keywordflow">catch</span> (std::string &amp;e) {</div>
-<div class="line">        std::cerr &lt;&lt; <span class="stringliteral">&quot;Error in the example: &quot;</span> &lt;&lt; e &lt;&lt; std::endl;</div>
-<div class="line">        <span class="keywordflow">return</span> 2;</div>
-<div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Example passes&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv) {</div>
+<div class="line">    <span class="keywordflow">return</span> handle_example_errors(gpu_opencl_interop_tutorial);</div>
 <div class="line">}</div>
-<div class="line"><span class="comment">// [Main]</span></div>
+<div class="line"></div>
 </div><!-- fragment --> </div><!-- contents -->
 <div class="footer">
     <div class="footer-wrapper">

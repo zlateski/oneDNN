@@ -64,7 +64,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -116,7 +116,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr>
 <td align="left">Engine </td><td align="left"><a class="el" href="structdnnl_1_1engine.html#a2f7013922cf742705ec04b425fa06a7f" title="Returns the OpenCL device associated with the engine. ">dnnl::engine::get_ocl_device()</a> and <a class="el" href="structdnnl_1_1engine.html#a739ba77b89cc3dc890819bc85d038198" title="Returns the OpenCL context associated with the engine. ">dnnl::engine::get_ocl_context()</a> </td></tr>
 <tr>
-<td align="left">Stream </td><td align="left"><a class="el" href="structdnnl_1_1stream.html#ad7583cd3c56f330f90e0e6b148a9e5c3">dnnl::stream::get_ocl_command_queue()</a> </td></tr>
+<td align="left">Stream </td><td align="left"><a class="el" href="structdnnl_1_1stream.html#ad7583cd3c56f330f90e0e6b148a9e5c3" title="Returns the underlying OpenCL queue object. ">dnnl::stream::get_ocl_command_queue()</a> </td></tr>
 <tr>
 <td align="left">Memory </td><td align="left"><a class="el" href="structdnnl_1_1memory.html#a9767b76689ed4a9c8fbb96e443e374d4" title="Returns the OpenCL memory object associated with the memory. ">dnnl::memory::get_ocl_mem_object()</a> </td></tr>
 </table>
@@ -127,22 +127,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr>
 <th align="left">DNNL object </th><th align="left">API to construct DNNL object  </th></tr>
 <tr>
-<td align="left">Engine </td><td align="left"><a class="el" href="group__c__api__engine.html#ga45b925909497257abf48cf4d5bd17b2c">dnnl_engine_create_ocl(&amp;engine, kind, ocl_dev, ocl_ctx)</a> </td></tr>
+<td align="left">Engine </td><td align="left"><a class="el" href="group__dnnl__api__engine.html#ga45b925909497257abf48cf4d5bd17b2c">dnnl_engine_create_ocl(&amp;engine, kind, ocl_dev, ocl_ctx)</a> </td></tr>
 <tr>
-<td align="left">Stream </td><td align="left"><a class="el" href="group__c__api__stream.html#ga4403b8d09197fdf6c7f957092bac0306">dnnl_stream_create_ocl(&amp;stream, engine, ocl_queue)</a> </td></tr>
+<td align="left">Stream </td><td align="left"><a class="el" href="group__dnnl__api__stream.html#ga4403b8d09197fdf6c7f957092bac0306">dnnl_stream_create_ocl(&amp;stream, engine, ocl_queue)</a> </td></tr>
 <tr>
-<td align="left">Memory </td><td align="left"><a class="el" href="group__c__api__memory.html#ga52a9246bd7f4e498b08d61e75e689a0c">dnnl_memory_create(&amp;memory, memory_desc, engine, &amp;ocl_mem)</a> </td></tr>
+<td align="left">Memory </td><td align="left"><a class="el" href="group__dnnl__api__memory.html#ga52a9246bd7f4e498b08d61e75e689a0c">dnnl_memory_create(&amp;memory, memory_desc, engine, &amp;ocl_mem)</a> </td></tr>
 </table>
 <h3>API to Access OpenCL Objects</h3>
 <table class="doxtable">
 <tr>
 <th align="left">DNNL object </th><th align="left">API to access OpenCL object(s)  </th></tr>
 <tr>
-<td align="left">Engine </td><td align="left"><a class="el" href="group__c__api__engine.html#ga07dcb50917e9ac8d23d5a363f74868b6" title="Returns an OpenCL device associated with an engine. ">dnnl_engine_get_ocl_device()</a> and <a class="el" href="group__c__api__engine.html#gaa78c7babf84ba288c7812bfc55896d07" title="Returns an OpenCL context associated with an engine. ">dnnl_engine_get_ocl_context()</a> </td></tr>
+<td align="left">Engine </td><td align="left"><a class="el" href="group__dnnl__api__engine.html#ga07dcb50917e9ac8d23d5a363f74868b6" title="Returns the OpenCL device associated with an engine. ">dnnl_engine_get_ocl_device()</a> and <a class="el" href="group__dnnl__api__engine.html#gaa78c7babf84ba288c7812bfc55896d07" title="Returns the OpenCL context associated with an engine. ">dnnl_engine_get_ocl_context()</a> </td></tr>
 <tr>
-<td align="left">Stream </td><td align="left"><a class="el" href="group__c__api__stream.html#ga77f34bf9765aed054da5ca078d5d0906" title="Returns the OpenCL command queue associated with an execution stream. ">dnnl_stream_get_ocl_command_queue()</a> </td></tr>
+<td align="left">Stream </td><td align="left"><a class="el" href="group__dnnl__api__stream.html#ga77f34bf9765aed054da5ca078d5d0906" title="Returns the OpenCL command queue associated with an execution stream. ">dnnl_stream_get_ocl_command_queue()</a> </td></tr>
 <tr>
-<td align="left">Memory </td><td align="left"><a class="el" href="group__c__api__memory.html#gaf0f56c1bdffa7889ee408445883cca16" title="For a memory returns the OpenCL memory object associated with it. ">dnnl_memory_get_ocl_mem_object()</a> </td></tr>
+<td align="left">Memory </td><td align="left"><a class="el" href="group__dnnl__api__memory.html#gaf0f56c1bdffa7889ee408445883cca16" title="Returns an OpenCL memory object associated with a memory object. ">dnnl_memory_get_ocl_mem_object()</a> </td></tr>
 </table>
 </div></div><!-- contents -->
 <div class="footer">

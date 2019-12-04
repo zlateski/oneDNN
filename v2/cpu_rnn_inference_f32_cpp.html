@@ -292,7 +292,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="keyword">auto</span> dec_dst_iter_c_memory = <a class="code" href="structdnnl_1_1memory.html">dnnl::memory</a>(dec_dst_iter_c_md, cpu_engine);</div>
 </div><!-- fragment --><p>Decoder : As mentioned above, we create a view without context out of the memory with context. </p>
 <div class="fragment"><div class="line">    <span class="keyword">auto</span> dec_dst_iter_memory = <a class="code" href="structdnnl_1_1memory.html">dnnl::memory</a>(dec_dst_iter_md, cpu_engine);</div>
-<div class="line">    <span class="keyword">auto</span> dec_dst_iter_noctx_md = dec_dst_iter_md.<a class="code" href="structdnnl_1_1memory_1_1desc.html#ab369a09dee3b0eb879e0e1cbccdfe7d7">submemory_desc</a>(</div>
+<div class="line">    <span class="keyword">auto</span> dec_dst_iter_noctx_md = dec_dst_iter_md.<a class="code" href="structdnnl_1_1memory_1_1desc.html#a79ed6858e4b6e0aae4a815a1f54658d4">submemory_desc</a>(</div>
 <div class="line">            dec_dst_iter_noctx_dims, {0, 0, 0, 0, 0});</div>
 </div><!-- fragment --><p>Decoder : Create RNN decoder cell </p>
 <div class="fragment"><div class="line">    lstm_forward::desc dec_ctx_desc(prop_kind::forward_inference,</div>

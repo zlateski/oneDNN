@@ -64,7 +64,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -90,7 +90,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr>
 <td align="left"><a class="el" href="dev_guide_attributes_post_ops.html#dev_guide_attributes_post_ops_sum">Sum</a> </td><td align="left">Partial </td><td align="left">N/A </td><td align="left">N/A </td></tr>
 </table>
-<p>Just like <a class="el" href="dev_guide_attributes.html">Primitive Attributes</a>, the post-ops are represented by an opaque structure (<a class="el" href="group__c__api__primitive__attr.html#ga7d715ce1a81606584df9dcf045976401">dnnl_post_ops_t</a> in C API and <a class="el" href="structdnnl_1_1post__ops.html">dnnl::post_ops</a> in C++ API) which is copied once it is attached to the attributes using C++ <a class="el" href="structdnnl_1_1primitive__attr.html#ac830fa9f4fcf480b494d73153ad579bf">dnnl::primitive_attr::set_post_ops</a> or C <a class="el" href="group__c__api__attributes.html#ga7045d42606599f156bfca69820c21ea2">dnnl_primitive_attr_set_post_ops</a> functions. These attributes then are passed to a primitive descriptor creation function to take effect. Below is a simple skeleton for C++ API:</p>
+<p>Just like <a class="el" href="dev_guide_attributes.html">Primitive Attributes</a>, the post-ops are represented by an opaque structure (<a class="el" href="group__dnnl__api__attributes.html#ga7d715ce1a81606584df9dcf045976401">dnnl_post_ops_t</a> in C API and <a class="el" href="structdnnl_1_1post__ops.html">dnnl::post_ops</a> in C++ API) which is copied once it is attached to the attributes using C++ <a class="el" href="structdnnl_1_1primitive__attr.html#ac830fa9f4fcf480b494d73153ad579bf">dnnl::primitive_attr::set_post_ops</a> or C <a class="el" href="group__dnnl__api__attributes.html#ga7045d42606599f156bfca69820c21ea2">dnnl_primitive_attr_set_post_ops</a> functions. These attributes then are passed to a primitive descriptor creation function to take effect. Below is a simple skeleton for C++ API:</p>
 <div class="fragment"><div class="line"><a class="code" href="structdnnl_1_1post__ops.html">dnnl::post_ops</a> po; <span class="comment">// default empty post-ops</span></div>
 <div class="line">assert(po.<a class="code" href="structdnnl_1_1post__ops.html#a26d76d6a99c01b33eee312d1491c1d4e">len</a>() == 0); <span class="comment">// no post-ops attached</span></div>
 <div class="line"></div>
@@ -116,13 +116,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>The <a class="el" href="structdnnl_1_1primitive.html#ad1ec93215a0cf3aa0a32bae0c2cd9169">dnnl::primitive::kind</a> of this post-op is <a class="el" href="structdnnl_1_1primitive.html#ad1ec93215a0cf3aa0a32bae0c2cd9169a98b908c7d0339bb6a4832db44fc2c8da" title="An element-wise primitive. ">dnnl::primitive::kind::eltwise</a>.</p>
 <p>API:</p>
 <ul>
-<li>C: <a class="el" href="group__c__api__attributes__post__ops.html#ga3f4e1e6923df257def1b8b38113bced5">dnnl_post_ops_append_eltwise</a></li>
+<li>C: <a class="el" href="group__dnnl__api__attributes.html#gad3a93e3c396b07066d42eadbe119b7a4">dnnl_post_ops_append_eltwise</a></li>
 <li>C++: <a class="el" href="structdnnl_1_1post__ops.html#a66606f08467b19091e696b52a2f789e6">dnnl::post_ops::append_eltwise</a></li>
 </ul>
 <p>The parameters (C++ API for simplicity): </p>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> <a class="code" href="structdnnl_1_1post__ops.html#a66606f08467b19091e696b52a2f789e6">dnnl::post_ops::append_eltwise</a>(</div>
 <div class="line">        <span class="keywordtype">float</span> scale, <span class="comment">// scaling factor (described below)</span></div>
-<div class="line">        <a class="code" href="group__cpp__api__enums.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a> alg, <span class="keywordtype">float</span> alpha, <span class="keywordtype">float</span> beta <span class="comment">// same as in Eltwise primitive</span></div>
+<div class="line">        <a class="code" href="group__dnnl__api__attributes.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a> alg, <span class="keywordtype">float</span> alpha, <span class="keywordtype">float</span> beta <span class="comment">// same as in Eltwise primitive</span></div>
 <div class="line">        );</div>
 </div><!-- fragment --><p>The <code>alg</code>, <code>alpha</code>, and <code>beta</code> parameters are the same as in <a class="el" href="dev_guide_eltwise.html">Eltwise</a>.</p>
 <p>The Eltwise post-op replaces: </p>
@@ -159,7 +159,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">        <span class="comment">/* scale = */</span> 1.f);</div>
 <div class="line">po.<a class="code" href="structdnnl_1_1post__ops.html#a66606f08467b19091e696b52a2f789e6">append_eltwise</a>(</div>
 <div class="line">        <span class="comment">/* scale     = */</span> 1.f</div>
-<div class="line">        <span class="comment">/* alg kind  = */</span> <a class="code" href="group__cpp__api__enums.html#gga00377dd4982333e42e8ae1d09a309640aba09bebb742494255b90b43871c01c69">dnnl::algorithm::eltwise_relu</a>,</div>
+<div class="line">        <span class="comment">/* alg kind  = */</span> <a class="code" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640aba09bebb742494255b90b43871c01c69">dnnl::algorithm::eltwise_relu</a>,</div>
 <div class="line">        <span class="comment">/* neg slope = */</span> 0.f,</div>
 <div class="line">        <span class="comment">/* unused for relu */</span> 0.f);</div>
 <div class="line"></div>
@@ -177,14 +177,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="fragment"><div class="line"><a class="code" href="structdnnl_1_1post__ops.html">dnnl::post_ops</a> po;</div>
 <div class="line">po.<a class="code" href="structdnnl_1_1post__ops.html#a66606f08467b19091e696b52a2f789e6">append_eltwise</a>(</div>
 <div class="line">        <span class="comment">/* scale     = */</span> s_tanh,</div>
-<div class="line">        <span class="comment">/* alg kind  = */</span> <a class="code" href="group__cpp__api__enums.html#gga00377dd4982333e42e8ae1d09a309640a38dd7159307eab45742c78e72f06abb0">dnnl::algorithm::eltwise_tanh</a>,</div>
+<div class="line">        <span class="comment">/* alg kind  = */</span> <a class="code" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640a38dd7159307eab45742c78e72f06abb0">dnnl::algorithm::eltwise_tanh</a>,</div>
 <div class="line">        <span class="comment">/* unused for tanh */</span> 0.f,</div>
 <div class="line">        <span class="comment">/* unused for tanh */</span> 0.f);</div>
 <div class="line">po.<a class="code" href="structdnnl_1_1post__ops.html#a078ab8ec15423d2b3d26f3619a78ca38">append_sum</a>(</div>
 <div class="line">        <span class="comment">/* scale     = */</span> s_sum);</div>
 <div class="line">po.<a class="code" href="structdnnl_1_1post__ops.html#a66606f08467b19091e696b52a2f789e6">append_eltwise</a>(</div>
 <div class="line">        <span class="comment">/* scale     = */</span> s_linear,</div>
-<div class="line">        <span class="comment">/* alg kind  = */</span> <a class="code" href="group__cpp__api__enums.html#gga00377dd4982333e42e8ae1d09a309640a21aba6844d2de47b92ab1d110f561945">dnnl::algorithm::eltwise_linear</a>,</div>
+<div class="line">        <span class="comment">/* alg kind  = */</span> <a class="code" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640a21aba6844d2de47b92ab1d110f561945">dnnl::algorithm::eltwise_linear</a>,</div>
 <div class="line">        <span class="comment">/* scale     = */</span> alpha,</div>
 <div class="line">        <span class="comment">/* shift     = */</span> beta);</div>
 <div class="line"></div>

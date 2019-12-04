@@ -102,9 +102,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl__version__t.html">dnnl_version_t</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Version type.  <a href="structdnnl__version__t.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl__blocking__desc__t.html">dnnl_blocking_desc_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic description of blocked data layout for most memory formats.  <a href="structdnnl__blocking__desc__t.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -153,8 +150,14 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl__binary__desc__t.html">dnnl_binary_desc_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A descriptor of a binary operation.  <a href="structdnnl__binary__desc__t.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl__matmul__desc__t.html">dnnl_matmul_desc_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A descriptor of a matrix multiplication operation.  <a href="structdnnl__matmul__desc__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl__exec__arg__t.html">dnnl_exec_arg_t</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An auxiliary structure to specify primitive's inputs/outputs at execution.  <a href="structdnnl__exec__arg__t.html#details">More...</a><br/></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A structure that contains an index and a memory object, and is used to pass arguments to <a class="el" href="group__c__api__primitive__common.html#ga57f8ec3a6e5b33a1068cf2236028935c" title="Executes a primitive using a stream, and nargs arguments args. ">dnnl_primitive_execute()</a>.  <a href="structdnnl__exec__arg__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl__version__t.html">dnnl_version_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure containing version information as per <a href="https://semver.org">Semantic Versioning</a>  <a href="structdnnl__version__t.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
@@ -162,9 +165,44 @@ Macros</h2></td></tr>
 <tr class="memitem:gaa9e648b617df0f0186143abdf78ca5f2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#gaa9e648b617df0f0186143abdf78ca5f2">DNNL_MAX_NDIMS</a>&#160;&#160;&#160;12</td></tr>
 <tr class="memdesc:gaa9e648b617df0f0186143abdf78ca5f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of dimensions a tensor can have.  <a href="group__c__api__types__memory.html#gaa9e648b617df0f0186143abdf78ca5f2">More...</a><br/></td></tr>
 <tr class="separator:gaa9e648b617df0f0186143abdf78ca5f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa596c5a6102df77a550bad98f0d5cc12"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">DNNL_RUNTIME_DIM_VAL</a>&#160;&#160;&#160;INT64_MIN</td></tr>
+<tr class="memdesc:gaa596c5a6102df77a550bad98f0d5cc12"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wildcard value for dimensions that are unknown at a primitive creation time.  <a href="group__c__api__types__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">More...</a><br/></td></tr>
+<tr class="separator:gaa596c5a6102df77a550bad98f0d5cc12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga61466fbd352b6c94b6541977fbe199b8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#ga61466fbd352b6c94b6541977fbe199b8">DNNL_RUNTIME_SIZE_VAL</a>&#160;&#160;&#160;((size_t)<a class="el" href="group__c__api__types__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">DNNL_RUNTIME_DIM_VAL</a>)</td></tr>
+<tr class="memdesc:ga61466fbd352b6c94b6541977fbe199b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <code>size_t</code> counterpart of the DNNL_RUNTIME_DIM_VAL.  <a href="group__c__api__types__memory.html#ga61466fbd352b6c94b6541977fbe199b8">More...</a><br/></td></tr>
+<tr class="separator:ga61466fbd352b6c94b6541977fbe199b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab16365c11b4dc88fbb453edb51f1979f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#gab16365c11b4dc88fbb453edb51f1979f">DNNL_RUNTIME_F32_VAL</a>&#160;&#160;&#160;(DNNL_RUNTIME_F32_VAL_REP.f)</td></tr>
+<tr class="memdesc:gab16365c11b4dc88fbb453edb51f1979f"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wildcard value for floating point values that are unknown at a primitive creation time.  <a href="group__c__api__types__memory.html#gab16365c11b4dc88fbb453edb51f1979f">More...</a><br/></td></tr>
+<tr class="separator:gab16365c11b4dc88fbb453edb51f1979f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga30139d5110e9e895ccd93fe503ca4c35"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#ga30139d5110e9e895ccd93fe503ca4c35">DNNL_RUNTIME_S32_VAL</a>&#160;&#160;&#160;DNNL_RUNTIME_S32_VAL_REP</td></tr>
+<tr class="memdesc:ga30139d5110e9e895ccd93fe503ca4c35"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wildcard value for int32_t values that are unknown at a primitive creation time.  <a href="group__c__api__types__memory.html#ga30139d5110e9e895ccd93fe503ca4c35">More...</a><br/></td></tr>
+<tr class="separator:ga30139d5110e9e895ccd93fe503ca4c35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga13d8eca8d5e6c94573e1154b3407407f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__memory.html#ga13d8eca8d5e6c94573e1154b3407407f">DNNL_RNN_MAX_N_PARTS</a>&#160;&#160;&#160;4</td></tr>
 <tr class="memdesc:ga13d8eca8d5e6c94573e1154b3407407f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of parts of RNN weights tensor that require separate computation.  <a href="group__c__api__types__memory.html#ga13d8eca8d5e6c94573e1154b3407407f">More...</a><br/></td></tr>
 <tr class="separator:ga13d8eca8d5e6c94573e1154b3407407f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7ceacd6430988ed4bf58f5b01cd9c5a4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga7ceacd6430988ed4bf58f5b01cd9c5a4"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__service.html#ga7ceacd6430988ed4bf58f5b01cd9c5a4">DNNL_JIT_PROFILE_NONE</a>&#160;&#160;&#160;0u</td></tr>
+<tr class="memdesc:ga7ceacd6430988ed4bf58f5b01cd9c5a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable profiling completely. <br/></td></tr>
+<tr class="separator:ga7ceacd6430988ed4bf58f5b01cd9c5a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga137013d98ef736973ebbe1ecd4a4b2c9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga137013d98ef736973ebbe1ecd4a4b2c9"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__service.html#ga137013d98ef736973ebbe1ecd4a4b2c9">DNNL_JIT_PROFILE_VTUNE</a>&#160;&#160;&#160;1u</td></tr>
+<tr class="memdesc:ga137013d98ef736973ebbe1ecd4a4b2c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable VTune integration. <br/></td></tr>
+<tr class="separator:ga137013d98ef736973ebbe1ecd4a4b2c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacb5b174589525cce34589ef4ef56462f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gacb5b174589525cce34589ef4ef56462f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__service.html#gacb5b174589525cce34589ef4ef56462f">DNNL_JIT_PROFILE_LINUX_PERFMAP</a>&#160;&#160;&#160;2u</td></tr>
+<tr class="memdesc:gacb5b174589525cce34589ef4ef56462f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable Linux perf integration via perfmap files. <br/></td></tr>
+<tr class="separator:gacb5b174589525cce34589ef4ef56462f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5afb7d615d8507b8d5469553e6dde2a7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga5afb7d615d8507b8d5469553e6dde2a7"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__service.html#ga5afb7d615d8507b8d5469553e6dde2a7">DNNL_JIT_PROFILE_LINUX_JITDUMP</a>&#160;&#160;&#160;4u</td></tr>
+<tr class="memdesc:ga5afb7d615d8507b8d5469553e6dde2a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable Linux perf integration via jitdump files. <br/></td></tr>
+<tr class="separator:ga5afb7d615d8507b8d5469553e6dde2a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga66a48a940ab2916d360b0bb677a70e5f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__service.html#ga66a48a940ab2916d360b0bb677a70e5f">DNNL_JIT_PROFILE_LINUX_JITDUMP_USE_TSC</a>&#160;&#160;&#160;8u</td></tr>
+<tr class="memdesc:ga66a48a940ab2916d360b0bb677a70e5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instruct Linux perf integration via jitdump files to use TSC.  <a href="group__c__api__types__service.html#ga66a48a940ab2916d360b0bb677a70e5f">More...</a><br/></td></tr>
+<tr class="separator:ga66a48a940ab2916d360b0bb677a70e5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5a1d61af9d5b15dbc6d7d33f0f3e22bc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga5a1d61af9d5b15dbc6d7d33f0f3e22bc"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__service.html#ga5a1d61af9d5b15dbc6d7d33f0f3e22bc">DNNL_JIT_PROFILE_LINUX_PERF</a>&#160;&#160;&#160;(<a class="el" href="group__c__api__types__service.html#ga5afb7d615d8507b8d5469553e6dde2a7">DNNL_JIT_PROFILE_LINUX_JITDUMP</a> | <a class="el" href="group__c__api__types__service.html#gacb5b174589525cce34589ef4ef56462f">DNNL_JIT_PROFILE_LINUX_PERFMAP</a>)</td></tr>
+<tr class="memdesc:ga5a1d61af9d5b15dbc6d7d33f0f3e22bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable Linux perf integration (both jitdump and perfmap) <br/></td></tr>
+<tr class="separator:ga5a1d61af9d5b15dbc6d7d33f0f3e22bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -196,6 +234,9 @@ typedef const void *&#160;</td><td class="memItemRight" valign="bottom"><a class
 typedef <a class="el" href="structdnnl__convolution__desc__t.html">dnnl_convolution_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__op__descs.html#gafd99fc7c70359ba9434d6a9933d566c3">dnnl_deconvolution_desc_t</a></td></tr>
 <tr class="memdesc:gafd99fc7c70359ba9434d6a9933d566c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">A descriptor of a deconvolution operation. <br/></td></tr>
 <tr class="separator:gafd99fc7c70359ba9434d6a9933d566c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga312b4653a7712a595c96e23cddd7b8d8"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structdnnl__softmax__desc__t.html">dnnl_softmax_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__op__descs.html#ga312b4653a7712a595c96e23cddd7b8d8">dnnl_logsoftmax_desc_t</a></td></tr>
+<tr class="memdesc:ga312b4653a7712a595c96e23cddd7b8d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">A descriptor of a LogSoftmax operation.  <a href="group__c__api__types__op__descs.html#ga312b4653a7712a595c96e23cddd7b8d8">More...</a><br/></td></tr>
+<tr class="separator:ga312b4653a7712a595c96e23cddd7b8d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1ce7843660e8203ed6e1af9bfd23e14f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga1ce7843660e8203ed6e1af9bfd23e14f"></a>
 typedef struct <a class="el" href="structdnnl__engine.html">dnnl_engine</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__engine__types.html#ga1ce7843660e8203ed6e1af9bfd23e14f">dnnl_engine_t</a></td></tr>
 <tr class="memdesc:ga1ce7843660e8203ed6e1af9bfd23e14f"><td class="mdescLeft">&#160;</td><td class="mdescRight">An engine handle. <br/></td></tr>
@@ -307,95 +348,99 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091daab417c26841486da2a0da84730d0874d">dnnl_abdec</a>, 
 <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091daf8537ed269eb5d0586456db114039c00">dnnl_acb</a>, 
 <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091dac5f398cc58f5625915719ec541bb152e">dnnl_acbde</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da8fcce5dd7260b5b0740e3b37b1e9ad41">dnnl_acdb</a>, 
+<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da8463916a68cb816050fbaf71817093ae">dnnl_acbdef</a>, 
 <br/>
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da0cfe86402763786b9b4d73062cfd2f05">dnnl_acdeb</a>, 
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da8fcce5dd7260b5b0740e3b37b1e9ad41">dnnl_acdb</a>, 
+<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da0cfe86402763786b9b4d73062cfd2f05">dnnl_acdeb</a>, 
 <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da6a6dbc0b30468d92e32a9cb3f6615c43">dnnl_ba</a>, 
 <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091dae31cc3d3a0bfbd4936f7b503cf6dc9de">dnnl_bac</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091dab1a39583c90f536df19e47d8262ef6f6">dnnl_bacd</a>, 
 <br/>
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da37fcc057fe063d378bb5f1d5111e0e60">dnnl_bca</a>, 
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091dab1a39583c90f536df19e47d8262ef6f6">dnnl_bacd</a>, 
+<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da37fcc057fe063d378bb5f1d5111e0e60">dnnl_bca</a>, 
 <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091dac42f365ea58d5b73c141c0788641f74a">dnnl_bcda</a>, 
 <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091dad219c123f120d32a5f26d584b334af41">dnnl_bcdea</a>, 
-<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da5a8de15eee2e5bcc2515eb7b01965789">dnnl_cba</a>, 
 <br/>
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da2368e1a4ce9d9954fa10c242569eacb4">dnnl_cdba</a>, 
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da5a8de15eee2e5bcc2515eb7b01965789">dnnl_cba</a>, 
+<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da2368e1a4ce9d9954fa10c242569eacb4">dnnl_cdba</a>, 
 <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091dae7dd2b81eb2b502efbf65c888665b358">dnnl_cdeba</a>, 
 <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da31fa5f2eb4a236664583afc291310ec6">dnnl_decab</a>
-, <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da3e2da6258e387e0eb149b22f57209056">dnnl_aBc16b</a>
 , <br/>
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da4df9991897c2031b5fbdf97a4b3d2a02">dnnl_aBc4b</a>
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da3e2da6258e387e0eb149b22f57209056">dnnl_aBc16b</a>
+, <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da4df9991897c2031b5fbdf97a4b3d2a02">dnnl_aBc4b</a>
 , <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da96fcac28a789530765def2cfae2b61f6">dnnl_aBc8b</a>
 , <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da590d748ac3761a51b407555a9a0d5efe">dnnl_aBcd16b</a>
-, <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da2ec2a0d2900e5ddb7f88783e2d8a5e66">dnnl_aBcd4b</a>
 , <br/>
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da9523ccda38e86a8f7f58f8f780ef6eac">dnnl_aBcd8b</a>
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da2ec2a0d2900e5ddb7f88783e2d8a5e66">dnnl_aBcd4b</a>
+, <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da9523ccda38e86a8f7f58f8f780ef6eac">dnnl_aBcd8b</a>
 , <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da2062c0db6b460fd8ac254684bbc15c36">dnnl_ABcd8b8a</a>
-, <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091dad4357b1ef924c1331e9e7e25facc3827">dnnl_aBcde16b</a>
+, <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091dad8e56dc7af8c48b5d4e5d11650a19eab">dnnl_ABcde4b16a4b</a>, 
+<br/>
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091dad4357b1ef924c1331e9e7e25facc3827">dnnl_aBcde16b</a>
 , <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da3b841f4fc9008e7a27f4dcc4b130d819">dnnl_aBcde4b</a>
-, <br/>
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091daa778e377f1b0afdee9a6bcbc63ae76bd">dnnl_aBcde8b</a>
+, <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091daa778e377f1b0afdee9a6bcbc63ae76bd">dnnl_aBcde8b</a>
 , <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da431c182a4f2665030f29973efb556c94">dnnl_aBcdef16b</a>
-, <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da2735d5d034a5abe998df55be8e47e5e8">dnnl_aBcdef4b</a>
+, <br/>
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da2735d5d034a5abe998df55be8e47e5e8">dnnl_aBcdef4b</a>
 , <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091dadece229e4705088e29d6cbfb94c64756">dnnl_format_tag_last</a>, 
-<br/>
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da9ccb37bb1a788f0245efbffbaf81e145">dnnl_x</a> = dnnl_a, 
+<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da9ccb37bb1a788f0245efbffbaf81e145">dnnl_x</a> = dnnl_a, 
 <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091dac08a541001fe70289305a5fbde48906d">dnnl_nc</a> = dnnl_ab, 
-<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da11b661fe7ab82f99b34bcaf460a8dc66">dnnl_cn</a> = dnnl_ba, 
+<br/>
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da11b661fe7ab82f99b34bcaf460a8dc66">dnnl_cn</a> = dnnl_ba, 
 <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091dac1ee747f881fc8cae805ae4051e671cf">dnnl_tn</a> = dnnl_ab, 
-<br/>
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da7ede27a46172c1ab2775593ba4b118dc">dnnl_nt</a> = dnnl_ba, 
+<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da7ede27a46172c1ab2775593ba4b118dc">dnnl_nt</a> = dnnl_ba, 
 <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091dab55cb1d54480dd7f796bf66eea3ad32f">dnnl_ncw</a> = dnnl_abc, 
-<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da9f756dbdc1e949646c95f83e0f51bc43">dnnl_nwc</a> = dnnl_acb, 
+<br/>
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da9f756dbdc1e949646c95f83e0f51bc43">dnnl_nwc</a> = dnnl_acb, 
 <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da83a751aedeb59613312339d0f8b90f54">dnnl_nchw</a> = dnnl_abcd, 
-<br/>
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091dae50c534446b3c18cc018b3946b3cebd7">dnnl_nhwc</a> = dnnl_acdb, 
+<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091dae50c534446b3c18cc018b3946b3cebd7">dnnl_nhwc</a> = dnnl_acdb, 
 <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091daab65a38658838cec19e718ba048cd459">dnnl_chwn</a> = dnnl_bcda, 
-<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091dae33b8c6790e5d37324f18a019658d464">dnnl_ncdhw</a> = dnnl_abcde, 
+<br/>
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091dae33b8c6790e5d37324f18a019658d464">dnnl_ncdhw</a> = dnnl_abcde, 
 <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091daa0d8b24eefd029e214080d3787114fc2">dnnl_ndhwc</a> = dnnl_acdeb, 
-<br/>
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091daee91ff6fadfe8c5494be1595fd253c4e">dnnl_oi</a> = dnnl_ab, 
+<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091daee91ff6fadfe8c5494be1595fd253c4e">dnnl_oi</a> = dnnl_ab, 
 <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da46de139a50746a1a22d8d33c60d9081b">dnnl_io</a> = dnnl_ba, 
-<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091dae6bd836b8515857585336a0921e35663">dnnl_oiw</a> = dnnl_abc, 
+<br/>
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091dae6bd836b8515857585336a0921e35663">dnnl_oiw</a> = dnnl_abc, 
 <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da250d14a2373c43ea403098b4758152ab">dnnl_owi</a> = dnnl_acb, 
-<br/>
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da93eecc25f8ab1b07604b632401aa28e5">dnnl_wio</a> = dnnl_cba, 
+<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da93eecc25f8ab1b07604b632401aa28e5">dnnl_wio</a> = dnnl_cba, 
 <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da7811cefee328570707df45965b63844e">dnnl_iwo</a> = dnnl_bca, 
-<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da11176ff202375dcd0d06e2fba5f8a8e0">dnnl_oihw</a> = dnnl_abcd, 
+<br/>
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da11176ff202375dcd0d06e2fba5f8a8e0">dnnl_oihw</a> = dnnl_abcd, 
 <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da4f4c7bd98c6d53fb3b69e1c8df0a80f6">dnnl_hwio</a> = dnnl_cdba, 
-<br/>
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da7543e08a69ca4f7770124d6424314d4b">dnnl_ohwi</a> = dnnl_acdb, 
+<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da7543e08a69ca4f7770124d6424314d4b">dnnl_ohwi</a> = dnnl_acdb, 
 <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091daf1345b7d3d7aef806d9716287104dc96">dnnl_ihwo</a> = dnnl_bcda, 
-<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da17b2a778caa0f78f3387b09611ab9ceb">dnnl_iohw</a> = dnnl_bacd, 
+<br/>
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da17b2a778caa0f78f3387b09611ab9ceb">dnnl_iohw</a> = dnnl_bacd, 
 <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da18e605a5f6afe9995961fc21fddf314e">dnnl_oidhw</a> = dnnl_abcde, 
-<br/>
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091dae4885779f955beeddc25443a3f8c2a63">dnnl_dhwio</a> = dnnl_cdeba, 
+<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091dae4885779f955beeddc25443a3f8c2a63">dnnl_dhwio</a> = dnnl_cdeba, 
 <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091dadf48b08738673a6746907b934d82248d">dnnl_odhwi</a> = dnnl_acdeb, 
-<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da6fdbc8d31779a5548bc39c23d41466b2">dnnl_idhwo</a> = dnnl_bcdea, 
+<br/>
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da6fdbc8d31779a5548bc39c23d41466b2">dnnl_idhwo</a> = dnnl_bcdea, 
 <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da7a95a9ab4d0be153fe304d94a4f96138">dnnl_goiw</a> = dnnl_abcd, 
-<br/>
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091daee332d306e012c0614dc32e0ed66072f">dnnl_goihw</a> = dnnl_abcde, 
+<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091daee332d306e012c0614dc32e0ed66072f">dnnl_goihw</a> = dnnl_abcde, 
 <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da059c27962618c1f7670f5389bb7fb7ed">dnnl_hwigo</a> = dnnl_decab, 
-<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091daecd143f4e88930c11ab4348bb5c24dc4">dnnl_giohw</a> = dnnl_acbde, 
-<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da621b8c724d93d2a5444feab224b2ce3e">dnnl_goidhw</a> = dnnl_abcdef, 
 <br/>
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da2a9735ec024c9362b717304edbfe2237">dnnl_tnc</a> = dnnl_abc, 
-<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da5d73ca7a68559ef44241be5a096e6bff">dnnl_ntc</a> = dnnl_bac, 
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091daecd143f4e88930c11ab4348bb5c24dc4">dnnl_giohw</a> = dnnl_acbde, 
+<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da621b8c724d93d2a5444feab224b2ce3e">dnnl_goidhw</a> = dnnl_abcdef, 
+<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da44de40f7cc576af9bff1d0c95fe6bf0f">dnnl_giodhw</a> = dnnl_acbdef, 
+<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da2a9735ec024c9362b717304edbfe2237">dnnl_tnc</a> = dnnl_abc, 
+<br/>
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da5d73ca7a68559ef44241be5a096e6bff">dnnl_ntc</a> = dnnl_bac, 
 <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da4fd1cf9fdb67c554bcd8281695b65b3c">dnnl_ldnc</a> = dnnl_abcd, 
 <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da96a227ab1a1be1825c1fa596c38847fc">dnnl_ldigo</a> = dnnl_abcde, 
+<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da5fc9120d8f52d7d7fa853aa79bf654fe">dnnl_ldgoi</a> = dnnl_abdec, 
 <br/>
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da5fc9120d8f52d7d7fa853aa79bf654fe">dnnl_ldgoi</a> = dnnl_abdec, 
-<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da2bc162b37fd0049dceab3b12300a26c7">dnnl_ldgo</a> = dnnl_abcd, 
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da2bc162b37fd0049dceab3b12300a26c7">dnnl_ldgo</a> = dnnl_abcd, 
 <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da2fd2bec64ddb6031730c180acf1a894f">dnnl_nCdhw16c</a> = dnnl_aBcde16b, 
 <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da72cb744b96d7a9feb19fbc488dfcdc90">dnnl_nCdhw4c</a> = dnnl_aBcde4b, 
+<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091dabacffa20b5188cda4d5f86e2e10d2572">dnnl_nCdhw8c</a> = dnnl_aBcde8b, 
 <br/>
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091dabacffa20b5188cda4d5f86e2e10d2572">dnnl_nCdhw8c</a> = dnnl_aBcde8b, 
-<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091daa7847819b4fb840d2db20796bc607a5c">dnnl_nChw16c</a> = dnnl_aBcd16b, 
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091daa7847819b4fb840d2db20796bc607a5c">dnnl_nChw16c</a> = dnnl_aBcd16b, 
 <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da80c1478a2fb2bb2095d1866e1d04908e">dnnl_nChw4c</a> = dnnl_aBcd4b, 
 <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da775389dbdcda91ea12906210c309746f">dnnl_nChw8c</a> = dnnl_aBcd8b, 
+<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091daf996bf5a22fc850b0d4cf5d2533aa134">dnnl_nCw16c</a> = dnnl_aBc16b, 
 <br/>
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091daf996bf5a22fc850b0d4cf5d2533aa134">dnnl_nCw16c</a> = dnnl_aBc16b, 
-<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091daa487c7e7aad196e5dbe2d1b22da5b045">dnnl_nCw4c</a> = dnnl_aBc4b, 
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091daa487c7e7aad196e5dbe2d1b22da5b045">dnnl_nCw4c</a> = dnnl_aBc4b, 
 <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091dad691bfd0677cab219ce336afa6023a59">dnnl_nCw8c</a> = dnnl_aBc8b
 <br/>
  }</td></tr>
@@ -438,7 +483,9 @@ Enumerations</h2></td></tr>
 <a class="el" href="group__c__api__types__generic.html#gga9878f4795e53ad8443e5c0a29e53286aaf383485481e1d188df5b59c5424ee3ea">dnnl_rnn</a>, 
 <a class="el" href="group__c__api__types__generic.html#gga9878f4795e53ad8443e5c0a29e53286aa3b0a4f28c65ae19ceb17f8cc9c4a1ad8">dnnl_gemm</a>, 
 <br/>
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga9878f4795e53ad8443e5c0a29e53286aa1d51705e2642ce2ce19a3e163bb25f93">dnnl_binary</a>
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga9878f4795e53ad8443e5c0a29e53286aa1d51705e2642ce2ce19a3e163bb25f93">dnnl_binary</a>, 
+<a class="el" href="group__c__api__types__generic.html#gga9878f4795e53ad8443e5c0a29e53286aabe23960b7972fb6776b8c85131fd3724">dnnl_logsoftmax</a>, 
+<a class="el" href="group__c__api__types__generic.html#gga9878f4795e53ad8443e5c0a29e53286aa9e943e8007f69f82a00e30a3079cb407">dnnl_matmul</a>
 <br/>
  }</td></tr>
 <tr class="memdesc:ga9878f4795e53ad8443e5c0a29e53286a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kinds of primitives.  <a href="group__c__api__types__generic.html#ga9878f4795e53ad8443e5c0a29e53286a">More...</a><br/></td></tr>
@@ -466,20 +513,21 @@ Enumerations</h2></td></tr>
 <br/>
 &#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a4dd9cf08e3bebffb5d14e24c7d513f64">dnnl_eltwise_gelu</a> = 0xcf, 
 <a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a63447dedf2e45ab535f1365502ff3240">dnnl_eltwise_swish</a> = 0xdf, 
+<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a8ea10785816fd41353b49445852e0b74">dnnl_eltwise_log</a> = 0xef, 
 <a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23acf3529ba1c4761c0da90eb6750def6c7">dnnl_pooling_max</a> = 0x1ff, 
-<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23ac13a4cc7c0dc1edfcbf1bac23391d5cb">dnnl_pooling_avg_include_padding</a> = 0x2ff, 
 <br/>
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a00156580493fd7c2f4cdbaaf9fcbde79">dnnl_pooling_avg_exclude_padding</a> = 0x3ff
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23ac13a4cc7c0dc1edfcbf1bac23391d5cb">dnnl_pooling_avg_include_padding</a> = 0x2ff, 
+<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a00156580493fd7c2f4cdbaaf9fcbde79">dnnl_pooling_avg_exclude_padding</a> = 0x3ff
 , <a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a540b116253bf1290b9536929198d18fd">dnnl_lrn_across_channels</a> = 0xaff, 
 <a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a922fdd348b6a3e6bbe589025691d7171">dnnl_lrn_within_channel</a> = 0xbff, 
-<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a65d20a62fd39cfe09b3deb2e35752449">dnnl_vanilla_rnn</a> = 0x1fff, 
 <br/>
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a765cecdcf6f7c524833a241ecc9bf41d">dnnl_vanilla_lstm</a> = 0x2fff, 
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a65d20a62fd39cfe09b3deb2e35752449">dnnl_vanilla_rnn</a> = 0x1fff, 
+<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a765cecdcf6f7c524833a241ecc9bf41d">dnnl_vanilla_lstm</a> = 0x2fff, 
 <a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a7ba4a460b8bff80dcdf1240d7ad34208">dnnl_vanilla_gru</a> = 0x3fff, 
 <a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a7cd2e2970fefcdeb255415d0363279e2">dnnl_lbr_gru</a> = 0x4fff, 
-<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23ad4c6d69ac6f6b443449923d51325886d">dnnl_binary_add</a> = 0x1fff0, 
 <br/>
-&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23ade272a5bcb8af2b2cb0bc691c78b4e36">dnnl_binary_mul</a> = 0x1fff1
+&#160;&#160;<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23ad4c6d69ac6f6b443449923d51325886d">dnnl_binary_add</a> = 0x1fff0, 
+<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23ade272a5bcb8af2b2cb0bc691c78b4e36">dnnl_binary_mul</a> = 0x1fff1
 <br/>
  }</td></tr>
 <tr class="memdesc:ga96946c805f6c4922c38c37049ab95d23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kinds of algorithms.  <a href="group__c__api__types__generic.html#ga96946c805f6c4922c38c37049ab95d23">More...</a><br/></td></tr>
@@ -565,19 +613,21 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059ad78b3945c7d4da7938ca77daa425afab">dnnl_query_rnn_d</a>, 
 <a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a983136e74f9746f470ed80d6337a147e">dnnl_query_gemm_d</a>, 
 <a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a1c3379cb10acf363b9d50e8eb6e40010">dnnl_query_binary_d</a>, 
+<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059afef5b19704b36da50f1bcfa5b66a61a2">dnnl_query_logsoftmax_d</a>, 
+<br/>
+&#160;&#160;<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a1e4a8897b0c5b3e10277ec3f39dcf942">dnnl_query_matmul_d</a>, 
 <a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a0c4a1096638c39c0771db9a4cb2a3336">dnnl_query_some_md</a> = 128, 
-<br/>
-&#160;&#160;<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5">dnnl_query_src_md</a>, 
+<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5">dnnl_query_src_md</a>, 
 <a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a2367b043da6df5d691d6038693f363d6">dnnl_query_diff_src_md</a>, 
-<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355">dnnl_query_weights_md</a>, 
+<br/>
+&#160;&#160;<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355">dnnl_query_weights_md</a>, 
 <a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a8551246c3e70fa1e420411507dbdfe32">dnnl_query_diff_weights_md</a>, 
-<br/>
-&#160;&#160;<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598">dnnl_query_dst_md</a>, 
+<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598">dnnl_query_dst_md</a>, 
 <a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059ae28e33688bf6c55edcf108bd24eb90de">dnnl_query_diff_dst_md</a>, 
-<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a1c465006660aabe46e644e6df7d36e8a">dnnl_query_workspace_md</a>, 
-<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a2ef0eedf44417ce40237f6f459347663">dnnl_query_scratchpad_md</a>, 
 <br/>
-&#160;&#160;<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059ac7ecf09260d89d54ddd7f35c51a244da">dnnl_query_exec_arg_md</a> = 255
+&#160;&#160;<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a1c465006660aabe46e644e6df7d36e8a">dnnl_query_workspace_md</a>, 
+<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059a2ef0eedf44417ce40237f6f459347663">dnnl_query_scratchpad_md</a>, 
+<a class="el" href="group__c__api__types__query.html#gga9e5235563cf7cfc10fa89f415de98059ac7ecf09260d89d54ddd7f35c51a244da">dnnl_query_exec_arg_md</a> = 255
 <br/>
  }</td></tr>
 <tr class="memdesc:ga9e5235563cf7cfc10fa89f415de98059"><td class="mdescLeft">&#160;</td><td class="mdescRight">Primitive descriptor query specification.  <a href="group__c__api__types__query.html#ga9e5235563cf7cfc10fa89f415de98059">More...</a><br/></td></tr>

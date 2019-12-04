@@ -72,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -83,7 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>dnnl</b></li><li class="navelem"><a class="el" href="structdnnl_1_1memory.html">memory</a></li><li class="navelem"><a class="el" href="structdnnl_1_1memory_1_1desc.html">desc</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacednnl.html">dnnl</a></li><li class="navelem"><a class="el" href="structdnnl_1_1memory.html">memory</a></li><li class="navelem"><a class="el" href="structdnnl_1_1memory_1_1desc.html">desc</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -123,24 +123,22 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:adc5a3eb4dbd8aef650bf6823f13167e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a memory descriptor from a C API data structure.  <a href="#adc5a3eb4dbd8aef650bf6823f13167e3">More...</a><br/></td></tr>
 <tr class="separator:adc5a3eb4dbd8aef650bf6823f13167e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab51c30ca2e2ce806821871a4dbded3a2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structdnnl_1_1memory_1_1desc.html">desc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1memory_1_1desc.html#ab51c30ca2e2ce806821871a4dbded3a2">submemory_desc</a> (const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;<a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">dims</a>, const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;offsets) const </td></tr>
-<tr class="memdesc:ab51c30ca2e2ce806821871a4dbded3a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a sub-memory descriptor.  <a href="#ab51c30ca2e2ce806821871a4dbded3a2">More...</a><br/></td></tr>
+<tr class="memdesc:ab51c30ca2e2ce806821871a4dbded3a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a memory descriptor for a region inside an area described by this memory descriptor.  <a href="#ab51c30ca2e2ce806821871a4dbded3a2">More...</a><br/></td></tr>
 <tr class="separator:ab51c30ca2e2ce806821871a4dbded3a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7c80d84712cbb17ddf13c6e3f17044a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structdnnl_1_1memory_1_1desc.html">desc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1memory_1_1desc.html#af7c80d84712cbb17ddf13c6e3f17044a">reshape</a> (const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;<a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">dims</a>) const </td></tr>
 <tr class="memdesc:af7c80d84712cbb17ddf13c6e3f17044a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a memory descriptor by reshaping existing one.  <a href="#af7c80d84712cbb17ddf13c6e3f17044a">More...</a><br/></td></tr>
 <tr class="separator:af7c80d84712cbb17ddf13c6e3f17044a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a491d7a286f274fc21a0202e678fb06e9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1memory_1_1desc.html#a491d7a286f274fc21a0202e678fb06e9">dims</a> () const </td></tr>
-<tr class="memdesc:a491d7a286f274fc21a0202e678fb06e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a copy of the dimensions array.  <a href="#a491d7a286f274fc21a0202e678fb06e9">More...</a><br/></td></tr>
+<tr class="memdesc:a491d7a286f274fc21a0202e678fb06e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns dimensions of the memory descriptor.  <a href="#a491d7a286f274fc21a0202e678fb06e9">More...</a><br/></td></tr>
 <tr class="separator:a491d7a286f274fc21a0202e678fb06e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13a55bc177f0397a337222c3de6fd102"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a13a55bc177f0397a337222c3de6fd102"></a>
-<a class="el" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dce">memory::data_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1memory_1_1desc.html#a13a55bc177f0397a337222c3de6fd102">data_type</a> () const </td></tr>
-<tr class="memdesc:a13a55bc177f0397a337222c3de6fd102"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the data type. <br/></td></tr>
+<tr class="memitem:a13a55bc177f0397a337222c3de6fd102"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dce">memory::data_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1memory_1_1desc.html#a13a55bc177f0397a337222c3de6fd102">data_type</a> () const </td></tr>
+<tr class="memdesc:a13a55bc177f0397a337222c3de6fd102"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the data type of the memory descriptor.  <a href="#a13a55bc177f0397a337222c3de6fd102">More...</a><br/></td></tr>
 <tr class="separator:a13a55bc177f0397a337222c3de6fd102"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a12698f833b44ed55af9fc6621c4917"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1memory_1_1desc.html#a3a12698f833b44ed55af9fc6621c4917">get_size</a> () const </td></tr>
-<tr class="memdesc:a3a12698f833b44ed55af9fc6621c4917"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of bytes required to allocate a memory buffer for the memory object described by this memory descriptor including the padding area.  <a href="#a3a12698f833b44ed55af9fc6621c4917">More...</a><br/></td></tr>
+<tr class="memdesc:a3a12698f833b44ed55af9fc6621c4917"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns size of the memory descriptor in bytes.  <a href="#a3a12698f833b44ed55af9fc6621c4917">More...</a><br/></td></tr>
 <tr class="separator:a3a12698f833b44ed55af9fc6621c4917"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a517663e910e8c1795b3a935f49579652"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a517663e910e8c1795b3a935f49579652"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1memory_1_1desc.html#a517663e910e8c1795b3a935f49579652">is_zero</a> () const </td></tr>
-<tr class="memdesc:a517663e910e8c1795b3a935f49579652"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the memory descriptor describes an empty memory. <br/></td></tr>
+<tr class="memitem:a517663e910e8c1795b3a935f49579652"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1memory_1_1desc.html#a517663e910e8c1795b3a935f49579652">is_zero</a> () const </td></tr>
+<tr class="memdesc:a517663e910e8c1795b3a935f49579652"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the memory descriptor is zero (empty).  <a href="#a517663e910e8c1795b3a935f49579652">More...</a><br/></td></tr>
 <tr class="separator:a517663e910e8c1795b3a935f49579652"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16d4cd7dfcc61b101ff1b82927cd6c16"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1memory_1_1desc.html#a16d4cd7dfcc61b101ff1b82927cd6c16">operator==</a> (const <a class="el" href="structdnnl_1_1memory_1_1desc.html">desc</a> &amp;other) const </td></tr>
 <tr class="memdesc:a16d4cd7dfcc61b101ff1b82927cd6c16"><td class="mdescLeft">&#160;</td><td class="mdescRight">An equality operator.  <a href="#a16d4cd7dfcc61b101ff1b82927cd6c16">More...</a><br/></td></tr>
@@ -158,7 +156,7 @@ Public Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A memory descriptor. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cnn_inference_f32_8cpp-example.html#_a6">cnn_inference_f32.cpp</a>, <a class="el" href="cnn_inference_int8_8cpp-example.html#_a6">cnn_inference_int8.cpp</a>, <a class="el" href="cnn_training_f32_8cpp-example.html#_a6">cnn_training_f32.cpp</a>, <a class="el" href="cpu_cnn_training_bf16_8cpp-example.html#_a7">cpu_cnn_training_bf16.cpp</a>, <a class="el" href="cpu_matmul_quantization_8cpp-example.html#_a5">cpu_matmul_quantization.cpp</a>, <a class="el" href="cpu_rnn_inference_f32_8cpp-example.html#_a5">cpu_rnn_inference_f32.cpp</a>, <a class="el" href="cpu_rnn_inference_int8_8cpp-example.html#_a6">cpu_rnn_inference_int8.cpp</a>, <a class="el" href="cpu_sgemm_and_matmul_8cpp-example.html#_a4">cpu_sgemm_and_matmul.cpp</a>, <a class="el" href="getting_started_8cpp-example.html#_a3">getting_started.cpp</a>, <a class="el" href="gpu_opencl_interop_8cpp-example.html#_a3">gpu_opencl_interop.cpp</a>, <a class="el" href="memory_format_propagation_8cpp-example.html#_a2">memory_format_propagation.cpp</a>, <a class="el" href="performance_profiling_8cpp-example.html#_a14">performance_profiling.cpp</a>, and <a class="el" href="rnn_training_f32_8cpp-example.html#_a7">rnn_training_f32.cpp</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cnn_inference_f32_8cpp-example.html#_a6">cnn_inference_f32.cpp</a>, <a class="el" href="cnn_inference_int8_8cpp-example.html#_a6">cnn_inference_int8.cpp</a>, <a class="el" href="cnn_training_f32_8cpp-example.html#_a6">cnn_training_f32.cpp</a>, <a class="el" href="cpu_cnn_training_bf16_8cpp-example.html#_a7">cpu_cnn_training_bf16.cpp</a>, <a class="el" href="cpu_matmul_quantization_8cpp-example.html#_a5">cpu_matmul_quantization.cpp</a>, <a class="el" href="cpu_rnn_inference_f32_8cpp-example.html#_a5">cpu_rnn_inference_f32.cpp</a>, <a class="el" href="cpu_rnn_inference_int8_8cpp-example.html#_a6">cpu_rnn_inference_int8.cpp</a>, <a class="el" href="cpu_sgemm_and_matmul_8cpp-example.html#_a4">cpu_sgemm_and_matmul.cpp</a>, <a class="el" href="getting_started_8cpp-example.html#_a2">getting_started.cpp</a>, <a class="el" href="gpu_opencl_interop_8cpp-example.html#_a3">gpu_opencl_interop.cpp</a>, <a class="el" href="inference_int8_matmul_8cpp-example.html#_a3">inference_int8_matmul.cpp</a>, <a class="el" href="memory_format_propagation_8cpp-example.html#_a2">memory_format_propagation.cpp</a>, <a class="el" href="performance_profiling_8cpp-example.html#_a16">performance_profiling.cpp</a>, and <a class="el" href="rnn_training_f32_8cpp-example.html#_a7">rnn_training_f32.cpp</a>.</dd>
 </dl></div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a2a12f9b43aae8c214d695b321b543b5c"></a>
 <div class="memitem">
@@ -225,6 +223,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructs a memory descriptor. </p>
+<dl class="section note"><dt>Note</dt><dd>As always, the logical order of dimensions corresponds to the <code>abc...</code> format tag, and the physical meaning of the dimensions depends on both the primitive that consumes the memory and the context of that consumption.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dims</td><td>Tensor dimensions. </td></tr>
@@ -275,6 +274,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructs a memory descriptor by strides. </p>
+<dl class="section note"><dt>Note</dt><dd>As always, the logical order of dimensions corresponds to the <code>abc...</code> format tag, and the physical meaning of the dimensions depends on both the primitive that consumes the memory and the context of that consumption.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dims</td><td>Tensor dimensions. </td></tr>
@@ -351,15 +351,16 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Constructs a sub-memory descriptor. </p>
+<p>Constructs a memory descriptor for a region inside an area described by this memory descriptor. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">dims</td><td>Sizes of a sub-memory. </td></tr>
-    <tr><td class="paramname">offsets</td><td>Offsets of a sub-memory from the encompassing memory object in each dimension </td></tr>
+    <tr><td class="paramname">dims</td><td>Sizes of the region. </td></tr>
+    <tr><td class="paramname">offsets</td><td>Offsets to the region from the encompassing memory object in each dimension. </td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cpu_rnn_inference_f32_8cpp-example.html#a19">cpu_rnn_inference_f32.cpp</a>, <a class="el" href="cpu_rnn_inference_int8_8cpp-example.html#a25">cpu_rnn_inference_int8.cpp</a>, and <a class="el" href="rnn_training_f32_8cpp-example.html#a13">rnn_training_f32.cpp</a>.</dd>
+<dl class="section return"><dt>Returns</dt><dd>A memory descriptor for the region. </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cpu_rnn_inference_f32_8cpp-example.html#a28">cpu_rnn_inference_f32.cpp</a>, <a class="el" href="cpu_rnn_inference_int8_8cpp-example.html#a36">cpu_rnn_inference_int8.cpp</a>, and <a class="el" href="rnn_training_f32_8cpp-example.html#a13">rnn_training_f32.cpp</a>.</dd>
 </dl>
 </div>
 </div>
@@ -392,6 +393,7 @@ Public Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>A new memory descriptor with new dimensions. </dd></dl>
 
 </div>
 </div>
@@ -416,8 +418,36 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns a copy of the dimensions array. </p>
+<p>Returns dimensions of the memory descriptor. </p>
 <p>Potentially expensive due to the data copy involved. </p>
+<dl class="section return"><dt>Returns</dt><dd>A copy of the dimensions vector. </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="inference_int8_matmul_8cpp-example.html#a19">inference_int8_matmul.cpp</a>.</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a13a55bc177f0397a337222c3de6fd102"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dce">memory::data_type</a> dnnl::memory::desc::data_type </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the data type of the memory descriptor. </p>
+<dl class="section return"><dt>Returns</dt><dd>The data type. </dd></dl>
 
 </div>
 </div>
@@ -442,9 +472,36 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns the number of bytes required to allocate a memory buffer for the memory object described by this memory descriptor including the padding area. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cpu_rnn_inference_f32_8cpp-example.html#a22">cpu_rnn_inference_f32.cpp</a>, <a class="el" href="cpu_rnn_inference_int8_8cpp-example.html#a28">cpu_rnn_inference_int8.cpp</a>, and <a class="el" href="performance_profiling_8cpp-example.html#a2">performance_profiling.cpp</a>.</dd>
+<p>Returns size of the memory descriptor in bytes. </p>
+<dl class="section return"><dt>Returns</dt><dd>The number of bytes required to allocate a memory buffer for the memory object described by this memory descriptor including the padding area. </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cpu_rnn_inference_f32_8cpp-example.html#a35">cpu_rnn_inference_f32.cpp</a>, <a class="el" href="cpu_rnn_inference_int8_8cpp-example.html#a43">cpu_rnn_inference_int8.cpp</a>, and <a class="el" href="performance_profiling_8cpp-example.html#a2">performance_profiling.cpp</a>.</dd>
 </dl>
+</div>
+</div>
+<a class="anchor" id="a517663e910e8c1795b3a935f49579652"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool dnnl::memory::desc::is_zero </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks whether the memory descriptor is zero (empty). </p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the memory descriptor describes an empty memory and <code>false</code> otherwise. </dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="a16d4cd7dfcc61b101ff1b82927cd6c16"></a>

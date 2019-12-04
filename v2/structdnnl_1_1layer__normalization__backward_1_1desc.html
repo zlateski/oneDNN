@@ -95,7 +95,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>Descriptor for layer normalization backward propagation.  
+<p>Descriptor for a layer normalization backward propagation primitive.  
  <a href="structdnnl_1_1layer__normalization__backward_1_1desc.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="dnnl_8hpp_source.html">dnnl.hpp</a>&gt;</code></p>
@@ -109,14 +109,17 @@ Collaboration diagram for dnnl::layer_normalization_backward::desc:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac29473459e26afc6d6e5292a6f9d5c7e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1layer__normalization__backward_1_1desc.html#ac29473459e26afc6d6e5292a6f9d5c7e">desc</a> (<a class="el" href="group__cpp__api__enums.html#gac7db48f6583aa9903e54c2a39d65438f">prop_kind</a> aprop_kind, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_data_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;data_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;stat_desc, float epsilon, <a class="el" href="group__cpp__api__enums.html#gad8ef0fcbb7b10cae3d67dd46892002be">normalization_flags</a> flags)</td></tr>
-<tr class="memdesc:ac29473459e26afc6d6e5292a6f9d5c7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a layer normalization descriptor for backward propagation with respect to data and scale-shift parameters using memory descriptors <code>data_desc</code> and <code>diff_data_desc</code>, normalization parameter <code>epsilon</code>, and <code>flags</code> set using bit flags of type <a class="el" href="structdnnl__layer__normalization__desc__t.html" title="A descriptor of a Layer Normalization operation. ">dnnl_layer_normalization_desc_t</a>.  <a href="#ac29473459e26afc6d6e5292a6f9d5c7e">More...</a><br/></td></tr>
-<tr class="separator:ac29473459e26afc6d6e5292a6f9d5c7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9edbb05f1c83a9170ec87bef7d73bf58"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1layer__normalization__backward_1_1desc.html#a9edbb05f1c83a9170ec87bef7d73bf58">desc</a> (<a class="el" href="group__cpp__api__enums.html#gac7db48f6583aa9903e54c2a39d65438f">prop_kind</a> <a class="el" href="group__cpp__api__enums.html#gac7db48f6583aa9903e54c2a39d65438f">prop_kind</a>, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_data_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;data_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;stat_desc, float epsilon, <a class="el" href="group__cpp__api__enums.html#gad8ef0fcbb7b10cae3d67dd46892002be">normalization_flags</a> flags)</td></tr>
+<tr class="memdesc:a9edbb05f1c83a9170ec87bef7d73bf58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a layer normalization descriptor for backward propagation with respect to data and scale-shift parameters using memory descriptors <code>diff_data_desc</code>, <code>data_desc</code> and <code>stat_desc</code>, normalization parameter <code>epsilon</code>, and p flags set using bit <code>flags</code>.  <a href="#a9edbb05f1c83a9170ec87bef7d73bf58">More...</a><br/></td></tr>
+<tr class="separator:a9edbb05f1c83a9170ec87bef7d73bf58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1335b431e23e1b450db169e7c67dec77"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1layer__normalization__backward_1_1desc.html#a1335b431e23e1b450db169e7c67dec77">desc</a> (<a class="el" href="group__cpp__api__enums.html#gac7db48f6583aa9903e54c2a39d65438f">prop_kind</a> <a class="el" href="group__cpp__api__enums.html#gac7db48f6583aa9903e54c2a39d65438f">prop_kind</a>, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_data_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;data_desc, float epsilon, <a class="el" href="group__cpp__api__enums.html#gad8ef0fcbb7b10cae3d67dd46892002be">normalization_flags</a> flags)</td></tr>
+<tr class="memdesc:a1335b431e23e1b450db169e7c67dec77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a layer normalization descriptor for backward propagation with respect to data and scale-shift parameters using memory descriptors <code>diff_data_desc</code> and <code>data_desc</code>, normalization parameter <code>epsilon</code>, and flags set using bit <code>flags</code>.  <a href="#a1335b431e23e1b450db169e7c67dec77">More...</a><br/></td></tr>
+<tr class="separator:a1335b431e23e1b450db169e7c67dec77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Descriptor for layer normalization backward propagation. </p>
+<div class="textblock"><p>Descriptor for a layer normalization backward propagation primitive. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ac29473459e26afc6d6e5292a6f9d5c7e"></a>
+<a class="anchor" id="a9edbb05f1c83a9170ec87bef7d73bf58"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -127,7 +130,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">dnnl::layer_normalization_backward::desc::desc </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__cpp__api__enums.html#gac7db48f6583aa9903e54c2a39d65438f">prop_kind</a>&#160;</td>
-          <td class="paramname"><em>aprop_kind</em>, </td>
+          <td class="paramname"><em>prop_kind</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -172,8 +175,61 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Initializes a layer normalization descriptor for backward propagation with respect to data and scale-shift parameters using memory descriptors <code>data_desc</code> and <code>diff_data_desc</code>, normalization parameter <code>epsilon</code>, and <code>flags</code> set using bit flags of type <a class="el" href="structdnnl__layer__normalization__desc__t.html" title="A descriptor of a Layer Normalization operation. ">dnnl_layer_normalization_desc_t</a>. </p>
-<dl class="section note"><dt>Note</dt><dd>In-place operation is supported; that is, diff_src points to the same memory as diff_dst. </dd></dl>
+<p>Constructs a layer normalization descriptor for backward propagation with respect to data and scale-shift parameters using memory descriptors <code>diff_data_desc</code>, <code>data_desc</code> and <code>stat_desc</code>, normalization parameter <code>epsilon</code>, and p flags set using bit <code>flags</code>. </p>
+
+</div>
+</div>
+<a class="anchor" id="a1335b431e23e1b450db169e7c67dec77"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">dnnl::layer_normalization_backward::desc::desc </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__cpp__api__enums.html#gac7db48f6583aa9903e54c2a39d65438f">prop_kind</a>&#160;</td>
+          <td class="paramname"><em>prop_kind</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;&#160;</td>
+          <td class="paramname"><em>diff_data_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;&#160;</td>
+          <td class="paramname"><em>data_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>epsilon</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__cpp__api__enums.html#gad8ef0fcbb7b10cae3d67dd46892002be">normalization_flags</a>&#160;</td>
+          <td class="paramname"><em>flags</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructs a layer normalization descriptor for backward propagation with respect to data and scale-shift parameters using memory descriptors <code>diff_data_desc</code> and <code>data_desc</code>, normalization parameter <code>epsilon</code>, and flags set using bit <code>flags</code>. </p>
 
 </div>
 </div>

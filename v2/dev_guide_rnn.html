@@ -149,9 +149,9 @@ Figure 1: Example of stacked recurrent cells unrolled over the time dimension an
 <div class="line">    aprop, direction, src_layer_desc, src_iter_desc,</div>
 <div class="line">    weights_layer_desc, weights_iter_desc, bias_desc,</div>
 <div class="line">    dst_layer_desc, dst_iter_desc);</div>
-</div><!-- fragment --><p>Note that for all tensors with a dimension depending on the gates number, we implicitly require the order of these gates to be <code>u</code>, <code>r</code> and \(\tilde{c}\). The following equation gives the mathematical definition of these gates.</p>
+</div><!-- fragment --><p>Note that for all tensors with a dimension depending on the gates number, we implicitly require the order of these gates to be <code>u</code>, <code>r</code>, and <code>o</code>. The following equation gives the mathematical definition of these gates.</p>
 <p class="formulaDsp">
-\[ \begin{align} u_t &amp;= \sigma(W_u \cdot h_{t,l-1} + U_u \cdot h_{t-1, l} + B_u) \\ r_t &amp;= \sigma(W_r \cdot h_{t,l-1} + U_r \cdot h_{t-1, l} + B_r) \\ \tilde c_t &amp;= tanh(W_o \cdot h_{t,l-1} + U_o \cdot (r * h_{t-1, l}) + B_o) \\ h_t &amp;= u_t * h_{t-1, l} + (1 - u_t) * \tilde c_t \end{align} \]
+\[ \begin{align} u_t &amp;= \sigma(W_u \cdot h_{t,l-1} + U_u \cdot h_{t-1, l} + B_u) \\ r_t &amp;= \sigma(W_r \cdot h_{t,l-1} + U_r \cdot h_{t-1, l} + B_r) \\ o_t &amp;= tanh(W_o \cdot h_{t,l-1} + U_o \cdot (r_t * h_{t-1, l}) + B_o) \\ h_t &amp;= u_t * h_{t-1, l} + (1 - u_t) * o_t \end{align} \]
 </p>
 <p>where \(W_*\) are in <code>weights_layer</code>, \(U_*\) are in <code>weights_iter</code>, and \(B_*\) are stored in <code>bias</code>.</p>
 <dl class="section note"><dt>Note</dt><dd>If you need to replace u_t by (1-u_t) when computing h_t, you can achieve this by multiplying \(W_u\), \(U_u\) and \(B_u\) by \(-1\). This is possible as \(u_t = \sigma(W_u \cdot h_{t,l-1} + U_u \cdot h_{t-1, l} + B_u)\), and \(1 – \sigma(a) = \sigma(-a)\).</dd></dl>
@@ -163,9 +163,9 @@ Figure 1: Example of stacked recurrent cells unrolled over the time dimension an
 <div class="line">    dst_layer_desc, dst_iter_desc);</div>
 </div><!-- fragment --><p>The following equation describes the mathematical behavior of the Linear-Before-Reset GRU cell.</p>
 <p class="formulaDsp">
-\[ \begin{align} u &amp;= \sigma(W_u \cdot h_{t,l-1} + U_u \cdot h_{t-1, l} + B_u) \\ r &amp;= \sigma(W_r \cdot h_{t,l-1} + U_r \cdot h_{t-1, l} + B_r) \\ \tilde c &amp;= tanh(W_o \cdot h_{t,l-1} + r *(U_o \cdot h_{t-1, l} + B_{u&#39;}) + B_o) \\ h_t &amp;= u_t * h_{t-1, l} + (1 - u_t) * \tilde c \end{align} \]
+\[ \begin{align} u_t &amp;= \sigma(W_u \cdot h_{t,l-1} + U_u \cdot h_{t-1, l} + B_u) \\ r_t &amp;= \sigma(W_r \cdot h_{t,l-1} + U_r \cdot h_{t-1, l} + B_r) \\ o_t &amp;= tanh(W_o \cdot h_{t,l-1} + r_t *(U_o \cdot h_{t-1, l} + B_{u&#39;}) + B_o) \\ h_t &amp;= u_t * h_{t-1, l} + (1 - u_t) * o_t \end{align} \]
 </p>
-<p>Note that for all tensors with a dimension depending on the gates number, except the bias, we implicitly require the order of these gates to be <code>u</code>, <code>r</code> and \(\tilde{c}\). For the <code>bias</code> tensor, we implicitly require the order of the gates to be <code>u</code>, <code>r</code>, \(\tilde{c}\) and <code>u'</code>.</p>
+<p>Note that for all tensors with a dimension depending on the gates number, except the bias, we implicitly require the order of these gates to be <code>u</code>, <code>r</code>, and <code>o</code>. For the <code>bias</code> tensor, we implicitly require the order of the gates to be <code>u</code>, <code>r</code>, <code>o</code>, and <code>u'</code>.</p>
 <dl class="section note"><dt>Note</dt><dd>If you need to replace u_t by (1-u_t) when computing h_t, you can achieve this by multiplying \(W_u\), \(U_u\) and \(B_u\) by \(-1\). This is possible as \(u_t = \sigma(W_u \cdot h_{t,l-1} + U_u \cdot h_{t-1, l} + B_u)\), and \(1 – \sigma(a) = \sigma(-a)\).</dd></dl>
 <h1>Data Types</h1>
 <p>The following table lists the combination of data types supported by the RNN primitive for each input and output memory object.</p>

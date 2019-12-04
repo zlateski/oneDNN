@@ -118,6 +118,12 @@ Functions</h2></td></tr>
 <tr class="memitem:gae3ff1fe9449f2d9b1cd02ad864b57057"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__attributes.html#gae3ff1fe9449f2d9b1cd02ad864b57057">dnnl_primitive_attr_set_output_scales</a> (<a class="el" href="group__c__api__primitive__attr.html#ga06d701a25b82d4c8a93aaabb93e03dc3">dnnl_primitive_attr_t</a> attr, <a class="el" href="group__c__api__types__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> count, int mask, const float *scales)</td></tr>
 <tr class="memdesc:gae3ff1fe9449f2d9b1cd02ad864b57057"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets output <code>scales</code> for primitive operations.  <a href="#gae3ff1fe9449f2d9b1cd02ad864b57057">More...</a><br/></td></tr>
 <tr class="separator:gae3ff1fe9449f2d9b1cd02ad864b57057"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadd27e1e35b2854f593360f90acc8965f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__attributes.html#gadd27e1e35b2854f593360f90acc8965f">dnnl_primitive_attr_get_zero_points</a> (<a class="el" href="group__c__api__primitive__attr.html#gab7ba17dbb2692c0f5ee2a3e102c707d9">const_dnnl_primitive_attr_t</a> attr, int arg, <a class="el" href="group__c__api__types__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> *count, int *mask, const int32_t **zero_points)</td></tr>
+<tr class="memdesc:gadd27e1e35b2854f593360f90acc8965f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>count</code>, correspondence zero point <code>mask</code>, and a pointer to a constant int32_t array of <code>zero_points</code> for given <code>attr</code> and memory argument (index), previously set by dnnl_primitive_attr_set_zero_points.  <a href="#gadd27e1e35b2854f593360f90acc8965f">More...</a><br/></td></tr>
+<tr class="separator:gadd27e1e35b2854f593360f90acc8965f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6f4b625c7f238883fe32cbf6829b7f30"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__attributes.html#ga6f4b625c7f238883fe32cbf6829b7f30">dnnl_primitive_attr_set_zero_points</a> (<a class="el" href="group__c__api__primitive__attr.html#ga06d701a25b82d4c8a93aaabb93e03dc3">dnnl_primitive_attr_t</a> attr, int arg, <a class="el" href="group__c__api__types__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> count, int mask, const int32_t *zero_points)</td></tr>
+<tr class="memdesc:ga6f4b625c7f238883fe32cbf6829b7f30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets <code>zero_points</code> for primitive operations for given memory argument <code>arg</code>.  <a href="#ga6f4b625c7f238883fe32cbf6829b7f30">More...</a><br/></td></tr>
+<tr class="separator:ga6f4b625c7f238883fe32cbf6829b7f30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga50c92661cc69e1eeb17b61f006320a05"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__generic.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__attributes.html#ga50c92661cc69e1eeb17b61f006320a05">dnnl_primitive_attr_get_post_ops</a> (<a class="el" href="group__c__api__primitive__attr.html#gab7ba17dbb2692c0f5ee2a3e102c707d9">const_dnnl_primitive_attr_t</a> attr, <a class="el" href="group__c__api__primitive__attr.html#ga5ca949c8e907bd9ed79bc06d869c9c0e">const_dnnl_post_ops_t</a> *post_ops)</td></tr>
 <tr class="memdesc:ga50c92661cc69e1eeb17b61f006320a05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>post_ops</code> for given <code>attr</code>.  <a href="#ga50c92661cc69e1eeb17b61f006320a05">More...</a><br/></td></tr>
 <tr class="separator:ga50c92661cc69e1eeb17b61f006320a05"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -173,7 +179,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Sets scratchpad <code>mode</code>. </p>
-<p>The possible values are: <a class="el" href="group__c__api__primitive__attr.html#ggacda323181ab267e571c31435b0817de4ac6aab09a2f8ef442a6a59800549b0487" title="The library manages scratchpad (default) ">dnnl_scratchpad_mode_library</a> (default) and <a class="el" href="group__c__api__primitive__attr.html#ggacda323181ab267e571c31435b0817de4a7e9d97b9ceefc5e47512d83c097d6927" title="A user shall query and provide the scratchpad memory to primitives. ">dnnl_scratchpad_mode_user</a>. </p>
+<p>The possible values are: <a class="el" href="group__c__api__primitive__attr.html#ggacda323181ab267e571c31435b0817de4ac6aab09a2f8ef442a6a59800549b0487" title="The library manages scratchpad (default) The allocation policy is controlled by the DNNL_ENABLE_CONCU...">dnnl_scratchpad_mode_library</a> (default) and <a class="el" href="group__c__api__primitive__attr.html#ggacda323181ab267e571c31435b0817de4a7e9d97b9ceefc5e47512d83c097d6927" title="A user shall query and provide the scratchpad memory to primitives This mode is thread-safe as long a...">dnnl_scratchpad_mode_user</a>. </p>
 
 </div>
 </div>
@@ -284,6 +290,107 @@ The lifetime of <code>scales</code> is the same as that of the <code>attr</code>
 \[count = \prod\limits_{d \in mask} output.dims[d]\]
 </p>
  
+</div>
+</div>
+<a class="anchor" id="gadd27e1e35b2854f593360f90acc8965f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__c__api__types__generic.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API dnnl_primitive_attr_get_zero_points </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__c__api__primitive__attr.html#gab7ba17dbb2692c0f5ee2a3e102c707d9">const_dnnl_primitive_attr_t</a>&#160;</td>
+          <td class="paramname"><em>attr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>arg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__c__api__types__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> *&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>mask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int32_t **&#160;</td>
+          <td class="paramname"><em>zero_points</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns <code>count</code>, correspondence zero point <code>mask</code>, and a pointer to a constant int32_t array of <code>zero_points</code> for given <code>attr</code> and memory argument (index), previously set by dnnl_primitive_attr_set_zero_points. </p>
+<dl class="section warning"><dt>Warning</dt><dd>The <code>zero_points</code> array points to the internal <code>attr</code> field, so the user should not modify or destroy <code>zero_points</code>.</dd>
+<dd>
+The lifetime of <code>zero_points</code> is the same as that of the <code>attr</code> to which it belongs, so it is illegal to use <code>zero_points</code> after <code>attr</code> is destroyed. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga6f4b625c7f238883fe32cbf6829b7f30"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__c__api__types__generic.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API dnnl_primitive_attr_set_zero_points </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__c__api__primitive__attr.html#ga06d701a25b82d4c8a93aaabb93e03dc3">dnnl_primitive_attr_t</a>&#160;</td>
+          <td class="paramname"><em>attr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>arg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__c__api__types__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a>&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>mask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int32_t *&#160;</td>
+          <td class="paramname"><em>zero_points</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets <code>zero_points</code> for primitive operations for given memory argument <code>arg</code>. </p>
+<p>The number of elements <code>count</code> and correspondence scale <code>mask</code> are stored for future use.</p>
+<dl class="section note"><dt>Note</dt><dd>There is no way to check that <code>count</code> corresponds to <code>mask</code> until an actual primitive descriptor is created, so it is the user's responsibility to set proper values. The following formula must hold:</dd></dl>
+<p class="formulaDsp">
+\[count = \prod\limits_{d \in mask} memory[arg].dims[d]\]
+</p>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="group__c__api__attributes.html#gae3ff1fe9449f2d9b1cd02ad864b57057" title="Sets output scales for primitive operations. ">dnnl_primitive_attr_set_output_scales</a> </dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="ga50c92661cc69e1eeb17b61f006320a05"></a>

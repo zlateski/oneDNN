@@ -14,10 +14,15 @@ var searchData=
   ['inner_5fblks',['inner_blks',['../structdnnl__blocking__desc__t.html#ab142704c20c4c2518488baa18cb453a5',1,'dnnl_blocking_desc_t']]],
   ['inner_5fidxs',['inner_idxs',['../structdnnl__blocking__desc__t.html#ac60774d51adba600161db81846b5ca77',1,'dnnl_blocking_desc_t']]],
   ['inner_5fnblks',['inner_nblks',['../structdnnl__blocking__desc__t.html#aa605314004fee131958a1d4cf2e1905c',1,'dnnl_blocking_desc_t']]],
-  ['inner_5fproduct',['inner_product',['../classdnnl_1_1primitive.html#ad1ec93215a0cf3aa0a32bae0c2cd9169a30813812e3beef3eefcc2b97dc2e0783',1,'dnnl::primitive']]],
+  ['inner_5fproduct',['inner_product',['../structdnnl_1_1primitive.html#ad1ec93215a0cf3aa0a32bae0c2cd9169a30813812e3beef3eefcc2b97dc2e0783',1,'dnnl::primitive']]],
+  ['inner_5fproduct_5fbackward_5fdata',['inner_product_backward_data',['../structdnnl_1_1inner__product__backward__data.html#af233c4c668291532f53b11061ff0f9f8',1,'dnnl::inner_product_backward_data::inner_product_backward_data()=default'],['../structdnnl_1_1inner__product__backward__data.html#a5fe16e09062a20988dd5305c0410693d',1,'dnnl::inner_product_backward_data::inner_product_backward_data(const primitive_desc &amp;pd)']]],
   ['inner_5fproduct_5fbackward_5fdata',['inner_product_backward_data',['../structdnnl_1_1inner__product__backward__data.html',1,'dnnl']]],
   ['inner_5fproduct_5fbackward_5fweights',['inner_product_backward_weights',['../structdnnl_1_1inner__product__backward__weights.html',1,'dnnl']]],
+  ['inner_5fproduct_5fbackward_5fweights',['inner_product_backward_weights',['../structdnnl_1_1inner__product__backward__weights.html#ad7d930bf963f5168225c89dd07383d73',1,'dnnl::inner_product_backward_weights::inner_product_backward_weights()=default'],['../structdnnl_1_1inner__product__backward__weights.html#a5f050012a7044d8cb694dbd1382ba3ae',1,'dnnl::inner_product_backward_weights::inner_product_backward_weights(const primitive_desc &amp;pd)']]],
   ['inner_5fproduct_5fd',['inner_product_d',['../group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1aded69e5210888fc8315d2f7e90d7ba15',1,'dnnl']]],
+  ['inner_5fproduct_5fforward',['inner_product_forward',['../structdnnl_1_1inner__product__forward.html#a9fb22f17a0ce989a174d45995f80232b',1,'dnnl::inner_product_forward::inner_product_forward()=default'],['../structdnnl_1_1inner__product__forward.html#a1626abb1c2dc58648dc6271cebb31a14',1,'dnnl::inner_product_forward::inner_product_forward(const primitive_desc &amp;pd)']]],
   ['inner_5fproduct_5fforward',['inner_product_forward',['../structdnnl_1_1inner__product__forward.html',1,'dnnl']]],
-  ['is_5fzero',['is_zero',['../structdnnl_1_1memory_1_1desc.html#a517663e910e8c1795b3a935f49579652',1,'dnnl::memory::desc']]]
+  ['invalid_5farguments',['invalid_arguments',['../group__cpp__api__service.html#gga7acc4d3516304ae68a1289551d8f2cdda242ac674d98ee2191f0bbf6de851d2d0',1,'dnnl']]],
+  ['is_5fzero',['is_zero',['../structdnnl_1_1memory_1_1desc.html#a517663e910e8c1795b3a935f49579652',1,'dnnl::memory::desc']]],
+  ['iterator_5fends',['iterator_ends',['../group__cpp__api__service.html#gga7acc4d3516304ae68a1289551d8f2cddaeea82822a38c56f5e03aae6ae1775adb',1,'dnnl']]]
 ];

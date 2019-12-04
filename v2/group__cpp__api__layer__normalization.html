@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>DNNL: layer normalization</title>
+<title>DNNL: Layer normalization</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -78,11 +78,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#nested-classes">Classes</a>  </div>
   <div class="headertitle">
-<div class="title">layer normalization<div class="ingroups"><a class="el" href="group__cpp__api__primitives.html">Primitives</a></div></div>  </div>
+<div class="title">Layer normalization<div class="ingroups"><a class="el" href="group__cpp__api__primitives.html">Primitives</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>A primitive to perform layer normalization.  
+<p>Layer normalization is a normalization over the last logical axis of a data tensor.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
@@ -95,10 +95,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>A primitive to perform layer normalization. </p>
-<p>Normalization is performed over the last logical axis of data tensor.</p>
-<p>Both forward and backward passes support in-place operation; that is, src and dst point to the same memory for forward pass, and diff_dst and diff_src point to the same memory for backward pass.</p>
-<p>layer normalization supports different flavors controlled by <a class="el" href="structdnnl__layer__normalization__desc__t.html" title="A descriptor of a Layer Normalization operation. ">dnnl_layer_normalization_desc_t</a>. For example, layer normalization can compute the mean and variance on its own or take them as inputs. It can either perform scaling and shifting using gamma and beta parameters or not. Optionally, it can also perform a fused ReLU, which in case of training would also require a workspace.</p>
+<p>Layer normalization is a normalization over the last logical axis of a data tensor. </p>
+<p>Both forward and backward propagation primitives support in-place operation; that is, src and dst memory objects may be the same or point to the same underlying memory for forward propagation, and diff_dst and diff_src point to the same memory for backward propagation.</p>
+<p>The layer normalization primitives computations can be controlled by specifying different dnnl::normalization_flags values. For example, layer normalization forward propagation can be configured to either compute the mean and variance or take them as arguments. It can either perform scaling and shifting using gamma and beta parameters or not. Optionally, it can also perform a fused ReLU, which in case of training would also require a workspace.</p>
 <dl class="section see"><dt>See Also</dt><dd><a class="el" href="dev_guide_layer_normalization.html">Layer Normalization</a> in developer guide </dd>
 <dd>
 <a class="el" href="group__c__api__layer__normalization.html">Layer Normalization</a> in <a class="el" href="group__c__api.html">C API</a> </dd></dl>

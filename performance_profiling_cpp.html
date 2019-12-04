@@ -64,7 +64,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -139,8 +139,8 @@ Naive Implementation</h1>
 <div class="line">    <span class="keyword">auto</span> conv = convolution_forward(conv_pd);</div>
 </div><!-- fragment --> <div class="fragment"><div class="line">    <span class="comment">// execute convolution by adding it to the stream s</span></div>
 <div class="line">    conv.execute(s,</div>
-<div class="line">            {{DNNL_ARG_SRC, user_src}, {DNNL_ARG_WEIGHTS, user_wei},</div>
-<div class="line">                    {DNNL_ARG_DST, user_dst}});</div>
+<div class="line">            {{<a class="code" href="group__dnnl__api__primitives__common.html#gac37ad67b48edeb9e742af0e50b70fe09">DNNL_ARG_SRC</a>, user_src}, {<a class="code" href="group__dnnl__api__primitives__common.html#gaf279f28c59a807e71a70c719db56c5b3">DNNL_ARG_WEIGHTS</a>, user_wei},</div>
+<div class="line">                    {<a class="code" href="group__dnnl__api__primitives__common.html#ga3ca217e4a06d42a0ede3c018383c388f">DNNL_ARG_DST</a>, user_dst}});</div>
 </div><!-- fragment --><div class="fragment"><div class="line">    <span class="comment">// execute relu (on convolution&#39;s destination format, whatever it is)</span></div>
 <div class="line">    create_and_execute_relu(user_dst, eng, s);</div>
 </div><!-- fragment --> <dl class="section note"><dt>Note</dt><dd>The function for creation and execution of ReLU primitive is defined elsewhere to keep this example clean. It is an non-intensive operation, so the <code>create_and_execute_relu()</code> function uses whatever the input data format is at the time it is called.</dd></dl>
@@ -151,7 +151,7 @@ Naive Implementation</h1>
 <div class="line">        blocked:abcd:f0,alg:convolution_direct,</div>
 <div class="line">        mb1000_ic3oc96_ih227oh55kh11sh4dh0ph0_iw227ow55kw11sw4dw0pw0,235.86</div>
 <div class="line">dnnl_verbose,exec,eltwise,jit:avx512_common,forward_inference,</div>
-<div class="line">        data_f32::blocked:abcd:f0,alg:<a class="code" href="group__cpp__api__enums.html#gga00377dd4982333e42e8ae1d09a309640aba09bebb742494255b90b43871c01c69">eltwise_relu</a>,1000x96x55x55,100.264</div>
+<div class="line">        data_f32::blocked:abcd:f0,alg:<a class="code" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640aba09bebb742494255b90b43871c01c69">eltwise_relu</a>,1000x96x55x55,100.264</div>
 </div><!-- fragment --><p> In <em>Blocked format implementation</em>, we will incorporate the best practice of letting DNNL determine the optimal format for convolution primitive.</p>
 <h1><a class="anchor" id="performance_profiling_cpp_implementation2"></a>
 Blocked format implementation</h1>
@@ -165,9 +165,9 @@ Blocked format implementation</h1>
 <div class="line">    <span class="keyword">auto</span> conv_dst_md = memory::desc(user_dst.get_desc());</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// reset format to &quot;any&quot; to allow convolution to pick the best implementation</span></div>
-<div class="line">    conv_src_md.data.<a class="code" href="structdnnl__memory__desc__t.html#ae6f8322c5cff0068a97e7fba2f123e2c">format_kind</a> = <a class="code" href="group__c__api__types__generic.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83">dnnl_format_kind_any</a>;</div>
-<div class="line">    conv_wei_md.data.format_kind = <a class="code" href="group__c__api__types__generic.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83">dnnl_format_kind_any</a>;</div>
-<div class="line">    conv_dst_md.data.format_kind = <a class="code" href="group__c__api__types__generic.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83">dnnl_format_kind_any</a>;</div>
+<div class="line">    conv_src_md.data.<a class="code" href="structdnnl__memory__desc__t.html#ae6f8322c5cff0068a97e7fba2f123e2c">format_kind</a> = <a class="code" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83">dnnl_format_kind_any</a>;</div>
+<div class="line">    conv_wei_md.data.format_kind = <a class="code" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83">dnnl_format_kind_any</a>;</div>
+<div class="line">    conv_dst_md.data.format_kind = <a class="code" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83">dnnl_format_kind_any</a>;</div>
 </div><!-- fragment --> <div class="fragment"><div class="line">    <span class="comment">// create a convolution descriptor</span></div>
 <div class="line">    <span class="keyword">auto</span> conv_d = convolution_forward::desc(prop_kind::forward_inference,</div>
 <div class="line">            algorithm::convolution_direct, conv_src_md, conv_wei_md,</div>
@@ -202,8 +202,8 @@ Blocked format implementation</h1>
 <div class="line">    <span class="keyword">auto</span> conv = convolution_forward(conv_pd);</div>
 </div><!-- fragment --> <div class="fragment"><div class="line">    <span class="comment">// execute convolution by adding it to the stream s</span></div>
 <div class="line">    conv.execute(s,</div>
-<div class="line">            {{DNNL_ARG_SRC, conv_src}, {DNNL_ARG_WEIGHTS, conv_wei},</div>
-<div class="line">                    {DNNL_ARG_DST, conv_dst}});</div>
+<div class="line">            {{<a class="code" href="group__dnnl__api__primitives__common.html#gac37ad67b48edeb9e742af0e50b70fe09">DNNL_ARG_SRC</a>, conv_src}, {<a class="code" href="group__dnnl__api__primitives__common.html#gaf279f28c59a807e71a70c719db56c5b3">DNNL_ARG_WEIGHTS</a>, conv_wei},</div>
+<div class="line">                    {<a class="code" href="group__dnnl__api__primitives__common.html#ga3ca217e4a06d42a0ede3c018383c388f">DNNL_ARG_DST</a>, conv_dst}});</div>
 </div><!-- fragment --> <div class="fragment"><div class="line">    <span class="comment">// execute relu (on convolution&#39;s destination format, whatever it is)</span></div>
 <div class="line">    create_and_execute_relu(conv_dst, eng, s);</div>
 </div><!-- fragment --><p> Blocked memory format is recommended for DNNL primitive execution and provides better performance, as shown in the DNNL_VERBOSE output by the convolution and relu execution times of 119.6 and 34.4 milliseconds (down from 235.9 and 100.3 in <em>naive implementation</em>), respectively. In this implementation, there is an additional reorder operation that executes before and after the the conv + relu. This small cost is worth the gain from executing in blocked format. If fact, it becomes negligible when chaining together multiple DNNL operations in succession. In these situations, you can do one reorder at the beginning and one at the end of the chain, and only pay the reorder penalty at those points in the execution.</p>
@@ -215,7 +215,7 @@ Blocked format implementation</h1>
 <div class="line">        dst_f32::blocked:aBcd16b:f0,alg:convolution_direct,</div>
 <div class="line">        mb1000_ic3oc96_ih227oh55kh11sh4dh0ph0_iw227ow55kw11sw4dw0pw0,119.649</div>
 <div class="line">dnnl_verbose,exec,eltwise,jit:avx512_common,forward_inference,</div>
-<div class="line">        data_f32::blocked:aBcd16b:f0,alg:<a class="code" href="group__cpp__api__enums.html#gga00377dd4982333e42e8ae1d09a309640aba09bebb742494255b90b43871c01c69">eltwise_relu</a>,1000x96x55x55,34.417</div>
+<div class="line">        data_f32::blocked:aBcd16b:f0,alg:<a class="code" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640aba09bebb742494255b90b43871c01c69">eltwise_relu</a>,1000x96x55x55,34.417</div>
 <div class="line">dnnl_verbose,exec,reorder,jit:uni,undef,src_f32::blocked:aBcd16b:f0</div>
 <div class="line">        dst_f32::blocked:abcd:f0,num:1,1000x96x55x55,97.3352</div>
 </div><!-- fragment --><p> This inference implementation is closer to best practices than <em>naive implementation</em> because it uses DNNL recommended memory format. <em>fused implementation</em> will futher optimize the performance by using a fused version of the conv + ReLU primitive emplying the Intel DNNL <a class="el" href="dev_guide_attributes_post_ops.html">post-ops attribute</a></p>
@@ -250,8 +250,8 @@ Fused Implementation</h1>
 <div class="line">    <span class="keyword">auto</span> conv = convolution_forward(conv_pd);</div>
 </div><!-- fragment --> <div class="fragment"><div class="line">    <span class="comment">// execute convolution by adding it to the stream s</span></div>
 <div class="line">    conv.execute(s,</div>
-<div class="line">            {{DNNL_ARG_SRC, conv_src}, {DNNL_ARG_WEIGHTS, conv_wei},</div>
-<div class="line">                    {DNNL_ARG_DST, conv_dst}});</div>
+<div class="line">            {{<a class="code" href="group__dnnl__api__primitives__common.html#gac37ad67b48edeb9e742af0e50b70fe09">DNNL_ARG_SRC</a>, conv_src}, {<a class="code" href="group__dnnl__api__primitives__common.html#gaf279f28c59a807e71a70c719db56c5b3">DNNL_ARG_WEIGHTS</a>, conv_wei},</div>
+<div class="line">                    {<a class="code" href="group__dnnl__api__primitives__common.html#ga3ca217e4a06d42a0ede3c018383c388f">DNNL_ARG_DST</a>, conv_dst}});</div>
 </div><!-- fragment --><p> This implementation complies with best practices for f32 inference by using the DNNL recommended blocked format for convolution and adding ReLU as a post-op to execute a fused version of conv + ReLU. The consequence to following best practices can be seen in the execution time of the fused primitive of 103.9 milliseconds.</p>
 <p><em>DNNL_VERBOSE output (see configuration notice*):</em> </p>
 <div class="fragment"><div class="line">dnnl_verbose,exec,convolution,jit:avx512_common,forward_inference,</div>

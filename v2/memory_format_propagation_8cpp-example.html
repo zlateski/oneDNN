@@ -79,7 +79,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">memory_format_propagation.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<p>This example demonstrates memory format propagation, which is critical for deep learning applications performance.</p>
+<p>This example demonstrates memory format propagation, which is critical for deep learning applications performance. </p>
 <blockquote class="doxtable">
 <p>Annotated version: <a class="el" href="memory_format_propagation_cpp.html">Memory format propagation</a> </p>
 </blockquote>
@@ -106,7 +106,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line"></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="dnnl_8hpp.html">dnnl.hpp</a>&quot;</span></div>
-<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="dnnl__debug_8h.html">dnnl_debug.h</a>&quot;</span></div>
 <div class="line"></div>
 <div class="line"><span class="preprocessor">#include &quot;example_utils.hpp&quot;</span></div>
 <div class="line"></div>
@@ -225,19 +224,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv) {</div>
-<div class="line">    <span class="keywordflow">try</span> {</div>
-<div class="line">        memory_format_propagation_tutorial(parse_engine_kind(argc, argv));</div>
-<div class="line">    } <span class="keywordflow">catch</span> (<a name="_a19"></a><a class="code" href="structdnnl_1_1error.html">dnnl::error</a> &amp;e) {</div>
-<div class="line">        std::cerr &lt;&lt; <span class="stringliteral">&quot;DNNL error: &quot;</span> &lt;&lt; e.<a name="a20"></a><a class="code" href="structdnnl_1_1error.html#adfc1a2bf4e31aa1751b38e8e1dbcba2b">what</a>() &lt;&lt; std::endl</div>
-<div class="line">                  &lt;&lt; <span class="stringliteral">&quot;Error status: &quot;</span> &lt;&lt; dnnl_status2str(e.<a name="a21"></a>status) &lt;&lt; std::endl;</div>
-<div class="line">        <span class="keywordflow">return</span> 1;</div>
-<div class="line">    } <span class="keywordflow">catch</span> (std::string &amp;e) {</div>
-<div class="line">        std::cerr &lt;&lt; <span class="stringliteral">&quot;Error in the example: &quot;</span> &lt;&lt; e &lt;&lt; std::endl;</div>
-<div class="line">        <span class="keywordflow">return</span> 2;</div>
-<div class="line">    }</div>
-<div class="line"></div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Example passes&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">    <span class="keywordflow">return</span> handle_example_errors(</div>
+<div class="line">            memory_format_propagation_tutorial, parse_engine_kind(argc, argv));</div>
 <div class="line">}</div>
 <div class="line"></div>
 </div><!-- fragment --> </div><!-- contents -->

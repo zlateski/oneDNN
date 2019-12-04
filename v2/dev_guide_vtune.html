@@ -79,14 +79,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Profiling with Intel(R) VTune Amplifier </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>DNNL uses just-in-time compilation (JIT) to generate optimal code for some functions based on input parameters and instruction set supported by the system. The library uses Intel SEAPI interface to annotate the generated code for Intel VTune Amplifier, so that it can correctly attribute processor monitoring unit (PMU) events to the code.</p>
-<p>The behavior is controlled with build time option <code>DNNL_ENABLE_JIT_PROFILING</code></p>
-<table class="doxtable">
-<tr>
-<th align="left">Option </th><th align="left">Possible Values (defaults in bold) </th><th align="left">Description  </th></tr>
-<tr>
-<td align="left">DNNL_ENABLE_JIT_PROFILING </td><td align="left"><b>ON</b>, OFF </td><td align="left">Enables integration with Intel(R) VTune(TM) Amplifier </td></tr>
-</table>
+<div class="textblock"><p>See <a class="el" href="dev_guide_profilers.html">Profiling DNNL performance</a> </p>
 </div></div><!-- contents -->
 <div class="footer">
     <div class="footer-wrapper">

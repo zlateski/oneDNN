@@ -95,7 +95,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>Descriptor for GRU forward propagation.  
+<p>Descriptor for a GRU forward propagation primitive.  
  <a href="structdnnl_1_1gru__forward_1_1desc.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="dnnl_8hpp_source.html">dnnl.hpp</a>&gt;</code></p>
@@ -109,14 +109,14 @@ Collaboration diagram for dnnl::gru_forward::desc:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad9c9ae2a269112ea44fba1173789d546"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1gru__forward_1_1desc.html#ad9c9ae2a269112ea44fba1173789d546">desc</a> (<a class="el" href="group__cpp__api__enums.html#gac7db48f6583aa9903e54c2a39d65438f">prop_kind</a> aprop_kind, <a class="el" href="group__cpp__api__enums.html#ga33315cf335d1cbe26fd6b70d956e23d5">rnn_direction</a> direction, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;src_layer_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;src_iter_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;weights_layer_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;weights_iter_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;bias_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;dst_layer_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;dst_iter_desc, <a class="el" href="group__cpp__api__enums.html#gad27d0db2a86ae3072207769f5c2ddd1e">rnn_flags</a> flags=<a class="el" href="group__cpp__api__enums.html#ggad27d0db2a86ae3072207769f5c2ddd1eaf31ee5e3824f1f5e5d206bdf3029f22b">rnn_flags::undef</a>)</td></tr>
-<tr class="memdesc:ad9c9ae2a269112ea44fba1173789d546"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a GRU descriptor for forward propagation using <code>prop_kind</code>, <code>direction</code>, and memory descriptors.  <a href="#ad9c9ae2a269112ea44fba1173789d546">More...</a><br/></td></tr>
-<tr class="separator:ad9c9ae2a269112ea44fba1173789d546"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ed1811f1c69cdef5a48afb6a2ca5e17"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1gru__forward_1_1desc.html#a2ed1811f1c69cdef5a48afb6a2ca5e17">desc</a> (<a class="el" href="group__cpp__api__enums.html#gac7db48f6583aa9903e54c2a39d65438f">prop_kind</a> <a class="el" href="group__cpp__api__enums.html#gac7db48f6583aa9903e54c2a39d65438f">prop_kind</a>, <a class="el" href="group__cpp__api__enums.html#ga33315cf335d1cbe26fd6b70d956e23d5">rnn_direction</a> direction, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;src_layer_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;src_iter_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;weights_layer_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;weights_iter_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;bias_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;dst_layer_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;dst_iter_desc, <a class="el" href="group__cpp__api__enums.html#gad27d0db2a86ae3072207769f5c2ddd1e">rnn_flags</a> flags=<a class="el" href="group__cpp__api__enums.html#ggad27d0db2a86ae3072207769f5c2ddd1eaf31ee5e3824f1f5e5d206bdf3029f22b">rnn_flags::undef</a>)</td></tr>
+<tr class="memdesc:a2ed1811f1c69cdef5a48afb6a2ca5e17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a descriptor for a GRU forward propagation primitive using <code>prop_kind</code>, <code>direction</code>, and memory descriptors.  <a href="#a2ed1811f1c69cdef5a48afb6a2ca5e17">More...</a><br/></td></tr>
+<tr class="separator:a2ed1811f1c69cdef5a48afb6a2ca5e17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Descriptor for GRU forward propagation. </p>
+<div class="textblock"><p>Descriptor for a GRU forward propagation primitive. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ad9c9ae2a269112ea44fba1173789d546"></a>
+<a class="anchor" id="a2ed1811f1c69cdef5a48afb6a2ca5e17"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -127,7 +127,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">dnnl::gru_forward::desc::desc </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__cpp__api__enums.html#gac7db48f6583aa9903e54c2a39d65438f">prop_kind</a>&#160;</td>
-          <td class="paramname"><em>aprop_kind</em>, </td>
+          <td class="paramname"><em>prop_kind</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -196,11 +196,12 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Initializes a GRU descriptor for forward propagation using <code>prop_kind</code>, <code>direction</code>, and memory descriptors. </p>
-<dl class="section note"><dt>Note</dt><dd>If <code>prop_kind</code> equals <a class="el" href="group__cpp__api__enums.html#ggac7db48f6583aa9903e54c2a39d65438fa24775787fab8f13aa4809e1ce8f82aeb" title="Forward data propagation (training mode). ">dnnl::forward_training</a>, you must query a workspace memory descriptor before creating the primitive.</dd></dl>
-<p><code>flags</code> is a parameter to the GRU descriptor and is currently ignored.</p>
-<p><code>src_iter_desc</code>, <code>bias_desc</code>, and <code>dst_iter_desc</code> are allowed to point to a zero memory descriptor, which would indicate that the GRU primitive should not use them and will default to zero values.</p>
-<dl class="section note"><dt>Note</dt><dd>All memory descriptors except <code>src_iter_desc</code> can be initialized with an <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> value of <code>format_kind</code>. </dd></dl>
+<p>Constructs a descriptor for a GRU forward propagation primitive using <code>prop_kind</code>, <code>direction</code>, and memory descriptors. </p>
+<p>The <code>flags</code> parameter is currently ignored.</p>
+<p>The <code>src_iter_desc</code>, <code>bias_desc</code>, and <code>dst_iter_desc</code> are allowed to point to a zero memory descriptor, which would indicate that the GRU primitive should not use them and will default to zero values.</p>
+<dl class="section note"><dt>Note</dt><dd>All memory descriptors except <code>src_iter_desc</code> can be initialized with an <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> value of <code>format_tag</code>.</dd>
+<dd>
+If <code>prop_kind</code> equals <a class="el" href="group__cpp__api__enums.html#ggac7db48f6583aa9903e54c2a39d65438fa24775787fab8f13aa4809e1ce8f82aeb" title="Forward data propagation (training mode). ">dnnl::forward_training</a>, you must query a workspace memory descriptor before creating the primitive. </dd></dl>
 
 </div>
 </div>

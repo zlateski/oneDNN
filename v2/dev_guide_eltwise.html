@@ -106,6 +106,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr>
 <td align="left">linear </td><td align="left"><a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23aed5eec69000ddfe6ac96e161b0d723b4" title="Eltwise: linear. ">dnnl_eltwise_linear</a> </td><td align="left">\( f(x) = \alpha x + \beta \) </td></tr>
 <tr>
+<td align="left">log </td><td align="left"><a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a8ea10785816fd41353b49445852e0b74" title="Eltwise: natural logarithm. ">dnnl_eltwise_log</a> </td><td align="left">\( f(x) = \log_{e}{x} \) </td></tr>
+<tr>
 <td align="left">logistic </td><td align="left"><a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23ab560981bee9e7711017423e29ba46071" title="Eltwise: logistic. ">dnnl_eltwise_logistic</a> </td><td align="left">\( f(x) = \frac{1}{1+e^{-x}} \) </td></tr>
 <tr>
 <td align="left">relu </td><td align="left"><a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a5e37643fec6531331e2e38df68d4c65a" title="Eltwise: ReLU. ">dnnl_eltwise_relu</a> </td><td align="left">\( f(x) = \begin{cases} x &amp; \text{if}\ x &gt; 0 \\ \alpha x &amp; \text{if}\ x \leq 0 \end{cases} \) </td></tr>
@@ -118,7 +120,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr>
 <td align="left">swish </td><td align="left"><a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a63447dedf2e45ab535f1365502ff3240" title="Eltwise: swish. ">dnnl_eltwise_swish</a> </td><td align="left">\( f(x) = \frac{x}{1+e^{-\alpha x}} \) </td></tr>
 <tr>
-<td align="left">tanh </td><td align="left"><a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a81b20d8f0b54c7114024186a9fbb698e" title="Eltwise: hyperbolic tangent non-linearity (tanh) ">dnnl_eltwise_tanh</a> </td><td align="left">\( f(x) = \frac{e^z - e^{-z}}{e^z + e^{-z}} \) </td></tr>
+<td align="left">tanh </td><td align="left"><a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a81b20d8f0b54c7114024186a9fbb698e" title="Eltwise: hyperbolic tangent non-linearity (tanh) ">dnnl_eltwise_tanh</a> </td><td align="left">\( f(x) = \tanh{x} \) </td></tr>
 </table>
 <h4>Difference Between <a href="#dnnl_forward_training">Forward Training</a> and <a href="#dnnl_forward_inference">Forward Inference</a></h4>
 <p>There is no difference between the <a class="el" href="group__c__api__types__generic.html#ggae3c1f22ae55645782923fbfd8b07d0c4a992e03bebfe623ac876b3636333bbce0" title="Forward data propagation (training mode). ">dnnl_forward_training</a> and <a class="el" href="group__c__api__types__generic.html#ggae3c1f22ae55645782923fbfd8b07d0c4a2f77a568a675dec649eb0450c997856d" title="Forward data propagation (inference mode). ">dnnl_forward_inference</a> propagation kinds.</p>
@@ -127,8 +129,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h2>Implementation Details</h2>
 <h3>General Notes</h3>
 <ol type="1">
-<li>All eltwise primitives have a common initialization function (e.g., dnnl::eltwise_forward::desc::desc()) which takes both parameters \(\alpha\), and \(\beta\). These parameters are ignored if they are unused.</li>
-<li>The memory format and data type for <code>src</code> and <code>dst</code> are assumed to be the same, and in the API are typically referred as <code>data</code> (e.g., see <code>data_desc</code> in dnnl::eltwise_forward::desc::desc()). The same holds for <code>diff_src</code> and <code>diff_dst</code>. The corresponding memory descriptors are referred to as <code>diff_data_desc</code>.</li>
+<li>All eltwise primitives have a common initialization function (e.g., <a class="el" href="structdnnl_1_1eltwise__forward_1_1desc.html#a9e8335109fd954af101951001b634d49" title="Constructs a descriptor for an elementwise forward propagation primitive using prop_kind (acceptable ...">dnnl::eltwise_forward::desc::desc()</a>) which takes both parameters \(\alpha\), and \(\beta\). These parameters are ignored if they are unused.</li>
+<li>The memory format and data type for <code>src</code> and <code>dst</code> are assumed to be the same, and in the API are typically referred as <code>data</code> (e.g., see <code>data_desc</code> in <a class="el" href="structdnnl_1_1eltwise__forward_1_1desc.html#a9e8335109fd954af101951001b634d49" title="Constructs a descriptor for an elementwise forward propagation primitive using prop_kind (acceptable ...">dnnl::eltwise_forward::desc::desc()</a>). The same holds for <code>diff_src</code> and <code>diff_dst</code>. The corresponding memory descriptors are referred to as <code>diff_data_desc</code>.</li>
 <li>Both forward and backward propagation support in-place operations, meaning that <code>src</code> can be used as input and output for forward propagation, and <code>diff_dst</code> can be used as input and output for backward propagation. In case of in-place operation, the original data will be overwritten.</li>
 <li>For some operations it might be performance beneficial to compute backward propagation based on \(dst(\overline{x})\), rather than on \(src(\overline{x})\). However, for some other operations this is simply impossible. So for generality the library always requires \(src\).</li>
 </ol>
@@ -155,10 +157,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h2>Implementation Limitations</h2>
 <ol type="1">
 <li>Refer to <a class="el" href="dev_guide_data_types.html">Data Types</a> for limitations related to data types support.</li>
-<li><b>GPU</b><ul>
-<li>No support for swish (<a class="el" href="group__c__api__types__generic.html#gga96946c805f6c4922c38c37049ab95d23a63447dedf2e45ab535f1365502ff3240" title="Eltwise: swish. ">dnnl_eltwise_swish</a>) operation</li>
-</ul>
-</li>
 </ol>
 <h2>Performance Tips</h2>
 <ol type="1">

@@ -92,9 +92,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </p>
 <p>where</p>
 <ul>
-<li>\(c\) dimension is called a softmax axis,</li>
-<li>\(\overline{ou}\) is the outermost indices (to the left from softmax axis),</li>
-<li>\(\overline{in}\) is the innermost indices (to the right from softmax axis), and</li>
+<li>\(c\) axis over which the softmax computation is computed on,</li>
+<li>\(\overline{ou}\) is the outermost index (to the left of softmax axis),</li>
+<li>\(\overline{in}\) is the innermost index (to the right of softmax axis), and</li>
 <li><p class="startli">\(\nu\) is used to produce more accurate results and defined as:</p>
 <p class="formulaDsp">
 \[ \nu(\overline{ou}, \overline{in}) = \max\limits_{ic} src(\overline{ou}, ic, \overline{in}) \]
@@ -136,9 +136,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>Optimized: 2D case, tensor \(A \times B\), softmax axis 1 (B), format tag <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da1bd907fc29344dfe7ba88336960dcf53" title="plain 2D tensor ">dnnl_ab</a></li>
 <li>Optimized: 4D case, tensor \(A \times B \times C \times D\), softmax axis 3 (D), format tag <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da6e669cc61278663a5ddbd3d0b25c6c5c" title="plain 4D tensor ">dnnl_abcd</a></li>
 <li>Optimized: 4D case, tensor \(A \times B \times C \times D\), softmax axis 1 (B), format tag <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da6e669cc61278663a5ddbd3d0b25c6c5c" title="plain 4D tensor ">dnnl_abcd</a>, and \(C = D = 1\)</li>
+<li>Optimized: 4D case, tensor \(A \times B \times C \times D\), softmax axis 1 (B), format tag <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da8fcce5dd7260b5b0740e3b37b1e9ad41" title="permuted 4D tensor ">dnnl_acdb</a> or <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da590d748ac3761a51b407555a9a0d5efe" title="4D tensor blocked by 2nd dimension with block size 16 ">dnnl_aBcd16b</a>, and \(C \cdot D \ne 1\)</li>
 <li>Non-optimized: 2D case, tensor \(A \times B\), softmax axis 0 (A), format tag <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da1bd907fc29344dfe7ba88336960dcf53" title="plain 2D tensor ">dnnl_ab</a>, and \(B \ne 1\)</li>
 <li>Non-optimized: 2D case, tensor \(A \times B\), softmax axis 1 (B), format tag <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da6a6dbc0b30468d92e32a9cb3f6615c43" title="permuted 2D tensor ">dnnl_ba</a>, and \(A \ne 1\)</li>
-<li>Non-optimized: 4D case, tensor \(A \times B\), softmax axis 2 (C), format tag <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da8fcce5dd7260b5b0740e3b37b1e9ad41" title="permuted 4D tensor ">dnnl_acdb</a>, and and \(D \cdot B \ne 1\) </li>
+<li>Non-optimized: 4D case, tensor \(A \times B \times C \times D\), softmax axis 2 (C), format tag <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da8fcce5dd7260b5b0740e3b37b1e9ad41" title="permuted 4D tensor ">dnnl_acdb</a>, and and \(D \cdot B \ne 1\) </li>
 </ul>
 </li>
 </ol>

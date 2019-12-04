@@ -101,6 +101,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><span class="preprocessor">#include &lt;math.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;numeric&gt;</span></div>
 <div class="line"></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="dnnl_8hpp.html">dnnl.hpp</a>&quot;</span></div>
+<div class="line"></div>
 <div class="line"><span class="preprocessor">#include &quot;example_utils.hpp&quot;</span></div>
 <div class="line"></div>
 <div class="line"><span class="keyword">using namespace </span>dnnl;</div>
@@ -154,7 +156,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line">    <span class="comment">// Input tensor holds two batches with different sequence lengths.</span></div>
 <div class="line">    <span class="comment">// Shorter sequences are padded</span></div>
-<div class="line">    memory::dims net_src_dims = {</div>
+<div class="line">    <a class="code" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> net_src_dims = {</div>
 <div class="line">            T0, <span class="comment">// time, maximum sequence length</span></div>
 <div class="line">            N0 + N1, <span class="comment">// n, total batch size</span></div>
 <div class="line">            common_feature_size <span class="comment">// c, common number of channels</span></div>
@@ -162,42 +164,42 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line">    <span class="comment">// Two RNN primitives for different sequence lengths,</span></div>
 <div class="line">    <span class="comment">// one unidirectional layer, LSTM-based</span></div>
-<div class="line">    memory::dims leftmost_src_layer_dims = {</div>
+<div class="line">    <a class="code" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> leftmost_src_layer_dims = {</div>
 <div class="line">            leftmost_seq_length, <span class="comment">// time</span></div>
 <div class="line">            leftmost_batch, <span class="comment">// n</span></div>
 <div class="line">            common_feature_size <span class="comment">// c</span></div>
 <div class="line">    };</div>
-<div class="line">    memory::dims rightmost_src_layer_dims = {</div>
+<div class="line">    <a class="code" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> rightmost_src_layer_dims = {</div>
 <div class="line">            rightmost_seq_length, <span class="comment">// time</span></div>
 <div class="line">            rightmost_batch, <span class="comment">// n</span></div>
 <div class="line">            common_feature_size <span class="comment">// c</span></div>
 <div class="line">    };</div>
-<div class="line">    memory::dims common_weights_layer_dims = {</div>
+<div class="line">    <a class="code" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> common_weights_layer_dims = {</div>
 <div class="line">            common_n_layers, <span class="comment">// layers</span></div>
 <div class="line">            1, <span class="comment">// directions</span></div>
 <div class="line">            common_feature_size, <span class="comment">// input feature size</span></div>
 <div class="line">            lstm_n_gates, <span class="comment">// gates number</span></div>
 <div class="line">            common_feature_size <span class="comment">// output feature size</span></div>
 <div class="line">    };</div>
-<div class="line">    memory::dims common_weights_iter_dims = {</div>
+<div class="line">    <a class="code" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> common_weights_iter_dims = {</div>
 <div class="line">            common_n_layers, <span class="comment">// layers</span></div>
 <div class="line">            1, <span class="comment">// directions</span></div>
 <div class="line">            common_feature_size, <span class="comment">// input feature size</span></div>
 <div class="line">            lstm_n_gates, <span class="comment">// gates number</span></div>
 <div class="line">            common_feature_size <span class="comment">// output feature size</span></div>
 <div class="line">    };</div>
-<div class="line">    memory::dims common_bias_dims = {</div>
+<div class="line">    <a class="code" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> common_bias_dims = {</div>
 <div class="line">            common_n_layers, <span class="comment">// layers</span></div>
 <div class="line">            1, <span class="comment">// directions</span></div>
 <div class="line">            lstm_n_gates, <span class="comment">// gates number</span></div>
 <div class="line">            common_feature_size <span class="comment">// output feature size</span></div>
 <div class="line">    };</div>
-<div class="line">    memory::dims leftmost_dst_layer_dims = {</div>
+<div class="line">    <a class="code" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> leftmost_dst_layer_dims = {</div>
 <div class="line">            leftmost_seq_length, <span class="comment">// time</span></div>
 <div class="line">            leftmost_batch, <span class="comment">// n</span></div>
 <div class="line">            common_feature_size <span class="comment">// c</span></div>
 <div class="line">    };</div>
-<div class="line">    memory::dims rightmost_dst_layer_dims = {</div>
+<div class="line">    <a class="code" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> rightmost_dst_layer_dims = {</div>
 <div class="line">            rightmost_seq_length, <span class="comment">// time</span></div>
 <div class="line">            rightmost_batch, <span class="comment">// n</span></div>
 <div class="line">            common_feature_size <span class="comment">// c</span></div>
@@ -211,25 +213,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="comment">// We have arranged our primitives so that</span></div>
 <div class="line">    <span class="comment">// leftmost_batch &gt;= rightmost_batch, and so the rightmost data will fit</span></div>
 <div class="line">    <span class="comment">// into the memory allocated for the leftmost.</span></div>
-<div class="line">    memory::dims leftmost_dst_iter_dims = {</div>
+<div class="line">    <a class="code" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> leftmost_dst_iter_dims = {</div>
 <div class="line">            common_n_layers, <span class="comment">// layers</span></div>
 <div class="line">            1, <span class="comment">// directions</span></div>
 <div class="line">            leftmost_batch, <span class="comment">// n</span></div>
 <div class="line">            common_feature_size <span class="comment">// c</span></div>
 <div class="line">    };</div>
-<div class="line">    memory::dims leftmost_dst_iter_c_dims = {</div>
+<div class="line">    <a class="code" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> leftmost_dst_iter_c_dims = {</div>
 <div class="line">            common_n_layers, <span class="comment">// layers</span></div>
 <div class="line">            1, <span class="comment">// directions</span></div>
 <div class="line">            leftmost_batch, <span class="comment">// n</span></div>
 <div class="line">            common_feature_size <span class="comment">// c</span></div>
 <div class="line">    };</div>
-<div class="line">    memory::dims rightmost_src_iter_dims = {</div>
+<div class="line">    <a class="code" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> rightmost_src_iter_dims = {</div>
 <div class="line">            common_n_layers, <span class="comment">// layers</span></div>
 <div class="line">            1, <span class="comment">// directions</span></div>
 <div class="line">            rightmost_batch, <span class="comment">// n</span></div>
 <div class="line">            common_feature_size <span class="comment">// c</span></div>
 <div class="line">    };</div>
-<div class="line">    memory::dims rightmost_src_iter_c_dims = {</div>
+<div class="line">    <a class="code" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> rightmost_src_iter_c_dims = {</div>
 <div class="line">            common_n_layers, <span class="comment">// layers</span></div>
 <div class="line">            1, <span class="comment">// directions</span></div>
 <div class="line">            rightmost_batch, <span class="comment">// n</span></div>
@@ -237,20 +239,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    };</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// multiplication of tensor dimensions</span></div>
-<div class="line">    <span class="keyword">auto</span> tz_volume = [=](memory::dims tz_dims) {</div>
-<div class="line">        <span class="keywordflow">return</span> std::accumulate(tz_dims.begin(), tz_dims.end(), (memory::dim)1,</div>
+<div class="line">    <span class="keyword">auto</span> tz_volume = [=](<a class="code" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> tz_dims) {</div>
+<div class="line">        <span class="keywordflow">return</span> std::accumulate(tz_dims.begin(), tz_dims.end(), (<a class="code" href="structdnnl_1_1memory.html#a6ad818e4699872cc913474fa5f122cd5">memory::dim</a>)1,</div>
 <div class="line">                std::multiplies&lt;memory::dim&gt;());</div>
 <div class="line">    };</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Create auxillary f32 memory descriptor</span></div>
 <div class="line">    <span class="comment">// based on user- supplied dimensions and layout.</span></div>
 <div class="line">    <span class="keyword">auto</span> formatted_md</div>
-<div class="line">            = [=](memory::dims dimensions, <a class="code" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3f">memory::format_tag</a> layout) {</div>
+<div class="line">            = [=](<a class="code" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> dimensions, <a class="code" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3f">memory::format_tag</a> layout) {</div>
 <div class="line">                  <span class="keywordflow">return</span> <a class="code" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> {{dimensions}, dt::f32, layout};</div>
 <div class="line">              };</div>
 <div class="line">    <span class="comment">// Create auxillary generic f32 memory descriptor</span></div>
 <div class="line">    <span class="comment">// based on supplied dimensions, with format_tag::any.</span></div>
-<div class="line">    <span class="keyword">auto</span> generic_md = [=](memory::dims dimensions) {</div>
+<div class="line">    <span class="keyword">auto</span> generic_md = [=](<a class="code" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> dimensions) {</div>
 <div class="line">        <span class="keywordflow">return</span> formatted_md(dimensions, tag::any);</div>
 <div class="line">    };</div>
 <div class="line"></div>
@@ -515,7 +517,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line">    <span class="comment">// User-provided input to the backward primitive.</span></div>
 <div class="line">    <span class="comment">// To be updated by the user after forward pass using some cost function.</span></div>
-<div class="line">    memory::dims net_diff_dst_dims = {</div>
+<div class="line">    <a class="code" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> net_diff_dst_dims = {</div>
 <div class="line">            T0, <span class="comment">// time</span></div>
 <div class="line">            N0 + N1, <span class="comment">// n</span></div>
 <div class="line">            common_feature_size <span class="comment">// c</span></div>
@@ -777,15 +779,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv) {</div>
-<div class="line">    <span class="keywordflow">try</span> {</div>
-<div class="line">        simple_net(parse_engine_kind(argc, argv));</div>
-<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;Simple net f32 training example passed!\n&quot;</span>;</div>
-<div class="line">    } <span class="keywordflow">catch</span> (<a class="code" href="structdnnl_1_1error.html">error</a> &amp;e) {</div>
-<div class="line">        std::cerr &lt;&lt; <span class="stringliteral">&quot;status: &quot;</span> &lt;&lt; e.status &lt;&lt; std::endl;</div>
-<div class="line">        std::cerr &lt;&lt; <span class="stringliteral">&quot;message: &quot;</span> &lt;&lt; e.message &lt;&lt; std::endl;</div>
-<div class="line">        <span class="keywordflow">return</span> 1;</div>
-<div class="line">    }</div>
-<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">    <span class="keywordflow">return</span> handle_example_errors(simple_net, parse_engine_kind(argc, argv));</div>
 <div class="line">}</div>
 </div><!-- fragment --> </div></div><!-- contents -->
 <div class="footer">

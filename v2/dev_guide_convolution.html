@@ -87,40 +87,55 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>The convolution primitive computes forward, backward, or weight update for a batched convolution operation on 1D, 2D, or 3D spatial data with bias.</p>
 <p>The convolution operation is defined by the following formulas. We show formulas only for 2D spatial data which are straightforward to generalize to cases of higher and lower dimensions. Variable names follow the standard <a class="el" href="dev_guide_conventions.html">Naming Conventions</a>.</p>
 <p>Let \(src\), \(weights\) and \(dst\) be \(N \times IC \times IH \times IW\), \(OC \times IC \times KH \times KW\), and \(N \times OC \times OH \times OW\) tensors respectively. Let \(bias\) be a 1D tensor with \(OC\) elements.</p>
+<p>Furthermore, let the remaining convolution parameters be:</p>
+<table class="doxtable">
+<tr>
+<th>Parameter </th><th align="left">Depth </th><th align="left">Height </th><th align="left">Width </th><th align="left">Comment  </th></tr>
+<tr>
+<td>Padding: <br/>
+Front, top, and left </td><td align="left">\(PD_L\) </td><td align="left">\(PH_L\) </td><td align="left">\(PW_L\) </td><td align="left">In the API we use <code>padding_l</code> to indicate the corresponding vector of paddings (<code>_l</code> in the name stands for <b>left</b>) </td></tr>
+<tr>
+<td>Padding: <br/>
+Back, bottom, and right </td><td align="left">\(PD_R\) </td><td align="left">\(PH_R\) </td><td align="left">\(PW_R\) </td><td align="left">In the API we use <code>padding_r</code> to indicate the corresponding vector of paddings (<code>_r</code> in the name stands for <b>right</b>) </td></tr>
+<tr>
+<td>Stride </td><td align="left">\(SD\) </td><td align="left">\(SH\) </td><td align="left">\(SW\) </td><td align="left">Non-strided convolution should have the stride parameters equal <code>1</code> </td></tr>
+<tr>
+<td>Dilation </td><td align="left">\(DD\) </td><td align="left">\(DH\) </td><td align="left">\(DW\) </td><td align="left">Dilation starts with 0, so non-dilated convolution should have the dilation parameters equal <code>0</code> </td></tr>
+</table>
 <p>The following formulas show how DNNL computes convolutions. They are broken down into several types to simplify the exposition, but in reality the convolution types can be combined.</p>
 <p>To further simplify the formulas, we assume that \(src(n, ic, ih, iw) = 0\) if \(ih &lt; 0\), or \(ih \geq IH\), or \(iw &lt; 0\), or \(iw \geq IW\).</p>
 <h3>Forward</h3>
 <h4>Regular Convolution</h4>
 <p class="formulaDsp">
-\[dst(n, oc, oh, ow) = bias(oc) + \\ + \sum_{ic=0}^{IC-1}\sum_{kh=0}^{KH-1}\sum_{kw=0}^{KW-1} src(n, ic, oh \cdot SH + kh - ph_0, ow \cdot SW + kw - pw_0) \cdot weights(oc, ic, kh, kw).\]
+\[dst(n, oc, oh, ow) = bias(oc) + \\ + \sum_{ic=0}^{IC-1}\sum_{kh=0}^{KH-1}\sum_{kw=0}^{KW-1} src(n, ic, oh \cdot SH + kh - PH_L, ow \cdot SW + kw - PW_L) \cdot weights(oc, ic, kh, kw).\]
 </p>
 <p>Here:</p>
 <ul>
-<li>\(OH = \left\lfloor{\frac{IH \cdot SH - KH + ph_0 + ph_1}{sh}} \right\rfloor + 1,\)</li>
-<li>\(OW = \left\lfloor{\frac{IW \cdot SW - KW + pw_0 + pw_1}{sw}} \right\rfloor + 1.\)</li>
+<li>\(OH = \left\lfloor{\frac{IH \cdot SH - KH + PH_L + PH_R}{SH}} \right\rfloor + 1,\)</li>
+<li>\(OW = \left\lfloor{\frac{IW \cdot SW - KW + PW_L + PW_R}{SW}} \right\rfloor + 1.\)</li>
 </ul>
 <h4>Convolution with Groups</h4>
 <p>In the API, DNNL adds a separate groups dimension to memory objects representing weights tensors and represents weights as \(G \times OC_G \times IC_G \times KH \times KW \) 5D tensors for 2D convolutions with groups.</p>
 <p class="formulaDsp">
-\[ dst(n, g \cdot OC_G + oc_g, oh, ow) = bias(g \cdot OC_G + oc_g) + \\ + \sum_{ic_g=0}^{IC_G-1}\sum_{kh=0}^{KH-1}\sum_{kw=0}^{KW-1} src(n, g \cdot IC_G + ic_g, oh + kh - ph_0, ow + kw - pw_0) \cdot weights(g, oc_g, ic_g, kh, kw), \]
+\[ dst(n, g \cdot OC_G + oc_g, oh, ow) = bias(g \cdot OC_G + oc_g) + \\ + \sum_{ic_g=0}^{IC_G-1}\sum_{kh=0}^{KH-1}\sum_{kw=0}^{KW-1} src(n, g \cdot IC_G + ic_g, oh + kh - PH_L, ow + kw - PW_L) \cdot weights(g, oc_g, ic_g, kh, kw), \]
 </p>
 <p>where</p>
 <ul>
 <li>\(IC_G = \frac{IC}{G}\),</li>
-<li>\(OC_G = \frac{OC}{G}\),</li>
-<li>\(ic_g \in [0, IC_G)\) and</li>
+<li>\(OC_G = \frac{OC}{G}\), and</li>
 <li>\(oc_g \in [0, OC_G).\)</li>
 </ul>
 <p>The case when \(OC_G = IC_G = 1\) is also known as <em>a depthwise convolution</em>.</p>
 <h4>Convolution with Dilation</h4>
 <p class="formulaDsp">
-\[ dst(n, oc, oh, ow) = bias(oc) + \\ + \sum_{ic=0}^{IC-1}\sum_{kh=0}^{KH-1}\sum_{kw=0}^{KW-1} src(n, ic, oh + kh \cdot dh - ph_0, ow + kw \cdot dw - pw_0) \cdot weights(oc, ic, kh, kw). \]
+\[ dst(n, oc, oh, ow) = bias(oc) + \\ + \sum_{ic=0}^{IC-1}\sum_{kh=0}^{KH-1}\sum_{kw=0}^{KW-1} src(n, ic, oh + kh \cdot (DH + 1) - PH_L, ow + kw \cdot (DW + 1) - PW_L) \cdot weights(oc, ic, kh, kw). \]
 </p>
 <p>Here:</p>
 <ul>
-<li>\(OH = \left\lfloor{\frac{IH - DKH + ph_0 + ph_1}{sh}} \right\rfloor + 1,\) where \(DKH = 1 + (KH - 1) \cdot (DH + 1)\), and</li>
-<li>\(OW = \left\lfloor{\frac{IW - DKW + pw_0 + pw_1}{sw}} \right\rfloor + 1,\) where \(DKW = 1 + (KW - 1) \cdot (DW + 1)\).</li>
+<li>\(OH = \left\lfloor{\frac{IH - DKH + PH_L + PH_R}{SH}} \right\rfloor + 1,\) where \(DKH = 1 + (KH - 1) \cdot (DH + 1)\), and</li>
+<li>\(OW = \left\lfloor{\frac{IW - DKW + PW_L + PW_R}{SW}} \right\rfloor + 1,\) where \(DKW = 1 + (KW - 1) \cdot (DW + 1)\).</li>
 </ul>
+<dl class="section note"><dt>Note</dt><dd>In DNNL dilation parameter equals 0 means no-dilation, i.e. regular convolution. Other libraries might use another convention, where dilation parameter equals 1 indicates no-dilation case.</dd></dl>
 <h4>Deconvolution (Transposed Convolution)</h4>
 <p>Deconvolutions (also called fractionally strided convolutions or transposed convolutions) work by swapping the forward and backward passes of a convolution. One way to put it is to note that the weights define a convolution, but whether it is a direct convolution or a transposed convolution is determined by how the forward and backward passes are computed.</p>
 <h4>Difference Between <a href="#dnnl_forward_training">Forward Training</a> and <a href="#dnnl_forward_inference">Forward Inference</a></h4>
@@ -192,7 +207,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr>
 <td align="left">forward </td><td align="left">attribute </td><td align="left"><a class="el" href="structdnnl_1_1primitive__attr.html#a4b81acc8e48886313154f75c1708ae02">Output scale</a> </td><td align="left">int8 convolutions only </td><td align="left">Scales the result of convolution by given scale factor(s) </td></tr>
 <tr>
-<td align="left">forward </td><td align="left">post-op </td><td align="left"><a class="el" href="structdnnl_1_1post__ops.html#a9cc93664cc11d2cd4c900f172be5703f">eltwise</a> </td><td align="left"></td><td align="left">Applies an <a class="el" href="group__c__api__eltwise.html">Eltwise</a> operation to the result </td></tr>
+<td align="left">forward </td><td align="left">post-op </td><td align="left"><a class="el" href="structdnnl_1_1post__ops.html#a66606f08467b19091e696b52a2f789e6">eltwise</a> </td><td align="left"></td><td align="left">Applies an <a class="el" href="group__c__api__eltwise.html">Eltwise</a> operation to the result </td></tr>
 <tr>
 <td align="left">forward </td><td align="left">post-op </td><td align="left"><a class="el" href="structdnnl_1_1post__ops.html#a078ab8ec15423d2b3d26f3619a78ca38">sum</a> </td><td align="left"></td><td align="left">Adds the operation result to the destination tensor instead of overwriting it </td></tr>
 </table>
@@ -244,7 +259,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>DNNL implements convolution primitives using several different algorithms:</p>
 <ul>
 <li><em>Direct</em>. The convolution operation is computed directly using SIMD instructions. This is the algorithm used for the most shapes and supports int8, f32 and bf16 data types.</li>
-<li><em>Winograd</em>. This algorithm reduces computational complexity of convolution at the expense of accuracy loss and additional memory operations. The implementation is based on the <a href="https://arxiv.org/abs/1509.09308">**Fast Algorithms for Convolutional Neural Networks by A. Lavin and S. Gray**</a>. The Winograd algorithm often results in the best performance, but it is applicable only to particular shapes. Moreover, Winograd only supports int8 and f32 data types.</li>
+<li><em>Winograd</em>. This algorithm reduces computational complexity of convolution at the expense of accuracy loss and additional memory operations. The implementation is based on the <a href="https://arxiv.org/abs/1509.09308">Fast Algorithms for Convolutional Neural Networks by A. Lavin and S. Gray</a>. The Winograd algorithm often results in the best performance, but it is applicable only to particular shapes. Moreover, Winograd only supports int8 and f32 data types.</li>
 <li><em>Implicit GEMM</em>. The convolution operation is reinterpreted in terms of matrix-matrix multiplication by rearranging the source data into a <a class="el" href="dev_guide_attributes_scratchpad.html">scratchpad memory</a>. This is a fallback algorithm that is dispatched automatically when other implementations are not available. GEMM convolution supports the int8, f32, and bf16 data types.</li>
 </ul>
 <h4>Direct Algorithm</h4>
@@ -253,15 +268,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>Data and weights memory formats are defined by the convolution primitive (user passes <code>any</code>).</li>
 <li>The number of channels per group is a multiple of SIMD width for grouped convolutions.</li>
 <li>For each spatial direction padding does not exceed one half of the corresponding dimension of the weights tensor.</li>
-<li>Weights tensor width does not exceed 14</li>
+<li>Weights tensor width does not exceed 14.</li>
 </ul>
 <p>In case any of these constraints are not met, the implementation will silently fall back to an explicit GEMM algorithm.</p>
 <h4>Winograd Convolution</h4>
-<p>DNNL supports the Winograd convolution algorithm on systems with Intel AVX-512 support and above under the following conditions:</p>
+<p>DNNL supports the Winograd convolution algorithm on systems with Intel(R) AVX-512 support and above under the following conditions:</p>
 <ul>
 <li>Data and weights memory formats are defined by the convolution primitive (user passes <code>any</code> as the data format).</li>
 <li>The spatial domain is two-dimensional.</li>
-<li>The weights shape is 3x3, there are no groups, dilation or strides ( \(kh = kw = 3\), and \(sw = sh = 1\), \(dw = dh = 0\)).</li>
+<li>The weights shape is 3x3, there are no groups, dilation or strides ( \(KH = KW = 3\), \(SH = SW = 1\), and \(DH = DW = 0\)).</li>
 <li>The data type is either int8 or f32.</li>
 </ul>
 <p>In case any of these constraints is not met, the implementation will silently fall back to the direct algorithm.</p>
@@ -279,9 +294,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="fragment"><div class="line"><span class="keyword">auto</span> conv1_desc = convolution_forward::desc(</div>
 <div class="line">    prop_kind::forward_inference, algorithm::convolution_winograd,</div>
 <div class="line">    conv1_src_md, conv1_weights_md, conv1_bias_md, conv1_dst_md,</div>
-<div class="line">    conv1_strides, conv1_padding, padding_kind::zero);</div>
+<div class="line">    conv1_strides, conv1_padding_l, conv1_padding_r);</div>
 </div><!-- fragment --><h4>Automatic Algorithm Selection</h4>
-<p>DNNL supports <code><a class="el" href="group__cpp__api__enums.html#gga00377dd4982333e42e8ae1d09a309640acfdececd63a8bc0cfe1021ad614e2ded" title="Convolution algorithm(either direct or Winograd) is chosen just in time. ">dnnl::algorithm::convolution_auto</a></code> algorithm that instructs the library to automatically select the <em>best</em> algorithm based on the heuristics that take into account tensor shapes and the number of logical processors available. (For automatic selection to work as intended, use the same thread affinity settings when creating the convolution as when executing the convolution.)</p>
+<p>DNNL supports <code><a class="el" href="group__cpp__api__enums.html#gga00377dd4982333e42e8ae1d09a309640acfdececd63a8bc0cfe1021ad614e2ded" title="Convolution algorithm (either direct or Winograd) is chosen just in time. ">dnnl::algorithm::convolution_auto</a></code> algorithm that instructs the library to automatically select the <em>best</em> algorithm based on the heuristics that take into account tensor shapes and the number of logical processors available. (For automatic selection to work as intended, use the same thread affinity settings when creating the convolution as when executing the convolution.)</p>
 <p><a class="anchor" id="dg_conv_impl_limits"></a></p>
 <h2>Implementation Limitations</h2>
 <ol type="1">

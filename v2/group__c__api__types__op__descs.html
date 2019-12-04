@@ -119,6 +119,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl__binary__desc__t.html">dnnl_binary_desc_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A descriptor of a binary operation.  <a href="structdnnl__binary__desc__t.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl__matmul__desc__t.html">dnnl_matmul_desc_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A descriptor of a matrix multiplication operation.  <a href="structdnnl__matmul__desc__t.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -134,6 +137,9 @@ typedef const void *&#160;</td><td class="memItemRight" valign="bottom"><a class
 typedef <a class="el" href="structdnnl__convolution__desc__t.html">dnnl_convolution_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__op__descs.html#gafd99fc7c70359ba9434d6a9933d566c3">dnnl_deconvolution_desc_t</a></td></tr>
 <tr class="memdesc:gafd99fc7c70359ba9434d6a9933d566c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">A descriptor of a deconvolution operation. <br/></td></tr>
 <tr class="separator:gafd99fc7c70359ba9434d6a9933d566c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga312b4653a7712a595c96e23cddd7b8d8"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structdnnl__softmax__desc__t.html">dnnl_softmax_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c__api__types__op__descs.html#ga312b4653a7712a595c96e23cddd7b8d8">dnnl_logsoftmax_desc_t</a></td></tr>
+<tr class="memdesc:ga312b4653a7712a595c96e23cddd7b8d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">A descriptor of a LogSoftmax operation.  <a href="#ga312b4653a7712a595c96e23cddd7b8d8">More...</a><br/></td></tr>
+<tr class="separator:ga312b4653a7712a595c96e23cddd7b8d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -154,6 +160,22 @@ Enumerations</h2></td></tr>
 <tr class="separator:ga629de1827647bf1824361a276c5169f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a class="anchor" id="ga312b4653a7712a595c96e23cddd7b8d8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structdnnl__softmax__desc__t.html">dnnl_softmax_desc_t</a> <a class="el" href="group__c__api__types__op__descs.html#ga312b4653a7712a595c96e23cddd7b8d8">dnnl_logsoftmax_desc_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A descriptor of a LogSoftmax operation. </p>
+<p>An alias of Softmax structure, but primitive_kind must be <a class="el" href="group__c__api__types__generic.html#gga9878f4795e53ad8443e5c0a29e53286aabe23960b7972fb6776b8c85131fd3724" title="A logsoftmax primitive. ">dnnl_logsoftmax</a>. </p>
+
+</div>
+</div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a class="anchor" id="ga3e71b827ee442f0302111d214a6d35b5"></a>
 <div class="memitem">

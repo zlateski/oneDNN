@@ -80,8 +80,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>Upon compiling and run the example the output should be just:</p>
+<p>This example demonstrates memory format propagation, which is critical for deep learning applications performance.</p>
 <blockquote class="doxtable">
-<p>Example code: <a class="el" href="memory_format_propagation_8cpp-example.html">memory_format_propagation.cpp</a> </p>
+<p>Example code: <a class="el" href="memory_format_propagation_8cpp-example.html">memory_format_propagation.cpp</a></p>
+<p></p>
 </blockquote>
 <p>Format propagation is one of the central notions that needs to be well-understood to use DNNL correctly.</p>
 <p>Convolution and inner product primitives choose the memory format when you create them with the placeholder memory format <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> for input or output. The memory format chosen is based on different circumstances such as hardware and convolutional parameters. Using the placeholder memory format is the recommended practice for convolutions, since they are the most compute-intensive operations in most topologies where they are present.</p>
@@ -206,7 +208,7 @@ Create and execute convolution and pooling primitives</h2>
 <div class="line">    s.wait();</div>
 </div><!-- fragment --> <h2><a class="anchor" id="memory_format_propagation_sub7"></a>
 Reorder destination data if necessary</h2>
-<p>The only potentially remaining operation is a reorder from the pooling destination memory object to the users's one. Similarly to the reorders for the source and weights memory objects, it is performed depending on the value of the previously computed flag.</p>
+<p>The only potentially remaining operation is a reorder from the pooling destination memory object to the user's one. Similarly to the reorders for the source and weights memory objects, it is performed depending on the value of the previously computed flag.</p>
 <div class="fragment"><div class="line">    <span class="keywordflow">if</span> (need_reorder_dst) {</div>
 <div class="line">        <span class="keyword">auto</span> reorder_dst = reorder(pool_dst_mem, dst_mem);</div>
 <div class="line">        reorder_dst.execute(</div>

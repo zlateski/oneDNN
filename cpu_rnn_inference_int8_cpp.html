@@ -64,7 +64,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -178,16 +178,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">            user_enc_bidir_src_layer_memory, enc_bidir_src_layer_memory, attr);</div>
 <div class="line">    encoder_net.push_back(reorder(enc_bidir_src_layer_reorder_pd));</div>
 <div class="line">    encoder_net_args.push_back(</div>
-<div class="line">            {{DNNL_ARG_FROM, user_enc_bidir_src_layer_memory},</div>
-<div class="line">                    {DNNL_ARG_TO, enc_bidir_src_layer_memory}});</div>
+<div class="line">            {{<a class="code" href="group__dnnl__api__primitives__common.html#ga953b34f004a8222b04e21851487c611a">DNNL_ARG_FROM</a>, user_enc_bidir_src_layer_memory},</div>
+<div class="line">                    {<a class="code" href="group__dnnl__api__primitives__common.html#gaf700c3396987b450413c8df5d78bafd9">DNNL_ARG_TO</a>, enc_bidir_src_layer_memory}});</div>
 </div><!-- fragment --><p>Encoder : add the bidirectional rnn primitive with related arguments into encoder_net </p>
 <div class="fragment"><div class="line">    encoder_net.push_back(lstm_forward(enc_bidir_prim_desc));</div>
 <div class="line">    encoder_net_args.push_back(</div>
-<div class="line">            {{DNNL_ARG_SRC_LAYER, enc_bidir_src_layer_memory},</div>
-<div class="line">                    {DNNL_ARG_WEIGHTS_LAYER, enc_bidir_wei_layer_memory},</div>
-<div class="line">                    {DNNL_ARG_WEIGHTS_ITER, enc_bidir_wei_iter_memory},</div>
-<div class="line">                    {DNNL_ARG_BIAS, user_enc_bidir_bias_memory},</div>
-<div class="line">                    {DNNL_ARG_DST_LAYER, enc_bidir_dst_layer_memory}});</div>
+<div class="line">            {{<a class="code" href="group__dnnl__api__primitives__common.html#gab91ce4d04cf4e98e3a407daa0676764f">DNNL_ARG_SRC_LAYER</a>, enc_bidir_src_layer_memory},</div>
+<div class="line">                    {<a class="code" href="group__dnnl__api__primitives__common.html#ga1ac9e1f1327be3902b488b64bae1b4c5">DNNL_ARG_WEIGHTS_LAYER</a>, enc_bidir_wei_layer_memory},</div>
+<div class="line">                    {<a class="code" href="group__dnnl__api__primitives__common.html#ga5a9c39486c01ad263e29677a32735af8">DNNL_ARG_WEIGHTS_ITER</a>, enc_bidir_wei_iter_memory},</div>
+<div class="line">                    {<a class="code" href="group__dnnl__api__primitives__common.html#gad0cbc09942aba93fbe3c0c2e09166f0d">DNNL_ARG_BIAS</a>, user_enc_bidir_bias_memory},</div>
+<div class="line">                    {<a class="code" href="group__dnnl__api__primitives__common.html#gacfc123a6a4ff3b4af4cd27ed66fb8528">DNNL_ARG_DST_LAYER</a>, enc_bidir_dst_layer_memory}});</div>
 </div><!-- fragment --><p>Encoder: unidirectional layers</p>
 <p>First unidirectinal layer scales 2 * feature_size output of bidirectional layer to feature_size output </p>
 <div class="fragment"><div class="line">    std::vector&lt;float&gt; user_enc_uni_first_wei_layer(</div>
@@ -209,11 +209,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --><p>Encoder : add the first unidirectional rnn primitive with related arguments into encoder_net </p>
 <div class="fragment"><div class="line">    encoder_net.push_back(lstm_forward(enc_uni_first_prim_desc));</div>
 <div class="line">    encoder_net_args.push_back(</div>
-<div class="line">            {{DNNL_ARG_SRC_LAYER, enc_bidir_dst_layer_memory},</div>
-<div class="line">                    {DNNL_ARG_WEIGHTS_LAYER, enc_uni_first_wei_layer_memory},</div>
-<div class="line">                    {DNNL_ARG_WEIGHTS_ITER, enc_uni_first_wei_iter_memory},</div>
-<div class="line">                    {DNNL_ARG_BIAS, user_enc_uni_first_bias_memory},</div>
-<div class="line">                    {DNNL_ARG_DST_LAYER, enc_uni_first_dst_layer_memory}});</div>
+<div class="line">            {{<a class="code" href="group__dnnl__api__primitives__common.html#gab91ce4d04cf4e98e3a407daa0676764f">DNNL_ARG_SRC_LAYER</a>, enc_bidir_dst_layer_memory},</div>
+<div class="line">                    {<a class="code" href="group__dnnl__api__primitives__common.html#ga1ac9e1f1327be3902b488b64bae1b4c5">DNNL_ARG_WEIGHTS_LAYER</a>, enc_uni_first_wei_layer_memory},</div>
+<div class="line">                    {<a class="code" href="group__dnnl__api__primitives__common.html#ga5a9c39486c01ad263e29677a32735af8">DNNL_ARG_WEIGHTS_ITER</a>, enc_uni_first_wei_iter_memory},</div>
+<div class="line">                    {<a class="code" href="group__dnnl__api__primitives__common.html#gad0cbc09942aba93fbe3c0c2e09166f0d">DNNL_ARG_BIAS</a>, user_enc_uni_first_bias_memory},</div>
+<div class="line">                    {<a class="code" href="group__dnnl__api__primitives__common.html#gacfc123a6a4ff3b4af4cd27ed66fb8528">DNNL_ARG_DST_LAYER</a>, enc_uni_first_dst_layer_memory}});</div>
 </div><!-- fragment --><p>Encoder : Remaining unidirectional layers </p>
 <div class="fragment"><div class="line">    std::vector&lt;float&gt; user_enc_uni_wei_layer((enc_unidir_n_layers - 1) * 1</div>
 <div class="line">                    * feature_size * lstm_n_gates * feature_size,</div>
@@ -235,11 +235,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --><p>Encoder : add the unidirectional rnn primitive with related arguments into encoder_net </p>
 <div class="fragment"><div class="line">    encoder_net.push_back(lstm_forward(enc_uni_prim_desc));</div>
 <div class="line">    encoder_net_args.push_back(</div>
-<div class="line">            {{DNNL_ARG_SRC_LAYER, enc_uni_first_dst_layer_memory},</div>
-<div class="line">                    {DNNL_ARG_WEIGHTS_LAYER, enc_uni_wei_layer_memory},</div>
-<div class="line">                    {DNNL_ARG_WEIGHTS_ITER, enc_uni_wei_iter_memory},</div>
-<div class="line">                    {DNNL_ARG_BIAS, user_enc_uni_bias_memory},</div>
-<div class="line">                    {DNNL_ARG_DST_LAYER, enc_dst_layer_memory}});</div>
+<div class="line">            {{<a class="code" href="group__dnnl__api__primitives__common.html#gab91ce4d04cf4e98e3a407daa0676764f">DNNL_ARG_SRC_LAYER</a>, enc_uni_first_dst_layer_memory},</div>
+<div class="line">                    {<a class="code" href="group__dnnl__api__primitives__common.html#ga1ac9e1f1327be3902b488b64bae1b4c5">DNNL_ARG_WEIGHTS_LAYER</a>, enc_uni_wei_layer_memory},</div>
+<div class="line">                    {<a class="code" href="group__dnnl__api__primitives__common.html#ga5a9c39486c01ad263e29677a32735af8">DNNL_ARG_WEIGHTS_ITER</a>, enc_uni_wei_iter_memory},</div>
+<div class="line">                    {<a class="code" href="group__dnnl__api__primitives__common.html#gad0cbc09942aba93fbe3c0c2e09166f0d">DNNL_ARG_BIAS</a>, user_enc_uni_bias_memory},</div>
+<div class="line">                    {<a class="code" href="group__dnnl__api__primitives__common.html#gacfc123a6a4ff3b4af4cd27ed66fb8528">DNNL_ARG_DST_LAYER</a>, enc_dst_layer_memory}});</div>
 </div><!-- fragment --><p><b>Decoder with attention mechanism</b></p>
 <p>Decoder : declare memory dimensions </p>
 <div class="fragment"><div class="line">    std::vector&lt;float&gt; user_dec_wei_layer(</div>

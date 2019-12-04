@@ -11,5 +11,7 @@ var searchData=
   ['handle_3c_20dnnl_5fprimitive_5ft_20_3e',['handle&lt; dnnl_primitive_t &gt;',['../structdnnl_1_1handle.html',1,'dnnl']]],
   ['handle_3c_20dnnl_5fstream_5ft_20_3e',['handle&lt; dnnl_stream_t &gt;',['../structdnnl_1_1handle.html',1,'dnnl']]],
   ['handle_5ftraits',['handle_traits',['../structdnnl_1_1handle__traits.html',1,'dnnl']]],
-  ['hash',['hash',['../structdnnl__version__t.html#a1c2a7e8b3f26ed376b537dd511feccad',1,'dnnl_version_t']]]
+  ['hash',['hash',['../structdnnl__version__t.html#a1c2a7e8b3f26ed376b537dd511feccad',1,'dnnl_version_t']]],
+  ['hwigo',['hwigo',['../structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fafd710c828421b3c91725b0e5aa53ecc6',1,'dnnl::memory']]],
+  ['hwio',['hwio',['../structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fadd942f902c741de7193e1869b13ba55a',1,'dnnl::memory']]]
 ];

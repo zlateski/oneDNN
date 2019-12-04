@@ -95,7 +95,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>Descriptor for local response normalization backward propagation.  
+<p>Descriptor for an LRN backward propagation primitive.  
  <a href="structdnnl_1_1lrn__backward_1_1desc.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="dnnl_8hpp_source.html">dnnl.hpp</a>&gt;</code></p>
@@ -109,15 +109,15 @@ Collaboration diagram for dnnl::lrn_backward::desc:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a59aa96046c2bf2bc8c74ded21df266d7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1lrn__backward_1_1desc.html#a59aa96046c2bf2bc8c74ded21df266d7">desc</a> (<a class="el" href="group__cpp__api__enums.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a> aalgorithm, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;data_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_data_desc, memory::dim local_size, float alpha, float beta, float k=1.f)</td></tr>
-<tr class="memdesc:a59aa96046c2bf2bc8c74ded21df266d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a descriptor for backward propagation using <code>aalgorithm</code>, memory descriptors <code>data_desc</code> and <code>diff_data_desc</code>, and regularization parameters <code>local_size</code>, <code>alpha</code>, <code>beta</code>, and <code>k</code>.  <a href="#a59aa96046c2bf2bc8c74ded21df266d7">More...</a><br/></td></tr>
-<tr class="separator:a59aa96046c2bf2bc8c74ded21df266d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bf5c6804295875719a5fec96b8e311d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1lrn__backward_1_1desc.html#a0bf5c6804295875719a5fec96b8e311d">desc</a> (<a class="el" href="group__cpp__api__enums.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a> <a class="el" href="group__cpp__api__enums.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a>, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;data_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_data_desc, <a class="el" href="structdnnl_1_1memory.html#a6ad818e4699872cc913474fa5f122cd5">memory::dim</a> local_size, float alpha, float beta, float k=1.f)</td></tr>
+<tr class="memdesc:a0bf5c6804295875719a5fec96b8e311d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a descriptor for an LRN backward propagation primitive using <code>algorithm</code>, memory descriptors <code>data_desc</code> and <code>diff_data_desc</code>, and regularization parameters <code>local_size</code>, <code>alpha</code>, <code>beta</code>, and <code>k</code>.  <a href="#a0bf5c6804295875719a5fec96b8e311d">More...</a><br/></td></tr>
+<tr class="separator:a0bf5c6804295875719a5fec96b8e311d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Descriptor for local response normalization backward propagation. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cnn_training_f32_8cpp-example.html#_a26">cnn_training_f32.cpp</a>, and <a class="el" href="cpu_cnn_training_bf16_8cpp-example.html#_a27">cpu_cnn_training_bf16.cpp</a>.</dd>
+<div class="textblock"><p>Descriptor for an LRN backward propagation primitive. </p>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cnn_training_f32_8cpp-example.html#_a28">cnn_training_f32.cpp</a>, and <a class="el" href="cpu_cnn_training_bf16_8cpp-example.html#_a32">cpu_cnn_training_bf16.cpp</a>.</dd>
 </dl></div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a59aa96046c2bf2bc8c74ded21df266d7"></a>
+<a class="anchor" id="a0bf5c6804295875719a5fec96b8e311d"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -128,7 +128,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">dnnl::lrn_backward::desc::desc </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__cpp__api__enums.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a>&#160;</td>
-          <td class="paramname"><em>aalgorithm</em>, </td>
+          <td class="paramname"><em>algorithm</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -145,7 +145,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">memory::dim&#160;</td>
+          <td class="paramtype"><a class="el" href="structdnnl_1_1memory.html#a6ad818e4699872cc913474fa5f122cd5">memory::dim</a>&#160;</td>
           <td class="paramname"><em>local_size</em>, </td>
         </tr>
         <tr>
@@ -179,7 +179,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Initializes a descriptor for backward propagation using <code>aalgorithm</code>, memory descriptors <code>data_desc</code> and <code>diff_data_desc</code>, and regularization parameters <code>local_size</code>, <code>alpha</code>, <code>beta</code>, and <code>k</code>. </p>
+<p>Constructs a descriptor for an LRN backward propagation primitive using <code>algorithm</code>, memory descriptors <code>data_desc</code> and <code>diff_data_desc</code>, and regularization parameters <code>local_size</code>, <code>alpha</code>, <code>beta</code>, and <code>k</code>. </p>
 
 </div>
 </div>

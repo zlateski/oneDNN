@@ -64,7 +64,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -182,15 +182,15 @@ Perform reorders for source data if necessary</h2>
 <div class="fragment"><div class="line">    <span class="keywordflow">if</span> (need_reorder_src) {</div>
 <div class="line">        <span class="keyword">auto</span> reorder_src = reorder(src_mem, conv_src_mem);</div>
 <div class="line">        reorder_src.execute(</div>
-<div class="line">                s, {{DNNL_ARG_FROM, src_mem}, {DNNL_ARG_TO, conv_src_mem}});</div>
+<div class="line">                s, {{<a class="code" href="group__dnnl__api__primitives__common.html#ga953b34f004a8222b04e21851487c611a">DNNL_ARG_FROM</a>, src_mem}, {<a class="code" href="group__dnnl__api__primitives__common.html#gaf700c3396987b450413c8df5d78bafd9">DNNL_ARG_TO</a>, conv_src_mem}});</div>
 <div class="line">        s.wait(); <span class="comment">// wait for the reorder to complete</span></div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (need_reorder_weights) {</div>
 <div class="line">        <span class="keyword">auto</span> reorder_weights = reorder(weights_mem, conv_weights_mem);</div>
 <div class="line">        reorder_weights.execute(s,</div>
-<div class="line">                {{DNNL_ARG_FROM, weights_mem},</div>
-<div class="line">                        {DNNL_ARG_TO, conv_weights_mem}});</div>
+<div class="line">                {{<a class="code" href="group__dnnl__api__primitives__common.html#ga953b34f004a8222b04e21851487c611a">DNNL_ARG_FROM</a>, weights_mem},</div>
+<div class="line">                        {<a class="code" href="group__dnnl__api__primitives__common.html#gaf700c3396987b450413c8df5d78bafd9">DNNL_ARG_TO</a>, conv_weights_mem}});</div>
 <div class="line">        s.wait(); <span class="comment">// wait for the reorder to complete</span></div>
 <div class="line">    }</div>
 </div><!-- fragment --> <h2><a class="anchor" id="memory_format_propagation_sub6"></a>
@@ -199,12 +199,12 @@ Create and execute convolution and pooling primitives</h2>
 <div class="fragment"><div class="line">    <span class="keyword">auto</span> conv_scratchpad_mem = memory(conv_pd.scratchpad_desc(), eng);</div>
 <div class="line">    <span class="keyword">auto</span> conv = convolution_forward(conv_pd);</div>
 <div class="line">    conv.execute(s,</div>
-<div class="line">            {{DNNL_ARG_SRC, conv_src_mem}, {DNNL_ARG_WEIGHTS, conv_weights_mem},</div>
-<div class="line">                    {DNNL_ARG_DST, conv_dst_mem}});</div>
+<div class="line">            {{<a class="code" href="group__dnnl__api__primitives__common.html#gac37ad67b48edeb9e742af0e50b70fe09">DNNL_ARG_SRC</a>, conv_src_mem}, {<a class="code" href="group__dnnl__api__primitives__common.html#gaf279f28c59a807e71a70c719db56c5b3">DNNL_ARG_WEIGHTS</a>, conv_weights_mem},</div>
+<div class="line">                    {<a class="code" href="group__dnnl__api__primitives__common.html#ga3ca217e4a06d42a0ede3c018383c388f">DNNL_ARG_DST</a>, conv_dst_mem}});</div>
 <div class="line">    <span class="keyword">auto</span> pool_scratchpad_mem = memory(pool_pd.scratchpad_desc(), eng);</div>
 <div class="line">    <span class="keyword">auto</span> pool = pooling_forward(pool_pd);</div>
 <div class="line">    pool.execute(</div>
-<div class="line">            s, {{DNNL_ARG_SRC, conv_dst_mem}, {DNNL_ARG_DST, pool_dst_mem}});</div>
+<div class="line">            s, {{<a class="code" href="group__dnnl__api__primitives__common.html#gac37ad67b48edeb9e742af0e50b70fe09">DNNL_ARG_SRC</a>, conv_dst_mem}, {<a class="code" href="group__dnnl__api__primitives__common.html#ga3ca217e4a06d42a0ede3c018383c388f">DNNL_ARG_DST</a>, pool_dst_mem}});</div>
 <div class="line">    s.wait();</div>
 </div><!-- fragment --> <h2><a class="anchor" id="memory_format_propagation_sub7"></a>
 Reorder destination data if necessary</h2>
@@ -212,7 +212,7 @@ Reorder destination data if necessary</h2>
 <div class="fragment"><div class="line">    <span class="keywordflow">if</span> (need_reorder_dst) {</div>
 <div class="line">        <span class="keyword">auto</span> reorder_dst = reorder(pool_dst_mem, dst_mem);</div>
 <div class="line">        reorder_dst.execute(</div>
-<div class="line">                s, {{DNNL_ARG_FROM, pool_dst_mem}, {DNNL_ARG_TO, dst_mem}});</div>
+<div class="line">                s, {{<a class="code" href="group__dnnl__api__primitives__common.html#ga953b34f004a8222b04e21851487c611a">DNNL_ARG_FROM</a>, pool_dst_mem}, {<a class="code" href="group__dnnl__api__primitives__common.html#gaf700c3396987b450413c8df5d78bafd9">DNNL_ARG_TO</a>, dst_mem}});</div>
 <div class="line">        s.wait();</div>
 <div class="line">    }</div>
 </div><!-- fragment --><p> Upon compiling and run the example the output should be just:</p>
