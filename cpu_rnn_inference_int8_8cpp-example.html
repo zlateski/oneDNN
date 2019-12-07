@@ -294,7 +294,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">float</span> data_shift = 64.;</div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">float</span> data_scale = 63.;</div>
-<div class="line">    <span class="keyword">const</span> <span class="keywordtype">int</span> weights_scale_mask = 3; <span class="comment">// 11 for last two dimensions of ldigo</span></div>
+<div class="line">    <span class="keyword">const</span> <span class="keywordtype">int</span> weights_scale_mask = 0</div>
+<div class="line">            + (1 &lt;&lt; 3) <span class="comment">// bit, indicating the unique scales for `g` dim in `ldigo`</span></div>
+<div class="line">            + (1 &lt;&lt; 4); <span class="comment">// bit, indicating the unique scales for `o` dim in `ldigo`</span></div>
 <div class="line">    <span class="comment">//[quantize]</span></div>
 <div class="line">    std::vector&lt;float&gt; weights_scales(lstm_n_gates * feature_size);</div>
 <div class="line">    <span class="comment">// assign halves of vector with arbitrary values</span></div>

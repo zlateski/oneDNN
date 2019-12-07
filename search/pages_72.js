@@ -5,6 +5,7 @@ var searchData=
   ['reorder_20between_20cpu_20and_20gpu_20engines',['Reorder between CPU and GPU engines',['../cross_engine_reorder_c.html',1,'']]],
   ['reorder_20between_20cpu_20and_20gpu_20engines',['Reorder between CPU and GPU engines',['../cross_engine_reorder_cpp.html',1,'']]],
   ['reorder',['Reorder',['../dev_guide_reorder.html',1,'']]],
+  ['resampling',['Resampling',['../dev_guide_resampling.html',1,'']]],
   ['rnn',['RNN',['../dev_guide_rnn.html',1,'']]],
   ['rnn_20f32_20training_20example',['RNN f32 training example',['../rnn_training_f32_cpp.html',1,'']]]
 ];

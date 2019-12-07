@@ -70,6 +70,7 @@ var searchData=
   ['mkldnn_5fdims_5ft',['mkldnn_dims_t',['../group__c__api__types__memory.html#ga9acc437c5b1f7ca760c048dc2de1c44d',1,'mkldnn_types.h']]],
   ['mkldnn_5fdt2str',['mkldnn_dt2str',['../mkldnn__debug_8h.html#aacb9e9cd34c3c907795372985647b046',1,'mkldnn_debug.h']]],
   ['mkldnn_5feager',['mkldnn_eager',['../group__c__api__types__stream.html#ggadd66574e231fe36721cdbe02ea47aa18a31d72581d8e1f3e15fc78f996a43ecc2',1,'mkldnn_types.h']]],
+  ['mkldnn_5feager_5fnostore',['mkldnn_eager_nostore',['../group__c__api__types__stream.html#ggadd66574e231fe36721cdbe02ea47aa18a7c5c5f64b970392bb16ebd8bbfba69bb',1,'mkldnn_types.h']]],
   ['mkldnn_5feltwise',['mkldnn_eltwise',['../group__c__api__types__generic.html#gga4f5c189c2ba9ef6444250299f1f8e973ae1cbd23f0addc5270d4f8ae63e0ecc7d',1,'mkldnn_types.h']]],
   ['mkldnn_5feltwise_5fabs',['mkldnn_eltwise_abs',['../group__c__api__types__generic.html#ggaa27d43cdd1e439cc41a9580d23ce3e97acdc9ab2cd85eae9d8ad1fa11db97543e',1,'mkldnn_types.h']]],
   ['mkldnn_5feltwise_5fbackward_5fdesc_5finit',['mkldnn_eltwise_backward_desc_init',['../group__c__api__eltwise.html#ga6f5a8f5b448140e651b14aba6a6fdd6e',1,'mkldnn.h']]],
