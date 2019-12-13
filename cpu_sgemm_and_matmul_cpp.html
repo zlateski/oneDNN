@@ -130,8 +130,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><span class="keyword">namespace </span>{</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">void</span> init_vector(std::vector&lt;float&gt; &amp;v) {</div>
-<div class="line">    std::random_device rdev;</div>
-<div class="line">    std::mt19937 gen(rdev());</div>
+<div class="line">    std::mt19937 gen;</div>
 <div class="line">    std::uniform_real_distribution&lt;float&gt; u(-1, 1);</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;e : v)</div>

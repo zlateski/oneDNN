@@ -14,5 +14,13 @@ var searchData=
   ['acbdef',['acbdef',['../structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa66fd87374b1ec6be9fdbea534e17adeb',1,'dnnl::memory']]],
   ['acdb',['acdb',['../structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa776649ab3d00664587b889457db87da7',1,'dnnl::memory']]],
   ['acdeb',['acdeb',['../structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3faf95d333a023ac787b43babc5b5c480ae',1,'dnnl::memory']]],
-  ['any',['any',['../structdnnl_1_1engine.html#a2635da16314dcbdb9bd9ea431316bb1aa100b8cad7cf2a56f6df78f171f97a1ec',1,'dnnl::engine::any()'],['../structdnnl_1_1memory.html#aabcadfb0e23a36a91272fc571cff105fa100b8cad7cf2a56f6df78f171f97a1ec',1,'dnnl::memory::any()'],['../structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec',1,'dnnl::memory::any()']]]
+  ['all',['all',['../group__dnnl__api__service.html#ggabad017feb1850634bf3babdb68234f83aa181a603769c1f98ad927e7367c7aa51',1,'dnnl']]],
+  ['any',['any',['../structdnnl_1_1engine.html#a2635da16314dcbdb9bd9ea431316bb1aa100b8cad7cf2a56f6df78f171f97a1ec',1,'dnnl::engine::any()'],['../structdnnl_1_1memory.html#aabcadfb0e23a36a91272fc571cff105fa100b8cad7cf2a56f6df78f171f97a1ec',1,'dnnl::memory::any()'],['../structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec',1,'dnnl::memory::any()']]],
+  ['avx',['avx',['../group__dnnl__api__service.html#ggabad017feb1850634bf3babdb68234f83a73758c37e4499f20ac5f995a144abba6',1,'dnnl']]],
+  ['avx2',['avx2',['../group__dnnl__api__service.html#ggabad017feb1850634bf3babdb68234f83a220c4ad92e33497ef256a48712352b84',1,'dnnl']]],
+  ['avx512_5fcore',['avx512_core',['../group__dnnl__api__service.html#ggabad017feb1850634bf3babdb68234f83aa427cc9f00ac692056a83a8cb5e37fa4',1,'dnnl']]],
+  ['avx512_5fcore_5fbf16',['avx512_core_bf16',['../group__dnnl__api__service.html#ggabad017feb1850634bf3babdb68234f83af9b353b49d5aa4dfe76e22337b5a02cf',1,'dnnl']]],
+  ['avx512_5fcore_5fvnni',['avx512_core_vnni',['../group__dnnl__api__service.html#ggabad017feb1850634bf3babdb68234f83acac6fe12844735aafd8fd1fd81738f8e',1,'dnnl']]],
+  ['avx512_5fmic',['avx512_mic',['../group__dnnl__api__service.html#ggabad017feb1850634bf3babdb68234f83a046d44270c4d1f4f1c76ae337c97ccf3',1,'dnnl']]],
+  ['avx512_5fmic_5f4ops',['avx512_mic_4ops',['../group__dnnl__api__service.html#ggabad017feb1850634bf3babdb68234f83aad1ffde9d0e65a434da74d86c82f1edd',1,'dnnl']]]
 ];

@@ -130,7 +130,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">clang++ -std=c++11 -I${DNNLROOT}/include -L${DNNLROOT}/lib simple_net.cpp -ldnnl</div>
 <div class="line">icpc -std=c++11 -I${DNNLROOT}/include -L${DNNLROOT}/lib simple_net.cpp -ldnnl</div>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>Applications linked dynamically will resolve the dependencies at runtime. Make sure that the dependencies are available in the standard locations defined by the operating system, in the locations listed in the <code>LD_LIBRARY_PATH</code> (Linux) or <code>DYLD_LIBRARY_PATH</code> (macOS) environment variable or the <code>rpath</code> mechanism.</dd></dl>
-<h3>Windows</h3>
+<h4>Support for macOS hardened runtime</h4>
+<p>DNNL requires the <a href="https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_security_cs_allow-unsigned-executable-memory">com.apple.security.cs.allow-unsigned-executable-memory</a> entitlement when it is integrated with an application that uses the macOS <a href="https://developer.apple.com/documentation/security/hardened_runtime_entitlements">hardened runtime</a>. This requirement comes from the fact that DNNL generates executable code on the fly and does not sign it.</p>
+<p>It can be enabled in Xcode or passed to <code>codesign</code> like this: </p>
+<div class="fragment"><div class="line">codesign -s <span class="stringliteral">&quot;Your identity&quot;</span> --options runtime --entitlements Entitlements.plist [other options...] /path/to/libdnnl.dylib</div>
+</div><!-- fragment --><p>Example <code>Entitlements.plist</code>: </p>
+<div class="fragment"><div class="line">&lt;?xml <a class="code" href="group__dnnl__api__service.html#gaad8292408620d0296f22bdf65afb752d">version</a>=<span class="stringliteral">&quot;1.0&quot;</span> encoding=<span class="stringliteral">&quot;UTF-8&quot;</span>?&gt;</div>
+<div class="line">&lt;!DOCTYPE plist PUBLIC <span class="stringliteral">&quot;-//Apple//DTD PLIST 1.0//EN&quot;</span> <span class="stringliteral">&quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;</span>&gt;</div>
+<div class="line">&lt;plist version=<span class="stringliteral">&quot;1.0&quot;</span>&gt;</div>
+<div class="line">&lt;dict&gt;</div>
+<div class="line">    &lt;key&gt;com.apple.security.cs.allow-<span class="keywordtype">unsigned</span>-executable-memory&lt;/key&gt;&lt;<span class="keyword">true</span>/&gt;</div>
+<div class="line">&lt;/dict&gt;</div>
+<div class="line">&lt;/plist&gt;</div>
+</div><!-- fragment --><h3>Windows</h3>
 <p>To link the application from the command line, set up the <code>LIB</code> and <code>INCLUDE</code> environment variables to point to the locations of the DNNL headers and libraries.</p>
 <div class="fragment"><div class="line">icl /I%DNNLROOT%\include /Qstd=c++11 /qopenmp simple_net.cpp %DNNLROOT%\lib\dnnl.lib</div>
 <div class="line">cl /I%DNNLROOT%\include simple_net.cpp %DNNLROOT%\lib\dnnl.lib</div>

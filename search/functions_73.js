@@ -6,6 +6,7 @@ var searchData=
   ['set_5fjit_5fdump',['set_jit_dump',['../group__dnnl__api__service.html#ga2344639528a341878d2ce46fe1c1ac83',1,'dnnl']]],
   ['set_5fjit_5fprofiling_5fflags',['set_jit_profiling_flags',['../group__dnnl__api__service.html#ga966c54ccb1d9ff33d20c4ea47e34675d',1,'dnnl']]],
   ['set_5fjit_5fprofiling_5fjitdumpdir',['set_jit_profiling_jitdumpdir',['../group__dnnl__api__service.html#ga533341aaf1402e27d1225d1a59819a62',1,'dnnl']]],
+  ['set_5fmax_5fcpu_5fisa',['set_max_cpu_isa',['../group__dnnl__api__service.html#ga08734310b5f1ca794c64b6a5b944b698',1,'dnnl']]],
   ['set_5focl_5fmem_5fobject',['set_ocl_mem_object',['../structdnnl_1_1memory.html#a727cea8263521e3bfd0ca1b1d952ba48',1,'dnnl::memory']]],
   ['set_5foutput_5fscales',['set_output_scales',['../structdnnl_1_1primitive__attr.html#a4b81acc8e48886313154f75c1708ae02',1,'dnnl::primitive_attr']]],
   ['set_5fpost_5fops',['set_post_ops',['../structdnnl_1_1primitive__attr.html#ac830fa9f4fcf480b494d73153ad579bf',1,'dnnl::primitive_attr']]],

@@ -36,8 +36,10 @@ var searchData=
   ['cpu',['cpu',['../structdnnl_1_1engine.html#a2635da16314dcbdb9bd9ea431316bb1aad9747e2da342bdb995f6389533ad1a3d',1,'dnnl::engine']]],
   ['cnn_20bf16_20training_20example',['CNN bf16 training example',['../cpu_cnn_training_bf16_cpp.html',1,'']]],
   ['cnn_20f32_20training_20example',['CNN f32 training example',['../cpu_cnn_training_f32_c.html',1,'']]],
+  ['cpu_5fisa',['cpu_isa',['../group__dnnl__api__service.html#gabad017feb1850634bf3babdb68234f83',1,'dnnl']]],
   ['concat',['Concat',['../dev_guide_concat.html',1,'']]],
   ['convolution',['Convolution',['../dev_guide_convolution.html',1,'']]],
+  ['cpu_20dispatcher_20control',['CPU dispatcher control',['../dev_guide_cpu_dispatcher_control.html',1,'']]],
   ['concat',['Concat',['../group__dnnl__api__concat.html',1,'']]],
   ['convolution',['Convolution',['../group__dnnl__api__convolution.html',1,'']]],
   ['common',['Common',['../group__dnnl__api__primitives__common.html',1,'']]]
