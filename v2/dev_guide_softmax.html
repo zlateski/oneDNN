@@ -64,7 +64,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -81,7 +81,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><blockquote class="doxtable">
 <p></p>
-<p>API reference: <a class="el" href="group__c__api__softmax.html">C</a>, <a class="el" href="group__cpp__api__softmax.html">C++</a></p>
+<p><a class="el" href="group__dnnl__api__softmax.html">API Reference</a></p>
 <p></p>
 </blockquote>
 <p>The softmax primitive performs softmax along a particular axis on data with arbitrary dimensions. All other axes are treated as independent (batch).</p>
@@ -101,8 +101,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </p>
 </li>
 </ul>
-<h4>Difference Between <a href="#dnnl_forward_training">Forward Training</a> and <a href="#dnnl_forward_inference">Forward Inference</a></h4>
-<p>There is no difference between the <a class="el" href="group__c__api__types__generic.html#ggae3c1f22ae55645782923fbfd8b07d0c4a992e03bebfe623ac876b3636333bbce0" title="Forward data propagation (training mode). ">dnnl_forward_training</a> and <a class="el" href="group__c__api__types__generic.html#ggae3c1f22ae55645782923fbfd8b07d0c4a2f77a568a675dec649eb0450c997856d" title="Forward data propagation (inference mode). ">dnnl_forward_inference</a> propagation kinds.</p>
+<h4>Difference Between Forward Training and Forward Inference</h4>
+<p>There is no difference between the <a class="el" href="group__dnnl__api__primitives__common.html#ggae3c1f22ae55645782923fbfd8b07d0c4a992e03bebfe623ac876b3636333bbce0" title="Forward data propagation (training mode). ">dnnl_forward_training</a> and <a class="el" href="group__dnnl__api__primitives__common.html#ggae3c1f22ae55645782923fbfd8b07d0c4a2f77a568a675dec649eb0450c997856d" title="Forward data propagation (inference mode). ">dnnl_forward_inference</a> propagation kinds.</p>
 <h3>Backward</h3>
 <p>The backward propagation computes \(diff\_src(ou, c, in)\), based on \(diff\_dst(ou, c, in)\) and \(dst(ou, c, in)\).</p>
 <h2>Implementation Details</h2>
@@ -133,13 +133,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <ol type="1">
 <li>Use in-place operations whenever possible.</li>
 <li>Currently the softmax primitive is optimized for the cases where the dimension of the softmax axis is physically dense. For instance:<ul>
-<li>Optimized: 2D case, tensor \(A \times B\), softmax axis 1 (B), format tag <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da1bd907fc29344dfe7ba88336960dcf53" title="plain 2D tensor ">dnnl_ab</a></li>
-<li>Optimized: 4D case, tensor \(A \times B \times C \times D\), softmax axis 3 (D), format tag <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da6e669cc61278663a5ddbd3d0b25c6c5c" title="plain 4D tensor ">dnnl_abcd</a></li>
-<li>Optimized: 4D case, tensor \(A \times B \times C \times D\), softmax axis 1 (B), format tag <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da6e669cc61278663a5ddbd3d0b25c6c5c" title="plain 4D tensor ">dnnl_abcd</a>, and \(C = D = 1\)</li>
-<li>Optimized: 4D case, tensor \(A \times B \times C \times D\), softmax axis 1 (B), format tag <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da8fcce5dd7260b5b0740e3b37b1e9ad41" title="permuted 4D tensor ">dnnl_acdb</a> or <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da590d748ac3761a51b407555a9a0d5efe" title="4D tensor blocked by 2nd dimension with block size 16 ">dnnl_aBcd16b</a>, and \(C \cdot D \ne 1\)</li>
-<li>Non-optimized: 2D case, tensor \(A \times B\), softmax axis 0 (A), format tag <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da1bd907fc29344dfe7ba88336960dcf53" title="plain 2D tensor ">dnnl_ab</a>, and \(B \ne 1\)</li>
-<li>Non-optimized: 2D case, tensor \(A \times B\), softmax axis 1 (B), format tag <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da6a6dbc0b30468d92e32a9cb3f6615c43" title="permuted 2D tensor ">dnnl_ba</a>, and \(A \ne 1\)</li>
-<li>Non-optimized: 4D case, tensor \(A \times B \times C \times D\), softmax axis 2 (C), format tag <a class="el" href="group__c__api__types__generic.html#gga395e42b594683adb25ed2d842bb3091da8fcce5dd7260b5b0740e3b37b1e9ad41" title="permuted 4D tensor ">dnnl_acdb</a>, and and \(D \cdot B \ne 1\) </li>
+<li>Optimized: 2D case, tensor \(A \times B\), softmax axis 1 (B), format tag <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da1bd907fc29344dfe7ba88336960dcf53" title="plain 2D tensor ">dnnl_ab</a></li>
+<li>Optimized: 4D case, tensor \(A \times B \times C \times D\), softmax axis 3 (D), format tag <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da6e669cc61278663a5ddbd3d0b25c6c5c" title="plain 4D tensor ">dnnl_abcd</a></li>
+<li>Optimized: 4D case, tensor \(A \times B \times C \times D\), softmax axis 1 (B), format tag <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da6e669cc61278663a5ddbd3d0b25c6c5c" title="plain 4D tensor ">dnnl_abcd</a>, and \(C = D = 1\)</li>
+<li>Optimized: 4D case, tensor \(A \times B \times C \times D\), softmax axis 1 (B), format tag <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da8fcce5dd7260b5b0740e3b37b1e9ad41" title="permuted 4D tensor ">dnnl_acdb</a> or <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da590d748ac3761a51b407555a9a0d5efe" title="4D tensor blocked by 2nd dimension with block size 16 ">dnnl_aBcd16b</a>, and \(C \cdot D \ne 1\)</li>
+<li>Non-optimized: 2D case, tensor \(A \times B\), softmax axis 0 (A), format tag <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da1bd907fc29344dfe7ba88336960dcf53" title="plain 2D tensor ">dnnl_ab</a>, and \(B \ne 1\)</li>
+<li>Non-optimized: 2D case, tensor \(A \times B\), softmax axis 1 (B), format tag <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da6a6dbc0b30468d92e32a9cb3f6615c43" title="permuted 2D tensor ">dnnl_ba</a>, and \(A \ne 1\)</li>
+<li>Non-optimized: 4D case, tensor \(A \times B \times C \times D\), softmax axis 2 (C), format tag <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da8fcce5dd7260b5b0740e3b37b1e9ad41" title="permuted 4D tensor ">dnnl_acdb</a>, and and \(D \cdot B \ne 1\) </li>
 </ul>
 </li>
 </ol>

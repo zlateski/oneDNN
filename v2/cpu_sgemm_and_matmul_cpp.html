@@ -64,7 +64,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -83,14 +83,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Concepts:</p>
 <ul>
 <li>Create primitive once, use multiple times<ul>
-<li>Run-time tensor shapes: <a class="el" href="group__c__api__types__memory.html#gaa596c5a6102df77a550bad98f0d5cc12" title="A wildcard value for dimensions that are unknown at a primitive creation time. ">DNNL_RUNTIME_DIM_VAL</a></li>
-<li>Run-time output scales: <a class="el" href="structdnnl_1_1primitive__attr.html#a4b81acc8e48886313154f75c1708ae02" title="Sets output scale correspondence mask and values. ">dnnl::primitive_attr::set_output_scales()</a> and <a class="el" href="group__c__api__types__memory.html#gab16365c11b4dc88fbb453edb51f1979f" title="A wildcard value for floating point values that are unknown at a primitive creation time...">DNNL_RUNTIME_F32_VAL</a></li>
+<li>Run-time tensor shapes: <a class="el" href="group__dnnl__api__memory.html#gaa596c5a6102df77a550bad98f0d5cc12" title="A wildcard value for dimensions that are unknown at a primitive creation time. ">DNNL_RUNTIME_DIM_VAL</a></li>
+<li>Run-time output scales: <a class="el" href="structdnnl_1_1primitive__attr.html#a4b81acc8e48886313154f75c1708ae02" title="Sets output scaling factors correspondence mask and values. ">dnnl::primitive_attr::set_output_scales()</a> and <a class="el" href="group__dnnl__api__memory.html#gab16365c11b4dc88fbb453edb51f1979f" title="A wildcard value for floating point values that are unknown at a primitive creation time...">DNNL_RUNTIME_F32_VAL</a></li>
 </ul>
 </li>
 </ul>
 <p>We will show two modes for the MatMul primitive:</p>
 <ol type="1">
-<li>The shapes of the input and output matrices are passed at execution time. This enables you to create a primitive only once and use it for different matrices, just like normal SGEMM (though with a handle &ndash; DNNL primitive). To indicate the unknown dimensions and floating point values, you should use <a class="el" href="group__c__api__types__memory.html#gaa596c5a6102df77a550bad98f0d5cc12" title="A wildcard value for dimensions that are unknown at a primitive creation time. ">DNNL_RUNTIME_DIM_VAL</a> and <a class="el" href="group__c__api__types__memory.html#gab16365c11b4dc88fbb453edb51f1979f" title="A wildcard value for floating point values that are unknown at a primitive creation time...">DNNL_RUNTIME_F32_VAL</a> respectively.</li>
+<li>The shapes of the input and output matrices are passed at execution time. This enables you to create a primitive only once and use it for different matrices, just like normal SGEMM (though with a handle &ndash; DNNL primitive). To indicate the unknown dimensions and floating point values, you should use <a class="el" href="group__dnnl__api__memory.html#gaa596c5a6102df77a550bad98f0d5cc12" title="A wildcard value for dimensions that are unknown at a primitive creation time. ">DNNL_RUNTIME_DIM_VAL</a> and <a class="el" href="group__dnnl__api__memory.html#gab16365c11b4dc88fbb453edb51f1979f" title="A wildcard value for floating point values that are unknown at a primitive creation time...">DNNL_RUNTIME_F32_VAL</a> respectively.</li>
 <li>The shapes of the input and output matrices are passed at creation time, similar to the traditional DNNL / Intel MKL-DNN programming model. This enables creating a highly specialized kernel for the given problem sizes with the loss of generality.</li>
 </ol>
 <p>Users are free to choose between these two options, as well as any intermediate ones (e.g., specifying some of the parameters at creation time while leaving the others until execution time). This enables balancing between flexibility and performance.</p>
@@ -130,8 +130,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><span class="keyword">namespace </span>{</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">void</span> init_vector(std::vector&lt;float&gt; &amp;v) {</div>
-<div class="line">    std::random_device rdev;</div>
-<div class="line">    std::mt19937 gen(rdev());</div>
+<div class="line">    std::mt19937 gen;</div>
 <div class="line">    std::uniform_real_distribution&lt;float&gt; u(-1, 1);</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;e : v)</div>
@@ -183,13 +182,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="comment">// We assume that beta is known at the primitive creation time</span></div>
 <div class="line">    <span class="keywordtype">float</span> beta = fixed_beta;</div>
 <div class="line"></div>
-<div class="line">    <a class="code" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> a_shape = {<a class="code" href="group__c__api__types__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">DNNL_RUNTIME_DIM_VAL</a>, <a class="code" href="group__c__api__types__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">DNNL_RUNTIME_DIM_VAL</a>};</div>
-<div class="line">    <a class="code" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> b_shape = {<a class="code" href="group__c__api__types__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">DNNL_RUNTIME_DIM_VAL</a>, <a class="code" href="group__c__api__types__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">DNNL_RUNTIME_DIM_VAL</a>};</div>
-<div class="line">    <a class="code" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> c_shape = {<a class="code" href="group__c__api__types__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">DNNL_RUNTIME_DIM_VAL</a>, <a class="code" href="group__c__api__types__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">DNNL_RUNTIME_DIM_VAL</a>};</div>
+<div class="line">    <a class="code" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> a_shape = {<a class="code" href="group__dnnl__api__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">DNNL_RUNTIME_DIM_VAL</a>, <a class="code" href="group__dnnl__api__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">DNNL_RUNTIME_DIM_VAL</a>};</div>
+<div class="line">    <a class="code" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> b_shape = {<a class="code" href="group__dnnl__api__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">DNNL_RUNTIME_DIM_VAL</a>, <a class="code" href="group__dnnl__api__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">DNNL_RUNTIME_DIM_VAL</a>};</div>
+<div class="line">    <a class="code" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> c_shape = {<a class="code" href="group__dnnl__api__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">DNNL_RUNTIME_DIM_VAL</a>, <a class="code" href="group__dnnl__api__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">DNNL_RUNTIME_DIM_VAL</a>};</div>
 <div class="line"></div>
-<div class="line">    <a class="code" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> a_strides = {<a class="code" href="group__c__api__types__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">DNNL_RUNTIME_DIM_VAL</a>, <a class="code" href="group__c__api__types__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">DNNL_RUNTIME_DIM_VAL</a>};</div>
-<div class="line">    <a class="code" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> b_strides = {<a class="code" href="group__c__api__types__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">DNNL_RUNTIME_DIM_VAL</a>, <a class="code" href="group__c__api__types__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">DNNL_RUNTIME_DIM_VAL</a>};</div>
-<div class="line">    <a class="code" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> c_strides = {<a class="code" href="group__c__api__types__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">DNNL_RUNTIME_DIM_VAL</a>, 1};</div>
+<div class="line">    <a class="code" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> a_strides = {<a class="code" href="group__dnnl__api__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">DNNL_RUNTIME_DIM_VAL</a>, <a class="code" href="group__dnnl__api__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">DNNL_RUNTIME_DIM_VAL</a>};</div>
+<div class="line">    <a class="code" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> b_strides = {<a class="code" href="group__dnnl__api__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">DNNL_RUNTIME_DIM_VAL</a>, <a class="code" href="group__dnnl__api__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">DNNL_RUNTIME_DIM_VAL</a>};</div>
+<div class="line">    <a class="code" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> c_strides = {<a class="code" href="group__dnnl__api__memory.html#gaa596c5a6102df77a550bad98f0d5cc12">DNNL_RUNTIME_DIM_VAL</a>, 1};</div>
 <div class="line"></div>
 <div class="line">    <a class="code" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> a_md(a_shape, <a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e">memory::data_type::f32</a>, a_strides);</div>
 <div class="line">    <a class="code" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> b_md(b_shape, <a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e">memory::data_type::f32</a>, b_strides);</div>
@@ -197,7 +196,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line">    <span class="comment">// Create attributes (to handle alpha dynamically and beta if necessary)</span></div>
 <div class="line">    <a class="code" href="structdnnl_1_1primitive__attr.html">primitive_attr</a> attr;</div>
-<div class="line">    attr.<a class="code" href="structdnnl_1_1primitive__attr.html#a4b81acc8e48886313154f75c1708ae02">set_output_scales</a>(<span class="comment">/* mask */</span> 0, {<a class="code" href="group__c__api__types__memory.html#gab16365c11b4dc88fbb453edb51f1979f">DNNL_RUNTIME_F32_VAL</a>});</div>
+<div class="line">    attr.<a class="code" href="structdnnl_1_1primitive__attr.html#a4b81acc8e48886313154f75c1708ae02">set_output_scales</a>(<span class="comment">/* mask */</span> 0, {<a class="code" href="group__dnnl__api__memory.html#gab16365c11b4dc88fbb453edb51f1979f">DNNL_RUNTIME_F32_VAL</a>});</div>
 <div class="line">    <span class="keywordflow">if</span> (beta != 0.f) {</div>
 <div class="line">        <a class="code" href="structdnnl_1_1post__ops.html">post_ops</a> po;</div>
 <div class="line">        po.<a class="code" href="structdnnl_1_1post__ops.html#a078ab8ec15423d2b3d26f3619a78ca38">append_sum</a>(beta);</div>
@@ -205,8 +204,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Create a MatMul primitive</span></div>
-<div class="line">    <a class="code" href="structdnnl_1_1matmul_1_1desc.html">matmul::desc</a> <a class="code" href="group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1a4a7fa4b07a2f5ef2534d7159225f480d">matmul_d</a>(a_md, b_md, c_md);</div>
-<div class="line">    <a class="code" href="structdnnl_1_1matmul_1_1primitive__desc.html">matmul::primitive_desc</a> matmul_pd(<a class="code" href="group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1a4a7fa4b07a2f5ef2534d7159225f480d">matmul_d</a>, attr, eng);</div>
+<div class="line">    <a class="code" href="structdnnl_1_1matmul_1_1desc.html">matmul::desc</a> <a class="code" href="group__dnnl__api__primitives__common.html#gga94efdd650364f4d9776cfb9b711cbdc1a4a7fa4b07a2f5ef2534d7159225f480d">matmul_d</a>(a_md, b_md, c_md);</div>
+<div class="line">    <a class="code" href="structdnnl_1_1matmul_1_1primitive__desc.html">matmul::primitive_desc</a> matmul_pd(matmul_d, attr, eng);</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="structdnnl_1_1matmul.html">matmul</a>(matmul_pd);</div>
 <div class="line">}</div>
 <div class="line"></div>
@@ -237,8 +236,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="comment">// Execute the MatMul primitive</span></div>
 <div class="line">    stream s(eng);</div>
 <div class="line">    matmul_p.<a class="code" href="structdnnl_1_1primitive.html#a4c454f3d9315ea0dc6635f26eab9a950">execute</a>(s,</div>
-<div class="line">            {{DNNL_ARG_SRC, A_m}, {DNNL_ARG_WEIGHTS, B_m}, {DNNL_ARG_DST, C_m},</div>
-<div class="line">                    {DNNL_ARG_ATTR_OUTPUT_SCALES, alpha_m}});</div>
+<div class="line">            {{<a class="code" href="group__dnnl__api__primitives__common.html#gac37ad67b48edeb9e742af0e50b70fe09">DNNL_ARG_SRC</a>, A_m}, {<a class="code" href="group__dnnl__api__primitives__common.html#gaf279f28c59a807e71a70c719db56c5b3">DNNL_ARG_WEIGHTS</a>, B_m}, {<a class="code" href="group__dnnl__api__primitives__common.html#ga3ca217e4a06d42a0ede3c018383c388f">DNNL_ARG_DST</a>, C_m},</div>
+<div class="line">                    {<a class="code" href="group__dnnl__api__primitives__common.html#ga0afb48b0c2b8f3ee30609aaa47aa29db">DNNL_ARG_ATTR_OUTPUT_SCALES</a>, alpha_m}});</div>
 <div class="line">    s.wait();</div>
 <div class="line">}</div>
 <div class="line"></div>
@@ -269,8 +268,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Create a MatMul primitive</span></div>
-<div class="line">    <a class="code" href="structdnnl_1_1matmul_1_1desc.html">matmul::desc</a> <a class="code" href="group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1a4a7fa4b07a2f5ef2534d7159225f480d">matmul_d</a>(a_md, b_md, c_md);</div>
-<div class="line">    <a class="code" href="structdnnl_1_1matmul_1_1primitive__desc.html">matmul::primitive_desc</a> matmul_pd(<a class="code" href="group__cpp__api__enums.html#gga94efdd650364f4d9776cfb9b711cbdc1a4a7fa4b07a2f5ef2534d7159225f480d">matmul_d</a>, attr, eng);</div>
+<div class="line">    <a class="code" href="structdnnl_1_1matmul_1_1desc.html">matmul::desc</a> <a class="code" href="group__dnnl__api__primitives__common.html#gga94efdd650364f4d9776cfb9b711cbdc1a4a7fa4b07a2f5ef2534d7159225f480d">matmul_d</a>(a_md, b_md, c_md);</div>
+<div class="line">    <a class="code" href="structdnnl_1_1matmul_1_1primitive__desc.html">matmul::primitive_desc</a> matmul_pd(matmul_d, attr, eng);</div>
 <div class="line">    <a class="code" href="structdnnl_1_1matmul.html">matmul</a> matmul_p(matmul_pd);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Wrap raw pointers into DNNL memory objects</span></div>
@@ -286,8 +285,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="comment">// the memory descriptors passed to MatMul operation descriptor.</span></div>
 <div class="line">    stream s(eng);</div>
 <div class="line">    matmul_p.<a class="code" href="structdnnl_1_1primitive.html#a4c454f3d9315ea0dc6635f26eab9a950">execute</a>(s,</div>
-<div class="line">            {{DNNL_ARG_SRC, A_m}, {DNNL_ARG_WEIGHTS, B_m},</div>
-<div class="line">                    {DNNL_ARG_DST, C_m}});</div>
+<div class="line">            {{<a class="code" href="group__dnnl__api__primitives__common.html#gac37ad67b48edeb9e742af0e50b70fe09">DNNL_ARG_SRC</a>, A_m}, {<a class="code" href="group__dnnl__api__primitives__common.html#gaf279f28c59a807e71a70c719db56c5b3">DNNL_ARG_WEIGHTS</a>, B_m},</div>
+<div class="line">                    {<a class="code" href="group__dnnl__api__primitives__common.html#ga3ca217e4a06d42a0ede3c018383c388f">DNNL_ARG_DST</a>, C_m}});</div>
 <div class="line">    s.wait();</div>
 <div class="line">}</div>
 <div class="line"></div>
@@ -316,7 +315,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line">    <span class="comment">// 1. Execute sgemm</span></div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> run = 0; run &lt; number_of_runs; ++run)</div>
-<div class="line">        <a class="code" href="group__c__api__blas.html#ga75ee119765bdac249200fda42c0617f8">dnnl_sgemm</a>(transA, transB, M, N, K, alpha, A.data(), lda, B.data(), ldb,</div>
+<div class="line">        <a class="code" href="group__dnnl__api__blas.html#ga75ee119765bdac249200fda42c0617f8">dnnl_sgemm</a>(transA, transB, M, N, K, alpha, A.data(), lda, B.data(), ldb,</div>
 <div class="line">                beta, C_sgemm.data(), ldc);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// 2.a Create dynamic MatMul</span></div>
@@ -347,7 +346,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv) {</div>
-<div class="line">    <span class="keywordflow">return</span> handle_example_errors(sgemm_and_matmul);</div>
+<div class="line">    <span class="keywordflow">return</span> handle_example_errors({<a class="code" href="structdnnl_1_1engine.html#a2635da16314dcbdb9bd9ea431316bb1aad9747e2da342bdb995f6389533ad1a3d">engine::kind::cpu</a>}, sgemm_and_matmul);</div>
 <div class="line">}</div>
 </div><!-- fragment --> </div></div><!-- contents -->
 <div class="footer">

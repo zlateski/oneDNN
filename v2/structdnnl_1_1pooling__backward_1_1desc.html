@@ -72,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -83,7 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>dnnl</b></li><li class="navelem"><a class="el" href="structdnnl_1_1pooling__backward.html">pooling_backward</a></li><li class="navelem"><a class="el" href="structdnnl_1_1pooling__backward_1_1desc.html">desc</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacednnl.html">dnnl</a></li><li class="navelem"><a class="el" href="structdnnl_1_1pooling__backward.html">pooling_backward</a></li><li class="navelem"><a class="el" href="structdnnl_1_1pooling__backward_1_1desc.html">desc</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -109,13 +109,13 @@ Collaboration diagram for dnnl::pooling_backward::desc:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6773c6fb2ed5fb7602046685fced8dda"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1pooling__backward_1_1desc.html#a6773c6fb2ed5fb7602046685fced8dda">desc</a> (<a class="el" href="group__cpp__api__enums.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a> <a class="el" href="group__cpp__api__enums.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a>, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_src_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_dst_desc, const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;strides, const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;kernel, const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;padding_l, const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;padding_r)</td></tr>
-<tr class="memdesc:a6773c6fb2ed5fb7602046685fced8dda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a pooling descriptor for a pooling backward propagation primitive using <code>algorithm</code>, memory descriptors, and pooling parameters in the spatial domain: <code>strides</code>, <code>kernel</code> sizes, <code>padding_l</code>, and <code>padding_r</code>.  <a href="#a6773c6fb2ed5fb7602046685fced8dda">More...</a><br/></td></tr>
+<tr class="memitem:a6773c6fb2ed5fb7602046685fced8dda"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1pooling__backward_1_1desc.html#a6773c6fb2ed5fb7602046685fced8dda">desc</a> (<a class="el" href="group__dnnl__api__attributes.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a> <a class="el" href="group__dnnl__api__attributes.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a>, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_src_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_dst_desc, const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;strides, const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;kernel, const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;padding_l, const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;padding_r)</td></tr>
+<tr class="memdesc:a6773c6fb2ed5fb7602046685fced8dda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a descriptor for pooling backward propagation primitive.  <a href="#a6773c6fb2ed5fb7602046685fced8dda">More...</a><br/></td></tr>
 <tr class="separator:a6773c6fb2ed5fb7602046685fced8dda"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Descriptor for a pooling backward propagation primitive. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cnn_training_f32_8cpp-example.html#_a25">cnn_training_f32.cpp</a>, and <a class="el" href="cpu_cnn_training_bf16_8cpp-example.html#_a29">cpu_cnn_training_bf16.cpp</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cnn_training_f32_8cpp-example.html#_a32">cnn_training_f32.cpp</a>, and <a class="el" href="cpu_cnn_training_bf16_8cpp-example.html#_a36">cpu_cnn_training_bf16.cpp</a>.</dd>
 </dl></div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a6773c6fb2ed5fb7602046685fced8dda"></a>
 <div class="memitem">
@@ -127,7 +127,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">dnnl::pooling_backward::desc::desc </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__cpp__api__enums.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__dnnl__api__attributes.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a>&#160;</td>
           <td class="paramname"><em>algorithm</em>, </td>
         </tr>
         <tr>
@@ -179,7 +179,28 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Constructs a pooling descriptor for a pooling backward propagation primitive using <code>algorithm</code>, memory descriptors, and pooling parameters in the spatial domain: <code>strides</code>, <code>kernel</code> sizes, <code>padding_l</code>, and <code>padding_r</code>. </p>
+<p>Constructs a descriptor for pooling backward propagation primitive. </p>
+<p>Inputs:</p>
+<ul>
+<li>diff_dst (<a class="el" href="structdnnl_1_1primitive__desc__base.html#aa95dd1711a45923204ffddc3f02ea546" title="Returns a diff destination memory descriptor. ">dnnl::primitive_desc_base::diff_dst_desc</a> (0))</li>
+<li>workspace (<a class="el" href="structdnnl_1_1primitive__desc__base.html#aaf33632e215a1f2b066a6111836ecbb3" title="Returns the workspace memory descriptor. ">dnnl::primitive_desc_base::workspace_desc</a> (0)), if <code>alg_kind</code> = <a class="el" href="group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23acf3529ba1c4761c0da90eb6750def6c7" title="Max pooling. ">dnnl_pooling_max</a>; must be queried for using <a class="el" href="group__dnnl__api__primitives__common.html#ga416464a8b3e898d8965a5f3c49d4cd54">dnnl_primitive_desc_query_md()</a> after a corresponding primitive descriptor is created</li>
+</ul>
+<p>Outputs:</p>
+<ul>
+<li>diff_src (<a class="el" href="structdnnl_1_1primitive__desc__base.html#aeb499ab1390d20eb071d97ec4628029f" title="Returns a diff source memory descriptor. ">dnnl::primitive_desc_base::diff_src_desc</a> (0))</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">algorithm</td><td>Pooling algorithm kind: either <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640a8c73d4bb88a0497586a74256bb338e88" title="Max pooling. ">dnnl::algorithm::pooling_max</a>, <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640ad62617dd43972a6bbff8d263a5c4462c" title="Average pooling include padding. ">dnnl::algorithm::pooling_avg_include_padding</a>, or <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640a7702ff2872aa0321d96ea7134bad855a" title="Average pooling exclude padding, alias for dnnl::algorithm::pooling_avg_include_padding. ">dnnl::algorithm::pooling_avg</a> (same as <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640a7ed10af2056450d8f6ac7277b48fc6a8" title="Average pooling exclude padding. ">dnnl::algorithm::pooling_avg_exclude_padding</a>). </td></tr>
+    <tr><td class="paramname">diff_src_desc</td><td>Diff source memory descriptor. </td></tr>
+    <tr><td class="paramname">diff_dst_desc</td><td>Diff destination memory descriptor. </td></tr>
+    <tr><td class="paramname">strides</td><td>Vector of strides for spatial dimension. </td></tr>
+    <tr><td class="paramname">kernel</td><td>Vector of kernel spatial dimensions. </td></tr>
+    <tr><td class="paramname">padding_l</td><td>Vector of padding values for low indices for each spatial dimension (front, top, left). </td></tr>
+    <tr><td class="paramname">padding_r</td><td>Vector of padding values for high indices for each spatial dimension (back, bottom, right). </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

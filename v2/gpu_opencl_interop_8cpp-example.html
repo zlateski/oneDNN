@@ -65,7 +65,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -121,7 +121,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><span class="preprocessor">        cl_int s = (x); \</span></div>
 <div class="line"><span class="preprocessor">        if (s != CL_SUCCESS) { \</span></div>
 <div class="line"><span class="preprocessor">            std::cout &lt;&lt; &quot;[&quot; &lt;&lt; __FILE__ &lt;&lt; &quot;:&quot; &lt;&lt; __LINE__ &lt;&lt; &quot;] &#39;&quot; &lt;&lt; #x \</span></div>
-<div class="line"><span class="preprocessor">                      &lt;&lt; &quot;&#39; failed (status code: &quot; &lt;&lt; s &lt;&lt; &quot;)&quot; &lt;&lt; std::endl; \</span></div>
+<div class="line"><span class="preprocessor">                      &lt;&lt; &quot;&#39; failed (status code: &quot; &lt;&lt; s &lt;&lt; &quot;).&quot; &lt;&lt; std::endl; \</span></div>
 <div class="line"><span class="preprocessor">            exit(1); \</span></div>
 <div class="line"><span class="preprocessor">        } \</span></div>
 <div class="line"><span class="preprocessor">    } while (0)</span></div>
@@ -189,13 +189,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line">    <span class="comment">//  [relu creation]</span></div>
 <div class="line">    <span class="keyword">auto</span> relu_d = <a name="_a8"></a><a class="code" href="structdnnl_1_1eltwise__forward_1_1desc.html">eltwise_forward::desc</a>(</div>
-<div class="line">            <a name="a9"></a><a class="code" href="group__cpp__api__enums.html#ggac7db48f6583aa9903e54c2a39d65438fa965dbaac085fc891bfbbd4f9d145bbc8">prop_kind::forward</a>, <a name="a10"></a><a class="code" href="group__cpp__api__enums.html#gga00377dd4982333e42e8ae1d09a309640aba09bebb742494255b90b43871c01c69">algorithm::eltwise_relu</a>, mem_d, 0.0f);</div>
+<div class="line">            <a name="a9"></a><a class="code" href="group__dnnl__api__attributes.html#ggac7db48f6583aa9903e54c2a39d65438fa965dbaac085fc891bfbbd4f9d145bbc8">prop_kind::forward</a>, <a name="a10"></a><a class="code" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640aba09bebb742494255b90b43871c01c69">algorithm::eltwise_relu</a>, mem_d, 0.0f);</div>
 <div class="line">    <span class="keyword">auto</span> relu_pd = <a name="_a11"></a><a class="code" href="structdnnl_1_1eltwise__forward_1_1primitive__desc.html">eltwise_forward::primitive_desc</a>(relu_d, eng);</div>
 <div class="line">    <span class="keyword">auto</span> relu = <a name="_a12"></a><a class="code" href="structdnnl_1_1eltwise__forward.html">eltwise_forward</a>(relu_pd);</div>
 <div class="line">    <span class="comment">//  [relu creation]</span></div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// [relu exec]</span></div>
-<div class="line">    relu.execute(strm, {{DNNL_ARG_SRC, mem}, {DNNL_ARG_DST, mem}});</div>
+<div class="line">    relu.execute(strm, {{<a name="a13"></a><a class="code" href="group__dnnl__api__primitives__common.html#gac37ad67b48edeb9e742af0e50b70fe09">DNNL_ARG_SRC</a>, mem}, {<a name="a14"></a><a class="code" href="group__dnnl__api__primitives__common.html#ga3ca217e4a06d42a0ede3c018383c388f">DNNL_ARG_DST</a>, mem}});</div>
 <div class="line">    strm.wait();</div>
 <div class="line">    <span class="comment">// [relu exec]</span></div>
 <div class="line"><span class="comment"></span></div>
@@ -206,7 +206,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">        <span class="keywordtype">float</span> expected = (i % 2) ? 0.0f : (<span class="keywordtype">float</span>)i;</div>
 <div class="line">        <span class="keywordflow">if</span> (mem_data[i] != expected) {</div>
 <div class="line">            std::cout &lt;&lt; <span class="stringliteral">&quot;Expect &quot;</span> &lt;&lt; expected &lt;&lt; <span class="stringliteral">&quot; but got &quot;</span> &lt;&lt; mem_data[i]</div>
-<div class="line">                      &lt;&lt; std::endl;</div>
+<div class="line">                      &lt;&lt; <span class="stringliteral">&quot;.&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">            <span class="keywordflow">throw</span> std::logic_error(<span class="stringliteral">&quot;Accuracy check failed.&quot;</span>);</div>
 <div class="line">        }</div>
 <div class="line">    }</div>
@@ -216,7 +216,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv) {</div>
-<div class="line">    <span class="keywordflow">return</span> handle_example_errors(gpu_opencl_interop_tutorial);</div>
+<div class="line">    <span class="keywordflow">return</span> handle_example_errors(</div>
+<div class="line">            {<a class="code" href="structdnnl_1_1engine.html#a2635da16314dcbdb9bd9ea431316bb1aa0aa0be2a866411d9ff03515227454947">engine::kind::gpu</a>}, gpu_opencl_interop_tutorial);</div>
 <div class="line">}</div>
 <div class="line"></div>
 </div><!-- fragment --> </div><!-- contents -->

@@ -72,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -83,7 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>dnnl</b></li><li class="navelem"><a class="el" href="structdnnl_1_1deconvolution__backward__weights.html">deconvolution_backward_weights</a></li><li class="navelem"><a class="el" href="structdnnl_1_1deconvolution__backward__weights_1_1desc.html">desc</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacednnl.html">dnnl</a></li><li class="navelem"><a class="el" href="structdnnl_1_1deconvolution__backward__weights.html">deconvolution_backward_weights</a></li><li class="navelem"><a class="el" href="structdnnl_1_1deconvolution__backward__weights_1_1desc.html">desc</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -95,7 +95,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>Descriptor for a deconvolution weights update primitive.  
+<p>Descriptor for a deconvolution weights gradient primitive.  
  <a href="structdnnl_1_1deconvolution__backward__weights_1_1desc.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="dnnl_8hpp_source.html">dnnl.hpp</a>&gt;</code></p>
@@ -109,21 +109,21 @@ Collaboration diagram for dnnl::deconvolution_backward_weights::desc:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a958daf3f54993240f172b8a207837a93"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1deconvolution__backward__weights_1_1desc.html#a958daf3f54993240f172b8a207837a93">desc</a> (<a class="el" href="group__cpp__api__enums.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a> <a class="el" href="group__cpp__api__enums.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a>, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;src_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_weights_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_bias_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_dst_desc, const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;strides, const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;padding_l, const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;padding_r)</td></tr>
-<tr class="memdesc:a958daf3f54993240f172b8a207837a93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a descriptor for a deconvolution weights update primitive with bias using <code>algorithm</code>, memory descriptors, <code>strides</code>, <code>padding_l</code>, and <code>padding_r</code>.  <a href="#a958daf3f54993240f172b8a207837a93">More...</a><br/></td></tr>
+<tr class="memitem:a958daf3f54993240f172b8a207837a93"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1deconvolution__backward__weights_1_1desc.html#a958daf3f54993240f172b8a207837a93">desc</a> (<a class="el" href="group__dnnl__api__attributes.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a> <a class="el" href="group__dnnl__api__attributes.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a>, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;src_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_weights_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_bias_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_dst_desc, const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;strides, const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;padding_l, const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;padding_r)</td></tr>
+<tr class="memdesc:a958daf3f54993240f172b8a207837a93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a descriptor for a deconvolution weights gradient primitive with bias.  <a href="#a958daf3f54993240f172b8a207837a93">More...</a><br/></td></tr>
 <tr class="separator:a958daf3f54993240f172b8a207837a93"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb95cce1f13617358d550c58c6c5cccd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1deconvolution__backward__weights_1_1desc.html#abb95cce1f13617358d550c58c6c5cccd">desc</a> (<a class="el" href="group__cpp__api__enums.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a> <a class="el" href="group__cpp__api__enums.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a>, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;src_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_weights_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_dst_desc, const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;strides, const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;padding_l, const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;padding_r)</td></tr>
-<tr class="memdesc:abb95cce1f13617358d550c58c6c5cccd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a descriptor for a deconvolution weights update primitive without bias using <code>algorithm</code>, memory descriptors, <code>strides</code>, <code>padding_l</code>, and <code>padding_r</code>.  <a href="#abb95cce1f13617358d550c58c6c5cccd">More...</a><br/></td></tr>
+<tr class="memitem:abb95cce1f13617358d550c58c6c5cccd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1deconvolution__backward__weights_1_1desc.html#abb95cce1f13617358d550c58c6c5cccd">desc</a> (<a class="el" href="group__dnnl__api__attributes.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a> <a class="el" href="group__dnnl__api__attributes.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a>, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;src_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_weights_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_dst_desc, const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;strides, const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;padding_l, const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;padding_r)</td></tr>
+<tr class="memdesc:abb95cce1f13617358d550c58c6c5cccd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a descriptor for a deconvolution weights gradient primitive without bias.  <a href="#abb95cce1f13617358d550c58c6c5cccd">More...</a><br/></td></tr>
 <tr class="separator:abb95cce1f13617358d550c58c6c5cccd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0262263aa5af7c2e940f3ce6110e521f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1deconvolution__backward__weights_1_1desc.html#a0262263aa5af7c2e940f3ce6110e521f">desc</a> (<a class="el" href="group__cpp__api__enums.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a> <a class="el" href="group__cpp__api__enums.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a>, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;src_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_weights_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_bias_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_dst_desc, const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;strides, const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;dilates, const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;padding_l, const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;padding_r)</td></tr>
-<tr class="memdesc:a0262263aa5af7c2e940f3ce6110e521f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a descriptor for a dilated deconvolution weights update primitive with bias using <code>algorithm</code>, memory descriptors, <code>strides</code>, <code>dilates</code> <code>padding_l</code>, and <code>padding_r</code>.  <a href="#a0262263aa5af7c2e940f3ce6110e521f">More...</a><br/></td></tr>
+<tr class="memitem:a0262263aa5af7c2e940f3ce6110e521f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1deconvolution__backward__weights_1_1desc.html#a0262263aa5af7c2e940f3ce6110e521f">desc</a> (<a class="el" href="group__dnnl__api__attributes.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a> <a class="el" href="group__dnnl__api__attributes.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a>, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;src_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_weights_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_bias_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_dst_desc, const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;strides, const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;dilates, const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;padding_l, const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;padding_r)</td></tr>
+<tr class="memdesc:a0262263aa5af7c2e940f3ce6110e521f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a descriptor for a dilated deconvolution weights gradient primitive with bias.  <a href="#a0262263aa5af7c2e940f3ce6110e521f">More...</a><br/></td></tr>
 <tr class="separator:a0262263aa5af7c2e940f3ce6110e521f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85697a70e0050464cc0d94c239bb9c5d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1deconvolution__backward__weights_1_1desc.html#a85697a70e0050464cc0d94c239bb9c5d">desc</a> (<a class="el" href="group__cpp__api__enums.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a> <a class="el" href="group__cpp__api__enums.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a>, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;src_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_weights_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_dst_desc, const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;strides, const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;dilates, const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;padding_l, const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;padding_r)</td></tr>
-<tr class="memdesc:a85697a70e0050464cc0d94c239bb9c5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a descriptor for a dilated deconvolution weights update primitive without bias using <code>algorithm</code>, memory descriptors, <code>strides</code>, <code>dilates</code> <code>padding_l</code>, and <code>padding_r</code>.  <a href="#a85697a70e0050464cc0d94c239bb9c5d">More...</a><br/></td></tr>
+<tr class="memitem:a85697a70e0050464cc0d94c239bb9c5d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1deconvolution__backward__weights_1_1desc.html#a85697a70e0050464cc0d94c239bb9c5d">desc</a> (<a class="el" href="group__dnnl__api__attributes.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a> <a class="el" href="group__dnnl__api__attributes.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a>, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;src_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_weights_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_dst_desc, const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;strides, const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;dilates, const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;padding_l, const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;padding_r)</td></tr>
+<tr class="memdesc:a85697a70e0050464cc0d94c239bb9c5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a descriptor for a dilated deconvolution weights gradient primitive without bias.  <a href="#a85697a70e0050464cc0d94c239bb9c5d">More...</a><br/></td></tr>
 <tr class="separator:a85697a70e0050464cc0d94c239bb9c5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Descriptor for a deconvolution weights update primitive. </p>
+<div class="textblock"><p>Descriptor for a deconvolution weights gradient primitive. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a958daf3f54993240f172b8a207837a93"></a>
 <div class="memitem">
@@ -135,7 +135,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">dnnl::deconvolution_backward_weights::desc::desc </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__cpp__api__enums.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__dnnl__api__attributes.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a>&#160;</td>
           <td class="paramname"><em>algorithm</em>, </td>
         </tr>
         <tr>
@@ -193,8 +193,31 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Constructs a descriptor for a deconvolution weights update primitive with bias using <code>algorithm</code>, memory descriptors, <code>strides</code>, <code>padding_l</code>, and <code>padding_r</code>. </p>
-<dl class="section note"><dt>Note</dt><dd>Memory descriptors are allowed to be initialized with <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> value of <code>format_tag</code>. </dd></dl>
+<p>Constructs a descriptor for a deconvolution weights gradient primitive with bias. </p>
+<dl class="section note"><dt>Note</dt><dd>Memory descriptors are allowed to be initialized with <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> value of <code>format_tag</code>.</dd></dl>
+<p>Inputs:</p>
+<ul>
+<li>src (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a31ee74fc65986558ac11db590945811a" title="Returns a source memory descriptor. ">dnnl::primitive_desc_base::src_desc</a> (0))</li>
+<li>diff_dst (<a class="el" href="structdnnl_1_1primitive__desc__base.html#aa95dd1711a45923204ffddc3f02ea546" title="Returns a diff destination memory descriptor. ">dnnl::primitive_desc_base::diff_dst_desc</a> (0))</li>
+</ul>
+<p>Outputs:</p>
+<ul>
+<li>diff_weights (<a class="el" href="structdnnl_1_1primitive__desc__base.html#ab6dc65154169608dfb9c2e9842012826" title="Returns a diff weights memory descriptor. ">dnnl::primitive_desc_base::diff_weights_desc</a> (0))</li>
+<li>diff_bias (<a class="el" href="structdnnl_1_1primitive__desc__base.html#ab6dc65154169608dfb9c2e9842012826" title="Returns a diff weights memory descriptor. ">dnnl::primitive_desc_base::diff_weights_desc</a> (1))</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">algorithm</td><td>Deconvolution algorithm. Possible values are <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640a73f81608d2b7315f04c438fb8be5f99c" title="Direct deconvolution. ">dnnl::algorithm::deconvolution_direct</a>, and <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640aeb5da82914413424bf941fa04eb065aa" title="Winograd deconvolution. ">dnnl::algorithm::deconvolution_winograd</a>. </td></tr>
+    <tr><td class="paramname">src_desc</td><td>Source memory descriptor. </td></tr>
+    <tr><td class="paramname">diff_weights_desc</td><td>Diff weights memory descriptor. </td></tr>
+    <tr><td class="paramname">diff_bias_desc</td><td>Diff bias memory descriptor. Passing zero memory descriptor disables the bias term. </td></tr>
+    <tr><td class="paramname">diff_dst_desc</td><td>Diff destination memory descriptor. </td></tr>
+    <tr><td class="paramname">strides</td><td>Strides for each spatial dimension. </td></tr>
+    <tr><td class="paramname">padding_l</td><td>Vector of padding values for low indices for each spatial dimension (front, top, left). </td></tr>
+    <tr><td class="paramname">padding_r</td><td>Vector of padding values for high indices for each spatial dimension (back, bottom, right). </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -208,7 +231,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">dnnl::deconvolution_backward_weights::desc::desc </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__cpp__api__enums.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__dnnl__api__attributes.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a>&#160;</td>
           <td class="paramname"><em>algorithm</em>, </td>
         </tr>
         <tr>
@@ -260,8 +283,29 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Constructs a descriptor for a deconvolution weights update primitive without bias using <code>algorithm</code>, memory descriptors, <code>strides</code>, <code>padding_l</code>, and <code>padding_r</code>. </p>
-<dl class="section note"><dt>Note</dt><dd>Memory descriptors are allowed to be initialized with <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> value of <code>format_tag</code>. </dd></dl>
+<p>Constructs a descriptor for a deconvolution weights gradient primitive without bias. </p>
+<dl class="section note"><dt>Note</dt><dd>Memory descriptors are allowed to be initialized with <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> value of <code>format_tag</code>.</dd></dl>
+<p>Inputs:</p>
+<ul>
+<li>src (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a31ee74fc65986558ac11db590945811a" title="Returns a source memory descriptor. ">dnnl::primitive_desc_base::src_desc</a> (0))</li>
+<li>diff_dst (<a class="el" href="structdnnl_1_1primitive__desc__base.html#aa95dd1711a45923204ffddc3f02ea546" title="Returns a diff destination memory descriptor. ">dnnl::primitive_desc_base::diff_dst_desc</a> (0))</li>
+</ul>
+<p>Outputs:</p>
+<ul>
+<li>diff_weights (<a class="el" href="structdnnl_1_1primitive__desc__base.html#ab6dc65154169608dfb9c2e9842012826" title="Returns a diff weights memory descriptor. ">dnnl::primitive_desc_base::diff_weights_desc</a> (0))</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">algorithm</td><td>Deconvolution algorithm. Possible values are <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640a73f81608d2b7315f04c438fb8be5f99c" title="Direct deconvolution. ">dnnl::algorithm::deconvolution_direct</a>, and <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640aeb5da82914413424bf941fa04eb065aa" title="Winograd deconvolution. ">dnnl::algorithm::deconvolution_winograd</a>. </td></tr>
+    <tr><td class="paramname">src_desc</td><td>Source memory descriptor. </td></tr>
+    <tr><td class="paramname">diff_weights_desc</td><td>Diff weights memory descriptor. </td></tr>
+    <tr><td class="paramname">diff_dst_desc</td><td>Diff destination memory descriptor. </td></tr>
+    <tr><td class="paramname">strides</td><td>Strides for each spatial dimension. </td></tr>
+    <tr><td class="paramname">padding_l</td><td>Vector of padding values for low indices for each spatial dimension (front, top, left). </td></tr>
+    <tr><td class="paramname">padding_r</td><td>Vector of padding values for high indices for each spatial dimension (back, bottom, right). </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -275,7 +319,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">dnnl::deconvolution_backward_weights::desc::desc </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__cpp__api__enums.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__dnnl__api__attributes.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a>&#160;</td>
           <td class="paramname"><em>algorithm</em>, </td>
         </tr>
         <tr>
@@ -339,8 +383,32 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Constructs a descriptor for a dilated deconvolution weights update primitive with bias using <code>algorithm</code>, memory descriptors, <code>strides</code>, <code>dilates</code> <code>padding_l</code>, and <code>padding_r</code>. </p>
-<dl class="section note"><dt>Note</dt><dd>Memory descriptors are allowed to be initialized with <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> value of <code>format_tag</code>. </dd></dl>
+<p>Constructs a descriptor for a dilated deconvolution weights gradient primitive with bias. </p>
+<dl class="section note"><dt>Note</dt><dd>Memory descriptors are allowed to be initialized with <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> value of <code>format_tag</code>.</dd></dl>
+<p>Inputs:</p>
+<ul>
+<li>src (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a31ee74fc65986558ac11db590945811a" title="Returns a source memory descriptor. ">dnnl::primitive_desc_base::src_desc</a> (0))</li>
+<li>diff_dst (<a class="el" href="structdnnl_1_1primitive__desc__base.html#aa95dd1711a45923204ffddc3f02ea546" title="Returns a diff destination memory descriptor. ">dnnl::primitive_desc_base::diff_dst_desc</a> (0))</li>
+</ul>
+<p>Outputs:</p>
+<ul>
+<li>diff_weights (<a class="el" href="structdnnl_1_1primitive__desc__base.html#ab6dc65154169608dfb9c2e9842012826" title="Returns a diff weights memory descriptor. ">dnnl::primitive_desc_base::diff_weights_desc</a> (0))</li>
+<li>diff_bias (<a class="el" href="structdnnl_1_1primitive__desc__base.html#ab6dc65154169608dfb9c2e9842012826" title="Returns a diff weights memory descriptor. ">dnnl::primitive_desc_base::diff_weights_desc</a> (1))</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">algorithm</td><td>Deconvolution algorithm. Possible values are <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640a73f81608d2b7315f04c438fb8be5f99c" title="Direct deconvolution. ">dnnl::algorithm::deconvolution_direct</a>, and <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640aeb5da82914413424bf941fa04eb065aa" title="Winograd deconvolution. ">dnnl::algorithm::deconvolution_winograd</a>. </td></tr>
+    <tr><td class="paramname">src_desc</td><td>Source memory descriptor. </td></tr>
+    <tr><td class="paramname">diff_weights_desc</td><td>Diff weights memory descriptor. </td></tr>
+    <tr><td class="paramname">diff_bias_desc</td><td>Diff bias memory descriptor. Passing zero memory descriptor disables the bias term. </td></tr>
+    <tr><td class="paramname">diff_dst_desc</td><td>Diff destination memory descriptor. </td></tr>
+    <tr><td class="paramname">strides</td><td>Strides for each spatial dimension. </td></tr>
+    <tr><td class="paramname">dilates</td><td>Dilations for each spatial dimension. A zero value means no dilation in the corresponding dimension. </td></tr>
+    <tr><td class="paramname">padding_l</td><td>Vector of padding values for low indices for each spatial dimension (front, top, left). </td></tr>
+    <tr><td class="paramname">padding_r</td><td>Vector of padding values for high indices for each spatial dimension (back, bottom, right). </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -354,7 +422,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">dnnl::deconvolution_backward_weights::desc::desc </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__cpp__api__enums.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__dnnl__api__attributes.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a>&#160;</td>
           <td class="paramname"><em>algorithm</em>, </td>
         </tr>
         <tr>
@@ -412,8 +480,30 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Constructs a descriptor for a dilated deconvolution weights update primitive without bias using <code>algorithm</code>, memory descriptors, <code>strides</code>, <code>dilates</code> <code>padding_l</code>, and <code>padding_r</code>. </p>
-<dl class="section note"><dt>Note</dt><dd>Memory descriptors are allowed to be initialized with <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> value of <code>format_tag</code>. </dd></dl>
+<p>Constructs a descriptor for a dilated deconvolution weights gradient primitive without bias. </p>
+<dl class="section note"><dt>Note</dt><dd>Memory descriptors are allowed to be initialized with <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> value of <code>format_tag</code>.</dd></dl>
+<p>Inputs:</p>
+<ul>
+<li>src (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a31ee74fc65986558ac11db590945811a" title="Returns a source memory descriptor. ">dnnl::primitive_desc_base::src_desc</a> (0))</li>
+<li>diff_dst (<a class="el" href="structdnnl_1_1primitive__desc__base.html#aa95dd1711a45923204ffddc3f02ea546" title="Returns a diff destination memory descriptor. ">dnnl::primitive_desc_base::diff_dst_desc</a> (0))</li>
+</ul>
+<p>Outputs:</p>
+<ul>
+<li>diff_weights (<a class="el" href="structdnnl_1_1primitive__desc__base.html#ab6dc65154169608dfb9c2e9842012826" title="Returns a diff weights memory descriptor. ">dnnl::primitive_desc_base::diff_weights_desc</a> (0))</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">algorithm</td><td>Deconvolution algorithm. Possible values are <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640a73f81608d2b7315f04c438fb8be5f99c" title="Direct deconvolution. ">dnnl::algorithm::deconvolution_direct</a>, and <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640aeb5da82914413424bf941fa04eb065aa" title="Winograd deconvolution. ">dnnl::algorithm::deconvolution_winograd</a>. </td></tr>
+    <tr><td class="paramname">src_desc</td><td>Source memory descriptor. </td></tr>
+    <tr><td class="paramname">diff_weights_desc</td><td>Diff weights memory descriptor. </td></tr>
+    <tr><td class="paramname">diff_dst_desc</td><td>Diff destination memory descriptor. </td></tr>
+    <tr><td class="paramname">strides</td><td>Strides for each spatial dimension. </td></tr>
+    <tr><td class="paramname">dilates</td><td>Dilations for each spatial dimension. A zero value means no dilation in the corresponding dimension. </td></tr>
+    <tr><td class="paramname">padding_l</td><td>Vector of padding values for low indices for each spatial dimension (front, top, left). </td></tr>
+    <tr><td class="paramname">padding_r</td><td>Vector of padding values for high indices for each spatial dimension (back, bottom, right). </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

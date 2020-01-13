@@ -72,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -87,7 +87,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="structdnnl__blocking__desc__t-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">dnnl_blocking_desc_t Struct Reference<div class="ingroups"><a class="el" href="group__c__api__types__memory.html">Memory</a></div></div>  </div>
+<div class="title">dnnl_blocking_desc_t Struct Reference<div class="ingroups"><a class="el" href="group__dnnl__api__memory.html">Memory</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -98,7 +98,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a48c1a3cb43f5b935fe3627e6312543b3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__memory.html#ga8331e1160e52a5d4babe96736464095a">dnnl_dims_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl__blocking__desc__t.html#a48c1a3cb43f5b935fe3627e6312543b3">strides</a></td></tr>
+<tr class="memitem:a48c1a3cb43f5b935fe3627e6312543b3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__memory.html#ga8331e1160e52a5d4babe96736464095a">dnnl_dims_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl__blocking__desc__t.html#a48c1a3cb43f5b935fe3627e6312543b3">strides</a></td></tr>
 <tr class="memdesc:a48c1a3cb43f5b935fe3627e6312543b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The strides between the outermost blocks.  <a href="#a48c1a3cb43f5b935fe3627e6312543b3">More...</a><br/></td></tr>
 <tr class="separator:a48c1a3cb43f5b935fe3627e6312543b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa605314004fee131958a1d4cf2e1905c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa605314004fee131958a1d4cf2e1905c"></a>
@@ -106,10 +106,10 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struc
 <tr class="memdesc:aa605314004fee131958a1d4cf2e1905c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of innermost blocks, e.g. 3 in case of <code>OIhw_4i16o4i_</code> <br/></td></tr>
 <tr class="separator:aa605314004fee131958a1d4cf2e1905c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab142704c20c4c2518488baa18cb453a5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab142704c20c4c2518488baa18cb453a5"></a>
-<a class="el" href="group__c__api__types__memory.html#ga8331e1160e52a5d4babe96736464095a">dnnl_dims_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl__blocking__desc__t.html#ab142704c20c4c2518488baa18cb453a5">inner_blks</a></td></tr>
+<a class="el" href="group__dnnl__api__memory.html#ga8331e1160e52a5d4babe96736464095a">dnnl_dims_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl__blocking__desc__t.html#ab142704c20c4c2518488baa18cb453a5">inner_blks</a></td></tr>
 <tr class="memdesc:ab142704c20c4c2518488baa18cb453a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The size of the blocks, e.g. <code>{4, 16, 4}</code> in case of <code>OIhw_4i16o4i</code> <br/></td></tr>
 <tr class="separator:ab142704c20c4c2518488baa18cb453a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac60774d51adba600161db81846b5ca77"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__c__api__types__memory.html#ga8331e1160e52a5d4babe96736464095a">dnnl_dims_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl__blocking__desc__t.html#ac60774d51adba600161db81846b5ca77">inner_idxs</a></td></tr>
+<tr class="memitem:ac60774d51adba600161db81846b5ca77"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__memory.html#ga8331e1160e52a5d4babe96736464095a">dnnl_dims_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl__blocking__desc__t.html#ac60774d51adba600161db81846b5ca77">inner_idxs</a></td></tr>
 <tr class="memdesc:ac60774d51adba600161db81846b5ca77"><td class="mdescLeft">&#160;</td><td class="mdescRight">The logical indices of the blocks, e.g.  <a href="#ac60774d51adba600161db81846b5ca77">More...</a><br/></td></tr>
 <tr class="separator:ac60774d51adba600161db81846b5ca77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -122,7 +122,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struc
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__c__api__types__memory.html#ga8331e1160e52a5d4babe96736464095a">dnnl_dims_t</a> dnnl_blocking_desc_t::strides</td>
+          <td class="memname"><a class="el" href="group__dnnl__api__memory.html#ga8331e1160e52a5d4babe96736464095a">dnnl_dims_t</a> dnnl_blocking_desc_t::strides</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -137,7 +137,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struc
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__c__api__types__memory.html#ga8331e1160e52a5d4babe96736464095a">dnnl_dims_t</a> dnnl_blocking_desc_t::inner_idxs</td>
+          <td class="memname"><a class="el" href="group__dnnl__api__memory.html#ga8331e1160e52a5d4babe96736464095a">dnnl_dims_t</a> dnnl_blocking_desc_t::inner_idxs</td>
         </tr>
       </table>
 </div><div class="memdoc">

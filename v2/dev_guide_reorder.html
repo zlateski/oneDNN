@@ -64,7 +64,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -81,7 +81,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><blockquote class="doxtable">
 <p></p>
-<p>API reference: <a class="el" href="group__c__api__reorder.html">C</a>, <a class="el" href="group__cpp__api__reorder.html">C++</a></p>
+<p><a class="el" href="group__dnnl__api__reorder.html">API Reference</a></p>
 <p></p>
 </blockquote>
 <p>The reorder primitive copies data between different memory formats but doesn't change the tensor from mathematical perspective:</p>
@@ -97,7 +97,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>While in most of the cases the reorder should be able to handle arbitrary source and destination memory formats and data types it might happen than some combinations are not implemented. For instance:<ul>
 <li>Reorder implementations between weights in non-plain memory formats might be limited (but if encountered in real practice should be treated as a bug and reported to the DNNL team);</li>
 <li>Weights in one Winograd format cannot be reordered to the weights of the other Winograd format;</li>
-<li>Quantized weights for convolution with <a class="el" href="group__c__api__types__generic.html#gga012ba1c84ff24bdd068f9d2f9b26a130a9638cfbcb7d50834a608ffae644d76b4" title="8-bit signed integer. ">dnnl_s8</a> source data type cannot be dequantized back to the <a class="el" href="group__c__api__types__generic.html#gga012ba1c84ff24bdd068f9d2f9b26a130a6b33889946b183311c39cc1bd0656ae9" title="32-bit/single-precision floating point. ">dnnl_f32</a> data type;</li>
+<li>Quantized weights for convolution with <a class="el" href="group__dnnl__api__memory.html#gga012ba1c84ff24bdd068f9d2f9b26a130a9638cfbcb7d50834a608ffae644d76b4" title="8-bit signed integer. ">dnnl_s8</a> source data type cannot be dequantized back to the <a class="el" href="group__dnnl__api__memory.html#gga012ba1c84ff24bdd068f9d2f9b26a130a6b33889946b183311c39cc1bd0656ae9" title="32-bit/single-precision floating point. ">dnnl_f32</a> data type;</li>
 </ul>
 </li>
 <li>To alleviate the problem a user may rely on fact that the reorder from original plain memory format and user's data type to the <em>optimized</em> format with chosen data type should be always implemented.</li>
@@ -118,9 +118,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr>
 <th align="left">Attributes / Post-ops </th><th align="left">Meaning  </th></tr>
 <tr>
-<td align="left"><a class="el" href="group__c__api__attributes.html#gae3ff1fe9449f2d9b1cd02ad864b57057">Output scales</a> </td><td align="left">Copy and scale the data according to the scaling factors </td></tr>
+<td align="left"><a class="el" href="group__dnnl__api__attributes.html#gae3ff1fe9449f2d9b1cd02ad864b57057">Output scales</a> </td><td align="left">Copy and scale the data according to the scaling factors </td></tr>
 <tr>
-<td align="left"><a class="el" href="group__c__api__attributes__post__ops.html#ga7175edf83658bd14dd5d7cd9e9193e92">Sum post-op</a> </td><td align="left">Instead of copy the data accumulate it to the previous data </td></tr>
+<td align="left"><a class="el" href="group__dnnl__api__attributes.html#ga7175edf83658bd14dd5d7cd9e9193e92">Sum post-op</a> </td><td align="left">Instead of copy the data accumulate it to the previous data </td></tr>
 </table>
 <p>For instance, the following pseudo-code</p>
 <div class="fragment"><div class="line">reorder(</div>

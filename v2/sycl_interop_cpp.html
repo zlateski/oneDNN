@@ -64,7 +64,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -120,7 +120,7 @@ Engine and stream</h2>
 <div class="fragment"><div class="line">    <a class="code" href="structdnnl_1_1stream.html">dnnl::stream</a> strm(eng);</div>
 </div><!-- fragment --> <h2><a class="anchor" id="sycl_interop_cpp_sub2"></a>
 Wrapping data into DNNL memory object</h2>
-<p>Next, we create a memory object. We need to specify dimensions of our memory by passing a memory::dims object. Then we create a memory descriptor with these dimensions, with the <a class="el" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e" title="32-bit/single-precision floating point. ">dnnl::memory::data_type::f32</a> data type, and with the <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3faded7ac40158367123c5467281d44cbeb" title="4D CNN activations tensor, an alias for dnnl::memory::format_tag::abcd ">dnnl::memory::format_tag::nchw</a> memory format. Finally, we construct a memory object and pass the memory descriptor. The library allocates memory internally. </p>
+<p>Next, we create a memory object. We need to specify dimensions of our memory by passing a memory::dims object. Then we create a memory descriptor with these dimensions, with the <a class="el" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e" title="32-bit/single-precision floating point. ">dnnl::memory::data_type::f32</a> data type, and with the <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3faded7ac40158367123c5467281d44cbeb" title="4D CNN activations tensor; an alias for dnnl::memory::format_tag::abcd ">dnnl::memory::format_tag::nchw</a> memory format. Finally, we construct a memory object and pass the memory descriptor. The library allocates memory internally. </p>
 <div class="fragment"><div class="line">    memory::dims tz_dims = {2, 3, 4, 5};</div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">size_t</span> N = std::accumulate(tz_dims.begin(), tz_dims.end(), (size_t)1,</div>
 <div class="line">            std::multiplies&lt;size_t&gt;());</div>
@@ -156,7 +156,7 @@ Create and execute a primitive</h2>
 <div class="line">    <span class="keyword">auto</span> relu_pd = eltwise_forward::primitive_desc(relu_d, eng);</div>
 <div class="line">    <span class="keyword">auto</span> relu = eltwise_forward(relu_pd);</div>
 </div><!-- fragment --><p> Next, execute the primitive. </p>
-<div class="fragment"><div class="line">    relu.execute(strm, {{DNNL_ARG_SRC, mem}, {DNNL_ARG_DST, mem}});</div>
+<div class="fragment"><div class="line">    relu.execute(strm, {{<a class="code" href="group__dnnl__api__primitives__common.html#gac37ad67b48edeb9e742af0e50b70fe09">DNNL_ARG_SRC</a>, mem}, {<a class="code" href="group__dnnl__api__primitives__common.html#ga3ca217e4a06d42a0ede3c018383c388f">DNNL_ARG_DST</a>, mem}});</div>
 <div class="line">    strm.wait();</div>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>With DPC++ runtime, both CPU and GPU have asynchronous execution; However, the user can call <a class="el" href="structdnnl_1_1stream.html#a59985fa8746436057cf51a820ef8929c" title="Waits for all primitives executing in the stream to finish. ">dnnl::stream::wait()</a> to synchronize the stream and ensure that all previously submitted primitives are completed.</dd></dl>
 <h2><a class="anchor" id="sycl_interop_cpp_sub5"></a>
@@ -168,31 +168,35 @@ Validate the results</h2>
 <div class="line">        <span class="keywordflow">if</span> (host_acc[i] != (<span class="keywordtype">float</span>)exp_value)</div>
 <div class="line">            <span class="keywordflow">throw</span> std::string(</div>
 <div class="line">                    <span class="stringliteral">&quot;Unexpected output, find a negative value after the ReLU &quot;</span></div>
-<div class="line">                    <span class="stringliteral">&quot;execution&quot;</span>);</div>
+<div class="line">                    <span class="stringliteral">&quot;execution.&quot;</span>);</div>
 <div class="line">    }</div>
 </div><!-- fragment --> <h1><a class="anchor" id="sycl_interop_cpp_main"></a>
 main() function</h1>
 <p>We now just call everything we prepared earlier.</p>
-<p>Because we are using the DNNL C++ API, we use exceptions to handle errors (see <a class="el" href="dev_guide_c_and_cpp_apis.html">C and C++ APIs</a>). The DNNL C++ API throws exceptions of type <a class="el" href="structdnnl_1_1error.html">dnnl::error</a>, which contains the error status (of type <a class="el" href="group__c__api__types__generic.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a>) and a human-readable error message accessible through the regular <code>what()</code> method.</p>
+<p>Because we are using the DNNL C++ API, we use exceptions to handle errors (see <a class="el" href="dev_guide_c_and_cpp_apis.html">API</a>). The DNNL C++ API throws exceptions of type <a class="el" href="structdnnl_1_1error.html">dnnl::error</a>, which contains the error status (of type <a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a>) and a human-readable error message accessible through the regular <code>what()</code> method.</p>
 <div class="fragment"><div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv) {</div>
+<div class="line">    <span class="keywordtype">int</span> exit_code = 0;</div>
+<div class="line"></div>
+<div class="line">    engine::kind engine_kind = parse_engine_kind(argc, argv);</div>
 <div class="line">    <span class="keywordflow">try</span> {</div>
-<div class="line">        engine::kind engine_kind = parse_engine_kind(argc, argv);</div>
 <div class="line">        sycl_interop_tutorial(engine_kind);</div>
 <div class="line">    } <span class="keywordflow">catch</span> (<a class="code" href="structdnnl_1_1error.html">dnnl::error</a> &amp;e) {</div>
-<div class="line">        std::cerr &lt;&lt; <span class="stringliteral">&quot;DNNL error: &quot;</span> &lt;&lt; e.<a class="code" href="structdnnl_1_1error.html#adfc1a2bf4e31aa1751b38e8e1dbcba2b">what</a>() &lt;&lt; std::endl</div>
-<div class="line">                  &lt;&lt; <span class="stringliteral">&quot;Error status: &quot;</span> &lt;&lt; dnnl_status2str(e.status) &lt;&lt; std::endl;</div>
-<div class="line">        <span class="keywordflow">return</span> 1;</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;DNNL error caught: &quot;</span> &lt;&lt; std::endl</div>
+<div class="line">                  &lt;&lt; <span class="stringliteral">&quot;\tStatus: &quot;</span> &lt;&lt; dnnl_status2str(e.status) &lt;&lt; std::endl</div>
+<div class="line">                  &lt;&lt; <span class="stringliteral">&quot;\tMessage: &quot;</span> &lt;&lt; e.<a class="code" href="structdnnl_1_1error.html#adfc1a2bf4e31aa1751b38e8e1dbcba2b">what</a>() &lt;&lt; std::endl;</div>
+<div class="line">        exit_code = 1;</div>
 <div class="line">    } <span class="keywordflow">catch</span> (std::string &amp;e) {</div>
-<div class="line">        std::cerr &lt;&lt; <span class="stringliteral">&quot;Error in the example: &quot;</span> &lt;&lt; e &lt;&lt; std::endl;</div>
-<div class="line">        <span class="keywordflow">return</span> 2;</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;Error in the example: &quot;</span> &lt;&lt; e &lt;&lt; <span class="stringliteral">&quot;.&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">        exit_code = 2;</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Example passes&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Example &quot;</span> &lt;&lt; (exit_code ? <span class="stringliteral">&quot;failed&quot;</span> : <span class="stringliteral">&quot;passed&quot;</span>) &lt;&lt; <span class="stringliteral">&quot; on &quot;</span></div>
+<div class="line">              &lt;&lt; engine_kind2str_upper(engine_kind) &lt;&lt; <span class="stringliteral">&quot;.&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    <span class="keywordflow">return</span> exit_code;</div>
 <div class="line">}</div>
 </div><!-- fragment --><p> <b></b></p>
 <p>Upon compiling and running the example, the output should be just:</p>
-<div class="fragment"><div class="line">Example passes</div>
+<div class="fragment"><div class="line">Example passed.</div>
 </div><!-- fragment --> </div></div><!-- contents -->
 <div class="footer">
     <div class="footer-wrapper">

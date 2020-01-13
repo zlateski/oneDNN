@@ -72,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -83,7 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>dnnl</b></li><li class="navelem"><a class="el" href="structdnnl_1_1layer__normalization__forward.html">layer_normalization_forward</a></li><li class="navelem"><a class="el" href="structdnnl_1_1layer__normalization__forward_1_1desc.html">desc</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacednnl.html">dnnl</a></li><li class="navelem"><a class="el" href="structdnnl_1_1layer__normalization__forward.html">layer_normalization_forward</a></li><li class="navelem"><a class="el" href="structdnnl_1_1layer__normalization__forward_1_1desc.html">desc</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -109,11 +109,11 @@ Collaboration diagram for dnnl::layer_normalization_forward::desc:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a820147906b6e85315ffda07c48845eed"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1layer__normalization__forward_1_1desc.html#a820147906b6e85315ffda07c48845eed">desc</a> (<a class="el" href="group__cpp__api__enums.html#gac7db48f6583aa9903e54c2a39d65438f">prop_kind</a> <a class="el" href="group__cpp__api__enums.html#gac7db48f6583aa9903e54c2a39d65438f">prop_kind</a>, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;data_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;stat_desc, float epsilon, <a class="el" href="group__cpp__api__enums.html#gad8ef0fcbb7b10cae3d67dd46892002be">normalization_flags</a> flags)</td></tr>
-<tr class="memdesc:a820147906b6e85315ffda07c48845eed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a layer normalization descriptor for forward propagation using <code>prop_kind</code> (acceptable values are <a class="el" href="group__cpp__api__enums.html#ggac7db48f6583aa9903e54c2a39d65438fa24775787fab8f13aa4809e1ce8f82aeb" title="Forward data propagation (training mode). ">dnnl::forward_training</a> and <a class="el" href="group__cpp__api__enums.html#ggac7db48f6583aa9903e54c2a39d65438fa3b9fad4f80d45368f856b5403198ac4c" title="Forward data propagation (inference mode). ">dnnl::forward_inference</a>), data memory descriptor <code>data_desc</code>, statistics memory descriptor <code>stat_desc</code>, normalization parameter <code>epsilon</code>, and flags set using bit <code>flags</code>.  <a href="#a820147906b6e85315ffda07c48845eed">More...</a><br/></td></tr>
+<tr class="memitem:a820147906b6e85315ffda07c48845eed"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1layer__normalization__forward_1_1desc.html#a820147906b6e85315ffda07c48845eed">desc</a> (<a class="el" href="group__dnnl__api__attributes.html#gac7db48f6583aa9903e54c2a39d65438f">prop_kind</a> <a class="el" href="group__dnnl__api__attributes.html#gac7db48f6583aa9903e54c2a39d65438f">prop_kind</a>, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;data_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;stat_desc, float epsilon, <a class="el" href="group__dnnl__api__primitives__common.html#gad8ef0fcbb7b10cae3d67dd46892002be">normalization_flags</a> flags)</td></tr>
+<tr class="memdesc:a820147906b6e85315ffda07c48845eed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a descriptor for layer normalization forward propagation primitive.  <a href="#a820147906b6e85315ffda07c48845eed">More...</a><br/></td></tr>
 <tr class="separator:a820147906b6e85315ffda07c48845eed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a096e3357f6bec659da705912075ebd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1layer__normalization__forward_1_1desc.html#a5a096e3357f6bec659da705912075ebd">desc</a> (<a class="el" href="group__cpp__api__enums.html#gac7db48f6583aa9903e54c2a39d65438f">prop_kind</a> <a class="el" href="group__cpp__api__enums.html#gac7db48f6583aa9903e54c2a39d65438f">prop_kind</a>, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;data_desc, float epsilon, <a class="el" href="group__cpp__api__enums.html#gad8ef0fcbb7b10cae3d67dd46892002be">normalization_flags</a> flags)</td></tr>
-<tr class="memdesc:a5a096e3357f6bec659da705912075ebd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a layer normalization descriptor for forward propagation using <code>prop_kind</code> (acceptable values are <a class="el" href="group__cpp__api__enums.html#ggac7db48f6583aa9903e54c2a39d65438fa24775787fab8f13aa4809e1ce8f82aeb" title="Forward data propagation (training mode). ">dnnl::forward_training</a> and <a class="el" href="group__cpp__api__enums.html#ggac7db48f6583aa9903e54c2a39d65438fa3b9fad4f80d45368f856b5403198ac4c" title="Forward data propagation (inference mode). ">dnnl::forward_inference</a>), data memory descriptor <code>data_desc</code>, normalization parameter <code>epsilon</code>, and flags set using bit <code>flags</code>.  <a href="#a5a096e3357f6bec659da705912075ebd">More...</a><br/></td></tr>
+<tr class="memitem:a5a096e3357f6bec659da705912075ebd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1layer__normalization__forward_1_1desc.html#a5a096e3357f6bec659da705912075ebd">desc</a> (<a class="el" href="group__dnnl__api__attributes.html#gac7db48f6583aa9903e54c2a39d65438f">prop_kind</a> <a class="el" href="group__dnnl__api__attributes.html#gac7db48f6583aa9903e54c2a39d65438f">prop_kind</a>, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;data_desc, float epsilon, <a class="el" href="group__dnnl__api__primitives__common.html#gad8ef0fcbb7b10cae3d67dd46892002be">normalization_flags</a> flags)</td></tr>
+<tr class="memdesc:a5a096e3357f6bec659da705912075ebd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a descriptor for layer normalization forward propagation primitive.  <a href="#a5a096e3357f6bec659da705912075ebd">More...</a><br/></td></tr>
 <tr class="separator:a5a096e3357f6bec659da705912075ebd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -129,7 +129,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">dnnl::layer_normalization_forward::desc::desc </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__cpp__api__enums.html#gac7db48f6583aa9903e54c2a39d65438f">prop_kind</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__dnnl__api__attributes.html#gac7db48f6583aa9903e54c2a39d65438f">prop_kind</a>&#160;</td>
           <td class="paramname"><em>prop_kind</em>, </td>
         </tr>
         <tr>
@@ -153,7 +153,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__cpp__api__enums.html#gad8ef0fcbb7b10cae3d67dd46892002be">normalization_flags</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__dnnl__api__primitives__common.html#gad8ef0fcbb7b10cae3d67dd46892002be">normalization_flags</a>&#160;</td>
           <td class="paramname"><em>flags</em>&#160;</td>
         </tr>
         <tr>
@@ -169,7 +169,30 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Constructs a layer normalization descriptor for forward propagation using <code>prop_kind</code> (acceptable values are <a class="el" href="group__cpp__api__enums.html#ggac7db48f6583aa9903e54c2a39d65438fa24775787fab8f13aa4809e1ce8f82aeb" title="Forward data propagation (training mode). ">dnnl::forward_training</a> and <a class="el" href="group__cpp__api__enums.html#ggac7db48f6583aa9903e54c2a39d65438fa3b9fad4f80d45368f856b5403198ac4c" title="Forward data propagation (inference mode). ">dnnl::forward_inference</a>), data memory descriptor <code>data_desc</code>, statistics memory descriptor <code>stat_desc</code>, normalization parameter <code>epsilon</code>, and flags set using bit <code>flags</code>. </p>
+<p>Constructs a descriptor for layer normalization forward propagation primitive. </p>
+<p>Inputs:</p>
+<ul>
+<li>src (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a31ee74fc65986558ac11db590945811a" title="Returns a source memory descriptor. ">dnnl::primitive_desc_base::src_desc</a> (0))</li>
+<li>mean (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a31ee74fc65986558ac11db590945811a" title="Returns a source memory descriptor. ">dnnl::primitive_desc_base::src_desc</a> (1)), if <a class="el" href="group__dnnl__api__primitives__common.html#gga301f673522a400c7c1e75f518431c9a3aec04425c28af752c0f8b4dc5ae11fb19" title="Use global statistics. ">dnnl_use_global_stats</a> bit-flags is set in <code>flags</code> </li>
+<li>variance (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a31ee74fc65986558ac11db590945811a" title="Returns a source memory descriptor. ">dnnl::primitive_desc_base::src_desc</a> (2)), if <a class="el" href="group__dnnl__api__primitives__common.html#gga301f673522a400c7c1e75f518431c9a3aec04425c28af752c0f8b4dc5ae11fb19" title="Use global statistics. ">dnnl_use_global_stats</a> bit-flags is set in <code>flags</code> </li>
+<li>scale_and_shift (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a35b7fb7725959ab336db58dd05e14d20" title="Returns a weights memory descriptor. ">dnnl::primitive_desc_base::weights_desc</a> (0)), if <a class="el" href="group__dnnl__api__primitives__common.html#gga301f673522a400c7c1e75f518431c9a3aeba5189d91e23448d706fb027867ae55" title="Use scale and shift parameters. ">dnnl_use_scaleshift</a> bit-flags is set in <code>flags</code> </li>
+</ul>
+<p>Outputs:</p>
+<ul>
+<li>dst (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a0b724a92606a86a7ac9b6b9b07935529" title="Returns a destination memory descriptor. ">dnnl::primitive_desc_base::dst_desc</a> (0))</li>
+<li>mean (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a0b724a92606a86a7ac9b6b9b07935529" title="Returns a destination memory descriptor. ">dnnl::primitive_desc_base::dst_desc</a> (1)), if <a class="el" href="group__dnnl__api__primitives__common.html#gga301f673522a400c7c1e75f518431c9a3aec04425c28af752c0f8b4dc5ae11fb19" title="Use global statistics. ">dnnl_use_global_stats</a> bit-flags is not set in <code>flags</code> <code>prop_kind</code> = <a class="el" href="group__dnnl__api__primitives__common.html#ggae3c1f22ae55645782923fbfd8b07d0c4a992e03bebfe623ac876b3636333bbce0" title="Forward data propagation (training mode). ">dnnl_forward_training</a></li>
+<li>variance (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a0b724a92606a86a7ac9b6b9b07935529" title="Returns a destination memory descriptor. ">dnnl::primitive_desc_base::dst_desc</a> (2)), if <a class="el" href="group__dnnl__api__primitives__common.html#gga301f673522a400c7c1e75f518431c9a3aec04425c28af752c0f8b4dc5ae11fb19" title="Use global statistics. ">dnnl_use_global_stats</a> bit-flags is not set in <code>flags</code> and <code>prop_kind</code> = <a class="el" href="group__dnnl__api__primitives__common.html#ggae3c1f22ae55645782923fbfd8b07d0c4a992e03bebfe623ac876b3636333bbce0" title="Forward data propagation (training mode). ">dnnl_forward_training</a></li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">prop_kind</td><td>Propagation kind. Possible values are <a class="el" href="group__dnnl__api__attributes.html#ggac7db48f6583aa9903e54c2a39d65438fa24775787fab8f13aa4809e1ce8f82aeb" title="Forward data propagation (training mode). ">dnnl::prop_kind::forward_training</a>, and <a class="el" href="group__dnnl__api__attributes.html#ggac7db48f6583aa9903e54c2a39d65438fa3b9fad4f80d45368f856b5403198ac4c" title="Forward data propagation (inference mode). ">dnnl::prop_kind::forward_inference</a>. </td></tr>
+    <tr><td class="paramname">data_desc</td><td>Source and destination memory descriptor. </td></tr>
+    <tr><td class="paramname">stat_desc</td><td>Statistics memory descriptors. </td></tr>
+    <tr><td class="paramname">epsilon</td><td>Layer normalization epsilon parameter. </td></tr>
+    <tr><td class="paramname">flags</td><td>Layer normalization flags (<a class="el" href="group__dnnl__api__primitives__common.html#gad8ef0fcbb7b10cae3d67dd46892002be">dnnl::normalization_flags</a>). </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -183,7 +206,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">dnnl::layer_normalization_forward::desc::desc </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__cpp__api__enums.html#gac7db48f6583aa9903e54c2a39d65438f">prop_kind</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__dnnl__api__attributes.html#gac7db48f6583aa9903e54c2a39d65438f">prop_kind</a>&#160;</td>
           <td class="paramname"><em>prop_kind</em>, </td>
         </tr>
         <tr>
@@ -201,7 +224,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__cpp__api__enums.html#gad8ef0fcbb7b10cae3d67dd46892002be">normalization_flags</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__dnnl__api__primitives__common.html#gad8ef0fcbb7b10cae3d67dd46892002be">normalization_flags</a>&#160;</td>
           <td class="paramname"><em>flags</em>&#160;</td>
         </tr>
         <tr>
@@ -217,7 +240,29 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Constructs a layer normalization descriptor for forward propagation using <code>prop_kind</code> (acceptable values are <a class="el" href="group__cpp__api__enums.html#ggac7db48f6583aa9903e54c2a39d65438fa24775787fab8f13aa4809e1ce8f82aeb" title="Forward data propagation (training mode). ">dnnl::forward_training</a> and <a class="el" href="group__cpp__api__enums.html#ggac7db48f6583aa9903e54c2a39d65438fa3b9fad4f80d45368f856b5403198ac4c" title="Forward data propagation (inference mode). ">dnnl::forward_inference</a>), data memory descriptor <code>data_desc</code>, normalization parameter <code>epsilon</code>, and flags set using bit <code>flags</code>. </p>
+<p>Constructs a descriptor for layer normalization forward propagation primitive. </p>
+<p>Inputs:</p>
+<ul>
+<li>src (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a31ee74fc65986558ac11db590945811a" title="Returns a source memory descriptor. ">dnnl::primitive_desc_base::src_desc</a> (0))</li>
+<li>mean (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a31ee74fc65986558ac11db590945811a" title="Returns a source memory descriptor. ">dnnl::primitive_desc_base::src_desc</a> (1)), if <a class="el" href="group__dnnl__api__primitives__common.html#gga301f673522a400c7c1e75f518431c9a3aec04425c28af752c0f8b4dc5ae11fb19" title="Use global statistics. ">dnnl_use_global_stats</a> bit-flags is set in <code>flags</code> </li>
+<li>variance (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a31ee74fc65986558ac11db590945811a" title="Returns a source memory descriptor. ">dnnl::primitive_desc_base::src_desc</a> (2)), if <a class="el" href="group__dnnl__api__primitives__common.html#gga301f673522a400c7c1e75f518431c9a3aec04425c28af752c0f8b4dc5ae11fb19" title="Use global statistics. ">dnnl_use_global_stats</a> bit-flags is set in <code>flags</code> </li>
+<li>scale_and_shift (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a35b7fb7725959ab336db58dd05e14d20" title="Returns a weights memory descriptor. ">dnnl::primitive_desc_base::weights_desc</a> (0)), if <a class="el" href="group__dnnl__api__primitives__common.html#gga301f673522a400c7c1e75f518431c9a3aeba5189d91e23448d706fb027867ae55" title="Use scale and shift parameters. ">dnnl_use_scaleshift</a> bit-flags is set in <code>flags</code> </li>
+</ul>
+<p>Outputs:</p>
+<ul>
+<li>dst (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a0b724a92606a86a7ac9b6b9b07935529" title="Returns a destination memory descriptor. ">dnnl::primitive_desc_base::dst_desc</a> (0))</li>
+<li>mean (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a0b724a92606a86a7ac9b6b9b07935529" title="Returns a destination memory descriptor. ">dnnl::primitive_desc_base::dst_desc</a> (1)), if <a class="el" href="group__dnnl__api__primitives__common.html#gga301f673522a400c7c1e75f518431c9a3aec04425c28af752c0f8b4dc5ae11fb19" title="Use global statistics. ">dnnl_use_global_stats</a> bit-flags is not set in <code>flags</code> <code>prop_kind</code> = <a class="el" href="group__dnnl__api__primitives__common.html#ggae3c1f22ae55645782923fbfd8b07d0c4a992e03bebfe623ac876b3636333bbce0" title="Forward data propagation (training mode). ">dnnl_forward_training</a></li>
+<li>variance (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a0b724a92606a86a7ac9b6b9b07935529" title="Returns a destination memory descriptor. ">dnnl::primitive_desc_base::dst_desc</a> (2)), if <a class="el" href="group__dnnl__api__primitives__common.html#gga301f673522a400c7c1e75f518431c9a3aec04425c28af752c0f8b4dc5ae11fb19" title="Use global statistics. ">dnnl_use_global_stats</a> bit-flags is not set in <code>flags</code> and <code>prop_kind</code> = <a class="el" href="group__dnnl__api__primitives__common.html#ggae3c1f22ae55645782923fbfd8b07d0c4a992e03bebfe623ac876b3636333bbce0" title="Forward data propagation (training mode). ">dnnl_forward_training</a></li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">prop_kind</td><td>Propagation kind. Possible values are <a class="el" href="group__dnnl__api__attributes.html#ggac7db48f6583aa9903e54c2a39d65438fa24775787fab8f13aa4809e1ce8f82aeb" title="Forward data propagation (training mode). ">dnnl::prop_kind::forward_training</a>, and <a class="el" href="group__dnnl__api__attributes.html#ggac7db48f6583aa9903e54c2a39d65438fa3b9fad4f80d45368f856b5403198ac4c" title="Forward data propagation (inference mode). ">dnnl::prop_kind::forward_inference</a>. </td></tr>
+    <tr><td class="paramname">data_desc</td><td>Source and destination memory descriptor. </td></tr>
+    <tr><td class="paramname">epsilon</td><td>Layer normalization epsilon parameter. </td></tr>
+    <tr><td class="paramname">flags</td><td>Layer normalization flags (<a class="el" href="group__dnnl__api__primitives__common.html#gad8ef0fcbb7b10cae3d67dd46892002be">dnnl::normalization_flags</a>). </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

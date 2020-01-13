@@ -64,7 +64,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -86,7 +86,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr>
 <td align="left">DNNL_LIBRARY_TYPE </td><td align="left"><b>SHARED</b>, STATIC </td><td align="left">Defines the resulting library type </td></tr>
 <tr>
-<td align="left">DNNL_CPU_RUNTIME </td><td align="left"><b>OMP</b>, TBB, DPCPP </td><td align="left">Defines the threading runtime for CPU engines </td></tr>
+<td align="left">DNNL_CPU_RUNTIME </td><td align="left"><b>OMP</b>, TBB, DPCPP, SEQ </td><td align="left">Defines the threading runtime for CPU engines </td></tr>
 <tr>
 <td align="left">DNNL_GPU_RUNTIME </td><td align="left"><b>NONE</b>, OCL, DPCPP </td><td align="left">Defines the offload runtime for GPU engines </td></tr>
 <tr>
@@ -96,11 +96,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr>
 <td align="left">DNNL_ARCH_OPT_FLAGS </td><td align="left"><em>compiler flags</em> </td><td align="left">Specifies compiler optimization flags (see warning note below) </td></tr>
 <tr>
-<td align="left">DNNL_ENABLE_CONCURRENT_EXEC </td><td align="left">ON, <b>OFF</b> </td><td align="left">Disables sharing a common scratchpad between primitives in <a class="el" href="group__cpp__api__enums.html#ggac24d40ceea0256c7d6cc3a383a0fa07fad521f765a49c72507257a2620612ee96" title="The library manages the scratchpad allocation according to the policy specified by the DNNL_ENABLE_CO...">dnnl::scratchpad_mode::library</a> mode </td></tr>
+<td align="left">DNNL_ENABLE_CONCURRENT_EXEC </td><td align="left">ON, <b>OFF</b> </td><td align="left">Disables sharing a common scratchpad between primitives in <a class="el" href="group__dnnl__api__attributes.html#ggac24d40ceea0256c7d6cc3a383a0fa07fad521f765a49c72507257a2620612ee96" title="The library manages the scratchpad allocation according to the policy specified by the DNNL_ENABLE_CO...">dnnl::scratchpad_mode::library</a> mode </td></tr>
 <tr>
 <td align="left">DNNL_ENABLE_JIT_PROFILING </td><td align="left"><b>ON</b>, OFF </td><td align="left">Enables integration with Intel(R) VTune(TM) Amplifier </td></tr>
 <tr>
 <td align="left">DNNL_ENABLE_PRIMITIVE_CACHE </td><td align="left">ON, <b>OFF</b> </td><td align="left">Enables primitive cache </td></tr>
+<tr>
+<td align="left">DNNL_ENABLE_MAX_CPU_ISA </td><td align="left"><b>ON</b>, OFF </td><td align="left">Enables controlling CPU dispatcher at run-time </td></tr>
 </table>
 <p>All other building options that can be found in CMake files are dedicated for the development/debug purposes and are subject to change without any notice. Please avoid using them.</p>
 <h2>Common options</h2>
@@ -114,18 +116,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>For Intel(R) C++ Compilers, the default option is <code>-xSSE4.1</code>, which instructs the compiler to generate the code for the processors that support SSE4.1 instructions. This option would not allow you to run the library on older processor architectures.</p>
 <p>For GNU* Compilers and Clang, the default option is <code>-msse4.1</code>.</p>
 <dl class="section warning"><dt>Warning</dt><dd>While use of <code>DNNL_ARCH_OPT_FLAGS</code> option gives better performance, the resulting library can be run only on systems that have instruction set compatible with the target instruction set. Therefore, <code>ARCH_OPT_FLAGS</code> should be set to an empty string (<code>""</code>) if the resulting library needs to be portable.</dd></dl>
+<h3>Runtime CPU dispatcher control</h3>
+<p>DNNL JIT relies on ISA features obtained from the processor it is being run on. There are situations when it is necessary to control this behavior at run-time to, for example, test SSE4.1 code on an AVX2-capable processor. The <code>DNNL_ENABLE_MAX_CPU_ISA</code> build option controls the availability of this feature. See <a class="el" href="dev_guide_cpu_dispatcher_control.html">CPU dispatcher control</a> for more information.</p>
 <h3>Runtimes</h3>
-<p>CPU engine can use OpenMP or TBB threading runtime. OpenMP threading is the default build mode. This behavior is controlled by the <code>DNNL_CPU_RUNTIME</code> CMake option.</p>
+<p>CPU engine can use OpenMP, TBB or sequential threading runtimes. OpenMP threading is the default build mode. This behavior is controlled by the <code>DNNL_CPU_RUNTIME</code> CMake option.</p>
 <h4>OpenMP</h4>
 <p>DNNL uses OpenMP runtime library provided by the compiler.</p>
 <dl class="section warning"><dt>Warning</dt><dd>Because different OpenMP runtimes may not be binary-compatible, it's important to ensure that only one OpenMP runtime is used throughout the application. Having more than one OpenMP runtime linked to an executable may lead to undefined behavior including incorrect results or crashes. However as long as both the library and the application use the same or compatible compilers there would be no conflicts.</dd></dl>
 <h4>TBB</h4>
-<p>To build DNNL with TBB support, set the <code>TBBROOT</code> environmental variable to point to the TBB installation path or pass the path directly to cmake:</p>
+<p>To build DNNL with TBB support, set <code>DNNL_CPU_RUNTIME</code> to <code>TBB</code>:</p>
+<div class="fragment"><div class="line">$ cmake -DDNNL_CPU_RUNTIME=TBB ..</div>
+</div><!-- fragment --><p>Optionally, set the <code>TBBROOT</code> environmental variable to point to the TBB installation path or pass the path directly to CMake:</p>
 <div class="fragment"><div class="line">$ cmake -DDNNL_CPU_RUNTIME=TBB -DTBBROOT=/opt/intel/path/tbb ..</div>
 </div><!-- fragment --><p>DNNL has limited optimizations for Intel TBB and has some functional limitations if built with Intel TBB.</p>
 <p>Functional limitations:</p>
 <ul>
-<li>Winograd convolution algorithm is not supported for fp32 backward by data and backward by weights propogation.</li>
+<li>Winograd convolution algorithm is not supported for fp32 backward by data and backward by weights propagation.</li>
 </ul>
 <h2>GPU Options</h2>
 <p>Intel Processor Graphics is supported by DNNLs GPU engine. GPU engine is disabled in the default build configuration.</p>
@@ -134,14 +140,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h4>OpenCL*</h4>
 <p>OpenCL runtime requires Intel(R) SDK for OpenCL* applications. You can explicitly specify the path to the SDK using <code>-DOPENCLROOT</code> CMake option.</p>
 <div class="fragment"><div class="line">cmake -DDNNL_GPU_RUNTIME=OCL -DOPENCLROOT=/path/to/opencl/sdk ..</div>
-</div><!-- fragment --><h2>DPC++ (experimental)</h2>
-<p>DPC++ runtime requires the DPC++ compiler. You can explicitly specify the path to the DPC++ installation using <code>-DDPCPPROOT</code> CMake option.</p>
-<p>Intel DNNL has a limitation for DPC++ runtime, which makes primitive submission into stream not thread-safe. This issue can be workarounded by using a separate stream per thread.</p>
-<p>You need to set C and C++ compilers to point to the DPC++ compilers.</p>
-<div class="fragment"><div class="line">export CC=path/to/c/dpcpp/compiler</div>
-<div class="line">export CXX=path/to/cpp/dpcpp/compiler</div>
-<div class="line"></div>
-<div class="line">cmake -DDNNL_CPU_RUNTIME=DPCPP -DDNNL_GPU_RUNTIME=DPCPP -DDPCPPROOT=/path/to/dpcpp ..</div>
 </div><!-- fragment --> </div></div><!-- contents -->
 <div class="footer">
     <div class="footer-wrapper">

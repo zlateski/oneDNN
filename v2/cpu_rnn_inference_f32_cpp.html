@@ -64,7 +64,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -118,18 +118,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Create the memory for user data </p>
 <div class="fragment"><div class="line">    <span class="keyword">auto</span> user_enc_bidir_src_layer_md = <a class="code" href="structdnnl_1_1memory_1_1desc.html">dnnl::memory::desc</a>(</div>
 <div class="line">            {enc_bidir_src_layer_tz}, <a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e">dnnl::memory::data_type::f32</a>,</div>
-<div class="line">            dnnl::memory::format_tag::tnc);</div>
+<div class="line">            <a class="code" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fac775cf954921a129a65eb929476de911">dnnl::memory::format_tag::tnc</a>);</div>
 <div class="line"></div>
 <div class="line">    <span class="keyword">auto</span> user_enc_bidir_wei_layer_md = <a class="code" href="structdnnl_1_1memory_1_1desc.html">dnnl::memory::desc</a>(</div>
 <div class="line">            {enc_bidir_weights_layer_tz}, <a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e">dnnl::memory::data_type::f32</a>,</div>
-<div class="line">            dnnl::memory::format_tag::ldigo);</div>
+<div class="line">            <a class="code" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa4e62e330c56963f9ead98490cd57ef7b">dnnl::memory::format_tag::ldigo</a>);</div>
 <div class="line"></div>
 <div class="line">    <span class="keyword">auto</span> user_enc_bidir_wei_iter_md = <a class="code" href="structdnnl_1_1memory_1_1desc.html">dnnl::memory::desc</a>(</div>
 <div class="line">            {enc_bidir_weights_iter_tz}, <a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e">dnnl::memory::data_type::f32</a>,</div>
-<div class="line">            dnnl::memory::format_tag::ldigo);</div>
+<div class="line">            <a class="code" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa4e62e330c56963f9ead98490cd57ef7b">dnnl::memory::format_tag::ldigo</a>);</div>
 <div class="line"></div>
 <div class="line">    <span class="keyword">auto</span> user_enc_bidir_bias_md = <a class="code" href="structdnnl_1_1memory_1_1desc.html">dnnl::memory::desc</a>({enc_bidir_bias_tz},</div>
-<div class="line">            <a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e">dnnl::memory::data_type::f32</a>, dnnl::memory::format_tag::ldgo);</div>
+<div class="line">            <a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e">dnnl::memory::data_type::f32</a>, <a class="code" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fab8690cd92ccee6a0ad55faccc0346aab">dnnl::memory::format_tag::ldgo</a>);</div>
 <div class="line"></div>
 <div class="line">    <span class="keyword">auto</span> user_enc_bidir_src_layer_memory = <a class="code" href="structdnnl_1_1memory.html">dnnl::memory</a>(</div>
 <div class="line">            user_enc_bidir_src_layer_md, cpu_engine, net_src.data());</div>
@@ -173,11 +173,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --><p>Encoder : add the bidirectional rnn primitive with related arguments into encoder_net </p>
 <div class="fragment"><div class="line">    encoder_net.push_back(lstm_forward(enc_bidir_prim_desc));</div>
 <div class="line">    encoder_net_args.push_back(</div>
-<div class="line">            {{DNNL_ARG_SRC_LAYER, user_enc_bidir_src_layer_memory},</div>
-<div class="line">                    {DNNL_ARG_WEIGHTS_LAYER, enc_bidir_wei_layer_memory},</div>
-<div class="line">                    {DNNL_ARG_WEIGHTS_ITER, enc_bidir_wei_iter_memory},</div>
-<div class="line">                    {DNNL_ARG_BIAS, user_enc_bidir_bias_memory},</div>
-<div class="line">                    {DNNL_ARG_DST_LAYER, enc_bidir_dst_layer_memory}});</div>
+<div class="line">            {{<a class="code" href="group__dnnl__api__primitives__common.html#gab91ce4d04cf4e98e3a407daa0676764f">DNNL_ARG_SRC_LAYER</a>, user_enc_bidir_src_layer_memory},</div>
+<div class="line">                    {<a class="code" href="group__dnnl__api__primitives__common.html#ga1ac9e1f1327be3902b488b64bae1b4c5">DNNL_ARG_WEIGHTS_LAYER</a>, enc_bidir_wei_layer_memory},</div>
+<div class="line">                    {<a class="code" href="group__dnnl__api__primitives__common.html#ga5a9c39486c01ad263e29677a32735af8">DNNL_ARG_WEIGHTS_ITER</a>, enc_bidir_wei_iter_memory},</div>
+<div class="line">                    {<a class="code" href="group__dnnl__api__primitives__common.html#gad0cbc09942aba93fbe3c0c2e09166f0d">DNNL_ARG_BIAS</a>, user_enc_bidir_bias_memory},</div>
+<div class="line">                    {<a class="code" href="group__dnnl__api__primitives__common.html#gacfc123a6a4ff3b4af4cd27ed66fb8528">DNNL_ARG_DST_LAYER</a>, enc_bidir_dst_layer_memory}});</div>
 </div><!-- fragment --><p>Encoder: unidirectional layers</p>
 <p>First unidirectinal layer scales 2 * feature_size output of bidirectional layer to feature_size output </p>
 <div class="fragment"><div class="line">    std::vector&lt;float&gt; user_enc_uni_first_wei_layer(</div>
@@ -200,11 +200,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="fragment"><div class="line">    <span class="comment">// TODO: add a reorder when they will be available</span></div>
 <div class="line">    encoder_net.push_back(lstm_forward(enc_uni_first_prim_desc));</div>
 <div class="line">    encoder_net_args.push_back(</div>
-<div class="line">            {{DNNL_ARG_SRC_LAYER, enc_bidir_dst_layer_memory},</div>
-<div class="line">                    {DNNL_ARG_WEIGHTS_LAYER, enc_uni_first_wei_layer_memory},</div>
-<div class="line">                    {DNNL_ARG_WEIGHTS_ITER, enc_uni_first_wei_iter_memory},</div>
-<div class="line">                    {DNNL_ARG_BIAS, user_enc_uni_first_bias_memory},</div>
-<div class="line">                    {DNNL_ARG_DST_LAYER, enc_uni_first_dst_layer_memory}});</div>
+<div class="line">            {{<a class="code" href="group__dnnl__api__primitives__common.html#gab91ce4d04cf4e98e3a407daa0676764f">DNNL_ARG_SRC_LAYER</a>, enc_bidir_dst_layer_memory},</div>
+<div class="line">                    {<a class="code" href="group__dnnl__api__primitives__common.html#ga1ac9e1f1327be3902b488b64bae1b4c5">DNNL_ARG_WEIGHTS_LAYER</a>, enc_uni_first_wei_layer_memory},</div>
+<div class="line">                    {<a class="code" href="group__dnnl__api__primitives__common.html#ga5a9c39486c01ad263e29677a32735af8">DNNL_ARG_WEIGHTS_ITER</a>, enc_uni_first_wei_iter_memory},</div>
+<div class="line">                    {<a class="code" href="group__dnnl__api__primitives__common.html#gad0cbc09942aba93fbe3c0c2e09166f0d">DNNL_ARG_BIAS</a>, user_enc_uni_first_bias_memory},</div>
+<div class="line">                    {<a class="code" href="group__dnnl__api__primitives__common.html#gacfc123a6a4ff3b4af4cd27ed66fb8528">DNNL_ARG_DST_LAYER</a>, enc_uni_first_dst_layer_memory}});</div>
 </div><!-- fragment --><p>Encoder : Remaining unidirectional layers </p>
 <div class="fragment"><div class="line">    std::vector&lt;float&gt; user_enc_uni_wei_layer((enc_unidir_n_layers - 1) * 1</div>
 <div class="line">                    * feature_size * lstm_n_gates * feature_size,</div>
@@ -225,11 +225,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --><p>Encoder : add the unidirectional rnn primitive with related arguments into encoder_net </p>
 <div class="fragment"><div class="line">    encoder_net.push_back(lstm_forward(enc_uni_prim_desc));</div>
 <div class="line">    encoder_net_args.push_back(</div>
-<div class="line">            {{DNNL_ARG_SRC_LAYER, enc_uni_first_dst_layer_memory},</div>
-<div class="line">                    {DNNL_ARG_WEIGHTS_LAYER, enc_uni_wei_layer_memory},</div>
-<div class="line">                    {DNNL_ARG_WEIGHTS_ITER, enc_uni_wei_iter_memory},</div>
-<div class="line">                    {DNNL_ARG_BIAS, user_enc_uni_bias_memory},</div>
-<div class="line">                    {DNNL_ARG_DST_LAYER, enc_dst_layer_memory}});</div>
+<div class="line">            {{<a class="code" href="group__dnnl__api__primitives__common.html#gab91ce4d04cf4e98e3a407daa0676764f">DNNL_ARG_SRC_LAYER</a>, enc_uni_first_dst_layer_memory},</div>
+<div class="line">                    {<a class="code" href="group__dnnl__api__primitives__common.html#ga1ac9e1f1327be3902b488b64bae1b4c5">DNNL_ARG_WEIGHTS_LAYER</a>, enc_uni_wei_layer_memory},</div>
+<div class="line">                    {<a class="code" href="group__dnnl__api__primitives__common.html#ga5a9c39486c01ad263e29677a32735af8">DNNL_ARG_WEIGHTS_ITER</a>, enc_uni_wei_iter_memory},</div>
+<div class="line">                    {<a class="code" href="group__dnnl__api__primitives__common.html#gad0cbc09942aba93fbe3c0c2e09166f0d">DNNL_ARG_BIAS</a>, user_enc_uni_bias_memory},</div>
+<div class="line">                    {<a class="code" href="group__dnnl__api__primitives__common.html#gacfc123a6a4ff3b4af4cd27ed66fb8528">DNNL_ARG_DST_LAYER</a>, enc_dst_layer_memory}});</div>
 </div><!-- fragment --><p><b>Decoder with attention mechanism</b></p>
 <p>Decoder : declare memory dimensions </p>
 <div class="fragment"><div class="line">    std::vector&lt;float&gt; user_dec_wei_layer(</div>
@@ -266,19 +266,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">            = {dec_n_layers, 1, batch, feature_size};</div>
 </div><!-- fragment --><p>Decoder : create memory description </p>
 <div class="fragment"><div class="line">    <span class="keyword">auto</span> user_dec_wei_layer_md = <a class="code" href="structdnnl_1_1memory_1_1desc.html">dnnl::memory::desc</a>({user_dec_wei_layer_dims},</div>
-<div class="line">            <a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e">dnnl::memory::data_type::f32</a>, dnnl::memory::format_tag::ldigo);</div>
+<div class="line">            <a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e">dnnl::memory::data_type::f32</a>, <a class="code" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa4e62e330c56963f9ead98490cd57ef7b">dnnl::memory::format_tag::ldigo</a>);</div>
 <div class="line">    <span class="keyword">auto</span> user_dec_wei_iter_md = <a class="code" href="structdnnl_1_1memory_1_1desc.html">dnnl::memory::desc</a>({user_dec_wei_iter_dims},</div>
-<div class="line">            <a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e">dnnl::memory::data_type::f32</a>, dnnl::memory::format_tag::ldigo);</div>
+<div class="line">            <a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e">dnnl::memory::data_type::f32</a>, <a class="code" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa4e62e330c56963f9ead98490cd57ef7b">dnnl::memory::format_tag::ldigo</a>);</div>
 <div class="line">    <span class="keyword">auto</span> user_dec_bias_md = <a class="code" href="structdnnl_1_1memory_1_1desc.html">dnnl::memory::desc</a>({user_dec_bias_dims},</div>
-<div class="line">            <a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e">dnnl::memory::data_type::f32</a>, dnnl::memory::format_tag::ldgo);</div>
+<div class="line">            <a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e">dnnl::memory::data_type::f32</a>, <a class="code" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fab8690cd92ccee6a0ad55faccc0346aab">dnnl::memory::format_tag::ldgo</a>);</div>
 <div class="line">    <span class="keyword">auto</span> dec_dst_layer_md = <a class="code" href="structdnnl_1_1memory_1_1desc.html">dnnl::memory::desc</a>({dec_dst_layer_dims},</div>
-<div class="line">            <a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e">dnnl::memory::data_type::f32</a>, dnnl::memory::format_tag::tnc);</div>
+<div class="line">            <a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e">dnnl::memory::data_type::f32</a>, <a class="code" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fac775cf954921a129a65eb929476de911">dnnl::memory::format_tag::tnc</a>);</div>
 <div class="line">    <span class="keyword">auto</span> dec_src_layer_md = <a class="code" href="structdnnl_1_1memory_1_1desc.html">dnnl::memory::desc</a>({dec_src_layer_dims},</div>
-<div class="line">            <a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e">dnnl::memory::data_type::f32</a>, dnnl::memory::format_tag::tnc);</div>
+<div class="line">            <a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e">dnnl::memory::data_type::f32</a>, <a class="code" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fac775cf954921a129a65eb929476de911">dnnl::memory::format_tag::tnc</a>);</div>
 <div class="line">    <span class="keyword">auto</span> dec_dst_iter_md = <a class="code" href="structdnnl_1_1memory_1_1desc.html">dnnl::memory::desc</a>({dec_dst_iter_dims},</div>
-<div class="line">            <a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e">dnnl::memory::data_type::f32</a>, dnnl::memory::format_tag::ldnc);</div>
+<div class="line">            <a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e">dnnl::memory::data_type::f32</a>, <a class="code" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fab49be97ff353a86d84d06d98f846b61d">dnnl::memory::format_tag::ldnc</a>);</div>
 <div class="line">    <span class="keyword">auto</span> dec_dst_iter_c_md = <a class="code" href="structdnnl_1_1memory_1_1desc.html">dnnl::memory::desc</a>({dec_dst_iter_c_dims},</div>
-<div class="line">            <a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e">dnnl::memory::data_type::f32</a>, dnnl::memory::format_tag::ldnc);</div>
+<div class="line">            <a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e">dnnl::memory::data_type::f32</a>, <a class="code" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fab49be97ff353a86d84d06d98f846b61d">dnnl::memory::format_tag::ldnc</a>);</div>
 </div><!-- fragment --><p>Decoder : Create memory </p>
 <div class="fragment"><div class="line">    <span class="keyword">auto</span> user_dec_wei_layer_memory = <a class="code" href="structdnnl_1_1memory.html">dnnl::memory</a>(</div>
 <div class="line">            user_dec_wei_layer_md, cpu_engine, user_dec_wei_layer.data());</div>
@@ -292,7 +292,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="keyword">auto</span> dec_dst_iter_c_memory = <a class="code" href="structdnnl_1_1memory.html">dnnl::memory</a>(dec_dst_iter_c_md, cpu_engine);</div>
 </div><!-- fragment --><p>Decoder : As mentioned above, we create a view without context out of the memory with context. </p>
 <div class="fragment"><div class="line">    <span class="keyword">auto</span> dec_dst_iter_memory = <a class="code" href="structdnnl_1_1memory.html">dnnl::memory</a>(dec_dst_iter_md, cpu_engine);</div>
-<div class="line">    <span class="keyword">auto</span> dec_dst_iter_noctx_md = dec_dst_iter_md.<a class="code" href="structdnnl_1_1memory_1_1desc.html#a79ed6858e4b6e0aae4a815a1f54658d4">submemory_desc</a>(</div>
+<div class="line">    <span class="keyword">auto</span> dec_dst_iter_noctx_md = dec_dst_iter_md.<a class="code" href="structdnnl_1_1memory_1_1desc.html#ab51c30ca2e2ce806821871a4dbded3a2">submemory_desc</a>(</div>
 <div class="line">            dec_dst_iter_noctx_dims, {0, 0, 0, 0, 0});</div>
 </div><!-- fragment --><p>Decoder : Create RNN decoder cell </p>
 <div class="fragment"><div class="line">    lstm_forward::desc dec_ctx_desc(prop_kind::forward_inference,</div>
@@ -319,15 +319,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --><p>Decoder : add the rnn primitive with related arguments into decoder_net </p>
 <div class="fragment"><div class="line">    <span class="comment">// TODO: add a reorder when they will be available</span></div>
 <div class="line">    decoder_net.push_back(lstm_forward(dec_ctx_prim_desc));</div>
-<div class="line">    decoder_net_args.push_back({{DNNL_ARG_SRC_LAYER, dec_src_layer_memory},</div>
-<div class="line">            {DNNL_ARG_SRC_ITER, dec_dst_iter_memory},</div>
-<div class="line">            {DNNL_ARG_SRC_ITER_C, dec_dst_iter_c_memory},</div>
-<div class="line">            {DNNL_ARG_WEIGHTS_LAYER, dec_wei_layer_memory},</div>
-<div class="line">            {DNNL_ARG_WEIGHTS_ITER, dec_wei_iter_memory},</div>
-<div class="line">            {DNNL_ARG_BIAS, user_dec_bias_memory},</div>
-<div class="line">            {DNNL_ARG_DST_LAYER, user_dec_dst_layer_memory},</div>
-<div class="line">            {DNNL_ARG_DST_ITER, dec_dst_iter_memory},</div>
-<div class="line">            {DNNL_ARG_DST_ITER_C, dec_dst_iter_c_memory}});</div>
+<div class="line">    decoder_net_args.push_back({{<a class="code" href="group__dnnl__api__primitives__common.html#gab91ce4d04cf4e98e3a407daa0676764f">DNNL_ARG_SRC_LAYER</a>, dec_src_layer_memory},</div>
+<div class="line">            {<a class="code" href="group__dnnl__api__primitives__common.html#gaf35f4f604284f1b00bb35bffd0f7a143">DNNL_ARG_SRC_ITER</a>, dec_dst_iter_memory},</div>
+<div class="line">            {<a class="code" href="group__dnnl__api__primitives__common.html#ga8ef6969516e717208a33766542410410">DNNL_ARG_SRC_ITER_C</a>, dec_dst_iter_c_memory},</div>
+<div class="line">            {<a class="code" href="group__dnnl__api__primitives__common.html#ga1ac9e1f1327be3902b488b64bae1b4c5">DNNL_ARG_WEIGHTS_LAYER</a>, dec_wei_layer_memory},</div>
+<div class="line">            {<a class="code" href="group__dnnl__api__primitives__common.html#ga5a9c39486c01ad263e29677a32735af8">DNNL_ARG_WEIGHTS_ITER</a>, dec_wei_iter_memory},</div>
+<div class="line">            {<a class="code" href="group__dnnl__api__primitives__common.html#gad0cbc09942aba93fbe3c0c2e09166f0d">DNNL_ARG_BIAS</a>, user_dec_bias_memory},</div>
+<div class="line">            {<a class="code" href="group__dnnl__api__primitives__common.html#gacfc123a6a4ff3b4af4cd27ed66fb8528">DNNL_ARG_DST_LAYER</a>, user_dec_dst_layer_memory},</div>
+<div class="line">            {<a class="code" href="group__dnnl__api__primitives__common.html#ga13b91cbd3f531d9c90227895a275d5a6">DNNL_ARG_DST_ITER</a>, dec_dst_iter_memory},</div>
+<div class="line">            {<a class="code" href="group__dnnl__api__primitives__common.html#ga8b77d8716fc0ab9923d6cb409dbdf900">DNNL_ARG_DST_ITER_C</a>, dec_dst_iter_c_memory}});</div>
 </div><!-- fragment --><p><b>Execution</b></p>
 <p>run encoder (1 stream) </p>
 <div class="fragment"><div class="line">        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> p = 0; p &lt; encoder_net.size(); ++p)</div>

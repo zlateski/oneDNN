@@ -64,7 +64,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -157,7 +157,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>The library uses <a class="el" href="dev_guide_attributes.html">Primitive Attributes</a> API for setting the scaling factors for most of the primitives. The supporting attributes can be found in the documentation for each primitive. The unsupported cases are handled according to the <a class="el" href="dev_guide_attributes.html#dev_guide_attributes_error_handling">attributes error handling section</a>.</p>
 <p>API:</p>
 <ul>
-<li>C: <a class="el" href="group__c__api__attributes.html#gae3ff1fe9449f2d9b1cd02ad864b57057">dnnl_primitive_attr_set_output_scales</a></li>
+<li>C: <a class="el" href="group__dnnl__api__attributes.html#gae3ff1fe9449f2d9b1cd02ad864b57057">dnnl_primitive_attr_set_output_scales</a></li>
 <li>C++: <a class="el" href="structdnnl_1_1primitive__attr.html#a4b81acc8e48886313154f75c1708ae02">dnnl::primitive_attr::set_output_scales</a></li>
 </ul>
 <p>The primitives do not support output scales if source (and weights) tensors are of the int8 data type. In other words, regular <code>f32</code> convolution cannot scale the output result.</p>
@@ -192,7 +192,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a class="code" href="structdnnl_1_1memory_1_1desc.html">dnnl::memory::desc</a> wei_user_f32_md(</div>
 <div class="line">        {G, OC/G, IC/G, KH, KW},            <span class="comment">// dims</span></div>
 <div class="line">        <a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e">dnnl::memory::data_type::f32</a>,     <span class="comment">// the data originally in f32</span></div>
-<div class="line">        dnnl::memory::format_tag::hwigo   <span class="comment">// the memory format a user uses</span></div>
+<div class="line">        <a class="code" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fafd710c828421b3c91725b0e5aa53ecc6">dnnl::memory::format_tag::hwigo</a>   <span class="comment">// the memory format a user uses</span></div>
 <div class="line">        );</div>
 <div class="line"></div>
 <div class="line"><span class="comment">// the scaling factors for quantized weights</span></div>
@@ -260,8 +260,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line"><span class="comment">// Create a convolution operation descriptor</span></div>
 <div class="line"><a class="code" href="structdnnl_1_1convolution__forward_1_1desc.html">dnnl::convolution_forward::desc</a> conv_d(</div>
-<div class="line">        <a class="code" href="group__cpp__api__enums.html#ggac7db48f6583aa9903e54c2a39d65438fa3b9fad4f80d45368f856b5403198ac4c">dnnl::prop_kind::forward_inference</a>,</div>
-<div class="line">        <a class="code" href="group__cpp__api__enums.html#gga00377dd4982333e42e8ae1d09a309640a5028ad8f818a45333a8a0eefad35c5c0">dnnl::algorithm::convolution_direct</a>,</div>
+<div class="line">        <a class="code" href="group__dnnl__api__attributes.html#ggac7db48f6583aa9903e54c2a39d65438fa3b9fad4f80d45368f856b5403198ac4c">dnnl::prop_kind::forward_inference</a>,</div>
+<div class="line">        <a class="code" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640a5028ad8f818a45333a8a0eefad35c5c0">dnnl::algorithm::convolution_direct</a>,</div>
 <div class="line">        src_conv_s8_any_md,                     <span class="comment">// what&#39;s important is that</span></div>
 <div class="line">        wei_conv_s8_any_md,                     <span class="comment">// we specified that we want</span></div>
 <div class="line">        dst_conv_s8_any_md,                     <span class="comment">// computations in s8</span></div>

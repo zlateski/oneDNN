@@ -72,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -87,7 +87,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="structdnnl__version__t-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">dnnl_version_t Struct Reference<div class="ingroups"><a class="el" href="group__c__api__types__service.html">Service</a></div></div>  </div>
+<div class="title">dnnl_version_t Struct Reference<div class="ingroups"><a class="el" href="group__dnnl__api__service.html">Service</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -114,6 +114,14 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struc
 const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl__version__t.html#a1c2a7e8b3f26ed376b537dd511feccad">hash</a></td></tr>
 <tr class="memdesc:a1c2a7e8b3f26ed376b537dd511feccad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Git hash of the sources (may be absent) <br/></td></tr>
 <tr class="separator:a1c2a7e8b3f26ed376b537dd511feccad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d0bade7e7ab7ff25d68f9011a3978e2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2d0bade7e7ab7ff25d68f9011a3978e2"></a>
+unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl__version__t.html#a2d0bade7e7ab7ff25d68f9011a3978e2">cpu_runtime</a></td></tr>
+<tr class="memdesc:a2d0bade7e7ab7ff25d68f9011a3978e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">CPU runtime. <br/></td></tr>
+<tr class="separator:a2d0bade7e7ab7ff25d68f9011a3978e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac15e5566f96a65b2c97903c787f129ac"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac15e5566f96a65b2c97903c787f129ac"></a>
+unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl__version__t.html#ac15e5566f96a65b2c97903c787f129ac">gpu_runtime</a></td></tr>
+<tr class="memdesc:ac15e5566f96a65b2c97903c787f129ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPU runtime. <br/></td></tr>
+<tr class="separator:ac15e5566f96a65b2c97903c787f129ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Structure containing version information as per <a href="https://semver.org">Semantic Versioning</a> </p>
