@@ -11,6 +11,7 @@ var searchData=
   ['eltwise_5flinear',['eltwise_linear',['../group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640a21aba6844d2de47b92ab1d110f561945',1,'dnnl']]],
   ['eltwise_5flog',['eltwise_log',['../group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640af2a460e3ec273e904c6f6b39baa5e477',1,'dnnl']]],
   ['eltwise_5flogistic',['eltwise_logistic',['../group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640a282836cce833348ee509b0ecd764d217',1,'dnnl']]],
+  ['eltwise_5fpow',['eltwise_pow',['../group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640a30977b2a33c3a2bd6a5d71a352fa4bcc',1,'dnnl']]],
   ['eltwise_5frelu',['eltwise_relu',['../group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640aba09bebb742494255b90b43871c01c69',1,'dnnl']]],
   ['eltwise_5fsoft_5frelu',['eltwise_soft_relu',['../group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640a23175afeee905a4de38e5a24b46cb6e2',1,'dnnl']]],
   ['eltwise_5fsqrt',['eltwise_sqrt',['../group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640a83b978b280304349860c7cdc3519865f',1,'dnnl']]],

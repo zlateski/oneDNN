@@ -88,7 +88,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p class="formulaDsp">
 \[ dst(\overline{x}) = src0(\overline{x}) \mathbin{op} src1(\overline{x}), \]
 </p>
-<p>where \(op\) is addition or multiplication.</p>
+<p>where \(op\) is addition, multiplication, get maximum value or get minimum value.</p>
 <p>The binary primitive does not have a notion of forward or backward propagations.</p>
 <h2>Implementation Details</h2>
 <h3>General Notes</h3>
@@ -106,6 +106,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <th align="left">Type </th><th align="left">Operation </th><th align="left">Restrictions </th><th align="left">Description  </th></tr>
 <tr>
 <td align="left">Attribute </td><td align="left"><a class="el" href="structdnnl_1_1primitive__attr.html#a9bf717bd25b6fddd89055da8178eab75">Scales</a> </td><td align="left">The corresponding tensor has integer data type. Only one scale per tensor is supported. Input tensors only. </td><td align="left">Scales the corresponding input tensor by the given scale factor(s). </td></tr>
+<tr>
+<td align="left">Post-op </td><td align="left"><a class="el" href="structdnnl_1_1post__ops.html#a078ab8ec15423d2b3d26f3619a78ca38">Sum</a> </td><td align="left">Must precede eltwise post-op. </td><td align="left">Adds the operation result to the destination tensor instead of overwriting it. </td></tr>
+<tr>
+<td align="left">Post-op </td><td align="left"><a class="el" href="structdnnl_1_1post__ops.html#a66606f08467b19091e696b52a2f789e6">Eltwise</a> </td><td align="left"></td><td align="left">Applies an <a class="el" href="group__dnnl__api__eltwise.html">Eltwise</a> operation to the result. </td></tr>
 </table>
 <h3>Data Types Support</h3>
 <p>The source and destination tensors may have <code>f32</code>, <code>bf16</code>, or <code>int8</code> data types. See <a class="el" href="dev_guide_data_types.html">Data Types</a> page for more details.</p>
@@ -115,6 +119,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h2>Implementation Limitations</h2>
 <ol type="1">
 <li>Refer to <a class="el" href="dev_guide_data_types.html">Data Types</a> for limitations related to data types support.</li>
+<li>No post-ops or attributes support on GPU.</li>
 </ol>
 <h2>Performance Tips</h2>
 <ol type="1">

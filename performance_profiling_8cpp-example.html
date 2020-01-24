@@ -123,10 +123,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><span class="comment">// function to init data</span></div>
 <div class="line"><span class="keywordtype">void</span> init_data(<a name="_a0"></a><a class="code" href="structdnnl_1_1memory.html">memory</a> &amp;m, <span class="keywordtype">float</span> v) {</div>
 <div class="line">    <span class="keywordtype">size_t</span> size = m.<a name="a1"></a><a class="code" href="structdnnl_1_1memory.html#a6bfc99db50d87d133c6b3b4f438b967a">get_desc</a>().<a name="a2"></a><a class="code" href="structdnnl_1_1memory_1_1desc.html#a3a12698f833b44ed55af9fc6621c4917">get_size</a>() / <span class="keyword">sizeof</span>(float);</div>
-<div class="line">    std::vector&lt;float&gt; data(size);</div>
-<div class="line">    read_from_dnnl_memory(data.data(), m);</div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; size; ++i)</div>
-<div class="line">        data[i] = v;</div>
+<div class="line">    std::vector&lt;float&gt; data(size, v);</div>
+<div class="line">    write_to_dnnl_memory(data.data(), m);</div>
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="comment">// function to execute non-fused relu</span></div>

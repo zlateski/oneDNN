@@ -129,7 +129,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line">    <span class="comment">// float data type is used for user data</span></div>
 <div class="line">    std::vector&lt;float&gt; net_src(batch * 3 * 227 * 227);</div>
-<div class="line">    std::vector&lt;float&gt; net_dst(batch * 96 * 27 * 27);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// initializing non-zero values for src</span></div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; net_src.size(); ++i)</div>
@@ -157,13 +156,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">        conv_bias[i] = sinf((<span class="keywordtype">float</span>)i);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// create memory for user data</span></div>
-<div class="line">    <span class="keyword">auto</span> conv_user_src_memory = <a name="_a6"></a><a class="code" href="structdnnl_1_1memory.html">memory</a>(</div>
-<div class="line">            {{conv_src_tz}, dt::f32, tag::nchw}, cpu_engine, net_src.data());</div>
+<div class="line">    <span class="keyword">auto</span> conv_user_src_memory</div>
+<div class="line">            = <a name="_a6"></a><a class="code" href="structdnnl_1_1memory.html">memory</a>({{conv_src_tz}, dt::f32, tag::nchw}, cpu_engine);</div>
+<div class="line">    write_to_dnnl_memory(net_src.data(), conv_user_src_memory);</div>
+<div class="line"></div>
 <div class="line">    <span class="keyword">auto</span> conv_user_weights_memory</div>
-<div class="line">            = <a class="code" href="structdnnl_1_1memory.html">memory</a>({{conv_weights_tz}, dt::f32, tag::oihw}, cpu_engine,</div>
-<div class="line">                    conv_weights.data());</div>
-<div class="line">    <span class="keyword">auto</span> conv_user_bias_memory = <a class="code" href="structdnnl_1_1memory.html">memory</a>(</div>
-<div class="line">            {{conv_bias_tz}, dt::f32, tag::x}, cpu_engine, conv_bias.data());</div>
+<div class="line">            = <a class="code" href="structdnnl_1_1memory.html">memory</a>({{conv_weights_tz}, dt::f32, tag::oihw}, cpu_engine);</div>
+<div class="line">    write_to_dnnl_memory(conv_weights.data(), conv_user_weights_memory);</div>
+<div class="line"></div>
+<div class="line">    <span class="keyword">auto</span> conv_user_bias_memory</div>
+<div class="line">            = <a class="code" href="structdnnl_1_1memory.html">memory</a>({{conv_bias_tz}, dt::f32, tag::x}, cpu_engine);</div>
+<div class="line">    write_to_dnnl_memory(conv_bias.data(), conv_user_bias_memory);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// create memory descriptors for bfloat16 convolution data w/ no specified</span></div>
 <div class="line">    <span class="comment">// format tag(`any`)</span></div>
@@ -206,7 +209,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="keyword">auto</span> conv_weights_memory = conv_user_weights_memory;</div>
-<div class="line">    <span class="keywordflow">if</span> (conv_pd.weights_desc() != conv_user_weights_memory.<a name="a18"></a><a class="code" href="structdnnl_1_1memory.html#a6bfc99db50d87d133c6b3b4f438b967a">get_desc</a>()) {</div>
+<div class="line">    <span class="keywordflow">if</span> (conv_pd.weights_desc() != conv_user_weights_memory.get_desc()) {</div>
 <div class="line">        conv_weights_memory = <a class="code" href="structdnnl_1_1memory.html">memory</a>(conv_pd.weights_desc(), cpu_engine);</div>
 <div class="line">        net_fwd.push_back(</div>
 <div class="line">                <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(conv_user_weights_memory, conv_weights_memory));</div>
@@ -218,11 +221,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="keyword">auto</span> conv_dst_memory = <a class="code" href="structdnnl_1_1memory.html">memory</a>(conv_pd.dst_desc(), cpu_engine);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// finally create a convolution primitive</span></div>
-<div class="line">    net_fwd.push_back(<a name="_a19"></a><a class="code" href="structdnnl_1_1convolution__forward.html">convolution_forward</a>(conv_pd));</div>
-<div class="line">    net_fwd_args.push_back({{<a name="a20"></a><a class="code" href="group__dnnl__api__primitives__common.html#gac37ad67b48edeb9e742af0e50b70fe09">DNNL_ARG_SRC</a>, conv_src_memory},</div>
-<div class="line">            {<a name="a21"></a><a class="code" href="group__dnnl__api__primitives__common.html#gaf279f28c59a807e71a70c719db56c5b3">DNNL_ARG_WEIGHTS</a>, conv_weights_memory},</div>
-<div class="line">            {<a name="a22"></a><a class="code" href="group__dnnl__api__primitives__common.html#gad0cbc09942aba93fbe3c0c2e09166f0d">DNNL_ARG_BIAS</a>, conv_user_bias_memory},</div>
-<div class="line">            {<a name="a23"></a><a class="code" href="group__dnnl__api__primitives__common.html#ga3ca217e4a06d42a0ede3c018383c388f">DNNL_ARG_DST</a>, conv_dst_memory}});</div>
+<div class="line">    net_fwd.push_back(<a name="_a18"></a><a class="code" href="structdnnl_1_1convolution__forward.html">convolution_forward</a>(conv_pd));</div>
+<div class="line">    net_fwd_args.push_back({{<a name="a19"></a><a class="code" href="group__dnnl__api__primitives__common.html#gac37ad67b48edeb9e742af0e50b70fe09">DNNL_ARG_SRC</a>, conv_src_memory},</div>
+<div class="line">            {<a name="a20"></a><a class="code" href="group__dnnl__api__primitives__common.html#gaf279f28c59a807e71a70c719db56c5b3">DNNL_ARG_WEIGHTS</a>, conv_weights_memory},</div>
+<div class="line">            {<a name="a21"></a><a class="code" href="group__dnnl__api__primitives__common.html#gad0cbc09942aba93fbe3c0c2e09166f0d">DNNL_ARG_BIAS</a>, conv_user_bias_memory},</div>
+<div class="line">            {<a name="a22"></a><a class="code" href="group__dnnl__api__primitives__common.html#ga3ca217e4a06d42a0ede3c018383c388f">DNNL_ARG_DST</a>, conv_dst_memory}});</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// AlexNet: relu</span></div>
 <div class="line">    <span class="comment">// {batch, 96, 55, 55} -&gt; {batch, 96, 55, 55}</span></div>
@@ -232,15 +235,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="comment">// create relu primitive desc</span></div>
 <div class="line">    <span class="comment">// keep memory format tag of source same as the format tag of convolution</span></div>
 <div class="line">    <span class="comment">// output in order to avoid reorder</span></div>
-<div class="line">    <span class="keyword">auto</span> relu_desc = <a name="_a24"></a><a class="code" href="structdnnl_1_1eltwise__forward_1_1desc.html">eltwise_forward::desc</a>(<a class="code" href="group__dnnl__api__attributes.html#ggac7db48f6583aa9903e54c2a39d65438fa965dbaac085fc891bfbbd4f9d145bbc8">prop_kind::forward</a>,</div>
-<div class="line">            <a name="a25"></a><a class="code" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640aba09bebb742494255b90b43871c01c69">algorithm::eltwise_relu</a>, conv_pd.dst_desc(), negative_slope);</div>
-<div class="line">    <span class="keyword">auto</span> relu_pd = <a name="_a26"></a><a class="code" href="structdnnl_1_1eltwise__forward_1_1primitive__desc.html">eltwise_forward::primitive_desc</a>(relu_desc, cpu_engine);</div>
+<div class="line">    <span class="keyword">auto</span> relu_desc = <a name="_a23"></a><a class="code" href="structdnnl_1_1eltwise__forward_1_1desc.html">eltwise_forward::desc</a>(<a class="code" href="group__dnnl__api__attributes.html#ggac7db48f6583aa9903e54c2a39d65438fa965dbaac085fc891bfbbd4f9d145bbc8">prop_kind::forward</a>,</div>
+<div class="line">            <a name="a24"></a><a class="code" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640aba09bebb742494255b90b43871c01c69">algorithm::eltwise_relu</a>, conv_pd.dst_desc(), negative_slope);</div>
+<div class="line">    <span class="keyword">auto</span> relu_pd = <a name="_a25"></a><a class="code" href="structdnnl_1_1eltwise__forward_1_1primitive__desc.html">eltwise_forward::primitive_desc</a>(relu_desc, cpu_engine);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// create relu dst memory</span></div>
 <div class="line">    <span class="keyword">auto</span> relu_dst_memory = <a class="code" href="structdnnl_1_1memory.html">memory</a>(relu_pd.dst_desc(), cpu_engine);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// finally create a relu primitive</span></div>
-<div class="line">    net_fwd.push_back(<a name="_a27"></a><a class="code" href="structdnnl_1_1eltwise__forward.html">eltwise_forward</a>(relu_pd));</div>
+<div class="line">    net_fwd.push_back(<a name="_a26"></a><a class="code" href="structdnnl_1_1eltwise__forward.html">eltwise_forward</a>(relu_pd));</div>
 <div class="line">    net_fwd_args.push_back(</div>
 <div class="line">            {{<a class="code" href="group__dnnl__api__primitives__common.html#gac37ad67b48edeb9e742af0e50b70fe09">DNNL_ARG_SRC</a>, conv_dst_memory}, {<a class="code" href="group__dnnl__api__primitives__common.html#ga3ca217e4a06d42a0ede3c018383c388f">DNNL_ARG_DST</a>, relu_dst_memory}});</div>
 <div class="line"></div>
@@ -257,10 +260,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">float</span> k = 1.0f;</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// create a lrn primitive descriptor</span></div>
-<div class="line">    <span class="keyword">auto</span> lrn_desc = <a name="_a28"></a><a class="code" href="structdnnl_1_1lrn__forward_1_1desc.html">lrn_forward::desc</a>(<a class="code" href="group__dnnl__api__attributes.html#ggac7db48f6583aa9903e54c2a39d65438fa965dbaac085fc891bfbbd4f9d145bbc8">prop_kind::forward</a>,</div>
-<div class="line">            <a name="a29"></a><a class="code" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640ab9e2d858b551792385a4b5b86672b24b">algorithm::lrn_across_channels</a>, relu_pd.dst_desc(), local_size,</div>
+<div class="line">    <span class="keyword">auto</span> lrn_desc = <a name="_a27"></a><a class="code" href="structdnnl_1_1lrn__forward_1_1desc.html">lrn_forward::desc</a>(<a class="code" href="group__dnnl__api__attributes.html#ggac7db48f6583aa9903e54c2a39d65438fa965dbaac085fc891bfbbd4f9d145bbc8">prop_kind::forward</a>,</div>
+<div class="line">            <a name="a28"></a><a class="code" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640ab9e2d858b551792385a4b5b86672b24b">algorithm::lrn_across_channels</a>, relu_pd.dst_desc(), local_size,</div>
 <div class="line">            alpha, beta, k);</div>
-<div class="line">    <span class="keyword">auto</span> lrn_pd = <a name="_a30"></a><a class="code" href="structdnnl_1_1lrn__forward_1_1primitive__desc.html">lrn_forward::primitive_desc</a>(lrn_desc, cpu_engine);</div>
+<div class="line">    <span class="keyword">auto</span> lrn_pd = <a name="_a29"></a><a class="code" href="structdnnl_1_1lrn__forward_1_1primitive__desc.html">lrn_forward::primitive_desc</a>(lrn_desc, cpu_engine);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// create lrn dst memory</span></div>
 <div class="line">    <span class="keyword">auto</span> lrn_dst_memory = <a class="code" href="structdnnl_1_1memory.html">memory</a>(lrn_pd.dst_desc(), cpu_engine);</div>
@@ -270,10 +273,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="keyword">auto</span> lrn_workspace_memory = <a class="code" href="structdnnl_1_1memory.html">memory</a>(lrn_pd.workspace_desc(), cpu_engine);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// finally create a lrn primitive</span></div>
-<div class="line">    net_fwd.push_back(<a name="_a31"></a><a class="code" href="structdnnl_1_1lrn__forward.html">lrn_forward</a>(lrn_pd));</div>
+<div class="line">    net_fwd.push_back(<a name="_a30"></a><a class="code" href="structdnnl_1_1lrn__forward.html">lrn_forward</a>(lrn_pd));</div>
 <div class="line">    net_fwd_args.push_back(</div>
 <div class="line">            {{<a class="code" href="group__dnnl__api__primitives__common.html#gac37ad67b48edeb9e742af0e50b70fe09">DNNL_ARG_SRC</a>, relu_dst_memory}, {<a class="code" href="group__dnnl__api__primitives__common.html#ga3ca217e4a06d42a0ede3c018383c388f">DNNL_ARG_DST</a>, lrn_dst_memory},</div>
-<div class="line">                    {<a name="a32"></a><a class="code" href="group__dnnl__api__primitives__common.html#ga550c80e1b9ba4f541202a7ac98be117f">DNNL_ARG_WORKSPACE</a>, lrn_workspace_memory}});</div>
+<div class="line">                    {<a name="a31"></a><a class="code" href="group__dnnl__api__primitives__common.html#ga550c80e1b9ba4f541202a7ac98be117f">DNNL_ARG_WORKSPACE</a>, lrn_workspace_memory}});</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// AlexNet: pool</span></div>
 <div class="line">    <span class="comment">// {batch, 96, 55, 55} -&gt; {batch, 96, 27, 27}</span></div>
@@ -286,23 +289,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <a class="code" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> pool_padding = {0, 0};</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// create memory for pool dst data in user format</span></div>
-<div class="line">    <span class="keyword">auto</span> pool_user_dst_memory = <a class="code" href="structdnnl_1_1memory.html">memory</a>(</div>
-<div class="line">            {{pool_dst_tz}, dt::f32, tag::nchw}, cpu_engine, net_dst.data());</div>
+<div class="line">    <span class="keyword">auto</span> pool_user_dst_memory</div>
+<div class="line">            = <a class="code" href="structdnnl_1_1memory.html">memory</a>({{pool_dst_tz}, dt::f32, tag::nchw}, cpu_engine);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// create pool dst memory descriptor in format any for bfloat16 data type</span></div>
 <div class="line">    <span class="keyword">auto</span> pool_dst_md = <a class="code" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a>({pool_dst_tz}, dt::bf16, tag::any);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// create a pooling primitive descriptor</span></div>
-<div class="line">    <span class="keyword">auto</span> pool_desc = <a name="_a33"></a><a class="code" href="structdnnl_1_1pooling__forward_1_1desc.html">pooling_forward::desc</a>(<a class="code" href="group__dnnl__api__attributes.html#ggac7db48f6583aa9903e54c2a39d65438fa965dbaac085fc891bfbbd4f9d145bbc8">prop_kind::forward</a>,</div>
-<div class="line">            <a name="a34"></a><a class="code" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640a8c73d4bb88a0497586a74256bb338e88">algorithm::pooling_max</a>, lrn_dst_memory.get_desc(), pool_dst_md,</div>
+<div class="line">    <span class="keyword">auto</span> pool_desc = <a name="_a32"></a><a class="code" href="structdnnl_1_1pooling__forward_1_1desc.html">pooling_forward::desc</a>(<a class="code" href="group__dnnl__api__attributes.html#ggac7db48f6583aa9903e54c2a39d65438fa965dbaac085fc891bfbbd4f9d145bbc8">prop_kind::forward</a>,</div>
+<div class="line">            <a name="a33"></a><a class="code" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640a8c73d4bb88a0497586a74256bb338e88">algorithm::pooling_max</a>, lrn_dst_memory.get_desc(), pool_dst_md,</div>
 <div class="line">            pool_strides, pool_kernel, pool_padding, pool_padding);</div>
-<div class="line">    <span class="keyword">auto</span> pool_pd = <a name="_a35"></a><a class="code" href="structdnnl_1_1pooling__forward_1_1primitive__desc.html">pooling_forward::primitive_desc</a>(pool_desc, cpu_engine);</div>
+<div class="line">    <span class="keyword">auto</span> pool_pd = <a name="_a34"></a><a class="code" href="structdnnl_1_1pooling__forward_1_1primitive__desc.html">pooling_forward::primitive_desc</a>(pool_desc, cpu_engine);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// create pooling workspace memory if training</span></div>
 <div class="line">    <span class="keyword">auto</span> pool_workspace_memory = <a class="code" href="structdnnl_1_1memory.html">memory</a>(pool_pd.workspace_desc(), cpu_engine);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// create a pooling primitive</span></div>
-<div class="line">    net_fwd.push_back(<a name="_a36"></a><a class="code" href="structdnnl_1_1pooling__forward.html">pooling_forward</a>(pool_pd));</div>
+<div class="line">    net_fwd.push_back(<a name="_a35"></a><a class="code" href="structdnnl_1_1pooling__forward.html">pooling_forward</a>(pool_pd));</div>
 <div class="line">    <span class="comment">// leave DST unknown for now (see the next reorder)</span></div>
 <div class="line">    net_fwd_args.push_back({{<a class="code" href="group__dnnl__api__primitives__common.html#gac37ad67b48edeb9e742af0e50b70fe09">DNNL_ARG_SRC</a>, lrn_dst_memory},</div>
 <div class="line">            <span class="comment">// delay putting DST until reorder (if needed)</span></div>
@@ -330,8 +333,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">        net_diff_dst[i] = sinf((<span class="keywordtype">float</span>)i);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// create memory for user diff dst data stored in float data type</span></div>
-<div class="line">    <span class="keyword">auto</span> pool_user_diff_dst_memory = <a class="code" href="structdnnl_1_1memory.html">memory</a>({{pool_dst_tz}, dt::f32, tag::nchw},</div>
-<div class="line">            cpu_engine, net_diff_dst.data());</div>
+<div class="line">    <span class="keyword">auto</span> pool_user_diff_dst_memory</div>
+<div class="line">            = <a class="code" href="structdnnl_1_1memory.html">memory</a>({{pool_dst_tz}, dt::f32, tag::nchw}, cpu_engine);</div>
+<div class="line">    write_to_dnnl_memory(net_diff_dst.data(), pool_user_diff_dst_memory);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Backward pooling</span></div>
 <div class="line">    <span class="comment">// create memory descriptors for pooling</span></div>
@@ -339,11 +343,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="keyword">auto</span> pool_diff_dst_md = <a class="code" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a>({pool_dst_tz}, dt::bf16, tag::any);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// create backward pooling descriptor</span></div>
-<div class="line">    <span class="keyword">auto</span> pool_bwd_desc = <a name="_a37"></a><a class="code" href="structdnnl_1_1pooling__backward_1_1desc.html">pooling_backward::desc</a>(<a class="code" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640a8c73d4bb88a0497586a74256bb338e88">algorithm::pooling_max</a>,</div>
+<div class="line">    <span class="keyword">auto</span> pool_bwd_desc = <a name="_a36"></a><a class="code" href="structdnnl_1_1pooling__backward_1_1desc.html">pooling_backward::desc</a>(<a class="code" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640a8c73d4bb88a0497586a74256bb338e88">algorithm::pooling_max</a>,</div>
 <div class="line">            pool_diff_src_md, pool_diff_dst_md, pool_strides, pool_kernel,</div>
 <div class="line">            pool_padding, pool_padding);</div>
 <div class="line">    <span class="comment">// backward primitive descriptor needs to hint forward descriptor</span></div>
-<div class="line">    <span class="keyword">auto</span> pool_bwd_pd = <a name="_a38"></a><a class="code" href="structdnnl_1_1pooling__backward_1_1primitive__desc.html">pooling_backward::primitive_desc</a>(</div>
+<div class="line">    <span class="keyword">auto</span> pool_bwd_pd = <a name="_a37"></a><a class="code" href="structdnnl_1_1pooling__backward_1_1primitive__desc.html">pooling_backward::primitive_desc</a>(</div>
 <div class="line">            pool_bwd_desc, cpu_engine, pool_pd);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// create reorder primitive between user diff dst and pool diff dst</span></div>
@@ -361,19 +365,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="keyword">auto</span> pool_diff_src_memory = <a class="code" href="structdnnl_1_1memory.html">memory</a>(pool_bwd_pd.diff_src_desc(), cpu_engine);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// finally create backward pooling primitive</span></div>
-<div class="line">    net_bwd.push_back(<a name="_a39"></a><a class="code" href="structdnnl_1_1pooling__backward.html">pooling_backward</a>(pool_bwd_pd));</div>
-<div class="line">    net_bwd_args.push_back({{<a name="a40"></a><a class="code" href="group__dnnl__api__primitives__common.html#gac9302f4cbd2668bf9a98ba99d752b971">DNNL_ARG_DIFF_DST</a>, pool_diff_dst_memory},</div>
-<div class="line">            {<a name="a41"></a><a class="code" href="group__dnnl__api__primitives__common.html#ga18ee0e360399cfe9d3b58a13dfcb9333">DNNL_ARG_DIFF_SRC</a>, pool_diff_src_memory},</div>
+<div class="line">    net_bwd.push_back(<a name="_a38"></a><a class="code" href="structdnnl_1_1pooling__backward.html">pooling_backward</a>(pool_bwd_pd));</div>
+<div class="line">    net_bwd_args.push_back({{<a name="a39"></a><a class="code" href="group__dnnl__api__primitives__common.html#gac9302f4cbd2668bf9a98ba99d752b971">DNNL_ARG_DIFF_DST</a>, pool_diff_dst_memory},</div>
+<div class="line">            {<a name="a40"></a><a class="code" href="group__dnnl__api__primitives__common.html#ga18ee0e360399cfe9d3b58a13dfcb9333">DNNL_ARG_DIFF_SRC</a>, pool_diff_src_memory},</div>
 <div class="line">            {<a class="code" href="group__dnnl__api__primitives__common.html#ga550c80e1b9ba4f541202a7ac98be117f">DNNL_ARG_WORKSPACE</a>, pool_workspace_memory}});</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Backward lrn</span></div>
 <div class="line">    <span class="keyword">auto</span> lrn_diff_dst_md = <a class="code" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a>({lrn_data_tz}, dt::bf16, tag::any);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// create backward lrn primitive descriptor</span></div>
-<div class="line">    <span class="keyword">auto</span> lrn_bwd_desc = <a name="_a42"></a><a class="code" href="structdnnl_1_1lrn__backward_1_1desc.html">lrn_backward::desc</a>(<a class="code" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640ab9e2d858b551792385a4b5b86672b24b">algorithm::lrn_across_channels</a>,</div>
+<div class="line">    <span class="keyword">auto</span> lrn_bwd_desc = <a name="_a41"></a><a class="code" href="structdnnl_1_1lrn__backward_1_1desc.html">lrn_backward::desc</a>(<a class="code" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640ab9e2d858b551792385a4b5b86672b24b">algorithm::lrn_across_channels</a>,</div>
 <div class="line">            lrn_pd.src_desc(), lrn_diff_dst_md, local_size, alpha, beta, k);</div>
 <div class="line">    <span class="keyword">auto</span> lrn_bwd_pd</div>
-<div class="line">            = <a name="_a43"></a><a class="code" href="structdnnl_1_1lrn__backward_1_1primitive__desc.html">lrn_backward::primitive_desc</a>(lrn_bwd_desc, cpu_engine, lrn_pd);</div>
+<div class="line">            = <a name="_a42"></a><a class="code" href="structdnnl_1_1lrn__backward_1_1primitive__desc.html">lrn_backward::primitive_desc</a>(lrn_bwd_desc, cpu_engine, lrn_pd);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// create reorder primitive between pool diff src and lrn diff dst</span></div>
 <div class="line">    <span class="comment">// if required</span></div>
@@ -390,7 +394,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line">    <span class="comment">// finally create a lrn backward primitive</span></div>
 <div class="line">    <span class="comment">// backward lrn needs src: relu dst in this topology</span></div>
-<div class="line">    net_bwd.push_back(<a name="_a44"></a><a class="code" href="structdnnl_1_1lrn__backward.html">lrn_backward</a>(lrn_bwd_pd));</div>
+<div class="line">    net_bwd.push_back(<a name="_a43"></a><a class="code" href="structdnnl_1_1lrn__backward.html">lrn_backward</a>(lrn_bwd_pd));</div>
 <div class="line">    net_bwd_args.push_back({{<a class="code" href="group__dnnl__api__primitives__common.html#gac37ad67b48edeb9e742af0e50b70fe09">DNNL_ARG_SRC</a>, relu_dst_memory},</div>
 <div class="line">            {<a class="code" href="group__dnnl__api__primitives__common.html#gac9302f4cbd2668bf9a98ba99d752b971">DNNL_ARG_DIFF_DST</a>, lrn_diff_dst_memory},</div>
 <div class="line">            {<a class="code" href="group__dnnl__api__primitives__common.html#ga18ee0e360399cfe9d3b58a13dfcb9333">DNNL_ARG_DIFF_SRC</a>, lrn_diff_src_memory},</div>
@@ -401,9 +405,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="keyword">auto</span> relu_src_md = conv_pd.dst_desc();</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// create backward relu primitive_descriptor</span></div>
-<div class="line">    <span class="keyword">auto</span> relu_bwd_desc = <a name="_a45"></a><a class="code" href="structdnnl_1_1eltwise__backward_1_1desc.html">eltwise_backward::desc</a>(<a class="code" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640aba09bebb742494255b90b43871c01c69">algorithm::eltwise_relu</a>,</div>
+<div class="line">    <span class="keyword">auto</span> relu_bwd_desc = <a name="_a44"></a><a class="code" href="structdnnl_1_1eltwise__backward_1_1desc.html">eltwise_backward::desc</a>(<a class="code" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640aba09bebb742494255b90b43871c01c69">algorithm::eltwise_relu</a>,</div>
 <div class="line">            relu_diff_dst_md, relu_src_md, negative_slope);</div>
-<div class="line">    <span class="keyword">auto</span> relu_bwd_pd = <a name="_a46"></a><a class="code" href="structdnnl_1_1eltwise__backward_1_1primitive__desc.html">eltwise_backward::primitive_desc</a>(</div>
+<div class="line">    <span class="keyword">auto</span> relu_bwd_pd = <a name="_a45"></a><a class="code" href="structdnnl_1_1eltwise__backward_1_1primitive__desc.html">eltwise_backward::primitive_desc</a>(</div>
 <div class="line">            relu_bwd_desc, cpu_engine, relu_pd);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// create reorder primitive between lrn diff src and relu diff dst</span></div>
@@ -420,21 +424,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="keyword">auto</span> relu_diff_src_memory = <a class="code" href="structdnnl_1_1memory.html">memory</a>(relu_bwd_pd.diff_src_desc(), cpu_engine);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// finally create a backward relu primitive</span></div>
-<div class="line">    net_bwd.push_back(<a name="_a47"></a><a class="code" href="structdnnl_1_1eltwise__backward.html">eltwise_backward</a>(relu_bwd_pd));</div>
+<div class="line">    net_bwd.push_back(<a name="_a46"></a><a class="code" href="structdnnl_1_1eltwise__backward.html">eltwise_backward</a>(relu_bwd_pd));</div>
 <div class="line">    net_bwd_args.push_back({{<a class="code" href="group__dnnl__api__primitives__common.html#gac37ad67b48edeb9e742af0e50b70fe09">DNNL_ARG_SRC</a>, conv_dst_memory},</div>
 <div class="line">            {<a class="code" href="group__dnnl__api__primitives__common.html#gac9302f4cbd2668bf9a98ba99d752b971">DNNL_ARG_DIFF_DST</a>, relu_diff_dst_memory},</div>
 <div class="line">            {<a class="code" href="group__dnnl__api__primitives__common.html#ga18ee0e360399cfe9d3b58a13dfcb9333">DNNL_ARG_DIFF_SRC</a>, relu_diff_src_memory}});</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Backward convolution with respect to weights</span></div>
 <div class="line">    <span class="comment">// create user format diff weights and diff bias memory for float data type</span></div>
-<div class="line">    std::vector&lt;float&gt; conv_user_diff_weights_buffer(product(conv_weights_tz));</div>
-<div class="line">    std::vector&lt;float&gt; conv_diff_bias_buffer(product(conv_bias_tz));</div>
 <div class="line"></div>
 <div class="line">    <span class="keyword">auto</span> conv_user_diff_weights_memory</div>
-<div class="line">            = <a class="code" href="structdnnl_1_1memory.html">memory</a>({{conv_weights_tz}, dt::f32, tag::nchw}, cpu_engine,</div>
-<div class="line">                    conv_user_diff_weights_buffer.data());</div>
-<div class="line">    <span class="keyword">auto</span> conv_diff_bias_memory = <a class="code" href="structdnnl_1_1memory.html">memory</a>({{conv_bias_tz}, dt::f32, tag::x},</div>
-<div class="line">            cpu_engine, conv_diff_bias_buffer.data());</div>
+<div class="line">            = <a class="code" href="structdnnl_1_1memory.html">memory</a>({{conv_weights_tz}, dt::f32, tag::nchw}, cpu_engine);</div>
+<div class="line">    <span class="keyword">auto</span> conv_diff_bias_memory</div>
+<div class="line">            = <a class="code" href="structdnnl_1_1memory.html">memory</a>({{conv_bias_tz}, dt::f32, tag::x}, cpu_engine);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// create memory descriptors for bfloat16 convolution data</span></div>
 <div class="line">    <span class="keyword">auto</span> conv_bwd_src_md = <a class="code" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a>({conv_src_tz}, dt::bf16, tag::any);</div>
@@ -445,10 +446,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line">    <span class="comment">// create backward convolution primitive descriptor</span></div>
 <div class="line">    <span class="keyword">auto</span> conv_bwd_weights_desc</div>
-<div class="line">            = <a name="_a48"></a><a class="code" href="structdnnl_1_1convolution__backward__weights_1_1desc.html">convolution_backward_weights::desc</a>(<a class="code" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640a5028ad8f818a45333a8a0eefad35c5c0">algorithm::convolution_direct</a>,</div>
+<div class="line">            = <a name="_a47"></a><a class="code" href="structdnnl_1_1convolution__backward__weights_1_1desc.html">convolution_backward_weights::desc</a>(<a class="code" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640a5028ad8f818a45333a8a0eefad35c5c0">algorithm::convolution_direct</a>,</div>
 <div class="line">                    conv_bwd_src_md, conv_diff_weights_md, conv_diff_bias_md,</div>
 <div class="line">                    conv_diff_dst_md, conv_strides, conv_padding, conv_padding);</div>
-<div class="line">    <span class="keyword">auto</span> conv_bwd_weights_pd = <a name="_a49"></a><a class="code" href="structdnnl_1_1convolution__backward__weights_1_1primitive__desc.html">convolution_backward_weights::primitive_desc</a>(</div>
+<div class="line">    <span class="keyword">auto</span> conv_bwd_weights_pd = <a name="_a48"></a><a class="code" href="structdnnl_1_1convolution__backward__weights_1_1primitive__desc.html">convolution_backward_weights::primitive_desc</a>(</div>
 <div class="line">            conv_bwd_weights_desc, cpu_engine, conv_pd);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// for best performance convolution backward might chose</span></div>
@@ -479,11 +480,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// create backward convolution primitive</span></div>
-<div class="line">    net_bwd.push_back(<a name="_a50"></a><a class="code" href="structdnnl_1_1convolution__backward__weights.html">convolution_backward_weights</a>(conv_bwd_weights_pd));</div>
+<div class="line">    net_bwd.push_back(<a name="_a49"></a><a class="code" href="structdnnl_1_1convolution__backward__weights.html">convolution_backward_weights</a>(conv_bwd_weights_pd));</div>
 <div class="line">    net_bwd_args.push_back({{<a class="code" href="group__dnnl__api__primitives__common.html#gac37ad67b48edeb9e742af0e50b70fe09">DNNL_ARG_SRC</a>, conv_bwd_src_memory},</div>
 <div class="line">            {<a class="code" href="group__dnnl__api__primitives__common.html#gac9302f4cbd2668bf9a98ba99d752b971">DNNL_ARG_DIFF_DST</a>, conv_diff_dst_memory},</div>
 <div class="line">            <span class="comment">// delay putting DIFF_WEIGHTS until reorder (if needed)</span></div>
-<div class="line">            {<a name="a51"></a><a class="code" href="group__dnnl__api__primitives__common.html#ga1cd79979dda6df65ec45eef32a839901">DNNL_ARG_DIFF_BIAS</a>, conv_diff_bias_memory}});</div>
+<div class="line">            {<a name="a50"></a><a class="code" href="group__dnnl__api__primitives__common.html#ga1cd79979dda6df65ec45eef32a839901">DNNL_ARG_DIFF_BIAS</a>, conv_diff_bias_memory}});</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// create reorder primitives between conv diff weights and user diff weights</span></div>
 <div class="line">    <span class="comment">// if needed</span></div>
@@ -493,7 +494,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">        conv_diff_weights_memory</div>
 <div class="line">                = <a class="code" href="structdnnl_1_1memory.html">memory</a>(conv_bwd_weights_pd.diff_weights_desc(), cpu_engine);</div>
 <div class="line">        net_bwd_args.back().insert(</div>
-<div class="line">                {<a name="a52"></a><a class="code" href="group__dnnl__api__primitives__common.html#ga3324092ef421f77aebee83b0117cac60">DNNL_ARG_DIFF_WEIGHTS</a>, conv_diff_weights_memory});</div>
+<div class="line">                {<a name="a51"></a><a class="code" href="group__dnnl__api__primitives__common.html#ga3324092ef421f77aebee83b0117cac60">DNNL_ARG_DIFF_WEIGHTS</a>, conv_diff_weights_memory});</div>
 <div class="line"></div>
 <div class="line">        net_bwd.push_back(<a class="code" href="structdnnl_1_1reorder.html">reorder</a>(</div>
 <div class="line">                conv_diff_weights_memory, conv_user_diff_weights_memory));</div>

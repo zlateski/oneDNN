@@ -130,7 +130,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line">    <span class="comment">// float data type is used for user data</span></div>
 <div class="line">    std::vector&lt;float&gt; net_src(batch * 3 * 227 * 227);</div>
-<div class="line">    std::vector&lt;float&gt; net_dst(batch * 96 * 27 * 27);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// initializing non-zero values for src</span></div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; net_src.size(); ++i)</div>
@@ -158,13 +157,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">        conv_bias[i] = sinf((<span class="keywordtype">float</span>)i);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// create memory for user data</span></div>
-<div class="line">    <span class="keyword">auto</span> conv_user_src_memory = memory(</div>
-<div class="line">            {{conv_src_tz}, dt::f32, tag::nchw}, cpu_engine, net_src.data());</div>
+<div class="line">    <span class="keyword">auto</span> conv_user_src_memory</div>
+<div class="line">            = memory({{conv_src_tz}, dt::f32, tag::nchw}, cpu_engine);</div>
+<div class="line">    write_to_dnnl_memory(net_src.data(), conv_user_src_memory);</div>
+<div class="line"></div>
 <div class="line">    <span class="keyword">auto</span> conv_user_weights_memory</div>
-<div class="line">            = memory({{conv_weights_tz}, dt::f32, tag::oihw}, cpu_engine,</div>
-<div class="line">                    conv_weights.data());</div>
-<div class="line">    <span class="keyword">auto</span> conv_user_bias_memory = memory(</div>
-<div class="line">            {{conv_bias_tz}, dt::f32, tag::x}, cpu_engine, conv_bias.data());</div>
+<div class="line">            = memory({{conv_weights_tz}, dt::f32, tag::oihw}, cpu_engine);</div>
+<div class="line">    write_to_dnnl_memory(conv_weights.data(), conv_user_weights_memory);</div>
+<div class="line"></div>
+<div class="line">    <span class="keyword">auto</span> conv_user_bias_memory</div>
+<div class="line">            = memory({{conv_bias_tz}, dt::f32, tag::x}, cpu_engine);</div>
+<div class="line">    write_to_dnnl_memory(conv_bias.data(), conv_user_bias_memory);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// create memory descriptors for bfloat16 convolution data w/ no specified</span></div>
 <div class="line">    <span class="comment">// format tag(`any`)</span></div>
@@ -207,7 +210,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="keyword">auto</span> conv_weights_memory = conv_user_weights_memory;</div>
-<div class="line">    <span class="keywordflow">if</span> (conv_pd.weights_desc() != conv_user_weights_memory.<a class="code" href="structdnnl_1_1memory.html#a6bfc99db50d87d133c6b3b4f438b967a">get_desc</a>()) {</div>
+<div class="line">    <span class="keywordflow">if</span> (conv_pd.weights_desc() != conv_user_weights_memory.get_desc()) {</div>
 <div class="line">        conv_weights_memory = memory(conv_pd.weights_desc(), cpu_engine);</div>
 <div class="line">        net_fwd.push_back(</div>
 <div class="line">                reorder(conv_user_weights_memory, conv_weights_memory));</div>
@@ -287,8 +290,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <a class="code" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> pool_padding = {0, 0};</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// create memory for pool dst data in user format</span></div>
-<div class="line">    <span class="keyword">auto</span> pool_user_dst_memory = memory(</div>
-<div class="line">            {{pool_dst_tz}, dt::f32, tag::nchw}, cpu_engine, net_dst.data());</div>
+<div class="line">    <span class="keyword">auto</span> pool_user_dst_memory</div>
+<div class="line">            = memory({{pool_dst_tz}, dt::f32, tag::nchw}, cpu_engine);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// create pool dst memory descriptor in format any for bfloat16 data type</span></div>
 <div class="line">    <span class="keyword">auto</span> pool_dst_md = <a class="code" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a>({pool_dst_tz}, dt::bf16, tag::any);</div>
@@ -331,8 +334,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">        net_diff_dst[i] = sinf((<span class="keywordtype">float</span>)i);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// create memory for user diff dst data stored in float data type</span></div>
-<div class="line">    <span class="keyword">auto</span> pool_user_diff_dst_memory = memory({{pool_dst_tz}, dt::f32, tag::nchw},</div>
-<div class="line">            cpu_engine, net_diff_dst.data());</div>
+<div class="line">    <span class="keyword">auto</span> pool_user_diff_dst_memory</div>
+<div class="line">            = memory({{pool_dst_tz}, dt::f32, tag::nchw}, cpu_engine);</div>
+<div class="line">    write_to_dnnl_memory(net_diff_dst.data(), pool_user_diff_dst_memory);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Backward pooling</span></div>
 <div class="line">    <span class="comment">// create memory descriptors for pooling</span></div>
@@ -428,14 +432,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line">    <span class="comment">// Backward convolution with respect to weights</span></div>
 <div class="line">    <span class="comment">// create user format diff weights and diff bias memory for float data type</span></div>
-<div class="line">    std::vector&lt;float&gt; conv_user_diff_weights_buffer(product(conv_weights_tz));</div>
-<div class="line">    std::vector&lt;float&gt; conv_diff_bias_buffer(product(conv_bias_tz));</div>
 <div class="line"></div>
 <div class="line">    <span class="keyword">auto</span> conv_user_diff_weights_memory</div>
-<div class="line">            = memory({{conv_weights_tz}, dt::f32, tag::nchw}, cpu_engine,</div>
-<div class="line">                    conv_user_diff_weights_buffer.data());</div>
-<div class="line">    <span class="keyword">auto</span> conv_diff_bias_memory = memory({{conv_bias_tz}, dt::f32, tag::x},</div>
-<div class="line">            cpu_engine, conv_diff_bias_buffer.data());</div>
+<div class="line">            = memory({{conv_weights_tz}, dt::f32, tag::nchw}, cpu_engine);</div>
+<div class="line">    <span class="keyword">auto</span> conv_diff_bias_memory</div>
+<div class="line">            = memory({{conv_bias_tz}, dt::f32, tag::x}, cpu_engine);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// create memory descriptors for bfloat16 convolution data</span></div>
 <div class="line">    <span class="keyword">auto</span> conv_bwd_src_md = <a class="code" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a>({conv_src_tz}, dt::bf16, tag::any);</div>

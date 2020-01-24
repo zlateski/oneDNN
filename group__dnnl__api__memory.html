@@ -424,12 +424,12 @@ Functions</h2></td></tr>
 <div class="line"><a class="code" href="group__dnnl__api__memory.html#ga8331e1160e52a5d4babe96736464095a">dnnl_dims_t</a> dims = {batch, channels, depth, height, width};</div>
 <div class="line"><a class="code" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> data_in_ncdhw;</div>
 <div class="line"><a class="code" href="group__dnnl__api__memory.html#gaff696e368aeefb3036a0419c508dc6be">dnnl_memory_desc_init_by_tag</a>(</div>
-<div class="line">     &amp;data_in_ncdhw, 5, dims, dnnl_f32, <a class="code" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dae33b8c6790e5d37324f18a019658d464">dnnl_ncdhw</a>);</div>
+<div class="line">     &amp;data_in_ncdhw, 5, dims, <a class="code" href="group__dnnl__api__memory.html#gga012ba1c84ff24bdd068f9d2f9b26a130a6b33889946b183311c39cc1bd0656ae9">dnnl_f32</a>, <a class="code" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dae33b8c6790e5d37324f18a019658d464">dnnl_ncdhw</a>);</div>
 <div class="line"></div>
 <div class="line"><span class="comment">// note that in both cases dims passed are the same</span></div>
 <div class="line"><a class="code" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> data_in_ndhwc;</div>
 <div class="line"><a class="code" href="group__dnnl__api__memory.html#gaff696e368aeefb3036a0419c508dc6be">dnnl_memory_desc_init_by_tag</a>(</div>
-<div class="line">     &amp;data_in_ndhwc, 5, dims, dnnl_f32, <a class="code" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091daa0d8b24eefd029e214080d3787114fc2">dnnl_ndhwc</a>);</div>
+<div class="line">     &amp;data_in_ndhwc, 5, dims, <a class="code" href="group__dnnl__api__memory.html#gga012ba1c84ff24bdd068f9d2f9b26a130a6b33889946b183311c39cc1bd0656ae9">dnnl_f32</a>, <a class="code" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091daa0d8b24eefd029e214080d3787114fc2">dnnl_ndhwc</a>);</div>
 </div><!-- fragment --><p>Memory format tags can be further divided into two categories:</p>
 <ul>
 <li>Domain-agnostic names, i.e. names the do not depend on the tensor usage in the specific primitive. These names use letters from <code>a</code> to <code>l</code> to denote logical dimension from 1 to 12, and form the order in which the dimensions are laid in memory. For instance, <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da1bd907fc29344dfe7ba88336960dcf53" title="plain 2D tensor ">dnnl_ab</a> is used to denote 2D tensor where the second logical dimension (aka <code>b</code>) is the innermost, i.e. has stride = 1, and the first logical dimension (<code>a</code>) laid out in memory with stride equal to the size of second dimension. On the other hand, <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da6a6dbc0b30468d92e32a9cb3f6615c43" title="permuted 2D tensor ">dnnl_ba</a> is just transposed version of the same tensor: the first dimension (<code>a</code>) becomes the innermost one.</li>
@@ -898,7 +898,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__dnnl__api__utils.html#ggad24f9ded06e34d3ee71e7fc4b408d57aaa31395e9dccc103cf166cf7b38fc5b9c" title="The operation was successful. ">dnnl_success</a> on success and a status describing the error otherwise. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cnn_inference_f32_8c-example.html#a7">cnn_inference_f32.c</a>, <a class="el" href="cpu_cnn_training_f32_8c-example.html#a6">cpu_cnn_training_f32.c</a>, and <a class="el" href="cross_engine_reorder_8c-example.html#a6">cross_engine_reorder.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cnn_inference_f32_8c-example.html#a6">cnn_inference_f32.c</a>, <a class="el" href="cpu_cnn_training_f32_8c-example.html#a6">cpu_cnn_training_f32.c</a>, and <a class="el" href="cross_engine_reorder_8c-example.html#a6">cross_engine_reorder.c</a>.</dd>
 </dl>
 </div>
 </div>
