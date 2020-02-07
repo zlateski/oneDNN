@@ -101,7 +101,7 @@ Walkthrough</h1>
 <div class="fragment"><div class="line">export DNNL_VERBOSE=1</div>
 </div><!-- fragment --><p>The program starts by creating DNNL memory objects in <b>NCHW</b> format. These are called <code>user_</code> because they are meant to represent the user's source data entering DNNL with the NCHW format.</p>
 <div class="fragment"><div class="line">    <span class="comment">// set dimensions for synthetic data and weights</span></div>
-<div class="line">    <span class="keyword">const</span> memory::dim BATCH = 1000;</div>
+<div class="line">    <span class="keyword">const</span> memory::dim BATCH = (engine_kind == engine::kind::cpu ? 1000 : 100);</div>
 <div class="line">    <span class="keyword">const</span> memory::dim IC = 3, OC = 96;</div>
 <div class="line">    <span class="keyword">const</span> memory::dim IH = 227, KH = 11, OH = 55;</div>
 <div class="line">    <span class="keyword">const</span> memory::dim IW = 227, KW = 11, OW = 55;</div>

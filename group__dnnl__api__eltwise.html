@@ -110,7 +110,7 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>A primitive to perform elementwise operations such as the rectifier linear unit (ReLU). </p>
 <p>Both forward and backward propagation primitives support in-place operation; that is, src and dst can refer to the same memory for forward propagation, and diff_dst and diff_src can refer to the same memory for backward propagation.</p>
-<dl class="section warning"><dt>Warning</dt><dd>Because the original source data is required for backward propagation, in-place forward propagation is not generally supported in the training mode. However, for namely ReLU with the alpha parameter set to 0, either dst or src can be used for the backward propagation, which makes it possible to get performance benefit even in the training mode.</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Because the original source data is required for backward propagation, in-place forward propagation is not generally supported in the training mode. However, for algorithms supporting destination as input memory, dst can be used for the backward propagation, which makes it possible to get performance benefit even in the training mode.</dd></dl>
 <dl class="section see"><dt>See Also</dt><dd><a class="el" href="dev_guide_eltwise.html">Eltwise</a> in developer guide </dd></dl>
 <h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="ga5606fd4c9291f7caca8b015460d2f037"></a>

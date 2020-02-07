@@ -356,13 +356,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line">    <span class="comment">// rightmost src_iter will be a sub-memory of dst_iter of leftmost</span></div>
 <div class="line">    <span class="keyword">auto</span> rightmost_src_iter_md</div>
-<div class="line">            = leftmost_dst_iter_memory.<a class="code" href="structdnnl_1_1memory.html#a6bfc99db50d87d133c6b3b4f438b967a">get_desc</a>().<a class="code" href="structdnnl_1_1memory_1_1desc.html#ab51c30ca2e2ce806821871a4dbded3a2">submemory_desc</a>(</div>
+<div class="line">            = leftmost_dst_iter_memory.<a class="code" href="structdnnl_1_1memory.html#a6bfc99db50d87d133c6b3b4f438b967a">get_desc</a>().<a class="code" href="structdnnl_1_1memory_1_1desc.html#a3d017ecf635aae91cc3856a9dfe0721c">submemory_desc</a>(</div>
 <div class="line">                    rightmost_src_iter_dims,</div>
 <div class="line">                    {0, 0, 0, 0}); <span class="comment">// l, d, n, c offsets</span></div>
 <div class="line">    <span class="keyword">auto</span> rightmost_src_iter_memory = leftmost_dst_iter_memory;</div>
 <div class="line"></div>
 <div class="line">    <span class="keyword">auto</span> rightmost_src_iter_c_md</div>
-<div class="line">            = leftmost_dst_iter_c_memory.<a class="code" href="structdnnl_1_1memory.html#a6bfc99db50d87d133c6b3b4f438b967a">get_desc</a>().<a class="code" href="structdnnl_1_1memory_1_1desc.html#ab51c30ca2e2ce806821871a4dbded3a2">submemory_desc</a>(</div>
+<div class="line">            = leftmost_dst_iter_c_memory.<a class="code" href="structdnnl_1_1memory.html#a6bfc99db50d87d133c6b3b4f438b967a">get_desc</a>().<a class="code" href="structdnnl_1_1memory_1_1desc.html#a3d017ecf635aae91cc3856a9dfe0721c">submemory_desc</a>(</div>
 <div class="line">                    rightmost_src_iter_c_dims,</div>
 <div class="line">                    {0, 0, 0, 0}); <span class="comment">// l, d, n, c offsets</span></div>
 <div class="line">    <span class="keyword">auto</span> rightmost_src_iter_c_memory = leftmost_dst_iter_c_memory;</div>
@@ -575,13 +575,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">            = <a class="code" href="structdnnl_1_1memory.html">dnnl::memory</a>(leftmost_bwd_prim_desc.diff_dst_iter_c_desc(), eng);</div>
 <div class="line"></div>
 <div class="line">    <span class="keyword">auto</span> rightmost_diff_src_iter_md</div>
-<div class="line">            = leftmost_diff_dst_iter_memory.<a class="code" href="structdnnl_1_1memory.html#a6bfc99db50d87d133c6b3b4f438b967a">get_desc</a>().<a class="code" href="structdnnl_1_1memory_1_1desc.html#ab51c30ca2e2ce806821871a4dbded3a2">submemory_desc</a>(</div>
+<div class="line">            = leftmost_diff_dst_iter_memory.<a class="code" href="structdnnl_1_1memory.html#a6bfc99db50d87d133c6b3b4f438b967a">get_desc</a>().<a class="code" href="structdnnl_1_1memory_1_1desc.html#a3d017ecf635aae91cc3856a9dfe0721c">submemory_desc</a>(</div>
 <div class="line">                    rightmost_src_iter_dims,</div>
 <div class="line">                    {0, 0, 0, 0}); <span class="comment">// l, d, n, c offsets</span></div>
 <div class="line">    <span class="keyword">auto</span> rightmost_diff_src_iter_memory = leftmost_diff_dst_iter_memory;</div>
 <div class="line"></div>
 <div class="line">    <span class="keyword">auto</span> rightmost_diff_src_iter_c_md</div>
-<div class="line">            = leftmost_diff_dst_iter_c_memory.<a class="code" href="structdnnl_1_1memory.html#a6bfc99db50d87d133c6b3b4f438b967a">get_desc</a>().<a class="code" href="structdnnl_1_1memory_1_1desc.html#ab51c30ca2e2ce806821871a4dbded3a2">submemory_desc</a>(</div>
+<div class="line">            = leftmost_diff_dst_iter_c_memory.<a class="code" href="structdnnl_1_1memory.html#a6bfc99db50d87d133c6b3b4f438b967a">get_desc</a>().<a class="code" href="structdnnl_1_1memory_1_1desc.html#a3d017ecf635aae91cc3856a9dfe0721c">submemory_desc</a>(</div>
 <div class="line">                    rightmost_src_iter_c_dims,</div>
 <div class="line">                    {0, 0, 0, 0}); <span class="comment">// l, d, n, c offsets</span></div>
 <div class="line">    <span class="keyword">auto</span> rightmost_diff_src_iter_c_memory = leftmost_diff_dst_iter_c_memory;</div>

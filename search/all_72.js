@@ -25,7 +25,7 @@ var searchData=
   ['reserved',['reserved',['../structdnnl__memory__extra__desc__t.html#a174a1f0d7fddfd508465a940e0c6e875',1,'dnnl_memory_extra_desc_t']]],
   ['reset',['reset',['../structdnnl_1_1handle.html#a8862ef3d31c3b19bd88395e0b1373909',1,'dnnl::handle']]],
   ['reset_5fwith_5fclone',['reset_with_clone',['../structdnnl_1_1primitive__desc__base.html#a657087d16749edfbf21f557377f1e55f',1,'dnnl::primitive_desc_base']]],
-  ['reshape',['reshape',['../structdnnl_1_1memory_1_1desc.html#af7c80d84712cbb17ddf13c6e3f17044a',1,'dnnl::memory::desc']]],
+  ['reshape',['reshape',['../structdnnl_1_1memory_1_1desc.html#a0325f155fdaf54443a31df5bd7a1ab88',1,'dnnl::memory::desc']]],
   ['rnn',['rnn',['../structdnnl_1_1primitive.html#ad1ec93215a0cf3aa0a32bae0c2cd9169a6eed45b9327120cabad6916919a9a600',1,'dnnl::primitive']]],
   ['rnn_5fd',['rnn_d',['../group__dnnl__api__primitives__common.html#gga94efdd650364f4d9776cfb9b711cbdc1a5bada9b07803d3e657d5bdc592f7fc52',1,'dnnl']]],
   ['rnn_5fdirection',['rnn_direction',['../group__dnnl__api__rnn.html#ga33315cf335d1cbe26fd6b70d956e23d5',1,'dnnl']]],

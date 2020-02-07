@@ -185,6 +185,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga5994f41ff7305a203aacce192d4eac35"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__memory.html#ga5994f41ff7305a203aacce192d4eac35">dnnl_memory_desc_reshape</a> (<a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *out_memory_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *in_memory_desc, int ndims, const <a class="el" href="group__dnnl__api__memory.html#ga8331e1160e52a5d4babe96736464095a">dnnl_dims_t</a> dims)</td></tr>
 <tr class="memdesc:ga5994f41ff7305a203aacce192d4eac35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a memory descriptor by reshaping an existing one.  <a href="#ga5994f41ff7305a203aacce192d4eac35">More...</a><br/></td></tr>
 <tr class="separator:ga5994f41ff7305a203aacce192d4eac35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga415adf7b7053b88886431e949211e810"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__memory.html#ga415adf7b7053b88886431e949211e810">dnnl_memory_desc_permute_axes</a> (<a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *out_memory_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *in_memory_desc, const int *permutation)</td></tr>
+<tr class="memdesc:ga415adf7b7053b88886431e949211e810"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a memory descriptor by permuting axes in an existing one.  <a href="#ga415adf7b7053b88886431e949211e810">More...</a><br/></td></tr>
+<tr class="separator:ga415adf7b7053b88886431e949211e810"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa734e01591b567ed6378df1f404058e2"><td class="memItemLeft" align="right" valign="top">int DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__memory.html#gaa734e01591b567ed6378df1f404058e2">dnnl_memory_desc_equal</a> (const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *lhs, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *rhs)</td></tr>
 <tr class="memdesc:gaa734e01591b567ed6378df1f404058e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares two memory descriptors.  <a href="#gaa734e01591b567ed6378df1f404058e2">More...</a><br/></td></tr>
 <tr class="separator:gaa734e01591b567ed6378df1f404058e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -418,18 +421,19 @@ Functions</h2></td></tr>
 <p>Memory format tag specification. </p>
 <p>DNNL formats describe physical data layout. The physical layout is described as a sequence of the dimensions as they are laid out in the memory (from the outer-most to the inner-most). Note that this order doesn't affect the logical order of the dimensions that is kept in the <code>dims</code> field of the <a class="el" href="structdnnl__memory__desc__t.html" title="Memory descriptor. ">dnnl_memory_desc_t</a> structure. The logical order of the dimensions is specified by the primitive that uses the tensor.</p>
 <p>For example, CNN 5D tensor always has its logical dimensions in the order <code>(batch, channels, depth, height, width)</code>, while the physical layout might be <code>NCDHW</code> (corresponds to <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dae33b8c6790e5d37324f18a019658d464" title="5D CNN activations tensor, an alias to dnnl_abcde ">dnnl_ncdhw</a> format tag) or <code>NDHWC</code> (corresponds to <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091daa0d8b24eefd029e214080d3787114fc2" title="5D CNN activations tensor, an alias to dnnl_acdeb ">dnnl_ndhwc</a> format tag).</p>
-<div class="fragment"><div class="line"><span class="keywordtype">int</span> batch = 2, channels = 16, depth = 13, height = 13, width = 13;</div>
-<div class="line"></div>
-<div class="line"><span class="keywordtype">int</span> ndims = 5; <span class="comment">// 5D tensor</span></div>
-<div class="line"><a class="code" href="group__dnnl__api__memory.html#ga8331e1160e52a5d4babe96736464095a">dnnl_dims_t</a> dims = {batch, channels, depth, height, width};</div>
-<div class="line"><a class="code" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> data_in_ncdhw;</div>
-<div class="line"><a class="code" href="group__dnnl__api__memory.html#gaff696e368aeefb3036a0419c508dc6be">dnnl_memory_desc_init_by_tag</a>(</div>
-<div class="line">     &amp;data_in_ncdhw, 5, dims, <a class="code" href="group__dnnl__api__memory.html#gga012ba1c84ff24bdd068f9d2f9b26a130a6b33889946b183311c39cc1bd0656ae9">dnnl_f32</a>, <a class="code" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dae33b8c6790e5d37324f18a019658d464">dnnl_ncdhw</a>);</div>
-<div class="line"></div>
-<div class="line"><span class="comment">// note that in both cases dims passed are the same</span></div>
-<div class="line"><a class="code" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> data_in_ndhwc;</div>
-<div class="line"><a class="code" href="group__dnnl__api__memory.html#gaff696e368aeefb3036a0419c508dc6be">dnnl_memory_desc_init_by_tag</a>(</div>
-<div class="line">     &amp;data_in_ndhwc, 5, dims, <a class="code" href="group__dnnl__api__memory.html#gga012ba1c84ff24bdd068f9d2f9b26a130a6b33889946b183311c39cc1bd0656ae9">dnnl_f32</a>, <a class="code" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091daa0d8b24eefd029e214080d3787114fc2">dnnl_ndhwc</a>);</div>
+<div class="fragment"><div class="line">*  <span class="keywordtype">int</span> batch = 2, channels = 16, depth = 13, height = 13, width = 13;</div>
+<div class="line">* </div>
+<div class="line">*  <span class="keywordtype">int</span> ndims = 5; <span class="comment">// 5D tensor</span></div>
+<div class="line">*  <a class="code" href="group__dnnl__api__memory.html#ga8331e1160e52a5d4babe96736464095a">dnnl_dims_t</a> dims = {batch, channels, depth, height, width};</div>
+<div class="line">*  <a class="code" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> data_in_ncdhw;</div>
+<div class="line">*  <a class="code" href="group__dnnl__api__memory.html#gaff696e368aeefb3036a0419c508dc6be">dnnl_memory_desc_init_by_tag</a>(</div>
+<div class="line">*       &amp;data_in_ncdhw, 5, dims, <a class="code" href="group__dnnl__api__memory.html#gga012ba1c84ff24bdd068f9d2f9b26a130a6b33889946b183311c39cc1bd0656ae9">dnnl_f32</a>, <a class="code" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dae33b8c6790e5d37324f18a019658d464">dnnl_ncdhw</a>);</div>
+<div class="line">* </div>
+<div class="line">*  <span class="comment">// note that in both cases dims passed are the same</span></div>
+<div class="line">*  <a class="code" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> data_in_ndhwc;</div>
+<div class="line">*  <a class="code" href="group__dnnl__api__memory.html#gaff696e368aeefb3036a0419c508dc6be">dnnl_memory_desc_init_by_tag</a>(</div>
+<div class="line">*       &amp;data_in_ndhwc, 5, dims, <a class="code" href="group__dnnl__api__memory.html#gga012ba1c84ff24bdd068f9d2f9b26a130a6b33889946b183311c39cc1bd0656ae9">dnnl_f32</a>, <a class="code" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091daa0d8b24eefd029e214080d3787114fc2">dnnl_ndhwc</a>);</div>
+<div class="line">* </div>
 </div><!-- fragment --><p>Memory format tags can be further divided into two categories:</p>
 <ul>
 <li>Domain-agnostic names, i.e. names the do not depend on the tensor usage in the specific primitive. These names use letters from <code>a</code> to <code>l</code> to denote logical dimension from 1 to 12, and form the order in which the dimensions are laid in memory. For instance, <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da1bd907fc29344dfe7ba88336960dcf53" title="plain 2D tensor ">dnnl_ab</a> is used to denote 2D tensor where the second logical dimension (aka <code>b</code>) is the innermost, i.e. has stride = 1, and the first logical dimension (<code>a</code>) laid out in memory with stride equal to the size of second dimension. On the other hand, <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da6a6dbc0b30468d92e32a9cb3f6615c43" title="permuted 2D tensor ">dnnl_ba</a> is just transposed version of the same tensor: the first dimension (<code>a</code>) becomes the innermost one.</li>
@@ -990,14 +994,88 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initializes a memory descriptor by reshaping an existing one. </p>
-<p>The new memory descriptor inherits the data type. This operation is valid only for memory descriptors that have format_kind set to <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da30498f5adbc7d8017979a2201725ff16" title="A tensor in a generic format described by the stride and blocking values in each dimension. ">dnnl_blocked</a>.</p>
-<dl class="section note"><dt>Note</dt><dd>Currently reshape is limited to appending 1-sized dimensions to the end of the dimensions array.</dd></dl>
+<p>The new memory descriptor inherits the data type. This operation is valid only for memory descriptors that have format_kind set to <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da30498f5adbc7d8017979a2201725ff16" title="A tensor in a generic format described by the stride and blocking values in each dimension. ">dnnl_blocked</a> or <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83" title="Unspecified format kind. ">dnnl_format_kind_any</a>.</p>
+<p>The operation ensures the transformation of the physical memory format corresponds to the transformation of the logical dimensions. If such transformation is impossible, the function returns <a class="el" href="group__dnnl__api__utils.html#ggad24f9ded06e34d3ee71e7fc4b408d57aaecec97c787d74a33924abcf16ae4f51c" title="The operation failed because of incorrect function arguments. ">dnnl_invalid_arguments</a>.</p>
+<p>The reshape operation can be described as a combination of the following basic operations:</p>
+<ol type="1">
+<li>Add a dimension of size <code>1</code>. This is always possible.</li>
+<li>Remove a dimension of size <code>1</code>. This is possible only if the dimension has no padding (i.e. <code>padded_dims[dim] == dims[dim] &amp;&amp; dims[dim] == 1</code>).</li>
+<li>Split a dimension into multiple ones. This is possible only if the size of the dimension is exactly equal to the product of the split ones and the dimension does not have padding (i.e. <code>padded_dims[dim] = dims[dim]</code>).</li>
+<li>Joining multiple consecutive dimensions into a single one. As in the cases above, this requires that the dimensions do not have padding and that the memory format is such that in physical memory these dimensions are dense and have the same order as their logical counterparts. This also assumes that these dimensions are not blocked.<ul>
+<li>Here, dense means: <code>stride for dim[i] == (stride for dim[i + 1]) * dim[i + 1]</code>;</li>
+<li>And same order means: <code>i &lt; j &lt;=&gt; stride for dim[i] &lt; stride for dim[j]</code>.</li>
+</ul>
+</li>
+</ol>
+<dl class="section warning"><dt>Warning</dt><dd>Some combinations of physical memory layout and/or offsets or dimensions may result in a failure to make a reshape.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out_memory_desc</td><td>Output memory descriptor. </td></tr>
-    <tr><td class="paramname">in_memory_desc</td><td>An existing memory descriptor. Must have format_kind set to <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da30498f5adbc7d8017979a2201725ff16" title="A tensor in a generic format described by the stride and blocking values in each dimension. ">dnnl_blocked</a>. </td></tr>
+    <tr><td class="paramname">in_memory_desc</td><td>An existing memory descriptor. Must have format_kind set to <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da30498f5adbc7d8017979a2201725ff16" title="A tensor in a generic format described by the stride and blocking values in each dimension. ">dnnl_blocked</a> or <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83" title="Unspecified format kind. ">dnnl_format_kind_any</a>. </td></tr>
     <tr><td class="paramname">ndims</td><td>Number of dimensions for the output memory descriptor. </td></tr>
     <tr><td class="paramname">dims</td><td>Dimensions for the output memory descriptor. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__dnnl__api__utils.html#ggad24f9ded06e34d3ee71e7fc4b408d57aaa31395e9dccc103cf166cf7b38fc5b9c" title="The operation was successful. ">dnnl_success</a> on success and a status describing the error otherwise. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga415adf7b7053b88886431e949211e810"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API dnnl_memory_desc_permute_axes </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *&#160;</td>
+          <td class="paramname"><em>out_memory_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *&#160;</td>
+          <td class="paramname"><em>in_memory_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int *&#160;</td>
+          <td class="paramname"><em>permutation</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes a memory descriptor by permuting axes in an existing one. </p>
+<p>The physical memory layout representation is adjusted accordingly to maintain the consistency between the logical and physical parts of the memory descriptor.</p>
+<p>The new memory descriptor inherits the data type. This operation is valid only for memory descriptors that have format_kind set to <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da30498f5adbc7d8017979a2201725ff16" title="A tensor in a generic format described by the stride and blocking values in each dimension. ">dnnl_blocked</a> or <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83" title="Unspecified format kind. ">dnnl_format_kind_any</a>.</p>
+<p>The logical axes will be permuted in the following manner: ``` for (i: 0 .. in_memory_desc-&gt;ndims) out_memory_desc-&gt;dims[permutation[i]] = in_memory_desc-&gt;dims[i]; ```</p>
+<p>Example: </p>
+<div class="fragment"><div class="line">*      <a class="code" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> in_md, out_md, expect_out_md;</div>
+<div class="line">* </div>
+<div class="line">*      <span class="keyword">const</span> <span class="keywordtype">int</span> permutation[] = {1, 0}; <span class="comment">// swap the first and the second axes</span></div>
+<div class="line">* </div>
+<div class="line">*      <a class="code" href="group__dnnl__api__memory.html#ga8331e1160e52a5d4babe96736464095a">dnnl_dims_t</a> in_dims = {2, 3}, out_dims = {3, 2};</div>
+<div class="line">*      <a class="code" href="group__dnnl__api__memory.html#ga395e42b594683adb25ed2d842bb3091d">dnnl_format_tag_t</a> in_tag = <a class="code" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da1bd907fc29344dfe7ba88336960dcf53">dnnl_ab</a>, out_tag = <a class="code" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da6a6dbc0b30468d92e32a9cb3f6615c43">dnnl_ba</a>;</div>
+<div class="line">* </div>
+<div class="line">*      <a class="code" href="group__dnnl__api__memory.html#gaff696e368aeefb3036a0419c508dc6be">dnnl_memory_desc_init_by_tag</a>(</div>
+<div class="line">*              &amp;in_md, 2, in_dims, data_type, in_tag);</div>
+<div class="line">*      <a class="code" href="group__dnnl__api__memory.html#gaff696e368aeefb3036a0419c508dc6be">dnnl_memory_desc_init_by_tag</a>(</div>
+<div class="line">*              &amp;expect_out_md, 2, out_dims, data_type, out_tag);</div>
+<div class="line">* </div>
+<div class="line">*      <a class="code" href="group__dnnl__api__memory.html#ga415adf7b7053b88886431e949211e810">dnnl_memory_desc_permute_axes</a>(&amp;out_md, in_md, permutation);</div>
+<div class="line">*      assert(<a class="code" href="group__dnnl__api__memory.html#gaa734e01591b567ed6378df1f404058e2">dnnl_memory_desc_equal</a>(&amp;out_md, &amp;expect_out_md));</div>
+<div class="line">*  </div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">out_memory_desc</td><td>Output memory descriptor. </td></tr>
+    <tr><td class="paramname">in_memory_desc</td><td>An existing memory descriptor. Must have format_kind set to <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da30498f5adbc7d8017979a2201725ff16" title="A tensor in a generic format described by the stride and blocking values in each dimension. ">dnnl_blocked</a> or <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83" title="Unspecified format kind. ">dnnl_format_kind_any</a>. </td></tr>
+    <tr><td class="paramname">permutation</td><td>Axes permutation (of size <code>in_memory_desc-&gt;ndims</code>). </td></tr>
   </table>
   </dd>
 </dl>

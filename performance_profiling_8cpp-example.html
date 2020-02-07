@@ -335,7 +335,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <a class="code" href="structdnnl_1_1stream.html">stream</a> s(eng);</div>
 <div class="line">    <span class="comment">// [Set dimensions]</span></div>
 <div class="line">    <span class="comment">// set dimensions for synthetic data and weights</span></div>
-<div class="line">    <span class="keyword">const</span> <a class="code" href="structdnnl_1_1memory.html#a6ad818e4699872cc913474fa5f122cd5">memory::dim</a> BATCH = 1000;</div>
+<div class="line">    <span class="keyword">const</span> <a class="code" href="structdnnl_1_1memory.html#a6ad818e4699872cc913474fa5f122cd5">memory::dim</a> BATCH = (engine_kind == <a name="a28"></a><a class="code" href="structdnnl_1_1engine.html#a2635da16314dcbdb9bd9ea431316bb1aad9747e2da342bdb995f6389533ad1a3d">engine::kind::cpu</a> ? 1000 : 100);</div>
 <div class="line">    <span class="keyword">const</span> <a class="code" href="structdnnl_1_1memory.html#a6ad818e4699872cc913474fa5f122cd5">memory::dim</a> IC = 3, OC = 96;</div>
 <div class="line">    <span class="keyword">const</span> <a class="code" href="structdnnl_1_1memory.html#a6ad818e4699872cc913474fa5f122cd5">memory::dim</a> IH = 227, KH = 11, OH = 55;</div>
 <div class="line">    <span class="keyword">const</span> <a class="code" href="structdnnl_1_1memory.html#a6ad818e4699872cc913474fa5f122cd5">memory::dim</a> IW = 227, KW = 11, OW = 55;</div>
@@ -344,11 +344,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="comment">// [Create memory objects]</span></div>
 <div class="line">    <span class="comment">// create DNNL memory objects for user&#39;s tensors (in nchw and oihw formats)</span></div>
 <div class="line">    <span class="comment">// @note here the library allocates memory</span></div>
-<div class="line">    <span class="keyword">auto</span> user_src = <a class="code" href="structdnnl_1_1memory.html">memory</a>({{BATCH, IC, IH, IW}, <a name="a28"></a><a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e">memory::data_type::f32</a>,</div>
-<div class="line">                                   <a name="a29"></a><a class="code" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3faded7ac40158367123c5467281d44cbeb">memory::format_tag::nchw</a>},</div>
+<div class="line">    <span class="keyword">auto</span> user_src = <a class="code" href="structdnnl_1_1memory.html">memory</a>({{BATCH, IC, IH, IW}, <a name="a29"></a><a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e">memory::data_type::f32</a>,</div>
+<div class="line">                                   <a name="a30"></a><a class="code" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3faded7ac40158367123c5467281d44cbeb">memory::format_tag::nchw</a>},</div>
 <div class="line">            eng);</div>
 <div class="line">    <span class="keyword">auto</span> user_wei = <a class="code" href="structdnnl_1_1memory.html">memory</a>({{OC, IC, KH, KW}, <a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e">memory::data_type::f32</a>,</div>
-<div class="line">                                   <a name="a30"></a><a class="code" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa14b72a467aeefa06a5cb802ec4a7743c">memory::format_tag::oihw</a>},</div>
+<div class="line">                                   <a name="a31"></a><a class="code" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa14b72a467aeefa06a5cb802ec4a7743c">memory::format_tag::oihw</a>},</div>
 <div class="line">            eng);</div>
 <div class="line">    <span class="keyword">auto</span> user_dst = <a class="code" href="structdnnl_1_1memory.html">memory</a>({{BATCH, OC, OH, OW}, <a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e">memory::data_type::f32</a>,</div>
 <div class="line">                                   <a class="code" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3faded7ac40158367123c5467281d44cbeb">memory::format_tag::nchw</a>},</div>

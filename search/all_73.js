@@ -56,7 +56,7 @@ var searchData=
   ['stream',['stream',['../structdnnl_1_1stream.html#ad264b142d2f7c728fe8c84aa65d62b13',1,'dnnl::stream::stream()=default'],['../structdnnl_1_1stream.html#a681be26446cb86ddcc727f3a00a69cd9',1,'dnnl::stream::stream(const engine &amp;engine, flags flags=flags::default_flags)'],['../structdnnl_1_1stream.html#ad7f76682c40a962f27db621be7122ea2',1,'dnnl::stream::stream(const engine &amp;engine, cl_command_queue queue)']]],
   ['stream',['stream',['../structdnnl_1_1stream.html',1,'dnnl']]],
   ['strides',['strides',['../structdnnl__blocking__desc__t.html#a48c1a3cb43f5b935fe3627e6312543b3',1,'dnnl_blocking_desc_t::strides()'],['../structdnnl__convolution__desc__t.html#a12d0bfc58c674901155a0e9a1f9a72f8',1,'dnnl_convolution_desc_t::strides()'],['../structdnnl__pooling__desc__t.html#a2ea5682de63b0f77709cd1d0197997a3',1,'dnnl_pooling_desc_t::strides()']]],
-  ['submemory_5fdesc',['submemory_desc',['../structdnnl_1_1memory_1_1desc.html#ab51c30ca2e2ce806821871a4dbded3a2',1,'dnnl::memory::desc']]],
+  ['submemory_5fdesc',['submemory_desc',['../structdnnl_1_1memory_1_1desc.html#a3d017ecf635aae91cc3856a9dfe0721c',1,'dnnl::memory::desc']]],
   ['success',['success',['../group__dnnl__api__service.html#gga7acc4d3516304ae68a1289551d8f2cdda260ca9dd8a4577fc00b7bd5810298076',1,'dnnl']]],
   ['sum',['sum',['../structdnnl_1_1sum.html',1,'dnnl']]],
   ['sum',['sum',['../structdnnl_1_1sum.html#a08ab30bce8e2c28298a6926f144265b9',1,'dnnl::sum::sum()=default'],['../structdnnl_1_1sum.html#a393855f591d5700e6d35e458f6910110',1,'dnnl::sum::sum(const primitive_desc &amp;pd)'],['../structdnnl_1_1primitive.html#ad1ec93215a0cf3aa0a32bae0c2cd9169a1d623b89683f9ce4e074de1676d12416',1,'dnnl::primitive::sum()']]]

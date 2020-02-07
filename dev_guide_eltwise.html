@@ -86,59 +86,67 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </blockquote>
 <p>The eltwise primitive applies an operation to every element of the tensor:</p>
 <p class="formulaDsp">
-\[ dst(\overline{x}) = Operation(src(\overline{x})), \]
+\[ dst(\overline{s}) = Operation(src(\overline{s})), \]
 </p>
-<p>where \(\overline{x} = (x_n, .., x_0)\).</p>
+<p>where \(\overline{s} = (s_n, .., s_0)\).</p>
 <p>The following operations are supported:</p>
 <table class="doxtable">
 <tr>
-<th align="left">Operation </th><th align="left">DNNL algorithm kind </th><th align="left">Formula  </th></tr>
+<th align="left">Operation </th><th align="left">DNNL algorithm kind </th><th align="left">Forward formula </th><th align="left">Backward formula (from src) </th><th align="left">Backward formula (from dst)  </th></tr>
 <tr>
-<td align="left">abs </td><td align="left"><a class="el" href="group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23a2ac04aed39c46f6d6356744d9d12df43" title="Eltwise: abs. ">dnnl_eltwise_abs</a> </td><td align="left">\( f(x) = \begin{cases} x &amp; \text{if}\ x &gt; 0 \\ -x &amp; \text{if}\ x \leq 0 \end{cases} \) </td></tr>
+<td align="left">abs </td><td align="left"><a class="el" href="group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23a2ac04aed39c46f6d6356744d9d12df43" title="Eltwise: abs. ">dnnl_eltwise_abs</a> </td><td align="left">\( d = \begin{cases} s &amp; \text{if}\ s &gt; 0 \\ -s &amp; \text{if}\ s \leq 0 \end{cases} \) </td><td align="left">\( ds = \begin{cases} dd &amp; \text{if}\ s &gt; 0 \\ -dd &amp; \text{if}\ s &lt; 0 \\ 0 &amp; \text{if}\ s = 0 \end{cases} \) </td><td align="left">&ndash; </td></tr>
 <tr>
-<td align="left">bounded_relu </td><td align="left"><a class="el" href="group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23aed5e7f85cc5d7dfeacefe6a7a5032502" title="Eltwise: bounded_relu. ">dnnl_eltwise_bounded_relu</a> </td><td align="left">\( f(x) = \begin{cases} \alpha &amp; \text{if}\ x &gt; \alpha, \alpha \geq 0 \\ x &amp; \text{if}\ 0 &lt; x \leq \alpha \\ 0 &amp; \text{if}\ x \leq 0 \end{cases} \) </td></tr>
+<td align="left">bounded_relu </td><td align="left"><a class="el" href="group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23aed5e7f85cc5d7dfeacefe6a7a5032502" title="Eltwise: bounded_relu. ">dnnl_eltwise_bounded_relu</a> </td><td align="left">\( d = \begin{cases} \alpha &amp; \text{if}\ s &gt; \alpha \geq 0 \\ s &amp; \text{if}\ 0 &lt; s \leq \alpha \\ 0 &amp; \text{if}\ s \leq 0 \end{cases} \) </td><td align="left">\( ds = \begin{cases} dd &amp; \text{if}\ 0 &lt; s \leq \alpha, \\ 0 &amp; \text{otherwise}\ \end{cases} \) </td><td align="left">&ndash; </td></tr>
 <tr>
-<td align="left">clip </td><td align="left"><a class="el" href="group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23a026ef822b5cc28653e0730f8c8c2cf32" title="Eltwise: clip. ">dnnl_eltwise_clip</a> </td><td align="left">\( f(x) = \begin{cases} \beta &amp; \text{if}\ x &gt; \beta, \beta \geq \alpha \\ x &amp; \text{if}\ \alpha &lt; x \leq \beta \\ \alpha &amp; \text{if}\ x \leq \alpha \end{cases} \) </td></tr>
+<td align="left">clip </td><td align="left"><a class="el" href="group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23a026ef822b5cc28653e0730f8c8c2cf32" title="Eltwise: clip. ">dnnl_eltwise_clip</a> </td><td align="left">\( d = \begin{cases} \beta &amp; \text{if}\ s &gt; \beta \geq \alpha \\ s &amp; \text{if}\ \alpha &lt; s \leq \beta \\ \alpha &amp; \text{if}\ s \leq \alpha \end{cases} \) </td><td align="left">\( ds = \begin{cases} dd &amp; \text{if}\ \alpha &lt; s \leq \beta \\ 0 &amp; \text{otherwise}\ \end{cases} \) </td><td align="left">&ndash; </td></tr>
 <tr>
-<td align="left">elu </td><td align="left"><a class="el" href="group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23a7afda2aa9bac4a229909522235f461b5" title="Eltwise: parametric exponential linear unit (elu) ">dnnl_eltwise_elu</a> </td><td align="left">\( f(x) = \begin{cases} x &amp; \text{if}\ x &gt; 0 \\ \alpha (e^x - 1) &amp; \text{if}\ x \leq 0 \end{cases} \) </td></tr>
+<td align="left">elu </td><td align="left"><a class="el" href="group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23a7afda2aa9bac4a229909522235f461b5" title="Eltwise: exponential linear unit (elu) ">dnnl_eltwise_elu</a> <br/>
+ <a class="el" href="group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23a975aea11dce8571bf1d4b2552c652a27" title="Eltwise: exponential linear unit (elu) (dst for backward) ">dnnl_eltwise_elu_use_dst_for_bwd</a> </td><td align="left">\( d = \begin{cases} s &amp; \text{if}\ s &gt; 0 \\ \alpha (e^s - 1) &amp; \text{if}\ s \leq 0 \end{cases} \) </td><td align="left">\( ds = \begin{cases} dd &amp; \text{if}\ s &gt; 0 \\ dd \cdot \alpha e^s &amp; \text{if}\ s \leq 0 \end{cases} \) </td><td align="left">\( ds = \begin{cases} dd &amp; \text{if}\ d &gt; 0 \\ dd \cdot (d + \alpha) &amp; \text{if}\ d \leq 0 \end{cases}. See\ (2). \) </td></tr>
 <tr>
-<td align="left">exp </td><td align="left"><a class="el" href="group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23a4859f1326783a273500ef294bb7c7d5c" title="Eltwise: exponent. ">dnnl_eltwise_exp</a> </td><td align="left">\( f(x) = e^x \) </td></tr>
+<td align="left">exp </td><td align="left"><a class="el" href="group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23a4859f1326783a273500ef294bb7c7d5c" title="Eltwise: exponent. ">dnnl_eltwise_exp</a> <br/>
+ <a class="el" href="group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23ae7f15ca067ce527eb66a35767d253e81" title="Eltwise: exp (dst for backward) ">dnnl_eltwise_exp_use_dst_for_bwd</a> </td><td align="left">\( d = e^s \) </td><td align="left">\( ds = dd \cdot e^s \) </td><td align="left">\( ds = dd \cdot d \) </td></tr>
 <tr>
-<td align="left">gelu </td><td align="left"><a class="el" href="group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23a4dd9cf08e3bebffb5d14e24c7d513f64" title="Eltwise: gelu. ">dnnl_eltwise_gelu</a> </td><td align="left">\( f(x) = 0.5 x (1 + tanh[\sqrt{\frac{2}{\pi}} (x + 0.044715 x^3)])\) </td></tr>
+<td align="left">gelu </td><td align="left"><a class="el" href="group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23a4dd9cf08e3bebffb5d14e24c7d513f64" title="Eltwise: gelu. ">dnnl_eltwise_gelu</a> </td><td align="left">\( d = 0.5 s (1 + tanh[\sqrt{\frac{2}{\pi}} (s + 0.044715 s^3)])\) </td><td align="left">\( See\ (1). \) </td><td align="left">&ndash; </td></tr>
 <tr>
-<td align="left">linear </td><td align="left"><a class="el" href="group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23aed5eec69000ddfe6ac96e161b0d723b4" title="Eltwise: linear. ">dnnl_eltwise_linear</a> </td><td align="left">\( f(x) = \alpha x + \beta \) </td></tr>
+<td align="left">linear </td><td align="left"><a class="el" href="group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23aed5eec69000ddfe6ac96e161b0d723b4" title="Eltwise: linear. ">dnnl_eltwise_linear</a> </td><td align="left">\( d = \alpha s + \beta \) </td><td align="left">\( ds = \alpha \cdot dd \) </td><td align="left">&ndash; </td></tr>
 <tr>
-<td align="left">log </td><td align="left"><a class="el" href="group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23a8ea10785816fd41353b49445852e0b74" title="Eltwise: natural logarithm. ">dnnl_eltwise_log</a> </td><td align="left">\( f(x) = \log_{e}{x} \) </td></tr>
+<td align="left">log </td><td align="left"><a class="el" href="group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23a8ea10785816fd41353b49445852e0b74" title="Eltwise: natural logarithm. ">dnnl_eltwise_log</a> </td><td align="left">\( d = \log_{e}{s} \) </td><td align="left">\( ds = \frac{dd}{s} \) </td><td align="left">&ndash; </td></tr>
 <tr>
-<td align="left">logistic </td><td align="left"><a class="el" href="group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23ab560981bee9e7711017423e29ba46071" title="Eltwise: logistic. ">dnnl_eltwise_logistic</a> </td><td align="left">\( f(x) = \frac{1}{1+e^{-x}} \) </td></tr>
+<td align="left">logistic </td><td align="left"><a class="el" href="group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23ab560981bee9e7711017423e29ba46071" title="Eltwise: logistic. ">dnnl_eltwise_logistic</a> <br/>
+ <a class="el" href="group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23ad224a5a4730407c8b97a10fb53d1fe0f" title="Eltwise: logistic (dst for backward) ">dnnl_eltwise_logistic_use_dst_for_bwd</a> </td><td align="left">\( d = \frac{1}{1+e^{-s}} \) </td><td align="left">\( ds = \frac{dd}{1+e^{-s}} \cdot (1 - \frac{1}{1+e^{-s}}) \) </td><td align="left">\( ds = dd \cdot d \cdot (1 - d) \) </td></tr>
 <tr>
-<td align="left">pow </td><td align="left"><a class="el" href="group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23aa1d0f7a69b7dfbfbd817623552558054" title="Eltwise: pow. ">dnnl_eltwise_pow</a> </td><td align="left">\( f(x) = \alpha x^{\beta} \) </td></tr>
+<td align="left">pow </td><td align="left"><a class="el" href="group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23aa1d0f7a69b7dfbfbd817623552558054" title="Eltwise: pow. ">dnnl_eltwise_pow</a> </td><td align="left">\( d = \alpha s^{\beta} \) </td><td align="left">\( ds = dd \cdot \alpha \beta s^{\beta - 1} \) </td><td align="left">&ndash; </td></tr>
 <tr>
-<td align="left">relu </td><td align="left"><a class="el" href="group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23a5e37643fec6531331e2e38df68d4c65a" title="Eltwise: ReLU. ">dnnl_eltwise_relu</a> </td><td align="left">\( f(x) = \begin{cases} x &amp; \text{if}\ x &gt; 0 \\ \alpha x &amp; \text{if}\ x \leq 0 \end{cases} \) </td></tr>
+<td align="left">relu </td><td align="left"><a class="el" href="group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23a5e37643fec6531331e2e38df68d4c65a" title="Eltwise: ReLU. ">dnnl_eltwise_relu</a> <br/>
+ <a class="el" href="group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23aa2fffcdde8480cd08a0d6e4dee7dec53" title="Eltwise: ReLU (dst for backward) ">dnnl_eltwise_relu_use_dst_for_bwd</a> </td><td align="left">\( d = \begin{cases} s &amp; \text{if}\ s &gt; 0 \\ \alpha s &amp; \text{if}\ s \leq 0 \end{cases} \) </td><td align="left">\( ds = \begin{cases} dd &amp; \text{if}\ s &gt; 0 \\ \alpha \cdot dd &amp; \text{if}\ s \leq 0 \end{cases} \) </td><td align="left">\( ds = \begin{cases} dd &amp; \text{if}\ d &gt; 0 \\ \alpha \cdot dd &amp; \text{if}\ d \leq 0 \end{cases}. See\ (2). \) </td></tr>
 <tr>
-<td align="left">soft_relu </td><td align="left"><a class="el" href="group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23a82d95f7071af086d4b1652160d9a972f" title="Eltwise: soft_relu. ">dnnl_eltwise_soft_relu</a> </td><td align="left">\( f(x) = \log_{e}(1+e^x) \) </td></tr>
+<td align="left">soft_relu </td><td align="left"><a class="el" href="group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23a82d95f7071af086d4b1652160d9a972f" title="Eltwise: soft_relu. ">dnnl_eltwise_soft_relu</a> </td><td align="left">\( d = \log_{e}(1+e^s) \) </td><td align="left">\( ds = \frac{dd}{1 + e^{-s}} \) </td><td align="left">&ndash; </td></tr>
 <tr>
-<td align="left">sqrt </td><td align="left"><a class="el" href="group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23a2152d4664761b356bbceed3d9afe2189" title="Eltwise: square root. ">dnnl_eltwise_sqrt</a> </td><td align="left">\( f(x) = \sqrt{x} \) </td></tr>
+<td align="left">sqrt </td><td align="left"><a class="el" href="group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23a2152d4664761b356bbceed3d9afe2189" title="Eltwise: square root. ">dnnl_eltwise_sqrt</a> <br/>
+ <a class="el" href="group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23a45b82064ee41f69c5463895c41ec24d0" title="Eltwise: square root (dst for backward) ">dnnl_eltwise_sqrt_use_dst_for_bwd</a> </td><td align="left">\( d = \sqrt{s} \) </td><td align="left">\( ds = \frac{dd}{2\sqrt{s}} \) </td><td align="left">\( ds = \frac{dd}{2d} \) </td></tr>
 <tr>
-<td align="left">square </td><td align="left"><a class="el" href="group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23a4da34cea03ccb7cc2701b2f2023bcc2e" title="Eltwise: square. ">dnnl_eltwise_square</a> </td><td align="left">\( f(x) = x^2 \) </td></tr>
+<td align="left">square </td><td align="left"><a class="el" href="group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23a4da34cea03ccb7cc2701b2f2023bcc2e" title="Eltwise: square. ">dnnl_eltwise_square</a> </td><td align="left">\( d = s^2 \) </td><td align="left">\( ds = dd \cdot 2 s \) </td><td align="left">&ndash; </td></tr>
 <tr>
-<td align="left">swish </td><td align="left"><a class="el" href="group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23a63447dedf2e45ab535f1365502ff3240" title="Eltwise: swish. ">dnnl_eltwise_swish</a> </td><td align="left">\( f(x) = \frac{x}{1+e^{-\alpha x}} \) </td></tr>
+<td align="left">swish </td><td align="left"><a class="el" href="group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23a63447dedf2e45ab535f1365502ff3240" title="Eltwise: swish. ">dnnl_eltwise_swish</a> </td><td align="left">\( d = \frac{s}{1+e^{-\alpha s}} \) </td><td align="left">\( ds = \frac{dd}{1 + e^{-\alpha s}}(1 + \alpha s (1 - \frac{1}{1 + e^{-\alpha s}}) \) </td><td align="left">&ndash; </td></tr>
 <tr>
-<td align="left">tanh </td><td align="left"><a class="el" href="group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23a81b20d8f0b54c7114024186a9fbb698e" title="Eltwise: hyperbolic tangent non-linearity (tanh) ">dnnl_eltwise_tanh</a> </td><td align="left">\( f(x) = \tanh{x} \) </td></tr>
+<td align="left">tanh </td><td align="left"><a class="el" href="group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23a81b20d8f0b54c7114024186a9fbb698e" title="Eltwise: hyperbolic tangent non-linearity (tanh) ">dnnl_eltwise_tanh</a> <br/>
+ <a class="el" href="group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23a04e559b66a5d43a74a9f1b91da78151c" title="Eltwise: hyperbolic tangent non-linearity (tanh) (dst for backward) ">dnnl_eltwise_tanh_use_dst_for_bwd</a> </td><td align="left">\( d = \tanh{s} \) </td><td align="left">\( ds = dd \cdot (1 - \tanh^2{s}) \) </td><td align="left">\( ds = dd \cdot (1 - d^2) \) </td></tr>
 </table>
+<p>\( (1)\ ds = dd \cdot 0.5 (1 + tanh[\sqrt{\frac{2}{\pi}} (s + 0.044715 s^3)]) (1 + \sqrt{\frac{2}{\pi}} (s + 0.134145 s^3) (1 - tanh[s \sqrt{\frac{2}{\pi}} (1 + 0.044715 s^2)]) ) \)</p>
+<p>\( (2)\ \text{Operation is supported only for } \alpha \geq 0. \)</p>
 <h4>Difference Between Forward Training and Forward Inference</h4>
 <p>There is no difference between the <a class="el" href="group__dnnl__api__primitives__common.html#ggae3c1f22ae55645782923fbfd8b07d0c4a992e03bebfe623ac876b3636333bbce0" title="Forward data propagation (training mode). ">dnnl_forward_training</a> and <a class="el" href="group__dnnl__api__primitives__common.html#ggae3c1f22ae55645782923fbfd8b07d0c4a2f77a568a675dec649eb0450c997856d" title="Forward data propagation (inference mode). ">dnnl_forward_inference</a> propagation kinds.</p>
 <h3>Backward</h3>
-<p>The backward propagation computes \(diff\_src(\overline{x})\), based on \(diff\_dst(\overline{x})\) and \(src(\overline{x})\).</p>
+<p>The backward propagation computes \(diff\_src(\overline{s})\), based on \(diff\_dst(\overline{s})\) and \(src(\overline{s})\). However, some operations support a computation using \(dst(\overline{s})\) memory produced during forward propagation. Refer to the table above for a list of operations supporting destination as input memory and the corresponding formulas.</p>
 <h2>Implementation Details</h2>
 <h3>General Notes</h3>
 <ol type="1">
 <li>All eltwise primitives have a common initialization function (e.g., <a class="el" href="structdnnl_1_1eltwise__forward_1_1desc.html#ae7c6744d2c292b00441577291323fe84" title="Constructs a descriptor for an elementwise forward propagation primitive. ">dnnl::eltwise_forward::desc::desc()</a>) which takes both parameters \(\alpha\), and \(\beta\). These parameters are ignored if they are unused.</li>
 <li>The memory format and data type for <code>src</code> and <code>dst</code> are assumed to be the same, and in the API are typically referred as <code>data</code> (e.g., see <code>data_desc</code> in <a class="el" href="structdnnl_1_1eltwise__forward_1_1desc.html#ae7c6744d2c292b00441577291323fe84" title="Constructs a descriptor for an elementwise forward propagation primitive. ">dnnl::eltwise_forward::desc::desc()</a>). The same holds for <code>diff_src</code> and <code>diff_dst</code>. The corresponding memory descriptors are referred to as <code>diff_data_desc</code>.</li>
 <li>Both forward and backward propagation support in-place operations, meaning that <code>src</code> can be used as input and output for forward propagation, and <code>diff_dst</code> can be used as input and output for backward propagation. In case of in-place operation, the original data will be overwritten.</li>
-<li>For some operations it might be performance beneficial to compute backward propagation based on \(dst(\overline{x})\), rather than on \(src(\overline{x})\). However, for some other operations this is simply impossible. So for generality the library always requires \(src\).</li>
+<li>For some operations it might be performance beneficial to compute backward propagation based on \(dst(\overline{s})\), rather than on \(src(\overline{s})\).</li>
 </ol>
-<dl class="section note"><dt>Note</dt><dd>For the ReLU operation with \(\alpha = 0\), \(dst\) can be used instead of \(src\) and \(dst\) when backward propagation is computed. This enables several performance optimizations (see the tips below).</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>For operations supporting destination memory as input, \(dst\) can be used instead of \(src\) when backward propagation is computed. This enables several performance optimizations (see the tips below).</dd></dl>
 <h3>Data Type Support</h3>
 <p>The eltwise primitive supports the following combinations of data types:</p>
 <table class="doxtable">
@@ -166,9 +174,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <ol type="1">
 <li>For backward propagation, use the same memory format for <code>src</code>, <code>diff_dst</code>, and <code>diff_src</code> (the format of the <code>diff_dst</code> and <code>diff_src</code> are always the same because of the API). Different formats are functionally supported but lead to highly suboptimal performance.</li>
 <li>Use in-place operations whenever possible.</li>
-<li>As mentioned above for the ReLU operation with \(\alpha = 0\), one can use the \(dst\) tensor instead of \(src\). This enables the following potential optimizations for training:<ul>
-<li>ReLU can be safely done in-place.</li>
-<li>Moreover, ReLU can be fused as a <a class="el" href="dev_guide_attributes.html">post-op</a> with the previous operation if that operation doesn't require its \(dst\) to compute the backward propagation (e.g., if the convolution operation satisfies these conditions). </li>
+<li>As mentioned above for all operations supporting destination memory as input, one can use the \(dst\) tensor instead of \(src\). This enables the following potential optimizations for training:<ul>
+<li>Such operations can be safely done in-place.</li>
+<li>Moreover, such operations can be fused as a <a class="el" href="dev_guide_attributes.html">post-op</a> with the previous operation if that operation doesn't require its \(dst\) to compute the backward propagation (e.g., if the convolution operation satisfies these conditions). </li>
 </ul>
 </li>
 </ol>

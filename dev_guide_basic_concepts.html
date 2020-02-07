@@ -113,7 +113,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Memory objects are created from the memory descriptors. It is not possible to create a memory object from a memory descriptor that has memory format set to <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a>.</p>
 <p>There are two common ways for initializing memory descriptors:</p>
 <ul>
-<li>By using <a class="el" href="structdnnl_1_1memory_1_1desc.html">dnnl::memory::desc</a> constructors or by extracting a descriptor for a part of a tensor via <a class="el" href="structdnnl_1_1memory_1_1desc.html#ab51c30ca2e2ce806821871a4dbded3a2">dnnl::memory::desc::submemory_desc</a></li>
+<li>By using <a class="el" href="structdnnl_1_1memory_1_1desc.html">dnnl::memory::desc</a> constructors or by extracting a descriptor for a part of a tensor via <a class="el" href="structdnnl_1_1memory_1_1desc.html#a3d017ecf635aae91cc3856a9dfe0721c">dnnl::memory::desc::submemory_desc</a></li>
 <li>By <em>querying</em> an existing primitive descriptor for a memory descriptor corresponding to one of the primitive's parameters (for example, <a class="el" href="structdnnl_1_1convolution__forward_1_1primitive__desc.html#a0b525cb29996d52ce821b42824589fe3">dnnl::convolution_forward::primitive_desc::src_desc</a>).</li>
 </ul>
 <p>Memory objects can be created with a user-provided handle (a <code>void *</code> on CPU), or without one, in which case the library will allocate storage space on its own.</p>
