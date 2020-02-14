@@ -590,7 +590,6 @@ Public Member Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">arg</td><td>Parameter argument index as passed to the <a class="el" href="structdnnl_1_1primitive.html#a4c454f3d9315ea0dc6635f26eab9a950" title="Executes computations specified by the primitive in a specified stream. ">primitive::execute()</a> call. </td></tr>
     <tr><td class="paramname">mask</td><td>Zero point correspondence mask that defines the correspondence between the tensor dimensions and the <code>zero_points</code> vector. The set i-th bit indicates that a dedicated zero point is used for each index along that dimension. Set the mask to 0 to use a common zero point for the whole output tensor. </td></tr>
-    <tr><td class="paramname">zero_points</td><td>Constant vector of zero points. </td></tr>
     <tr><td class="paramname">zero_points</td><td>Constant vector of zero points. If the zero points are known at the time of this call, the following equality must hold: <p class="formulaDsp">
 \[zero_points.size() = \prod\limits_{d \in mask} argument.dims[d].\]
 </p>

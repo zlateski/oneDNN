@@ -154,6 +154,9 @@ Public Attributes</h2></td></tr>
 <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl__rnn__desc__t.html#a1aaeffcd4fbcb2a912281cc75a7bad1d">dst_iter_c_desc</a></td></tr>
 <tr class="memdesc:a1aaeffcd4fbcb2a912281cc75a7bad1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destination iter memory descriptor for cell state. <br/></td></tr>
 <tr class="separator:a1aaeffcd4fbcb2a912281cc75a7bad1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca86677fb7aadfca20fac609bdadeb60"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl__rnn__desc__t.html#aca86677fb7aadfca20fac609bdadeb60">weights_peephole_desc</a></td></tr>
+<tr class="memdesc:aca86677fb7aadfca20fac609bdadeb60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Weights peephole memory descriptor This memory descriptor is equal to zero memory descriptor in case of non-peephole LSTMs and other non-LSTM RNNs.  <a href="#aca86677fb7aadfca20fac609bdadeb60">More...</a><br/></td></tr>
+<tr class="separator:aca86677fb7aadfca20fac609bdadeb60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ebd9b4e6c9c1f6e1c153e4eb14e1ea1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1ebd9b4e6c9c1f6e1c153e4eb14e1ea1"></a>
 <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl__rnn__desc__t.html#a1ebd9b4e6c9c1f6e1c153e4eb14e1ea1">placeholder_desc</a></td></tr>
 <tr class="memdesc:a1ebd9b4e6c9c1f6e1c153e4eb14e1ea1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Placeholders. <br/></td></tr>
@@ -194,6 +197,9 @@ Public Attributes</h2></td></tr>
 <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl__rnn__desc__t.html#a25af5a28b6f2d91951dadeefdb9b5b37">diff_dst_iter_c_desc</a></td></tr>
 <tr class="memdesc:a25af5a28b6f2d91951dadeefdb9b5b37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destination gradient iteration memory descriptor for cell state. <br/></td></tr>
 <tr class="separator:a25af5a28b6f2d91951dadeefdb9b5b37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f029378877c8b0dbdd76802b94b0ad0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl__rnn__desc__t.html#a6f029378877c8b0dbdd76802b94b0ad0">diff_weights_peephole_desc</a></td></tr>
+<tr class="memdesc:a6f029378877c8b0dbdd76802b94b0ad0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Weights gradient peephole memory descriptor This memory descriptor is equal to zero memory descriptor in case of non-peephole LSTMs and other non-LSTM RNNs.  <a href="#a6f029378877c8b0dbdd76802b94b0ad0">More...</a><br/></td></tr>
+<tr class="separator:a6f029378877c8b0dbdd76802b94b0ad0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ca3fdd997fa4805628646b5109b609a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7ca3fdd997fa4805628646b5109b609a"></a>
 <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl__rnn__desc__t.html#a7ca3fdd997fa4805628646b5109b609a">diff_placeholder_desc</a></td></tr>
 <tr class="memdesc:a7ca3fdd997fa4805628646b5109b609a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Placeholders. <br/></td></tr>
@@ -251,6 +257,34 @@ unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 
 <p>RNN cell kind. </p>
 <p>Must be one of <a class="el" href="group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23a65d20a62fd39cfe09b3deb2e35752449" title="RNN cell. ">dnnl_vanilla_rnn</a>, <a class="el" href="group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23a765cecdcf6f7c524833a241ecc9bf41d" title="LSTM cell. ">dnnl_vanilla_lstm</a>, <a class="el" href="group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23a7ba4a460b8bff80dcdf1240d7ad34208" title="GRU cell. ">dnnl_vanilla_gru</a>, or <a class="el" href="group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23a7cd2e2970fefcdeb255415d0363279e2" title="GRU cell with linear before reset. ">dnnl_lbr_gru</a>. </p>
+
+</div>
+</div>
+<a class="anchor" id="aca86677fb7aadfca20fac609bdadeb60"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> dnnl_rnn_desc_t::weights_peephole_desc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Weights peephole memory descriptor This memory descriptor is equal to zero memory descriptor in case of non-peephole LSTMs and other non-LSTM RNNs. </p>
+
+</div>
+</div>
+<a class="anchor" id="a6f029378877c8b0dbdd76802b94b0ad0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> dnnl_rnn_desc_t::diff_weights_peephole_desc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Weights gradient peephole memory descriptor This memory descriptor is equal to zero memory descriptor in case of non-peephole LSTMs and other non-LSTM RNNs. </p>
 
 </div>
 </div>

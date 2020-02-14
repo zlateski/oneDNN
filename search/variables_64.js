@@ -19,6 +19,7 @@ var searchData=
   ['diff_5fweights_5fdesc',['diff_weights_desc',['../structdnnl__convolution__desc__t.html#aaee4a5b0219fcbc45a6aade038b89899',1,'dnnl_convolution_desc_t::diff_weights_desc()'],['../structdnnl__inner__product__desc__t.html#ab19d58dc0b094224396f9f938e65d2cf',1,'dnnl_inner_product_desc_t::diff_weights_desc()']]],
   ['diff_5fweights_5fiter_5fdesc',['diff_weights_iter_desc',['../structdnnl__rnn__desc__t.html#a284239fadd76cec600abf418e4cc19a9',1,'dnnl_rnn_desc_t']]],
   ['diff_5fweights_5flayer_5fdesc',['diff_weights_layer_desc',['../structdnnl__rnn__desc__t.html#a8030f10b83affa1bb99e6c18ec77632d',1,'dnnl_rnn_desc_t']]],
+  ['diff_5fweights_5fpeephole_5fdesc',['diff_weights_peephole_desc',['../structdnnl__rnn__desc__t.html#a6f029378877c8b0dbdd76802b94b0ad0',1,'dnnl_rnn_desc_t']]],
   ['dilates',['dilates',['../structdnnl__convolution__desc__t.html#a269474b0f8c2686623aa03ce752f0d66',1,'dnnl_convolution_desc_t']]],
   ['dims',['dims',['../structdnnl__memory__desc__t.html#a47052ab197c58af737ac2865796402ce',1,'dnnl_memory_desc_t']]],
   ['direction',['direction',['../structdnnl__rnn__desc__t.html#a05d5f4a7c0acb6a544e92017bc44ba2b',1,'dnnl_rnn_desc_t']]],

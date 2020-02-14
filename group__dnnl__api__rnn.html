@@ -146,9 +146,15 @@ Functions</h2></td></tr>
 <tr class="memitem:gabfc48e17679206624fb1e0b5cbdc9539"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__rnn.html#gabfc48e17679206624fb1e0b5cbdc9539">dnnl_lstm_forward_desc_init</a> (<a class="el" href="structdnnl__rnn__desc__t.html">dnnl_rnn_desc_t</a> *rnn_desc, <a class="el" href="group__dnnl__api__primitives__common.html#gae3c1f22ae55645782923fbfd8b07d0c4">dnnl_prop_kind_t</a> prop_kind, <a class="el" href="group__dnnl__api__rnn.html#ga629de1827647bf1824361a276c5169f0">dnnl_rnn_direction_t</a> direction, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *src_layer_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *src_iter_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *src_iter_c_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *weights_layer_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *weights_iter_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *bias_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *dst_layer_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *dst_iter_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *dst_iter_c_desc, unsigned flags)</td></tr>
 <tr class="memdesc:gabfc48e17679206624fb1e0b5cbdc9539"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a descriptor for LSTM forward propagation primitive.  <a href="#gabfc48e17679206624fb1e0b5cbdc9539">More...</a><br/></td></tr>
 <tr class="separator:gabfc48e17679206624fb1e0b5cbdc9539"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad9b01827d9c54ce4e6a09a25abe5fb55"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__rnn.html#gad9b01827d9c54ce4e6a09a25abe5fb55">dnnl_lstm_forward_desc_init_v2</a> (<a class="el" href="structdnnl__rnn__desc__t.html">dnnl_rnn_desc_t</a> *rnn_desc, <a class="el" href="group__dnnl__api__primitives__common.html#gae3c1f22ae55645782923fbfd8b07d0c4">dnnl_prop_kind_t</a> prop_kind, <a class="el" href="group__dnnl__api__rnn.html#ga629de1827647bf1824361a276c5169f0">dnnl_rnn_direction_t</a> direction, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *src_layer_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *src_iter_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *src_iter_c_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *weights_layer_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *weights_iter_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *weights_peephole_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *bias_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *dst_layer_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *dst_iter_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *dst_iter_c_desc, unsigned flags)</td></tr>
+<tr class="memdesc:gad9b01827d9c54ce4e6a09a25abe5fb55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a descriptor for an LSTM (with or without peephole) forward propagation primitive.  <a href="#gad9b01827d9c54ce4e6a09a25abe5fb55">More...</a><br/></td></tr>
+<tr class="separator:gad9b01827d9c54ce4e6a09a25abe5fb55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga61249b3a787ca3d6412daf7fa389f8cd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__rnn.html#ga61249b3a787ca3d6412daf7fa389f8cd">dnnl_lstm_backward_desc_init</a> (<a class="el" href="structdnnl__rnn__desc__t.html">dnnl_rnn_desc_t</a> *rnn_desc, <a class="el" href="group__dnnl__api__primitives__common.html#gae3c1f22ae55645782923fbfd8b07d0c4">dnnl_prop_kind_t</a> prop_kind, <a class="el" href="group__dnnl__api__rnn.html#ga629de1827647bf1824361a276c5169f0">dnnl_rnn_direction_t</a> direction, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *src_layer_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *src_iter_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *src_iter_c_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *weights_layer_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *weights_iter_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *bias_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *dst_layer_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *dst_iter_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *dst_iter_c_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *diff_src_layer_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *diff_src_iter_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *diff_src_iter_c_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *diff_weights_layer_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *diff_weights_iter_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *diff_bias_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *diff_dst_layer_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *diff_dst_iter_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *diff_dst_iter_c_desc, unsigned flags)</td></tr>
-<tr class="memdesc:ga61249b3a787ca3d6412daf7fa389f8cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a descriptor for LSTM backward propagation primitive.  <a href="#ga61249b3a787ca3d6412daf7fa389f8cd">More...</a><br/></td></tr>
+<tr class="memdesc:ga61249b3a787ca3d6412daf7fa389f8cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a descriptor for an LSTM backward propagation primitive.  <a href="#ga61249b3a787ca3d6412daf7fa389f8cd">More...</a><br/></td></tr>
 <tr class="separator:ga61249b3a787ca3d6412daf7fa389f8cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga893994f53b35e6d66bd346a0ee1936a7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__rnn.html#ga893994f53b35e6d66bd346a0ee1936a7">dnnl_lstm_backward_desc_init_v2</a> (<a class="el" href="structdnnl__rnn__desc__t.html">dnnl_rnn_desc_t</a> *rnn_desc, <a class="el" href="group__dnnl__api__primitives__common.html#gae3c1f22ae55645782923fbfd8b07d0c4">dnnl_prop_kind_t</a> prop_kind, <a class="el" href="group__dnnl__api__rnn.html#ga629de1827647bf1824361a276c5169f0">dnnl_rnn_direction_t</a> direction, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *src_layer_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *src_iter_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *src_iter_c_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *weights_layer_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *weights_iter_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *weights_peephole_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *bias_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *dst_layer_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *dst_iter_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *dst_iter_c_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *diff_src_layer_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *diff_src_iter_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *diff_src_iter_c_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *diff_weights_layer_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *diff_weights_iter_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *diff_weights_peephole_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *diff_bias_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *diff_dst_layer_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *diff_dst_iter_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *diff_dst_iter_c_desc, unsigned flags)</td></tr>
+<tr class="memdesc:ga893994f53b35e6d66bd346a0ee1936a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a descriptor for an LSTM (with or without peephole) backward propagation primitive.  <a href="#ga893994f53b35e6d66bd346a0ee1936a7">More...</a><br/></td></tr>
+<tr class="separator:ga893994f53b35e6d66bd346a0ee1936a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1552168adfd901681cc6eab2d6da4112"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__rnn.html#ga1552168adfd901681cc6eab2d6da4112">dnnl_gru_forward_desc_init</a> (<a class="el" href="structdnnl__rnn__desc__t.html">dnnl_rnn_desc_t</a> *rnn_desc, <a class="el" href="group__dnnl__api__primitives__common.html#gae3c1f22ae55645782923fbfd8b07d0c4">dnnl_prop_kind_t</a> prop_kind, <a class="el" href="group__dnnl__api__rnn.html#ga629de1827647bf1824361a276c5169f0">dnnl_rnn_direction_t</a> direction, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *src_layer_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *src_iter_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *weights_layer_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *weights_iter_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *bias_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *dst_layer_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *dst_iter_desc, unsigned flags)</td></tr>
 <tr class="memdesc:ga1552168adfd901681cc6eab2d6da4112"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a descriptor for GRU forward propagation primitive.  <a href="#ga1552168adfd901681cc6eab2d6da4112">More...</a><br/></td></tr>
 <tr class="separator:ga1552168adfd901681cc6eab2d6da4112"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -387,7 +393,7 @@ Functions</h2></td></tr>
 
 <p>Initializes a descriptor for vanilla RNN forward propagation primitive. </p>
 <p>The <code>src_iter_desc</code>, <code>bias_desc</code>, and <code>dst_iter_desc</code> may either be <code>NULL</code> or point to a zero memory descriptor. This would then indicate that the RNN forward propagation primitive should not use them and should default to zero values instead.</p>
-<dl class="section note"><dt>Note</dt><dd>All memory descriptors are allowed to be initialized with <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dafee39ac6fff0325cae43cd66495c18ac" title="Undefined memory format tag. ">dnnl_format_tag_any</a> or with format_kind set to <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83" title="Unspecified format kind. ">dnnl_format_kind_any</a>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>All memory descriptors can be initialized with <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dafee39ac6fff0325cae43cd66495c18ac" title="Undefined memory format tag. ">dnnl_format_tag_any</a> or with format_kind set to <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83" title="Unspecified format kind. ">dnnl_format_kind_any</a>.</dd></dl>
 <p>Inputs:</p>
 <ul>
 <li>src_layer (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, 0)</li>
@@ -565,7 +571,7 @@ Functions</h2></td></tr>
 
 <p>Initializes a descriptor for vanilla RNN backward propagation primitive. </p>
 <p>The <code>src_iter_desc</code> together with <code>diff_src_iter_desc</code>, <code>bias_desc</code> together with <code>diff_bias_desc</code>, and <code>dst_iter_desc</code> together with <code>diff_src_iter_desc</code>, may either be <code>NULL</code> or point to a zero memory descriptor. This would then indicate that the RNN backward propagation primitive should not use the respective data and should use zero values instead.</p>
-<dl class="section note"><dt>Note</dt><dd>All memory descriptors are allowed to be initialized with <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dafee39ac6fff0325cae43cd66495c18ac" title="Undefined memory format tag. ">dnnl_format_tag_any</a> or with format_kind set to <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83" title="Unspecified format kind. ">dnnl_format_kind_any</a>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>All memory descriptors can be initialized with <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dafee39ac6fff0325cae43cd66495c18ac" title="Undefined memory format tag. ">dnnl_format_tag_any</a> or with format_kind set to <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83" title="Unspecified format kind. ">dnnl_format_kind_any</a>.</dd></dl>
 <p>Inputs:</p>
 <ul>
 <li>src_layer (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, 0)</li>
@@ -709,7 +715,8 @@ Functions</h2></td></tr>
 
 <p>Initializes a descriptor for LSTM forward propagation primitive. </p>
 <p>The <code>src_iter_desc</code>, <code>src_iter_c_desc</code>, <code>bias_desc</code>, <code>dst_iter_desc</code>, and <code>dst_iter_c_desc</code> may either be <code>NULL</code> or point to a zero memory descriptor. This would then indicate that the LSTM forward propagation primitive should not use them and should default to zero values instead.</p>
-<dl class="section note"><dt>Note</dt><dd>All memory descriptors are allowed to be initialized with <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dafee39ac6fff0325cae43cd66495c18ac" title="Undefined memory format tag. ">dnnl_format_tag_any</a> or with format_kind set to <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83" title="Unspecified format kind. ">dnnl_format_kind_any</a>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>All memory descriptors can be initialized with <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dafee39ac6fff0325cae43cd66495c18ac" title="Undefined memory format tag. ">dnnl_format_tag_any</a> or with format_kind set to <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83" title="Unspecified format kind. ">dnnl_format_kind_any</a>.</dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="group__dnnl__api__rnn.html#gad9b01827d9c54ce4e6a09a25abe5fb55" title="Initializes a descriptor for an LSTM (with or without peephole) forward propagation primitive...">dnnl_lstm_forward_desc_init_v2</a> to initialize forward LSTM with and without peephole</dd></dl>
 <p>Inputs:</p>
 <ul>
 <li>src_layer (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, 0)</li>
@@ -736,6 +743,146 @@ Functions</h2></td></tr>
     <tr><td class="paramname">src_iter_c_desc</td><td>Memory descriptor for the input recurrent cell state vector. </td></tr>
     <tr><td class="paramname">weights_layer_desc</td><td>Memory descriptor for the weights applied to the layer input. </td></tr>
     <tr><td class="paramname">weights_iter_desc</td><td>Memory descriptor for the weights applied to the recurrent input. </td></tr>
+    <tr><td class="paramname">bias_desc</td><td>Bias memory descriptor. </td></tr>
+    <tr><td class="paramname">dst_layer_desc</td><td>Memory descriptor for the output vector. </td></tr>
+    <tr><td class="paramname">dst_iter_desc</td><td>Memory descriptor for the output recurrent hidden state vector. </td></tr>
+    <tr><td class="paramname">dst_iter_c_desc</td><td>Memory descriptor for the output recurrent cell state vector. </td></tr>
+    <tr><td class="paramname">flags</td><td>Unused. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__dnnl__api__utils.html#ggad24f9ded06e34d3ee71e7fc4b408d57aaa31395e9dccc103cf166cf7b38fc5b9c" title="The operation was successful. ">dnnl_success</a> on success and a status describing the error otherwise. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gad9b01827d9c54ce4e6a09a25abe5fb55"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API dnnl_lstm_forward_desc_init_v2 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structdnnl__rnn__desc__t.html">dnnl_rnn_desc_t</a> *&#160;</td>
+          <td class="paramname"><em>rnn_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__dnnl__api__primitives__common.html#gae3c1f22ae55645782923fbfd8b07d0c4">dnnl_prop_kind_t</a>&#160;</td>
+          <td class="paramname"><em>prop_kind</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__dnnl__api__rnn.html#ga629de1827647bf1824361a276c5169f0">dnnl_rnn_direction_t</a>&#160;</td>
+          <td class="paramname"><em>direction</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *&#160;</td>
+          <td class="paramname"><em>src_layer_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *&#160;</td>
+          <td class="paramname"><em>src_iter_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *&#160;</td>
+          <td class="paramname"><em>src_iter_c_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *&#160;</td>
+          <td class="paramname"><em>weights_layer_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *&#160;</td>
+          <td class="paramname"><em>weights_iter_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *&#160;</td>
+          <td class="paramname"><em>weights_peephole_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *&#160;</td>
+          <td class="paramname"><em>bias_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *&#160;</td>
+          <td class="paramname"><em>dst_layer_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *&#160;</td>
+          <td class="paramname"><em>dst_iter_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *&#160;</td>
+          <td class="paramname"><em>dst_iter_c_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>flags</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes a descriptor for an LSTM (with or without peephole) forward propagation primitive. </p>
+<p>The <code>src_iter_desc</code>, <code>src_iter_c_desc</code>, <code>weights_peephole_desc</code>, <code>bias_desc</code>, <code>dst_iter_desc</code>, and <code>dst_iter_c_desc</code> may either be <code>NULL</code> or point to a zero memory descriptor. This would then indicate that the LSTM forward propagation primitive should not use them and should default to zero values instead.</p>
+<dl class="section note"><dt>Note</dt><dd>All memory descriptors can be initialized with <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dafee39ac6fff0325cae43cd66495c18ac" title="Undefined memory format tag. ">dnnl_format_tag_any</a> or with format_kind set to <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83" title="Unspecified format kind. ">dnnl_format_kind_any</a>.</dd></dl>
+<p>Inputs:</p>
+<ul>
+<li>src_layer (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, 0)</li>
+<li>src_iter (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, 1), if used</li>
+<li>src_iter_c (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, 2), if used</li>
+<li>weights_layer (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, 0)</li>
+<li>weights_iter (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, 1)</li>
+<li>weights_peephole (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, 2), if used</li>
+<li>bias (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, 2), if used and LSTM is without peephole</li>
+<li>bias (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, 3), if used and LSTM is with peephole</li>
+</ul>
+<p>Outputs:</p>
+<ul>
+<li>dst_layer (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598" title="destination memory desc ">dnnl_query_dst_md</a>, 0)</li>
+<li>dst_iter (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598" title="destination memory desc ">dnnl_query_dst_md</a>, 1), if used</li>
+<li>dst_iter_c (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598" title="destination memory desc ">dnnl_query_dst_md</a>, 2), if used</li>
+<li>workspace (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a1c465006660aabe46e644e6df7d36e8a" title="workspace memory desc ">dnnl_query_workspace_md</a>, 0), if <code>prop_kind</code> equals <a class="el" href="group__dnnl__api__primitives__common.html#ggae3c1f22ae55645782923fbfd8b07d0c4a992e03bebfe623ac876b3636333bbce0" title="Forward data propagation (training mode). ">dnnl_forward_training</a>; must be queried for using <a class="el" href="group__dnnl__api__primitives__common.html#ga416464a8b3e898d8965a5f3c49d4cd54">dnnl_primitive_desc_query_md()</a> after a corresponding primitive descriptor is created</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rnn_desc</td><td>Output descriptor for LSTM primitive. </td></tr>
+    <tr><td class="paramname">prop_kind</td><td>Propagation kind. Possible values are <a class="el" href="group__dnnl__api__primitives__common.html#ggae3c1f22ae55645782923fbfd8b07d0c4a992e03bebfe623ac876b3636333bbce0" title="Forward data propagation (training mode). ">dnnl_forward_training</a> and <a class="el" href="group__dnnl__api__primitives__common.html#ggae3c1f22ae55645782923fbfd8b07d0c4a2f77a568a675dec649eb0450c997856d" title="Forward data propagation (inference mode). ">dnnl_forward_inference</a>. </td></tr>
+    <tr><td class="paramname">direction</td><td>RNN direction. See <a class="el" href="group__dnnl__api__rnn.html#ga629de1827647bf1824361a276c5169f0">dnnl_rnn_direction_t</a> for more info. </td></tr>
+    <tr><td class="paramname">src_layer_desc</td><td>Memory descriptor for the input vector. </td></tr>
+    <tr><td class="paramname">src_iter_desc</td><td>Memory descriptor for the input recurrent hidden state vector. </td></tr>
+    <tr><td class="paramname">src_iter_c_desc</td><td>Memory descriptor for the input recurrent cell state vector. </td></tr>
+    <tr><td class="paramname">weights_layer_desc</td><td>Memory descriptor for the weights applied to the layer input. </td></tr>
+    <tr><td class="paramname">weights_iter_desc</td><td>Memory descriptor for the weights applied to the recurrent input. </td></tr>
+    <tr><td class="paramname">weights_peephole_desc</td><td>Memory descriptor for the weights applied to the cell states (according to the Peephole LSTM formula). </td></tr>
     <tr><td class="paramname">bias_desc</td><td>Bias memory descriptor. </td></tr>
     <tr><td class="paramname">dst_layer_desc</td><td>Memory descriptor for the output vector. </td></tr>
     <tr><td class="paramname">dst_iter_desc</td><td>Memory descriptor for the output recurrent hidden state vector. </td></tr>
@@ -892,9 +1039,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Initializes a descriptor for LSTM backward propagation primitive. </p>
+<p>Initializes a descriptor for an LSTM backward propagation primitive. </p>
 <p>The <code>src_iter_desc</code> together with <code>diff_iter_desc</code>, <code>src_iter_c_desc</code> together with <code>src_iter_c_desc</code>, <code>bias_desc</code> together with <code>diff_bias_desc</code>, <code>dst_iter_desc</code> together with <code>diff_dst_iter_desc</code>, and <code>dst_iter_c_desc</code> together with <code>diff_dst_iter_c_desc</code>, may either be <code>NULL</code> or point to a zero memory descriptor. This would then indicate that the LSTM backward propagation primitive should not use them and should default to zero values instead.</p>
-<dl class="section note"><dt>Note</dt><dd>All memory descriptors are allowed to be initialized with <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dafee39ac6fff0325cae43cd66495c18ac" title="Undefined memory format tag. ">dnnl_format_tag_any</a> or with format_kind set to <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83" title="Unspecified format kind. ">dnnl_format_kind_any</a>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>All memory descriptors can be initialized with <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dafee39ac6fff0325cae43cd66495c18ac" title="Undefined memory format tag. ">dnnl_format_tag_any</a> or with format_kind set to <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83" title="Unspecified format kind. ">dnnl_format_kind_any</a>.</dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="group__dnnl__api__rnn.html#ga893994f53b35e6d66bd346a0ee1936a7" title="Initializes a descriptor for an LSTM (with or without peephole) backward propagation primitive...">dnnl_lstm_backward_desc_init_v2</a> to initialize backward LSTM with and without peephole</dd></dl>
 <p>Inputs:</p>
 <ul>
 <li>src_layer (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, 0)</li>
@@ -939,6 +1087,227 @@ Functions</h2></td></tr>
     <tr><td class="paramname">diff_src_iter_c_desc</td><td>Memory descriptor for the diff of input recurrent cell state vector. </td></tr>
     <tr><td class="paramname">diff_weights_layer_desc</td><td>Memory descriptor for the diff of weights applied to the layer input. </td></tr>
     <tr><td class="paramname">diff_weights_iter_desc</td><td>Memory descriptor for the diff of weights applied to the recurrent input. </td></tr>
+    <tr><td class="paramname">diff_bias_desc</td><td>Diff bias memory descriptor. </td></tr>
+    <tr><td class="paramname">diff_dst_layer_desc</td><td>Memory descriptor for the diff of output vector. </td></tr>
+    <tr><td class="paramname">diff_dst_iter_desc</td><td>Memory descriptor for the diff of output recurrent hidden state vector. </td></tr>
+    <tr><td class="paramname">diff_dst_iter_c_desc</td><td>Memory descriptor for the diff of output recurrent cell state vector. </td></tr>
+    <tr><td class="paramname">flags</td><td>Unused. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__dnnl__api__utils.html#ggad24f9ded06e34d3ee71e7fc4b408d57aaa31395e9dccc103cf166cf7b38fc5b9c" title="The operation was successful. ">dnnl_success</a> on success and a status describing the error otherwise. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga893994f53b35e6d66bd346a0ee1936a7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API dnnl_lstm_backward_desc_init_v2 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structdnnl__rnn__desc__t.html">dnnl_rnn_desc_t</a> *&#160;</td>
+          <td class="paramname"><em>rnn_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__dnnl__api__primitives__common.html#gae3c1f22ae55645782923fbfd8b07d0c4">dnnl_prop_kind_t</a>&#160;</td>
+          <td class="paramname"><em>prop_kind</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__dnnl__api__rnn.html#ga629de1827647bf1824361a276c5169f0">dnnl_rnn_direction_t</a>&#160;</td>
+          <td class="paramname"><em>direction</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *&#160;</td>
+          <td class="paramname"><em>src_layer_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *&#160;</td>
+          <td class="paramname"><em>src_iter_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *&#160;</td>
+          <td class="paramname"><em>src_iter_c_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *&#160;</td>
+          <td class="paramname"><em>weights_layer_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *&#160;</td>
+          <td class="paramname"><em>weights_iter_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *&#160;</td>
+          <td class="paramname"><em>weights_peephole_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *&#160;</td>
+          <td class="paramname"><em>bias_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *&#160;</td>
+          <td class="paramname"><em>dst_layer_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *&#160;</td>
+          <td class="paramname"><em>dst_iter_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *&#160;</td>
+          <td class="paramname"><em>dst_iter_c_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *&#160;</td>
+          <td class="paramname"><em>diff_src_layer_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *&#160;</td>
+          <td class="paramname"><em>diff_src_iter_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *&#160;</td>
+          <td class="paramname"><em>diff_src_iter_c_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *&#160;</td>
+          <td class="paramname"><em>diff_weights_layer_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *&#160;</td>
+          <td class="paramname"><em>diff_weights_iter_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *&#160;</td>
+          <td class="paramname"><em>diff_weights_peephole_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *&#160;</td>
+          <td class="paramname"><em>diff_bias_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *&#160;</td>
+          <td class="paramname"><em>diff_dst_layer_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *&#160;</td>
+          <td class="paramname"><em>diff_dst_iter_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *&#160;</td>
+          <td class="paramname"><em>diff_dst_iter_c_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>flags</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes a descriptor for an LSTM (with or without peephole) backward propagation primitive. </p>
+<p>The <code>src_iter_desc</code> together with <code>diff_iter_desc</code>, <code>src_iter_c_desc</code> together with <code>diff_src_iter_c_desc</code>, <code>weights_peephole_desc</code> together with <code>diff_weights_peephole_desc</code>, <code>bias_desc</code> together with <code>diff_bias_desc</code>, <code>dst_iter_desc</code> together with <code>diff_dst_iter_desc</code>, and <code>dst_iter_c_desc</code> together with <code>diff_dst_iter_c_desc</code>, may either be <code>NULL</code> or point to a zero memory descriptor. This would then indicate that the LSTM backward propagation primitive should not use them and should default to zero values instead.</p>
+<dl class="section note"><dt>Note</dt><dd>All memory descriptors can be initialized with <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dafee39ac6fff0325cae43cd66495c18ac" title="Undefined memory format tag. ">dnnl_format_tag_any</a> or with format_kind set to <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83" title="Unspecified format kind. ">dnnl_format_kind_any</a>.</dd></dl>
+<p>Inputs:</p>
+<ul>
+<li>src_layer (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, 0)</li>
+<li>src_iter (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, 1), if used</li>
+<li>src_iter_c (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, 2), if used</li>
+<li>weights_layer (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, 0)</li>
+<li>weights_iter (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, 1)</li>
+<li>weights_peephole (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, 2), if used</li>
+<li>bias (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, 2), if used and LSTM is without peephole</li>
+<li>bias (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, 3), if used and LSTM is with peephole</li>
+<li>dst_layer (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598" title="destination memory desc ">dnnl_query_dst_md</a>, 0)</li>
+<li>dst_iter (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598" title="destination memory desc ">dnnl_query_dst_md</a>, 1), if used</li>
+<li>dst_iter_c (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598" title="destination memory desc ">dnnl_query_dst_md</a>, 2), if used</li>
+<li>diff_dst_layer (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059ae28e33688bf6c55edcf108bd24eb90de" title="destination grad. memory desc ">dnnl_query_diff_dst_md</a>, 0)</li>
+<li>diff_dst_iter (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059ae28e33688bf6c55edcf108bd24eb90de" title="destination grad. memory desc ">dnnl_query_diff_dst_md</a>, 1), if used</li>
+<li>diff_dst_iter_c (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059ae28e33688bf6c55edcf108bd24eb90de" title="destination grad. memory desc ">dnnl_query_diff_dst_md</a>, 2), if used</li>
+<li>workspace (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a1c465006660aabe46e644e6df7d36e8a" title="workspace memory desc ">dnnl_query_workspace_md</a>, 0)</li>
+</ul>
+<p>Outputs:</p>
+<ul>
+<li>diff_src_layer (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a2367b043da6df5d691d6038693f363d6" title="source gradient memory desc ">dnnl_query_diff_src_md</a>, 0)</li>
+<li>diff_src_iter (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a2367b043da6df5d691d6038693f363d6" title="source gradient memory desc ">dnnl_query_diff_src_md</a>, 1), if used</li>
+<li>diff_src_iter_c (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a2367b043da6df5d691d6038693f363d6" title="source gradient memory desc ">dnnl_query_diff_src_md</a>, 2), if used</li>
+<li>diff_weights_layer (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a8551246c3e70fa1e420411507dbdfe32" title="weights grad. memory desc ">dnnl_query_diff_weights_md</a>, 0)</li>
+<li>diff_weights_iter (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a8551246c3e70fa1e420411507dbdfe32" title="weights grad. memory desc ">dnnl_query_diff_weights_md</a>, 1)</li>
+<li>diff_weights_peephole (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, 2), if used</li>
+<li>diff_bias (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a8551246c3e70fa1e420411507dbdfe32" title="weights grad. memory desc ">dnnl_query_diff_weights_md</a>, 2), if used and LSTM is without peephole</li>
+<li>diff_bias (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a8551246c3e70fa1e420411507dbdfe32" title="weights grad. memory desc ">dnnl_query_diff_weights_md</a>, 3), if used and LSTM is with peephole</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rnn_desc</td><td>Output descriptor for LSTM primitive. </td></tr>
+    <tr><td class="paramname">prop_kind</td><td>Propagation kind. Must be <a class="el" href="group__dnnl__api__primitives__common.html#ggae3c1f22ae55645782923fbfd8b07d0c4a326a5e31769302972e7bded555e1cc10" title="Backward propagation (with respect to all parameters). ">dnnl_backward</a>. </td></tr>
+    <tr><td class="paramname">direction</td><td>RNN direction. See <a class="el" href="group__dnnl__api__rnn.html#ga629de1827647bf1824361a276c5169f0">dnnl_rnn_direction_t</a> for more info. </td></tr>
+    <tr><td class="paramname">src_layer_desc</td><td>Memory descriptor for the input vector. </td></tr>
+    <tr><td class="paramname">src_iter_desc</td><td>Memory descriptor for the input recurrent hidden state vector. </td></tr>
+    <tr><td class="paramname">src_iter_c_desc</td><td>Memory descriptor for the input recurrent cell state vector. </td></tr>
+    <tr><td class="paramname">weights_layer_desc</td><td>Memory descriptor for the weights applied to the layer input. </td></tr>
+    <tr><td class="paramname">weights_iter_desc</td><td>Memory descriptor for the weights applied to the recurrent input. </td></tr>
+    <tr><td class="paramname">weights_peephole_desc</td><td>Memory descriptor for the weights applied to the cell states (according to the Peephole LSTM formula). </td></tr>
+    <tr><td class="paramname">bias_desc</td><td>Bias memory descriptor. </td></tr>
+    <tr><td class="paramname">dst_layer_desc</td><td>Memory descriptor for the output vector. </td></tr>
+    <tr><td class="paramname">dst_iter_desc</td><td>Memory descriptor for the output recurrent hidden state vector. </td></tr>
+    <tr><td class="paramname">dst_iter_c_desc</td><td>Memory descriptor for the output recurrent cell state vector. </td></tr>
+    <tr><td class="paramname">diff_src_layer_desc</td><td>Memory descriptor for the diff of input vector. </td></tr>
+    <tr><td class="paramname">diff_src_iter_desc</td><td>Memory descriptor for the diff of input recurrent hidden state vector. </td></tr>
+    <tr><td class="paramname">diff_src_iter_c_desc</td><td>Memory descriptor for the diff of input recurrent cell state vector. </td></tr>
+    <tr><td class="paramname">diff_weights_layer_desc</td><td>Memory descriptor for the diff of weights applied to the layer input. </td></tr>
+    <tr><td class="paramname">diff_weights_iter_desc</td><td>Memory descriptor for the diff of weights applied to the recurrent input. </td></tr>
+    <tr><td class="paramname">diff_weights_peephole_desc</td><td>Memory descriptor for the diff of weights applied to the cell states (according to the Peephole LSTM formula). </td></tr>
     <tr><td class="paramname">diff_bias_desc</td><td>Diff bias memory descriptor. </td></tr>
     <tr><td class="paramname">diff_dst_layer_desc</td><td>Memory descriptor for the diff of output vector. </td></tr>
     <tr><td class="paramname">diff_dst_iter_desc</td><td>Memory descriptor for the diff of output recurrent hidden state vector. </td></tr>
@@ -1031,7 +1400,7 @@ Functions</h2></td></tr>
 
 <p>Initializes a descriptor for GRU forward propagation primitive. </p>
 <p>The <code>src_iter_desc</code>, <code>bias_desc</code>, and <code>dst_iter</code>, may either be <code>NULL</code> or point to a zero memory descriptor. This would then indicate that the GRU forward propagation primitive should not use them and should default to zero values instead.</p>
-<dl class="section note"><dt>Note</dt><dd>All memory descriptors are allowed to be initialized with <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dafee39ac6fff0325cae43cd66495c18ac" title="Undefined memory format tag. ">dnnl_format_tag_any</a> or with format_kind set to <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83" title="Unspecified format kind. ">dnnl_format_kind_any</a>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>All memory descriptors can be initialized with <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dafee39ac6fff0325cae43cd66495c18ac" title="Undefined memory format tag. ">dnnl_format_tag_any</a> or with format_kind set to <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83" title="Unspecified format kind. ">dnnl_format_kind_any</a>.</dd></dl>
 <p>Inputs:</p>
 <ul>
 <li>src_layer (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, 0)</li>
@@ -1188,7 +1557,7 @@ Functions</h2></td></tr>
 
 <p>Initializes a descriptor for GRU backward propagation primitive. </p>
 <p>The <code>src_iter_desc</code> together with <code>diff_src_iter_desc</code>, <code>bias_desc</code> together with <code>diff_bias_desc</code>, and <code>dst_iter</code> together with <code>diff_dst_iter</code>, may either be <code>NULL</code> or point to a zero memory descriptor. This would then indicate that the GRU backward propagation primitive should not use them and should default to zero values instead.</p>
-<dl class="section note"><dt>Note</dt><dd>All memory descriptors are allowed to be initialized with <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dafee39ac6fff0325cae43cd66495c18ac" title="Undefined memory format tag. ">dnnl_format_tag_any</a> or with format_kind set to <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83" title="Unspecified format kind. ">dnnl_format_kind_any</a>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>All memory descriptors can be initialized with <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dafee39ac6fff0325cae43cd66495c18ac" title="Undefined memory format tag. ">dnnl_format_tag_any</a> or with format_kind set to <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83" title="Unspecified format kind. ">dnnl_format_kind_any</a>.</dd></dl>
 <p>Inputs:</p>
 <ul>
 <li>src_layer (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, 0)</li>
@@ -1473,7 +1842,7 @@ Functions</h2></td></tr>
 
 <p>Initializes a descriptor for LBR GRU backward propagation primitive. </p>
 <p>The <code>src_iter_desc</code> together with <code>diff_src_iter_desc</code>, <code>bias_desc</code> together with <code>diff_bias_desc</code>, and <code>dst_iter</code> together with <code>diff_dst_iter</code>, may either be <code>NULL</code> or point to a zero memory descriptor. This would then indicate that the LBR GRU backward propagation primitive should not use them and should default to zero values instead.</p>
-<dl class="section note"><dt>Note</dt><dd>All memory descriptors are allowed to be initialized with <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dafee39ac6fff0325cae43cd66495c18ac" title="Undefined memory format tag. ">dnnl_format_tag_any</a> or with format_kind set to <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83" title="Unspecified format kind. ">dnnl_format_kind_any</a>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>All memory descriptors can be initialized with <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dafee39ac6fff0325cae43cd66495c18ac" title="Undefined memory format tag. ">dnnl_format_tag_any</a> or with format_kind set to <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83" title="Unspecified format kind. ">dnnl_format_kind_any</a>.</dd></dl>
 <p>Inputs:</p>
 <ul>
 <li>src_layer (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, 0)</li>

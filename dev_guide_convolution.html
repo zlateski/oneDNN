@@ -296,7 +296,7 @@ Back, bottom, and right </td><td align="left">\(PD_R\) </td><td align="left">\(P
 <div class="line">    conv1_src_md, conv1_weights_md, conv1_bias_md, conv1_dst_md,</div>
 <div class="line">    conv1_strides, conv1_padding_l, conv1_padding_r);</div>
 </div><!-- fragment --><h4>Automatic Algorithm Selection</h4>
-<p>DNNL supports <code><a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640acfdececd63a8bc0cfe1021ad614e2ded" title="Convolution algorithm (either direct or Winograd) is chosen just in time. ">dnnl::algorithm::convolution_auto</a></code> algorithm that instructs the library to automatically select the <em>best</em> algorithm based on the heuristics that take into account tensor shapes and the number of logical processors available. (For automatic selection to work as intended, use the same thread affinity settings when creating the convolution as when executing the convolution.)</p>
+<p>DNNL supports <code><a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640acfdececd63a8bc0cfe1021ad614e2ded" title="Convolution algorithm (either direct or Winograd) to be chosen just in time. ">dnnl::algorithm::convolution_auto</a></code> algorithm that instructs the library to automatically select the <em>best</em> algorithm based on the heuristics that take into account tensor shapes and the number of logical processors available. (For automatic selection to work as intended, use the same thread affinity settings when creating the convolution as when executing the convolution.)</p>
 <p><a class="anchor" id="dg_conv_impl_limits"></a></p>
 <h2>Implementation Limitations</h2>
 <ol type="1">

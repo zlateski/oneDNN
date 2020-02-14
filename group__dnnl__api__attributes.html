@@ -267,7 +267,8 @@ Functions</h2></td></tr>
 <p>When <code>DNNL_ENABLE_CONCURRENT_EXEC=ON</code>, the library scratchpad is private to each primitive. The memory footprint is larger than when using <code>DNNL_ENABLE_CONCURRENT_EXEC=OFF</code> but different primitives can be created and run concurrently (the same primitive cannot be run concurrently from two different threads though). </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggac24d40ceea0256c7d6cc3a383a0fa07faee11cbb19052e40b07aac0ca060c23ee"></a>user</em>&nbsp;</td><td class="fielddoc">
-<p>A user shall query and provide the scratchpad memory to primitives This mode is thread-safe as long as the scratchpad buffers are not used concurrently by two primitive executions. </p>
+<p>The user manages the scratchpad allocation by querying and providing the scratchpad memory to primitives. </p>
+<p>This mode is thread-safe as long as the scratchpad buffers are not used concurrently by two primitive executions. </p>
 </td></tr>
 </table>
 
@@ -298,11 +299,11 @@ Functions</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggac7db48f6583aa9903e54c2a39d65438fa24775787fab8f13aa4809e1ce8f82aeb"></a>forward_training</em>&nbsp;</td><td class="fielddoc">
 <p>Forward data propagation (training mode). </p>
-<p>In this mode primitives perform computations necessary for subsequent backward propagation. </p>
+<p>In this mode, primitives perform computations necessary for subsequent backward propagation. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggac7db48f6583aa9903e54c2a39d65438fa3b9fad4f80d45368f856b5403198ac4c"></a>forward_inference</em>&nbsp;</td><td class="fielddoc">
 <p>Forward data propagation (inference mode). </p>
-<p>In this mode primitives perform only computations that are necessary for inference and omit computations that are necessary only for backward propagation. </p>
+<p>In this mode, primitives perform only computations that are necessary for inference and omit computations that are necessary only for backward propagation. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggac7db48f6583aa9903e54c2a39d65438fa4f2df7bab0115f1ddbe25392e3a71542"></a>forward_scoring</em>&nbsp;</td><td class="fielddoc">
 <p>Forward data propagation, alias for <a class="el" href="group__dnnl__api__attributes.html#ggac7db48f6583aa9903e54c2a39d65438fa3b9fad4f80d45368f856b5403198ac4c" title="Forward data propagation (inference mode). ">dnnl::prop_kind::forward_inference</a>. </p>
@@ -346,8 +347,11 @@ Functions</h2></td></tr>
 
 <p>Kinds of algorithms. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="gga00377dd4982333e42e8ae1d09a309640acfdececd63a8bc0cfe1021ad614e2ded"></a>convolution_auto</em>&nbsp;</td><td class="fielddoc">
-<p>Convolution algorithm (either direct or Winograd) is chosen just in time. </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="gga00377dd4982333e42e8ae1d09a309640af31ee5e3824f1f5e5d206bdf3029f22b"></a>undef</em>&nbsp;</td><td class="fielddoc">
+<p>Undefined algorithm. </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="gga00377dd4982333e42e8ae1d09a309640acfdececd63a8bc0cfe1021ad614e2ded"></a>convolution_auto</em>&nbsp;</td><td class="fielddoc">
+<p>Convolution algorithm (either direct or Winograd) to be chosen just in time. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga00377dd4982333e42e8ae1d09a309640a5028ad8f818a45333a8a0eefad35c5c0"></a>convolution_direct</em>&nbsp;</td><td class="fielddoc">
 <p>Direct convolution. </p>
@@ -398,7 +402,13 @@ Functions</h2></td></tr>
 <p>Elementwise: exponent. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga00377dd4982333e42e8ae1d09a309640a8320b34de5fed32c795cd92a7fbf4749"></a>eltwise_gelu</em>&nbsp;</td><td class="fielddoc">
-<p>Elementwise: gelu. </p>
+<p>Elementwise: gelu alias for <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640abab46bda36dbfea612e68c5345351194" title="Elementwise: tanh-based gelu. ">dnnl::algorithm::eltwise_gelu_tanh</a>. </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="gga00377dd4982333e42e8ae1d09a309640abab46bda36dbfea612e68c5345351194"></a>eltwise_gelu_tanh</em>&nbsp;</td><td class="fielddoc">
+<p>Elementwise: tanh-based gelu. </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="gga00377dd4982333e42e8ae1d09a309640a8fd73f441d3ef70416c010f6aea56d5b"></a>eltwise_gelu_erf</em>&nbsp;</td><td class="fielddoc">
+<p>Elementwise: erf-based gelu. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga00377dd4982333e42e8ae1d09a309640af2a460e3ec273e904c6f6b39baa5e477"></a>eltwise_log</em>&nbsp;</td><td class="fielddoc">
 <p>Elementwise: natural logarithm. </p>
@@ -460,7 +470,7 @@ Functions</h2></td></tr>
 <p class="formulaDsp">
 \[ c_t = tanh(W_c*x_t + b_{c_x} + r_t*(U_c*h_{t-1}+b_{c_h})) \]
 </p>
-<p> Primitive expects 4 biases on input: \([b_{u}, b_{r}, b_{c_x}, b_{c_h}]\) </p>
+<p> Primitive expects four biases on input: \([b_{u}, b_{r}, b_{c_x}, b_{c_h}]\) </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga00377dd4982333e42e8ae1d09a309640ab2c3faf084cf82b5603946995f637b35"></a>binary_add</em>&nbsp;</td><td class="fielddoc">
 <p>Binary add. </p>
@@ -497,12 +507,13 @@ Functions</h2></td></tr>
 <p>Scratchpad mode. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="ggacda323181ab267e571c31435b0817de4ac6aab09a2f8ef442a6a59800549b0487"></a>dnnl_scratchpad_mode_library</em>&nbsp;</td><td class="fielddoc">
-<p>The library manages scratchpad (default) The allocation policy is controlled by the DNNL_ENABLE_CONCURRENT_EXEC build option (<a class="el" href="dev_guide_build_options.html">Build Options</a>). </p>
-<p>When DNNL_ENABLE_CONCURRENT_EXEC=OFF (default), the library scratchpad is common to all primitives to reduce the memory footprint. This configuration comes with limited thread-safety properties, namely different primitives can be created and executed in parallel but cannot migrate between threads (in other words, each primitive should be executed in the same thread it was created in).</p>
-<p>When DNNL_ENABLE_CONCURRENT_EXEC=ON, the library scratchpad is private to each primitive. The memory footprint is larger than when using DNNL_ENABLE_CONCURRENT_EXEC=OFF but different primitives can be created and run concurrently (the same primitive cannot be run concurrently from two different threads though). </p>
+<p>The library manages the scratchpad allocation according to the policy specified by the <code>DNNL_ENABLE_CONCURRENT_EXEC</code> <a class="el" href="dev_guide_build_options.html">build option</a> (default). </p>
+<p>When <code>DNNL_ENABLE_CONCURRENT_EXEC=OFF</code> (default), the library scratchpad is common to all primitives to reduce the memory footprint. This configuration comes with limited thread-safety properties, namely primitives can be created and executed in parallel but cannot migrate between threads (in other words, each primitive should be executed in the same thread it was created in).</p>
+<p>When <code>DNNL_ENABLE_CONCURRENT_EXEC=ON</code>, the library scratchpad is private to each primitive. The memory footprint is larger than when using <code>DNNL_ENABLE_CONCURRENT_EXEC=OFF</code> but different primitives can be created and run concurrently (the same primitive cannot be run concurrently from two different threads though). </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggacda323181ab267e571c31435b0817de4a7e9d97b9ceefc5e47512d83c097d6927"></a>dnnl_scratchpad_mode_user</em>&nbsp;</td><td class="fielddoc">
-<p>A user shall query and provide the scratchpad memory to primitives This mode is thread-safe as long as the scratchpad buffers are not used concurrently by two primitive executions. </p>
+<p>The user manages the scratchpad allocation by querying and providing the scratchpad memory to primitives. </p>
+<p>This mode is thread-safe as long as the scratchpad buffers are not used concurrently by two primitive executions. </p>
 </td></tr>
 </table>
 
@@ -660,7 +671,7 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">attr</td><td>Primitive attributes. </td></tr>
-    <tr><td class="paramname">mode</td><td>Scratchpad mode. The possible values are: <a class="el" href="group__dnnl__api__attributes.html#ggacda323181ab267e571c31435b0817de4ac6aab09a2f8ef442a6a59800549b0487" title="The library manages scratchpad (default) The allocation policy is controlled by the DNNL_ENABLE_CONCU...">dnnl_scratchpad_mode_library</a> (default) and <a class="el" href="group__dnnl__api__attributes.html#ggacda323181ab267e571c31435b0817de4a7e9d97b9ceefc5e47512d83c097d6927" title="A user shall query and provide the scratchpad memory to primitives This mode is thread-safe as long a...">dnnl_scratchpad_mode_user</a>. </td></tr>
+    <tr><td class="paramname">mode</td><td>Scratchpad mode. The possible values are: <a class="el" href="group__dnnl__api__attributes.html#ggacda323181ab267e571c31435b0817de4ac6aab09a2f8ef442a6a59800549b0487" title="The library manages the scratchpad allocation according to the policy specified by the DNNL_ENABLE_CO...">dnnl_scratchpad_mode_library</a> (default) and <a class="el" href="group__dnnl__api__attributes.html#ggacda323181ab267e571c31435b0817de4a7e9d97b9ceefc5e47512d83c097d6927" title="The user manages the scratchpad allocation by querying and providing the scratchpad memory to primiti...">dnnl_scratchpad_mode_user</a>. </td></tr>
   </table>
   </dd>
 </dl>

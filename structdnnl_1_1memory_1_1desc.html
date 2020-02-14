@@ -232,7 +232,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructs a memory descriptor. </p>
-<dl class="section note"><dt>Note</dt><dd>As always, the logical order of dimensions corresponds to the <code>abc...</code> format tag, and the physical meaning of the dimensions depends on both the primitive that consumes the memory and the context of that consumption.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The logical order of dimensions corresponds to the <code>abc...</code> format tag, and the interpretation of the dimensions depends on the primitive that consumes the memory.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dims</td><td>Tensor dimensions. </td></tr>
@@ -290,12 +290,12 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructs a memory descriptor by strides. </p>
-<dl class="section note"><dt>Note</dt><dd>As always, the logical order of dimensions corresponds to the <code>abc...</code> format tag, and the physical meaning of the dimensions depends on both the primitive that consumes the memory and the context of that consumption.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The logical order of dimensions corresponds to the <code>abc...</code> format tag, and the interpretation of the dimensions depends on the primitive that consumes the memory.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dims</td><td>Tensor dimensions. </td></tr>
     <tr><td class="paramname">data_type</td><td>Data precision/type. </td></tr>
-    <tr><td class="paramname">strides</td><td>The strides for each dimension. </td></tr>
+    <tr><td class="paramname">strides</td><td>Strides for each dimension. </td></tr>
     <tr><td class="paramname">allow_empty</td><td>A flag signifying whether construction is allowed to fail without throwing an exception. In this case a zero memory descriptor will be constructed. This flag is optional and defaults to false. </td></tr>
   </table>
   </dd>

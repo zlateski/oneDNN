@@ -132,6 +132,7 @@ Figure 1: Example of stacked recurrent cells unrolled over the time dimension an
 \[ \begin{align} a_t &amp;= W \cdot h_{t,l-1} + U \cdot h_{t-1, l} + B \\ h_t &amp;= activation(a_t) \end{align} \]
 </p>
 <h2>LSTM</h2>
+<h3>LSTM (or Vanilla LSTM)</h3>
 <p>A four-gate long short-term memory recurrent cell initialized with <code>lstm_forward::desc</code> or <code>lstm_backward::desc</code> as in the following example.</p>
 <div class="fragment"><div class="line"><span class="keyword">auto</span> lstm_desc = lstm_forward::desc(</div>
 <div class="line">    aprop, direction, src_layer_desc, src_iter_h_desc, src_iter_c_desc,</div>
@@ -139,10 +140,22 @@ Figure 1: Example of stacked recurrent cells unrolled over the time dimension an
 <div class="line">    dst_iter_h_desc, dst_iter_c_desc);</div>
 </div><!-- fragment --><p>Note that for all tensors with a dimension depending on the gates number, we implicitly require the order of these gates to be <code>i</code>, <code>f</code>, \(\tilde c\), and <code>o</code>. The following equation gives the mathematical description of these gates and output for the forward pass:</p>
 <p class="formulaDsp">
-\[ \begin{align} i_t &amp;= \sigma(W_i \cdot h_{t,l-1} + U_i \cdot h_{t-1, l} + B_i) \\ f_t &amp;= \sigma(W_f \cdot h_{t,l-1} + U_f \cdot h_{t-1, l} + B_f) \\ \tilde c_t &amp;= tanh(W_{\tilde c} \cdot h_{t,l-1} + U_{\tilde c} \cdot h_{t-1, l} + B_{\tilde c}) \\ o_t &amp;= \sigma(W_o \cdot h_{t,l-1} + U_o \cdot h_{t-1, l} + B_o) \\ \\ c_t &amp;= f_t * c_{t-1} + i_t * \tilde c_t \\ h_t &amp;= tanh(c_t) * o_t \end{align} \]
+\[ \begin{align} i_t &amp;= \sigma(W_i \cdot h_{t,l-1} + U_i \cdot h_{t-1, l} + B_i) \\ f_t &amp;= \sigma(W_f \cdot h_{t,l-1} + U_f \cdot h_{t-1, l} + B_f) \\ \\ \tilde c_t &amp;= tanh(W_{\tilde c} \cdot h_{t,l-1} + U_{\tilde c} \cdot h_{t-1, l} + B_{\tilde c}) \\ c_t &amp;= f_t * c_{t-1} + i_t * \tilde c_t \\ \\ o_t &amp;= \sigma(W_o \cdot h_{t,l-1} + U_o \cdot h_{t-1, l} + B_o) \\ h_t &amp;= tanh(c_t) * o_t \end{align} \]
 </p>
 <p>where \(W_*\) are stored in <code>weights_layer</code>, \(U_*\) are stored in <code>weights_iter</code> and \(B_*\) are stored in <code>bias</code>.</p>
 <dl class="section note"><dt>Note</dt><dd>In order for the dimensions to be consistent, we require \(channels(src\_iter\_c) = channels(dst\_iter\_c) = channels(dst\_iter)\).</dd></dl>
+<h3>LSTM with Peephole</h3>
+<p>A four-gate long short-term memory recurrent cell with peephole initialized with <code>lstm_forward::desc</code> or <code>lstm_backward::desc</code> as in the following example.</p>
+<div class="fragment"><div class="line"><span class="keyword">auto</span> lstm_desc = lstm_forward::desc(</div>
+<div class="line">    aprop, direction, src_layer_desc, src_iter_h_desc, src_iter_c_desc,</div>
+<div class="line">    weights_layer_desc, weights_iter_desc, weights_peephole_desc,</div>
+<div class="line">    bias_desc, dst_layer_desc, dst_iter_h_desc, dst_iter_c_desc);</div>
+</div><!-- fragment --><p>Similarly to vanilla LSTM tensors with a dimension depending on the gates number, we implicitly require the order of these gates to be <code>i</code>, <code>f</code>, \(\tilde c\), and <code>o</code>. For peephole weights, the gates order is <code>i</code>, <code>f</code>, <code>o</code>. The following equation gives the mathematical description of these gates and output for the forward pass:</p>
+<p class="formulaDsp">
+\[ \begin{align} i_t &amp;= \sigma(W_i \cdot h_{t,l-1} + U_i \cdot h_{t-1, l} + P_i \cdot c_{t-1} + B_i) \\ f_t &amp;= \sigma(W_f \cdot h_{t,l-1} + U_f \cdot h_{t-1, l} + P_f \cdot c_{t-1} + B_f) \\ \\ \tilde c_t &amp;= tanh(W_{\tilde c} \cdot h_{t,l-1} + U_{\tilde c} \cdot h_{t-1, l} + B_{\tilde c}) \\ c_t &amp;= f_t * c_{t-1} + i_t * \tilde c_t \\ \\ o_t &amp;= \sigma(W_o \cdot h_{t,l-1} + U_o \cdot h_{t-1, l} + P_o \cdot c_t + B_o) \\ h_t &amp;= tanh(c_t) * o_t \end{align} \]
+</p>
+<p>where \(P_*\) are stored in <code>weights_peephole</code>, and the other parameters are the same as in vanilla LSTM.</p>
+<dl class="section note"><dt>Note</dt><dd>If the <code>weights_peephole_desc</code> passed to the operation descriptor constructor is a zero memory desciptor, the primitive will behave the same as in LSTM without peephole.</dd></dl>
 <h2>GRU</h2>
 <p>A three-gate gated recurrent unit cell, initialized with <code>gru_forward::desc</code> or <code>gru_backward::desc</code> as in the following example. </p>
 <div class="fragment"><div class="line"><span class="keyword">auto</span> gru_desc = gru_forward::desc(</div>
@@ -171,13 +184,13 @@ Figure 1: Example of stacked recurrent cells unrolled over the time dimension an
 <p>The following table lists the combination of data types supported by the RNN primitive for each input and output memory object.</p>
 <table class="doxtable">
 <tr>
-<th>Propagation </th><th>Input data </th><th>Recurrent data </th><th>Weights </th><th>Bias </th><th>Output Data  </th></tr>
+<th>Propagation </th><th>Cell Function </th><th>Input data </th><th>Recurrent data </th><th>Weights </th><th>Bias </th><th>Output Data  </th></tr>
 <tr>
-<td>Forward / Backward </td><td>f32 </td><td>f32 </td><td>f32 </td><td>f32 </td><td>f32 </td></tr>
+<td>Forward / Backward </td><td>All </td><td>f32 </td><td>f32 </td><td>f32 </td><td>f32 </td><td>f32 </td></tr>
 <tr>
-<td>Forward </td><td>f16 </td><td>f16 </td><td>f16 </td><td>f16 </td><td>f16 </td></tr>
+<td>Forward </td><td>All </td><td>f16 </td><td>f16 </td><td>f16 </td><td>f16 </td><td>f16 </td></tr>
 <tr>
-<td>Forward inference </td><td>u8 </td><td>u8 </td><td>s8 </td><td>f32 </td><td>u8, f32 </td></tr>
+<td>Forward inference </td><td>Vanilla LSTM </td><td>u8 </td><td>u8 </td><td>s8 </td><td>f32 </td><td>u8, f32 </td></tr>
 </table>
 <dl class="section warning"><dt>Warning</dt><dd>There might be hardware and/or implementation specific restrictions. Check <a class="el" href="dev_guide_rnn.html#dg_rnn_impl_limits">Implementation Limitations</a> section below.</dd></dl>
 <h1>Data and Weights Formats</h1>
@@ -185,7 +198,7 @@ Figure 1: Example of stacked recurrent cells unrolled over the time dimension an
 <p>The following table summarizes the data layouts supported by the RNN primitive.</p>
 <table class="doxtable">
 <tr>
-<th>Input/Output Data </th><th>Recurrent Data </th><th>Weights </th><th>Bias  </th></tr>
+<th>Input/Output Data </th><th>Recurrent Data </th><th>Layer and Iteration Weights </th><th>Peephole Weights and Bias  </th></tr>
 <tr>
 <td>any </td><td>any </td><td>any </td><td>ldgo </td></tr>
 <tr>
@@ -200,7 +213,8 @@ Figure 1: Example of stacked recurrent cells unrolled over the time dimension an
 <ol type="1">
 <li>Refer to <a class="el" href="dev_guide_data_types.html">Data Types</a> for limitations related to data types support.</li>
 <li><b>GPU</b><ul>
-<li>No support for GRU </li>
+<li>No support for GRU</li>
+<li>No support for Peephole LSTM </li>
 </ul>
 </li>
 </ol>

@@ -200,7 +200,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructs a descriptor for a deconvolution forward propagation primitive with bias. </p>
-<dl class="section note"><dt>Note</dt><dd>Memory descriptors are allowed to be initialized with <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> value of <code>format_tag</code>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Memory descriptors can be initialized with <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> value of <code>format_tag</code>.</dd></dl>
 <p>Inputs:</p>
 <ul>
 <li>src (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a31ee74fc65986558ac11db590945811a" title="Returns a source memory descriptor. ">dnnl::primitive_desc_base::src_desc</a> (0))</li>
@@ -213,7 +213,7 @@ Public Member Functions</h2></td></tr>
 </ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">prop_kind</td><td>Propagation kind. Possible values are <a class="el" href="group__dnnl__api__primitives__common.html#ggae3c1f22ae55645782923fbfd8b07d0c4a992e03bebfe623ac876b3636333bbce0" title="Forward data propagation (training mode). ">dnnl_forward_training</a>, and <a class="el" href="group__dnnl__api__primitives__common.html#ggae3c1f22ae55645782923fbfd8b07d0c4a2f77a568a675dec649eb0450c997856d" title="Forward data propagation (inference mode). ">dnnl_forward_inference</a>. </td></tr>
+    <tr><td class="paramname">prop_kind</td><td>Propagation kind. Possible values are <a class="el" href="group__dnnl__api__attributes.html#ggac7db48f6583aa9903e54c2a39d65438fa24775787fab8f13aa4809e1ce8f82aeb" title="Forward data propagation (training mode). ">dnnl::prop_kind::forward_training</a>, and <a class="el" href="group__dnnl__api__attributes.html#ggac7db48f6583aa9903e54c2a39d65438fa3b9fad4f80d45368f856b5403198ac4c" title="Forward data propagation (inference mode). ">dnnl::prop_kind::forward_inference</a>. </td></tr>
     <tr><td class="paramname">algorithm</td><td>Deconvolution algorithm: <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640a73f81608d2b7315f04c438fb8be5f99c" title="Direct deconvolution. ">dnnl::algorithm::deconvolution_direct</a>, and <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640aeb5da82914413424bf941fa04eb065aa" title="Winograd deconvolution. ">dnnl::algorithm::deconvolution_winograd</a>. </td></tr>
     <tr><td class="paramname">src_desc</td><td>Source memory descriptor. </td></tr>
     <tr><td class="paramname">weights_desc</td><td>Weights memory descriptor. </td></tr>
@@ -297,7 +297,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructs a descriptor for a deconvolution forward propagation primitive without bias. </p>
-<dl class="section note"><dt>Note</dt><dd>Memory descriptors are allowed to be initialized with <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> value of <code>format_tag</code>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Memory descriptors can be initialized with <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> value of <code>format_tag</code>.</dd></dl>
 <p>Inputs:</p>
 <ul>
 <li>src (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a31ee74fc65986558ac11db590945811a" title="Returns a source memory descriptor. ">dnnl::primitive_desc_base::src_desc</a> (0))</li>
@@ -309,7 +309,7 @@ Public Member Functions</h2></td></tr>
 </ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">prop_kind</td><td>Propagation kind. Possible values are <a class="el" href="group__dnnl__api__primitives__common.html#ggae3c1f22ae55645782923fbfd8b07d0c4a992e03bebfe623ac876b3636333bbce0" title="Forward data propagation (training mode). ">dnnl_forward_training</a>, and <a class="el" href="group__dnnl__api__primitives__common.html#ggae3c1f22ae55645782923fbfd8b07d0c4a2f77a568a675dec649eb0450c997856d" title="Forward data propagation (inference mode). ">dnnl_forward_inference</a>. </td></tr>
+    <tr><td class="paramname">prop_kind</td><td>Propagation kind. Possible values are <a class="el" href="group__dnnl__api__attributes.html#ggac7db48f6583aa9903e54c2a39d65438fa24775787fab8f13aa4809e1ce8f82aeb" title="Forward data propagation (training mode). ">dnnl::prop_kind::forward_training</a>, and <a class="el" href="group__dnnl__api__attributes.html#ggac7db48f6583aa9903e54c2a39d65438fa3b9fad4f80d45368f856b5403198ac4c" title="Forward data propagation (inference mode). ">dnnl::prop_kind::forward_inference</a>. </td></tr>
     <tr><td class="paramname">algorithm</td><td>Deconvolution algorithm: <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640a73f81608d2b7315f04c438fb8be5f99c" title="Direct deconvolution. ">dnnl::algorithm::deconvolution_direct</a>, and <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640aeb5da82914413424bf941fa04eb065aa" title="Winograd deconvolution. ">dnnl::algorithm::deconvolution_winograd</a>. </td></tr>
     <tr><td class="paramname">src_desc</td><td>Source memory descriptor. </td></tr>
     <tr><td class="paramname">weights_desc</td><td>Weights memory descriptor. </td></tr>
@@ -404,7 +404,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructs a descriptor for a dilated deconvolution forward propagation primitive with bias. </p>
-<dl class="section note"><dt>Note</dt><dd>Memory descriptors are allowed to be initialized with <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> value of <code>format_tag</code>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Memory descriptors can be initialized with <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> value of <code>format_tag</code>.</dd></dl>
 <p>Inputs:</p>
 <ul>
 <li>src (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a31ee74fc65986558ac11db590945811a" title="Returns a source memory descriptor. ">dnnl::primitive_desc_base::src_desc</a> (0))</li>
@@ -417,7 +417,7 @@ Public Member Functions</h2></td></tr>
 </ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">prop_kind</td><td>Propagation kind. Possible values are <a class="el" href="group__dnnl__api__primitives__common.html#ggae3c1f22ae55645782923fbfd8b07d0c4a992e03bebfe623ac876b3636333bbce0" title="Forward data propagation (training mode). ">dnnl_forward_training</a>, and <a class="el" href="group__dnnl__api__primitives__common.html#ggae3c1f22ae55645782923fbfd8b07d0c4a2f77a568a675dec649eb0450c997856d" title="Forward data propagation (inference mode). ">dnnl_forward_inference</a>. </td></tr>
+    <tr><td class="paramname">prop_kind</td><td>Propagation kind. Possible values are <a class="el" href="group__dnnl__api__attributes.html#ggac7db48f6583aa9903e54c2a39d65438fa24775787fab8f13aa4809e1ce8f82aeb" title="Forward data propagation (training mode). ">dnnl::prop_kind::forward_training</a>, and <a class="el" href="group__dnnl__api__attributes.html#ggac7db48f6583aa9903e54c2a39d65438fa3b9fad4f80d45368f856b5403198ac4c" title="Forward data propagation (inference mode). ">dnnl::prop_kind::forward_inference</a>. </td></tr>
     <tr><td class="paramname">algorithm</td><td>Deconvolution algorithm: <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640a73f81608d2b7315f04c438fb8be5f99c" title="Direct deconvolution. ">dnnl::algorithm::deconvolution_direct</a>, and <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640aeb5da82914413424bf941fa04eb065aa" title="Winograd deconvolution. ">dnnl::algorithm::deconvolution_winograd</a>. </td></tr>
     <tr><td class="paramname">src_desc</td><td>Source memory descriptor. </td></tr>
     <tr><td class="paramname">weights_desc</td><td>Weights memory descriptor. </td></tr>
@@ -508,7 +508,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructs a descriptor for a dilated deconvolution forward propagation primitive without bias. </p>
-<dl class="section note"><dt>Note</dt><dd>Memory descriptors are allowed to be initialized with <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> value of <code>format_tag</code>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Memory descriptors can be initialized with <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> value of <code>format_tag</code>.</dd></dl>
 <p>Inputs:</p>
 <ul>
 <li>src (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a31ee74fc65986558ac11db590945811a" title="Returns a source memory descriptor. ">dnnl::primitive_desc_base::src_desc</a> (0))</li>
@@ -520,7 +520,7 @@ Public Member Functions</h2></td></tr>
 </ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">prop_kind</td><td>Propagation kind. Possible values are <a class="el" href="group__dnnl__api__primitives__common.html#ggae3c1f22ae55645782923fbfd8b07d0c4a992e03bebfe623ac876b3636333bbce0" title="Forward data propagation (training mode). ">dnnl_forward_training</a>, and <a class="el" href="group__dnnl__api__primitives__common.html#ggae3c1f22ae55645782923fbfd8b07d0c4a2f77a568a675dec649eb0450c997856d" title="Forward data propagation (inference mode). ">dnnl_forward_inference</a>. </td></tr>
+    <tr><td class="paramname">prop_kind</td><td>Propagation kind. Possible values are <a class="el" href="group__dnnl__api__attributes.html#ggac7db48f6583aa9903e54c2a39d65438fa24775787fab8f13aa4809e1ce8f82aeb" title="Forward data propagation (training mode). ">dnnl::prop_kind::forward_training</a>, and <a class="el" href="group__dnnl__api__attributes.html#ggac7db48f6583aa9903e54c2a39d65438fa3b9fad4f80d45368f856b5403198ac4c" title="Forward data propagation (inference mode). ">dnnl::prop_kind::forward_inference</a>. </td></tr>
     <tr><td class="paramname">algorithm</td><td>Deconvolution algorithm: <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640a73f81608d2b7315f04c438fb8be5f99c" title="Direct deconvolution. ">dnnl::algorithm::deconvolution_direct</a>, and <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640aeb5da82914413424bf941fa04eb065aa" title="Winograd deconvolution. ">dnnl::algorithm::deconvolution_winograd</a>. </td></tr>
     <tr><td class="paramname">src_desc</td><td>Source memory descriptor. </td></tr>
     <tr><td class="paramname">weights_desc</td><td>Weights memory descriptor. </td></tr>

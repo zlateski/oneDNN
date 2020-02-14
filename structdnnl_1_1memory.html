@@ -224,10 +224,10 @@ cl_mem&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="st
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a3f44e12065b986c997b4df3b9eb55f5a"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a3f44e12065b986c997b4df3b9eb55f5a"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structdnnl_1_1memory.html#a3f44e12065b986c997b4df3b9eb55f5a">validate_dims</a> (const std::vector&lt; T &gt; &amp;v)</td></tr>
-<tr class="memdesc:a3f44e12065b986c997b4df3b9eb55f5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function that validates that an <code>std::vector</code> of dimensions can be safely converted to the C API array <a class="el" href="group__dnnl__api__memory.html#ga8331e1160e52a5d4babe96736464095a" title="A type to describe tensor dimensions. ">dnnl_dims_t</a>.  <a href="#a3f44e12065b986c997b4df3b9eb55f5a">More...</a><br/></td></tr>
-<tr class="separator:a3f44e12065b986c997b4df3b9eb55f5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a02c4d5aa4a07650977ba57ed65bd9a"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a5a02c4d5aa4a07650977ba57ed65bd9a"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structdnnl_1_1memory.html#a5a02c4d5aa4a07650977ba57ed65bd9a">validate_dims</a> (const std::vector&lt; T &gt; &amp;v, int min_size=0)</td></tr>
+<tr class="memdesc:a5a02c4d5aa4a07650977ba57ed65bd9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function that validates that an <code>std::vector</code> of dimensions can be safely converted to the C API array <a class="el" href="group__dnnl__api__memory.html#ga8331e1160e52a5d4babe96736464095a" title="A type to describe tensor dimensions. ">dnnl_dims_t</a>.  <a href="#a5a02c4d5aa4a07650977ba57ed65bd9a">More...</a><br/></td></tr>
+<tr class="separator:a5a02c4d5aa4a07650977ba57ed65bd9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Memory object. </p>
@@ -360,14 +360,14 @@ Static Public Member Functions</h2></td></tr>
 <p>Memory format tags can be further divided into two categories:</p>
 <ul>
 <li>Domain-agnostic names, i.e. names that do not depend on the tensor usage in the specific primitive. These names use letters from <code>a</code> to <code>l</code> to denote logical dimensions and form the order in which the dimensions are laid in memory. For example, <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa187ef4436122d1cc2f40dc2b92f0eba0" title="plain 2D tensor ">dnnl::memory::format_tag::ab</a> is used to denote a 2D tensor where the second logical dimension (denoted as <code>b</code>) is the innermost, i.e. has stride = 1, and the first logical dimension (<code>a</code>) is laid out in memory with stride equal to the size of the second dimension. On the other hand, <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa07159c47ee1b19ae4fb9c40d480856c4" title="permuted 2D tensor ">dnnl::memory::format_tag::ba</a> is the transposed version of the same tensor: the outermost dimension (<code>a</code>) becomes the innermost one.</li>
-<li>Domain-specific names, i.e. names that make sense only in the context of a certain domain, such as CNN. These names are aliases to the corresponding domain-agnostic tags and used mostly for convenience. For example, <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa1e7342845e24eb3b5b3554490da1c128" title="2D CNN activations tensor; an alias for dnnl::memory::format_tag::ab ">dnnl::memory::format_tag::nc</a> is used to denote 2D CNN activations tensor memory format, where the channels dimension is the innermost one and the batch dimension is the outermost one. Moreover, <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa1e7342845e24eb3b5b3554490da1c128" title="2D CNN activations tensor; an alias for dnnl::memory::format_tag::ab ">dnnl::memory::format_tag::nc</a> is an alias for <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa187ef4436122d1cc2f40dc2b92f0eba0" title="plain 2D tensor ">dnnl::memory::format_tag::ab</a>, because for DNNL CNN primitives the logical dimensions of activations tensors come in order: batch, channels, spatial. In other words, batch corresponds to the first logical dimension (<code>a</code>), and channels correspond to the second one (<code>b</code>).</li>
+<li>Domain-specific names, i.e. names that make sense only in the context of a certain domain, such as CNN. These names are aliases to the corresponding domain-agnostic tags and used mostly for convenience. For example, <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa1e7342845e24eb3b5b3554490da1c128" title="2D CNN activations tensor; an alias for dnnl::memory::format_tag::ab ">dnnl::memory::format_tag::nc</a> is used to denote 2D CNN activations tensor memory format, where the channels dimension is the innermost one and the batch dimension is the outermost one. Moreover, <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa1e7342845e24eb3b5b3554490da1c128" title="2D CNN activations tensor; an alias for dnnl::memory::format_tag::ab ">dnnl::memory::format_tag::nc</a> is an alias for <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa187ef4436122d1cc2f40dc2b92f0eba0" title="plain 2D tensor ">dnnl::memory::format_tag::ab</a>, because for CNN primitives the logical dimensions of activations tensors come in order: batch, channels, spatial. In other words, batch corresponds to the first logical dimension (<code>a</code>), and channels correspond to the second one (<code>b</code>).</li>
 </ul>
 <p>The following domain-specific notation applies to memory format tags:</p>
 <ul>
 <li><code>'n'</code> denotes the mini-batch dimension</li>
 <li><code>'c'</code> denotes a channels dimension</li>
 <li>When there are multiple channel dimensions (for example, in convolution weights tensor), <code>'i'</code> and <code>'o'</code> denote dimensions of input and output channels</li>
-<li><code>'c'</code> denotes a groups dimension for convolution weights</li>
+<li><code>'g'</code> denotes a groups dimension for convolution weights</li>
 <li><code>'d'</code>, <code>'h'</code>, and <code>'w'</code> denote spatial depth, height, and width respectively</li>
 </ul>
 <p>See <a class="el" href="group__dnnl__api__memory.html#ga395e42b594683adb25ed2d842bb3091d">dnnl_format_tag_t</a> for a detailed description. </p>
@@ -687,7 +687,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a3f44e12065b986c997b4df3b9eb55f5a"></a>
+<a class="anchor" id="a5a02c4d5aa4a07650977ba57ed65bd9a"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -700,8 +700,18 @@ template&lt;typename T &gt; </div>
           <td class="memname">static void dnnl::memory::validate_dims </td>
           <td>(</td>
           <td class="paramtype">const std::vector&lt; T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>v</em></td><td>)</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>min_size</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -716,6 +726,7 @@ template&lt;typename T &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">v</td><td>Vector of dimensions. </td></tr>
+    <tr><td class="paramname">min_size</td><td>Minimum expected size of the vector. </td></tr>
   </table>
   </dd>
 </dl>
