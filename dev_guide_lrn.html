@@ -14,7 +14,7 @@
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
-<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML"></script>
+<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML,dnnl"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -88,15 +88,29 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h3>Forward</h3>
 <p>LRN <a href="#dnnl_lrn_across_channels">across channels</a>:</p>
 <p class="formulaDsp">
-\[ dst(n, c, h, w) = \left\{k + \frac{\alpha}{n_{l}} \sum\limits_{i=-(n_{l}-1)/2}^{(n_{l}+1)/2-1} (src(n, c+i, h, w))^2 \right\}^{-\beta} \cdot src(n, c, h, w), \]
+\[ \dst(n, c, h, w) = \left\{k + \frac{\alpha}{n_{l}} \sum\limits_{i=-(n_{l}-1)/2}^{(n_{l}+1)/2-1} (\src(n, c+i, h, w))^2 \right\}^{-\beta} \cdot \src(n, c, h, w), \]
 </p>
 <p>LRN <a href="#dnnl_lrn_within_channel">within channel</a>:</p>
 <p class="formulaDsp">
-\[ dst(n, c, h, w) = \left\{k + \frac{\alpha}{n_{l}} \sum\limits_{i=-(n_{l}-1)/2}^{(n_{l}+1)/2-1} \sum\limits_{j=-(n_{l}-1)/2}^{(n_{l}+1)/2-1} (src(n, c, h+i, w+j))^2 \right\}^{-\beta} \cdot src(n, c, h, w), \]
+\[ \dst(n, c, h, w) = \left\{k + \frac{\alpha}{n_{l}} \sum\limits_{i=-(n_{l}-1)/2}^{(n_{l}+1)/2-1} \sum\limits_{j=-(n_{l}-1)/2}^{(n_{l}+1)/2-1} (\src(n, c, h+i, w+j))^2 \right\}^{-\beta} \cdot \src(n, c, h, w), \]
 </p>
 <p>where \(n_{l}\) is the <code>local_size</code>. Formulas are provided for 2D spatial data case.</p>
 <h3>Backward</h3>
-<p>The backward propagation computes \(diff\_src(n, c, h, w)\), based on \(diff\_dst(n, c, h, w)\) and \(src(n, c, h, w)\).</p>
+<p>The backward propagation computes \(\diffsrc(n, c, h, w)\), based on \(\diffdst(n, c, h, w)\) and \(\src(n, c, h, w)\).</p>
+<h2>Execution Arguments</h2>
+<p>When executed, the inputs and outputs should be mapped to an execution argument index as specified by the following table. </p>
+<table class="doxtable">
+<tr>
+<th>Primitive intput/output </th><th>Execution argument index  </th></tr>
+<tr>
+<td>\(\src\) </td><td>DNNL_ARG_SRC </td></tr>
+<tr>
+<td>\(\dst\) </td><td>DNNL_ARG_DST </td></tr>
+<tr>
+<td>\(\diffsrc\) </td><td>DNNL_ARG_DIFF_SRC </td></tr>
+<tr>
+<td>\(\diffdst\) </td><td>DNNL_ARG_DIFF_DST </td></tr>
+</table>
 <h2>Implementation Details</h2>
 <h3>General Notes</h3>
 <ol type="1">

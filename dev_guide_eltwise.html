@@ -14,7 +14,7 @@
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
-<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML"></script>
+<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML,dnnl"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -86,7 +86,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </blockquote>
 <p>The eltwise primitive applies an operation to every element of the tensor:</p>
 <p class="formulaDsp">
-\[ dst(\overline{s}) = Operation(src(\overline{s})), \]
+\[ \dst(\overline{s}) = Operation(\src(\overline{s})), \]
 </p>
 <p>where \(\overline{s} = (s_n, .., s_0)\).</p>
 <p>The following operations are supported:</p>
@@ -139,16 +139,30 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h4>Difference Between Forward Training and Forward Inference</h4>
 <p>There is no difference between the <a class="el" href="group__dnnl__api__primitives__common.html#ggae3c1f22ae55645782923fbfd8b07d0c4a992e03bebfe623ac876b3636333bbce0" title="Forward data propagation (training mode). ">dnnl_forward_training</a> and <a class="el" href="group__dnnl__api__primitives__common.html#ggae3c1f22ae55645782923fbfd8b07d0c4a2f77a568a675dec649eb0450c997856d" title="Forward data propagation (inference mode). ">dnnl_forward_inference</a> propagation kinds.</p>
 <h3>Backward</h3>
-<p>The backward propagation computes \(diff\_src(\overline{s})\), based on \(diff\_dst(\overline{s})\) and \(src(\overline{s})\). However, some operations support a computation using \(dst(\overline{s})\) memory produced during forward propagation. Refer to the table above for a list of operations supporting destination as input memory and the corresponding formulas.</p>
+<p>The backward propagation computes \(\diffsrc(\overline{s})\), based on \(\diffdst(\overline{s})\) and \(\src(\overline{s})\). However, some operations support a computation using \(\dst(\overline{s})\) memory produced during forward propagation. Refer to the table above for a list of operations supporting destination as input memory and the corresponding formulas.</p>
+<h2>Execution Arguments</h2>
+<p>When executed, the inputs and outputs should be mapped to an execution argument index as specified by the following table. </p>
+<table class="doxtable">
+<tr>
+<th>Primitive intput/output </th><th>Execution argument index  </th></tr>
+<tr>
+<td>\(\src\) </td><td>DNNL_ARG_SRC </td></tr>
+<tr>
+<td>\(\dst\) </td><td>DNNL_ARG_DST </td></tr>
+<tr>
+<td>\(\diffsrc\) </td><td>DNNL_ARG_DIFF_SRC </td></tr>
+<tr>
+<td>\(\diffdst\) </td><td>DNNL_ARG_DIFF_DST </td></tr>
+</table>
 <h2>Implementation Details</h2>
 <h3>General Notes</h3>
 <ol type="1">
 <li>All eltwise primitives have a common initialization function (e.g., <a class="el" href="structdnnl_1_1eltwise__forward_1_1desc.html#ae7c6744d2c292b00441577291323fe84" title="Constructs a descriptor for an elementwise forward propagation primitive. ">dnnl::eltwise_forward::desc::desc()</a>) which takes both parameters \(\alpha\), and \(\beta\). These parameters are ignored if they are unused.</li>
-<li>The memory format and data type for <code>src</code> and <code>dst</code> are assumed to be the same, and in the API are typically referred as <code>data</code> (e.g., see <code>data_desc</code> in <a class="el" href="structdnnl_1_1eltwise__forward_1_1desc.html#ae7c6744d2c292b00441577291323fe84" title="Constructs a descriptor for an elementwise forward propagation primitive. ">dnnl::eltwise_forward::desc::desc()</a>). The same holds for <code>diff_src</code> and <code>diff_dst</code>. The corresponding memory descriptors are referred to as <code>diff_data_desc</code>.</li>
-<li>Both forward and backward propagation support in-place operations, meaning that <code>src</code> can be used as input and output for forward propagation, and <code>diff_dst</code> can be used as input and output for backward propagation. In case of in-place operation, the original data will be overwritten.</li>
-<li>For some operations it might be performance beneficial to compute backward propagation based on \(dst(\overline{s})\), rather than on \(src(\overline{s})\).</li>
+<li>The memory format and data type for \(\src\) and \(\dst\) are assumed to be the same, and in the API are typically referred as <code>data</code> (e.g., see <code>data_desc</code> in <a class="el" href="structdnnl_1_1eltwise__forward_1_1desc.html#ae7c6744d2c292b00441577291323fe84" title="Constructs a descriptor for an elementwise forward propagation primitive. ">dnnl::eltwise_forward::desc::desc()</a>). The same holds for \(\diffsrc\) and \(\diffdst\). The corresponding memory descriptors are referred to as <code>diff_data_desc</code>.</li>
+<li>Both forward and backward propagation support in-place operations, meaning that \(\src\) can be used as input and output for forward propagation, and \(\diffdst\) can be used as input and output for backward propagation. In case of in-place operation, the original data will be overwritten.</li>
+<li>For some operations it might be performance beneficial to compute backward propagation based on \(\dst(\overline{s})\), rather than on \(\src(\overline{s})\).</li>
 </ol>
-<dl class="section note"><dt>Note</dt><dd>For operations supporting destination memory as input, \(dst\) can be used instead of \(src\) when backward propagation is computed. This enables several performance optimizations (see the tips below).</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>For operations supporting destination memory as input, \(\dst\) can be used instead of \(\src\) when backward propagation is computed. This enables several performance optimizations (see the tips below).</dd></dl>
 <h3>Data Type Support</h3>
 <p>The eltwise primitive supports the following combinations of data types:</p>
 <table class="doxtable">
@@ -174,11 +188,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </ol>
 <h2>Performance Tips</h2>
 <ol type="1">
-<li>For backward propagation, use the same memory format for <code>src</code>, <code>diff_dst</code>, and <code>diff_src</code> (the format of the <code>diff_dst</code> and <code>diff_src</code> are always the same because of the API). Different formats are functionally supported but lead to highly suboptimal performance.</li>
+<li>For backward propagation, use the same memory format for \(\src\), \(\diffdst\), and \(\diffsrc\) (the format of the \(\diffdst\) and \(\diffsrc\) are always the same because of the API). Different formats are functionally supported but lead to highly suboptimal performance.</li>
 <li>Use in-place operations whenever possible.</li>
-<li>As mentioned above for all operations supporting destination memory as input, one can use the \(dst\) tensor instead of \(src\). This enables the following potential optimizations for training:<ul>
+<li>As mentioned above for all operations supporting destination memory as input, one can use the \(\dst\) tensor instead of \(\src\). This enables the following potential optimizations for training:<ul>
 <li>Such operations can be safely done in-place.</li>
-<li>Moreover, such operations can be fused as a <a class="el" href="dev_guide_attributes.html">post-op</a> with the previous operation if that operation doesn't require its \(dst\) to compute the backward propagation (e.g., if the convolution operation satisfies these conditions). </li>
+<li>Moreover, such operations can be fused as a <a class="el" href="dev_guide_attributes.html">post-op</a> with the previous operation if that operation doesn't require its \(\dst\) to compute the backward propagation (e.g., if the convolution operation satisfies these conditions). </li>
 </ul>
 </li>
 </ol>

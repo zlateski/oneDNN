@@ -14,7 +14,7 @@
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
-<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML"></script>
+<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML,dnnl"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -86,13 +86,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </blockquote>
 <p>The matrix multiplication (MatMul) primitive computes the product of two 2D tensors with optional bias addition:</p>
 <p class="formulaDsp">
-\[ dst(m, n) = \sum_{k=0}^{K} \left( src(m, k) \cdot weights(k, n) \right) + bias(m, n) \]
+\[ \dst(m, n) = \sum_{k=0}^{K} \left( \src(m, k) \cdot \weights(k, n) \right) + \bias(m, n) \]
 </p>
 <p>The MatMul primitive also supports batching multiple independent matrix multiplication operations, in which case the tensors must be 3D:</p>
 <p class="formulaDsp">
-\[ dst(mb, m, n) = \sum_{k=0}^{K} \left( src(mb, m, k) \cdot weights(mb, k, n) \right) + bias(mb, m, n) \]
+\[ \dst(mb, m, n) = \sum_{k=0}^{K} \left( \src(mb, m, k) \cdot \weights(mb, k, n) \right) + \bias(mb, m, n) \]
 </p>
-<p>The bias tensor is optional and supports implicit broadcast semantics: any of its dimensions can be 1 and the same value would be used across the corresponding dimension. However, \(bias\) must have the same number of dimensions as the \(dst\).</p>
+<p>The bias tensor is optional and supports implicit broadcast semantics: any of its dimensions can be 1 and the same value would be used across the corresponding dimension. However, \(\bias\) must have the same number of dimensions as the \(\dst\).</p>
+<h2>Execution Arguments</h2>
+<p>When executed, the inputs and outputs should be mapped to an execution argument index as specified by the following table. </p>
+<table class="doxtable">
+<tr>
+<th>Primitive intput/output </th><th>Execution argument index  </th></tr>
+<tr>
+<td>\(\src\) </td><td>DNNL_ARG_SRC </td></tr>
+<tr>
+<td>\(\weights\) </td><td>DNNL_ARG_WEIGHTS </td></tr>
+<tr>
+<td>\(\bias\) </td><td>DNNL_ARG_BIAS </td></tr>
+<tr>
+<td>\(\dst\) </td><td>DNNL_ARG_DST </td></tr>
+</table>
 <h2>Implementation Details</h2>
 <h3>General Notes</h3>
 <ol type="1">

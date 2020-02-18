@@ -14,7 +14,7 @@
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
-<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML"></script>
+<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML,dnnl"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -105,19 +105,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h3>Example: Convolution Quantization Workflow</h3>
 <p>Let's consider a simple example: a convolution without bias. The tensors are represented as:</p>
 <ul>
-<li>\(src_{f32}(:) = scale_{src} \cdot src_{int8}(:)\)</li>
-<li>\(weights_{f32}(:) = scale_{weights} \cdot weights_{int8}(:)\)</li>
-<li>\(dst_{f32}(:) = scale_{dst} \cdot dst_{int8}(:)\)</li>
+<li>\(\src_{f32}(:) = scale_{\src} \cdot \src_{int8}(:)\)</li>
+<li>\(\weights_{f32}(:) = scale_{\weights} \cdot \weights_{int8}(:)\)</li>
+<li>\(\dst_{f32}(:) = scale_{\dst} \cdot \dst_{int8}(:)\)</li>
 </ul>
-<p>Here the \(src_{f32}, weights_{f32}, dst_{f32}\) are not computed at all, the whole work happens with INT8 tensors. As mentioned above, we also somehow know all the scaling factors: \(scale_{src}, scale_{weights}, scale_{dst}\).</p>
-<p>So the task is to compute the \(dst_{int8}\) tensor.</p>
+<p>Here the \(\src_{f32}, \weights_{f32}, \dst_{f32}\) are not computed at all, the whole work happens with INT8 tensors. As mentioned above, we also somehow know all the scaling factors: \(scale_{\src}, scale_{\weights}, scale_{\dst}\).</p>
+<p>So the task is to compute the \(\dst_{int8}\) tensor.</p>
 <p>Mathematically, the computations are pretty straightforward: </p>
 <p class="formulaDsp">
-\[ dst_{int8}(:) = downconvert\_f32\_to\_int8( output\_scale \cdot conv_{s32}(src_{int8}, weights_{int8}) ), \]
+\[ \dst_{int8}(:) = downconvert\_f32\_to\_int8( output\_scale \cdot conv_{s32}(\src_{int8}, \weights_{int8}) ), \]
 </p>
 <p>where:</p>
 <ul>
-<li>\(output\_scale := \frac{scale_{src} \cdot scale_{weights}}{scale_{dst}}\);</li>
+<li>\(output\_scale := \frac{scale_{\src} \cdot scale_{\weights}}{scale_{\dst}}\);</li>
 <li>\(conv_{s32}\) is just a regular convolution which takes source and weights with INT8 data type and compute the result in INT32 data type (INT32 is chosen to avoid overflows during the computations);</li>
 <li>\(downconvert\_f32\_to\_s8()\) converts an <code>f32</code> value to <code>s8</code> with potential saturation if the values are out of the range of the INT8 data type.</li>
 </ul>
@@ -126,26 +126,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Some of the primitives have limited support of multiple scales for a quantized tensor. The most popular use-case is a <a class="el" href="dev_guide_convolution.html">Convolution</a> primitive that supports per-output-channel scaling factors for the weights, meaning that the actual convolution computations would need to scale different output channels differently. This is possible without significant performance drop because the per-output-channel re-quantization only required at the very end of the computations. It seems impossible to implement the same trick for the input channels, since that would require re-quantization for every input data point.</p>
 <p>Assume we have (the scales are designated as \(\alpha\) to simplify reading):</p>
 <ul>
-<li>\(src_{f32}(n, ic, ih, iw) = \alpha_{src} \cdot src_{int8}(n, ic, ih, iw)\)</li>
-<li>\(weights_{f32}(oc, ic, kh, kw) = \alpha_{weights}(oc) \cdot weights_{int8}(oc, ic, kh, kw)\)</li>
-<li>\(dst_{f32}(n, oc, oh, ow) = scale_{dst} \cdot dst_{int8}(n, oc, oh, ow)\)</li>
+<li>\(\src_{f32}(n, ic, ih, iw) = \alpha_{\src} \cdot \src_{int8}(n, ic, ih, iw)\)</li>
+<li>\(\weights_{f32}(oc, ic, kh, kw) = \alpha_{\weights}(oc) \cdot \weights_{int8}(oc, ic, kh, kw)\)</li>
+<li>\(\dst_{f32}(n, oc, oh, ow) = scale_{\dst} \cdot \dst_{int8}(n, oc, oh, ow)\)</li>
 </ul>
 <p>Note that now the weights' scaling factor depends on the \(oc\).</p>
-<p>To compute the \(dst_{int8}\) we need to perform the following:</p>
+<p>To compute the \(\dst_{int8}\) we need to perform the following:</p>
 <p class="formulaDsp">
-\[ dst_{int8}(n, oc, oh, ow) = downconvert\_f32\_to\_int8( output\_scale(oc) \cdot conv_{s32}(src_{int8}, weights_{int8})|_{(n, oc, oh, ow)} ), \]
+\[ \dst_{int8}(n, oc, oh, ow) = downconvert\_f32\_to\_int8( output\_scale(oc) \cdot conv_{s32}(\src_{int8}, \weights_{int8})|_{(n, oc, oh, ow)} ), \]
 </p>
 <p>where now</p>
 <ul>
-<li>\(output\_scale(oc) := \frac{\alpha_{src} \cdot \alpha_{weights}(oc)}{\alpha_{dst}}\).</li>
+<li>\(output\_scale(oc) := \frac{\alpha_{\src} \cdot \alpha_{\weights}(oc)}{\alpha_{\dst}}\).</li>
 </ul>
 <p>It is worth mentioning that a user has to prepare quantized weights accordingly. For DNNL provides reorders that can perform per-channel scaling:</p>
 <p class="formulaDsp">
-\[ weights_{int8}(oc, ic, kh, kw) = downconvert\_f32\_to\_int8( output\_scale(oc) \cdot weights_{f32}(oc, ic, kh, kw) ), \]
+\[ \weights_{int8}(oc, ic, kh, kw) = downconvert\_f32\_to\_int8( output\_scale(oc) \cdot \weights_{f32}(oc, ic, kh, kw) ), \]
 </p>
 <p>where:</p>
 <ul>
-<li>\(output\_scale(oc) := \frac{1}{\alpha_{weights}(oc_{})}\).</li>
+<li>\(output\_scale(oc) := \frac{1}{\alpha_{\weights}(oc_{})}\).</li>
 </ul>
 <h2>API</h2>
 <p>The library API to support for INT8 was designed for the model described above. However, it doesn't require users to follow exactly this model. As long as users can fit their model into the given functionality everything should work fine. Having this in mind we tried to design a minimal and simple yet powerful enough quantization API.</p>
@@ -168,11 +168,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">        );</div>
 </div><!-- fragment --><p>In the simplest case, when there is only one common scale the attribute changes the op behavior from </p>
 <p class="formulaDsp">
-\[ dst(:) = Op(...) \]
+\[ \dst(:) = Op(...) \]
 </p>
 <p>to</p>
 <p class="formulaDsp">
-\[ dst(:) = scale \cdot Op(...). \]
+\[ \dst(:) = scale \cdot Op(...). \]
 </p>
 <p>To support scales per one or several dimensions, users must set the appropriate mask.</p>
 <p>Say the destination is \(D_0 \times ... \times D_{n-1}\) tensor and we want to have output scales per \(d_i\) dimension (where \(0 \le d_i &lt; n\)).</p>
@@ -292,12 +292,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>For details, refer to the <a class="el" href="dev_guide_attributes_post_ops.html#dev_guide_attributes_post_ops_with_scales">Tanh -&gt; Sum -&gt; ScaleShift</a> example.</p>
 <p>That has an implication on the scaling factors passed to the library, however. Consider the following example of a convolution with \(\tanh\) as a post-op:</p>
 <p class="formulaDsp">
-\[ dst_{s8}(:) = \frac{1}{scale_{dst}} \cdot \tanh( scale_{src} \cdot scale_{weights} \cdot conv_{s32}(src_{s8}, wei_{s8}) ) \]
+\[ \dst_{s8}(:) = \frac{1}{scale_{\dst}} \cdot \tanh( scale_{\src} \cdot scale_{\weights} \cdot conv_{s32}(\src_{s8}, wei_{s8}) ) \]
 </p>
 <p>As you can see:</p>
 <ul>
-<li>The convolution output scales are now \(conv\_output\_scale = scale_{src} \cdot scale_{weights}\), i.e. no division by \(scale_{dst}\);</li>
-<li>And the post-ops scale for \(\tanh\) is set to \(scale\_tanh\_post\_op = \frac{1}{scale_{dst}}\). </li>
+<li>The convolution output scales are now \(conv\_output\_scale = scale_{\src} \cdot scale_{\weights}\), i.e. no division by \(scale_{\dst}\);</li>
+<li>And the post-ops scale for \(\tanh\) is set to \(scale\_tanh\_post\_op = \frac{1}{scale_{\dst}}\). </li>
 </ul>
 </div></div><!-- contents -->
 <div class="footer">

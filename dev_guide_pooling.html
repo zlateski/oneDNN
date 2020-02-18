@@ -14,7 +14,7 @@
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
-<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML"></script>
+<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML,dnnl"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -89,11 +89,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h3>Forward</h3>
 <p>Max pooling:</p>
 <p class="formulaDsp">
-\[ dst(n, c, oh, ow) = \max\limits_{kh, kw} \left( src(n, c, oh \cdot SH + kh - ph_0, ow \cdot SW +kw - pw_0) \right) \]
+\[ \dst(n, c, oh, ow) = \max\limits_{kh, kw} \left( \src(n, c, oh \cdot SH + kh - ph_0, ow \cdot SW +kw - pw_0) \right) \]
 </p>
 <p>Average pooling:</p>
 <p class="formulaDsp">
-\[ dst(n, c, oh, ow) = \frac{1}{DENOM} \sum\limits_{kh, kw} src(n, c, oh \cdot SH + kh - ph_0, ow \cdot SW +kw - pw_0) \]
+\[ \dst(n, c, oh, ow) = \frac{1}{DENOM} \sum\limits_{kh, kw} \src(n, c, oh \cdot SH + kh - ph_0, ow \cdot SW +kw - pw_0) \]
 </p>
 <p>where \(ph_0, pw_0\) are <code>padding_l[0]</code> and <code>padding_l[1]</code> respectively, and output spatial dimensions are calculated similarly to how they are done in convolution.</p>
 <p>Average pooling supports two algorithms:</p>
@@ -110,7 +110,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>Max pooling requires <code>workspace</code> output for the <a class="el" href="group__dnnl__api__primitives__common.html#ggae3c1f22ae55645782923fbfd8b07d0c4a992e03bebfe623ac876b3636333bbce0" title="Forward data propagation (training mode). ">dnnl_forward_training</a> propagation kind, and doesn't require it for <a class="el" href="group__dnnl__api__primitives__common.html#ggae3c1f22ae55645782923fbfd8b07d0c4a2f77a568a675dec649eb0450c997856d" title="Forward data propagation (inference mode). ">dnnl_forward_inference</a> (see details below).</li>
 </ul>
 <h3>Backward</h3>
-<p>The backward propagation computes \(diff\_src(n, c, h, w)\), based on \(diff\_dst(n, c, h, w)\) and (in case of max pooling) <code>workspace</code>.</p>
+<p>The backward propagation computes \(\diffsrc(n, c, h, w)\), based on \(\diffdst(n, c, h, w)\) and (in case of max pooling) <code>workspace</code>.</p>
+<h2>Execution Arguments</h2>
+<p>When executed, the inputs and outputs should be mapped to an execution argument index as specified by the following table. </p>
+<table class="doxtable">
+<tr>
+<th>Primitive intput/output </th><th>Execution argument index  </th></tr>
+<tr>
+<td>\(\src\) </td><td>DNNL_ARG_SRC </td></tr>
+<tr>
+<td>\(\dst\) </td><td>DNNL_ARG_DST </td></tr>
+<tr>
+<td>workspace </td><td>DNNL_ARG_WORKSPACE </td></tr>
+<tr>
+<td>\(\diffsrc\) </td><td>DNNL_ARG_DIFF_SRC </td></tr>
+<tr>
+<td>\(\diffdst\) </td><td>DNNL_ARG_DIFF_DST </td></tr>
+</table>
 <h2>Implementation Details</h2>
 <h3>General Notes</h3>
 <ol type="1">

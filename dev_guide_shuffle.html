@@ -14,7 +14,7 @@
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
-<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML"></script>
+<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML,dnnl"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -88,7 +88,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>The formal definition is shown below:</p>
 <h3>Forward</h3>
 <p class="formulaDsp">
-\[ dst(\overline{ou}, c, \overline{in}) = src(\overline{ou}, c&#39;, \overline{in}) \]
+\[ \dst(\overline{ou}, c, \overline{in}) = \src(\overline{ou}, c&#39;, \overline{in}) \]
 </p>
 <p>where</p>
 <ul>
@@ -106,8 +106,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h4>Difference Between Forward Training and Forward Inference</h4>
 <p>There is no difference between the <a class="el" href="group__dnnl__api__primitives__common.html#ggae3c1f22ae55645782923fbfd8b07d0c4a992e03bebfe623ac876b3636333bbce0" title="Forward data propagation (training mode). ">dnnl_forward_training</a> and <a class="el" href="group__dnnl__api__primitives__common.html#ggae3c1f22ae55645782923fbfd8b07d0c4a2f77a568a675dec649eb0450c997856d" title="Forward data propagation (inference mode). ">dnnl_forward_inference</a> propagation kinds.</p>
 <h3>Backward</h3>
-<p>The backward propagation computes \(diff\_src(ou, c, in)\), based on \(diff\_dst(ou, c, in)\).</p>
+<p>The backward propagation computes \(\diffsrc(ou, c, in)\), based on \(\diffdst(ou, c, in)\).</p>
 <p>Essentially, backward propagation is the same as forward propagation with \(g\) replaced by \(C / g\).</p>
+<h2>Execution Arguments</h2>
+<p>When executed, the inputs and outputs should be mapped to an execution argument index as specified by the following table. </p>
+<table class="doxtable">
+<tr>
+<th>Primitive intput/output </th><th>Execution argument index  </th></tr>
+<tr>
+<td>\(\src\) </td><td>DNNL_ARG_SRC </td></tr>
+<tr>
+<td>\(\dst\) </td><td>DNNL_ARG_DST </td></tr>
+<tr>
+<td>\(\diffsrc\) </td><td>DNNL_ARG_DIFF_SRC </td></tr>
+<tr>
+<td>\(\diffdst\) </td><td>DNNL_ARG_DIFF_DST </td></tr>
+</table>
 <h2>Implementation Details</h2>
 <h3>General Notes</h3>
 <ol type="1">

@@ -14,7 +14,7 @@
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
-<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML"></script>
+<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML,dnnl"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -90,7 +90,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>The operation primitives that work with the int8 data type (<a class="el" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea3e8d88fdd85d7153525e0647cdd97686" title="8-bit signed integer. ">dnnl::memory::data_type::s8</a> and <a class="el" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea077393852be20e37026d6281827662f2" title="8-bit unsigned integer. ">dnnl::memory::data_type::u8</a>) typically use s32 (<code>int32_t</code>) as an intermediate data type (<a class="el" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dceaa860868d23f3a68323a2e3f6563d7f31" title="32-bit signed integer. ">dnnl::memory::data_type::s32</a>) to avoid integer overflows.</p>
 <p>For instance, the int8 average <a class="el" href="dev_guide_pooling.html">pooling</a> primitive accumulates the int8 input values in a window to an s32 accumulator, then divides the result by the window size, and then stores the result back to the int8 destination:</p>
 <ul>
-<li>\( dst_{s8}(...) = (s8) \Biggl( \Biggl( \sum\limits_{kh,kw} (s32)src_{s8}(...) \Biggr) \div (kh \cdot kw) \Biggr) \)</li>
+<li>\( \dst_{s8}(...) = (s8) \Biggl( \Biggl( \sum\limits_{kh,kw} (s32)\src_{s8}(...) \Biggr) \div (kh \cdot kw) \Biggr) \)</li>
 </ul>
 <dl class="section note"><dt>Note</dt><dd>The max pooling primitive can directly work with int8 data types.</dd></dl>
 <p>Using an s32 accumulator is especially important for matrix-multiply such as operation primitives that have chains of multiplication and accumulation of int8 values. These primitives are:</p>

@@ -14,7 +14,7 @@
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
-<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML"></script>
+<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML,dnnl"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -127,13 +127,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --><p>The <code>alg</code>, <code>alpha</code>, and <code>beta</code> parameters are the same as in <a class="el" href="dev_guide_eltwise.html">Eltwise</a>.</p>
 <p>The Eltwise post-op replaces: </p>
 <p class="formulaDsp">
-\[ dst(:) = Op(...) \]
+\[ \dst(:) = \operatorname{Op}(...) \]
 </p>
 <p>with</p>
 <p class="formulaDsp">
-\[ dst(:) = scale \cdot Eltwise( Op(...) ) \]
+\[ \dst(:) = scale \cdot \operatorname{Eltwise}( \operatorname{Op}(...) ) \]
 </p>
-<p>The intermediate result of \(Op(...)\) is not stored. Hence in most of the case this kind of fusion cannot be used with the training.</p>
+<p>The intermediate result of \(\operatorname{Op}(...)\) is not stored. Hence in most of the case this kind of fusion cannot be used with the training.</p>
 <p>The \(scale\) factor is supported in <a class="el" href="dev_guide_attributes_quantization.html">INT8</a> inference only. For other cases the scale must be equal to <code>1.0</code>.</p>
 <p><a class="anchor" id="dev_guide_attributes_post_ops_sum"></a></p>
 <h3>Sum Post-op</h3>
@@ -142,11 +142,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>This feature might improve performance for cases like residual learning blocks, where the result of a convolution is accumulated to the previously computed activations. The scale parameter can be used in <a class="el" href="dev_guide_attributes_quantization.html">INT8</a> inference only when the result and previous activations have different logical scaling factors.</p>
 <p>The sum post-op replaces </p>
 <p class="formulaDsp">
-\[ dst(:) = Op(...) \]
+\[ \dst(:) = \operatorname{Op}(...) \]
 </p>
 <p>with</p>
 <p class="formulaDsp">
-\[ dst(:) = scale \cdot dst(:) + Op(...) \]
+\[ \dst(:) = scale \cdot \dst(:) + \operatorname{Op}(...) \]
 </p>
 <dl class="section warning"><dt>Warning</dt><dd>This post-op (as well as all the others) disregards the original layout of the destination; that is, the layout of the original destination is expected to be the same as the layout of the output destination.</dd></dl>
 <h2>Examples of Chained Post-ops</h2>
@@ -169,7 +169,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">convolution_forward::primitive_desc(conv_d, attr, engine);</div>
 </div><!-- fragment --><p>This will lead to the following primitive behavior:</p>
 <p class="formulaDsp">
-\[ dst(:) = ReLU(dst(:) + conv(src(:), weights(:)) \]
+\[ \dst(:) = \operatorname{ReLU}(\dst(:) + \operatorname{conv}(\src(:), \weights(:)) \]
 </p>
 <p><a class="anchor" id="dev_guide_attributes_post_ops_with_scales"></a></p>
 <h3>Tanh -&gt; Sum -&gt; ScaleShift</h3>
@@ -195,7 +195,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">convolution_forward::primitive_desc(conv_d, attr, engine);</div>
 </div><!-- fragment --><p>This will lead to the following primitive behavior (for better readability the tensors are designated by their names only; i.e., <code>(:)</code> is omitted):</p>
 <p class="formulaDsp">
-\[ dst = s_{linear} \cdot ( \alpha \cdot ( s_{sum} \cdot dst + s_{tanh} \cdot \tanh ( s_{conv} \cdot conv(src, weights) ) ) + \beta ) \]
+\[ \dst = s_{linear} \cdot ( \alpha \cdot ( s_{sum} \cdot \dst + s_{tanh} \cdot \tanh ( s_{conv} \cdot \operatorname{conv}(\src, \weights) ) ) + \beta ) \]
 </p>
  </div></div><!-- contents -->
 <div class="footer">
