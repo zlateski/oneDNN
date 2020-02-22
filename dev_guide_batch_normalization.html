@@ -93,10 +93,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>where</p>
 <ul>
 <li>\(\gamma(c), \beta(c)\) are optional scale and shift for a channel (see <a class="el" href="group__dnnl__api__primitives__common.html#gga301f673522a400c7c1e75f518431c9a3aeba5189d91e23448d706fb027867ae55" title="Use scale and shift parameters. ">dnnl_use_scaleshift</a> flag),</li>
-<li>\(\mu(c), \sigma^2(c)\) are computed at runtime or provided by a user mean and variance for a channel (see <a class="el" href="group__dnnl__api__primitives__common.html#gga301f673522a400c7c1e75f518431c9a3aec04425c28af752c0f8b4dc5ae11fb19" title="Use global statistics. ">dnnl_use_global_stats</a> flag), and</li>
+<li>\(\mu(c), \sigma^2(c)\) are mean and variance for a channel (see <a class="el" href="group__dnnl__api__primitives__common.html#gga301f673522a400c7c1e75f518431c9a3aec04425c28af752c0f8b4dc5ae11fb19" title="Use global statistics. ">dnnl_use_global_stats</a> flag), and</li>
 <li>\(\varepsilon\) is a constant to improve numerical stability.</li>
 </ul>
-<p>When mean and variance are computed at runtime, the following formulas are used:</p>
+<p>Mean and variance are computed at runtime or provided by a user. When mean and variance are computed at runtime, the following formulas are used:</p>
 <ul>
 <li>\(\mu(c) = \frac{1}{NHW} \sum\limits_{nhw} \src(n, c, h, w)_{}\),</li>
 <li>\(\sigma^2(c) = \frac{1}{NHW} \sum\limits_{nhw} {}_{} (\src(n, c, h, w) - \mu(c))^2\).</li>
