@@ -84,7 +84,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p><a class="el" href="group__dnnl__api__sum.html">API Reference</a></p>
 <p></p>
 </blockquote>
-<p>The sum primitive sums \(N\) tensors:</p>
+<p>The sum primitive sums \(N\) tensors (the variable names follow the standard <a class="el" href="dev_guide_conventions.html">Naming Conventions</a>):</p>
 <p class="formulaDsp">
 \[ \dst(\overline{x}) = \sum\limits_{i = 1}^{N} scales(i) \cdot \src_i(\overline{x}) \]
 </p>
@@ -93,7 +93,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>When executed, the inputs and outputs should be mapped to an execution argument index as specified by the following table. </p>
 <table class="doxtable">
 <tr>
-<th>primitive intput/output </th><th>execution argument index  </th></tr>
+<th>primitive input/output </th><th>execution argument index  </th></tr>
 <tr>
 <td>\(\src\) </td><td>DNNL_ARG_MULTIPLE_SRC </td></tr>
 <tr>

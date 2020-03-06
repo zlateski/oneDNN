@@ -139,6 +139,18 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struc
 <tr class="memitem:ae92752ff26efd3f300c35f23f67ef078"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1post__ops.html#ae92752ff26efd3f300c35f23f67ef078">get_params_eltwise</a> (int index, float &amp;scale, <a class="el" href="group__dnnl__api__attributes.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a> &amp;<a class="el" href="group__dnnl__api__attributes.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a>, float &amp;alpha, float &amp;beta) const </td></tr>
 <tr class="memdesc:ae92752ff26efd3f300c35f23f67ef078"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns parameters of an elementwise post-up.  <a href="#ae92752ff26efd3f300c35f23f67ef078">More...</a><br/></td></tr>
 <tr class="separator:ae92752ff26efd3f300c35f23f67ef078"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4229db0e1e1eab273ed0e2b3e18402de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1post__ops.html#a4229db0e1e1eab273ed0e2b3e18402de">append_dw_k3s1p1</a> (<a class="el" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dce">memory::data_type</a> weights_data_type, <a class="el" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dce">memory::data_type</a> bias_data_type, <a class="el" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dce">memory::data_type</a> dst_data_type, int mask, const std::vector&lt; float &gt; &amp;scales)</td></tr>
+<tr class="memdesc:a4229db0e1e1eab273ed0e2b3e18402de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends a depthwise post-op convolution with stride 1.  <a href="#a4229db0e1e1eab273ed0e2b3e18402de">More...</a><br/></td></tr>
+<tr class="separator:a4229db0e1e1eab273ed0e2b3e18402de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefb536724307912fdfd1439383679501"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1post__ops.html#aefb536724307912fdfd1439383679501">get_params_dw_k3s1p1</a> (int index, <a class="el" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dce">memory::data_type</a> &amp;weights_data_type, <a class="el" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dce">memory::data_type</a> &amp;bias_data_type, <a class="el" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dce">memory::data_type</a> &amp;dst_data_type, int &amp;mask, std::vector&lt; float &gt; &amp;scales) const </td></tr>
+<tr class="memdesc:aefb536724307912fdfd1439383679501"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the parameters of an depthwise post-op with stride 1.  <a href="#aefb536724307912fdfd1439383679501">More...</a><br/></td></tr>
+<tr class="separator:aefb536724307912fdfd1439383679501"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88ed886c27b4df4667431ed48d29f4c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1post__ops.html#a88ed886c27b4df4667431ed48d29f4c1">append_dw_k3s2p1</a> (<a class="el" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dce">memory::data_type</a> weights_data_type, <a class="el" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dce">memory::data_type</a> bias_data_type, <a class="el" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dce">memory::data_type</a> dst_data_type, int mask, const std::vector&lt; float &gt; &amp;scales)</td></tr>
+<tr class="memdesc:a88ed886c27b4df4667431ed48d29f4c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends a depthwise post-op convolution with stride 2.  <a href="#a88ed886c27b4df4667431ed48d29f4c1">More...</a><br/></td></tr>
+<tr class="separator:a88ed886c27b4df4667431ed48d29f4c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a128429160104654adcfb651e9ee02905"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1post__ops.html#a128429160104654adcfb651e9ee02905">get_params_dw_k3s2p1</a> (int index, <a class="el" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dce">memory::data_type</a> &amp;weights_data_type, <a class="el" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dce">memory::data_type</a> &amp;bias_data_type, <a class="el" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dce">memory::data_type</a> &amp;dst_data_type, int &amp;mask, std::vector&lt; float &gt; &amp;scales) const </td></tr>
+<tr class="memdesc:a128429160104654adcfb651e9ee02905"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the parameters of an depthwise post-op with stride 2.  <a href="#a128429160104654adcfb651e9ee02905">More...</a><br/></td></tr>
+<tr class="separator:a128429160104654adcfb651e9ee02905"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_structdnnl_1_1handle"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_structdnnl_1_1handle')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="structdnnl_1_1handle.html">dnnl::handle&lt; dnnl_post_ops_t &gt;</a></td></tr>
 <tr class="memitem:a8569ba9d1b62264df858f3b3316577c6 inherit pub_methods_structdnnl_1_1handle"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1handle.html#a8569ba9d1b62264df858f3b3316577c6">operator==</a> (const <a class="el" href="structdnnl_1_1handle.html">handle</a>&lt; <a class="el" href="group__dnnl__api__attributes.html#ga7d715ce1a81606584df9dcf045976401">dnnl_post_ops_t</a>, <a class="el" href="structdnnl_1_1handle__traits.html">handle_traits</a>&lt; <a class="el" href="group__dnnl__api__attributes.html#ga7d715ce1a81606584df9dcf045976401">dnnl_post_ops_t</a> &gt; &gt; &amp;other) const</td></tr>
 <tr class="memdesc:a8569ba9d1b62264df858f3b3316577c6 inherit pub_methods_structdnnl_1_1handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equality operator.  <a href="#a8569ba9d1b62264df858f3b3316577c6">More...</a><br/></td></tr>
@@ -424,6 +436,290 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struc
     <tr><td class="paramname">algorithm</td><td>Output elementwise algorithm kind. </td></tr>
     <tr><td class="paramname">alpha</td><td>Output alpha parameter for the elementwise algorithm. </td></tr>
     <tr><td class="paramname">beta</td><td>Output beta parameter for the elementwise algorithm. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a4229db0e1e1eab273ed0e2b3e18402de"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dnnl::post_ops::append_dw_k3s1p1 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dce">memory::data_type</a>&#160;</td>
+          <td class="paramname"><em>weights_data_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dce">memory::data_type</a>&#160;</td>
+          <td class="paramname"><em>bias_data_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dce">memory::data_type</a>&#160;</td>
+          <td class="paramname"><em>dst_data_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>mask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; float &gt; &amp;&#160;</td>
+          <td class="paramname"><em>scales</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Appends a depthwise post-op convolution with stride 1. </p>
+<p>This post-op can only be fused with a 2D 1x1 convolution (convolution with weights spatial dimension equal to 1 i.e., kh=kw=1).</p>
+<p>The kind of this post-op is <a class="el" href="group__dnnl__api__primitives__common.html#gga9878f4795e53ad8443e5c0a29e53286aa402cfeaa257524d301bb73e770bc87f6" title="A convolution primitive. ">dnnl_convolution</a>.</p>
+<p>The number of outputs for primitive remain same as before. The output size remain same as the original primitive due to stride=1.</p>
+<p>The Post-op can be defined as: </p>
+<pre class="fragment"> dst[:] &lt;- scales * (conv_dw(conv_1x1))
+</pre><p>See <a class="el" href="dev_guide_attributes_post_ops.html#dev_guide_attributes_post_ops_depthwise">dev_guide_attributes_post_ops_depthwise</a> and <a class="el" href="dev_guide_attributes_post_ops.html#dev_guide_attributes_post_ops_depthwise_fusion">dev_guide_attributes_post_ops_depthwise_fusion</a> for more info.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">weights_data_type</td><td>Weights data type of depthwise post-op </td></tr>
+    <tr><td class="paramname">bias_data_type</td><td>Bias data type of depthwise post-op </td></tr>
+    <tr><td class="paramname">dst_data_type</td><td>Output data type of depthwise post-op </td></tr>
+    <tr><td class="paramname">mask</td><td>Output scaling factors correspondence mask that defines the correspondence between the output tensor dimensions and the <code>scales</code> array. The set i-th bit indicates that a dedicated output scaling factor is used for each index along that dimension. The mask value of 0 implies a common scaling factor for the whole output tensor. </td></tr>
+    <tr><td class="paramname">scales</td><td>Output pointer to a constant array of float scaling factors. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aefb536724307912fdfd1439383679501"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dnnl::post_ops::get_params_dw_k3s1p1 </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dce">memory::data_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>weights_data_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dce">memory::data_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>bias_data_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dce">memory::data_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>dst_data_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>mask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; float &gt; &amp;&#160;</td>
+          <td class="paramname"><em>scales</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the parameters of an depthwise post-op with stride 1. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>Index of the elementwise post-op. </td></tr>
+    <tr><td class="paramname">weights_data_type</td><td>Weights data type of depthwise post-op </td></tr>
+    <tr><td class="paramname">bias_data_type</td><td>Bias data type of depthwise post-op </td></tr>
+    <tr><td class="paramname">dst_data_type</td><td>Output data type of depthwise post-op </td></tr>
+    <tr><td class="paramname">mask</td><td>Output scaling factors correspondence mask that defines the correspondence between the output tensor dimensions and the <code>scales</code> array. The set i-th bit indicates that a dedicated output scaling factor is used for each index along that dimension. The mask value of 0 implies a common scaling factor for the whole output tensor. </td></tr>
+    <tr><td class="paramname">scales</td><td>Output pointer to a constant array of float scaling factors. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a88ed886c27b4df4667431ed48d29f4c1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dnnl::post_ops::append_dw_k3s2p1 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dce">memory::data_type</a>&#160;</td>
+          <td class="paramname"><em>weights_data_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dce">memory::data_type</a>&#160;</td>
+          <td class="paramname"><em>bias_data_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dce">memory::data_type</a>&#160;</td>
+          <td class="paramname"><em>dst_data_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>mask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; float &gt; &amp;&#160;</td>
+          <td class="paramname"><em>scales</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Appends a depthwise post-op convolution with stride 2. </p>
+<p>This post-op can only be fused with a 2D 1x1 convolution (convolution with weights spatial dimension equal to 1 i.e., kh=kw=1).</p>
+<p>The kind of this post-op is <a class="el" href="group__dnnl__api__primitives__common.html#gga9878f4795e53ad8443e5c0a29e53286aa402cfeaa257524d301bb73e770bc87f6" title="A convolution primitive. ">dnnl_convolution</a>.</p>
+<p>The number of outputs for primitive remain same as before. The output spatial size can be derived as below:</p>
+<p>output_height = ceil(output_height_1x1_convolution, stride) output_width = ceil(output_width_1x1_convolution, stride)</p>
+<p>The Post-op can be defined as: </p>
+<pre class="fragment"> dst[:] &lt;- scales * (conv_dw(conv_1x1))
+</pre><p>See <a class="el" href="dev_guide_attributes_post_ops.html#dev_guide_attributes_post_ops_depthwise">dev_guide_attributes_post_ops_depthwise</a> and <a class="el" href="dev_guide_attributes_post_ops.html#dev_guide_attributes_post_ops_depthwise_fusion">dev_guide_attributes_post_ops_depthwise_fusion</a> for more info.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">weights_data_type</td><td>Weights data type of depthwise post-op </td></tr>
+    <tr><td class="paramname">bias_data_type</td><td>Bias data type of depthwise post-op </td></tr>
+    <tr><td class="paramname">dst_data_type</td><td>Output data type of depthwise post-op </td></tr>
+    <tr><td class="paramname">mask</td><td>Output scaling factors correspondence mask that defines the correspondence between the output tensor dimensions and the <code>scales</code> array. The set i-th bit indicates that a dedicated output scaling factor is used for each index along that dimension. The mask value of 0 implies a common scaling factor for the whole output tensor. </td></tr>
+    <tr><td class="paramname">scales</td><td>Output pointer to a constant array of float scaling factors. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__dnnl__api__utils.html#ggad24f9ded06e34d3ee71e7fc4b408d57aaa31395e9dccc103cf166cf7b38fc5b9c" title="The operation was successful. ">dnnl_success</a> on success and a status describing the error otherwise </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a128429160104654adcfb651e9ee02905"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dnnl::post_ops::get_params_dw_k3s2p1 </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dce">memory::data_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>weights_data_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dce">memory::data_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>bias_data_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dce">memory::data_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>dst_data_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>mask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; float &gt; &amp;&#160;</td>
+          <td class="paramname"><em>scales</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the parameters of an depthwise post-op with stride 2. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>Index of the elementwise post-op. </td></tr>
+    <tr><td class="paramname">weights_data_type</td><td>Weights data type of depthwise post-op </td></tr>
+    <tr><td class="paramname">bias_data_type</td><td>Bias data type of depthwise post-op </td></tr>
+    <tr><td class="paramname">dst_data_type</td><td>Output data type of depthwise post-op </td></tr>
+    <tr><td class="paramname">mask</td><td>Output scaling factors correspondence mask that defines the correspondence between the output tensor dimensions and the <code>scales</code> array. The set i-th bit indicates that a dedicated output scaling factor is used for each index along that dimension. The mask value of 0 implies a common scaling factor for the whole output tensor. </td></tr>
+    <tr><td class="paramname">scales</td><td>Output pointer to a constant array of float scaling factors. </td></tr>
   </table>
   </dd>
 </dl>

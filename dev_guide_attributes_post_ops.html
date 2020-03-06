@@ -89,6 +89,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <td align="left"><a class="el" href="dev_guide_attributes_post_ops.html#dev_guide_attributes_post_ops_eltwise">Eltwise</a> </td><td align="left">Partial </td><td align="left">Partial </td><td align="left">Partial </td></tr>
 <tr>
 <td align="left"><a class="el" href="dev_guide_attributes_post_ops.html#dev_guide_attributes_post_ops_sum">Sum</a> </td><td align="left">Partial </td><td align="left">N/A </td><td align="left">N/A </td></tr>
+<tr>
+<td align="left"><a class="el" href="dev_guide_attributes_post_ops.html#dev_guide_attributes_post_ops_depthwise">Depthwise</a> </td><td align="left">Partial </td><td align="left">N/A </td><td align="left">N/A </td></tr>
 </table>
 <p>Just like <a class="el" href="dev_guide_attributes.html">Primitive Attributes</a>, the post-ops are represented by an opaque structure (<a class="el" href="group__dnnl__api__attributes.html#ga7d715ce1a81606584df9dcf045976401">dnnl_post_ops_t</a> in C API and <a class="el" href="structdnnl_1_1post__ops.html">dnnl::post_ops</a> in C++ API) which is copied once it is attached to the attributes using C++ <a class="el" href="structdnnl_1_1primitive__attr.html#ac830fa9f4fcf480b494d73153ad579bf">dnnl::primitive_attr::set_post_ops</a> or C <a class="el" href="group__dnnl__api__attributes.html#ga7045d42606599f156bfca69820c21ea2">dnnl_primitive_attr_set_post_ops</a> functions. These attributes then are passed to a primitive descriptor creation function to take effect. Below is a simple skeleton for C++ API:</p>
 <div class="fragment"><div class="line"><a class="code" href="structdnnl_1_1post__ops.html">dnnl::post_ops</a> po; <span class="comment">// default empty post-ops</span></div>
@@ -149,6 +151,53 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 \[ \dst(:) = scale \cdot \dst(:) + \operatorname{Op}(...) \]
 </p>
 <dl class="section warning"><dt>Warning</dt><dd>This post-op (as well as all the others) disregards the original layout of the destination; that is, the layout of the original destination is expected to be the same as the layout of the output destination.</dd></dl>
+<p><a class="anchor" id="dev_guide_attributes_post_ops_depthwise"></a></p>
+<h3>Depthwise Post-op</h3>
+<p>Appends a Depthwise convolution as a post-op. This post-op can only be fused with 1x1 convolution as generally seen in models (like MobileNet_v1) that use a stack of Separable convolutions: Depthwise convolution followed by 1x1 convolution. The stack of these Separable convolutions (like in MobileNet_v1) provide an opportunity to fuse 1x1-Convolution with bandwidth-limited Depthwise convolution.</p>
+<p>The <a class="el" href="structdnnl_1_1primitive.html#ad1ec93215a0cf3aa0a32bae0c2cd9169">dnnl::primitive::kind</a> of this post-op is <a class="el" href="structdnnl_1_1primitive.html#ad1ec93215a0cf3aa0a32bae0c2cd9169aa9595c1c24c33b16056d2ad07e71682d" title="A convolution primitive. ">dnnl::primitive::kind::convolution</a>.</p>
+<p>There are two variants of this post-op: dw_k3s1p1 and dw_k3_s2p1 for stride-1 and and stride-2 respectively.</p>
+<p>API:</p>
+<ul>
+<li>C: <a class="el" href="group__dnnl__api__attributes.html#ga60126f67fa1dd9df8cca16e2dd471184">dnnl_post_ops_append_dw_k3s1p1</a> , <a class="el" href="group__dnnl__api__attributes.html#gaa31670d933930b7c7940379bff0de326">dnnl_post_ops_append_dw_k3s2p1</a></li>
+<li>C++: <a class="el" href="structdnnl_1_1post__ops.html#a4229db0e1e1eab273ed0e2b3e18402de">dnnl::post_ops::append_dw_k3s1p1</a> , <a class="el" href="structdnnl_1_1post__ops.html#a88ed886c27b4df4667431ed48d29f4c1">dnnl::post_ops::append_dw_k3s2p1</a></li>
+</ul>
+<p>For better readability, below we assume a 2D convolution and use the following notations:</p>
+<p><code>conv_1x1</code> Convolution with weights spatial=1 i.e., <code>kh</code> = <code>kw</code> = 1.</p>
+<p><code>conv_dw</code> Depthwise convolution with weights spatial=3 i.e., <code>kh</code> = <code>kw</code> = 3, <code>g</code> = <code>oc</code> = <code>ic</code> and <code>pad_l</code> = <code>pad_r</code> = {1, 1}.</p>
+<p>The Depthwise post-op replaces</p>
+<p class="formulaDsp">
+\[ dst(:) = Conv_{1x1}(...) \]
+</p>
+<p>with</p>
+<p class="formulaDsp">
+\[ dst(:) = Conv_{dw}(Conv_{1x1}(...)) \]
+</p>
+<p>The final output dimensions of the after post-op is defined as</p>
+<p class="formulaDsp">
+\[ dst_{conv_dw} = \{ n, oc_{1x1}, \operatorname{ceil}(oh_{conv_{1x1}}/stride), \operatorname{ceil}(ow_{conv_{1x1}}/stride) \} \]
+</p>
+<p>where <code>oh_conv_1x1</code>, <code>ow_conv_1x1</code> are height and width of conv_1x1 destination.</p>
+<div class="image">
+<img src="img_depthwise_fusion.jpg" alt="img_depthwise_fusion.jpg"/>
+<div class="caption">
+Fusion</div></div>
+<p> Supported data types</p>
+<table class="doxtable">
+<tr>
+<th align="left">conv 1x1 output data type </th><th align="left">depthwise post-op output data type </th><th align="left">depthwise post-op weights data type </th><th align="left">depthwise post-op bias data type  </th></tr>
+<tr>
+<td align="left">u8, s8 </td><td align="left">u8, s8, s32, f32 </td><td align="left">s8 </td><td align="left">f32, s32 </td></tr>
+<tr>
+<td align="left">f32 </td><td align="left">f32 </td><td align="left">f32 </td><td align="left">f32 </td></tr>
+<tr>
+<td align="left">bf16 </td><td align="left">bf16, f32 </td><td align="left">bf16 </td><td align="left">f32, bf16 </td></tr>
+</table>
+<dl class="section note"><dt>Note</dt><dd><ul>
+<li>Currently only supported for 2D 1x1 convolution.</li>
+<li>Only eltwise post-op can be part of post-op chain (i.e., sum post-op is not supported)</li>
+<li>The <code>dst_1x1</code>, <code>wei_dw</code> and <code>dst_dw</code> are assumed to be <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dafee39ac6fff0325cae43cd66495c18ac" title="Undefined memory format tag. ">dnnl_format_tag_any</a>.</li>
+</ul>
+</dd></dl>
 <h2>Examples of Chained Post-ops</h2>
 <p>Different post-ops can be chained together by appending one after another. Note that the order matters: the post-ops are executed in the order they have been appended.</p>
 <p>Let's consider some examples.</p>
@@ -158,7 +207,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">po.<a class="code" href="structdnnl_1_1post__ops.html#a078ab8ec15423d2b3d26f3619a78ca38">append_sum</a>(</div>
 <div class="line">        <span class="comment">/* scale = */</span> 1.f);</div>
 <div class="line">po.<a class="code" href="structdnnl_1_1post__ops.html#a66606f08467b19091e696b52a2f789e6">append_eltwise</a>(</div>
-<div class="line">        <span class="comment">/* scale     = */</span> 1.f</div>
+<div class="line">        <span class="comment">/* scale     = */</span> 1.f,</div>
 <div class="line">        <span class="comment">/* alg kind  = */</span> <a class="code" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640aba09bebb742494255b90b43871c01c69">dnnl::algorithm::eltwise_relu</a>,</div>
 <div class="line">        <span class="comment">/* neg slope = */</span> 0.f,</div>
 <div class="line">        <span class="comment">/* unused for relu */</span> 0.f);</div>
@@ -196,6 +245,43 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --><p>This will lead to the following primitive behavior (for better readability the tensors are designated by their names only; i.e., <code>(:)</code> is omitted):</p>
 <p class="formulaDsp">
 \[ \dst = s_{linear} \cdot ( \alpha \cdot ( s_{sum} \cdot \dst + s_{tanh} \cdot \tanh ( s_{conv} \cdot \operatorname{conv}(\src, \weights) ) ) + \beta ) \]
+</p>
+<p><a class="anchor" id="dev_guide_attributes_post_ops_depthwise_fusion"></a></p>
+<h3>Relu -&gt; Depthwise -&gt; Relu</h3>
+<p>An example of fusing depthwise convolution with 1x1 convolution in MobileNet.</p>
+<div class="fragment"><div class="line"><a class="code" href="structdnnl_1_1post__ops.html">dnnl::post_ops</a> po;</div>
+<div class="line"></div>
+<div class="line">po.<a class="code" href="structdnnl_1_1post__ops.html#a66606f08467b19091e696b52a2f789e6">append_eltwise</a>(</div>
+<div class="line">        <span class="comment">/* scale     = */</span> 1.f,</div>
+<div class="line">        <span class="comment">/* alg kind  = */</span> <a class="code" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640aba09bebb742494255b90b43871c01c69">dnnl::algorithm::eltwise_relu</a>,</div>
+<div class="line">        <span class="comment">/* neg slope = */</span> 0.f,</div>
+<div class="line">        <span class="comment">/* unused for relu */</span> 0.f);</div>
+<div class="line"></div>
+<div class="line">po.<a class="code" href="structdnnl_1_1post__ops.html#a4229db0e1e1eab273ed0e2b3e18402de">append_dw_k3s1p1</a>( <span class="comment">/* or po.append_dw_k3s2p1 for depthwise with stride=2*/</span></div>
+<div class="line">        <span class="comment">/* depthwise weights data type = */</span> <a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea3e8d88fdd85d7153525e0647cdd97686">dnnl::memory::data_type::s8</a>,</div>
+<div class="line">        <span class="comment">/* depthwise bias data type (undef implies no bias) = */</span> <a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dceaf31ee5e3824f1f5e5d206bdf3029f22b">dnnl::memory::data_type::undef</a>,</div>
+<div class="line">        <span class="comment">/* depthwise destination data type = */</span> <a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea077393852be20e37026d6281827662f2">dnnl::memory::data_type::u8</a>,</div>
+<div class="line">        <span class="comment">/* mask for output scales of depthwise output = */</span> mask,</div>
+<div class="line">        <span class="comment">/* output scales for depthwise output = */</span> scales_depthwise)</div>
+<div class="line"></div>
+<div class="line">po.<a class="code" href="structdnnl_1_1post__ops.html#a66606f08467b19091e696b52a2f789e6">append_eltwise</a>(</div>
+<div class="line">        <span class="comment">/* scale     = */</span> 1.f,</div>
+<div class="line">        <span class="comment">/* alg kind  = */</span> <a class="code" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640aba09bebb742494255b90b43871c01c69">dnnl::algorithm::eltwise_relu</a>,</div>
+<div class="line">        <span class="comment">/* neg slope = */</span> 0.f,</div>
+<div class="line">        <span class="comment">/* unused for relu */</span> 0.f);</div>
+<div class="line"></div>
+<div class="line"><a class="code" href="structdnnl_1_1primitive__attr.html">dnnl::primitive_attr</a> attr;</div>
+<div class="line">attr.<a class="code" href="structdnnl_1_1primitive__attr.html#a4b81acc8e48886313154f75c1708ae02">set_output_scales</a>(0, {output_scales_1x1_conv});</div>
+<div class="line">attr.<a class="code" href="structdnnl_1_1primitive__attr.html#ac830fa9f4fcf480b494d73153ad579bf">set_post_ops</a>(po);</div>
+<div class="line"></div>
+<div class="line"><span class="keyword">auto</span> cpd = convolution_forward::primitive_desc(conv_1x1, attr, engine);</div>
+<div class="line"><span class="keyword">auto</span> dw_weight_md = cpd.query(query::exec_arg_md,</div>
+<div class="line">                <a class="code" href="group__dnnl__api__primitives__common.html#ga47534804c9b2f9ede6b875f6cb08cc35">DNNL_ARG_ATTR_POST_OP_DW</a> | <a class="code" href="group__dnnl__api__primitives__common.html#gaf279f28c59a807e71a70c719db56c5b3">DNNL_ARG_WEIGHTS</a>);</div>
+<div class="line"><span class="keyword">auto</span> dw_bias_md = cpd.query(query::exec_arg_md,</div>
+<div class="line">                <a class="code" href="group__dnnl__api__primitives__common.html#ga47534804c9b2f9ede6b875f6cb08cc35">DNNL_ARG_ATTR_POST_OP_DW</a> | <a class="code" href="group__dnnl__api__primitives__common.html#gad0cbc09942aba93fbe3c0c2e09166f0d">DNNL_ARG_BIAS</a>);</div>
+</div><!-- fragment --><p>This will lead to the following primitive behaviour:</p>
+<p class="formulaDsp">
+\[ dst = ReLU_{depthwise} ( scales_{depthwise} \cdot ( conv_{depthwise} ( ReLU_{1x1} ( scales_{conv_{1x1}} \cdot ( conv_{1x1}() ) ) ) ) ) \]
 </p>
  </div></div><!-- contents -->
 <div class="footer">

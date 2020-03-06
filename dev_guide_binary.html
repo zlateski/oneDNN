@@ -84,7 +84,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p><a class="el" href="group__dnnl__api__binary.html">API Reference</a></p>
 <p></p>
 </blockquote>
-<p>The binary primitive computes an operation between source 0 and source 1 element-wise:</p>
+<p>The binary primitive computes an operation between source 0 and source 1 element-wise (the variable names follow the standard <a class="el" href="dev_guide_conventions.html">Naming Conventions</a>):</p>
 <p class="formulaDsp">
 \[ \dst(\overline{x}) = \src_0(\overline{x}) \mathbin{op} \src_1(\overline{x}), \]
 </p>
@@ -94,11 +94,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>When executed, the inputs and outputs should be mapped to an execution argument index as specified by the following table. </p>
 <table class="doxtable">
 <tr>
-<th>Primitive intput/output </th><th>Execution argument index  </th></tr>
+<th>Primitive input/output </th><th>Execution argument index  </th></tr>
 <tr>
-<td>\(\src_0\) </td><td>DNNL_ARG_SRC0 </td></tr>
+<td>\(\src_0\) </td><td>DNNL_ARG_SRC_0 </td></tr>
 <tr>
-<td>\(\src_1\) </td><td>DNNL_ARG_SRC1 </td></tr>
+<td>\(\src_1\) </td><td>DNNL_ARG_SRC_1 </td></tr>
 <tr>
 <td>\(\dst\) </td><td>DNNL_ARG_DST </td></tr>
 </table>
@@ -115,13 +115,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>The following attributes are supported:</p>
 <table class="doxtable">
 <tr>
-<th align="left">Type </th><th align="left">Operation </th><th align="left">Restrictions </th><th align="left">Description  </th></tr>
+<th align="left">Type </th><th align="left">Operation </th><th align="left">Description </th><th align="left">Restrictions  </th></tr>
 <tr>
-<td align="left">Attribute </td><td align="left"><a class="el" href="structdnnl_1_1primitive__attr.html#a9bf717bd25b6fddd89055da8178eab75">Scales</a> </td><td align="left">The corresponding tensor has integer data type. Only one scale per tensor is supported. Input tensors only. </td><td align="left">Scales the corresponding input tensor by the given scale factor(s). </td></tr>
+<td align="left">Attribute </td><td align="left"><a class="el" href="structdnnl_1_1primitive__attr.html#a9bf717bd25b6fddd89055da8178eab75">Scales</a> </td><td align="left">Scales the corresponding input tensor by the given scale factor(s). </td><td align="left">The corresponding tensor has integer data type. Only one scale per tensor is supported. Input tensors only. </td></tr>
 <tr>
-<td align="left">Post-op </td><td align="left"><a class="el" href="structdnnl_1_1post__ops.html#a078ab8ec15423d2b3d26f3619a78ca38">Sum</a> </td><td align="left">Must precede eltwise post-op. </td><td align="left">Adds the operation result to the destination tensor instead of overwriting it. </td></tr>
+<td align="left">Post-op </td><td align="left"><a class="el" href="structdnnl_1_1post__ops.html#a078ab8ec15423d2b3d26f3619a78ca38">Sum</a> </td><td align="left">Adds the operation result to the destination tensor instead of overwriting it. </td><td align="left">Must precede eltwise post-op. </td></tr>
 <tr>
-<td align="left">Post-op </td><td align="left"><a class="el" href="structdnnl_1_1post__ops.html#a66606f08467b19091e696b52a2f789e6">Eltwise</a> </td><td align="left"></td><td align="left">Applies an <a class="el" href="group__dnnl__api__eltwise.html">Eltwise</a> operation to the result. </td></tr>
+<td align="left">Post-op </td><td align="left"><a class="el" href="structdnnl_1_1post__ops.html#a66606f08467b19091e696b52a2f789e6">Eltwise</a> </td><td align="left">Applies an <a class="el" href="group__dnnl__api__eltwise.html">Eltwise</a> operation to the result. </td><td align="left"></td></tr>
 </table>
 <h3>Data Types Support</h3>
 <p>The source and destination tensors may have <code>f32</code>, <code>bf16</code>, or <code>int8</code> data types. See <a class="el" href="dev_guide_data_types.html">Data Types</a> page for more details.</p>

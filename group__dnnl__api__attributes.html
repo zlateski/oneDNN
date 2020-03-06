@@ -203,6 +203,18 @@ Functions</h2></td></tr>
 <tr class="memitem:gaa57e61baf091b255b4cc0c3648bac3a5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__attributes.html#gaa57e61baf091b255b4cc0c3648bac3a5">dnnl_post_ops_get_params_eltwise</a> (<a class="el" href="group__dnnl__api__attributes.html#ga5ca949c8e907bd9ed79bc06d869c9c0e">const_dnnl_post_ops_t</a> post_ops, int index, float *scale, <a class="el" href="group__dnnl__api__primitives__common.html#ga96946c805f6c4922c38c37049ab95d23">dnnl_alg_kind_t</a> *alg_kind, float *alpha, float *beta)</td></tr>
 <tr class="memdesc:gaa57e61baf091b255b4cc0c3648bac3a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the parameters of an elementwise post-up.  <a href="#gaa57e61baf091b255b4cc0c3648bac3a5">More...</a><br/></td></tr>
 <tr class="separator:gaa57e61baf091b255b4cc0c3648bac3a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga60126f67fa1dd9df8cca16e2dd471184"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__attributes.html#ga60126f67fa1dd9df8cca16e2dd471184">dnnl_post_ops_append_dw_k3s1p1</a> (<a class="el" href="group__dnnl__api__attributes.html#ga7d715ce1a81606584df9dcf045976401">dnnl_post_ops_t</a> post_ops, <a class="el" href="group__dnnl__api__memory.html#ga012ba1c84ff24bdd068f9d2f9b26a130">dnnl_data_type_t</a> weights_data_type, <a class="el" href="group__dnnl__api__memory.html#ga012ba1c84ff24bdd068f9d2f9b26a130">dnnl_data_type_t</a> bias_data_type, <a class="el" href="group__dnnl__api__memory.html#ga012ba1c84ff24bdd068f9d2f9b26a130">dnnl_data_type_t</a> dst_data_type, <a class="el" href="group__dnnl__api__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> count, int mask, const float *scales)</td></tr>
+<tr class="memdesc:ga60126f67fa1dd9df8cca16e2dd471184"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends a depthwise post-op convolution with stride 1.  <a href="#ga60126f67fa1dd9df8cca16e2dd471184">More...</a><br/></td></tr>
+<tr class="separator:ga60126f67fa1dd9df8cca16e2dd471184"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab7b3337bc132438f4dada22f6fe72a0f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__attributes.html#gab7b3337bc132438f4dada22f6fe72a0f">dnnl_post_ops_get_params_dw_k3s1p1</a> (<a class="el" href="group__dnnl__api__attributes.html#ga5ca949c8e907bd9ed79bc06d869c9c0e">const_dnnl_post_ops_t</a> post_ops, int index, <a class="el" href="group__dnnl__api__memory.html#ga012ba1c84ff24bdd068f9d2f9b26a130">dnnl_data_type_t</a> *weights_data_type, <a class="el" href="group__dnnl__api__memory.html#ga012ba1c84ff24bdd068f9d2f9b26a130">dnnl_data_type_t</a> *bias_data_type, <a class="el" href="group__dnnl__api__memory.html#ga012ba1c84ff24bdd068f9d2f9b26a130">dnnl_data_type_t</a> *dst_data_type, <a class="el" href="group__dnnl__api__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> *count, int *mask, const float **scales)</td></tr>
+<tr class="memdesc:gab7b3337bc132438f4dada22f6fe72a0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the parameters of an depthwise post-op with stride 1.  <a href="#gab7b3337bc132438f4dada22f6fe72a0f">More...</a><br/></td></tr>
+<tr class="separator:gab7b3337bc132438f4dada22f6fe72a0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa31670d933930b7c7940379bff0de326"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__attributes.html#gaa31670d933930b7c7940379bff0de326">dnnl_post_ops_append_dw_k3s2p1</a> (<a class="el" href="group__dnnl__api__attributes.html#ga7d715ce1a81606584df9dcf045976401">dnnl_post_ops_t</a> post_ops, <a class="el" href="group__dnnl__api__memory.html#ga012ba1c84ff24bdd068f9d2f9b26a130">dnnl_data_type_t</a> weights_data_type, <a class="el" href="group__dnnl__api__memory.html#ga012ba1c84ff24bdd068f9d2f9b26a130">dnnl_data_type_t</a> bias_data_type, <a class="el" href="group__dnnl__api__memory.html#ga012ba1c84ff24bdd068f9d2f9b26a130">dnnl_data_type_t</a> dst_data_type, <a class="el" href="group__dnnl__api__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> count, int mask, const float *scales)</td></tr>
+<tr class="memdesc:gaa31670d933930b7c7940379bff0de326"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends a depthwise post-op convolution with stride 2.  <a href="#gaa31670d933930b7c7940379bff0de326">More...</a><br/></td></tr>
+<tr class="separator:gaa31670d933930b7c7940379bff0de326"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0b82c6ac2d4bd5c8ddee4a807fd2e527"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__attributes.html#ga0b82c6ac2d4bd5c8ddee4a807fd2e527">dnnl_post_ops_get_params_dw_k3s2p1</a> (<a class="el" href="group__dnnl__api__attributes.html#ga5ca949c8e907bd9ed79bc06d869c9c0e">const_dnnl_post_ops_t</a> post_ops, int index, <a class="el" href="group__dnnl__api__memory.html#ga012ba1c84ff24bdd068f9d2f9b26a130">dnnl_data_type_t</a> *weights_data_type, <a class="el" href="group__dnnl__api__memory.html#ga012ba1c84ff24bdd068f9d2f9b26a130">dnnl_data_type_t</a> *bias_data_type, <a class="el" href="group__dnnl__api__memory.html#ga012ba1c84ff24bdd068f9d2f9b26a130">dnnl_data_type_t</a> *dst_data_type, <a class="el" href="group__dnnl__api__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> *count, int *mask, const float **scales)</td></tr>
+<tr class="memdesc:ga0b82c6ac2d4bd5c8ddee4a807fd2e527"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the parameters of an depthwise post-op with stride 2.  <a href="#ga0b82c6ac2d4bd5c8ddee4a807fd2e527">More...</a><br/></td></tr>
+<tr class="separator:ga0b82c6ac2d4bd5c8ddee4a807fd2e527"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0067a4b6e5dd2fe7578cd4a25dddfe39"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__attributes.html#ga0067a4b6e5dd2fe7578cd4a25dddfe39">dnnl_primitive_attr_set_rnn_data_qparams</a> (<a class="el" href="group__dnnl__api__attributes.html#ga06d701a25b82d4c8a93aaabb93e03dc3">dnnl_primitive_attr_t</a> attr, const float scale, const float shift)</td></tr>
 <tr class="memdesc:ga0067a4b6e5dd2fe7578cd4a25dddfe39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set quantization scale and shift parameters for RNN data tensors.  <a href="#ga0067a4b6e5dd2fe7578cd4a25dddfe39">More...</a><br/></td></tr>
 <tr class="separator:ga0067a4b6e5dd2fe7578cd4a25dddfe39"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1445,6 +1457,317 @@ The lifetime of <code>zero_points</code> array is the same as that of the primit
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__dnnl__api__utils.html#ggad24f9ded06e34d3ee71e7fc4b408d57aaa31395e9dccc103cf166cf7b38fc5b9c" title="The operation was successful. ">dnnl_success</a> on success and a status describing the error otherwise. </dd>
 <dd>
 <a class="el" href="group__dnnl__api__utils.html#ggad24f9ded06e34d3ee71e7fc4b408d57aaecec97c787d74a33924abcf16ae4f51c" title="The operation failed because of incorrect function arguments. ">dnnl_invalid_arguments</a> if <code>index</code> does not refer to an elementwise post-op. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga60126f67fa1dd9df8cca16e2dd471184"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API dnnl_post_ops_append_dw_k3s1p1 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__dnnl__api__attributes.html#ga7d715ce1a81606584df9dcf045976401">dnnl_post_ops_t</a>&#160;</td>
+          <td class="paramname"><em>post_ops</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__dnnl__api__memory.html#ga012ba1c84ff24bdd068f9d2f9b26a130">dnnl_data_type_t</a>&#160;</td>
+          <td class="paramname"><em>weights_data_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__dnnl__api__memory.html#ga012ba1c84ff24bdd068f9d2f9b26a130">dnnl_data_type_t</a>&#160;</td>
+          <td class="paramname"><em>bias_data_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__dnnl__api__memory.html#ga012ba1c84ff24bdd068f9d2f9b26a130">dnnl_data_type_t</a>&#160;</td>
+          <td class="paramname"><em>dst_data_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__dnnl__api__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a>&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>mask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float *&#160;</td>
+          <td class="paramname"><em>scales</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Appends a depthwise post-op convolution with stride 1. </p>
+<p>This post-op can only be fused with a 2D 1x1 convolution (convolution with weights spatial dimension equal to 1 i.e., kh=kw=1).</p>
+<p>The kind of this post-op is <a class="el" href="group__dnnl__api__primitives__common.html#gga9878f4795e53ad8443e5c0a29e53286aa402cfeaa257524d301bb73e770bc87f6" title="A convolution primitive. ">dnnl_convolution</a>.</p>
+<p>The number of outputs for primitive remain same as before. The output size remain same as the original primitive due to stride=1.</p>
+<p>The Post-op can be defined as: </p>
+<pre class="fragment"> dst[:] &lt;- scales * (conv_dw(conv_1x1))
+</pre><p>See <a class="el" href="dev_guide_attributes_post_ops.html#dev_guide_attributes_post_ops_depthwise">dev_guide_attributes_post_ops_depthwise</a> and <a class="el" href="dev_guide_attributes_post_ops.html#dev_guide_attributes_post_ops_depthwise_fusion">dev_guide_attributes_post_ops_depthwise_fusion</a> for more info.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">post_ops</td><td>Post-ops. </td></tr>
+    <tr><td class="paramname">weights_data_type</td><td>Weights data type of depthwise post-op </td></tr>
+    <tr><td class="paramname">bias_data_type</td><td>Bias data type of depthwise post-op </td></tr>
+    <tr><td class="paramname">dst_data_type</td><td>Output data type of depthwise post-op </td></tr>
+    <tr><td class="paramname">count</td><td>Output length of the array of scaling factors <code>scales</code>. </td></tr>
+    <tr><td class="paramname">mask</td><td>Output scaling factors correspondence mask that defines the correspondence between the output tensor dimensions and the <code>scales</code> array. The set i-th bit indicates that a dedicated output scaling factor is used for each index along that dimension. The mask value of 0 implies a common scaling factor for the whole output tensor. </td></tr>
+    <tr><td class="paramname">scales</td><td>Output pointer to a constant array of float scaling factors. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__dnnl__api__utils.html#ggad24f9ded06e34d3ee71e7fc4b408d57aaa31395e9dccc103cf166cf7b38fc5b9c" title="The operation was successful. ">dnnl_success</a> on success and a status describing the error otherwise </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gab7b3337bc132438f4dada22f6fe72a0f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API dnnl_post_ops_get_params_dw_k3s1p1 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__dnnl__api__attributes.html#ga5ca949c8e907bd9ed79bc06d869c9c0e">const_dnnl_post_ops_t</a>&#160;</td>
+          <td class="paramname"><em>post_ops</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__dnnl__api__memory.html#ga012ba1c84ff24bdd068f9d2f9b26a130">dnnl_data_type_t</a> *&#160;</td>
+          <td class="paramname"><em>weights_data_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__dnnl__api__memory.html#ga012ba1c84ff24bdd068f9d2f9b26a130">dnnl_data_type_t</a> *&#160;</td>
+          <td class="paramname"><em>bias_data_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__dnnl__api__memory.html#ga012ba1c84ff24bdd068f9d2f9b26a130">dnnl_data_type_t</a> *&#160;</td>
+          <td class="paramname"><em>dst_data_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__dnnl__api__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> *&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>mask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float **&#160;</td>
+          <td class="paramname"><em>scales</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the parameters of an depthwise post-op with stride 1. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">post_ops</td><td>Post-ops. </td></tr>
+    <tr><td class="paramname">index</td><td>Index of the elementwise post-op. </td></tr>
+    <tr><td class="paramname">weights_data_type</td><td>Weights data type of depthwise post-op </td></tr>
+    <tr><td class="paramname">bias_data_type</td><td>Bias data type of depthwise post-op </td></tr>
+    <tr><td class="paramname">dst_data_type</td><td>Output data type of depthwise post-op </td></tr>
+    <tr><td class="paramname">count</td><td>Output length of the array of scaling factors <code>scales</code>. </td></tr>
+    <tr><td class="paramname">mask</td><td>Output scaling factors correspondence mask that defines the correspondence between the output tensor dimensions and the <code>scales</code> array. The set i-th bit indicates that a dedicated output scaling factor is used for each index along that dimension. The mask value of 0 implies a common scaling factor for the whole output tensor. </td></tr>
+    <tr><td class="paramname">scales</td><td>Output pointer to a constant array of float scaling factors. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__dnnl__api__utils.html#ggad24f9ded06e34d3ee71e7fc4b408d57aaa31395e9dccc103cf166cf7b38fc5b9c" title="The operation was successful. ">dnnl_success</a> on success and a status describing the error otherwise </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gaa31670d933930b7c7940379bff0de326"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API dnnl_post_ops_append_dw_k3s2p1 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__dnnl__api__attributes.html#ga7d715ce1a81606584df9dcf045976401">dnnl_post_ops_t</a>&#160;</td>
+          <td class="paramname"><em>post_ops</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__dnnl__api__memory.html#ga012ba1c84ff24bdd068f9d2f9b26a130">dnnl_data_type_t</a>&#160;</td>
+          <td class="paramname"><em>weights_data_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__dnnl__api__memory.html#ga012ba1c84ff24bdd068f9d2f9b26a130">dnnl_data_type_t</a>&#160;</td>
+          <td class="paramname"><em>bias_data_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__dnnl__api__memory.html#ga012ba1c84ff24bdd068f9d2f9b26a130">dnnl_data_type_t</a>&#160;</td>
+          <td class="paramname"><em>dst_data_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__dnnl__api__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a>&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>mask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float *&#160;</td>
+          <td class="paramname"><em>scales</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Appends a depthwise post-op convolution with stride 2. </p>
+<p>This post-op can only be fused with a 2D 1x1 convolution (convolution with weights spatial dimension equal to 1 i.e., kh=kw=1).</p>
+<p>The kind of this post-op is <a class="el" href="group__dnnl__api__primitives__common.html#gga9878f4795e53ad8443e5c0a29e53286aa402cfeaa257524d301bb73e770bc87f6" title="A convolution primitive. ">dnnl_convolution</a>.</p>
+<p>The number of outputs for primitive remain same as before. The output spatial size can be derived as below:</p>
+<p>output_height = ceil(output_height_1x1_convolution, stride) output_width = ceil(output_width_1x1_convolution, stride)</p>
+<p>The Post-op can be defined as: </p>
+<pre class="fragment"> dst[:] &lt;- scales * (conv_dw(conv_1x1))
+</pre><p>See <a class="el" href="dev_guide_attributes_post_ops.html#dev_guide_attributes_post_ops_depthwise">dev_guide_attributes_post_ops_depthwise</a> and <a class="el" href="dev_guide_attributes_post_ops.html#dev_guide_attributes_post_ops_depthwise_fusion">dev_guide_attributes_post_ops_depthwise_fusion</a> for more info.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">post_ops</td><td>Post-ops. </td></tr>
+    <tr><td class="paramname">weights_data_type</td><td>Weights data type of depthwise post-op </td></tr>
+    <tr><td class="paramname">bias_data_type</td><td>Bias data type of depthwise post-op </td></tr>
+    <tr><td class="paramname">dst_data_type</td><td>Output data type of depthwise post-op </td></tr>
+    <tr><td class="paramname">count</td><td>Output length of the array of scaling factors <code>scales</code>. </td></tr>
+    <tr><td class="paramname">mask</td><td>Output scaling factors correspondence mask that defines the correspondence between the output tensor dimensions and the <code>scales</code> array. The set i-th bit indicates that a dedicated output scaling factor is used for each index along that dimension. The mask value of 0 implies a common scaling factor for the whole output tensor. </td></tr>
+    <tr><td class="paramname">scales</td><td>Output pointer to a constant array of float scaling factors. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__dnnl__api__utils.html#ggad24f9ded06e34d3ee71e7fc4b408d57aaa31395e9dccc103cf166cf7b38fc5b9c" title="The operation was successful. ">dnnl_success</a> on success and a status describing the error otherwise </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga0b82c6ac2d4bd5c8ddee4a807fd2e527"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API dnnl_post_ops_get_params_dw_k3s2p1 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__dnnl__api__attributes.html#ga5ca949c8e907bd9ed79bc06d869c9c0e">const_dnnl_post_ops_t</a>&#160;</td>
+          <td class="paramname"><em>post_ops</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__dnnl__api__memory.html#ga012ba1c84ff24bdd068f9d2f9b26a130">dnnl_data_type_t</a> *&#160;</td>
+          <td class="paramname"><em>weights_data_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__dnnl__api__memory.html#ga012ba1c84ff24bdd068f9d2f9b26a130">dnnl_data_type_t</a> *&#160;</td>
+          <td class="paramname"><em>bias_data_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__dnnl__api__memory.html#ga012ba1c84ff24bdd068f9d2f9b26a130">dnnl_data_type_t</a> *&#160;</td>
+          <td class="paramname"><em>dst_data_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__dnnl__api__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> *&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>mask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float **&#160;</td>
+          <td class="paramname"><em>scales</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the parameters of an depthwise post-op with stride 2. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">post_ops</td><td>Post-ops. </td></tr>
+    <tr><td class="paramname">index</td><td>Index of the elementwise post-op. </td></tr>
+    <tr><td class="paramname">weights_data_type</td><td>Weights data type of depthwise post-op </td></tr>
+    <tr><td class="paramname">bias_data_type</td><td>Bias data type of depthwise post-op </td></tr>
+    <tr><td class="paramname">dst_data_type</td><td>Output data type of depthwise post-op </td></tr>
+    <tr><td class="paramname">count</td><td>Output length of the array of scaling factors <code>scales</code>. </td></tr>
+    <tr><td class="paramname">mask</td><td>Output scaling factors correspondence mask that defines the correspondence between the output tensor dimensions and the <code>scales</code> array. The set i-th bit indicates that a dedicated output scaling factor is used for each index along that dimension. The mask value of 0 implies a common scaling factor for the whole output tensor. </td></tr>
+    <tr><td class="paramname">scales</td><td>Output pointer to a constant array of float scaling factors. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__dnnl__api__utils.html#ggad24f9ded06e34d3ee71e7fc4b408d57aaa31395e9dccc103cf166cf7b38fc5b9c" title="The operation was successful. ">dnnl_success</a> on success and a status describing the error otherwise </dd></dl>
 
 </div>
 </div>

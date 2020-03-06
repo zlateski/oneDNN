@@ -84,7 +84,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p><a class="el" href="group__dnnl__api__rnn.html">API Reference</a></p>
 <p></p>
 </blockquote>
-<p>The RNN primitive computes a stack of unrolled recurrent cells, as depicted in Figure 1. \(\bias\), \(\srciter\) and \(\dstiter\) are optional parameters. If not provided, \(\bias\) and \(\srciter\) will default to 0.</p>
+<p>The RNN primitive computes a stack of unrolled recurrent cells, as depicted in Figure 1. \(\bias\), \(\srciter\) and \(\dstiter\) are optional parameters (the variable names follow the standard <a class="el" href="dev_guide_conventions.html">Naming Conventions</a>). If not provided, \(\bias\) and \(\srciter\) will default to 0.</p>
  <style>div.image img[src="unrolled_stack_rnn.jpg"]{width:80%;}</style> <div class="image">
 <img src="unrolled_stack_rnn.jpg" alt="unrolled_stack_rnn.jpg"/>
 <div class="caption">
@@ -187,7 +187,7 @@ Figure 1: Example of stacked recurrent cells unrolled over the time dimension an
 <p>When executed, the inputs and outputs should be mapped to an execution argument index as specified by the following table. </p>
 <table class="doxtable">
 <tr>
-<th>Primitive intput/output </th><th>Execution argument index  </th></tr>
+<th>Primitive input/output </th><th>Execution argument index  </th></tr>
 <tr>
 <td>\(\srclayer\) </td><td>DNNL_ARG_SRC_LAYER </td></tr>
 <tr>
@@ -246,7 +246,7 @@ Figure 1: Example of stacked recurrent cells unrolled over the time dimension an
 <p>(2) In backward propagation, all <code>diff_*</code> tensors are in f32.</p>
 <dl class="section warning"><dt>Warning</dt><dd>There might be hardware and/or implementation specific restrictions. Check <a class="el" href="dev_guide_rnn.html#dg_rnn_impl_limits">Implementation Limitations</a> section below.</dd></dl>
 <h2>Data Representation</h2>
-<p>In the DNNL programming model, the RNN primitive is one of a few that support the placeholder memory format memory::format::any (shortened to <code>any</code> from now on) and can define data and weight memory objects format based on the primitive parameters.</p>
+<p>In the DNNL programming model, the RNN primitive is one of a few that support the placeholder memory format <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> (shortened to <code>any</code> from now on) and can define data and weight memory objects format based on the primitive parameters.</p>
 <p>The following table summarizes the data layouts supported by the RNN primitive.</p>
 <table class="doxtable">
 <tr>
