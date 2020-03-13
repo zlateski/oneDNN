@@ -8,5 +8,6 @@ var searchData=
   ['primitive_20cache',['Primitive Cache',['../dev_guide_primitive_cache.html',1,'']]],
   ['profiling_20dnnl_20performance',['Profiling DNNL performance',['../dev_guide_profilers.html',1,'']]],
   ['profiling_20with_20intel_28r_29_20vtune_20amplifier',['Profiling with Intel(R) VTune Amplifier',['../dev_guide_vtune.html',1,'']]],
-  ['performance_20profiling_20example',['Performance Profiling Example',['../performance_profiling_cpp.html',1,'']]]
+  ['performance_20profiling_20example',['Performance Profiling Example',['../performance_profiling_cpp.html',1,'']]],
+  ['pooling_20primitive_20example',['Pooling Primitive Example',['../pooling_example_cpp.html',1,'']]]
 ];

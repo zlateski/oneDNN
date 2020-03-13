@@ -169,13 +169,13 @@ Functions</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>Memory descriptors can be initialized with <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dafee39ac6fff0325cae43cd66495c18ac" title="Undefined memory format tag. ">dnnl_format_tag_any</a> or with format_kind set to <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83" title="Unspecified format kind. ">dnnl_format_kind_any</a>.</dd></dl>
 <p>Inputs:</p>
 <ul>
-<li>src (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, 0)</li>
-<li>weights (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, 0)</li>
-<li>bias (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, 1), if created with bias</li>
+<li><code>src</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, <code>0</code>)</li>
+<li><code>weights</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, <code>0</code>)</li>
+<li><code>bias</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, <code>1</code>), if created with bias</li>
 </ul>
 <p>Outputs:</p>
 <ul>
-<li>dst (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598" title="destination memory desc ">dnnl_query_dst_md</a>, 0)</li>
+<li><code>dst</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598" title="destination memory desc ">dnnl_query_dst_md</a>, <code>0</code>)</li>
 </ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -232,12 +232,12 @@ Functions</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>Memory descriptors can be initialized with <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dafee39ac6fff0325cae43cd66495c18ac" title="Undefined memory format tag. ">dnnl_format_tag_any</a> or with format_kind set to <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83" title="Unspecified format kind. ">dnnl_format_kind_any</a>.</dd></dl>
 <p>Inputs:</p>
 <ul>
-<li>diff_dst (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059ae28e33688bf6c55edcf108bd24eb90de" title="destination grad. memory desc ">dnnl_query_diff_dst_md</a>, 0)</li>
-<li>weights (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, 0)</li>
+<li><code>diff_dst</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059ae28e33688bf6c55edcf108bd24eb90de" title="destination grad. memory desc ">dnnl_query_diff_dst_md</a>, <code>0</code>)</li>
+<li><code>weights</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, <code>0</code>)</li>
 </ul>
 <p>Outputs:</p>
 <ul>
-<li>diff_src (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a2367b043da6df5d691d6038693f363d6" title="source gradient memory desc ">dnnl_query_diff_src_md</a>, 0)</li>
+<li><code>diff_src</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a2367b043da6df5d691d6038693f363d6" title="source gradient memory desc ">dnnl_query_diff_src_md</a>, <code>0</code>)</li>
 </ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -298,13 +298,13 @@ Functions</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>Memory descriptors can be initialized with <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dafee39ac6fff0325cae43cd66495c18ac" title="Undefined memory format tag. ">dnnl_format_tag_any</a> or with format_kind set to <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83" title="Unspecified format kind. ">dnnl_format_kind_any</a>.</dd></dl>
 <p>Inputs:</p>
 <ul>
-<li>src (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, 0)</li>
-<li>diff_dst (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059ae28e33688bf6c55edcf108bd24eb90de" title="destination grad. memory desc ">dnnl_query_diff_dst_md</a>, 0)</li>
+<li><code>src</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, <code>0</code>)</li>
+<li><code>diff_dst</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059ae28e33688bf6c55edcf108bd24eb90de" title="destination grad. memory desc ">dnnl_query_diff_dst_md</a>, <code>0</code>)</li>
 </ul>
 <p>Outputs:</p>
 <ul>
-<li>diff_weights (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a8551246c3e70fa1e420411507dbdfe32" title="weights grad. memory desc ">dnnl_query_diff_weights_md</a>, 0)</li>
-<li>diff_bias (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a8551246c3e70fa1e420411507dbdfe32" title="weights grad. memory desc ">dnnl_query_diff_weights_md</a>, 1), if created with bias</li>
+<li><code>diff_weights</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a8551246c3e70fa1e420411507dbdfe32" title="weights grad. memory desc ">dnnl_query_diff_weights_md</a>, <code>0</code>)</li>
+<li><code>diff_bias</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a8551246c3e70fa1e420411507dbdfe32" title="weights grad. memory desc ">dnnl_query_diff_weights_md</a>, <code>1</code>), if created with bias</li>
 </ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">

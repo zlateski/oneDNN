@@ -259,8 +259,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h2>Performance Tips</h2>
 <ol type="1">
 <li>For backward propagation, use the same memory format for <code>src</code>, <code>diff_dst</code>, and <code>diff_src</code> (the format of the <code>diff_dst</code> and <code>diff_src</code> are always the same because of the API). Different formats are functionally supported but lead to highly suboptimal performance.</li>
-<li>Use in-place operations whenever possible. </li>
+<li>Use in-place operations whenever possible.</li>
 </ol>
+<h2>Examples</h2>
+<table class="doxtable">
+<tr>
+<th align="left">Engine </th><th align="left">Name </th><th align="left">Comments  </th></tr>
+<tr>
+<td align="left">CPU/GPU </td><td align="left"><a class="el" href="batch_normalization_example_cpp.html">Batch Normalization Primitive Example</a> </td><td align="left"><p class="starttd">This C++ API example demonstrates how to create and execute a <a class="el" href="dev_guide_batch_normalization.html">Batch Normalization</a> primitive in forward training propagation mode.</p>
+<p class="endtd">Key optimizations included in this example:</p>
+<ul>
+<li>In-place primitive execution;</li>
+<li>Source memory format for an optimized primitive implementation;</li>
+<li>Fused post-ops via operation descriptor flags; </li>
+</ul>
+</td></tr>
+</table>
 </div></div><!-- contents -->
 <div class="footer">
     <div class="footer-wrapper">

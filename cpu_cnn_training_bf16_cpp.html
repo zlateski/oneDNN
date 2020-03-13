@@ -101,7 +101,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><span class="preprocessor">#include &lt;cassert&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;cmath&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;numeric&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
 <div class="line"></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="dnnl_8hpp.html">dnnl.hpp</a>&quot;</span></div>
@@ -110,14 +109,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line"><span class="keyword">using namespace </span>dnnl;</div>
 <div class="line"></div>
-<div class="line"><a class="code" href="structdnnl_1_1memory.html#a6ad818e4699872cc913474fa5f122cd5">memory::dim</a> product(<span class="keyword">const</span> <a class="code" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;dims) {</div>
-<div class="line">    <span class="keywordflow">return</span> std::accumulate(dims.begin(), dims.end(), (<a class="code" href="structdnnl_1_1memory.html#a6ad818e4699872cc913474fa5f122cd5">memory::dim</a>)1,</div>
-<div class="line">            std::multiplies&lt;memory::dim&gt;());</div>
-<div class="line">}</div>
-<div class="line"></div>
 <div class="line"><span class="keywordtype">void</span> simple_net() {</div>
-<div class="line">    <span class="keyword">using</span> tag = <a class="code" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3f">memory::format_tag</a>;</div>
-<div class="line">    <span class="keyword">using</span> dt = <a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dce">memory::data_type</a>;</div>
+<div class="line">    <span class="keyword">using</span> <a class="code" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3f">tag</a> = <a class="code" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3f">memory::format_tag</a>;</div>
+<div class="line">    <span class="keyword">using</span> <a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dce">dt</a> = <a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dce">memory::data_type</a>;</div>
 <div class="line"></div>
 <div class="line">    <span class="keyword">auto</span> cpu_engine = engine(<a class="code" href="structdnnl_1_1engine.html#a2635da16314dcbdb9bd9ea431316bb1aad9747e2da342bdb995f6389533ad1a3d">engine::kind::cpu</a>, 0);</div>
 <div class="line">    stream s(cpu_engine);</div>

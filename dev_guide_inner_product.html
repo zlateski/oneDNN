@@ -187,8 +187,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </ol>
 <h2>Performance Tips</h2>
 <ul>
-<li>Use <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> for source, weights, and destinations memory format tags when create an inner product primitive to allow the library to choose the most appropriate memory format. </li>
+<li>Use <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> for source, weights, and destinations memory format tags when create an inner product primitive to allow the library to choose the most appropriate memory format.</li>
 </ul>
+<h2>Examples</h2>
+<table class="doxtable">
+<tr>
+<th align="left">Engine </th><th align="left">Name </th><th align="left">Comments  </th></tr>
+<tr>
+<td align="left">CPU/GPU </td><td align="left"><a class="el" href="inner_product_example_cpp.html">Inner Product Primitive Example</a> </td><td align="left"><p class="starttd">This C++ API example demonstrates how to create and execute an <a class="el" href="dev_guide_inner_product.html">Inner Product</a> primitive.</p>
+<p class="endtd">Key optimizations included in this example:</p>
+<ul>
+<li>Primitive attributes with fused post-ops;</li>
+<li>Creation of optimized memory format from the primitive descriptor. </li>
+</ul>
+</td></tr>
+</table>
 </div></div><!-- contents -->
 <div class="footer">
     <div class="footer-wrapper">

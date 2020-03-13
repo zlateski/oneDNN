@@ -363,7 +363,7 @@ Functions</h2></td></tr>
 <p>Undefined algorithm. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga00377dd4982333e42e8ae1d09a309640acfdececd63a8bc0cfe1021ad614e2ded"></a>convolution_auto</em>&nbsp;</td><td class="fielddoc">
-<p>Convolution algorithm (either direct or Winograd) to be chosen just in time. </p>
+<p>Convolution algorithm that is chosen to be either direct or Winograd automatically. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga00377dd4982333e42e8ae1d09a309640a5028ad8f818a45333a8a0eefad35c5c0"></a>convolution_direct</em>&nbsp;</td><td class="fielddoc">
 <p>Direct convolution. </p>
@@ -378,13 +378,13 @@ Functions</h2></td></tr>
 <p>Winograd deconvolution. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga00377dd4982333e42e8ae1d09a309640aba09bebb742494255b90b43871c01c69"></a>eltwise_relu</em>&nbsp;</td><td class="fielddoc">
-<p>Elementwise: ReLU. </p>
+<p>Elementwise: rectified linear unit (ReLU) </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga00377dd4982333e42e8ae1d09a309640a38dd7159307eab45742c78e72f06abb0"></a>eltwise_tanh</em>&nbsp;</td><td class="fielddoc">
 <p>Elementwise: hyperbolic tangent non-linearity (tanh) </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga00377dd4982333e42e8ae1d09a309640a690376cad4a7f001e967a6a40d04da3a"></a>eltwise_elu</em>&nbsp;</td><td class="fielddoc">
-<p>Elementwise: exponential linear unit (elu) </p>
+<p>Elementwise: exponential linear unit (ELU) </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga00377dd4982333e42e8ae1d09a309640a448fc250a28e651c02966142f7f66cce"></a>eltwise_square</em>&nbsp;</td><td class="fielddoc">
 <p>Elementwise: square. </p>
@@ -396,7 +396,7 @@ Functions</h2></td></tr>
 <p>Elementwise: square root. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga00377dd4982333e42e8ae1d09a309640a97395201ce1744f18c19d243d24fbd13"></a>eltwise_swish</em>&nbsp;</td><td class="fielddoc">
-<p>Elementwise: x*sigmoid(a*x) </p>
+<p>Elementwise: swish ( \(x \cdot sigmoid(a \cdot x)\)) </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga00377dd4982333e42e8ae1d09a309640a21aba6844d2de47b92ab1d110f561945"></a>eltwise_linear</em>&nbsp;</td><td class="fielddoc">
 <p>Elementwise: linear. </p>
@@ -432,13 +432,13 @@ Functions</h2></td></tr>
 <p>Elementwise: pow. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga00377dd4982333e42e8ae1d09a309640ac227b99192be41d4060b700d1e788fd6"></a>eltwise_relu_use_dst_for_bwd</em>&nbsp;</td><td class="fielddoc">
-<p>Elementwise: ReLU (dst for backward) </p>
+<p>Elementwise: rectified linar unit (ReLU) (dst for backward) </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga00377dd4982333e42e8ae1d09a309640a0be1df5ff86383197efdfeb01b10e046"></a>eltwise_tanh_use_dst_for_bwd</em>&nbsp;</td><td class="fielddoc">
 <p>Elementwise: hyperbolic tangent non-linearity (tanh) (dst for backward) </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga00377dd4982333e42e8ae1d09a309640a09b26fc530b10556b14bc8e9b2d29d35"></a>eltwise_elu_use_dst_for_bwd</em>&nbsp;</td><td class="fielddoc">
-<p>Elementwise: exponential linear unit (elu) (dst for backward) </p>
+<p>Elementwise: exponential linear unit (ELU) (dst for backward) </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga00377dd4982333e42e8ae1d09a309640ad5704aaf680703d473f983e3f19b8d4d"></a>eltwise_sqrt_use_dst_for_bwd</em>&nbsp;</td><td class="fielddoc">
 <p>Elementwise: square root (dst for backward) </p>
@@ -478,11 +478,7 @@ Functions</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga00377dd4982333e42e8ae1d09a309640a792e966b14bd4e16625ee4df357a0723"></a>lbr_gru</em>&nbsp;</td><td class="fielddoc">
 <p>GRU cell with linear before reset. </p>
-<p>Modification of original GRU cell. Differs from <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640a272fa682d36b810a24ec89202b7a31f7" title="GRU cell. ">dnnl::algorithm::vanilla_gru</a> in how the new memory gate is calculated: </p>
-<p class="formulaDsp">
-\[ c_t = tanh(W_c*x_t + b_{c_x} + r_t*(U_c*h_{t-1}+b_{c_h})) \]
-</p>
-<p> Primitive expects four biases on input: \([b_{u}, b_{r}, b_{c_x}, b_{c_h}]\) </p>
+<p>Differs from the vanilla GRU in how the new memory gate is calculated: \(c_t = tanh(W_c*x_t + b_{c_x} + r_t*(U_c*h_{t-1}+b_{c_h})) \) LRB GRU expects 4 bias tensors on input: \([b_{u}, b_{r}, b_{c_x}, b_{c_h}]\) </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga00377dd4982333e42e8ae1d09a309640ab2c3faf084cf82b5603946995f637b35"></a>binary_add</em>&nbsp;</td><td class="fielddoc">
 <p>Binary add. </p>

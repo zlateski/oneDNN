@@ -194,17 +194,17 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructs a descriptor for a deconvolution weights gradient primitive with bias. </p>
-<dl class="section note"><dt>Note</dt><dd>Memory descriptors can be initialized with <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> value of <code>format_tag</code>.</dd></dl>
 <p>Inputs:</p>
 <ul>
-<li>src (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a31ee74fc65986558ac11db590945811a" title="Returns a source memory descriptor. ">dnnl::primitive_desc_base::src_desc</a> (0))</li>
-<li>diff_dst (<a class="el" href="structdnnl_1_1primitive__desc__base.html#aa95dd1711a45923204ffddc3f02ea546" title="Returns a diff destination memory descriptor. ">dnnl::primitive_desc_base::diff_dst_desc</a> (0))</li>
+<li><code>src</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a31ee74fc65986558ac11db590945811a" title="Returns a source memory descriptor. ">dnnl::primitive_desc_base::src_desc</a>(<code>0</code>))</li>
+<li><code>diff_dst</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#aa95dd1711a45923204ffddc3f02ea546" title="Returns a diff destination memory descriptor. ">dnnl::primitive_desc_base::diff_dst_desc</a>(<code>0</code>))</li>
 </ul>
 <p>Outputs:</p>
 <ul>
-<li>diff_weights (<a class="el" href="structdnnl_1_1primitive__desc__base.html#ab6dc65154169608dfb9c2e9842012826" title="Returns a diff weights memory descriptor. ">dnnl::primitive_desc_base::diff_weights_desc</a> (0))</li>
-<li>diff_bias (<a class="el" href="structdnnl_1_1primitive__desc__base.html#ab6dc65154169608dfb9c2e9842012826" title="Returns a diff weights memory descriptor. ">dnnl::primitive_desc_base::diff_weights_desc</a> (1))</li>
+<li><code>diff_weights</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#ab6dc65154169608dfb9c2e9842012826" title="Returns a diff weights memory descriptor. ">dnnl::primitive_desc_base::diff_weights_desc</a>(<code>0</code>))</li>
+<li><code>diff_bias</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#ab6dc65154169608dfb9c2e9842012826" title="Returns a diff weights memory descriptor. ">dnnl::primitive_desc_base::diff_weights_desc</a>(<code>1</code>))</li>
 </ul>
+<dl class="section note"><dt>Note</dt><dd>All the memory descriptors may be initialized with the <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> value of <code>format_tag</code>.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">algorithm</td><td>Deconvolution algorithm. Possible values are <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640a73f81608d2b7315f04c438fb8be5f99c" title="Direct deconvolution. ">dnnl::algorithm::deconvolution_direct</a>, and <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640aeb5da82914413424bf941fa04eb065aa" title="Winograd deconvolution. ">dnnl::algorithm::deconvolution_winograd</a>. </td></tr>
@@ -284,16 +284,16 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructs a descriptor for a deconvolution weights gradient primitive without bias. </p>
-<dl class="section note"><dt>Note</dt><dd>Memory descriptors can be initialized with <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> value of <code>format_tag</code>.</dd></dl>
 <p>Inputs:</p>
 <ul>
-<li>src (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a31ee74fc65986558ac11db590945811a" title="Returns a source memory descriptor. ">dnnl::primitive_desc_base::src_desc</a> (0))</li>
-<li>diff_dst (<a class="el" href="structdnnl_1_1primitive__desc__base.html#aa95dd1711a45923204ffddc3f02ea546" title="Returns a diff destination memory descriptor. ">dnnl::primitive_desc_base::diff_dst_desc</a> (0))</li>
+<li><code>src</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a31ee74fc65986558ac11db590945811a" title="Returns a source memory descriptor. ">dnnl::primitive_desc_base::src_desc</a>(<code>0</code>))</li>
+<li><code>diff_dst</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#aa95dd1711a45923204ffddc3f02ea546" title="Returns a diff destination memory descriptor. ">dnnl::primitive_desc_base::diff_dst_desc</a>(<code>0</code>))</li>
 </ul>
 <p>Outputs:</p>
 <ul>
-<li>diff_weights (<a class="el" href="structdnnl_1_1primitive__desc__base.html#ab6dc65154169608dfb9c2e9842012826" title="Returns a diff weights memory descriptor. ">dnnl::primitive_desc_base::diff_weights_desc</a> (0))</li>
+<li><code>diff_weights</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#ab6dc65154169608dfb9c2e9842012826" title="Returns a diff weights memory descriptor. ">dnnl::primitive_desc_base::diff_weights_desc</a>(<code>0</code>))</li>
 </ul>
+<dl class="section note"><dt>Note</dt><dd>All the memory descriptors may be initialized with the <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> value of <code>format_tag</code>.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">algorithm</td><td>Deconvolution algorithm. Possible values are <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640a73f81608d2b7315f04c438fb8be5f99c" title="Direct deconvolution. ">dnnl::algorithm::deconvolution_direct</a>, and <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640aeb5da82914413424bf941fa04eb065aa" title="Winograd deconvolution. ">dnnl::algorithm::deconvolution_winograd</a>. </td></tr>
@@ -384,17 +384,17 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructs a descriptor for a dilated deconvolution weights gradient primitive with bias. </p>
-<dl class="section note"><dt>Note</dt><dd>Memory descriptors can be initialized with <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> value of <code>format_tag</code>.</dd></dl>
 <p>Inputs:</p>
 <ul>
-<li>src (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a31ee74fc65986558ac11db590945811a" title="Returns a source memory descriptor. ">dnnl::primitive_desc_base::src_desc</a> (0))</li>
-<li>diff_dst (<a class="el" href="structdnnl_1_1primitive__desc__base.html#aa95dd1711a45923204ffddc3f02ea546" title="Returns a diff destination memory descriptor. ">dnnl::primitive_desc_base::diff_dst_desc</a> (0))</li>
+<li><code>src</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a31ee74fc65986558ac11db590945811a" title="Returns a source memory descriptor. ">dnnl::primitive_desc_base::src_desc</a>(<code>0</code>))</li>
+<li><code>diff_dst</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#aa95dd1711a45923204ffddc3f02ea546" title="Returns a diff destination memory descriptor. ">dnnl::primitive_desc_base::diff_dst_desc</a>(<code>0</code>))</li>
 </ul>
 <p>Outputs:</p>
 <ul>
-<li>diff_weights (<a class="el" href="structdnnl_1_1primitive__desc__base.html#ab6dc65154169608dfb9c2e9842012826" title="Returns a diff weights memory descriptor. ">dnnl::primitive_desc_base::diff_weights_desc</a> (0))</li>
-<li>diff_bias (<a class="el" href="structdnnl_1_1primitive__desc__base.html#ab6dc65154169608dfb9c2e9842012826" title="Returns a diff weights memory descriptor. ">dnnl::primitive_desc_base::diff_weights_desc</a> (1))</li>
+<li><code>diff_weights</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#ab6dc65154169608dfb9c2e9842012826" title="Returns a diff weights memory descriptor. ">dnnl::primitive_desc_base::diff_weights_desc</a>(<code>0</code>))</li>
+<li><code>diff_bias</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#ab6dc65154169608dfb9c2e9842012826" title="Returns a diff weights memory descriptor. ">dnnl::primitive_desc_base::diff_weights_desc</a>(<code>1</code>))</li>
 </ul>
+<dl class="section note"><dt>Note</dt><dd>All the memory descriptors may be initialized with the <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> value of <code>format_tag</code>.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">algorithm</td><td>Deconvolution algorithm. Possible values are <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640a73f81608d2b7315f04c438fb8be5f99c" title="Direct deconvolution. ">dnnl::algorithm::deconvolution_direct</a>, and <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640aeb5da82914413424bf941fa04eb065aa" title="Winograd deconvolution. ">dnnl::algorithm::deconvolution_winograd</a>. </td></tr>
@@ -481,16 +481,16 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructs a descriptor for a dilated deconvolution weights gradient primitive without bias. </p>
-<dl class="section note"><dt>Note</dt><dd>Memory descriptors can be initialized with <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> value of <code>format_tag</code>.</dd></dl>
 <p>Inputs:</p>
 <ul>
-<li>src (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a31ee74fc65986558ac11db590945811a" title="Returns a source memory descriptor. ">dnnl::primitive_desc_base::src_desc</a> (0))</li>
-<li>diff_dst (<a class="el" href="structdnnl_1_1primitive__desc__base.html#aa95dd1711a45923204ffddc3f02ea546" title="Returns a diff destination memory descriptor. ">dnnl::primitive_desc_base::diff_dst_desc</a> (0))</li>
+<li><code>src</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a31ee74fc65986558ac11db590945811a" title="Returns a source memory descriptor. ">dnnl::primitive_desc_base::src_desc</a>(<code>0</code>))</li>
+<li><code>diff_dst</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#aa95dd1711a45923204ffddc3f02ea546" title="Returns a diff destination memory descriptor. ">dnnl::primitive_desc_base::diff_dst_desc</a>(<code>0</code>))</li>
 </ul>
 <p>Outputs:</p>
 <ul>
-<li>diff_weights (<a class="el" href="structdnnl_1_1primitive__desc__base.html#ab6dc65154169608dfb9c2e9842012826" title="Returns a diff weights memory descriptor. ">dnnl::primitive_desc_base::diff_weights_desc</a> (0))</li>
+<li><code>diff_weights</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#ab6dc65154169608dfb9c2e9842012826" title="Returns a diff weights memory descriptor. ">dnnl::primitive_desc_base::diff_weights_desc</a>(<code>0</code>))</li>
 </ul>
+<dl class="section note"><dt>Note</dt><dd>All the memory descriptors may be initialized with the <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> value of <code>format_tag</code>.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">algorithm</td><td>Deconvolution algorithm. Possible values are <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640a73f81608d2b7315f04c438fb8be5f99c" title="Direct deconvolution. ">dnnl::algorithm::deconvolution_direct</a>, and <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640aeb5da82914413424bf941fa04eb065aa" title="Winograd deconvolution. ">dnnl::algorithm::deconvolution_winograd</a>. </td></tr>

@@ -155,10 +155,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>Optimized: 4D case, tensor \(A \times B \times C \times D\), softmax axis 1 (B), format tag <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da8fcce5dd7260b5b0740e3b37b1e9ad41" title="permuted 4D tensor ">dnnl_acdb</a> or <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da590d748ac3761a51b407555a9a0d5efe" title="4D tensor blocked by 2nd dimension with block size 16 ">dnnl_aBcd16b</a>, and \(C \cdot D \ne 1\)</li>
 <li>Non-optimized: 2D case, tensor \(A \times B\), softmax axis 0 (A), format tag <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da1bd907fc29344dfe7ba88336960dcf53" title="plain 2D tensor ">dnnl_ab</a>, and \(B \ne 1\)</li>
 <li>Non-optimized: 2D case, tensor \(A \times B\), softmax axis 1 (B), format tag <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da6a6dbc0b30468d92e32a9cb3f6615c43" title="permuted 2D tensor ">dnnl_ba</a>, and \(A \ne 1\)</li>
-<li>Non-optimized: 4D case, tensor \(A \times B \times C \times D\), softmax axis 2 (C), format tag <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da8fcce5dd7260b5b0740e3b37b1e9ad41" title="permuted 4D tensor ">dnnl_acdb</a>, and and \(D \cdot B \ne 1\) </li>
+<li>Non-optimized: 4D case, tensor \(A \times B \times C \times D\), softmax axis 2 (C), format tag <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da8fcce5dd7260b5b0740e3b37b1e9ad41" title="permuted 4D tensor ">dnnl_acdb</a>, and and \(D \cdot B \ne 1\)</li>
 </ul>
 </li>
 </ol>
+<h2>Examples</h2>
+<table class="doxtable">
+<tr>
+<th align="left">Engine </th><th align="left">Name </th><th align="left">Comments  </th></tr>
+<tr>
+<td align="left">CPU/GPU </td><td align="left"><a class="el" href="logsoftmax_example_cpp.html">Logsoftmax Primitive Example</a> </td><td align="left"><p class="starttd">This C++ API example demonstrates how to create and execute a <a class="el" href="dev_guide_logsoftmax.html">Logsoftmax</a> primitive in forward training propagation mode.</p>
+<p class="endtd">Key optimizations included in this example:</p>
+<ul>
+<li>In-place primitive execution;</li>
+<li>Softmax along axis 1 (C) for 2D tensors. </li>
+</ul>
+</td></tr>
+</table>
 </div></div><!-- contents -->
 <div class="footer">
     <div class="footer-wrapper">

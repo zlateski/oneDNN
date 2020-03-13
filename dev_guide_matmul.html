@@ -181,10 +181,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <ul>
 <li>Use <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> for either of the input tensors if and only if the shape of the corresponding tensor is fully known at creation time and it is possible to cache reordered tensors across multiple primitive executions. For instance, a good candidate for reuse are the weights tensors during inference: their shapes and data types are known in advance; thus they can be reordered during the first inference pass and can be reused during the subsequent passes. However, if any of the input tensors cannot be reused, it is best to force the primitive to use the same format as that used by the tensors.</li>
 </ul>
-<h2>Tutorials</h2>
+<h2>Examples</h2>
 <table class="doxtable">
 <tr>
 <th align="left">Engine </th><th align="left">Name </th><th align="left">Comments  </th></tr>
+<tr>
+<td align="left">CPU/GPU </td><td align="left"><a class="el" href="matmul_example_cpp.html">Matmul Primitive Example</a> </td><td align="left"><p class="starttd">This C++ API example demonstrates how to create and execute a <a class="el" href="dev_guide_matmul.html">MatMul</a> primitive.</p>
+<p class="endtd">Key optimizations included in this example:</p>
+<ul>
+<li>Primitive attributes with fused post-ops. </li>
+</ul>
+</td></tr>
 <tr>
 <td align="left">CPU </td><td align="left"><a class="el" href="cpu_sgemm_and_matmul_cpp.html">MatMul Tutorial: Comparison with SGEMM</a> </td><td align="left"><p class="starttd">C++ API example demonstrating <a class="el" href="dev_guide_matmul.html">MatMul</a> as a replacement for SGEMM functions.</p>
 <p class="endtd">Concepts:</p>

@@ -219,8 +219,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>For data tensors (<code>src</code>, <code>dst</code>, <code>diff_src</code>, <code>diff_dst</code>), use memory formats for which the last logical axis is the last in the physical memory layout.</li>
 <li>For <code>mean</code>/<code>variance</code>, use the memory format that follows the data memory format; i.e., if the data format is <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da2a9735ec024c9362b717304edbfe2237" title="3D RNN data tensor in the format (seq_length, batch, input channels). ">dnnl_tnc</a>, the best performance can be expected for statistics with <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dac1ee747f881fc8cae805ae4051e671cf" title="2D RNN statistics tensor, an alias to dnnl_ab ">dnnl_tn</a> and suboptimal for statistics with the <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da7ede27a46172c1ab2775593ba4b118dc" title="2D RNN statistics tensor, an alias to dnnl_ba ">dnnl_nt</a> format.</li>
 <li>For backward propagation, use the same memory format for <code>src</code>, <code>diff_dst</code>, and <code>diff_src</code> (the format of <code>diff_dst</code> and <code>diff_src</code> are always the same because of the API). Different formats are functionally supported but lead to highly suboptimal performance.</li>
-<li>Use in-place operations whenever possible. </li>
+<li>Use in-place operations whenever possible.</li>
 </ol>
+<h2>Examples</h2>
+<table class="doxtable">
+<tr>
+<th align="left">Engine </th><th align="left">Name </th><th align="left">Comments  </th></tr>
+<tr>
+<td align="left">CPU/GPU </td><td align="left"><a class="el" href="layer_normalization_example_cpp.html">Layer Normalization Primitive Example</a> </td><td align="left"><p class="starttd">This C++ API example demonstrates how to create and execute a <a class="el" href="dev_guide_layer_normalization.html">Layer normalization</a> primitive in forward propagation mode.</p>
+<p class="endtd">Key optimizations included in this example:</p>
+<ul>
+<li>In-place primitive execution;</li>
+<li>Creation of memory objects using the primitive descriptor. </li>
+</ul>
+</td></tr>
+</table>
 </div></div><!-- contents -->
 <div class="footer">
     <div class="footer-wrapper">

@@ -320,7 +320,7 @@ Back, bottom, and right </td><td align="left">\(PD_R\) </td><td align="left">\(P
 <div class="line">    conv1_src_md, conv1_weights_md, conv1_bias_md, conv1_dst_md,</div>
 <div class="line">    conv1_strides, conv1_padding_l, conv1_padding_r);</div>
 </div><!-- fragment --><h4>Automatic Algorithm Selection</h4>
-<p>DNNL supports <code><a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640acfdececd63a8bc0cfe1021ad614e2ded" title="Convolution algorithm (either direct or Winograd) to be chosen just in time. ">dnnl::algorithm::convolution_auto</a></code> algorithm that instructs the library to automatically select the <em>best</em> algorithm based on the heuristics that take into account tensor shapes and the number of logical processors available. (For automatic selection to work as intended, use the same thread affinity settings when creating the convolution as when executing the convolution.)</p>
+<p>DNNL supports <code><a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640acfdececd63a8bc0cfe1021ad614e2ded" title="Convolution algorithm that is chosen to be either direct or Winograd automatically. ">dnnl::algorithm::convolution_auto</a></code> algorithm that instructs the library to automatically select the <em>best</em> algorithm based on the heuristics that take into account tensor shapes and the number of logical processors available. (For automatic selection to work as intended, use the same thread affinity settings when creating the convolution as when executing the convolution.)</p>
 <p><a class="anchor" id="dg_conv_impl_limits"></a></p>
 <h2>Implementation Limitations</h2>
 <ol type="1">
@@ -336,8 +336,21 @@ Back, bottom, and right </td><td align="left">\(PD_R\) </td><td align="left">\(P
 </ol>
 <h2>Performance Tips</h2>
 <ul>
-<li>Use <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> for source, weights, and destinations memory format tags when create a convolution primitive to allow the library to choose the most appropriate memory format. </li>
+<li>Use <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> for source, weights, and destinations memory format tags when create a convolution primitive to allow the library to choose the most appropriate memory format.</li>
 </ul>
+<h2>Examples</h2>
+<table class="doxtable">
+<tr>
+<th align="left">Engine </th><th align="left">Name </th><th align="left">Comments  </th></tr>
+<tr>
+<td align="left">CPU/GPU </td><td align="left"><a class="el" href="convolution_example_cpp.html">Convolution Primitive Example</a> </td><td align="left"><p class="starttd">This C++ API example demonstrates how to create and execute a <a class="el" href="dev_guide_convolution.html">Convolution</a> primitive in forward propagation mode.</p>
+<p class="endtd">Key optimizations included in this example:</p>
+<ul>
+<li>Creation of optimized memory format from the primitive descriptor;</li>
+<li>Primitive attributes with fused post-ops. </li>
+</ul>
+</td></tr>
+</table>
 </div></div><!-- contents -->
 <div class="footer">
     <div class="footer-wrapper">

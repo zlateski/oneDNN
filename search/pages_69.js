@@ -6,5 +6,6 @@ var searchData=
   ['inner_20product',['Inner Product',['../dev_guide_inner_product.html',1,'']]],
   ['inspecting_20jit_20code',['Inspecting JIT Code',['../dev_guide_inspecting_jit.html',1,'']]],
   ['int8_20computation_20aspects',['Int8 Computation Aspects',['../dev_guide_int8_computations.html',1,'']]],
-  ['intel_20mkl_2ddnn_20to_20dnnl_20transition_20guide',['Intel MKL-DNN to DNNL Transition Guide',['../dev_guide_transition_to_dnnl.html',1,'']]]
+  ['intel_20mkl_2ddnn_20to_20dnnl_20transition_20guide',['Intel MKL-DNN to DNNL Transition Guide',['../dev_guide_transition_to_dnnl.html',1,'']]],
+  ['inner_20product_20primitive_20example',['Inner Product Primitive Example',['../inner_product_example_cpp.html',1,'']]]
 ];

@@ -125,8 +125,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h2>Performance Tips</h2>
 <ol type="1">
 <li>Whenever possible, avoid specifying the destination memory format so that the primitive is able to choose the most appropriate one.</li>
-<li>The concat primitive is highly optimized for the cases in which all source tensors have same memory format and data type matches the destination tensor data type. For other cases, more general but slower code is working. Consider reordering sources to the same data format before using the concat primitive. </li>
+<li>The concat primitive is highly optimized for the cases in which all source tensors have same memory format and data type matches the destination tensor data type. For other cases, more general but slower code is working. Consider reordering sources to the same data format before using the concat primitive.</li>
 </ol>
+<h2>Examples</h2>
+<table class="doxtable">
+<tr>
+<th align="left">Engine </th><th align="left">Name </th><th align="left">Comments  </th></tr>
+<tr>
+<td align="left">CPU/GPU </td><td align="left"><a class="el" href="concat_example_cpp.html">Concat Primitive Example</a> </td><td align="left"><p class="starttd">This C++ API example demonstrates how to create and execute a <a class="el" href="dev_guide_concat.html">Concat</a> primitive.</p>
+<p class="endtd">Key optimizations included in this example:</p>
+<ul>
+<li>Identical source (src) memory formats.</li>
+<li>Creation of optimized memory format for destination (dst) from the primitive descriptor </li>
+</ul>
+</td></tr>
+</table>
 </div></div><!-- contents -->
 <div class="footer">
     <div class="footer-wrapper">

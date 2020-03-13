@@ -180,12 +180,12 @@ Functions</h2></td></tr>
 <p>Initializes a descriptor for pooling forward propagation primitive. </p>
 <p>Inputs:</p>
 <ul>
-<li>src (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, 0)</li>
+<li><code>src</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, <code>0</code>)</li>
 </ul>
 <p>Outputs:</p>
 <ul>
-<li>dst (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598" title="destination memory desc ">dnnl_query_dst_md</a>, 0)</li>
-<li>workspace (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a1c465006660aabe46e644e6df7d36e8a" title="workspace memory desc ">dnnl_query_workspace_md</a>, 0), if <code>alg_kind</code> = <a class="el" href="group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23acf3529ba1c4761c0da90eb6750def6c7" title="Max pooling. ">dnnl_pooling_max</a> and <code>prop_kind</code> = <a class="el" href="group__dnnl__api__primitives__common.html#ggae3c1f22ae55645782923fbfd8b07d0c4a992e03bebfe623ac876b3636333bbce0" title="Forward data propagation (training mode). ">dnnl_forward_training</a>; must be queried for using <a class="el" href="group__dnnl__api__primitives__common.html#ga416464a8b3e898d8965a5f3c49d4cd54">dnnl_primitive_desc_query_md()</a> after a corresponding primitive descriptor is created</li>
+<li><code>dst</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598" title="destination memory desc ">dnnl_query_dst_md</a>, <code>0</code>)</li>
+<li><code>workspace</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a1c465006660aabe46e644e6df7d36e8a" title="workspace memory desc ">dnnl_query_workspace_md</a>, <code>0</code>), if <code>alg_kind</code> = <a class="el" href="group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23acf3529ba1c4761c0da90eb6750def6c7" title="Max pooling. ">dnnl_pooling_max</a> and <code>prop_kind</code> = <a class="el" href="group__dnnl__api__primitives__common.html#ggae3c1f22ae55645782923fbfd8b07d0c4a992e03bebfe623ac876b3636333bbce0" title="Forward data propagation (training mode). ">dnnl_forward_training</a>; must be queried for using <a class="el" href="group__dnnl__api__primitives__common.html#ga416464a8b3e898d8965a5f3c49d4cd54">dnnl_primitive_desc_query_md()</a> after a corresponding primitive descriptor is created</li>
 </ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -269,12 +269,12 @@ Functions</h2></td></tr>
 <p>Initializes a descriptor for pooling backward propagation primitive. </p>
 <p>Inputs:</p>
 <ul>
-<li>diff_dst (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059ae28e33688bf6c55edcf108bd24eb90de" title="destination grad. memory desc ">dnnl_query_diff_dst_md</a>, 0)</li>
-<li>workspace (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a1c465006660aabe46e644e6df7d36e8a" title="workspace memory desc ">dnnl_query_workspace_md</a>, 0), if <code>alg_kind</code> = <a class="el" href="group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23acf3529ba1c4761c0da90eb6750def6c7" title="Max pooling. ">dnnl_pooling_max</a>; must be queried for using <a class="el" href="group__dnnl__api__primitives__common.html#ga416464a8b3e898d8965a5f3c49d4cd54">dnnl_primitive_desc_query_md()</a> after a corresponding primitive descriptor is created</li>
+<li><code>diff_dst</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059ae28e33688bf6c55edcf108bd24eb90de" title="destination grad. memory desc ">dnnl_query_diff_dst_md</a>, <code>0</code>)</li>
+<li><code>workspace</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a1c465006660aabe46e644e6df7d36e8a" title="workspace memory desc ">dnnl_query_workspace_md</a>, <code>0</code>), if <code>alg_kind</code> = <a class="el" href="group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23acf3529ba1c4761c0da90eb6750def6c7" title="Max pooling. ">dnnl_pooling_max</a>; must be queried for using <a class="el" href="group__dnnl__api__primitives__common.html#ga416464a8b3e898d8965a5f3c49d4cd54">dnnl_primitive_desc_query_md()</a> after a corresponding primitive descriptor is created</li>
 </ul>
 <p>Outputs:</p>
 <ul>
-<li>diff_src (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a2367b043da6df5d691d6038693f363d6" title="source gradient memory desc ">dnnl_query_diff_src_md</a>, 0)</li>
+<li><code>diff_src</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a2367b043da6df5d691d6038693f363d6" title="source gradient memory desc ">dnnl_query_diff_src_md</a>, <code>0</code>)</li>
 </ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
