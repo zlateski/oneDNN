@@ -14,7 +14,7 @@
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
-<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML"></script>
+<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML,dnnl"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -115,7 +115,7 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Descriptor for an LRN forward propagation primitive. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cnn_inference_f32_8cpp-example.html#_a24">cnn_inference_f32.cpp</a>, <a class="el" href="cnn_training_f32_8cpp-example.html#_a23">cnn_training_f32.cpp</a>, and <a class="el" href="cpu_cnn_training_bf16_8cpp-example.html#_a27">cpu_cnn_training_bf16.cpp</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cnn_inference_f32_8cpp-example.html#_a23">cnn_inference_f32.cpp</a>, <a class="el" href="cnn_training_f32_8cpp-example.html#_a22">cnn_training_f32.cpp</a>, <a class="el" href="cpu_cnn_training_bf16_8cpp-example.html#_a26">cpu_cnn_training_bf16.cpp</a>, and <a class="el" href="lrn_8cpp-example.html#_a6">lrn.cpp</a>.</dd>
 </dl></div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a61840141223ac7465440f42967f8b8d2"></a>
 <div class="memitem">
@@ -182,12 +182,12 @@ Public Member Functions</h2></td></tr>
 <p>Constructs a descriptor for a LRN forward propagation primitive. </p>
 <p>Inputs:</p>
 <ul>
-<li>src (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a31ee74fc65986558ac11db590945811a" title="Returns a source memory descriptor. ">dnnl::primitive_desc_base::src_desc</a> (0))</li>
+<li><code>src</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a31ee74fc65986558ac11db590945811a" title="Returns a source memory descriptor. ">dnnl::primitive_desc_base::src_desc</a>(<code>0</code>))</li>
 </ul>
 <p>Outputs:</p>
 <ul>
-<li>dst (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a0b724a92606a86a7ac9b6b9b07935529" title="Returns a destination memory descriptor. ">dnnl::primitive_desc_base::dst_desc</a> (0))</li>
-<li>workspace (<a class="el" href="structdnnl_1_1primitive__desc__base.html#aaf33632e215a1f2b066a6111836ecbb3" title="Returns the workspace memory descriptor. ">dnnl::primitive_desc_base::workspace_desc</a> (0)), if <code>alg_kind</code> = <a class="el" href="group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23acf3529ba1c4761c0da90eb6750def6c7" title="Max pooling. ">dnnl_pooling_max</a> and <code>prop_kind</code> = <a class="el" href="group__dnnl__api__primitives__common.html#ggae3c1f22ae55645782923fbfd8b07d0c4a992e03bebfe623ac876b3636333bbce0" title="Forward data propagation (training mode). ">dnnl_forward_training</a>; must be queried for using <a class="el" href="group__dnnl__api__primitives__common.html#ga416464a8b3e898d8965a5f3c49d4cd54">dnnl_primitive_desc_query_md()</a> after a corresponding primitive descriptor is created</li>
+<li><code>dst</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a0b724a92606a86a7ac9b6b9b07935529" title="Returns a destination memory descriptor. ">dnnl::primitive_desc_base::dst_desc</a>(<code>0</code>))</li>
+<li><code>workspace</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#aaf33632e215a1f2b066a6111836ecbb3" title="Returns the workspace memory descriptor. ">dnnl::primitive_desc_base::workspace_desc</a>(<code>0</code>)), if <code>alg_kind</code> = <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640a8c73d4bb88a0497586a74256bb338e88" title="Max pooling. ">dnnl::algorithm::pooling_max</a> and <code>prop_kind</code> = <a class="el" href="group__dnnl__api__attributes.html#ggac7db48f6583aa9903e54c2a39d65438fa24775787fab8f13aa4809e1ce8f82aeb" title="Forward data propagation (training mode). ">dnnl::prop_kind::forward_training</a>; must be queried for using <a class="el" href="structdnnl_1_1primitive__desc__base.html#ac2ec36092718ed89bece0fec7f5f3171">dnnl::primitive_desc_base::query_md()</a> after a corresponding primitive descriptor is created</li>
 </ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">

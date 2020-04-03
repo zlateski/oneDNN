@@ -14,7 +14,7 @@
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
-<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML"></script>
+<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML,dnnl"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -101,7 +101,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line"></div>
 <div class="line"></div>
-<div class="line"><span class="preprocessor">#include &lt;chrono&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;vector&gt;</span></div>
@@ -123,10 +122,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><span class="comment">// function to init data</span></div>
 <div class="line"><span class="keywordtype">void</span> init_data(<a name="_a0"></a><a class="code" href="structdnnl_1_1memory.html">memory</a> &amp;m, <span class="keywordtype">float</span> v) {</div>
 <div class="line">    <span class="keywordtype">size_t</span> size = m.get_desc().get_size() / <span class="keyword">sizeof</span>(float);</div>
-<div class="line">    std::vector&lt;float&gt; data(size);</div>
-<div class="line">    read_from_dnnl_memory(data.data(), m);</div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; size; ++i)</div>
-<div class="line">        data[i] = v;</div>
+<div class="line">    std::vector&lt;float&gt; data(size, v);</div>
+<div class="line">    write_to_dnnl_memory(data.data(), m);</div>
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="comment">// function to execute non-fused relu</span></div>
@@ -182,7 +179,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="comment">// create convolution primitive</span></div>
 <div class="line">    <span class="keyword">auto</span> conv = <a name="_a18"></a><a class="code" href="structdnnl_1_1convolution__forward.html">convolution_forward</a>(conv_pd);</div>
 <div class="line">    <span class="comment">// [Create conv_primitive]</span></div>
-<div class="line">    <span class="comment">// @page performance_profiling_cpp</span></div>
 <div class="line"><span class="comment"></span>    <span class="comment">// [Add to stream]</span></div>
 <div class="line">    <span class="comment">// execute convolution by adding it to the stream s</span></div>
 <div class="line">    conv.execute(s,</div>
@@ -340,7 +336,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <a class="code" href="structdnnl_1_1stream.html">stream</a> s(eng);</div>
 <div class="line">    <span class="comment">// [Set dimensions]</span></div>
 <div class="line">    <span class="comment">// set dimensions for synthetic data and weights</span></div>
-<div class="line">    <span class="keyword">const</span> <a class="code" href="structdnnl_1_1memory.html#a6ad818e4699872cc913474fa5f122cd5">memory::dim</a> BATCH = 1000;</div>
+<div class="line">    <span class="keyword">const</span> <a class="code" href="structdnnl_1_1memory.html#a6ad818e4699872cc913474fa5f122cd5">memory::dim</a> BATCH = 128;</div>
 <div class="line">    <span class="keyword">const</span> <a class="code" href="structdnnl_1_1memory.html#a6ad818e4699872cc913474fa5f122cd5">memory::dim</a> IC = 3, OC = 96;</div>
 <div class="line">    <span class="keyword">const</span> <a class="code" href="structdnnl_1_1memory.html#a6ad818e4699872cc913474fa5f122cd5">memory::dim</a> IH = 227, KH = 11, OH = 55;</div>
 <div class="line">    <span class="keyword">const</span> <a class="code" href="structdnnl_1_1memory.html#a6ad818e4699872cc913474fa5f122cd5">memory::dim</a> IW = 227, KW = 11, OW = 55;</div>
@@ -348,7 +344,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line">    <span class="comment">// [Create memory objects]</span></div>
 <div class="line">    <span class="comment">// create DNNL memory objects for user&#39;s tensors (in nchw and oihw formats)</span></div>
-<div class="line">    <span class="comment">// @note here the library allocates memory</span></div>
 <div class="line">    <span class="keyword">auto</span> user_src = <a class="code" href="structdnnl_1_1memory.html">memory</a>({{BATCH, IC, IH, IW}, <a name="a27"></a><a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e">memory::data_type::f32</a>,</div>
 <div class="line">                                   <a name="a28"></a><a class="code" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3faded7ac40158367123c5467281d44cbeb">memory::format_tag::nchw</a>},</div>
 <div class="line">            eng);</div>

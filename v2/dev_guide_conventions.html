@@ -14,7 +14,7 @@
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
-<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML"></script>
+<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML,dnnl"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -83,16 +83,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h2>Variable (Tensor) Names</h2>
 <p>Neural network models consist of operations of the following form: </p>
 <p class="formulaDsp">
-\[ dst = f(src, weights), \]
+\[ \dst = f(\src, \weights), \]
 </p>
-<p> where \(dst\) and \(src\) are activation tensors, and \(weights\) are learnable tensors.</p>
-<p>The backward propagation consists then in computing the gradients with respect to the \(src\) and \(weights\) respectively: </p>
+<p> where \(\dst\) and \(\src\) are activation tensors, and \(\weights\) are learnable tensors.</p>
+<p>The backward propagation consists then in computing the gradients with respect to the \(\src\) and \(\weights\) respectively: </p>
 <p class="formulaDsp">
-\[ diff\_src = df_{src}(diff\_dst, src, weights, dst), \]
+\[ \diffsrc = df_{\src}(\diffdst, \src, \weights, \dst), \]
 </p>
 <p> and </p>
 <p class="formulaDsp">
-\[ diff\_weights = df_{weights}(diff\_dst, src, weights, dst). \]
+\[ \diffweights = df_{\weights}(\diffdst, \src, \weights, \dst). \]
 </p>
 <p>While DNNL uses <em>src</em>, <em>dst</em>, and <em>weights</em> as generic names for the activations and learnable tensors, for a specific operation there might be commonly used and widely known specific names for these tensors. For instance, the <a class="el" href="dev_guide_convolution.html">convolution</a> operation has a learnable tensor called bias. For usability reasons, DNNL primitives use such names in initialization or other functions to simplify the coding.</p>
 <p>To summarize, DNNL uses the following commonly used notations for tensors:</p>
@@ -129,30 +129,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <td align="left"><code>*_iter</code> </td><td align="left">RNN recurrent data or weights tensors </td></tr>
 </table>
 <h2>Formulas and Verbose Output</h2>
-<p>DNNL uses the following notations in the documentation formulas and verbose output.</p>
+<p>DNNL uses the following notations in the documentation formulas and verbose output. Here, lower-case letters are used to denote indices in a particular spatial dimension, the sizes of which are denoted by corresponding upper-case letters.</p>
 <table class="doxtable">
 <tr>
 <th align="left">Name </th><th align="left">Semantics  </th></tr>
 <tr>
-<td align="left">n </td><td align="left">number of image in a batch </td></tr>
+<td align="left"><code>n</code> (or <code>mb</code>) </td><td align="left">batch </td></tr>
 <tr>
-<td align="left">g </td><td align="left">number of a group </td></tr>
+<td align="left"><code>g</code> </td><td align="left">groups </td></tr>
 <tr>
-<td align="left">oc, od, oh, ow </td><td align="left">number of output channels, depth, height, and width </td></tr>
+<td align="left"><code>oc</code>, <code>od</code>, <code>oh</code>, <code>ow</code> </td><td align="left">output channels, depth, height, and width </td></tr>
 <tr>
-<td align="left">ic, id, ih, iw </td><td align="left">input channels, depth, height, and width </td></tr>
+<td align="left"><code>ic</code>, <code>id</code>, <code>ih</code>, <code>iw</code> </td><td align="left">input channels, depth, height, and width </td></tr>
 <tr>
-<td align="left">kd, kh, kw </td><td align="left">kernel (filter) depth, height, and width </td></tr>
+<td align="left"><code>kd</code>, <code>kh</code>, <code>kw</code> </td><td align="left">kernel (filter) depth, height, and width </td></tr>
 <tr>
-<td align="left">sd, sh, sw </td><td align="left">stride by depth, height, and width </td></tr>
+<td align="left"><code>sd</code>, <code>sh</code>, <code>sw</code> </td><td align="left">stride by depth, height, and width </td></tr>
 <tr>
-<td align="left">dd, dh, dw </td><td align="left">kernel (filter) height, width and depth </td></tr>
+<td align="left"><code>dd</code>, <code>dh</code>, <code>dw</code> </td><td align="left">dilation by depth, height, and width </td></tr>
 <tr>
-<td align="left">pd, ph, pw </td><td align="left">padding by depth, height, and width </td></tr>
-<tr>
-<td align="left">\(pd_0\), \(ph_0\), \(pw_0\) </td><td align="left">padding by depth, height, and width on the lower index side </td></tr>
-<tr>
-<td align="left">\(pd_1\), \(ph_1\), \(pw_1\) </td><td align="left">padding by depth, height, and width on the higher index side </td></tr>
+<td align="left"><code>pd</code>, <code>ph</code>, <code>pw</code> </td><td align="left">padding by depth, height, and width </td></tr>
 </table>
 <h2>RNN-Specific Notation</h2>
 <p>The following notations are used when describing RNN primitives.</p>

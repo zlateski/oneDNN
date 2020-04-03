@@ -14,7 +14,7 @@
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
-<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML"></script>
+<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML,dnnl"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -206,12 +206,12 @@ Public Member Functions</h2></td></tr>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_types_structdnnl_1_1primitive"><td colspan="2" onclick="javascript:toggleInherit('pub_types_structdnnl_1_1primitive')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="structdnnl_1_1primitive.html">dnnl::primitive</a></td></tr>
 <tr class="memitem:ad1ec93215a0cf3aa0a32bae0c2cd9169 inherit pub_types_structdnnl_1_1primitive"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1primitive.html#ad1ec93215a0cf3aa0a32bae0c2cd9169">kind</a> </td></tr>
-<tr class="memdesc:ad1ec93215a0cf3aa0a32bae0c2cd9169"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kinds of primitives.  <a href="structdnnl_1_1primitive.html#ad1ec93215a0cf3aa0a32bae0c2cd9169">More...</a><br/></td></tr>
+<tr class="memdesc:ad1ec93215a0cf3aa0a32bae0c2cd9169"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kinds of primitives supported by the library.  <a href="structdnnl_1_1primitive.html#ad1ec93215a0cf3aa0a32bae0c2cd9169">More...</a><br/></td></tr>
 <tr class="separator:ad1ec93215a0cf3aa0a32bae0c2cd9169 inherit pub_types_structdnnl_1_1primitive"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Reorder primitive. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cnn_inference_f32_8cpp-example.html#_a11">cnn_inference_f32.cpp</a>, <a class="el" href="cnn_inference_int8_8cpp-example.html#_a21">cnn_inference_int8.cpp</a>, <a class="el" href="cnn_training_f32_8cpp-example.html#_a11">cnn_training_f32.cpp</a>, <a class="el" href="cpu_cnn_training_bf16_8cpp-example.html#_a15">cpu_cnn_training_bf16.cpp</a>, <a class="el" href="cpu_matmul_quantization_8cpp-example.html#_a14">cpu_matmul_quantization.cpp</a>, <a class="el" href="cpu_rnn_inference_f32_8cpp-example.html#_a18">cpu_rnn_inference_f32.cpp</a>, <a class="el" href="cpu_rnn_inference_int8_8cpp-example.html#_a24">cpu_rnn_inference_int8.cpp</a>, <a class="el" href="cross_engine_reorder_8cpp-example.html#_a8">cross_engine_reorder.cpp</a>, <a class="el" href="inference_int8_matmul_8cpp-example.html#_a27">inference_int8_matmul.cpp</a>, <a class="el" href="memory_format_propagation_8cpp-example.html#_a15">memory_format_propagation.cpp</a>, <a class="el" href="performance_profiling_8cpp-example.html#_a25">performance_profiling.cpp</a>, and <a class="el" href="rnn_training_f32_8cpp-example.html#_a12">rnn_training_f32.cpp</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cnn_inference_f32_8cpp-example.html#_a10">cnn_inference_f32.cpp</a>, <a class="el" href="cnn_inference_int8_8cpp-example.html#_a20">cnn_inference_int8.cpp</a>, <a class="el" href="cnn_training_f32_8cpp-example.html#_a10">cnn_training_f32.cpp</a>, <a class="el" href="convolution_8cpp-example.html#_a15">convolution.cpp</a>, <a class="el" href="cpu_cnn_training_bf16_8cpp-example.html#_a14">cpu_cnn_training_bf16.cpp</a>, <a class="el" href="cpu_matmul_quantization_8cpp-example.html#_a14">cpu_matmul_quantization.cpp</a>, <a class="el" href="cpu_rnn_inference_f32_8cpp-example.html#_a18">cpu_rnn_inference_f32.cpp</a>, <a class="el" href="cpu_rnn_inference_int8_8cpp-example.html#_a24">cpu_rnn_inference_int8.cpp</a>, <a class="el" href="cross_engine_reorder_8cpp-example.html#_a7">cross_engine_reorder.cpp</a>, <a class="el" href="inference_int8_matmul_8cpp-example.html#_a27">inference_int8_matmul.cpp</a>, <a class="el" href="inner_product_8cpp-example.html#_a14">inner_product.cpp</a>, <a class="el" href="lstm_8cpp-example.html#_a10">lstm.cpp</a>, <a class="el" href="memory_format_propagation_8cpp-example.html#_a15">memory_format_propagation.cpp</a>, <a class="el" href="performance_profiling_8cpp-example.html#_a25">performance_profiling.cpp</a>, <a class="el" href="reorder_8cpp-example.html#_a9">reorder.cpp</a>, and <a class="el" href="rnn_training_f32_8cpp-example.html#_a12">rnn_training_f32.cpp</a>.</dd>
 </dl></div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a8052aeb588fa278d3e56ef85490b6690"></a>
 <div class="memitem">
@@ -343,7 +343,7 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cnn_inference_f32_8cpp-example.html#a14">cnn_inference_f32.cpp</a>, <a class="el" href="cpu_matmul_quantization_8cpp-example.html#a15">cpu_matmul_quantization.cpp</a>, <a class="el" href="cpu_rnn_inference_f32_8cpp-example.html#a19">cpu_rnn_inference_f32.cpp</a>, <a class="el" href="cpu_rnn_inference_int8_8cpp-example.html#a27">cpu_rnn_inference_int8.cpp</a>, <a class="el" href="inference_int8_matmul_8cpp-example.html#a28">inference_int8_matmul.cpp</a>, <a class="el" href="performance_profiling_8cpp-example.html#a26">performance_profiling.cpp</a>, and <a class="el" href="rnn_training_f32_8cpp-example.html#a13">rnn_training_f32.cpp</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cnn_inference_f32_8cpp-example.html#a13">cnn_inference_f32.cpp</a>, <a class="el" href="convolution_8cpp-example.html#a16">convolution.cpp</a>, <a class="el" href="cpu_matmul_quantization_8cpp-example.html#a15">cpu_matmul_quantization.cpp</a>, <a class="el" href="cpu_rnn_inference_f32_8cpp-example.html#a19">cpu_rnn_inference_f32.cpp</a>, <a class="el" href="cpu_rnn_inference_int8_8cpp-example.html#a27">cpu_rnn_inference_int8.cpp</a>, <a class="el" href="inference_int8_matmul_8cpp-example.html#a28">inference_int8_matmul.cpp</a>, <a class="el" href="inner_product_8cpp-example.html#a15">inner_product.cpp</a>, <a class="el" href="lstm_8cpp-example.html#a11">lstm.cpp</a>, <a class="el" href="performance_profiling_8cpp-example.html#a26">performance_profiling.cpp</a>, and <a class="el" href="rnn_training_f32_8cpp-example.html#a13">rnn_training_f32.cpp</a>.</dd>
 </dl>
 </div>
 </div>

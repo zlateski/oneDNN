@@ -14,7 +14,7 @@
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
-<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML"></script>
+<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML,dnnl"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -209,7 +209,7 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Primitive attributes. </p>
 <dl class="section see"><dt>See Also</dt><dd><a class="el" href="dev_guide_attributes.html">Primitive Attributes</a> </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cnn_inference_int8_8cpp-example.html#_a10">cnn_inference_int8.cpp</a>, <a class="el" href="cpu_matmul_quantization_8cpp-example.html#_a8">cpu_matmul_quantization.cpp</a>, <a class="el" href="cpu_rnn_inference_int8_8cpp-example.html#_a19">cpu_rnn_inference_int8.cpp</a>, <a class="el" href="cpu_sgemm_and_matmul_8cpp-example.html#_a6">cpu_sgemm_and_matmul.cpp</a>, <a class="el" href="inference_int8_matmul_8cpp-example.html#_a7">inference_int8_matmul.cpp</a>, and <a class="el" href="performance_profiling_8cpp-example.html#_a10">performance_profiling.cpp</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="binary_8cpp-example.html#_a11">binary.cpp</a>, <a class="el" href="cnn_inference_int8_8cpp-example.html#_a9">cnn_inference_int8.cpp</a>, <a class="el" href="convolution_8cpp-example.html#_a12">convolution.cpp</a>, <a class="el" href="cpu_matmul_quantization_8cpp-example.html#_a8">cpu_matmul_quantization.cpp</a>, <a class="el" href="cpu_rnn_inference_int8_8cpp-example.html#_a19">cpu_rnn_inference_int8.cpp</a>, <a class="el" href="cpu_sgemm_and_matmul_8cpp-example.html#_a6">cpu_sgemm_and_matmul.cpp</a>, <a class="el" href="inference_int8_matmul_8cpp-example.html#_a7">inference_int8_matmul.cpp</a>, <a class="el" href="inner_product_8cpp-example.html#_a11">inner_product.cpp</a>, <a class="el" href="matmul_8cpp-example.html#_a10">matmul.cpp</a>, <a class="el" href="performance_profiling_8cpp-example.html#_a10">performance_profiling.cpp</a>, and <a class="el" href="reorder_8cpp-example.html#_a6">reorder.cpp</a>.</dd>
 </dl></div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aafb54e73f3abe59555f1cfe62407280e"></a>
 <div class="memitem">
@@ -384,7 +384,7 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cnn_inference_int8_8cpp-example.html#a11">cnn_inference_int8.cpp</a>, <a class="el" href="cpu_matmul_quantization_8cpp-example.html#a9">cpu_matmul_quantization.cpp</a>, <a class="el" href="cpu_sgemm_and_matmul_8cpp-example.html#a7">cpu_sgemm_and_matmul.cpp</a>, and <a class="el" href="inference_int8_matmul_8cpp-example.html#a8">inference_int8_matmul.cpp</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cnn_inference_int8_8cpp-example.html#a10">cnn_inference_int8.cpp</a>, <a class="el" href="cpu_matmul_quantization_8cpp-example.html#a9">cpu_matmul_quantization.cpp</a>, <a class="el" href="cpu_sgemm_and_matmul_8cpp-example.html#a7">cpu_sgemm_and_matmul.cpp</a>, <a class="el" href="inference_int8_matmul_8cpp-example.html#a8">inference_int8_matmul.cpp</a>, and <a class="el" href="reorder_8cpp-example.html#a7">reorder.cpp</a>.</dd>
 </dl>
 </div>
 </div>
@@ -590,7 +590,6 @@ Public Member Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">arg</td><td>Parameter argument index as passed to the <a class="el" href="structdnnl_1_1primitive.html#a4c454f3d9315ea0dc6635f26eab9a950" title="Executes computations specified by the primitive in a specified stream. ">primitive::execute()</a> call. </td></tr>
     <tr><td class="paramname">mask</td><td>Zero point correspondence mask that defines the correspondence between the tensor dimensions and the <code>zero_points</code> vector. The set i-th bit indicates that a dedicated zero point is used for each index along that dimension. Set the mask to 0 to use a common zero point for the whole output tensor. </td></tr>
-    <tr><td class="paramname">zero_points</td><td>Constant vector of zero points. </td></tr>
     <tr><td class="paramname">zero_points</td><td>Constant vector of zero points. If the zero points are known at the time of this call, the following equality must hold: <p class="formulaDsp">
 \[zero_points.size() = \prod\limits_{d \in mask} argument.dims[d].\]
 </p>
@@ -658,7 +657,7 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cnn_inference_int8_8cpp-example.html#a15">cnn_inference_int8.cpp</a>, <a class="el" href="cpu_sgemm_and_matmul_8cpp-example.html#a11">cpu_sgemm_and_matmul.cpp</a>, and <a class="el" href="performance_profiling_8cpp-example.html#a13">performance_profiling.cpp</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="binary_8cpp-example.html#a12">binary.cpp</a>, <a class="el" href="cnn_inference_int8_8cpp-example.html#a14">cnn_inference_int8.cpp</a>, <a class="el" href="convolution_8cpp-example.html#a13">convolution.cpp</a>, <a class="el" href="cpu_sgemm_and_matmul_8cpp-example.html#a11">cpu_sgemm_and_matmul.cpp</a>, <a class="el" href="inner_product_8cpp-example.html#a12">inner_product.cpp</a>, <a class="el" href="matmul_8cpp-example.html#a11">matmul.cpp</a>, and <a class="el" href="performance_profiling_8cpp-example.html#a13">performance_profiling.cpp</a>.</dd>
 </dl>
 </div>
 </div>

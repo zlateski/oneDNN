@@ -32,6 +32,7 @@ var searchData=
   ['shuffle_5fbackward',['shuffle_backward',['../structdnnl_1_1shuffle__backward.html#a867ad6134709758db0ce9d626ae0765a',1,'dnnl::shuffle_backward::shuffle_backward()=default'],['../structdnnl_1_1shuffle__backward.html#af7c950680ea4d14a09b8a2fed06043a9',1,'dnnl::shuffle_backward::shuffle_backward(const primitive_desc &amp;pd)']]],
   ['shuffle_5fbackward',['shuffle_backward',['../structdnnl_1_1shuffle__backward.html',1,'dnnl']]],
   ['shuffle_5fd',['shuffle_d',['../group__dnnl__api__primitives__common.html#gga94efdd650364f4d9776cfb9b711cbdc1a22964f067fb5f173218eb8aa9f6c22c2',1,'dnnl']]],
+  ['shuffle_20primitive_20example',['Shuffle Primitive Example',['../shuffle_example_cpp.html',1,'']]],
   ['shuffle_5fforward',['shuffle_forward',['../structdnnl_1_1shuffle__forward.html',1,'dnnl']]],
   ['shuffle_5fforward',['shuffle_forward',['../structdnnl_1_1shuffle__forward.html#aa915bdb2ae635ec086cba1fb0e1b94d0',1,'dnnl::shuffle_forward::shuffle_forward()=default'],['../structdnnl_1_1shuffle__forward.html#ad8f1fe049e780c9b103ea923d8bd9d5a',1,'dnnl::shuffle_forward::shuffle_forward(const primitive_desc &amp;pd)']]],
   ['softmax',['softmax',['../structdnnl_1_1primitive.html#ad1ec93215a0cf3aa0a32bae0c2cd9169ace2f1fbd249d24aabc07ac4488ab5b8c',1,'dnnl::primitive']]],
@@ -39,6 +40,7 @@ var searchData=
   ['softmax_5fbackward',['softmax_backward',['../structdnnl_1_1softmax__backward.html#a39e810b511d1219f5a71a570dfa6814c',1,'dnnl::softmax_backward::softmax_backward()=default'],['../structdnnl_1_1softmax__backward.html#a4e058991b8cf4e67c9e9dacd87284367',1,'dnnl::softmax_backward::softmax_backward(const primitive_desc &amp;pd)']]],
   ['softmax_5fbackward',['softmax_backward',['../structdnnl_1_1softmax__backward.html',1,'dnnl']]],
   ['softmax_5fd',['softmax_d',['../group__dnnl__api__primitives__common.html#gga94efdd650364f4d9776cfb9b711cbdc1a5be7596ca77ae38c8f14dd9d29c55760',1,'dnnl']]],
+  ['softmax_20primitive_20example',['Softmax Primitive Example',['../softmax_example_cpp.html',1,'']]],
   ['softmax_5fforward',['softmax_forward',['../structdnnl_1_1softmax__forward.html',1,'dnnl']]],
   ['softmax_5fforward',['softmax_forward',['../structdnnl_1_1softmax__forward.html#a9cc65d3089823612fe1e134790c9a04a',1,'dnnl::softmax_forward::softmax_forward()=default'],['../structdnnl_1_1softmax__forward.html#ab84d1ab8764d37e46fffbf1f3e11dc47',1,'dnnl::softmax_forward::softmax_forward(const primitive_desc &amp;pd)']]],
   ['src0_5fdesc',['src0_desc',['../structdnnl_1_1binary_1_1primitive__desc.html#a1573fd987288450e850b5a70159aeda3',1,'dnnl::binary::primitive_desc']]],
@@ -54,8 +56,9 @@ var searchData=
   ['stream',['stream',['../structdnnl_1_1stream.html#ad264b142d2f7c728fe8c84aa65d62b13',1,'dnnl::stream::stream()=default'],['../structdnnl_1_1stream.html#a681be26446cb86ddcc727f3a00a69cd9',1,'dnnl::stream::stream(const engine &amp;engine, flags flags=flags::default_flags)'],['../structdnnl_1_1stream.html#ad7f76682c40a962f27db621be7122ea2',1,'dnnl::stream::stream(const engine &amp;engine, cl_command_queue queue)'],['../structdnnl_1_1stream.html#a047eeee586954a5a660a255aac7abed5',1,'dnnl::stream::stream(const engine &amp;eng, cl::sycl::queue &amp;aqueue)']]],
   ['stream',['stream',['../structdnnl_1_1stream.html',1,'dnnl']]],
   ['strides',['strides',['../structdnnl__blocking__desc__t.html#a48c1a3cb43f5b935fe3627e6312543b3',1,'dnnl_blocking_desc_t::strides()'],['../structdnnl__convolution__desc__t.html#a12d0bfc58c674901155a0e9a1f9a72f8',1,'dnnl_convolution_desc_t::strides()'],['../structdnnl__pooling__desc__t.html#a2ea5682de63b0f77709cd1d0197997a3',1,'dnnl_pooling_desc_t::strides()']]],
-  ['submemory_5fdesc',['submemory_desc',['../structdnnl_1_1memory_1_1desc.html#ab51c30ca2e2ce806821871a4dbded3a2',1,'dnnl::memory::desc']]],
+  ['submemory_5fdesc',['submemory_desc',['../structdnnl_1_1memory_1_1desc.html#a3d017ecf635aae91cc3856a9dfe0721c',1,'dnnl::memory::desc']]],
   ['success',['success',['../group__dnnl__api__service.html#gga7acc4d3516304ae68a1289551d8f2cdda260ca9dd8a4577fc00b7bd5810298076',1,'dnnl']]],
+  ['sum',['sum',['../structdnnl_1_1sum.html',1,'dnnl']]],
   ['sum',['sum',['../structdnnl_1_1sum.html#a08ab30bce8e2c28298a6926f144265b9',1,'dnnl::sum::sum()=default'],['../structdnnl_1_1sum.html#a393855f591d5700e6d35e458f6910110',1,'dnnl::sum::sum(const primitive_desc &amp;pd)'],['../structdnnl_1_1primitive.html#ad1ec93215a0cf3aa0a32bae0c2cd9169a1d623b89683f9ce4e074de1676d12416',1,'dnnl::primitive::sum()']]],
-  ['sum',['sum',['../structdnnl_1_1sum.html',1,'dnnl']]]
+  ['sum_20primitive_20example',['Sum Primitive Example',['../sum_example_cpp.html',1,'']]]
 ];

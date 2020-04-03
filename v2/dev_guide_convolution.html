@@ -14,7 +14,7 @@
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
-<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML"></script>
+<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML,dnnl"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -86,7 +86,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </blockquote>
 <p>The convolution primitive computes forward, backward, or weight update for a batched convolution operation on 1D, 2D, or 3D spatial data with bias.</p>
 <p>The convolution operation is defined by the following formulas. We show formulas only for 2D spatial data which are straightforward to generalize to cases of higher and lower dimensions. Variable names follow the standard <a class="el" href="dev_guide_conventions.html">Naming Conventions</a>.</p>
-<p>Let \(src\), \(weights\) and \(dst\) be \(N \times IC \times IH \times IW\), \(OC \times IC \times KH \times KW\), and \(N \times OC \times OH \times OW\) tensors respectively. Let \(bias\) be a 1D tensor with \(OC\) elements.</p>
+<p>Let \(\src\), \(\weights\) and \(\dst\) be \(N \times IC \times IH \times IW\), \(OC \times IC \times KH \times KW\), and \(N \times OC \times OH \times OW\) tensors respectively. Let \(\bias\) be a 1D tensor with \(OC\) elements.</p>
 <p>Furthermore, let the remaining convolution parameters be:</p>
 <table class="doxtable">
 <tr>
@@ -103,21 +103,21 @@ Back, bottom, and right </td><td align="left">\(PD_R\) </td><td align="left">\(P
 <td>Dilation </td><td align="left">\(DD\) </td><td align="left">\(DH\) </td><td align="left">\(DW\) </td><td align="left">Dilation starts with 0, so non-dilated convolution should have the dilation parameters equal <code>0</code> </td></tr>
 </table>
 <p>The following formulas show how DNNL computes convolutions. They are broken down into several types to simplify the exposition, but in reality the convolution types can be combined.</p>
-<p>To further simplify the formulas, we assume that \(src(n, ic, ih, iw) = 0\) if \(ih &lt; 0\), or \(ih \geq IH\), or \(iw &lt; 0\), or \(iw \geq IW\).</p>
+<p>To further simplify the formulas, we assume that \(\src(n, ic, ih, iw) = 0\) if \(ih &lt; 0\), or \(ih \geq IH\), or \(iw &lt; 0\), or \(iw \geq IW\).</p>
 <h3>Forward</h3>
 <h4>Regular Convolution</h4>
 <p class="formulaDsp">
-\[dst(n, oc, oh, ow) = bias(oc) + \\ + \sum_{ic=0}^{IC-1}\sum_{kh=0}^{KH-1}\sum_{kw=0}^{KW-1} src(n, ic, oh \cdot SH + kh - PH_L, ow \cdot SW + kw - PW_L) \cdot weights(oc, ic, kh, kw).\]
+\[\dst(n, oc, oh, ow) = \bias(oc) + \\ + \sum_{ic=0}^{IC-1}\sum_{kh=0}^{KH-1}\sum_{kw=0}^{KW-1} \src(n, ic, oh \cdot SH + kh - PH_L, ow \cdot SW + kw - PW_L) \cdot \weights(oc, ic, kh, kw).\]
 </p>
 <p>Here:</p>
 <ul>
-<li>\(OH = \left\lfloor{\frac{IH \cdot SH - KH + PH_L + PH_R}{SH}} \right\rfloor + 1,\)</li>
-<li>\(OW = \left\lfloor{\frac{IW \cdot SW - KW + PW_L + PW_R}{SW}} \right\rfloor + 1.\)</li>
+<li>\(OH = \left\lfloor{\frac{IH - KH + PH_L + PH_R}{SH}} \right\rfloor + 1,\)</li>
+<li>\(OW = \left\lfloor{\frac{IW - KW + PW_L + PW_R}{SW}} \right\rfloor + 1.\)</li>
 </ul>
 <h4>Convolution with Groups</h4>
-<p>In the API, DNNL adds a separate groups dimension to memory objects representing weights tensors and represents weights as \(G \times OC_G \times IC_G \times KH \times KW \) 5D tensors for 2D convolutions with groups.</p>
+<p>In the API, DNNL adds a separate groups dimension to memory objects representing \(\weights\) tensors and represents weights as \(G \times OC_G \times IC_G \times KH \times KW \) 5D tensors for 2D convolutions with groups.</p>
 <p class="formulaDsp">
-\[ dst(n, g \cdot OC_G + oc_g, oh, ow) = bias(g \cdot OC_G + oc_g) + \\ + \sum_{ic_g=0}^{IC_G-1}\sum_{kh=0}^{KH-1}\sum_{kw=0}^{KW-1} src(n, g \cdot IC_G + ic_g, oh + kh - PH_L, ow + kw - PW_L) \cdot weights(g, oc_g, ic_g, kh, kw), \]
+\[ \dst(n, g \cdot OC_G + oc_g, oh, ow) = \bias(g \cdot OC_G + oc_g) + \\ + \sum_{ic_g=0}^{IC_G-1}\sum_{kh=0}^{KH-1}\sum_{kw=0}^{KW-1} \src(n, g \cdot IC_G + ic_g, oh + kh - PH_L, ow + kw - PW_L) \cdot \weights(g, oc_g, ic_g, kh, kw), \]
 </p>
 <p>where</p>
 <ul>
@@ -128,22 +128,46 @@ Back, bottom, and right </td><td align="left">\(PD_R\) </td><td align="left">\(P
 <p>The case when \(OC_G = IC_G = 1\) is also known as <em>a depthwise convolution</em>.</p>
 <h4>Convolution with Dilation</h4>
 <p class="formulaDsp">
-\[ dst(n, oc, oh, ow) = bias(oc) + \\ + \sum_{ic=0}^{IC-1}\sum_{kh=0}^{KH-1}\sum_{kw=0}^{KW-1} src(n, ic, oh + kh \cdot (DH + 1) - PH_L, ow + kw \cdot (DW + 1) - PW_L) \cdot weights(oc, ic, kh, kw). \]
+\[ \dst(n, oc, oh, ow) = \bias(oc) + \\ + \sum_{ic=0}^{IC-1}\sum_{kh=0}^{KH-1}\sum_{kw=0}^{KW-1} \src(n, ic, oh + kh \cdot (DH + 1) - PH_L, ow + kw \cdot (DW + 1) - PW_L) \cdot \weights(oc, ic, kh, kw). \]
 </p>
 <p>Here:</p>
 <ul>
 <li>\(OH = \left\lfloor{\frac{IH - DKH + PH_L + PH_R}{SH}} \right\rfloor + 1,\) where \(DKH = 1 + (KH - 1) \cdot (DH + 1)\), and</li>
 <li>\(OW = \left\lfloor{\frac{IW - DKW + PW_L + PW_R}{SW}} \right\rfloor + 1,\) where \(DKW = 1 + (KW - 1) \cdot (DW + 1)\).</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>In DNNL dilation parameter equals 0 means no-dilation, i.e. regular convolution. Other libraries might use another convention, where dilation parameter equals 1 indicates no-dilation case.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>In DNNL dilation parameter equals 0 corresponds to non-dilated, i.e. regular, convolution. Other libraries might use another convention, where dilation parameter equals 1 corresponds to regular convolution.</dd></dl>
 <h4>Deconvolution (Transposed Convolution)</h4>
 <p>Deconvolutions (also called fractionally strided convolutions or transposed convolutions) work by swapping the forward and backward passes of a convolution. One way to put it is to note that the weights define a convolution, but whether it is a direct convolution or a transposed convolution is determined by how the forward and backward passes are computed.</p>
 <h4>Difference Between Forward Training and Forward Inference</h4>
 <p>There is no difference between the <a class="el" href="group__dnnl__api__primitives__common.html#ggae3c1f22ae55645782923fbfd8b07d0c4a992e03bebfe623ac876b3636333bbce0" title="Forward data propagation (training mode). ">dnnl_forward_training</a> and <a class="el" href="group__dnnl__api__primitives__common.html#ggae3c1f22ae55645782923fbfd8b07d0c4a2f77a568a675dec649eb0450c997856d" title="Forward data propagation (inference mode). ">dnnl_forward_inference</a> propagation kinds.</p>
 <h3>Backward</h3>
-<p>The backward propagation computes \(diff\_src\) based on \(diff\_dst\) and \(weights\).</p>
-<p>The weights update computes \(diff\_weights\) and \(diff\_bias\) based on \(diff\_dst\) and \(src\).</p>
-<dl class="section note"><dt>Note</dt><dd>The <em>optimized</em> memory formats \(src\) and \(weights\) might be different on forward propagation, backward propagation, and weights update.</dd></dl>
+<p>The backward propagation computes \(\diffsrc\) based on \(\diffdst\) and \(\weights\).</p>
+<p>The weights update computes \(\diffweights\) and \(\diffbias\) based on \(\diffdst\) and \(\src\).</p>
+<dl class="section note"><dt>Note</dt><dd>The <em>optimized</em> memory formats \(\src\) and \(\weights\) might be different on forward propagation, backward propagation, and weights update.</dd></dl>
+<h2>Execution Arguments</h2>
+<p>When executed, the inputs and outputs should be mapped to an execution argument index as specified by the following table. </p>
+<table class="doxtable">
+<tr>
+<th>Primitive input/output </th><th>Execution argument index  </th></tr>
+<tr>
+<td>\(\src\) </td><td>DNNL_ARG_SRC </td></tr>
+<tr>
+<td>\(\weights\) </td><td>DNNL_ARG_WEIGHTS </td></tr>
+<tr>
+<td>\(\bias\) </td><td>DNNL_ARG_BIAS </td></tr>
+<tr>
+<td>\(\dst\) </td><td>DNNL_ARG_DST </td></tr>
+<tr>
+<td>\(\diffsrc\) </td><td>DNNL_ARG_DIFF_SRC </td></tr>
+<tr>
+<td>\(\diffweights\) </td><td>DNNL_ARG_DIFF_WEIGHTS </td></tr>
+<tr>
+<td>\(\diffbias\) </td><td>DNNL_ARG_DIFF_BIAS </td></tr>
+<tr>
+<td>\(\diffdst\) </td><td>DNNL_ARG_DIFF_DST </td></tr>
+<tr>
+<td>\(depthwise\) </td><td>DNNL_ARG_ATTR_POST_OP_DW </td></tr>
+</table>
 <h2>Implementation Details</h2>
 <h3>General Notes</h3>
 <p>N/A.</p>
@@ -203,13 +227,13 @@ Back, bottom, and right </td><td align="left">\(PD_R\) </td><td align="left">\(P
 <p>Post-ops and attributes enable you to modify the behavior of the convolution primitive by applying the output scale to the result of the primitive and by chaining certain operations after the primitive. The following attributes and post-ops are supported:</p>
 <table class="doxtable">
 <tr>
-<th align="left">Propagation </th><th align="left">Type </th><th align="left">Operation </th><th align="left">Restrictions </th><th align="left">Description  </th></tr>
+<th align="left">Propagation </th><th align="left">Type </th><th align="left">Operation </th><th align="left">Description </th><th align="left">Restrictions  </th></tr>
 <tr>
-<td align="left">forward </td><td align="left">attribute </td><td align="left"><a class="el" href="structdnnl_1_1primitive__attr.html#a4b81acc8e48886313154f75c1708ae02">Output scale</a> </td><td align="left">int8 convolutions only </td><td align="left">Scales the result of convolution by given scale factor(s) </td></tr>
+<td align="left">forward </td><td align="left">attribute </td><td align="left"><a class="el" href="structdnnl_1_1primitive__attr.html#a4b81acc8e48886313154f75c1708ae02">Output scale</a> </td><td align="left">Scales the result of convolution by given scale factor(s) </td><td align="left">int8 convolutions only </td></tr>
 <tr>
-<td align="left">forward </td><td align="left">post-op </td><td align="left"><a class="el" href="structdnnl_1_1post__ops.html#a66606f08467b19091e696b52a2f789e6">eltwise</a> </td><td align="left"></td><td align="left">Applies an <a class="el" href="group__dnnl__api__eltwise.html">Eltwise</a> operation to the result </td></tr>
+<td align="left">forward </td><td align="left">post-op </td><td align="left"><a class="el" href="structdnnl_1_1post__ops.html#a66606f08467b19091e696b52a2f789e6">eltwise</a> </td><td align="left">Applies an <a class="el" href="group__dnnl__api__eltwise.html">Eltwise</a> operation to the result </td><td align="left"></td></tr>
 <tr>
-<td align="left">forward </td><td align="left">post-op </td><td align="left"><a class="el" href="structdnnl_1_1post__ops.html#a078ab8ec15423d2b3d26f3619a78ca38">sum</a> </td><td align="left"></td><td align="left">Adds the operation result to the destination tensor instead of overwriting it </td></tr>
+<td align="left">forward </td><td align="left">post-op </td><td align="left"><a class="el" href="structdnnl_1_1post__ops.html#a078ab8ec15423d2b3d26f3619a78ca38">sum</a> </td><td align="left">Adds the operation result to the destination tensor instead of overwriting it </td><td align="left"></td></tr>
 </table>
 <dl class="section note"><dt>Note</dt><dd>The library doesn't prevent using post-ops in training, but note that not all post-ops are feasible for training usage. For instance, using ReLU with non-zero negative slope parameter as a post-op would not produce an additional output <code>workspace</code> that is required to compute backward propagation correctly. Hence, in this particular case one should use separate convolution and eltwise primitives for training.</dd></dl>
 <p>The following post-ops chaining is supported by the library:</p>
@@ -239,7 +263,7 @@ Back, bottom, and right </td><td align="left">\(PD_R\) </td><td align="left">\(P
 <div class="line">convolution_forward(src, weights, dst, attr)</div>
 </div><!-- fragment --><p>The would lead to the following:</p>
 <p class="formulaDsp">
-\[ dst(\overline{x}) = \gamma \cdot \tanh \left( \alpha \cdot conv(src, weights) + \beta \cdot dst(\overline{x}) \right) \]
+\[ \dst(\overline{x}) = \gamma \cdot \tanh \left( \alpha \cdot conv(\src, \weights) + \beta \cdot \dst(\overline{x}) \right) \]
 </p>
 <h4>Example 2</h4>
 <p>The following pseudo code:</p>
@@ -253,7 +277,7 @@ Back, bottom, and right </td><td align="left">\(PD_R\) </td><td align="left">\(P
 <div class="line">convolution_forward(src, weights, dst, attr)</div>
 </div><!-- fragment --><p>That would lead to the following:</p>
 <p class="formulaDsp">
-\[ dst(\overline{x}) = \beta \cdot dst(\overline{x}) + \gamma \cdot ReLU \left( \alpha \cdot conv(src, weights), \eta \right) \]
+\[ \dst(\overline{x}) = \beta \cdot \dst(\overline{x}) + \gamma \cdot ReLU \left( \alpha \cdot conv(\src, \weights), \eta \right) \]
 </p>
 <h2>Algorithms</h2>
 <p>DNNL implements convolution primitives using several different algorithms:</p>
@@ -296,7 +320,7 @@ Back, bottom, and right </td><td align="left">\(PD_R\) </td><td align="left">\(P
 <div class="line">    conv1_src_md, conv1_weights_md, conv1_bias_md, conv1_dst_md,</div>
 <div class="line">    conv1_strides, conv1_padding_l, conv1_padding_r);</div>
 </div><!-- fragment --><h4>Automatic Algorithm Selection</h4>
-<p>DNNL supports <code><a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640acfdececd63a8bc0cfe1021ad614e2ded" title="Convolution algorithm (either direct or Winograd) is chosen just in time. ">dnnl::algorithm::convolution_auto</a></code> algorithm that instructs the library to automatically select the <em>best</em> algorithm based on the heuristics that take into account tensor shapes and the number of logical processors available. (For automatic selection to work as intended, use the same thread affinity settings when creating the convolution as when executing the convolution.)</p>
+<p>DNNL supports <code><a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640acfdececd63a8bc0cfe1021ad614e2ded" title="Convolution algorithm that is chosen to be either direct or Winograd automatically. ">dnnl::algorithm::convolution_auto</a></code> algorithm that instructs the library to automatically select the <em>best</em> algorithm based on the heuristics that take into account tensor shapes and the number of logical processors available. (For automatic selection to work as intended, use the same thread affinity settings when creating the convolution as when executing the convolution.)</p>
 <p><a class="anchor" id="dg_conv_impl_limits"></a></p>
 <h2>Implementation Limitations</h2>
 <ol type="1">
@@ -312,8 +336,21 @@ Back, bottom, and right </td><td align="left">\(PD_R\) </td><td align="left">\(P
 </ol>
 <h2>Performance Tips</h2>
 <ul>
-<li>Use <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> for source, weights, and destinations memory format tags when create a convolution primitive to allow the library to choose the most appropriate memory format. </li>
+<li>Use <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> for source, weights, and destinations memory format tags when create a convolution primitive to allow the library to choose the most appropriate memory format.</li>
 </ul>
+<h2>Examples</h2>
+<table class="doxtable">
+<tr>
+<th align="left">Engine </th><th align="left">Name </th><th align="left">Comments  </th></tr>
+<tr>
+<td align="left">CPU/GPU </td><td align="left"><a class="el" href="convolution_example_cpp.html">Convolution Primitive Example</a> </td><td align="left"><p class="starttd">This C++ API example demonstrates how to create and execute a <a class="el" href="dev_guide_convolution.html">Convolution</a> primitive in forward propagation mode.</p>
+<p class="endtd">Key optimizations included in this example:</p>
+<ul>
+<li>Creation of optimized memory format from the primitive descriptor;</li>
+<li>Primitive attributes with fused post-ops. </li>
+</ul>
+</td></tr>
+</table>
 </div></div><!-- contents -->
 <div class="footer">
     <div class="footer-wrapper">

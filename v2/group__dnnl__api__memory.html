@@ -14,7 +14,7 @@
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
-<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML"></script>
+<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML,dnnl"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -185,6 +185,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga5994f41ff7305a203aacce192d4eac35"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__memory.html#ga5994f41ff7305a203aacce192d4eac35">dnnl_memory_desc_reshape</a> (<a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *out_memory_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *in_memory_desc, int ndims, const <a class="el" href="group__dnnl__api__memory.html#ga8331e1160e52a5d4babe96736464095a">dnnl_dims_t</a> dims)</td></tr>
 <tr class="memdesc:ga5994f41ff7305a203aacce192d4eac35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a memory descriptor by reshaping an existing one.  <a href="#ga5994f41ff7305a203aacce192d4eac35">More...</a><br/></td></tr>
 <tr class="separator:ga5994f41ff7305a203aacce192d4eac35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga415adf7b7053b88886431e949211e810"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__memory.html#ga415adf7b7053b88886431e949211e810">dnnl_memory_desc_permute_axes</a> (<a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *out_memory_desc, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *in_memory_desc, const int *permutation)</td></tr>
+<tr class="memdesc:ga415adf7b7053b88886431e949211e810"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a memory descriptor by permuting axes in an existing one.  <a href="#ga415adf7b7053b88886431e949211e810">More...</a><br/></td></tr>
+<tr class="separator:ga415adf7b7053b88886431e949211e810"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa734e01591b567ed6378df1f404058e2"><td class="memItemLeft" align="right" valign="top">int DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__memory.html#gaa734e01591b567ed6378df1f404058e2">dnnl_memory_desc_equal</a> (const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *lhs, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *rhs)</td></tr>
 <tr class="memdesc:gaa734e01591b567ed6378df1f404058e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares two memory descriptors.  <a href="#gaa734e01591b567ed6378df1f404058e2">More...</a><br/></td></tr>
 <tr class="separator:gaa734e01591b567ed6378df1f404058e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -201,16 +204,16 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga583a4a06428de7d6c4251313e57ad814"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the engine of a memory object.  <a href="#ga583a4a06428de7d6c4251313e57ad814">More...</a><br/></td></tr>
 <tr class="separator:ga583a4a06428de7d6c4251313e57ad814"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac9006cdf6816b8bef7be3455ab0ceb49"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__memory.html#gac9006cdf6816b8bef7be3455ab0ceb49">dnnl_memory_map_data</a> (<a class="el" href="group__dnnl__api__memory.html#ga1a1df843f4d0f72cde135a9a6adf20f3">const_dnnl_memory_t</a> memory, void **mapped_ptr)</td></tr>
-<tr class="memdesc:gac9006cdf6816b8bef7be3455ab0ceb49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps a memory object and returns a pointer to host-side buffer with a copy of its contents.  <a href="#gac9006cdf6816b8bef7be3455ab0ceb49">More...</a><br/></td></tr>
+<tr class="memdesc:gac9006cdf6816b8bef7be3455ab0ceb49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps a memory object and returns a pointer to a host-side buffer with a copy of its contents.  <a href="#gac9006cdf6816b8bef7be3455ab0ceb49">More...</a><br/></td></tr>
 <tr class="separator:gac9006cdf6816b8bef7be3455ab0ceb49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga46dd4eb02eade91cadd0b9f85b4eccd4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__memory.html#ga46dd4eb02eade91cadd0b9f85b4eccd4">dnnl_memory_unmap_data</a> (<a class="el" href="group__dnnl__api__memory.html#ga1a1df843f4d0f72cde135a9a6adf20f3">const_dnnl_memory_t</a> memory, void *mapped_ptr)</td></tr>
-<tr class="memdesc:ga46dd4eb02eade91cadd0b9f85b4eccd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unmaps a memory objects and writes any changes to the previously mapped buffer back.  <a href="#ga46dd4eb02eade91cadd0b9f85b4eccd4">More...</a><br/></td></tr>
+<tr class="memdesc:ga46dd4eb02eade91cadd0b9f85b4eccd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unmaps a memory object and writes back any changes to the previously mapped buffer.  <a href="#ga46dd4eb02eade91cadd0b9f85b4eccd4">More...</a><br/></td></tr>
 <tr class="separator:ga46dd4eb02eade91cadd0b9f85b4eccd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga71efa7bd0ac194fdec98fb908b8ba9c5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__memory.html#ga71efa7bd0ac194fdec98fb908b8ba9c5">dnnl_memory_get_data_handle</a> (<a class="el" href="group__dnnl__api__memory.html#ga1a1df843f4d0f72cde135a9a6adf20f3">const_dnnl_memory_t</a> memory, void **handle)</td></tr>
 <tr class="memdesc:ga71efa7bd0ac194fdec98fb908b8ba9c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns memory object's data handle.  <a href="#ga71efa7bd0ac194fdec98fb908b8ba9c5">More...</a><br/></td></tr>
 <tr class="separator:ga71efa7bd0ac194fdec98fb908b8ba9c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6888f8c17f272d6729c9bc258ed41fcf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__memory.html#ga6888f8c17f272d6729c9bc258ed41fcf">dnnl_memory_set_data_handle</a> (<a class="el" href="group__dnnl__api__memory.html#ga2b79954bd7bb293e766a89189e8440fd">dnnl_memory_t</a> memory, void *handle)</td></tr>
-<tr class="memdesc:ga6888f8c17f272d6729c9bc258ed41fcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets memory object's data handle.  <a href="#ga6888f8c17f272d6729c9bc258ed41fcf">More...</a><br/></td></tr>
+<tr class="memdesc:ga6888f8c17f272d6729c9bc258ed41fcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a memory object's data handle.  <a href="#ga6888f8c17f272d6729c9bc258ed41fcf">More...</a><br/></td></tr>
 <tr class="separator:ga6888f8c17f272d6729c9bc258ed41fcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf0f56c1bdffa7889ee408445883cca16"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__memory.html#gaf0f56c1bdffa7889ee408445883cca16">dnnl_memory_get_ocl_mem_object</a> (<a class="el" href="group__dnnl__api__memory.html#ga1a1df843f4d0f72cde135a9a6adf20f3">const_dnnl_memory_t</a> memory, cl_mem *mem_object)</td></tr>
 <tr class="memdesc:gaf0f56c1bdffa7889ee408445883cca16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an OpenCL memory object associated with a memory object.  <a href="#gaf0f56c1bdffa7889ee408445883cca16">More...</a><br/></td></tr>
@@ -225,25 +228,23 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>A container that describes and stores data. </p>
 <p>dnnl_api_primitives</p>
-<p>Memory objects can contain data of various data types and formats. There are two levels of abstraction:</p>
+<p>Memory objects can contain data of various types and formats. There are two levels of abstraction:</p>
 <ol type="1">
-<li><p class="startli"><b>Memory descriptor</b> &ndash; engine-agnostic logical description of data (number of dimensions, dimension sizes, and data type), and, optionally, the information about the physical format of data in memory. If this information is not known yet, a memory descriptor can be created with <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dafee39ac6fff0325cae43cd66495c18ac" title="Undefined memory format tag. ">dnnl_format_tag_any</a>. This allows compute-intensive primitives to chose the most appropriate format for the computations. The user is then responsible for reordering their data into the new format if the formats do not match.</p>
-<p class="startli">A memory descriptor can be initialized either by calling <a class="el" href="group__dnnl__api__memory.html#gaff696e368aeefb3036a0419c508dc6be" title="Initializes a memory descriptor using dimensions and memory format tag. ">dnnl_memory_desc_init_by_tag()</a> or <a class="el" href="group__dnnl__api__memory.html#ga77c4ac2c6c59730ade594b954c145f73" title="Initializes a memory descriptor using dimensions and strides. ">dnnl_memory_desc_init_by_strides()</a> functions, or by directly setting the values in the <a class="el" href="structdnnl__memory__desc__t.html" title="Memory descriptor. ">dnnl_memory_desc_t</a> structure.</p>
-<dl class="section warning"><dt>Warning</dt><dd>The latter approach requires deep knowledge of how the physical data representation is mapped to the structure and is discouraged. The <a class="el" href="dev_guide_understanding_memory_formats.html">Understanding Memory Formats</a> topic should shed some light on that.</dd></dl>
-<p>User can query amount of memory required by a memory descriptor using the <a class="el" href="group__dnnl__api__memory.html#gaed039afa75d9f56763e2c1321f1563c4" title="Returns the size of a memory descriptor. ">dnnl_memory_desc_get_size()</a> function. As described in <a class="el" href="dev_guide_understanding_memory_formats.html">Understanding Memory Formats</a>, the size of data in general cannot be computed as the product of dimensions multiplied by the size of the data type. So users are required to use this function for better code portability.</p>
-<p class="startli">Two memory descriptors can be compared with <a class="el" href="group__dnnl__api__memory.html#gaa734e01591b567ed6378df1f404058e2" title="Compares two memory descriptors. ">dnnl_memory_desc_equal()</a>. The comparison is especially useful when checking whether it is necessary to reorder data from the user's data format to a primitive's format.</p>
+<li><p class="startli"><b>Memory descriptor</b> &ndash; engine-agnostic logical description of data (number of dimensions, dimension sizes, and data type), and, optionally, the information about the physical format of data in memory. If this information is not known yet, a memory descriptor can be created with <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a>. This allows compute-intensive primitives to choose the best format for computation. The user is responsible for reordering the data into the chosen format when formats do not match.</p>
+<p class="startli">A memory descriptor can be initialized either by specifying dimensions and a memory format tag or strides for each of them, or by manipulating the <a class="el" href="structdnnl__memory__desc__t.html" title="Memory descriptor. ">dnnl_memory_desc_t</a> structure directly.</p>
+<dl class="section warning"><dt>Warning</dt><dd>The latter approach requires understanding how the physical data representation is mapped to the structure and is discouraged. This topic is discussed in <a class="el" href="dev_guide_understanding_memory_formats.html">Understanding Memory Formats</a>.</dd></dl>
+<p>The user can query the amount of memory required by a memory descriptor using the <a class="el" href="structdnnl_1_1memory_1_1desc.html#a3a12698f833b44ed55af9fc6621c4917" title="Returns size of the memory descriptor in bytes. ">dnnl::memory::desc::get_size()</a> function. The size of data in general cannot be computed as the product of dimensions multiplied by the size of the data type. So users are required to use this function for better code portability.</p>
+<p class="startli">Two memory descriptors can be compared using the equality and inequality operators. The comparison is especially useful when checking whether it is necessary to reorder data from the user's data format to a primitive's format.</p>
 </li>
-<li><b>Memory object</b> &ndash; an engine-specific object that handles the data and its description (a memory descriptor). For the CPU engine, the data handle is simply a pointer to <code>void</code>. The data handle can be queried using <a class="el" href="group__dnnl__api__memory.html#ga71efa7bd0ac194fdec98fb908b8ba9c5" title="Returns memory object&#39;s data handle. ">dnnl_memory_get_data_handle()</a> and set using <a class="el" href="group__dnnl__api__memory.html#ga6888f8c17f272d6729c9bc258ed41fcf" title="Sets memory object&#39;s data handle. ">dnnl_memory_set_data_handle()</a>. The latter function always sets the memory in the padding region to zero, which is the invariant maintained by all the primitives in DNNL. See <a class="el" href="dev_guide_understanding_memory_formats.html">Understanding Memory Formats</a> for more details. A memory object can be created using <a class="el" href="group__dnnl__api__memory.html#ga52a9246bd7f4e498b08d61e75e689a0c" title="Creates a memory object. ">dnnl_memory_create()</a> function. A memory object can also be queried for the underlying memory descriptor and for its engine using <a class="el" href="group__dnnl__api__memory.html#ga59a447af4c51aba057856c7b596351d4" title="Returns the memory descriptor for a memory object. ">dnnl_memory_get_memory_desc()</a> and <a class="el" href="group__dnnl__api__memory.html#ga583a4a06428de7d6c4251313e57ad814" title="Returns the engine of a memory object. ">dnnl_memory_get_engine()</a> functions.</li>
+<li><b>Memory object</b> &ndash; an engine-specific object that handles the data and its description (a memory descriptor). For the CPU engine, the data handle is simply a pointer to <code>void</code>. The data handle can be queried using #dnnl::memory::get_data_handle() and set using #dnnl::memory::set_data_handle(). A memory object can also be queried for the underlying memory descriptor and for its engine using #dnnl::memory::get_desc() and dnnl::memory::get_engine().</li>
 </ol>
-<p>Along with ordinary memory with all dimensions being positive, Intel DNNL supports <em>zero-volume</em> (or just <em>zero</em>) memory with one or more dimensions set to zero. This is to support the NumPy* convention. If a zero memory is passed to a primitive, the primitive does not perform any computations on this memory. For example:</p>
+<p>Along with ordinary memory descriptors with all dimensions being positive, the library supports <em>zero-volume</em> memory descriptors with one or more dimensions set to zero. This is used to support the NumPy* convention. If a zero-volume memory is passed to a primitive, the primitive typically does not perform any computations with this memory. For example:</p>
 <ul>
-<li>A convolution primitive with <code>(0 batch, 3 input channels, 13 height, 13 width)</code> source and <code>(16 output channels, 3 input channels, 3 height, 3 width)</code> weights would produce <code>(0 batch, 16 output channels, 11 height, 11 width)</code> destination (assuming strides are <code>1</code> and paddings are zero) and perform zero multiply-add operations.</li>
-<li>A concat primitive of three memories of shapes <code>(3, 4, 13, 13)</code>, <code>(3, 0, 13, 13)</code>, and <code>(3, 1, 13, 13)</code> along the second axis would produce the output of the shape <code>(3, 5, 13, 13)</code>, effectively ignoring the second input (however, if the user created a concatenation primitive descriptor with three inputs they should also provide all three memories to the concatenation primitive, including the one with zero second dimension).</li>
-<li>However, DNNL would return an error when attempting to create a convolution with zero memory passed for weights because such a convolution is not well-defined: <div class="fragment"><div class="line">dst(1, 16, 11, 11) &lt;-- src(1, 0, 13, 13) (*) weights(16, 0, 3, 3)</div>
-</div><!-- fragment --> It is not clear whether the values in the destination be zeroes or just not accessed at all. Moreover, computations for weights gradient primitives are not well defined in such cases.</li>
+<li>A concatenation primitive would ignore all memory object with zeroes in the concat dimension / axis.</li>
+<li>A forward convolution with a source memory object with zero in the minibatch dimension would always produce a destination memory object with a zero in the minibatch dimension and perform no computations.</li>
+<li>However, a forward convolution with a zero in one of the weights dimensions is ill-defined and is considered to be an error by the library because there is no clear definition of what the output values should be.</li>
 </ul>
-<p>Data handle of <em>zero-volume</em> memory is never accessed and hence can be unset (NULL in case of CPU engine).</p>
-<dl class="section see"><dt>See Also</dt><dd><a class="el" href="dev_guide_understanding_memory_formats.html">Understanding Memory Formats</a> </dd></dl>
+<p>Data handle of a zero-volume memory is never accessed. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a class="anchor" id="gaa9e648b617df0f0186143abdf78ca5f2"></a>
 <div class="memitem">
@@ -424,12 +425,12 @@ Functions</h2></td></tr>
 <div class="line"><a class="code" href="group__dnnl__api__memory.html#ga8331e1160e52a5d4babe96736464095a">dnnl_dims_t</a> dims = {batch, channels, depth, height, width};</div>
 <div class="line"><a class="code" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> data_in_ncdhw;</div>
 <div class="line"><a class="code" href="group__dnnl__api__memory.html#gaff696e368aeefb3036a0419c508dc6be">dnnl_memory_desc_init_by_tag</a>(</div>
-<div class="line">     &amp;data_in_ncdhw, 5, dims, dnnl_f32, <a class="code" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dae33b8c6790e5d37324f18a019658d464">dnnl_ncdhw</a>);</div>
+<div class="line">     &amp;data_in_ncdhw, 5, dims, <a class="code" href="group__dnnl__api__memory.html#gga012ba1c84ff24bdd068f9d2f9b26a130a6b33889946b183311c39cc1bd0656ae9">dnnl_f32</a>, <a class="code" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dae33b8c6790e5d37324f18a019658d464">dnnl_ncdhw</a>);</div>
 <div class="line"></div>
 <div class="line"><span class="comment">// note that in both cases dims passed are the same</span></div>
 <div class="line"><a class="code" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> data_in_ndhwc;</div>
 <div class="line"><a class="code" href="group__dnnl__api__memory.html#gaff696e368aeefb3036a0419c508dc6be">dnnl_memory_desc_init_by_tag</a>(</div>
-<div class="line">     &amp;data_in_ndhwc, 5, dims, dnnl_f32, <a class="code" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091daa0d8b24eefd029e214080d3787114fc2">dnnl_ndhwc</a>);</div>
+<div class="line">     &amp;data_in_ndhwc, 5, dims, <a class="code" href="group__dnnl__api__memory.html#gga012ba1c84ff24bdd068f9d2f9b26a130a6b33889946b183311c39cc1bd0656ae9">dnnl_f32</a>, <a class="code" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091daa0d8b24eefd029e214080d3787114fc2">dnnl_ndhwc</a>);</div>
 </div><!-- fragment --><p>Memory format tags can be further divided into two categories:</p>
 <ul>
 <li>Domain-agnostic names, i.e. names the do not depend on the tensor usage in the specific primitive. These names use letters from <code>a</code> to <code>l</code> to denote logical dimension from 1 to 12, and form the order in which the dimensions are laid in memory. For instance, <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da1bd907fc29344dfe7ba88336960dcf53" title="plain 2D tensor ">dnnl_ab</a> is used to denote 2D tensor where the second logical dimension (aka <code>b</code>) is the innermost, i.e. has stride = 1, and the first logical dimension (<code>a</code>) laid out in memory with stride equal to the size of second dimension. On the other hand, <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da6a6dbc0b30468d92e32a9cb3f6615c43" title="permuted 2D tensor ">dnnl_ba</a> is just transposed version of the same tensor: the first dimension (<code>a</code>) becomes the innermost one.</li>
@@ -469,6 +470,9 @@ Functions</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga395e42b594683adb25ed2d842bb3091da74b2db34e6253e56f441764d16e6ec42"></a>dnnl_abcdef</em>&nbsp;</td><td class="fielddoc">
 <p>plain 6D tensor </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="gga395e42b594683adb25ed2d842bb3091dad7bcb765b861ed46b2b752e912989217"></a>dnnl_abdc</em>&nbsp;</td><td class="fielddoc">
+<p>permuted 4D tensor </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga395e42b594683adb25ed2d842bb3091daab417c26841486da2a0da84730d0874d"></a>dnnl_abdec</em>&nbsp;</td><td class="fielddoc">
 <p>permuted 5D tensor </p>
@@ -542,6 +546,9 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga395e42b594683adb25ed2d842bb3091da2062c0db6b460fd8ac254684bbc15c36"></a>dnnl_ABcd8b8a</em>&nbsp;</td><td class="fielddoc">
 <p>4D tensor blocked by 1st and 2nd dimension with block size 8 </p>
 </td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="gga395e42b594683adb25ed2d842bb3091dac8768b971e97816930a09b6199f5bc05"></a>dnnl_aBCd2b4c2b</em>&nbsp;</td><td class="fielddoc">
+<p>4D tensor blocked by 3rd dimension with block size 4 </p>
+</td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga395e42b594683adb25ed2d842bb3091dad8e56dc7af8c48b5d4e5d11650a19eab"></a>dnnl_ABcde4b16a4b</em>&nbsp;</td><td class="fielddoc">
 <p>5D tensor blocked by 1st dimension with block size 16 </p>
 </td></tr>
@@ -557,11 +564,17 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga395e42b594683adb25ed2d842bb3091daa778e377f1b0afdee9a6bcbc63ae76bd"></a>dnnl_aBcde8b</em>&nbsp;</td><td class="fielddoc">
 <p>5D tensor blocked by 2nd dimension with block size 8 </p>
 </td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="gga395e42b594683adb25ed2d842bb3091da451386bf211128eaa11a8863a9d97e2b"></a>dnnl_aBCde2b4c2b</em>&nbsp;</td><td class="fielddoc">
+<p>5D tensor blocked by 3rd dimension with block size 4 </p>
+</td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga395e42b594683adb25ed2d842bb3091da431c182a4f2665030f29973efb556c94"></a>dnnl_aBcdef16b</em>&nbsp;</td><td class="fielddoc">
 <p>6D tensor blocked by 2nd dimension with block size 16 </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga395e42b594683adb25ed2d842bb3091daf9d8eabf65635e7a932e5f5b3339cdd8"></a>dnnl_aBCdef2c8b4c</em>&nbsp;</td><td class="fielddoc">
 <p>6D tensor blocked by 2nd dimension with block size 8 </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="gga395e42b594683adb25ed2d842bb3091da06fe4d629df62b68f499416b791da96b"></a>dnnl_aBCdef2b4c2b</em>&nbsp;</td><td class="fielddoc">
+<p>6D tensor blocked by 3rd dimension with block size 4 </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga395e42b594683adb25ed2d842bb3091da2735d5d034a5abe998df55be8e47e5e8"></a>dnnl_aBcdef4b</em>&nbsp;</td><td class="fielddoc">
 <p>6D tensor blocked by 2nd dimension with block size 4 </p>
@@ -694,6 +707,12 @@ Functions</h2></td></tr>
 <li>For LSTM cells, the gates order is input, forget, candidate and output gate.</li>
 <li>For GRU cells, the gates order is update, reset and output gate. </li>
 </ul>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="gga395e42b594683adb25ed2d842bb3091da2d5a8e24d6b4904b4e8986d9b0fb4613"></a>dnnl_ldio</em>&nbsp;</td><td class="fielddoc">
+<p>4D LSTM projection tensor in the format (num_layers, num_directions, num_channels_in_hidden_state, num_channels_in_recurrent_projection). </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="gga395e42b594683adb25ed2d842bb3091da475da8ead8c761bac894e6c87042355d"></a>dnnl_ldoi</em>&nbsp;</td><td class="fielddoc">
+<p>4D LSTM projection tensor in the format (num_layers, num_directions, num_channels_in_recurrent_projection, num_channels_in_hidden_state). </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga395e42b594683adb25ed2d842bb3091da2bc162b37fd0049dceab3b12300a26c7"></a>dnnl_ldgo</em>&nbsp;</td><td class="fielddoc">
 <p>4D RNN bias tensor in the format (num_layers, num_directions, num_gates, output_channels). </p>
@@ -898,7 +917,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__dnnl__api__utils.html#ggad24f9ded06e34d3ee71e7fc4b408d57aaa31395e9dccc103cf166cf7b38fc5b9c" title="The operation was successful. ">dnnl_success</a> on success and a status describing the error otherwise. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cnn_inference_f32_8c-example.html#a7">cnn_inference_f32.c</a>, <a class="el" href="cpu_cnn_training_f32_8c-example.html#a6">cpu_cnn_training_f32.c</a>, and <a class="el" href="cross_engine_reorder_8c-example.html#a6">cross_engine_reorder.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cnn_inference_f32_8c-example.html#a6">cnn_inference_f32.c</a>, <a class="el" href="cpu_cnn_training_f32_8c-example.html#a6">cpu_cnn_training_f32.c</a>, and <a class="el" href="cross_engine_reorder_8c-example.html#a6">cross_engine_reorder.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -990,14 +1009,88 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initializes a memory descriptor by reshaping an existing one. </p>
-<p>The new memory descriptor inherits the data type. This operation is valid only for memory descriptors that have format_kind set to <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da30498f5adbc7d8017979a2201725ff16" title="A tensor in a generic format described by the stride and blocking values in each dimension. ">dnnl_blocked</a>.</p>
-<dl class="section note"><dt>Note</dt><dd>Currently reshape is limited to appending 1-sized dimensions to the end of the dimensions array.</dd></dl>
+<p>The new memory descriptor inherits the data type. This operation is valid only for memory descriptors that have format_kind set to <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da30498f5adbc7d8017979a2201725ff16" title="A tensor in a generic format described by the stride and blocking values in each dimension. ">dnnl_blocked</a> or <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83" title="Unspecified format kind. ">dnnl_format_kind_any</a>.</p>
+<p>The operation ensures the transformation of the physical memory format corresponds to the transformation of the logical dimensions. If such transformation is impossible, the function returns <a class="el" href="group__dnnl__api__utils.html#ggad24f9ded06e34d3ee71e7fc4b408d57aaecec97c787d74a33924abcf16ae4f51c" title="The operation failed because of incorrect function arguments. ">dnnl_invalid_arguments</a>.</p>
+<p>The reshape operation can be described as a combination of the following basic operations:</p>
+<ol type="1">
+<li>Add a dimension of size <code>1</code>. This is always possible.</li>
+<li>Remove a dimension of size <code>1</code>. This is possible only if the dimension has no padding (i.e. <code>padded_dims[dim] == dims[dim] &amp;&amp; dims[dim] == 1</code>).</li>
+<li>Split a dimension into multiple ones. This is possible only if the size of the dimension is exactly equal to the product of the split ones and the dimension does not have padding (i.e. <code>padded_dims[dim] = dims[dim]</code>).</li>
+<li>Joining multiple consecutive dimensions into a single one. As in the cases above, this requires that the dimensions do not have padding and that the memory format is such that in physical memory these dimensions are dense and have the same order as their logical counterparts. This also assumes that these dimensions are not blocked.<ul>
+<li>Here, dense means: <code>stride for dim[i] == (stride for dim[i + 1]) * dim[i + 1]</code>;</li>
+<li>And same order means: <code>i &lt; j &lt;=&gt; stride for dim[i] &lt; stride for dim[j]</code>.</li>
+</ul>
+</li>
+</ol>
+<dl class="section warning"><dt>Warning</dt><dd>Some combinations of physical memory layout and/or offsets or dimensions may result in a failure to make a reshape.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out_memory_desc</td><td>Output memory descriptor. </td></tr>
-    <tr><td class="paramname">in_memory_desc</td><td>An existing memory descriptor. Must have format_kind set to <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da30498f5adbc7d8017979a2201725ff16" title="A tensor in a generic format described by the stride and blocking values in each dimension. ">dnnl_blocked</a>. </td></tr>
+    <tr><td class="paramname">in_memory_desc</td><td>An existing memory descriptor. Must have format_kind set to <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da30498f5adbc7d8017979a2201725ff16" title="A tensor in a generic format described by the stride and blocking values in each dimension. ">dnnl_blocked</a> or <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83" title="Unspecified format kind. ">dnnl_format_kind_any</a>. </td></tr>
     <tr><td class="paramname">ndims</td><td>Number of dimensions for the output memory descriptor. </td></tr>
     <tr><td class="paramname">dims</td><td>Dimensions for the output memory descriptor. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__dnnl__api__utils.html#ggad24f9ded06e34d3ee71e7fc4b408d57aaa31395e9dccc103cf166cf7b38fc5b9c" title="The operation was successful. ">dnnl_success</a> on success and a status describing the error otherwise. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga415adf7b7053b88886431e949211e810"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API dnnl_memory_desc_permute_axes </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *&#160;</td>
+          <td class="paramname"><em>out_memory_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *&#160;</td>
+          <td class="paramname"><em>in_memory_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int *&#160;</td>
+          <td class="paramname"><em>permutation</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes a memory descriptor by permuting axes in an existing one. </p>
+<p>The physical memory layout representation is adjusted accordingly to maintain the consistency between the logical and physical parts of the memory descriptor.</p>
+<p>The new memory descriptor inherits the data type. This operation is valid only for memory descriptors that have format_kind set to <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da30498f5adbc7d8017979a2201725ff16" title="A tensor in a generic format described by the stride and blocking values in each dimension. ">dnnl_blocked</a> or <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83" title="Unspecified format kind. ">dnnl_format_kind_any</a>.</p>
+<p>The logical axes will be permuted in the following manner: ``` for (i: 0 .. in_memory_desc-&gt;ndims) out_memory_desc-&gt;dims[permutation[i]] = in_memory_desc-&gt;dims[i]; ```</p>
+<p>Example: </p>
+<div class="fragment"><div class="line">*      <a class="code" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> in_md, out_md, expect_out_md;</div>
+<div class="line">* </div>
+<div class="line">*      <span class="keyword">const</span> <span class="keywordtype">int</span> permutation[] = {1, 0}; <span class="comment">// swap the first and the second axes</span></div>
+<div class="line">* </div>
+<div class="line">*      <a class="code" href="group__dnnl__api__memory.html#ga8331e1160e52a5d4babe96736464095a">dnnl_dims_t</a> in_dims = {2, 3}, out_dims = {3, 2};</div>
+<div class="line">*      <a class="code" href="group__dnnl__api__memory.html#ga395e42b594683adb25ed2d842bb3091d">dnnl_format_tag_t</a> in_tag = <a class="code" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da1bd907fc29344dfe7ba88336960dcf53">dnnl_ab</a>, out_tag = <a class="code" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da6a6dbc0b30468d92e32a9cb3f6615c43">dnnl_ba</a>;</div>
+<div class="line">* </div>
+<div class="line">*      <a class="code" href="group__dnnl__api__memory.html#gaff696e368aeefb3036a0419c508dc6be">dnnl_memory_desc_init_by_tag</a>(</div>
+<div class="line">*              &amp;in_md, 2, in_dims, data_type, in_tag);</div>
+<div class="line">*      <a class="code" href="group__dnnl__api__memory.html#gaff696e368aeefb3036a0419c508dc6be">dnnl_memory_desc_init_by_tag</a>(</div>
+<div class="line">*              &amp;expect_out_md, 2, out_dims, data_type, out_tag);</div>
+<div class="line">* </div>
+<div class="line">*      <a class="code" href="group__dnnl__api__memory.html#ga415adf7b7053b88886431e949211e810">dnnl_memory_desc_permute_axes</a>(&amp;out_md, in_md, permutation);</div>
+<div class="line">*      assert(<a class="code" href="group__dnnl__api__memory.html#gaa734e01591b567ed6378df1f404058e2">dnnl_memory_desc_equal</a>(&amp;out_md, &amp;expect_out_md));</div>
+<div class="line">*  </div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">out_memory_desc</td><td>Output memory descriptor. </td></tr>
+    <tr><td class="paramname">in_memory_desc</td><td>An existing memory descriptor. Must have format_kind set to <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da30498f5adbc7d8017979a2201725ff16" title="A tensor in a generic format described by the stride and blocking values in each dimension. ">dnnl_blocked</a> or <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83" title="Unspecified format kind. ">dnnl_format_kind_any</a>. </td></tr>
+    <tr><td class="paramname">permutation</td><td>Axes permutation (of size <code>in_memory_desc-&gt;ndims</code>). </td></tr>
   </table>
   </dd>
 </dl>
@@ -1107,14 +1200,16 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Creates a memory object. </p>
+<p>Unless <code>handle</code> is equal to DNNL_MEMORY_NONE, the constructed memory object will have the underlying buffer set. In this case, the buffer will be initialized as if <a class="el" href="group__dnnl__api__memory.html#ga6888f8c17f272d6729c9bc258ed41fcf" title="Sets a memory object&#39;s data handle. ">dnnl_memory_set_data_handle()</a> had been called.</p>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="group__dnnl__api__memory.html#ga6888f8c17f272d6729c9bc258ed41fcf" title="Sets a memory object&#39;s data handle. ">dnnl_memory_set_data_handle()</a></dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">memory</td><td>Output memory object. </td></tr>
     <tr><td class="paramname">memory_desc</td><td>Memory descriptor. </td></tr>
     <tr><td class="paramname">engine</td><td>Engine to use. </td></tr>
-    <tr><td class="paramname">handle</td><td>Memory handle:<ul>
-<li>A pointer to the user- allocated buffer. In this case the library doesn't own the buffer.</li>
-<li>DNNL_MEMORY_ALLOCATE special value instructs the library to allocate the buffer for the memory object. In this case the library owns the buffer.</li>
+    <tr><td class="paramname">handle</td><td>Handle of the memory buffer to use as an underlying storage.<ul>
+<li>A pointer to the user-allocated buffer. In this case the library doesn't own the buffer.</li>
+<li>The DNNL_MEMORY_ALLOCATE special value. Instructs the library to allocate the buffer for the memory object. In this case the library owns the buffer.</li>
 <li>DNNL_MEMORY_NONE to create <a class="el" href="structdnnl__memory.html" title="An opaque structure to describe a memory. ">dnnl_memory</a> without an underlying buffer. </li>
 </ul>
 </td></tr>
@@ -1224,12 +1319,12 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Maps a memory object and returns a pointer to host-side buffer with a copy of its contents. </p>
-<p>Mapping allows explicit direct access to memory contents for the engines that do not support it implicitly.</p>
+<p>Maps a memory object and returns a pointer to a host-side buffer with a copy of its contents. </p>
+<p>Mapping enables explicit direct access to memory contents for the engines that do not support it implicitly.</p>
 <p>Mapping is an exclusive operation - a memory object cannot be used in other operations until this memory object is unmapped.</p>
-<dl class="section note"><dt>Note</dt><dd>Any primitives working with <code>memory</code> should be completed before mapping the memory. Use dnnl_stream_wait to synchronize the corresponding execution stream.</dd>
+<dl class="section note"><dt>Note</dt><dd>Any primitives working with <code>memory</code> should be completed before the memory is mapped. Use dnnl_stream_wait to synchronize the corresponding execution stream.</dd>
 <dd>
-<a class="el" href="group__dnnl__api__memory.html#gac9006cdf6816b8bef7be3455ab0ceb49" title="Maps a memory object and returns a pointer to host-side buffer with a copy of its contents...">dnnl_memory_map_data()</a> and <a class="el" href="group__dnnl__api__memory.html#ga46dd4eb02eade91cadd0b9f85b4eccd4" title="Unmaps a memory objects and writes any changes to the previously mapped buffer back. ">dnnl_memory_unmap_data()</a> function are mainly provided for debug and testing purposes, and its performance may be suboptimal.</dd></dl>
+The <a class="el" href="group__dnnl__api__memory.html#gac9006cdf6816b8bef7be3455ab0ceb49" title="Maps a memory object and returns a pointer to a host-side buffer with a copy of its contents...">dnnl_memory_map_data()</a> and <a class="el" href="group__dnnl__api__memory.html#ga46dd4eb02eade91cadd0b9f85b4eccd4" title="Unmaps a memory object and writes back any changes to the previously mapped buffer. ">dnnl_memory_unmap_data()</a> functions are mainly provided for debug and testing purposes, and their performance may be suboptimal.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">memory</td><td>Memory object. </td></tr>
@@ -1265,12 +1360,12 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Unmaps a memory objects and writes any changes to the previously mapped buffer back. </p>
-<dl class="section note"><dt>Note</dt><dd><a class="el" href="group__dnnl__api__memory.html#gac9006cdf6816b8bef7be3455ab0ceb49" title="Maps a memory object and returns a pointer to host-side buffer with a copy of its contents...">dnnl_memory_map_data()</a> and <a class="el" href="group__dnnl__api__memory.html#ga46dd4eb02eade91cadd0b9f85b4eccd4" title="Unmaps a memory objects and writes any changes to the previously mapped buffer back. ">dnnl_memory_unmap_data()</a> function are mainly provided for debug and testing purposes, and its performance may be suboptimal.</dd></dl>
+<p>Unmaps a memory object and writes back any changes to the previously mapped buffer. </p>
+<dl class="section note"><dt>Note</dt><dd>The <a class="el" href="group__dnnl__api__memory.html#gac9006cdf6816b8bef7be3455ab0ceb49" title="Maps a memory object and returns a pointer to a host-side buffer with a copy of its contents...">dnnl_memory_map_data()</a> and <a class="el" href="group__dnnl__api__memory.html#ga46dd4eb02eade91cadd0b9f85b4eccd4" title="Unmaps a memory object and writes back any changes to the previously mapped buffer. ">dnnl_memory_unmap_data()</a> functions are mainly provided for debug and testing purposes, and their performance may be suboptimal.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">memory</td><td>Memory object. </td></tr>
-    <tr><td class="paramname">mapped_ptr</td><td>Pointer to the mapped buffer that must have been obtained using <a class="el" href="group__dnnl__api__memory.html#gac9006cdf6816b8bef7be3455ab0ceb49" title="Maps a memory object and returns a pointer to host-side buffer with a copy of its contents...">dnnl_memory_map_data()</a> function. </td></tr>
+    <tr><td class="paramname">mapped_ptr</td><td>Pointer to the mapped buffer that must have been obtained using the <a class="el" href="group__dnnl__api__memory.html#gac9006cdf6816b8bef7be3455ab0ceb49" title="Maps a memory object and returns a pointer to a host-side buffer with a copy of its contents...">dnnl_memory_map_data()</a> function. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1339,7 +1434,11 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Sets memory object's data handle. </p>
+<p>Sets a memory object's data handle. </p>
+<p>This function may write zeroes to the specified data <code>handle</code> if the memory object has padding to maintain data consistency.</p>
+<dl class="section note"><dt>Note</dt><dd>The padding is performed for memory objects created with blocked memory format tags like <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da9523ccda38e86a8f7f58f8f780ef6eac" title="4D tensor blocked by 2nd dimension with block size 8 ">dnnl_aBcd8b</a> when any of the dimensions is not a multiple of a corresponding block size. The padding is performed only for memory objects created with plain memory format tags like <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da83a751aedeb59613312339d0f8b90f54" title="4D CNN activations tensor, an alias to dnnl_abcd ">dnnl_nchw</a> or <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dae50c534446b3c18cc018b3946b3cebd7" title="4D CNN activations tensor, an alias to dnnl_acdb ">dnnl_nhwc</a> if requested explicitly. More information is available in <a class="el" href="dev_guide_understanding_memory_formats.html">Understanding Memory Formats</a>.</dd></dl>
+<p>The write can be time consuming and happens each time the function is called. Furthermore, it is performed using an internal service stream in a blocking manner.</p>
+<dl class="section warning"><dt>Warning</dt><dd>Even if the memory object is used to hold values that stay constant (e.g., pre-packed weights during inference), the function will still write zeroes to the padding area if it exists. Hence, the <code>handle</code> parameter cannot and does not have a const qualifier.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">memory</td><td>Memory object. </td></tr>
@@ -1413,6 +1512,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Sets OpenCL memory object associated with a memory object. </p>
+<p>For behavioral details, see <a class="el" href="group__dnnl__api__memory.html#ga6888f8c17f272d6729c9bc258ed41fcf" title="Sets a memory object&#39;s data handle. ">dnnl_memory_set_data_handle()</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">memory</td><td>Memory object. </td></tr>

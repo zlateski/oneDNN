@@ -14,7 +14,7 @@
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
-<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML"></script>
+<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML,dnnl"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -104,7 +104,7 @@ Collaboration diagram for dnnl::vanilla_rnn_backward::desc:</div>
 <div class="dyncontent">
 <div class="center"><img src="structdnnl_1_1vanilla__rnn__backward_1_1desc__coll__graph.png" border="0" usemap="#dnnl_1_1vanilla__rnn__backward_1_1desc_coll__map" alt="Collaboration graph"/></div>
 <map name="dnnl_1_1vanilla__rnn__backward_1_1desc_coll__map" id="dnnl_1_1vanilla__rnn__backward_1_1desc_coll__map">
-<area shape="rect" id="node2" href="structdnnl__rnn__desc__t.html" title="A descriptor for an RNN operation. " alt="" coords="672,153,789,180"/><area shape="rect" id="node3" href="structdnnl__memory__desc__t.html" title="Memory descriptor. " alt="" coords="344,153,491,180"/><area shape="rect" id="node4" href="structdnnl__wino__desc__t.html" title="Description of tensor of weights for winograd 2x3 convolution. " alt="" coords="34,77,161,104"/><area shape="rect" id="node5" href="structdnnl__blocking__desc__t.html" title="Generic description of blocked data layout for most memory formats. " alt="" coords="24,128,171,155"/><area shape="rect" id="node6" href="structdnnl__rnn__packed__desc__t.html" title="Description of tensor of packed weights for rnn. " alt="" coords="14,179,181,205"/><area shape="rect" id="node7" href="structdnnl__memory__extra__desc__t.html" title="Description of extra information stored in memory. " alt="" coords="6,229,189,256"/></map>
+<area shape="rect" id="node2" href="structdnnl__rnn__desc__t.html" title="A descriptor for an RNN operation. " alt="" coords="656,168,773,195"/><area shape="rect" id="node3" href="structdnnl__memory__desc__t.html" title="Memory descriptor. " alt="" coords="344,168,491,195"/><area shape="rect" id="node4" href="structdnnl__wino__desc__t.html" title="Description of tensor of weights for winograd 2x3 convolution. " alt="" coords="34,92,161,119"/><area shape="rect" id="node5" href="structdnnl__blocking__desc__t.html" title="Generic description of blocked data layout for most memory formats. " alt="" coords="24,143,171,169"/><area shape="rect" id="node6" href="structdnnl__rnn__packed__desc__t.html" title="Description of tensor of packed weights for rnn. " alt="" coords="14,193,181,220"/><area shape="rect" id="node7" href="structdnnl__memory__extra__desc__t.html" title="Description of extra information stored in memory. " alt="" coords="6,244,189,271"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -258,32 +258,32 @@ Public Member Functions</h2></td></tr>
 
 <p>Constructs a descriptor for a vanilla RNN backward propagation primitive. </p>
 <p>The <code>src_iter_desc</code> together with <code>diff_src_iter_desc</code>, <code>bias_desc</code> together with <code>diff_bias_desc</code>, and <code>dst_iter_desc</code> together with <code>diff_src_iter_desc</code>, may point to a zero memory descriptor. This would then indicate that the RNN backward propagation primitive should not use the respective data and should use zero values instead.</p>
-<dl class="section note"><dt>Note</dt><dd>All memory descriptors are allowed to be initialized with <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> value of <code>format_tag</code>.</dd></dl>
 <p>Inputs:</p>
 <ul>
-<li>src_layer (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a31ee74fc65986558ac11db590945811a" title="Returns a source memory descriptor. ">dnnl::primitive_desc_base::src_desc</a> (0))</li>
-<li>src_iter (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a31ee74fc65986558ac11db590945811a" title="Returns a source memory descriptor. ">dnnl::primitive_desc_base::src_desc</a> (1)), if used</li>
-<li>weights_layer (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a35b7fb7725959ab336db58dd05e14d20" title="Returns a weights memory descriptor. ">dnnl::primitive_desc_base::weights_desc</a> (0))</li>
-<li>weights_iter (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a35b7fb7725959ab336db58dd05e14d20" title="Returns a weights memory descriptor. ">dnnl::primitive_desc_base::weights_desc</a> (1))</li>
-<li>bias (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a35b7fb7725959ab336db58dd05e14d20" title="Returns a weights memory descriptor. ">dnnl::primitive_desc_base::weights_desc</a> (2)), if used</li>
-<li>dst_layer (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a0b724a92606a86a7ac9b6b9b07935529" title="Returns a destination memory descriptor. ">dnnl::primitive_desc_base::dst_desc</a> (0))</li>
-<li>dst_iter (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a0b724a92606a86a7ac9b6b9b07935529" title="Returns a destination memory descriptor. ">dnnl::primitive_desc_base::dst_desc</a> (1)), if used</li>
-<li>diff_dst_layer (<a class="el" href="structdnnl_1_1primitive__desc__base.html#aa95dd1711a45923204ffddc3f02ea546" title="Returns a diff destination memory descriptor. ">dnnl::primitive_desc_base::diff_dst_desc</a> (0))</li>
-<li>diff_dst_iter (<a class="el" href="structdnnl_1_1primitive__desc__base.html#aa95dd1711a45923204ffddc3f02ea546" title="Returns a diff destination memory descriptor. ">dnnl::primitive_desc_base::diff_dst_desc</a> (1)), if used</li>
-<li>workspace (<a class="el" href="structdnnl_1_1primitive__desc__base.html#aaf33632e215a1f2b066a6111836ecbb3" title="Returns the workspace memory descriptor. ">dnnl::primitive_desc_base::workspace_desc</a> (0))</li>
+<li><code>src_layer</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a31ee74fc65986558ac11db590945811a" title="Returns a source memory descriptor. ">dnnl::primitive_desc_base::src_desc</a>(<code>0</code>))</li>
+<li><code>src_iter</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a31ee74fc65986558ac11db590945811a" title="Returns a source memory descriptor. ">dnnl::primitive_desc_base::src_desc</a>(<code>1</code>)), if used</li>
+<li><code>weights_layer</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a35b7fb7725959ab336db58dd05e14d20" title="Returns a weights memory descriptor. ">dnnl::primitive_desc_base::weights_desc</a>(<code>0</code>))</li>
+<li><code>weights_iter</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a35b7fb7725959ab336db58dd05e14d20" title="Returns a weights memory descriptor. ">dnnl::primitive_desc_base::weights_desc</a>(<code>1</code>))</li>
+<li><code>bias</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a35b7fb7725959ab336db58dd05e14d20" title="Returns a weights memory descriptor. ">dnnl::primitive_desc_base::weights_desc</a>(<code>2</code>)), if used</li>
+<li><code>dst_layer</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a0b724a92606a86a7ac9b6b9b07935529" title="Returns a destination memory descriptor. ">dnnl::primitive_desc_base::dst_desc</a>(<code>0</code>))</li>
+<li><code>dst_iter</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a0b724a92606a86a7ac9b6b9b07935529" title="Returns a destination memory descriptor. ">dnnl::primitive_desc_base::dst_desc</a>(<code>1</code>)), if used</li>
+<li><code>diff_dst_layer</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#aa95dd1711a45923204ffddc3f02ea546" title="Returns a diff destination memory descriptor. ">dnnl::primitive_desc_base::diff_dst_desc</a>(<code>0</code>))</li>
+<li><code>diff_dst_iter</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#aa95dd1711a45923204ffddc3f02ea546" title="Returns a diff destination memory descriptor. ">dnnl::primitive_desc_base::diff_dst_desc</a>(<code>1</code>)), if used</li>
+<li><code>workspace</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#aaf33632e215a1f2b066a6111836ecbb3" title="Returns the workspace memory descriptor. ">dnnl::primitive_desc_base::workspace_desc</a>(<code>0</code>))</li>
 </ul>
 <p>Outputs:</p>
 <ul>
-<li>diff_src_layer (<a class="el" href="structdnnl_1_1primitive__desc__base.html#aeb499ab1390d20eb071d97ec4628029f" title="Returns a diff source memory descriptor. ">dnnl::primitive_desc_base::diff_src_desc</a> (0))</li>
-<li>diff_src_iter (<a class="el" href="structdnnl_1_1primitive__desc__base.html#aeb499ab1390d20eb071d97ec4628029f" title="Returns a diff source memory descriptor. ">dnnl::primitive_desc_base::diff_src_desc</a> (1)), if used</li>
-<li>diff_weights_layer (<a class="el" href="structdnnl_1_1primitive__desc__base.html#ab6dc65154169608dfb9c2e9842012826" title="Returns a diff weights memory descriptor. ">dnnl::primitive_desc_base::diff_weights_desc</a> (0))</li>
-<li>diff_weights_iter (<a class="el" href="structdnnl_1_1primitive__desc__base.html#ab6dc65154169608dfb9c2e9842012826" title="Returns a diff weights memory descriptor. ">dnnl::primitive_desc_base::diff_weights_desc</a> (1))</li>
-<li>diff_bias (<a class="el" href="structdnnl_1_1primitive__desc__base.html#ab6dc65154169608dfb9c2e9842012826" title="Returns a diff weights memory descriptor. ">dnnl::primitive_desc_base::diff_weights_desc</a> (2)), if used</li>
+<li><code>diff_src_layer</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#aeb499ab1390d20eb071d97ec4628029f" title="Returns a diff source memory descriptor. ">dnnl::primitive_desc_base::diff_src_desc</a>(<code>0</code>))</li>
+<li><code>diff_src_iter</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#aeb499ab1390d20eb071d97ec4628029f" title="Returns a diff source memory descriptor. ">dnnl::primitive_desc_base::diff_src_desc</a>(<code>1</code>)), if used</li>
+<li><code>diff_weights_layer</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#ab6dc65154169608dfb9c2e9842012826" title="Returns a diff weights memory descriptor. ">dnnl::primitive_desc_base::diff_weights_desc</a>(<code>0</code>))</li>
+<li><code>diff_weights_iter</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#ab6dc65154169608dfb9c2e9842012826" title="Returns a diff weights memory descriptor. ">dnnl::primitive_desc_base::diff_weights_desc</a>(<code>1</code>))</li>
+<li><code>diff_bias</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#ab6dc65154169608dfb9c2e9842012826" title="Returns a diff weights memory descriptor. ">dnnl::primitive_desc_base::diff_weights_desc</a>(<code>2</code>)), if used</li>
 </ul>
+<dl class="section note"><dt>Note</dt><dd>All the memory descriptors may be initialized with the <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> value of <code>format_tag</code>.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">prop_kind</td><td>Propagation kind. Must be <a class="el" href="group__dnnl__api__attributes.html#ggac7db48f6583aa9903e54c2a39d65438fa195fe59b6f103787a914aead0f3db502" title="Backward propagation (with respect to all parameters). ">dnnl::prop_kind::backward</a>. </td></tr>
-    <tr><td class="paramname">activation</td><td>Activation kind. Possible values are <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640aba09bebb742494255b90b43871c01c69" title="Elementwise: ReLU. ">dnnl::algorithm::eltwise_relu</a>, <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640a38dd7159307eab45742c78e72f06abb0" title="Elementwise: hyperbolic tangent non-linearity (tanh) ">dnnl::algorithm::eltwise_tanh</a>, or <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640a282836cce833348ee509b0ecd764d217" title="Elementwise: logistic. ">dnnl::algorithm::eltwise_logistic</a>. </td></tr>
+    <tr><td class="paramname">activation</td><td>Activation kind. Possible values are <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640aba09bebb742494255b90b43871c01c69" title="Elementwise: rectified linear unit (ReLU) ">dnnl::algorithm::eltwise_relu</a>, <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640a38dd7159307eab45742c78e72f06abb0" title="Elementwise: hyperbolic tangent non-linearity (tanh) ">dnnl::algorithm::eltwise_tanh</a>, or <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640a282836cce833348ee509b0ecd764d217" title="Elementwise: logistic. ">dnnl::algorithm::eltwise_logistic</a>. </td></tr>
     <tr><td class="paramname">direction</td><td>RNN direction. See <a class="el" href="group__dnnl__api__rnn.html#ga33315cf335d1cbe26fd6b70d956e23d5">dnnl::rnn_direction</a> for more info. </td></tr>
     <tr><td class="paramname">src_layer_desc</td><td>Memory descriptor for the input vector. </td></tr>
     <tr><td class="paramname">src_iter_desc</td><td>Memory descriptor for the input recurrent hidden state vector. </td></tr>
@@ -300,7 +300,7 @@ Public Member Functions</h2></td></tr>
     <tr><td class="paramname">diff_dst_layer_desc</td><td>Memory descriptor for the diff of output vector. </td></tr>
     <tr><td class="paramname">diff_dst_iter_desc</td><td>Memory descriptor for the diff of output recurrent hidden state vector. </td></tr>
     <tr><td class="paramname">flags</td><td>Unused. </td></tr>
-    <tr><td class="paramname">alpha</td><td>Negative slope if activation is <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640aba09bebb742494255b90b43871c01c69" title="Elementwise: ReLU. ">dnnl::algorithm::eltwise_relu</a>. </td></tr>
+    <tr><td class="paramname">alpha</td><td>Negative slope if activation is <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640aba09bebb742494255b90b43871c01c69" title="Elementwise: rectified linear unit (ReLU) ">dnnl::algorithm::eltwise_relu</a>. </td></tr>
     <tr><td class="paramname">beta</td><td>Unused. </td></tr>
   </table>
   </dd>

@@ -14,7 +14,7 @@
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
-<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML"></script>
+<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML,dnnl"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -252,7 +252,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><span class="comment">// - X_int_m -- prepared DNNL memory that would hold quantized values</span></div>
 <div class="line"><span class="keywordtype">void</span> quantize(q10n_scheme_t q10n_scheme, <span class="keyword">const</span> std::vector&lt;float&gt; &amp;X_f32,</div>
 <div class="line">        <span class="keywordtype">float</span> scale_X, int32_t zp_X, memory &amp;X_int_m) {</div>
-<div class="line">    <span class="keyword">using</span> dt = <a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dce">memory::data_type</a>;</div>
+<div class="line">    <span class="keyword">using</span> <a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dce">dt</a> = <a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dce">memory::data_type</a>;</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Depending on `q10n_scheme` pretend the values come at run-time (dynamic)</span></div>
 <div class="line">    <span class="comment">// or were known at creation time (static).</span></div>
@@ -310,7 +310,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    memory C_f32_m(c_md, eng, (<span class="keywordtype">void</span> *)C_f32.data());</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Create a MatMul primitive</span></div>
-<div class="line">    <a class="code" href="structdnnl_1_1matmul_1_1desc.html">matmul::desc</a> <a class="code" href="group__dnnl__api__primitives__common.html#gga94efdd650364f4d9776cfb9b711cbdc1a4a7fa4b07a2f5ef2534d7159225f480d">matmul_d</a>(a_md, b_md, c_md);</div>
+<div class="line">    <a class="code" href="structdnnl_1_1matmul_1_1desc.html">matmul::desc</a> matmul_d(a_md, b_md, c_md);</div>
 <div class="line">    <a class="code" href="structdnnl_1_1matmul_1_1primitive__desc.html">matmul::primitive_desc</a> matmul_pd(matmul_d, eng);</div>
 <div class="line">    <a class="code" href="structdnnl_1_1matmul.html">matmul</a> matmul_p(matmul_pd);</div>
 <div class="line"></div>
@@ -378,7 +378,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">        matmul_attr.<a class="code" href="structdnnl_1_1primitive__attr.html#aee82deb014cf9702ceb3e725156c25a1">set_zero_points</a>(</div>
 <div class="line">                <a class="code" href="group__dnnl__api__primitives__common.html#gac37ad67b48edeb9e742af0e50b70fe09">DNNL_ARG_SRC</a>, <span class="comment">/* mask */</span> 0, {<a class="code" href="group__dnnl__api__memory.html#ga30139d5110e9e895ccd93fe503ca4c35">DNNL_RUNTIME_S32_VAL</a>});</div>
 <div class="line"></div>
-<div class="line">        <a class="code" href="structdnnl_1_1matmul_1_1desc.html">matmul::desc</a> <a class="code" href="group__dnnl__api__primitives__common.html#gga94efdd650364f4d9776cfb9b711cbdc1a4a7fa4b07a2f5ef2534d7159225f480d">matmul_d</a>(a_u8_md, b_s8_md, c_f32_md);</div>
+<div class="line">        <a class="code" href="structdnnl_1_1matmul_1_1desc.html">matmul::desc</a> matmul_d(a_u8_md, b_s8_md, c_f32_md);</div>
 <div class="line">        <a class="code" href="structdnnl_1_1matmul_1_1primitive__desc.html">matmul::primitive_desc</a> matmul_pd(matmul_d, matmul_attr, eng);</div>
 <div class="line">        <a class="code" href="structdnnl_1_1matmul.html">matmul</a> matmul_p(matmul_pd);</div>
 <div class="line"></div>
@@ -446,7 +446,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">        matmul_attr.set_zero_points(<a class="code" href="group__dnnl__api__primitives__common.html#gac37ad67b48edeb9e742af0e50b70fe09">DNNL_ARG_SRC</a>, <span class="comment">/* mask */</span> 0, {zp_A});</div>
 <div class="line">        matmul_attr.set_zero_points(<a class="code" href="group__dnnl__api__primitives__common.html#ga3ca217e4a06d42a0ede3c018383c388f">DNNL_ARG_DST</a>, <span class="comment">/* mask */</span> 0, {zp_C});</div>
 <div class="line"></div>
-<div class="line">        <a class="code" href="structdnnl_1_1matmul_1_1desc.html">matmul::desc</a> <a class="code" href="group__dnnl__api__primitives__common.html#gga94efdd650364f4d9776cfb9b711cbdc1a4a7fa4b07a2f5ef2534d7159225f480d">matmul_d</a>(a_u8_md, b_s8_md, c_u8_md);</div>
+<div class="line">        <a class="code" href="structdnnl_1_1matmul_1_1desc.html">matmul::desc</a> matmul_d(a_u8_md, b_s8_md, c_u8_md);</div>
 <div class="line">        <a class="code" href="structdnnl_1_1matmul_1_1primitive__desc.html">matmul::primitive_desc</a> matmul_pd(matmul_d, matmul_attr, eng);</div>
 <div class="line">        <a class="code" href="structdnnl_1_1matmul.html">matmul</a> matmul_p(matmul_pd);</div>
 <div class="line"></div>

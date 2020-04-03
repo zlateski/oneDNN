@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['permute_5faxes',['permute_axes',['../structdnnl_1_1memory_1_1desc.html#a9dd8e97d94b247910fcf2473da12844d',1,'dnnl::memory::desc']]],
   ['pooling_5fbackward',['pooling_backward',['../structdnnl_1_1pooling__backward.html#a39dae6fa1c4f63560e8fda5fda18543e',1,'dnnl::pooling_backward::pooling_backward()=default'],['../structdnnl_1_1pooling__backward.html#ad002497e9938c6407fd2d38abd15cad2',1,'dnnl::pooling_backward::pooling_backward(const primitive_desc &amp;pd)']]],
   ['pooling_5fforward',['pooling_forward',['../structdnnl_1_1pooling__forward.html#ade1c816301e38f37b4f4fa8cd3000a85',1,'dnnl::pooling_forward::pooling_forward()=default'],['../structdnnl_1_1pooling__forward.html#abccc5797009b6c1fa2f2c6f761a5faac',1,'dnnl::pooling_forward::pooling_forward(const primitive_desc &amp;pd)']]],
   ['post_5fops',['post_ops',['../structdnnl_1_1post__ops.html#a8e1d47722db8f53b3689468788ec2c01',1,'dnnl::post_ops']]],

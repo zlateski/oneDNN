@@ -14,7 +14,7 @@
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
-<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML"></script>
+<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML,dnnl"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -90,7 +90,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>The operation primitives that work with the int8 data type (<a class="el" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea3e8d88fdd85d7153525e0647cdd97686" title="8-bit signed integer. ">dnnl::memory::data_type::s8</a> and <a class="el" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea077393852be20e37026d6281827662f2" title="8-bit unsigned integer. ">dnnl::memory::data_type::u8</a>) typically use s32 (<code>int32_t</code>) as an intermediate data type (<a class="el" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dceaa860868d23f3a68323a2e3f6563d7f31" title="32-bit signed integer. ">dnnl::memory::data_type::s32</a>) to avoid integer overflows.</p>
 <p>For instance, the int8 average <a class="el" href="dev_guide_pooling.html">pooling</a> primitive accumulates the int8 input values in a window to an s32 accumulator, then divides the result by the window size, and then stores the result back to the int8 destination:</p>
 <ul>
-<li>\( dst_{s8}(...) = (s8) \Biggl( \Biggl( \sum\limits_{kh,kw} (s32)src_{s8}(...) \Biggr) \div (kh \cdot kw) \Biggr) \)</li>
+<li>\( \dst_{s8}(...) = (s8) \Biggl( \Biggl( \sum\limits_{kh,kw} (s32)\src_{s8}(...) \Biggr) \div (kh \cdot kw) \Biggr) \)</li>
 </ul>
 <dl class="section note"><dt>Note</dt><dd>The max pooling primitive can directly work with int8 data types.</dd></dl>
 <p>Using an s32 accumulator is especially important for matrix-multiply such as operation primitives that have chains of multiplication and accumulation of int8 values. These primitives are:</p>
@@ -114,9 +114,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h3>1. Inputs of mixed type: u8 and s8</h3>
 <p>The Intel(R) Instruction Set Architecture has special instructions that enable multiplying and adding the vectors of u8 and s8 very efficiently. DNNL enables int8 support using these particular instructions.</p>
 <p>Unfortunately, these instructions do not have the counterparts that work with vectors of the same type (either s8/s8 or u8/u8). The details for the s8/s8 case are covered in the <a class="el" href="dev_guide_int8_computations.html#dg_i8_comp_s12">2. Inputs of the same type: s8</a> section below.</p>
-<h4>1.1. Processors with the Intel AVX512 Instruction Set</h4>
-<p><em>System examples: Intel Xeon Scalable processor x1xx series (formerly Skylake).</em></p>
-<p>DNNL implements matrix multiplication such as operations with u8 and s8 operands on the Intel AVX512 Instruction Set by using a sequence of <code>VPMADDUBSW, VPMADDWD, VPADDD</code> instructions <a class="el" href="dev_guide_int8_computations.html#dg_i8_ref_sdm">[1]</a>:</p>
+<h4>1.1. Processors with the Intel AVX2 or Intel AVX512 Instruction Set</h4>
+<p><em>System examples: Intel Xeon Processor E7 v3 Family (formerly Haswell), Intel Xeon Scalable processor x1xx series (formerly Skylake).</em></p>
+<p>DNNL implements matrix multiplication such as operations with u8 and s8 operands on the Intel AVX2 and Intel AVX512 Instruction Set by using a sequence of <code>VPMADDUBSW, VPMADDWD, VPADDD</code> instructions <a class="el" href="dev_guide_int8_computations.html#dg_i8_ref_sdm">[1]</a>:</p>
 <ol type="1">
 <li><code>VPMADDUBSW</code> multiplies two pairs of u8/s8 values and accumulates the result into s16 (<code>int16_t</code>) with potential saturation.</li>
 <li><code>VPMADDWD</code> sums the pairs of s16 values obtained above into s32. Computed sum is exact.</li>
@@ -155,7 +155,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><span class="comment">//       + max(INT16_MIN, min(INT16_MAX,   0 *   0 +   0 *   0));</span></div>
 <div class="line"><span class="comment">// While one might expect 64770 = 255 * 127 + 255 * 127 + 0 * 0 + 0 * 0;</span></div>
 </div><!-- fragment --><p>This is the major pitfall of using this sequence of instructions. As far as the precise result is concerned, one of the possible instruction sequences would be <code>VPMOVSXBW/VPMOVZXBW, VPMADDWD, VPADDD</code> <a class="el" href="dev_guide_int8_computations.html#dg_i8_ref_sdm">[1]</a>, where the first ones casts the s8/u8 values to s16. Unfortunately, using them would lead to 2x lower performance.</p>
-<p>When one input is of type u8 and the other one is of type s8, DNNL assumes that it is the user's responsibility to choose the quantization parameters so that no overflow/saturation occurs. For instance, a user can use u7 <code>[0, 127]</code> instead of u8 for the unsigned input, or s7 <code>[-64, 63]</code> instead of the s8 one. It is worth mentioning that this is required only when the Intel AVX512 Instruction Set is used.</p>
+<p>When one input is of type u8 and the other one is of type s8, DNNL assumes that it is the user's responsibility to choose the quantization parameters so that no overflow/saturation occurs. For instance, a user can use u7 <code>[0, 127]</code> instead of u8 for the unsigned input, or s7 <code>[-64, 63]</code> instead of the s8 one. It is worth mentioning that this is required only when the Intel AVX2 or Intel AVX512 Instruction Set is used.</p>
 <p>The <b>LSTM</b> primitive behaves slightly differently than the convolution and inner product primitives, or u8/s8 GEMM. Even though its hidden state is represented by the u8 data type, the non-symmetric quantization is assumed. Namely, the formula is:</p>
 <ul>
 <li>\(data_{f32}(:) = \frac{1}{scale}(data_{u8}(:) - shift)\).</li>
@@ -198,7 +198,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>\( 128 \cdot W_{s8} {}_{} \) is a compensation.</li>
 </ul>
 <dl class="section note"><dt>Note</dt><dd>Since s8/s8 implementations are based on u8/s8 ones, the performance of the former might be slightly lower than the latter. The difference might vary depending on the problem sizes, hardware, and environment, but is expected to be in a range from 0% to 15% in most cases.</dd></dl>
-<p>Since s8/s8 implementations are based on u8/s8 ones, they have the same potential issue with overflow/saturation when the Intel AVX512 Instruction Set is used. The difference between the expected and actual results might be much greater though in this case. Consider the following example:</p>
+<p>Since s8/s8 implementations are based on u8/s8 ones, they have the same potential issue with overflow/saturation when the Intel AVX2 or Intel AVX512 Instruction Set is used. The difference between the expected and actual results might be much greater though in this case. Consider the following example:</p>
 <div class="fragment"><div class="line">int8_t  a_s8[4] = {127, 127, 0, 0};</div>
 <div class="line">int8_t  b_s8[4] = {127, 127, 0, 0};</div>
 <div class="line">int32_t c_s32 = 0;</div>
@@ -222,10 +222,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><span class="comment">// c_s32 = 255</span></div>
 <div class="line"><span class="comment">//       = 32767 - 128 * (127 + 127 + 0 + 0);</span></div>
 <div class="line"><span class="comment">// While one might expect 32258 !!!</span></div>
-</div><!-- fragment --><p>Note that processors with no support of the Intel AVX512 Instruction Set or with support of the Intel DL Boost Instruction Set are not affected by these issues due to the reasons described in <a class="el" href="dev_guide_int8_computations.html#dg_i8_comp_s11">1. Inputs of mixed type: u8 and s8</a> section above.</p>
+</div><!-- fragment --><p>Note that processors with no support of the Intel AVX2 and Intel AVX512 Instruction Set or with support of the Intel DL Boost Instruction Set are not affected by these issues due to the reasons described in <a class="el" href="dev_guide_int8_computations.html#dg_i8_comp_s11">1. Inputs of mixed type: u8 and s8</a> section above.</p>
 <p>Different primitives solve the potential overflow differently. The overview of the implementations are given below:</p>
 <ol type="1">
-<li><b>Convolution</b> primitive. The source is treated as <code>X_s8</code>, which would be shifted during the execution. The compensation is precomputed by a reorder during quantization of the weights, and embedded into them. Finally, when the Intel AVX512 Instruction Set is used the reorder additionally scales the weights by 0.5 to overcome the potential overflow issue. During the convolution execution, the result would be re-scaled back. This rescaling introduces an error that might insignificantly affect the inference accuracy (compared to a platform with the Intel DL Boost Instruction Set).</li>
+<li><b>Convolution</b> primitive. The source is treated as <code>X_s8</code>, which would be shifted during the execution. The compensation is precomputed by a reorder during quantization of the weights, and embedded into them. Finally, when the Intel AVX2 or Intel AVX512 Instruction Set is used the reorder additionally scales the weights by 0.5 to overcome the potential overflow issue. During the convolution execution, the result would be re-scaled back. This rescaling introduces an error that might insignificantly affect the inference accuracy (compared to a platform with the Intel DL Boost Instruction Set).</li>
 <li><p class="startli"><b>s8/s8 GEMM</b> (<a class="el" href="group__dnnl__api__blas.html#ga2b763b7629846913507d88fba875cc26" title="Performs integer matrix-matrix multiply on 8-bit signed matrix A, 8-bit signed matrix B...">dnnl_gemm_s8s8s32()</a>) does nothing to handle the overflow issue. It is up to the user to prepare the data so that the overflow/saturation doesn't occur. For instance, the user can specify s7 <code>[-64, 63]</code> instead of s8 for the second input.</p>
 <dl class="section warning"><dt>Warning</dt><dd>It would not be enough to use s7 <code>[-64, 63]</code> for the first input. The only possible way to avoid overflow by shrinking the range of the first input would be to use the range <code>[-128, -1]</code>, which is most likely meaningless.</dd></dl>
 </li>

@@ -14,7 +14,7 @@
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
-<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML"></script>
+<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML,dnnl"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -142,7 +142,20 @@ Create convolution and pooling primitives</h2>
 <div class="line">    <span class="keyword">auto</span> conv_dst_md = conv_src_md; <span class="comment">// shape does not change</span></div>
 <div class="line">    <span class="keyword">auto</span> pool_dst_md = conv_dst_md; <span class="comment">// shape does not change</span></div>
 </div><!-- fragment --><p> Next, we pass the memory descriptors to primitive descriptors constructors.</p>
-<h2><a class="anchor" id="memory_format_propagation_sub3"></a>
+<div class="fragment"><div class="line">    <span class="keyword">auto</span> conv_pd = convolution_forward::primitive_desc(</div>
+<div class="line">            {prop_kind::forward_inference, algorithm::convolution_auto,</div>
+<div class="line">                    conv_src_md, conv_weights_md,</div>
+<div class="line">                    conv_dst_md, <span class="comment">// shape information</span></div>
+<div class="line">                    {1, 1}, <span class="comment">// strides</span></div>
+<div class="line">                    {1, 1}, {1, 1}}, <span class="comment">// left and right padding</span></div>
+<div class="line">            eng);</div>
+<div class="line">    <span class="keyword">auto</span> pool_pd = pooling_forward::primitive_desc(</div>
+<div class="line">            {prop_kind::forward_inference, algorithm::pooling_max,</div>
+<div class="line">                    conv_pd.dst_desc(), pool_dst_md, <span class="comment">// shape information</span></div>
+<div class="line">                    {1, 1}, {KH, KW}, <span class="comment">// strides and kernel</span></div>
+<div class="line">                    {1, 1}, {1, 1}}, <span class="comment">// left and right padding</span></div>
+<div class="line">            eng);</div>
+</div><!-- fragment --> <h2><a class="anchor" id="memory_format_propagation_sub3"></a>
 Create source and destination memory objects</h2>
 <p>We assume that the 'user' source and destination memory format is NCHW. Since there is no result validation in this tutorial, we do not bother with filling the data with some values and let DNNL allocate the memory.</p>
 <div class="fragment"><div class="line">    <span class="keyword">auto</span> src_mem = memory(</div>

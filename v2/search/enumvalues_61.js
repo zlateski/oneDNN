@@ -8,6 +8,7 @@ var searchData=
   ['abcd8b8a',['ABcd8b8a',['../structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fabcbce50e9c241458767871fa053e1ba0',1,'dnnl::memory']]],
   ['abcde',['abcde',['../structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3faab56b4d92b40713acc5af89985d4b786',1,'dnnl::memory']]],
   ['abcdef',['abcdef',['../structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fae80b5017098950fc58aad83c8c14978e',1,'dnnl::memory']]],
+  ['abdc',['abdc',['../structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa5e822a0b52c71ce2ff2ecd3aa8ca46fc',1,'dnnl::memory']]],
   ['abdec',['abdec',['../structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa7a05226d93263d6fc613f52400f7416d',1,'dnnl::memory']]],
   ['acb',['acb',['../structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa5ff832d9bca8241d653279756f3ccd11',1,'dnnl::memory']]],
   ['acbde',['acbde',['../structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fae0e56a95aff0ee48fc44e8a4faf69adb',1,'dnnl::memory']]],

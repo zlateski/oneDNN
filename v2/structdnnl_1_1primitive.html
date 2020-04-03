@@ -14,7 +14,7 @@
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
-<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML"></script>
+<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML,dnnl"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -118,7 +118,7 @@ Collaboration diagram for dnnl::primitive:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:ad1ec93215a0cf3aa0a32bae0c2cd9169"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1primitive.html#ad1ec93215a0cf3aa0a32bae0c2cd9169">kind</a> </td></tr>
-<tr class="memdesc:ad1ec93215a0cf3aa0a32bae0c2cd9169"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kinds of primitives.  <a href="structdnnl_1_1primitive.html#ad1ec93215a0cf3aa0a32bae0c2cd9169">More...</a><br/></td></tr>
+<tr class="memdesc:ad1ec93215a0cf3aa0a32bae0c2cd9169"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kinds of primitives supported by the library.  <a href="structdnnl_1_1primitive.html#ad1ec93215a0cf3aa0a32bae0c2cd9169">More...</a><br/></td></tr>
 <tr class="separator:ad1ec93215a0cf3aa0a32bae0c2cd9169"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -209,8 +209,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Kinds of primitives. </p>
-<p>Used to implement a way to extend the library with new primitives without changing the ABI. </p>
+<p>Kinds of primitives supported by the library. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="ad1ec93215a0cf3aa0a32bae0c2cd9169af31ee5e3824f1f5e5d206bdf3029f22b"></a>undef</em>&nbsp;</td><td class="fielddoc">
 <p>Undefined primitive. </p>
@@ -348,7 +347,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Executes computations specified by the primitive in a specified stream. </p>
-<p>Arguments are passed via an arguments map containing &lt;index, memory object&gt; pairs. The index must be one of the <code>DNNL_ARG_*</code> values such as <code>DNNL_ARG_SRC</code>, and the memory must have a memory descriptor matching the one returned by <a class="el" href="structdnnl_1_1primitive__desc__base.html#ac2ec36092718ed89bece0fec7f5f3171" title="Returns a memory descriptor. ">primitive_desc::query_md</a>(<a class="el" href="group__dnnl__api__primitives__common.html#gga94efdd650364f4d9776cfb9b711cbdc1ad531896cf1d66c4832790f428623f164" title="memory desc of an execute argument ">query::exec_arg_md</a>, index) unless using dynamic shapes (see DNNL_RUNTIME_DIM_VAL).</p>
+<p>Arguments are passed via an arguments map containing &lt;index, memory object&gt; pairs. The index must be one of the <code>DNNL_ARG_*</code> values such as <code>DNNL_ARG_SRC</code>, and the memory must have a memory descriptor matching the one returned by <a class="el" href="structdnnl_1_1primitive__desc__base.html#ac2ec36092718ed89bece0fec7f5f3171" title="Returns a memory descriptor. ">primitive_desc::query_md</a>(<a class="el" href="group__dnnl__api__primitives__common.html#gga94efdd650364f4d9776cfb9b711cbdc1ad531896cf1d66c4832790f428623f164" title="memory desc of an execute argument ">query::exec_arg_md</a>, index) unless using dynamic shapes (see <a class="el" href="group__dnnl__api__memory.html#gaa596c5a6102df77a550bad98f0d5cc12" title="A wildcard value for dimensions that are unknown at a primitive creation time. ">DNNL_RUNTIME_DIM_VAL</a>).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">stream</td><td>Stream object. The stream must belong to the same engine as the primitive. </td></tr>

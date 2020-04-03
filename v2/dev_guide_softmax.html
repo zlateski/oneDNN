@@ -14,7 +14,7 @@
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
-<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML"></script>
+<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML,dnnl"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -85,10 +85,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p></p>
 </blockquote>
 <p>The softmax primitive performs softmax along a particular axis on data with arbitrary dimensions. All other axes are treated as independent (batch).</p>
-<p>In general form, the operation is defined by the following formulas:</p>
+<p>In general form, the operation is defined by the following formulas (the variable names follow the standard <a class="el" href="dev_guide_conventions.html">Naming Conventions</a>):</p>
 <h3>Forward</h3>
 <p class="formulaDsp">
-\[ dst(\overline{ou}, c, \overline{in}) = \frac {e^{src(\overline{ou}, c, \overline{in}) - \nu(\overline{ou}, \overline{in})}} { \sum\limits_{ic} e^{src(\overline{ou}, ic, \overline{in}) - \nu(\overline{ou}, \overline{in})} }, \]
+\[ \dst(\overline{ou}, c, \overline{in}) = \frac {e^{\src(\overline{ou}, c, \overline{in}) - \nu(\overline{ou}, \overline{in})}} { \sum\limits_{ic} e^{\src(\overline{ou}, ic, \overline{in}) - \nu(\overline{ou}, \overline{in})} }, \]
 </p>
 <p>where</p>
 <ul>
@@ -97,14 +97,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>\(\overline{in}\) is the innermost index (to the right of softmax axis), and</li>
 <li><p class="startli">\(\nu\) is used to produce more accurate results and defined as:</p>
 <p class="formulaDsp">
-\[ \nu(\overline{ou}, \overline{in}) = \max\limits_{ic} src(\overline{ou}, ic, \overline{in}) \]
+\[ \nu(\overline{ou}, \overline{in}) = \max\limits_{ic} \src(\overline{ou}, ic, \overline{in}) \]
 </p>
 </li>
 </ul>
 <h4>Difference Between Forward Training and Forward Inference</h4>
 <p>There is no difference between the <a class="el" href="group__dnnl__api__primitives__common.html#ggae3c1f22ae55645782923fbfd8b07d0c4a992e03bebfe623ac876b3636333bbce0" title="Forward data propagation (training mode). ">dnnl_forward_training</a> and <a class="el" href="group__dnnl__api__primitives__common.html#ggae3c1f22ae55645782923fbfd8b07d0c4a2f77a568a675dec649eb0450c997856d" title="Forward data propagation (inference mode). ">dnnl_forward_inference</a> propagation kinds.</p>
 <h3>Backward</h3>
-<p>The backward propagation computes \(diff\_src(ou, c, in)\), based on \(diff\_dst(ou, c, in)\) and \(dst(ou, c, in)\).</p>
+<p>The backward propagation computes \(\diffsrc(ou, c, in)\), based on \(\diffdst(ou, c, in)\) and \(\dst(ou, c, in)\).</p>
+<h2>Execution Arguments</h2>
+<p>When executed, the inputs and outputs should be mapped to an execution argument index as specified by the following table. </p>
+<table class="doxtable">
+<tr>
+<th>Primitive input/output </th><th>Execution argument index  </th></tr>
+<tr>
+<td>\(\src\) </td><td>DNNL_ARG_SRC </td></tr>
+<tr>
+<td>\(\dst\) </td><td>DNNL_ARG_DST </td></tr>
+<tr>
+<td>\(\diffsrc\) </td><td>DNNL_ARG_DIFF_SRC </td></tr>
+<tr>
+<td>\(\diffdst\) </td><td>DNNL_ARG_DIFF_DST </td></tr>
+</table>
 <h2>Implementation Details</h2>
 <h3>General Notes</h3>
 <ol type="1">
@@ -139,10 +153,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>Optimized: 4D case, tensor \(A \times B \times C \times D\), softmax axis 1 (B), format tag <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da8fcce5dd7260b5b0740e3b37b1e9ad41" title="permuted 4D tensor ">dnnl_acdb</a> or <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da590d748ac3761a51b407555a9a0d5efe" title="4D tensor blocked by 2nd dimension with block size 16 ">dnnl_aBcd16b</a>, and \(C \cdot D \ne 1\)</li>
 <li>Non-optimized: 2D case, tensor \(A \times B\), softmax axis 0 (A), format tag <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da1bd907fc29344dfe7ba88336960dcf53" title="plain 2D tensor ">dnnl_ab</a>, and \(B \ne 1\)</li>
 <li>Non-optimized: 2D case, tensor \(A \times B\), softmax axis 1 (B), format tag <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da6a6dbc0b30468d92e32a9cb3f6615c43" title="permuted 2D tensor ">dnnl_ba</a>, and \(A \ne 1\)</li>
-<li>Non-optimized: 4D case, tensor \(A \times B \times C \times D\), softmax axis 2 (C), format tag <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da8fcce5dd7260b5b0740e3b37b1e9ad41" title="permuted 4D tensor ">dnnl_acdb</a>, and and \(D \cdot B \ne 1\) </li>
+<li>Non-optimized: 4D case, tensor \(A \times B \times C \times D\), softmax axis 2 (C), format tag <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da8fcce5dd7260b5b0740e3b37b1e9ad41" title="permuted 4D tensor ">dnnl_acdb</a>, and and \(D \cdot B \ne 1\)</li>
 </ul>
 </li>
 </ol>
+<h2>Examples</h2>
+<table class="doxtable">
+<tr>
+<th align="left">Engine </th><th align="left">Name </th><th align="left">Comments  </th></tr>
+<tr>
+<td align="left">CPU/GPU </td><td align="left"><a class="el" href="softmax_example_cpp.html">Softmax Primitive Example</a> </td><td align="left"><p class="starttd">This C++ API example demonstrates how to create and execute a <a class="el" href="dev_guide_softmax.html">Softmax</a> primitive in forward training propagation mode.</p>
+<p class="endtd">Key optimizations included in this example:</p>
+<ul>
+<li>In-place primitive execution;</li>
+<li>Softmax along axis 1 (C) for 2D tensors. </li>
+</ul>
+</td></tr>
+</table>
 </div></div><!-- contents -->
 <div class="footer">
     <div class="footer-wrapper">

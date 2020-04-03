@@ -14,7 +14,7 @@
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
-<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML"></script>
+<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML,dnnl"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -101,7 +101,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line"></div>
 <div class="line"></div>
-<div class="line"><span class="preprocessor">#include &lt;numeric&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
 <div class="line"></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="dnnl_8hpp.html">dnnl.hpp</a>&quot;</span></div>
@@ -110,17 +109,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line"><span class="keyword">using namespace </span>dnnl;</div>
 <div class="line"></div>
-<div class="line"><a class="code" href="structdnnl_1_1memory.html#a6ad818e4699872cc913474fa5f122cd5">memory::dim</a> product(<span class="keyword">const</span> <a class="code" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;dims) {</div>
-<div class="line">    <span class="keywordflow">return</span> std::accumulate(dims.begin(), dims.end(), (<a name="a0"></a><a class="code" href="structdnnl_1_1memory.html#a6ad818e4699872cc913474fa5f122cd5">memory::dim</a>)1,</div>
-<div class="line">            std::multiplies&lt;memory::dim&gt;());</div>
-<div class="line">}</div>
-<div class="line"></div>
 <div class="line"><span class="keywordtype">void</span> simple_net_int8(<a class="code" href="structdnnl_1_1engine.html#a2635da16314dcbdb9bd9ea431316bb1a">engine::kind</a> engine_kind) {</div>
-<div class="line">    <span class="keyword">using</span> tag = <a name="a1"></a><a class="code" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3f">memory::format_tag</a>;</div>
-<div class="line">    <span class="keyword">using</span> dt = <a name="a2"></a><a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dce">memory::data_type</a>;</div>
+<div class="line">    <span class="keyword">using</span> <a class="code" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3f">tag</a> = <a name="a0"></a><a class="code" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3f">memory::format_tag</a>;</div>
+<div class="line">    <span class="keyword">using</span> <a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dce">dt</a> = <a name="a1"></a><a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dce">memory::data_type</a>;</div>
 <div class="line"></div>
-<div class="line">    <span class="keyword">auto</span> eng = <a name="_a3"></a><a class="code" href="structdnnl_1_1engine.html">engine</a>(engine_kind, 0);</div>
-<div class="line">    <a name="_a4"></a><a class="code" href="structdnnl_1_1stream.html">stream</a> s(eng);</div>
+<div class="line">    <span class="keyword">auto</span> eng = <a name="_a2"></a><a class="code" href="structdnnl_1_1engine.html">engine</a>(engine_kind, 0);</div>
+<div class="line">    <a name="_a3"></a><a class="code" href="structdnnl_1_1stream.html">stream</a> s(eng);</div>
 <div class="line"></div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">int</span> batch = 8;</div>
 <div class="line"></div>
@@ -167,7 +161,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    std::vector&lt;float&gt; conv_bias(product(conv_bias_tz));</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">//[Allocate buffers]</span></div>
-<div class="line">    <span class="keyword">auto</span> user_src_memory = <a name="_a5"></a><a class="code" href="structdnnl_1_1memory.html">memory</a>({{conv_src_tz}, dt::f32, tag::nchw}, eng);</div>
+<div class="line">    <span class="keyword">auto</span> user_src_memory = <a name="_a4"></a><a class="code" href="structdnnl_1_1memory.html">memory</a>({{conv_src_tz}, dt::f32, tag::nchw}, eng);</div>
 <div class="line">    write_to_dnnl_memory(user_src.data(), user_src_memory);</div>
 <div class="line">    <span class="keyword">auto</span> user_weights_memory</div>
 <div class="line">            = <a class="code" href="structdnnl_1_1memory.html">memory</a>({{conv_weights_tz}, dt::f32, tag::oihw}, eng);</div>
@@ -177,38 +171,38 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="comment">//[Allocate buffers]</span></div>
 <div class="line"></div>
 <div class="line">    <span class="comment">//[Create convolution memory descriptors]</span></div>
-<div class="line">    <span class="keyword">auto</span> conv_src_md = <a name="_a6"></a><a class="code" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a>({conv_src_tz}, dt::u8, tag::any);</div>
+<div class="line">    <span class="keyword">auto</span> conv_src_md = <a name="_a5"></a><a class="code" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a>({conv_src_tz}, dt::u8, tag::any);</div>
 <div class="line">    <span class="keyword">auto</span> conv_bias_md = <a class="code" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a>({conv_bias_tz}, dt::s8, tag::any);</div>
 <div class="line">    <span class="keyword">auto</span> conv_weights_md = <a class="code" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a>({conv_weights_tz}, dt::s8, tag::any);</div>
 <div class="line">    <span class="keyword">auto</span> conv_dst_md = <a class="code" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a>({conv_dst_tz}, dt::u8, tag::any);</div>
 <div class="line">    <span class="comment">//[Create convolution memory descriptors]</span></div>
 <div class="line"></div>
 <div class="line">    <span class="comment">//[Create convolution descriptor]</span></div>
-<div class="line">    <span class="keyword">auto</span> conv_desc = <a name="_a7"></a><a class="code" href="structdnnl_1_1convolution__forward_1_1desc.html">convolution_forward::desc</a>(<a name="a8"></a><a class="code" href="group__dnnl__api__attributes.html#ggac7db48f6583aa9903e54c2a39d65438fa965dbaac085fc891bfbbd4f9d145bbc8">prop_kind::forward</a>,</div>
-<div class="line">            <a name="a9"></a><a class="code" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640a5028ad8f818a45333a8a0eefad35c5c0">algorithm::convolution_direct</a>, conv_src_md, conv_weights_md,</div>
+<div class="line">    <span class="keyword">auto</span> conv_desc = <a name="_a6"></a><a class="code" href="structdnnl_1_1convolution__forward_1_1desc.html">convolution_forward::desc</a>(<a name="a7"></a><a class="code" href="group__dnnl__api__attributes.html#ggac7db48f6583aa9903e54c2a39d65438fa965dbaac085fc891bfbbd4f9d145bbc8">prop_kind::forward</a>,</div>
+<div class="line">            <a name="a8"></a><a class="code" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640a5028ad8f818a45333a8a0eefad35c5c0">algorithm::convolution_direct</a>, conv_src_md, conv_weights_md,</div>
 <div class="line">            conv_bias_md, conv_dst_md, conv_strides, conv_padding,</div>
 <div class="line">            conv_padding);</div>
 <div class="line">    <span class="comment">//[Create convolution descriptor]</span></div>
 <div class="line"></div>
 <div class="line">    <span class="comment">//[Configure scaling]</span></div>
-<div class="line">    <a name="_a10"></a><a class="code" href="structdnnl_1_1primitive__attr.html">primitive_attr</a> conv_attr;</div>
-<div class="line">    conv_attr.<a name="a11"></a><a class="code" href="structdnnl_1_1primitive__attr.html#a4b81acc8e48886313154f75c1708ae02">set_output_scales</a>(conv_mask, conv_scales);</div>
+<div class="line">    <a name="_a9"></a><a class="code" href="structdnnl_1_1primitive__attr.html">primitive_attr</a> conv_attr;</div>
+<div class="line">    conv_attr.<a name="a10"></a><a class="code" href="structdnnl_1_1primitive__attr.html#a4b81acc8e48886313154f75c1708ae02">set_output_scales</a>(conv_mask, conv_scales);</div>
 <div class="line">    <span class="comment">//[Configure scaling]</span></div>
 <div class="line"></div>
 <div class="line">    <span class="comment">//[Configure post-ops]</span></div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">float</span> ops_scale = 1.f;</div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">float</span> ops_alpha = 0.f; <span class="comment">// relu negative slope</span></div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">float</span> ops_beta = 0.f;</div>
-<div class="line">    <a name="_a12"></a><a class="code" href="structdnnl_1_1post__ops.html">post_ops</a> ops;</div>
-<div class="line">    ops.<a name="a13"></a><a class="code" href="structdnnl_1_1post__ops.html#a66606f08467b19091e696b52a2f789e6">append_eltwise</a>(ops_scale, <a name="a14"></a><a class="code" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640aba09bebb742494255b90b43871c01c69">algorithm::eltwise_relu</a>, ops_alpha, ops_beta);</div>
-<div class="line">    conv_attr.<a name="a15"></a><a class="code" href="structdnnl_1_1primitive__attr.html#ac830fa9f4fcf480b494d73153ad579bf">set_post_ops</a>(ops);</div>
+<div class="line">    <a name="_a11"></a><a class="code" href="structdnnl_1_1post__ops.html">post_ops</a> ops;</div>
+<div class="line">    ops.<a name="a12"></a><a class="code" href="structdnnl_1_1post__ops.html#a66606f08467b19091e696b52a2f789e6">append_eltwise</a>(ops_scale, <a name="a13"></a><a class="code" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640aba09bebb742494255b90b43871c01c69">algorithm::eltwise_relu</a>, ops_alpha, ops_beta);</div>
+<div class="line">    conv_attr.<a name="a14"></a><a class="code" href="structdnnl_1_1primitive__attr.html#ac830fa9f4fcf480b494d73153ad579bf">set_post_ops</a>(ops);</div>
 <div class="line">    <span class="comment">//[Configure post-ops]</span></div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// check if int8 convolution is supported</span></div>
 <div class="line">    <span class="keywordflow">try</span> {</div>
-<div class="line">        <a name="_a16"></a><a class="code" href="structdnnl_1_1convolution__forward_1_1primitive__desc.html">convolution_forward::primitive_desc</a>(conv_desc, conv_attr, eng);</div>
-<div class="line">    } <span class="keywordflow">catch</span> (<a name="_a17"></a><a class="code" href="structdnnl_1_1error.html">error</a> &amp;e) {</div>
-<div class="line">        <span class="keywordflow">if</span> (e.<a name="a18"></a>status == <a name="a19"></a><a class="code" href="group__dnnl__api__utils.html#ggad24f9ded06e34d3ee71e7fc4b408d57aa3a8579e8afc4e23344cd3115b0e81de1">dnnl_unimplemented</a>)</div>
+<div class="line">        <a name="_a15"></a><a class="code" href="structdnnl_1_1convolution__forward_1_1primitive__desc.html">convolution_forward::primitive_desc</a>(conv_desc, conv_attr, eng);</div>
+<div class="line">    } <span class="keywordflow">catch</span> (<a name="_a16"></a><a class="code" href="structdnnl_1_1error.html">error</a> &amp;e) {</div>
+<div class="line">        <span class="keywordflow">if</span> (e.<a name="a17"></a>status == <a name="a18"></a><a class="code" href="group__dnnl__api__utils.html#ggad24f9ded06e34d3ee71e7fc4b408d57aa3a8579e8afc4e23344cd3115b0e81de1">dnnl_unimplemented</a>)</div>
 <div class="line">            <span class="keywordflow">throw</span> example_allows_unimplemented {</div>
 <div class="line">                    <span class="stringliteral">&quot;DNNL does not have int8 convolution implementation &quot;</span></div>
 <div class="line">                    <span class="stringliteral">&quot;that supports this system.\n&quot;</span></div>
@@ -228,9 +222,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <a class="code" href="structdnnl_1_1primitive__attr.html">primitive_attr</a> src_attr;</div>
 <div class="line">    src_attr.<a class="code" href="structdnnl_1_1primitive__attr.html#a4b81acc8e48886313154f75c1708ae02">set_output_scales</a>(src_mask, src_scales);</div>
 <div class="line">    <span class="keyword">auto</span> src_reorder_pd</div>
-<div class="line">            = <a name="_a20"></a><a class="code" href="structdnnl_1_1reorder_1_1primitive__desc.html">reorder::primitive_desc</a>(eng, user_src_memory.get_desc(), eng,</div>
+<div class="line">            = <a name="_a19"></a><a class="code" href="structdnnl_1_1reorder_1_1primitive__desc.html">reorder::primitive_desc</a>(eng, user_src_memory.get_desc(), eng,</div>
 <div class="line">                    conv_src_memory.get_desc(), src_attr);</div>
-<div class="line">    <span class="keyword">auto</span> src_reorder = <a name="_a21"></a><a class="code" href="structdnnl_1_1reorder.html">reorder</a>(src_reorder_pd);</div>
+<div class="line">    <span class="keyword">auto</span> src_reorder = <a name="_a20"></a><a class="code" href="structdnnl_1_1reorder.html">reorder</a>(src_reorder_pd);</div>
 <div class="line">    src_reorder.execute(s, user_src_memory, conv_src_memory);</div>
 <div class="line"></div>
 <div class="line">    <span class="keyword">auto</span> conv_weights_memory = <a class="code" href="structdnnl_1_1memory.html">memory</a>(conv_prim_desc.weights_desc(), eng);</div>
@@ -255,12 +249,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="keyword">auto</span> conv_dst_memory = <a class="code" href="structdnnl_1_1memory.html">memory</a>(conv_prim_desc.dst_desc(), eng);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">//[Create convolution primitive]</span></div>
-<div class="line">    <span class="keyword">auto</span> conv = <a name="_a22"></a><a class="code" href="structdnnl_1_1convolution__forward.html">convolution_forward</a>(conv_prim_desc);</div>
+<div class="line">    <span class="keyword">auto</span> conv = <a name="_a21"></a><a class="code" href="structdnnl_1_1convolution__forward.html">convolution_forward</a>(conv_prim_desc);</div>
 <div class="line">    conv.execute(s,</div>
-<div class="line">            {{<a name="a23"></a><a class="code" href="group__dnnl__api__primitives__common.html#gac37ad67b48edeb9e742af0e50b70fe09">DNNL_ARG_SRC</a>, conv_src_memory},</div>
-<div class="line">                    {<a name="a24"></a><a class="code" href="group__dnnl__api__primitives__common.html#gaf279f28c59a807e71a70c719db56c5b3">DNNL_ARG_WEIGHTS</a>, conv_weights_memory},</div>
-<div class="line">                    {<a name="a25"></a><a class="code" href="group__dnnl__api__primitives__common.html#gad0cbc09942aba93fbe3c0c2e09166f0d">DNNL_ARG_BIAS</a>, conv_bias_memory},</div>
-<div class="line">                    {<a name="a26"></a><a class="code" href="group__dnnl__api__primitives__common.html#ga3ca217e4a06d42a0ede3c018383c388f">DNNL_ARG_DST</a>, conv_dst_memory}});</div>
+<div class="line">            {{<a name="a22"></a><a class="code" href="group__dnnl__api__primitives__common.html#gac37ad67b48edeb9e742af0e50b70fe09">DNNL_ARG_SRC</a>, conv_src_memory},</div>
+<div class="line">                    {<a name="a23"></a><a class="code" href="group__dnnl__api__primitives__common.html#gaf279f28c59a807e71a70c719db56c5b3">DNNL_ARG_WEIGHTS</a>, conv_weights_memory},</div>
+<div class="line">                    {<a name="a24"></a><a class="code" href="group__dnnl__api__primitives__common.html#gad0cbc09942aba93fbe3c0c2e09166f0d">DNNL_ARG_BIAS</a>, conv_bias_memory},</div>
+<div class="line">                    {<a name="a25"></a><a class="code" href="group__dnnl__api__primitives__common.html#ga3ca217e4a06d42a0ede3c018383c388f">DNNL_ARG_DST</a>, conv_dst_memory}});</div>
 <div class="line">    <span class="comment">//[Create convolution primitive]</span></div>
 <div class="line"></div>
 <div class="line">    <span class="keyword">auto</span> user_dst_memory = <a class="code" href="structdnnl_1_1memory.html">memory</a>({{conv_dst_tz}, dt::f32, tag::nchw}, eng);</div>
@@ -274,7 +268,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    dst_reorder.execute(s, conv_dst_memory, user_dst_memory);</div>
 <div class="line">    <span class="comment">//[Dequantize the result]</span></div>
 <div class="line"></div>
-<div class="line">    s.wait();</div>
+<div class="line">    s.<a name="a26"></a><a class="code" href="structdnnl_1_1stream.html#a59985fa8746436057cf51a820ef8929c">wait</a>();</div>
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv) {</div>

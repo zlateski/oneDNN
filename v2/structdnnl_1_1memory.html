@@ -14,7 +14,7 @@
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
-<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML"></script>
+<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML,dnnl"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -144,15 +144,15 @@ typedef <a class="el" href="group__dnnl__api__memory.html#ga872631b12a112bf43fba
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a3f44e12065b986c997b4df3b9eb55f5a"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a3f44e12065b986c997b4df3b9eb55f5a"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structdnnl_1_1memory.html#a3f44e12065b986c997b4df3b9eb55f5a">validate_dims</a> (const std::vector&lt; T &gt; &amp;v)</td></tr>
-<tr class="memdesc:a3f44e12065b986c997b4df3b9eb55f5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function that validates that an <code>std::vector</code> of dimensions can be safely converted to the C API array <a class="el" href="group__dnnl__api__memory.html#ga8331e1160e52a5d4babe96736464095a" title="A type to describe tensor dimensions. ">dnnl_dims_t</a>.  <a href="#a3f44e12065b986c997b4df3b9eb55f5a">More...</a><br/></td></tr>
-<tr class="separator:a3f44e12065b986c997b4df3b9eb55f5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a02c4d5aa4a07650977ba57ed65bd9a"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a5a02c4d5aa4a07650977ba57ed65bd9a"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structdnnl_1_1memory.html#a5a02c4d5aa4a07650977ba57ed65bd9a">validate_dims</a> (const std::vector&lt; T &gt; &amp;v, int min_size=0)</td></tr>
+<tr class="memdesc:a5a02c4d5aa4a07650977ba57ed65bd9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function that validates that an <code>std::vector</code> of dimensions can be safely converted to the C API array <a class="el" href="group__dnnl__api__memory.html#ga8331e1160e52a5d4babe96736464095a" title="A type to describe tensor dimensions. ">dnnl_dims_t</a>.  <a href="#a5a02c4d5aa4a07650977ba57ed65bd9a">More...</a><br/></td></tr>
+<tr class="separator:a5a02c4d5aa4a07650977ba57ed65bd9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:af2d95e24e4a5af8e3ea0e14f37455513"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1memory.html#af2d95e24e4a5af8e3ea0e14f37455513">__pad0__</a>: <a class="el" href="structdnnl_1_1memory.html">memory</a>(with_sycl_tag {}</td></tr>
-<tr class="memdesc:af2d95e24e4a5af8e3ea0e14f37455513"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a memory.  <a href="#af2d95e24e4a5af8e3ea0e14f37455513">More...</a><br/></td></tr>
+<tr class="memdesc:af2d95e24e4a5af8e3ea0e14f37455513"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a memory object.  <a href="#af2d95e24e4a5af8e3ea0e14f37455513">More...</a><br/></td></tr>
 <tr class="separator:af2d95e24e4a5af8e3ea0e14f37455513"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
@@ -204,7 +204,7 @@ Additional Inherited Members</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Memory object. </p>
 <p>A memory object encapsulates a handle to a memory buffer allocated on a specific engine, tensor dimensions, data type, and memory format, which is the way tensor indices map to offsets in linear memory space. Memory objects are passed to primitives during execution. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cnn_inference_f32_8cpp-example.html#_a5">cnn_inference_f32.cpp</a>, <a class="el" href="cnn_inference_int8_8cpp-example.html#_a5">cnn_inference_int8.cpp</a>, <a class="el" href="cnn_training_f32_8cpp-example.html#_a5">cnn_training_f32.cpp</a>, <a class="el" href="cpu_cnn_training_bf16_8cpp-example.html#_a6">cpu_cnn_training_bf16.cpp</a>, <a class="el" href="cpu_matmul_quantization_8cpp-example.html#_a2">cpu_matmul_quantization.cpp</a>, <a class="el" href="cpu_rnn_inference_f32_8cpp-example.html#_a10">cpu_rnn_inference_f32.cpp</a>, <a class="el" href="cpu_rnn_inference_int8_8cpp-example.html#_a11">cpu_rnn_inference_int8.cpp</a>, <a class="el" href="cpu_sgemm_and_matmul_8cpp-example.html#_a15">cpu_sgemm_and_matmul.cpp</a>, <a class="el" href="cross_engine_reorder_8cpp-example.html#_a1">cross_engine_reorder.cpp</a>, <a class="el" href="getting_started_8cpp-example.html#_a5">getting_started.cpp</a>, <a class="el" href="gpu_opencl_interop_8cpp-example.html#_a6">gpu_opencl_interop.cpp</a>, <a class="el" href="inference_int8_matmul_8cpp-example.html#_a17">inference_int8_matmul.cpp</a>, <a class="el" href="memory_format_propagation_8cpp-example.html#_a10">memory_format_propagation.cpp</a>, <a class="el" href="performance_profiling_8cpp-example.html#_a0">performance_profiling.cpp</a>, <a class="el" href="rnn_training_f32_8cpp-example.html#_a8">rnn_training_f32.cpp</a>, and <a class="el" href="sycl_interop_8cpp-example.html#_a5">sycl_interop.cpp</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="batch_normalization_8cpp-example.html#_a5">batch_normalization.cpp</a>, <a class="el" href="binary_8cpp-example.html#_a5">binary.cpp</a>, <a class="el" href="cnn_inference_f32_8cpp-example.html#_a4">cnn_inference_f32.cpp</a>, <a class="el" href="cnn_inference_int8_8cpp-example.html#_a4">cnn_inference_int8.cpp</a>, <a class="el" href="cnn_training_f32_8cpp-example.html#_a4">cnn_training_f32.cpp</a>, <a class="el" href="concat_8cpp-example.html#_a5">concat.cpp</a>, <a class="el" href="convolution_8cpp-example.html#_a4">convolution.cpp</a>, <a class="el" href="cpu_cnn_training_bf16_8cpp-example.html#_a5">cpu_cnn_training_bf16.cpp</a>, <a class="el" href="cpu_matmul_quantization_8cpp-example.html#_a2">cpu_matmul_quantization.cpp</a>, <a class="el" href="cpu_rnn_inference_f32_8cpp-example.html#_a10">cpu_rnn_inference_f32.cpp</a>, <a class="el" href="cpu_rnn_inference_int8_8cpp-example.html#_a11">cpu_rnn_inference_int8.cpp</a>, <a class="el" href="cpu_sgemm_and_matmul_8cpp-example.html#_a15">cpu_sgemm_and_matmul.cpp</a>, <a class="el" href="cross_engine_reorder_8cpp-example.html#_a0">cross_engine_reorder.cpp</a>, <a class="el" href="eltwise_8cpp-example.html#_a5">eltwise.cpp</a>, <a class="el" href="getting_started_8cpp-example.html#_a5">getting_started.cpp</a>, <a class="el" href="gpu_opencl_interop_8cpp-example.html#_a6">gpu_opencl_interop.cpp</a>, <a class="el" href="inference_int8_matmul_8cpp-example.html#_a17">inference_int8_matmul.cpp</a>, <a class="el" href="inner_product_8cpp-example.html#_a5">inner_product.cpp</a>, <a class="el" href="layer_normalization_8cpp-example.html#_a5">layer_normalization.cpp</a>, <a class="el" href="logsoftmax_8cpp-example.html#_a5">logsoftmax.cpp</a>, <a class="el" href="lrn_8cpp-example.html#_a5">lrn.cpp</a>, <a class="el" href="lstm_8cpp-example.html#_a5">lstm.cpp</a>, <a class="el" href="matmul_8cpp-example.html#_a5">matmul.cpp</a>, <a class="el" href="memory_format_propagation_8cpp-example.html#_a10">memory_format_propagation.cpp</a>, <a class="el" href="performance_profiling_8cpp-example.html#_a0">performance_profiling.cpp</a>, <a class="el" href="pooling_8cpp-example.html#_a5">pooling.cpp</a>, <a class="el" href="reorder_8cpp-example.html#_a5">reorder.cpp</a>, <a class="el" href="resampling_8cpp-example.html#_a5">resampling.cpp</a>, <a class="el" href="rnn_training_f32_8cpp-example.html#_a8">rnn_training_f32.cpp</a>, <a class="el" href="shuffle_8cpp-example.html#_a5">shuffle.cpp</a>, <a class="el" href="softmax_8cpp-example.html#_a5">softmax.cpp</a>, <a class="el" href="sum_8cpp-example.html#_a5">sum.cpp</a>, and <a class="el" href="sycl_interop_8cpp-example.html#_a5">sycl_interop.cpp</a>.</dd>
 </dl></div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a class="anchor" id="afdd20764d58c0b517d5a31276672aeb8"></a>
 <div class="memitem">
@@ -265,7 +265,7 @@ Additional Inherited Members</h2></td></tr>
 <p>8-bit unsigned integer. </p>
 </td></tr>
 </table>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cnn_inference_f32_8cpp-example.html#a2">cnn_inference_f32.cpp</a>, <a class="el" href="cnn_inference_int8_8cpp-example.html#a2">cnn_inference_int8.cpp</a>, <a class="el" href="cnn_training_f32_8cpp-example.html#a2">cnn_training_f32.cpp</a>, <a class="el" href="cpu_cnn_training_bf16_8cpp-example.html#a2">cpu_cnn_training_bf16.cpp</a>, <a class="el" href="cpu_matmul_quantization_8cpp-example.html#a3">cpu_matmul_quantization.cpp</a>, and <a class="el" href="rnn_training_f32_8cpp-example.html#a1">rnn_training_f32.cpp</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="batch_normalization_8cpp-example.html#a1">batch_normalization.cpp</a>, <a class="el" href="binary_8cpp-example.html#a1">binary.cpp</a>, <a class="el" href="cnn_inference_f32_8cpp-example.html#a1">cnn_inference_f32.cpp</a>, <a class="el" href="cnn_inference_int8_8cpp-example.html#a1">cnn_inference_int8.cpp</a>, <a class="el" href="cnn_training_f32_8cpp-example.html#a1">cnn_training_f32.cpp</a>, <a class="el" href="concat_8cpp-example.html#a1">concat.cpp</a>, <a class="el" href="convolution_8cpp-example.html#a1">convolution.cpp</a>, <a class="el" href="cpu_cnn_training_bf16_8cpp-example.html#a1">cpu_cnn_training_bf16.cpp</a>, <a class="el" href="cpu_matmul_quantization_8cpp-example.html#a3">cpu_matmul_quantization.cpp</a>, <a class="el" href="eltwise_8cpp-example.html#a1">eltwise.cpp</a>, <a class="el" href="inner_product_8cpp-example.html#a1">inner_product.cpp</a>, <a class="el" href="layer_normalization_8cpp-example.html#a1">layer_normalization.cpp</a>, <a class="el" href="logsoftmax_8cpp-example.html#a1">logsoftmax.cpp</a>, <a class="el" href="lrn_8cpp-example.html#a1">lrn.cpp</a>, <a class="el" href="lstm_8cpp-example.html#a1">lstm.cpp</a>, <a class="el" href="matmul_8cpp-example.html#a1">matmul.cpp</a>, <a class="el" href="pooling_8cpp-example.html#a1">pooling.cpp</a>, <a class="el" href="reorder_8cpp-example.html#a1">reorder.cpp</a>, <a class="el" href="resampling_8cpp-example.html#a1">resampling.cpp</a>, <a class="el" href="rnn_training_f32_8cpp-example.html#a1">rnn_training_f32.cpp</a>, <a class="el" href="shuffle_8cpp-example.html#a1">shuffle.cpp</a>, <a class="el" href="softmax_8cpp-example.html#a1">softmax.cpp</a>, and <a class="el" href="sum_8cpp-example.html#a1">sum.cpp</a>.</dd>
 </dl>
 </div>
 </div>
@@ -332,14 +332,14 @@ Additional Inherited Members</h2></td></tr>
 <p>Memory format tags can be further divided into two categories:</p>
 <ul>
 <li>Domain-agnostic names, i.e. names that do not depend on the tensor usage in the specific primitive. These names use letters from <code>a</code> to <code>l</code> to denote logical dimensions and form the order in which the dimensions are laid in memory. For example, <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa187ef4436122d1cc2f40dc2b92f0eba0" title="plain 2D tensor ">dnnl::memory::format_tag::ab</a> is used to denote a 2D tensor where the second logical dimension (denoted as <code>b</code>) is the innermost, i.e. has stride = 1, and the first logical dimension (<code>a</code>) is laid out in memory with stride equal to the size of the second dimension. On the other hand, <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa07159c47ee1b19ae4fb9c40d480856c4" title="permuted 2D tensor ">dnnl::memory::format_tag::ba</a> is the transposed version of the same tensor: the outermost dimension (<code>a</code>) becomes the innermost one.</li>
-<li>Domain-specific names, i.e. names that make sense only in the context of a certain domain, such as CNN. These names are aliases to the corresponding domain-agnostic tags and used mostly for convenience. For example, <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa1e7342845e24eb3b5b3554490da1c128" title="2D CNN activations tensor; an alias for dnnl::memory::format_tag::ab ">dnnl::memory::format_tag::nc</a> is used to denote 2D CNN activations tensor memory format, where the channels dimension is the innermost one and the batch dimension is the outermost one. Moreover, <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa1e7342845e24eb3b5b3554490da1c128" title="2D CNN activations tensor; an alias for dnnl::memory::format_tag::ab ">dnnl::memory::format_tag::nc</a> is an alias for <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa187ef4436122d1cc2f40dc2b92f0eba0" title="plain 2D tensor ">dnnl::memory::format_tag::ab</a>, because for DNNL CNN primitives the logical dimensions of activations tensors come in order: batch, channels, spatial. In other words, batch corresponds to the first logical dimension (<code>a</code>), and channels correspond to the second one (<code>b</code>).</li>
+<li>Domain-specific names, i.e. names that make sense only in the context of a certain domain, such as CNN. These names are aliases to the corresponding domain-agnostic tags and used mostly for convenience. For example, <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa1e7342845e24eb3b5b3554490da1c128" title="2D CNN activations tensor; an alias for dnnl::memory::format_tag::ab ">dnnl::memory::format_tag::nc</a> is used to denote 2D CNN activations tensor memory format, where the channels dimension is the innermost one and the batch dimension is the outermost one. Moreover, <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa1e7342845e24eb3b5b3554490da1c128" title="2D CNN activations tensor; an alias for dnnl::memory::format_tag::ab ">dnnl::memory::format_tag::nc</a> is an alias for <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa187ef4436122d1cc2f40dc2b92f0eba0" title="plain 2D tensor ">dnnl::memory::format_tag::ab</a>, because for CNN primitives the logical dimensions of activations tensors come in order: batch, channels, spatial. In other words, batch corresponds to the first logical dimension (<code>a</code>), and channels correspond to the second one (<code>b</code>).</li>
 </ul>
 <p>The following domain-specific notation applies to memory format tags:</p>
 <ul>
 <li><code>'n'</code> denotes the mini-batch dimension</li>
 <li><code>'c'</code> denotes a channels dimension</li>
 <li>When there are multiple channel dimensions (for example, in convolution weights tensor), <code>'i'</code> and <code>'o'</code> denote dimensions of input and output channels</li>
-<li><code>'c'</code> denotes a groups dimension for convolution weights</li>
+<li><code>'g'</code> denotes a groups dimension for convolution weights</li>
 <li><code>'d'</code>, <code>'h'</code>, and <code>'w'</code> denote spatial depth, height, and width respectively</li>
 </ul>
 <p>See <a class="el" href="group__dnnl__api__memory.html#ga395e42b594683adb25ed2d842bb3091d">dnnl_format_tag_t</a> for a detailed description. </p>
@@ -377,6 +377,9 @@ Additional Inherited Members</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fae2fc714c4727ee9395f324cd2e7f331f"></a>abcd</em>&nbsp;</td><td class="fielddoc">
 <p>plain 4D tensor </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa5e822a0b52c71ce2ff2ecd3aa8ca46fc"></a>abdc</em>&nbsp;</td><td class="fielddoc">
+<p>permuted 4D tensor </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa776649ab3d00664587b889457db87da7"></a>acdb</em>&nbsp;</td><td class="fielddoc">
 <p>permuted 4D tensor </p>
@@ -545,6 +548,12 @@ Additional Inherited Members</h2></td></tr>
 <li>For GRU cells, the gates order is update, reset and output gate. </li>
 </ul>
 </td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa201b31c3cfbeec4962a869bdc27da090"></a>ldio</em>&nbsp;</td><td class="fielddoc">
+<p>4D LSTM projection tensor in the format (num_layers, num_directions, num_channels_in_hidden_state, num_channels_in_recurrent_projection). </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa79ca41a567de72f7df2782e76dea722d"></a>ldoi</em>&nbsp;</td><td class="fielddoc">
+<p>4D LSTM projection tensor in the format (num_layers, num_directions, num_channels_in_recurrent_projection, num_channels_in_hidden_state). </p>
+</td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fab8690cd92ccee6a0ad55faccc0346aab"></a>ldgo</em>&nbsp;</td><td class="fielddoc">
 <p>4D RNN bias tensor in the format (num_layers, num_directions, num_gates, output_channels). </p>
 <ul>
@@ -559,12 +568,12 @@ Additional Inherited Members</h2></td></tr>
 <p>4D tensor blocked by 1st and 2nd dimension with block size 8 </p>
 </td></tr>
 </table>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cnn_inference_f32_8cpp-example.html#a1">cnn_inference_f32.cpp</a>, <a class="el" href="cnn_inference_int8_8cpp-example.html#a1">cnn_inference_int8.cpp</a>, <a class="el" href="cnn_training_f32_8cpp-example.html#a1">cnn_training_f32.cpp</a>, <a class="el" href="cpu_cnn_training_bf16_8cpp-example.html#a1">cpu_cnn_training_bf16.cpp</a>, and <a class="el" href="rnn_training_f32_8cpp-example.html#a0">rnn_training_f32.cpp</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="batch_normalization_8cpp-example.html#a0">batch_normalization.cpp</a>, <a class="el" href="binary_8cpp-example.html#a0">binary.cpp</a>, <a class="el" href="cnn_inference_f32_8cpp-example.html#a0">cnn_inference_f32.cpp</a>, <a class="el" href="cnn_inference_int8_8cpp-example.html#a0">cnn_inference_int8.cpp</a>, <a class="el" href="cnn_training_f32_8cpp-example.html#a0">cnn_training_f32.cpp</a>, <a class="el" href="concat_8cpp-example.html#a0">concat.cpp</a>, <a class="el" href="convolution_8cpp-example.html#a0">convolution.cpp</a>, <a class="el" href="cpu_cnn_training_bf16_8cpp-example.html#a0">cpu_cnn_training_bf16.cpp</a>, <a class="el" href="eltwise_8cpp-example.html#a0">eltwise.cpp</a>, <a class="el" href="inner_product_8cpp-example.html#a0">inner_product.cpp</a>, <a class="el" href="layer_normalization_8cpp-example.html#a0">layer_normalization.cpp</a>, <a class="el" href="logsoftmax_8cpp-example.html#a0">logsoftmax.cpp</a>, <a class="el" href="lrn_8cpp-example.html#a0">lrn.cpp</a>, <a class="el" href="lstm_8cpp-example.html#a0">lstm.cpp</a>, <a class="el" href="matmul_8cpp-example.html#a0">matmul.cpp</a>, <a class="el" href="pooling_8cpp-example.html#a0">pooling.cpp</a>, <a class="el" href="reorder_8cpp-example.html#a0">reorder.cpp</a>, <a class="el" href="resampling_8cpp-example.html#a0">resampling.cpp</a>, <a class="el" href="rnn_training_f32_8cpp-example.html#a0">rnn_training_f32.cpp</a>, <a class="el" href="shuffle_8cpp-example.html#a0">shuffle.cpp</a>, <a class="el" href="softmax_8cpp-example.html#a0">softmax.cpp</a>, and <a class="el" href="sum_8cpp-example.html#a0">sum.cpp</a>.</dd>
 </dl>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a3f44e12065b986c997b4df3b9eb55f5a"></a>
+<a class="anchor" id="a5a02c4d5aa4a07650977ba57ed65bd9a"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -577,8 +586,18 @@ template&lt;typename T &gt; </div>
           <td class="memname">static void dnnl::memory::validate_dims </td>
           <td>(</td>
           <td class="paramtype">const std::vector&lt; T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>v</em></td><td>)</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>min_size</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -593,6 +612,7 @@ template&lt;typename T &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">v</td><td>Vector of dimensions. </td></tr>
+    <tr><td class="paramname">min_size</td><td>Minimum expected size of the vector. </td></tr>
   </table>
   </dd>
 </dl>
@@ -610,7 +630,7 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Constructs a memory. </p>
+<p>Constructs a memory object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">md</td><td>Memory descriptor. </td></tr>

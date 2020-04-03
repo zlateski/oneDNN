@@ -14,7 +14,7 @@
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
-<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML"></script>
+<script src="assets/mathjax/MathJax.js?config=TeX-AMS_CHTML,dnnl"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -101,7 +101,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><span class="comment">// Required for posix_memalign</span></div>
 <div class="line"><span class="preprocessor">#define _POSIX_C_SOURCE 200112L</span></div>
 <div class="line"><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#include &lt;math.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;string.h&gt;</span></div>
@@ -110,7 +109,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line"><span class="preprocessor">#include &quot;example_utils.h&quot;</span></div>
 <div class="line"></div>
-<div class="line"><span class="preprocessor">#define BATCH 32</span></div>
+<div class="line"><span class="preprocessor">#define BATCH 8</span></div>
 <div class="line"><span class="preprocessor"></span><span class="preprocessor">#define IC 3</span></div>
 <div class="line"><span class="preprocessor"></span><span class="preprocessor">#define OC 96</span></div>
 <div class="line"><span class="preprocessor"></span><span class="preprocessor">#define CONV_IH 227</span></div>
@@ -167,24 +166,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> init_data_memory(uint32_t dim, <span class="keyword">const</span> <a class="code" href="group__dnnl__api__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> *dims,</div>
-<div class="line">        <a class="code" href="group__dnnl__api__memory.html#ga395e42b594683adb25ed2d842bb3091d">dnnl_format_tag_t</a> user_fmt, <a class="code" href="group__dnnl__api__memory.html#ga012ba1c84ff24bdd068f9d2f9b26a130">dnnl_data_type_t</a> data_type,</div>
-<div class="line">        <a name="_a4"></a><a class="code" href="structdnnl__engine.html">dnnl_engine_t</a> engine, <span class="keywordtype">float</span> *data, <a class="code" href="structdnnl__memory.html">dnnl_memory_t</a> *memory) {</div>
+<div class="line">        <a class="code" href="group__dnnl__api__memory.html#ga395e42b594683adb25ed2d842bb3091d">dnnl_format_tag_t</a> user_tag, <a name="_a4"></a><a class="code" href="structdnnl__engine.html">dnnl_engine_t</a> engine, <span class="keywordtype">float</span> *data,</div>
+<div class="line">        <a class="code" href="structdnnl__memory.html">dnnl_memory_t</a> *memory) {</div>
 <div class="line">    <a name="_a5"></a><a class="code" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> user_md;</div>
 <div class="line">    CHECK(<a name="a6"></a><a class="code" href="group__dnnl__api__memory.html#gaff696e368aeefb3036a0419c508dc6be">dnnl_memory_desc_init_by_tag</a>(</div>
-<div class="line">            &amp;user_md, dim, dims, <a name="a7"></a><a class="code" href="group__dnnl__api__memory.html#gga012ba1c84ff24bdd068f9d2f9b26a130a6b33889946b183311c39cc1bd0656ae9">dnnl_f32</a>, user_fmt));</div>
+<div class="line">            &amp;user_md, dim, dims, <a name="a7"></a><a class="code" href="group__dnnl__api__memory.html#gga012ba1c84ff24bdd068f9d2f9b26a130a6b33889946b183311c39cc1bd0656ae9">dnnl_f32</a>, user_tag));</div>
 <div class="line">    CHECK(<a name="a8"></a><a class="code" href="group__dnnl__api__memory.html#ga52a9246bd7f4e498b08d61e75e689a0c">dnnl_memory_create</a>(memory, &amp;user_md, engine, DNNL_MEMORY_ALLOCATE));</div>
-<div class="line">    <span class="comment">// copy data to memory</span></div>
-<div class="line">    <span class="comment">// ...</span></div>
+<div class="line">    write_to_dnnl_memory(data, *memory);</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><a class="code" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> prepare_reorder(<a class="code" href="structdnnl__memory.html">dnnl_memory_t</a> *user_memory, </div>
-<div class="line">        <span class="keyword">const</span> <a class="code" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *prim_memory_md, </div>
-<div class="line">        <a class="code" href="structdnnl__engine.html">dnnl_engine_t</a> prim_engine, </div>
-<div class="line">        <span class="keywordtype">int</span> dir_is_user_to_prim, </div>
-<div class="line">        <a class="code" href="structdnnl__memory.html">dnnl_memory_t</a> *prim_memory, </div>
-<div class="line">        <a name="_a9"></a><a class="code" href="structdnnl__primitive.html">dnnl_primitive_t</a> *reorder, </div>
-<div class="line">        uint32_t *net_index, </div>
-<div class="line">        <a class="code" href="structdnnl__primitive.html">dnnl_primitive_t</a> *net, args_t *net_args) {</div>
+<div class="line"><a class="code" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> prepare_reorder(<a class="code" href="structdnnl__memory.html">dnnl_memory_t</a> *user_memory, <span class="comment">// in</span></div>
+<div class="line">        <span class="keyword">const</span> <a class="code" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *prim_memory_md, <span class="comment">// in</span></div>
+<div class="line">        <a class="code" href="structdnnl__engine.html">dnnl_engine_t</a> prim_engine, <span class="comment">// in: primitive&#39;s engine</span></div>
+<div class="line">        <span class="keywordtype">int</span> dir_is_user_to_prim, <span class="comment">// in: user -&gt; prim or prim -&gt; user</span></div>
+<div class="line">        <a class="code" href="structdnnl__memory.html">dnnl_memory_t</a> *prim_memory, <span class="comment">// out: primitive&#39;s memory created</span></div>
+<div class="line">        <a name="_a9"></a><a class="code" href="structdnnl__primitive.html">dnnl_primitive_t</a> *reorder, <span class="comment">// out: reorder primitive created</span></div>
+<div class="line">        uint32_t *net_index, <span class="comment">// primitive index in net (inc if reorder created)</span></div>
+<div class="line">        <a class="code" href="structdnnl__primitive.html">dnnl_primitive_t</a> *net, args_t *net_args) { <span class="comment">// net params</span></div>
 <div class="line">    <span class="keyword">const</span> <a class="code" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *user_memory_md;</div>
 <div class="line">    <a name="a10"></a><a class="code" href="group__dnnl__api__memory.html#ga59a447af4c51aba057856c7b596351d4">dnnl_memory_get_memory_desc</a>(*user_memory, &amp;user_memory_md);</div>
 <div class="line"></div>
@@ -266,11 +264,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="comment">// create memory for user data</span></div>
 <div class="line">    <a class="code" href="structdnnl__memory.html">dnnl_memory_t</a> conv_user_src_memory, conv_user_weights_memory,</div>
 <div class="line">            conv_user_bias_memory;</div>
-<div class="line">    init_data_memory(4, conv_user_src_sizes, <a name="a22"></a><a class="code" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da83a751aedeb59613312339d0f8b90f54">dnnl_nchw</a>, <a class="code" href="group__dnnl__api__memory.html#gga012ba1c84ff24bdd068f9d2f9b26a130a6b33889946b183311c39cc1bd0656ae9">dnnl_f32</a>, engine,</div>
-<div class="line">            conv_src, &amp;conv_user_src_memory);</div>
-<div class="line">    init_data_memory(4, conv_user_weights_sizes, <a name="a23"></a><a class="code" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da11176ff202375dcd0d06e2fba5f8a8e0">dnnl_oihw</a>, <a class="code" href="group__dnnl__api__memory.html#gga012ba1c84ff24bdd068f9d2f9b26a130a6b33889946b183311c39cc1bd0656ae9">dnnl_f32</a>, engine,</div>
+<div class="line">    init_data_memory(4, conv_user_src_sizes, <a name="a22"></a><a class="code" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da83a751aedeb59613312339d0f8b90f54">dnnl_nchw</a>, engine, conv_src,</div>
+<div class="line">            &amp;conv_user_src_memory);</div>
+<div class="line">    init_data_memory(4, conv_user_weights_sizes, <a name="a23"></a><a class="code" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da11176ff202375dcd0d06e2fba5f8a8e0">dnnl_oihw</a>, engine,</div>
 <div class="line">            conv_weights, &amp;conv_user_weights_memory);</div>
-<div class="line">    init_data_memory(1, conv_bias_sizes, <a name="a24"></a><a class="code" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da9ccb37bb1a788f0245efbffbaf81e145">dnnl_x</a>, <a class="code" href="group__dnnl__api__memory.html#gga012ba1c84ff24bdd068f9d2f9b26a130a6b33889946b183311c39cc1bd0656ae9">dnnl_f32</a>, engine, conv_bias,</div>
+<div class="line">    init_data_memory(1, conv_bias_sizes, <a name="a24"></a><a class="code" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da9ccb37bb1a788f0245efbffbaf81e145">dnnl_x</a>, engine, conv_bias,</div>
 <div class="line">            &amp;conv_user_bias_memory);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// create a convolution</span></div>
@@ -437,7 +435,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line">    <span class="comment">// create memory for user dst data</span></div>
 <div class="line">    <a class="code" href="structdnnl__memory.html">dnnl_memory_t</a> pool_user_dst_memory;</div>
-<div class="line">    init_data_memory(4, pool_dst_sizes, <a class="code" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da83a751aedeb59613312339d0f8b90f54">dnnl_nchw</a>, <a class="code" href="group__dnnl__api__memory.html#gga012ba1c84ff24bdd068f9d2f9b26a130a6b33889946b183311c39cc1bd0656ae9">dnnl_f32</a>, engine, net_dst,</div>
+<div class="line">    init_data_memory(4, pool_dst_sizes, <a class="code" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da83a751aedeb59613312339d0f8b90f54">dnnl_nchw</a>, engine, net_dst,</div>
 <div class="line">            &amp;pool_user_dst_memory);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// create a pooling primitive descriptor</span></div>
@@ -510,8 +508,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line">    <span class="comment">// create memory for user diff dst data</span></div>
 <div class="line">    <a class="code" href="structdnnl__memory.html">dnnl_memory_t</a> pool_user_diff_dst_memory;</div>
-<div class="line">    init_data_memory(4, pool_dst_sizes, <a class="code" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da83a751aedeb59613312339d0f8b90f54">dnnl_nchw</a>, <a class="code" href="group__dnnl__api__memory.html#gga012ba1c84ff24bdd068f9d2f9b26a130a6b33889946b183311c39cc1bd0656ae9">dnnl_f32</a>, engine,</div>
-<div class="line">            net_diff_dst, &amp;pool_user_diff_dst_memory);</div>
+<div class="line">    init_data_memory(4, pool_dst_sizes, <a class="code" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da83a751aedeb59613312339d0f8b90f54">dnnl_nchw</a>, engine, net_diff_dst,</div>
+<div class="line">            &amp;pool_user_diff_dst_memory);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Pooling Backward</span></div>
 <div class="line">    <span class="comment">// pooling diff src memory descriptor</span></div>
@@ -632,7 +630,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line">    <span class="comment">// initialize memory for diff weights in user format</span></div>
 <div class="line">    <a class="code" href="structdnnl__memory.html">dnnl_memory_t</a> conv_user_diff_weights_memory;</div>
-<div class="line">    init_data_memory(4, conv_user_weights_sizes, <a class="code" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da11176ff202375dcd0d06e2fba5f8a8e0">dnnl_oihw</a>, <a class="code" href="group__dnnl__api__memory.html#gga012ba1c84ff24bdd068f9d2f9b26a130a6b33889946b183311c39cc1bd0656ae9">dnnl_f32</a>, engine,</div>
+<div class="line">    init_data_memory(4, conv_user_weights_sizes, <a class="code" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da11176ff202375dcd0d06e2fba5f8a8e0">dnnl_oihw</a>, engine,</div>
 <div class="line">            conv_user_diff_weights_buffer, &amp;conv_user_diff_weights_memory);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// create backward convolution primitive descriptor</span></div>
