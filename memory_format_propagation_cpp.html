@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>DNNL: Memory format propagation</title>
+<title>oneDNN: Memory format propagation</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,7 +24,7 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-   <div id="projectname">Deep Neural Network Library (DNNL)
+   <div id="projectname">oneAPI Deep Neural Network Library (oneDNN)
    &#160;<span id="projectnumber">1.4.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
@@ -85,9 +85,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Example code: <a class="el" href="memory_format_propagation_8cpp-example.html">memory_format_propagation.cpp</a></p>
 <p></p>
 </blockquote>
-<p>Format propagation is one of the central notions that needs to be well-understood to use DNNL correctly.</p>
+<p>Format propagation is one of the central notions that needs to be well-understood to use oneDNN correctly.</p>
 <p>Convolution and inner product primitives choose the memory format when you create them with the placeholder memory format <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> for input or output. The memory format chosen is based on different circumstances such as hardware and convolutional parameters. Using the placeholder memory format is the recommended practice for convolutions, since they are the most compute-intensive operations in most topologies where they are present.</p>
-<p>Other primitives, such as Elementwise, LRN, batch normalization and other, on forward propagation should use the same memory format as the preceding layer thus propagating the memory format through multiple DNNL primitives. This avoids unnecessary reorders which may be expensive and should be avoided unless a compute-intensive primitive requires a different format. For performance reasons, backward computations of such primitives requires consistent memory format with the corresponding forward computations. Hence, when initializing there primitives for backward computations you should use <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> memory format tag as well.</p>
+<p>Other primitives, such as Elementwise, LRN, batch normalization and other, on forward propagation should use the same memory format as the preceding layer thus propagating the memory format through multiple oneDNN primitives. This avoids unnecessary reorders which may be expensive and should be avoided unless a compute-intensive primitive requires a different format. For performance reasons, backward computations of such primitives requires consistent memory format with the corresponding forward computations. Hence, when initializing there primitives for backward computations you should use <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> memory format tag as well.</p>
 <p>Below is the short summary when to use and not to use memory format <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> during operation description initialization:</p>
 <table class="doxtable">
 <tr>
@@ -100,10 +100,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <td align="left">Memory-bandwidth limited: Reorder, Concat, Sum, Binary </td><td align="left">N/A </td><td align="left">N/A </td><td align="left">Use memory format from preceding layer for inputs, and <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> for outputs </td></tr>
 </table>
 <p>Additional format synchronization is required between forward and backward computations when running training workloads. This topic is covered in <a class="el" href="dev_guide_inference_and_training_aspects.html#dev_guide_inference_and_training_aspects_training">Training-Specific Aspects</a>.</p>
-<p>For better understanding of the architecture and design of DNNL as well as the concepts used in the library, please refer to <a class="el" href="dev_guide_understanding_memory_formats.html">Understanding Memory Formats</a>.</p>
+<p>For better understanding of the architecture and design of oneDNN as well as the concepts used in the library, please refer to <a class="el" href="dev_guide_understanding_memory_formats.html">Understanding Memory Formats</a>.</p>
 <h1><a class="anchor" id="memory_format_propagation_intro"></a>
 Introduction to the tutorial</h1>
-<p>This C++ API example demonstrates how to use optimized memory formats supported by DNNL:</p>
+<p>This C++ API example demonstrates how to use optimized memory formats supported by oneDNN:</p>
 <ul>
 <li>How to configure primitives to use optimized memory formats.</li>
 <li>How to determine whether data needs to be reordered from/to optimized memory formats.</li>
@@ -157,7 +157,7 @@ Create convolution and pooling primitives</h2>
 <div class="line">            eng);</div>
 </div><!-- fragment --> <h2><a class="anchor" id="memory_format_propagation_sub3"></a>
 Create source and destination memory objects</h2>
-<p>We assume that the 'user' source and destination memory format is NCHW. Since there is no result validation in this tutorial, we do not bother with filling the data with some values and let DNNL allocate the memory.</p>
+<p>We assume that the 'user' source and destination memory format is NCHW. Since there is no result validation in this tutorial, we do not bother with filling the data with some values and let oneDNN allocate the memory.</p>
 <div class="fragment"><div class="line">    <span class="keyword">auto</span> src_mem = memory(</div>
 <div class="line">            {{N, IC, H, W}, memory::data_type::f32, memory::format_tag::nchw},</div>
 <div class="line">            eng);</div>
@@ -232,7 +232,7 @@ Reorder destination data if necessary</h2>
 <div class="fragment"><div class="line">Example passed.</div>
 </div><!-- fragment --><p>It may be interesting to check what really happens during the run. We can use <code>DNNL_VERBOSE</code> environment variable for that (see also <a class="el" href="dev_guide_verbose.html">Verbose Mode</a>). Here's example output on a system that has an Intel(R) AVX2-capable processor (line breaks added for readability):</p>
 <div class="fragment"><div class="line">$ DNNL_VERBOSE=1 ./memory-format-propagation-cpp</div>
-<div class="line">dnnl_verbose,info,DNNL &lt;ver&gt; (Git Hash &lt;hash&gt;),Intel(R) Advanced Vector Extensions 2 (Intel(R) AVX2)</div>
+<div class="line">dnnl_verbose,info,oneDNN &lt;ver&gt; (Git Hash &lt;hash&gt;),Intel(R) Advanced Vector Extensions 2 (Intel(R) AVX2)</div>
 <div class="line">dnnl_verbose,exec,reorder,jit:uni,undef,</div>
 <div class="line">    src_f32::blocked:abcd:f0 dst_f32::blocked:aBcd8b:f0,num:1,1x256x14x14,1.03101</div>
 <div class="line">dnnl_verbose,exec,reorder,jit:uni,undef,</div>

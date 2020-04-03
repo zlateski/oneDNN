@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>DNNL: Getting started</title>
+<title>oneDNN: Getting started</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,7 +24,7 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-   <div id="projectname">Deep Neural Network Library (DNNL)
+   <div id="projectname">oneAPI Deep Neural Network Library (oneDNN)
    &#160;<span id="projectnumber">1.4.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
@@ -80,26 +80,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><b></b></p>
-<p>This C++ API example demonstrates the basics of the DNNL programming model.</p>
+<p>This C++ API example demonstrates the basics of the oneDNN programming model.</p>
 <blockquote class="doxtable">
 <p>Example code: <a class="el" href="getting_started_8cpp-example.html">getting_started.cpp</a></p>
 <p></p>
 </blockquote>
-<p>This C++ API example demonstrates the basics of the DNNL programming model:</p>
+<p>This C++ API example demonstrates the basics of the oneDNN programming model:</p>
 <ul>
-<li>How to create DNNL memory objects.<ul>
-<li>How to get data from the user's buffer into a DNNL memory object.</li>
+<li>How to create oneDNN memory objects.<ul>
+<li>How to get data from the user's buffer into a oneDNN memory object.</li>
 <li>How a tensor's logical dimensions and memory object formats relate.</li>
 </ul>
 </li>
-<li>How to create DNNL primitives.</li>
+<li>How to create oneDNN primitives.</li>
 <li>How to execute the primitives.</li>
 </ul>
 <p>The example uses the ReLU operation and comprises the following steps:</p>
 <ol type="1">
 <li>Creating <a class="el" href="getting_started_cpp.html#getting_started_cpp_sub1">Engine and stream</a> to execute a primitive.</li>
-<li>Performing <a class="el" href="getting_started_cpp.html#getting_started_cpp_sub2">Data preparation (code outside of DNNL)</a>.</li>
-<li><a class="el" href="getting_started_cpp.html#getting_started_cpp_sub3">Wrapping data into a DNNL memory object</a> (using different flavors).</li>
+<li>Performing <a class="el" href="getting_started_cpp.html#getting_started_cpp_sub2">Data preparation (code outside of oneDNN)</a>.</li>
+<li><a class="el" href="getting_started_cpp.html#getting_started_cpp_sub3">Wrapping data into a oneDNN memory object</a> (using different flavors).</li>
 <li><a class="el" href="getting_started_cpp.html#getting_started_cpp_sub4">Creating a ReLU primitive</a>.</li>
 <li><a class="el" href="getting_started_cpp.html#getting_started_cpp_sub5">Executing the ReLU primitive</a>.</li>
 <li><a class="el" href="getting_started_cpp.html#getting_started_cpp_sub6">Obtaining the result and validation</a> (checking that the resulting image does not contain negative values).</li>
@@ -107,23 +107,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>These steps are implemented in the <a class="el" href="getting_started_cpp.html#getting_started_cpp_tutorial">getting_started_tutorial() function</a>, which in turn is called from <a class="el" href="getting_started_cpp.html#getting_started_cpp_main">main() function</a> (which is also responsible for error handling).</p>
 <h1><a class="anchor" id="getting_started_cpp_headers"></a>
 Public headers</h1>
-<p>To start using DNNL we must first include the <a class="el" href="dnnl_8hpp.html">dnnl.hpp</a> header file in the program. We also include <a class="el" href="dnnl__debug_8h.html">dnnl_debug.h</a> in <a class="el" href="example__utils_8hpp_source.html">example_utils.hpp</a>, which contains some debugging facilities like returning a string representation for common DNNL C types.</p>
+<p>To start using oneDNN we must first include the <a class="el" href="dnnl_8hpp.html">dnnl.hpp</a> header file in the program. We also include <a class="el" href="dnnl__debug_8h.html">dnnl_debug.h</a> in <a class="el" href="example__utils_8hpp_source.html">example_utils.hpp</a>, which contains some debugging facilities like returning a string representation for common oneDNN C types.</p>
 <h1><a class="anchor" id="getting_started_cpp_tutorial"></a>
 getting_started_tutorial() function</h1>
 <h2><a class="anchor" id="getting_started_cpp_sub1"></a>
 Engine and stream</h2>
-<p>All DNNL primitives and memory objects are attached to a particular <a class="el" href="structdnnl_1_1engine.html">dnnl::engine</a>, which is an abstraction of a computational device (see also <a class="el" href="dev_guide_basic_concepts.html">Basic Concepts</a>). The primitives are created and optimized for the device they are attached to and the memory objects refer to memory residing on the corresponding device. In particular, that means neither memory objects nor primitives that were created for one engine can be used on another.</p>
+<p>All oneDNN primitives and memory objects are attached to a particular <a class="el" href="structdnnl_1_1engine.html">dnnl::engine</a>, which is an abstraction of a computational device (see also <a class="el" href="dev_guide_basic_concepts.html">Basic Concepts</a>). The primitives are created and optimized for the device they are attached to and the memory objects refer to memory residing on the corresponding device. In particular, that means neither memory objects nor primitives that were created for one engine can be used on another.</p>
 <p>To create an engine, we should specify the <a class="el" href="structdnnl_1_1engine.html#a2635da16314dcbdb9bd9ea431316bb1a">dnnl::engine::kind</a> and the index of the device of the given kind.</p>
 <div class="fragment"><div class="line">    engine eng(engine_kind, 0);</div>
 </div><!-- fragment --><p> In addition to an engine, all primitives require a <a class="el" href="structdnnl_1_1stream.html">dnnl::stream</a> for the execution. The stream encapsulates an execution context and is tied to a particular engine.</p>
 <p>The creation is pretty straightforward: </p>
 <div class="fragment"><div class="line">    stream engine_stream(eng);</div>
-</div><!-- fragment --><p> In the simple cases, when a program works with one device only (e.g. only on CPU), an engine and a stream can be created once and used throughout the program. Some frameworks create singleton objects that hold DNNL engine and stream and use them throughout the code.</p>
+</div><!-- fragment --><p> In the simple cases, when a program works with one device only (e.g. only on CPU), an engine and a stream can be created once and used throughout the program. Some frameworks create singleton objects that hold oneDNN engine and stream and use them throughout the code.</p>
 <h2><a class="anchor" id="getting_started_cpp_sub2"></a>
-Data preparation (code outside of DNNL)</h2>
+Data preparation (code outside of oneDNN)</h2>
 <p>Now that the preparation work is done, let's create some data to work with. We will create a 4D tensor in NHWC format, which is quite popular in many frameworks.</p>
 <p>Note that even though we work with one image only, the image tensor is still 4D. The extra dimension (here N) corresponds to the batch, and, in case of a single image, is equal to 1. It is pretty typical to have the batch dimension even when working with a single image.</p>
-<p>In DNNL, all CNN primitives assume that tensors have the batch dimension, which is always the first logical dimension (see also <a class="el" href="dev_guide_conventions.html">Naming Conventions</a>).</p>
+<p>In oneDNN, all CNN primitives assume that tensors have the batch dimension, which is always the first logical dimension (see also <a class="el" href="dev_guide_conventions.html">Naming Conventions</a>).</p>
 <div class="fragment"><div class="line">    <span class="keyword">const</span> <span class="keywordtype">int</span> N = 1, H = 13, W = 13, C = 3;</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Compute physical strides for each dimension</span></div>
@@ -153,8 +153,8 @@ Data preparation (code outside of DNNL)</h2>
 <div class="line">                    image[off] = -std::cos(off / 10.f);</div>
 <div class="line">                }</div>
 </div><!-- fragment --> <h2><a class="anchor" id="getting_started_cpp_sub3"></a>
-Wrapping data into a DNNL memory object</h2>
-<p>Now, having the image ready, let's wrap it in a <a class="el" href="structdnnl_1_1memory.html">dnnl::memory</a> object to be able to pass the data to DNNL primitives.</p>
+Wrapping data into a oneDNN memory object</h2>
+<p>Now, having the image ready, let's wrap it in a <a class="el" href="structdnnl_1_1memory.html">dnnl::memory</a> object to be able to pass the data to oneDNN primitives.</p>
 <p>Creating <a class="el" href="structdnnl_1_1memory.html">dnnl::memory</a> comprises two steps:</p>
 <ol type="1">
 <li>Initializing the <a class="el" href="structdnnl_1_1memory_1_1desc.html">dnnl::memory::desc</a> struct (also referred to as a memory descriptor), which only describes the tensor data and doesn't contain the data itself. Memory descriptors are used to create <a class="el" href="structdnnl_1_1memory.html">dnnl::memory</a> objects and to initialize primitive descriptors (shown later in the example).</li>
@@ -177,7 +177,7 @@ Memory descriptor</h3>
 <div class="line">            memory::data_type::f32, <span class="comment">// tensor&#39;s data type</span></div>
 <div class="line">            memory::format_tag::nhwc <span class="comment">// memory format, NHWC in this case</span></div>
 <div class="line">    );</div>
-</div><!-- fragment --><p> The first thing to notice here is that we pass dimensions as <code>{N, C, H, W}</code> while it might seem more natural to pass <code>{N, H, W, C}</code>, which better corresponds to the user's code. This is because DNNL CNN primitives like ReLU always expect tensors in the following form:</p>
+</div><!-- fragment --><p> The first thing to notice here is that we pass dimensions as <code>{N, C, H, W}</code> while it might seem more natural to pass <code>{N, H, W, C}</code>, which better corresponds to the user's code. This is because oneDNN CNN primitives like ReLU always expect tensors in the following form:</p>
 <table class="doxtable">
 <tr>
 <th align="left">Spatial dim </th><th align="left">Tensor dimensions  </th></tr>
@@ -196,7 +196,7 @@ Memory descriptor</h3>
 <li>\(C\) is channel (aka feature maps) dimension, and</li>
 <li>\(D\), \(H\), and \(W\) are spatial dimensions.</li>
 </ul>
-<p>Now that the logical order of dimension is defined, we need to specify the memory format (the third parameter), which describes how logical indices map to the offset in memory. This is the place where the user's format NHWC comes into play. DNNL has different <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3f">dnnl::memory::format_tag</a> values that cover the most popular memory formats like NCHW, NHWC, CHWN, and some others.</p>
+<p>Now that the logical order of dimension is defined, we need to specify the memory format (the third parameter), which describes how logical indices map to the offset in memory. This is the place where the user's format NHWC comes into play. oneDNN has different <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3f">dnnl::memory::format_tag</a> values that cover the most popular memory formats like NCHW, NHWC, CHWN, and some others.</p>
 <p>The memory descriptor for the image is called <code>src_md</code>. The <code>src</code> part comes from the fact that the image will be a source for the ReLU primitive (that is, we formulate memory names from the primitive perspective; hence we will use <code>dst</code> to name the output memory). The <code>md</code> is an initialism for Memory Descriptor.</p>
 <h4><a class="anchor" id="getting_started_cpp_sub311"></a>
 Alternative way to create a memory descriptor</h4>
@@ -228,7 +228,7 @@ Creating a memory object</h3>
 <li>The library will own the memory for <code>dst_mem</code> and will deallocate it when <code>dst_mem</code> is destroyed. That means the memory buffer can be used only while <code>dst_mem</code> is alive.</li>
 <li>Library-allocated buffers have good alignment, which typically results in better performance.</li>
 </ol>
-<dl class="section note"><dt>Note</dt><dd>Memory allocated outside of the library and passed to Intel DNNL should have good alignment for better performance.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Memory allocated outside of the library and passed to oneDNN should have good alignment for better performance.</dd></dl>
 <p>In the subsequent section we will show how to get the buffer (pointer) from the <code>dst_mem</code> memory object. </p>
 <h2><a class="anchor" id="getting_started_cpp_sub4"></a>
 Creating a ReLU primitive</h2>
@@ -240,7 +240,7 @@ Creating a ReLU primitive</h2>
 <li>Create an operation primitive descriptor (here <a class="el" href="structdnnl_1_1eltwise__forward_1_1primitive__desc.html">dnnl::eltwise_forward::primitive_desc</a>), which is a <b>lightweight</b> descriptor of the actual algorithm that <b>implements</b> the given operation. The user can query different characteristics of the chosen implementation such as memory consumptions and some others that will be covered in the next topic (<a class="el" href="memory_format_propagation_cpp.html">Memory format propagation</a>).</li>
 <li>Create a primitive (here <a class="el" href="structdnnl_1_1eltwise__forward.html">dnnl::eltwise_forward</a>) that can be executed on memory objects to compute the operation.</li>
 </ol>
-<p>DNNL separates steps 2 and 3 to enable the user to inspect details of a primitive implementation prior to creating the primitive. This may be expensive, because, for example, DNNL generates the optimized computational code on the fly.</p>
+<p>oneDNN separates steps 2 and 3 to enable the user to inspect details of a primitive implementation prior to creating the primitive. This may be expensive, because, for example, oneDNN generates the optimized computational code on the fly.</p>
 <dl class="section note"><dt>Note</dt><dd>Primitive creation might be a very expensive operation, so consider creating primitive objects once and executing them multiple times.</dd></dl>
 <p>The code: </p>
 <div class="fragment"><div class="line">    <span class="comment">//  ReLU op descriptor (no engine- or implementation-specific information)</span></div>
@@ -315,7 +315,7 @@ Obtaining the result and validation</h2>
 </div><!-- fragment --> <h1><a class="anchor" id="getting_started_cpp_main"></a>
 main() function</h1>
 <p>We now just call everything we prepared earlier.</p>
-<p>Because we are using the DNNL C++ API, we use exceptions to handle errors (see <a class="el" href="dev_guide_c_and_cpp_apis.html">API</a>). The DNNL C++ API throws exceptions of type <a class="el" href="structdnnl_1_1error.html">dnnl::error</a>, which contains the error status (of type <a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a>) and a human-readable error message accessible through regular <code>what()</code> method.</p>
+<p>Because we are using the oneDNN C++ API, we use exceptions to handle errors (see <a class="el" href="dev_guide_c_and_cpp_apis.html">API</a>). The oneDNN C++ API throws exceptions of type <a class="el" href="structdnnl_1_1error.html">dnnl::error</a>, which contains the error status (of type <a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a>) and a human-readable error message accessible through regular <code>what()</code> method.</p>
 <div class="fragment"><div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv) {</div>
 <div class="line">    <span class="keywordtype">int</span> exit_code = 0;</div>
 <div class="line"></div>
@@ -323,7 +323,7 @@ main() function</h1>
 <div class="line">    <span class="keywordflow">try</span> {</div>
 <div class="line">        getting_started_tutorial(engine_kind);</div>
 <div class="line">    } <span class="keywordflow">catch</span> (<a class="code" href="structdnnl_1_1error.html">dnnl::error</a> &amp;e) {</div>
-<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;DNNL error caught: &quot;</span> &lt;&lt; std::endl</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;oneDNN error caught: &quot;</span> &lt;&lt; std::endl</div>
 <div class="line">                  &lt;&lt; <span class="stringliteral">&quot;\tStatus: &quot;</span> &lt;&lt; dnnl_status2str(e.status) &lt;&lt; std::endl</div>
 <div class="line">                  &lt;&lt; <span class="stringliteral">&quot;\tMessage: &quot;</span> &lt;&lt; e.<a class="code" href="structdnnl_1_1error.html#adfc1a2bf4e31aa1751b38e8e1dbcba2b">what</a>() &lt;&lt; std::endl;</div>
 <div class="line">        exit_code = 1;</div>
@@ -350,7 +350,7 @@ main() function</h1>
 <div class="line">        <span class="comment">// {DNNL_ARG_DST, dst_mem}, // Oops, forgot about this one</span></div>
 <div class="line">    });</div>
 </div><!-- fragment --><p>we should get the following output:</p>
-<div class="fragment"><div class="line">DNNL error caught:</div>
+<div class="fragment"><div class="line">oneDNN error caught:</div>
 <div class="line">        Status: <a class="code" href="group__dnnl__api__service.html#gga7acc4d3516304ae68a1289551d8f2cdda242ac674d98ee2191f0bbf6de851d2d0">invalid_arguments</a></div>
 <div class="line">        Message: could not execute a primitive</div>
 <div class="line">Example failed.</div>

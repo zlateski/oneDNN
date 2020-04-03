@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>DNNL: Int8 Inference</title>
+<title>oneDNN: Int8 Inference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,7 +24,7 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-   <div id="projectname">Deep Neural Network Library (DNNL)
+   <div id="projectname">oneAPI Deep Neural Network Library (oneDNN)
    &#160;<span id="projectnumber">1.4.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
@@ -82,7 +82,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="textblock"><h2>Introduction</h2>
 <p>To push higher performance during inference computations, recent work has focused on computing at a lower precision (that is, shrinking the size of data for activations and weights) to achieve higher throughput. Eight-bit computations (referred to as int8) offer improved performance over higher-precision types because they enable packing more data into a single instruction, at the cost of reduced (but acceptable) accuracy.</p>
 <h2>Int8 Workflow</h2>
-<p>There are different ways to use lower precision to perform inference. Please go through the <a class="el" href="dev_guide_attributes_quantization.html">Primitive Attributes: Quantization</a> page to get the initial understanding of what kind of quantization model DNNL supports.</p>
+<p>There are different ways to use lower precision to perform inference. Please go through the <a class="el" href="dev_guide_attributes_quantization.html">Primitive Attributes: Quantization</a> page to get the initial understanding of what kind of quantization model oneDNN supports.</p>
 <h3>Quantization Process</h3>
 <p>To operate with int8 data types from a higher-precision format (for example, 32-bit floating point), data must first be <em>quantized</em>. The quantization process converts a given input into a lower-precision format. The precision and accuracy factors are determined by the scaling factors.</p>
 <h3>Scale</h3>
@@ -134,12 +134,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>\(b_{s32} = \lceil Q_{\alpha} Q_{w} b_{f32} \rceil = \lceil 17 \times 12.96 \times [ 2.4, -5.2 ... -8 ] \rceil = [528, -1145, ... -1762] \)</li>
 </ul>
 <p>These arrays are the new inputs for the int8 net.</p>
-<h2>DNNL Support for Low-Precision int8 Primitives</h2>
-<p>DNNL supports low-precision computations for inference through the int8 primitives. int8 primitives are ordinary DNNL primitives that have their input and output parameters configured to 8-bit types. int8 primitives are optimized for high performance on the compatible hardware (see <a class="el" href="dev_guide_data_types.html">Data Types</a>).</p>
-<h3>DNNL Attributes</h3>
-<p>DNNL primitive behavior may be extended for additional functionalities involving output data transformation. These additional features are configured via <b>primitive attributes</b>. The primitive attributes definition is an opaque structure for passing extra parameters to a primitive descriptor. These parameters include a scaling factor and fused post-ops. All operation primitives support the attributes structure; however, some configurations are not implemented and result in <em>failed primitive creation</em>.</p>
-<p>The <b>scaling factor</b>, as previously described, is known prior to the inference operation where the values are calculated from a set of formulas. In DNNL, the scaling factor is applied to the output of a primitive. Moreover, to perform input transformations (for example, source, bias, and weights), DNNL performs quantizing and dequantizing of data for int8 through the <b>Reorder Primitive</b>.</p>
-<p>DNNL has two formats for defining the output scaling factor. Depending on the configuration set by the scaling mask, either the output is scaled uniformly across all the dimensions (<em>mask = 0</em>) or a set of scaling values is applied to specific dimensions, as explained below:</p>
+<h2>int8 Support</h2>
+<p>oneDNN supports low-precision computations for inference through the int8 primitives. int8 primitives are ordinary oneDNN primitives that have their input and output parameters configured to 8-bit types. int8 primitives are optimized for high performance on the compatible hardware (see <a class="el" href="dev_guide_data_types.html">Data Types</a>).</p>
+<h3>Attributes</h3>
+<p>oneDNN primitive behavior may be extended for additional functionalities involving output data transformation. These additional features are configured via <b>primitive attributes</b>. The primitive attributes definition is an opaque structure for passing extra parameters to a primitive descriptor. These parameters include a scaling factor and fused post-ops. All operation primitives support the attributes structure; however, some configurations are not implemented and result in <em>failed primitive creation</em>.</p>
+<p>The <b>scaling factor</b>, as previously described, is known prior to the inference operation where the values are calculated from a set of formulas. In oneDNN, the scaling factor is applied to the output of a primitive. Moreover, to perform input transformations (for example, source, bias, and weights), oneDNN performs quantizing and dequantizing of data for int8 through the <b>Reorder Primitive</b>.</p>
+<p>oneDNN has two formats for defining the output scaling factor. Depending on the configuration set by the scaling mask, either the output is scaled uniformly across all the dimensions (<em>mask = 0</em>) or a set of scaling values is applied to specific dimensions, as explained below:</p>
 <ul>
 <li>A <em>single floating point value</em> shared across the tensor <div class="image">
 <img src="img_singlescalar.png" alt="img_singlescalar.png"/>
@@ -158,7 +158,7 @@ Multi-value scaling format</div></div>
 </ul>
 </li>
 </ul>
-<p>Mask is always applied to the logical dimension; this is independent of the dimension format that the primitive might select. The dimensions in DNNL are defined as follows:</p>
+<p>Mask is always applied to the logical dimension; this is independent of the dimension format that the primitive might select. The dimensions in oneDNN are defined as follows:</p>
 <ul>
 <li>2D dimensional data the order of dimensions is always: (n, c)</li>
 <li>4D dimensional data the order is always: (n, c, h, w)</li>

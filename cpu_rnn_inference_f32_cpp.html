@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>DNNL: RNN f32 inference example</title>
+<title>oneDNN: RNN f32 inference example</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,7 +24,7 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-   <div id="projectname">Deep Neural Network Library (DNNL)
+   <div id="projectname">oneAPI Deep Neural Network Library (oneDNN)
    &#160;<span id="projectnumber">1.4.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
@@ -90,7 +90,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>one primitive for all remaining unidirectional layers in the encoder For the decoder we use:</li>
 <li>one primitive for the first iteration</li>
 <li>one primitive for all subsequent iterations in the decoder. Note that in this example, this primitive computes the states in place.</li>
-<li>the attention mechanism is implemented separately as there is no support for the context vectors in DNNL yet</li>
+<li>the attention mechanism is implemented separately as there is no support for the context vectors in oneDNN yet</li>
 </ul>
 <p>Initialize a CPU engine and stream. The last parameter in the call represents the index of the engine. </p>
 <div class="fragment"><div class="line">    <span class="keyword">auto</span> cpu_engine = engine(engine::kind::cpu, 0);</div>

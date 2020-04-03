@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>DNNL: Eltwise</title>
+<title>oneDNN: Eltwise</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,7 +24,7 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-   <div id="projectname">Deep Neural Network Library (DNNL)
+   <div id="projectname">oneAPI Deep Neural Network Library (oneDNN)
    &#160;<span id="projectnumber">1.4.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
@@ -92,7 +92,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>The following operations are supported:</p>
 <table class="doxtable">
 <tr>
-<th align="left">Operation </th><th align="left">DNNL algorithm kind </th><th align="left">Forward formula </th><th align="left">Backward formula (from src) </th><th align="left">Backward formula (from dst)  </th></tr>
+<th align="left">Operation </th><th align="left">oneDNN algorithm kind </th><th align="left">Forward formula </th><th align="left">Backward formula (from src) </th><th align="left">Backward formula (from dst)  </th></tr>
 <tr>
 <td align="left">abs </td><td align="left"><a class="el" href="group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23a2ac04aed39c46f6d6356744d9d12df43" title="Eltwise: abs. ">dnnl_eltwise_abs</a> </td><td align="left">\( d = \begin{cases} s &amp; \text{if}\ s &gt; 0 \\ -s &amp; \text{if}\ s \leq 0 \end{cases} \) </td><td align="left">\( ds = \begin{cases} dd &amp; \text{if}\ s &gt; 0 \\ -dd &amp; \text{if}\ s &lt; 0 \\ 0 &amp; \text{if}\ s = 0 \end{cases} \) </td><td align="left">&ndash; </td></tr>
 <tr>

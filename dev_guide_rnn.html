@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>DNNL: RNN</title>
+<title>oneDNN: RNN</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,7 +24,7 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-   <div id="projectname">Deep Neural Network Library (DNNL)
+   <div id="projectname">oneAPI Deep Neural Network Library (oneDNN)
    &#160;<span id="projectnumber">1.4.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
@@ -268,7 +268,7 @@ Figure 1: Example of stacked recurrent cells unrolled over the time dimension an
 <p>(3) Projection LSTM is not supported.</p>
 <dl class="section warning"><dt>Warning</dt><dd>There might be hardware and/or implementation specific restrictions. Check <a class="el" href="dev_guide_rnn.html#dg_rnn_impl_limits">Implementation Limitations</a> section below.</dd></dl>
 <h2>Data Representation</h2>
-<p>In the DNNL programming model, the RNN primitive is one of a few that support the placeholder memory format <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> (shortened to <code>any</code> from now on) and can define data and weight memory objects format based on the primitive parameters.</p>
+<p>In the oneDNN programming model, the RNN primitive is one of a few that support the placeholder memory format <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> (shortened to <code>any</code> from now on) and can define data and weight memory objects format based on the primitive parameters.</p>
 <p>The following table summarizes the data layouts supported by the RNN primitive.</p>
 <table class="doxtable">
 <tr>

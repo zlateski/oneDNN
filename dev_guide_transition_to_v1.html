@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>DNNL: Version 1.0 Transition Guide</title>
+<title>oneDNN: Version 1.0 Transition Guide</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,7 +24,7 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-   <div id="projectname">Deep Neural Network Library (DNNL)
+   <div id="projectname">oneAPI Deep Neural Network Library (oneDNN)
    &#160;<span id="projectnumber">1.4.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
@@ -81,13 +81,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><blockquote class="doxtable">
 <p><b>NOTE</b></p>
-<p>Starting with version 1.1 Intel(R) MKL-DNN is renamed to DNNL. For consistency, only this guide uses Intel MKL-DNN nomenclature.</p>
+<p>Starting with version 1.1 Intel MKL-DNN is renamed to DNNL. For consistency, only this guide uses Intel MKL-DNN nomenclature.</p>
 <p></p>
 </blockquote>
 <h2>Introduction</h2>
 <p>This article describes user-visible and some important internal changes to Intel MKL-DNN that occurred between v0.20 and v1.0.</p>
-<p>The v0.x branch (<a href="https://github.com/intel/mkl-dnn/tree/mnt-v0">mnt-v0</a>) is deprecated and users are strongly encouraged to migrate to <a href="https://github.com/intel/mkl-dnn">v1.x</a>.</p>
-<dl class="section see"><dt>See Also</dt><dd>Discussion on the API changes occurred in PR #384: <a href="https://github.com/intel/mkl-dnn/pull/384">RFC: API changes for the upcoming v1.0</a>.</dd></dl>
+<p>The v0.x branch (<a href="https://github.com/oneapi-src/oneDNN/tree/mnt-v0">mnt-v0</a>) is deprecated and users are strongly encouraged to migrate to <a href="https://github.com/oneapi-src/oneDNN">v1.x</a>.</p>
+<dl class="section see"><dt>See Also</dt><dd>Discussion on the API changes occurred in PR #384: <a href="https://github.com/oneapi-src/oneDNN/pull/384">RFC: API changes for the upcoming v1.0</a>.</dd></dl>
 <h2>Summary of Changes</h2>
 <p>We tried to keep changes minimal to make migration as simple as possible. In particular, the Intel MKL-DNN programming model stays the same. Nevertheless, the new version brings a lot of incompatible changes requiring developers to revisit significant portions of the integrated code.</p>
 <p>All changes can be split into the following groups:</p>
@@ -208,7 +208,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </table>
 <h3>1.7. Remove view primitive</h3>
 <p>Version 0.x had an implementation of view that was simply an alias for memory. In Intel MKL-DNN v1.0, we removed view as a type and replaced it with a memory descriptor directly. In order to initialize sub-memory, use <a class="el" href="structdnnl_1_1memory_1_1desc.html#a3d017ecf635aae91cc3856a9dfe0721c">dnnl::memory::desc::submemory_desc</a>( "mkldnn::memory::desc::submemory_desc()").</p>
-<dl class="section see"><dt>See Also</dt><dd>For more detail, refer to section <a href="https://github.com/intel/mkl-dnn/tree/rfc-api-changes-v1.0/doc/rfc/api-v1.0#4-view-rework">4. View rework</a> of the <a href="https://github.com/intel/mkl-dnn/pull/384">RFC for v1.0</a>.</dd></dl>
+<dl class="section see"><dt>See Also</dt><dd>For more detail, refer to section <a href="https://github.com/oneapi-src/oneDNN/tree/rfc-api-changes-v1.0/doc/rfc/api-v1.0#4-view-rework">4. View rework</a> of the <a href="https://github.com/oneapi-src/oneDNN/pull/384">RFC for v1.0</a>.</dd></dl>
 <h3>1.8. RNN-specific changes</h3>
 <p>Each type of <a class="el" href="group__dnnl__api__rnn.html">RNN</a> (Vanilla RNN, LSTM, and two types of GRU) is now initialized by a separate function/operation descriptor constructor.</p>
 <p>For instance, instead of using mkldnn::rnn_forward with specified RNN types a user is expected to use:</p>
@@ -384,7 +384,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>The way of describing memory format in version 0.x had multiple issues. From the user's perspective, the main issues were:</p>
 <ul>
 <li>Some memory formats were missing. For example, the <code>iohw</code> format was not available.</li>
-<li>There were multiple ambiguous ways to describe memory. For example, <code>oihw</code> described memory in the same way as <code>nchw</code>, but these formats were different (see <a href="https://github.com/intel/mkl-dnn/issues/153">gh#153</a>).</li>
+<li>There were multiple ambiguous ways to describe memory. For example, <code>oihw</code> described memory in the same way as <code>nchw</code>, but these formats were different (see <a href="https://github.com/oneapi-src/oneDNN/issues/153">gh#153</a>).</li>
 <li>Support for custom formats was limited.</li>
 <li>Support for memory views was limited.</li>
 </ul>
@@ -403,7 +403,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>In version 0.x, most memory formats could be described directly by using appropriate format names (for example, <code>nchw</code>) that fully describe how data is laid out in memory. However, Intel MKL-DNN also had the <code>blocked</code> memory format and the corresponding <code>memory_desc_t.layout_desc.blocking_desc</code> structure, which could describe a memory format in a unified fashion by specifying block sizes and strides. The original idea was to use format tags like <code>nchw</code> during memory descriptor initialization only, and always use the <code>blocked</code> format internally. Unfortunately, that was never implemented.</p>
 <p>With the new design, Intel MKL-DNN starts distinguishing between the actual memory format and convenience memory format tags that can be used to describe memory format concisely.</p>
 <p>Users are still able to initialize memory descriptors with format tags like <code>nchw</code> using <a class="el" href="structdnnl_1_1memory_1_1desc.html#a2a12f9b43aae8c214d695b321b543b5c">mkldnn::memory::desc::desc(dims, data_type, format_tag)</a> or <a class="el" href="group__dnnl__api__memory.html#gaff696e368aeefb3036a0419c508dc6be">mkldnn_memory_desc_init_by_tag()</a>, but the <code>memory_desc_t.format_kind</code> is set to a canonicalized kind like <code>blocked</code>, and the format name is not recorded in the memory descriptor structure. Initialization with strides will always result in <code>blocked</code> format. The API also uses different types for memory format tags and kinds to aid correctness.</p>
-<p>For more details, refer to the <a href="https://github.com/intel/mkl-dnn/blob/rfc-api-changes-v1.0/doc/rfc/api-v1.0/rfc_memory_desc.md">Memory descriptor article</a> of the <a href="https://github.com/intel/mkl-dnn/pull/384">RFC for v1.0</a>.</p>
+<p>For more details, refer to the <a href="https://github.com/oneapi-src/oneDNN/blob/rfc-api-changes-v1.0/doc/rfc/api-v1.0/rfc_memory_desc.md">Memory descriptor article</a> of the <a href="https://github.com/oneapi-src/oneDNN/pull/384">RFC for v1.0</a>.</p>
 <h2>5. Changes in the Build System</h2>
 <p>The build options were slightly changed in the new version of Intel MKL-DNN. That was done mainly to avoid name collisions with other projects that include Intel MKL-DNN as a subproject and to accommodate future extensions to the library. The change are:</p>
 <table class="doxtable">

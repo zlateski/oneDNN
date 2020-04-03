@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['operation_20descriptors',['Operation descriptors',['../group__c__api__types__op__descs.html',1,'']]]
+  ['onednn_20api',['oneDNN API',['../group__dnnl__api.html',1,'']]]
 ];

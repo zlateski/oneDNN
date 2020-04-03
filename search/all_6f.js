@@ -1,6 +1,7 @@
 var searchData=
 [
   ['opencl_20interoperability',['OpenCL Interoperability',['../dev_guide_opencl_interoperability.html',1,'']]],
+  ['onednn_20api',['oneDNN API',['../group__dnnl__api.html',1,'']]],
   ['odhwi',['odhwi',['../structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fabf55006478a9dae3506eb67923703a1d',1,'dnnl::memory']]],
   ['offset0',['offset0',['../structdnnl__memory__desc__t.html#a20a5edce338892ffdba47f8f11ddfe91',1,'dnnl_memory_desc_t']]],
   ['ohwi',['ohwi',['../structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fab889a0cb4d051674706433941a2e867f',1,'dnnl::memory']]],

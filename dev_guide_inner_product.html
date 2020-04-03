@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>DNNL: Inner Product</title>
+<title>oneDNN: Inner Product</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,7 +24,7 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-   <div id="projectname">Deep Neural Network Library (DNNL)
+   <div id="projectname">oneAPI Deep Neural Network Library (oneDNN)
    &#160;<span id="projectnumber">1.4.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
@@ -151,7 +151,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr>
 <td align="left">3D </td><td align="left">\(N \times C \times D \times H \times W\) </td><td align="left">\(N \times C\) </td><td align="left">\(OC \times IC \times KD \times KH \times KW\) </td></tr>
 </table>
-<p>Memory format of data and weights memory objects is critical for inner product primitive performance. In the DNNL programming model, inner product primitive is one of the few primitives that support the placeholder format <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> (shortened to <code>any</code> from now on) and can define data and weight memory objects formats based on the primitive parameters. When using <code>any</code> it is necessary to first create an inner product primitive descriptor and then query it for the actual data and weight memory objects formats.</p>
+<p>Memory format of data and weights memory objects is critical for inner product primitive performance. In the oneDNN programming model, inner product primitive is one of the few primitives that support the placeholder format <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> (shortened to <code>any</code> from now on) and can define data and weight memory objects formats based on the primitive parameters. When using <code>any</code> it is necessary to first create an inner product primitive descriptor and then query it for the actual data and weight memory objects formats.</p>
 <p>The table below shows the combinations for which <b>plain</b> memory formats the inner product primitive is optimized for. For the destination tensor (which is always \(N \times C\)) the memory format is always <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa1e7342845e24eb3b5b3554490da1c128" title="2D CNN activations tensor; an alias for dnnl::memory::format_tag::ab ">dnnl::memory::format_tag::nc</a> (<a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa187ef4436122d1cc2f40dc2b92f0eba0" title="plain 2D tensor ">dnnl::memory::format_tag::ab</a>).</p>
 <table class="doxtable">
 <tr>

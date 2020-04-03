@@ -6,7 +6,7 @@ var searchData=
   ['primitive_20attributes_3a_20scratchpad',['Primitive Attributes: Scratchpad',['../dev_guide_attributes_scratchpad.html',1,'']]],
   ['pooling',['Pooling',['../dev_guide_pooling.html',1,'']]],
   ['primitive_20cache',['Primitive Cache',['../dev_guide_primitive_cache.html',1,'']]],
-  ['profiling_20dnnl_20performance',['Profiling DNNL performance',['../dev_guide_profilers.html',1,'']]],
+  ['profiling_20onednn_20performance',['Profiling oneDNN performance',['../dev_guide_profilers.html',1,'']]],
   ['profiling_20with_20intel_28r_29_20vtune_20amplifier',['Profiling with Intel(R) VTune Amplifier',['../dev_guide_vtune.html',1,'']]],
   ['pooling',['Pooling',['../group__dnnl__api__pooling.html',1,'']]],
   ['primitives',['Primitives',['../group__dnnl__api__primitives.html',1,'']]],

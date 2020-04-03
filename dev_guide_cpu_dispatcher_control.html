@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>DNNL: CPU dispatcher control</title>
+<title>oneDNN: CPU dispatcher control</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,7 +24,7 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-   <div id="projectname">Deep Neural Network Library (DNNL)
+   <div id="projectname">oneAPI Deep Neural Network Library (oneDNN)
    &#160;<span id="projectnumber">1.4.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
@@ -79,9 +79,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">CPU dispatcher control </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>DNNL uses JIT code generation to implement most of its functionality and will choose the best code based on detected processor features. Sometimes it is necessary to control which features DNNL detects. This is sometimes useful for debugging purposes or for performance exploration. To enable this, DNNL provides two mechanisms: an environment variable <code>DNNL_MAX_CPU_ISA</code> and a function <code><a class="el" href="group__dnnl__api__service.html#ga08734310b5f1ca794c64b6a5b944b698" title="Sets the maximal ISA DNNL can dispatch to on the CPU. ">dnnl::set_max_cpu_isa()</a></code>.</p>
-<p>The environment variable can be set to an upper-case name of the ISA as defined by the <code><a class="el" href="group__dnnl__api__service.html#gabad017feb1850634bf3babdb68234f83" title="CPU instruction set flags. ">dnnl::cpu_isa</a></code> enumeration. For example, <code>DNNL_MAX_CPU_ISA=AVX2</code> will instruct DNNL to never dispatch to JIT-ed CPU primitive implementations that require ISA 'higher' than AVX2 like AVX512. The <code>DNNL_MAX_CPU_ISA=ALL</code> setting implies no restrictions.</p>
-<p>The <code><a class="el" href="group__dnnl__api__service.html#ga08734310b5f1ca794c64b6a5b944b698" title="Sets the maximal ISA DNNL can dispatch to on the CPU. ">dnnl::set_max_cpu_isa()</a></code> function allows changing the ISA at run-time. The limitation is that, it is possible to set the value only before the first JIT-ed function is generated. This limitation ensures that the JIT-ed code observe consistent CPU features both during generation and execution.</p>
+<div class="textblock"><p>oneDNN uses JIT code generation to implement most of its functionality and will choose the best code based on detected processor features. Sometimes it is necessary to control which features oneDNN detects. This is sometimes useful for debugging purposes or for performance exploration. To enable this, oneDNN provides two mechanisms: an environment variable <code>DNNL_MAX_CPU_ISA</code> and a function <code><a class="el" href="group__dnnl__api__service.html#ga08734310b5f1ca794c64b6a5b944b698" title="Sets the maximal ISA the library can dispatch to on the CPU. ">dnnl::set_max_cpu_isa()</a></code>.</p>
+<p>The environment variable can be set to an upper-case name of the ISA as defined by the <code><a class="el" href="group__dnnl__api__service.html#gabad017feb1850634bf3babdb68234f83" title="CPU instruction set flags. ">dnnl::cpu_isa</a></code> enumeration. For example, <code>DNNL_MAX_CPU_ISA=AVX2</code> will instruct oneDNN to dispatch code that will run on systems with Intel AVX2 instruction set support. The <code>DNNL_MAX_CPU_ISA=ALL</code> setting implies no restrictions.</p>
+<p>The <code><a class="el" href="group__dnnl__api__service.html#ga08734310b5f1ca794c64b6a5b944b698" title="Sets the maximal ISA the library can dispatch to on the CPU. ">dnnl::set_max_cpu_isa()</a></code> function allows changing the ISA at run-time. The limitation is that, it is possible to set the value only before the first JIT-ed function is generated. This limitation ensures that the JIT-ed code observe consistent CPU features both during generation and execution.</p>
 <p>This feature can be enabled or disabled at build time. See <a class="el" href="dev_guide_build_options.html">Build Options</a> for more information. </p>
 </div></div><!-- contents -->
 <div class="footer">
