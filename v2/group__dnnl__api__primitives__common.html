@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>DNNL: Common</title>
+<title>oneDNN: Common</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,8 +24,8 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-   <div id="projectname">Deep Neural Network Library (DNNL)
-   &#160;<span id="projectnumber">1.91.0</span>
+   <div id="projectname">oneAPI Deep Neural Network Library (oneDNN)
+   &#160;<span id="projectnumber">1.93.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
 </div>
@@ -384,7 +384,7 @@ Enumerations</h2></td></tr>
 <tr class="memdesc:ga96946c805f6c4922c38c37049ab95d23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kinds of algorithms.  <a href="group__dnnl__api__primitives__common.html#ga96946c805f6c4922c38c37049ab95d23">More...</a><br/></td></tr>
 <tr class="separator:ga96946c805f6c4922c38c37049ab95d23"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga301f673522a400c7c1e75f518431c9a3"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__primitives__common.html#ga301f673522a400c7c1e75f518431c9a3">dnnl_normalization_flags_t</a> </td></tr>
-<tr class="memdesc:ga301f673522a400c7c1e75f518431c9a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flags for batch normalization primitive.  <a href="group__dnnl__api__primitives__common.html#ga301f673522a400c7c1e75f518431c9a3">More...</a><br/></td></tr>
+<tr class="memdesc:ga301f673522a400c7c1e75f518431c9a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flags for normalization primitives.  <a href="group__dnnl__api__primitives__common.html#ga301f673522a400c7c1e75f518431c9a3">More...</a><br/></td></tr>
 <tr class="separator:ga301f673522a400c7c1e75f518431c9a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9e5235563cf7cfc10fa89f415de98059"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__primitives__common.html#ga9e5235563cf7cfc10fa89f415de98059">dnnl_query_t</a> </td></tr>
 <tr class="memdesc:ga9e5235563cf7cfc10fa89f415de98059"><td class="mdescLeft">&#160;</td><td class="mdescRight">Primitive descriptor query specification.  <a href="group__dnnl__api__primitives__common.html#ga9e5235563cf7cfc10fa89f415de98059">More...</a><br/></td></tr>
@@ -996,7 +996,11 @@ Functions</h2></td></tr>
 
 <p>Flags for normalization primitives. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="ggad8ef0fcbb7b10cae3d67dd46892002bea95768ff8afb8ee75dc24be0d307627f8"></a>use_global_stats</em>&nbsp;</td><td class="fielddoc">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="ggad8ef0fcbb7b10cae3d67dd46892002bea334c4a4c42fdb79d7ebc3e73b517e6f8"></a>none</em>&nbsp;</td><td class="fielddoc">
+<p>Use no normalization flags. </p>
+<p>If specified, the library computes mean and variance on forward propagation for training and inference, outputs them on forward propagation for training, and computes the respective derivatives on backward propagation. </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="ggad8ef0fcbb7b10cae3d67dd46892002bea95768ff8afb8ee75dc24be0d307627f8"></a>use_global_stats</em>&nbsp;</td><td class="fielddoc">
 <p>Use global statistics. </p>
 <p>If specified, the library uses mean and variance provided by the user as an input on forward propagation and does not compute their derivatives on backward propagation. Otherwise, the library computes mean and variance on forward propagation for training and inference, outputs them on forward propagation for training, and computes the respective derivatives on backward propagation. </p>
 </td></tr>
@@ -1441,9 +1445,18 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Flags for batch normalization primitive. </p>
+<p>Flags for normalization primitives. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="gga301f673522a400c7c1e75f518431c9a3aec04425c28af752c0f8b4dc5ae11fb19"></a>dnnl_use_global_stats</em>&nbsp;</td><td class="fielddoc">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="gga301f673522a400c7c1e75f518431c9a3ab71f2077a94fd4bbc107a09b115a24a4"></a>dnnl_normalization_flags_none</em>&nbsp;</td><td class="fielddoc">
+<p>Use no normalization flags. </p>
+<p>If specified</p>
+<ul>
+<li>on forward training propagation mean and variance are computed and stored as output</li>
+<li>on backward propagation compute full derivative wrt data</li>
+<li>on backward propagation prop_kind == <a class="el" href="group__dnnl__api__primitives__common.html#ggae3c1f22ae55645782923fbfd8b07d0c4a524dd6cb2ed9680bbd170ba15261d218" title="Backward data propagation. ">dnnl_backward_data</a> has the same behavior as prop_kind == <a class="el" href="group__dnnl__api__primitives__common.html#ggae3c1f22ae55645782923fbfd8b07d0c4a326a5e31769302972e7bded555e1cc10" title="Backward propagation (with respect to all parameters). ">dnnl_backward</a> </li>
+</ul>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="gga301f673522a400c7c1e75f518431c9a3aec04425c28af752c0f8b4dc5ae11fb19"></a>dnnl_use_global_stats</em>&nbsp;</td><td class="fielddoc">
 <p>Use global statistics. </p>
 <p>If specified</p>
 <ul>
@@ -1452,8 +1465,8 @@ Functions</h2></td></tr>
 </ul>
 <p>If not specified:</p>
 <ul>
-<li>on forward propagation mean and variance are computed and stored in output</li>
-<li>on backward propagation compute full derivative wrt to data </li>
+<li>on forward propagation mean and variance are computed and stored as output</li>
+<li>on backward propagation compute full derivative wrt data </li>
 </ul>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga301f673522a400c7c1e75f518431c9a3aeba5189d91e23448d706fb027867ae55"></a>dnnl_use_scaleshift</em>&nbsp;</td><td class="fielddoc">
@@ -1461,7 +1474,7 @@ Functions</h2></td></tr>
 <p>If specified:</p>
 <ul>
 <li>on forward propagation use scale and shift (aka scale and bias) for the batch normalization results</li>
-<li>on backward propagation (for prop_kind == <a class="el" href="group__dnnl__api__primitives__common.html#ggae3c1f22ae55645782923fbfd8b07d0c4a326a5e31769302972e7bded555e1cc10" title="Backward propagation (with respect to all parameters). ">dnnl_backward</a>) compute diff wrt to scale and shift (hence one extra output used)</li>
+<li>on backward propagation (for prop_kind == <a class="el" href="group__dnnl__api__primitives__common.html#ggae3c1f22ae55645782923fbfd8b07d0c4a326a5e31769302972e7bded555e1cc10" title="Backward propagation (with respect to all parameters). ">dnnl_backward</a>) compute diff wrt scale and shift (hence one extra output used)</li>
 </ul>
 <p>If no specified:</p>
 <ul>

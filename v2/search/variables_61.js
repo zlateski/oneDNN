@@ -5,5 +5,6 @@ var searchData=
   ['alg_5fkind',['alg_kind',['../structdnnl__convolution__desc__t.html#a9a82a0415d9052264a259dd3f9ccaaf1',1,'dnnl_convolution_desc_t::alg_kind()'],['../structdnnl__eltwise__desc__t.html#ae5d386bea1a4c651880ab304a7044fe4',1,'dnnl_eltwise_desc_t::alg_kind()'],['../structdnnl__pooling__desc__t.html#a6dc1371eb776111b66334f0f0aea2a4c',1,'dnnl_pooling_desc_t::alg_kind()'],['../structdnnl__lrn__desc__t.html#ac85e412ee28f0318187b361c9bb8785c',1,'dnnl_lrn_desc_t::alg_kind()'],['../structdnnl__binary__desc__t.html#a7de6b0ea07d03866df649802405a7918',1,'dnnl_binary_desc_t::alg_kind()'],['../structdnnl__resampling__desc__t.html#a21f709d07bd16a1925d2d7e1ef643677',1,'dnnl_resampling_desc_t::alg_kind()']]],
   ['alpha',['alpha',['../structdnnl__eltwise__desc__t.html#a10784684fa814edcb365c0a8fecdef59',1,'dnnl_eltwise_desc_t']]],
   ['arg',['arg',['../structdnnl__exec__arg__t.html#a46c7f77870713b8af3fd37dc66e9690b',1,'dnnl_exec_arg_t']]],
+  ['asynchronous',['ASYNCHRONOUS',['../structdnnl_1_1threadpool__iface.html#a740361555b71b3ddd2f740c8e0bcfdba',1,'dnnl::threadpool_iface']]],
   ['axis',['axis',['../structdnnl__shuffle__desc__t.html#a1bb136f69743fc7381990f4406bf7fe2',1,'dnnl_shuffle_desc_t']]]
 ];

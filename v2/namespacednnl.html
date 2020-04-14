@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>DNNL: dnnl Namespace Reference</title>
+<title>oneDNN: dnnl Namespace Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,8 +24,8 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-   <div id="projectname">Deep Neural Network Library (DNNL)
-   &#160;<span id="projectnumber">1.91.0</span>
+   <div id="projectname">oneAPI Deep Neural Network Library (oneDNN)
+   &#160;<span id="projectnumber">1.93.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
 </div>
@@ -86,29 +86,32 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">dnnl Namespace Reference<div class="ingroups"><a class="el" href="group__dnnl__api.html">DNNL API</a></div></div>  </div>
+<div class="title">dnnl Namespace Reference<div class="ingroups"><a class="el" href="group__dnnl__api.html">oneDNN API</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>DNNL namespace.  
+<p>oneDNN namespace  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1error.html">error</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">DNNL exception class.  <a href="structdnnl_1_1error.html#details">More...</a><br/></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">oneDNN exception class.  <a href="structdnnl_1_1error.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1handle__traits.html">handle_traits</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A class that provides the destructor for a DNNL C API handle.  <a href="structdnnl_1_1handle__traits.html#details">More...</a><br/></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A class that provides the destructor for a oneDNN C API handle.  <a href="structdnnl_1_1handle__traits.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1handle.html">handle</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">DNNL C API handle wrapper class.  <a href="structdnnl_1_1handle.html#details">More...</a><br/></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">oneDNN C API handle wrapper class.  <a href="structdnnl_1_1handle.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1primitive.html">primitive</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for all computational primitives.  <a href="structdnnl_1_1primitive.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1engine.html">engine</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An execution engine.  <a href="structdnnl_1_1engine.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1stream__attr.html">stream_attr</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A container for stream attributes.  <a href="structdnnl_1_1stream__attr.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1stream.html">stream</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An execution stream.  <a href="structdnnl_1_1stream.html#details">More...</a><br/></td></tr>
@@ -251,6 +254,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1resampling__backward.html">resampling_backward</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resampling backward propagation primitive.  <a href="structdnnl_1_1resampling__backward.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1threadpool__iface.html">threadpool_iface</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract threadpool interface.  <a href="structdnnl_1_1threadpool__iface.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -314,6 +320,9 @@ Functions</h2></td></tr>
 <tr class="memitem:gaa018e6ba2bb49a25a2fa553681090df1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__primitives__common.html#ga9e5235563cf7cfc10fa89f415de98059">dnnl_query_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__primitives__common.html#gaa018e6ba2bb49a25a2fa553681090df1">convert_to_c</a> (<a class="el" href="group__dnnl__api__primitives__common.html#ga94efdd650364f4d9776cfb9b711cbdc1">query</a> <a class="el" href="group__dnnl__api__primitives__common.html#ga94efdd650364f4d9776cfb9b711cbdc1">query</a>)</td></tr>
 <tr class="memdesc:gaa018e6ba2bb49a25a2fa553681090df1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts query enum value from C++ API to C API type.  <a href="group__dnnl__api__primitives__common.html#gaa018e6ba2bb49a25a2fa553681090df1">More...</a><br/></td></tr>
 <tr class="separator:gaa018e6ba2bb49a25a2fa553681090df1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafbde918dddc2a0b502eb3deddf18073c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__engine.html#ga04b3dd9eba628ea02218a52c4c4363a2">dnnl_engine_kind_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__engine.html#gafbde918dddc2a0b502eb3deddf18073c">convert_to_c</a> (<a class="el" href="structdnnl_1_1engine.html#a2635da16314dcbdb9bd9ea431316bb1a">engine::kind</a> kind)</td></tr>
+<tr class="memdesc:gafbde918dddc2a0b502eb3deddf18073c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts engine kind enum value from C++ API to C API type.  <a href="group__dnnl__api__engine.html#gafbde918dddc2a0b502eb3deddf18073c">More...</a><br/></td></tr>
+<tr class="separator:gafbde918dddc2a0b502eb3deddf18073c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga37bcab6f832df551a9fc418e48743b15"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__service.html#ga7acc4d3516304ae68a1289551d8f2cdd">status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__service.html#ga37bcab6f832df551a9fc418e48743b15">set_verbose</a> (int level)</td></tr>
 <tr class="memdesc:ga37bcab6f832df551a9fc418e48743b15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures verbose output to stdout.  <a href="group__dnnl__api__service.html#ga37bcab6f832df551a9fc418e48743b15">More...</a><br/></td></tr>
 <tr class="separator:ga37bcab6f832df551a9fc418e48743b15"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -330,7 +339,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga533341aaf1402e27d1225d1a59819a62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets JIT dump output path.  <a href="group__dnnl__api__service.html#ga533341aaf1402e27d1225d1a59819a62">More...</a><br/></td></tr>
 <tr class="separator:ga533341aaf1402e27d1225d1a59819a62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga08734310b5f1ca794c64b6a5b944b698"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__service.html#ga7acc4d3516304ae68a1289551d8f2cdd">status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__service.html#ga08734310b5f1ca794c64b6a5b944b698">set_max_cpu_isa</a> (<a class="el" href="group__dnnl__api__service.html#gabad017feb1850634bf3babdb68234f83">cpu_isa</a> isa)</td></tr>
-<tr class="memdesc:ga08734310b5f1ca794c64b6a5b944b698"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the maximal ISA DNNL can dispatch to on the CPU.  <a href="group__dnnl__api__service.html#ga08734310b5f1ca794c64b6a5b944b698">More...</a><br/></td></tr>
+<tr class="memdesc:ga08734310b5f1ca794c64b6a5b944b698"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the maximal ISA the library can dispatch to on the CPU.  <a href="group__dnnl__api__service.html#ga08734310b5f1ca794c64b6a5b944b698">More...</a><br/></td></tr>
 <tr class="separator:ga08734310b5f1ca794c64b6a5b944b698"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gace5cc61273dc46ccd9c08eee76d4057b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__service.html#ga7acc4d3516304ae68a1289551d8f2cdd">status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__blas.html#gace5cc61273dc46ccd9c08eee76d4057b">sgemm</a> (char transa, char transb, <a class="el" href="group__dnnl__api__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> M, <a class="el" href="group__dnnl__api__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> N, <a class="el" href="group__dnnl__api__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> K, float alpha, const float *A, <a class="el" href="group__dnnl__api__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> lda, const float *B, <a class="el" href="group__dnnl__api__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> ldb, float beta, float *C, <a class="el" href="group__dnnl__api__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> ldc)</td></tr>
 <tr class="memdesc:gace5cc61273dc46ccd9c08eee76d4057b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs single-precision matrix-matrix multiply.  <a href="group__dnnl__api__blas.html#gace5cc61273dc46ccd9c08eee76d4057b">More...</a><br/></td></tr>
@@ -341,9 +350,15 @@ Functions</h2></td></tr>
 <tr class="memitem:ga6bb7da88545097f097bbcd5778787826"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__service.html#ga7acc4d3516304ae68a1289551d8f2cdd">status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__blas.html#ga6bb7da88545097f097bbcd5778787826">gemm_s8s8s32</a> (char transa, char transb, char offsetc, <a class="el" href="group__dnnl__api__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> M, <a class="el" href="group__dnnl__api__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> N, <a class="el" href="group__dnnl__api__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> K, float alpha, const int8_t *A, <a class="el" href="group__dnnl__api__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> lda, int8_t ao, const int8_t *B, <a class="el" href="group__dnnl__api__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> ldb, int8_t bo, float beta, int32_t *C, <a class="el" href="group__dnnl__api__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> ldc, const int32_t *co)</td></tr>
 <tr class="memdesc:ga6bb7da88545097f097bbcd5778787826"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs integer matrix-matrix multiply on 8-bit signed matrix A, 8-bit signed matrix B, and 32-bit signed resulting matrix C.  <a href="group__dnnl__api__blas.html#ga6bb7da88545097f097bbcd5778787826">More...</a><br/></td></tr>
 <tr class="separator:ga6bb7da88545097f097bbcd5778787826"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1c235f1d3de159d9a869dfce89b635fd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__service.html#ga7acc4d3516304ae68a1289551d8f2cdd">status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__blas.html#ga1c235f1d3de159d9a869dfce89b635fd">sgemm</a> (char transa, char transb, <a class="el" href="group__dnnl__api__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> M, <a class="el" href="group__dnnl__api__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> N, <a class="el" href="group__dnnl__api__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> K, float alpha, const float *A, <a class="el" href="group__dnnl__api__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> lda, const float *B, <a class="el" href="group__dnnl__api__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> ldb, float beta, float *C, <a class="el" href="group__dnnl__api__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> ldc, <a class="el" href="structdnnl_1_1threadpool__iface.html">dnnl::threadpool_iface</a> *tp)</td></tr>
+<tr class="separator:ga1c235f1d3de159d9a869dfce89b635fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga18eb19e9b6e79eb0aff76d90b2f6dfef"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__service.html#ga7acc4d3516304ae68a1289551d8f2cdd">status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__blas.html#ga18eb19e9b6e79eb0aff76d90b2f6dfef">gemm_u8s8s32</a> (char transa, char transb, char offsetc, <a class="el" href="group__dnnl__api__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> M, <a class="el" href="group__dnnl__api__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> N, <a class="el" href="group__dnnl__api__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> K, float alpha, const uint8_t *A, <a class="el" href="group__dnnl__api__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> lda, uint8_t ao, const int8_t *B, <a class="el" href="group__dnnl__api__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> ldb, int8_t bo, float beta, int32_t *C, <a class="el" href="group__dnnl__api__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> ldc, const int32_t *co, <a class="el" href="structdnnl_1_1threadpool__iface.html">dnnl::threadpool_iface</a> *tp)</td></tr>
+<tr class="separator:ga18eb19e9b6e79eb0aff76d90b2f6dfef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga402a4c552248d8bc822db959746df280"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__service.html#ga7acc4d3516304ae68a1289551d8f2cdd">status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__blas.html#ga402a4c552248d8bc822db959746df280">gemm_s8s8s32</a> (char transa, char transb, char offsetc, <a class="el" href="group__dnnl__api__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> M, <a class="el" href="group__dnnl__api__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> N, <a class="el" href="group__dnnl__api__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> K, float alpha, const int8_t *A, <a class="el" href="group__dnnl__api__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> lda, int8_t ao, const int8_t *B, <a class="el" href="group__dnnl__api__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> ldb, int8_t bo, float beta, int32_t *C, <a class="el" href="group__dnnl__api__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> ldc, const int32_t *co, <a class="el" href="structdnnl_1_1threadpool__iface.html">dnnl::threadpool_iface</a> *tp)</td></tr>
+<tr class="separator:ga402a4c552248d8bc822db959746df280"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>DNNL namespace. </p>
+<div class="textblock"><p>oneDNN namespace </p>
 </div></div><!-- contents -->
 <div class="footer">
     <div class="footer-wrapper">

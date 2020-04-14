@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>DNNL: cpu_matmul_quantization.cpp</title>
+<title>oneDNN: cpu_matmul_quantization.cpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,8 +24,8 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-   <div id="projectname">Deep Neural Network Library (DNNL)
-   &#160;<span id="projectnumber">1.91.0</span>
+   <div id="projectname">oneAPI Deep Neural Network Library (oneDNN)
+   &#160;<span id="projectnumber">1.93.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
 </div>
@@ -146,7 +146,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line"><span class="preprocessor">#ifndef OMIT_WORKAROUND_FOR_SKX</span></div>
 <div class="line"><span class="preprocessor"></span>    <span class="comment">// Read more in CPU / Section 1 here:</span></div>
-<div class="line">    <span class="comment">// https://intel.github.io/mkl-dnn/dev_guide_int8_computations.html</span></div>
+<div class="line">    <span class="comment">// https://oneapi-src.github.io/oneDNN/dev_guide_int8_computations.html</span></div>
 <div class="line">    <span class="keywordflow">if</span> (std::is_same&lt;T, uint8_t&gt;::value) max_int /= 2;</div>
 <div class="line"><span class="preprocessor">#endif</span></div>
 <div class="line"><span class="preprocessor"></span></div>
@@ -197,7 +197,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line"><a name="_a0"></a><a class="code" href="structdnnl_1_1engine.html">engine</a> eng(<a name="a1"></a><a class="code" href="structdnnl_1_1engine.html#a2635da16314dcbdb9bd9ea431316bb1aad9747e2da342bdb995f6389533ad1a3d">engine::kind::cpu</a>, 0); <span class="comment">// We create a global engine for simplicity</span></div>
 <div class="line"></div>
-<div class="line"><span class="comment">// Quantize float data into X_int_m DNNL memory using the q10n parameters</span></div>
+<div class="line"><span class="comment">// Quantize float data into X_int_m oneDNN memory using the q10n parameters</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// Inputs:</span></div>
 <div class="line"><span class="comment">// - X_f32 -- source f32 matrix</span></div>
@@ -205,7 +205,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><span class="comment">// - q10n_scheme -- dynamic or static, to mimic real-world applications wrt to</span></div>
 <div class="line"><span class="comment">//                  how the q10n parameters are passed to reorders</span></div>
 <div class="line"><span class="comment">// Outputs:</span></div>
-<div class="line"><span class="comment">// - X_int_m -- prepared DNNL memory that would hold quantized values</span></div>
+<div class="line"><span class="comment">// - X_int_m -- prepared oneDNN memory that would hold quantized values</span></div>
 <div class="line"><span class="keywordtype">void</span> quantize(q10n_scheme_t q10n_scheme, <span class="keyword">const</span> std::vector&lt;float&gt; &amp;X_f32,</div>
 <div class="line">        <span class="keywordtype">float</span> scale_X, int32_t zp_X, <a name="_a2"></a><a class="code" href="structdnnl_1_1memory.html">memory</a> &amp;X_int_m) {</div>
 <div class="line">    <span class="keyword">using</span> <a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dce">dt</a> = <a name="a3"></a><a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dce">memory::data_type</a>;</div>
@@ -234,12 +234,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="keywordflow">if</span> (is_dynamic_q10n) {</div>
 <div class="line">        <a class="code" href="structdnnl_1_1memory.html">memory</a> scale_X_m({{1}, dt::f32, {1}}, eng, &amp;inv_scale_X);</div>
 <div class="line">        <a class="code" href="structdnnl_1_1memory.html">memory</a> zp_X_m({{1}, dt::s32, {1}}, eng, &amp;zp_X);</div>
-<div class="line">        <a name="_a14"></a><a class="code" href="structdnnl_1_1reorder.html">reorder</a>(q10n_pd).<a name="a15"></a><a class="code" href="structdnnl_1_1reorder.html#a0d551b51dd0b727253be8c88bec06a08">execute</a>(s,</div>
+<div class="line">        <a name="_a14"></a><a class="code" href="structdnnl_1_1reorder.html">reorder</a>(q10n_pd).<a name="a15"></a><a class="code" href="structdnnl_1_1reorder.html#a573f94090cedc71fea0091b64b1bd79a">execute</a>(s,</div>
 <div class="line">                {{<a name="a16"></a><a class="code" href="group__dnnl__api__primitives__common.html#gac37ad67b48edeb9e742af0e50b70fe09">DNNL_ARG_SRC</a>, X_f32_m}, {<a class="code" href="group__dnnl__api__primitives__common.html#ga3ca217e4a06d42a0ede3c018383c388f">DNNL_ARG_DST</a>, X_int_m},</div>
 <div class="line">                        {<a name="a17"></a><a class="code" href="group__dnnl__api__primitives__common.html#ga0afb48b0c2b8f3ee30609aaa47aa29db">DNNL_ARG_ATTR_OUTPUT_SCALES</a>, scale_X_m},</div>
 <div class="line">                        {<a name="a18"></a><a class="code" href="group__dnnl__api__primitives__common.html#gaf8d879adfe2baa2f9f2a5143a0f274b6">DNNL_ARG_ATTR_ZERO_POINTS</a> | <a class="code" href="group__dnnl__api__primitives__common.html#ga3ca217e4a06d42a0ede3c018383c388f">DNNL_ARG_DST</a>, zp_X_m}});</div>
 <div class="line">    } <span class="keywordflow">else</span> {</div>
-<div class="line">        <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(q10n_pd).<a class="code" href="structdnnl_1_1reorder.html#a0d551b51dd0b727253be8c88bec06a08">execute</a>(</div>
+<div class="line">        <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(q10n_pd).<a class="code" href="structdnnl_1_1reorder.html#a573f94090cedc71fea0091b64b1bd79a">execute</a>(</div>
 <div class="line">                s, {{<a class="code" href="group__dnnl__api__primitives__common.html#gac37ad67b48edeb9e742af0e50b70fe09">DNNL_ARG_SRC</a>, X_f32_m}, {<a class="code" href="group__dnnl__api__primitives__common.html#ga3ca217e4a06d42a0ede3c018383c388f">DNNL_ARG_DST</a>, X_int_m}});</div>
 <div class="line">    }</div>
 <div class="line"></div>
@@ -260,7 +260,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <a class="code" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> b_md({K, N}, <a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e">memory::data_type::f32</a>, {N, 1});</div>
 <div class="line">    <a class="code" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> c_md({M, N}, <a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e">memory::data_type::f32</a>, {N, 1});</div>
 <div class="line"></div>
-<div class="line">    <span class="comment">// Wrap raw pointers into DNNL memory objects</span></div>
+<div class="line">    <span class="comment">// Wrap raw pointers into oneDNN memory objects</span></div>
 <div class="line">    <a class="code" href="structdnnl_1_1memory.html">memory</a> A_f32_m(a_md, eng, (<span class="keywordtype">void</span> *)A_f32.data());</div>
 <div class="line">    <a class="code" href="structdnnl_1_1memory.html">memory</a> B_f32_m(b_md, eng, (<span class="keywordtype">void</span> *)B_f32.data());</div>
 <div class="line">    <a class="code" href="structdnnl_1_1memory.html">memory</a> C_f32_m(c_md, eng, (<span class="keywordtype">void</span> *)C_f32.data());</div>

@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>DNNL: DPC++ Interoperability</title>
+<title>oneDNN: DPC++ Interoperability</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,8 +24,8 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-   <div id="projectname">Deep Neural Network Library (DNNL)
-   &#160;<span id="projectnumber">1.91.0</span>
+   <div id="projectname">oneAPI Deep Neural Network Library (oneDNN)
+   &#160;<span id="projectnumber">1.93.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
 </div>
@@ -79,17 +79,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">DPC++ Interoperability </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>DNNL may use the DPC++ runtime for CPU and GPU engines to interact with the hardware. Users may need to use DNNL with other code that uses DPC++. For that purpose, the library provides API extensions to interoperate with underlying SYCL objects.</p>
-<p>One of the possible scenarios is executing a SYCL kernel for a custom operation not provided by DNNL. In this case, the library provides all necessary API to "seamlessly" submit a kernel, sharing the execution context with DNNL: using the same device and queue.</p>
+<div class="textblock"><p>oneDNN may use the DPC++ runtime for CPU and GPU engines to interact with the hardware. Users may need to use oneDNN with other code that uses DPC++. For that purpose, the library provides API extensions to interoperate with underlying SYCL objects.</p>
+<p>One of the possible scenarios is executing a SYCL kernel for a custom operation not provided by oneDNN. In this case, the library provides all necessary API to "seamlessly" submit a kernel, sharing the execution context with oneDNN: using the same device and queue.</p>
 <p>The interoperability API is provided for two scenarios:</p>
 <ul>
-<li>Construction of DNNL objects based on existing SYCL objects</li>
-<li>Accessing SYCL objects for existing DNNL objects</li>
+<li>Construction of oneDNN objects based on existing SYCL objects</li>
+<li>Accessing SYCL objects for existing oneDNN objects</li>
 </ul>
-<p>The mapping between DNNL and SYCL objects is provided in the following table:</p>
+<p>The mapping between oneDNN and SYCL objects is provided in the following table:</p>
 <table class="doxtable">
 <tr>
-<th align="left">DNNL object </th><th align="left">SYCL object(s)  </th></tr>
+<th align="left">oneDNN object </th><th align="left">SYCL object(s)  </th></tr>
 <tr>
 <td align="left">Engine </td><td align="left"><code>cl::sycl::device</code> and <code>cl::sycl::context</code> </td></tr>
 <tr>
@@ -99,10 +99,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </table>
 <dl class="section note"><dt>Note</dt><dd>Internally, library memory objects use 1D <code>uint8_t</code> SYCL buffers, however user may initialize and access memory using SYCL buffers of a different type, in this case buffers will be reinterpreted to the underlying type <code>cl::sycl::buffer&lt;uint8_t, 1&gt;</code>.</dd></dl>
 <h2>C++ API Extensions for Interoperability with DPC++</h2>
-<h3>API to Construct DNNL Objects</h3>
+<h3>API to Construct oneDNN Objects</h3>
 <table class="doxtable">
 <tr>
-<th align="left">DNNL object </th><th align="left">API to construct DNNL object  </th></tr>
+<th align="left">oneDNN object </th><th align="left">API to construct oneDNN object  </th></tr>
 <tr>
 <td align="left">Engine </td><td align="left"><a class="el" href="structdnnl_1_1engine.html">dnnl::engine(kind, sycl_dev, sycl_ctx)</a> </td></tr>
 <tr>
@@ -113,7 +113,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h3>API to Access SYCL Objects</h3>
 <table class="doxtable">
 <tr>
-<th align="left">DNNL object </th><th align="left">API to access SYCL object(s)  </th></tr>
+<th align="left">oneDNN object </th><th align="left">API to access SYCL object(s)  </th></tr>
 <tr>
 <td align="left">Engine </td><td align="left"><a class="el" href="structdnnl_1_1engine.html#ade7a188f8b05690085cb9e9a89fb1689" title="Returns the underlying SYCL device object. ">dnnl::engine::get_sycl_device()</a> and <a class="el" href="structdnnl_1_1engine.html#a9def2954f609be6f6419afa72daf9190" title="Returns the underlying SYCL context object. ">dnnl::engine::get_sycl_context()</a> </td></tr>
 <tr>

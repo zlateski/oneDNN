@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>DNNL: cpu_rnn_inference_int8.cpp</title>
+<title>oneDNN: cpu_rnn_inference_int8.cpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,8 +24,8 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-   <div id="projectname">Deep Neural Network Library (DNNL)
-   &#160;<span id="projectnumber">1.91.0</span>
+   <div id="projectname">oneAPI Deep Neural Network Library (oneDNN)
+   &#160;<span id="projectnumber">1.93.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
 </div>
@@ -385,7 +385,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="keyword">auto</span> enc_bidir_wei_layer_reorder_pd = <a class="code" href="structdnnl_1_1reorder_1_1primitive__desc.html">reorder::primitive_desc</a>(</div>
 <div class="line">            user_enc_bidir_wei_layer_memory, enc_bidir_wei_layer_memory, attr);</div>
 <div class="line">    <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(enc_bidir_wei_layer_reorder_pd)</div>
-<div class="line">            .<a name="a27"></a><a class="code" href="structdnnl_1_1reorder.html#a0d551b51dd0b727253be8c88bec06a08">execute</a>(s, user_enc_bidir_wei_layer_memory,</div>
+<div class="line">            .<a name="a27"></a><a class="code" href="structdnnl_1_1reorder.html#a573f94090cedc71fea0091b64b1bd79a">execute</a>(s, user_enc_bidir_wei_layer_memory,</div>
 <div class="line">                    enc_bidir_wei_layer_memory);</div>
 <div class="line"></div>
 <div class="line">    <span class="keyword">auto</span> enc_bidir_wei_iter_memory</div>
@@ -393,7 +393,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="keyword">auto</span> enc_bidir_wei_iter_reorder_pd = <a class="code" href="structdnnl_1_1reorder_1_1primitive__desc.html">reorder::primitive_desc</a>(</div>
 <div class="line">            user_enc_bidir_wei_iter_memory, enc_bidir_wei_iter_memory, attr);</div>
 <div class="line">    <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(enc_bidir_wei_iter_reorder_pd)</div>
-<div class="line">            .<a class="code" href="structdnnl_1_1reorder.html#a0d551b51dd0b727253be8c88bec06a08">execute</a>(s, user_enc_bidir_wei_iter_memory,</div>
+<div class="line">            .<a class="code" href="structdnnl_1_1reorder.html#a573f94090cedc71fea0091b64b1bd79a">execute</a>(s, user_enc_bidir_wei_iter_memory,</div>
 <div class="line">                    enc_bidir_wei_iter_memory);</div>
 <div class="line"></div>
 <div class="line">    <span class="keyword">auto</span> enc_bidir_dst_layer_memory</div>
@@ -470,13 +470,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="keyword">auto</span> enc_uni_first_wei_layer_memory</div>
 <div class="line">            = <a class="code" href="structdnnl_1_1memory.html">memory</a>(enc_uni_first_prim_desc.weights_layer_desc(), cpu_engine);</div>
 <div class="line">    <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(user_enc_uni_first_wei_layer_memory, enc_uni_first_wei_layer_memory)</div>
-<div class="line">            .<a class="code" href="structdnnl_1_1reorder.html#a0d551b51dd0b727253be8c88bec06a08">execute</a>(s, user_enc_uni_first_wei_layer_memory,</div>
+<div class="line">            .<a class="code" href="structdnnl_1_1reorder.html#a573f94090cedc71fea0091b64b1bd79a">execute</a>(s, user_enc_uni_first_wei_layer_memory,</div>
 <div class="line">                    enc_uni_first_wei_layer_memory);</div>
 <div class="line"></div>
 <div class="line">    <span class="keyword">auto</span> enc_uni_first_wei_iter_memory</div>
 <div class="line">            = <a class="code" href="structdnnl_1_1memory.html">memory</a>(enc_uni_first_prim_desc.weights_iter_desc(), cpu_engine);</div>
 <div class="line">    <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(user_enc_uni_first_wei_iter_memory, enc_uni_first_wei_iter_memory)</div>
-<div class="line">            .<a class="code" href="structdnnl_1_1reorder.html#a0d551b51dd0b727253be8c88bec06a08">execute</a>(s, user_enc_uni_first_wei_iter_memory,</div>
+<div class="line">            .<a class="code" href="structdnnl_1_1reorder.html#a573f94090cedc71fea0091b64b1bd79a">execute</a>(s, user_enc_uni_first_wei_iter_memory,</div>
 <div class="line">                    enc_uni_first_wei_iter_memory);</div>
 <div class="line"></div>
 <div class="line">    <span class="keyword">auto</span> enc_uni_first_dst_layer_memory</div>
@@ -548,7 +548,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="keyword">auto</span> enc_uni_wei_layer_reorder_pd = <a class="code" href="structdnnl_1_1reorder_1_1primitive__desc.html">reorder::primitive_desc</a>(</div>
 <div class="line">            user_enc_uni_wei_layer_memory, enc_uni_wei_layer_memory, attr);</div>
 <div class="line">    <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(enc_uni_wei_layer_reorder_pd)</div>
-<div class="line">            .<a class="code" href="structdnnl_1_1reorder.html#a0d551b51dd0b727253be8c88bec06a08">execute</a>(</div>
+<div class="line">            .<a class="code" href="structdnnl_1_1reorder.html#a573f94090cedc71fea0091b64b1bd79a">execute</a>(</div>
 <div class="line">                    s, user_enc_uni_wei_layer_memory, enc_uni_wei_layer_memory);</div>
 <div class="line"></div>
 <div class="line">    <span class="keyword">auto</span> enc_uni_wei_iter_memory</div>
@@ -556,7 +556,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="keyword">auto</span> enc_uni_wei_iter_reorder_pd = <a class="code" href="structdnnl_1_1reorder_1_1primitive__desc.html">reorder::primitive_desc</a>(</div>
 <div class="line">            user_enc_uni_wei_iter_memory, enc_uni_wei_iter_memory, attr);</div>
 <div class="line">    <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(enc_uni_wei_iter_reorder_pd)</div>
-<div class="line">            .<a class="code" href="structdnnl_1_1reorder.html#a0d551b51dd0b727253be8c88bec06a08">execute</a>(s, user_enc_uni_wei_iter_memory, enc_uni_wei_iter_memory);</div>
+<div class="line">            .<a class="code" href="structdnnl_1_1reorder.html#a573f94090cedc71fea0091b64b1bd79a">execute</a>(s, user_enc_uni_wei_iter_memory, enc_uni_wei_iter_memory);</div>
 <div class="line"></div>
 <div class="line">    <span class="keyword">auto</span> enc_dst_layer_memory</div>
 <div class="line">            = <a class="code" href="structdnnl_1_1memory.html">memory</a>(enc_uni_prim_desc.dst_layer_desc(), cpu_engine);</div>
@@ -673,7 +673,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="keyword">auto</span> dec_wei_layer_reorder_pd = <a class="code" href="structdnnl_1_1reorder_1_1primitive__desc.html">reorder::primitive_desc</a>(</div>
 <div class="line">            user_dec_wei_layer_memory, dec_wei_layer_memory, attr);</div>
 <div class="line">    <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(dec_wei_layer_reorder_pd)</div>
-<div class="line">            .<a class="code" href="structdnnl_1_1reorder.html#a0d551b51dd0b727253be8c88bec06a08">execute</a>(s, user_dec_wei_layer_memory, dec_wei_layer_memory);</div>
+<div class="line">            .<a class="code" href="structdnnl_1_1reorder.html#a573f94090cedc71fea0091b64b1bd79a">execute</a>(s, user_dec_wei_layer_memory, dec_wei_layer_memory);</div>
 <div class="line">    <span class="comment">//[dec reorder]</span></div>
 <div class="line"></div>
 <div class="line">    <span class="keyword">auto</span> dec_wei_iter_memory</div>
@@ -681,7 +681,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="keyword">auto</span> dec_wei_iter_reorder_pd = <a class="code" href="structdnnl_1_1reorder_1_1primitive__desc.html">reorder::primitive_desc</a>(</div>
 <div class="line">            user_dec_wei_iter_memory, dec_wei_iter_memory, attr);</div>
 <div class="line">    <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(dec_wei_iter_reorder_pd)</div>
-<div class="line">            .<a class="code" href="structdnnl_1_1reorder.html#a0d551b51dd0b727253be8c88bec06a08">execute</a>(s, user_dec_wei_iter_memory, dec_wei_iter_memory);</div>
+<div class="line">            .<a class="code" href="structdnnl_1_1reorder.html#a573f94090cedc71fea0091b64b1bd79a">execute</a>(s, user_dec_wei_iter_memory, dec_wei_iter_memory);</div>
 <div class="line"></div>
 <div class="line">    decoder_net.push_back(<a class="code" href="structdnnl_1_1lstm__forward.html">lstm_forward</a>(dec_ctx_prim_desc));</div>
 <div class="line">    decoder_net_args.push_back({{<a class="code" href="group__dnnl__api__primitives__common.html#gab91ce4d04cf4e98e3a407daa0676764f">DNNL_ARG_SRC_LAYER</a>, dec_src_layer_memory},</div>

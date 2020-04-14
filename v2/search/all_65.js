@@ -39,5 +39,5 @@ var searchData=
   ['error',['error',['../structdnnl_1_1error.html',1,'dnnl']]],
   ['error',['error',['../structdnnl_1_1error.html#a67984998eff9083077daf1cd1a1acb01',1,'dnnl::error']]],
   ['exec_5farg_5fmd',['exec_arg_md',['../group__dnnl__api__primitives__common.html#gga94efdd650364f4d9776cfb9b711cbdc1ad531896cf1d66c4832790f428623f164',1,'dnnl']]],
-  ['execute',['execute',['../structdnnl_1_1primitive.html#a4c454f3d9315ea0dc6635f26eab9a950',1,'dnnl::primitive::execute()'],['../structdnnl_1_1reorder.html#a0d551b51dd0b727253be8c88bec06a08',1,'dnnl::reorder::execute()']]]
+  ['execute',['execute',['../structdnnl_1_1primitive.html#a65b6bd202ba2cb37ed8504da346dda2e',1,'dnnl::primitive::execute()'],['../structdnnl_1_1reorder.html#a573f94090cedc71fea0091b64b1bd79a',1,'dnnl::reorder::execute()']]]
 ];

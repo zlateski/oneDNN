@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>DNNL: Convolution</title>
+<title>oneDNN: Convolution</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,8 +24,8 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-   <div id="projectname">Deep Neural Network Library (DNNL)
-   &#160;<span id="projectnumber">1.91.0</span>
+   <div id="projectname">oneAPI Deep Neural Network Library (oneDNN)
+   &#160;<span id="projectnumber">1.93.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
 </div>
@@ -102,7 +102,7 @@ Back, bottom, and right </td><td align="left">\(PD_R\) </td><td align="left">\(P
 <tr>
 <td>Dilation </td><td align="left">\(DD\) </td><td align="left">\(DH\) </td><td align="left">\(DW\) </td><td align="left">Dilation starts with 0, so non-dilated convolution should have the dilation parameters equal <code>0</code> </td></tr>
 </table>
-<p>The following formulas show how DNNL computes convolutions. They are broken down into several types to simplify the exposition, but in reality the convolution types can be combined.</p>
+<p>The following formulas show how oneDNN computes convolutions. They are broken down into several types to simplify the exposition, but in reality the convolution types can be combined.</p>
 <p>To further simplify the formulas, we assume that \(\src(n, ic, ih, iw) = 0\) if \(ih &lt; 0\), or \(ih \geq IH\), or \(iw &lt; 0\), or \(iw \geq IW\).</p>
 <h3>Forward</h3>
 <h4>Regular Convolution</h4>
@@ -115,7 +115,7 @@ Back, bottom, and right </td><td align="left">\(PD_R\) </td><td align="left">\(P
 <li>\(OW = \left\lfloor{\frac{IW - KW + PW_L + PW_R}{SW}} \right\rfloor + 1.\)</li>
 </ul>
 <h4>Convolution with Groups</h4>
-<p>In the API, DNNL adds a separate groups dimension to memory objects representing \(\weights\) tensors and represents weights as \(G \times OC_G \times IC_G \times KH \times KW \) 5D tensors for 2D convolutions with groups.</p>
+<p>In the API, oneDNN adds a separate groups dimension to memory objects representing \(\weights\) tensors and represents weights as \(G \times OC_G \times IC_G \times KH \times KW \) 5D tensors for 2D convolutions with groups.</p>
 <p class="formulaDsp">
 \[ \dst(n, g \cdot OC_G + oc_g, oh, ow) = \bias(g \cdot OC_G + oc_g) + \\ + \sum_{ic_g=0}^{IC_G-1}\sum_{kh=0}^{KH-1}\sum_{kw=0}^{KW-1} \src(n, g \cdot IC_G + ic_g, oh + kh - PH_L, ow + kw - PW_L) \cdot \weights(g, oc_g, ic_g, kh, kw), \]
 </p>
@@ -135,7 +135,7 @@ Back, bottom, and right </td><td align="left">\(PD_R\) </td><td align="left">\(P
 <li>\(OH = \left\lfloor{\frac{IH - DKH + PH_L + PH_R}{SH}} \right\rfloor + 1,\) where \(DKH = 1 + (KH - 1) \cdot (DH + 1)\), and</li>
 <li>\(OW = \left\lfloor{\frac{IW - DKW + PW_L + PW_R}{SW}} \right\rfloor + 1,\) where \(DKW = 1 + (KW - 1) \cdot (DW + 1)\).</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>In DNNL dilation parameter equals 0 corresponds to non-dilated, i.e. regular, convolution. Other libraries might use another convention, where dilation parameter equals 1 corresponds to regular convolution.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>In oneDNN dilation parameter equals 0 corresponds to non-dilated, i.e. regular, convolution. Other libraries might use another convention, where dilation parameter equals 1 corresponds to regular convolution.</dd></dl>
 <h4>Deconvolution (Transposed Convolution)</h4>
 <p>Deconvolutions (also called fractionally strided convolutions or transposed convolutions) work by swapping the forward and backward passes of a convolution. One way to put it is to note that the weights define a convolution, but whether it is a direct convolution or a transposed convolution is determined by how the forward and backward passes are computed.</p>
 <h4>Difference Between Forward Training and Forward Inference</h4>
@@ -202,7 +202,7 @@ Back, bottom, and right </td><td align="left">\(PD_R\) </td><td align="left">\(P
 <tr>
 <td align="left">3D </td><td align="left">\(N \times C \times D \times H \times W\) </td><td align="left">\([G \times ] OC \times IC \times KD \times KH \times KW\) </td></tr>
 </table>
-<p>Physical format of data and weights memory objects is critical for convolution primitive performance. In the DNNL programming model, convolution is one of the few primitives that support the placeholder memory format tag <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> (shortened to <code>any</code> from now on) and can define data and weight memory objects format based on the primitive parameters. When using <code>any</code> it is necessary to first create a convolution primitive descriptor and then query it for the actual data and weight memory objects formats.</p>
+<p>Physical format of data and weights memory objects is critical for convolution primitive performance. In the oneDNN programming model, convolution is one of the few primitives that support the placeholder memory format tag <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> (shortened to <code>any</code> from now on) and can define data and weight memory objects format based on the primitive parameters. When using <code>any</code> it is necessary to first create a convolution primitive descriptor and then query it for the actual data and weight memory objects formats.</p>
 <p>While convolution primitives can be created with memory formats specified explicitly, the performance is likely to be suboptimal.</p>
 <p>The table below shows the combinations for which <b>plain</b> memory formats the convolution primitive is optimized for.</p>
 <table class="doxtable">
@@ -235,6 +235,7 @@ Back, bottom, and right </td><td align="left">\(PD_R\) </td><td align="left">\(P
 <tr>
 <td align="left">forward </td><td align="left">post-op </td><td align="left"><a class="el" href="structdnnl_1_1post__ops.html#a078ab8ec15423d2b3d26f3619a78ca38">sum</a> </td><td align="left">Adds the operation result to the destination tensor instead of overwriting it </td><td align="left"></td></tr>
 </table>
+<p>To facilitate dynamic quantization, the primitive supports run-time output scales. That means a user could configure attributes with output scales set to the <a class="el" href="group__dnnl__api__memory.html#gab16365c11b4dc88fbb453edb51f1979f" title="A wildcard value for floating point values that are unknown at a primitive creation time...">DNNL_RUNTIME_F32_VAL</a> wildcard value instead of the actual scales, if the scales are not known at the primitive descriptor creation stage. In this case, the user must provide the scales as an additional input memory object with argument <code>DNNL_ARG_ATTR_OUTPUT_SCALES</code> during the execution stage.</p>
 <dl class="section note"><dt>Note</dt><dd>The library doesn't prevent using post-ops in training, but note that not all post-ops are feasible for training usage. For instance, using ReLU with non-zero negative slope parameter as a post-op would not produce an additional output <code>workspace</code> that is required to compute backward propagation correctly. Hence, in this particular case one should use separate convolution and eltwise primitives for training.</dd></dl>
 <p>The following post-ops chaining is supported by the library:</p>
 <table class="doxtable">
@@ -280,14 +281,14 @@ Back, bottom, and right </td><td align="left">\(PD_R\) </td><td align="left">\(P
 \[ \dst(\overline{x}) = \beta \cdot \dst(\overline{x}) + \gamma \cdot ReLU \left( \alpha \cdot conv(\src, \weights), \eta \right) \]
 </p>
 <h2>Algorithms</h2>
-<p>DNNL implements convolution primitives using several different algorithms:</p>
+<p>oneDNN implements convolution primitives using several different algorithms:</p>
 <ul>
 <li><em>Direct</em>. The convolution operation is computed directly using SIMD instructions. This is the algorithm used for the most shapes and supports int8, f32 and bf16 data types.</li>
 <li><em>Winograd</em>. This algorithm reduces computational complexity of convolution at the expense of accuracy loss and additional memory operations. The implementation is based on the <a href="https://arxiv.org/abs/1509.09308">Fast Algorithms for Convolutional Neural Networks by A. Lavin and S. Gray</a>. The Winograd algorithm often results in the best performance, but it is applicable only to particular shapes. Moreover, Winograd only supports int8 and f32 data types.</li>
 <li><em>Implicit GEMM</em>. The convolution operation is reinterpreted in terms of matrix-matrix multiplication by rearranging the source data into a <a class="el" href="dev_guide_attributes_scratchpad.html">scratchpad memory</a>. This is a fallback algorithm that is dispatched automatically when other implementations are not available. GEMM convolution supports the int8, f32, and bf16 data types.</li>
 </ul>
 <h4>Direct Algorithm</h4>
-<p>DNNL supports the direct convolution algorithm on all supported platforms for the following conditions:</p>
+<p>oneDNN supports the direct convolution algorithm on all supported platforms for the following conditions:</p>
 <ul>
 <li>Data and weights memory formats are defined by the convolution primitive (user passes <code>any</code>).</li>
 <li>The number of channels per group is a multiple of SIMD width for grouped convolutions.</li>
@@ -296,7 +297,7 @@ Back, bottom, and right </td><td align="left">\(PD_R\) </td><td align="left">\(P
 </ul>
 <p>In case any of these constraints are not met, the implementation will silently fall back to an explicit GEMM algorithm.</p>
 <h4>Winograd Convolution</h4>
-<p>DNNL supports the Winograd convolution algorithm on systems with Intel(R) AVX-512 support and above under the following conditions:</p>
+<p>oneDNN supports the Winograd convolution algorithm on systems with Intel(R) Advanced Vector Extensions 512 (Intel(R) AVX-512) support and Intel Deep Learning Boost (Intel DL Boost) under the following conditions:</p>
 <ul>
 <li>Data and weights memory formats are defined by the convolution primitive (user passes <code>any</code> as the data format).</li>
 <li>The spatial domain is two-dimensional.</li>
@@ -306,12 +307,12 @@ Back, bottom, and right </td><td align="left">\(PD_R\) </td><td align="left">\(P
 <p>In case any of these constraints is not met, the implementation will silently fall back to the direct algorithm.</p>
 <p>The Winograd convolution algorithm implementation additionally chooses tile size based on the problem shape and <a class="el" href="group__dnnl__api__primitives__common.html#gae3c1f22ae55645782923fbfd8b07d0c4">propagation kind</a>:</p>
 <ul>
-<li>For <code>forward_inference</code> DNNL supports \(F(2 \times 2, 3 \times 3)\) or \(F(4 \times 4, 3 \times 3)\)</li>
-<li>DNNL supports only \(F(4 \times 4, 3 \times 3)\) Winograd for all the training propagation kinds.</li>
+<li>For <code>forward_inference</code> oneDNN supports \(F(2 \times 2, 3 \times 3)\) or \(F(4 \times 4, 3 \times 3)\)</li>
+<li>oneDNN supports only \(F(4 \times 4, 3 \times 3)\) Winograd for all the training propagation kinds.</li>
 </ul>
 <p>The following side effects should be weighed against the (potential) performance boost achieved from using the Winograd algorithm:</p>
 <ul>
-<li><em>Memory consumption</em>. Winograd implementation in DNNL requires additional scratchpad memory to store intermediate results. As more convolutions using Winograd are added to the topology, the amount of memory required can grow significantly. This growth can be controlled if the scratchpad memory can be reused across multiple primitives. See <a class="el" href="dev_guide_attributes_scratchpad.html">Primitive Attributes: Scratchpad</a> for more details.</li>
+<li><em>Memory consumption</em>. Winograd implementation in oneDNN requires additional scratchpad memory to store intermediate results. As more convolutions using Winograd are added to the topology, the amount of memory required can grow significantly. This growth can be controlled if the scratchpad memory can be reused across multiple primitives. See <a class="el" href="dev_guide_attributes_scratchpad.html">Primitive Attributes: Scratchpad</a> for more details.</li>
 <li><em>Accuracy</em>. In some cases Winograd convolution produce results that are significantly less accurate than results from the direct convolution.</li>
 </ul>
 <p>Create a Winograd convolution by simply creating a convolution descriptor (step 6 in <a class="el" href="cnn_inference_f32_cpp.html">simple network example</a> specifying the Winograd algorithm. The rest of the steps are exactly the same.</p>
@@ -320,13 +321,14 @@ Back, bottom, and right </td><td align="left">\(PD_R\) </td><td align="left">\(P
 <div class="line">    conv1_src_md, conv1_weights_md, conv1_bias_md, conv1_dst_md,</div>
 <div class="line">    conv1_strides, conv1_padding_l, conv1_padding_r);</div>
 </div><!-- fragment --><h4>Automatic Algorithm Selection</h4>
-<p>DNNL supports <code><a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640acfdececd63a8bc0cfe1021ad614e2ded" title="Convolution algorithm that is chosen to be either direct or Winograd automatically. ">dnnl::algorithm::convolution_auto</a></code> algorithm that instructs the library to automatically select the <em>best</em> algorithm based on the heuristics that take into account tensor shapes and the number of logical processors available. (For automatic selection to work as intended, use the same thread affinity settings when creating the convolution as when executing the convolution.)</p>
+<p>oneDNN supports <code><a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640acfdececd63a8bc0cfe1021ad614e2ded" title="Convolution algorithm that is chosen to be either direct or Winograd automatically. ">dnnl::algorithm::convolution_auto</a></code> algorithm that instructs the library to automatically select the <em>best</em> algorithm based on the heuristics that take into account tensor shapes and the number of logical processors available. (For automatic selection to work as intended, use the same thread affinity settings when creating the convolution as when executing the convolution.)</p>
 <p><a class="anchor" id="dg_conv_impl_limits"></a></p>
 <h2>Implementation Limitations</h2>
 <ol type="1">
 <li>Refer to <a class="el" href="dev_guide_data_types.html">Data Types</a> for limitations related to data types support.</li>
 <li><b>CPU</b><ul>
-<li>Winograd are implemented only for Intel(R) AVX-512 or Intel(R) AVX512-DL Boost instruction sets</li>
+<li>Winograd are implemented only for processors with Intel AVX-512 and Intel DL Boost instruction sets</li>
+<li>Run-time output scales are not supported</li>
 </ul>
 </li>
 <li><b>GPU</b><ul>

@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>DNNL: Bfloat16 Training</title>
+<title>oneDNN: Bfloat16 Training</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,8 +24,8 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-   <div id="projectname">Deep Neural Network Library (DNNL)
-   &#160;<span id="projectnumber">1.91.0</span>
+   <div id="projectname">oneAPI Deep Neural Network Library (oneDNN)
+   &#160;<span id="projectnumber">1.93.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
 </div>
@@ -89,10 +89,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Diagram depicting the bit-wise layout of f32, bf16, and f16 floating point data types.</div></div>
 <p> More details of the bfloat16 data type can be found at <a href="https://software.intel.com/sites/default/files/managed/40/8b/bf16-hardware-numerics-definition-white-paper.pdf">Intel's site</a> and <a href="https://cloud.google.com/tpu/docs/bfloat16">TensorFlow's documentation</a>.</p>
 <p>One of the advantages of using <code>bf16</code> versus <code>f32</code> is reduced memory footprint and, hence, increased memory access throughput. Additionally, when executing on hardware that supports <a href="https://software.intel.com/sites/default/files/managed/c5/15/architecture-instruction-set-extensions-programming-reference.pdf">Intel DL Boost bfloat16 instructions</a>, <code>bf16</code> may offer an increase in computational throughput.</p>
-<h2>DNNL Support for bfloat16 Primitives</h2>
+<h2>bfloat16 Support</h2>
 <p>Most of the primitives have been updated to support the <code>bf16</code> data type for source and weights tensors. Destination tensors can be specified to have either the <code>bf16</code> or <code>f32</code> data type. The latter is intended for cases in which the output is to be fed to operations that do not support bfloat16 or require better precision.</p>
-<h2>Bfloat16 Workflow</h2>
-<p>The main difference between implementing training with the <code>f32</code> data type and with the <code>bf16</code> data type is the way the weights updates are treated. With the <code>f32</code> data type, the weights gradients have the same data type as the weights themselves. This is not necessarily the case with the <code>bf16</code> data type as DNNL allows some flexibility here. For example, one could maintain a master copy of all the weights, computing weights gradients in <code>f32</code> and converting the result to <code>bf16</code> afterwards.</p>
+<h2>bfloat16 Workflow</h2>
+<p>The main difference between implementing training with the <code>f32</code> data type and with the <code>bf16</code> data type is the way the weights updates are treated. With the <code>f32</code> data type, the weights gradients have the same data type as the weights themselves. This is not necessarily the case with the <code>bf16</code> data type as oneDNN allows some flexibility here. For example, one could maintain a master copy of all the weights, computing weights gradients in <code>f32</code> and converting the result to <code>bf16</code> afterwards.</p>
 <h2>Example</h2>
 <p>The <a class="el" href="cpu_cnn_training_bf16_cpp.html">CNN bf16 training example</a> shows how to use <code>bf16</code> to train CNNs. </p>
 </div></div><!-- contents -->

@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>DNNL: dnnl::handle&lt; T, traits &gt; Struct Template Reference</title>
+<title>oneDNN: dnnl::handle&lt; T, traits &gt; Struct Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,8 +24,8 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-   <div id="projectname">Deep Neural Network Library (DNNL)
-   &#160;<span id="projectnumber">1.91.0</span>
+   <div id="projectname">oneAPI Deep Neural Network Library (oneDNN)
+   &#160;<span id="projectnumber">1.93.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
 </div>
@@ -95,7 +95,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>DNNL C API handle wrapper class.  
+<p>oneDNN C API handle wrapper class.  
  <a href="structdnnl_1_1handle.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="dnnl_8hpp_source.html">dnnl.hpp</a>&gt;</code></p>
@@ -147,10 +147,10 @@ Public Member Functions</h2></td></tr>
 <div class="textblock"><h3>template&lt;typename T, typename traits = handle_traits&lt;T&gt;&gt;<br/>
 struct dnnl::handle&lt; T, traits &gt;</h3>
 
-<p>DNNL C API handle wrapper class. </p>
-<p>This class is used as the base class for primitive (<a class="el" href="structdnnl_1_1primitive.html" title="Base class for all computational primitives. ">dnnl::primitive</a>), engine (<a class="el" href="structdnnl_1_1engine.html" title="An execution engine. ">dnnl::engine</a>), and stream (<a class="el" href="structdnnl_1_1stream.html" title="An execution stream. ">dnnl::stream</a>) classes, as well as others. An object of the <a class="el" href="structdnnl_1_1handle.html" title="DNNL C API handle wrapper class. ">dnnl::handle</a> class can be passed by value.</p>
+<p>oneDNN C API handle wrapper class. </p>
+<p>This class is used as the base class for primitive (<a class="el" href="structdnnl_1_1primitive.html" title="Base class for all computational primitives. ">dnnl::primitive</a>), engine (<a class="el" href="structdnnl_1_1engine.html" title="An execution engine. ">dnnl::engine</a>), and stream (<a class="el" href="structdnnl_1_1stream.html" title="An execution stream. ">dnnl::stream</a>) classes, as well as others. An object of the <a class="el" href="structdnnl_1_1handle.html" title="oneDNN C API handle wrapper class. ">dnnl::handle</a> class can be passed by value.</p>
 <p>A handle can be weak, in which case it follows std::weak_ptr semantics. Otherwise, it follows <code>std::shared_ptr</code> semantics.</p>
-<dl class="section note"><dt>Note</dt><dd>The implementation stores DNNL C API handles in a <code>std::shared_ptr</code> with deleter set to a dummy function in the weak mode. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The implementation stores oneDNN C API handles in a <code>std::shared_ptr</code> with deleter set to a dummy function in the weak mode. </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a5c631f7e5e4c92a13edb8e3422d3a973"></a>
 <div class="memitem">

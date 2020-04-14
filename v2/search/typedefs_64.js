@@ -14,5 +14,6 @@ var searchData=
   ['dnnl_5fprimitive_5fdesc_5fiterator_5ft',['dnnl_primitive_desc_iterator_t',['../group__dnnl__api__primitives__common.html#ga2a9b0fa6a3a0f2b7713c943ba18b8615',1,'dnnl_types.h']]],
   ['dnnl_5fprimitive_5fdesc_5ft',['dnnl_primitive_desc_t',['../group__dnnl__api__primitives__common.html#gaabde3e27edf071b62b39f47bace7efd6',1,'dnnl_types.h']]],
   ['dnnl_5fprimitive_5ft',['dnnl_primitive_t',['../group__dnnl__api__primitives__common.html#ga226afc85f63f0d1029d4ea90a60cae47',1,'dnnl_types.h']]],
+  ['dnnl_5fstream_5fattr_5ft',['dnnl_stream_attr_t',['../group__dnnl__api__stream.html#ga2c94efc726062d353677595e02854d82',1,'dnnl_types.h']]],
   ['dnnl_5fstream_5ft',['dnnl_stream_t',['../group__dnnl__api__stream.html#ga735eb19cfd205c108c468b5657de4eca',1,'dnnl_types.h']]]
 ];

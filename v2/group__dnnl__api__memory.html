@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>DNNL: Memory</title>
+<title>oneDNN: Memory</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,8 +24,8 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-   <div id="projectname">Deep Neural Network Library (DNNL)
-   &#160;<span id="projectnumber">1.91.0</span>
+   <div id="projectname">oneAPI Deep Neural Network Library (oneDNN)
+   &#160;<span id="projectnumber">1.93.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
 </div>
@@ -82,7 +82,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">Memory<div class="ingroups"><a class="el" href="group__dnnl__api.html">DNNL API</a></div></div>  </div>
+<div class="title">Memory<div class="ingroups"><a class="el" href="group__dnnl__api.html">oneDNN API</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -204,10 +204,10 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga583a4a06428de7d6c4251313e57ad814"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the engine of a memory object.  <a href="#ga583a4a06428de7d6c4251313e57ad814">More...</a><br/></td></tr>
 <tr class="separator:ga583a4a06428de7d6c4251313e57ad814"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac9006cdf6816b8bef7be3455ab0ceb49"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__memory.html#gac9006cdf6816b8bef7be3455ab0ceb49">dnnl_memory_map_data</a> (<a class="el" href="group__dnnl__api__memory.html#ga1a1df843f4d0f72cde135a9a6adf20f3">const_dnnl_memory_t</a> memory, void **mapped_ptr)</td></tr>
-<tr class="memdesc:gac9006cdf6816b8bef7be3455ab0ceb49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps a memory object and returns a pointer to a host-side buffer with a copy of its contents.  <a href="#gac9006cdf6816b8bef7be3455ab0ceb49">More...</a><br/></td></tr>
+<tr class="memdesc:gac9006cdf6816b8bef7be3455ab0ceb49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps a memory object and returns a host-side pointer to a memory buffer with a copy of its contents.  <a href="#gac9006cdf6816b8bef7be3455ab0ceb49">More...</a><br/></td></tr>
 <tr class="separator:gac9006cdf6816b8bef7be3455ab0ceb49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga46dd4eb02eade91cadd0b9f85b4eccd4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__memory.html#ga46dd4eb02eade91cadd0b9f85b4eccd4">dnnl_memory_unmap_data</a> (<a class="el" href="group__dnnl__api__memory.html#ga1a1df843f4d0f72cde135a9a6adf20f3">const_dnnl_memory_t</a> memory, void *mapped_ptr)</td></tr>
-<tr class="memdesc:ga46dd4eb02eade91cadd0b9f85b4eccd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unmaps a memory object and writes back any changes to the previously mapped buffer.  <a href="#ga46dd4eb02eade91cadd0b9f85b4eccd4">More...</a><br/></td></tr>
+<tr class="memdesc:ga46dd4eb02eade91cadd0b9f85b4eccd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unmaps a memory object and writes back any changes made to the previously mapped memory buffer.  <a href="#ga46dd4eb02eade91cadd0b9f85b4eccd4">More...</a><br/></td></tr>
 <tr class="separator:ga46dd4eb02eade91cadd0b9f85b4eccd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga71efa7bd0ac194fdec98fb908b8ba9c5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__memory.html#ga71efa7bd0ac194fdec98fb908b8ba9c5">dnnl_memory_get_data_handle</a> (<a class="el" href="group__dnnl__api__memory.html#ga1a1df843f4d0f72cde135a9a6adf20f3">const_dnnl_memory_t</a> memory, void **handle)</td></tr>
 <tr class="memdesc:ga71efa7bd0ac194fdec98fb908b8ba9c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns memory object's data handle.  <a href="#ga71efa7bd0ac194fdec98fb908b8ba9c5">More...</a><br/></td></tr>
@@ -215,6 +215,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga6888f8c17f272d6729c9bc258ed41fcf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__memory.html#ga6888f8c17f272d6729c9bc258ed41fcf">dnnl_memory_set_data_handle</a> (<a class="el" href="group__dnnl__api__memory.html#ga2b79954bd7bb293e766a89189e8440fd">dnnl_memory_t</a> memory, void *handle)</td></tr>
 <tr class="memdesc:ga6888f8c17f272d6729c9bc258ed41fcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a memory object's data handle.  <a href="#ga6888f8c17f272d6729c9bc258ed41fcf">More...</a><br/></td></tr>
 <tr class="separator:ga6888f8c17f272d6729c9bc258ed41fcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga722a97a6fb834a4347deb3e70a240008"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__memory.html#ga722a97a6fb834a4347deb3e70a240008">dnnl_memory_set_data_handle_v2</a> (<a class="el" href="group__dnnl__api__memory.html#ga2b79954bd7bb293e766a89189e8440fd">dnnl_memory_t</a> memory, void *handle, <a class="el" href="group__dnnl__api__stream.html#ga735eb19cfd205c108c468b5657de4eca">dnnl_stream_t</a> stream)</td></tr>
+<tr class="memdesc:ga722a97a6fb834a4347deb3e70a240008"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a memory object's data handle.  <a href="#ga722a97a6fb834a4347deb3e70a240008">More...</a><br/></td></tr>
+<tr class="separator:ga722a97a6fb834a4347deb3e70a240008"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf0f56c1bdffa7889ee408445883cca16"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__memory.html#gaf0f56c1bdffa7889ee408445883cca16">dnnl_memory_get_ocl_mem_object</a> (<a class="el" href="group__dnnl__api__memory.html#ga1a1df843f4d0f72cde135a9a6adf20f3">const_dnnl_memory_t</a> memory, cl_mem *mem_object)</td></tr>
 <tr class="memdesc:gaf0f56c1bdffa7889ee408445883cca16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an OpenCL memory object associated with a memory object.  <a href="#gaf0f56c1bdffa7889ee408445883cca16">More...</a><br/></td></tr>
 <tr class="separator:gaf0f56c1bdffa7889ee408445883cca16"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -417,7 +420,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Memory format tag specification. </p>
-<p>DNNL formats describe physical data layout. The physical layout is described as a sequence of the dimensions as they are laid out in the memory (from the outer-most to the inner-most). Note that this order doesn't affect the logical order of the dimensions that is kept in the <code>dims</code> field of the <a class="el" href="structdnnl__memory__desc__t.html" title="Memory descriptor. ">dnnl_memory_desc_t</a> structure. The logical order of the dimensions is specified by the primitive that uses the tensor.</p>
+<p>oneDNN formats describe physical data layout. The physical layout is described as a sequence of the dimensions as they are laid out in the memory (from the outer-most to the inner-most). Note that this order doesn't affect the logical order of the dimensions that is kept in the <code>dims</code> field of the <a class="el" href="structdnnl__memory__desc__t.html" title="Memory descriptor. ">dnnl_memory_desc_t</a> structure. The logical order of the dimensions is specified by the primitive that uses the tensor.</p>
 <p>For example, CNN 5D tensor always has its logical dimensions in the order <code>(batch, channels, depth, height, width)</code>, while the physical layout might be <code>NCDHW</code> (corresponds to <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dae33b8c6790e5d37324f18a019658d464" title="5D CNN activations tensor, an alias to dnnl_abcde ">dnnl_ncdhw</a> format tag) or <code>NDHWC</code> (corresponds to <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091daa0d8b24eefd029e214080d3787114fc2" title="5D CNN activations tensor, an alias to dnnl_acdeb ">dnnl_ndhwc</a> format tag).</p>
 <div class="fragment"><div class="line"><span class="keywordtype">int</span> batch = 2, channels = 16, depth = 13, height = 13, width = 13;</div>
 <div class="line"></div>
@@ -434,7 +437,7 @@ Functions</h2></td></tr>
 </div><!-- fragment --><p>Memory format tags can be further divided into two categories:</p>
 <ul>
 <li>Domain-agnostic names, i.e. names the do not depend on the tensor usage in the specific primitive. These names use letters from <code>a</code> to <code>l</code> to denote logical dimension from 1 to 12, and form the order in which the dimensions are laid in memory. For instance, <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da1bd907fc29344dfe7ba88336960dcf53" title="plain 2D tensor ">dnnl_ab</a> is used to denote 2D tensor where the second logical dimension (aka <code>b</code>) is the innermost, i.e. has stride = 1, and the first logical dimension (<code>a</code>) laid out in memory with stride equal to the size of second dimension. On the other hand, <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da6a6dbc0b30468d92e32a9cb3f6615c43" title="permuted 2D tensor ">dnnl_ba</a> is just transposed version of the same tensor: the first dimension (<code>a</code>) becomes the innermost one.</li>
-<li>Domain-specific names, i.e. names that make sense only in the context of a certain domain, such as CNN. This names are just aliases to the corresponding domain-agnostic tags and used mostly for the convenience. For example, <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dac08a541001fe70289305a5fbde48906d" title="2D CNN activations tensor, an alias to dnnl_ab ">dnnl_nc</a> is used to denote 2D CNN activations tensor memory format, where channels are the innermost dimension and batch is an outermost one. Moreover, <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dac08a541001fe70289305a5fbde48906d" title="2D CNN activations tensor, an alias to dnnl_ab ">dnnl_nc</a> is just an alias to <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da1bd907fc29344dfe7ba88336960dcf53" title="plain 2D tensor ">dnnl_ab</a>, since for DNNL CNN primitives the logical dimensions of activations tensors come in order: batch, channels, spatial. In other words, batch corresponds to the first logical dimension (<code>a</code>), channels correspond to the second one (<code>b</code>).</li>
+<li>Domain-specific names, i.e. names that make sense only in the context of a certain domain, such as CNN. This names are just aliases to the corresponding domain-agnostic tags and used mostly for the convenience. For example, <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dac08a541001fe70289305a5fbde48906d" title="2D CNN activations tensor, an alias to dnnl_ab ">dnnl_nc</a> is used to denote 2D CNN activations tensor memory format, where channels are the innermost dimension and batch is an outermost one. Moreover, <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dac08a541001fe70289305a5fbde48906d" title="2D CNN activations tensor, an alias to dnnl_ab ">dnnl_nc</a> is just an alias to <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da1bd907fc29344dfe7ba88336960dcf53" title="plain 2D tensor ">dnnl_ab</a>, since for oneDNN CNN primitives the logical dimensions of activations tensors come in order: batch, channels, spatial. In other words, batch corresponds to the first logical dimension (<code>a</code>), channels correspond to the second one (<code>b</code>).</li>
 </ul>
 <p>The following domain-specific notation applies to memory format tags:</p>
 <ul>
@@ -514,6 +517,9 @@ Functions</h2></td></tr>
 <p>permuted 3D tensor </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga395e42b594683adb25ed2d842bb3091da2368e1a4ce9d9954fa10c242569eacb4"></a>dnnl_cdba</em>&nbsp;</td><td class="fielddoc">
+<p>permuted 4D tensor </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="gga395e42b594683adb25ed2d842bb3091dae6c549f1a265f8d61bffb24c24925a1d"></a>dnnl_dcab</em>&nbsp;</td><td class="fielddoc">
 <p>permuted 4D tensor </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga395e42b594683adb25ed2d842bb3091dae7dd2b81eb2b502efbf65c888665b358"></a>dnnl_cdeba</em>&nbsp;</td><td class="fielddoc">
@@ -666,6 +672,9 @@ Functions</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga395e42b594683adb25ed2d842bb3091da7a95a9ab4d0be153fe304d94a4f96138"></a>dnnl_goiw</em>&nbsp;</td><td class="fielddoc">
 <p>4D CNN weights tensor (incl. groups), an alias to <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da6e669cc61278663a5ddbd3d0b25c6c5c" title="plain 4D tensor ">dnnl_abcd</a> </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="gga395e42b594683adb25ed2d842bb3091da27409507462c2e1f45deb987623de29c"></a>dnnl_wigo</em>&nbsp;</td><td class="fielddoc">
+<p>4D CNN weights tensor (incl. groups), an alias to <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dae6c549f1a265f8d61bffb24c24925a1d" title="permuted 4D tensor ">dnnl_dcab</a> </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga395e42b594683adb25ed2d842bb3091daee332d306e012c0614dc32e0ed66072f"></a>dnnl_goihw</em>&nbsp;</td><td class="fielddoc">
 <p>5D CNN weights tensor (incl. groups), an alias to <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da30d5d3c9de2931f06d265af81787ada3" title="plain 5D tensor ">dnnl_abcde</a> </p>
@@ -1319,12 +1328,12 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Maps a memory object and returns a pointer to a host-side buffer with a copy of its contents. </p>
+<p>Maps a memory object and returns a host-side pointer to a memory buffer with a copy of its contents. </p>
 <p>Mapping enables explicit direct access to memory contents for the engines that do not support it implicitly.</p>
 <p>Mapping is an exclusive operation - a memory object cannot be used in other operations until this memory object is unmapped.</p>
 <dl class="section note"><dt>Note</dt><dd>Any primitives working with <code>memory</code> should be completed before the memory is mapped. Use dnnl_stream_wait to synchronize the corresponding execution stream.</dd>
 <dd>
-The <a class="el" href="group__dnnl__api__memory.html#gac9006cdf6816b8bef7be3455ab0ceb49" title="Maps a memory object and returns a pointer to a host-side buffer with a copy of its contents...">dnnl_memory_map_data()</a> and <a class="el" href="group__dnnl__api__memory.html#ga46dd4eb02eade91cadd0b9f85b4eccd4" title="Unmaps a memory object and writes back any changes to the previously mapped buffer. ">dnnl_memory_unmap_data()</a> functions are mainly provided for debug and testing purposes, and their performance may be suboptimal.</dd></dl>
+The <a class="el" href="group__dnnl__api__memory.html#gac9006cdf6816b8bef7be3455ab0ceb49" title="Maps a memory object and returns a host-side pointer to a memory buffer with a copy of its contents...">dnnl_memory_map_data()</a> and <a class="el" href="group__dnnl__api__memory.html#ga46dd4eb02eade91cadd0b9f85b4eccd4" title="Unmaps a memory object and writes back any changes made to the previously mapped memory buffer...">dnnl_memory_unmap_data()</a> functions are mainly provided for debug and testing purposes, and their performance may be suboptimal.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">memory</td><td>Memory object. </td></tr>
@@ -1360,12 +1369,13 @@ The <a class="el" href="group__dnnl__api__memory.html#gac9006cdf6816b8bef7be3455
       </table>
 </div><div class="memdoc">
 
-<p>Unmaps a memory object and writes back any changes to the previously mapped buffer. </p>
-<dl class="section note"><dt>Note</dt><dd>The <a class="el" href="group__dnnl__api__memory.html#gac9006cdf6816b8bef7be3455ab0ceb49" title="Maps a memory object and returns a pointer to a host-side buffer with a copy of its contents...">dnnl_memory_map_data()</a> and <a class="el" href="group__dnnl__api__memory.html#ga46dd4eb02eade91cadd0b9f85b4eccd4" title="Unmaps a memory object and writes back any changes to the previously mapped buffer. ">dnnl_memory_unmap_data()</a> functions are mainly provided for debug and testing purposes, and their performance may be suboptimal.</dd></dl>
+<p>Unmaps a memory object and writes back any changes made to the previously mapped memory buffer. </p>
+<p>The pointer to the mapped buffer must be obtained via the <a class="el" href="group__dnnl__api__memory.html#gac9006cdf6816b8bef7be3455ab0ceb49" title="Maps a memory object and returns a host-side pointer to a memory buffer with a copy of its contents...">dnnl_memory_map_data()</a> call.</p>
+<dl class="section note"><dt>Note</dt><dd>The <a class="el" href="group__dnnl__api__memory.html#gac9006cdf6816b8bef7be3455ab0ceb49" title="Maps a memory object and returns a host-side pointer to a memory buffer with a copy of its contents...">dnnl_memory_map_data()</a> and <a class="el" href="group__dnnl__api__memory.html#ga46dd4eb02eade91cadd0b9f85b4eccd4" title="Unmaps a memory object and writes back any changes made to the previously mapped memory buffer...">dnnl_memory_unmap_data()</a> functions are mainly provided for debug and testing purposes, and their performance may be suboptimal.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">memory</td><td>Memory object. </td></tr>
-    <tr><td class="paramname">mapped_ptr</td><td>Pointer to the mapped buffer that must have been obtained using the <a class="el" href="group__dnnl__api__memory.html#gac9006cdf6816b8bef7be3455ab0ceb49" title="Maps a memory object and returns a pointer to a host-side buffer with a copy of its contents...">dnnl_memory_map_data()</a> function. </td></tr>
+    <tr><td class="paramname">mapped_ptr</td><td>Pointer to the mapped buffer that must have been obtained using the <a class="el" href="group__dnnl__api__memory.html#gac9006cdf6816b8bef7be3455ab0ceb49" title="Maps a memory object and returns a host-side pointer to a memory buffer with a copy of its contents...">dnnl_memory_map_data()</a> function. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1435,20 +1445,64 @@ The <a class="el" href="group__dnnl__api__memory.html#gac9006cdf6816b8bef7be3455
 </div><div class="memdoc">
 
 <p>Sets a memory object's data handle. </p>
-<p>This function may write zeroes to the specified data <code>handle</code> if the memory object has padding to maintain data consistency.</p>
-<dl class="section note"><dt>Note</dt><dd>The padding is performed for memory objects created with blocked memory format tags like <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da9523ccda38e86a8f7f58f8f780ef6eac" title="4D tensor blocked by 2nd dimension with block size 8 ">dnnl_aBcd8b</a> when any of the dimensions is not a multiple of a corresponding block size. The padding is performed only for memory objects created with plain memory format tags like <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da83a751aedeb59613312339d0f8b90f54" title="4D CNN activations tensor, an alias to dnnl_abcd ">dnnl_nchw</a> or <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dae50c534446b3c18cc018b3946b3cebd7" title="4D CNN activations tensor, an alias to dnnl_acdb ">dnnl_nhwc</a> if requested explicitly. More information is available in <a class="el" href="dev_guide_understanding_memory_formats.html">Understanding Memory Formats</a>.</dd></dl>
-<p>The write can be time consuming and happens each time the function is called. Furthermore, it is performed using an internal service stream in a blocking manner.</p>
-<dl class="section warning"><dt>Warning</dt><dd>Even if the memory object is used to hold values that stay constant (e.g., pre-packed weights during inference), the function will still write zeroes to the padding area if it exists. Hence, the <code>handle</code> parameter cannot and does not have a const qualifier.</dd></dl>
+<p>See the description of <a class="el" href="group__dnnl__api__memory.html#ga722a97a6fb834a4347deb3e70a240008" title="Sets a memory object&#39;s data handle. ">dnnl_memory_set_data_handle_v2()</a> for more details.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">memory</td><td>Memory object. </td></tr>
-    <tr><td class="paramname">handle</td><td>Data handle. For the CPU engine, the data handle is a pointer to the actual data. For OpenCL it is a cl_mem. </td></tr>
+    <tr><td class="paramname">handle</td><td>Data handle. For the CPU engine, the data handle is a pointer to the actual data. For OpenCL it is a <code>cl_mem</code>. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__dnnl__api__utils.html#ggad24f9ded06e34d3ee71e7fc4b408d57aaa31395e9dccc103cf166cf7b38fc5b9c" title="The operation was successful. ">dnnl_success</a> on success and a status describing the error otherwise. </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="cpu_cnn_training_f32_8c-example.html#a59">cpu_cnn_training_f32.c</a>.</dd>
 </dl>
+</div>
+</div>
+<a class="anchor" id="ga722a97a6fb834a4347deb3e70a240008"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API dnnl_memory_set_data_handle_v2 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__dnnl__api__memory.html#ga2b79954bd7bb293e766a89189e8440fd">dnnl_memory_t</a>&#160;</td>
+          <td class="paramname"><em>memory</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__dnnl__api__stream.html#ga735eb19cfd205c108c468b5657de4eca">dnnl_stream_t</a>&#160;</td>
+          <td class="paramname"><em>stream</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets a memory object's data handle. </p>
+<p>This function may write zero values to the memory specified by the <code>handle</code> if the memory object has a zero padding area. This may be time consuming and happens each time this function is called. The operation is always blocking and the stream parameter is a hint.</p>
+<dl class="section note"><dt>Note</dt><dd>The zero padding is required by memory objects created with blocked memory format tags like <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da9523ccda38e86a8f7f58f8f780ef6eac" title="4D tensor blocked by 2nd dimension with block size 8 ">dnnl_aBcd8b</a> when any of the dimensions is not a multiple of the corresponding block size. For "plain" formats like <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da83a751aedeb59613312339d0f8b90f54" title="4D CNN activations tensor, an alias to dnnl_abcd ">dnnl_nchw</a> or <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dae50c534446b3c18cc018b3946b3cebd7" title="4D CNN activations tensor, an alias to dnnl_acdb ">dnnl_nhwc</a> zero padding area needs to be set up explicitly when creating the corresponding memory descriptors. See <a class="el" href="dev_guide_understanding_memory_formats.html">Understanding Memory Formats</a> for more details.</dd>
+<dd>
+Even when the memory object is used to hold values that stay constant during the execution of the program (pre-packed weights during inference, for example), the function will still write zeroes to the padding area if it exists. Hence, the <code>handle</code> parameter cannot and does not have a const qualifier.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">memory</td><td>Memory object. </td></tr>
+    <tr><td class="paramname">handle</td><td>Data handle. For the CPU engine, the data handle is a pointer to the actual data. For OpenCL it is a <code>cl_mem</code>. </td></tr>
+    <tr><td class="paramname">stream</td><td>Stream to use to execute padding in. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__dnnl__api__utils.html#ggad24f9ded06e34d3ee71e7fc4b408d57aaa31395e9dccc103cf166cf7b38fc5b9c" title="The operation was successful. ">dnnl_success</a> on success and a status describing the error otherwise. </dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="gaf0f56c1bdffa7889ee408445883cca16"></a>

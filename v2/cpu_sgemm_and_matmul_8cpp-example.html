@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>DNNL: cpu_sgemm_and_matmul.cpp</title>
+<title>oneDNN: cpu_sgemm_and_matmul.cpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,8 +24,8 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-   <div id="projectname">Deep Neural Network Library (DNNL)
-   &#160;<span id="projectnumber">1.91.0</span>
+   <div id="projectname">oneAPI Deep Neural Network Library (oneDNN)
+   &#160;<span id="projectnumber">1.93.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
 </div>
@@ -212,17 +212,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    dims a_strides = tolower(transA) == <span class="charliteral">&#39;n&#39;</span> ? dims {lda, 1} : dims {1, lda};</div>
 <div class="line">    dims b_strides = tolower(transB) == <span class="charliteral">&#39;n&#39;</span> ? dims {ldb, 1} : dims {1, ldb};</div>
 <div class="line"></div>
-<div class="line">    <span class="comment">// Wrap raw pointers into DNNL memories (with proper shapes)</span></div>
+<div class="line">    <span class="comment">// Wrap raw pointers into oneDNN memories (with proper shapes)</span></div>
 <div class="line">    <a name="_a15"></a><a class="code" href="structdnnl_1_1memory.html">memory</a> A_m({{M, K}, <a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e">memory::data_type::f32</a>, a_strides}, eng, (<span class="keywordtype">void</span> *)A);</div>
 <div class="line">    <a class="code" href="structdnnl_1_1memory.html">memory</a> B_m({{K, N}, <a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e">memory::data_type::f32</a>, b_strides}, eng, (<span class="keywordtype">void</span> *)B);</div>
 <div class="line">    <a class="code" href="structdnnl_1_1memory.html">memory</a> C_m({{M, N}, <a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e">memory::data_type::f32</a>, {ldc, 1}}, eng, (<span class="keywordtype">void</span> *)C);</div>
 <div class="line"></div>
-<div class="line">    <span class="comment">// Prepare DNNL memory for alpha</span></div>
+<div class="line">    <span class="comment">// Prepare oneDNN memory for alpha</span></div>
 <div class="line">    <a class="code" href="structdnnl_1_1memory.html">memory</a> alpha_m({{1}, <a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e">memory::data_type::f32</a>, {1}}, eng, &amp;alpha);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Execute the MatMul primitive</span></div>
 <div class="line">    <a name="_a16"></a><a class="code" href="structdnnl_1_1stream.html">stream</a> s(eng);</div>
-<div class="line">    matmul_p.<a name="a17"></a><a class="code" href="structdnnl_1_1primitive.html#a4c454f3d9315ea0dc6635f26eab9a950">execute</a>(s,</div>
+<div class="line">    matmul_p.<a name="a17"></a><a class="code" href="structdnnl_1_1primitive.html#a65b6bd202ba2cb37ed8504da346dda2e">execute</a>(s,</div>
 <div class="line">            {{<a name="a18"></a><a class="code" href="group__dnnl__api__primitives__common.html#gac37ad67b48edeb9e742af0e50b70fe09">DNNL_ARG_SRC</a>, A_m}, {<a name="a19"></a><a class="code" href="group__dnnl__api__primitives__common.html#gaf279f28c59a807e71a70c719db56c5b3">DNNL_ARG_WEIGHTS</a>, B_m}, {<a name="a20"></a><a class="code" href="group__dnnl__api__primitives__common.html#ga3ca217e4a06d42a0ede3c018383c388f">DNNL_ARG_DST</a>, C_m},</div>
 <div class="line">                    {<a name="a21"></a><a class="code" href="group__dnnl__api__primitives__common.html#ga0afb48b0c2b8f3ee30609aaa47aa29db">DNNL_ARG_ATTR_OUTPUT_SCALES</a>, alpha_m}});</div>
 <div class="line">    s.wait();</div>
@@ -259,7 +259,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <a class="code" href="structdnnl_1_1matmul_1_1primitive__desc.html">matmul::primitive_desc</a> matmul_pd(matmul_d, attr, eng);</div>
 <div class="line">    <a class="code" href="structdnnl_1_1matmul.html">matmul</a> matmul_p(matmul_pd);</div>
 <div class="line"></div>
-<div class="line">    <span class="comment">// Wrap raw pointers into DNNL memory objects</span></div>
+<div class="line">    <span class="comment">// Wrap raw pointers into oneDNN memory objects</span></div>
 <div class="line">    <a class="code" href="structdnnl_1_1memory.html">memory</a> A_m(a_md, eng, (<span class="keywordtype">void</span> *)A);</div>
 <div class="line">    <a class="code" href="structdnnl_1_1memory.html">memory</a> B_m(b_md, eng, (<span class="keywordtype">void</span> *)B);</div>
 <div class="line">    <a class="code" href="structdnnl_1_1memory.html">memory</a> C_m(c_md, eng, (<span class="keywordtype">void</span> *)C);</div>
@@ -271,7 +271,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="comment">// shapes of matrices A, B, and C -- they should exactly match</span></div>
 <div class="line">    <span class="comment">// the memory descriptors passed to MatMul operation descriptor.</span></div>
 <div class="line">    <a class="code" href="structdnnl_1_1stream.html">stream</a> s(eng);</div>
-<div class="line">    matmul_p.<a class="code" href="structdnnl_1_1primitive.html#a4c454f3d9315ea0dc6635f26eab9a950">execute</a>(s,</div>
+<div class="line">    matmul_p.<a class="code" href="structdnnl_1_1primitive.html#a65b6bd202ba2cb37ed8504da346dda2e">execute</a>(s,</div>
 <div class="line">            {{<a class="code" href="group__dnnl__api__primitives__common.html#gac37ad67b48edeb9e742af0e50b70fe09">DNNL_ARG_SRC</a>, A_m}, {<a class="code" href="group__dnnl__api__primitives__common.html#gaf279f28c59a807e71a70c719db56c5b3">DNNL_ARG_WEIGHTS</a>, B_m},</div>
 <div class="line">                    {<a class="code" href="group__dnnl__api__primitives__common.html#ga3ca217e4a06d42a0ede3c018383c388f">DNNL_ARG_DST</a>, C_m}});</div>
 <div class="line">    s.wait();</div>

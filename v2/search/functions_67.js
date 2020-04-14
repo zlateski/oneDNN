@@ -1,12 +1,15 @@
 var searchData=
 [
-  ['gemm_5fs8s8s32',['gemm_s8s8s32',['../group__dnnl__api__blas.html#ga6bb7da88545097f097bbcd5778787826',1,'dnnl']]],
-  ['gemm_5fu8s8s32',['gemm_u8s8s32',['../group__dnnl__api__blas.html#ga454c26361de7d3a29f6e23c641380fb0',1,'dnnl']]],
+  ['gemm_5fs8s8s32',['gemm_s8s8s32',['../group__dnnl__api__blas.html#ga6bb7da88545097f097bbcd5778787826',1,'dnnl::gemm_s8s8s32(char transa, char transb, char offsetc, dnnl_dim_t M, dnnl_dim_t N, dnnl_dim_t K, float alpha, const int8_t *A, dnnl_dim_t lda, int8_t ao, const int8_t *B, dnnl_dim_t ldb, int8_t bo, float beta, int32_t *C, dnnl_dim_t ldc, const int32_t *co)'],['../group__dnnl__api__blas.html#ga402a4c552248d8bc822db959746df280',1,'dnnl::gemm_s8s8s32(char transa, char transb, char offsetc, dnnl_dim_t M, dnnl_dim_t N, dnnl_dim_t K, float alpha, const int8_t *A, dnnl_dim_t lda, int8_t ao, const int8_t *B, dnnl_dim_t ldb, int8_t bo, float beta, int32_t *C, dnnl_dim_t ldc, const int32_t *co, dnnl::threadpool_iface *tp)']]],
+  ['gemm_5fu8s8s32',['gemm_u8s8s32',['../group__dnnl__api__blas.html#ga454c26361de7d3a29f6e23c641380fb0',1,'dnnl::gemm_u8s8s32(char transa, char transb, char offsetc, dnnl_dim_t M, dnnl_dim_t N, dnnl_dim_t K, float alpha, const uint8_t *A, dnnl_dim_t lda, uint8_t ao, const int8_t *B, dnnl_dim_t ldb, int8_t bo, float beta, int32_t *C, dnnl_dim_t ldc, const int32_t *co)'],['../group__dnnl__api__blas.html#ga18eb19e9b6e79eb0aff76d90b2f6dfef',1,'dnnl::gemm_u8s8s32(char transa, char transb, char offsetc, dnnl_dim_t M, dnnl_dim_t N, dnnl_dim_t K, float alpha, const uint8_t *A, dnnl_dim_t lda, uint8_t ao, const int8_t *B, dnnl_dim_t ldb, int8_t bo, float beta, int32_t *C, dnnl_dim_t ldc, const int32_t *co, dnnl::threadpool_iface *tp)']]],
   ['get',['get',['../structdnnl_1_1handle.html#affb19aaf768579eebdf885edbbef7d7a',1,'dnnl::handle']]],
   ['get_5fcount',['get_count',['../structdnnl_1_1engine.html#a35bcbdd6fa35663ca73e24d63c2f8ff4',1,'dnnl::engine']]],
   ['get_5fdst_5fengine',['get_dst_engine',['../structdnnl_1_1reorder_1_1primitive__desc.html#aeea13591e2dc943d337f9617fedec3ff',1,'dnnl::reorder::primitive_desc']]],
   ['get_5fengine',['get_engine',['../structdnnl_1_1primitive__desc__base.html#a3f3ea17a8e5767653732ebec37eff68f',1,'dnnl::primitive_desc_base']]],
+  ['get_5fflags',['get_flags',['../structdnnl_1_1threadpool__iface.html#af94fc0f16e47ca6a3646bfd3b3b1e3cb',1,'dnnl::threadpool_iface']]],
+  ['get_5fin_5fparallel',['get_in_parallel',['../structdnnl_1_1threadpool__iface.html#ac83748ff2dbb47f5381293d9fd62ab19',1,'dnnl::threadpool_iface']]],
   ['get_5fkind',['get_kind',['../group__dnnl__api__primitives__common.html#ga30c28d0cebe5b1d4758af2c24fafbdfb',1,'dnnl::primitive::get_kind()'],['../structdnnl_1_1engine.html#a6e9bb6ada8b2ccd815c42e3577b2f2b8',1,'dnnl::engine::get_kind()'],['../structdnnl_1_1primitive__desc__base.html#a622be560a40df3c657b18904f81f2a0a',1,'dnnl::primitive_desc_base::get_kind()']]],
+  ['get_5fnum_5fthreads',['get_num_threads',['../structdnnl_1_1threadpool__iface.html#aa9100d463b88df07e1901e383ebc1bb1',1,'dnnl::threadpool_iface']]],
   ['get_5focl_5fcommand_5fqueue',['get_ocl_command_queue',['../structdnnl_1_1stream.html#ad7583cd3c56f330f90e0e6b148a9e5c3',1,'dnnl::stream']]],
   ['get_5focl_5fcontext',['get_ocl_context',['../structdnnl_1_1engine.html#a739ba77b89cc3dc890819bc85d038198',1,'dnnl::engine']]],
   ['get_5focl_5fdevice',['get_ocl_device',['../structdnnl_1_1engine.html#a2f7013922cf742705ec04b425fa06a7f',1,'dnnl::engine']]],
@@ -25,6 +28,7 @@ var searchData=
   ['get_5fsycl_5fcontext',['get_sycl_context',['../structdnnl_1_1engine.html#a9def2954f609be6f6419afa72daf9190',1,'dnnl::engine']]],
   ['get_5fsycl_5fdevice',['get_sycl_device',['../structdnnl_1_1engine.html#ade7a188f8b05690085cb9e9a89fb1689',1,'dnnl::engine']]],
   ['get_5fsycl_5fqueue',['get_sycl_queue',['../structdnnl_1_1stream.html#af1972ee58c04883f8266ac2607aac990',1,'dnnl::stream']]],
+  ['get_5fthreadpool',['get_threadpool',['../structdnnl_1_1stream__attr.html#a9c1b4dff1eb60d35201148b38ed1001f',1,'dnnl::stream_attr']]],
   ['get_5fzero_5fpoints',['get_zero_points',['../structdnnl_1_1primitive__attr.html#a1eec7efe501d3f6571636d389a8c66fe',1,'dnnl::primitive_attr']]],
   ['gru_5fbackward',['gru_backward',['../structdnnl_1_1gru__backward.html#a8916d8de8e768a15255d94d69e9f0a68',1,'dnnl::gru_backward::gru_backward()=default'],['../structdnnl_1_1gru__backward.html#a8a341b3745ab0c27b1d48b88fa4ac1f6',1,'dnnl::gru_backward::gru_backward(const primitive_desc &amp;pd)']]],
   ['gru_5fforward',['gru_forward',['../structdnnl_1_1gru__forward.html#ac3bfe27a9088c8e2a27ad88c7929de38',1,'dnnl::gru_forward::gru_forward()=default'],['../structdnnl_1_1gru__forward.html#a120dbe542bd785423ac1dea0128764aa',1,'dnnl::gru_forward::gru_forward(const primitive_desc &amp;pd)']]]

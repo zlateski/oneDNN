@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>DNNL: DPC++ Unified Shared Memory Support</title>
+<title>oneDNN: DPC++ Unified Shared Memory Support</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,8 +24,8 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-   <div id="projectname">Deep Neural Network Library (DNNL)
-   &#160;<span id="projectnumber">1.91.0</span>
+   <div id="projectname">oneAPI Deep Neural Network Library (oneDNN)
+   &#160;<span id="projectnumber">1.93.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
 </div>
@@ -80,12 +80,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>Unified Shared Memory (USM) is a DPC++ capability that provides the ability to allocate and use memory in a uniform way on host and DPC++ devices.</p>
-<p>DNNL enables you to use two sets of interfaces with memory: SYCL buffers-based and USM-based. This is controlled by the special macros: <code>DNNL_USE_SYCL_BUFFERS</code> for SYCL buffers (which is the default) and <code>DNNL_USE_DPCPP_USM</code> for USM. The corresponding macro must be defined to enable SYCL buffers or USM interfaces.</p>
-<p>For example, to enable USM interfaces in DNNL, the user must pass the <code>DNNL_USE_DPCPP_USM</code> macro:</p>
+<p>oneDNN enables you to use two sets of interfaces with memory: SYCL buffers-based and USM-based. This is controlled by the special macros: <code>DNNL_USE_SYCL_BUFFERS</code> for SYCL buffers (which is the default) and <code>DNNL_USE_DPCPP_USM</code> for USM. The corresponding macro must be defined to enable SYCL buffers or USM interfaces.</p>
+<p>For example, to enable USM interfaces in oneDNN, the user must pass the <code>DNNL_USE_DPCPP_USM</code> macro:</p>
 <div class="fragment"><div class="line">${CXX} application.cpp -DDNNL_USE_DPCPP_USM ...</div>
-</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>SYCL buffers and USM interfaces cannot be used together in a single application. With the <code>DNNL_USE_SYCL_BUFFERS</code> macro defined, the library provides interfaces working with SYCL buffers only and DNNL memory objects are always constructed with SYCL buffers. With the <code>DNNL_USE_DPCPP_USM</code> macro defined, the library provides interfaces working with USM only and DNNL memory objects are always constructed with USM memory.</dd></dl>
+</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>SYCL buffers and USM interfaces cannot be used together in a single application. With the <code>DNNL_USE_SYCL_BUFFERS</code> macro defined, the library provides interfaces working with SYCL buffers only and oneDNN memory objects are always constructed with SYCL buffers. With the <code>DNNL_USE_DPCPP_USM</code> macro defined, the library provides interfaces working with USM only and oneDNN memory objects are always constructed with USM memory.</dd></dl>
 <h2>API</h2>
-<p>DNNL provides the following interfaces to work with USM memory:</p>
+<p>oneDNN provides the following interfaces to work with USM memory:</p>
 <ul>
 <li><p class="startli"><code>memory mem(md, eng);</code></p>
 <p class="startli">Constructs a memory object from an internally allocated USM memory using <code>cl::sycl::malloc_shared()</code>. The constructed object owns the allocated USM memory, which is deallocated on destruction of the object.</p>
@@ -102,18 +102,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </ul>
 <h2>Handling Dependencies with USM</h2>
 <p>SYCL queues from the SYCL 1.2.1 specification are inherently out-of-order. That means that the order of execution is defined by the dependencies between SYCL tasks. The runtime tracks dependencies based on accessors created for SYCL buffers. USM pointers cannot be used to create accessors and users must handle dependencies on their own using SYCL events.</p>
-<p>DNNL provides two mechanisms to handle dependencies when USM memory is used:</p>
+<p>oneDNN provides two mechanisms to handle dependencies when USM memory is used:</p>
 <ol type="1">
 <li><p class="startli"><code>primitive::execute_sycl()</code> interface</p>
 <p class="startli">This interface enables you to pass dependencies between primitives using SYCL events. In this case, the user is responsible for passing proper dependencies for every primitive execution.</p>
 </li>
-<li><p class="startli">In-order DNNL stream</p>
-<p class="startli">DNNL enables you to create in-order streams when submitted primitives are executed in the order they were submitted. Using in-order streams prevents possible read-before-write or concurrent read/write issues.</p>
-<dl class="section note"><dt>Note</dt><dd>Performance with in-order DNNL streams with the DPC++ runtime may be suboptimal due to the lack of in-order queue support in the SYCL 1.2.1 specification.</dd></dl>
+<li><p class="startli">In-order oneDNN stream</p>
+<p class="startli">oneDNN enables you to create in-order streams when submitted primitives are executed in the order they were submitted. Using in-order streams prevents possible read-before-write or concurrent read/write issues.</p>
+<dl class="section note"><dt>Note</dt><dd>Performance with in-order oneDNN streams with the DPC++ runtime may be suboptimal due to the lack of in-order queue support in the SYCL 1.2.1 specification.</dd></dl>
 <h2>SYCL Buffers and DPC++ USM Interfaces</h2>
 </li>
 </ol>
-<p>The tables below summarize the behavior of the DNNL interfaces for working with memory.</p>
+<p>The tables below summarize the behavior of the oneDNN interfaces for working with memory.</p>
 <h3>For constructors:</h3>
 <table class="doxtable">
 <tr>

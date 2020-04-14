@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['dcab',['dcab',['../structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa9737604d6ad5938095054dc4413bf8e9',1,'dnnl::memory']]],
   ['decab',['decab',['../structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fab9a152e018d02395e6e94c5619da4a91',1,'dnnl::memory']]],
   ['deconvolution',['deconvolution',['../structdnnl_1_1primitive.html#ad1ec93215a0cf3aa0a32bae0c2cd9169a2294014fceafa2f8ca8d16ad35f25875',1,'dnnl::primitive']]],
   ['deconvolution_5fd',['deconvolution_d',['../group__dnnl__api__primitives__common.html#gga94efdd650364f4d9776cfb9b711cbdc1a2c191a4c2f3830f7960fd2d7eff440ff',1,'dnnl']]],
@@ -86,6 +87,7 @@ var searchData=
   ['dnnl_5fcpu_5fisa_5favx512_5fmic_5f4ops',['dnnl_cpu_isa_avx512_mic_4ops',['../group__dnnl__api__service.html#gga303bab5d2e7b371bb44495864df21dd2ad30d60a53b03395ab914e685656436e2',1,'dnnl_types.h']]],
   ['dnnl_5fcpu_5fisa_5fsse41',['dnnl_cpu_isa_sse41',['../group__dnnl__api__service.html#gga303bab5d2e7b371bb44495864df21dd2a5e2f2cccadb94b34700a90bba91e0fe3',1,'dnnl_types.h']]],
   ['dnnl_5fdata_5ftype_5fundef',['dnnl_data_type_undef',['../group__dnnl__api__memory.html#gga012ba1c84ff24bdd068f9d2f9b26a130a7b0351f23ccd840c87a0a9d869339888',1,'dnnl_types.h']]],
+  ['dnnl_5fdcab',['dnnl_dcab',['../group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dae6c549f1a265f8d61bffb24c24925a1d',1,'dnnl_types.h']]],
   ['dnnl_5fdecab',['dnnl_decab',['../group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da31fa5f2eb4a236664583afc291310ec6',1,'dnnl_types.h']]],
   ['dnnl_5fdeconvolution',['dnnl_deconvolution',['../group__dnnl__api__primitives__common.html#gga9878f4795e53ad8443e5c0a29e53286aacd3571ebae73142a0f690a87cca1fbb2',1,'dnnl_types.h']]],
   ['dnnl_5fdeconvolution_5fdirect',['dnnl_deconvolution_direct',['../group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23a575e3d69d108a8a1e62af755dda0ef5f',1,'dnnl_types.h']]],
@@ -178,6 +180,7 @@ var searchData=
   ['dnnl_5fncw8c',['dnnl_nCw8c',['../group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dad691bfd0677cab219ce336afa6023a59',1,'dnnl_types.h']]],
   ['dnnl_5fndhwc',['dnnl_ndhwc',['../group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091daa0d8b24eefd029e214080d3787114fc2',1,'dnnl_types.h']]],
   ['dnnl_5fnhwc',['dnnl_nhwc',['../group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dae50c534446b3c18cc018b3946b3cebd7',1,'dnnl_types.h']]],
+  ['dnnl_5fnormalization_5fflags_5fnone',['dnnl_normalization_flags_none',['../group__dnnl__api__primitives__common.html#gga301f673522a400c7c1e75f518431c9a3ab71f2077a94fd4bbc107a09b115a24a4',1,'dnnl_types.h']]],
   ['dnnl_5fnot_5frequired',['dnnl_not_required',['../group__dnnl__api__utils.html#ggad24f9ded06e34d3ee71e7fc4b408d57aaff3988320148106126bce50dd76d6a97',1,'dnnl_types.h']]],
   ['dnnl_5fnt',['dnnl_nt',['../group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da7ede27a46172c1ab2775593ba4b118dc',1,'dnnl_types.h']]],
   ['dnnl_5fntc',['dnnl_ntc',['../group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da5d73ca7a68559ef44241be5a096e6bff',1,'dnnl_types.h']]],
@@ -268,6 +271,7 @@ var searchData=
   ['dnnl_5fvanilla_5fgru',['dnnl_vanilla_gru',['../group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23a7ba4a460b8bff80dcdf1240d7ad34208',1,'dnnl_types.h']]],
   ['dnnl_5fvanilla_5flstm',['dnnl_vanilla_lstm',['../group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23a765cecdcf6f7c524833a241ecc9bf41d',1,'dnnl_types.h']]],
   ['dnnl_5fvanilla_5frnn',['dnnl_vanilla_rnn',['../group__dnnl__api__primitives__common.html#gga96946c805f6c4922c38c37049ab95d23a65d20a62fd39cfe09b3deb2e35752449',1,'dnnl_types.h']]],
+  ['dnnl_5fwigo',['dnnl_wigo',['../group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da27409507462c2e1f45deb987623de29c',1,'dnnl_types.h']]],
   ['dnnl_5fwino_5fundef',['dnnl_wino_undef',['../group__dnnl__api__memory.html#ggaaab02321c4a85efc3dbd94ee3b0594c9a8327b4514289b80707542878551aa58b',1,'dnnl_types.h']]],
   ['dnnl_5fwino_5fwei_5faaobioo',['dnnl_wino_wei_aaOBiOo',['../group__dnnl__api__memory.html#ggaaab02321c4a85efc3dbd94ee3b0594c9a7b7d072c7c19c2eed3dc59af5334deda',1,'dnnl_types.h']]],
   ['dnnl_5fwino_5fwei_5faaoio',['dnnl_wino_wei_aaOio',['../group__dnnl__api__memory.html#ggaaab02321c4a85efc3dbd94ee3b0594c9a47ce86a27d9acdc92eb35ed5e51d1965',1,'dnnl_types.h']]],

@@ -27,6 +27,7 @@ var searchData=
   ['append_5feltwise',['append_eltwise',['../structdnnl_1_1post__ops.html#a66606f08467b19091e696b52a2f789e6',1,'dnnl::post_ops']]],
   ['append_5fsum',['append_sum',['../structdnnl_1_1post__ops.html#a078ab8ec15423d2b3d26f3619a78ca38',1,'dnnl::post_ops']]],
   ['arg',['arg',['../structdnnl__exec__arg__t.html#a46c7f77870713b8af3fd37dc66e9690b',1,'dnnl_exec_arg_t']]],
+  ['asynchronous',['ASYNCHRONOUS',['../structdnnl_1_1threadpool__iface.html#a740361555b71b3ddd2f740c8e0bcfdba',1,'dnnl::threadpool_iface']]],
   ['avx',['avx',['../group__dnnl__api__service.html#ggabad017feb1850634bf3babdb68234f83a73758c37e4499f20ac5f995a144abba6',1,'dnnl']]],
   ['avx2',['avx2',['../group__dnnl__api__service.html#ggabad017feb1850634bf3babdb68234f83a220c4ad92e33497ef256a48712352b84',1,'dnnl']]],
   ['avx512_5fcore',['avx512_core',['../group__dnnl__api__service.html#ggabad017feb1850634bf3babdb68234f83aa427cc9f00ac692056a83a8cb5e37fa4',1,'dnnl']]],

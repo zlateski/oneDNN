@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>DNNL: OpenCL Interoperability</title>
+<title>oneDNN: OpenCL Interoperability</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,8 +24,8 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-   <div id="projectname">Deep Neural Network Library (DNNL)
-   &#160;<span id="projectnumber">1.91.0</span>
+   <div id="projectname">oneAPI Deep Neural Network Library (oneDNN)
+   &#160;<span id="projectnumber">1.93.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
 </div>
@@ -79,16 +79,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">OpenCL Interoperability </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>DNNL uses the OpenCL runtime for GPU engines to interact with the GPU. Users may need to use DNNL with other code that uses OpenCL. For that purpose, the library provides API extensions to interoperate with underlying OpenCL objects.</p>
+<div class="textblock"><p>oneDNN uses the OpenCL runtime for GPU engines to interact with the GPU. Users may need to use oneDNN with other code that uses OpenCL. For that purpose, the library provides API extensions to interoperate with underlying OpenCL objects.</p>
 <p>The interoperability API is provided for two scenarios:</p>
 <ul>
-<li>Construction of DNNL objects based on existing OpenCL objects</li>
-<li>Accessing OpenCL objects for existing DNNL objects</li>
+<li>Construction of oneDNN objects based on existing OpenCL objects</li>
+<li>Accessing OpenCL objects for existing oneDNN objects</li>
 </ul>
-<p>The mapping between DNNL and OpenCL objects is provided in the following table:</p>
+<p>The mapping between oneDNN and OpenCL objects is provided in the following table:</p>
 <table class="doxtable">
 <tr>
-<th align="left">DNNL object </th><th align="left">OpenCL object(s)  </th></tr>
+<th align="left">oneDNN object </th><th align="left">OpenCL object(s)  </th></tr>
 <tr>
 <td align="left">Engine </td><td align="left"><code>cl_device_id</code> and <code>cl_context</code> </td></tr>
 <tr>
@@ -97,10 +97,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <td align="left">Memory </td><td align="left"><code>cl_mem</code> </td></tr>
 </table>
 <h2>C++ API Extensions for Interoperability with OpenCL</h2>
-<h3>API to Construct DNNL Objects</h3>
+<h3>API to Construct oneDNN Objects</h3>
 <table class="doxtable">
 <tr>
-<th align="left">DNNL object </th><th align="left">API to construct DNNL object  </th></tr>
+<th align="left">oneDNN object </th><th align="left">API to construct oneDNN object  </th></tr>
 <tr>
 <td align="left">Engine </td><td align="left"><a class="el" href="structdnnl_1_1engine.html">dnnl::engine(kind, ocl_dev, ocl_ctx)</a> </td></tr>
 <tr>
@@ -108,11 +108,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr>
 <td align="left">Memory </td><td align="left"><a class="el" href="structdnnl_1_1memory.html">dnnl::memory(memory_desc, engine, ocl_mem)</a> </td></tr>
 </table>
-<dl class="section note"><dt>Note</dt><dd>DNNL follows retain/release OpenCL semantics when using OpenCL objects during construction. An OpenCL object is retained on construction and released on destruction - that ensures that the OpenCL object will not be destroyed while the DNNL object stores a reference to it.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>oneDNN follows retain/release OpenCL semantics when using OpenCL objects during construction. An OpenCL object is retained on construction and released on destruction - that ensures that the OpenCL object will not be destroyed while the oneDNN object stores a reference to it.</dd></dl>
 <h3>API to Access OpenCL Objects</h3>
 <table class="doxtable">
 <tr>
-<th align="left">DNNL object </th><th align="left">API to access OpenCL object(s)  </th></tr>
+<th align="left">oneDNN object </th><th align="left">API to access OpenCL object(s)  </th></tr>
 <tr>
 <td align="left">Engine </td><td align="left"><a class="el" href="structdnnl_1_1engine.html#a2f7013922cf742705ec04b425fa06a7f" title="Returns the OpenCL device associated with the engine. ">dnnl::engine::get_ocl_device()</a> and <a class="el" href="structdnnl_1_1engine.html#a739ba77b89cc3dc890819bc85d038198" title="Returns the OpenCL context associated with the engine. ">dnnl::engine::get_ocl_context()</a> </td></tr>
 <tr>
@@ -122,10 +122,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </table>
 <dl class="section note"><dt>Note</dt><dd>The access interfaces do not retain the OpenCL object. It is the user's responsibility to retain the returned OpenCL object if necessary.</dd></dl>
 <h2>C API Extensions for Interoperability with OpenCL</h2>
-<h3>API to Construct DNNL Objects</h3>
+<h3>API to Construct oneDNN Objects</h3>
 <table class="doxtable">
 <tr>
-<th align="left">DNNL object </th><th align="left">API to construct DNNL object  </th></tr>
+<th align="left">oneDNN object </th><th align="left">API to construct oneDNN object  </th></tr>
 <tr>
 <td align="left">Engine </td><td align="left"><a class="el" href="group__dnnl__api__engine.html#ga45b925909497257abf48cf4d5bd17b2c">dnnl_engine_create_ocl(&amp;engine, kind, ocl_dev, ocl_ctx)</a> </td></tr>
 <tr>
@@ -136,7 +136,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h3>API to Access OpenCL Objects</h3>
 <table class="doxtable">
 <tr>
-<th align="left">DNNL object </th><th align="left">API to access OpenCL object(s)  </th></tr>
+<th align="left">oneDNN object </th><th align="left">API to access OpenCL object(s)  </th></tr>
 <tr>
 <td align="left">Engine </td><td align="left"><a class="el" href="group__dnnl__api__engine.html#ga07dcb50917e9ac8d23d5a363f74868b6" title="Returns the OpenCL device associated with an engine. ">dnnl_engine_get_ocl_device()</a> and <a class="el" href="group__dnnl__api__engine.html#gaa78c7babf84ba288c7812bfc55896d07" title="Returns the OpenCL context associated with an engine. ">dnnl_engine_get_ocl_context()</a> </td></tr>
 <tr>

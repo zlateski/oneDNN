@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>DNNL: examples/example_utils.hpp Source File</title>
+<title>oneDNN: examples/example_utils.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,8 +24,8 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-   <div id="projectname">Deep Neural Network Library (DNNL)
-   &#160;<span id="projectnumber">1.91.0</span>
+   <div id="projectname">oneAPI Deep Neural Network Library (oneDNN)
+   &#160;<span id="projectnumber">1.93.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
 </div>
@@ -166,7 +166,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">inline</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *engine_kind2str_upper(<a class="code" href="structdnnl_1_1engine.html#a2635da16314dcbdb9bd9ea431316bb1a">dnnl::engine::kind</a> kind);</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">// Runs example function with signature void() and catches errors.</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">// Returns `0` on success, `1` or DNNL error, and `2` on example error.</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">// Returns `0` on success, `1` or oneDNN error, and `2` on example error.</span></div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">int</span> handle_example_errors(</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        std::initializer_list&lt;dnnl::engine::kind&gt; engine_kinds,</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        std::function&lt;<span class="keywordtype">void</span>()&gt; example) {</div>
@@ -178,7 +178,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        std::cout &lt;&lt; e.message &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        exit_code = 0;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    } <span class="keywordflow">catch</span> (<a class="code" href="structdnnl_1_1error.html">dnnl::error</a> &amp;e) {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;DNNL error caught: &quot;</span> &lt;&lt; std::endl</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;oneDNN error caught: &quot;</span> &lt;&lt; std::endl</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                  &lt;&lt; <span class="stringliteral">&quot;\tStatus: &quot;</span> &lt;&lt; dnnl_status2str(e.status) &lt;&lt; std::endl</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                  &lt;&lt; <span class="stringliteral">&quot;\tMessage: &quot;</span> &lt;&lt; e.<a class="code" href="structdnnl_1_1error.html#adfc1a2bf4e31aa1751b38e8e1dbcba2b">what</a>() &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        exit_code = 1;</div>
@@ -348,21 +348,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;}</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="group__dnnl__api__service_html_ga6c26ca286652838cb6927ca8bcd57ed7"><div class="ttname"><a href="group__dnnl__api__service.html#ga6c26ca286652838cb6927ca8bcd57ed7">DNNL_RUNTIME_SYCL</a></div><div class="ttdeci">#define DNNL_RUNTIME_SYCL</div><div class="ttdoc">SYCL runtime. </div><div class="ttdef"><b>Definition:</b> dnnl_types.h:2096</div></div>
+<div class="ttc" id="group__dnnl__api__service_html_ga6c26ca286652838cb6927ca8bcd57ed7"><div class="ttname"><a href="group__dnnl__api__service.html#ga6c26ca286652838cb6927ca8bcd57ed7">DNNL_RUNTIME_SYCL</a></div><div class="ttdeci">#define DNNL_RUNTIME_SYCL</div><div class="ttdoc">SYCL runtime. </div><div class="ttdef"><b>Definition:</b> dnnl_types.h:2119</div></div>
 <div class="ttc" id="dnnl_8hpp_html"><div class="ttname"><a href="dnnl_8hpp.html">dnnl.hpp</a></div><div class="ttdoc">C++ API. </div></div>
-<div class="ttc" id="structdnnl_1_1error_html_adfc1a2bf4e31aa1751b38e8e1dbcba2b"><div class="ttname"><a href="structdnnl_1_1error.html#adfc1a2bf4e31aa1751b38e8e1dbcba2b">dnnl::error::what</a></div><div class="ttdeci">const char * what() const noexceptoverride</div><div class="ttdoc">Returns the explanatory string. </div><div class="ttdef"><b>Definition:</b> dnnl.hpp:104</div></div>
-<div class="ttc" id="structdnnl_1_1engine_html"><div class="ttname"><a href="structdnnl_1_1engine.html">dnnl::engine</a></div><div class="ttdoc">An execution engine. </div><div class="ttdef"><b>Definition:</b> dnnl.hpp:859</div></div>
-<div class="ttc" id="structdnnl_1_1engine_html_a35bcbdd6fa35663ca73e24d63c2f8ff4"><div class="ttname"><a href="structdnnl_1_1engine.html#a35bcbdd6fa35663ca73e24d63c2f8ff4">dnnl::engine::get_count</a></div><div class="ttdeci">static size_t get_count(kind kind)</div><div class="ttdoc">Returns the number of engines of a certain kind. </div><div class="ttdef"><b>Definition:</b> dnnl.hpp:883</div></div>
-<div class="ttc" id="structdnnl_1_1error_html"><div class="ttname"><a href="structdnnl_1_1error.html">dnnl::error</a></div><div class="ttdoc">DNNL exception class. </div><div class="ttdef"><b>Definition:</b> dnnl.hpp:92</div></div>
-<div class="ttc" id="structdnnl_1_1engine_html_a2635da16314dcbdb9bd9ea431316bb1a"><div class="ttname"><a href="structdnnl_1_1engine.html#a2635da16314dcbdb9bd9ea431316bb1a">dnnl::engine::kind</a></div><div class="ttdeci">kind</div><div class="ttdoc">Kinds of engines. </div><div class="ttdef"><b>Definition:</b> dnnl.hpp:864</div></div>
+<div class="ttc" id="structdnnl_1_1error_html_adfc1a2bf4e31aa1751b38e8e1dbcba2b"><div class="ttname"><a href="structdnnl_1_1error.html#adfc1a2bf4e31aa1751b38e8e1dbcba2b">dnnl::error::what</a></div><div class="ttdeci">const char * what() const noexceptoverride</div><div class="ttdoc">Returns the explanatory string. </div><div class="ttdef"><b>Definition:</b> dnnl.hpp:108</div></div>
+<div class="ttc" id="structdnnl_1_1engine_html"><div class="ttname"><a href="structdnnl_1_1engine.html">dnnl::engine</a></div><div class="ttdoc">An execution engine. </div><div class="ttdef"><b>Definition:</b> dnnl.hpp:869</div></div>
+<div class="ttc" id="structdnnl_1_1engine_html_a35bcbdd6fa35663ca73e24d63c2f8ff4"><div class="ttname"><a href="structdnnl_1_1engine.html#a35bcbdd6fa35663ca73e24d63c2f8ff4">dnnl::engine::get_count</a></div><div class="ttdeci">static size_t get_count(kind kind)</div><div class="ttdoc">Returns the number of engines of a certain kind. </div><div class="ttdef"><b>Definition:</b> dnnl.hpp:893</div></div>
+<div class="ttc" id="structdnnl_1_1error_html"><div class="ttname"><a href="structdnnl_1_1error.html">dnnl::error</a></div><div class="ttdoc">oneDNN exception class. </div><div class="ttdef"><b>Definition:</b> dnnl.hpp:96</div></div>
+<div class="ttc" id="structdnnl_1_1engine_html_a2635da16314dcbdb9bd9ea431316bb1a"><div class="ttname"><a href="structdnnl_1_1engine.html#a2635da16314dcbdb9bd9ea431316bb1a">dnnl::engine::kind</a></div><div class="ttdeci">kind</div><div class="ttdoc">Kinds of engines. </div><div class="ttdef"><b>Definition:</b> dnnl.hpp:874</div></div>
 <div class="ttc" id="structdnnl_1_1engine_html_a2635da16314dcbdb9bd9ea431316bb1aad9747e2da342bdb995f6389533ad1a3d"><div class="ttname"><a href="structdnnl_1_1engine.html#a2635da16314dcbdb9bd9ea431316bb1aad9747e2da342bdb995f6389533ad1a3d">dnnl::engine::kind::cpu</a></div><div class="ttdoc">CPU engine. </div></div>
-<div class="ttc" id="structdnnl_1_1memory_html_a6ad818e4699872cc913474fa5f122cd5"><div class="ttname"><a href="structdnnl_1_1memory.html#a6ad818e4699872cc913474fa5f122cd5">dnnl::memory::dim</a></div><div class="ttdeci">dnnl_dim_t dim</div><div class="ttdoc">Integer type for representing dimension sizes and indices. </div><div class="ttdef"><b>Definition:</b> dnnl.hpp:1172</div></div>
-<div class="ttc" id="structdnnl_1_1memory_html"><div class="ttname"><a href="structdnnl_1_1memory.html">dnnl::memory</a></div><div class="ttdoc">Memory object. </div><div class="ttdef"><b>Definition:</b> dnnl.hpp:1170</div></div>
+<div class="ttc" id="structdnnl_1_1memory_html_a6ad818e4699872cc913474fa5f122cd5"><div class="ttname"><a href="structdnnl_1_1memory.html#a6ad818e4699872cc913474fa5f122cd5">dnnl::memory::dim</a></div><div class="ttdeci">dnnl_dim_t dim</div><div class="ttdoc">Integer type for representing dimension sizes and indices. </div><div class="ttdef"><b>Definition:</b> dnnl.hpp:1244</div></div>
+<div class="ttc" id="structdnnl_1_1memory_html"><div class="ttname"><a href="structdnnl_1_1memory.html">dnnl::memory</a></div><div class="ttdoc">Memory object. </div><div class="ttdef"><b>Definition:</b> dnnl.hpp:1242</div></div>
 <div class="ttc" id="dnnl__debug_8h_html"><div class="ttname"><a href="dnnl__debug_8h.html">dnnl_debug.h</a></div><div class="ttdoc">Debug capabilities. </div></div>
-<div class="ttc" id="structdnnl_1_1engine_html_a6e9bb6ada8b2ccd815c42e3577b2f2b8"><div class="ttname"><a href="structdnnl_1_1engine.html#a6e9bb6ada8b2ccd815c42e3577b2f2b8">dnnl::engine::get_kind</a></div><div class="ttdeci">kind get_kind() const </div><div class="ttdoc">Returns the kind of the engine. </div><div class="ttdef"><b>Definition:</b> dnnl.hpp:941</div></div>
+<div class="ttc" id="structdnnl_1_1engine_html_a6e9bb6ada8b2ccd815c42e3577b2f2b8"><div class="ttname"><a href="structdnnl_1_1engine.html#a6e9bb6ada8b2ccd815c42e3577b2f2b8">dnnl::engine::get_kind</a></div><div class="ttdeci">kind get_kind() const </div><div class="ttdoc">Returns the kind of the engine. </div><div class="ttdef"><b>Definition:</b> dnnl.hpp:951</div></div>
 <div class="ttc" id="structdnnl_1_1engine_html_a2635da16314dcbdb9bd9ea431316bb1aa0aa0be2a866411d9ff03515227454947"><div class="ttname"><a href="structdnnl_1_1engine.html#a2635da16314dcbdb9bd9ea431316bb1aa0aa0be2a866411d9ff03515227454947">dnnl::engine::kind::gpu</a></div><div class="ttdoc">GPU engine. </div></div>
-<div class="ttc" id="structdnnl_1_1memory_html_afdd20764d58c0b517d5a31276672aeb8"><div class="ttname"><a href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">dnnl::memory::dims</a></div><div class="ttdeci">std::vector&lt; dim &gt; dims</div><div class="ttdoc">Vector of dimensions. </div><div class="ttdef"><b>Definition:</b> dnnl.hpp:1175</div></div>
-<div class="ttc" id="structdnnl_1_1stream_html"><div class="ttname"><a href="structdnnl_1_1stream.html">dnnl::stream</a></div><div class="ttdoc">An execution stream. </div><div class="ttdef"><b>Definition:</b> dnnl.hpp:1021</div></div>
+<div class="ttc" id="structdnnl_1_1memory_html_afdd20764d58c0b517d5a31276672aeb8"><div class="ttname"><a href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">dnnl::memory::dims</a></div><div class="ttdeci">std::vector&lt; dim &gt; dims</div><div class="ttdoc">Vector of dimensions. </div><div class="ttdef"><b>Definition:</b> dnnl.hpp:1247</div></div>
+<div class="ttc" id="structdnnl_1_1stream_html"><div class="ttname"><a href="structdnnl_1_1stream.html">dnnl::stream</a></div><div class="ttdoc">An execution stream. </div><div class="ttdef"><b>Definition:</b> dnnl.hpp:1090</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="footer">
     <div class="footer-wrapper">

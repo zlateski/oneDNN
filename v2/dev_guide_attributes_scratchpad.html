@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>DNNL: Primitive Attributes: Scratchpad</title>
+<title>oneDNN: Primitive Attributes: Scratchpad</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,8 +24,8 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-   <div id="projectname">Deep Neural Network Library (DNNL)
-   &#160;<span id="projectnumber">1.91.0</span>
+   <div id="projectname">oneAPI Deep Neural Network Library (oneDNN)
+   &#160;<span id="projectnumber">1.93.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
 </div>
@@ -80,12 +80,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>Some primitives might require a temporary buffer while performing their computations. For instance, the operations that do not have enough independent work to utilize all cores on a system might use parallelization over the reduction axis (e.g. k-axis in matrix-matrix multiplication). In this case the threads compute partial results in a temporary buffer and once finished the library reduces partial results into the final one. Another example is a convolution implementation that uses GEMM. Before using a GEMM the source images needs to be rearranged by so-called <code>im2col</code> transformation. The transformation happens in a temporary buffer that is then used as an input for GEMM.</p>
-<p>In both of these examples, the temporary buffer is no longer required once the primitive computation is completed. DNNL refers to such a memory buffer as a <b>scratchpad</b>.</p>
+<p>In both of these examples, the temporary buffer is no longer required once the primitive computation is completed. oneDNN refers to such a memory buffer as a <b>scratchpad</b>.</p>
 <dl class="section warning"><dt>Warning</dt><dd>Do not confuse <b>scratchpad</b> with <a class="el" href="dev_guide_inference_and_training_aspects.html#dev_guide_inference_and_training_aspects_workspace">Workspace</a>. The workspace is a buffer that is shared between forward and backward propagation of a primitive (hence <b>must</b> be preserved between the calls) and is used only in training.</dd></dl>
 <p>The amount of space required for the scratchpad depends on the primitive and its actual implementation. For example, the GEMM-based convolution requires a scratchpad for the <code>im2col</code> data, while the direct convolution does not.</p>
 <p>Both types of implementation might need extra space for the reduction in case there are too few independent tasks. The <code>im2col</code> size is proportional to the size of the source image multiplied by the weights spatial size. The size of a buffer for reduction is proportional to the tensor size to be reduced (e.g., <code>diff_weights</code> in the case of backward by weights) multiplied by the number of threads in the reduction groups (the upper bound is the overall number of threads).</p>
 <p>By contrast, some other primitives might require very little extra space. For instance, one of the implementation of the <a class="el" href="structdnnl_1_1sum.html">dnnl::sum</a> primitive requires temporary space only to store the pointers to data for each and every input array (that is, the size of the scratchpad is <code>n * sizeof(void *)</code>, where <code>n</code> is the number of summands).</p>
-<p>DNNL supports two modes for handling scratchpads:</p>
+<p>oneDNN supports two modes for handling scratchpads:</p>
 <ol type="1">
 <li><a class="el" href="group__dnnl__api__attributes.html#ggac24d40ceea0256c7d6cc3a383a0fa07fad521f765a49c72507257a2620612ee96" title="The library manages the scratchpad allocation according to the policy specified by the DNNL_ENABLE_CO...">dnnl::scratchpad_mode::library</a>. The library allocates memory for each primitive during its creation. This is the <b>default</b> behavior which enables user to not worry about the scratchpad at all. The scratchpad management policy can be configured at compile-time using the DNNL_ENABLE_CONCURRENT_EXEC (<a class="el" href="dev_guide_build_options.html">Build Options</a>) cmake option.<ul>
 <li>When DNNL_ENABLE_CONCURRENT_EXEC=OFF (<b>default</b>), a global scratchpad memory is shared across primitives. This mode minimizes the amount of memory needed for scratchpads at the application level. The global scratchpad is freed when all the primitives referencing it are destroyed. <dl class="section warning"><dt>Warning</dt><dd>In this mode, primitives can be created and executed in parallel but must be executed in the same thread they were created in. Executing primitives in a different thread than the one they were created in will result in segmentation fault. If you might execute a primitive in a thread different than the one it was created in, consider using <a class="el" href="group__dnnl__api__attributes.html#ggac24d40ceea0256c7d6cc3a383a0fa07faee11cbb19052e40b07aac0ca060c23ee" title="The user manages the scratchpad allocation by querying and providing the scratchpad memory to primiti...">dnnl::scratchpad_mode::user</a> or DNNL_ENABLE_CONCURRENT_EXEC=ON.</dd></dl>

@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>DNNL: cnn_inference_f32.cpp</title>
+<title>oneDNN: cnn_inference_f32.cpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,8 +24,8 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-   <div id="projectname">Deep Neural Network Library (DNNL)
-   &#160;<span id="projectnumber">1.91.0</span>
+   <div id="projectname">oneAPI Deep Neural Network Library (oneDNN)
+   &#160;<span id="projectnumber">1.93.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
 </div>
@@ -188,7 +188,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="keywordflow">if</span> (conv1_prim_desc.weights_desc() != user_weights_memory.get_desc()) {</div>
 <div class="line">        conv1_weights_memory = <a class="code" href="structdnnl_1_1memory.html">memory</a>(conv1_prim_desc.weights_desc(), eng);</div>
 <div class="line">        <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(user_weights_memory, conv1_weights_memory)</div>
-<div class="line">                .<a name="a13"></a><a class="code" href="structdnnl_1_1reorder.html#a0d551b51dd0b727253be8c88bec06a08">execute</a>(s, user_weights_memory, conv1_weights_memory);</div>
+<div class="line">                .<a name="a13"></a><a class="code" href="structdnnl_1_1reorder.html#a573f94090cedc71fea0091b64b1bd79a">execute</a>(s, user_weights_memory, conv1_weights_memory);</div>
 <div class="line">    }</div>
 <div class="line">    <span class="comment">//[Reorder data and weights]</span></div>
 <div class="line"></div>
@@ -310,7 +310,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">            != conv2_user_weights_memory.get_desc()) {</div>
 <div class="line">        conv2_weights_memory = <a class="code" href="structdnnl_1_1memory.html">memory</a>(conv2_prim_desc.weights_desc(), eng);</div>
 <div class="line">        <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(conv2_user_weights_memory, conv2_weights_memory)</div>
-<div class="line">                .<a class="code" href="structdnnl_1_1reorder.html#a0d551b51dd0b727253be8c88bec06a08">execute</a>(s, conv2_user_weights_memory, conv2_weights_memory);</div>
+<div class="line">                .<a class="code" href="structdnnl_1_1reorder.html#a573f94090cedc71fea0091b64b1bd79a">execute</a>(s, conv2_user_weights_memory, conv2_weights_memory);</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="keyword">auto</span> conv2_dst_memory = <a class="code" href="structdnnl_1_1memory.html">memory</a>(conv2_prim_desc.dst_desc(), eng);</div>
@@ -427,7 +427,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">            != conv3_user_weights_memory.get_desc()) {</div>
 <div class="line">        conv3_weights_memory = <a class="code" href="structdnnl_1_1memory.html">memory</a>(conv3_prim_desc.weights_desc(), eng);</div>
 <div class="line">        <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(conv3_user_weights_memory, conv3_weights_memory)</div>
-<div class="line">                .<a class="code" href="structdnnl_1_1reorder.html#a0d551b51dd0b727253be8c88bec06a08">execute</a>(s, conv3_user_weights_memory, conv3_weights_memory);</div>
+<div class="line">                .<a class="code" href="structdnnl_1_1reorder.html#a573f94090cedc71fea0091b64b1bd79a">execute</a>(s, conv3_user_weights_memory, conv3_weights_memory);</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="keyword">auto</span> conv3_dst_memory = <a class="code" href="structdnnl_1_1memory.html">memory</a>(conv3_prim_desc.dst_desc(), eng);</div>
@@ -501,7 +501,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">            != conv4_user_weights_memory.get_desc()) {</div>
 <div class="line">        conv4_weights_memory = <a class="code" href="structdnnl_1_1memory.html">memory</a>(conv4_prim_desc.weights_desc(), eng);</div>
 <div class="line">        <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(conv4_user_weights_memory, conv4_weights_memory)</div>
-<div class="line">                .<a class="code" href="structdnnl_1_1reorder.html#a0d551b51dd0b727253be8c88bec06a08">execute</a>(s, conv4_user_weights_memory, conv4_weights_memory);</div>
+<div class="line">                .<a class="code" href="structdnnl_1_1reorder.html#a573f94090cedc71fea0091b64b1bd79a">execute</a>(s, conv4_user_weights_memory, conv4_weights_memory);</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="keyword">auto</span> conv4_dst_memory = <a class="code" href="structdnnl_1_1memory.html">memory</a>(conv4_prim_desc.dst_desc(), eng);</div>
@@ -574,7 +574,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">            != conv5_user_weights_memory.get_desc()) {</div>
 <div class="line">        conv5_weights_memory = <a class="code" href="structdnnl_1_1memory.html">memory</a>(conv5_prim_desc.weights_desc(), eng);</div>
 <div class="line">        <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(conv5_user_weights_memory, conv5_weights_memory)</div>
-<div class="line">                .<a class="code" href="structdnnl_1_1reorder.html#a0d551b51dd0b727253be8c88bec06a08">execute</a>(s, conv5_user_weights_memory, conv5_weights_memory);</div>
+<div class="line">                .<a class="code" href="structdnnl_1_1reorder.html#a573f94090cedc71fea0091b64b1bd79a">execute</a>(s, conv5_user_weights_memory, conv5_weights_memory);</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="keyword">auto</span> conv5_dst_memory = <a class="code" href="structdnnl_1_1memory.html">memory</a>(conv5_prim_desc.dst_desc(), eng);</div>
@@ -666,7 +666,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="keywordflow">if</span> (fc6_prim_desc.weights_desc() != fc6_user_weights_memory.get_desc()) {</div>
 <div class="line">        fc6_weights_memory = <a class="code" href="structdnnl_1_1memory.html">memory</a>(fc6_prim_desc.weights_desc(), eng);</div>
 <div class="line">        <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(fc6_user_weights_memory, fc6_weights_memory)</div>
-<div class="line">                .<a class="code" href="structdnnl_1_1reorder.html#a0d551b51dd0b727253be8c88bec06a08">execute</a>(s, fc6_user_weights_memory, fc6_weights_memory);</div>
+<div class="line">                .<a class="code" href="structdnnl_1_1reorder.html#a573f94090cedc71fea0091b64b1bd79a">execute</a>(s, fc6_user_weights_memory, fc6_weights_memory);</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="keyword">auto</span> fc6_dst_memory = <a class="code" href="structdnnl_1_1memory.html">memory</a>(fc6_prim_desc.dst_desc(), eng);</div>
@@ -708,7 +708,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="keywordflow">if</span> (fc7_prim_desc.weights_desc() != fc7_user_weights_memory.get_desc()) {</div>
 <div class="line">        fc7_weights_memory = <a class="code" href="structdnnl_1_1memory.html">memory</a>(fc7_prim_desc.weights_desc(), eng);</div>
 <div class="line">        <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(fc7_user_weights_memory, fc7_weights_memory)</div>
-<div class="line">                .<a class="code" href="structdnnl_1_1reorder.html#a0d551b51dd0b727253be8c88bec06a08">execute</a>(s, fc7_user_weights_memory, fc7_weights_memory);</div>
+<div class="line">                .<a class="code" href="structdnnl_1_1reorder.html#a573f94090cedc71fea0091b64b1bd79a">execute</a>(s, fc7_user_weights_memory, fc7_weights_memory);</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="keyword">auto</span> fc7_dst_memory = <a class="code" href="structdnnl_1_1memory.html">memory</a>(fc7_prim_desc.dst_desc(), eng);</div>
@@ -751,7 +751,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="keywordflow">if</span> (fc8_prim_desc.weights_desc() != fc8_user_weights_memory.get_desc()) {</div>
 <div class="line">        fc8_weights_memory = <a class="code" href="structdnnl_1_1memory.html">memory</a>(fc8_prim_desc.weights_desc(), eng);</div>
 <div class="line">        <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(fc8_user_weights_memory, fc8_weights_memory)</div>
-<div class="line">                .<a class="code" href="structdnnl_1_1reorder.html#a0d551b51dd0b727253be8c88bec06a08">execute</a>(s, fc8_user_weights_memory, fc8_weights_memory);</div>
+<div class="line">                .<a class="code" href="structdnnl_1_1reorder.html#a573f94090cedc71fea0091b64b1bd79a">execute</a>(s, fc8_user_weights_memory, fc8_weights_memory);</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="keyword">auto</span> fc8_dst_memory = <a class="code" href="structdnnl_1_1memory.html">memory</a>(fc8_prim_desc.dst_desc(), eng);</div>

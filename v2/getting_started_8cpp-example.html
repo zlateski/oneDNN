@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>DNNL: getting_started.cpp</title>
+<title>oneDNN: getting_started.cpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,8 +24,8 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-   <div id="projectname">Deep Neural Network Library (DNNL)
-   &#160;<span id="projectnumber">1.91.0</span>
+   <div id="projectname">oneAPI Deep Neural Network Library (oneDNN)
+   &#160;<span id="projectnumber">1.93.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
 </div>
@@ -79,7 +79,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">getting_started.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<p>This C++ API example demonstrates the basics of the DNNL programming model. </p>
+<p>This C++ API example demonstrates the basics of the oneDNN programming model. </p>
 <blockquote class="doxtable">
 <p>Annotated version: <a class="el" href="getting_started_cpp.html">Getting started</a> </p>
 </blockquote>
@@ -267,7 +267,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="keywordflow">try</span> {</div>
 <div class="line">        getting_started_tutorial(engine_kind);</div>
 <div class="line">    } <span class="keywordflow">catch</span> (<a name="_a14"></a><a class="code" href="structdnnl_1_1error.html">dnnl::error</a> &amp;e) {</div>
-<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;DNNL error caught: &quot;</span> &lt;&lt; std::endl</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;oneDNN error caught: &quot;</span> &lt;&lt; std::endl</div>
 <div class="line">                  &lt;&lt; <span class="stringliteral">&quot;\tStatus: &quot;</span> &lt;&lt; dnnl_status2str(e.<a name="a15"></a>status) &lt;&lt; std::endl</div>
 <div class="line">                  &lt;&lt; <span class="stringliteral">&quot;\tMessage: &quot;</span> &lt;&lt; e.<a name="a16"></a><a class="code" href="structdnnl_1_1error.html#adfc1a2bf4e31aa1751b38e8e1dbcba2b">what</a>() &lt;&lt; std::endl;</div>
 <div class="line">        exit_code = 1;</div>

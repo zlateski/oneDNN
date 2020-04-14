@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>DNNL: dnnl::primitive_attr Struct Reference</title>
+<title>oneDNN: dnnl::primitive_attr Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,8 +24,8 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-   <div id="projectname">Deep Neural Network Library (DNNL)
-   &#160;<span id="projectnumber">1.91.0</span>
+   <div id="projectname">oneAPI Deep Neural Network Library (oneDNN)
+   &#160;<span id="projectnumber">1.93.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
 </div>
@@ -429,7 +429,7 @@ Public Member Functions</h2></td></tr>
 <p>Returns scaling factors correspondence mask and values for a given memory argument. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">arg</td><td>Parameter argument index as passed to the <a class="el" href="structdnnl_1_1primitive.html#a4c454f3d9315ea0dc6635f26eab9a950" title="Executes computations specified by the primitive in a specified stream. ">primitive::execute()</a> call. </td></tr>
+    <tr><td class="paramname">arg</td><td>Parameter argument index as passed to the <a class="el" href="structdnnl_1_1primitive.html#a65b6bd202ba2cb37ed8504da346dda2e" title="Executes computations specified by the primitive in a specified stream. ">primitive::execute()</a> call. </td></tr>
     <tr><td class="paramname">mask</td><td>Scaling factors correspondence mask that defines the correspondence between the output tensor dimensions and the <code>scales</code> vector. The set i-th bit indicates that a dedicated scaling factor is used for each index along that dimension. Set the mask to 0 to use a common scaling factor for the whole output tensor. </td></tr>
     <tr><td class="paramname">scales</td><td>Output vector of scaling factors. </td></tr>
   </table>
@@ -482,7 +482,7 @@ Public Member Functions</h2></td></tr>
 <a class="el" href="structdnnl_1_1primitive__attr.html#a4b81acc8e48886313154f75c1708ae02" title="Sets output scaling factors correspondence mask and values. ">dnnl::primitive_attr::set_output_scales</a></dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">arg</td><td>Parameter argument index as passed to the <a class="el" href="structdnnl_1_1primitive.html#a4c454f3d9315ea0dc6635f26eab9a950" title="Executes computations specified by the primitive in a specified stream. ">primitive::execute()</a> call. </td></tr>
+    <tr><td class="paramname">arg</td><td>Parameter argument index as passed to the <a class="el" href="structdnnl_1_1primitive.html#a65b6bd202ba2cb37ed8504da346dda2e" title="Executes computations specified by the primitive in a specified stream. ">primitive::execute()</a> call. </td></tr>
     <tr><td class="paramname">mask</td><td>Scaling factors correspondence mask that defines the correspondence between the tensor dimensions and the <code>scales</code> vector. The set i-th bit indicates that a dedicated scaling factor is used for each index along that dimension. Set the mask to 0 to use a common scaling factor for the whole output tensor. </td></tr>
     <tr><td class="paramname">scales</td><td>Constant vector of scaling factors. The following equality must hold: <p class="formulaDsp">
 \[scales.size() = \prod\limits_{d \in mask} argument.dims[d].\]
@@ -535,7 +535,7 @@ Public Member Functions</h2></td></tr>
 <p>Returns zero points correspondence mask and values. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">arg</td><td>Parameter argument index as passed to the <a class="el" href="structdnnl_1_1primitive.html#a4c454f3d9315ea0dc6635f26eab9a950" title="Executes computations specified by the primitive in a specified stream. ">primitive::execute()</a> call. </td></tr>
+    <tr><td class="paramname">arg</td><td>Parameter argument index as passed to the <a class="el" href="structdnnl_1_1primitive.html#a65b6bd202ba2cb37ed8504da346dda2e" title="Executes computations specified by the primitive in a specified stream. ">primitive::execute()</a> call. </td></tr>
     <tr><td class="paramname">mask</td><td>Zero points correspondence mask that defines the correspondence between the output tensor dimensions and the <code>zero_points</code> vector. The set i-th bit indicates that a dedicated zero point is used for each index along that dimension. Set the mask to 0 to use a common zero point for the whole output tensor. </td></tr>
     <tr><td class="paramname">zero_points</td><td>Output vector of zero points. </td></tr>
   </table>
@@ -588,7 +588,7 @@ Public Member Functions</h2></td></tr>
 <a class="el" href="structdnnl_1_1primitive__attr.html#a4b81acc8e48886313154f75c1708ae02" title="Sets output scaling factors correspondence mask and values. ">dnnl::primitive_attr::set_output_scales</a></dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">arg</td><td>Parameter argument index as passed to the <a class="el" href="structdnnl_1_1primitive.html#a4c454f3d9315ea0dc6635f26eab9a950" title="Executes computations specified by the primitive in a specified stream. ">primitive::execute()</a> call. </td></tr>
+    <tr><td class="paramname">arg</td><td>Parameter argument index as passed to the <a class="el" href="structdnnl_1_1primitive.html#a65b6bd202ba2cb37ed8504da346dda2e" title="Executes computations specified by the primitive in a specified stream. ">primitive::execute()</a> call. </td></tr>
     <tr><td class="paramname">mask</td><td>Zero point correspondence mask that defines the correspondence between the tensor dimensions and the <code>zero_points</code> vector. The set i-th bit indicates that a dedicated zero point is used for each index along that dimension. Set the mask to 0 to use a common zero point for the whole output tensor. </td></tr>
     <tr><td class="paramname">zero_points</td><td>Constant vector of zero points. If the zero points are known at the time of this call, the following equality must hold: <p class="formulaDsp">
 \[zero_points.size() = \prod\limits_{d \in mask} argument.dims[d].\]

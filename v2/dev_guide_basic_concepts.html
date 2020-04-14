@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>DNNL: Basic Concepts</title>
+<title>oneDNN: Basic Concepts</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,8 +24,8 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-   <div id="projectname">Deep Neural Network Library (DNNL)
-   &#160;<span id="projectnumber">1.91.0</span>
+   <div id="projectname">oneAPI Deep Neural Network Library (oneDNN)
+   &#160;<span id="projectnumber">1.93.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
 </div>
@@ -80,15 +80,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><h2>Introduction</h2>
-<p>In this page, an outline of the DNNL programming model is presented, and the key concepts are discussed, including <em>Primitives</em>, <em>Engines</em>, <em>Streams</em>, and <em>Memory Objects</em>. In essence, the DNNL programming model consists in executing one or several <em>primitives</em> to process data in one or several <em>memory objects</em>. The execution is performed on an <em>engine</em> in the context of a <em>stream</em>. The relationship between these entities is briefly presented in Figure 1, which also includes additional concepts relevant to the DNNL programming model, such as primitive <em>attributes</em> and <em>descriptors</em>. These concepts are described below in much more details.</p>
+<p>In this page, an outline of the oneDNN programming model is presented, and the key concepts are discussed, including <em>Primitives</em>, <em>Engines</em>, <em>Streams</em>, and <em>Memory Objects</em>. In essence, the oneDNN programming model consists in executing one or several <em>primitives</em> to process data in one or several <em>memory objects</em>. The execution is performed on an <em>engine</em> in the context of a <em>stream</em>. The relationship between these entities is briefly presented in Figure 1, which also includes additional concepts relevant to the oneDNN programming model, such as primitive <em>attributes</em> and <em>descriptors</em>. These concepts are described below in much more details.</p>
  <style>div.image img[src="img_programming_model.png"]{width:60%;}</style> <div class="image">
 <img src="img_programming_model.png" alt="img_programming_model.png"/>
 <div class="caption">
-Figure 1: Overview of DNNL programming model. Blue rectangles denote DNNL objects, and red lines denote dependencies between objects.</div></div>
+Figure 1: Overview of oneDNN programming model. Blue rectangles denote oneDNN objects, and red lines denote dependencies between objects.</div></div>
  <h3>Primitives</h3>
-<p>DNNL is built around the notion of a <em>primitive</em> (<a class="el" href="structdnnl_1_1primitive.html">dnnl::primitive</a>). A <em>primitive</em> is a functor object that encapsulates a particular computation such as forward convolution, backward LSTM computations, or a data transformation operation. Additionally, using primitive <em>attributes</em> (<a class="el" href="structdnnl_1_1primitive__attr.html">dnnl::primitive_attr</a>) certain primitives can represent more complex <em>fused</em> computations such as a forward convolution followed by a ReLU.</p>
+<p>oneDNN is built around the notion of a <em>primitive</em> (<a class="el" href="structdnnl_1_1primitive.html">dnnl::primitive</a>). A <em>primitive</em> is a functor object that encapsulates a particular computation such as forward convolution, backward LSTM computations, or a data transformation operation. Additionally, using primitive <em>attributes</em> (<a class="el" href="structdnnl_1_1primitive__attr.html">dnnl::primitive_attr</a>) certain primitives can represent more complex <em>fused</em> computations such as a forward convolution followed by a ReLU.</p>
 <p>The most important difference between a primitive and a pure function is that a primitive can store state.</p>
-<p>One part of the primitive’s state is immutable. For example, convolution primitives store parameters like tensor shapes and can pre-compute other dependent parameters like cache blocking. This approach allows DNNL primitives to pre-generate code specifically tailored for the operation to be performed. The DNNL programming model assumes that the time it takes to perform the pre-computations is amortized by reusing the same primitive to perform computations multiple times.</p>
+<p>One part of the primitive’s state is immutable. For example, convolution primitives store parameters like tensor shapes and can pre-compute other dependent parameters like cache blocking. This approach allows oneDNN primitives to pre-generate code specifically tailored for the operation to be performed. The oneDNN programming model assumes that the time it takes to perform the pre-computations is amortized by reusing the same primitive to perform computations multiple times.</p>
 <p>The mutable part of the primitive’s state is referred to as a scratchpad. It is a memory buffer that a primitive may use for temporary storage only during computations. The scratchpad can either be owned by a primitive object (which makes that object non-thread safe) or be an execution-time parameter.</p>
 <h3>Engines</h3>
 <p><em>Engines</em> (<a class="el" href="structdnnl_1_1engine.html">dnnl::engine</a>) is an abstraction of a computational device: a CPU, a specific GPU card in the system, etc. Most primitives are created to execute computations on one specific engine. The only exceptions are reorder primitives that transfer data between two different engines.</p>
@@ -97,7 +97,7 @@ Figure 1: Overview of DNNL programming model. Blue rectangles denote DNNL object
 <h3>Memory Objects</h3>
 <p><em>Memory objects</em> (<a class="el" href="structdnnl_1_1memory.html">dnnl::memory</a>) encapsulate handles to memory allocated on a specific engine, tensor dimensions, data type, and memory format – the way tensor indices map to offsets in linear memory space. Memory objects are passed to primitives during execution.</p>
 <h2>Levels of Abstraction</h2>
-<p>DNNL has multiple levels of abstractions for primitives and memory objects in order to expose maximum flexibility to its users.</p>
+<p>oneDNN has multiple levels of abstractions for primitives and memory objects in order to expose maximum flexibility to its users.</p>
 <p>On the <em>logical</em> level, the library provides the following abstractions:</p>
 <ul>
 <li><em>Memory descriptors</em> (<a class="el" href="structdnnl_1_1memory_1_1desc.html">dnnl::memory::desc</a>) define a tensor's logical dimensions, data type, and the format in which the data is laid out in memory. The special format <em>any</em> (<a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec">dnnl::memory::format_tag::any</a>) indicates that the actual format will be defined later (see <a class="el" href="memory_format_propagation_cpp.html">Memory format propagation</a>).</li>

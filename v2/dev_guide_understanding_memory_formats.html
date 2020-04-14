@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>DNNL: Understanding Memory Formats</title>
+<title>oneDNN: Understanding Memory Formats</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,8 +24,8 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-   <div id="projectname">Deep Neural Network Library (DNNL)
-   &#160;<span id="projectnumber">1.91.0</span>
+   <div id="projectname">oneAPI Deep Neural Network Library (oneDNN)
+   &#160;<span id="projectnumber">1.93.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
 </div>
@@ -81,7 +81,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><h2>Introduction</h2>
 <p>Most computations are about data: analyzing data, adjusting data, reading and storing data, generating data, etc. The DNN domain is no exception. Images, weights/filters, sound, and text require efficient representation in computer memory to facilitate performing operations fast and in the most convenient way.</p>
-<p>This article is devoted to <b>data format</b> &ndash; one form of data representation that describes how multidimensional arrays (nD) are stored in linear (1D) memory address space and why this is important for <a href="https://github.com/intel/mkl-dnn/">Deep Neural Network Library (DNNL)</a>.</p>
+<p>This article is devoted to <b>data format</b> &ndash; one form of data representation that describes how multidimensional arrays (nD) are stored in linear (1D) memory address space and why this is important for oneDNN.</p>
 <dl class="section note"><dt>Note</dt><dd>For the purpose of this article, data <em>format</em> and <em>layout</em> are used interchangeably.</dd></dl>
 <h3>Nomenclature used</h3>
 <ul>
@@ -123,7 +123,7 @@ Activations</div></div>
 </div><!-- fragment --><p>We use <code>nchw</code> here to denote that <code>w</code> is the inner-most dimension, meaning that two elements adjacent in memory would share the same indices of <code>n</code>, <code>c</code>, and <code>h</code>, and their index of <code>w</code> would be different by <code>1</code>. This is of course true only for non-border elements. On the contrary, <code>n</code> is the outermost dimension here, meaning that if you need to take the same pixel <code>(c, h, w)</code> but on the next image, you have to jump over the whole image size <code>C*H*W</code>.</p>
 <p>This data format is called <b>NCHW</b> and is used by default in BVLC* Caffe. TensorFlow* also supports this data format.</p>
 <dl class="section note"><dt>Note</dt><dd>It is just a coincidence that <code>offset_nchw()</code> is the same as <code>value()</code> in this example.</dd></dl>
-<p>One can create memory with <b>NCHW</b> data layout using <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da83a751aedeb59613312339d0f8b90f54" title="4D CNN activations tensor, an alias to dnnl_abcd ">dnnl_nchw</a> of the enum type <a class="el" href="group__dnnl__api__memory.html#ga395e42b594683adb25ed2d842bb3091d" title="Memory format tag specification. ">dnnl_format_tag_t</a> defined in <a href="https://github.com/intel/mkl-dnn/blob/master/include/dnnl_types.h">dnnl_types.h</a> for the C API, and <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3faded7ac40158367123c5467281d44cbeb" title="4D CNN activations tensor; an alias for dnnl::memory::format_tag::abcd ">dnnl::memory::format_tag::nchw</a> defined in <a href="https://github.com/intel/mkl-dnn/blob/master/include/dnnl.hpp">dnnl.hpp</a> for the C++ API.</p>
+<p>One can create memory with <b>NCHW</b> data layout using <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da83a751aedeb59613312339d0f8b90f54" title="4D CNN activations tensor, an alias to dnnl_abcd ">dnnl_nchw</a> of the enum type <a class="el" href="group__dnnl__api__memory.html#ga395e42b594683adb25ed2d842bb3091d" title="Memory format tag specification. ">dnnl_format_tag_t</a> defined in <a href="https://github.com/oneapi-src/oneDNN/blob/master/include/dnnl_types.h">dnnl_types.h</a> for the C API, and <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3faded7ac40158367123c5467281d44cbeb" title="4D CNN activations tensor; an alias for dnnl::memory::format_tag::abcd ">dnnl::memory::format_tag::nchw</a> defined in <a href="https://github.com/oneapi-src/oneDNN/blob/master/include/dnnl.hpp">dnnl.hpp</a> for the C++ API.</p>
 <h4>NHWC</h4>
 <p>Another quite popular data format is <b>NHWC</b>, which uses the following offset function: </p>
 <div class="fragment"><div class="line">offset_nhwc(n, c, h, w) = n * HWC + h * WC + w * C + c</div>
@@ -164,7 +164,7 @@ Strides</div></div>
 <div class="line"></div>
 <div class="line"><a class="code" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> md;</div>
 <div class="line"><a class="code" href="group__dnnl__api__memory.html#ga77c4ac2c6c59730ade594b954c145f73">dnnl_memory_desc_init_by_strides</a>(&amp;md, 4, dims, <a class="code" href="group__dnnl__api__memory.html#gga012ba1c84ff24bdd068f9d2f9b26a130a6b33889946b183311c39cc1bd0656ae9">dnnl_f32</a>, strides);</div>
-</div><!-- fragment --><p>DNNL supports strides via blocking structure. The pseudo-code for the function above is: </p>
+</div><!-- fragment --><p>oneDNN supports strides via blocking structure. The pseudo-code for the function above is: </p>
 <div class="fragment"><div class="line">memory_desc_t md; <span class="comment">// memory descriptor object</span></div>
 <div class="line"></div>
 <div class="line"><span class="comment">// logical description, layout independent</span></div>
@@ -176,10 +176,10 @@ Strides</div></div>
 <div class="line">md.format_desc.<a class="code" href="structdnnl__memory__desc__t.html#a376a38353672131bfc67fe92bceb6c9e">blocking</a>.<a class="code" href="structdnnl__blocking__desc__t.html#a48c1a3cb43f5b935fe3627e6312543b3">strides</a> = {</div>
 <div class="line">    stride_n, stride_c, stride_h, stride_w</div>
 <div class="line">};</div>
-</div><!-- fragment --><p> In particular, whenever a user creates memory with the <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da83a751aedeb59613312339d0f8b90f54" title="4D CNN activations tensor, an alias to dnnl_abcd ">dnnl_nchw</a> format, DNNL computes the strides and fills the structure on behalf of the user.</p>
+</div><!-- fragment --><p> In particular, whenever a user creates memory with the <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da83a751aedeb59613312339d0f8b90f54" title="4D CNN activations tensor, an alias to dnnl_abcd ">dnnl_nchw</a> format, oneDNN computes the strides and fills the structure on behalf of the user.</p>
 <h2>Blocked layout</h2>
 <p>Plain layouts give great flexibility and are very convenient for use. That's why most of the frameworks and applications use either the <b>NCHW</b> or <b>NHWC</b> layout. However, depending on the operation that is performed on data, it might turn out that those layouts are sub-optimal from the performance perspective.</p>
-<p>In order to achieve better vectorization and cache re-usage DNNL introduces blocked layout that splits one or several dimensions into the blocks of fixed size. The most popular DNNL data format is <b>nChw16c</b> on AVX512+ systems and <b>nChw8c</b> on SSE4.1+ systems. As one might guess from the name the only dimension that is blocked is channels and the block size is either 16 in the former case or 8 in the later case.</p>
+<p>In order to achieve better vectorization and cache reuse oneDNN introduces blocked layout that splits one or several dimensions into the blocks of fixed size. The most popular oneDNN data format is <b>nChw16c</b> on AVX512+ systems and <b>nChw8c</b> on SSE4.1+ systems. As one might guess from the name the only dimension that is blocked is channels and the block size is either 16 in the former case or 8 in the later case.</p>
 <p>Precisely, the offset function for <b>nChw8c</b> is: </p>
 <div class="fragment"><div class="line">offset_nChw8c(n, c, h, w) = n * CHW</div>
 <div class="line">                          + (c / 8) * HW*8</div>
@@ -193,7 +193,7 @@ Strides</div></div>
 nChw8c format</div></div>
  <dl class="section note"><dt>Note</dt><dd>We use lower- and uppercase letters in the formats to distinguish between the blocks (e.g. 8c) and the remaining co-dimension (<b>C</b> = channels / 8).</dd></dl>
 <p>The reason behind the format choice can be found in <a href="https://arxiv.org/pdf/1602.06709v1.pdf">this paper</a>.</p>
-<p>DNNL describes this type of memory via blocking structure as well. The pseudo-code is: </p>
+<p>oneDNN describes this type of memory via blocking structure as well. The pseudo-code is: </p>
 <div class="fragment"><div class="line">memory_desc_t md;</div>
 <div class="line"><span class="comment">// logical description, layout independent</span></div>
 <div class="line">md.<a class="code" href="structdnnl__memory__desc__t.html#a72ed50c98f23f513550255ca8917b473">ndims</a> = 4;           <span class="comment">// # dimensions</span></div>
@@ -220,7 +220,7 @@ nChw8c format</div></div>
 <div class="line">md.format_desc.inner_blks[0] = 8; <span class="comment">// This 1st dimensions is blocked by 8</span></div>
 </div><!-- fragment --><h3>What if channels are not a multiple of 8 (or 16)?</h3>
 <p>The blocking data layout gives a significant performance improvement for the convolutions, but what to do when the number of channels is not a multiple of the block size (for example, 17 channels for <b>nChw8c</b> format)?</p>
-<p>One of the possible ways to handle that would be to use blocked layout for as many channels as possible by rounding them down to a number that is a multiple of the block size (in this case <code>16 = 17 / 8 * 8</code>) and process the tail somehow. However, that would lead to the introduction of very special tail-processing code into many DNNL kernels.</p>
+<p>One of the possible ways to handle that would be to use blocked layout for as many channels as possible by rounding them down to a number that is a multiple of the block size (in this case <code>16 = 17 / 8 * 8</code>) and process the tail somehow. However, that would lead to the introduction of very special tail-processing code into many oneDNN kernels.</p>
 <p>So we came up with another solution using zero-padding. The idea is to round the channels up to make them multiples of the block size and pad the resulting tail with zeros (in the example above, <code>24 = div_up(17, 8) * 8</code>). Then primitives like convolutions might work with a rounded-up number of channels instead of the original ones and compute the correct result (adding zeros doesn't change the result).</p>
 <p>That enables supporting an arbitrary number of channels with almost no changes to the kernels. The price would be some extra computations on those zeros, but either this is negligible or the performance with overheads is still higher than the performance with the plain data layout.</p>
 <p>The picture below depicts the idea. Note that some extra computations occur during computation of <code>d0</code>, but that does not affect the result.</p>
@@ -232,11 +232,11 @@ Padded format</div></div>
 <ul>
 <li>To keep <em>padded data are zeros</em> invariant, <a class="el" href="group__dnnl__api__memory.html#ga6888f8c17f272d6729c9bc258ed41fcf" title="Sets a memory object&#39;s data handle. ">dnnl_memory_set_data_handle()</a> and dnnl::memory::set_data_handle() physically add zeros whenever the user attaches a pointer to a memory that uses zero padding. That might affect performance if too many unnecessary calls to these functions are made. We might consider extending our API in the future to allow attaching pointers without subsequent initialization with zeros if the user can guarantee that the padding is already filled correctly.</li>
 <li>The memory size required to keep the data cannot be computed by the formula <code>sizeof(data_type) * N * C * H * W</code> anymore. The actual size should always be queried via <a class="el" href="group__dnnl__api__memory.html#gaed039afa75d9f56763e2c1321f1563c4" title="Returns the size of a memory descriptor. ">dnnl_memory_desc_get_size()</a> in C and <a class="el" href="structdnnl_1_1memory_1_1desc.html#a3a12698f833b44ed55af9fc6621c4917" title="Returns size of the memory descriptor in bytes. ">dnnl::memory::desc::get_size()</a> in C++.</li>
-<li>Element-wise operations that are implemented in the user's code and directly operate on DNNL blocked layout like this: <div class="fragment"><div class="line"><span class="keywordflow">for</span> (<span class="keywordtype">int</span> e = 0; e &lt; phys_size; ++e)</div>
+<li>Element-wise operations that are implemented in the user's code and directly operate on oneDNN blocked layout like this: <div class="fragment"><div class="line"><span class="keywordflow">for</span> (<span class="keywordtype">int</span> e = 0; e &lt; phys_size; ++e)</div>
 <div class="line">    x[e] = eltwise_op(x[e])</div>
 </div><!-- fragment --> are not safe if the data is padded with zeros and <code>eltwise_op(0) != 0</code>.</li>
 </ul>
-<p>Relevant DNNL code: </p>
+<p>Relevant oneDNN code: </p>
 <div class="fragment"><div class="line"><span class="keyword">const</span> <span class="keywordtype">int</span> C = 17;</div>
 <div class="line"><span class="keyword">const</span> <span class="keywordtype">int</span> C_padded = div_up(17, 8) * 8; <span class="comment">// 24</span></div>
 <div class="line"></div>
