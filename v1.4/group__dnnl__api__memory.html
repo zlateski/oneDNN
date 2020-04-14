@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>DNNL: Memory</title>
+<title>oneDNN: Memory</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,7 +24,7 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-   <div id="projectname">Deep Neural Network Library (DNNL)
+   <div id="projectname">oneAPI Deep Neural Network Library (oneDNN)
    &#160;<span id="projectnumber">1.4.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
@@ -82,7 +82,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">Memory<div class="ingroups"><a class="el" href="group__dnnl__api.html">DNNL API</a></div></div>  </div>
+<div class="title">Memory<div class="ingroups"><a class="el" href="group__dnnl__api.html">oneDNN API</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -420,7 +420,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Memory format tag specification. </p>
-<p>DNNL formats describe physical data layout. The physical layout is described as a sequence of the dimensions as they are laid out in the memory (from the outer-most to the inner-most). Note that this order doesn't affect the logical order of the dimensions that is kept in the <code>dims</code> field of the <a class="el" href="structdnnl__memory__desc__t.html" title="Memory descriptor. ">dnnl_memory_desc_t</a> structure. The logical order of the dimensions is specified by the primitive that uses the tensor.</p>
+<p>oneDNN formats describe physical data layout. The physical layout is described as a sequence of the dimensions as they are laid out in the memory (from the outer-most to the inner-most). Note that this order doesn't affect the logical order of the dimensions that is kept in the <code>dims</code> field of the <a class="el" href="structdnnl__memory__desc__t.html" title="Memory descriptor. ">dnnl_memory_desc_t</a> structure. The logical order of the dimensions is specified by the primitive that uses the tensor.</p>
 <p>For example, CNN 5D tensor always has its logical dimensions in the order <code>(batch, channels, depth, height, width)</code>, while the physical layout might be <code>NCDHW</code> (corresponds to <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dae33b8c6790e5d37324f18a019658d464" title="5D CNN activations tensor, an alias to dnnl_abcde ">dnnl_ncdhw</a> format tag) or <code>NDHWC</code> (corresponds to <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091daa0d8b24eefd029e214080d3787114fc2" title="5D CNN activations tensor, an alias to dnnl_acdeb ">dnnl_ndhwc</a> format tag).</p>
 <div class="fragment"><div class="line"><span class="keywordtype">int</span> batch = 2, channels = 16, depth = 13, height = 13, width = 13;</div>
 <div class="line"></div>
@@ -437,7 +437,7 @@ Functions</h2></td></tr>
 </div><!-- fragment --><p>Memory format tags can be further divided into two categories:</p>
 <ul>
 <li>Domain-agnostic names, i.e. names the do not depend on the tensor usage in the specific primitive. These names use letters from <code>a</code> to <code>l</code> to denote logical dimension from 1 to 12, and form the order in which the dimensions are laid in memory. For instance, <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da1bd907fc29344dfe7ba88336960dcf53" title="plain 2D tensor ">dnnl_ab</a> is used to denote 2D tensor where the second logical dimension (aka <code>b</code>) is the innermost, i.e. has stride = 1, and the first logical dimension (<code>a</code>) laid out in memory with stride equal to the size of second dimension. On the other hand, <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da6a6dbc0b30468d92e32a9cb3f6615c43" title="permuted 2D tensor ">dnnl_ba</a> is just transposed version of the same tensor: the first dimension (<code>a</code>) becomes the innermost one.</li>
-<li>Domain-specific names, i.e. names that make sense only in the context of a certain domain, such as CNN. This names are just aliases to the corresponding domain-agnostic tags and used mostly for the convenience. For example, <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dac08a541001fe70289305a5fbde48906d" title="2D CNN activations tensor, an alias to dnnl_ab ">dnnl_nc</a> is used to denote 2D CNN activations tensor memory format, where channels are the innermost dimension and batch is an outermost one. Moreover, <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dac08a541001fe70289305a5fbde48906d" title="2D CNN activations tensor, an alias to dnnl_ab ">dnnl_nc</a> is just an alias to <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da1bd907fc29344dfe7ba88336960dcf53" title="plain 2D tensor ">dnnl_ab</a>, since for DNNL CNN primitives the logical dimensions of activations tensors come in order: batch, channels, spatial. In other words, batch corresponds to the first logical dimension (<code>a</code>), channels correspond to the second one (<code>b</code>).</li>
+<li>Domain-specific names, i.e. names that make sense only in the context of a certain domain, such as CNN. This names are just aliases to the corresponding domain-agnostic tags and used mostly for the convenience. For example, <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dac08a541001fe70289305a5fbde48906d" title="2D CNN activations tensor, an alias to dnnl_ab ">dnnl_nc</a> is used to denote 2D CNN activations tensor memory format, where channels are the innermost dimension and batch is an outermost one. Moreover, <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dac08a541001fe70289305a5fbde48906d" title="2D CNN activations tensor, an alias to dnnl_ab ">dnnl_nc</a> is just an alias to <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da1bd907fc29344dfe7ba88336960dcf53" title="plain 2D tensor ">dnnl_ab</a>, since for oneDNN CNN primitives the logical dimensions of activations tensors come in order: batch, channels, spatial. In other words, batch corresponds to the first logical dimension (<code>a</code>), channels correspond to the second one (<code>b</code>).</li>
 </ul>
 <p>The following domain-specific notation applies to memory format tags:</p>
 <ul>

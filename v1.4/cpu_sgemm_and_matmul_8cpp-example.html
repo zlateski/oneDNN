@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>DNNL: cpu_sgemm_and_matmul.cpp</title>
+<title>oneDNN: cpu_sgemm_and_matmul.cpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,7 +24,7 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-   <div id="projectname">Deep Neural Network Library (DNNL)
+   <div id="projectname">oneAPI Deep Neural Network Library (oneDNN)
    &#160;<span id="projectnumber">1.4.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
@@ -212,12 +212,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    dims a_strides = tolower(transA) == <span class="charliteral">&#39;n&#39;</span> ? dims {lda, 1} : dims {1, lda};</div>
 <div class="line">    dims b_strides = tolower(transB) == <span class="charliteral">&#39;n&#39;</span> ? dims {ldb, 1} : dims {1, ldb};</div>
 <div class="line"></div>
-<div class="line">    <span class="comment">// Wrap raw pointers into DNNL memories (with proper shapes)</span></div>
+<div class="line">    <span class="comment">// Wrap raw pointers into oneDNN memories (with proper shapes)</span></div>
 <div class="line">    <a name="_a15"></a><a class="code" href="structdnnl_1_1memory.html">memory</a> A_m({{M, K}, <a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e">memory::data_type::f32</a>, a_strides}, eng, (<span class="keywordtype">void</span> *)A);</div>
 <div class="line">    <a class="code" href="structdnnl_1_1memory.html">memory</a> B_m({{K, N}, <a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e">memory::data_type::f32</a>, b_strides}, eng, (<span class="keywordtype">void</span> *)B);</div>
 <div class="line">    <a class="code" href="structdnnl_1_1memory.html">memory</a> C_m({{M, N}, <a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e">memory::data_type::f32</a>, {ldc, 1}}, eng, (<span class="keywordtype">void</span> *)C);</div>
 <div class="line"></div>
-<div class="line">    <span class="comment">// Prepare DNNL memory for alpha</span></div>
+<div class="line">    <span class="comment">// Prepare oneDNN memory for alpha</span></div>
 <div class="line">    <a class="code" href="structdnnl_1_1memory.html">memory</a> alpha_m({{1}, <a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e">memory::data_type::f32</a>, {1}}, eng, &amp;alpha);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Execute the MatMul primitive</span></div>
@@ -259,7 +259,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <a class="code" href="structdnnl_1_1matmul_1_1primitive__desc.html">matmul::primitive_desc</a> matmul_pd(matmul_d, attr, eng);</div>
 <div class="line">    <a class="code" href="structdnnl_1_1matmul.html">matmul</a> matmul_p(matmul_pd);</div>
 <div class="line"></div>
-<div class="line">    <span class="comment">// Wrap raw pointers into DNNL memory objects</span></div>
+<div class="line">    <span class="comment">// Wrap raw pointers into oneDNN memory objects</span></div>
 <div class="line">    <a class="code" href="structdnnl_1_1memory.html">memory</a> A_m(a_md, eng, (<span class="keywordtype">void</span> *)A);</div>
 <div class="line">    <a class="code" href="structdnnl_1_1memory.html">memory</a> B_m(b_md, eng, (<span class="keywordtype">void</span> *)B);</div>
 <div class="line">    <a class="code" href="structdnnl_1_1memory.html">memory</a> C_m(c_md, eng, (<span class="keywordtype">void</span> *)C);</div>

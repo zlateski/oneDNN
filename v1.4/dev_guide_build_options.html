@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>DNNL: Build Options</title>
+<title>oneDNN: Build Options</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,7 +24,7 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-   <div id="projectname">Deep Neural Network Library (DNNL)
+   <div id="projectname">oneAPI Deep Neural Network Library (oneDNN)
    &#160;<span id="projectnumber">1.4.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
@@ -79,7 +79,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Build Options </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>DNNL supports the following build-time options.</p>
+<div class="textblock"><p>oneDNN supports the following build-time options.</p>
 <table class="doxtable">
 <tr>
 <th align="left">Option </th><th align="left">Supported values (defaults in bold) </th><th align="left">Description  </th></tr>
@@ -110,31 +110,30 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Primitive cache is disabled in the default build configuration.</p>
 <p>To enable the primitive cache you can use <code>DNNL_ENABLE_PRIMITIVE_CACHE</code> CMake option. The default value is <code>"OFF"</code>.</p>
 <h2>CPU Options</h2>
-<p>Intel Architecture Processors and compatible devices are supported by DNNL CPU engine. The CPU engine is built by default and cannot be disabled at build time.</p>
+<p>Intel Architecture Processors and compatible devices are supported by oneDNN CPU engine. The CPU engine is built by default and cannot be disabled at build time.</p>
 <h3>Targeting Specific Architecture</h3>
-<p>DNNL uses JIT code generation to implement most of its functionality and will choose the best code based on detected processor features. However, some DNNL functionality will still benefit from targeting a specific processor architecture at build time. You can use <code>DNNL_ARCH_OPT_FLAGS</code> CMake option for this.</p>
+<p>oneDNN uses JIT code generation to implement most of its functionality and will choose the best code based on detected processor features. However, some oneDNN functionality will still benefit from targeting a specific processor architecture at build time. You can use <code>DNNL_ARCH_OPT_FLAGS</code> CMake option for this.</p>
 <p>For Intel(R) C++ Compilers, the default option is <code>-xSSE4.1</code>, which instructs the compiler to generate the code for the processors that support SSE4.1 instructions. This option would not allow you to run the library on older processor architectures.</p>
 <p>For GNU* Compilers and Clang, the default option is <code>-msse4.1</code>.</p>
 <dl class="section warning"><dt>Warning</dt><dd>While use of <code>DNNL_ARCH_OPT_FLAGS</code> option gives better performance, the resulting library can be run only on systems that have instruction set compatible with the target instruction set. Therefore, <code>ARCH_OPT_FLAGS</code> should be set to an empty string (<code>""</code>) if the resulting library needs to be portable.</dd></dl>
 <h3>Runtime CPU dispatcher control</h3>
-<p>DNNL JIT relies on ISA features obtained from the processor it is being run on. There are situations when it is necessary to control this behavior at run-time to, for example, test SSE4.1 code on an AVX2-capable processor. The <code>DNNL_ENABLE_MAX_CPU_ISA</code> build option controls the availability of this feature. See <a class="el" href="dev_guide_cpu_dispatcher_control.html">CPU dispatcher control</a> for more information.</p>
+<p>oneDNN JIT relies on ISA features obtained from the processor it is being run on. There are situations when it is necessary to control this behavior at run-time to, for example, test SSE4.1 code on an AVX2-capable processor. The <code>DNNL_ENABLE_MAX_CPU_ISA</code> build option controls the availability of this feature. See <a class="el" href="dev_guide_cpu_dispatcher_control.html">CPU dispatcher control</a> for more information.</p>
 <h3>Runtimes</h3>
-<p>CPU engine can use OpenMP, TBB or sequential threading runtimes. OpenMP threading is the default build mode. This behavior is controlled by the <code>DNNL_CPU_RUNTIME</code> CMake option.</p>
+<p>CPU engine can use OpenMP, Threading Building Blocks (TBB) or sequential threading runtimes. OpenMP threading is the default build mode. This behavior is controlled by the <code>DNNL_CPU_RUNTIME</code> CMake option.</p>
 <h4>OpenMP</h4>
-<p>DNNL uses OpenMP runtime library provided by the compiler.</p>
+<p>oneDNN uses OpenMP runtime library provided by the compiler.</p>
 <dl class="section warning"><dt>Warning</dt><dd>Because different OpenMP runtimes may not be binary-compatible, it's important to ensure that only one OpenMP runtime is used throughout the application. Having more than one OpenMP runtime linked to an executable may lead to undefined behavior including incorrect results or crashes. However as long as both the library and the application use the same or compatible compilers there would be no conflicts.</dd></dl>
-<h4>TBB</h4>
-<p>To build DNNL with TBB support, set <code>DNNL_CPU_RUNTIME</code> to <code>TBB</code>:</p>
+<h4>Threading Building Blocks (TBB)</h4>
+<p>To build oneDNN with TBB support, set <code>DNNL_CPU_RUNTIME</code> to <code>TBB</code>:</p>
 <div class="fragment"><div class="line">$ cmake -DDNNL_CPU_RUNTIME=TBB ..</div>
 </div><!-- fragment --><p>Optionally, set the <code>TBBROOT</code> environmental variable to point to the TBB installation path or pass the path directly to CMake:</p>
 <div class="fragment"><div class="line">$ cmake -DDNNL_CPU_RUNTIME=TBB -DTBBROOT=/opt/intel/path/tbb ..</div>
-</div><!-- fragment --><p>DNNL has limited optimizations for Intel TBB and has some functional limitations if built with Intel TBB.</p>
-<p>Functional limitations:</p>
+</div><!-- fragment --><p>oneDNN has functional limitations if built with TBB:</p>
 <ul>
 <li>Winograd convolution algorithm is not supported for fp32 backward by data and backward by weights propagation.</li>
 </ul>
 <h4>Threadpool</h4>
-<p>To build DNNL with support for threadpool threading, set <code>DNNL_CPU_RUNTIME</code> to <code>THREADPOOL</code></p>
+<p>To build oneDNN with support for threadpool threading, set <code>DNNL_CPU_RUNTIME</code> to <code>THREADPOOL</code></p>
 <div class="fragment"><div class="line">$ cmake -DDNNL_CPU_RUNTIME=THREADPOOL ..</div>
 </div><!-- fragment --><p>The <code>DNNL_TEST_THREADPOOL_IMPL</code> CMake variable controls which of the three threadpool implementations would be used for testing: <code>STANDALONE</code>, <code>TBB</code>, or <code>EIGEN</code>. The latter two require also passing <code>TBBROOT</code> or <code>Eigen3_DIR</code> paths to CMake. For example:</p>
 <div class="fragment"><div class="line">$ cmake -DDNNL_CPU_RUNTIME=THREADPOOL -DDNNL_TEST_THREADPOOL_IMPL=EIGEN -DEigen3_DIR=/path/to/eigen/share/eigen3/cmake ..</div>
@@ -143,7 +142,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>As threadpools are attached to streams which are only passed during primitive execution, work decomposition is performed statically at the primitive creation time. At the primitive execution time, the threadpool is responsible for balancing the static decomposition from the previous item across available worker threads.</li>
 </ul>
 <h2>GPU Options</h2>
-<p>Intel Processor Graphics is supported by DNNLs GPU engine. GPU engine is disabled in the default build configuration.</p>
+<p>Intel Processor Graphics is supported by oneDNN GPU engine. GPU engine is disabled in the default build configuration.</p>
 <h3>Runtimes</h3>
 <p>To enable GPU support you need to specify the GPU runtime by setting <code>DNNL_GPU_RUNTIME</code> CMake option. The default value is <code>"NONE"</code> which corresponds to no GPU support in the library.</p>
 <h4>OpenCL*</h4>

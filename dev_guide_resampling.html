@@ -150,17 +150,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Resampling primitive supports the following combination of data types for source and destination memory objects:</p>
 <table class="doxtable">
 <tr>
-<th align="left">Propagation </th><th align="left">Source </th><th align="left">Destination  </th></tr>
+<th align="left">Propagation </th><th align="left">Source / Destination  </th></tr>
 <tr>
-<td align="left">forward / backward </td><td align="left">f32 </td><td align="left">f32 </td></tr>
+<td align="left">forward / backward </td><td align="left">f32, bf16 </td></tr>
 <tr>
-<td align="left">forward / backward </td><td align="left">bf16 </td><td align="left">bf16 </td></tr>
+<td align="left">forward </td><td align="left">f16, s8, u8 </td></tr>
 </table>
 <h3>Post-ops and Attributes</h3>
 <p>The resampling primitive doesn't support any post-ops or attributes.</p>
 <h2>Implementation Limitations</h2>
 <ol type="1">
 <li>No primitive specific limitations. Refer to <a class="el" href="dev_guide_data_types.html">Data Types</a> for limitations related to data types support.</li>
+<li><b>CPU</b><ul>
+<li>No support for f16, u8, s8 data types.</li>
+</ul>
+</li>
 </ol>
 <h2>Performance Tips</h2>
 <p>N/A</p>

@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>DNNL: CNN int8 inference example</title>
+<title>oneDNN: CNN int8 inference example</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,7 +24,7 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-   <div id="projectname">Deep Neural Network Library (DNNL)
+   <div id="projectname">oneAPI Deep Neural Network Library (oneDNN)
    &#160;<span id="projectnumber">1.4.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
@@ -150,7 +150,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --><p> Create a primitive descriptor using the convolution descriptor and passing along the int8 attributes in the constructor. The primitive descriptor for the convolution will contain the specific memory formats for the computation. </p>
 <div class="fragment"><div class="line">    <span class="keyword">auto</span> conv_prim_desc</div>
 <div class="line">            = convolution_forward::primitive_desc(conv_desc, conv_attr, eng);</div>
-</div><!-- fragment --><p> Create a memory for each of the convolution's data input parameters (source, bias, weights, and destination). Using the convolution primitive descriptor as the creation parameter enables DNNL to configure the memory formats for the convolution.</p>
+</div><!-- fragment --><p> Create a memory for each of the convolution's data input parameters (source, bias, weights, and destination). Using the convolution primitive descriptor as the creation parameter enables oneDNN to configure the memory formats for the convolution.</p>
 <p>Scaling parameters are passed to the reorder primitive via the attributes primitive.</p>
 <p>User memory must be transformed into convolution-friendly memory (for int8 and memory format). A reorder layer performs the data transformation from f32 (the original user data) into int8 format (the data used for the convolution). In addition, the reorder transforms the user data into the required memory format (as explained in the simple_net example).</p>
 <div class="fragment"><div class="line">    <span class="keyword">auto</span> conv_src_memory = memory(conv_prim_desc.src_desc(), eng);</div>

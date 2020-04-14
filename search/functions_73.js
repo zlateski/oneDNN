@@ -10,6 +10,7 @@ var searchData=
   ['set_5focl_5fmem_5fobject',['set_ocl_mem_object',['../structdnnl_1_1memory.html#a727cea8263521e3bfd0ca1b1d952ba48',1,'dnnl::memory']]],
   ['set_5foutput_5fscales',['set_output_scales',['../structdnnl_1_1primitive__attr.html#a4b81acc8e48886313154f75c1708ae02',1,'dnnl::primitive_attr']]],
   ['set_5fpost_5fops',['set_post_ops',['../structdnnl_1_1primitive__attr.html#ac830fa9f4fcf480b494d73153ad579bf',1,'dnnl::primitive_attr']]],
+  ['set_5fprimitive_5fcache_5fcapacity',['set_primitive_cache_capacity',['../group__dnnl__api__primitive__cache.html#ga12eefad64ac6917a161994c005abe69c',1,'dnnl']]],
   ['set_5frnn_5fdata_5fqparams',['set_rnn_data_qparams',['../structdnnl_1_1primitive__attr.html#a39ce5aa8b06ed331d8e2158108cc8324',1,'dnnl::primitive_attr']]],
   ['set_5frnn_5fweights_5fqparams',['set_rnn_weights_qparams',['../structdnnl_1_1primitive__attr.html#a61bd70f97baa628fd49b2c8b334b913e',1,'dnnl::primitive_attr']]],
   ['set_5fscales',['set_scales',['../structdnnl_1_1primitive__attr.html#a9bf717bd25b6fddd89055da8178eab75',1,'dnnl::primitive_attr']]],

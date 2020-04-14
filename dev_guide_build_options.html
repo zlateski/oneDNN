@@ -100,15 +100,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr>
 <td align="left">DNNL_ENABLE_JIT_PROFILING </td><td align="left"><b>ON</b>, OFF </td><td align="left">Enables integration with Intel(R) VTune(TM) Amplifier </td></tr>
 <tr>
-<td align="left">DNNL_ENABLE_PRIMITIVE_CACHE </td><td align="left">ON, <b>OFF</b> </td><td align="left">Enables primitive cache </td></tr>
+<td align="left">DNNL_ENABLE_PRIMITIVE_CACHE </td><td align="left"><b>ON</b>, OFF </td><td align="left">Enables primitive cache </td></tr>
 <tr>
 <td align="left">DNNL_ENABLE_MAX_CPU_ISA </td><td align="left"><b>ON</b>, OFF </td><td align="left">Enables controlling CPU dispatcher at run-time </td></tr>
 </table>
 <p>All other building options that can be found in CMake files are dedicated for the development/debug purposes and are subject to change without any notice. Please avoid using them.</p>
 <h2>Common options</h2>
-<h3>Primitive cache</h3>
-<p>Primitive cache is disabled in the default build configuration.</p>
-<p>To enable the primitive cache you can use <code>DNNL_ENABLE_PRIMITIVE_CACHE</code> CMake option. The default value is <code>"OFF"</code>.</p>
 <h2>CPU Options</h2>
 <p>Intel Architecture Processors and compatible devices are supported by oneDNN CPU engine. The CPU engine is built by default and cannot be disabled at build time.</p>
 <h3>Targeting Specific Architecture</h3>
@@ -119,17 +116,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h3>Runtime CPU dispatcher control</h3>
 <p>oneDNN JIT relies on ISA features obtained from the processor it is being run on. There are situations when it is necessary to control this behavior at run-time to, for example, test SSE4.1 code on an AVX2-capable processor. The <code>DNNL_ENABLE_MAX_CPU_ISA</code> build option controls the availability of this feature. See <a class="el" href="dev_guide_cpu_dispatcher_control.html">CPU dispatcher control</a> for more information.</p>
 <h3>Runtimes</h3>
-<p>CPU engine can use OpenMP, TBB or sequential threading runtimes. OpenMP threading is the default build mode. This behavior is controlled by the <code>DNNL_CPU_RUNTIME</code> CMake option.</p>
+<p>CPU engine can use OpenMP, Threading Building Blocks (TBB) or sequential threading runtimes. OpenMP threading is the default build mode. This behavior is controlled by the <code>DNNL_CPU_RUNTIME</code> CMake option.</p>
 <h4>OpenMP</h4>
 <p>oneDNN uses OpenMP runtime library provided by the compiler.</p>
 <dl class="section warning"><dt>Warning</dt><dd>Because different OpenMP runtimes may not be binary-compatible, it's important to ensure that only one OpenMP runtime is used throughout the application. Having more than one OpenMP runtime linked to an executable may lead to undefined behavior including incorrect results or crashes. However as long as both the library and the application use the same or compatible compilers there would be no conflicts.</dd></dl>
-<h4>TBB</h4>
+<h4>Threading Building Blocks (TBB)</h4>
 <p>To build oneDNN with TBB support, set <code>DNNL_CPU_RUNTIME</code> to <code>TBB</code>:</p>
 <div class="fragment"><div class="line">$ cmake -DDNNL_CPU_RUNTIME=TBB ..</div>
 </div><!-- fragment --><p>Optionally, set the <code>TBBROOT</code> environmental variable to point to the TBB installation path or pass the path directly to CMake:</p>
 <div class="fragment"><div class="line">$ cmake -DDNNL_CPU_RUNTIME=TBB -DTBBROOT=/opt/intel/path/tbb ..</div>
-</div><!-- fragment --><p>oneDNN has limited optimizations for Intel TBB and has some functional limitations if built with Intel TBB.</p>
-<p>Functional limitations:</p>
+</div><!-- fragment --><p>oneDNN has functional limitations if built with TBB:</p>
 <ul>
 <li>Winograd convolution algorithm is not supported for fp32 backward by data and backward by weights propagation.</li>
 </ul>

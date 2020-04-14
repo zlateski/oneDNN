@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>DNNL: Int8 Computation Aspects</title>
+<title>oneDNN: Int8 Computation Aspects</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,7 +24,7 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-   <div id="projectname">Deep Neural Network Library (DNNL)
+   <div id="projectname">oneAPI Deep Neural Network Library (oneDNN)
    &#160;<span id="projectnumber">1.4.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
@@ -112,11 +112,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h2>CPU</h2>
 <p><a class="anchor" id="dg_i8_comp_s11"></a></p>
 <h3>1. Inputs of mixed type: u8 and s8</h3>
-<p>The Intel(R) Instruction Set Architecture has special instructions that enable multiplying and adding the vectors of u8 and s8 very efficiently. DNNL enables int8 support using these particular instructions.</p>
+<p>Instruction Set Architecture (ISA) has special instructions that enable multiplying and adding the vectors of u8 and s8 very efficiently. oneDNN enables int8 support using these particular instructions.</p>
 <p>Unfortunately, these instructions do not have the counterparts that work with vectors of the same type (either s8/s8 or u8/u8). The details for the s8/s8 case are covered in the <a class="el" href="dev_guide_int8_computations.html#dg_i8_comp_s12">2. Inputs of the same type: s8</a> section below.</p>
-<h4>1.1. Processors with the Intel AVX2 or Intel AVX512 Instruction Set</h4>
-<p><em>System examples: Intel Xeon Processor E7 v3 Family (formerly Haswell), Intel Xeon Scalable processor x1xx series (formerly Skylake).</em></p>
-<p>DNNL implements matrix multiplication such as operations with u8 and s8 operands on the Intel AVX2 and Intel AVX512 Instruction Set by using a sequence of <code>VPMADDUBSW, VPMADDWD, VPADDD</code> instructions <a class="el" href="dev_guide_int8_computations.html#dg_i8_ref_sdm">[1]</a>:</p>
+<h4>1.1. Processors with the Intel AVX2 or Intel AVX-512 Support</h4>
+<p><em>System examples: Intel Xeon processor E7 v3 Family (formerly Haswell), Intel Xeon Scalable processor x1xx series (formerly Skylake).</em></p>
+<p>oneDNN implements matrix multiplication such as operations with u8 and s8 operands on the Intel AVX2 and Intel AVX512 Instruction Set by using a sequence of <code>VPMADDUBSW, VPMADDWD, VPADDD</code> instructions <a class="el" href="dev_guide_int8_computations.html#dg_i8_ref_sdm">[1]</a>:</p>
 <ol type="1">
 <li><code>VPMADDUBSW</code> multiplies two pairs of u8/s8 values and accumulates the result into s16 (<code>int16_t</code>) with potential saturation.</li>
 <li><code>VPMADDWD</code> sums the pairs of s16 values obtained above into s32. Computed sum is exact.</li>
@@ -155,7 +155,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><span class="comment">//       + max(INT16_MIN, min(INT16_MAX,   0 *   0 +   0 *   0));</span></div>
 <div class="line"><span class="comment">// While one might expect 64770 = 255 * 127 + 255 * 127 + 0 * 0 + 0 * 0;</span></div>
 </div><!-- fragment --><p>This is the major pitfall of using this sequence of instructions. As far as the precise result is concerned, one of the possible instruction sequences would be <code>VPMOVSXBW/VPMOVZXBW, VPMADDWD, VPADDD</code> <a class="el" href="dev_guide_int8_computations.html#dg_i8_ref_sdm">[1]</a>, where the first ones casts the s8/u8 values to s16. Unfortunately, using them would lead to 2x lower performance.</p>
-<p>When one input is of type u8 and the other one is of type s8, DNNL assumes that it is the user's responsibility to choose the quantization parameters so that no overflow/saturation occurs. For instance, a user can use u7 <code>[0, 127]</code> instead of u8 for the unsigned input, or s7 <code>[-64, 63]</code> instead of the s8 one. It is worth mentioning that this is required only when the Intel AVX2 or Intel AVX512 Instruction Set is used.</p>
+<p>When one input is of type u8 and the other one is of type s8, oneDNN assumes that it is the user's responsibility to choose the quantization parameters so that no overflow/saturation occurs. For instance, a user can use u7 <code>[0, 127]</code> instead of u8 for the unsigned input, or s7 <code>[-64, 63]</code> instead of the s8 one. It is worth mentioning that this is required only when the Intel AVX2 or Intel AVX512 Instruction Set is used.</p>
 <p>The <b>LSTM</b> primitive behaves slightly differently than the convolution and inner product primitives, or u8/s8 GEMM. Even though its hidden state is represented by the u8 data type, the non-symmetric quantization is assumed. Namely, the formula is:</p>
 <ul>
 <li>\(data_{f32}(:) = \frac{1}{scale}(data_{u8}(:) - shift)\).</li>
@@ -165,7 +165,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>Data (hidden states) use <code>scale = 127</code>, and <code>shift = 128</code>.</li>
 <li>Weights use <code>scale = 63 / W_max</code>, where <code>W_max</code> is \(\max | W_{f32}(:)| {}_{} \).</li>
 </ul>
-<h4>1.2. Processors with the Intel(R) DL Boost Instruction Set</h4>
+<h4>1.2. Processors with the Intel DL Boost Support</h4>
 <p><em>System examples: Intel Xeon Scalable processor x2xx series (formerly Cascade Lake).</em></p>
 <p>Intel DL Boost brings the <code>VPDPBUSD</code> instruction <a class="el" href="dev_guide_int8_computations.html#dg_i8_ref_isa_ext">[2]</a>, which enables computing the sum of four products of s8 and u8 values. This instruction performs same computations as the sequence of <code>VPMADDUBSW, VPMADDWD, VPADDD</code> instructions shown above, but with the major difference that the intermediate overflow and saturation cannot occur.</p>
 <p>In other words, <code>VPDPBUSD</code> enables you to exactly compute: </p>
@@ -187,7 +187,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p><a class="anchor" id="dg_i8_comp_s12"></a></p>
 <h3>2. Inputs of the same type: s8</h3>
 <p>As mentioned above, with the current instruction set it is impossible to multiply and add two vectors of the s8 data type as efficiently as it is for the mixed case. However, in real-world applications the inputs are typically signed.</p>
-<p>To overcome this issue, DNNL employs a trick: at run-time, it adds 128 to one of the s8 input to make it of type u8 instead. Once the result is computed, DNNL subtracts the extra value it added by replacing the s8 with u8. This subtracted value sometimes referred as a <b>compensation</b>.</p>
+<p>To overcome this issue, oneDNN employs a trick: at run-time, it adds 128 to one of the s8 input to make it of type u8 instead. Once the result is computed, oneDNN subtracts the extra value it added by replacing the s8 with u8. This subtracted value sometimes referred as a <b>compensation</b>.</p>
 <p>Conceptually the formula is: </p>
 <p class="formulaDsp">
 \[ Y_{s32} = X_{s8} \cdot W_{s8} = X&#39;_{u8} \cdot W_{s8} - 128 \cdot W_{s8}, \]

@@ -297,7 +297,7 @@ Back, bottom, and right </td><td align="left">\(PD_R\) </td><td align="left">\(P
 </ul>
 <p>In case any of these constraints are not met, the implementation will silently fall back to an explicit GEMM algorithm.</p>
 <h4>Winograd Convolution</h4>
-<p>oneDNN supports the Winograd convolution algorithm on systems with Intel(R) AVX-512 support and above under the following conditions:</p>
+<p>oneDNN supports the Winograd convolution algorithm on systems with Intel(R) Advanced Vector Extensions 512 (Intel(R) AVX-512) support and Intel Deep Learning Boost (Intel DL Boost) under the following conditions:</p>
 <ul>
 <li>Data and weights memory formats are defined by the convolution primitive (user passes <code>any</code> as the data format).</li>
 <li>The spatial domain is two-dimensional.</li>
@@ -327,7 +327,7 @@ Back, bottom, and right </td><td align="left">\(PD_R\) </td><td align="left">\(P
 <ol type="1">
 <li>Refer to <a class="el" href="dev_guide_data_types.html">Data Types</a> for limitations related to data types support.</li>
 <li><b>CPU</b><ul>
-<li>Winograd are implemented only for Intel(R) AVX-512 or Intel(R) AVX512-DL Boost instruction sets</li>
+<li>Winograd are implemented only for processors with Intel AVX-512 and Intel DL Boost instruction sets</li>
 <li>Run-time output scales are not supported</li>
 </ul>
 </li>

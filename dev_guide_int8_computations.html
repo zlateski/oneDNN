@@ -112,10 +112,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h2>CPU</h2>
 <p><a class="anchor" id="dg_i8_comp_s11"></a></p>
 <h3>1. Inputs of mixed type: u8 and s8</h3>
-<p>The Intel(R) Instruction Set Architecture has special instructions that enable multiplying and adding the vectors of u8 and s8 very efficiently. oneDNN enables int8 support using these particular instructions.</p>
+<p>Instruction Set Architecture (ISA) has special instructions that enable multiplying and adding the vectors of u8 and s8 very efficiently. oneDNN enables int8 support using these particular instructions.</p>
 <p>Unfortunately, these instructions do not have the counterparts that work with vectors of the same type (either s8/s8 or u8/u8). The details for the s8/s8 case are covered in the <a class="el" href="dev_guide_int8_computations.html#dg_i8_comp_s12">2. Inputs of the same type: s8</a> section below.</p>
-<h4>1.1. Processors with the Intel AVX2 or Intel AVX512 Instruction Set</h4>
-<p><em>System examples: Intel Xeon Processor E7 v3 Family (formerly Haswell), Intel Xeon Scalable processor x1xx series (formerly Skylake).</em></p>
+<h4>1.1. Processors with the Intel AVX2 or Intel AVX-512 Support</h4>
+<p><em>System examples: Intel Xeon processor E7 v3 Family (formerly Haswell), Intel Xeon Scalable processor x1xx series (formerly Skylake).</em></p>
 <p>oneDNN implements matrix multiplication such as operations with u8 and s8 operands on the Intel AVX2 and Intel AVX512 Instruction Set by using a sequence of <code>VPMADDUBSW, VPMADDWD, VPADDD</code> instructions <a class="el" href="dev_guide_int8_computations.html#dg_i8_ref_sdm">[1]</a>:</p>
 <ol type="1">
 <li><code>VPMADDUBSW</code> multiplies two pairs of u8/s8 values and accumulates the result into s16 (<code>int16_t</code>) with potential saturation.</li>
@@ -165,7 +165,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>Data (hidden states) use <code>scale = 127</code>, and <code>shift = 128</code>.</li>
 <li>Weights use <code>scale = 63 / W_max</code>, where <code>W_max</code> is \(\max | W_{f32}(:)| {}_{} \).</li>
 </ul>
-<h4>1.2. Processors with the Intel(R) DL Boost Instruction Set</h4>
+<h4>1.2. Processors with the Intel DL Boost Support</h4>
 <p><em>System examples: Intel Xeon Scalable processor x2xx series (formerly Cascade Lake).</em></p>
 <p>Intel DL Boost brings the <code>VPDPBUSD</code> instruction <a class="el" href="dev_guide_int8_computations.html#dg_i8_ref_isa_ext">[2]</a>, which enables computing the sum of four products of s8 and u8 values. This instruction performs same computations as the sequence of <code>VPMADDUBSW, VPMADDWD, VPADDD</code> instructions shown above, but with the major difference that the intermediate overflow and saturation cannot occur.</p>
 <p>In other words, <code>VPDPBUSD</code> enables you to exactly compute: </p>

@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>DNNL: examples/example_utils.hpp Source File</title>
+<title>oneDNN: examples/example_utils.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,7 +24,7 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-   <div id="projectname">Deep Neural Network Library (DNNL)
+   <div id="projectname">oneAPI Deep Neural Network Library (oneDNN)
    &#160;<span id="projectnumber">1.4.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
@@ -154,7 +154,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">inline</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *engine_kind2str_upper(<a class="code" href="structdnnl_1_1engine.html#a2635da16314dcbdb9bd9ea431316bb1a">dnnl::engine::kind</a> kind);</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">// Runs example function with signature void() and catches errors.</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">// Returns `0` on success, `1` or DNNL error, and `2` on example error.</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">// Returns `0` on success, `1` or oneDNN error, and `2` on example error.</span></div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">int</span> handle_example_errors(</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        std::initializer_list&lt;dnnl::engine::kind&gt; engine_kinds,</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        std::function&lt;<span class="keywordtype">void</span>()&gt; example) {</div>
@@ -166,7 +166,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        std::cout &lt;&lt; e.message &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        exit_code = 0;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    } <span class="keywordflow">catch</span> (<a class="code" href="structdnnl_1_1error.html">dnnl::error</a> &amp;e) {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;DNNL error caught: &quot;</span> &lt;&lt; std::endl</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;oneDNN error caught: &quot;</span> &lt;&lt; std::endl</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                  &lt;&lt; <span class="stringliteral">&quot;\tStatus: &quot;</span> &lt;&lt; dnnl_status2str(e.status) &lt;&lt; std::endl</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                  &lt;&lt; <span class="stringliteral">&quot;\tMessage: &quot;</span> &lt;&lt; e.<a class="code" href="structdnnl_1_1error.html#adfc1a2bf4e31aa1751b38e8e1dbcba2b">what</a>() &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        exit_code = 1;</div>
@@ -300,7 +300,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="structdnnl_1_1memory_1_1desc_html_a3a12698f833b44ed55af9fc6621c4917"><div class="ttname"><a href="structdnnl_1_1memory_1_1desc.html#a3a12698f833b44ed55af9fc6621c4917">dnnl::memory::desc::get_size</a></div><div class="ttdeci">size_t get_size() const </div><div class="ttdoc">Returns size of the memory descriptor in bytes. </div><div class="ttdef"><b>Definition:</b> dnnl.hpp:1944</div></div>
 <div class="ttc" id="structdnnl_1_1engine_html_a35bcbdd6fa35663ca73e24d63c2f8ff4"><div class="ttname"><a href="structdnnl_1_1engine.html#a35bcbdd6fa35663ca73e24d63c2f8ff4">dnnl::engine::get_count</a></div><div class="ttdeci">static size_t get_count(kind kind)</div><div class="ttdoc">Returns the number of engines of a certain kind. </div><div class="ttdef"><b>Definition:</b> dnnl.hpp:868</div></div>
 <div class="ttc" id="structdnnl_1_1memory_html_a4494aca5ff97774b73e707f4f951972d"><div class="ttname"><a href="structdnnl_1_1memory.html#a4494aca5ff97774b73e707f4f951972d">dnnl::memory::get_engine</a></div><div class="ttdeci">engine get_engine() const </div><div class="ttdoc">Returns the associated engine. </div><div class="ttdef"><b>Definition:</b> dnnl.hpp:2018</div></div>
-<div class="ttc" id="structdnnl_1_1error_html"><div class="ttname"><a href="structdnnl_1_1error.html">dnnl::error</a></div><div class="ttdoc">DNNL exception class. </div><div class="ttdef"><b>Definition:</b> dnnl.hpp:91</div></div>
+<div class="ttc" id="structdnnl_1_1error_html"><div class="ttname"><a href="structdnnl_1_1error.html">dnnl::error</a></div><div class="ttdoc">oneDNN exception class. </div><div class="ttdef"><b>Definition:</b> dnnl.hpp:91</div></div>
 <div class="ttc" id="structdnnl_1_1engine_html_a2635da16314dcbdb9bd9ea431316bb1a"><div class="ttname"><a href="structdnnl_1_1engine.html#a2635da16314dcbdb9bd9ea431316bb1a">dnnl::engine::kind</a></div><div class="ttdeci">kind</div><div class="ttdoc">Kinds of engines. </div><div class="ttdef"><b>Definition:</b> dnnl.hpp:849</div></div>
 <div class="ttc" id="structdnnl_1_1engine_html_a2635da16314dcbdb9bd9ea431316bb1aad9747e2da342bdb995f6389533ad1a3d"><div class="ttname"><a href="structdnnl_1_1engine.html#a2635da16314dcbdb9bd9ea431316bb1aad9747e2da342bdb995f6389533ad1a3d">dnnl::engine::kind::cpu</a></div><div class="ttdoc">CPU engine. </div></div>
 <div class="ttc" id="structdnnl_1_1memory_html_a6ad818e4699872cc913474fa5f122cd5"><div class="ttname"><a href="structdnnl_1_1memory.html#a6ad818e4699872cc913474fa5f122cd5">dnnl::memory::dim</a></div><div class="ttdeci">dnnl_dim_t dim</div><div class="ttdoc">Integer type for representing dimension sizes and indices. </div><div class="ttdef"><b>Definition:</b> dnnl.hpp:1190</div></div>

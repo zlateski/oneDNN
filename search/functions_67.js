@@ -23,6 +23,7 @@ var searchData=
   ['get_5fparams_5fsum',['get_params_sum',['../structdnnl_1_1post__ops.html#a80a7b5900334d558aa5abbf9f1f1661a',1,'dnnl::post_ops']]],
   ['get_5fpost_5fops',['get_post_ops',['../structdnnl_1_1primitive__attr.html#a8f6b7226d2a1ccaf11142553faa17f1b',1,'dnnl::primitive_attr']]],
   ['get_5fprimitive_5fattr',['get_primitive_attr',['../structdnnl_1_1primitive__desc__base.html#a9d26b8c1068f0849da74a6ba358e5de6',1,'dnnl::primitive_desc_base']]],
+  ['get_5fprimitive_5fcache_5fcapacity',['get_primitive_cache_capacity',['../group__dnnl__api__primitive__cache.html#gacc0f23351595504f3e2c2b6fcf603770',1,'dnnl']]],
   ['get_5fprimitive_5fdesc',['get_primitive_desc',['../group__dnnl__api__primitives__common.html#ga1fa3eca53abce941ace7d28f9af1ec61',1,'dnnl::primitive']]],
   ['get_5fscales',['get_scales',['../structdnnl_1_1primitive__attr.html#a80388f05674a791c6614efe64a43b980',1,'dnnl::primitive_attr']]],
   ['get_5fscratchpad_5fmode',['get_scratchpad_mode',['../structdnnl_1_1primitive__attr.html#a05ff5d73eae0eba28b341b5d2b6186a7',1,'dnnl::primitive_attr']]],

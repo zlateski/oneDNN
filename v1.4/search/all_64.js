@@ -120,7 +120,6 @@ var searchData=
   ['dnnl_5facdeb',['dnnl_acdeb',['../group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091da0cfe86402763786b9b4d73062cfd2f05',1,'dnnl_types.h']]],
   ['dnnl_5falg_5fkind_5ft',['dnnl_alg_kind_t',['../group__dnnl__api__primitives__common.html#ga96946c805f6c4922c38c37049ab95d23',1,'dnnl_types.h']]],
   ['dnnl_5fany_5fengine',['dnnl_any_engine',['../group__dnnl__api__engine.html#gga04b3dd9eba628ea02218a52c4c4363a2af14bd66bd4a7130da204c539f7cf08b6',1,'dnnl_types.h']]],
-  ['dnnl_20api',['DNNL API',['../group__dnnl__api.html',1,'']]],
   ['deconvolution',['Deconvolution',['../group__dnnl__api__deconvolution.html',1,'']]],
   ['dnnl_5farg_5fattr_5foutput_5fscales',['DNNL_ARG_ATTR_OUTPUT_SCALES',['../group__dnnl__api__primitives__common.html#ga0afb48b0c2b8f3ee30609aaa47aa29db',1,'dnnl_types.h']]],
   ['dnnl_5farg_5fattr_5fpost_5fop_5fdw',['DNNL_ARG_ATTR_POST_OP_DW',['../group__dnnl__api__primitives__common.html#ga47534804c9b2f9ede6b875f6cb08cc35',1,'dnnl_types.h']]],

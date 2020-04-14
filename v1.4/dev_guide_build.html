@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>DNNL: Build from Source</title>
+<title>oneDNN: Build from Source</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,7 +24,7 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-   <div id="projectname">Deep Neural Network Library (DNNL)
+   <div id="projectname">oneAPI Deep Neural Network Library (oneDNN)
    &#160;<span id="projectnumber">1.4.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
@@ -80,11 +80,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><h2>Download the Source Code</h2>
-<p>Download <a href="https://github.com/intel/mkl-dnn/archive/master.zip">DNNL source code</a> or clone <a href="https://github.com/intel/mkl-dnn.git">the repository</a>.</p>
-<div class="fragment"><div class="line">git clone https:<span class="comment">//github.com/intel/mkl-dnn.git</span></div>
+<p>Download <a href="https://github.com/oneapi-src/oneDNN/archive/master.zip">oneDNN source code</a> or clone <a href="https://github.com/oneapi-src/oneDNN.git">the repository</a>.</p>
+<div class="fragment"><div class="line">git clone https:<span class="comment">//github.com/oneapi-src/oneDNN.git</span></div>
 </div><!-- fragment --><h2>Build the Library</h2>
 <p>Ensure that all software dependencies are in place and have at least the minimal supported version.</p>
-<p>The DNNL build system is based on CMake. Use</p>
+<p>The oneDNN build system is based on CMake. Use</p>
 <ul>
 <li><code>CMAKE_INSTALL_PREFIX</code> to control the library installation location,</li>
 <li><code>CMAKE_BUILD_TYPE</code> to select between build type (<code>Release</code>, <code>Debug</code>, <code>RelWithDebInfo</code>).</li>
@@ -107,7 +107,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --> For the solution to use the Intel C++ Compiler, select the corresponding toolchain using the cmake <code>-T</code> switch: <div class="fragment"><div class="line">cmake -G <span class="stringliteral">&quot;Visual Studio 15 2017 Win64&quot;</span> -T <span class="stringliteral">&quot;Intel C++ Compiler 19.0&quot;</span> ..</div>
 </div><!-- fragment --></li>
 <li>Build the library: <div class="fragment"><div class="line">cmake --build .</div>
-</div><!-- fragment --> You can also use the <code>msbuild</code> command-line tool directly (here <code>/p:Configuration</code> selects the build configuration which can be different from the one specified in <code>CMAKE_BUILD_TYPE</code>, and <code>/m</code> enables a parallel build): <div class="fragment"><div class="line">msbuild <span class="stringliteral">&quot;DNNL.sln&quot;</span> /p:Configuration=Release /m</div>
+</div><!-- fragment --> You can also use the <code>msbuild</code> command-line tool directly (here <code>/p:Configuration</code> selects the build configuration which can be different from the one specified in <code>CMAKE_BUILD_TYPE</code>, and <code>/m</code> enables a parallel build): <div class="fragment"><div class="line">msbuild <span class="stringliteral">&quot;oneDNN.sln&quot;</span> /p:Configuration=Release /m</div>
 </div><!-- fragment --></li>
 <li>Build the documentation <div class="fragment"><div class="line">cmake --build . --target DOC</div>
 </div><!-- fragment --></li>

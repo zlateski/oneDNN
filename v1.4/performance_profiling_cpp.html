@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>DNNL: Performance Profiling Example</title>
+<title>oneDNN: Performance Profiling Example</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,7 +24,7 @@
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
-   <div id="projectname">Deep Neural Network Library (DNNL)
+   <div id="projectname">oneAPI Deep Neural Network Library (oneDNN)
    &#160;<span id="projectnumber">1.4.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
@@ -84,16 +84,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="keyword">const</span> memory::dim IC = 3, OC = 96;</div>
 <div class="line">    <span class="keyword">const</span> memory::dim IH = 227, KH = 11, OH = 55;</div>
 <div class="line">    <span class="keyword">const</span> memory::dim IW = 227, KW = 11, OW = 55;</div>
-</div><!-- fragment --><p> This example demonstrates the best practices for application performance optimizations with DNNL.</p>
+</div><!-- fragment --><p> This example demonstrates the best practices for application performance optimizations with oneDNN.</p>
 <blockquote class="doxtable">
 <p>Example code: <a class="el" href="performance_profiling_8cpp-example.html">performance_profiling.cpp</a></p>
 <p></p>
 </blockquote>
-<p>This example uses <a class="el" href="dev_guide_verbose.html">DNNL_VERBOSE</a> trace output to tune DNNL code to align with the <a class="el" href="dev_guide_inference.html">best practices</a>.</p>
-<p>It will assume knowledge of memory formats and their usage in DNNL. You can read more about this topic <a class="el" href="memory_format_propagation_cpp.html">here</a>.</p>
+<p>This example uses <a class="el" href="dev_guide_verbose.html">DNNL_VERBOSE</a> trace output to tune oneDNN code to align with the <a class="el" href="dev_guide_inference.html">best practices</a>.</p>
+<p>It will assume knowledge of memory formats and their usage in oneDNN. You can read more about this topic <a class="el" href="memory_format_propagation_cpp.html">here</a>.</p>
 <p>The example has three different implementations of the mathematical operation:</p>
 <ol type="1">
-<li><em>Naive implementation</em> executes 2D convolution followed by ReLU on the data in <b>NCHW</b> format. This implementation does not align with DNNL best practices and results in suboptimal performance.</li>
+<li><em>Naive implementation</em> executes 2D convolution followed by ReLU on the data in <b>NCHW</b> format. This implementation does not align with oneDNN best practices and results in suboptimal performance.</li>
 <li><em>Blocked format implementation</em> executes the same operations sequence on the <b>blocked format</b> optimized for convolution performance. This implementation uses <code>format_tag=ANY</code> to create a convolution memory descriptor to determine the data format optimal for the convolution implementation. It then <b>propagates the blocked format</b> to the non-intensive ReLU. This implementation results in better overall performance than the naive implementation.</li>
 <li><em>Fused implementation</em> executes convolution fused with ReLU on blocked data format. This implementation uses <code>format_tag=ANY</code> to create a convolution memory descriptor, and then adds ReLU as a <b>post-op</b> to the convolution primitive. This version implements all of the best practices for inference resulting in the best overall performance.</li>
 </ol>
@@ -104,14 +104,14 @@ Walkthrough</h1>
 <div class="fragment"><div class="line">./program.exe [cpu|gpu] [implementation]</div>
 </div><!-- fragment --><p>Before you run the program, set your <code>DNNL_VERBOSE</code> environment variable to 1: </p>
 <div class="fragment"><div class="line">export DNNL_VERBOSE=1</div>
-</div><!-- fragment --><p>The program starts by creating DNNL memory objects in <b>NCHW</b> format. These are called <code>user_</code> because they are meant to represent the user's source data entering DNNL with the NCHW format.</p>
+</div><!-- fragment --><p>The program starts by creating oneDNN memory objects in <b>NCHW</b> format. These are called <code>user_</code> because they are meant to represent the user's source data entering oneDNN with the NCHW format.</p>
 <div class="fragment"><div class="line">    <span class="comment">// set dimensions for synthetic data and weights</span></div>
 <div class="line">    <span class="keyword">const</span> memory::dim BATCH = 128;</div>
 <div class="line">    <span class="keyword">const</span> memory::dim IC = 3, OC = 96;</div>
 <div class="line">    <span class="keyword">const</span> memory::dim IH = 227, KH = 11, OH = 55;</div>
 <div class="line">    <span class="keyword">const</span> memory::dim IW = 227, KW = 11, OW = 55;</div>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>Here the library allocates memory.</dd></dl>
-<div class="fragment"><div class="line">    <span class="comment">// create DNNL memory objects for user&#39;s tensors (in nchw and oihw formats)</span></div>
+<div class="fragment"><div class="line">    <span class="comment">// create oneDNN memory objects for user&#39;s tensors (in nchw and oihw formats)</span></div>
 <div class="line">    <span class="keyword">auto</span> user_src = memory({{BATCH, IC, IH, IW}, memory::data_type::f32,</div>
 <div class="line">                                   memory::format_tag::nchw},</div>
 <div class="line">            eng);</div>
@@ -128,7 +128,7 @@ Naive Implementation</h1>
 <p>This implementation is launched with the following shell code: </p>
 <div class="fragment"><div class="line">./program.exe cpu naive</div>
 </div><!-- fragment --><p> The program will call the implementation defined in the function <code>conv_relu_naive()</code>.</p>
-<p>First it sets the dimensions and format for convolution memory descriptors (<code>_md</code>) to match <code>user_</code> values&ndash;one <code>md</code> each for source, destination, and weight data. Then it uses those <code>md</code> to create the convolution descriptor <code>conv_d</code>, which tells DNNL to use plain format (NCHW) for the convolution.</p>
+<p>First it sets the dimensions and format for convolution memory descriptors (<code>_md</code>) to match <code>user_</code> values&ndash;one <code>md</code> each for source, destination, and weight data. Then it uses those <code>md</code> to create the convolution descriptor <code>conv_d</code>, which tells oneDNN to use plain format (NCHW) for the convolution.</p>
 <div class="fragment"><div class="line">    <span class="comment">// copy the dimensions and format from user&#39;s memory</span></div>
 <div class="line">    <span class="keyword">auto</span> conv_src_md = memory::desc(user_src.get_desc());</div>
 <div class="line">    <span class="keyword">auto</span> conv_wei_md = memory::desc(user_wei.get_desc());</div>
@@ -153,13 +153,13 @@ Naive Implementation</h1>
 <p><em>DNNL_VERBOSE output (see configuration notice*):</em> </p>
 <div class="fragment"><div class="line">dnnl_verbose,exec,cpu,convolution,gemm:jit,forward_inference,src_f32::blocked:abcd:f0 wei_f32::blocked:abcd:f0 bia_undef::undef::f0 dst_f32::blocked:abcd:f0,,alg:convolution_direct,mb128_ic3oc96_ih227oh55kh11sh4dh0ph0_iw227ow55kw11sw4dw0pw0,38.314</div>
 <div class="line">dnnl_verbose,exec,cpu,eltwise,jit:avx512_common,forward_inference,data_f32::blocked:abcd:f0 diff_undef::undef::f0,,alg:<a class="code" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640aba09bebb742494255b90b43871c01c69">eltwise_relu</a> alpha:0 beta:0,128x96x55x55,2.87695</div>
-</div><!-- fragment --><p> In <em>Blocked format implementation</em>, we will incorporate the best practice of letting DNNL determine the optimal format for convolution primitive.</p>
+</div><!-- fragment --><p> In <em>Blocked format implementation</em>, we will incorporate the best practice of letting oneDNN determine the optimal format for convolution primitive.</p>
 <h1><a class="anchor" id="performance_profiling_cpp_implementation2"></a>
 Blocked format implementation</h1>
 <p>This implementation is launched with the following shell code: </p>
 <div class="fragment"><div class="line">./program.exe cpu blocked</div>
 </div><!-- fragment --><p> The program will call the implementation defined in the function <code>conv_relu_blocked()</code>.</p>
-<p>First it creates the md as in <b>naive implementation</b>. Next it changes the <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3f" title="Memory format tag specification. ">dnnl::memory::format_tag</a> for each md to <code>ANY</code>. Then it uses those md to create the convolution descriptor conv_d, which tells Intel DNNL to use whatever format it recommends for the convolution. DNNL will choose a friendly blocked format.</p>
+<p>First it creates the md as in <b>naive implementation</b>. Next it changes the <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3f" title="Memory format tag specification. ">dnnl::memory::format_tag</a> for each md to <code>ANY</code>. Then it uses those md to create the convolution descriptor conv_d, which tells oneDNN to use whatever format it recommends for the convolution. oneDNN will choose a friendly blocked format.</p>
 <div class="fragment"><div class="line">    <span class="comment">// copy the dimensions and format from user&#39;s memory</span></div>
 <div class="line">    <span class="keyword">auto</span> conv_src_md = memory::desc(user_src.get_desc());</div>
 <div class="line">    <span class="keyword">auto</span> conv_wei_md = memory::desc(user_wei.get_desc());</div>
@@ -177,7 +177,7 @@ Blocked format implementation</h1>
 <div class="fragment"><div class="line">    <span class="comment">// create a convolution primitive descriptor and primitive</span></div>
 <div class="line">    <span class="keyword">auto</span> conv_pd = convolution_forward::primitive_desc(conv_d, eng);</div>
 </div><!-- fragment --><p> Since the resulting convolution primitive will expect blocked source data, conditional reorders are inserted to convert input data to blocked format if required. The input data user_src is NCHW, so this conditional will be triggered:</p>
-<dl class="section note"><dt>Note</dt><dd>The reoders are applied using DNNL <code>reorder</code> primitive.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The reoders are applied using oneDNN <code>reorder</code> primitive.</dd></dl>
 <div class="fragment"><div class="line">    <span class="comment">// prepare convolution source</span></div>
 <div class="line">    memory conv_src = user_src;</div>
 <div class="line">    <span class="keywordflow">if</span> (conv_pd.src_desc() != user_src.get_desc()) {</div>
@@ -207,13 +207,13 @@ Blocked format implementation</h1>
 <div class="line">                    {<a class="code" href="group__dnnl__api__primitives__common.html#ga3ca217e4a06d42a0ede3c018383c388f">DNNL_ARG_DST</a>, conv_dst}});</div>
 </div><!-- fragment --> <div class="fragment"><div class="line">    <span class="comment">// execute relu (on convolution&#39;s destination format, whatever it is)</span></div>
 <div class="line">    create_and_execute_relu(conv_dst, eng, s);</div>
-</div><!-- fragment --><p> Blocked memory format is recommended for DNNL primitive execution and provides better performance, as shown in the DNNL_VERBOSE output by the convolution and relu execution times of 18.3 and 2.7 milliseconds (down from 38.3 and 2.9 in <em>naive implementation</em>), respectively. In this implementation, there is an additional reorder operation that executes before and after the the conv + relu. This small cost is worth the gain from executing in blocked format. If fact, it becomes negligible when chaining together multiple DNNL operations in succession. In these situations, you can do one reorder at the beginning and one at the end of the chain, and only pay the reorder penalty at those points in the execution.</p>
+</div><!-- fragment --><p> Blocked memory format is recommended for oneDNN primitive execution and provides better performance, as shown in the DNNL_VERBOSE output by the convolution and relu execution times of 18.3 and 2.7 milliseconds (down from 38.3 and 2.9 in <em>naive implementation</em>), respectively. In this implementation, there is an additional reorder operation that executes before and after the the conv + relu. This small cost is worth the gain from executing in blocked format. If fact, it becomes negligible when chaining together multiple oneDNN operations in succession. In these situations, you can do one reorder at the beginning and one at the end of the chain, and only pay the reorder penalty at those points in the execution.</p>
 <p><em>DNNL_VERBOSE output (see configuration notice*):</em> </p>
 <div class="fragment"><div class="line">dnnl_verbose,exec,cpu,reorder,jit:uni,undef,src_f32::blocked:abcd:f0 dst_f32::blocked:Acdb16a:f0,,,96x3x11x11,0.0310059</div>
 <div class="line">dnnl_verbose,exec,cpu,convolution,jit:avx512_common,forward_inference,src_f32::blocked:abcd:f0 wei_f32::blocked:Acdb16a:f0 bia_undef::undef::f0 dst_f32::blocked:aBcd16b:f0,,alg:convolution_direct,mb128_ic3oc96_ih227oh55kh11sh4dh0ph0_iw227ow55kw11sw4dw0pw0,18.3101</div>
 <div class="line">dnnl_verbose,exec,cpu,eltwise,jit:avx512_common,forward_inference,data_f32::blocked:aBcd16b:f0 diff_undef::undef::f0,,alg:<a class="code" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640aba09bebb742494255b90b43871c01c69">eltwise_relu</a> alpha:0 beta:0,128x96x55x55,2.66895</div>
 <div class="line">dnnl_verbose,exec,cpu,reorder,jit:uni,undef,src_f32::blocked:aBcd16b:f0 dst_f32::blocked:abcd:f0,,,128x96x55x55,4.80396</div>
-</div><!-- fragment --><p> This inference implementation is closer to best practices than <em>naive implementation</em> because it uses DNNL recommended memory format. <em>fused implementation</em> will futher optimize the performance by using a fused version of the conv + ReLU primitive emplying the Intel DNNL <a class="el" href="dev_guide_attributes_post_ops.html">post-ops attribute</a></p>
+</div><!-- fragment --><p> This inference implementation is closer to best practices than <em>naive implementation</em> because it uses oneDNN recommended memory format. <em>fused implementation</em> will futher optimize the performance by fusing convolution with ReLU using oneDNN <a class="el" href="dev_guide_attributes_post_ops.html">post-ops</a>.</p>
 <h1><a class="anchor" id="performance_profiling_cpp_implementation3"></a>
 Fused Implementation</h1>
 <p>This implementation is launched with the following shell code: </p>
@@ -247,7 +247,7 @@ Fused Implementation</h1>
 <div class="line">    conv.execute(s,</div>
 <div class="line">            {{<a class="code" href="group__dnnl__api__primitives__common.html#gac37ad67b48edeb9e742af0e50b70fe09">DNNL_ARG_SRC</a>, conv_src}, {<a class="code" href="group__dnnl__api__primitives__common.html#gaf279f28c59a807e71a70c719db56c5b3">DNNL_ARG_WEIGHTS</a>, conv_wei},</div>
 <div class="line">                    {<a class="code" href="group__dnnl__api__primitives__common.html#ga3ca217e4a06d42a0ede3c018383c388f">DNNL_ARG_DST</a>, conv_dst}});</div>
-</div><!-- fragment --><p> This implementation complies with best practices for f32 inference by using the DNNL recommended blocked format for convolution and adding ReLU as a post-op to execute a fused version of conv + ReLU. The consequence to following best practices can be seen in the execution time of the fused primitive of 18.0 milliseconds.</p>
+</div><!-- fragment --><p> This implementation complies with best practices for f32 inference by using the oneDNN recommended blocked format for convolution and adding ReLU as a post-op to execute a fused version of conv + ReLU. The consequence to following best practices can be seen in the execution time of the fused primitive of 18.0 milliseconds.</p>
 <p><em>DNNL_VERBOSE output (see configuration notice*):</em> </p>
 <div class="fragment"><div class="line">dnnl_verbose,exec,cpu,reorder,jit:uni,undef,src_f32::blocked:abcd:f0 dst_f32::blocked:Acdb16a:f0,,,96x3x11x11,0.0148926</div>
 <div class="line">dnnl_verbose,exec,cpu,convolution,jit:avx512_common,forward_inference,src_f32::blocked:abcd:f0 wei_f32::blocked:Acdb16a:f0 bia_undef::undef::f0 dst_f32::blocked:aBcd16b:f0,post_ops:<span class="stringliteral">&#39;eltwise_relu;&#39;</span>;,alg:convolution_direct,mb128_ic3oc96_ih227oh55kh11sh4dh0ph0_iw227ow55kw11sw4dw0pw0,17.968</div>
@@ -267,7 +267,7 @@ Performance summary</h1>
 <hr/>
 <h1><a class="anchor" id="performance_profiling_cpp_config"></a>
 Configuration Notice</h1>
-<dl class="section note"><dt>Note</dt><dd>This example is meant to demonstrate DNNL best practices. </dd>
+<dl class="section note"><dt>Note</dt><dd>This example is meant to demonstrate oneDNN best practices. </dd>
 <dd>
 It is not meant for benchmarking purposes. The platform is not fully </dd>
 <dd>
