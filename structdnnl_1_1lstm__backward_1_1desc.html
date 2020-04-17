@@ -294,7 +294,14 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructs an LSTM (with or without peephole and with or without projection) descriptor for backward propagation using <code>prop_kind</code>, <code>direction</code>, and memory descriptors. </p>
-<p>The <code>src_iter_desc</code> together with <code>diff_iter_desc</code>, <code>src_iter_c_desc</code> together with <code>src_iter_c_desc</code>, <code>weights_peephole_desc</code> together with <code>diff_weights_peephole_desc</code>, <code>bias_desc</code> together with <code>diff_bias_desc</code>, <code>dst_iter_desc</code> together with <code>diff_dst_iter_desc</code>, and <code>dst_iter_c_desc</code> together with <code>diff_dst_iter_c_desc</code>, may point to a zero memory descriptor. This would then indicate that the LSTM backward propagation primitive should not use them and should default to zero values instead.</p>
+<p>The following arguments may point to a zero memory descriptor:</p>
+<ul>
+<li><code>src_iter_desc</code> together with <code>src_iter_c_desc</code>, <code>diff_src_iter_desc</code>, and <code>diff_src_iter_c_desc</code>,</li>
+<li><code>weights_peephole_desc</code> together with <code>diff_weights_peephole_desc</code> </li>
+<li><code>bias_desc</code> together with <code>diff_bias_desc</code>,</li>
+<li><code>dst_iter_desc</code> together with <code>dst_iter_c_desc</code>, <code>diff_dst_iter_desc</code>, and <code>diff_dst_iter_c_desc</code>.</li>
+</ul>
+<p>This would then indicate that the LSTM backward propagation primitive should not use them and should default to zero values instead.</p>
 <p>The <code>weights_projection_desc</code> together with <code>diff_weights_projection_desc</code> may point to a zero memory descriptor. This would then indicate that the LSTM doesn't have recurrent projection layer.</p>
 <dl class="section note"><dt>Note</dt><dd>All memory descriptors can be initialized with <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> value of <code>format_tag</code>.</dd></dl>
 <p>Inputs:</p>
@@ -536,7 +543,14 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructs an LSTM (with or without peephole) descriptor for backward propagation using <code>prop_kind</code>, <code>direction</code>, and memory descriptors. </p>
-<p>The <code>src_iter_desc</code> together with <code>diff_iter_desc</code>, <code>src_iter_c_desc</code> together with <code>src_iter_c_desc</code>, <code>weights_peephole_desc</code> together with <code>diff_weights_peephole_desc</code>, <code>bias_desc</code> together with <code>diff_bias_desc</code>, <code>dst_iter_desc</code> together with <code>diff_dst_iter_desc</code>, and <code>dst_iter_c_desc</code> together with <code>diff_dst_iter_c_desc</code>, may point to a zero memory descriptor. This would then indicate that the LSTM backward propagation primitive should not use them and should default to zero values instead.</p>
+<p>The following arguments may point to a zero memory descriptor:</p>
+<ul>
+<li><code>src_iter_desc</code> together with <code>src_iter_c_desc</code>, <code>diff_src_iter_desc</code>, and <code>diff_src_iter_c_desc</code>,</li>
+<li><code>weights_peephole_desc</code> together with <code>diff_weights_peephole_desc</code> </li>
+<li><code>bias_desc</code> together with <code>diff_bias_desc</code>,</li>
+<li><code>dst_iter_desc</code> together with <code>dst_iter_c_desc</code>, <code>diff_dst_iter_desc</code>, and <code>diff_dst_iter_c_desc</code>.</li>
+</ul>
+<p>This would then indicate that the LSTM backward propagation primitive should not use them and should default to zero values instead.</p>
 <dl class="section note"><dt>Note</dt><dd>All memory descriptors may be initialized with <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> value of <code>format_tag</code>.</dd></dl>
 <p>Inputs:</p>
 <ul>
@@ -745,7 +759,13 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructs an LSTM descriptor for backward propagation using <code>prop_kind</code>, <code>direction</code>, and memory descriptors. </p>
-<p>The <code>src_iter_desc</code> together with <code>diff_iter_desc</code>, <code>src_iter_c_desc</code> together with <code>src_iter_c_desc</code>, <code>bias_desc</code> together with <code>diff_bias_desc</code>, <code>dst_iter_desc</code> together with <code>diff_dst_iter_desc</code>, and <code>dst_iter_c_desc</code> together with <code>diff_dst_iter_c_desc</code>, may point to a zero memory descriptor. This would then indicate that the LSTM backward propagation primitive should not use them and should default to zero values instead.</p>
+<p>The following arguments may point to a zero memory descriptor:</p>
+<ul>
+<li><code>src_iter_desc</code> together with <code>src_iter_c_desc</code>, <code>diff_src_iter_desc</code>, and <code>diff_src_iter_c_desc</code>,</li>
+<li><code>bias_desc</code> together with <code>diff_bias_desc</code>,</li>
+<li><code>dst_iter_desc</code> together with <code>dst_iter_c_desc</code>, <code>diff_dst_iter_desc</code>, and <code>diff_dst_iter_c_desc</code>.</li>
+</ul>
+<p>This would then indicate that the LSTM backward propagation primitive should not use them and should default to zero values instead.</p>
 <dl class="section note"><dt>Note</dt><dd>All memory descriptors may be initialized with <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> value of <code>format_tag</code>.</dd></dl>
 <p>Inputs:</p>
 <ul>

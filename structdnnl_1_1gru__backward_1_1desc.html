@@ -239,7 +239,13 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructs a descriptor for a GRU backward propagation primitive. </p>
-<p>The <code>src_iter_desc</code> together with <code>diff_src_iter_desc</code>, <code>bias_desc</code> together with <code>diff_bias_desc</code>, and <code>dst_iter</code> together with <code>diff_dst_iter</code>, may point to a zero memory descriptor. This would then indicate that the GRU backward propagation primitive should not use them and should default to zero values instead.</p>
+<p>The following arguments may point to a zero memory descriptor:</p>
+<ul>
+<li><code>src_iter_desc</code> together with <code>diff_src_iter_desc</code>,</li>
+<li><code>bias_desc</code> together with <code>diff_bias_desc</code>,</li>
+<li><code>dst_iter_desc</code> together with <code>diff_dst_iter_desc</code>.</li>
+</ul>
+<p>This would then indicate that the GRU backward propagation primitive should not use them and should default to zero values instead.</p>
 <p>Inputs:</p>
 <ul>
 <li><code>src_layer</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a31ee74fc65986558ac11db590945811a" title="Returns a source memory descriptor. ">dnnl::primitive_desc_base::src_desc</a>(<code>0</code>))</li>

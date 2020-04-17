@@ -168,9 +168,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="comment">// tag `any` lets a primitive(convolution in this case)</span></div>
 <div class="line">    <span class="comment">// chose the memory format preferred for best performance.</span></div>
 <div class="line">    <span class="keyword">auto</span> conv_src_md = <a class="code" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a>({conv_src_tz}, dt::bf16, tag::any);</div>
-<div class="line">    <span class="keyword">auto</span> conv_bias_md = <a class="code" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a>({conv_bias_tz}, dt::bf16, tag::any);</div>
 <div class="line">    <span class="keyword">auto</span> conv_weights_md = <a class="code" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a>({conv_weights_tz}, dt::bf16, tag::any);</div>
 <div class="line">    <span class="keyword">auto</span> conv_dst_md = <a class="code" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a>({conv_dst_tz}, dt::bf16, tag::any);</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">// use bias provided by the user</span></div>
+<div class="line">    <span class="keyword">auto</span> conv_bias_md = conv_user_bias_memory.get_desc();</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// create a convolution primitive descriptor</span></div>
 <div class="line">    <span class="keyword">auto</span> conv_desc = <a class="code" href="structdnnl_1_1convolution__forward_1_1desc.html">convolution_forward::desc</a>(<a class="code" href="group__dnnl__api__attributes.html#ggac7db48f6583aa9903e54c2a39d65438fa965dbaac085fc891bfbbd4f9d145bbc8">prop_kind::forward</a>,</div>
@@ -434,10 +436,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line">    <span class="comment">// create memory descriptors for bfloat16 convolution data</span></div>
 <div class="line">    <span class="keyword">auto</span> conv_bwd_src_md = <a class="code" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a>({conv_src_tz}, dt::bf16, tag::any);</div>
-<div class="line">    <span class="keyword">auto</span> conv_diff_bias_md = <a class="code" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a>({conv_bias_tz}, dt::bf16, tag::any);</div>
 <div class="line">    <span class="keyword">auto</span> conv_diff_weights_md</div>
 <div class="line">            = <a class="code" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a>({conv_weights_tz}, dt::bf16, tag::any);</div>
 <div class="line">    <span class="keyword">auto</span> conv_diff_dst_md = <a class="code" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a>({conv_dst_tz}, dt::bf16, tag::any);</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">// use diff bias provided by the user</span></div>
+<div class="line">    <span class="keyword">auto</span> conv_diff_bias_md = conv_diff_bias_memory.<a class="code" href="structdnnl_1_1memory.html#a6bfc99db50d87d133c6b3b4f438b967a">get_desc</a>();</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// create backward convolution primitive descriptor</span></div>
 <div class="line">    <span class="keyword">auto</span> conv_bwd_weights_desc</div>

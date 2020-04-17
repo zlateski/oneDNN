@@ -285,9 +285,16 @@ Figure 1: Example of stacked recurrent cells unrolled over the time dimension an
 <h1>Implementation Limitations</h1>
 <ol type="1">
 <li>Refer to <a class="el" href="dev_guide_data_types.html">Data Types</a> for limitations related to data types support.</li>
+<li><b>CPU</b><ul>
+<li>Bias must always be present (that is, the corresponding memory descriptor argument cannot be zero memory descriptor when the RNN operation descriptor is initialized).</li>
+</ul>
+</li>
+</ol>
+<ol type="1">
 <li><b>GPU</b><ul>
 <li>No support for GRU</li>
 <li>No support for Peephole LSTM and Projection LSTM</li>
+<li>Bias must always be present (that is, the corresponding memory descriptor argument cannot be zero memory descriptor when the RNN operation descriptor is initialized).</li>
 </ul>
 </li>
 </ol>

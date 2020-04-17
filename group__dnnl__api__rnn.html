@@ -398,7 +398,13 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initializes a descriptor for vanilla RNN forward propagation primitive. </p>
-<p>The <code>src_iter_desc</code>, <code>bias_desc</code>, and <code>dst_iter_desc</code> may either be <code>NULL</code> or point to a zero memory descriptor. This would then indicate that the RNN forward propagation primitive should not use them and should default to zero values instead.</p>
+<p>The following arguments may either be <code>NULL</code> or point to a zero memory descriptor:</p>
+<ul>
+<li><code>src_iter_desc</code>,</li>
+<li><code>bias_desc</code>,</li>
+<li><code>dst_iter_desc</code>.</li>
+</ul>
+<p>This would then indicate that the RNN forward propagation primitive should not use them and should default to zero values instead.</p>
 <dl class="section note"><dt>Note</dt><dd>All memory descriptors can be initialized with <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dafee39ac6fff0325cae43cd66495c18ac" title="Undefined memory format tag. ">dnnl_format_tag_any</a> or with format_kind set to <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83" title="Unspecified format kind. ">dnnl_format_kind_any</a>.</dd></dl>
 <p>Inputs:</p>
 <ul>
@@ -576,7 +582,13 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initializes a descriptor for vanilla RNN backward propagation primitive. </p>
-<p>The <code>src_iter_desc</code> together with <code>diff_src_iter_desc</code>, <code>bias_desc</code> together with <code>diff_bias_desc</code>, and <code>dst_iter_desc</code> together with <code>diff_src_iter_desc</code>, may either be <code>NULL</code> or point to a zero memory descriptor. This would then indicate that the RNN backward propagation primitive should not use the respective data and should use zero values instead.</p>
+<p>The following arguments may either be <code>NULL</code> or point to a zero memory descriptor:</p>
+<ul>
+<li><code>src_iter_desc</code> together with <code>diff_src_iter_desc</code>,</li>
+<li><code>bias_desc</code> together with <code>diff_bias_desc</code>,</li>
+<li><code>dst_iter_desc</code> together with <code>diff_dst_iter_desc</code>.</li>
+</ul>
+<p>This would then indicate that the RNN backward propagation primitive should not use the respective data and should use zero values instead.</p>
 <dl class="section note"><dt>Note</dt><dd>All memory descriptors can be initialized with <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dafee39ac6fff0325cae43cd66495c18ac" title="Undefined memory format tag. ">dnnl_format_tag_any</a> or with format_kind set to <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83" title="Unspecified format kind. ">dnnl_format_kind_any</a>.</dd></dl>
 <p>Inputs:</p>
 <ul>
@@ -720,7 +732,13 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initializes a descriptor for LSTM forward propagation primitive. </p>
-<p>The <code>src_iter_desc</code>, <code>src_iter_c_desc</code>, <code>bias_desc</code>, <code>dst_iter_desc</code>, and <code>dst_iter_c_desc</code> may either be <code>NULL</code> or point to a zero memory descriptor. This would then indicate that the LSTM forward propagation primitive should not use them and should default to zero values instead.</p>
+<p>The following arguments may either be <code>NULL</code> or point to a zero memory descriptor:</p>
+<ul>
+<li><code>src_iter_desc</code> together with <code>src_iter_c_desc</code>,</li>
+<li><code>bias_desc</code>,</li>
+<li><code>dst_iter_desc</code> together with <code>dst_iter_c_desc</code>.</li>
+</ul>
+<p>This would then indicate that the LSTM forward propagation primitive should not use them and should default to zero values instead.</p>
 <dl class="section note"><dt>Note</dt><dd>All memory descriptors can be initialized with <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dafee39ac6fff0325cae43cd66495c18ac" title="Undefined memory format tag. ">dnnl_format_tag_any</a> or with format_kind set to <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83" title="Unspecified format kind. ">dnnl_format_kind_any</a>.</dd></dl>
 <dl class="section see"><dt>See Also</dt><dd><a class="el" href="group__dnnl__api__rnn.html#gad9b01827d9c54ce4e6a09a25abe5fb55" title="Initializes a descriptor for an LSTM (with or without peephole) forward propagation primitive...">dnnl_lstm_forward_desc_init_v2</a> to initialize forward LSTM with and without peephole </dd>
 <dd>
@@ -860,7 +878,14 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initializes a descriptor for an LSTM (with or without peephole) forward propagation primitive. </p>
-<p>The <code>src_iter_desc</code>, <code>src_iter_c_desc</code>, <code>weights_peephole_desc</code>, <code>bias_desc</code>, <code>dst_iter_desc</code>, and <code>dst_iter_c_desc</code> may either be <code>NULL</code> or point to a zero memory descriptor. This would then indicate that the LSTM forward propagation primitive should not use them and should default to zero values instead.</p>
+<p>The following arguments may either be <code>NULL</code> or point to a zero memory descriptor:</p>
+<ul>
+<li><code>src_iter_desc</code> together with <code>src_iter_c_desc</code>,</li>
+<li><code>weights_peephole_desc</code>,</li>
+<li><code>bias_desc</code>,</li>
+<li><code>dst_iter_desc</code> together with <code>dst_iter_c_desc</code>.</li>
+</ul>
+<p>This would then indicate that the LSTM forward propagation primitive should not use them and should default to zero values instead.</p>
 <dl class="section note"><dt>Note</dt><dd>All memory descriptors can be initialized with <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dafee39ac6fff0325cae43cd66495c18ac" title="Undefined memory format tag. ">dnnl_format_tag_any</a> or with format_kind set to <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83" title="Unspecified format kind. ">dnnl_format_kind_any</a>.</dd></dl>
 <dl class="section see"><dt>See Also</dt><dd><a class="el" href="group__dnnl__api__rnn.html#gac8b27af5eba355e35962ef996060b824" title="Initializes a descriptor for an LSTM (with or without peephole and with or without recurrent projecti...">dnnl_lstm_forward_desc_init_v3</a> to initialize forward LSTM with and without peephole / recurrent projection layer</dd></dl>
 <p>Inputs:</p>
@@ -1007,7 +1032,14 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initializes a descriptor for an LSTM (with or without peephole and with or without recurrent projection layer) forward propagation primitive. </p>
-<p>The <code>src_iter_desc</code>, <code>src_iter_c_desc</code>, <code>weights_peephole_desc</code>, <code>bias_desc</code>, <code>dst_iter_desc</code>, and <code>dst_iter_c_desc</code> may either be <code>NULL</code> or point to a zero memory descriptor. This would then indicate that the LSTM forward propagation primitive should not use them and should default to zero values instead.</p>
+<p>The following arguments may either be <code>NULL</code> or point to a zero memory descriptor:</p>
+<ul>
+<li><code>src_iter_desc</code> together with <code>src_iter_c_desc</code>,</li>
+<li><code>weights_peephole_desc</code>,</li>
+<li><code>bias_desc</code>,</li>
+<li><code>dst_iter_desc</code> together with <code>dst_iter_c_desc</code>.</li>
+</ul>
+<p>This would then indicate that the LSTM forward propagation primitive should not use them and should default to zero values instead.</p>
 <p>The <code>weights_projection_desc</code> could either be <code>NULL</code> or point to a zero memory descriptor. This would then indicate that the LSTM doesn't have recurrent projection layer.</p>
 <dl class="section note"><dt>Note</dt><dd>All memory descriptors can be initialized with <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dafee39ac6fff0325cae43cd66495c18ac" title="Undefined memory format tag. ">dnnl_format_tag_any</a> or with format_kind set to <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83" title="Unspecified format kind. ">dnnl_format_kind_any</a>.</dd></dl>
 <p>Inputs:</p>
@@ -1206,7 +1238,13 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initializes a descriptor for an LSTM backward propagation primitive. </p>
-<p>The <code>src_iter_desc</code> together with <code>diff_iter_desc</code>, <code>src_iter_c_desc</code> together with <code>src_iter_c_desc</code>, <code>bias_desc</code> together with <code>diff_bias_desc</code>, <code>dst_iter_desc</code> together with <code>diff_dst_iter_desc</code>, and <code>dst_iter_c_desc</code> together with <code>diff_dst_iter_c_desc</code>, may either be <code>NULL</code> or point to a zero memory descriptor. This would then indicate that the LSTM backward propagation primitive should not use them and should default to zero values instead.</p>
+<p>The following arguments may either be <code>NULL</code> or point to a zero memory descriptor:</p>
+<ul>
+<li><code>src_iter_desc</code> together with <code>src_iter_c_desc</code>, diff_src_iter_desc, and <code>diff_src_iter_c_desc</code>,</li>
+<li><code>bias_desc</code> together with <code>diff_bias_desc</code>,</li>
+<li><code>dst_iter_desc</code> together with <code>dst_iter_c_desc</code>, diff_dst_iter_desc, and <code>diff_dst_iter_c_desc</code>.</li>
+</ul>
+<p>This would then indicate that the LSTM backward propagation primitive should not use them and should default to zero values instead.</p>
 <dl class="section note"><dt>Note</dt><dd>All memory descriptors can be initialized with <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dafee39ac6fff0325cae43cd66495c18ac" title="Undefined memory format tag. ">dnnl_format_tag_any</a> or with format_kind set to <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83" title="Unspecified format kind. ">dnnl_format_kind_any</a>.</dd></dl>
 <dl class="section see"><dt>See Also</dt><dd><a class="el" href="group__dnnl__api__rnn.html#ga893994f53b35e6d66bd346a0ee1936a7" title="Initializes a descriptor for an LSTM (with or without peephole) backward propagation primitive...">dnnl_lstm_backward_desc_init_v2</a> to initialize backward LSTM with and without peephole </dd>
 <dd>
@@ -1424,7 +1462,14 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initializes a descriptor for an LSTM (with or without peephole) backward propagation primitive. </p>
-<p>The <code>src_iter_desc</code> together with <code>diff_iter_desc</code>, <code>src_iter_c_desc</code> together with <code>diff_src_iter_c_desc</code>, <code>weights_peephole_desc</code> together with <code>diff_weights_peephole_desc</code>, <code>bias_desc</code> together with <code>diff_bias_desc</code>, <code>dst_iter_desc</code> together with <code>diff_dst_iter_desc</code>, and <code>dst_iter_c_desc</code> together with <code>diff_dst_iter_c_desc</code>, may either be <code>NULL</code> or point to a zero memory descriptor. This would then indicate that the LSTM backward propagation primitive should not use them and should default to zero values instead.</p>
+<p>The following arguments may either be <code>NULL</code> or point to a zero memory descriptor:</p>
+<ul>
+<li><code>src_iter_desc</code> together with <code>src_iter_c_desc</code>, diff_src_iter_desc, and <code>diff_src_iter_c_desc</code>,</li>
+<li><code>weights_peephole_desc</code> together with <code>diff_weights_peephole_desc</code>,</li>
+<li><code>bias_desc</code> together with <code>diff_bias_desc</code>,</li>
+<li><code>dst_iter_desc</code> together with <code>dst_iter_c_desc</code>, diff_dst_iter_desc, and <code>diff_dst_iter_c_desc</code>.</li>
+</ul>
+<p>This would then indicate that the LSTM backward propagation primitive should not use them and should default to zero values instead.</p>
 <dl class="section note"><dt>Note</dt><dd>All memory descriptors can be initialized with <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dafee39ac6fff0325cae43cd66495c18ac" title="Undefined memory format tag. ">dnnl_format_tag_any</a> or with format_kind set to <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83" title="Unspecified format kind. ">dnnl_format_kind_any</a>.</dd></dl>
 <dl class="section see"><dt>See Also</dt><dd><a class="el" href="group__dnnl__api__rnn.html#ga7a04fe20c7cc0efe2728433aebfdef52" title="Initializes a descriptor for an LSTM (with or without peephole and with or with out recurrent project...">dnnl_lstm_backward_desc_init_v3</a> to initialize backward LSTM with and without peephole / recurrent projection layer</dd></dl>
 <p>Inputs:</p>
@@ -1658,7 +1703,14 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initializes a descriptor for an LSTM (with or without peephole and with or with out recurrent projection layer) backward propagation primitive. </p>
-<p>The <code>src_iter_desc</code> together with <code>diff_iter_desc</code>, <code>src_iter_c_desc</code> together with <code>diff_src_iter_c_desc</code>, <code>weights_peephole_desc</code> together with <code>diff_weights_peephole_desc</code>, <code>bias_desc</code> together with <code>diff_bias_desc</code>, <code>dst_iter_desc</code> together with <code>diff_dst_iter_desc</code>, and <code>dst_iter_c_desc</code> together with <code>diff_dst_iter_c_desc</code>, may either be <code>NULL</code> or point to a zero memory descriptor. This would then indicate that the LSTM backward propagation primitive should not use them and should default to zero values instead.</p>
+<p>The following arguments may either be <code>NULL</code> or point to a zero memory descriptor:</p>
+<ul>
+<li><code>src_iter_desc</code> together with <code>src_iter_c_desc</code>, diff_src_iter_desc, and <code>diff_src_iter_c_desc</code>,</li>
+<li><code>weights_peephole_desc</code> together with <code>diff_weights_peephole_desc</code>,</li>
+<li><code>bias_desc</code> together with <code>diff_bias_desc</code>,</li>
+<li><code>dst_iter_desc</code> together with <code>dst_iter_c_desc</code>, diff_dst_iter_desc, and <code>diff_dst_iter_c_desc</code>.</li>
+</ul>
+<p>This would then indicate that the LSTM backward propagation primitive should not use them and should default to zero values instead.</p>
 <p>The <code>weights_projection_desc</code> together with <code>diff_weights_projection_desc</code> could either be <code>NULL</code> or point to a zero memory descriptor. This would then indicate that the LSTM doesn't have recurrent projection layer.</p>
 <dl class="section note"><dt>Note</dt><dd>All memory descriptors can be initialized with <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dafee39ac6fff0325cae43cd66495c18ac" title="Undefined memory format tag. ">dnnl_format_tag_any</a> or with format_kind set to <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83" title="Unspecified format kind. ">dnnl_format_kind_any</a>.</dd></dl>
 <p>Inputs:</p>
@@ -1822,7 +1874,13 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initializes a descriptor for GRU forward propagation primitive. </p>
-<p>The <code>src_iter_desc</code>, <code>bias_desc</code>, and <code>dst_iter</code>, may either be <code>NULL</code> or point to a zero memory descriptor. This would then indicate that the GRU forward propagation primitive should not use them and should default to zero values instead.</p>
+<p>The following arguments may either be <code>NULL</code> or point to a zero memory descriptor:</p>
+<ul>
+<li><code>src_iter_desc</code>,</li>
+<li><code>bias_desc</code>,</li>
+<li><code>dst_iter_desc</code>.</li>
+</ul>
+<p>This would then indicate that the GRU forward propagation primitive should not use them and should default to zero values instead.</p>
 <dl class="section note"><dt>Note</dt><dd>All memory descriptors can be initialized with <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dafee39ac6fff0325cae43cd66495c18ac" title="Undefined memory format tag. ">dnnl_format_tag_any</a> or with format_kind set to <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83" title="Unspecified format kind. ">dnnl_format_kind_any</a>.</dd></dl>
 <p>Inputs:</p>
 <ul>
@@ -1979,7 +2037,13 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initializes a descriptor for GRU backward propagation primitive. </p>
-<p>The <code>src_iter_desc</code> together with <code>diff_src_iter_desc</code>, <code>bias_desc</code> together with <code>diff_bias_desc</code>, and <code>dst_iter</code> together with <code>diff_dst_iter</code>, may either be <code>NULL</code> or point to a zero memory descriptor. This would then indicate that the GRU backward propagation primitive should not use them and should default to zero values instead.</p>
+<p>The following arguments may either be <code>NULL</code> or point to a zero memory descriptor:</p>
+<ul>
+<li><code>src_iter_desc</code> together with <code>diff_src_iter_desc</code>,</li>
+<li><code>bias_desc</code> together with <code>diff_bias_desc</code>,</li>
+<li><code>dst_iter_desc</code> together with <code>diff_dst_iter_desc</code>.</li>
+</ul>
+<p>This would then indicate that the GRU backward propagation primitive should not use them and should default to zero values instead.</p>
 <dl class="section note"><dt>Note</dt><dd>All memory descriptors can be initialized with <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dafee39ac6fff0325cae43cd66495c18ac" title="Undefined memory format tag. ">dnnl_format_tag_any</a> or with format_kind set to <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83" title="Unspecified format kind. ">dnnl_format_kind_any</a>.</dd></dl>
 <p>Inputs:</p>
 <ul>
@@ -2108,7 +2172,13 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initializes a descriptor for LBR GRU forward propagation primitive. </p>
-<p>The <code>src_iter_desc</code>, <code>bias_desc</code>, and <code>dst_iter</code>, may either be <code>NULL</code> or point to a zero memory descriptor. This would then indicate that the LBR GRU forward propagation primitive should not use them and should default to zero values instead.</p>
+<p>The following arguments may either be <code>NULL</code> or point to a zero memory descriptor:</p>
+<ul>
+<li><code>src_iter_desc</code>,</li>
+<li><code>bias_desc</code>,</li>
+<li><code>dst_iter_desc</code>.</li>
+</ul>
+<p>This would then indicate that the LBR GRU forward propagation primitive should not use them and should default to zero values instead.</p>
 <p>Inputs:</p>
 <ul>
 <li><code>src_layer</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, <code>0</code>)</li>
@@ -2264,7 +2334,13 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initializes a descriptor for LBR GRU backward propagation primitive. </p>
-<p>The <code>src_iter_desc</code> together with <code>diff_src_iter_desc</code>, <code>bias_desc</code> together with <code>diff_bias_desc</code>, and <code>dst_iter</code> together with <code>diff_dst_iter</code>, may either be <code>NULL</code> or point to a zero memory descriptor. This would then indicate that the LBR GRU backward propagation primitive should not use them and should default to zero values instead.</p>
+<p>The following arguments may either be <code>NULL</code> or point to a zero memory descriptor:</p>
+<ul>
+<li><code>src_iter_desc</code> together with <code>diff_src_iter_desc</code>,</li>
+<li><code>bias_desc</code> together with <code>diff_bias_desc</code>,</li>
+<li><code>dst_iter_desc</code> together with <code>diff_dst_iter_desc</code>.</li>
+</ul>
+<p>This would then indicate that the LBR GRU backward propagation primitive should not use them and should default to zero values instead.</p>
 <dl class="section note"><dt>Note</dt><dd>All memory descriptors can be initialized with <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dafee39ac6fff0325cae43cd66495c18ac" title="Undefined memory format tag. ">dnnl_format_tag_any</a> or with format_kind set to <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83" title="Unspecified format kind. ">dnnl_format_kind_any</a>.</dd></dl>
 <p>Inputs:</p>
 <ul>
