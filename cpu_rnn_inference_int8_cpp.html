@@ -169,8 +169,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    attr.set_rnn_data_qparams(data_scale, data_shift);</div>
 <div class="line">    attr.set_rnn_weights_qparams(weights_scale_mask, weights_scales);</div>
 <div class="line"></div>
-<div class="line">    <span class="keyword">auto</span> enc_bidir_prim_desc</div>
-<div class="line">            = lstm_forward::primitive_desc(bi_layer_desc, attr, cpu_engine);</div>
+<div class="line">    <span class="comment">// check if int8 LSTM is supported</span></div>
+<div class="line">    lstm_forward::primitive_desc enc_bidir_prim_desc;</div>
+<div class="line">    <span class="keywordflow">try</span> {</div>
+<div class="line">        enc_bidir_prim_desc</div>
+<div class="line">                = lstm_forward::primitive_desc(bi_layer_desc, attr, cpu_engine);</div>
+<div class="line">    } <span class="keywordflow">catch</span> (error &amp;e) {</div>
+<div class="line">        <span class="keywordflow">if</span> (e.status == <a class="code" href="group__dnnl__api__utils.html#ggad24f9ded06e34d3ee71e7fc4b408d57aa3a8579e8afc4e23344cd3115b0e81de1">dnnl_unimplemented</a>)</div>
+<div class="line">            <span class="keywordflow">throw</span> example_allows_unimplemented {</div>
+<div class="line">                    <span class="stringliteral">&quot;No int8 LSTM implementation is available for this &quot;</span></div>
+<div class="line">                    <span class="stringliteral">&quot;platform.\n&quot;</span></div>
+<div class="line">                    <span class="stringliteral">&quot;Please refer to the developer guide for details.&quot;</span>};</div>
+<div class="line"></div>
+<div class="line">        <span class="comment">// on any other error just re-throw</span></div>
+<div class="line">        <span class="keywordflow">throw</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
 </div><!-- fragment --><p>Create memory for input data and use reorders to quantize values to int8 NOTE: same attributes are used when creating RNN primitive and reorders </p>
 <div class="fragment"><div class="line">    <span class="keyword">auto</span> enc_bidir_src_layer_memory</div>
 <div class="line">            = memory(enc_bidir_prim_desc.src_layer_desc(), cpu_engine);</div>

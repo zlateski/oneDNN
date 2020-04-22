@@ -91,9 +91,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </ul>
 <p>See <a class="el" href="dev_guide_build_options.html">Build Options</a> for detailed description of build-time configuration options.</p>
 <h3>Linux/macOS</h3>
+<h4>Prepare the Build Space</h4>
+<div class="fragment"><div class="line">mkdir -p build &amp;&amp; cd build</div>
+</div><!-- fragment --><h4>Generate makefile</h4>
 <ul>
-<li>Generate makefile: <div class="fragment"><div class="line">mkdir -p build &amp;&amp; cd build &amp;&amp; cmake ..</div>
+<li>Native compilation: <div class="fragment"><div class="line">cmake .. &lt;extra build options&gt;</div>
 </div><!-- fragment --></li>
+<li>Cross compilation (AArch64 target on Intel 64 host)</li>
+</ul>
+<div class="fragment"><div class="line">export CC=aarch64-linux-gnu-gcc</div>
+<div class="line">export CXX=aarch64-linux-gnu-g++</div>
+<div class="line">cmake .. \</div>
+<div class="line">          -DCMAKE_SYSTEM_NAME=Linux \</div>
+<div class="line">          -DCMAKE_SYSTEM_PROCESSOR=AARCH64 \</div>
+<div class="line">          -DCMAKE_LIBRARY_PATH=/usr/aarch64-linux-gnu/lib \</div>
+<div class="line">          &lt;extra build options&gt;</div>
+</div><!-- fragment --><h4>Build and Install the Library</h4>
+<ul>
 <li>Build the library: <div class="fragment"><div class="line">make -j</div>
 </div><!-- fragment --></li>
 <li>Build the documentation: <div class="fragment"><div class="line">make doc</div>
@@ -115,7 +129,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></li>
 </ul>
 <h2>Validate the Build</h2>
-<p>Run unit tests:</p>
+<p>If the library is built for the host system, you can run unit tests using:</p>
 <div class="fragment"><div class="line">ctest</div>
 </div><!-- fragment --> </div></div><!-- contents -->
 <div class="footer">
