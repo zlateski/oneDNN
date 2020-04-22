@@ -159,7 +159,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <ol type="1">
 <li>All eltwise primitives have a common initialization function (e.g., <a class="el" href="structdnnl_1_1eltwise__forward_1_1desc.html#ae7c6744d2c292b00441577291323fe84" title="Constructs a descriptor for an elementwise forward propagation primitive. ">dnnl::eltwise_forward::desc::desc()</a>) which takes both parameters \(\alpha\), and \(\beta\). These parameters are ignored if they are unused.</li>
 <li>The memory format and data type for \(\src\) and \(\dst\) are assumed to be the same, and in the API are typically referred as <code>data</code> (e.g., see <code>data_desc</code> in <a class="el" href="structdnnl_1_1eltwise__forward_1_1desc.html#ae7c6744d2c292b00441577291323fe84" title="Constructs a descriptor for an elementwise forward propagation primitive. ">dnnl::eltwise_forward::desc::desc()</a>). The same holds for \(\diffsrc\) and \(\diffdst\). The corresponding memory descriptors are referred to as <code>diff_data_desc</code>.</li>
-<li>Both forward and backward propagation support in-place operations, meaning that \(\src\) can be used as input and output for forward propagation, and \(\diffdst\) can be used as input and output for backward propagation. In case of in-place operation, the original data will be overwritten.</li>
+<li>Both forward and backward propagation support in-place operations, meaning that \(\src\) can be used as input and output for forward propagation, and \(\diffdst\) can be used as input and output for backward propagation. In case of an in-place operation, the original data will be overwritten. Note, however, that some algorithms for backward propagation require original \(\src\), hence the corresponding forward propagation should not be performed in-place for those algorithms. Algorithms that use \(\dst\) for backward propogation can be safely done in-place.</li>
 <li>For some operations it might be beneficial to compute backward propagation based on \(\dst(\overline{s})\), rather than on \(\src(\overline{s})\), for improved performance.</li>
 </ol>
 <dl class="section note"><dt>Note</dt><dd>For operations supporting destination memory as input, \(\dst\) can be used instead of \(\src\) when backward propagation is computed. This enables several performance optimizations (see the tips below).</dd></dl>
@@ -189,7 +189,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h2>Performance Tips</h2>
 <ol type="1">
 <li>For backward propagation, use the same memory format for \(\src\), \(\diffdst\), and \(\diffsrc\) (the format of the \(\diffdst\) and \(\diffsrc\) are always the same because of the API). Different formats are functionally supported but lead to highly suboptimal performance.</li>
-<li>Use in-place operations whenever possible.</li>
+<li>Use in-place operations whenever possible (see caveats in General Notes).</li>
 <li>As mentioned above for all operations supporting destination memory as input, one can use the \(\dst\) tensor instead of \(\src\). This enables the following potential optimizations for training:<ul>
 <li>Such operations can be safely done in-place.</li>
 <li>Moreover, such operations can be fused as a <a class="el" href="dev_guide_attributes.html">post-op</a> with the previous operation if that operation doesn't require its \(\dst\) to compute the backward propagation (e.g., if the convolution operation satisfies these conditions).</li>

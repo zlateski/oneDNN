@@ -177,9 +177,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Post-ops and attributes enable you to modify the behavior of the inner product primitive by chaining certain operations after the inner product operation. The following post-ops are supported by inner product primitives:</p>
 <table class="doxtable">
 <tr>
-<th align="left">Propagation </th><th align="left">Type </th><th align="left">Operation </th><th align="left">Description  </th></tr>
+<th align="left">Propagation </th><th align="left">Type </th><th align="left">Operation </th><th align="left">Description </th><th align="left">Restrictions  </th></tr>
 <tr>
-<td align="left">forward </td><td align="left">post-op </td><td align="left">eltwise </td><td align="left">Applies an <a class="el" href="group__dnnl__api__eltwise.html">Eltwise</a> operation to the result </td></tr>
+<td align="left">forward </td><td align="left">attribute </td><td align="left"><a class="el" href="structdnnl_1_1primitive__attr.html#a4b81acc8e48886313154f75c1708ae02">Output scale</a> </td><td align="left">Scales the result of inner product by given scale factor(s) </td><td align="left">int8 inner products only </td></tr>
+<tr>
+<td align="left">forward </td><td align="left">post-op </td><td align="left"><a class="el" href="structdnnl_1_1post__ops.html#a66606f08467b19091e696b52a2f789e6">eltwise</a> </td><td align="left">Applies an <a class="el" href="group__dnnl__api__eltwise.html">Eltwise</a> operation to the result </td><td align="left"></td></tr>
+<tr>
+<td align="left">forward </td><td align="left">post-op </td><td align="left"><a class="el" href="structdnnl_1_1post__ops.html#a078ab8ec15423d2b3d26f3619a78ca38">sum</a> </td><td align="left">Adds the operation result to the destination tensor instead of overwriting it </td><td align="left"></td></tr>
 </table>
 <h2>Implementation Limitations</h2>
 <ol type="1">

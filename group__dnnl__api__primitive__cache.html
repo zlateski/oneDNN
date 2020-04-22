@@ -85,13 +85,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:gaaffb070446181187b04ee1a321cc24f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__primitive__cache.html#gaaffb070446181187b04ee1a321cc24f0">dnnl_get_primitive_cache_capacity</a> (int *capacity)</td></tr>
-<tr class="memdesc:gaaffb070446181187b04ee1a321cc24f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a number of primitives that can be held in the primitive cache at a time.  <a href="#gaaffb070446181187b04ee1a321cc24f0">More...</a><br/></td></tr>
+<tr class="memdesc:gaaffb070446181187b04ee1a321cc24f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of primitives that can be held in the primitive cache at the same time.  <a href="#gaaffb070446181187b04ee1a321cc24f0">More...</a><br/></td></tr>
 <tr class="separator:gaaffb070446181187b04ee1a321cc24f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga53456304297195ae9f053cc60ffe70a2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__primitive__cache.html#ga53456304297195ae9f053cc60ffe70a2">dnnl_set_primitive_cache_capacity</a> (int capacity)</td></tr>
 <tr class="memdesc:ga53456304297195ae9f053cc60ffe70a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a number of primitives that can be held in the primitive cache at a time.  <a href="#ga53456304297195ae9f053cc60ffe70a2">More...</a><br/></td></tr>
 <tr class="separator:ga53456304297195ae9f053cc60ffe70a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gacc0f23351595504f3e2c2b6fcf603770"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__primitive__cache.html#gacc0f23351595504f3e2c2b6fcf603770">dnnl::get_primitive_cache_capacity</a> ()</td></tr>
-<tr class="memdesc:gacc0f23351595504f3e2c2b6fcf603770"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a number of primitives that can be held in the primitive cache at a time.  <a href="#gacc0f23351595504f3e2c2b6fcf603770">More...</a><br/></td></tr>
+<tr class="memdesc:gacc0f23351595504f3e2c2b6fcf603770"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of primitives that can be held in the primitive cache at the same time.  <a href="#gacc0f23351595504f3e2c2b6fcf603770">More...</a><br/></td></tr>
 <tr class="separator:gacc0f23351595504f3e2c2b6fcf603770"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga12eefad64ac6917a161994c005abe69c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__primitive__cache.html#ga12eefad64ac6917a161994c005abe69c">dnnl::set_primitive_cache_capacity</a> (int capacity)</td></tr>
 <tr class="memdesc:ga12eefad64ac6917a161994c005abe69c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a number of primitives that can be held in the primitive cache at a time.  <a href="#ga12eefad64ac6917a161994c005abe69c">More...</a><br/></td></tr>
@@ -113,7 +113,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Returns a number of primitives that can be held in the primitive cache at a time. </p>
+<p>Returns the number of primitives that can be held in the primitive cache at the same time. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">capacity</td><td>Primitive cache capacity to query. Concurrently accessing <code>capacity</code> is safe. </td></tr>
@@ -170,14 +170,7 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns a number of primitives that can be held in the primitive cache at a time. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">capacity</td><td>Primitive cache capacity to query. Concurrently accessing <code>capacity</code> is safe. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__dnnl__api__utils.html#ggad24f9ded06e34d3ee71e7fc4b408d57aaecec97c787d74a33924abcf16ae4f51c" title="The operation failed because of incorrect function arguments. ">dnnl_invalid_arguments</a>/<a class="el" href="group__dnnl__api__service.html#gga7acc4d3516304ae68a1289551d8f2cdda242ac674d98ee2191f0bbf6de851d2d0" title="The operation failed because of incorrect function arguments. ">dnnl::status::invalid_arguments</a> if the <code>capacity</code> value is invalid, and <a class="el" href="group__dnnl__api__utils.html#ggad24f9ded06e34d3ee71e7fc4b408d57aaa31395e9dccc103cf166cf7b38fc5b9c" title="The operation was successful. ">dnnl_success</a>/<a class="el" href="group__dnnl__api__service.html#gga7acc4d3516304ae68a1289551d8f2cdda260ca9dd8a4577fc00b7bd5810298076" title="The operation was successful. ">dnnl::status::success</a> on success. </dd></dl>
+<p>Returns the number of primitives that can be held in the primitive cache at the same time. </p>
 
 </div>
 </div>
