@@ -26,6 +26,7 @@ var searchData=
   ['inner_5fproduct_5fforward',['inner_product_forward',['../structdnnl_1_1inner__product__forward.html',1,'dnnl']]],
   ['invalid_5farguments',['invalid_arguments',['../group__dnnl__api__service.html#gga7acc4d3516304ae68a1289551d8f2cdda242ac674d98ee2191f0bbf6de851d2d0',1,'dnnl']]],
   ['io',['io',['../structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3faf98ed07a4d5f50f7de1410d905f1477f',1,'dnnl::memory']]],
+  ['iodhw',['iodhw',['../structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa940f633559dc193ac5a96584394774a3',1,'dnnl::memory']]],
   ['iohw',['iohw',['../structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fac16710619e6550753801926b5388bef8',1,'dnnl::memory']]],
   ['is_5fzero',['is_zero',['../structdnnl_1_1memory_1_1desc.html#a517663e910e8c1795b3a935f49579652',1,'dnnl::memory::desc']]],
   ['iterator_5fends',['iterator_ends',['../group__dnnl__api__service.html#gga7acc4d3516304ae68a1289551d8f2cddaeea82822a38c56f5e03aae6ae1775adb',1,'dnnl']]],

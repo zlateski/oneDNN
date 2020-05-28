@@ -3,6 +3,7 @@ var searchData=
   ['ba',['ba',['../structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa07159c47ee1b19ae4fb9c40d480856c4',1,'dnnl::memory']]],
   ['bac',['bac',['../structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa79ec16df80b57696a03bb364410061f3',1,'dnnl::memory']]],
   ['bacd',['bacd',['../structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa5a3b732e0600663606054f6d8dfd465e',1,'dnnl::memory']]],
+  ['bacde',['bacde',['../structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fabb59e2a27c3cb4e24384952fc6847948',1,'dnnl::memory']]],
   ['backward',['backward',['../group__dnnl__api__attributes.html#ggac7db48f6583aa9903e54c2a39d65438fa195fe59b6f103787a914aead0f3db502',1,'dnnl']]],
   ['backward_5fbias',['backward_bias',['../group__dnnl__api__attributes.html#ggac7db48f6583aa9903e54c2a39d65438fab6b02795407dc7897e390e48f1d0ea02',1,'dnnl']]],
   ['backward_5fdata',['backward_data',['../group__dnnl__api__attributes.html#ggac7db48f6583aa9903e54c2a39d65438faa12627cacf73ecb7ef088beedd650e96',1,'dnnl']]],

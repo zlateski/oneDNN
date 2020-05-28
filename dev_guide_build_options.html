@@ -25,7 +25,7 @@
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
    <div id="projectname">oneAPI Deep Neural Network Library (oneDNN)
-   &#160;<span id="projectnumber">1.4.0</span>
+   &#160;<span id="projectnumber">1.5.0</span>
    </div>
    <div id="projectbrief">Performance library for Deep Learning</div>
 </div>
@@ -132,8 +132,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h4>Threadpool</h4>
 <p>To build oneDNN with support for threadpool threading, set <code>DNNL_CPU_RUNTIME</code> to <code>THREADPOOL</code></p>
 <div class="fragment"><div class="line">$ cmake -DDNNL_CPU_RUNTIME=THREADPOOL ..</div>
-</div><!-- fragment --><p>The <code>DNNL_TEST_THREADPOOL_IMPL</code> CMake variable controls which of the three threadpool implementations would be used for testing: <code>STANDALONE</code>, <code>TBB</code>, or <code>EIGEN</code>. The latter two require also passing <code>TBBROOT</code> or <code>Eigen3_DIR</code> paths to CMake. For example:</p>
-<div class="fragment"><div class="line">$ cmake -DDNNL_CPU_RUNTIME=THREADPOOL -DDNNL_TEST_THREADPOOL_IMPL=EIGEN -DEigen3_DIR=/path/to/eigen/share/eigen3/cmake ..</div>
+</div><!-- fragment --><p>The <code>_DNNL_TEST_THREADPOOL_IMPL</code> CMake variable controls which of the three threadpool implementations would be used for testing: <code>STANDALONE</code>, <code>TBB</code>, or <code>EIGEN</code>. The latter two require also passing <code>TBBROOT</code> or <code>Eigen3_DIR</code> paths to CMake. For example:</p>
+<div class="fragment"><div class="line">$ cmake -DDNNL_CPU_RUNTIME=THREADPOOL -D_DNNL_TEST_THREADPOOL_IMPL=EIGEN -DEigen3_DIR=/path/to/eigen/share/eigen3/cmake ..</div>
 </div><!-- fragment --><p>Threadpool threading support is experimental and has the same limitations as TBB plus more:</p>
 <ul>
 <li>As threadpools are attached to streams which are only passed during primitive execution, work decomposition is performed statically at the primitive creation time. At the primitive execution time, the threadpool is responsible for balancing the static decomposition from the previous item across available worker threads.</li>
