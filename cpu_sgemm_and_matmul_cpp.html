@@ -235,7 +235,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line">    <span class="comment">// Execute the MatMul primitive</span></div>
 <div class="line">    stream s(eng);</div>
-<div class="line">    matmul_p.<a class="code" href="structdnnl_1_1primitive.html#a65b6bd202ba2cb37ed8504da346dda2e">execute</a>(s,</div>
+<div class="line">    matmul_p.<a class="code" href="structdnnl_1_1primitive.html#a18a484f0f1fecbc6a58fca1a58f6d8d4">execute</a>(s,</div>
 <div class="line">            {{<a class="code" href="group__dnnl__api__primitives__common.html#gac37ad67b48edeb9e742af0e50b70fe09">DNNL_ARG_SRC</a>, A_m}, {<a class="code" href="group__dnnl__api__primitives__common.html#gaf279f28c59a807e71a70c719db56c5b3">DNNL_ARG_WEIGHTS</a>, B_m}, {<a class="code" href="group__dnnl__api__primitives__common.html#ga3ca217e4a06d42a0ede3c018383c388f">DNNL_ARG_DST</a>, C_m},</div>
 <div class="line">                    {<a class="code" href="group__dnnl__api__primitives__common.html#ga0afb48b0c2b8f3ee30609aaa47aa29db">DNNL_ARG_ATTR_OUTPUT_SCALES</a>, alpha_m}});</div>
 <div class="line">    s.wait();</div>
@@ -284,7 +284,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="comment">// shapes of matrices A, B, and C -- they should exactly match</span></div>
 <div class="line">    <span class="comment">// the memory descriptors passed to MatMul operation descriptor.</span></div>
 <div class="line">    stream s(eng);</div>
-<div class="line">    matmul_p.<a class="code" href="structdnnl_1_1primitive.html#a65b6bd202ba2cb37ed8504da346dda2e">execute</a>(s,</div>
+<div class="line">    matmul_p.<a class="code" href="structdnnl_1_1primitive.html#a18a484f0f1fecbc6a58fca1a58f6d8d4">execute</a>(s,</div>
 <div class="line">            {{<a class="code" href="group__dnnl__api__primitives__common.html#gac37ad67b48edeb9e742af0e50b70fe09">DNNL_ARG_SRC</a>, A_m}, {<a class="code" href="group__dnnl__api__primitives__common.html#gaf279f28c59a807e71a70c719db56c5b3">DNNL_ARG_WEIGHTS</a>, B_m},</div>
 <div class="line">                    {<a class="code" href="group__dnnl__api__primitives__common.html#ga3ca217e4a06d42a0ede3c018383c388f">DNNL_ARG_DST</a>, C_m}});</div>
 <div class="line">    s.wait();</div>

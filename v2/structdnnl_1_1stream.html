@@ -135,12 +135,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad7583cd3c56f330f90e0e6b148a9e5c3"><td class="memItemLeft" align="right" valign="top">cl_command_queue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1stream.html#ad7583cd3c56f330f90e0e6b148a9e5c3">get_ocl_command_queue</a> () const </td></tr>
 <tr class="memdesc:ad7583cd3c56f330f90e0e6b148a9e5c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the underlying OpenCL queue object.  <a href="#ad7583cd3c56f330f90e0e6b148a9e5c3">More...</a><br/></td></tr>
 <tr class="separator:ad7583cd3c56f330f90e0e6b148a9e5c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a047eeee586954a5a660a255aac7abed5"><td class="memItemLeft" align="right" valign="top">DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1stream.html#a047eeee586954a5a660a255aac7abed5">stream</a> (const <a class="el" href="structdnnl_1_1engine.html">engine</a> &amp;eng, cl::sycl::queue &amp;aqueue)</td></tr>
-<tr class="memdesc:a047eeee586954a5a660a255aac7abed5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a stream for the specified engine and the SYCL queue.  <a href="#a047eeee586954a5a660a255aac7abed5">More...</a><br/></td></tr>
-<tr class="separator:a047eeee586954a5a660a255aac7abed5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1972ee58c04883f8266ac2607aac990"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af1972ee58c04883f8266ac2607aac990"></a>
-cl::sycl::queue DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1stream.html#af1972ee58c04883f8266ac2607aac990">get_sycl_queue</a> () const </td></tr>
-<tr class="memdesc:af1972ee58c04883f8266ac2607aac990"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the underlying SYCL queue object. <br/></td></tr>
+<tr class="memitem:a343106b5b58a7fee51163cdd2679f0a8"><td class="memItemLeft" align="right" valign="top">DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1stream.html#a343106b5b58a7fee51163cdd2679f0a8">stream</a> (const <a class="el" href="structdnnl_1_1engine.html">engine</a> &amp;aengine, cl::sycl::queue &amp;queue)</td></tr>
+<tr class="memdesc:a343106b5b58a7fee51163cdd2679f0a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a stream for the specified engine and the SYCL queue.  <a href="#a343106b5b58a7fee51163cdd2679f0a8">More...</a><br/></td></tr>
+<tr class="separator:a343106b5b58a7fee51163cdd2679f0a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1972ee58c04883f8266ac2607aac990"><td class="memItemLeft" align="right" valign="top">cl::sycl::queue DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1stream.html#af1972ee58c04883f8266ac2607aac990">get_sycl_queue</a> () const </td></tr>
+<tr class="memdesc:af1972ee58c04883f8266ac2607aac990"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the underlying SYCL queue object.  <a href="#af1972ee58c04883f8266ac2607aac990">More...</a><br/></td></tr>
 <tr class="separator:af1972ee58c04883f8266ac2607aac990"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a59985fa8746436057cf51a820ef8929c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structdnnl_1_1stream.html">stream</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1stream.html#a59985fa8746436057cf51a820ef8929c">wait</a> ()</td></tr>
 <tr class="memdesc:a59985fa8746436057cf51a820ef8929c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for all primitives executing in the stream to finish.  <a href="#a59985fa8746436057cf51a820ef8929c">More...</a><br/></td></tr>
@@ -350,7 +349,7 @@ cl::sycl::queue DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a c
 
 </div>
 </div>
-<a class="anchor" id="a047eeee586954a5a660a255aac7abed5"></a>
+<a class="anchor" id="a343106b5b58a7fee51163cdd2679f0a8"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -358,13 +357,13 @@ cl::sycl::queue DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a c
           <td class="memname">DNNL_API dnnl::stream::stream </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structdnnl_1_1engine.html">engine</a> &amp;&#160;</td>
-          <td class="paramname"><em>eng</em>, </td>
+          <td class="paramname"><em>aengine</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">cl::sycl::queue &amp;&#160;</td>
-          <td class="paramname"><em>aqueue</em>&#160;</td>
+          <td class="paramname"><em>queue</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -377,8 +376,8 @@ cl::sycl::queue DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a c
 <p>Constructs a stream for the specified engine and the SYCL queue. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">eng</td><td>Engine object to use for the stream. </td></tr>
-    <tr><td class="paramname">aqueue</td><td>SYCL queue to use for the stream. </td></tr>
+    <tr><td class="paramname">aengine</td><td>Engine object to use for the stream. </td></tr>
+    <tr><td class="paramname">queue</td><td>SYCL queue to use for the stream. </td></tr>
   </table>
   </dd>
 </dl>
@@ -409,6 +408,24 @@ cl::sycl::queue DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a c
 
 <p>Returns the underlying OpenCL queue object. </p>
 <dl class="section return"><dt>Returns</dt><dd>OpenCL queue. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af1972ee58c04883f8266ac2607aac990"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cl::sycl::queue DNNL_API dnnl::stream::get_sycl_queue </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the underlying SYCL queue object. </p>
+<dl class="section return"><dt>Returns</dt><dd>SYCL queue object. </dd></dl>
 
 </div>
 </div>

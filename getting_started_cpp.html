@@ -221,7 +221,7 @@ Creating a memory object</h3>
 <div class="line"></div>
 <div class="line">    <span class="comment">// For dst_mem the library allocates buffer</span></div>
 <div class="line">    <span class="keyword">auto</span> dst_mem = memory(src_md, eng);</div>
-</div><!-- fragment --><p> We already have a memory buffer for the source memory object. We pass it to the <a class="el" href="structdnnl_1_1memory.html#a7349cd8dd17e53fbde7648fd7dc108a9">dnnl::memory::memory(const desc &amp;, const engine &amp;, void *)</a> constructor that takes a buffer pointer as its last argument.</p>
+</div><!-- fragment --><p> We already have a memory buffer for the source memory object. We pass it to the <a class="el" href="structdnnl_1_1memory.html#a7463ff54b529ec2b5392230861212a09">dnnl::memory::memory(const desc &amp;, const engine &amp;, void *)</a> constructor that takes a buffer pointer as its last argument.</p>
 <p>Let's use a constructor that instructs the library to allocate a memory buffer for the <code>dst_mem</code> for educational purposes.</p>
 <p>The key difference between these two are:</p>
 <ol type="1">
@@ -237,7 +237,7 @@ Creating a ReLU primitive</h2>
 <p>Just as in the case of <a class="el" href="structdnnl_1_1memory.html">dnnl::memory</a>, a user should always go through (at least) three creation steps (which however, can be sometimes combined thanks to C++11):</p>
 <ol type="1">
 <li>Initialize an operation descriptor (in this example, <a class="el" href="structdnnl_1_1eltwise__forward_1_1desc.html">dnnl::eltwise_forward::desc</a>), which defines the operation parameters.</li>
-<li>Create an operation primitive descriptor (here <a class="el" href="structdnnl_1_1eltwise__forward_1_1primitive__desc.html">dnnl::eltwise_forward::primitive_desc</a>), which is a <b>lightweight</b> descriptor of the actual algorithm that <b>implements</b> the given operation. The user can query different characteristics of the chosen implementation such as memory consumptions and some others that will be covered in the next topic (<a class="el" href="memory_format_propagation_cpp.html">Memory format propagation</a>).</li>
+<li>Create an operation primitive descriptor (here <a class="el" href="structdnnl_1_1eltwise__forward_1_1primitive__desc.html">dnnl::eltwise_forward::primitive_desc</a>), which is a <b>lightweight</b> descriptor of the actual algorithm that <b>implements</b> the given operation. The user can query different characteristics of the chosen implementation such as memory consumptions and some others that will be covered in the next topic (<a class="el" href="memory_format_propagation_cpp.html">Memory Format Propagation</a>).</li>
 <li>Create a primitive (here <a class="el" href="structdnnl_1_1eltwise__forward.html">dnnl::eltwise_forward</a>) that can be executed on memory objects to compute the operation.</li>
 </ol>
 <p>oneDNN separates steps 2 and 3 to enable the user to inspect details of a primitive implementation prior to creating the primitive. This may be expensive, because, for example, oneDNN generates the optimized computational code on the fly.</p>
@@ -262,7 +262,7 @@ Creating a ReLU primitive</h2>
 <div class="line">    <span class="keyword">auto</span> relu = eltwise_forward(relu_pd); <span class="comment">// !!! this can take quite some time</span></div>
 </div><!-- fragment --><p> A note about variable names. Similar to the <code>_md</code> suffix used for memory descriptor, we use <code>_d</code> for the operation descriptor names, <code>_pd</code> for the primitive descriptors, and no suffix for primitives themselves.</p>
 <p>It is worth mentioning that we specified the exact tensor and its memory format when we were initializing the <code>relu_d</code>. That means <code>relu</code> primitive would perform computations with memory objects that correspond to this description. This is the one and only one way of creating non-compute-intensive primitives like <a class="el" href="dev_guide_eltwise.html">Eltwise</a>, <a class="el" href="dev_guide_batch_normalization.html">Batch Normalization</a>, and others.</p>
-<p>Compute-intensive primitives (like <a class="el" href="dev_guide_convolution.html">Convolution</a>) have an ability to define the appropriate memory format on their own. This is one of the key features of the library and will be discussed in detail in the next topic: <a class="el" href="memory_format_propagation_cpp.html">Memory format propagation</a>.</p>
+<p>Compute-intensive primitives (like <a class="el" href="dev_guide_convolution.html">Convolution</a>) have an ability to define the appropriate memory format on their own. This is one of the key features of the library and will be discussed in detail in the next topic: <a class="el" href="memory_format_propagation_cpp.html">Memory Format Propagation</a>.</p>
 <h2><a class="anchor" id="getting_started_cpp_sub5"></a>
 Executing the ReLU primitive</h2>
 <p>Finally, let's execute the primitive and wait for its completion.</p>

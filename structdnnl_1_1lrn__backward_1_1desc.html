@@ -109,15 +109,15 @@ Collaboration diagram for dnnl::lrn_backward::desc:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0bf5c6804295875719a5fec96b8e311d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1lrn__backward_1_1desc.html#a0bf5c6804295875719a5fec96b8e311d">desc</a> (<a class="el" href="group__dnnl__api__attributes.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a> <a class="el" href="group__dnnl__api__attributes.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a>, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;data_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_data_desc, <a class="el" href="structdnnl_1_1memory.html#a6ad818e4699872cc913474fa5f122cd5">memory::dim</a> local_size, float alpha, float beta, float k=1.f)</td></tr>
-<tr class="memdesc:a0bf5c6804295875719a5fec96b8e311d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a descriptor for an LRN backward propagation primitive.  <a href="#a0bf5c6804295875719a5fec96b8e311d">More...</a><br/></td></tr>
-<tr class="separator:a0bf5c6804295875719a5fec96b8e311d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59aa96046c2bf2bc8c74ded21df266d7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1lrn__backward_1_1desc.html#a59aa96046c2bf2bc8c74ded21df266d7">desc</a> (<a class="el" href="group__dnnl__api__attributes.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a> aalgorithm, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;data_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_data_desc, <a class="el" href="structdnnl_1_1memory.html#a6ad818e4699872cc913474fa5f122cd5">memory::dim</a> local_size, float alpha, float beta, float k=1.f)</td></tr>
+<tr class="memdesc:a59aa96046c2bf2bc8c74ded21df266d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a descriptor for an LRN backward propagation primitive.  <a href="#a59aa96046c2bf2bc8c74ded21df266d7">More...</a><br/></td></tr>
+<tr class="separator:a59aa96046c2bf2bc8c74ded21df266d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Descriptor for an LRN backward propagation primitive. </p>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="cnn_training_f32_8cpp-example.html#_a36">cnn_training_f32.cpp</a>, and <a class="el" href="cpu_cnn_training_bf16_8cpp-example.html#_a40">cpu_cnn_training_bf16.cpp</a>.</dd>
 </dl></div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a0bf5c6804295875719a5fec96b8e311d"></a>
+<a class="anchor" id="a59aa96046c2bf2bc8c74ded21df266d7"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -128,7 +128,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">dnnl::lrn_backward::desc::desc </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__dnnl__api__attributes.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a>&#160;</td>
-          <td class="paramname"><em>algorithm</em>, </td>
+          <td class="paramname"><em>aalgorithm</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -192,7 +192,7 @@ Public Member Functions</h2></td></tr>
 </ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">algorithm</td><td>LRN algorithm kind: either <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640ab9e2d858b551792385a4b5b86672b24b" title="Local response normalization (LRN) across multiple channels. ">dnnl::algorithm::lrn_across_channels</a>, or <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640aa25c4ccc5c7c9bd3a977a2089189a494" title="LRN within a single channel. ">dnnl::algorithm::lrn_within_channel</a>. </td></tr>
+    <tr><td class="paramname">aalgorithm</td><td>LRN algorithm kind: either <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640ab9e2d858b551792385a4b5b86672b24b" title="Local response normalization (LRN) across multiple channels. ">dnnl::algorithm::lrn_across_channels</a>, or <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640aa25c4ccc5c7c9bd3a977a2089189a494" title="LRN within a single channel. ">dnnl::algorithm::lrn_within_channel</a>. </td></tr>
     <tr><td class="paramname">diff_data_desc</td><td>Diff source and diff destination memory descriptor. </td></tr>
     <tr><td class="paramname">data_desc</td><td>Source memory descriptor. </td></tr>
     <tr><td class="paramname">local_size</td><td>Regularization local size. </td></tr>

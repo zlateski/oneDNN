@@ -150,34 +150,15 @@ Single-value scaling format</div></div>
 <img src="img_multiscalar.png" alt="img_multiscalar.png"/>
 <div class="caption">
 Multi-value scaling format</div></div>
- The <b>mask</b> parameter determines the dimension to which the scales array is applied, where the i<sup>th</sup>-bit(s) of mask selects the dimension or dimensions d<sub>i</sub> (where <em>d</em> is an <em>n</em>-dimensional output tensor with logical dimensions as [<em>d0, d1, ..., dn-1</em>]). For example:</li>
+ The <b>mask</b> parameter determines the dimension to which the scales array is applied. The \(i\)-th bit of the mask selects the dimension \(D_i\) of an \(n\)-dimensional output tensor \(T[D_0, \ldots, D_{n-1}]\). For example:</li>
 <li>The single-scale format always has mask = 0.</li>
-<li>For a 5-dimensional tensor T[g0, o1,i2,h3,w4] where the numbering indicates the bit-index:<ul>
-<li>A mask = 2 = 2<sup>1</sup> selects the output channel for scaling.</li>
-<li>A mask = 3 = 2<sup>0</sup> | 2<sup>1</sup> selects the group and output channels.</li>
+<li>For a 5-dimensional tensor \(T[G_0, O_1, I_2, H_3, W_4]\) where the indices correspond to the positions of bits in the mask:<ul>
+<li>A \(mask = 2 = 2^1\) selects the output channel for scaling.</li>
+<li>A \(mask = 3 = 2^1 | 2^0\) selects the group and output channels.</li>
 </ul>
 </li>
 </ul>
-<p>Mask is always applied to the logical dimension; this is independent of the dimension format that the primitive might select. The dimensions in oneDNN are defined as follows:</p>
-<ul>
-<li>2D dimensional data the order of dimensions is always: (n, c)</li>
-<li>4D dimensional data the order is always: (n, c, h, w)</li>
-<li>5D dimensional weights the order is always: (g, oc, ic, kh, kw)</li>
-</ul>
-<p>Fused <b>post-ops</b> allow chaining operations during the primitive computation. Note that the resulting output value from post-ops is always affected by the scaling factor. The supported operations are:</p>
-<ul>
-<li>Accumulation where the primitive sums the resulting values from previously computed activations as:<ul>
-<li>\(dst[ ] \leftarrow scale * dst[] + op(...)\), instead of</li>
-<li>\(dst[ ] \leftarrow op(...)\)</li>
-</ul>
-</li>
-<li>Element-wise (eltwise) operation with kind, alpha and beta parameters as:<ul>
-<li>\(dst[ ] \leftarrow scale * eltwise\_op ( op(...) )\), instead of</li>
-<li>\(dst[ ] \leftarrow op(...)\)</li>
-</ul>
-</li>
-</ul>
-<p>The list of supported eltwise operations for int8 is currently limited to ReLU. For instance, post-ops may only configure a convolution with accumulation followed by eltwise (relu).</p>
+<p>Fused <a class="el" href="dev_guide_attributes_post_ops.html">post-ops</a> allow chaining computations. Note that the resulting output value from post-ops is always affected by the scaling factor.</p>
 <h2>Example</h2>
 <p><a class="el" href="cnn_inference_int8_cpp.html">CNN int8 inference example</a> example walks through the steps of int8 inference. </p>
 </div></div><!-- contents -->

@@ -356,13 +356,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line">    <span class="comment">// rightmost src_iter will be a sub-memory of dst_iter of leftmost</span></div>
 <div class="line">    <span class="keyword">auto</span> rightmost_src_iter_md</div>
-<div class="line">            = leftmost_dst_iter_memory.<a name="a12"></a><a class="code" href="structdnnl_1_1memory.html#a6bfc99db50d87d133c6b3b4f438b967a">get_desc</a>().<a name="a13"></a><a class="code" href="structdnnl_1_1memory_1_1desc.html#a3d017ecf635aae91cc3856a9dfe0721c">submemory_desc</a>(</div>
+<div class="line">            = leftmost_dst_iter_memory.<a name="a12"></a><a class="code" href="structdnnl_1_1memory.html#a6bfc99db50d87d133c6b3b4f438b967a">get_desc</a>().<a name="a13"></a><a class="code" href="structdnnl_1_1memory_1_1desc.html#a18f16cc91b7b4137aa70f42cf57e32de">submemory_desc</a>(</div>
 <div class="line">                    rightmost_src_iter_dims,</div>
 <div class="line">                    {0, 0, 0, 0}); <span class="comment">// l, d, n, c offsets</span></div>
 <div class="line">    <span class="keyword">auto</span> rightmost_src_iter_memory = leftmost_dst_iter_memory;</div>
 <div class="line"></div>
 <div class="line">    <span class="keyword">auto</span> rightmost_src_iter_c_md</div>
-<div class="line">            = leftmost_dst_iter_c_memory.<a class="code" href="structdnnl_1_1memory.html#a6bfc99db50d87d133c6b3b4f438b967a">get_desc</a>().<a class="code" href="structdnnl_1_1memory_1_1desc.html#a3d017ecf635aae91cc3856a9dfe0721c">submemory_desc</a>(</div>
+<div class="line">            = leftmost_dst_iter_c_memory.<a class="code" href="structdnnl_1_1memory.html#a6bfc99db50d87d133c6b3b4f438b967a">get_desc</a>().<a class="code" href="structdnnl_1_1memory_1_1desc.html#a18f16cc91b7b4137aa70f42cf57e32de">submemory_desc</a>(</div>
 <div class="line">                    rightmost_src_iter_c_dims,</div>
 <div class="line">                    {0, 0, 0, 0}); <span class="comment">// l, d, n, c offsets</span></div>
 <div class="line">    <span class="keyword">auto</span> rightmost_src_iter_c_memory = leftmost_dst_iter_c_memory;</div>
@@ -398,7 +398,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">        common_weights_layer_memory</div>
 <div class="line">                = <a class="code" href="structdnnl_1_1memory.html">dnnl::memory</a>(leftmost_prim_desc.weights_layer_desc(), eng);</div>
 <div class="line">        <a name="_a14"></a><a class="code" href="structdnnl_1_1reorder.html">reorder</a>(user_common_weights_layer_memory, common_weights_layer_memory)</div>
-<div class="line">                .<a name="a15"></a><a class="code" href="structdnnl_1_1reorder.html#a573f94090cedc71fea0091b64b1bd79a">execute</a>(s, user_common_weights_layer_memory,</div>
+<div class="line">                .<a name="a15"></a><a class="code" href="structdnnl_1_1reorder.html#a20b3cad4c1dfe4ff0551b0cb27683ef7">execute</a>(s, user_common_weights_layer_memory,</div>
 <div class="line">                        common_weights_layer_memory);</div>
 <div class="line">    }</div>
 <div class="line"></div>
@@ -408,7 +408,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">        common_weights_iter_memory</div>
 <div class="line">                = <a class="code" href="structdnnl_1_1memory.html">dnnl::memory</a>(leftmost_prim_desc.weights_iter_desc(), eng);</div>
 <div class="line">        <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(user_common_weights_iter_memory, common_weights_iter_memory)</div>
-<div class="line">                .<a class="code" href="structdnnl_1_1reorder.html#a573f94090cedc71fea0091b64b1bd79a">execute</a>(s, user_common_weights_iter_memory,</div>
+<div class="line">                .<a class="code" href="structdnnl_1_1reorder.html#a20b3cad4c1dfe4ff0551b0cb27683ef7">execute</a>(s, user_common_weights_iter_memory,</div>
 <div class="line">                        common_weights_iter_memory);</div>
 <div class="line">    }</div>
 <div class="line"></div>
@@ -416,7 +416,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="keywordflow">if</span> (leftmost_prim_desc.bias_desc() != common_bias_memory.get_desc()) {</div>
 <div class="line">        common_bias_memory = <a class="code" href="structdnnl_1_1memory.html">dnnl::memory</a>(leftmost_prim_desc.bias_desc(), eng);</div>
 <div class="line">        <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(user_common_bias_memory, common_bias_memory)</div>
-<div class="line">                .<a class="code" href="structdnnl_1_1reorder.html#a573f94090cedc71fea0091b64b1bd79a">execute</a>(s, user_common_bias_memory, common_bias_memory);</div>
+<div class="line">                .<a class="code" href="structdnnl_1_1reorder.html#a20b3cad4c1dfe4ff0551b0cb27683ef7">execute</a>(s, user_common_bias_memory, common_bias_memory);</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">//</span></div>
@@ -429,7 +429,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">        leftmost_dst_layer_memory</div>
 <div class="line">                = <a class="code" href="structdnnl_1_1memory.html">dnnl::memory</a>(leftmost_prim_desc.dst_layer_desc(), eng);</div>
 <div class="line">        <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(user_leftmost_dst_layer_memory, leftmost_dst_layer_memory)</div>
-<div class="line">                .<a class="code" href="structdnnl_1_1reorder.html#a573f94090cedc71fea0091b64b1bd79a">execute</a>(s, user_leftmost_dst_layer_memory,</div>
+<div class="line">                .<a class="code" href="structdnnl_1_1reorder.html#a20b3cad4c1dfe4ff0551b0cb27683ef7">execute</a>(s, user_leftmost_dst_layer_memory,</div>
 <div class="line">                        leftmost_dst_layer_memory);</div>
 <div class="line">    }</div>
 <div class="line"></div>
@@ -439,7 +439,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">        rightmost_dst_layer_memory</div>
 <div class="line">                = <a class="code" href="structdnnl_1_1memory.html">dnnl::memory</a>(rightmost_prim_desc.dst_layer_desc(), eng);</div>
 <div class="line">        <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(user_rightmost_dst_layer_memory, rightmost_dst_layer_memory)</div>
-<div class="line">                .<a class="code" href="structdnnl_1_1reorder.html#a573f94090cedc71fea0091b64b1bd79a">execute</a>(s, user_rightmost_dst_layer_memory,</div>
+<div class="line">                .<a class="code" href="structdnnl_1_1reorder.html#a20b3cad4c1dfe4ff0551b0cb27683ef7">execute</a>(s, user_rightmost_dst_layer_memory,</div>
 <div class="line">                        rightmost_dst_layer_memory);</div>
 <div class="line">    }</div>
 <div class="line"></div>
@@ -455,7 +455,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line">    <span class="comment">// Construct the RNN primitive objects</span></div>
 <div class="line">    <a name="_a16"></a><a class="code" href="structdnnl_1_1lstm__forward.html">lstm_forward</a> leftmost_layer(leftmost_prim_desc);</div>
-<div class="line">    leftmost_layer.<a name="a17"></a><a class="code" href="structdnnl_1_1primitive.html#a65b6bd202ba2cb37ed8504da346dda2e">execute</a>(s,</div>
+<div class="line">    leftmost_layer.<a name="a17"></a><a class="code" href="structdnnl_1_1primitive.html#a18a484f0f1fecbc6a58fca1a58f6d8d4">execute</a>(s,</div>
 <div class="line">            {{<a name="a18"></a><a class="code" href="group__dnnl__api__primitives__common.html#gab91ce4d04cf4e98e3a407daa0676764f">DNNL_ARG_SRC_LAYER</a>, leftmost_src_layer_memory},</div>
 <div class="line">                    {<a name="a19"></a><a class="code" href="group__dnnl__api__primitives__common.html#ga1ac9e1f1327be3902b488b64bae1b4c5">DNNL_ARG_WEIGHTS_LAYER</a>, common_weights_layer_memory},</div>
 <div class="line">                    {<a name="a20"></a><a class="code" href="group__dnnl__api__primitives__common.html#ga5a9c39486c01ad263e29677a32735af8">DNNL_ARG_WEIGHTS_ITER</a>, common_weights_iter_memory},</div>
@@ -466,7 +466,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">                    {<a name="a25"></a><a class="code" href="group__dnnl__api__primitives__common.html#ga550c80e1b9ba4f541202a7ac98be117f">DNNL_ARG_WORKSPACE</a>, leftmost_workspace_memory}});</div>
 <div class="line"></div>
 <div class="line">    <a class="code" href="structdnnl_1_1lstm__forward.html">lstm_forward</a> rightmost_layer(rightmost_prim_desc);</div>
-<div class="line">    rightmost_layer.<a class="code" href="structdnnl_1_1primitive.html#a65b6bd202ba2cb37ed8504da346dda2e">execute</a>(s,</div>
+<div class="line">    rightmost_layer.<a class="code" href="structdnnl_1_1primitive.html#a18a484f0f1fecbc6a58fca1a58f6d8d4">execute</a>(s,</div>
 <div class="line">            {{<a class="code" href="group__dnnl__api__primitives__common.html#gab91ce4d04cf4e98e3a407daa0676764f">DNNL_ARG_SRC_LAYER</a>, rightmost_src_layer_memory},</div>
 <div class="line">                    {<a name="a26"></a><a class="code" href="group__dnnl__api__primitives__common.html#gaf35f4f604284f1b00bb35bffd0f7a143">DNNL_ARG_SRC_ITER</a>, rightmost_src_iter_memory},</div>
 <div class="line">                    {<a name="a27"></a><a class="code" href="group__dnnl__api__primitives__common.html#ga8ef6969516e717208a33766542410410">DNNL_ARG_SRC_ITER_C</a>, rightmost_src_iter_c_memory},</div>
@@ -575,13 +575,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">            = <a class="code" href="structdnnl_1_1memory.html">dnnl::memory</a>(leftmost_bwd_prim_desc.diff_dst_iter_c_desc(), eng);</div>
 <div class="line"></div>
 <div class="line">    <span class="keyword">auto</span> rightmost_diff_src_iter_md</div>
-<div class="line">            = leftmost_diff_dst_iter_memory.<a class="code" href="structdnnl_1_1memory.html#a6bfc99db50d87d133c6b3b4f438b967a">get_desc</a>().<a class="code" href="structdnnl_1_1memory_1_1desc.html#a3d017ecf635aae91cc3856a9dfe0721c">submemory_desc</a>(</div>
+<div class="line">            = leftmost_diff_dst_iter_memory.<a class="code" href="structdnnl_1_1memory.html#a6bfc99db50d87d133c6b3b4f438b967a">get_desc</a>().<a class="code" href="structdnnl_1_1memory_1_1desc.html#a18f16cc91b7b4137aa70f42cf57e32de">submemory_desc</a>(</div>
 <div class="line">                    rightmost_src_iter_dims,</div>
 <div class="line">                    {0, 0, 0, 0}); <span class="comment">// l, d, n, c offsets</span></div>
 <div class="line">    <span class="keyword">auto</span> rightmost_diff_src_iter_memory = leftmost_diff_dst_iter_memory;</div>
 <div class="line"></div>
 <div class="line">    <span class="keyword">auto</span> rightmost_diff_src_iter_c_md</div>
-<div class="line">            = leftmost_diff_dst_iter_c_memory.<a class="code" href="structdnnl_1_1memory.html#a6bfc99db50d87d133c6b3b4f438b967a">get_desc</a>().<a class="code" href="structdnnl_1_1memory_1_1desc.html#a3d017ecf635aae91cc3856a9dfe0721c">submemory_desc</a>(</div>
+<div class="line">            = leftmost_diff_dst_iter_c_memory.<a class="code" href="structdnnl_1_1memory.html#a6bfc99db50d87d133c6b3b4f438b967a">get_desc</a>().<a class="code" href="structdnnl_1_1memory_1_1desc.html#a18f16cc91b7b4137aa70f42cf57e32de">submemory_desc</a>(</div>
 <div class="line">                    rightmost_src_iter_c_dims,</div>
 <div class="line">                    {0, 0, 0, 0}); <span class="comment">// l, d, n, c offsets</span></div>
 <div class="line">    <span class="keyword">auto</span> rightmost_diff_src_iter_c_memory = leftmost_diff_dst_iter_c_memory;</div>
@@ -629,7 +629,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">        common_weights_layer_bwd_memory</div>
 <div class="line">                = <a class="code" href="structdnnl_1_1memory.html">memory</a>(leftmost_bwd_prim_desc.weights_layer_desc(), eng);</div>
 <div class="line">        <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(common_weights_layer_memory, common_weights_layer_bwd_memory)</div>
-<div class="line">                .<a class="code" href="structdnnl_1_1reorder.html#a573f94090cedc71fea0091b64b1bd79a">execute</a>(s, common_weights_layer_memory,</div>
+<div class="line">                .<a class="code" href="structdnnl_1_1reorder.html#a20b3cad4c1dfe4ff0551b0cb27683ef7">execute</a>(s, common_weights_layer_memory,</div>
 <div class="line">                        common_weights_layer_bwd_memory);</div>
 <div class="line">    }</div>
 <div class="line"></div>
@@ -639,7 +639,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">        common_weights_iter_bwd_memory</div>
 <div class="line">                = <a class="code" href="structdnnl_1_1memory.html">memory</a>(leftmost_bwd_prim_desc.weights_iter_desc(), eng);</div>
 <div class="line">        <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(common_weights_iter_memory, common_weights_iter_bwd_memory)</div>
-<div class="line">                .<a class="code" href="structdnnl_1_1reorder.html#a573f94090cedc71fea0091b64b1bd79a">execute</a>(s, common_weights_iter_memory,</div>
+<div class="line">                .<a class="code" href="structdnnl_1_1reorder.html#a20b3cad4c1dfe4ff0551b0cb27683ef7">execute</a>(s, common_weights_iter_memory,</div>
 <div class="line">                        common_weights_iter_bwd_memory);</div>
 <div class="line">    }</div>
 <div class="line"></div>
@@ -648,7 +648,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">        common_bias_bwd_memory</div>
 <div class="line">                = <a class="code" href="structdnnl_1_1memory.html">dnnl::memory</a>(leftmost_bwd_prim_desc.bias_desc(), eng);</div>
 <div class="line">        <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(common_bias_memory, common_bias_bwd_memory)</div>
-<div class="line">                .<a class="code" href="structdnnl_1_1reorder.html#a573f94090cedc71fea0091b64b1bd79a">execute</a>(s, common_bias_memory, common_bias_bwd_memory);</div>
+<div class="line">                .<a class="code" href="structdnnl_1_1reorder.html#a20b3cad4c1dfe4ff0551b0cb27683ef7">execute</a>(s, common_bias_memory, common_bias_bwd_memory);</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// diff_weights and biases</span></div>
@@ -678,7 +678,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">        leftmost_dst_layer_bwd_memory</div>
 <div class="line">                = <a class="code" href="structdnnl_1_1memory.html">dnnl::memory</a>(leftmost_bwd_prim_desc.dst_layer_desc(), eng);</div>
 <div class="line">        <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(leftmost_dst_layer_memory, leftmost_dst_layer_bwd_memory)</div>
-<div class="line">                .<a class="code" href="structdnnl_1_1reorder.html#a573f94090cedc71fea0091b64b1bd79a">execute</a>(s, leftmost_dst_layer_memory,</div>
+<div class="line">                .<a class="code" href="structdnnl_1_1reorder.html#a20b3cad4c1dfe4ff0551b0cb27683ef7">execute</a>(s, leftmost_dst_layer_memory,</div>
 <div class="line">                        leftmost_dst_layer_bwd_memory);</div>
 <div class="line">    }</div>
 <div class="line"></div>
@@ -688,7 +688,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">        rightmost_dst_layer_bwd_memory</div>
 <div class="line">                = <a class="code" href="structdnnl_1_1memory.html">dnnl::memory</a>(rightmost_bwd_prim_desc.dst_layer_desc(), eng);</div>
 <div class="line">        <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(rightmost_dst_layer_memory, rightmost_dst_layer_bwd_memory)</div>
-<div class="line">                .<a class="code" href="structdnnl_1_1reorder.html#a573f94090cedc71fea0091b64b1bd79a">execute</a>(s, rightmost_dst_layer_memory,</div>
+<div class="line">                .<a class="code" href="structdnnl_1_1reorder.html#a20b3cad4c1dfe4ff0551b0cb27683ef7">execute</a>(s, rightmost_dst_layer_memory,</div>
 <div class="line">                        rightmost_dst_layer_bwd_memory);</div>
 <div class="line">    }</div>
 <div class="line"></div>
@@ -703,7 +703,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">        leftmost_dst_iter_bwd_memory</div>
 <div class="line">                = <a class="code" href="structdnnl_1_1memory.html">dnnl::memory</a>(leftmost_bwd_prim_desc.dst_iter_desc(), eng);</div>
 <div class="line">        <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(leftmost_dst_iter_memory, leftmost_dst_iter_bwd_memory)</div>
-<div class="line">                .<a class="code" href="structdnnl_1_1reorder.html#a573f94090cedc71fea0091b64b1bd79a">execute</a>(s, leftmost_dst_iter_memory,</div>
+<div class="line">                .<a class="code" href="structdnnl_1_1reorder.html#a20b3cad4c1dfe4ff0551b0cb27683ef7">execute</a>(s, leftmost_dst_iter_memory,</div>
 <div class="line">                        leftmost_dst_iter_bwd_memory);</div>
 <div class="line">    }</div>
 <div class="line"></div>
@@ -713,13 +713,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">        leftmost_dst_iter_c_bwd_memory</div>
 <div class="line">                = <a class="code" href="structdnnl_1_1memory.html">dnnl::memory</a>(leftmost_bwd_prim_desc.dst_iter_c_desc(), eng);</div>
 <div class="line">        <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(leftmost_dst_iter_c_memory, leftmost_dst_iter_c_bwd_memory)</div>
-<div class="line">                .<a class="code" href="structdnnl_1_1reorder.html#a573f94090cedc71fea0091b64b1bd79a">execute</a>(s, leftmost_dst_iter_c_memory,</div>
+<div class="line">                .<a class="code" href="structdnnl_1_1reorder.html#a20b3cad4c1dfe4ff0551b0cb27683ef7">execute</a>(s, leftmost_dst_iter_c_memory,</div>
 <div class="line">                        leftmost_dst_iter_c_bwd_memory);</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Construct the RNN primitive objects for backward</span></div>
 <div class="line">    <a name="_a31"></a><a class="code" href="structdnnl_1_1lstm__backward.html">lstm_backward</a> rightmost_layer_bwd(rightmost_bwd_prim_desc);</div>
-<div class="line">    rightmost_layer_bwd.<a class="code" href="structdnnl_1_1primitive.html#a65b6bd202ba2cb37ed8504da346dda2e">execute</a>(s,</div>
+<div class="line">    rightmost_layer_bwd.<a class="code" href="structdnnl_1_1primitive.html#a18a484f0f1fecbc6a58fca1a58f6d8d4">execute</a>(s,</div>
 <div class="line">            {{<a class="code" href="group__dnnl__api__primitives__common.html#gab91ce4d04cf4e98e3a407daa0676764f">DNNL_ARG_SRC_LAYER</a>, rightmost_src_layer_bwd_memory},</div>
 <div class="line">                    {<a class="code" href="group__dnnl__api__primitives__common.html#gaf35f4f604284f1b00bb35bffd0f7a143">DNNL_ARG_SRC_ITER</a>, rightmost_src_iter_memory},</div>
 <div class="line">                    {<a class="code" href="group__dnnl__api__primitives__common.html#ga8ef6969516e717208a33766542410410">DNNL_ARG_SRC_ITER_C</a>, rightmost_src_iter_c_memory},</div>
@@ -740,7 +740,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">                    {<a class="code" href="group__dnnl__api__primitives__common.html#ga550c80e1b9ba4f541202a7ac98be117f">DNNL_ARG_WORKSPACE</a>, rightmost_workspace_memory}});</div>
 <div class="line"></div>
 <div class="line">    <a class="code" href="structdnnl_1_1lstm__backward.html">lstm_backward</a> leftmost_layer_bwd(leftmost_bwd_prim_desc);</div>
-<div class="line">    leftmost_layer_bwd.<a class="code" href="structdnnl_1_1primitive.html#a65b6bd202ba2cb37ed8504da346dda2e">execute</a>(s,</div>
+<div class="line">    leftmost_layer_bwd.<a class="code" href="structdnnl_1_1primitive.html#a18a484f0f1fecbc6a58fca1a58f6d8d4">execute</a>(s,</div>
 <div class="line">            {{<a class="code" href="group__dnnl__api__primitives__common.html#gab91ce4d04cf4e98e3a407daa0676764f">DNNL_ARG_SRC_LAYER</a>, leftmost_src_layer_bwd_memory},</div>
 <div class="line">                    {<a class="code" href="group__dnnl__api__primitives__common.html#ga1ac9e1f1327be3902b488b64bae1b4c5">DNNL_ARG_WEIGHTS_LAYER</a>, common_weights_layer_bwd_memory},</div>
 <div class="line">                    {<a class="code" href="group__dnnl__api__primitives__common.html#ga5a9c39486c01ad263e29677a32735af8">DNNL_ARG_WEIGHTS_ITER</a>, common_weights_iter_bwd_memory},</div>
@@ -761,13 +761,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="keywordflow">if</span> (reorder_common_diff_weights_layer) {</div>
 <div class="line">        <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(common_diff_weights_layer_memory,</div>
 <div class="line">                user_common_diff_weights_layer_memory)</div>
-<div class="line">                .<a class="code" href="structdnnl_1_1reorder.html#a573f94090cedc71fea0091b64b1bd79a">execute</a>(s, common_diff_weights_layer_memory,</div>
+<div class="line">                .<a class="code" href="structdnnl_1_1reorder.html#a20b3cad4c1dfe4ff0551b0cb27683ef7">execute</a>(s, common_diff_weights_layer_memory,</div>
 <div class="line">                        user_common_diff_weights_layer_memory);</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (reorder_common_diff_bias) {</div>
 <div class="line">        <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(common_diff_bias_memory, user_common_diff_bias_memory)</div>
-<div class="line">                .<a class="code" href="structdnnl_1_1reorder.html#a573f94090cedc71fea0091b64b1bd79a">execute</a>(s, common_diff_bias_memory,</div>
+<div class="line">                .<a class="code" href="structdnnl_1_1reorder.html#a20b3cad4c1dfe4ff0551b0cb27683ef7">execute</a>(s, common_diff_bias_memory,</div>
 <div class="line">                        user_common_diff_bias_memory);</div>
 <div class="line">    }</div>
 <div class="line"></div>

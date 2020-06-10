@@ -27,14 +27,14 @@ var searchData=
   ['reserved',['reserved',['../structdnnl__memory__extra__desc__t.html#a174a1f0d7fddfd508465a940e0c6e875',1,'dnnl_memory_extra_desc_t']]],
   ['reset',['reset',['../structdnnl_1_1handle.html#a8862ef3d31c3b19bd88395e0b1373909',1,'dnnl::handle']]],
   ['reset_5fwith_5fclone',['reset_with_clone',['../structdnnl_1_1primitive__desc__base.html#a657087d16749edfbf21f557377f1e55f',1,'dnnl::primitive_desc_base']]],
-  ['reshape',['reshape',['../structdnnl_1_1memory_1_1desc.html#a0325f155fdaf54443a31df5bd7a1ab88',1,'dnnl::memory::desc']]],
+  ['reshape',['reshape',['../structdnnl_1_1memory_1_1desc.html#a129c324ddb119d10b9c55ea8dcd30240',1,'dnnl::memory::desc']]],
   ['rnn',['rnn',['../structdnnl_1_1primitive.html#ad1ec93215a0cf3aa0a32bae0c2cd9169a6eed45b9327120cabad6916919a9a600',1,'dnnl::primitive']]],
   ['rnn_5fd',['rnn_d',['../group__dnnl__api__primitives__common.html#gga94efdd650364f4d9776cfb9b711cbdc1a5bada9b07803d3e657d5bdc592f7fc52',1,'dnnl']]],
   ['rnn_5fdirection',['rnn_direction',['../group__dnnl__api__rnn.html#ga33315cf335d1cbe26fd6b70d956e23d5',1,'dnnl']]],
   ['rnn_5fflags',['rnn_flags',['../group__dnnl__api__rnn.html#gad27d0db2a86ae3072207769f5c2ddd1e',1,'dnnl']]],
   ['rnn_5fpacked_5fdesc',['rnn_packed_desc',['../structdnnl__memory__desc__t.html#ac8e3fced428d7d7a762cddcbfadadbbf',1,'dnnl_memory_desc_t']]],
   ['rnn_5fprimitive_5fdesc_5fbase',['rnn_primitive_desc_base',['../structdnnl_1_1rnn__primitive__desc__base.html',1,'dnnl']]],
-  ['rnn_5fprimitive_5fdesc_5fbase',['rnn_primitive_desc_base',['../structdnnl_1_1rnn__primitive__desc__base.html#a5f08b3113b2f2b4b67d9348ef7046251',1,'dnnl::rnn_primitive_desc_base::rnn_primitive_desc_base()=default'],['../structdnnl_1_1rnn__primitive__desc__base.html#a1c16b1a6f9f31d0b86fc71a16b47fb5e',1,'dnnl::rnn_primitive_desc_base::rnn_primitive_desc_base(dnnl_primitive_desc_t pd, dnnl::prop_kind prop_kind, dnnl::algorithm cell_kind)']]],
+  ['rnn_5fprimitive_5fdesc_5fbase',['rnn_primitive_desc_base',['../structdnnl_1_1rnn__primitive__desc__base.html#a5f08b3113b2f2b4b67d9348ef7046251',1,'dnnl::rnn_primitive_desc_base::rnn_primitive_desc_base()=default'],['../structdnnl_1_1rnn__primitive__desc__base.html#a91be3d723ce87dc5498d061f269f9705',1,'dnnl::rnn_primitive_desc_base::rnn_primitive_desc_base(dnnl_primitive_desc_t pd, dnnl::prop_kind aprop_kind, dnnl::algorithm cell_kind)']]],
   ['rnn_20f32_20training_20example',['RNN f32 training example',['../rnn_training_f32_cpp.html',1,'']]],
   ['runtime_5ferror',['runtime_error',['../group__dnnl__api__service.html#gga7acc4d3516304ae68a1289551d8f2cdda5b32065884bcc1f2ed126c47e6410808',1,'dnnl']]]
 ];

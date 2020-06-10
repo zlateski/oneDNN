@@ -109,15 +109,15 @@ Collaboration diagram for dnnl::pooling_backward::desc:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6773c6fb2ed5fb7602046685fced8dda"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1pooling__backward_1_1desc.html#a6773c6fb2ed5fb7602046685fced8dda">desc</a> (<a class="el" href="group__dnnl__api__attributes.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a> <a class="el" href="group__dnnl__api__attributes.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a>, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_src_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_dst_desc, const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;strides, const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;kernel, const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;padding_l, const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;padding_r)</td></tr>
-<tr class="memdesc:a6773c6fb2ed5fb7602046685fced8dda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a descriptor for pooling backward propagation primitive.  <a href="#a6773c6fb2ed5fb7602046685fced8dda">More...</a><br/></td></tr>
-<tr class="separator:a6773c6fb2ed5fb7602046685fced8dda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7bea39c45614f099b67a68b1825d080"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1pooling__backward_1_1desc.html#aa7bea39c45614f099b67a68b1825d080">desc</a> (<a class="el" href="group__dnnl__api__attributes.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a> aalgorithm, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_src_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_dst_desc, const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;strides, const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;kernel, const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;padding_l, const <a class="el" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;padding_r)</td></tr>
+<tr class="memdesc:aa7bea39c45614f099b67a68b1825d080"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a descriptor for pooling backward propagation primitive.  <a href="#aa7bea39c45614f099b67a68b1825d080">More...</a><br/></td></tr>
+<tr class="separator:aa7bea39c45614f099b67a68b1825d080"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Descriptor for a pooling backward propagation primitive. </p>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="cnn_training_f32_8cpp-example.html#_a31">cnn_training_f32.cpp</a>, and <a class="el" href="cpu_cnn_training_bf16_8cpp-example.html#_a35">cpu_cnn_training_bf16.cpp</a>.</dd>
 </dl></div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a6773c6fb2ed5fb7602046685fced8dda"></a>
+<a class="anchor" id="aa7bea39c45614f099b67a68b1825d080"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -128,7 +128,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">dnnl::pooling_backward::desc::desc </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__dnnl__api__attributes.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a>&#160;</td>
-          <td class="paramname"><em>algorithm</em>, </td>
+          <td class="paramname"><em>aalgorithm</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -192,7 +192,7 @@ Public Member Functions</h2></td></tr>
 <p>Arrays <code>strides</code>, <code>kernel</code>, <code>padding_l</code>, and <code>padding_r</code> contain values for spatial dimensions only and hence must have the same number of elements as there are spatial dimensions. The order of values is the same as in the tensor: depth (for 3D tensors), height (for 3D and 2D tensors), and width.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">algorithm</td><td>Pooling algorithm kind: either <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640a8c73d4bb88a0497586a74256bb338e88" title="Max pooling. ">dnnl::algorithm::pooling_max</a>, <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640ad62617dd43972a6bbff8d263a5c4462c" title="Average pooling include padding. ">dnnl::algorithm::pooling_avg_include_padding</a>, or <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640a7702ff2872aa0321d96ea7134bad855a" title="Average pooling exclude padding, alias for dnnl::algorithm::pooling_avg_include_padding. ">dnnl::algorithm::pooling_avg</a> (same as <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640a7ed10af2056450d8f6ac7277b48fc6a8" title="Average pooling exclude padding. ">dnnl::algorithm::pooling_avg_exclude_padding</a>). </td></tr>
+    <tr><td class="paramname">aalgorithm</td><td>Pooling algorithm kind: either <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640a8c73d4bb88a0497586a74256bb338e88" title="Max pooling. ">dnnl::algorithm::pooling_max</a>, <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640ad62617dd43972a6bbff8d263a5c4462c" title="Average pooling include padding. ">dnnl::algorithm::pooling_avg_include_padding</a>, or <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640a7702ff2872aa0321d96ea7134bad855a" title="Average pooling exclude padding, alias for dnnl::algorithm::pooling_avg_include_padding. ">dnnl::algorithm::pooling_avg</a> (same as <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640a7ed10af2056450d8f6ac7277b48fc6a8" title="Average pooling exclude padding. ">dnnl::algorithm::pooling_avg_exclude_padding</a>). </td></tr>
     <tr><td class="paramname">diff_src_desc</td><td>Diff source memory descriptor. </td></tr>
     <tr><td class="paramname">diff_dst_desc</td><td>Diff destination memory descriptor. </td></tr>
     <tr><td class="paramname">strides</td><td>Vector of strides for spatial dimension. </td></tr>

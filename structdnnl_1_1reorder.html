@@ -133,9 +133,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af04b380a824816defecb488a724bfb37"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1reorder.html#af04b380a824816defecb488a724bfb37">reorder</a> (const <a class="el" href="structdnnl_1_1memory.html">memory</a> &amp;src, const <a class="el" href="structdnnl_1_1memory.html">memory</a> &amp;dst, const <a class="el" href="structdnnl_1_1primitive__attr.html">primitive_attr</a> &amp;attr=<a class="el" href="structdnnl_1_1primitive__attr.html">primitive_attr</a>())</td></tr>
 <tr class="memdesc:af04b380a824816defecb488a724bfb37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a reorder primitive that would reorder data between memory objects having the same memory descriptors as memory objects <code>src</code> and <code>dst</code>.  <a href="#af04b380a824816defecb488a724bfb37">More...</a><br/></td></tr>
 <tr class="separator:af04b380a824816defecb488a724bfb37"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a573f94090cedc71fea0091b64b1bd79a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1reorder.html#a573f94090cedc71fea0091b64b1bd79a">execute</a> (const <a class="el" href="structdnnl_1_1stream.html">stream</a> &amp;<a class="el" href="structdnnl_1_1stream.html">stream</a>, <a class="el" href="structdnnl_1_1memory.html">memory</a> &amp;src, <a class="el" href="structdnnl_1_1memory.html">memory</a> &amp;dst) const </td></tr>
-<tr class="memdesc:a573f94090cedc71fea0091b64b1bd79a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the reorder primitive.  <a href="#a573f94090cedc71fea0091b64b1bd79a">More...</a><br/></td></tr>
-<tr class="separator:a573f94090cedc71fea0091b64b1bd79a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20b3cad4c1dfe4ff0551b0cb27683ef7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1reorder.html#a20b3cad4c1dfe4ff0551b0cb27683ef7">execute</a> (const <a class="el" href="structdnnl_1_1stream.html">stream</a> &amp;astream, <a class="el" href="structdnnl_1_1memory.html">memory</a> &amp;src, <a class="el" href="structdnnl_1_1memory.html">memory</a> &amp;dst) const </td></tr>
+<tr class="memdesc:a20b3cad4c1dfe4ff0551b0cb27683ef7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the reorder primitive.  <a href="#a20b3cad4c1dfe4ff0551b0cb27683ef7">More...</a><br/></td></tr>
+<tr class="separator:a20b3cad4c1dfe4ff0551b0cb27683ef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_structdnnl_1_1primitive"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_structdnnl_1_1primitive')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="structdnnl_1_1primitive.html">dnnl::primitive</a></td></tr>
 <tr class="memitem:a4ba1e667dfc4d3abda8fa47e8bc8bbdb inherit pub_methods_structdnnl_1_1primitive"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4ba1e667dfc4d3abda8fa47e8bc8bbdb"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1primitive.html#a4ba1e667dfc4d3abda8fa47e8bc8bbdb">primitive</a> ()=default</td></tr>
@@ -153,9 +153,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ga30c28d0cebe5b1d4758af2c24fafbdfb inherit pub_methods_structdnnl_1_1primitive"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structdnnl_1_1primitive.html#ad1ec93215a0cf3aa0a32bae0c2cd9169">kind</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__primitives__common.html#ga30c28d0cebe5b1d4758af2c24fafbdfb">get_kind</a> () const </td></tr>
 <tr class="memdesc:ga30c28d0cebe5b1d4758af2c24fafbdfb inherit pub_methods_structdnnl_1_1primitive"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the kind of the primitive.  <a href="group__dnnl__api__primitives__common.html#ga30c28d0cebe5b1d4758af2c24fafbdfb">More...</a><br/></td></tr>
 <tr class="separator:ga30c28d0cebe5b1d4758af2c24fafbdfb inherit pub_methods_structdnnl_1_1primitive"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65b6bd202ba2cb37ed8504da346dda2e inherit pub_methods_structdnnl_1_1primitive"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1primitive.html#a65b6bd202ba2cb37ed8504da346dda2e">execute</a> (const <a class="el" href="structdnnl_1_1stream.html">stream</a> &amp;<a class="el" href="structdnnl_1_1stream.html">stream</a>, const std::unordered_map&lt; int, <a class="el" href="structdnnl_1_1memory.html">memory</a> &gt; &amp;args) const </td></tr>
-<tr class="memdesc:a65b6bd202ba2cb37ed8504da346dda2e inherit pub_methods_structdnnl_1_1primitive"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes computations specified by the primitive in a specified stream.  <a href="#a65b6bd202ba2cb37ed8504da346dda2e">More...</a><br/></td></tr>
-<tr class="separator:a65b6bd202ba2cb37ed8504da346dda2e inherit pub_methods_structdnnl_1_1primitive"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18a484f0f1fecbc6a58fca1a58f6d8d4 inherit pub_methods_structdnnl_1_1primitive"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1primitive.html#a18a484f0f1fecbc6a58fca1a58f6d8d4">execute</a> (const <a class="el" href="structdnnl_1_1stream.html">stream</a> &amp;astream, const std::unordered_map&lt; int, <a class="el" href="structdnnl_1_1memory.html">memory</a> &gt; &amp;args) const </td></tr>
+<tr class="memdesc:a18a484f0f1fecbc6a58fca1a58f6d8d4 inherit pub_methods_structdnnl_1_1primitive"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes computations specified by the primitive in a specified stream.  <a href="#a18a484f0f1fecbc6a58fca1a58f6d8d4">More...</a><br/></td></tr>
+<tr class="separator:a18a484f0f1fecbc6a58fca1a58f6d8d4 inherit pub_methods_structdnnl_1_1primitive"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_structdnnl_1_1handle"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_structdnnl_1_1handle')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="structdnnl_1_1handle.html">dnnl::handle&lt; dnnl_primitive_t &gt;</a></td></tr>
 <tr class="memitem:a8569ba9d1b62264df858f3b3316577c6 inherit pub_methods_structdnnl_1_1handle"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1handle.html#a8569ba9d1b62264df858f3b3316577c6">operator==</a> (const <a class="el" href="structdnnl_1_1handle.html">handle</a>&lt; <a class="el" href="group__dnnl__api__primitives__common.html#ga226afc85f63f0d1029d4ea90a60cae47">dnnl_primitive_t</a>, <a class="el" href="structdnnl_1_1handle__traits.html">handle_traits</a>&lt; <a class="el" href="group__dnnl__api__primitives__common.html#ga226afc85f63f0d1029d4ea90a60cae47">dnnl_primitive_t</a> &gt; &gt; &amp;other) const</td></tr>
 <tr class="memdesc:a8569ba9d1b62264df858f3b3316577c6 inherit pub_methods_structdnnl_1_1handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equality operator.  <a href="#a8569ba9d1b62264df858f3b3316577c6">More...</a><br/></td></tr>
@@ -199,7 +199,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ab3560c3d12724f48e9fdbe47077ff342 inherit pub_methods_structdnnl_1_1handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a handle to the underlying C API handle type.  <a href="#ab3560c3d12724f48e9fdbe47077ff342">More...</a><br/></td></tr>
 <tr class="separator:ab3560c3d12724f48e9fdbe47077ff342 inherit pub_methods_structdnnl_1_1handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af014b68c14db64b9bb6a2034fe04440e inherit pub_methods_structdnnl_1_1handle"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1handle.html#af014b68c14db64b9bb6a2034fe04440e">operator bool</a> () const</td></tr>
-<tr class="memdesc:af014b68c14db64b9bb6a2034fe04440e inherit pub_methods_structdnnl_1_1handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the object is empty.  <a href="#af014b68c14db64b9bb6a2034fe04440e">More...</a><br/></td></tr>
+<tr class="memdesc:af014b68c14db64b9bb6a2034fe04440e inherit pub_methods_structdnnl_1_1handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the object is not empty.  <a href="#af014b68c14db64b9bb6a2034fe04440e">More...</a><br/></td></tr>
 <tr class="separator:af014b68c14db64b9bb6a2034fe04440e inherit pub_methods_structdnnl_1_1handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
@@ -296,7 +296,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a573f94090cedc71fea0091b64b1bd79a"></a>
+<a class="anchor" id="a20b3cad4c1dfe4ff0551b0cb27683ef7"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -307,7 +307,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">void dnnl::reorder::execute </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structdnnl_1_1stream.html">stream</a> &amp;&#160;</td>
-          <td class="paramname"><em>stream</em>, </td>
+          <td class="paramname"><em>astream</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -337,7 +337,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Executes the reorder primitive. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">stream</td><td>Stream object. The stream must belong to the same engine as the primitive. </td></tr>
+    <tr><td class="paramname">astream</td><td>Stream object. The stream must belong to the same engine as the primitive. </td></tr>
     <tr><td class="paramname">src</td><td>Source memory object. </td></tr>
     <tr><td class="paramname">dst</td><td>Destination memory object. </td></tr>
   </table>

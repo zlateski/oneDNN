@@ -109,15 +109,15 @@ Collaboration diagram for dnnl::batch_normalization_forward::desc:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a21ff436613c100d60de398660340b4fc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1batch__normalization__forward_1_1desc.html#a21ff436613c100d60de398660340b4fc">desc</a> (<a class="el" href="group__dnnl__api__attributes.html#gac7db48f6583aa9903e54c2a39d65438f">prop_kind</a> <a class="el" href="group__dnnl__api__attributes.html#gac7db48f6583aa9903e54c2a39d65438f">prop_kind</a>, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;data_desc, float epsilon, <a class="el" href="group__dnnl__api__primitives__common.html#gad8ef0fcbb7b10cae3d67dd46892002be">normalization_flags</a> flags)</td></tr>
-<tr class="memdesc:a21ff436613c100d60de398660340b4fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a batch normalization descriptor for forward propagation.  <a href="#a21ff436613c100d60de398660340b4fc">More...</a><br/></td></tr>
-<tr class="separator:a21ff436613c100d60de398660340b4fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93769b0a95b08e31ace5fe9d3e3ac974"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1batch__normalization__forward_1_1desc.html#a93769b0a95b08e31ace5fe9d3e3ac974">desc</a> (<a class="el" href="group__dnnl__api__attributes.html#gac7db48f6583aa9903e54c2a39d65438f">prop_kind</a> aprop_kind, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;data_desc, float epsilon, <a class="el" href="group__dnnl__api__primitives__common.html#gad8ef0fcbb7b10cae3d67dd46892002be">normalization_flags</a> flags)</td></tr>
+<tr class="memdesc:a93769b0a95b08e31ace5fe9d3e3ac974"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a batch normalization descriptor for forward propagation.  <a href="#a93769b0a95b08e31ace5fe9d3e3ac974">More...</a><br/></td></tr>
+<tr class="separator:a93769b0a95b08e31ace5fe9d3e3ac974"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Descriptor for a batch normalization forward propagation primitive. </p>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="batch_normalization_8cpp-example.html#_a6">batch_normalization.cpp</a>.</dd>
 </dl></div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a21ff436613c100d60de398660340b4fc"></a>
+<a class="anchor" id="a93769b0a95b08e31ace5fe9d3e3ac974"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -128,7 +128,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">dnnl::batch_normalization_forward::desc::desc </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__dnnl__api__attributes.html#gac7db48f6583aa9903e54c2a39d65438f">prop_kind</a>&#160;</td>
-          <td class="paramname"><em>prop_kind</em>, </td>
+          <td class="paramname"><em>aprop_kind</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -179,7 +179,7 @@ Public Member Functions</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>In-place operation is supported: the dst can refer to the same memory as the src.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">prop_kind</td><td>Propagation kind. Possible values are <a class="el" href="group__dnnl__api__attributes.html#ggac7db48f6583aa9903e54c2a39d65438fa24775787fab8f13aa4809e1ce8f82aeb" title="Forward data propagation (training mode). ">dnnl::prop_kind::forward_training</a> and <a class="el" href="group__dnnl__api__attributes.html#ggac7db48f6583aa9903e54c2a39d65438fa3b9fad4f80d45368f856b5403198ac4c" title="Forward data propagation (inference mode). ">dnnl::prop_kind::forward_inference</a>. </td></tr>
+    <tr><td class="paramname">aprop_kind</td><td>Propagation kind. Possible values are <a class="el" href="group__dnnl__api__attributes.html#ggac7db48f6583aa9903e54c2a39d65438fa24775787fab8f13aa4809e1ce8f82aeb" title="Forward data propagation (training mode). ">dnnl::prop_kind::forward_training</a> and <a class="el" href="group__dnnl__api__attributes.html#ggac7db48f6583aa9903e54c2a39d65438fa3b9fad4f80d45368f856b5403198ac4c" title="Forward data propagation (inference mode). ">dnnl::prop_kind::forward_inference</a>. </td></tr>
     <tr><td class="paramname">data_desc</td><td>Source and destination memory descriptors. </td></tr>
     <tr><td class="paramname">epsilon</td><td>Batch normalization epsilon parameter. </td></tr>
     <tr><td class="paramname">flags</td><td>Batch normalization flags (<a class="el" href="group__dnnl__api__primitives__common.html#gad8ef0fcbb7b10cae3d67dd46892002be">dnnl::normalization_flags</a>). </td></tr>

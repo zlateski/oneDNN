@@ -96,7 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Each subsequent line of verbose information is formatted as a comma-separated list containing:</p>
 <ul>
 <li><code>dnnl_verbose</code> marker string</li>
-<li>operation: <code>create[:cache_hit]</code>, <code>create[:cache_miss]</code> or <code>exec</code></li>
+<li>operation: <code>create:&lt;cache_hit|cache_miss&gt;</code> or <code>exec</code></li>
 <li>engine kind: <code>cpu</code> or <code>gpu</code></li>
 <li>primitive name: <code>convolution</code>, <code>reorder</code>, <code>sum</code>, etc</li>
 <li>primitive implementation</li>

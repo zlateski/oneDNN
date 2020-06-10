@@ -90,9 +90,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h2>Quantization Model</h2>
 <p>The primary quantization model that the library assumes is the following: </p>
 <p class="formulaDsp">
-\[ x_{f32}(:) = scale_{f32} \cdot (x_{int8}(:) - 0_{x\_int8}) \]
+\[ x_{f32}[:] = scale_{f32} \cdot (x_{int8}[:] - 0_{x\_int8}) \]
 </p>
-<p>where \(scale_{f32}\) is somehow known in advance (typically, the process of obtaining these scale factors is called the <em>calibration</em> process). This might be counter-intuitive, but the library cannot compute any of the scale factors at run-time dynamically. Hence, the model is sometimes called a <em>static</em> quantization model. The main rationale to support only <em>static</em> quantization out-of-the-box is higher performance. Those who want to use <em>dynamic</em> quantization can do so in a few steps:</p>
+<p>where \(scale_{f32}\) is a <em>scaling factor</em> that is somehow known in advance and \([:]\) is used to denote elementwise application of the formula to the arrays. Typically, the process of obtaining these scale factors is called the <em>calibration</em>. This might be counter-intuitive, but the library cannot compute any of the scale factors at run-time dynamically. Hence, the model is sometimes called a <em>static</em> quantization model. The main rationale to support only <em>static</em> quantization out-of-the-box is higher performance. To use <em>dynamic</em> quantization:</p>
 <ol type="1">
 <li>Compute the result in higher precision, like <a class="el" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dceaa860868d23f3a68323a2e3f6563d7f31" title="32-bit signed integer. ">dnnl::memory::data_type::s32</a>.</li>
 <li>Find the required characteristics, like min and max values, and derive the scale factor.</li>
@@ -103,28 +103,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <dl class="section warning"><dt>Warning</dt><dd>Depending on the architecture, the behavior of int8 computations might slightly vary. For more details, refer to <a class="el" href="dev_guide_int8_computations.html">Int8 Computation Aspects</a>.</dd></dl>
 <p>This guide doesn't cover how the appropriate scaling factor can be found. Refer to the materials in the <a class="el" href="dev_guide_attributes_quantization.html#dgaq_intro">Introduction</a>.</p>
 <h3>Example: Convolution Quantization Workflow</h3>
-<p>Let's consider a simple example: a convolution without bias. The tensors are represented as:</p>
+<p>Consider a convolution without bias. The tensors are represented as:</p>
 <ul>
-<li>\(\src_{f32}(:) = scale_{\src} \cdot \src_{int8}(:)\)</li>
-<li>\(\weights_{f32}(:) = scale_{\weights} \cdot \weights_{int8}(:)\)</li>
-<li>\(\dst_{f32}(:) = scale_{\dst} \cdot \dst_{int8}(:)\)</li>
+<li>\(\src_{f32}[:] = scale_{\src} \cdot \src_{int8}[:]\)</li>
+<li>\(\weights_{f32}[:] = scale_{\weights} \cdot \weights_{int8}[:]\)</li>
+<li>\(\dst_{f32}[:] = scale_{\dst} \cdot \dst_{int8}[:]\)</li>
 </ul>
 <p>Here the \(\src_{f32}, \weights_{f32}, \dst_{f32}\) are not computed at all, the whole work happens with INT8 tensors. As mentioned above, we also somehow know all the scaling factors: \(scale_{\src}, scale_{\weights}, scale_{\dst}\).</p>
 <p>So the task is to compute the \(\dst_{int8}\) tensor.</p>
-<p>Mathematically, the computations are pretty straightforward: </p>
+<p>Mathematically, the computations are straightforward: </p>
 <p class="formulaDsp">
-\[ \dst_{int8}(:) = downconvert\_f32\_to\_int8( output\_scale \cdot conv_{s32}(\src_{int8}, \weights_{int8}) ), \]
+\[ \dst_{int8}[:] = downconvert\_f32\_to\_int8( output\_scale \cdot conv_{s32}(\src_{int8}, \weights_{int8}) ), \]
 </p>
-<p>where:</p>
+<p>where</p>
 <ul>
 <li>\(output\_scale := \frac{scale_{\src} \cdot scale_{\weights}}{scale_{\dst}}\);</li>
 <li>\(conv_{s32}\) is just a regular convolution which takes source and weights with INT8 data type and compute the result in INT32 data type (INT32 is chosen to avoid overflows during the computations);</li>
 <li>\(downconvert\_f32\_to\_s8()\) converts an <code>f32</code> value to <code>s8</code> with potential saturation if the values are out of the range of the INT8 data type.</li>
 </ul>
-<p>Note that in order to perform the operation, one doesn't need to know the exact scaling factors for all the tensors; it is enough to know only the \(output\_scale\). The library utilizes this fact; a user needs to provide only this one extra parameter (see the <a class="el" href="dev_guide_attributes_quantization.html#dev_guide_attributes_quantization_output_scare">Output Scaling Attribute</a> section below) to perform the convolution.</p>
+<p>Note that in order to perform the operation, one doesn't need to know the exact scaling factors for all the tensors; it is enough to know only the \(output\_scale\). The library utilizes this fact: a user needs to provide only this one extra parameter to the convolution primitive (see the <a class="el" href="dev_guide_attributes_quantization.html#dev_guide_attributes_quantization_output_scare">Output</a>Scaling Attribute" section below).</p>
 <h3>Per-Channel Scaling</h3>
-<p>Some of the primitives have limited support of multiple scales for a quantized tensor. The most popular use-case is a <a class="el" href="dev_guide_convolution.html">Convolution</a> primitive that supports per-output-channel scaling factors for the weights, meaning that the actual convolution computations would need to scale different output channels differently. This is possible without significant performance drop because the per-output-channel re-quantization only required at the very end of the computations. It seems impossible to implement the same trick for the input channels, since that would require re-quantization for every input data point.</p>
-<p>Assume we have (the scales are designated as \(\alpha\) to simplify reading):</p>
+<p>Some of the primitives have limited support of multiple scales for a quantized tensor. The most popular use case is the <a class="el" href="dev_guide_convolution.html">Convolution</a> primitive that supports per-output-channel scaling factors for the weights, meaning that the actual convolution computations would need to scale different output channels differently. This is possible without significant performance loss because the per-output-channel re-quantization is only required at the very end of the computations. It seems impossible to implement the same trick for the input channels, since that would require re-quantization for every input data point.</p>
+<p>Let \(\alpha\) denote scales:</p>
 <ul>
 <li>\(\src_{f32}(n, ic, ih, iw) = \alpha_{\src} \cdot \src_{int8}(n, ic, ih, iw)\)</li>
 <li>\(\weights_{f32}(oc, ic, kh, kw) = \alpha_{\weights}(oc) \cdot \weights_{int8}(oc, ic, kh, kw)\)</li>
@@ -135,15 +135,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p class="formulaDsp">
 \[ \dst_{int8}(n, oc, oh, ow) = downconvert\_f32\_to\_int8( output\_scale(oc) \cdot conv_{s32}(\src_{int8}, \weights_{int8})|_{(n, oc, oh, ow)} ), \]
 </p>
-<p>where now</p>
+<p>where</p>
 <ul>
 <li>\(output\_scale(oc) := \frac{\alpha_{\src} \cdot \alpha_{\weights}(oc)}{\alpha_{\dst}}\).</li>
 </ul>
-<p>It is worth mentioning that a user has to prepare quantized weights accordingly. For oneDNN provides reorders that can perform per-channel scaling:</p>
+<p>It is worth mentioning that the user is responsible for preparing quantized weights accordingly. oneDNN provides reorders that can perform per-channel scaling:</p>
 <p class="formulaDsp">
 \[ \weights_{int8}(oc, ic, kh, kw) = downconvert\_f32\_to\_int8( output\_scale(oc) \cdot \weights_{f32}(oc, ic, kh, kw) ), \]
 </p>
-<p>where:</p>
+<p>where</p>
 <ul>
 <li>\(output\_scale(oc) := \frac{1}{\alpha_{\weights}(oc_{})}\).</li>
 </ul>
@@ -160,7 +160,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>C: <a class="el" href="group__dnnl__api__attributes.html#gae3ff1fe9449f2d9b1cd02ad864b57057">dnnl_primitive_attr_set_output_scales</a></li>
 <li>C++: <a class="el" href="structdnnl_1_1primitive__attr.html#a4b81acc8e48886313154f75c1708ae02">dnnl::primitive_attr::set_output_scales</a></li>
 </ul>
-<p>The primitives do not support output scales if source (and weights) tensors are of the int8 data type. In other words, regular <code>f32</code> convolution cannot scale the output result.</p>
+<p>The primitives do not support output scales if source (and weights) tensors are not of the int8 data type. In other words, regular <code>f32</code> convolution cannot scale the output result.</p>
 <p>The parameters (C++ API for simplicity): </p>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> <a class="code" href="structdnnl_1_1primitive__attr.html#a4b81acc8e48886313154f75c1708ae02">dnnl::primitive_attr::set_output_scales</a>(</div>
 <div class="line">        <span class="keywordtype">int</span> mask,</div>
@@ -168,14 +168,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">        );</div>
 </div><!-- fragment --><p>In the simplest case, when there is only one common scale the attribute changes the op behavior from </p>
 <p class="formulaDsp">
-\[ \dst(:) = Op(...) \]
+\[ \dst[:] = Op(...) \]
 </p>
 <p>to</p>
 <p class="formulaDsp">
-\[ \dst(:) = scale \cdot Op(...). \]
+\[ \dst[:] = scale \cdot Op(...). \]
 </p>
 <p>To support scales per one or several dimensions, users must set the appropriate mask.</p>
-<p>Say the destination is \(D_0 \times ... \times D_{n-1}\) tensor and we want to have output scales per \(d_i\) dimension (where \(0 \le d_i &lt; n\)).</p>
+<p>Say the destination is a \(D_0 \times ... \times D_{n-1}\) tensor and we want to have output scales per \(d_i\) dimension (where \(0 \le d_i &lt; n\)).</p>
 <p>Then the mask should be set to:</p>
 <ul>
 <li>\(mask = \sum \limits_{d_i} 2^{d_i}\),</li>
@@ -232,8 +232,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><span class="comment">// ...</span></div>
 </div><!-- fragment --><h4>Example 2: convolution with groups, with per-output-channel quantization</h4>
 <p>This example is complementary to the previous example (which should ideally be the first one). Let's say we want to have an INT8 convolution with per-output channel scaling.</p>
-<div class="fragment"><div class="line"><span class="keyword">const</span> <span class="keywordtype">float</span> src_scale; <span class="comment">// source scale factor: src_f32[:] = src_scale * src_s8[:]</span></div>
-<div class="line"><span class="keyword">const</span> <span class="keywordtype">float</span> dst_scale; <span class="comment">// destination scale factor: dst_f32[:] = dst_scale * dst_s8[:]</span></div>
+<div class="fragment"><div class="line"><span class="keyword">const</span> <span class="keywordtype">float</span> src_scale; <span class="comment">// src_f32[:] = src_scale * src_s8[:]</span></div>
+<div class="line"><span class="keyword">const</span> <span class="keywordtype">float</span> dst_scale; <span class="comment">// dst_f32[:] = dst_scale * dst_s8[:]</span></div>
 <div class="line"></div>
 <div class="line"><span class="comment">// the scaling factors for quantized weights (as declared above)</span></div>
 <div class="line"><span class="comment">// An unique scale for each group and output-channel.</span></div>
@@ -290,13 +290,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --><h4>Interplay of output scales with post-ops</h4>
 <p>In general, the <a class="el" href="dev_guide_attributes_post_ops.html">post-ops</a> are independent from the output scales. The output scales are applied to the result first; then post-ops will take effect.</p>
 <p>For details, refer to the <a class="el" href="dev_guide_attributes_post_ops.html#dev_guide_attributes_post_ops_with_scales">Tanh -&gt; Sum -&gt; ScaleShift</a> example.</p>
-<p>That has an implication on the scaling factors passed to the library, however. Consider the following example of a convolution with \(\tanh\) as a post-op:</p>
+<p>That has an implication on the scaling factors passed to the library, however. Consider the following example of a convolution with \(\tanh\) post-op:</p>
 <p class="formulaDsp">
-\[ \dst_{s8}(:) = \frac{1}{scale_{\dst}} \cdot \tanh( scale_{\src} \cdot scale_{\weights} \cdot conv_{s32}(\src_{s8}, wei_{s8}) ) \]
+\[ \dst_{s8}[:] = \frac{1}{scale_{\dst}} \cdot \tanh( scale_{\src} \cdot scale_{\weights} \cdot conv_{s32}(\src_{s8}, wei_{s8}) ) \]
 </p>
 <p>As you can see:</p>
 <ul>
-<li>The convolution output scales are now \(conv\_output\_scale = scale_{\src} \cdot scale_{\weights}\), i.e. no division by \(scale_{\dst}\);</li>
+<li>The convolution output scales are now \(conv\_output\_scale = scale_{\src} \cdot scale_{\weights}\), i.e. there is no division by \(scale_{\dst}\);</li>
 <li>And the post-ops scale for \(\tanh\) is set to \(scale\_tanh\_post\_op = \frac{1}{scale_{\dst}}\). </li>
 </ul>
 </div></div><!-- contents -->

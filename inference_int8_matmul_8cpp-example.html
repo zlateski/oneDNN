@@ -163,7 +163,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    attr.set_zero_points(<a name="a10"></a><a class="code" href="group__dnnl__api__primitives__common.html#gac37ad67b48edeb9e742af0e50b70fe09">DNNL_ARG_SRC</a>, <span class="comment">/* mask */</span> 0, {<a name="a11"></a><a class="code" href="group__dnnl__api__memory.html#ga30139d5110e9e895ccd93fe503ca4c35">DNNL_RUNTIME_S32_VAL</a>});</div>
 <div class="line">    attr.set_zero_points(<a name="a12"></a><a class="code" href="group__dnnl__api__primitives__common.html#ga3ca217e4a06d42a0ede3c018383c388f">DNNL_ARG_DST</a>, <span class="comment">/* mask */</span> 0, {<a class="code" href="group__dnnl__api__memory.html#ga30139d5110e9e895ccd93fe503ca4c35">DNNL_RUNTIME_S32_VAL</a>});</div>
 <div class="line">    <a name="_a13"></a><a class="code" href="structdnnl_1_1post__ops.html">post_ops</a> po;</div>
-<div class="line">    po.<a name="a14"></a><a class="code" href="structdnnl_1_1post__ops.html#a66606f08467b19091e696b52a2f789e6">append_eltwise</a>(1.f, <a name="a15"></a><a class="code" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640aba09bebb742494255b90b43871c01c69">algorithm::eltwise_relu</a>, 0.f, 0.f);</div>
+<div class="line">    po.<a name="a14"></a><a class="code" href="structdnnl_1_1post__ops.html#a28460923ad579c780e4027a6256fe207">append_eltwise</a>(1.f, <a name="a15"></a><a class="code" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640aba09bebb742494255b90b43871c01c69">algorithm::eltwise_relu</a>, 0.f, 0.f);</div>
 <div class="line">    attr.set_post_ops(po);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Create a MatMul primitive descriptor</span></div>
@@ -227,7 +227,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line">    <a name="_a23"></a><a class="code" href="structdnnl_1_1stream.html">stream</a> s(eng);</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> run = 0; run &lt; number_of_runs; ++run)</div>
-<div class="line">        matmul_p.<a name="a24"></a><a class="code" href="structdnnl_1_1primitive.html#a65b6bd202ba2cb37ed8504da346dda2e">execute</a>(s,</div>
+<div class="line">        matmul_p.<a name="a24"></a><a class="code" href="structdnnl_1_1primitive.html#a18a484f0f1fecbc6a58fca1a58f6d8d4">execute</a>(s,</div>
 <div class="line">                {{<a class="code" href="group__dnnl__api__primitives__common.html#gac37ad67b48edeb9e742af0e50b70fe09">DNNL_ARG_SRC</a>, A_u8_mem}, {<a name="a25"></a><a class="code" href="group__dnnl__api__primitives__common.html#gaf279f28c59a807e71a70c719db56c5b3">DNNL_ARG_WEIGHTS</a>, B_s8_mem},</div>
 <div class="line">                        {<a class="code" href="group__dnnl__api__primitives__common.html#ga3ca217e4a06d42a0ede3c018383c388f">DNNL_ARG_DST</a>, C_u8_mem},</div>
 <div class="line">                        {<a name="a26"></a><a class="code" href="group__dnnl__api__primitives__common.html#ga0afb48b0c2b8f3ee30609aaa47aa29db">DNNL_ARG_ATTR_OUTPUT_SCALES</a>, scale_f32_mem},</div>
@@ -257,7 +257,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">        <a class="code" href="structdnnl_1_1memory.html">memory</a> B_f32_mem(</div>
 <div class="line">                {{K, N}, memory::data_type::f32, memory::format_tag::ab}, eng);</div>
 <div class="line">        write_to_dnnl_memory(B_f32.data(), B_f32_mem);</div>
-<div class="line">        <a name="_a28"></a><a class="code" href="structdnnl_1_1reorder.html">reorder</a>(B_f32_mem, B_s8_mem).<a name="a29"></a><a class="code" href="structdnnl_1_1reorder.html#a573f94090cedc71fea0091b64b1bd79a">execute</a>(s, B_f32_mem, B_s8_mem);</div>
+<div class="line">        <a name="_a28"></a><a class="code" href="structdnnl_1_1reorder.html">reorder</a>(B_f32_mem, B_s8_mem).<a name="a29"></a><a class="code" href="structdnnl_1_1reorder.html#a20b3cad4c1dfe4ff0551b0cb27683ef7">execute</a>(s, B_f32_mem, B_s8_mem);</div>
 <div class="line">        s.wait();</div>
 <div class="line">    }</div>
 <div class="line"></div>

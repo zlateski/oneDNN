@@ -234,12 +234,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="keywordflow">if</span> (is_dynamic_q10n) {</div>
 <div class="line">        <a class="code" href="structdnnl_1_1memory.html">memory</a> scale_X_m({{1}, dt::f32, {1}}, eng, &amp;inv_scale_X);</div>
 <div class="line">        <a class="code" href="structdnnl_1_1memory.html">memory</a> zp_X_m({{1}, dt::s32, {1}}, eng, &amp;zp_X);</div>
-<div class="line">        <a name="_a15"></a><a class="code" href="structdnnl_1_1reorder.html">reorder</a>(q10n_pd).<a name="a16"></a><a class="code" href="structdnnl_1_1reorder.html#a573f94090cedc71fea0091b64b1bd79a">execute</a>(s,</div>
+<div class="line">        <a name="_a15"></a><a class="code" href="structdnnl_1_1reorder.html">reorder</a>(q10n_pd).<a name="a16"></a><a class="code" href="structdnnl_1_1reorder.html#a20b3cad4c1dfe4ff0551b0cb27683ef7">execute</a>(s,</div>
 <div class="line">                {{<a name="a17"></a><a class="code" href="group__dnnl__api__primitives__common.html#gac37ad67b48edeb9e742af0e50b70fe09">DNNL_ARG_SRC</a>, X_f32_m}, {<a class="code" href="group__dnnl__api__primitives__common.html#ga3ca217e4a06d42a0ede3c018383c388f">DNNL_ARG_DST</a>, X_int_m},</div>
 <div class="line">                        {<a name="a18"></a><a class="code" href="group__dnnl__api__primitives__common.html#ga0afb48b0c2b8f3ee30609aaa47aa29db">DNNL_ARG_ATTR_OUTPUT_SCALES</a>, scale_X_m},</div>
 <div class="line">                        {<a name="a19"></a><a class="code" href="group__dnnl__api__primitives__common.html#gaf8d879adfe2baa2f9f2a5143a0f274b6">DNNL_ARG_ATTR_ZERO_POINTS</a> | <a class="code" href="group__dnnl__api__primitives__common.html#ga3ca217e4a06d42a0ede3c018383c388f">DNNL_ARG_DST</a>, zp_X_m}});</div>
 <div class="line">    } <span class="keywordflow">else</span> {</div>
-<div class="line">        <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(q10n_pd).<a class="code" href="structdnnl_1_1reorder.html#a573f94090cedc71fea0091b64b1bd79a">execute</a>(</div>
+<div class="line">        <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(q10n_pd).<a class="code" href="structdnnl_1_1reorder.html#a20b3cad4c1dfe4ff0551b0cb27683ef7">execute</a>(</div>
 <div class="line">                s, {{<a class="code" href="group__dnnl__api__primitives__common.html#gac37ad67b48edeb9e742af0e50b70fe09">DNNL_ARG_SRC</a>, X_f32_m}, {<a class="code" href="group__dnnl__api__primitives__common.html#ga3ca217e4a06d42a0ede3c018383c388f">DNNL_ARG_DST</a>, X_int_m}});</div>
 <div class="line">    }</div>
 <div class="line"></div>

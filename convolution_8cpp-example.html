@@ -204,7 +204,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">float</span> alpha = 0.f;</div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">float</span> beta = 0.f;</div>
 <div class="line">    <a name="_a9"></a><a class="code" href="structdnnl_1_1post__ops.html">post_ops</a> conv_ops;</div>
-<div class="line">    conv_ops.<a name="a10"></a><a class="code" href="structdnnl_1_1post__ops.html#a66606f08467b19091e696b52a2f789e6">append_eltwise</a>(scale, <a name="a11"></a><a class="code" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640aba09bebb742494255b90b43871c01c69">algorithm::eltwise_relu</a>, alpha, beta);</div>
+<div class="line">    conv_ops.<a name="a10"></a><a class="code" href="structdnnl_1_1post__ops.html#a28460923ad579c780e4027a6256fe207">append_eltwise</a>(scale, <a name="a11"></a><a class="code" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640aba09bebb742494255b90b43871c01c69">algorithm::eltwise_relu</a>, alpha, beta);</div>
 <div class="line">    <a name="_a12"></a><a class="code" href="structdnnl_1_1primitive__attr.html">primitive_attr</a> conv_attr;</div>
 <div class="line">    conv_attr.<a name="a13"></a><a class="code" href="structdnnl_1_1primitive__attr.html#ac830fa9f4fcf480b494d73153ad579bf">set_post_ops</a>(conv_ops);</div>
 <div class="line"></div>
@@ -226,13 +226,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="keywordflow">if</span> (conv_pd.src_desc() != user_src_mem.get_desc()) {</div>
 <div class="line">        conv_src_mem = <a class="code" href="structdnnl_1_1memory.html">memory</a>(conv_pd.src_desc(), engine);</div>
 <div class="line">        <a name="_a15"></a><a class="code" href="structdnnl_1_1reorder.html">reorder</a>(user_src_mem, conv_src_mem)</div>
-<div class="line">                .<a name="a16"></a><a class="code" href="structdnnl_1_1reorder.html#a573f94090cedc71fea0091b64b1bd79a">execute</a>(engine_stream, user_src_mem, conv_src_mem);</div>
+<div class="line">                .<a name="a16"></a><a class="code" href="structdnnl_1_1reorder.html#a20b3cad4c1dfe4ff0551b0cb27683ef7">execute</a>(engine_stream, user_src_mem, conv_src_mem);</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (conv_pd.weights_desc() != user_weights_mem.<a name="a17"></a><a class="code" href="structdnnl_1_1memory.html#a6bfc99db50d87d133c6b3b4f438b967a">get_desc</a>()) {</div>
 <div class="line">        conv_weights_mem = <a class="code" href="structdnnl_1_1memory.html">memory</a>(conv_pd.weights_desc(), engine);</div>
 <div class="line">        <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(user_weights_mem, conv_weights_mem)</div>
-<div class="line">                .<a class="code" href="structdnnl_1_1reorder.html#a573f94090cedc71fea0091b64b1bd79a">execute</a>(engine_stream, user_weights_mem, conv_weights_mem);</div>
+<div class="line">                .<a class="code" href="structdnnl_1_1reorder.html#a20b3cad4c1dfe4ff0551b0cb27683ef7">execute</a>(engine_stream, user_weights_mem, conv_weights_mem);</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (conv_pd.dst_desc() != user_dst_mem.<a class="code" href="structdnnl_1_1memory.html#a6bfc99db50d87d133c6b3b4f438b967a">get_desc</a>()) {</div>
@@ -256,7 +256,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="comment">// primitive and the one provided by the user are different.</span></div>
 <div class="line">    <span class="keywordflow">if</span> (conv_pd.dst_desc() != user_dst_mem.<a class="code" href="structdnnl_1_1memory.html#a6bfc99db50d87d133c6b3b4f438b967a">get_desc</a>()) {</div>
 <div class="line">        <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(conv_dst_mem, user_dst_mem)</div>
-<div class="line">                .<a class="code" href="structdnnl_1_1reorder.html#a573f94090cedc71fea0091b64b1bd79a">execute</a>(engine_stream, conv_dst_mem, user_dst_mem);</div>
+<div class="line">                .<a class="code" href="structdnnl_1_1reorder.html#a20b3cad4c1dfe4ff0551b0cb27683ef7">execute</a>(engine_stream, conv_dst_mem, user_dst_mem);</div>
 <div class="line">    } <span class="keywordflow">else</span></div>
 <div class="line">        user_dst_mem = conv_dst_mem;</div>
 <div class="line"></div>

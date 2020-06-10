@@ -126,12 +126,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad264b142d2f7c728fe8c84aa65d62b13"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1stream.html#ad264b142d2f7c728fe8c84aa65d62b13">stream</a> ()=default</td></tr>
 <tr class="memdesc:ad264b142d2f7c728fe8c84aa65d62b13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an empty stream.  <a href="#ad264b142d2f7c728fe8c84aa65d62b13">More...</a><br/></td></tr>
 <tr class="separator:ad264b142d2f7c728fe8c84aa65d62b13"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a468096eeb7cc2c753c95697389542409"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1stream.html#a468096eeb7cc2c753c95697389542409">stream</a> (const <a class="el" href="structdnnl_1_1engine.html">engine</a> &amp;<a class="el" href="structdnnl_1_1engine.html">engine</a>, <a class="el" href="structdnnl_1_1stream.html#abc7ec7dfa1718f366abd8f495164de59">flags</a> <a class="el" href="structdnnl_1_1stream.html#abc7ec7dfa1718f366abd8f495164de59">flags</a>=<a class="el" href="structdnnl_1_1stream.html#abc7ec7dfa1718f366abd8f495164de59aeffb2d149f637ca450767d77cd927108">flags::default_flags</a>, const <a class="el" href="structdnnl_1_1stream__attr.html">stream_attr</a> &amp;attr=<a class="el" href="structdnnl_1_1stream__attr.html">stream_attr</a>())</td></tr>
-<tr class="memdesc:a468096eeb7cc2c753c95697389542409"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a stream for the specified engine and with behavior controlled by the specified flags.  <a href="#a468096eeb7cc2c753c95697389542409">More...</a><br/></td></tr>
-<tr class="separator:a468096eeb7cc2c753c95697389542409"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7f76682c40a962f27db621be7122ea2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1stream.html#ad7f76682c40a962f27db621be7122ea2">stream</a> (const <a class="el" href="structdnnl_1_1engine.html">engine</a> &amp;<a class="el" href="structdnnl_1_1engine.html">engine</a>, cl_command_queue queue)</td></tr>
-<tr class="memdesc:ad7f76682c40a962f27db621be7122ea2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a stream for the specified engine and the OpenCL queue.  <a href="#ad7f76682c40a962f27db621be7122ea2">More...</a><br/></td></tr>
-<tr class="separator:ad7f76682c40a962f27db621be7122ea2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af00bbec578ce5bd049c043f534f78e1d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1stream.html#af00bbec578ce5bd049c043f534f78e1d">stream</a> (const <a class="el" href="structdnnl_1_1engine.html">engine</a> &amp;aengine, <a class="el" href="structdnnl_1_1stream.html#abc7ec7dfa1718f366abd8f495164de59">flags</a> aflags=<a class="el" href="structdnnl_1_1stream.html#abc7ec7dfa1718f366abd8f495164de59aeffb2d149f637ca450767d77cd927108">flags::default_flags</a>, const <a class="el" href="structdnnl_1_1stream__attr.html">stream_attr</a> &amp;attr=<a class="el" href="structdnnl_1_1stream__attr.html">stream_attr</a>())</td></tr>
+<tr class="memdesc:af00bbec578ce5bd049c043f534f78e1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a stream for the specified engine and with behavior controlled by the specified flags.  <a href="#af00bbec578ce5bd049c043f534f78e1d">More...</a><br/></td></tr>
+<tr class="separator:af00bbec578ce5bd049c043f534f78e1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c7b7055f10354c8926390b79ab57287"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1stream.html#a6c7b7055f10354c8926390b79ab57287">stream</a> (const <a class="el" href="structdnnl_1_1engine.html">engine</a> &amp;aengine, cl_command_queue queue)</td></tr>
+<tr class="memdesc:a6c7b7055f10354c8926390b79ab57287"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a stream for the specified engine and the OpenCL queue.  <a href="#a6c7b7055f10354c8926390b79ab57287">More...</a><br/></td></tr>
+<tr class="separator:a6c7b7055f10354c8926390b79ab57287"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7583cd3c56f330f90e0e6b148a9e5c3"><td class="memItemLeft" align="right" valign="top">cl_command_queue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1stream.html#ad7583cd3c56f330f90e0e6b148a9e5c3">get_ocl_command_queue</a> () const </td></tr>
 <tr class="memdesc:ad7583cd3c56f330f90e0e6b148a9e5c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the underlying OpenCL queue object.  <a href="#ad7583cd3c56f330f90e0e6b148a9e5c3">More...</a><br/></td></tr>
 <tr class="separator:ad7583cd3c56f330f90e0e6b148a9e5c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -179,7 +179,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ab3560c3d12724f48e9fdbe47077ff342 inherit pub_methods_structdnnl_1_1handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a handle to the underlying C API handle type.  <a href="#ab3560c3d12724f48e9fdbe47077ff342">More...</a><br/></td></tr>
 <tr class="separator:ab3560c3d12724f48e9fdbe47077ff342 inherit pub_methods_structdnnl_1_1handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af014b68c14db64b9bb6a2034fe04440e inherit pub_methods_structdnnl_1_1handle"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1handle.html#af014b68c14db64b9bb6a2034fe04440e">operator bool</a> () const</td></tr>
-<tr class="memdesc:af014b68c14db64b9bb6a2034fe04440e inherit pub_methods_structdnnl_1_1handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the object is empty.  <a href="#af014b68c14db64b9bb6a2034fe04440e">More...</a><br/></td></tr>
+<tr class="memdesc:af014b68c14db64b9bb6a2034fe04440e inherit pub_methods_structdnnl_1_1handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the object is not empty.  <a href="#af014b68c14db64b9bb6a2034fe04440e">More...</a><br/></td></tr>
 <tr class="separator:af014b68c14db64b9bb6a2034fe04440e inherit pub_methods_structdnnl_1_1handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -250,7 +250,7 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a468096eeb7cc2c753c95697389542409"></a>
+<a class="anchor" id="af00bbec578ce5bd049c043f534f78e1d"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -261,13 +261,13 @@ Public Member Functions</h2></td></tr>
           <td class="memname">dnnl::stream::stream </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structdnnl_1_1engine.html">engine</a> &amp;&#160;</td>
-          <td class="paramname"><em>engine</em>, </td>
+          <td class="paramname"><em>aengine</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="structdnnl_1_1stream.html#abc7ec7dfa1718f366abd8f495164de59">flags</a>&#160;</td>
-          <td class="paramname"><em>flags</em> = <code><a class="el" href="structdnnl_1_1stream.html#abc7ec7dfa1718f366abd8f495164de59aeffb2d149f637ca450767d77cd927108">flags::default_flags</a></code>, </td>
+          <td class="paramname"><em>aflags</em> = <code><a class="el" href="structdnnl_1_1stream.html#abc7ec7dfa1718f366abd8f495164de59aeffb2d149f637ca450767d77cd927108">flags::default_flags</a></code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -291,8 +291,8 @@ Public Member Functions</h2></td></tr>
 <p>Constructs a stream for the specified engine and with behavior controlled by the specified flags. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">engine</td><td>Engine to create the stream on. </td></tr>
-    <tr><td class="paramname">flags</td><td>Flags controlling stream behavior. </td></tr>
+    <tr><td class="paramname">aengine</td><td>Engine to create the stream on. </td></tr>
+    <tr><td class="paramname">aflags</td><td>Flags controlling stream behavior. </td></tr>
     <tr><td class="paramname">attr</td><td>Stream attributes. </td></tr>
   </table>
   </dd>
@@ -300,7 +300,7 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ad7f76682c40a962f27db621be7122ea2"></a>
+<a class="anchor" id="a6c7b7055f10354c8926390b79ab57287"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -311,7 +311,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">dnnl::stream::stream </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structdnnl_1_1engine.html">engine</a> &amp;&#160;</td>
-          <td class="paramname"><em>engine</em>, </td>
+          <td class="paramname"><em>aengine</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -335,7 +335,7 @@ Public Member Functions</h2></td></tr>
 <p>Constructs a stream for the specified engine and the OpenCL queue. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">engine</td><td>Engine to create the stream on. </td></tr>
+    <tr><td class="paramname">aengine</td><td>Engine to create the stream on. </td></tr>
     <tr><td class="paramname">queue</td><td>OpenCL queue to use for the stream. </td></tr>
   </table>
   </dd>

@@ -117,7 +117,7 @@ Back, bottom, and right </td><td align="left">\(PD_R\) </td><td align="left">\(P
 <h4>Convolution with Groups</h4>
 <p>In the API, oneDNN adds a separate groups dimension to memory objects representing \(\weights\) tensors and represents weights as \(G \times OC_G \times IC_G \times KH \times KW \) 5D tensors for 2D convolutions with groups.</p>
 <p class="formulaDsp">
-\[ \dst(n, g \cdot OC_G + oc_g, oh, ow) = \bias(g \cdot OC_G + oc_g) + \\ + \sum_{ic_g=0}^{IC_G-1}\sum_{kh=0}^{KH-1}\sum_{kw=0}^{KW-1} \src(n, g \cdot IC_G + ic_g, oh + kh - PH_L, ow + kw - PW_L) \cdot \weights(g, oc_g, ic_g, kh, kw), \]
+\[ \dst(n, g \cdot OC_G + oc_g, oh, ow) = \bias(g \cdot OC_G + oc_g) + \\ + \sum_{ic_g=0}^{IC_G-1}\sum_{kh=0}^{KH-1}\sum_{kw=0}^{KW-1} \src(n, g \cdot IC_G + ic_g, oh \cdot SH + kh - PH_L, ow \cdot SW + kw - PW_L) \cdot \weights(g, oc_g, ic_g, kh, kw), \]
 </p>
 <p>where</p>
 <ul>
@@ -128,7 +128,7 @@ Back, bottom, and right </td><td align="left">\(PD_R\) </td><td align="left">\(P
 <p>The case when \(OC_G = IC_G = 1\) is also known as <em>a depthwise convolution</em>.</p>
 <h4>Convolution with Dilation</h4>
 <p class="formulaDsp">
-\[ \dst(n, oc, oh, ow) = \bias(oc) + \\ + \sum_{ic=0}^{IC-1}\sum_{kh=0}^{KH-1}\sum_{kw=0}^{KW-1} \src(n, ic, oh + kh \cdot (DH + 1) - PH_L, ow + kw \cdot (DW + 1) - PW_L) \cdot \weights(oc, ic, kh, kw). \]
+\[ \dst(n, oc, oh, ow) = \bias(oc) + \\ + \sum_{ic=0}^{IC-1}\sum_{kh=0}^{KH-1}\sum_{kw=0}^{KW-1} \src(n, ic, oh \cdot SH + kh \cdot (DH + 1) - PH_L, ow \cdot SW + kw \cdot (DW + 1) - PW_L) \cdot \weights(oc, ic, kh, kw). \]
 </p>
 <p>Here:</p>
 <ul>
@@ -231,7 +231,7 @@ Back, bottom, and right </td><td align="left">\(PD_R\) </td><td align="left">\(P
 <tr>
 <td align="left">forward </td><td align="left">attribute </td><td align="left"><a class="el" href="structdnnl_1_1primitive__attr.html#a4b81acc8e48886313154f75c1708ae02">Output scale</a> </td><td align="left">Scales the result of convolution by given scale factor(s) </td><td align="left">int8 convolutions only </td></tr>
 <tr>
-<td align="left">forward </td><td align="left">post-op </td><td align="left"><a class="el" href="structdnnl_1_1post__ops.html#a66606f08467b19091e696b52a2f789e6">eltwise</a> </td><td align="left">Applies an <a class="el" href="group__dnnl__api__eltwise.html">Eltwise</a> operation to the result </td><td align="left"></td></tr>
+<td align="left">forward </td><td align="left">post-op </td><td align="left"><a class="el" href="structdnnl_1_1post__ops.html#a28460923ad579c780e4027a6256fe207">eltwise</a> </td><td align="left">Applies an <a class="el" href="group__dnnl__api__eltwise.html">Eltwise</a> operation to the result </td><td align="left"></td></tr>
 <tr>
 <td align="left">forward </td><td align="left">post-op </td><td align="left"><a class="el" href="structdnnl_1_1post__ops.html#a078ab8ec15423d2b3d26f3619a78ca38">sum</a> </td><td align="left">Adds the operation result to the destination tensor instead of overwriting it </td><td align="left"></td></tr>
 </table>

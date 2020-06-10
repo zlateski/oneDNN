@@ -109,15 +109,15 @@ Collaboration diagram for dnnl::lrn_forward::desc:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a61840141223ac7465440f42967f8b8d2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1lrn__forward_1_1desc.html#a61840141223ac7465440f42967f8b8d2">desc</a> (<a class="el" href="group__dnnl__api__attributes.html#gac7db48f6583aa9903e54c2a39d65438f">prop_kind</a> <a class="el" href="group__dnnl__api__attributes.html#gac7db48f6583aa9903e54c2a39d65438f">prop_kind</a>, <a class="el" href="group__dnnl__api__attributes.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a> <a class="el" href="group__dnnl__api__attributes.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a>, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;data_desc, <a class="el" href="structdnnl_1_1memory.html#a6ad818e4699872cc913474fa5f122cd5">memory::dim</a> local_size, float alpha, float beta, float k=1.f)</td></tr>
-<tr class="memdesc:a61840141223ac7465440f42967f8b8d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a descriptor for a LRN forward propagation primitive.  <a href="#a61840141223ac7465440f42967f8b8d2">More...</a><br/></td></tr>
-<tr class="separator:a61840141223ac7465440f42967f8b8d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affd48c5e9b111e6e204fdd2849984d9c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1lrn__forward_1_1desc.html#affd48c5e9b111e6e204fdd2849984d9c">desc</a> (<a class="el" href="group__dnnl__api__attributes.html#gac7db48f6583aa9903e54c2a39d65438f">prop_kind</a> aprop_kind, <a class="el" href="group__dnnl__api__attributes.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a> aalgorithm, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;data_desc, <a class="el" href="structdnnl_1_1memory.html#a6ad818e4699872cc913474fa5f122cd5">memory::dim</a> local_size, float alpha, float beta, float k=1.f)</td></tr>
+<tr class="memdesc:affd48c5e9b111e6e204fdd2849984d9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a descriptor for a LRN forward propagation primitive.  <a href="#affd48c5e9b111e6e204fdd2849984d9c">More...</a><br/></td></tr>
+<tr class="separator:affd48c5e9b111e6e204fdd2849984d9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Descriptor for an LRN forward propagation primitive. </p>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="cnn_inference_f32_8cpp-example.html#_a23">cnn_inference_f32.cpp</a>, <a class="el" href="cnn_training_f32_8cpp-example.html#_a22">cnn_training_f32.cpp</a>, <a class="el" href="cpu_cnn_training_bf16_8cpp-example.html#_a26">cpu_cnn_training_bf16.cpp</a>, and <a class="el" href="lrn_8cpp-example.html#_a6">lrn.cpp</a>.</dd>
 </dl></div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a61840141223ac7465440f42967f8b8d2"></a>
+<a class="anchor" id="affd48c5e9b111e6e204fdd2849984d9c"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -128,13 +128,13 @@ Public Member Functions</h2></td></tr>
           <td class="memname">dnnl::lrn_forward::desc::desc </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__dnnl__api__attributes.html#gac7db48f6583aa9903e54c2a39d65438f">prop_kind</a>&#160;</td>
-          <td class="paramname"><em>prop_kind</em>, </td>
+          <td class="paramname"><em>aprop_kind</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="group__dnnl__api__attributes.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a>&#160;</td>
-          <td class="paramname"><em>algorithm</em>, </td>
+          <td class="paramname"><em>aalgorithm</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -191,8 +191,8 @@ Public Member Functions</h2></td></tr>
 </ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">prop_kind</td><td>Propagation kind. Possible values are <a class="el" href="group__dnnl__api__attributes.html#ggac7db48f6583aa9903e54c2a39d65438fa24775787fab8f13aa4809e1ce8f82aeb" title="Forward data propagation (training mode). ">dnnl::prop_kind::forward_training</a>, and <a class="el" href="group__dnnl__api__attributes.html#ggac7db48f6583aa9903e54c2a39d65438fa3b9fad4f80d45368f856b5403198ac4c" title="Forward data propagation (inference mode). ">dnnl::prop_kind::forward_inference</a>. </td></tr>
-    <tr><td class="paramname">algorithm</td><td>LRN algorithm kind: either <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640ab9e2d858b551792385a4b5b86672b24b" title="Local response normalization (LRN) across multiple channels. ">dnnl::algorithm::lrn_across_channels</a>, or <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640aa25c4ccc5c7c9bd3a977a2089189a494" title="LRN within a single channel. ">dnnl::algorithm::lrn_within_channel</a>. </td></tr>
+    <tr><td class="paramname">aprop_kind</td><td>Propagation kind. Possible values are <a class="el" href="group__dnnl__api__attributes.html#ggac7db48f6583aa9903e54c2a39d65438fa24775787fab8f13aa4809e1ce8f82aeb" title="Forward data propagation (training mode). ">dnnl::prop_kind::forward_training</a>, and <a class="el" href="group__dnnl__api__attributes.html#ggac7db48f6583aa9903e54c2a39d65438fa3b9fad4f80d45368f856b5403198ac4c" title="Forward data propagation (inference mode). ">dnnl::prop_kind::forward_inference</a>. </td></tr>
+    <tr><td class="paramname">aalgorithm</td><td>LRN algorithm kind: either <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640ab9e2d858b551792385a4b5b86672b24b" title="Local response normalization (LRN) across multiple channels. ">dnnl::algorithm::lrn_across_channels</a>, or <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640aa25c4ccc5c7c9bd3a977a2089189a494" title="LRN within a single channel. ">dnnl::algorithm::lrn_within_channel</a>. </td></tr>
     <tr><td class="paramname">data_desc</td><td>Source and destination memory descriptors. </td></tr>
     <tr><td class="paramname">local_size</td><td>Regularization local size. </td></tr>
     <tr><td class="paramname">alpha</td><td>The alpha regularization parameter. </td></tr>
