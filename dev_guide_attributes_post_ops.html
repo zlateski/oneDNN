@@ -109,7 +109,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line">primitive::primitive_desc op_pd(params, attr); <span class="comment">// create a pd with the attr</span></div>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>Different post-ops can be chained together by appending one after another. Note that the appending order matters: the sequence of the post-ops is executed in the order of appearance.</dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>Different primitives may have different post-ops support. Moreover, the support might also depend on the actual implementation of a primitive. For instance, the library generally doesn't support post-ops for reference primitives (which are typically very slow, so there is no point in doing the actual fusion). Robust code should handle errors accordingly. See the <a class="el" href="dev_guide_attributes.html#dev_guide_attributes_error_handling">section on attributes error handling</a>.</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Different primitives may have different post-ops support. Moreover, the support might also depend on the actual implementation of a primitive. For instance, the library generally does not support post-ops for reference primitives (which are typically very slow, so there is no point in doing the actual fusion). Robust code should handle errors accordingly. See the <a class="el" href="dev_guide_attributes.html#dev_guide_attributes_error_handling">section on attributes error handling</a>.</dd></dl>
 <dl class="section note"><dt>Note</dt><dd>Post-ops do not change the memory format of the operation destination memory object.</dd></dl>
 <p>The post-op object can be inspected using the <a class="el" href="structdnnl_1_1post__ops.html#a79ef658c2e7ac0fddbd605c6864c19f9">dnnl::post_ops::kind()</a> function that takes an index of the post-op (which must be less than the value returned by <a class="el" href="structdnnl_1_1post__ops.html#a26d76d6a99c01b33eee312d1491c1d4e">dnnl::post_ops::len()</a>), and returns its kind.</p>
 <h2>Supported Post-ops</h2>
@@ -151,6 +151,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p class="formulaDsp">
 \[ \dst[:] = scale \cdot \dst[:] + \operatorname{Op}(...) \]
 </p>
+<p>If the data type parameter is specified, the original destination tensor will be reinterpreted as a tensor with the provided data type. Because it is a reinterpretation, data_type and the destination data type must have the same size. As a result, the computation will be:</p>
+<p class="formulaDsp">
+\[ \dst(:) = scale \cdot \operatorname{as_data_type}(\dst(:)) + \operatorname{Op}(...) \]
+</p>
+<dl class="section note"><dt>Note</dt><dd><ul>
+<li>Currently only a u8/s8 data type parameter is supported. <b>CPU</b><ul>
+<li>No support for different destination and sum data type.</li>
+</ul>
+</li>
+</ul>
+</dd></dl>
 <p><a class="anchor" id="dev_guide_attributes_post_ops_depthwise"></a></p>
 <h3>Depthwise Post-op</h3>
 <p>Appends a Depthwise convolution as a post-op. This post-op can only be fused with 1x1 convolution as generally seen in models (like MobileNet_v1) that use a stack of Separable convolutions: Depthwise convolution followed by 1x1 convolution. The stack of these Separable convolutions (like in MobileNet_v1) provide an opportunity to fuse 1x1-Convolution with bandwidth-limited Depthwise convolution.</p>
@@ -204,7 +215,7 @@ Fusion</div></div>
 <h3>Sum -&gt; ReLU</h3>
 <p>This pattern is pretty common for the CNN topologies of the ResNet family.</p>
 <div class="fragment"><div class="line"><a class="code" href="structdnnl_1_1post__ops.html">dnnl::post_ops</a> po;</div>
-<div class="line">po.<a class="code" href="structdnnl_1_1post__ops.html#a078ab8ec15423d2b3d26f3619a78ca38">append_sum</a>(</div>
+<div class="line">po.<a class="code" href="structdnnl_1_1post__ops.html#ab8e3832e8600216a3646e9050d3bc1f3">append_sum</a>(</div>
 <div class="line">        <span class="comment">/* scale = */</span> 1.f);</div>
 <div class="line">po.<a class="code" href="structdnnl_1_1post__ops.html#a28460923ad579c780e4027a6256fe207">append_eltwise</a>(</div>
 <div class="line">        <span class="comment">/* scale     = */</span> 1.f,</div>
@@ -229,7 +240,7 @@ Fusion</div></div>
 <div class="line">        <span class="comment">/* alg kind  = */</span> <a class="code" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640a38dd7159307eab45742c78e72f06abb0">dnnl::algorithm::eltwise_tanh</a>,</div>
 <div class="line">        <span class="comment">/* unused for tanh */</span> 0.f,</div>
 <div class="line">        <span class="comment">/* unused for tanh */</span> 0.f);</div>
-<div class="line">po.<a class="code" href="structdnnl_1_1post__ops.html#a078ab8ec15423d2b3d26f3619a78ca38">append_sum</a>(</div>
+<div class="line">po.<a class="code" href="structdnnl_1_1post__ops.html#ab8e3832e8600216a3646e9050d3bc1f3">append_sum</a>(</div>
 <div class="line">        <span class="comment">/* scale     = */</span> s_sum);</div>
 <div class="line">po.<a class="code" href="structdnnl_1_1post__ops.html#a28460923ad579c780e4027a6256fe207">append_eltwise</a>(</div>
 <div class="line">        <span class="comment">/* scale     = */</span> s_linear,</div>

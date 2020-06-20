@@ -19,6 +19,7 @@ var searchData=
   ['eltwise_5fpow',['eltwise_pow',['../group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640a30977b2a33c3a2bd6a5d71a352fa4bcc',1,'dnnl']]],
   ['eltwise_5frelu',['eltwise_relu',['../group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640aba09bebb742494255b90b43871c01c69',1,'dnnl']]],
   ['eltwise_5frelu_5fuse_5fdst_5ffor_5fbwd',['eltwise_relu_use_dst_for_bwd',['../group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640ac227b99192be41d4060b700d1e788fd6',1,'dnnl']]],
+  ['eltwise_5fround',['eltwise_round',['../group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640ad3bc4dd78c67cb6040d6885b405b872b',1,'dnnl']]],
   ['eltwise_5fsoft_5frelu',['eltwise_soft_relu',['../group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640a23175afeee905a4de38e5a24b46cb6e2',1,'dnnl']]],
   ['eltwise_5fsqrt',['eltwise_sqrt',['../group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640a83b978b280304349860c7cdc3519865f',1,'dnnl']]],
   ['eltwise_5fsqrt_5fuse_5fdst_5ffor_5fbwd',['eltwise_sqrt_use_dst_for_bwd',['../group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640ad5704aaf680703d473f983e3f19b8d4d',1,'dnnl']]],

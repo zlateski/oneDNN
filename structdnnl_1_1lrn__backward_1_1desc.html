@@ -115,7 +115,7 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Descriptor for an LRN backward propagation primitive. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cnn_training_f32_8cpp-example.html#_a36">cnn_training_f32.cpp</a>, and <a class="el" href="cpu_cnn_training_bf16_8cpp-example.html#_a40">cpu_cnn_training_bf16.cpp</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cnn_training_bf16_8cpp-example.html#_a39">cnn_training_bf16.cpp</a>, and <a class="el" href="cnn_training_f32_8cpp-example.html#_a36">cnn_training_f32.cpp</a>.</dd>
 </dl></div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a59aa96046c2bf2bc8c74ded21df266d7"></a>
 <div class="memitem">
@@ -180,16 +180,6 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructs a descriptor for an LRN backward propagation primitive. </p>
-<p>Inputs:</p>
-<ul>
-<li><code>src</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a31ee74fc65986558ac11db590945811a" title="Returns a source memory descriptor. ">dnnl::primitive_desc_base::src_desc</a>(<code>0</code>))</li>
-<li><code>diff_dst</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#aa95dd1711a45923204ffddc3f02ea546" title="Returns a diff destination memory descriptor. ">dnnl::primitive_desc_base::diff_dst_desc</a>(<code>0</code>))</li>
-<li><code>workspace</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#aaf33632e215a1f2b066a6111836ecbb3" title="Returns the workspace memory descriptor. ">dnnl::primitive_desc_base::workspace_desc</a>(<code>0</code>)), if the underlying implementation requires it; must be queried for using <a class="el" href="structdnnl_1_1primitive__desc__base.html#ac2ec36092718ed89bece0fec7f5f3171">dnnl::primitive_desc_base::query_md()</a> after a corresponding primitive descriptor is created</li>
-</ul>
-<p>Outputs:</p>
-<ul>
-<li><code>diff_src</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#aeb499ab1390d20eb071d97ec4628029f" title="Returns a diff source memory descriptor. ">dnnl::primitive_desc_base::diff_src_desc</a>(<code>0</code>))</li>
-</ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">aalgorithm</td><td>LRN algorithm kind: either <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640ab9e2d858b551792385a4b5b86672b24b" title="Local response normalization (LRN) across multiple channels. ">dnnl::algorithm::lrn_across_channels</a>, or <a class="el" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640aa25c4ccc5c7c9bd3a977a2089189a494" title="LRN within a single channel. ">dnnl::algorithm::lrn_within_channel</a>. </td></tr>

@@ -21,7 +21,7 @@ var searchData=
   ['get_5fparams_5fdw_5fk3s1p1',['get_params_dw_k3s1p1',['../structdnnl_1_1post__ops.html#aefb536724307912fdfd1439383679501',1,'dnnl::post_ops']]],
   ['get_5fparams_5fdw_5fk3s2p1',['get_params_dw_k3s2p1',['../structdnnl_1_1post__ops.html#a128429160104654adcfb651e9ee02905',1,'dnnl::post_ops']]],
   ['get_5fparams_5feltwise',['get_params_eltwise',['../structdnnl_1_1post__ops.html#a0158eefb937f15634753922dc9e9455a',1,'dnnl::post_ops']]],
-  ['get_5fparams_5fsum',['get_params_sum',['../structdnnl_1_1post__ops.html#a80a7b5900334d558aa5abbf9f1f1661a',1,'dnnl::post_ops']]],
+  ['get_5fparams_5fsum',['get_params_sum',['../structdnnl_1_1post__ops.html#a80a7b5900334d558aa5abbf9f1f1661a',1,'dnnl::post_ops::get_params_sum(int index, float &amp;scale) const '],['../structdnnl_1_1post__ops.html#a8d59100bcd254a15d6d0ee4309e07959',1,'dnnl::post_ops::get_params_sum(int index, float &amp;scale, memory::data_type &amp;data_type) const ']]],
   ['get_5fpost_5fops',['get_post_ops',['../structdnnl_1_1primitive__attr.html#a8f6b7226d2a1ccaf11142553faa17f1b',1,'dnnl::primitive_attr']]],
   ['get_5fprimitive_5fattr',['get_primitive_attr',['../structdnnl_1_1primitive__desc__base.html#a9d26b8c1068f0849da74a6ba358e5de6',1,'dnnl::primitive_desc_base']]],
   ['get_5fprimitive_5fcache_5fcapacity',['get_primitive_cache_capacity',['../group__dnnl__api__primitive__cache.html#gacc0f23351595504f3e2c2b6fcf603770',1,'dnnl']]],

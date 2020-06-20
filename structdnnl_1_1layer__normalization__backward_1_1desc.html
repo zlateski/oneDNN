@@ -176,19 +176,6 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructs a descriptor for layer normalization backward propagation primitive. </p>
-<p>Inputs:</p>
-<ul>
-<li><code>src</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a31ee74fc65986558ac11db590945811a" title="Returns a source memory descriptor. ">dnnl::primitive_desc_base::src_desc</a>(<code>0</code>))</li>
-<li><code>mean</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a31ee74fc65986558ac11db590945811a" title="Returns a source memory descriptor. ">dnnl::primitive_desc_base::src_desc</a>(<code>1</code>))</li>
-<li><code>variance</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a31ee74fc65986558ac11db590945811a" title="Returns a source memory descriptor. ">dnnl::primitive_desc_base::src_desc</a>(<code>2</code>))</li>
-<li><code>diff_dst</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#aa95dd1711a45923204ffddc3f02ea546" title="Returns a diff destination memory descriptor. ">dnnl::primitive_desc_base::diff_dst_desc</a>(<code>0</code>))</li>
-<li><code>scale_and_shift</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a35b7fb7725959ab336db58dd05e14d20" title="Returns a weights memory descriptor. ">dnnl::primitive_desc_base::weights_desc</a>(<code>0</code>)), if <a class="el" href="group__dnnl__api__primitives__common.html#ggad8ef0fcbb7b10cae3d67dd46892002bea0cbad8a346551ec47da7ff1afb1e1f76" title="Use scale and shift parameters. ">dnnl::normalization_flags::use_scale_shift</a> bit-flag is set in <code>flags</code> </li>
-</ul>
-<p>Outputs:</p>
-<ul>
-<li><code>diff_src</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#aeb499ab1390d20eb071d97ec4628029f" title="Returns a diff source memory descriptor. ">dnnl::primitive_desc_base::diff_src_desc</a>(<code>0</code>))</li>
-<li><code>diff_scale_and_shift</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#ab6dc65154169608dfb9c2e9842012826" title="Returns a diff weights memory descriptor. ">dnnl::primitive_desc_base::diff_weights_desc</a>(<code>0</code>)), if <a class="el" href="group__dnnl__api__primitives__common.html#ggad8ef0fcbb7b10cae3d67dd46892002bea0cbad8a346551ec47da7ff1afb1e1f76" title="Use scale and shift parameters. ">dnnl::normalization_flags::use_scale_shift</a> bit-flag is set in <code>flags</code> and <code>prop_kind</code> = <a class="el" href="group__dnnl__api__attributes.html#ggac7db48f6583aa9903e54c2a39d65438fa195fe59b6f103787a914aead0f3db502" title="Backward propagation (with respect to all parameters). ">dnnl::prop_kind::backward</a></li>
-</ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">aprop_kind</td><td>Propagation kind. Possible values are <a class="el" href="group__dnnl__api__attributes.html#ggac7db48f6583aa9903e54c2a39d65438faa12627cacf73ecb7ef088beedd650e96" title="Backward data propagation. ">dnnl::prop_kind::backward_data</a> and <a class="el" href="group__dnnl__api__attributes.html#ggac7db48f6583aa9903e54c2a39d65438fa195fe59b6f103787a914aead0f3db502" title="Backward propagation (with respect to all parameters). ">dnnl::prop_kind::backward</a> (diffs for all parameters are computed in this case). </td></tr>
@@ -254,19 +241,6 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructs a descriptor for layer normalization backward propagation primitive. </p>
-<p>Inputs:</p>
-<ul>
-<li><code>src</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a31ee74fc65986558ac11db590945811a" title="Returns a source memory descriptor. ">dnnl::primitive_desc_base::src_desc</a>(<code>0</code>))</li>
-<li><code>mean</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a31ee74fc65986558ac11db590945811a" title="Returns a source memory descriptor. ">dnnl::primitive_desc_base::src_desc</a>(<code>1</code>))</li>
-<li><code>variance</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a31ee74fc65986558ac11db590945811a" title="Returns a source memory descriptor. ">dnnl::primitive_desc_base::src_desc</a>(<code>2</code>))</li>
-<li><code>diff_dst</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#aa95dd1711a45923204ffddc3f02ea546" title="Returns a diff destination memory descriptor. ">dnnl::primitive_desc_base::diff_dst_desc</a>(<code>0</code>))</li>
-<li><code>scale_and_shift</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a35b7fb7725959ab336db58dd05e14d20" title="Returns a weights memory descriptor. ">dnnl::primitive_desc_base::weights_desc</a>(<code>0</code>)), if <a class="el" href="group__dnnl__api__primitives__common.html#ggad8ef0fcbb7b10cae3d67dd46892002bea0cbad8a346551ec47da7ff1afb1e1f76" title="Use scale and shift parameters. ">dnnl::normalization_flags::use_scale_shift</a> bit-flag is set in <code>flags</code> </li>
-</ul>
-<p>Outputs:</p>
-<ul>
-<li><code>diff_src</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#aeb499ab1390d20eb071d97ec4628029f" title="Returns a diff source memory descriptor. ">dnnl::primitive_desc_base::diff_src_desc</a>(<code>0</code>))</li>
-<li><code>diff_scale_and_shift</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#ab6dc65154169608dfb9c2e9842012826" title="Returns a diff weights memory descriptor. ">dnnl::primitive_desc_base::diff_weights_desc</a>(<code>0</code>)), if <a class="el" href="group__dnnl__api__primitives__common.html#ggad8ef0fcbb7b10cae3d67dd46892002bea0cbad8a346551ec47da7ff1afb1e1f76" title="Use scale and shift parameters. ">dnnl::normalization_flags::use_scale_shift</a> bit-flag is set in <code>flags</code> and <code>prop_kind</code> = <a class="el" href="group__dnnl__api__attributes.html#ggac7db48f6583aa9903e54c2a39d65438fa195fe59b6f103787a914aead0f3db502" title="Backward propagation (with respect to all parameters). ">dnnl::prop_kind::backward</a></li>
-</ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">aprop_kind</td><td>Propagation kind. Possible values are <a class="el" href="group__dnnl__api__attributes.html#ggac7db48f6583aa9903e54c2a39d65438faa12627cacf73ecb7ef088beedd650e96" title="Backward data propagation. ">dnnl::prop_kind::backward_data</a> and <a class="el" href="group__dnnl__api__attributes.html#ggac7db48f6583aa9903e54c2a39d65438fa195fe59b6f103787a914aead0f3db502" title="Backward propagation (with respect to all parameters). ">dnnl::prop_kind::backward</a> (diffs for all parameters are computed in this case). </td></tr>

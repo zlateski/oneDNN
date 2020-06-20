@@ -151,15 +151,6 @@ Functions</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>Memory descriptor <code>dst_desc</code> is allowed to be initialized with <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dafee39ac6fff0325cae43cd66495c18ac" title="Undefined memory format tag. ">dnnl_format_tag_any</a> or with format_kind set to <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83" title="Unspecified format kind. ">dnnl_format_kind_any</a>.</dd>
 <dd>
 Both memory descriptors must have the same number of dimensions. Element broadcasting is supported for memory descriptor <code>src1_desc</code> and are applied to @ src1_desc dimensions that have size equal to 1.</dd></dl>
-<p>Inputs:</p>
-<ul>
-<li><code>src0</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, <code>0</code>)</li>
-<li><code>src1</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, <code>1</code>)</li>
-</ul>
-<p>Outputs:</p>
-<ul>
-<li><code>dst</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598" title="destination memory desc ">dnnl_query_dst_md</a>, <code>0</code>)</li>
-</ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">binary_desc</td><td>Output descriptor for a binary primitive. </td></tr>

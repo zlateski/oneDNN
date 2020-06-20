@@ -84,7 +84,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p><a class="el" href="group__dnnl__api__inner__product.html">API Reference</a></p>
 <p></p>
 </blockquote>
+<h2>General</h2>
 <p>The inner product primitive (sometimes called fully connected) treats each activation in the minibatch as a vector and computes its product with a weights 2D tensor producing a 2D tensor as an output.</p>
+<h3>Forward</h3>
 <p>More precisely, let \(\src\), \(\weights\), \(\bias\) and \(\dst\) be \(N \times IC\), \(OC \times IC\), \(OC\), and \(N \times OC\) tensors, respectively (variable names follow the standard <a class="el" href="dev_guide_conventions.html">Naming Conventions</a>). Then:</p>
 <p class="formulaDsp">
 \[\dst(n, oc) = \bias(oc) + \sum_{ic=0}^{IC-1} \src(n, ic) \cdot \weights(oc, ic)\]
@@ -97,7 +99,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>The weights update computes \(\diffweights\) and \(\diffbias\) based on \(\diffdst\) and \(\src\).</p>
 <dl class="section note"><dt>Note</dt><dd>The <em>optimized</em> memory formats \(\src\) and \(\weights\) might be different on forward propagation, backward propagation, and weights update.</dd></dl>
 <h2>Execution Arguments</h2>
-<p>When executed, the inputs and outputs should be mapped to an execution argument index as specified by the following table. </p>
+<p>When executed, the inputs and outputs should be mapped to an execution argument index as specified by the following table.</p>
 <table class="doxtable">
 <tr>
 <th>Primitive input/output </th><th>Execution argument index  </th></tr>
@@ -183,7 +185,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr>
 <td align="left">forward </td><td align="left">post-op </td><td align="left"><a class="el" href="structdnnl_1_1post__ops.html#a28460923ad579c780e4027a6256fe207">eltwise</a> </td><td align="left">Applies an <a class="el" href="group__dnnl__api__eltwise.html">Eltwise</a> operation to the result </td><td align="left"></td></tr>
 <tr>
-<td align="left">forward </td><td align="left">post-op </td><td align="left"><a class="el" href="structdnnl_1_1post__ops.html#a078ab8ec15423d2b3d26f3619a78ca38">sum</a> </td><td align="left">Adds the operation result to the destination tensor instead of overwriting it </td><td align="left"></td></tr>
+<td align="left">forward </td><td align="left">post-op </td><td align="left"><a class="el" href="structdnnl_1_1post__ops.html#ab8e3832e8600216a3646e9050d3bc1f3">sum</a> </td><td align="left">Adds the operation result to the destination tensor instead of overwriting it </td><td align="left"></td></tr>
 </table>
 <h2>Implementation Limitations</h2>
 <ol type="1">

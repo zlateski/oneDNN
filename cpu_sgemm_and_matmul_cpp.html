@@ -199,7 +199,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    attr.<a class="code" href="structdnnl_1_1primitive__attr.html#a4b81acc8e48886313154f75c1708ae02">set_output_scales</a>(<span class="comment">/* mask */</span> 0, {<a class="code" href="group__dnnl__api__memory.html#gab16365c11b4dc88fbb453edb51f1979f">DNNL_RUNTIME_F32_VAL</a>});</div>
 <div class="line">    <span class="keywordflow">if</span> (beta != 0.f) {</div>
 <div class="line">        <a class="code" href="structdnnl_1_1post__ops.html">post_ops</a> po;</div>
-<div class="line">        po.<a class="code" href="structdnnl_1_1post__ops.html#a078ab8ec15423d2b3d26f3619a78ca38">append_sum</a>(beta);</div>
+<div class="line">        po.<a class="code" href="structdnnl_1_1post__ops.html#ab8e3832e8600216a3646e9050d3bc1f3">append_sum</a>(beta);</div>
 <div class="line">        attr.<a class="code" href="structdnnl_1_1primitive__attr.html#ac830fa9f4fcf480b494d73153ad579bf">set_post_ops</a>(po);</div>
 <div class="line">    }</div>
 <div class="line"></div>
@@ -263,7 +263,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="keywordflow">if</span> (alpha != 1.f) attr.<a class="code" href="structdnnl_1_1primitive__attr.html#a4b81acc8e48886313154f75c1708ae02">set_output_scales</a>(<span class="comment">/* mask */</span> 0, {alpha});</div>
 <div class="line">    <span class="keywordflow">if</span> (beta != 0.f) {</div>
 <div class="line">        <a class="code" href="structdnnl_1_1post__ops.html">post_ops</a> po;</div>
-<div class="line">        po.<a class="code" href="structdnnl_1_1post__ops.html#a078ab8ec15423d2b3d26f3619a78ca38">append_sum</a>(beta);</div>
+<div class="line">        po.<a class="code" href="structdnnl_1_1post__ops.html#ab8e3832e8600216a3646e9050d3bc1f3">append_sum</a>(beta);</div>
 <div class="line">        attr.set_post_ops(po);</div>
 <div class="line">    }</div>
 <div class="line"></div>

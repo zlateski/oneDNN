@@ -182,15 +182,6 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructs a descriptor for a deconvolution backward propagation primitive. </p>
-<p>Inputs:</p>
-<ul>
-<li><code>diff_dst</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#aa95dd1711a45923204ffddc3f02ea546" title="Returns a diff destination memory descriptor. ">dnnl::primitive_desc_base::diff_dst_desc</a>(<code>0</code>))</li>
-<li><code>weights</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a35b7fb7725959ab336db58dd05e14d20" title="Returns a weights memory descriptor. ">dnnl::primitive_desc_base::weights_desc</a>(<code>0</code>))</li>
-</ul>
-<p>Outputs:</p>
-<ul>
-<li><code>diff_src</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#aeb499ab1390d20eb071d97ec4628029f" title="Returns a diff source memory descriptor. ">dnnl::primitive_desc_base::diff_src_desc</a>(<code>0</code>))</li>
-</ul>
 <dl class="section note"><dt>Note</dt><dd>All the memory descriptors may be initialized with the <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> value of <code>format_tag</code>.</dd></dl>
 <p>Arrays <code>strides</code>, <code>padding_l</code>, and <code>padding_r</code> contain values for spatial dimensions only and hence must have the same number of elements as there are spatial dimensions. The order of values is the same as in the tensor: depth (for 3D tensors), height (for 3D and 2D tensors), and width.</p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -277,15 +268,6 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructs a descriptor for a dilated deconvolution backward propagation primitive. </p>
-<p>Inputs:</p>
-<ul>
-<li><code>diff_dst</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#aa95dd1711a45923204ffddc3f02ea546" title="Returns a diff destination memory descriptor. ">dnnl::primitive_desc_base::diff_dst_desc</a>(<code>0</code>))</li>
-<li><code>weights</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a35b7fb7725959ab336db58dd05e14d20" title="Returns a weights memory descriptor. ">dnnl::primitive_desc_base::weights_desc</a>(<code>0</code>))</li>
-</ul>
-<p>Outputs:</p>
-<ul>
-<li><code>diff_src</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#aeb499ab1390d20eb071d97ec4628029f" title="Returns a diff source memory descriptor. ">dnnl::primitive_desc_base::diff_src_desc</a>(<code>0</code>))</li>
-</ul>
 <dl class="section note"><dt>Note</dt><dd>All the memory descriptors may be initialized with the <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> value of <code>format_tag</code>.</dd></dl>
 <p>Arrays <code>strides</code>, <code>dilates</code>, <code>padding_l</code>, and <code>padding_r</code> contain values for spatial dimensions only and hence must have the same number of elements as there are spatial dimensions. The order of values is the same as in the tensor: depth (for 3D tensors), height (for 3D and 2D tensors), and width.</p>
 <dl class="params"><dt>Parameters</dt><dd>

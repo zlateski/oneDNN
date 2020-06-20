@@ -94,7 +94,7 @@ Diagram depicting the bit-wise layout of f32, bf16, and f16 floating point data 
 <h2>bfloat16 Workflow</h2>
 <p>The main difference between implementing training with the <code>f32</code> data type and with the <code>bf16</code> data type is the way the weights updates are treated. With the <code>f32</code> data type, the weights gradients have the same data type as the weights themselves. This is not necessarily the case with the <code>bf16</code> data type as oneDNN allows some flexibility here. For example, one could maintain a master copy of all the weights, computing weights gradients in <code>f32</code> and converting the result to <code>bf16</code> afterwards.</p>
 <h2>Example</h2>
-<p>The <a class="el" href="cpu_cnn_training_bf16_cpp.html">CNN bf16 training example</a> shows how to use <code>bf16</code> to train CNNs. </p>
+<p>The <a class="el" href="cnn_training_bf16_cpp.html">CNN bf16 training example</a> shows how to use <code>bf16</code> to train CNNs. </p>
 </div></div><!-- contents -->
 <div class="footer">
     <div class="footer-wrapper">

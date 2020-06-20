@@ -162,14 +162,6 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initializes a descriptor for eltwise forward propagation primitive. </p>
-<p>Inputs:</p>
-<ul>
-<li><code>src</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, <code>0</code>)</li>
-</ul>
-<p>Outputs:</p>
-<ul>
-<li><code>dst</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598" title="destination memory desc ">dnnl_query_dst_md</a>, <code>0</code>)</li>
-</ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">eltwise_desc</td><td>Output descriptor for an eltwise primitive. </td></tr>
@@ -235,15 +227,6 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initializes a descriptor for eltwise backward propagation primitive. </p>
-<p>Inputs:</p>
-<ul>
-<li><code>src</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, <code>0</code>)</li>
-<li><code>diff_dst</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059ae28e33688bf6c55edcf108bd24eb90de" title="destination grad. memory desc ">dnnl_query_diff_dst_md</a>, <code>0</code>)</li>
-</ul>
-<p>Outputs:</p>
-<ul>
-<li><code>diff_src</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a2367b043da6df5d691d6038693f363d6" title="source gradient memory desc ">dnnl_query_diff_src_md</a>, <code>0</code>)</li>
-</ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">eltwise_desc</td><td>Output descriptor for an eltwise primitive. </td></tr>

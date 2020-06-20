@@ -79,7 +79,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Profiling oneDNN Performance </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>oneDNN uses JIT (just-in-time) code generation based on primitive parameters and instruction set supported by the system. In order to correctly attribute performance event information, profilers need to be notified about address ranges containing JIT-ed code. oneDNN supports two profilers: VTune Amplifier and Linux perf.</p>
+<div class="textblock"><p>oneDNN uses JIT (just-in-time) code generation based on primitive parameters and instruction set supported by the system. In order to correctly attribute performance event information, profilers need to be notified about address ranges containing JIT-ed code. oneDNN supports two profilers: VTune(TM) Amplifier and Linux perf.</p>
 <h2>Build-time Controls</h2>
 <p>At build-time, support for this feature is controlled via cmake option <code>DNNL_ENABLE_JIT_PROFILING</code>.</p>
 <table class="doxtable">
@@ -94,7 +94,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr>
 <th align="left">Environment variable </th><th align="left">Value </th><th align="left">Description  </th></tr>
 <tr>
-<td align="left">DNNL_JIT_PROFILE </td><td align="left"><b>1</b> </td><td align="left"><b>Enables VTune integration (default)</b> </td></tr>
+<td align="left">DNNL_JIT_PROFILE </td><td align="left"><b>1</b> </td><td align="left"><b>Enables VTune Amplifier integration (default)</b> </td></tr>
 <tr>
 <td align="left"></td><td align="left">2 </td><td align="left">Enables basic Linux perf integration </td></tr>
 <tr>

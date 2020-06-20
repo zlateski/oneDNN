@@ -105,7 +105,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a class="code" href="structdnnl__primitive__desc.html">dnnl_primitive_desc_t</a> op_pd; <span class="comment">// operation primitive descriptor</span></div>
 <div class="line"><a class="code" href="group__dnnl__api__primitives__common.html#ga336dd467c36d8fe0d3311ddc73f239cb">dnnl_primitive_desc_create</a>(&amp;op_pd, &amp;op_d, attr, engine, hint_fwd_pd);</div>
 <div class="line"></div>
-<div class="line"><span class="comment">// changing attr object here doesn&#39;t have any effect on op_pd</span></div>
+<div class="line"><span class="comment">// changing attr object here does not have any effect on op_pd</span></div>
 <div class="line"></div>
 <div class="line"><span class="comment">// once attr is no more used we can immediately destroy it</span></div>
 <div class="line"><a class="code" href="group__dnnl__api__attributes.html#ga96a7539382945195627f2932bff8fadb">dnnl_primitive_attr_destroy</a>(attr);</div>
@@ -129,7 +129,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li><a class="el" href="dev_guide_attributes_post_ops.html">Post-ops</a> to fuse a primitive with some operation applied to the primitive's result. Used mostly for inference.</li>
 </ul>
 <h2>Attribute Related Error Handling</h2>
-<p><a class="anchor" id="dev_guide_attributes_error_handling"></a> Because the attributes are created separately from the corresponding primitive descriptor, consistency checks are delayed. Users can successfully set attributes in whatever configuration they want. However, when they try to create a primitive descriptor with the attributes they set, it might happen that there is no primitive implementation that supports such a configuration. In this case, the library will return <a class="el" href="group__dnnl__api__utils.html#ggad24f9ded06e34d3ee71e7fc4b408d57aa3a8579e8afc4e23344cd3115b0e81de1" title="The operation failed because requested functionality is not implemented. ">dnnl_unimplemented</a> in the case of the C API or throw a corresponding <a class="el" href="structdnnl_1_1error.html">dnnl::error</a> exception in the case of the C++ API. Unfortunately, the library doesn't currently provide any hints about what exactly is going wrong in this case. The corresponding section of the documentation simply documents the primitives' capabilities. </p>
+<p><a class="anchor" id="dev_guide_attributes_error_handling"></a> Because the attributes are created separately from the corresponding primitive descriptor, consistency checks are delayed. Users can successfully set attributes in whatever configuration they want. However, when they try to create a primitive descriptor with the attributes they set, it might happen that there is no primitive implementation that supports such a configuration. In this case, the library will return <a class="el" href="group__dnnl__api__utils.html#ggad24f9ded06e34d3ee71e7fc4b408d57aa3a8579e8afc4e23344cd3115b0e81de1" title="The operation failed because requested functionality is not implemented. ">dnnl_unimplemented</a> in the case of the C API or throw a corresponding <a class="el" href="structdnnl_1_1error.html">dnnl::error</a> exception in the case of the C++ API. Unfortunately, the library does not currently provide any hints about what exactly is going wrong in this case. The corresponding section of the documentation simply documents the primitives' capabilities. </p>
 </div></div><!-- contents -->
 <div class="footer">
     <div class="footer-wrapper">

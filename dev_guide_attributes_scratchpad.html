@@ -132,7 +132,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><span class="comment">// Query the scratchpad memory descriptor</span></div>
 <div class="line"><a class="code" href="structdnnl_1_1memory_1_1desc.html">dnnl::memory::desc</a> <a class="code" href="group__dnnl__api__primitives__common.html#gga94efdd650364f4d9776cfb9b711cbdc1a9cbdd03b65c030ef560b5555be1a86c2">scratchpad_md</a> = op_pd.scratchpad_desc();</div>
 <div class="line"></div>
-<div class="line"><span class="comment">// Note, that a primitive doesn&#39;t consume memory in this configuration:</span></div>
+<div class="line"><span class="comment">// Note, that a primitive does not consume memory in this configuration:</span></div>
 <div class="line">assert(op_pd.query_s64(<a class="code" href="group__dnnl__api__primitives__common.html#gga94efdd650364f4d9776cfb9b711cbdc1a0ed44d67e94c1c7ac5f219491e422506">dnnl::query::memory_consumption_s64</a>) == 0);</div>
 <div class="line"></div>
 <div class="line"><span class="comment">// Create a primitive</span></div>

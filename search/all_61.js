@@ -25,7 +25,7 @@ var searchData=
   ['append_5fdw_5fk3s1p1',['append_dw_k3s1p1',['../structdnnl_1_1post__ops.html#a4229db0e1e1eab273ed0e2b3e18402de',1,'dnnl::post_ops']]],
   ['append_5fdw_5fk3s2p1',['append_dw_k3s2p1',['../structdnnl_1_1post__ops.html#a88ed886c27b4df4667431ed48d29f4c1',1,'dnnl::post_ops']]],
   ['append_5feltwise',['append_eltwise',['../structdnnl_1_1post__ops.html#a28460923ad579c780e4027a6256fe207',1,'dnnl::post_ops']]],
-  ['append_5fsum',['append_sum',['../structdnnl_1_1post__ops.html#a078ab8ec15423d2b3d26f3619a78ca38',1,'dnnl::post_ops']]],
+  ['append_5fsum',['append_sum',['../structdnnl_1_1post__ops.html#ab8e3832e8600216a3646e9050d3bc1f3',1,'dnnl::post_ops']]],
   ['arg',['arg',['../structdnnl__exec__arg__t.html#a46c7f77870713b8af3fd37dc66e9690b',1,'dnnl_exec_arg_t']]],
   ['asynchronous',['ASYNCHRONOUS',['../structdnnl_1_1threadpool__iface.html#a740361555b71b3ddd2f740c8e0bcfdba',1,'dnnl::threadpool_iface']]],
   ['avx',['avx',['../group__dnnl__api__service.html#ggabad017feb1850634bf3babdb68234f83a73758c37e4499f20ac5f995a144abba6',1,'dnnl']]],
