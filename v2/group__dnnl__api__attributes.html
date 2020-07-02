@@ -194,9 +194,15 @@ Functions</h2></td></tr>
 <tr class="memitem:ga7175edf83658bd14dd5d7cd9e9193e92"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__attributes.html#ga7175edf83658bd14dd5d7cd9e9193e92">dnnl_post_ops_append_sum</a> (<a class="el" href="group__dnnl__api__attributes.html#ga7d715ce1a81606584df9dcf045976401">dnnl_post_ops_t</a> post_ops, float scale)</td></tr>
 <tr class="memdesc:ga7175edf83658bd14dd5d7cd9e9193e92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends an accumulation (sum) to post-ops.  <a href="#ga7175edf83658bd14dd5d7cd9e9193e92">More...</a><br/></td></tr>
 <tr class="separator:ga7175edf83658bd14dd5d7cd9e9193e92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga97ce3bde45e1a8f1970c899e4e519497"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__attributes.html#ga97ce3bde45e1a8f1970c899e4e519497">dnnl_post_ops_append_sum_v2</a> (<a class="el" href="group__dnnl__api__attributes.html#ga7d715ce1a81606584df9dcf045976401">dnnl_post_ops_t</a> post_ops, float scale, <a class="el" href="group__dnnl__api__memory.html#ga012ba1c84ff24bdd068f9d2f9b26a130">dnnl_data_type_t</a> data_type)</td></tr>
+<tr class="memdesc:ga97ce3bde45e1a8f1970c899e4e519497"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends an accumulation v2 (sum) to post-ops.  <a href="#ga97ce3bde45e1a8f1970c899e4e519497">More...</a><br/></td></tr>
+<tr class="separator:ga97ce3bde45e1a8f1970c899e4e519497"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gade0dbf6e22ef699e31166c341f9d043a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__attributes.html#gade0dbf6e22ef699e31166c341f9d043a">dnnl_post_ops_get_params_sum</a> (<a class="el" href="group__dnnl__api__attributes.html#ga5ca949c8e907bd9ed79bc06d869c9c0e">const_dnnl_post_ops_t</a> post_ops, int index, float *scale)</td></tr>
 <tr class="memdesc:gade0dbf6e22ef699e31166c341f9d043a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the parameters of an accumulation (sum) post-op.  <a href="#gade0dbf6e22ef699e31166c341f9d043a">More...</a><br/></td></tr>
 <tr class="separator:gade0dbf6e22ef699e31166c341f9d043a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0546f6cb1352f898ef9444a4e0a79c06"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__attributes.html#ga0546f6cb1352f898ef9444a4e0a79c06">dnnl_post_ops_get_params_sum_v2</a> (<a class="el" href="group__dnnl__api__attributes.html#ga5ca949c8e907bd9ed79bc06d869c9c0e">const_dnnl_post_ops_t</a> post_ops, int index, float *scale, <a class="el" href="group__dnnl__api__memory.html#ga012ba1c84ff24bdd068f9d2f9b26a130">dnnl_data_type_t</a> *data_type)</td></tr>
+<tr class="memdesc:ga0546f6cb1352f898ef9444a4e0a79c06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the parameters of an accumulation (sum) post-op with a data type parameter.  <a href="#ga0546f6cb1352f898ef9444a4e0a79c06">More...</a><br/></td></tr>
+<tr class="separator:ga0546f6cb1352f898ef9444a4e0a79c06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad3a93e3c396b07066d42eadbe119b7a4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__attributes.html#gad3a93e3c396b07066d42eadbe119b7a4">dnnl_post_ops_append_eltwise</a> (<a class="el" href="group__dnnl__api__attributes.html#ga7d715ce1a81606584df9dcf045976401">dnnl_post_ops_t</a> post_ops, float scale, <a class="el" href="group__dnnl__api__primitives__common.html#ga96946c805f6c4922c38c37049ab95d23">dnnl_alg_kind_t</a> alg_kind, float alpha, float beta)</td></tr>
 <tr class="memdesc:gad3a93e3c396b07066d42eadbe119b7a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends an elementwise post-op.  <a href="#gad3a93e3c396b07066d42eadbe119b7a4">More...</a><br/></td></tr>
 <tr class="separator:gad3a93e3c396b07066d42eadbe119b7a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -224,12 +230,12 @@ Functions</h2></td></tr>
 <tr class="memitem:gaa30f540e1ed09b2865f153fd599c967b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__attributes.html#gacda323181ab267e571c31435b0817de4">dnnl_scratchpad_mode_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__attributes.html#gaa30f540e1ed09b2865f153fd599c967b">dnnl::convert_to_c</a> (scratchpad_mode mode)</td></tr>
 <tr class="memdesc:gaa30f540e1ed09b2865f153fd599c967b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a scratchpad mode enum value from C++ API to C API type.  <a href="#gaa30f540e1ed09b2865f153fd599c967b">More...</a><br/></td></tr>
 <tr class="separator:gaa30f540e1ed09b2865f153fd599c967b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaaf09c9867f08afe9bd59135f1dda9f6e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__primitives__common.html#gae3c1f22ae55645782923fbfd8b07d0c4">dnnl_prop_kind_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__attributes.html#gaaf09c9867f08afe9bd59135f1dda9f6e">dnnl::convert_to_c</a> (prop_kind kind)</td></tr>
-<tr class="memdesc:gaaf09c9867f08afe9bd59135f1dda9f6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts propagation kind enum value from C++ API to C API type.  <a href="#gaaf09c9867f08afe9bd59135f1dda9f6e">More...</a><br/></td></tr>
-<tr class="separator:gaaf09c9867f08afe9bd59135f1dda9f6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1811dfc1095b9f04b6f0c6f4a1685520"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__primitives__common.html#ga96946c805f6c4922c38c37049ab95d23">dnnl_alg_kind_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__attributes.html#ga1811dfc1095b9f04b6f0c6f4a1685520">dnnl::convert_to_c</a> (algorithm algorithm)</td></tr>
-<tr class="memdesc:ga1811dfc1095b9f04b6f0c6f4a1685520"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts algorithm kind enum value from C++ API to C API type.  <a href="#ga1811dfc1095b9f04b6f0c6f4a1685520">More...</a><br/></td></tr>
-<tr class="separator:ga1811dfc1095b9f04b6f0c6f4a1685520"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae13881206fecd43ce0e0daead7f0009e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__primitives__common.html#gae3c1f22ae55645782923fbfd8b07d0c4">dnnl_prop_kind_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__attributes.html#gae13881206fecd43ce0e0daead7f0009e">dnnl::convert_to_c</a> (prop_kind akind)</td></tr>
+<tr class="memdesc:gae13881206fecd43ce0e0daead7f0009e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts propagation kind enum value from C++ API to C API type.  <a href="#gae13881206fecd43ce0e0daead7f0009e">More...</a><br/></td></tr>
+<tr class="separator:gae13881206fecd43ce0e0daead7f0009e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad4c07d30e46391ce7ce0900d18cbfa30"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__primitives__common.html#ga96946c805f6c4922c38c37049ab95d23">dnnl_alg_kind_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__attributes.html#gad4c07d30e46391ce7ce0900d18cbfa30">dnnl::convert_to_c</a> (algorithm aalgorithm)</td></tr>
+<tr class="memdesc:gad4c07d30e46391ce7ce0900d18cbfa30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts algorithm kind enum value from C++ API to C API type.  <a href="#gad4c07d30e46391ce7ce0900d18cbfa30">More...</a><br/></td></tr>
+<tr class="separator:gad4c07d30e46391ce7ce0900d18cbfa30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>A container for parameters that extend primitives behavior. </p>
@@ -430,6 +436,9 @@ Functions</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga00377dd4982333e42e8ae1d09a309640a30977b2a33c3a2bd6a5d71a352fa4bcc"></a>eltwise_pow</em>&nbsp;</td><td class="fielddoc">
 <p>Elementwise: pow. </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="gga00377dd4982333e42e8ae1d09a309640ad3bc4dd78c67cb6040d6885b405b872b"></a>eltwise_round</em>&nbsp;</td><td class="fielddoc">
+<p>Elementwise: round. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga00377dd4982333e42e8ae1d09a309640ac227b99192be41d4060b700d1e788fd6"></a>eltwise_relu_use_dst_for_bwd</em>&nbsp;</td><td class="fielddoc">
 <p>Elementwise: rectified linar unit (ReLU) (dst for backward) </p>
@@ -1284,6 +1293,58 @@ The lifetime of <code>zero_points</code> array is the same as that of the primit
 
 </div>
 </div>
+<a class="anchor" id="ga97ce3bde45e1a8f1970c899e4e519497"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API dnnl_post_ops_append_sum_v2 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__dnnl__api__attributes.html#ga7d715ce1a81606584df9dcf045976401">dnnl_post_ops_t</a>&#160;</td>
+          <td class="paramname"><em>post_ops</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>scale</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__dnnl__api__memory.html#ga012ba1c84ff24bdd068f9d2f9b26a130">dnnl_data_type_t</a>&#160;</td>
+          <td class="paramname"><em>data_type</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Appends an accumulation v2 (sum) to post-ops. </p>
+<p>Prior to accumulating the result, the previous value is multiplied by a scale.</p>
+<p>The kind of this post-op is <a class="el" href="group__dnnl__api__primitives__common.html#gga9878f4795e53ad8443e5c0a29e53286aa8ab0990125f2a743db86666c9d8b401b" title="A sum primitive. ">dnnl_sum</a>.</p>
+<p>This feature may improve performance for cases like residual learning blocks, where the result of convolution is accumulated to the previously computed activations. The parameter <code>scale</code> may be used for the integer-based computations when the result and previous activations have different logical scaling factors.</p>
+<p>In the simplest case when the accumulation is the only post-op, the computations would be: </p>
+<pre class="fragment">dst[:] &lt;- scale * dst[:] + op(...) // instead of dst[:] &lt;- op(...)
+</pre><p>If <code>data_type</code> is specified, original dst tensor will be reinterpreted as a tensor with provided data type. Since it is reinterpretation, data_type and dst data type should have same size. As a result, computations would be: </p>
+<pre class="fragment">dst[:] &lt;- scale * as_data_type(dst[:]) + op(...)
+                                   // instead of dst[:] &lt;- op(...)
+</pre> <dl class="section note"><dt>Note</dt><dd>This post-op executes in-place and does not change the destination layout.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">post_ops</td><td>Post-ops. </td></tr>
+    <tr><td class="paramname">scale</td><td>Accumulation scaling factor. </td></tr>
+    <tr><td class="paramname">data_type</td><td>Accumulation data_type. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__dnnl__api__utils.html#ggad24f9ded06e34d3ee71e7fc4b408d57aaa31395e9dccc103cf166cf7b38fc5b9c" title="The operation was successful. ">dnnl_success</a> on success and a status describing the error otherwise. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="gade0dbf6e22ef699e31166c341f9d043a"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1326,6 +1387,56 @@ The lifetime of <code>zero_points</code> array is the same as that of the primit
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__dnnl__api__utils.html#ggad24f9ded06e34d3ee71e7fc4b408d57aaa31395e9dccc103cf166cf7b38fc5b9c" title="The operation was successful. ">dnnl_success</a> on success and a status describing the error otherwise. </dd>
 <dd>
 <a class="el" href="group__dnnl__api__utils.html#ggad24f9ded06e34d3ee71e7fc4b408d57aaecec97c787d74a33924abcf16ae4f51c" title="The operation failed because of incorrect function arguments. ">dnnl_invalid_arguments</a> if <code>index</code> does not refer to a sum post-op. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga0546f6cb1352f898ef9444a4e0a79c06"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API dnnl_post_ops_get_params_sum_v2 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__dnnl__api__attributes.html#ga5ca949c8e907bd9ed79bc06d869c9c0e">const_dnnl_post_ops_t</a>&#160;</td>
+          <td class="paramname"><em>post_ops</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>scale</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__dnnl__api__memory.html#ga012ba1c84ff24bdd068f9d2f9b26a130">dnnl_data_type_t</a> *&#160;</td>
+          <td class="paramname"><em>data_type</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the parameters of an accumulation (sum) post-op with a data type parameter. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">post_ops</td><td>Post-ops. </td></tr>
+    <tr><td class="paramname">index</td><td>Index of the sum post-op. </td></tr>
+    <tr><td class="paramname">scale</td><td>Output accumulation scaling factor. </td></tr>
+    <tr><td class="paramname">data_type</td><td>Data type for accumulation. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__dnnl__api__utils.html#ggad24f9ded06e34d3ee71e7fc4b408d57aaa31395e9dccc103cf166cf7b38fc5b9c" title="The operation was successful. ">dnnl_success</a> on success and a status describing the error otherwise. </dd></dl>
 
 </div>
 </div>
@@ -1921,7 +2032,7 @@ Quantization scales are common for weights_layer and weights_iteration</dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gaaf09c9867f08afe9bd59135f1dda9f6e"></a>
+<a class="anchor" id="gae13881206fecd43ce0e0daead7f0009e"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1932,7 +2043,7 @@ Quantization scales are common for weights_layer and weights_iteration</dd></dl>
           <td class="memname"><a class="el" href="group__dnnl__api__primitives__common.html#gae3c1f22ae55645782923fbfd8b07d0c4">dnnl_prop_kind_t</a> dnnl::convert_to_c </td>
           <td>(</td>
           <td class="paramtype">prop_kind&#160;</td>
-          <td class="paramname"><em>kind</em></td><td>)</td>
+          <td class="paramname"><em>akind</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1946,7 +2057,7 @@ Quantization scales are common for weights_layer and weights_iteration</dd></dl>
 <p>Converts propagation kind enum value from C++ API to C API type. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">kind</td><td>C++ API propagation kind enum value. </td></tr>
+    <tr><td class="paramname">akind</td><td>C++ API propagation kind enum value. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1954,7 +2065,7 @@ Quantization scales are common for weights_layer and weights_iteration</dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga1811dfc1095b9f04b6f0c6f4a1685520"></a>
+<a class="anchor" id="gad4c07d30e46391ce7ce0900d18cbfa30"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1965,7 +2076,7 @@ Quantization scales are common for weights_layer and weights_iteration</dd></dl>
           <td class="memname"><a class="el" href="group__dnnl__api__primitives__common.html#ga96946c805f6c4922c38c37049ab95d23">dnnl_alg_kind_t</a> dnnl::convert_to_c </td>
           <td>(</td>
           <td class="paramtype">algorithm&#160;</td>
-          <td class="paramname"><em>algorithm</em></td><td>)</td>
+          <td class="paramname"><em>aalgorithm</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1979,7 +2090,7 @@ Quantization scales are common for weights_layer and weights_iteration</dd></dl>
 <p>Converts algorithm kind enum value from C++ API to C API type. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">algorithm</td><td>C++ API algorithm kind enum value. </td></tr>
+    <tr><td class="paramname">aalgorithm</td><td>C++ API algorithm kind enum value. </td></tr>
   </table>
   </dd>
 </dl>

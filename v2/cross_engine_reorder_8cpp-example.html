@@ -129,9 +129,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    std::vector&lt;float&gt; array(product(adims));</div>
 <div class="line">    read_from_dnnl_memory(array.data(), mem);</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> e = 0; e &lt; adims.size(); ++e) {</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> e = 0; e &lt; (size_t)product(adims); ++e)</div>
 <div class="line">        negs += array[e] &lt; 0.0f;</div>
-<div class="line">    }</div>
 <div class="line">    <span class="keywordflow">return</span> negs;</div>
 <div class="line">}</div>
 <div class="line"></div>
@@ -142,32 +141,32 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="comment">// [Initialize engine]</span></div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// [Initialize stream]</span></div>
-<div class="line">    <span class="keyword">auto</span> stream_gpu = <a name="_a4"></a><a class="code" href="structdnnl_1_1stream.html">stream</a>(gpu_engine);</div>
+<div class="line">    <span class="keyword">auto</span> stream_gpu = <a name="_a4"></a><a class="code" href="structdnnl_1_1stream.html">stream</a>(gpu_engine, <a name="a5"></a><a class="code" href="structdnnl_1_1stream.html#abc7ec7dfa1718f366abd8f495164de59af51b25ca6f591d130cd0b575bf7821b3">stream::flags::in_order</a>);</div>
 <div class="line">    <span class="comment">// [Initialize stream]</span></div>
 <div class="line"></div>
 <div class="line">    <span class="comment">//  [reorder cpu2gpu]</span></div>
 <div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span> tz = <a class="code" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> {2, 16, 1, 1};</div>
 <div class="line">    <span class="keyword">auto</span> m_cpu</div>
-<div class="line">            = <a class="code" href="structdnnl_1_1memory.html">memory</a>({{tz}, <a name="a5"></a><a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e">memory::data_type::f32</a>, <a name="a6"></a><a class="code" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3faded7ac40158367123c5467281d44cbeb">memory::format_tag::nchw</a>},</div>
+<div class="line">            = <a class="code" href="structdnnl_1_1memory.html">memory</a>({{tz}, <a name="a6"></a><a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e">memory::data_type::f32</a>, <a name="a7"></a><a class="code" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3faded7ac40158367123c5467281d44cbeb">memory::format_tag::nchw</a>},</div>
 <div class="line">                    cpu_engine);</div>
 <div class="line">    <span class="keyword">auto</span> m_gpu</div>
 <div class="line">            = <a class="code" href="structdnnl_1_1memory.html">memory</a>({{tz}, <a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e">memory::data_type::f32</a>, <a class="code" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3faded7ac40158367123c5467281d44cbeb">memory::format_tag::nchw</a>},</div>
 <div class="line">                    gpu_engine);</div>
 <div class="line">    fill(m_cpu, tz);</div>
-<div class="line">    <span class="keyword">auto</span> r1 = <a name="_a7"></a><a class="code" href="structdnnl_1_1reorder.html">reorder</a>(m_cpu, m_gpu);</div>
+<div class="line">    <span class="keyword">auto</span> r1 = <a name="_a8"></a><a class="code" href="structdnnl_1_1reorder.html">reorder</a>(m_cpu, m_gpu);</div>
 <div class="line">    <span class="comment">//  [reorder cpu2gpu]</span></div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// [Create a ReLU primitive]</span></div>
 <div class="line">    <span class="comment">//  ReLU op descriptor (uses a GPU memory as source memory.</span></div>
 <div class="line">    <span class="comment">//  no engine- or implementation-specific information)</span></div>
-<div class="line">    <span class="keyword">auto</span> relu_d = <a name="_a8"></a><a class="code" href="structdnnl_1_1eltwise__forward_1_1desc.html">eltwise_forward::desc</a>(<a name="a9"></a><a class="code" href="group__dnnl__api__attributes.html#ggac7db48f6583aa9903e54c2a39d65438fa965dbaac085fc891bfbbd4f9d145bbc8">prop_kind::forward</a>,</div>
-<div class="line">            <a name="a10"></a><a class="code" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640aba09bebb742494255b90b43871c01c69">algorithm::eltwise_relu</a>, m_gpu.get_desc(), 0.0f);</div>
+<div class="line">    <span class="keyword">auto</span> relu_d = <a name="_a9"></a><a class="code" href="structdnnl_1_1eltwise__forward_1_1desc.html">eltwise_forward::desc</a>(<a name="a10"></a><a class="code" href="group__dnnl__api__attributes.html#ggac7db48f6583aa9903e54c2a39d65438fa965dbaac085fc891bfbbd4f9d145bbc8">prop_kind::forward</a>,</div>
+<div class="line">            <a name="a11"></a><a class="code" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640aba09bebb742494255b90b43871c01c69">algorithm::eltwise_relu</a>, m_gpu.get_desc(), 0.0f);</div>
 <div class="line">    <span class="comment">// ReLU primitive descriptor, which corresponds to a particular</span></div>
 <div class="line">    <span class="comment">// implementation in the library. Specify engine type for the ReLU</span></div>
 <div class="line">    <span class="comment">// primitive. Use a GPU engine here.</span></div>
-<div class="line">    <span class="keyword">auto</span> relu_pd = <a name="_a11"></a><a class="code" href="structdnnl_1_1eltwise__forward_1_1primitive__desc.html">eltwise_forward::primitive_desc</a>(relu_d, gpu_engine);</div>
+<div class="line">    <span class="keyword">auto</span> relu_pd = <a name="_a12"></a><a class="code" href="structdnnl_1_1eltwise__forward_1_1primitive__desc.html">eltwise_forward::primitive_desc</a>(relu_d, gpu_engine);</div>
 <div class="line">    <span class="comment">// ReLU primitive</span></div>
-<div class="line">    <span class="keyword">auto</span> relu = <a name="_a12"></a><a class="code" href="structdnnl_1_1eltwise__forward.html">eltwise_forward</a>(relu_pd);</div>
+<div class="line">    <span class="keyword">auto</span> relu = <a name="_a13"></a><a class="code" href="structdnnl_1_1eltwise__forward.html">eltwise_forward</a>(relu_pd);</div>
 <div class="line">    <span class="comment">// [Create a ReLU primitive]</span></div>
 <div class="line"></div>
 <div class="line">    <span class="comment">//  [reorder gpu2cpu]</span></div>
@@ -178,7 +177,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="comment">// wrap source data from CPU to GPU</span></div>
 <div class="line">    r1.execute(stream_gpu, m_cpu, m_gpu);</div>
 <div class="line">    <span class="comment">// Execute ReLU on a GPU stream</span></div>
-<div class="line">    relu.execute(stream_gpu, {{<a name="a13"></a><a class="code" href="group__dnnl__api__primitives__common.html#gac37ad67b48edeb9e742af0e50b70fe09">DNNL_ARG_SRC</a>, m_gpu}, {<a name="a14"></a><a class="code" href="group__dnnl__api__primitives__common.html#ga3ca217e4a06d42a0ede3c018383c388f">DNNL_ARG_DST</a>, m_gpu}});</div>
+<div class="line">    relu.execute(stream_gpu, {{<a name="a14"></a><a class="code" href="group__dnnl__api__primitives__common.html#gac37ad67b48edeb9e742af0e50b70fe09">DNNL_ARG_SRC</a>, m_gpu}, {<a name="a15"></a><a class="code" href="group__dnnl__api__primitives__common.html#ga3ca217e4a06d42a0ede3c018383c388f">DNNL_ARG_DST</a>, m_gpu}});</div>
 <div class="line">    <span class="comment">// Get result data from GPU to CPU</span></div>
 <div class="line">    r2.execute(stream_gpu, m_gpu, m_cpu);</div>
 <div class="line"></div>

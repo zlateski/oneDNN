@@ -84,9 +84,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p><a class="el" href="group__dnnl__api__pooling.html">API Reference</a></p>
 <p></p>
 </blockquote>
+<h2>General</h2>
 <p>The pooling primitive performs forward or backward max or average pooling operation on 1D, 2D, or 3D spatial data.</p>
-<p>The pooling operation is defined by the following formulas. We show formulas only for 2D spatial data which are straightforward to generalize to cases of higher and lower dimensions. Variable names follow the standard <a class="el" href="dev_guide_conventions.html">Naming Conventions</a>.</p>
 <h3>Forward</h3>
+<p>The pooling operation is defined by the following formulas. We show formulas only for 2D spatial data which are straightforward to generalize to cases of higher and lower dimensions. Variable names follow the standard <a class="el" href="dev_guide_conventions.html">Naming Conventions</a>.</p>
 <p>Max pooling:</p>
 <p class="formulaDsp">
 \[ \dst(n, c, oh, ow) = \max\limits_{kh, kw} \left( \src(n, c, oh \cdot SH + kh - PH_L, ow \cdot SW +kw - PW_L) \right) \]
@@ -107,12 +108,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </blockquote>
 <h4>Difference Between Forward Training and Forward Inference</h4>
 <ul>
-<li>Max pooling requires a <code>workspace</code> for the <a class="el" href="group__dnnl__api__primitives__common.html#ggae3c1f22ae55645782923fbfd8b07d0c4a992e03bebfe623ac876b3636333bbce0" title="Forward data propagation (training mode). ">dnnl_forward_training</a> propagation kind, and doesn't require it for <a class="el" href="group__dnnl__api__primitives__common.html#ggae3c1f22ae55645782923fbfd8b07d0c4a2f77a568a675dec649eb0450c997856d" title="Forward data propagation (inference mode). ">dnnl_forward_inference</a> (see details below).</li>
+<li>Max pooling requires a <code>workspace</code> for the <a class="el" href="group__dnnl__api__primitives__common.html#ggae3c1f22ae55645782923fbfd8b07d0c4a992e03bebfe623ac876b3636333bbce0" title="Forward data propagation (training mode). ">dnnl_forward_training</a> propagation kind, and does not require it for <a class="el" href="group__dnnl__api__primitives__common.html#ggae3c1f22ae55645782923fbfd8b07d0c4a2f77a568a675dec649eb0450c997856d" title="Forward data propagation (inference mode). ">dnnl_forward_inference</a> (see details below).</li>
 </ul>
 <h3>Backward</h3>
 <p>The backward propagation computes \(\diffsrc(n, c, h, w)\), based on \(\diffdst(n, c, h, w)\) and (in case of max pooling) <code>workspace</code>.</p>
 <h2>Execution Arguments</h2>
-<p>When executed, the inputs and outputs should be mapped to an execution argument index as specified by the following table. </p>
+<p>When executed, the inputs and outputs should be mapped to an execution argument index as specified by the following table.</p>
 <table class="doxtable">
 <tr>
 <th>Primitive input/output </th><th>Execution argument index  </th></tr>

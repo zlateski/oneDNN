@@ -191,6 +191,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga4b7f3b3299482f88f1a0aa61a4707156"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__service.html#ga4b7f3b3299482f88f1a0aa61a4707156">dnnl_set_max_cpu_isa</a> (<a class="el" href="group__dnnl__api__service.html#ga303bab5d2e7b371bb44495864df21dd2">dnnl_cpu_isa_t</a> isa)</td></tr>
 <tr class="memdesc:ga4b7f3b3299482f88f1a0aa61a4707156"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the maximal ISA the library can dispatch to on the CPU.  <a href="#ga4b7f3b3299482f88f1a0aa61a4707156">More...</a><br/></td></tr>
 <tr class="separator:ga4b7f3b3299482f88f1a0aa61a4707156"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac55836cf36bc25f8635e459678303570"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__service.html#ga303bab5d2e7b371bb44495864df21dd2">dnnl_cpu_isa_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__service.html#gac55836cf36bc25f8635e459678303570">dnnl_get_effective_cpu_isa</a> (void)</td></tr>
+<tr class="memdesc:gac55836cf36bc25f8635e459678303570"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the maximal ISA the library can dispatch to on the CPU.  <a href="#gac55836cf36bc25f8635e459678303570">More...</a><br/></td></tr>
+<tr class="separator:gac55836cf36bc25f8635e459678303570"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga37bcab6f832df551a9fc418e48743b15"><td class="memItemLeft" align="right" valign="top">status&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__service.html#ga37bcab6f832df551a9fc418e48743b15">dnnl::set_verbose</a> (int level)</td></tr>
 <tr class="memdesc:ga37bcab6f832df551a9fc418e48743b15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures verbose output to stdout.  <a href="#ga37bcab6f832df551a9fc418e48743b15">More...</a><br/></td></tr>
 <tr class="separator:ga37bcab6f832df551a9fc418e48743b15"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -209,6 +212,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga08734310b5f1ca794c64b6a5b944b698"><td class="memItemLeft" align="right" valign="top">status&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__service.html#ga08734310b5f1ca794c64b6a5b944b698">dnnl::set_max_cpu_isa</a> (cpu_isa isa)</td></tr>
 <tr class="memdesc:ga08734310b5f1ca794c64b6a5b944b698"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the maximal ISA the library can dispatch to on the CPU.  <a href="#ga08734310b5f1ca794c64b6a5b944b698">More...</a><br/></td></tr>
 <tr class="separator:ga08734310b5f1ca794c64b6a5b944b698"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3953f71c3f0126d9cc005a1ceff65e8b"><td class="memItemLeft" align="right" valign="top">cpu_isa&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__service.html#ga3953f71c3f0126d9cc005a1ceff65e8b">dnnl::get_effective_cpu_isa</a> ()</td></tr>
+<tr class="memdesc:ga3953f71c3f0126d9cc005a1ceff65e8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the maximal ISA the library can dispatch to on the CPU.  <a href="#ga3953f71c3f0126d9cc005a1ceff65e8b">More...</a><br/></td></tr>
+<tr class="separator:ga3953f71c3f0126d9cc005a1ceff65e8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>A set of functions that aid in oneDNN debugging and profiling. </p>
@@ -483,7 +489,7 @@ Functions</h2></td></tr>
 <p>Sets library profiling flags. </p>
 <p>The flags define which profilers are supported.</p>
 <dl class="section note"><dt>Note</dt><dd>This setting overrides DNNL_JIT_PROFILE environment variable.</dd></dl>
-<dl class="section see"><dt>See Also</dt><dd><a class="el" href="dev_guide_profilers.html">Profiling oneDNN performance</a></dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="dev_guide_profilers.html">Profiling oneDNN Performance</a></dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">flags</td><td>Profiling flags that can contain the following bits:<ul>
@@ -517,7 +523,7 @@ Functions</h2></td></tr>
 <p>Sets JIT dump output path. </p>
 <p>Only applicable to Linux and is only used when profiling flags have DNNL_JIT_PROFILE_LINUX_PERF bit set.</p>
 <p>After the first JIT kernel is generated, the jitdump output will be placed into temporary directory created using the mkdtemp template 'dir/.debug/jit/dnnl.XXXXXX'.</p>
-<dl class="section see"><dt>See Also</dt><dd><a class="el" href="dev_guide_profilers.html">Profiling oneDNN performance</a></dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="dev_guide_profilers.html">Profiling oneDNN Performance</a></dd></dl>
 <dl class="section note"><dt>Note</dt><dd>This setting overrides JITDUMPDIR environment variable. If JITDUMPDIR is not set, and this function is never called, the path defaults to HOME. Passing NULL reverts the value to default.</dd>
 <dd>
 The directory is accessed only when the first JIT kernel is being created. JIT profiling will be disabled in case of any errors accessing or creating this directory.</dd></dl>
@@ -557,7 +563,7 @@ The directory is accessed only when the first JIT kernel is being created. JIT p
 <li>AVX2 &lt; AVX512_CORE &lt; AVX512_CORE_VNNI &lt; AVX512_CORE_BF16.</li>
 </ul>
 </dd></dl>
-<dl class="section see"><dt>See Also</dt><dd><a class="el" href="dev_guide_cpu_dispatcher_control.html">CPU dispatcher control</a> for more details</dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="dev_guide_cpu_dispatcher_control.html">CPU Dispatcher Control</a> for more details</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">isa</td><td>Maximal ISA the library should dispatch to. Pass <a class="el" href="group__dnnl__api__service.html#gga303bab5d2e7b371bb44495864df21dd2a4f614e9d72ffc6338fdfc420b77601c8" title="Any ISA (no restrictions) ">dnnl_cpu_isa_all</a>/<a class="el" href="group__dnnl__api__service.html#ggabad017feb1850634bf3babdb68234f83aa181a603769c1f98ad927e7367c7aa51" title="Any ISA (no restrictions) ">dnnl::cpu_isa::all</a> to remove ISA restrictions. </td></tr>
@@ -567,6 +573,27 @@ The directory is accessed only when the first JIT kernel is being created. JIT p
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__dnnl__api__utils.html#ggad24f9ded06e34d3ee71e7fc4b408d57aaa31395e9dccc103cf166cf7b38fc5b9c" title="The operation was successful. ">dnnl_success</a>/<a class="el" href="group__dnnl__api__service.html#gga7acc4d3516304ae68a1289551d8f2cdda260ca9dd8a4577fc00b7bd5810298076" title="The operation was successful. ">dnnl::status::success</a> on success and a <a class="el" href="group__dnnl__api__utils.html#ggad24f9ded06e34d3ee71e7fc4b408d57aaecec97c787d74a33924abcf16ae4f51c" title="The operation failed because of incorrect function arguments. ">dnnl_invalid_arguments</a>/<a class="el" href="group__dnnl__api__service.html#gga7acc4d3516304ae68a1289551d8f2cdda242ac674d98ee2191f0bbf6de851d2d0" title="The operation failed because of incorrect function arguments. ">dnnl::status::invalid_arguments</a> if the <code>isa</code> parameter is invalid or the ISA cannot be changed at this time. </dd>
 <dd>
 <a class="el" href="group__dnnl__api__utils.html#ggad24f9ded06e34d3ee71e7fc4b408d57aa3a8579e8afc4e23344cd3115b0e81de1" title="The operation failed because requested functionality is not implemented. ">dnnl_unimplemented</a>/<a class="el" href="group__dnnl__api__service.html#gga7acc4d3516304ae68a1289551d8f2cdda4316423dfe3ade85c292aa38185f9817" title="The operation failed because requested functionality is not implemented. ">dnnl::status::unimplemented</a> if the feature was disabled at build time (see <a class="el" href="dev_guide_build_options.html">Build Options</a> for more details). </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gac55836cf36bc25f8635e459678303570"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__dnnl__api__service.html#ga303bab5d2e7b371bb44495864df21dd2">dnnl_cpu_isa_t</a> DNNL_API dnnl_get_effective_cpu_isa </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the maximal ISA the library can dispatch to on the CPU. </p>
+<p>See <a class="el" href="group__dnnl__api__service.html#ga303bab5d2e7b371bb44495864df21dd2" title="CPU instruction set flags. ">dnnl_cpu_isa_t</a> and <a class="el" href="group__dnnl__api__service.html#gabad017feb1850634bf3babdb68234f83" title="CPU instruction set flags. ">dnnl::cpu_isa</a> for the list of the values returned by the C and C++ API functions respectively.</p>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="dev_guide_cpu_dispatcher_control.html">CPU Dispatcher Control</a> for more details</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__dnnl__api__service.html#ga303bab5d2e7b371bb44495864df21dd2" title="CPU instruction set flags. ">dnnl_cpu_isa_t</a> value reflecting the maximal ISA the library may dispatch to. </dd></dl>
 
 </div>
 </div>
@@ -700,7 +727,7 @@ The directory is accessed only when the first JIT kernel is being created. JIT p
 <p>Sets library profiling flags. </p>
 <p>The flags define which profilers are supported.</p>
 <dl class="section note"><dt>Note</dt><dd>This setting overrides DNNL_JIT_PROFILE environment variable.</dd></dl>
-<dl class="section see"><dt>See Also</dt><dd><a class="el" href="dev_guide_profilers.html">Profiling oneDNN performance</a></dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="dev_guide_profilers.html">Profiling oneDNN Performance</a></dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">flags</td><td>Profiling flags that can contain the following bits:<ul>
@@ -742,7 +769,7 @@ The directory is accessed only when the first JIT kernel is being created. JIT p
 <p>Sets JIT dump output path. </p>
 <p>Only applicable to Linux and is only used when profiling flags have DNNL_JIT_PROFILE_LINUX_PERF bit set.</p>
 <p>After the first JIT kernel is generated, the jitdump output will be placed into temporary directory created using the mkdtemp template 'dir/.debug/jit/dnnl.XXXXXX'.</p>
-<dl class="section see"><dt>See Also</dt><dd><a class="el" href="dev_guide_profilers.html">Profiling oneDNN performance</a></dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="dev_guide_profilers.html">Profiling oneDNN Performance</a></dd></dl>
 <dl class="section note"><dt>Note</dt><dd>This setting overrides JITDUMPDIR environment variable. If JITDUMPDIR is not set, and this function is never called, the path defaults to HOME. Passing NULL reverts the value to default.</dd>
 <dd>
 The directory is accessed only when the first JIT kernel is being created. JIT profiling will be disabled in case of any errors accessing or creating this directory.</dd></dl>
@@ -790,7 +817,7 @@ The directory is accessed only when the first JIT kernel is being created. JIT p
 <li>AVX2 &lt; AVX512_CORE &lt; AVX512_CORE_VNNI &lt; AVX512_CORE_BF16.</li>
 </ul>
 </dd></dl>
-<dl class="section see"><dt>See Also</dt><dd><a class="el" href="dev_guide_cpu_dispatcher_control.html">CPU dispatcher control</a> for more details</dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="dev_guide_cpu_dispatcher_control.html">CPU Dispatcher Control</a> for more details</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">isa</td><td>Maximal ISA the library should dispatch to. Pass <a class="el" href="group__dnnl__api__service.html#gga303bab5d2e7b371bb44495864df21dd2a4f614e9d72ffc6338fdfc420b77601c8" title="Any ISA (no restrictions) ">dnnl_cpu_isa_all</a>/<a class="el" href="group__dnnl__api__service.html#ggabad017feb1850634bf3babdb68234f83aa181a603769c1f98ad927e7367c7aa51" title="Any ISA (no restrictions) ">dnnl::cpu_isa::all</a> to remove ISA restrictions. </td></tr>
@@ -800,6 +827,34 @@ The directory is accessed only when the first JIT kernel is being created. JIT p
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__dnnl__api__utils.html#ggad24f9ded06e34d3ee71e7fc4b408d57aaa31395e9dccc103cf166cf7b38fc5b9c" title="The operation was successful. ">dnnl_success</a>/<a class="el" href="group__dnnl__api__service.html#gga7acc4d3516304ae68a1289551d8f2cdda260ca9dd8a4577fc00b7bd5810298076" title="The operation was successful. ">dnnl::status::success</a> on success and a <a class="el" href="group__dnnl__api__utils.html#ggad24f9ded06e34d3ee71e7fc4b408d57aaecec97c787d74a33924abcf16ae4f51c" title="The operation failed because of incorrect function arguments. ">dnnl_invalid_arguments</a>/<a class="el" href="group__dnnl__api__service.html#gga7acc4d3516304ae68a1289551d8f2cdda242ac674d98ee2191f0bbf6de851d2d0" title="The operation failed because of incorrect function arguments. ">dnnl::status::invalid_arguments</a> if the <code>isa</code> parameter is invalid or the ISA cannot be changed at this time. </dd>
 <dd>
 <a class="el" href="group__dnnl__api__utils.html#ggad24f9ded06e34d3ee71e7fc4b408d57aa3a8579e8afc4e23344cd3115b0e81de1" title="The operation failed because requested functionality is not implemented. ">dnnl_unimplemented</a>/<a class="el" href="group__dnnl__api__service.html#gga7acc4d3516304ae68a1289551d8f2cdda4316423dfe3ade85c292aa38185f9817" title="The operation failed because requested functionality is not implemented. ">dnnl::status::unimplemented</a> if the feature was disabled at build time (see <a class="el" href="dev_guide_build_options.html">Build Options</a> for more details). </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga3953f71c3f0126d9cc005a1ceff65e8b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cpu_isa dnnl::get_effective_cpu_isa </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the maximal ISA the library can dispatch to on the CPU. </p>
+<p>See <a class="el" href="group__dnnl__api__service.html#ga303bab5d2e7b371bb44495864df21dd2" title="CPU instruction set flags. ">dnnl_cpu_isa_t</a> and <a class="el" href="group__dnnl__api__service.html#gabad017feb1850634bf3babdb68234f83" title="CPU instruction set flags. ">dnnl::cpu_isa</a> for the list of the values returned by the C and C++ API functions respectively.</p>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="dev_guide_cpu_dispatcher_control.html">CPU Dispatcher Control</a> for more details</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__dnnl__api__service.html#ga303bab5d2e7b371bb44495864df21dd2" title="CPU instruction set flags. ">dnnl_cpu_isa_t</a> value reflecting the maximal ISA the library may dispatch to. </dd></dl>
 
 </div>
 </div>

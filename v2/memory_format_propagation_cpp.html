@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>oneDNN: Memory format propagation</title>
+<title>oneDNN: Memory Format Propagation</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -76,7 +76,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">Memory format propagation </div>  </div>
+<div class="title">Memory Format Propagation </div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>This example demonstrates memory format propagation, which is critical for deep learning applications performance.</p>
@@ -84,7 +84,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Example code: <a class="el" href="memory_format_propagation_8cpp-example.html">memory_format_propagation.cpp</a></p>
 <p></p>
 </blockquote>
-<p>Format propagation is one of the central notions that needs to be well-understood to use oneDNN correctly.</p>
+<p>Memory format propagation is one of the central notions that needs to be well-understood to use oneDNN correctly.</p>
 <p>Convolution and inner product primitives choose the memory format when you create them with the placeholder memory format <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> for input or output. The memory format chosen is based on different circumstances such as hardware and convolutional parameters. Using the placeholder memory format is the recommended practice for convolutions, since they are the most compute-intensive operations in most topologies where they are present.</p>
 <p>Other primitives, such as Elementwise, LRN, batch normalization and other, on forward propagation should use the same memory format as the preceding layer thus propagating the memory format through multiple oneDNN primitives. This avoids unnecessary reorders which may be expensive and should be avoided unless a compute-intensive primitive requires a different format. For performance reasons, backward computations of such primitives requires consistent memory format with the corresponding forward computations. Hence, when initializing there primitives for backward computations you should use <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> memory format tag as well.</p>
 <p>Below is the short summary when to use and not to use memory format <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec" title="Placeholder memory format tag. ">dnnl::memory::format_tag::any</a> during operation description initialization:</p>

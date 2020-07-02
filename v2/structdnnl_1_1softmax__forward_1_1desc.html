@@ -113,15 +113,15 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1softmax__forward_1_1desc.html#ab9f8727afb4ea7555ae1cd718a091d9d">desc</a> ()=default</td></tr>
 <tr class="memdesc:ab9f8727afb4ea7555ae1cd718a091d9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. Produces an empty object. <br/></td></tr>
 <tr class="separator:ab9f8727afb4ea7555ae1cd718a091d9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a74ad273e533932c4f16aaf5c94c77941"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1softmax__forward_1_1desc.html#a74ad273e533932c4f16aaf5c94c77941">desc</a> (<a class="el" href="group__dnnl__api__attributes.html#gac7db48f6583aa9903e54c2a39d65438f">prop_kind</a> <a class="el" href="group__dnnl__api__attributes.html#gac7db48f6583aa9903e54c2a39d65438f">prop_kind</a>, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;data_desc, int softmax_axis)</td></tr>
-<tr class="memdesc:a74ad273e533932c4f16aaf5c94c77941"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a descriptor for a softmax forward propagation primitive.  <a href="#a74ad273e533932c4f16aaf5c94c77941">More...</a><br/></td></tr>
-<tr class="separator:a74ad273e533932c4f16aaf5c94c77941"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab573772b6fbaab68a2310f8238c4cce5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1softmax__forward_1_1desc.html#ab573772b6fbaab68a2310f8238c4cce5">desc</a> (<a class="el" href="group__dnnl__api__attributes.html#gac7db48f6583aa9903e54c2a39d65438f">prop_kind</a> aprop_kind, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;data_desc, int softmax_axis)</td></tr>
+<tr class="memdesc:ab573772b6fbaab68a2310f8238c4cce5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a descriptor for a softmax forward propagation primitive.  <a href="#ab573772b6fbaab68a2310f8238c4cce5">More...</a><br/></td></tr>
+<tr class="separator:ab573772b6fbaab68a2310f8238c4cce5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Descriptor for a softmax forward propagation primitive. </p>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="softmax_8cpp-example.html#_a6">softmax.cpp</a>.</dd>
 </dl></div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a74ad273e533932c4f16aaf5c94c77941"></a>
+<a class="anchor" id="ab573772b6fbaab68a2310f8238c4cce5"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -132,7 +132,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">dnnl::softmax_forward::desc::desc </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__dnnl__api__attributes.html#gac7db48f6583aa9903e54c2a39d65438f">prop_kind</a>&#160;</td>
-          <td class="paramname"><em>prop_kind</em>, </td>
+          <td class="paramname"><em>aprop_kind</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -160,17 +160,9 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructs a descriptor for a softmax forward propagation primitive. </p>
-<p>Inputs:</p>
-<ul>
-<li><code>src</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a31ee74fc65986558ac11db590945811a" title="Returns a source memory descriptor. ">dnnl::primitive_desc_base::src_desc</a>(<code>0</code>))</li>
-</ul>
-<p>Outputs:</p>
-<ul>
-<li><code>dst</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a0b724a92606a86a7ac9b6b9b07935529" title="Returns a destination memory descriptor. ">dnnl::primitive_desc_base::dst_desc</a>(<code>0</code>))</li>
-</ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">prop_kind</td><td>Propagation kind. Possible values are <a class="el" href="group__dnnl__api__attributes.html#ggac7db48f6583aa9903e54c2a39d65438fa24775787fab8f13aa4809e1ce8f82aeb" title="Forward data propagation (training mode). ">dnnl::prop_kind::forward_training</a>, and <a class="el" href="group__dnnl__api__attributes.html#ggac7db48f6583aa9903e54c2a39d65438fa3b9fad4f80d45368f856b5403198ac4c" title="Forward data propagation (inference mode). ">dnnl::prop_kind::forward_inference</a>. </td></tr>
+    <tr><td class="paramname">aprop_kind</td><td>Propagation kind. Possible values are <a class="el" href="group__dnnl__api__attributes.html#ggac7db48f6583aa9903e54c2a39d65438fa24775787fab8f13aa4809e1ce8f82aeb" title="Forward data propagation (training mode). ">dnnl::prop_kind::forward_training</a>, and <a class="el" href="group__dnnl__api__attributes.html#ggac7db48f6583aa9903e54c2a39d65438fa3b9fad4f80d45368f856b5403198ac4c" title="Forward data propagation (inference mode). ">dnnl::prop_kind::forward_inference</a>. </td></tr>
     <tr><td class="paramname">data_desc</td><td>Source and destination memory descriptor. </td></tr>
     <tr><td class="paramname">softmax_axis</td><td>Axis over which softmax is computed. </td></tr>
   </table>

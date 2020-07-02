@@ -120,9 +120,9 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1stream__attr.html#ae94c4b493b61a2ab606dd61bfb6b35b5">stream_attr</a> ()=default</td></tr>
 <tr class="memdesc:ae94c4b493b61a2ab606dd61bfb6b35b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs default (empty) stream attributes. <br/></td></tr>
 <tr class="separator:ae94c4b493b61a2ab606dd61bfb6b35b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b3c508f85e49e6fe021eae3e4c5a086"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1stream__attr.html#a2b3c508f85e49e6fe021eae3e4c5a086">stream_attr</a> (<a class="el" href="structdnnl_1_1engine.html#a2635da16314dcbdb9bd9ea431316bb1a">engine::kind</a> kind)</td></tr>
-<tr class="memdesc:a2b3c508f85e49e6fe021eae3e4c5a086"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs stream attributes for a stream that runs on an engine of a particular kind.  <a href="#a2b3c508f85e49e6fe021eae3e4c5a086">More...</a><br/></td></tr>
-<tr class="separator:a2b3c508f85e49e6fe021eae3e4c5a086"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2556a026f03e86c0bac4328269195d9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1stream__attr.html#ae2556a026f03e86c0bac4328269195d9">stream_attr</a> (<a class="el" href="structdnnl_1_1engine.html#a2635da16314dcbdb9bd9ea431316bb1a">engine::kind</a> akind)</td></tr>
+<tr class="memdesc:ae2556a026f03e86c0bac4328269195d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs stream attributes for a stream that runs on an engine of a particular kind.  <a href="#ae2556a026f03e86c0bac4328269195d9">More...</a><br/></td></tr>
+<tr class="separator:ae2556a026f03e86c0bac4328269195d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9dfff94e37be42390f3b34fa4ab3dec0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1stream__attr.html#a9dfff94e37be42390f3b34fa4ab3dec0">set_threadpool</a> (<a class="el" href="structdnnl_1_1threadpool__iface.html">threadpool_iface</a> *threadpool)</td></tr>
 <tr class="memdesc:a9dfff94e37be42390f3b34fa4ab3dec0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the threadpool attribute.  <a href="#a9dfff94e37be42390f3b34fa4ab3dec0">More...</a><br/></td></tr>
 <tr class="separator:a9dfff94e37be42390f3b34fa4ab3dec0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -172,13 +172,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ab3560c3d12724f48e9fdbe47077ff342 inherit pub_methods_structdnnl_1_1handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a handle to the underlying C API handle type.  <a href="#ab3560c3d12724f48e9fdbe47077ff342">More...</a><br/></td></tr>
 <tr class="separator:ab3560c3d12724f48e9fdbe47077ff342 inherit pub_methods_structdnnl_1_1handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af014b68c14db64b9bb6a2034fe04440e inherit pub_methods_structdnnl_1_1handle"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1handle.html#af014b68c14db64b9bb6a2034fe04440e">operator bool</a> () const</td></tr>
-<tr class="memdesc:af014b68c14db64b9bb6a2034fe04440e inherit pub_methods_structdnnl_1_1handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the object is empty.  <a href="#af014b68c14db64b9bb6a2034fe04440e">More...</a><br/></td></tr>
+<tr class="memdesc:af014b68c14db64b9bb6a2034fe04440e inherit pub_methods_structdnnl_1_1handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the object is not empty.  <a href="#af014b68c14db64b9bb6a2034fe04440e">More...</a><br/></td></tr>
 <tr class="separator:af014b68c14db64b9bb6a2034fe04440e inherit pub_methods_structdnnl_1_1handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A container for stream attributes. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a2b3c508f85e49e6fe021eae3e4c5a086"></a>
+<a class="anchor" id="ae2556a026f03e86c0bac4328269195d9"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -189,7 +189,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">dnnl::stream_attr::stream_attr </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structdnnl_1_1engine.html#a2635da16314dcbdb9bd9ea431316bb1a">engine::kind</a>&#160;</td>
-          <td class="paramname"><em>kind</em></td><td>)</td>
+          <td class="paramname"><em>akind</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -203,7 +203,7 @@ Public Member Functions</h2></td></tr>
 <p>Constructs stream attributes for a stream that runs on an engine of a particular kind. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">kind</td><td>Target engine kind. </td></tr>
+    <tr><td class="paramname">akind</td><td>Target engine kind. </td></tr>
   </table>
   </dd>
 </dl>

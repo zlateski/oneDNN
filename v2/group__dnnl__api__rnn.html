@@ -406,20 +406,6 @@ Functions</h2></td></tr>
 </ul>
 <p>This would then indicate that the RNN forward propagation primitive should not use them and should default to zero values instead.</p>
 <dl class="section note"><dt>Note</dt><dd>All memory descriptors can be initialized with <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dafee39ac6fff0325cae43cd66495c18ac" title="Undefined memory format tag. ">dnnl_format_tag_any</a> or with format_kind set to <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83" title="Unspecified format kind. ">dnnl_format_kind_any</a>.</dd></dl>
-<p>Inputs:</p>
-<ul>
-<li><code>src_layer</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, <code>0</code>)</li>
-<li><code>src_iter</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, <code>1</code>), if used</li>
-<li><code>weights_layer</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, <code>0</code>)</li>
-<li><code>weights_iter</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, <code>1</code>)</li>
-<li><code>bias</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, <code>2</code>), if used</li>
-</ul>
-<p>Outputs:</p>
-<ul>
-<li><code>dst_layer</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598" title="destination memory desc ">dnnl_query_dst_md</a>, <code>0</code>)</li>
-<li><code>dst_iter</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598" title="destination memory desc ">dnnl_query_dst_md</a>, <code>1</code>), if used</li>
-<li><code>workspace</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a1c465006660aabe46e644e6df7d36e8a" title="workspace memory desc ">dnnl_query_workspace_md</a>, <code>0</code>), if <code>prop_kind</code> equals <a class="el" href="group__dnnl__api__primitives__common.html#ggae3c1f22ae55645782923fbfd8b07d0c4a992e03bebfe623ac876b3636333bbce0" title="Forward data propagation (training mode). ">dnnl_forward_training</a>; must be queried for using <a class="el" href="group__dnnl__api__primitives__common.html#ga416464a8b3e898d8965a5f3c49d4cd54">dnnl_primitive_desc_query_md()</a> after a corresponding primitive descriptor is created</li>
-</ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">rnn_desc</td><td>Output descriptor for vanilla RNN primitive. </td></tr>
@@ -590,27 +576,6 @@ Functions</h2></td></tr>
 </ul>
 <p>This would then indicate that the RNN backward propagation primitive should not use the respective data and should use zero values instead.</p>
 <dl class="section note"><dt>Note</dt><dd>All memory descriptors can be initialized with <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dafee39ac6fff0325cae43cd66495c18ac" title="Undefined memory format tag. ">dnnl_format_tag_any</a> or with format_kind set to <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83" title="Unspecified format kind. ">dnnl_format_kind_any</a>.</dd></dl>
-<p>Inputs:</p>
-<ul>
-<li><code>src_layer</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, <code>0</code>)</li>
-<li><code>src_iter</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, <code>1</code>), if used</li>
-<li><code>weights_layer</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, <code>0</code>)</li>
-<li><code>weights_iter</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, <code>1</code>)</li>
-<li><code>bias</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, <code>2</code>), if used</li>
-<li><code>dst_layer</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598" title="destination memory desc ">dnnl_query_dst_md</a>, <code>0</code>)</li>
-<li><code>dst_iter</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598" title="destination memory desc ">dnnl_query_dst_md</a>, <code>1</code>), if used</li>
-<li><code>diff_dst_layer</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059ae28e33688bf6c55edcf108bd24eb90de" title="destination grad. memory desc ">dnnl_query_diff_dst_md</a>, <code>0</code>)</li>
-<li><code>diff_dst_iter</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059ae28e33688bf6c55edcf108bd24eb90de" title="destination grad. memory desc ">dnnl_query_diff_dst_md</a>, <code>1</code>), if used</li>
-<li><code>workspace</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a1c465006660aabe46e644e6df7d36e8a" title="workspace memory desc ">dnnl_query_workspace_md</a>, <code>0</code>)</li>
-</ul>
-<p>Outputs:</p>
-<ul>
-<li><code>diff_src_layer</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a2367b043da6df5d691d6038693f363d6" title="source gradient memory desc ">dnnl_query_diff_src_md</a>, <code>0</code>)</li>
-<li><code>diff_src_iter</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a2367b043da6df5d691d6038693f363d6" title="source gradient memory desc ">dnnl_query_diff_src_md</a>, <code>1</code>), if used</li>
-<li><code>diff_weights_layer</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a8551246c3e70fa1e420411507dbdfe32" title="weights grad. memory desc ">dnnl_query_diff_weights_md</a>, <code>0</code>)</li>
-<li><code>diff_weights_iter</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a8551246c3e70fa1e420411507dbdfe32" title="weights grad. memory desc ">dnnl_query_diff_weights_md</a>, <code>1</code>)</li>
-<li><code>diff_bias</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a8551246c3e70fa1e420411507dbdfe32" title="weights grad. memory desc ">dnnl_query_diff_weights_md</a>, <code>2</code>), if used</li>
-</ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">rnn_desc</td><td>Output descriptor for vanilla RNN primitive. </td></tr>
@@ -743,22 +708,6 @@ Functions</h2></td></tr>
 <dl class="section see"><dt>See Also</dt><dd><a class="el" href="group__dnnl__api__rnn.html#gad9b01827d9c54ce4e6a09a25abe5fb55" title="Initializes a descriptor for an LSTM (with or without peephole) forward propagation primitive...">dnnl_lstm_forward_desc_init_v2</a> to initialize forward LSTM with and without peephole </dd>
 <dd>
 <a class="el" href="group__dnnl__api__rnn.html#gac8b27af5eba355e35962ef996060b824" title="Initializes a descriptor for an LSTM (with or without peephole and with or without recurrent projecti...">dnnl_lstm_forward_desc_init_v3</a> to initialize forward LSTM with and without peephole / recurrent projection layer</dd></dl>
-<p>Inputs:</p>
-<ul>
-<li><code>src_layer</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, <code>0</code>)</li>
-<li><code>src_iter</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, <code>1</code>), if used</li>
-<li><code>src_iter_c</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, <code>2</code>), if used</li>
-<li><code>weights_layer</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, <code>0</code>)</li>
-<li><code>weights_iter</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, <code>1</code>)</li>
-<li><code>bias</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, <code>2</code>), if used</li>
-</ul>
-<p>Outputs:</p>
-<ul>
-<li><code>dst_layer</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598" title="destination memory desc ">dnnl_query_dst_md</a>, <code>0</code>)</li>
-<li><code>dst_iter</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598" title="destination memory desc ">dnnl_query_dst_md</a>, <code>1</code>), if used</li>
-<li><code>dst_iter_c</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598" title="destination memory desc ">dnnl_query_dst_md</a>, <code>2</code>), if used</li>
-<li><code>workspace</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a1c465006660aabe46e644e6df7d36e8a" title="workspace memory desc ">dnnl_query_workspace_md</a>, <code>0</code>), if <code>prop_kind</code> equals <a class="el" href="group__dnnl__api__primitives__common.html#ggae3c1f22ae55645782923fbfd8b07d0c4a992e03bebfe623ac876b3636333bbce0" title="Forward data propagation (training mode). ">dnnl_forward_training</a>; must be queried for using <a class="el" href="group__dnnl__api__primitives__common.html#ga416464a8b3e898d8965a5f3c49d4cd54">dnnl_primitive_desc_query_md()</a> after a corresponding primitive descriptor is created</li>
-</ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">rnn_desc</td><td>Output descriptor for LSTM primitive. </td></tr>
@@ -888,24 +837,6 @@ Functions</h2></td></tr>
 <p>This would then indicate that the LSTM forward propagation primitive should not use them and should default to zero values instead.</p>
 <dl class="section note"><dt>Note</dt><dd>All memory descriptors can be initialized with <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dafee39ac6fff0325cae43cd66495c18ac" title="Undefined memory format tag. ">dnnl_format_tag_any</a> or with format_kind set to <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83" title="Unspecified format kind. ">dnnl_format_kind_any</a>.</dd></dl>
 <dl class="section see"><dt>See Also</dt><dd><a class="el" href="group__dnnl__api__rnn.html#gac8b27af5eba355e35962ef996060b824" title="Initializes a descriptor for an LSTM (with or without peephole and with or without recurrent projecti...">dnnl_lstm_forward_desc_init_v3</a> to initialize forward LSTM with and without peephole / recurrent projection layer</dd></dl>
-<p>Inputs:</p>
-<ul>
-<li><code>src_layer</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, <code>0</code>)</li>
-<li><code>src_iter</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, <code>1</code>), if used</li>
-<li><code>src_iter_c</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, <code>2</code>), if used</li>
-<li><code>weights_layer</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, <code>0</code>)</li>
-<li><code>weights_iter</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, <code>1</code>)</li>
-<li><code>weights_peephole</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, <code>2</code>), if used</li>
-<li><code>bias</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, <code>2</code>), if used and LSTM is without peephole</li>
-<li><code>bias</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, <code>3</code>), if used and LSTM is with peephole</li>
-</ul>
-<p>Outputs:</p>
-<ul>
-<li><code>dst_layer</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598" title="destination memory desc ">dnnl_query_dst_md</a>, <code>0</code>)</li>
-<li><code>dst_iter</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598" title="destination memory desc ">dnnl_query_dst_md</a>, <code>1</code>), if used</li>
-<li><code>dst_iter_c</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598" title="destination memory desc ">dnnl_query_dst_md</a>, <code>2</code>), if used</li>
-<li><code>workspace</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a1c465006660aabe46e644e6df7d36e8a" title="workspace memory desc ">dnnl_query_workspace_md</a>, <code>0</code>), if <code>prop_kind</code> equals <a class="el" href="group__dnnl__api__primitives__common.html#ggae3c1f22ae55645782923fbfd8b07d0c4a992e03bebfe623ac876b3636333bbce0" title="Forward data propagation (training mode). ">dnnl_forward_training</a>; must be queried for using <a class="el" href="group__dnnl__api__primitives__common.html#ga416464a8b3e898d8965a5f3c49d4cd54">dnnl_primitive_desc_query_md()</a> after a corresponding primitive descriptor is created</li>
-</ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">rnn_desc</td><td>Output descriptor for LSTM primitive. </td></tr>
@@ -1042,33 +973,6 @@ Functions</h2></td></tr>
 <p>This would then indicate that the LSTM forward propagation primitive should not use them and should default to zero values instead.</p>
 <p>The <code>weights_projection_desc</code> could either be <code>NULL</code> or point to a zero memory descriptor. This would then indicate that the LSTM doesn't have recurrent projection layer.</p>
 <dl class="section note"><dt>Note</dt><dd>All memory descriptors can be initialized with <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dafee39ac6fff0325cae43cd66495c18ac" title="Undefined memory format tag. ">dnnl_format_tag_any</a> or with format_kind set to <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83" title="Unspecified format kind. ">dnnl_format_kind_any</a>.</dd></dl>
-<p>Inputs:</p>
-<ul>
-<li>src_layer (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, 0)</li>
-<li>src_iter (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, 1), if used</li>
-<li>src_iter_c (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, 2), if used</li>
-<li>weights_layer (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, 0)</li>
-<li>weights_iter (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, 1)</li>
-<li>weights_peephole (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, 2), if used</li>
-<li>weights_projection (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, index), if used and index is:<ul>
-<li>2, if there is no weights_peephole</li>
-<li>3, otherwise</li>
-</ul>
-</li>
-<li>bias (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, index), if used and index is:<ul>
-<li>2, if neither weights_peephole nor weights_projection is used</li>
-<li>3, if one of weights_peephole or weights_projection is used</li>
-<li>4, if both weights_peephole and weights_projection are used</li>
-</ul>
-</li>
-</ul>
-<p>Outputs:</p>
-<ul>
-<li>dst_layer (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598" title="destination memory desc ">dnnl_query_dst_md</a>, 0)</li>
-<li>dst_iter (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598" title="destination memory desc ">dnnl_query_dst_md</a>, 1), if used</li>
-<li>dst_iter_c (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598" title="destination memory desc ">dnnl_query_dst_md</a>, 2), if used</li>
-<li>workspace (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a1c465006660aabe46e644e6df7d36e8a" title="workspace memory desc ">dnnl_query_workspace_md</a>, 0), if <code>prop_kind</code> equals <a class="el" href="group__dnnl__api__primitives__common.html#ggae3c1f22ae55645782923fbfd8b07d0c4a992e03bebfe623ac876b3636333bbce0" title="Forward data propagation (training mode). ">dnnl_forward_training</a>; must be queried for using <a class="el" href="group__dnnl__api__primitives__common.html#ga416464a8b3e898d8965a5f3c49d4cd54">dnnl_primitive_desc_query_md()</a> after a corresponding primitive descriptor is created</li>
-</ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">rnn_desc</td><td>Output descriptor for LSTM primitive. </td></tr>
@@ -1249,31 +1153,6 @@ Functions</h2></td></tr>
 <dl class="section see"><dt>See Also</dt><dd><a class="el" href="group__dnnl__api__rnn.html#ga893994f53b35e6d66bd346a0ee1936a7" title="Initializes a descriptor for an LSTM (with or without peephole) backward propagation primitive...">dnnl_lstm_backward_desc_init_v2</a> to initialize backward LSTM with and without peephole </dd>
 <dd>
 <a class="el" href="group__dnnl__api__rnn.html#ga7a04fe20c7cc0efe2728433aebfdef52" title="Initializes a descriptor for an LSTM (with or without peephole and with or with out recurrent project...">dnnl_lstm_backward_desc_init_v3</a> to initialize backward LSTM with and without peephole / recurrent projection layer</dd></dl>
-<p>Inputs:</p>
-<ul>
-<li><code>src_layer</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, <code>0</code>)</li>
-<li><code>src_iter</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, <code>1</code>), if used</li>
-<li><code>src_iter_c</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, <code>2</code>), if used</li>
-<li><code>weights_layer</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, <code>0</code>)</li>
-<li><code>weights_iter</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, <code>1</code>)</li>
-<li><code>bias</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, <code>2</code>), if used</li>
-<li><code>dst_layer</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598" title="destination memory desc ">dnnl_query_dst_md</a>, <code>0</code>)</li>
-<li><code>dst_iter</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598" title="destination memory desc ">dnnl_query_dst_md</a>, <code>1</code>), if used</li>
-<li><code>dst_iter_c</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598" title="destination memory desc ">dnnl_query_dst_md</a>, <code>2</code>), if used</li>
-<li><code>diff_dst_layer</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059ae28e33688bf6c55edcf108bd24eb90de" title="destination grad. memory desc ">dnnl_query_diff_dst_md</a>, <code>0</code>)</li>
-<li><code>diff_dst_iter</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059ae28e33688bf6c55edcf108bd24eb90de" title="destination grad. memory desc ">dnnl_query_diff_dst_md</a>, <code>1</code>), if used</li>
-<li><code>diff_dst_iter_c</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059ae28e33688bf6c55edcf108bd24eb90de" title="destination grad. memory desc ">dnnl_query_diff_dst_md</a>, <code>2</code>), if used</li>
-<li><code>workspace</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a1c465006660aabe46e644e6df7d36e8a" title="workspace memory desc ">dnnl_query_workspace_md</a>, <code>0</code>)</li>
-</ul>
-<p>Outputs:</p>
-<ul>
-<li><code>diff_src_layer</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a2367b043da6df5d691d6038693f363d6" title="source gradient memory desc ">dnnl_query_diff_src_md</a>, <code>0</code>)</li>
-<li><code>diff_src_iter</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a2367b043da6df5d691d6038693f363d6" title="source gradient memory desc ">dnnl_query_diff_src_md</a>, <code>1</code>), if used</li>
-<li><code>diff_src_iter_c</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a2367b043da6df5d691d6038693f363d6" title="source gradient memory desc ">dnnl_query_diff_src_md</a>, <code>2</code>), if used</li>
-<li><code>diff_weights_layer</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a8551246c3e70fa1e420411507dbdfe32" title="weights grad. memory desc ">dnnl_query_diff_weights_md</a>, <code>0</code>)</li>
-<li><code>diff_weights_iter</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a8551246c3e70fa1e420411507dbdfe32" title="weights grad. memory desc ">dnnl_query_diff_weights_md</a>, <code>1</code>)</li>
-<li><code>diff_bias</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a8551246c3e70fa1e420411507dbdfe32" title="weights grad. memory desc ">dnnl_query_diff_weights_md</a>, <code>2</code>), if used</li>
-</ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">rnn_desc</td><td>Output descriptor for LSTM primitive. </td></tr>
@@ -1472,35 +1351,6 @@ Functions</h2></td></tr>
 <p>This would then indicate that the LSTM backward propagation primitive should not use them and should default to zero values instead.</p>
 <dl class="section note"><dt>Note</dt><dd>All memory descriptors can be initialized with <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dafee39ac6fff0325cae43cd66495c18ac" title="Undefined memory format tag. ">dnnl_format_tag_any</a> or with format_kind set to <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83" title="Unspecified format kind. ">dnnl_format_kind_any</a>.</dd></dl>
 <dl class="section see"><dt>See Also</dt><dd><a class="el" href="group__dnnl__api__rnn.html#ga7a04fe20c7cc0efe2728433aebfdef52" title="Initializes a descriptor for an LSTM (with or without peephole and with or with out recurrent project...">dnnl_lstm_backward_desc_init_v3</a> to initialize backward LSTM with and without peephole / recurrent projection layer</dd></dl>
-<p>Inputs:</p>
-<ul>
-<li><code>src_layer</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, <code>0</code>)</li>
-<li><code>src_iter</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, <code>1</code>), if used</li>
-<li><code>src_iter_c</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, <code>2</code>), if used</li>
-<li><code>weights_layer</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, <code>0</code>)</li>
-<li><code>weights_iter</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, <code>1</code>)</li>
-<li><code>weights_peephole</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, <code>2</code>), if used</li>
-<li><code>bias</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, <code>2</code>), if used and LSTM is without peephole</li>
-<li><code>bias</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, <code>3</code>), if used and LSTM is with peephole</li>
-<li><code>dst_layer</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598" title="destination memory desc ">dnnl_query_dst_md</a>, <code>0</code>)</li>
-<li><code>dst_iter</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598" title="destination memory desc ">dnnl_query_dst_md</a>, <code>1</code>), if used</li>
-<li><code>dst_iter_c</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598" title="destination memory desc ">dnnl_query_dst_md</a>, <code>2</code>), if used</li>
-<li><code>diff_dst_layer</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059ae28e33688bf6c55edcf108bd24eb90de" title="destination grad. memory desc ">dnnl_query_diff_dst_md</a>, <code>0</code>)</li>
-<li><code>diff_dst_iter</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059ae28e33688bf6c55edcf108bd24eb90de" title="destination grad. memory desc ">dnnl_query_diff_dst_md</a>, <code>1</code>), if used</li>
-<li><code>diff_dst_iter_c</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059ae28e33688bf6c55edcf108bd24eb90de" title="destination grad. memory desc ">dnnl_query_diff_dst_md</a>, <code>2</code>), if used</li>
-<li><code>workspace</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a1c465006660aabe46e644e6df7d36e8a" title="workspace memory desc ">dnnl_query_workspace_md</a>, <code>0</code>)</li>
-</ul>
-<p>Outputs:</p>
-<ul>
-<li><code>diff_src_layer</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a2367b043da6df5d691d6038693f363d6" title="source gradient memory desc ">dnnl_query_diff_src_md</a>, <code>0</code>)</li>
-<li><code>diff_src_iter</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a2367b043da6df5d691d6038693f363d6" title="source gradient memory desc ">dnnl_query_diff_src_md</a>, <code>1</code>), if used</li>
-<li><code>diff_src_iter_c</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a2367b043da6df5d691d6038693f363d6" title="source gradient memory desc ">dnnl_query_diff_src_md</a>, <code>2</code>), if used</li>
-<li><code>diff_weights_layer</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a8551246c3e70fa1e420411507dbdfe32" title="weights grad. memory desc ">dnnl_query_diff_weights_md</a>, <code>0</code>)</li>
-<li><code>diff_weights_iter</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a8551246c3e70fa1e420411507dbdfe32" title="weights grad. memory desc ">dnnl_query_diff_weights_md</a>, <code>1</code>)</li>
-<li><code>diff_weights_peephole</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, <code>2</code>), if used</li>
-<li><code>diff_bias</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a8551246c3e70fa1e420411507dbdfe32" title="weights grad. memory desc ">dnnl_query_diff_weights_md</a>, <code>2</code>), if used and LSTM is without peephole</li>
-<li><code>diff_bias</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a8551246c3e70fa1e420411507dbdfe32" title="weights grad. memory desc ">dnnl_query_diff_weights_md</a>, <code>3</code>), if used and LSTM is with peephole</li>
-</ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">rnn_desc</td><td>Output descriptor for LSTM primitive. </td></tr>
@@ -1713,53 +1563,6 @@ Functions</h2></td></tr>
 <p>This would then indicate that the LSTM backward propagation primitive should not use them and should default to zero values instead.</p>
 <p>The <code>weights_projection_desc</code> together with <code>diff_weights_projection_desc</code> could either be <code>NULL</code> or point to a zero memory descriptor. This would then indicate that the LSTM doesn't have recurrent projection layer.</p>
 <dl class="section note"><dt>Note</dt><dd>All memory descriptors can be initialized with <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dafee39ac6fff0325cae43cd66495c18ac" title="Undefined memory format tag. ">dnnl_format_tag_any</a> or with format_kind set to <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83" title="Unspecified format kind. ">dnnl_format_kind_any</a>.</dd></dl>
-<p>Inputs:</p>
-<ul>
-<li>src_layer (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, 0)</li>
-<li>src_iter (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, 1), if used</li>
-<li>src_iter_c (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, 2), if used</li>
-<li>weights_layer (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, 0)</li>
-<li>weights_iter (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, 1)</li>
-<li>weights_peephole (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, 2), if used</li>
-<li>weights_projection (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, index), if used and index is:<ul>
-<li>2, if there is no weights_peephole</li>
-<li>3, otherwise</li>
-</ul>
-</li>
-<li>bias (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, index), if used and index is:<ul>
-<li>2, if neither weights_peephole nor weights_projection is used</li>
-<li>3, if one of weights_peephole or weights_projection is used</li>
-<li>4, if both weights_peephole and weights_projection are used</li>
-</ul>
-</li>
-<li>dst_layer (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598" title="destination memory desc ">dnnl_query_dst_md</a>, 0)</li>
-<li>dst_iter (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598" title="destination memory desc ">dnnl_query_dst_md</a>, 1), if used</li>
-<li>dst_iter_c (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598" title="destination memory desc ">dnnl_query_dst_md</a>, 2), if used</li>
-<li>diff_dst_layer (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059ae28e33688bf6c55edcf108bd24eb90de" title="destination grad. memory desc ">dnnl_query_diff_dst_md</a>, 0)</li>
-<li>diff_dst_iter (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059ae28e33688bf6c55edcf108bd24eb90de" title="destination grad. memory desc ">dnnl_query_diff_dst_md</a>, 1), if used</li>
-<li>diff_dst_iter_c (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059ae28e33688bf6c55edcf108bd24eb90de" title="destination grad. memory desc ">dnnl_query_diff_dst_md</a>, 2), if used</li>
-<li>workspace (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a1c465006660aabe46e644e6df7d36e8a" title="workspace memory desc ">dnnl_query_workspace_md</a>, 0)</li>
-</ul>
-<p>Outputs:</p>
-<ul>
-<li>diff_src_layer (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a2367b043da6df5d691d6038693f363d6" title="source gradient memory desc ">dnnl_query_diff_src_md</a>, 0)</li>
-<li>diff_src_iter (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a2367b043da6df5d691d6038693f363d6" title="source gradient memory desc ">dnnl_query_diff_src_md</a>, 1), if used</li>
-<li>diff_src_iter_c (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a2367b043da6df5d691d6038693f363d6" title="source gradient memory desc ">dnnl_query_diff_src_md</a>, 2), if used</li>
-<li>diff_weights_layer (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a8551246c3e70fa1e420411507dbdfe32" title="weights grad. memory desc ">dnnl_query_diff_weights_md</a>, 0)</li>
-<li>diff_weights_iter (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a8551246c3e70fa1e420411507dbdfe32" title="weights grad. memory desc ">dnnl_query_diff_weights_md</a>, 1)</li>
-<li>diff_weights_peephole (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, 2), if used</li>
-<li>diff_weights_projection (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, index), if used and index is:<ul>
-<li>2, if there is no diff_weights_peephole</li>
-<li>3, otherwise</li>
-</ul>
-</li>
-<li>diff_bias (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a8551246c3e70fa1e420411507dbdfe32" title="weights grad. memory desc ">dnnl_query_diff_weights_md</a>, index), if used and index is:<ul>
-<li>2, if neither diff_weights_peephole nor diff_weights_projection is used</li>
-<li>3, if one of diff_weights_peephole or diff_weights_projection is used</li>
-<li>4, if both diff_weights_peephole and diff_weights_projection are used</li>
-</ul>
-</li>
-</ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">rnn_desc</td><td>Output descriptor for LSTM primitive. </td></tr>
@@ -1882,20 +1685,6 @@ Functions</h2></td></tr>
 </ul>
 <p>This would then indicate that the GRU forward propagation primitive should not use them and should default to zero values instead.</p>
 <dl class="section note"><dt>Note</dt><dd>All memory descriptors can be initialized with <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dafee39ac6fff0325cae43cd66495c18ac" title="Undefined memory format tag. ">dnnl_format_tag_any</a> or with format_kind set to <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83" title="Unspecified format kind. ">dnnl_format_kind_any</a>.</dd></dl>
-<p>Inputs:</p>
-<ul>
-<li><code>src_layer</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, <code>0</code>)</li>
-<li><code>src_iter</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, <code>1</code>), if used</li>
-<li><code>weights_layer</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, <code>0</code>)</li>
-<li><code>weights_iter</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, <code>1</code>)</li>
-<li><code>bias</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, <code>2</code>), if used</li>
-</ul>
-<p>Outputs:</p>
-<ul>
-<li><code>dst_layer</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598" title="destination memory desc ">dnnl_query_dst_md</a>, <code>0</code>)</li>
-<li><code>dst_iter</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598" title="destination memory desc ">dnnl_query_dst_md</a>, <code>1</code>), if used</li>
-<li><code>workspace</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a1c465006660aabe46e644e6df7d36e8a" title="workspace memory desc ">dnnl_query_workspace_md</a>, <code>0</code>), if <code>prop_kind</code> equals <a class="el" href="group__dnnl__api__primitives__common.html#ggae3c1f22ae55645782923fbfd8b07d0c4a992e03bebfe623ac876b3636333bbce0" title="Forward data propagation (training mode). ">dnnl_forward_training</a>; must be queried for using <a class="el" href="group__dnnl__api__primitives__common.html#ga416464a8b3e898d8965a5f3c49d4cd54">dnnl_primitive_desc_query_md()</a> after a corresponding primitive descriptor is created</li>
-</ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">rnn_desc</td><td>Output descriptor for GRU primitive. </td></tr>
@@ -2045,27 +1834,6 @@ Functions</h2></td></tr>
 </ul>
 <p>This would then indicate that the GRU backward propagation primitive should not use them and should default to zero values instead.</p>
 <dl class="section note"><dt>Note</dt><dd>All memory descriptors can be initialized with <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dafee39ac6fff0325cae43cd66495c18ac" title="Undefined memory format tag. ">dnnl_format_tag_any</a> or with format_kind set to <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83" title="Unspecified format kind. ">dnnl_format_kind_any</a>.</dd></dl>
-<p>Inputs:</p>
-<ul>
-<li><code>src_layer</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, <code>0</code>)</li>
-<li><code>src_iter</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, <code>1</code>), if used</li>
-<li><code>weights_layer</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, <code>0</code>)</li>
-<li><code>weights_iter</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, <code>1</code>)</li>
-<li><code>bias</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, <code>2</code>), if used</li>
-<li><code>dst_layer</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598" title="destination memory desc ">dnnl_query_dst_md</a>, <code>0</code>)</li>
-<li><code>dst_iter</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598" title="destination memory desc ">dnnl_query_dst_md</a>, <code>1</code>), if used</li>
-<li><code>diff_dst_layer</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059ae28e33688bf6c55edcf108bd24eb90de" title="destination grad. memory desc ">dnnl_query_diff_dst_md</a>, <code>0</code>)</li>
-<li><code>diff_dst_iter</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059ae28e33688bf6c55edcf108bd24eb90de" title="destination grad. memory desc ">dnnl_query_diff_dst_md</a>, <code>1</code>), if used</li>
-<li><code>workspace</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a1c465006660aabe46e644e6df7d36e8a" title="workspace memory desc ">dnnl_query_workspace_md</a>, <code>0</code>)</li>
-</ul>
-<p>Outputs:</p>
-<ul>
-<li><code>diff_src_layer</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a2367b043da6df5d691d6038693f363d6" title="source gradient memory desc ">dnnl_query_diff_src_md</a>, <code>0</code>)</li>
-<li><code>diff_src_iter</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a2367b043da6df5d691d6038693f363d6" title="source gradient memory desc ">dnnl_query_diff_src_md</a>, <code>1</code>), if used</li>
-<li><code>diff_weights_layer</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a8551246c3e70fa1e420411507dbdfe32" title="weights grad. memory desc ">dnnl_query_diff_weights_md</a>, <code>0</code>)</li>
-<li><code>diff_weights_iter</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a8551246c3e70fa1e420411507dbdfe32" title="weights grad. memory desc ">dnnl_query_diff_weights_md</a>, <code>1</code>)</li>
-<li><code>diff_bias</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a8551246c3e70fa1e420411507dbdfe32" title="weights grad. memory desc ">dnnl_query_diff_weights_md</a>, <code>2</code>), if used</li>
-</ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">rnn_desc</td><td>Output descriptor for GRU primitive. </td></tr>
@@ -2179,20 +1947,6 @@ Functions</h2></td></tr>
 <li><code>dst_iter_desc</code>.</li>
 </ul>
 <p>This would then indicate that the LBR GRU forward propagation primitive should not use them and should default to zero values instead.</p>
-<p>Inputs:</p>
-<ul>
-<li><code>src_layer</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, <code>0</code>)</li>
-<li><code>src_iter</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, <code>1</code>), if used</li>
-<li><code>weights_layer</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, <code>0</code>)</li>
-<li><code>weights_iter</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, <code>1</code>)</li>
-<li><code>bias</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, <code>2</code>), if used</li>
-</ul>
-<p>Outputs:</p>
-<ul>
-<li><code>dst_layer</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598" title="destination memory desc ">dnnl_query_dst_md</a>, <code>0</code>)</li>
-<li><code>dst_iter</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598" title="destination memory desc ">dnnl_query_dst_md</a>, <code>1</code>), if used</li>
-<li><code>workspace</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a1c465006660aabe46e644e6df7d36e8a" title="workspace memory desc ">dnnl_query_workspace_md</a>, <code>0</code>), if <code>prop_kind</code> equals <a class="el" href="group__dnnl__api__primitives__common.html#ggae3c1f22ae55645782923fbfd8b07d0c4a992e03bebfe623ac876b3636333bbce0" title="Forward data propagation (training mode). ">dnnl_forward_training</a>; must be queried for using <a class="el" href="group__dnnl__api__primitives__common.html#ga416464a8b3e898d8965a5f3c49d4cd54">dnnl_primitive_desc_query_md()</a> after a corresponding primitive descriptor is created</li>
-</ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">rnn_desc</td><td>Output descriptor for LBR GRU primitive. </td></tr>
@@ -2342,27 +2096,6 @@ Functions</h2></td></tr>
 </ul>
 <p>This would then indicate that the LBR GRU backward propagation primitive should not use them and should default to zero values instead.</p>
 <dl class="section note"><dt>Note</dt><dd>All memory descriptors can be initialized with <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dafee39ac6fff0325cae43cd66495c18ac" title="Undefined memory format tag. ">dnnl_format_tag_any</a> or with format_kind set to <a class="el" href="group__dnnl__api__memory.html#ggaa75cad747fa467d9dc527d943ba3367da77ae35388e04dc3e98d90675a7110c83" title="Unspecified format kind. ">dnnl_format_kind_any</a>.</dd></dl>
-<p>Inputs:</p>
-<ul>
-<li><code>src_layer</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, <code>0</code>)</li>
-<li><code>src_iter</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a14a86faee7b85eeb60d0d7886756ffa5" title="source memory desc ">dnnl_query_src_md</a>, <code>1</code>), if used</li>
-<li><code>weights_layer</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, <code>0</code>)</li>
-<li><code>weights_iter</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, <code>1</code>)</li>
-<li><code>bias</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a12ea0b4858b84889acab34e498323355" title="weights memory descriptor desc ">dnnl_query_weights_md</a>, <code>2</code>), if used</li>
-<li><code>dst_layer</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598" title="destination memory desc ">dnnl_query_dst_md</a>, <code>0</code>)</li>
-<li><code>dst_iter</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598" title="destination memory desc ">dnnl_query_dst_md</a>, <code>1</code>), if used</li>
-<li><code>diff_dst_layer</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059ae28e33688bf6c55edcf108bd24eb90de" title="destination grad. memory desc ">dnnl_query_diff_dst_md</a>, <code>0</code>)</li>
-<li><code>diff_dst_iter</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059ae28e33688bf6c55edcf108bd24eb90de" title="destination grad. memory desc ">dnnl_query_diff_dst_md</a>, <code>1</code>), if used</li>
-<li><code>workspace</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a1c465006660aabe46e644e6df7d36e8a" title="workspace memory desc ">dnnl_query_workspace_md</a>, <code>0</code>)</li>
-</ul>
-<p>Outputs:</p>
-<ul>
-<li><code>diff_src_layer</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a2367b043da6df5d691d6038693f363d6" title="source gradient memory desc ">dnnl_query_diff_src_md</a>, <code>0</code>)</li>
-<li><code>diff_src_iter</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a2367b043da6df5d691d6038693f363d6" title="source gradient memory desc ">dnnl_query_diff_src_md</a>, <code>1</code>), if used</li>
-<li><code>diff_weights_layer</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a8551246c3e70fa1e420411507dbdfe32" title="weights grad. memory desc ">dnnl_query_diff_weights_md</a>, <code>0</code>)</li>
-<li><code>diff_weights_iter</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a8551246c3e70fa1e420411507dbdfe32" title="weights grad. memory desc ">dnnl_query_diff_weights_md</a>, <code>1</code>)</li>
-<li><code>diff_bias</code> (<a class="el" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a8551246c3e70fa1e420411507dbdfe32" title="weights grad. memory desc ">dnnl_query_diff_weights_md</a>, <code>2</code>), if used</li>
-</ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">rnn_desc</td><td>Output descriptor for LBR GRU primitive. </td></tr>

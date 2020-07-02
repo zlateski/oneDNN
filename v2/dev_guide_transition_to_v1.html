@@ -207,7 +207,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <td align="left">mkldnn::memory::format_tag </td><td align="left">mkldnn::memory::nchw </td><td align="left"><a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3faded7ac40158367123c5467281d44cbeb">mkldnn::memory::format_tag::nchw</a> </td></tr>
 </table>
 <h3>1.7. Remove view primitive</h3>
-<p>Version 0.x had an implementation of view that was simply an alias for memory. In Intel MKL-DNN v1.0, we removed view as a type and replaced it with a memory descriptor directly. In order to initialize sub-memory, use <a class="el" href="structdnnl_1_1memory_1_1desc.html#a3d017ecf635aae91cc3856a9dfe0721c">dnnl::memory::desc::submemory_desc</a>( "mkldnn::memory::desc::submemory_desc()").</p>
+<p>Version 0.x had an implementation of view that was simply an alias for memory. In Intel MKL-DNN v1.0, we removed view as a type and replaced it with a memory descriptor directly. In order to initialize sub-memory, use <a class="el" href="structdnnl_1_1memory_1_1desc.html#a18f16cc91b7b4137aa70f42cf57e32de">dnnl::memory::desc::submemory_desc</a>( "mkldnn::memory::desc::submemory_desc()").</p>
 <dl class="section see"><dt>See Also</dt><dd>For more detail, refer to section <a href="https://github.com/oneapi-src/oneDNN/tree/rfc-api-changes-v1.0/doc/rfc/api-v1.0#4-view-rework">4. View rework</a> of the <a href="https://github.com/oneapi-src/oneDNN/pull/384">RFC for v1.0</a>.</dd></dl>
 <h3>1.8. RNN-specific changes</h3>
 <p>Each type of <a class="el" href="group__dnnl__api__rnn.html">RNN</a> (Vanilla RNN, LSTM, and two types of GRU) is now initialized by a separate function/operation descriptor constructor.</p>
@@ -271,7 +271,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">};</div>
 </div><!-- fragment --><h2>2. Improving the Library Robustness</h2>
 <h3>2.1. Memory allocation in the C API</h3>
-<p>In Intel MKL-DNN v1.0, constructing a memory object using special value <code>MKLDNN_MEMORY_ALLOCATE</code> for a handle results in the buffer being allocated by the library. This makes the behavior of the C API memory object constructor aligned with its C++ API <code>mkldnn::memory</code> counterpart. Note that the C++ API memory object class still has an extra constructor that doesn't take a handle at all, and asks the library to allocate the buffer (that is, the same behavior as calling with the handle equal to <code>MKLDNN_MEMORY_ALLOCATE</code>).</p>
+<p>In Intel MKL-DNN v1.0, constructing a memory object using special value <code>MKLDNN_MEMORY_ALLOCATE</code> for a handle results in the buffer being allocated by the library. This makes the behavior of the C API memory object constructor aligned with its C++ API <code>mkldnn::memory</code> counterpart. Note that the C++ API memory object class still has an extra constructor that does not take a handle at all, and asks the library to allocate the buffer (that is, the same behavior as calling with the handle equal to <code>MKLDNN_MEMORY_ALLOCATE</code>).</p>
 <h3>2.2. Explicit scratchpad management</h3>
 <p>Intel MKL-DNN primitives may require temporary <a class="el" href="dev_guide_attributes_scratchpad.html">scratchpad memory</a> for storing intermediate computational results. For instance, convolution backward by weights typically requires extra space to perform a reduction of the <code>diff_weights</code> computed by different threads (the work is divided across images). Starting with version 1.0, the library supports two modes:</p>
 <ol type="1">
@@ -296,7 +296,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><span class="comment">// create a memory</span></div>
 <div class="line"><span class="comment">// native_handle can:</span></div>
 <div class="line"><span class="comment">//  - point to the user allocated memory, i.e. valid handle. In this case the</span></div>
-<div class="line"><span class="comment">//    library doesn&#39;t own allocated memory.</span></div>
+<div class="line"><span class="comment">//    library does not own allocated memory.</span></div>
 <div class="line"><span class="comment">//  - be MKLDNN_NATIVE_HANDLE_ALLOCATE to ask the library to allocate and</span></div>
 <div class="line"><span class="comment">//    attach memory. In this case the library owns allocated memory.</span></div>
 <div class="line"><span class="comment">//  - be MKLDNN_NATIVE_HANDLE_NONE to create mkldnn_memory w/o attached memory.</span></div>

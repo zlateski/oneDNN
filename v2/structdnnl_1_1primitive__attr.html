@@ -203,7 +203,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ab3560c3d12724f48e9fdbe47077ff342 inherit pub_methods_structdnnl_1_1handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a handle to the underlying C API handle type.  <a href="#ab3560c3d12724f48e9fdbe47077ff342">More...</a><br/></td></tr>
 <tr class="separator:ab3560c3d12724f48e9fdbe47077ff342 inherit pub_methods_structdnnl_1_1handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af014b68c14db64b9bb6a2034fe04440e inherit pub_methods_structdnnl_1_1handle"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1handle.html#af014b68c14db64b9bb6a2034fe04440e">operator bool</a> () const</td></tr>
-<tr class="memdesc:af014b68c14db64b9bb6a2034fe04440e inherit pub_methods_structdnnl_1_1handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the object is empty.  <a href="#af014b68c14db64b9bb6a2034fe04440e">More...</a><br/></td></tr>
+<tr class="memdesc:af014b68c14db64b9bb6a2034fe04440e inherit pub_methods_structdnnl_1_1handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the object is not empty.  <a href="#af014b68c14db64b9bb6a2034fe04440e">More...</a><br/></td></tr>
 <tr class="separator:af014b68c14db64b9bb6a2034fe04440e inherit pub_methods_structdnnl_1_1handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -426,7 +426,7 @@ Public Member Functions</h2></td></tr>
 <p>Returns scaling factors correspondence mask and values for a given memory argument. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">arg</td><td>Parameter argument index as passed to the <a class="el" href="structdnnl_1_1primitive.html#a65b6bd202ba2cb37ed8504da346dda2e" title="Executes computations specified by the primitive in a specified stream. ">primitive::execute()</a> call. </td></tr>
+    <tr><td class="paramname">arg</td><td>Parameter argument index as passed to the <a class="el" href="structdnnl_1_1primitive.html#a18a484f0f1fecbc6a58fca1a58f6d8d4" title="Executes computations specified by the primitive in a specified stream. ">primitive::execute()</a> call. </td></tr>
     <tr><td class="paramname">mask</td><td>Scaling factors correspondence mask that defines the correspondence between the output tensor dimensions and the <code>scales</code> vector. The set i-th bit indicates that a dedicated scaling factor is used for each index along that dimension. Set the mask to 0 to use a common scaling factor for the whole output tensor. </td></tr>
     <tr><td class="paramname">scales</td><td>Output vector of scaling factors. </td></tr>
   </table>
@@ -479,7 +479,7 @@ Public Member Functions</h2></td></tr>
 <a class="el" href="structdnnl_1_1primitive__attr.html#a4b81acc8e48886313154f75c1708ae02" title="Sets output scaling factors correspondence mask and values. ">dnnl::primitive_attr::set_output_scales</a></dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">arg</td><td>Parameter argument index as passed to the <a class="el" href="structdnnl_1_1primitive.html#a65b6bd202ba2cb37ed8504da346dda2e" title="Executes computations specified by the primitive in a specified stream. ">primitive::execute()</a> call. </td></tr>
+    <tr><td class="paramname">arg</td><td>Parameter argument index as passed to the <a class="el" href="structdnnl_1_1primitive.html#a18a484f0f1fecbc6a58fca1a58f6d8d4" title="Executes computations specified by the primitive in a specified stream. ">primitive::execute()</a> call. </td></tr>
     <tr><td class="paramname">mask</td><td>Scaling factors correspondence mask that defines the correspondence between the tensor dimensions and the <code>scales</code> vector. The set i-th bit indicates that a dedicated scaling factor is used for each index along that dimension. Set the mask to 0 to use a common scaling factor for the whole output tensor. </td></tr>
     <tr><td class="paramname">scales</td><td>Constant vector of scaling factors. The following equality must hold: \(scales.size() = \prod\limits_{d \in mask} argument.dims[d].\) </td></tr>
   </table>
@@ -529,7 +529,7 @@ Public Member Functions</h2></td></tr>
 <p>Returns zero points correspondence mask and values. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">arg</td><td>Parameter argument index as passed to the <a class="el" href="structdnnl_1_1primitive.html#a65b6bd202ba2cb37ed8504da346dda2e" title="Executes computations specified by the primitive in a specified stream. ">primitive::execute()</a> call. </td></tr>
+    <tr><td class="paramname">arg</td><td>Parameter argument index as passed to the <a class="el" href="structdnnl_1_1primitive.html#a18a484f0f1fecbc6a58fca1a58f6d8d4" title="Executes computations specified by the primitive in a specified stream. ">primitive::execute()</a> call. </td></tr>
     <tr><td class="paramname">mask</td><td>Zero points correspondence mask that defines the correspondence between the output tensor dimensions and the <code>zero_points</code> vector. The set i-th bit indicates that a dedicated zero point is used for each index along that dimension. Set the mask to 0 to use a common zero point for the whole output tensor. </td></tr>
     <tr><td class="paramname">zero_points</td><td>Output vector of zero points. </td></tr>
   </table>
@@ -582,7 +582,7 @@ Public Member Functions</h2></td></tr>
 <a class="el" href="structdnnl_1_1primitive__attr.html#a4b81acc8e48886313154f75c1708ae02" title="Sets output scaling factors correspondence mask and values. ">dnnl::primitive_attr::set_output_scales</a></dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">arg</td><td>Parameter argument index as passed to the <a class="el" href="structdnnl_1_1primitive.html#a65b6bd202ba2cb37ed8504da346dda2e" title="Executes computations specified by the primitive in a specified stream. ">primitive::execute()</a> call. </td></tr>
+    <tr><td class="paramname">arg</td><td>Parameter argument index as passed to the <a class="el" href="structdnnl_1_1primitive.html#a18a484f0f1fecbc6a58fca1a58f6d8d4" title="Executes computations specified by the primitive in a specified stream. ">primitive::execute()</a> call. </td></tr>
     <tr><td class="paramname">mask</td><td>Zero point correspondence mask that defines the correspondence between the tensor dimensions and the <code>zero_points</code> vector. The set i-th bit indicates that a dedicated zero point is used for each index along that dimension. Set the mask to 0 to use a common zero point for the whole output tensor. </td></tr>
     <tr><td class="paramname">zero_points</td><td>Constant vector of zero points. If the zero points are known at the time of this call, the following equality must hold: \(zero\_points.size() = \prod\limits_{d \in mask} argument.dims[d].\) If the zero points are not known at the time of the call, this vector must contain a single <a class="el" href="group__dnnl__api__memory.html#gab16365c11b4dc88fbb453edb51f1979f" title="A wildcard value for floating point values that are unknown at a primitive creation time...">DNNL_RUNTIME_F32_VAL</a> value and the zero points must be passed at execution time as an argument with index <a class="el" href="group__dnnl__api__primitives__common.html#gaf8d879adfe2baa2f9f2a5143a0f274b6" title="Zero points provided at execution time. ">DNNL_ARG_ATTR_ZERO_POINTS</a>. </td></tr>
   </table>

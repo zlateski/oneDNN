@@ -127,18 +127,21 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struc
 <tr class="memitem:a79ef658c2e7ac0fddbd605c6864c19f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structdnnl_1_1primitive.html#ad1ec93215a0cf3aa0a32bae0c2cd9169">primitive::kind</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1post__ops.html#a79ef658c2e7ac0fddbd605c6864c19f9">kind</a> (int index) const </td></tr>
 <tr class="memdesc:a79ef658c2e7ac0fddbd605c6864c19f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the primitive kind of post-op at entry with a certain index.  <a href="#a79ef658c2e7ac0fddbd605c6864c19f9">More...</a><br/></td></tr>
 <tr class="separator:a79ef658c2e7ac0fddbd605c6864c19f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a078ab8ec15423d2b3d26f3619a78ca38"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1post__ops.html#a078ab8ec15423d2b3d26f3619a78ca38">append_sum</a> (float scale=1.)</td></tr>
-<tr class="memdesc:a078ab8ec15423d2b3d26f3619a78ca38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends an accumulation (sum) post-op.  <a href="#a078ab8ec15423d2b3d26f3619a78ca38">More...</a><br/></td></tr>
-<tr class="separator:a078ab8ec15423d2b3d26f3619a78ca38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8e3832e8600216a3646e9050d3bc1f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1post__ops.html#ab8e3832e8600216a3646e9050d3bc1f3">append_sum</a> (float scale=1.f, <a class="el" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dce">memory::data_type</a> data_type=<a class="el" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dceaf31ee5e3824f1f5e5d206bdf3029f22b">memory::data_type::undef</a>)</td></tr>
+<tr class="memdesc:ab8e3832e8600216a3646e9050d3bc1f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends an accumulation (sum) post-op.  <a href="#ab8e3832e8600216a3646e9050d3bc1f3">More...</a><br/></td></tr>
+<tr class="separator:ab8e3832e8600216a3646e9050d3bc1f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a80a7b5900334d558aa5abbf9f1f1661a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1post__ops.html#a80a7b5900334d558aa5abbf9f1f1661a">get_params_sum</a> (int index, float &amp;scale) const </td></tr>
 <tr class="memdesc:a80a7b5900334d558aa5abbf9f1f1661a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the parameters of an accumulation (sum) post-op.  <a href="#a80a7b5900334d558aa5abbf9f1f1661a">More...</a><br/></td></tr>
 <tr class="separator:a80a7b5900334d558aa5abbf9f1f1661a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66606f08467b19091e696b52a2f789e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1post__ops.html#a66606f08467b19091e696b52a2f789e6">append_eltwise</a> (float scale, <a class="el" href="group__dnnl__api__attributes.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a> <a class="el" href="group__dnnl__api__attributes.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a>, float alpha, float beta)</td></tr>
-<tr class="memdesc:a66606f08467b19091e696b52a2f789e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends an elementwise post-op.  <a href="#a66606f08467b19091e696b52a2f789e6">More...</a><br/></td></tr>
-<tr class="separator:a66606f08467b19091e696b52a2f789e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae92752ff26efd3f300c35f23f67ef078"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1post__ops.html#ae92752ff26efd3f300c35f23f67ef078">get_params_eltwise</a> (int index, float &amp;scale, <a class="el" href="group__dnnl__api__attributes.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a> &amp;<a class="el" href="group__dnnl__api__attributes.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a>, float &amp;alpha, float &amp;beta) const </td></tr>
-<tr class="memdesc:ae92752ff26efd3f300c35f23f67ef078"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns parameters of an elementwise post-up.  <a href="#ae92752ff26efd3f300c35f23f67ef078">More...</a><br/></td></tr>
-<tr class="separator:ae92752ff26efd3f300c35f23f67ef078"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d59100bcd254a15d6d0ee4309e07959"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1post__ops.html#a8d59100bcd254a15d6d0ee4309e07959">get_params_sum</a> (int index, float &amp;scale, <a class="el" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dce">memory::data_type</a> &amp;data_type) const </td></tr>
+<tr class="memdesc:a8d59100bcd254a15d6d0ee4309e07959"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the parameters of an accumulation (sum) post-op.  <a href="#a8d59100bcd254a15d6d0ee4309e07959">More...</a><br/></td></tr>
+<tr class="separator:a8d59100bcd254a15d6d0ee4309e07959"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28460923ad579c780e4027a6256fe207"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1post__ops.html#a28460923ad579c780e4027a6256fe207">append_eltwise</a> (float scale, <a class="el" href="group__dnnl__api__attributes.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a> aalgorithm, float alpha, float beta)</td></tr>
+<tr class="memdesc:a28460923ad579c780e4027a6256fe207"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends an elementwise post-op.  <a href="#a28460923ad579c780e4027a6256fe207">More...</a><br/></td></tr>
+<tr class="separator:a28460923ad579c780e4027a6256fe207"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0158eefb937f15634753922dc9e9455a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1post__ops.html#a0158eefb937f15634753922dc9e9455a">get_params_eltwise</a> (int index, float &amp;scale, <a class="el" href="group__dnnl__api__attributes.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a> &amp;aalgorithm, float &amp;alpha, float &amp;beta) const </td></tr>
+<tr class="memdesc:a0158eefb937f15634753922dc9e9455a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns parameters of an elementwise post-up.  <a href="#a0158eefb937f15634753922dc9e9455a">More...</a><br/></td></tr>
+<tr class="separator:a0158eefb937f15634753922dc9e9455a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4229db0e1e1eab273ed0e2b3e18402de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1post__ops.html#a4229db0e1e1eab273ed0e2b3e18402de">append_dw_k3s1p1</a> (<a class="el" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dce">memory::data_type</a> weights_data_type, <a class="el" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dce">memory::data_type</a> bias_data_type, <a class="el" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dce">memory::data_type</a> dst_data_type, int mask, const std::vector&lt; float &gt; &amp;scales)</td></tr>
 <tr class="memdesc:a4229db0e1e1eab273ed0e2b3e18402de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends a depthwise post-op convolution with stride 1.  <a href="#a4229db0e1e1eab273ed0e2b3e18402de">More...</a><br/></td></tr>
 <tr class="separator:a4229db0e1e1eab273ed0e2b3e18402de"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -192,7 +195,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struc
 <tr class="memdesc:ab3560c3d12724f48e9fdbe47077ff342 inherit pub_methods_structdnnl_1_1handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a handle to the underlying C API handle type.  <a href="#ab3560c3d12724f48e9fdbe47077ff342">More...</a><br/></td></tr>
 <tr class="separator:ab3560c3d12724f48e9fdbe47077ff342 inherit pub_methods_structdnnl_1_1handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af014b68c14db64b9bb6a2034fe04440e inherit pub_methods_structdnnl_1_1handle"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1handle.html#af014b68c14db64b9bb6a2034fe04440e">operator bool</a> () const</td></tr>
-<tr class="memdesc:af014b68c14db64b9bb6a2034fe04440e inherit pub_methods_structdnnl_1_1handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the object is empty.  <a href="#af014b68c14db64b9bb6a2034fe04440e">More...</a><br/></td></tr>
+<tr class="memdesc:af014b68c14db64b9bb6a2034fe04440e inherit pub_methods_structdnnl_1_1handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the object is not empty.  <a href="#af014b68c14db64b9bb6a2034fe04440e">More...</a><br/></td></tr>
 <tr class="separator:af014b68c14db64b9bb6a2034fe04440e inherit pub_methods_structdnnl_1_1handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -234,7 +237,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struc
 
 </div>
 </div>
-<a class="anchor" id="a078ab8ec15423d2b3d26f3619a78ca38"></a>
+<a class="anchor" id="ab8e3832e8600216a3646e9050d3bc1f3"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -245,8 +248,18 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struc
           <td class="memname">void dnnl::post_ops::append_sum </td>
           <td>(</td>
           <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>scale</em> = <code>1.</code></td><td>)</td>
+          <td class="paramname"><em>scale</em> = <code>1.f</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dce">memory::data_type</a>&#160;</td>
+          <td class="paramname"><em>data_type</em> = <code><a class="el" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dceaf31ee5e3824f1f5e5d206bdf3029f22b">memory::data_type::undef</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -261,10 +274,14 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struc
 <p>The kind of this post-op is <a class="el" href="structdnnl_1_1primitive.html#ad1ec93215a0cf3aa0a32bae0c2cd9169a1d623b89683f9ce4e074de1676d12416" title="A summation primitive. ">dnnl::primitive::kind::sum</a>.</p>
 <p>This feature may improve performance for cases like residual learning blocks, where the result of convolution is accumulated to the previously computed activations. The parameter <code>scale</code> may be used for the integer-based computations when the result and previous activations have different logical scaling factors.</p>
 <p>In the simplest case when the accumulation is the only post-op, the computations would be <code>dst[:] := scale * dst[:] + op(...)</code> instead of <code>dst[:] := op(...)</code>.</p>
-<dl class="section note"><dt>Note</dt><dd>This post-op executes in-place and does not change the destination layout.</dd></dl>
+<p>If <code>data_type</code> is specified, original dst tensor will be reinterpreted as a tensor with provided data type. Since it is reinterpretation, data_type and dst data type should have same size. As a result, computations would be: </p>
+<pre class="fragment">dst[:] &lt;- scale * as_data_type(dst[:]) + op(...)
+                                   // instead of dst[:] &lt;- op(...)
+</pre><dl class="section note"><dt>Note</dt><dd>This post-op executes in-place and does not change the destination layout.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">scale</td><td>Scaling factor. </td></tr>
+    <tr><td class="paramname">data_type</td><td>Data type. </td></tr>
   </table>
   </dd>
 </dl>
@@ -315,7 +332,57 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struc
 
 </div>
 </div>
-<a class="anchor" id="a66606f08467b19091e696b52a2f789e6"></a>
+<a class="anchor" id="a8d59100bcd254a15d6d0ee4309e07959"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dnnl::post_ops::get_params_sum </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float &amp;&#160;</td>
+          <td class="paramname"><em>scale</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dce">memory::data_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>data_type</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the parameters of an accumulation (sum) post-op. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>Index of the sum post-op. </td></tr>
+    <tr><td class="paramname">scale</td><td>Scaling factor of the sum post-op. </td></tr>
+    <tr><td class="paramname">data_type</td><td>Data type of the sum post-op. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a28460923ad579c780e4027a6256fe207"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -332,7 +399,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struc
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="group__dnnl__api__attributes.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a>&#160;</td>
-          <td class="paramname"><em>algorithm</em>, </td>
+          <td class="paramname"><em>aalgorithm</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -365,7 +432,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struc
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">scale</td><td>Scaling factor. </td></tr>
-    <tr><td class="paramname">algorithm</td><td>Elementwise algorithm. </td></tr>
+    <tr><td class="paramname">aalgorithm</td><td>Elementwise algorithm. </td></tr>
     <tr><td class="paramname">alpha</td><td>Alpha parameter for the elementwise algorithm. </td></tr>
     <tr><td class="paramname">beta</td><td>Beta parameter for the elementwise algorithm. </td></tr>
   </table>
@@ -375,7 +442,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struc
 </dl>
 </div>
 </div>
-<a class="anchor" id="ae92752ff26efd3f300c35f23f67ef078"></a>
+<a class="anchor" id="a0158eefb937f15634753922dc9e9455a"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -398,7 +465,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struc
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="group__dnnl__api__attributes.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a> &amp;&#160;</td>
-          <td class="paramname"><em>algorithm</em>, </td>
+          <td class="paramname"><em>aalgorithm</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -430,7 +497,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struc
   <table class="params">
     <tr><td class="paramname">index</td><td>Index of the post-op. </td></tr>
     <tr><td class="paramname">scale</td><td>Output scaling factor. </td></tr>
-    <tr><td class="paramname">algorithm</td><td>Output elementwise algorithm kind. </td></tr>
+    <tr><td class="paramname">aalgorithm</td><td>Output elementwise algorithm kind. </td></tr>
     <tr><td class="paramname">alpha</td><td>Output alpha parameter for the elementwise algorithm. </td></tr>
     <tr><td class="paramname">beta</td><td>Output beta parameter for the elementwise algorithm. </td></tr>
   </table>

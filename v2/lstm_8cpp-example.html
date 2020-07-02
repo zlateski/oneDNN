@@ -211,14 +211,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="keywordflow">if</span> (lstm_pd.weights_desc() != user_weights_layer_mem.get_desc()) {</div>
 <div class="line">        lstm_weights_layer_mem = <a class="code" href="structdnnl_1_1memory.html">memory</a>(lstm_pd.weights_desc(), engine);</div>
 <div class="line">        <a name="_a10"></a><a class="code" href="structdnnl_1_1reorder.html">reorder</a>(user_weights_layer_mem, lstm_weights_layer_mem)</div>
-<div class="line">                .<a name="a11"></a><a class="code" href="structdnnl_1_1reorder.html#a573f94090cedc71fea0091b64b1bd79a">execute</a>(engine_stream, user_weights_layer_mem,</div>
+<div class="line">                .<a name="a11"></a><a class="code" href="structdnnl_1_1reorder.html#a20b3cad4c1dfe4ff0551b0cb27683ef7">execute</a>(engine_stream, user_weights_layer_mem,</div>
 <div class="line">                        lstm_weights_layer_mem);</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (lstm_pd.weights_iter_desc() != user_weights_iter_mem.get_desc()) {</div>
 <div class="line">        lstm_weights_iter_mem = <a class="code" href="structdnnl_1_1memory.html">memory</a>(lstm_pd.weights_iter_desc(), engine);</div>
 <div class="line">        <a class="code" href="structdnnl_1_1reorder.html">reorder</a>(user_weights_iter_mem, lstm_weights_iter_mem)</div>
-<div class="line">                .<a class="code" href="structdnnl_1_1reorder.html#a573f94090cedc71fea0091b64b1bd79a">execute</a>(engine_stream, user_weights_iter_mem,</div>
+<div class="line">                .<a class="code" href="structdnnl_1_1reorder.html#a20b3cad4c1dfe4ff0551b0cb27683ef7">execute</a>(engine_stream, user_weights_iter_mem,</div>
 <div class="line">                        lstm_weights_iter_mem);</div>
 <div class="line">    }</div>
 <div class="line"></div>

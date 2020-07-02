@@ -15,6 +15,6 @@ var searchData=
   ['memory',['memory',['../structdnnl__exec__arg__t.html#a048f23e80b923636267c4dece912cd0d',1,'dnnl_exec_arg_t::memory()'],['../structdnnl_1_1memory.html#a5f509ba0d38054c147f1dceef1a42d44',1,'dnnl::memory::memory()']]],
   ['memory',['memory',['../structdnnl_1_1memory.html',1,'dnnl']]],
   ['memory_5fconsumption_5fs64',['memory_consumption_s64',['../group__dnnl__api__primitives__common.html#gga94efdd650364f4d9776cfb9b711cbdc1a0ed44d67e94c1c7ac5f219491e422506',1,'dnnl']]],
-  ['memory_20format_20propagation',['Memory format propagation',['../memory_format_propagation_cpp.html',1,'']]],
+  ['memory_20format_20propagation',['Memory Format Propagation',['../memory_format_propagation_cpp.html',1,'']]],
   ['minor',['minor',['../structdnnl__version__t.html#a30f17c81ffa45f1929bbe4f2c14fe42f',1,'dnnl_version_t']]]
 ];

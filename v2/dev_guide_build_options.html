@@ -82,7 +82,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="textblock"><p>oneDNN supports the following build-time options.</p>
 <table class="doxtable">
 <tr>
-<th align="left">Option </th><th align="left">Supported values (defaults in bold) </th><th align="left">Description  </th></tr>
+<th align="left">CMake Option </th><th align="left">Supported values (defaults in bold) </th><th align="left">Description  </th></tr>
 <tr>
 <td align="left">DNNL_LIBRARY_TYPE </td><td align="left"><b>SHARED</b>, STATIC </td><td align="left">Defines the resulting library type </td></tr>
 <tr>
@@ -98,11 +98,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr>
 <td align="left">DNNL_ENABLE_CONCURRENT_EXEC </td><td align="left">ON, <b>OFF</b> </td><td align="left">Disables sharing a common scratchpad between primitives in <a class="el" href="group__dnnl__api__attributes.html#ggac24d40ceea0256c7d6cc3a383a0fa07fad521f765a49c72507257a2620612ee96" title="The library manages the scratchpad allocation according to the policy specified by the DNNL_ENABLE_CO...">dnnl::scratchpad_mode::library</a> mode </td></tr>
 <tr>
-<td align="left">DNNL_ENABLE_JIT_PROFILING </td><td align="left"><b>ON</b>, OFF </td><td align="left">Enables integration with Intel(R) VTune(TM) Amplifier </td></tr>
+<td align="left">DNNL_ENABLE_JIT_PROFILING </td><td align="left"><b>ON</b>, OFF </td><td align="left">Enables <a class="el" href="dev_guide_profilers.html">integration with performance profilers</a> </td></tr>
 <tr>
-<td align="left">DNNL_ENABLE_PRIMITIVE_CACHE </td><td align="left"><b>ON</b>, OFF </td><td align="left">Enables primitive cache </td></tr>
+<td align="left">DNNL_ENABLE_PRIMITIVE_CACHE </td><td align="left"><b>ON</b>, OFF </td><td align="left">Enables <a class="el" href="dev_guide_primitive_cache.html">primitive cache</a> </td></tr>
 <tr>
-<td align="left">DNNL_ENABLE_MAX_CPU_ISA </td><td align="left"><b>ON</b>, OFF </td><td align="left">Enables controlling CPU dispatcher at run-time </td></tr>
+<td align="left">DNNL_ENABLE_MAX_CPU_ISA </td><td align="left"><b>ON</b>, OFF </td><td align="left">Enables <a class="el" href="dev_guide_cpu_dispatcher_control.html">CPU dispatcher controls</a> </td></tr>
+<tr>
+<td align="left">DNNL_VERBOSE </td><td align="left"><b>ON</b>, OFF </td><td align="left">Enables <a class="el" href="dev_guide_verbose.html">verbose mode</a> </td></tr>
 </table>
 <p>All other building options that can be found in CMake files are dedicated for the development/debug purposes and are subject to change without any notice. Please avoid using them.</p>
 <h2>Common options</h2>
@@ -114,7 +116,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>For GNU* Compilers and Clang, the default option is <code>-msse4.1</code>.</p>
 <dl class="section warning"><dt>Warning</dt><dd>While use of <code>DNNL_ARCH_OPT_FLAGS</code> option gives better performance, the resulting library can be run only on systems that have instruction set compatible with the target instruction set. Therefore, <code>ARCH_OPT_FLAGS</code> should be set to an empty string (<code>""</code>) if the resulting library needs to be portable.</dd></dl>
 <h3>Runtime CPU dispatcher control</h3>
-<p>oneDNN JIT relies on ISA features obtained from the processor it is being run on. There are situations when it is necessary to control this behavior at run-time to, for example, test SSE4.1 code on an AVX2-capable processor. The <code>DNNL_ENABLE_MAX_CPU_ISA</code> build option controls the availability of this feature. See <a class="el" href="dev_guide_cpu_dispatcher_control.html">CPU dispatcher control</a> for more information.</p>
+<p>oneDNN JIT relies on ISA features obtained from the processor it is being run on. There are situations when it is necessary to control this behavior at run-time to, for example, test SSE4.1 code on an AVX2-capable processor. The <code>DNNL_ENABLE_MAX_CPU_ISA</code> build option controls the availability of this feature. See <a class="el" href="dev_guide_cpu_dispatcher_control.html">CPU Dispatcher Control</a> for more information.</p>
 <h3>Runtimes</h3>
 <p>CPU engine can use OpenMP, Threading Building Blocks (TBB) or sequential threading runtimes. OpenMP threading is the default build mode. This behavior is controlled by the <code>DNNL_CPU_RUNTIME</code> CMake option.</p>
 <h4>OpenMP</h4>
@@ -132,8 +134,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h4>Threadpool</h4>
 <p>To build oneDNN with support for threadpool threading, set <code>DNNL_CPU_RUNTIME</code> to <code>THREADPOOL</code></p>
 <div class="fragment"><div class="line">$ cmake -DDNNL_CPU_RUNTIME=THREADPOOL ..</div>
-</div><!-- fragment --><p>The <code>DNNL_TEST_THREADPOOL_IMPL</code> CMake variable controls which of the three threadpool implementations would be used for testing: <code>STANDALONE</code>, <code>TBB</code>, or <code>EIGEN</code>. The latter two require also passing <code>TBBROOT</code> or <code>Eigen3_DIR</code> paths to CMake. For example:</p>
-<div class="fragment"><div class="line">$ cmake -DDNNL_CPU_RUNTIME=THREADPOOL -DDNNL_TEST_THREADPOOL_IMPL=EIGEN -DEigen3_DIR=/path/to/eigen/share/eigen3/cmake ..</div>
+</div><!-- fragment --><p>The <code>_DNNL_TEST_THREADPOOL_IMPL</code> CMake variable controls which of the three threadpool implementations would be used for testing: <code>STANDALONE</code>, <code>TBB</code>, or <code>EIGEN</code>. The latter two require also passing <code>TBBROOT</code> or <code>Eigen3_DIR</code> paths to CMake. For example:</p>
+<div class="fragment"><div class="line">$ cmake -DDNNL_CPU_RUNTIME=THREADPOOL -D_DNNL_TEST_THREADPOOL_IMPL=EIGEN -DEigen3_DIR=/path/to/eigen/share/eigen3/cmake ..</div>
 </div><!-- fragment --><p>Threadpool threading support is experimental and has the same limitations as TBB plus more:</p>
 <ul>
 <li>As threadpools are attached to streams which are only passed during primitive execution, work decomposition is performed statically at the primitive creation time. At the primitive execution time, the threadpool is responsible for balancing the static decomposition from the previous item across available worker threads.</li>

@@ -127,12 +127,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a400b0f6aacb6ce747d2aa747be23fa19"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1engine.html#a400b0f6aacb6ce747d2aa747be23fa19">engine</a> ()=default</td></tr>
 <tr class="memdesc:a400b0f6aacb6ce747d2aa747be23fa19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an empty engine.  <a href="#a400b0f6aacb6ce747d2aa747be23fa19">More...</a><br/></td></tr>
 <tr class="separator:a400b0f6aacb6ce747d2aa747be23fa19"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abfbca449ff03e4103de0b45cfa39b59d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1engine.html#abfbca449ff03e4103de0b45cfa39b59d">engine</a> (<a class="el" href="structdnnl_1_1engine.html#a2635da16314dcbdb9bd9ea431316bb1a">kind</a> <a class="el" href="structdnnl_1_1engine.html#a2635da16314dcbdb9bd9ea431316bb1a">kind</a>, size_t index)</td></tr>
-<tr class="memdesc:abfbca449ff03e4103de0b45cfa39b59d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an engine.  <a href="#abfbca449ff03e4103de0b45cfa39b59d">More...</a><br/></td></tr>
-<tr class="separator:abfbca449ff03e4103de0b45cfa39b59d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37a4f7c4261bab2436e834ae69790406"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1engine.html#a37a4f7c4261bab2436e834ae69790406">engine</a> (<a class="el" href="structdnnl_1_1engine.html#a2635da16314dcbdb9bd9ea431316bb1a">kind</a> <a class="el" href="structdnnl_1_1engine.html#a2635da16314dcbdb9bd9ea431316bb1a">kind</a>, cl_device_id device, cl_context context)</td></tr>
-<tr class="memdesc:a37a4f7c4261bab2436e834ae69790406"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an engine from OpenCL device and context objects.  <a href="#a37a4f7c4261bab2436e834ae69790406">More...</a><br/></td></tr>
-<tr class="separator:a37a4f7c4261bab2436e834ae69790406"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e23ffff24322cc9d3e108a098a88d31"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1engine.html#a2e23ffff24322cc9d3e108a098a88d31">engine</a> (<a class="el" href="structdnnl_1_1engine.html#a2635da16314dcbdb9bd9ea431316bb1a">kind</a> akind, size_t index)</td></tr>
+<tr class="memdesc:a2e23ffff24322cc9d3e108a098a88d31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an engine.  <a href="#a2e23ffff24322cc9d3e108a098a88d31">More...</a><br/></td></tr>
+<tr class="separator:a2e23ffff24322cc9d3e108a098a88d31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af524a86465d6194ec8f2ea7d615f3006"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1engine.html#af524a86465d6194ec8f2ea7d615f3006">engine</a> (<a class="el" href="structdnnl_1_1engine.html#a2635da16314dcbdb9bd9ea431316bb1a">kind</a> akind, cl_device_id device, cl_context context)</td></tr>
+<tr class="memdesc:af524a86465d6194ec8f2ea7d615f3006"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an engine from OpenCL device and context objects.  <a href="#af524a86465d6194ec8f2ea7d615f3006">More...</a><br/></td></tr>
+<tr class="separator:af524a86465d6194ec8f2ea7d615f3006"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad46095d55d65cb20ab64721f890085ff"><td class="memItemLeft" align="right" valign="top">DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1engine.html#ad46095d55d65cb20ab64721f890085ff">engine</a> (<a class="el" href="structdnnl_1_1engine.html#a2635da16314dcbdb9bd9ea431316bb1a">kind</a> akind, const cl::sycl::device &amp;dev, const cl::sycl::context &amp;ctx)</td></tr>
 <tr class="memdesc:ad46095d55d65cb20ab64721f890085ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an engine from SYCL device and context objects.  <a href="#ad46095d55d65cb20ab64721f890085ff">More...</a><br/></td></tr>
 <tr class="separator:ad46095d55d65cb20ab64721f890085ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -197,14 +197,14 @@ cl::sycl::device DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a 
 <tr class="memdesc:ab3560c3d12724f48e9fdbe47077ff342 inherit pub_methods_structdnnl_1_1handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a handle to the underlying C API handle type.  <a href="#ab3560c3d12724f48e9fdbe47077ff342">More...</a><br/></td></tr>
 <tr class="separator:ab3560c3d12724f48e9fdbe47077ff342 inherit pub_methods_structdnnl_1_1handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af014b68c14db64b9bb6a2034fe04440e inherit pub_methods_structdnnl_1_1handle"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1handle.html#af014b68c14db64b9bb6a2034fe04440e">operator bool</a> () const</td></tr>
-<tr class="memdesc:af014b68c14db64b9bb6a2034fe04440e inherit pub_methods_structdnnl_1_1handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the object is empty.  <a href="#af014b68c14db64b9bb6a2034fe04440e">More...</a><br/></td></tr>
+<tr class="memdesc:af014b68c14db64b9bb6a2034fe04440e inherit pub_methods_structdnnl_1_1handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the object is not empty.  <a href="#af014b68c14db64b9bb6a2034fe04440e">More...</a><br/></td></tr>
 <tr class="separator:af014b68c14db64b9bb6a2034fe04440e inherit pub_methods_structdnnl_1_1handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a35bcbdd6fa35663ca73e24d63c2f8ff4"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1engine.html#a35bcbdd6fa35663ca73e24d63c2f8ff4">get_count</a> (<a class="el" href="structdnnl_1_1engine.html#a2635da16314dcbdb9bd9ea431316bb1a">kind</a> <a class="el" href="structdnnl_1_1engine.html#a2635da16314dcbdb9bd9ea431316bb1a">kind</a>)</td></tr>
-<tr class="memdesc:a35bcbdd6fa35663ca73e24d63c2f8ff4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of engines of a certain kind.  <a href="#a35bcbdd6fa35663ca73e24d63c2f8ff4">More...</a><br/></td></tr>
-<tr class="separator:a35bcbdd6fa35663ca73e24d63c2f8ff4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4377c19abca7fc5d761bb5e512c732d1"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1engine.html#a4377c19abca7fc5d761bb5e512c732d1">get_count</a> (<a class="el" href="structdnnl_1_1engine.html#a2635da16314dcbdb9bd9ea431316bb1a">kind</a> akind)</td></tr>
+<tr class="memdesc:a4377c19abca7fc5d761bb5e512c732d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of engines of a certain kind.  <a href="#a4377c19abca7fc5d761bb5e512c732d1">More...</a><br/></td></tr>
+<tr class="separator:a4377c19abca7fc5d761bb5e512c732d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0979d6e10ff58fb9fe57302d8b9cdd00"><td class="memTemplParams" colspan="2">template&lt;typename primitive_desc &gt; </td></tr>
 <tr class="memitem:a0979d6e10ff58fb9fe57302d8b9cdd00"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="structdnnl_1_1engine.html">engine</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structdnnl_1_1engine.html#a0979d6e10ff58fb9fe57302d8b9cdd00">query</a> (const <a class="el" href="structdnnl_1_1primitive__desc.html">primitive_desc</a> &amp;pd)</td></tr>
 <tr class="memdesc:a0979d6e10ff58fb9fe57302d8b9cdd00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the engine of a primitive descriptor.  <a href="#a0979d6e10ff58fb9fe57302d8b9cdd00">More...</a><br/></td></tr>
@@ -212,7 +212,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>An execution engine. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="batch_normalization_8cpp-example.html#_a2">batch_normalization.cpp</a>, <a class="el" href="binary_8cpp-example.html#_a2">binary.cpp</a>, <a class="el" href="cnn_inference_f32_8cpp-example.html#_a2">cnn_inference_f32.cpp</a>, <a class="el" href="cnn_inference_int8_8cpp-example.html#_a2">cnn_inference_int8.cpp</a>, <a class="el" href="cnn_training_f32_8cpp-example.html#_a2">cnn_training_f32.cpp</a>, <a class="el" href="concat_8cpp-example.html#_a2">concat.cpp</a>, <a class="el" href="convolution_8cpp-example.html#_a2">convolution.cpp</a>, <a class="el" href="cpu_cnn_training_bf16_8cpp-example.html#_a2">cpu_cnn_training_bf16.cpp</a>, <a class="el" href="cpu_matmul_quantization_8cpp-example.html#_a0">cpu_matmul_quantization.cpp</a>, <a class="el" href="cpu_rnn_inference_f32_8cpp-example.html#_a2">cpu_rnn_inference_f32.cpp</a>, <a class="el" href="cpu_rnn_inference_int8_8cpp-example.html#_a3">cpu_rnn_inference_int8.cpp</a>, <a class="el" href="cpu_sgemm_and_matmul_8cpp-example.html#_a0">cpu_sgemm_and_matmul.cpp</a>, <a class="el" href="eltwise_8cpp-example.html#_a2">eltwise.cpp</a>, <a class="el" href="getting_started_8cpp-example.html#_a0">getting_started.cpp</a>, <a class="el" href="gpu_opencl_interop_8cpp-example.html#_a0">gpu_opencl_interop.cpp</a>, <a class="el" href="inference_int8_matmul_8cpp-example.html#_a1">inference_int8_matmul.cpp</a>, <a class="el" href="inner_product_8cpp-example.html#_a2">inner_product.cpp</a>, <a class="el" href="layer_normalization_8cpp-example.html#_a2">layer_normalization.cpp</a>, <a class="el" href="logsoftmax_8cpp-example.html#_a2">logsoftmax.cpp</a>, <a class="el" href="lrn_8cpp-example.html#_a2">lrn.cpp</a>, <a class="el" href="lstm_8cpp-example.html#_a2">lstm.cpp</a>, <a class="el" href="matmul_8cpp-example.html#_a2">matmul.cpp</a>, <a class="el" href="memory_format_propagation_8cpp-example.html#_a0">memory_format_propagation.cpp</a>, <a class="el" href="performance_profiling_8cpp-example.html#_a1">performance_profiling.cpp</a>, <a class="el" href="pooling_8cpp-example.html#_a2">pooling.cpp</a>, <a class="el" href="reorder_8cpp-example.html#_a2">reorder.cpp</a>, <a class="el" href="resampling_8cpp-example.html#_a2">resampling.cpp</a>, <a class="el" href="rnn_training_f32_8cpp-example.html#_a2">rnn_training_f32.cpp</a>, <a class="el" href="shuffle_8cpp-example.html#_a2">shuffle.cpp</a>, <a class="el" href="softmax_8cpp-example.html#_a2">softmax.cpp</a>, <a class="el" href="sum_8cpp-example.html#_a2">sum.cpp</a>, and <a class="el" href="sycl_interop_8cpp-example.html#_a0">sycl_interop.cpp</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="batch_normalization_8cpp-example.html#_a2">batch_normalization.cpp</a>, <a class="el" href="binary_8cpp-example.html#_a2">binary.cpp</a>, <a class="el" href="cnn_inference_f32_8cpp-example.html#_a2">cnn_inference_f32.cpp</a>, <a class="el" href="cnn_inference_int8_8cpp-example.html#_a2">cnn_inference_int8.cpp</a>, <a class="el" href="cnn_training_bf16_8cpp-example.html#_a2">cnn_training_bf16.cpp</a>, <a class="el" href="cnn_training_f32_8cpp-example.html#_a2">cnn_training_f32.cpp</a>, <a class="el" href="concat_8cpp-example.html#_a2">concat.cpp</a>, <a class="el" href="convolution_8cpp-example.html#_a2">convolution.cpp</a>, <a class="el" href="cpu_matmul_quantization_8cpp-example.html#_a0">cpu_matmul_quantization.cpp</a>, <a class="el" href="cpu_rnn_inference_f32_8cpp-example.html#_a2">cpu_rnn_inference_f32.cpp</a>, <a class="el" href="cpu_rnn_inference_int8_8cpp-example.html#_a3">cpu_rnn_inference_int8.cpp</a>, <a class="el" href="cpu_sgemm_and_matmul_8cpp-example.html#_a0">cpu_sgemm_and_matmul.cpp</a>, <a class="el" href="eltwise_8cpp-example.html#_a2">eltwise.cpp</a>, <a class="el" href="getting_started_8cpp-example.html#_a0">getting_started.cpp</a>, <a class="el" href="gpu_opencl_interop_8cpp-example.html#_a0">gpu_opencl_interop.cpp</a>, <a class="el" href="inference_int8_matmul_8cpp-example.html#_a1">inference_int8_matmul.cpp</a>, <a class="el" href="inner_product_8cpp-example.html#_a2">inner_product.cpp</a>, <a class="el" href="layer_normalization_8cpp-example.html#_a2">layer_normalization.cpp</a>, <a class="el" href="logsoftmax_8cpp-example.html#_a2">logsoftmax.cpp</a>, <a class="el" href="lrn_8cpp-example.html#_a2">lrn.cpp</a>, <a class="el" href="lstm_8cpp-example.html#_a2">lstm.cpp</a>, <a class="el" href="matmul_8cpp-example.html#_a2">matmul.cpp</a>, <a class="el" href="memory_format_propagation_8cpp-example.html#_a0">memory_format_propagation.cpp</a>, <a class="el" href="performance_profiling_8cpp-example.html#_a1">performance_profiling.cpp</a>, <a class="el" href="pooling_8cpp-example.html#_a2">pooling.cpp</a>, <a class="el" href="reorder_8cpp-example.html#_a2">reorder.cpp</a>, <a class="el" href="resampling_8cpp-example.html#_a2">resampling.cpp</a>, <a class="el" href="rnn_training_f32_8cpp-example.html#_a2">rnn_training_f32.cpp</a>, <a class="el" href="shuffle_8cpp-example.html#_a2">shuffle.cpp</a>, <a class="el" href="softmax_8cpp-example.html#_a2">softmax.cpp</a>, <a class="el" href="sum_8cpp-example.html#_a2">sum.cpp</a>, and <a class="el" href="sycl_interop_8cpp-example.html#_a0">sycl_interop.cpp</a>.</dd>
 </dl></div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a class="anchor" id="a2635da16314dcbdb9bd9ea431316bb1a"></a>
 <div class="memitem">
@@ -274,7 +274,7 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="abfbca449ff03e4103de0b45cfa39b59d"></a>
+<a class="anchor" id="a2e23ffff24322cc9d3e108a098a88d31"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -285,7 +285,7 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">dnnl::engine::engine </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structdnnl_1_1engine.html#a2635da16314dcbdb9bd9ea431316bb1a">kind</a>&#160;</td>
-          <td class="paramname"><em>kind</em>, </td>
+          <td class="paramname"><em>akind</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -309,15 +309,15 @@ Static Public Member Functions</h2></td></tr>
 <p>Constructs an engine. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">kind</td><td>The kind of engine to construct. </td></tr>
-    <tr><td class="paramname">index</td><td>The index of the engine. Must be less than the value returned by <a class="el" href="structdnnl_1_1engine.html#a35bcbdd6fa35663ca73e24d63c2f8ff4" title="Returns the number of engines of a certain kind. ">get_count()</a> for this particular kind of engine. </td></tr>
+    <tr><td class="paramname">akind</td><td>The kind of engine to construct. </td></tr>
+    <tr><td class="paramname">index</td><td>The index of the engine. Must be less than the value returned by <a class="el" href="structdnnl_1_1engine.html#a4377c19abca7fc5d761bb5e512c732d1" title="Returns the number of engines of a certain kind. ">get_count()</a> for this particular kind of engine. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="a37a4f7c4261bab2436e834ae69790406"></a>
+<a class="anchor" id="af524a86465d6194ec8f2ea7d615f3006"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -328,7 +328,7 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">dnnl::engine::engine </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structdnnl_1_1engine.html#a2635da16314dcbdb9bd9ea431316bb1a">kind</a>&#160;</td>
-          <td class="paramname"><em>kind</em>, </td>
+          <td class="paramname"><em>akind</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -358,7 +358,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Constructs an engine from OpenCL device and context objects. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">kind</td><td>The kind of engine to construct. </td></tr>
+    <tr><td class="paramname">akind</td><td>The kind of engine to construct. </td></tr>
     <tr><td class="paramname">device</td><td>The OpenCL device that this engine will encapsulate. </td></tr>
     <tr><td class="paramname">context</td><td>The OpenCL context (containing the device) that this engine will use for all operations. </td></tr>
   </table>
@@ -442,7 +442,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a35bcbdd6fa35663ca73e24d63c2f8ff4"></a>
+<a class="anchor" id="a4377c19abca7fc5d761bb5e512c732d1"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -453,7 +453,7 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">static size_t dnnl::engine::get_count </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structdnnl_1_1engine.html#a2635da16314dcbdb9bd9ea431316bb1a">kind</a>&#160;</td>
-          <td class="paramname"><em>kind</em></td><td>)</td>
+          <td class="paramname"><em>akind</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -467,7 +467,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Returns the number of engines of a certain kind. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">kind</td><td>The kind of engines to count. </td></tr>
+    <tr><td class="paramname">akind</td><td>The kind of engines to count. </td></tr>
   </table>
   </dd>
 </dl>

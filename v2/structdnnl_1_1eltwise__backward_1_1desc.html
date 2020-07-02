@@ -109,15 +109,15 @@ Collaboration diagram for dnnl::eltwise_backward::desc:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad94c1c1fce3f2f6756184a40bfb6ce01"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1eltwise__backward_1_1desc.html#ad94c1c1fce3f2f6756184a40bfb6ce01">desc</a> (<a class="el" href="group__dnnl__api__attributes.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a> <a class="el" href="group__dnnl__api__attributes.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a>, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_data_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;data_desc, float alpha=0, float beta=0)</td></tr>
-<tr class="memdesc:ad94c1c1fce3f2f6756184a40bfb6ce01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a descriptor for an elementwise backward propagation primitive.  <a href="#ad94c1c1fce3f2f6756184a40bfb6ce01">More...</a><br/></td></tr>
-<tr class="separator:ad94c1c1fce3f2f6756184a40bfb6ce01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f2b7f03992121019de203d01a9fe664"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1eltwise__backward_1_1desc.html#a1f2b7f03992121019de203d01a9fe664">desc</a> (<a class="el" href="group__dnnl__api__attributes.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a> aalgorithm, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;diff_data_desc, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;data_desc, float alpha=0, float beta=0)</td></tr>
+<tr class="memdesc:a1f2b7f03992121019de203d01a9fe664"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a descriptor for an elementwise backward propagation primitive.  <a href="#a1f2b7f03992121019de203d01a9fe664">More...</a><br/></td></tr>
+<tr class="separator:a1f2b7f03992121019de203d01a9fe664"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Descriptor for an elementwise backward propagation primitive. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cnn_training_f32_8cpp-example.html#_a39">cnn_training_f32.cpp</a>, and <a class="el" href="cpu_cnn_training_bf16_8cpp-example.html#_a43">cpu_cnn_training_bf16.cpp</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="cnn_training_bf16_8cpp-example.html#_a42">cnn_training_bf16.cpp</a>, and <a class="el" href="cnn_training_f32_8cpp-example.html#_a39">cnn_training_f32.cpp</a>.</dd>
 </dl></div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ad94c1c1fce3f2f6756184a40bfb6ce01"></a>
+<a class="anchor" id="a1f2b7f03992121019de203d01a9fe664"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -128,7 +128,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">dnnl::eltwise_backward::desc::desc </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__dnnl__api__attributes.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a>&#160;</td>
-          <td class="paramname"><em>algorithm</em>, </td>
+          <td class="paramname"><em>aalgorithm</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -168,18 +168,9 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructs a descriptor for an elementwise backward propagation primitive. </p>
-<p>Inputs:</p>
-<ul>
-<li><code>src</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#a31ee74fc65986558ac11db590945811a" title="Returns a source memory descriptor. ">dnnl::primitive_desc_base::src_desc</a>(<code>0</code>))</li>
-<li><code>diff_dst</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#aa95dd1711a45923204ffddc3f02ea546" title="Returns a diff destination memory descriptor. ">dnnl::primitive_desc_base::diff_dst_desc</a>(<code>0</code>))</li>
-</ul>
-<p>Outputs:</p>
-<ul>
-<li><code>diff_src</code> (<a class="el" href="structdnnl_1_1primitive__desc__base.html#aeb499ab1390d20eb071d97ec4628029f" title="Returns a diff source memory descriptor. ">dnnl::primitive_desc_base::diff_src_desc</a>(<code>0</code>))</li>
-</ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">algorithm</td><td>Elementwise algorithm kind. </td></tr>
+    <tr><td class="paramname">aalgorithm</td><td>Elementwise algorithm kind. </td></tr>
     <tr><td class="paramname">diff_data_desc</td><td>Diff source and destination memory descriptors. </td></tr>
     <tr><td class="paramname">data_desc</td><td>Source memory descriptor. </td></tr>
     <tr><td class="paramname">alpha</td><td>The alpha parameter for the elementwise operation. Specific meaning depends on the algorithm. </td></tr>

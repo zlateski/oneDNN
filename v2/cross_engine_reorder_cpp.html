@@ -99,7 +99,7 @@ Engine and stream</h2>
 <div class="line">    <span class="keyword">auto</span> gpu_engine = engine(validate_engine_kind(engine::kind::gpu), 0);</div>
 </div><!-- fragment --><p> In addition to an engine, all primitives require a <a class="el" href="structdnnl_1_1stream.html">dnnl::stream</a> for the execution. The stream encapsulates an execution context and is tied to a particular engine.</p>
 <p>In this example, a GPU stream is created.</p>
-<div class="fragment"><div class="line">    <span class="keyword">auto</span> stream_gpu = stream(gpu_engine);</div>
+<div class="fragment"><div class="line">    <span class="keyword">auto</span> stream_gpu = stream(gpu_engine, stream::flags::in_order);</div>
 </div><!-- fragment --> <h2><a class="anchor" id="cross_engine_reorder_cpp_sub2"></a>
 Wrapping data into oneDNN GPU memory object</h2>
 <p>Fill the data in CPU memory first, and then move data from CPU to GPU memory by reorder. </p>
