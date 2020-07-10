@@ -168,9 +168,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="keyword">auto</span> conv_src_md = <a name="_a5"></a><a class="code" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a>({conv_src_tz}, dt::bf16, tag::any);</div>
 <div class="line">    <span class="keyword">auto</span> conv_weights_md = <a class="code" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a>({conv_weights_tz}, dt::bf16, tag::any);</div>
 <div class="line">    <span class="keyword">auto</span> conv_dst_md = <a class="code" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a>({conv_dst_tz}, dt::bf16, tag::any);</div>
-<div class="line"></div>
-<div class="line">    <span class="comment">// use bias provided by the user</span></div>
-<div class="line">    <span class="keyword">auto</span> conv_bias_md = conv_user_bias_memory.get_desc();</div>
+<div class="line">    <span class="comment">// here bias data type is set to bf16.</span></div>
+<div class="line">    <span class="comment">// additionally, f32 data type is supported for bf16 convolution.</span></div>
+<div class="line">    <span class="keyword">auto</span> conv_bias_md = <a class="code" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a>({conv_bias_tz}, dt::bf16, tag::any);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// create a convolution primitive descriptor</span></div>
 <div class="line">    <span class="keyword">auto</span> conv_desc = <a name="_a6"></a><a class="code" href="structdnnl_1_1convolution__forward_1_1desc.html">convolution_forward::desc</a>(<a name="a7"></a><a class="code" href="group__dnnl__api__attributes.html#ggac7db48f6583aa9903e54c2a39d65438fa965dbaac085fc891bfbbd4f9d145bbc8">prop_kind::forward</a>,</div>
@@ -212,6 +212,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">                {<a class="code" href="group__dnnl__api__primitives__common.html#gaf700c3396987b450413c8df5d78bafd9">DNNL_ARG_TO</a>, conv_weights_memory}});</div>
 <div class="line">    }</div>
 <div class="line"></div>
+<div class="line">    <span class="comment">// convert bias from f32 to bf16 as convolution descriptor is created with</span></div>
+<div class="line">    <span class="comment">// bias data type as bf16.</span></div>
+<div class="line">    <span class="keyword">auto</span> conv_bias_memory = conv_user_bias_memory;</div>
+<div class="line">    <span class="keywordflow">if</span> (conv_pd.bias_desc() != conv_user_bias_memory.get_desc()) {</div>
+<div class="line">        conv_bias_memory = <a class="code" href="structdnnl_1_1memory.html">memory</a>(conv_pd.bias_desc(), eng);</div>
+<div class="line">        net_fwd.push_back(<a class="code" href="structdnnl_1_1reorder.html">reorder</a>(conv_user_bias_memory, conv_bias_memory));</div>
+<div class="line">        net_fwd_args.push_back({{<a class="code" href="group__dnnl__api__primitives__common.html#ga953b34f004a8222b04e21851487c611a">DNNL_ARG_FROM</a>, conv_user_bias_memory},</div>
+<div class="line">                {<a class="code" href="group__dnnl__api__primitives__common.html#gaf700c3396987b450413c8df5d78bafd9">DNNL_ARG_TO</a>, conv_bias_memory}});</div>
+<div class="line">    }</div>
+<div class="line"></div>
 <div class="line">    <span class="comment">// create memory for conv dst</span></div>
 <div class="line">    <span class="keyword">auto</span> conv_dst_memory = <a class="code" href="structdnnl_1_1memory.html">memory</a>(conv_pd.dst_desc(), eng);</div>
 <div class="line"></div>
@@ -219,7 +229,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    net_fwd.push_back(<a name="_a16"></a><a class="code" href="structdnnl_1_1convolution__forward.html">convolution_forward</a>(conv_pd));</div>
 <div class="line">    net_fwd_args.push_back({{<a name="a17"></a><a class="code" href="group__dnnl__api__primitives__common.html#gac37ad67b48edeb9e742af0e50b70fe09">DNNL_ARG_SRC</a>, conv_src_memory},</div>
 <div class="line">            {<a name="a18"></a><a class="code" href="group__dnnl__api__primitives__common.html#gaf279f28c59a807e71a70c719db56c5b3">DNNL_ARG_WEIGHTS</a>, conv_weights_memory},</div>
-<div class="line">            {<a name="a19"></a><a class="code" href="group__dnnl__api__primitives__common.html#gad0cbc09942aba93fbe3c0c2e09166f0d">DNNL_ARG_BIAS</a>, conv_user_bias_memory},</div>
+<div class="line">            {<a name="a19"></a><a class="code" href="group__dnnl__api__primitives__common.html#gad0cbc09942aba93fbe3c0c2e09166f0d">DNNL_ARG_BIAS</a>, conv_bias_memory},</div>
 <div class="line">            {<a name="a20"></a><a class="code" href="group__dnnl__api__primitives__common.html#ga3ca217e4a06d42a0ede3c018383c388f">DNNL_ARG_DST</a>, conv_dst_memory}});</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// AlexNet: relu</span></div>

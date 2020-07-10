@@ -105,8 +105,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <td align="left">DNNL_ENABLE_MAX_CPU_ISA </td><td align="left"><b>ON</b>, OFF </td><td align="left">Enables <a class="el" href="dev_guide_cpu_dispatcher_control.html">CPU dispatcher controls</a> </td></tr>
 <tr>
 <td align="left">DNNL_VERBOSE </td><td align="left"><b>ON</b>, OFF </td><td align="left">Enables <a class="el" href="dev_guide_verbose.html">verbose mode</a> </td></tr>
+<tr>
+<td align="left">DNNL_BLAS_VENDOR </td><td align="left"><b>NONE</b>, ARMPL </td><td align="left">Defines an external BLAS library to link to for GEMM-like operations </td></tr>
 </table>
-<p>All other building options that can be found in CMake files are dedicated for the development/debug purposes and are subject to change without any notice. Please avoid using them.</p>
+<p>All other building options or values that can be found in CMake files are intended for development/debug purposes and are subject to change without notice. Please avoid using them.</p>
 <h2>Common options</h2>
 <h2>CPU Options</h2>
 <p>Intel Architecture Processors and compatible devices are supported by oneDNN CPU engine. The CPU engine is built by default and cannot be disabled at build time.</p>
@@ -140,13 +142,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <ul>
 <li>As threadpools are attached to streams which are only passed during primitive execution, work decomposition is performed statically at the primitive creation time. At the primitive execution time, the threadpool is responsible for balancing the static decomposition from the previous item across available worker threads.</li>
 </ul>
+<h4>Vendor BLAS libraries</h4>
+<p>oneDNN can use a standard BLAS library for GEMM operations. The <code>DNNL_BLAS_VENDOR</code> build option controls BLAS library selection, and defaults to <code>NONE</code>. For AArch64 builds with GCC, use the <a href="https://developer.arm.com/tools-and-software/server-and-hpc/downloads/arm-performance-libraries">Arm Performance Libraries</a>:</p>
+<div class="fragment"><div class="line">$ cmake -DDNNL_BLAS_VENDOR=ARMPL ..</div>
+</div><!-- fragment --><p>Additional options available for development/debug purposes. These options are subject to change without notice, see <a href="https://github.com/oneapi-src/oneDNN/blob/master/cmake/options.cmake">`cmake/options.cmake`</a> for details.</p>
 <h2>GPU Options</h2>
 <p>Intel Processor Graphics is supported by oneDNN GPU engine. GPU engine is disabled in the default build configuration.</p>
 <h3>Runtimes</h3>
 <p>To enable GPU support you need to specify the GPU runtime by setting <code>DNNL_GPU_RUNTIME</code> CMake option. The default value is <code>"NONE"</code> which corresponds to no GPU support in the library.</p>
 <h4>OpenCL*</h4>
 <p>OpenCL runtime requires Intel(R) SDK for OpenCL* applications. You can explicitly specify the path to the SDK using <code>-DOPENCLROOT</code> CMake option.</p>
-<div class="fragment"><div class="line">cmake -DDNNL_GPU_RUNTIME=OCL -DOPENCLROOT=/path/to/opencl/sdk ..</div>
+<div class="fragment"><div class="line">$ cmake -DDNNL_GPU_RUNTIME=OCL -DOPENCLROOT=/path/to/opencl/sdk ..</div>
 </div><!-- fragment --> </div></div><!-- contents -->
 <div class="footer">
     <div class="footer-wrapper">
