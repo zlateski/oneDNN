@@ -1,6 +1,7 @@
 var searchData=
 [
   ['eltwise',['Eltwise',['../dev_guide_eltwise.html',1,'']]],
+  ['examples',['Examples',['../dev_guide_examples.html',1,'']]],
   ['eltwise',['Eltwise',['../group__dnnl__api__eltwise.html',1,'']]],
   ['engine',['Engine',['../group__dnnl__api__engine.html',1,'']]],
   ['eltwise',['eltwise',['../structdnnl_1_1primitive.html#ad1ec93215a0cf3aa0a32bae0c2cd9169a98b908c7d0339bb6a4832db44fc2c8da',1,'dnnl::primitive']]],

@@ -104,14 +104,14 @@ Inheritance diagram for dnnl::post_ops:</div>
 <div class="dyncontent">
 <div class="center"><img src="structdnnl_1_1post__ops__inherit__graph.png" border="0" usemap="#dnnl_1_1post__ops_inherit__map" alt="Inheritance graph"/></div>
 <map name="dnnl_1_1post__ops_inherit__map" id="dnnl_1_1post__ops_inherit__map">
-<area shape="rect" id="node2" href="structdnnl_1_1handle.html" title="dnnl::handle\&lt; dnnl\l_post_ops_t \&gt;" alt="" coords="5,6,149,47"/></map>
+<area shape="rect" id="node2" href="structdnnl_1_1handle.html" title="dnnl::handle\&lt; dnnl\l_post_ops_t \&gt;" alt="" coords="5,6,133,47"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for dnnl::post_ops:</div>
 <div class="dyncontent">
 <div class="center"><img src="structdnnl_1_1post__ops__coll__graph.png" border="0" usemap="#dnnl_1_1post__ops_coll__map" alt="Collaboration graph"/></div>
 <map name="dnnl_1_1post__ops_coll__map" id="dnnl_1_1post__ops_coll__map">
-<area shape="rect" id="node2" href="structdnnl_1_1handle.html" title="dnnl::handle\&lt; dnnl\l_post_ops_t \&gt;" alt="" coords="5,6,149,47"/></map>
+<area shape="rect" id="node2" href="structdnnl_1_1handle.html" title="dnnl::handle\&lt; dnnl\l_post_ops_t \&gt;" alt="" coords="5,6,133,47"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -274,10 +274,8 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struc
 <p>The kind of this post-op is <a class="el" href="structdnnl_1_1primitive.html#ad1ec93215a0cf3aa0a32bae0c2cd9169a1d623b89683f9ce4e074de1676d12416" title="A summation primitive. ">dnnl::primitive::kind::sum</a>.</p>
 <p>This feature may improve performance for cases like residual learning blocks, where the result of convolution is accumulated to the previously computed activations. The parameter <code>scale</code> may be used for the integer-based computations when the result and previous activations have different logical scaling factors.</p>
 <p>In the simplest case when the accumulation is the only post-op, the computations would be <code>dst[:] := scale * dst[:] + op(...)</code> instead of <code>dst[:] := op(...)</code>.</p>
-<p>If <code>data_type</code> is specified, original dst tensor will be reinterpreted as a tensor with provided data type. Since it is reinterpretation, data_type and dst data type should have same size. As a result, computations would be: </p>
-<pre class="fragment">dst[:] &lt;- scale * as_data_type(dst[:]) + op(...)
-                                   // instead of dst[:] &lt;- op(...)
-</pre><dl class="section note"><dt>Note</dt><dd>This post-op executes in-place and does not change the destination layout.</dd></dl>
+<p>If <code>data_type</code> is specified, the original dst tensor will be reinterpreted as a tensor with the provided data type. Because it is a reinterpretation, data_type and dst data type should have the same size. As a result, computations would be <code>dst[:] &lt;- scale * as_data_type(dst[:]) + op(...)</code> instead of <code>dst[:] &lt;- op(...)</code>.</p>
+<dl class="section note"><dt>Note</dt><dd>This post-op executes in-place and does not change the destination layout.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">scale</td><td>Scaling factor. </td></tr>

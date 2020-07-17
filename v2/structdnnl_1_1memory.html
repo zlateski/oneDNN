@@ -108,14 +108,14 @@ Inheritance diagram for dnnl::memory:</div>
 <div class="dyncontent">
 <div class="center"><img src="structdnnl_1_1memory__inherit__graph.png" border="0" usemap="#dnnl_1_1memory_inherit__map" alt="Inheritance graph"/></div>
 <map name="dnnl_1_1memory_inherit__map" id="dnnl_1_1memory_inherit__map">
-<area shape="rect" id="node2" href="structdnnl_1_1handle.html" title="dnnl::handle\&lt; dnnl\l_memory_t \&gt;" alt="" coords="5,6,149,47"/></map>
+<area shape="rect" id="node2" href="structdnnl_1_1handle.html" title="dnnl::handle\&lt; dnnl\l_memory_t \&gt;" alt="" coords="5,6,133,47"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for dnnl::memory:</div>
 <div class="dyncontent">
 <div class="center"><img src="structdnnl_1_1memory__coll__graph.png" border="0" usemap="#dnnl_1_1memory_coll__map" alt="Collaboration graph"/></div>
 <map name="dnnl_1_1memory_coll__map" id="dnnl_1_1memory_coll__map">
-<area shape="rect" id="node2" href="structdnnl_1_1handle.html" title="dnnl::handle\&lt; dnnl\l_memory_t \&gt;" alt="" coords="5,6,149,47"/></map>
+<area shape="rect" id="node2" href="structdnnl_1_1handle.html" title="dnnl::handle\&lt; dnnl\l_memory_t \&gt;" alt="" coords="5,6,133,47"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
@@ -335,7 +335,7 @@ Public Attributes</h2></td></tr>
 <p>Memory format tag specification. </p>
 <p>Memory format tags can be further divided into two categories:</p>
 <ul>
-<li>Domain-agnostic names, i.e. names that do not depend on the tensor usage in the specific primitive. These names use letters from <code>a</code> to <code>l</code> to denote logical dimensions and form the order in which the dimensions are laid in memory. For example, <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa187ef4436122d1cc2f40dc2b92f0eba0" title="plain 2D tensor ">dnnl::memory::format_tag::ab</a> is used to denote a 2D tensor where the second logical dimension (denoted as <code>b</code>) is the innermost, i.e. has stride = 1, and the first logical dimension (<code>a</code>) is laid out in memory with stride equal to the size of the second dimension. On the other hand, <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa07159c47ee1b19ae4fb9c40d480856c4" title="permuted 2D tensor ">dnnl::memory::format_tag::ba</a> is the transposed version of the same tensor: the outermost dimension (<code>a</code>) becomes the innermost one.</li>
+<li>Domain-agnostic names, i.e. names that do not depend on the tensor usage in the specific primitive. These names use letters from <code>a</code> to <code>f</code> to denote logical dimensions and form the order in which the dimensions are laid in memory. For example, <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa187ef4436122d1cc2f40dc2b92f0eba0" title="plain 2D tensor ">dnnl::memory::format_tag::ab</a> is used to denote a 2D tensor where the second logical dimension (denoted as <code>b</code>) is the innermost, i.e. has stride = 1, and the first logical dimension (<code>a</code>) is laid out in memory with stride equal to the size of the second dimension. On the other hand, <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa07159c47ee1b19ae4fb9c40d480856c4" title="permuted 2D tensor ">dnnl::memory::format_tag::ba</a> is the transposed version of the same tensor: the outermost dimension (<code>a</code>) becomes the innermost one.</li>
 <li>Domain-specific names, i.e. names that make sense only in the context of a certain domain, such as CNN. These names are aliases to the corresponding domain-agnostic tags and used mostly for convenience. For example, <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa1e7342845e24eb3b5b3554490da1c128" title="2D CNN activations tensor; an alias for dnnl::memory::format_tag::ab ">dnnl::memory::format_tag::nc</a> is used to denote 2D CNN activations tensor memory format, where the channels dimension is the innermost one and the batch dimension is the outermost one. Moreover, <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa1e7342845e24eb3b5b3554490da1c128" title="2D CNN activations tensor; an alias for dnnl::memory::format_tag::ab ">dnnl::memory::format_tag::nc</a> is an alias for <a class="el" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa187ef4436122d1cc2f40dc2b92f0eba0" title="plain 2D tensor ">dnnl::memory::format_tag::ab</a>, because for CNN primitives the logical dimensions of activations tensors come in order: batch, channels, spatial. In other words, batch corresponds to the first logical dimension (<code>a</code>), and channels correspond to the second one (<code>b</code>).</li>
 </ul>
 <p>The following domain-specific notation applies to memory format tags:</p>

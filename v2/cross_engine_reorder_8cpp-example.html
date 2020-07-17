@@ -126,10 +126,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line"><span class="keywordtype">int</span> find_negative(<a class="code" href="structdnnl_1_1memory.html">memory</a> &amp;mem, <span class="keyword">const</span> <a class="code" href="structdnnl_1_1memory.html#afdd20764d58c0b517d5a31276672aeb8">memory::dims</a> &amp;adims) {</div>
 <div class="line">    <span class="keywordtype">int</span> negs = 0;</div>
-<div class="line">    std::vector&lt;float&gt; array(product(adims));</div>
+<div class="line">    <span class="keywordtype">size_t</span> nelems = product(adims);</div>
+<div class="line">    std::vector&lt;float&gt; array(nelems);</div>
 <div class="line">    read_from_dnnl_memory(array.data(), mem);</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> e = 0; e &lt; (size_t)product(adims); ++e)</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> e = 0; e &lt; nelems; ++e)</div>
 <div class="line">        negs += array[e] &lt; 0.0f;</div>
 <div class="line">    <span class="keywordflow">return</span> negs;</div>
 <div class="line">}</div>

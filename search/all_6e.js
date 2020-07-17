@@ -1,6 +1,7 @@
 var searchData=
 [
   ['naming_20conventions',['Naming Conventions',['../dev_guide_conventions.html',1,'']]],
+  ['nuances_20of_20int8_20computations',['Nuances of int8 Computations',['../dev_guide_int8_computations.html',1,'']]],
   ['nc',['nc',['../structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa1e7342845e24eb3b5b3554490da1c128',1,'dnnl::memory']]],
   ['ncdhw',['ncdhw',['../structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fae7a84f08ef10d4fe3096307c6d9770fd',1,'dnnl::memory']]],
   ['nchw',['nchw',['../structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3faded7ac40158367123c5467281d44cbeb',1,'dnnl::memory']]],
