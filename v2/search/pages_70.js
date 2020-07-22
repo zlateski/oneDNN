@@ -4,7 +4,6 @@ var searchData=
   ['primitive_20attributes_3a_20post_2dops',['Primitive Attributes: Post-ops',['../dev_guide_attributes_post_ops.html',1,'']]],
   ['primitive_20attributes_3a_20quantization',['Primitive Attributes: Quantization',['../dev_guide_attributes_quantization.html',1,'']]],
   ['primitive_20attributes_3a_20scratchpad',['Primitive Attributes: Scratchpad',['../dev_guide_attributes_scratchpad.html',1,'']]],
-  ['performance_20settings_20for_20benchmarking',['Performance Settings for Benchmarking',['../dev_guide_performance_settings.html',1,'']]],
   ['pooling',['Pooling',['../dev_guide_pooling.html',1,'']]],
   ['primitive_20cache',['Primitive Cache',['../dev_guide_primitive_cache.html',1,'']]],
   ['profiling_20onednn_20performance',['Profiling oneDNN Performance',['../dev_guide_profilers.html',1,'']]],

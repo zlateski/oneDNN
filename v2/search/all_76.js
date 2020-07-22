@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['version_201_2e0_20transition_20guide',['Version 1.0 Transition Guide',['../dev_guide_transition_to_v1.html',1,'']]],
   ['verbose_20mode',['Verbose Mode',['../dev_guide_verbose.html',1,'']]],
   ['validate_5fdims',['validate_dims',['../structdnnl_1_1memory.html#a5a02c4d5aa4a07650977ba57ed65bd9a',1,'dnnl::memory']]],
   ['vanilla_5fgru',['vanilla_gru',['../group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640a272fa682d36b810a24ec89202b7a31f7',1,'dnnl']]],
