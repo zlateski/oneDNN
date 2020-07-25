@@ -28,65 +28,65 @@ var NAVTREE =
         [ "DPC++ Interoperability", "dev_guide_dpcpp_interoperability.html", null ],
         [ "Unified Shared Memory with DPC++", "dev_guide_dpcpp_usm.html", null ],
         [ "DPC++ Backends", "dev_guide_dpcpp_backends.html", null ]
+      ] ]
+    ] ],
+    [ "Supported Primitives", "usergroup3.html", [
+      [ "(De-)Convolution", "dev_guide_convolution.html", null ],
+      [ "Inner Product", "dev_guide_inner_product.html", null ],
+      [ "Matrix Multiplication", "dev_guide_matmul.html", null ],
+      [ "RNN", "dev_guide_rnn.html", null ],
+      [ "Batch Normalization", "dev_guide_batch_normalization.html", null ],
+      [ "Binary", "dev_guide_binary.html", null ],
+      [ "Concat", "dev_guide_concat.html", null ],
+      [ "Elementwise", "dev_guide_eltwise.html", null ],
+      [ "Layer Normalization", "dev_guide_layer_normalization.html", null ],
+      [ "Local Response Normalization", "dev_guide_lrn.html", null ],
+      [ "Logsoftmax", "dev_guide_logsoftmax.html", null ],
+      [ "Pooling", "dev_guide_pooling.html", null ],
+      [ "Resampling", "dev_guide_resampling.html", null ],
+      [ "Shuffle", "dev_guide_shuffle.html", null ],
+      [ "Softmax", "dev_guide_softmax.html", null ],
+      [ "Sum", "dev_guide_sum.html", null ],
+      [ "Reorder", "dev_guide_reorder.html", null ]
+    ] ],
+    [ "Examples", "dev_guide_examples.html", null ],
+    [ "Performance Profiling and Inspection", "usergroup4.html", [
+      [ "Verbose Mode", "dev_guide_verbose.html", null ],
+      [ "Configuring oneDNN for Benchmarking", "dev_guide_performance_settings.html", null ],
+      [ "Performance Benchmark", "dev_guide_benchdnn.html", null ],
+      [ "Profiling oneDNN Performance", "dev_guide_profilers.html", null ],
+      [ "Inspecting JIT Code", "dev_guide_inspecting_jit.html", null ],
+      [ "Performance Profiling Example", "performance_profiling_cpp.html", null ],
+      [ "CPU Dispatcher Controls", "dev_guide_cpu_dispatcher_control.html", null ]
+    ] ],
+    [ "Advanced Topics", "usergroup5.html", [
+      [ "Transition from v0.x to v1.x", "dev_guide_transition_to_v1.html", null ],
+      [ "Transition from Intel MKL-DNN to oneDNN", "dev_guide_transition_to_dnnl.html", null ],
+      [ "Understanding oneDNN Memory Formats", "dev_guide_understanding_memory_formats.html", null ],
+      [ "Nuances of int8 computations", "dev_guide_int8_computations.html", null ],
+      [ "Primitive Cache", "dev_guide_primitive_cache.html", null ],
+      [ "Using oneDNN with Threadpool-based Threading", "dev_guide_threadpool.html", null ]
+    ] ],
+    [ "API Reference", "usergroup6.html", [
+      [ "Modules", "modules.html", "modules" ],
+      [ "Namespace Members", "namespacemembers.html", [
+        [ "All", "namespacemembers.html", null ],
+        [ "Functions", "namespacemembers_func.html", null ],
+        [ "Typedefs", "namespacemembers_type.html", null ],
+        [ "Enumerations", "namespacemembers_enum.html", null ],
+        [ "Enumerator", "namespacemembers_eval.html", null ]
       ] ],
-      [ "Supported Primitives", "usergroup3.html", [
-        [ "(De-)Convolution", "dev_guide_convolution.html", null ],
-        [ "Inner Product", "dev_guide_inner_product.html", null ],
-        [ "Matrix Multiplication", "dev_guide_matmul.html", null ],
-        [ "RNN", "dev_guide_rnn.html", null ],
-        [ "Batch Normalization", "dev_guide_batch_normalization.html", null ],
-        [ "Binary", "dev_guide_binary.html", null ],
-        [ "Concat", "dev_guide_concat.html", null ],
-        [ "Elementwise", "dev_guide_eltwise.html", null ],
-        [ "Layer Normalization", "dev_guide_layer_normalization.html", null ],
-        [ "Local Response Normalization", "dev_guide_lrn.html", null ],
-        [ "Logsoftmax", "dev_guide_logsoftmax.html", null ],
-        [ "Pooling", "dev_guide_pooling.html", null ],
-        [ "Resampling", "dev_guide_resampling.html", null ],
-        [ "Shuffle", "dev_guide_shuffle.html", null ],
-        [ "Softmax", "dev_guide_softmax.html", null ],
-        [ "Sum", "dev_guide_sum.html", null ],
-        [ "Reorder", "dev_guide_reorder.html", null ]
-      ] ],
-      [ "Examples", "dev_guide_examples.html", null ],
-      [ "Performance Profiling and Inspection", "usergroup4.html", [
-        [ "Verbose Mode", "dev_guide_verbose.html", null ],
-        [ "Configuring oneDNN for Benchmarking", "dev_guide_performance_settings.html", null ],
-        [ "Performance Benchmark", "dev_guide_benchdnn.html", null ],
-        [ "Profiling oneDNN Performance", "dev_guide_profilers.html", null ],
-        [ "Inspecting JIT Code", "dev_guide_inspecting_jit.html", null ],
-        [ "Performance Profiling Example", "performance_profiling_cpp.html", null ],
-        [ "CPU Dispatcher Controls", "dev_guide_cpu_dispatcher_control.html", null ]
-      ] ],
-      [ "Advanced Topics", "usergroup5.html", [
-        [ "Transition from v0.x to v1.x", "dev_guide_transition_to_v1.html", null ],
-        [ "Transition from Intel MKL-DNN to oneDNN", "dev_guide_transition_to_dnnl.html", null ],
-        [ "Understanding oneDNN Memory Formats", "dev_guide_understanding_memory_formats.html", null ],
-        [ "Nuances of int8 computations", "dev_guide_int8_computations.html", null ],
-        [ "Primitive Cache", "dev_guide_primitive_cache.html", null ],
-        [ "Using oneDNN with Threadpool-based Threading", "dev_guide_threadpool.html", null ]
-      ] ],
-      [ "API Reference", "usergroup6.html", [
-        [ "Modules", "modules.html", "modules" ],
-        [ "Namespace Members", "namespacemembers.html", [
-          [ "All", "namespacemembers.html", null ],
-          [ "Functions", "namespacemembers_func.html", null ],
-          [ "Typedefs", "namespacemembers_type.html", null ],
-          [ "Enumerations", "namespacemembers_enum.html", null ],
-          [ "Enumerator", "namespacemembers_eval.html", null ]
-        ] ],
-        [ "Class List", null, [
-          [ "Class List", "annotated.html", "annotated" ],
-          [ "Class Index", "classes.html", null ],
-          [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
-          [ "Class Members", "functions.html", [
-            [ "All", "functions.html", "functions_dup" ],
-            [ "Functions", "functions_func.html", "functions_func" ],
-            [ "Variables", "functions_vars.html", null ],
-            [ "Typedefs", "functions_type.html", null ],
-            [ "Enumerations", "functions_enum.html", null ],
-            [ "Enumerator", "functions_eval.html", null ]
-          ] ]
+      [ "Class List", null, [
+        [ "Class List", "annotated.html", "annotated" ],
+        [ "Class Index", "classes.html", null ],
+        [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
+        [ "Class Members", "functions.html", [
+          [ "All", "functions.html", "functions_dup" ],
+          [ "Functions", "functions_func.html", "functions_func" ],
+          [ "Variables", "functions_vars.html", null ],
+          [ "Typedefs", "functions_type.html", null ],
+          [ "Enumerations", "functions_enum.html", null ],
+          [ "Enumerator", "functions_eval.html", null ]
         ] ]
       ] ]
     ] ]
