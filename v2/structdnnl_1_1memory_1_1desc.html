@@ -432,10 +432,10 @@ Public Attributes</h2></td></tr>
 <ol type="1">
 <li>Add a dimension of size <code>1</code>. This is always possible.</li>
 <li>Remove a dimension of size <code>1</code>. This is possible only if the dimension has no padding (i.e. <code>padded_dims[dim] == dims[dim] &amp;&amp; dims[dim] == 1</code>).</li>
-<li>Split a dimension into multiple ones. This is possible only if the product of all tensor diumensions stays constant and the dimension being split does not have padding (i.e. <code>padded_dims[dim] = dims[dim]</code>).</li>
+<li>Split a dimension into multiple ones. This is possible only if the product of all tensor dimensions stays constant and the dimension being split does not have padding (i.e. <code>padded_dims[dim] = dims[dim]</code>).</li>
 <li>Join multiple consecutive dimensions into a single one. As in the cases above, this requires that the dimensions do not have padding and that the memory format is such that in physical memory these dimensions are dense and have the same order as their logical counterparts. This also assumes that these dimensions are not blocked.<ul>
-<li>Here, dense means: <code>stride for dim[i] == (stride for dim[i + 1]) * dim[i + 1]</code>;</li>
-<li>And same order means: <code>i &lt; j</code> if and only if <code>stride for dim[j] &lt;= stride for dim[i]</code>.</li>
+<li>Here, 'dense' means: <code>stride for dim[i] == (stride for dim[i + 1]) * dim[i + 1]</code>;</li>
+<li>And 'same order' means: <code>i &lt; j</code> if and only if <code>stride for dim[j] &lt;= stride for dim[i]</code>.</li>
 </ul>
 </li>
 </ol>
@@ -484,7 +484,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructs a memory descriptor by permuting axes in an existing one. </p>
-<p>The physical memory layout representation is adjusted accordingly to maintain the consistency between the logical and physical parts of the memory descriptor.</p>
+<p>The physical memory layout representation is adjusted accordingly to maintain the consistency between the logical and physical parts of the memory descriptor. The new memory descriptor inherits the data type.</p>
 <p>The new memory descriptor inherits the data type. This operation is valid only for memory descriptors that have format_kind set to <a class="el" href="structdnnl_1_1memory.html#aabcadfb0e23a36a91272fc571cff105fa61326117ed4a9ddf3f754e71e119e5b3" title="A tensor in a generic format described by the stride and blocking values in each dimension. ">dnnl::memory::format_kind::blocked</a> or <a class="el" href="structdnnl_1_1memory.html#aabcadfb0e23a36a91272fc571cff105fa100b8cad7cf2a56f6df78f171f97a1ec" title="Unspecified format kind. ">dnnl::memory::format_kind::any</a>.</p>
 <p>The logical axes will be permuted in the following manner: </p>
 <div class="fragment"><div class="line">*  <span class="keywordflow">for</span> (i = 0; i &lt; ndims(); i++)</div>

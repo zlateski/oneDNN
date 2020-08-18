@@ -166,9 +166,9 @@ $(document).ready(function(){initNavTree('cross_engine_reorder_c.html','');});
 <div class="line"></div>
 <div class="line">    <a class="code" href="structdnnl__memory.html">dnnl_memory_t</a> m_cpu, m_gpu;</div>
 <div class="line">    CHECK(<a class="code" href="group__dnnl__api__memory.html#ga52a9246bd7f4e498b08d61e75e689a0c">dnnl_memory_create</a>(</div>
-<div class="line">            &amp;m_cpu, &amp;m_cpu_md, engine_cpu, DNNL_MEMORY_ALLOCATE));</div>
+<div class="line">            &amp;m_cpu, &amp;m_cpu_md, engine_cpu, <a class="code" href="group__dnnl__api__memory.html#gaf19cbfbf1f0a9508283f2a25561ae0e4">DNNL_MEMORY_ALLOCATE</a>));</div>
 <div class="line">    CHECK(<a class="code" href="group__dnnl__api__memory.html#ga52a9246bd7f4e498b08d61e75e689a0c">dnnl_memory_create</a>(</div>
-<div class="line">            &amp;m_gpu, &amp;m_gpu_md, engine_gpu, DNNL_MEMORY_ALLOCATE));</div>
+<div class="line">            &amp;m_gpu, &amp;m_gpu_md, engine_gpu, <a class="code" href="group__dnnl__api__memory.html#gaf19cbfbf1f0a9508283f2a25561ae0e4">DNNL_MEMORY_ALLOCATE</a>));</div>
 <div class="line"></div>
 <div class="line">    fill(m_cpu, 4, tz);</div>
 <div class="line">    <span class="keywordflow">if</span> (find_negative(m_cpu, 4, tz) == 0)</div>

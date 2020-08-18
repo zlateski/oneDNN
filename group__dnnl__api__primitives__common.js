@@ -129,6 +129,8 @@ var group__dnnl__api__primitives__common =
     [ "DNNL_ARG_MULTIPLE_DST", "group__dnnl__api__primitives__common.html#gaa4183403de9fac3efd3f32c7a975580b", null ],
     [ "DNNL_ARG_ATTR_ZERO_POINTS", "group__dnnl__api__primitives__common.html#gaf8d879adfe2baa2f9f2a5143a0f274b6", null ],
     [ "DNNL_ARG_ATTR_POST_OP_DW", "group__dnnl__api__primitives__common.html#ga47534804c9b2f9ede6b875f6cb08cc35", null ],
+    [ "DNNL_ARG_ATTR_MULTIPLE_POST_OP_BASE", "group__dnnl__api__primitives__common.html#gadec6bcdebcd35d41c394622af3e0cb75", null ],
+    [ "DNNL_ARG_ATTR_MULTIPLE_POST_OP", "group__dnnl__api__primitives__common.html#ga30839136bbf81b03a173e0842ae015e1", null ],
     [ "dnnl_op_desc_t", "group__dnnl__api__primitives__common.html#ga8aa7e594f8ce4c98bd6dc8294e4003e5", null ],
     [ "const_dnnl_op_desc_t", "group__dnnl__api__primitives__common.html#ga68197f349eb0876085adfb385d8932de", null ],
     [ "dnnl_primitive_desc_iterator_t", "group__dnnl__api__primitives__common.html#ga2a9b0fa6a3a0f2b7713c943ba18b8615", null ],

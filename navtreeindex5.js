@@ -1,5 +1,11 @@
 var NAVTREEINDEX5 =
 {
+"structdnnl_1_1lrn__backward_1_1primitive__desc.html#a3f18602980a6e17570b4dd3883d13f71":[6,0,0,0,13,1,1,4],
+"structdnnl_1_1lrn__backward_1_1primitive__desc.html#a5d5c62ca9b7b8627296223579788767b":[6,0,0,0,13,1,1,2],
+"structdnnl_1_1lrn__backward_1_1primitive__desc.html#a6307e71e4a9d941e76e2d03a96d81763":[6,0,0,0,13,1,1,5],
+"structdnnl_1_1lrn__backward_1_1primitive__desc.html#a8f262bb255d60609c04c9c0bc5d73ad1":[6,0,0,0,13,1,1,3],
+"structdnnl_1_1lrn__backward_1_1primitive__desc.html#aab7a7114ed6913f3c9edfe6553d7feae":[6,0,0,0,13,1,1,1],
+"structdnnl_1_1lrn__backward_1_1primitive__desc.html#ae3fa95b5d4f9814f79beacf3e2ca02ad":[6,0,0,0,13,1,1,0],
 "structdnnl_1_1lrn__forward.html":[6,0,0,0,13,0],
 "structdnnl_1_1lrn__forward.html#a0965de329a83a356d1d0004000610451":[6,0,0,0,13,0,2],
 "structdnnl_1_1lrn__forward.html#af08a4b4986501182caf804266af08dce":[6,0,0,0,13,0,3],
@@ -243,11 +249,5 @@ var NAVTREEINDEX5 =
 "structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa6b6699fd9768a197cd07ef9ffaf56795":[6,0,0,1,0,5,350],
 "structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa6c59aca085940321bf972a1b950bdaa5":[6,0,0,1,0,5,371],
 "structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa6c6f2aba250ce2441a9ff2976ab0e4ed":[6,0,0,1,0,5,165],
-"structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa6ddd5d85e7ecdd273334dcc2ecdb7899":[6,0,0,1,0,5,126],
-"structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa6debec47fc73823aa65cc49b94b7e1fb":[6,0,0,1,0,5,22],
-"structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa6e08a5845009f77deaf6701aafaf53cc":[6,0,0,1,0,5,270],
-"structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa70621dffd1398acc2e78eeb8a3fcda49":[6,0,0,1,0,5,154],
-"structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa71d88a282605bcf34c14cd4b97483941":[6,0,0,1,0,5,205],
-"structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa723520a2226cac57233f4e24ea6259ca":[6,0,0,1,0,5,184],
-"structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa7364c31504080477789c9f0c02557409":[6,0,0,1,0,5,283]
+"structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa6ddd5d85e7ecdd273334dcc2ecdb7899":[6,0,0,1,0,5,126]
 };

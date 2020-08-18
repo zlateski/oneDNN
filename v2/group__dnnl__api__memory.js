@@ -451,6 +451,8 @@ var group__dnnl__api__memory =
     [ "DNNL_RUNTIME_F32_VAL", "group__dnnl__api__memory.html#gab16365c11b4dc88fbb453edb51f1979f", null ],
     [ "DNNL_RUNTIME_S32_VAL", "group__dnnl__api__memory.html#ga30139d5110e9e895ccd93fe503ca4c35", null ],
     [ "DNNL_RNN_MAX_N_PARTS", "group__dnnl__api__memory.html#ga13d8eca8d5e6c94573e1154b3407407f", null ],
+    [ "DNNL_MEMORY_NONE", "group__dnnl__api__memory.html#ga96c8752fb3cb4f01cf64bf56190b1343", null ],
+    [ "DNNL_MEMORY_ALLOCATE", "group__dnnl__api__memory.html#gaf19cbfbf1f0a9508283f2a25561ae0e4", null ],
     [ "dnnl_dim_t", "group__dnnl__api__memory.html#ga872631b12a112bf43fba985cba24dd20", null ],
     [ "dnnl_dims_t", "group__dnnl__api__memory.html#ga8331e1160e52a5d4babe96736464095a", null ],
     [ "dnnl_memory_t", "group__dnnl__api__memory.html#ga2b79954bd7bb293e766a89189e8440fd", null ],

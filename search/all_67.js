@@ -18,6 +18,7 @@ var searchData=
   ['get_5focl_5fdevice',['get_ocl_device',['../structdnnl_1_1engine.html#a2f7013922cf742705ec04b425fa06a7f',1,'dnnl::engine']]],
   ['get_5focl_5fmem_5fobject',['get_ocl_mem_object',['../structdnnl_1_1memory.html#a9767b76689ed4a9c8fbb96e443e374d4',1,'dnnl::memory']]],
   ['get_5foutput_5fscales',['get_output_scales',['../structdnnl_1_1primitive__attr.html#a11f7ce246239d1416ce9ff8d81ff7f5f',1,'dnnl::primitive_attr']]],
+  ['get_5fparams_5fbinary',['get_params_binary',['../structdnnl_1_1post__ops.html#a726a64a5cd160a51b2f93d33f482670f',1,'dnnl::post_ops']]],
   ['get_5fparams_5fdw_5fk3s1p1',['get_params_dw_k3s1p1',['../structdnnl_1_1post__ops.html#aefb536724307912fdfd1439383679501',1,'dnnl::post_ops']]],
   ['get_5fparams_5fdw_5fk3s2p1',['get_params_dw_k3s2p1',['../structdnnl_1_1post__ops.html#a128429160104654adcfb651e9ee02905',1,'dnnl::post_ops']]],
   ['get_5fparams_5feltwise',['get_params_eltwise',['../structdnnl_1_1post__ops.html#a0158eefb937f15634753922dc9e9455a',1,'dnnl::post_ops']]],
@@ -42,8 +43,8 @@ var searchData=
   ['getting_20started_20on_20gpu_20with_20opencl_20extensions_20api',['Getting started on GPU with OpenCL extensions API',['../gpu_opencl_interop_cpp.html',1,'']]],
   ['gpu_5fruntime',['gpu_runtime',['../structdnnl__version__t.html#ac15e5566f96a65b2c97903c787f129ac',1,'dnnl_version_t']]],
   ['group_5fsize',['group_size',['../structdnnl__shuffle__desc__t.html#ade974f8027fee2319a64477110bd0619',1,'dnnl_shuffle_desc_t']]],
-  ['gru_5fbackward',['gru_backward',['../structdnnl_1_1gru__backward.html#a8916d8de8e768a15255d94d69e9f0a68',1,'dnnl::gru_backward::gru_backward()=default'],['../structdnnl_1_1gru__backward.html#a8a341b3745ab0c27b1d48b88fa4ac1f6',1,'dnnl::gru_backward::gru_backward(const primitive_desc &amp;pd)']]],
   ['gru_5fbackward',['gru_backward',['../structdnnl_1_1gru__backward.html',1,'dnnl']]],
+  ['gru_5fbackward',['gru_backward',['../structdnnl_1_1gru__backward.html#a8916d8de8e768a15255d94d69e9f0a68',1,'dnnl::gru_backward::gru_backward()=default'],['../structdnnl_1_1gru__backward.html#a8a341b3745ab0c27b1d48b88fa4ac1f6',1,'dnnl::gru_backward::gru_backward(const primitive_desc &amp;pd)']]],
   ['gru_5fforward',['gru_forward',['../structdnnl_1_1gru__forward.html#ac3bfe27a9088c8e2a27ad88c7929de38',1,'dnnl::gru_forward::gru_forward()=default'],['../structdnnl_1_1gru__forward.html#a120dbe542bd785423ac1dea0128764aa',1,'dnnl::gru_forward::gru_forward(const primitive_desc &amp;pd)']]],
   ['gru_5fforward',['gru_forward',['../structdnnl_1_1gru__forward.html',1,'dnnl']]]
 ];

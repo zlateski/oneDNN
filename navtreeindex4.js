@@ -1,5 +1,11 @@
 var NAVTREEINDEX4 =
 {
+"structdnnl_1_1eltwise__backward_1_1desc.html#a1f2b7f03992121019de203d01a9fe664":[6,0,0,0,9,1,0,0],
+"structdnnl_1_1eltwise__backward_1_1primitive__desc.html":[6,0,0,0,9,1,1],
+"structdnnl_1_1eltwise__backward_1_1primitive__desc.html#a5ff2345413f8223f1a06ee72da1b4346":[6,0,0,0,9,1,1,5],
+"structdnnl_1_1eltwise__backward_1_1primitive__desc.html#a64edb467aa0b080b9e8be37e343fd3ee":[6,0,0,0,9,1,1,6],
+"structdnnl_1_1eltwise__backward_1_1primitive__desc.html#a656a7d9aece3a8b0c0970b64579ce544":[6,0,0,0,9,1,1,0],
+"structdnnl_1_1eltwise__backward_1_1primitive__desc.html#a6820a9719f7aa3483e3e19443313d0ac":[6,0,0,0,9,1,1,1],
 "structdnnl_1_1eltwise__backward_1_1primitive__desc.html#a6fbd45121a46fde56ff70462e75e4515":[6,0,0,0,9,1,1,2],
 "structdnnl_1_1eltwise__backward_1_1primitive__desc.html#ac13b66eaebdd18f7c0113b1a832f414a":[6,0,0,0,9,1,1,4],
 "structdnnl_1_1eltwise__backward_1_1primitive__desc.html#aeadf274f41a2aeaafb63f5b0708d86e7":[6,0,0,0,9,1,1,3],
@@ -243,11 +249,5 @@ var NAVTREEINDEX4 =
 "structdnnl_1_1lrn__backward_1_1desc.html":[6,0,0,0,13,1,0],
 "structdnnl_1_1lrn__backward_1_1desc.html#a59aa96046c2bf2bc8c74ded21df266d7":[6,0,0,0,13,1,0,0],
 "structdnnl_1_1lrn__backward_1_1primitive__desc.html":[6,0,0,0,13,1,1],
-"structdnnl_1_1lrn__backward_1_1primitive__desc.html#a3e7fb4d3819892d288b6793e23c3e455":[6,0,0,0,13,1,1,6],
-"structdnnl_1_1lrn__backward_1_1primitive__desc.html#a3f18602980a6e17570b4dd3883d13f71":[6,0,0,0,13,1,1,4],
-"structdnnl_1_1lrn__backward_1_1primitive__desc.html#a5d5c62ca9b7b8627296223579788767b":[6,0,0,0,13,1,1,2],
-"structdnnl_1_1lrn__backward_1_1primitive__desc.html#a6307e71e4a9d941e76e2d03a96d81763":[6,0,0,0,13,1,1,5],
-"structdnnl_1_1lrn__backward_1_1primitive__desc.html#a8f262bb255d60609c04c9c0bc5d73ad1":[6,0,0,0,13,1,1,3],
-"structdnnl_1_1lrn__backward_1_1primitive__desc.html#aab7a7114ed6913f3c9edfe6553d7feae":[6,0,0,0,13,1,1,1],
-"structdnnl_1_1lrn__backward_1_1primitive__desc.html#ae3fa95b5d4f9814f79beacf3e2ca02ad":[6,0,0,0,13,1,1,0]
+"structdnnl_1_1lrn__backward_1_1primitive__desc.html#a3e7fb4d3819892d288b6793e23c3e455":[6,0,0,0,13,1,1,6]
 };

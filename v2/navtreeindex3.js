@@ -1,5 +1,7 @@
 var NAVTREEINDEX3 =
 {
+"group__dnnl__api__service.html#ga64c87a04eba7774b2157dc6ce95d5992":[6,0,0,5,1],
+"group__dnnl__api__service.html#ga66a48a940ab2916d360b0bb677a70e5f":[6,0,0,5,13],
 "group__dnnl__api__service.html#ga6c26ca286652838cb6927ca8bcd57ed7":[6,0,0,5,7],
 "group__dnnl__api__service.html#ga73e40d184386e9d9ca917756e76fb232":[6,0,0,5,21],
 "group__dnnl__api__service.html#ga7acc4d3516304ae68a1289551d8f2cdd":[6,0,0,5,16],
@@ -247,7 +249,5 @@ var NAVTREEINDEX3 =
 "structdnnl_1_1deconvolution__forward_1_1primitive__desc.html#a9f4d214e142ef77363abeab7f48ec9c7":[6,0,0,0,7,0,1,0],
 "structdnnl_1_1eltwise__backward.html":[6,0,0,0,9,1],
 "structdnnl_1_1eltwise__backward.html#a4f60bb4e596dbf16ef9f7edfdd303bfd":[6,0,0,0,9,1,2],
-"structdnnl_1_1eltwise__backward.html#adaf18ede58521c74dbccf53f8ca7f2fa":[6,0,0,0,9,1,3],
-"structdnnl_1_1eltwise__backward_1_1desc.html":[6,0,0,0,9,1,0],
-"structdnnl_1_1eltwise__backward_1_1desc.html#a1f2b7f03992121019de203d01a9fe664":[6,0,0,0,9,1,0,0]
+"structdnnl_1_1eltwise__backward.html#adaf18ede58521c74dbccf53f8ca7f2fa":[6,0,0,0,9,1,3]
 };

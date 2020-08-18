@@ -12,7 +12,9 @@ var group__dnnl__api__attributes =
       [ "append_dw_k3s1p1", "structdnnl_1_1post__ops.html#a4229db0e1e1eab273ed0e2b3e18402de", null ],
       [ "get_params_dw_k3s1p1", "structdnnl_1_1post__ops.html#aefb536724307912fdfd1439383679501", null ],
       [ "append_dw_k3s2p1", "structdnnl_1_1post__ops.html#a88ed886c27b4df4667431ed48d29f4c1", null ],
-      [ "get_params_dw_k3s2p1", "structdnnl_1_1post__ops.html#a128429160104654adcfb651e9ee02905", null ]
+      [ "get_params_dw_k3s2p1", "structdnnl_1_1post__ops.html#a128429160104654adcfb651e9ee02905", null ],
+      [ "append_binary", "structdnnl_1_1post__ops.html#a40bb2b39a685726ac54873b203be41b5", null ],
+      [ "get_params_binary", "structdnnl_1_1post__ops.html#a726a64a5cd160a51b2f93d33f482670f", null ]
     ] ],
     [ "primitive_attr", "structdnnl_1_1primitive__attr.html", [
       [ "primitive_attr", "structdnnl_1_1primitive__attr.html#acfbfd85b7ca82bf97e2b07c2427427de", null ],
@@ -131,6 +133,8 @@ var group__dnnl__api__attributes =
     [ "dnnl_post_ops_get_params_dw_k3s1p1", "group__dnnl__api__attributes.html#gab7b3337bc132438f4dada22f6fe72a0f", null ],
     [ "dnnl_post_ops_append_dw_k3s2p1", "group__dnnl__api__attributes.html#gaa31670d933930b7c7940379bff0de326", null ],
     [ "dnnl_post_ops_get_params_dw_k3s2p1", "group__dnnl__api__attributes.html#ga0b82c6ac2d4bd5c8ddee4a807fd2e527", null ],
+    [ "dnnl_post_ops_append_binary", "group__dnnl__api__attributes.html#ga9d6524a5808500e78138dd2125ac2cbe", null ],
+    [ "dnnl_post_ops_get_params_binary", "group__dnnl__api__attributes.html#gade0e47fd1f367bf5d8119b21751038ba", null ],
     [ "dnnl_primitive_attr_set_rnn_data_qparams", "group__dnnl__api__attributes.html#ga0067a4b6e5dd2fe7578cd4a25dddfe39", null ],
     [ "dnnl_primitive_attr_set_rnn_weights_qparams", "group__dnnl__api__attributes.html#ga815dbfe548cfcb70076fe091888e5466", null ],
     [ "convert_to_c", "group__dnnl__api__attributes.html#gaa30f540e1ed09b2865f153fd599c967b", null ],

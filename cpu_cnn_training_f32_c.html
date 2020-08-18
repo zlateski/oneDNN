@@ -186,7 +186,7 @@ $(document).ready(function(){initNavTree('cpu_cnn_training_f32_c.html','');});
 <div class="line">    <a class="code" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> user_md;</div>
 <div class="line">    CHECK(<a class="code" href="group__dnnl__api__memory.html#gaff696e368aeefb3036a0419c508dc6be">dnnl_memory_desc_init_by_tag</a>(</div>
 <div class="line">            &amp;user_md, dim, dims, <a class="code" href="group__dnnl__api__memory.html#gga012ba1c84ff24bdd068f9d2f9b26a130a6b33889946b183311c39cc1bd0656ae9">dnnl_f32</a>, user_tag));</div>
-<div class="line">    CHECK(<a class="code" href="group__dnnl__api__memory.html#ga52a9246bd7f4e498b08d61e75e689a0c">dnnl_memory_create</a>(memory, &amp;user_md, engine, DNNL_MEMORY_ALLOCATE));</div>
+<div class="line">    CHECK(<a class="code" href="group__dnnl__api__memory.html#ga52a9246bd7f4e498b08d61e75e689a0c">dnnl_memory_create</a>(memory, &amp;user_md, engine, <a class="code" href="group__dnnl__api__memory.html#gaf19cbfbf1f0a9508283f2a25561ae0e4">DNNL_MEMORY_ALLOCATE</a>));</div>
 <div class="line">    write_to_dnnl_memory(data, *memory);</div>
 <div class="line">}</div>
 <div class="line"></div>
@@ -206,7 +206,7 @@ $(document).ready(function(){initNavTree('cpu_cnn_training_f32_c.html','');});
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="group__dnnl__api__memory.html#gaa734e01591b567ed6378df1f404058e2">dnnl_memory_desc_equal</a>(user_memory_md, prim_memory_md)) {</div>
 <div class="line">        CHECK(<a class="code" href="group__dnnl__api__memory.html#ga52a9246bd7f4e498b08d61e75e689a0c">dnnl_memory_create</a>(prim_memory, prim_memory_md, prim_engine,</div>
-<div class="line">                DNNL_MEMORY_ALLOCATE));</div>
+<div class="line">                <a class="code" href="group__dnnl__api__memory.html#gaf19cbfbf1f0a9508283f2a25561ae0e4">DNNL_MEMORY_ALLOCATE</a>));</div>
 <div class="line"></div>
 <div class="line">        <a class="code" href="structdnnl__primitive__desc.html">dnnl_primitive_desc_t</a> reorder_pd;</div>
 <div class="line">        <span class="keywordflow">if</span> (dir_is_user_to_prim) {</div>
@@ -319,7 +319,7 @@ $(document).ready(function(){initNavTree('cpu_cnn_training_f32_c.html','');});
 <div class="line">    <span class="keyword">const</span> <a class="code" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *conv_dst_md</div>
 <div class="line">            = <a class="code" href="group__dnnl__api__primitives__common.html#ga416464a8b3e898d8965a5f3c49d4cd54">dnnl_primitive_desc_query_md</a>(conv_pd, <a class="code" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598">dnnl_query_dst_md</a>, 0);</div>
 <div class="line">    CHECK(<a class="code" href="group__dnnl__api__memory.html#ga52a9246bd7f4e498b08d61e75e689a0c">dnnl_memory_create</a>(&amp;conv_internal_dst_memory, conv_dst_md, engine,</div>
-<div class="line">            DNNL_MEMORY_ALLOCATE));</div>
+<div class="line">            <a class="code" href="group__dnnl__api__memory.html#gaf19cbfbf1f0a9508283f2a25561ae0e4">DNNL_MEMORY_ALLOCATE</a>));</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// create reorder primitives between user data and convolution srcs</span></div>
 <div class="line">    <span class="comment">// if required</span></div>
@@ -379,7 +379,7 @@ $(document).ready(function(){initNavTree('cpu_cnn_training_f32_c.html','');});
 <div class="line">    <span class="keyword">const</span> <a class="code" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *relu_dst_md</div>
 <div class="line">            = <a class="code" href="group__dnnl__api__primitives__common.html#ga416464a8b3e898d8965a5f3c49d4cd54">dnnl_primitive_desc_query_md</a>(relu_pd, <a class="code" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598">dnnl_query_dst_md</a>, 0);</div>
 <div class="line">    CHECK(<a class="code" href="group__dnnl__api__memory.html#ga52a9246bd7f4e498b08d61e75e689a0c">dnnl_memory_create</a>(</div>
-<div class="line">            &amp;relu_dst_memory, relu_dst_md, engine, DNNL_MEMORY_ALLOCATE));</div>
+<div class="line">            &amp;relu_dst_memory, relu_dst_md, engine, <a class="code" href="group__dnnl__api__memory.html#gaf19cbfbf1f0a9508283f2a25561ae0e4">DNNL_MEMORY_ALLOCATE</a>));</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// finally create a relu primitive</span></div>
 <div class="line">    <a class="code" href="structdnnl__primitive.html">dnnl_primitive_t</a> relu;</div>
@@ -420,14 +420,14 @@ $(document).ready(function(){initNavTree('cpu_cnn_training_f32_c.html','');});
 <div class="line">    <span class="keyword">const</span> <a class="code" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *lrn_dst_md</div>
 <div class="line">            = <a class="code" href="group__dnnl__api__primitives__common.html#ga416464a8b3e898d8965a5f3c49d4cd54">dnnl_primitive_desc_query_md</a>(lrn_pd, <a class="code" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059add5c338ad7ae0c296509e54d22130598">dnnl_query_dst_md</a>, 0);</div>
 <div class="line">    CHECK(<a class="code" href="group__dnnl__api__memory.html#ga52a9246bd7f4e498b08d61e75e689a0c">dnnl_memory_create</a>(</div>
-<div class="line">            &amp;lrn_dst_memory, lrn_dst_md, engine, DNNL_MEMORY_ALLOCATE));</div>
+<div class="line">            &amp;lrn_dst_memory, lrn_dst_md, engine, <a class="code" href="group__dnnl__api__memory.html#gaf19cbfbf1f0a9508283f2a25561ae0e4">DNNL_MEMORY_ALLOCATE</a>));</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// create workspace only in training and only for forward primitive</span></div>
 <div class="line">    <span class="comment">// query lrn_pd for workspace, this memory will be shared with forward lrn</span></div>
 <div class="line">    <span class="keyword">const</span> <a class="code" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *lrn_ws_md</div>
 <div class="line">            = <a class="code" href="group__dnnl__api__primitives__common.html#ga416464a8b3e898d8965a5f3c49d4cd54">dnnl_primitive_desc_query_md</a>(lrn_pd, <a class="code" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a1c465006660aabe46e644e6df7d36e8a">dnnl_query_workspace_md</a>, 0);</div>
 <div class="line">    CHECK(<a class="code" href="group__dnnl__api__memory.html#ga52a9246bd7f4e498b08d61e75e689a0c">dnnl_memory_create</a>(</div>
-<div class="line">            &amp;lrn_ws_memory, lrn_ws_md, engine, DNNL_MEMORY_ALLOCATE));</div>
+<div class="line">            &amp;lrn_ws_memory, lrn_ws_md, engine, <a class="code" href="group__dnnl__api__memory.html#gaf19cbfbf1f0a9508283f2a25561ae0e4">DNNL_MEMORY_ALLOCATE</a>));</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// finally create a lrn primitive</span></div>
 <div class="line">    <a class="code" href="structdnnl__primitive.html">dnnl_primitive_t</a> lrn;</div>
@@ -480,7 +480,7 @@ $(document).ready(function(){initNavTree('cpu_cnn_training_f32_c.html','');});
 <div class="line">    <span class="keyword">const</span> <a class="code" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *pool_ws_md</div>
 <div class="line">            = <a class="code" href="group__dnnl__api__primitives__common.html#ga416464a8b3e898d8965a5f3c49d4cd54">dnnl_primitive_desc_query_md</a>(pool_pd, <a class="code" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a1c465006660aabe46e644e6df7d36e8a">dnnl_query_workspace_md</a>, 0);</div>
 <div class="line">    CHECK(<a class="code" href="group__dnnl__api__memory.html#ga52a9246bd7f4e498b08d61e75e689a0c">dnnl_memory_create</a>(</div>
-<div class="line">            &amp;pool_ws_memory, pool_ws_md, engine, DNNL_MEMORY_ALLOCATE));</div>
+<div class="line">            &amp;pool_ws_memory, pool_ws_md, engine, <a class="code" href="group__dnnl__api__memory.html#gaf19cbfbf1f0a9508283f2a25561ae0e4">DNNL_MEMORY_ALLOCATE</a>));</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// create reorder primitives between pooling dsts and user format dst</span></div>
 <div class="line">    <span class="comment">// if required</span></div>
@@ -559,7 +559,7 @@ $(document).ready(function(){initNavTree('cpu_cnn_training_f32_c.html','');});
 <div class="line">    <span class="comment">// create memory for pool diff src data</span></div>
 <div class="line">    <a class="code" href="structdnnl__memory.html">dnnl_memory_t</a> pool_diff_src_memory;</div>
 <div class="line">    CHECK(<a class="code" href="group__dnnl__api__memory.html#ga52a9246bd7f4e498b08d61e75e689a0c">dnnl_memory_create</a>(&amp;pool_diff_src_memory, pool_diff_src_md, engine,</div>
-<div class="line">            DNNL_MEMORY_ALLOCATE));</div>
+<div class="line">            <a class="code" href="group__dnnl__api__memory.html#gaf19cbfbf1f0a9508283f2a25561ae0e4">DNNL_MEMORY_ALLOCATE</a>));</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// finally create backward pooling primitive</span></div>
 <div class="line">    <a class="code" href="structdnnl__primitive.html">dnnl_primitive_t</a> pool_bwd;</div>
@@ -590,7 +590,7 @@ $(document).ready(function(){initNavTree('cpu_cnn_training_f32_c.html','');});
 <div class="line">    <span class="keyword">const</span> <a class="code" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *lrn_diff_src_md = <a class="code" href="group__dnnl__api__primitives__common.html#ga416464a8b3e898d8965a5f3c49d4cd54">dnnl_primitive_desc_query_md</a>(</div>
 <div class="line">            lrn_bwd_pd, <a class="code" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a2367b043da6df5d691d6038693f363d6">dnnl_query_diff_src_md</a>, 0);</div>
 <div class="line">    CHECK(<a class="code" href="group__dnnl__api__memory.html#ga52a9246bd7f4e498b08d61e75e689a0c">dnnl_memory_create</a>(&amp;lrn_diff_src_memory, lrn_diff_src_md, engine,</div>
-<div class="line">            DNNL_MEMORY_ALLOCATE));</div>
+<div class="line">            <a class="code" href="group__dnnl__api__memory.html#gaf19cbfbf1f0a9508283f2a25561ae0e4">DNNL_MEMORY_ALLOCATE</a>));</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// finally create backward lrn primitive</span></div>
 <div class="line">    <a class="code" href="structdnnl__primitive.html">dnnl_primitive_t</a> lrn_bwd;</div>
@@ -622,7 +622,7 @@ $(document).ready(function(){initNavTree('cpu_cnn_training_f32_c.html','');});
 <div class="line">    <span class="keyword">const</span> <a class="code" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *relu_diff_src_md = <a class="code" href="group__dnnl__api__primitives__common.html#ga416464a8b3e898d8965a5f3c49d4cd54">dnnl_primitive_desc_query_md</a>(</div>
 <div class="line">            relu_bwd_pd, <a class="code" href="group__dnnl__api__primitives__common.html#gga9e5235563cf7cfc10fa89f415de98059a2367b043da6df5d691d6038693f363d6">dnnl_query_diff_src_md</a>, 0);</div>
 <div class="line">    CHECK(<a class="code" href="group__dnnl__api__memory.html#ga52a9246bd7f4e498b08d61e75e689a0c">dnnl_memory_create</a>(&amp;relu_diff_src_memory, relu_diff_src_md, engine,</div>
-<div class="line">            DNNL_MEMORY_ALLOCATE));</div>
+<div class="line">            <a class="code" href="group__dnnl__api__memory.html#gaf19cbfbf1f0a9508283f2a25561ae0e4">DNNL_MEMORY_ALLOCATE</a>));</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// finally create backward relu primitive</span></div>
 <div class="line">    <a class="code" href="structdnnl__primitive.html">dnnl_primitive_t</a> relu_bwd;</div>

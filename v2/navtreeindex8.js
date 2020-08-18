@@ -1,5 +1,7 @@
 var NAVTREEINDEX8 =
 {
+"structdnnl_1_1stream__attr.html#ae2556a026f03e86c0bac4328269195d9":[6,0,0,3,0,1],
+"structdnnl_1_1stream__attr.html#ae94c4b493b61a2ab606dd61bfb6b35b5":[6,0,0,3,0,0],
 "structdnnl_1_1sum.html":[6,0,0,0,4,0],
 "structdnnl_1_1sum.html#a08ab30bce8e2c28298a6926f144265b9":[6,0,0,0,4,0,1],
 "structdnnl_1_1sum.html#a393855f591d5700e6d35e458f6910110":[6,0,0,0,4,0,2],

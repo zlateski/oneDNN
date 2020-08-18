@@ -1,5 +1,13 @@
 var NAVTREEINDEX8 =
 {
+"structdnnl_1_1stream.html#ad264b142d2f7c728fe8c84aa65d62b13":[6,0,0,3,1,1],
+"structdnnl_1_1stream.html#ad7583cd3c56f330f90e0e6b148a9e5c3":[6,0,0,3,1,4],
+"structdnnl_1_1stream.html#af00bbec578ce5bd049c043f534f78e1d":[6,0,0,3,1,2],
+"structdnnl_1_1stream__attr.html":[6,0,0,3,0],
+"structdnnl_1_1stream__attr.html#a9c1b4dff1eb60d35201148b38ed1001f":[6,0,0,3,0,3],
+"structdnnl_1_1stream__attr.html#a9dfff94e37be42390f3b34fa4ab3dec0":[6,0,0,3,0,2],
+"structdnnl_1_1stream__attr.html#ae2556a026f03e86c0bac4328269195d9":[6,0,0,3,0,1],
+"structdnnl_1_1stream__attr.html#ae94c4b493b61a2ab606dd61bfb6b35b5":[6,0,0,3,0,0],
 "structdnnl_1_1sum.html":[6,0,0,0,4,0],
 "structdnnl_1_1sum.html#a08ab30bce8e2c28298a6926f144265b9":[6,0,0,0,4,0,1],
 "structdnnl_1_1sum.html#a393855f591d5700e6d35e458f6910110":[6,0,0,0,4,0,2],

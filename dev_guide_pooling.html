@@ -141,6 +141,8 @@ $(document).ready(function(){initNavTree('dev_guide_pooling.html','');});
 <td>\(\diffsrc\) </td><td>DNNL_ARG_DIFF_SRC </td></tr>
 <tr>
 <td>\(\diffdst\) </td><td>DNNL_ARG_DIFF_DST </td></tr>
+<tr>
+<td>\(binary post-op\) </td><td><a class="el" href="group__dnnl__api__primitives__common.html#ga30839136bbf81b03a173e0842ae015e1" title="Arguments for a binary post operation. ">DNNL_ARG_ATTR_MULTIPLE_POST_OP(binary_post_op_position)</a> | DNNL_ARG_SRC_1 </td></tr>
 </table>
 <h2>Implementation Details</h2>
 <h3>General Notes</h3>
@@ -183,7 +185,12 @@ $(document).ready(function(){initNavTree('dev_guide_pooling.html','');});
 </table>
 <p>Here <em>optimized^</em> means the format that <a class="el" href="memory_format_propagation_cpp.html">comes out</a> of any preceding compute-intensive primitive.</p>
 <h3>Post-ops and Attributes</h3>
-<p>The pooling primitive does not support any post-ops or attributes.</p>
+<table class="doxtable">
+<tr>
+<th align="left">Propagation </th><th align="left">Type </th><th align="left">Operation </th><th align="left">Description </th><th align="left">Restrictions  </th></tr>
+<tr>
+<td align="left">Forward </td><td align="left">Post-op </td><td align="left"><a class="el" href="structdnnl_1_1post__ops.html#a40bb2b39a685726ac54873b203be41b5">Binary</a> </td><td align="left">Applies a <a class="el" href="group__dnnl__api__binary.html">Binary</a> operation to the result </td><td align="left">General binary post-op restrictions </td></tr>
+</table>
 <p><a class="anchor" id="dg_pool_impl_limits"></a></p>
 <h2>Implementation Limitations</h2>
 <ol type="1">

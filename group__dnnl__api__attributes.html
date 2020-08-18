@@ -221,7 +221,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:gad3a93e3c396b07066d42eadbe119b7a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends an elementwise post-op.  <a href="#gad3a93e3c396b07066d42eadbe119b7a4">More...</a><br/></td></tr>
 <tr class="separator:gad3a93e3c396b07066d42eadbe119b7a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa57e61baf091b255b4cc0c3648bac3a5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__attributes.html#gaa57e61baf091b255b4cc0c3648bac3a5">dnnl_post_ops_get_params_eltwise</a> (<a class="el" href="group__dnnl__api__attributes.html#ga5ca949c8e907bd9ed79bc06d869c9c0e">const_dnnl_post_ops_t</a> post_ops, int index, float *scale, <a class="el" href="group__dnnl__api__primitives__common.html#ga96946c805f6c4922c38c37049ab95d23">dnnl_alg_kind_t</a> *alg_kind, float *alpha, float *beta)</td></tr>
-<tr class="memdesc:gaa57e61baf091b255b4cc0c3648bac3a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the parameters of an elementwise post-up.  <a href="#gaa57e61baf091b255b4cc0c3648bac3a5">More...</a><br/></td></tr>
+<tr class="memdesc:gaa57e61baf091b255b4cc0c3648bac3a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the parameters of an elementwise post-op.  <a href="#gaa57e61baf091b255b4cc0c3648bac3a5">More...</a><br/></td></tr>
 <tr class="separator:gaa57e61baf091b255b4cc0c3648bac3a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga60126f67fa1dd9df8cca16e2dd471184"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__attributes.html#ga60126f67fa1dd9df8cca16e2dd471184">dnnl_post_ops_append_dw_k3s1p1</a> (<a class="el" href="group__dnnl__api__attributes.html#ga7d715ce1a81606584df9dcf045976401">dnnl_post_ops_t</a> post_ops, <a class="el" href="group__dnnl__api__memory.html#ga012ba1c84ff24bdd068f9d2f9b26a130">dnnl_data_type_t</a> weights_data_type, <a class="el" href="group__dnnl__api__memory.html#ga012ba1c84ff24bdd068f9d2f9b26a130">dnnl_data_type_t</a> bias_data_type, <a class="el" href="group__dnnl__api__memory.html#ga012ba1c84ff24bdd068f9d2f9b26a130">dnnl_data_type_t</a> dst_data_type, <a class="el" href="group__dnnl__api__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> count, int mask, const float *scales)</td></tr>
 <tr class="memdesc:ga60126f67fa1dd9df8cca16e2dd471184"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends a depthwise post-op convolution with stride 1.  <a href="#ga60126f67fa1dd9df8cca16e2dd471184">More...</a><br/></td></tr>
@@ -235,6 +235,12 @@ Functions</h2></td></tr>
 <tr class="memitem:ga0b82c6ac2d4bd5c8ddee4a807fd2e527"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__attributes.html#ga0b82c6ac2d4bd5c8ddee4a807fd2e527">dnnl_post_ops_get_params_dw_k3s2p1</a> (<a class="el" href="group__dnnl__api__attributes.html#ga5ca949c8e907bd9ed79bc06d869c9c0e">const_dnnl_post_ops_t</a> post_ops, int index, <a class="el" href="group__dnnl__api__memory.html#ga012ba1c84ff24bdd068f9d2f9b26a130">dnnl_data_type_t</a> *weights_data_type, <a class="el" href="group__dnnl__api__memory.html#ga012ba1c84ff24bdd068f9d2f9b26a130">dnnl_data_type_t</a> *bias_data_type, <a class="el" href="group__dnnl__api__memory.html#ga012ba1c84ff24bdd068f9d2f9b26a130">dnnl_data_type_t</a> *dst_data_type, <a class="el" href="group__dnnl__api__memory.html#ga872631b12a112bf43fba985cba24dd20">dnnl_dim_t</a> *count, int *mask, const float **scales)</td></tr>
 <tr class="memdesc:ga0b82c6ac2d4bd5c8ddee4a807fd2e527"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the parameters of an depthwise post-op with stride 2.  <a href="#ga0b82c6ac2d4bd5c8ddee4a807fd2e527">More...</a><br/></td></tr>
 <tr class="separator:ga0b82c6ac2d4bd5c8ddee4a807fd2e527"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9d6524a5808500e78138dd2125ac2cbe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__attributes.html#ga9d6524a5808500e78138dd2125ac2cbe">dnnl_post_ops_append_binary</a> (<a class="el" href="group__dnnl__api__attributes.html#ga7d715ce1a81606584df9dcf045976401">dnnl_post_ops_t</a> post_ops, <a class="el" href="group__dnnl__api__primitives__common.html#ga96946c805f6c4922c38c37049ab95d23">dnnl_alg_kind_t</a> alg_kind, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *src1_desc)</td></tr>
+<tr class="memdesc:ga9d6524a5808500e78138dd2125ac2cbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends a binary post-op.  <a href="#ga9d6524a5808500e78138dd2125ac2cbe">More...</a><br/></td></tr>
+<tr class="separator:ga9d6524a5808500e78138dd2125ac2cbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gade0e47fd1f367bf5d8119b21751038ba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__attributes.html#gade0e47fd1f367bf5d8119b21751038ba">dnnl_post_ops_get_params_binary</a> (<a class="el" href="group__dnnl__api__attributes.html#ga5ca949c8e907bd9ed79bc06d869c9c0e">const_dnnl_post_ops_t</a> post_ops, int index, <a class="el" href="group__dnnl__api__primitives__common.html#ga96946c805f6c4922c38c37049ab95d23">dnnl_alg_kind_t</a> *alg_kind, const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> **src1_desc)</td></tr>
+<tr class="memdesc:gade0e47fd1f367bf5d8119b21751038ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the parameters of a binary post-op.  <a href="#gade0e47fd1f367bf5d8119b21751038ba">More...</a><br/></td></tr>
+<tr class="separator:gade0e47fd1f367bf5d8119b21751038ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0067a4b6e5dd2fe7578cd4a25dddfe39"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__attributes.html#ga0067a4b6e5dd2fe7578cd4a25dddfe39">dnnl_primitive_attr_set_rnn_data_qparams</a> (<a class="el" href="group__dnnl__api__attributes.html#ga06d701a25b82d4c8a93aaabb93e03dc3">dnnl_primitive_attr_t</a> attr, const float scale, const float shift)</td></tr>
 <tr class="memdesc:ga0067a4b6e5dd2fe7578cd4a25dddfe39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set quantization scale and shift parameters for RNN data tensors.  <a href="#ga0067a4b6e5dd2fe7578cd4a25dddfe39">More...</a><br/></td></tr>
 <tr class="separator:ga0067a4b6e5dd2fe7578cd4a25dddfe39"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1563,7 +1569,7 @@ The lifetime of <code>zero_points</code> array is the same as that of the primit
       </table>
 </div><div class="memdoc">
 
-<p>Returns the parameters of an elementwise post-up. </p>
+<p>Returns the parameters of an elementwise post-op. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">post_ops</td><td>Post-ops. </td></tr>
@@ -1889,6 +1895,105 @@ The lifetime of <code>zero_points</code> array is the same as that of the primit
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__dnnl__api__utils.html#ggad24f9ded06e34d3ee71e7fc4b408d57aaa31395e9dccc103cf166cf7b38fc5b9c" title="The operation was successful. ">dnnl_success</a> on success and a status describing the error otherwise </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga9d6524a5808500e78138dd2125ac2cbe"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API dnnl_post_ops_append_binary </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__dnnl__api__attributes.html#ga7d715ce1a81606584df9dcf045976401">dnnl_post_ops_t</a>&#160;</td>
+          <td class="paramname"><em>post_ops</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__dnnl__api__primitives__common.html#ga96946c805f6c4922c38c37049ab95d23">dnnl_alg_kind_t</a>&#160;</td>
+          <td class="paramname"><em>alg_kind</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> *&#160;</td>
+          <td class="paramname"><em>src1_desc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Appends a binary post-op. </p>
+<p>The kind of this post operation is <a class="el" href="group__dnnl__api__primitives__common.html#gga9878f4795e53ad8443e5c0a29e53286aa1d51705e2642ce2ce19a3e163bb25f93" title="A binary primitive. ">dnnl_binary</a>.</p>
+<p>In the simplest case when the binary is the only post operation, the computations would be: </p>
+<pre class="fragment">dst[:] &lt;- binary_op (dst[:], another_input[:])
+</pre><p>where binary_op is configured with the given parameters. binary_op supports broadcast semantics for a second operand.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">post_ops</td><td>Post-ops. </td></tr>
+    <tr><td class="paramname">alg_kind</td><td>Binary algorithm for the post-op. </td></tr>
+    <tr><td class="paramname">src1_desc</td><td>Memory descriptor of a second operand. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__dnnl__api__utils.html#ggad24f9ded06e34d3ee71e7fc4b408d57aaa31395e9dccc103cf166cf7b38fc5b9c" title="The operation was successful. ">dnnl_success</a> on success and a status describing the error otherwise. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gade0e47fd1f367bf5d8119b21751038ba"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__dnnl__api__utils.html#gad24f9ded06e34d3ee71e7fc4b408d57a">dnnl_status_t</a> DNNL_API dnnl_post_ops_get_params_binary </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__dnnl__api__attributes.html#ga5ca949c8e907bd9ed79bc06d869c9c0e">const_dnnl_post_ops_t</a>&#160;</td>
+          <td class="paramname"><em>post_ops</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__dnnl__api__primitives__common.html#ga96946c805f6c4922c38c37049ab95d23">dnnl_alg_kind_t</a> *&#160;</td>
+          <td class="paramname"><em>alg_kind</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdnnl__memory__desc__t.html">dnnl_memory_desc_t</a> **&#160;</td>
+          <td class="paramname"><em>src1_desc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the parameters of a binary post-op. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">post_ops</td><td>Post-ops. </td></tr>
+    <tr><td class="paramname">index</td><td>Index of the binary post-op. </td></tr>
+    <tr><td class="paramname">alg_kind</td><td>Output binary algorithm kind. </td></tr>
+    <tr><td class="paramname">src1_desc</td><td>Output memory descriptor of a second operand. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__dnnl__api__utils.html#ggad24f9ded06e34d3ee71e7fc4b408d57aaa31395e9dccc103cf166cf7b38fc5b9c" title="The operation was successful. ">dnnl_success</a> on success and a status describing the error otherwise. </dd>
+<dd>
+<a class="el" href="group__dnnl__api__utils.html#ggad24f9ded06e34d3ee71e7fc4b408d57aaecec97c787d74a33924abcf16ae4f51c" title="The operation failed because of incorrect function arguments. ">dnnl_invalid_arguments</a> if <code>index</code> does not refer to a binary post-op. </dd></dl>
 
 </div>
 </div>

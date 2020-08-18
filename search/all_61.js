@@ -22,6 +22,7 @@ var searchData=
   ['all',['all',['../group__dnnl__api__service.html#ggabad017feb1850634bf3babdb68234f83aa181a603769c1f98ad927e7367c7aa51',1,'dnnl']]],
   ['alpha',['alpha',['../structdnnl__eltwise__desc__t.html#a10784684fa814edcb365c0a8fecdef59',1,'dnnl_eltwise_desc_t']]],
   ['any',['any',['../structdnnl_1_1engine.html#a2635da16314dcbdb9bd9ea431316bb1aa100b8cad7cf2a56f6df78f171f97a1ec',1,'dnnl::engine::any()'],['../structdnnl_1_1memory.html#aabcadfb0e23a36a91272fc571cff105fa100b8cad7cf2a56f6df78f171f97a1ec',1,'dnnl::memory::any()'],['../structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec',1,'dnnl::memory::any()']]],
+  ['append_5fbinary',['append_binary',['../structdnnl_1_1post__ops.html#a40bb2b39a685726ac54873b203be41b5',1,'dnnl::post_ops']]],
   ['append_5fdw_5fk3s1p1',['append_dw_k3s1p1',['../structdnnl_1_1post__ops.html#a4229db0e1e1eab273ed0e2b3e18402de',1,'dnnl::post_ops']]],
   ['append_5fdw_5fk3s2p1',['append_dw_k3s2p1',['../structdnnl_1_1post__ops.html#a88ed886c27b4df4667431ed48d29f4c1',1,'dnnl::post_ops']]],
   ['append_5feltwise',['append_eltwise',['../structdnnl_1_1post__ops.html#a28460923ad579c780e4027a6256fe207',1,'dnnl::post_ops']]],

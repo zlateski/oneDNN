@@ -209,7 +209,7 @@ Public Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Memory object. </p>
-<p>A memory object encapsulates a handle to a memory buffer allocated on a specific aengine, tensor dimensions, data type, and memory format, which is the way tensor indices map to offsets in linear memory space. Memory objects are passed to primitives during execution. </p>
+<p>A memory object encapsulates a handle to a memory buffer allocated on a specific engine, tensor dimensions, data type, and memory format, which is the way tensor indices map to offsets in linear memory space. Memory objects are passed to primitives during execution. </p>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="batch_normalization_8cpp-example.html#_a5">batch_normalization.cpp</a>, <a class="el" href="binary_8cpp-example.html#_a5">binary.cpp</a>, <a class="el" href="cnn_inference_f32_8cpp-example.html#_a4">cnn_inference_f32.cpp</a>, <a class="el" href="cnn_inference_int8_8cpp-example.html#_a4">cnn_inference_int8.cpp</a>, <a class="el" href="cnn_training_bf16_8cpp-example.html#_a4">cnn_training_bf16.cpp</a>, <a class="el" href="cnn_training_f32_8cpp-example.html#_a4">cnn_training_f32.cpp</a>, <a class="el" href="concat_8cpp-example.html#_a5">concat.cpp</a>, <a class="el" href="convolution_8cpp-example.html#_a4">convolution.cpp</a>, <a class="el" href="cpu_matmul_quantization_8cpp-example.html#_a2">cpu_matmul_quantization.cpp</a>, <a class="el" href="cpu_rnn_inference_f32_8cpp-example.html#_a10">cpu_rnn_inference_f32.cpp</a>, <a class="el" href="cpu_rnn_inference_int8_8cpp-example.html#_a11">cpu_rnn_inference_int8.cpp</a>, <a class="el" href="cpu_sgemm_and_matmul_8cpp-example.html#_a15">cpu_sgemm_and_matmul.cpp</a>, <a class="el" href="cross_engine_reorder_8cpp-example.html#_a0">cross_engine_reorder.cpp</a>, <a class="el" href="eltwise_8cpp-example.html#_a5">eltwise.cpp</a>, <a class="el" href="getting_started_8cpp-example.html#_a5">getting_started.cpp</a>, <a class="el" href="gpu_opencl_interop_8cpp-example.html#_a6">gpu_opencl_interop.cpp</a>, <a class="el" href="inference_int8_matmul_8cpp-example.html#_a17">inference_int8_matmul.cpp</a>, <a class="el" href="inner_product_8cpp-example.html#_a5">inner_product.cpp</a>, <a class="el" href="layer_normalization_8cpp-example.html#_a5">layer_normalization.cpp</a>, <a class="el" href="logsoftmax_8cpp-example.html#_a5">logsoftmax.cpp</a>, <a class="el" href="lrn_8cpp-example.html#_a5">lrn.cpp</a>, <a class="el" href="lstm_8cpp-example.html#_a5">lstm.cpp</a>, <a class="el" href="matmul_8cpp-example.html#_a5">matmul.cpp</a>, <a class="el" href="memory_format_propagation_8cpp-example.html#_a10">memory_format_propagation.cpp</a>, <a class="el" href="performance_profiling_8cpp-example.html#_a0">performance_profiling.cpp</a>, <a class="el" href="pooling_8cpp-example.html#_a5">pooling.cpp</a>, <a class="el" href="reorder_8cpp-example.html#_a5">reorder.cpp</a>, <a class="el" href="resampling_8cpp-example.html#_a5">resampling.cpp</a>, <a class="el" href="rnn_training_f32_8cpp-example.html#_a8">rnn_training_f32.cpp</a>, <a class="el" href="shuffle_8cpp-example.html#_a5">shuffle.cpp</a>, <a class="el" href="softmax_8cpp-example.html#_a5">softmax.cpp</a>, <a class="el" href="sum_8cpp-example.html#_a5">sum.cpp</a>, and <a class="el" href="sycl_interop_8cpp-example.html#_a5">sycl_interop.cpp</a>.</dd>
 </dl></div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a class="anchor" id="afdd20764d58c0b517d5a31276672aeb8"></a>
@@ -253,13 +253,13 @@ Public Attributes</h2></td></tr>
 <p>Undefined data type (used for empty memory descriptors). </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a8e83474ec3a50e08e37af76c8c075dceaa2449b6477c1fef79be4202906486876"></a>f16</em>&nbsp;</td><td class="fielddoc">
-<p>16-bit/half-precision floating point. </p>
+<p><a href="https://en.wikipedia.org/wiki/Half-precision_floating-point_format">16-bit/half-precision floating point</a>. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a8e83474ec3a50e08e37af76c8c075dceafe2904d9fb3b0f4a81c92b03dec11424"></a>bf16</em>&nbsp;</td><td class="fielddoc">
-<p>non-standard 16-bit floating point with 7-bit mantissa. </p>
+<p>non-standard <a href="https://en.wikipedia.org/wiki/Bfloat16_floating-point_format">16-bit floating point with 7-bit mantissa</a>. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e"></a>f32</em>&nbsp;</td><td class="fielddoc">
-<p>32-bit/single-precision floating point. </p>
+<p><a href="https://en.wikipedia.org/wiki/Single-precision_floating-point_format">32-bit/single-precision floating point</a>. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a8e83474ec3a50e08e37af76c8c075dceaa860868d23f3a68323a2e3f6563d7f31"></a>s32</em>&nbsp;</td><td class="fielddoc">
 <p>32-bit signed integer. </p>
@@ -679,8 +679,8 @@ template&lt;typename T &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">md</td><td>Memory descriptor. </td></tr>
-    <tr><td class="paramname">engine</td><td>Engine. </td></tr>
-    <tr><td class="paramname">ahandle</td><td>handle. </td></tr>
+    <tr><td class="paramname">aengine</td><td>Engine to store the data on. </td></tr>
+    <tr><td class="paramname">handle</td><td>Handle of the memory buffer to use. </td></tr>
   </table>
   </dd>
 </dl>
