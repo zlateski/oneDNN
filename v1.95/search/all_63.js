@@ -44,6 +44,7 @@ var searchData=
   ['concat',['Concat',['../dev_guide_concat.html',1,'']]],
   ['convolution',['Convolution',['../dev_guide_convolution.html',1,'']]],
   ['cpu_20dispatcher_20control',['CPU Dispatcher Control',['../dev_guide_cpu_dispatcher_control.html',1,'']]],
+  ['configuring_20onednn_20for_20benchmarking',['Configuring oneDNN for Benchmarking',['../dev_guide_performance_settings.html',1,'']]],
   ['concat',['Concat',['../group__dnnl__api__concat.html',1,'']]],
   ['convolution',['Convolution',['../group__dnnl__api__convolution.html',1,'']]],
   ['common',['Common',['../group__dnnl__api__primitives__common.html',1,'']]]

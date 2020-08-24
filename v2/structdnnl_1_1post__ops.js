@@ -11,5 +11,7 @@ var structdnnl_1_1post__ops =
     [ "append_dw_k3s1p1", "structdnnl_1_1post__ops.html#a4229db0e1e1eab273ed0e2b3e18402de", null ],
     [ "get_params_dw_k3s1p1", "structdnnl_1_1post__ops.html#aefb536724307912fdfd1439383679501", null ],
     [ "append_dw_k3s2p1", "structdnnl_1_1post__ops.html#a88ed886c27b4df4667431ed48d29f4c1", null ],
-    [ "get_params_dw_k3s2p1", "structdnnl_1_1post__ops.html#a128429160104654adcfb651e9ee02905", null ]
+    [ "get_params_dw_k3s2p1", "structdnnl_1_1post__ops.html#a128429160104654adcfb651e9ee02905", null ],
+    [ "append_binary", "structdnnl_1_1post__ops.html#a40bb2b39a685726ac54873b203be41b5", null ],
+    [ "get_params_binary", "structdnnl_1_1post__ops.html#a726a64a5cd160a51b2f93d33f482670f", null ]
 ];

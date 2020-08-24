@@ -96,14 +96,14 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"group__dnnl__api__engine.html#gga04b3dd9eba628ea02218a52c4c4363a2abde7b942413dd36f8285dd360fc0c797",
-"group__dnnl__api__primitives__common.html#ga9e5235563cf7cfc10fa89f415de98059",
-"group__dnnl__api__service.html#ga64c87a04eba7774b2157dc6ce95d5992",
-"structdnnl_1_1eltwise__backward_1_1desc.html",
-"structdnnl_1_1lrn__backward_1_1desc.html",
-"structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa6e08a5845009f77deaf6701aafaf53cc",
-"structdnnl_1_1memory_1_1desc.html#a2a12f9b43aae8c214d695b321b543b5c",
-"structdnnl_1_1stream__attr.html#ae2556a026f03e86c0bac4328269195d9"
+"group__dnnl__api__engine.html#gae472e59f404ba6527988b046ef24c743",
+"group__dnnl__api__primitives__common.html#ga9878f4795e53ad8443e5c0a29e53286a",
+"group__dnnl__api__service.html#ga51ef634e4f201a12d32e573955943f48",
+"structdnnl_1_1deconvolution__forward_1_1primitive__desc.html#a9f4d214e142ef77363abeab7f48ec9c7",
+"structdnnl_1_1logsoftmax__forward_1_1primitive__desc.html#aa5f99b767e848e94712e563808da092c",
+"structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa6c59aca085940321bf972a1b950bdaa5",
+"structdnnl_1_1memory_1_1desc.html#a129c324ddb119d10b9c55ea8dcd30240",
+"structdnnl_1_1stream.html#ad7583cd3c56f330f90e0e6b148a9e5c3"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

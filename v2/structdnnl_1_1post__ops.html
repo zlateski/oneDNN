@@ -142,7 +142,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struc
 <tr class="memdesc:a28460923ad579c780e4027a6256fe207"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends an elementwise post-op.  <a href="#a28460923ad579c780e4027a6256fe207">More...</a><br/></td></tr>
 <tr class="separator:a28460923ad579c780e4027a6256fe207"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0158eefb937f15634753922dc9e9455a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1post__ops.html#a0158eefb937f15634753922dc9e9455a">get_params_eltwise</a> (int index, float &amp;scale, <a class="el" href="group__dnnl__api__attributes.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a> &amp;aalgorithm, float &amp;alpha, float &amp;beta) const </td></tr>
-<tr class="memdesc:a0158eefb937f15634753922dc9e9455a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns parameters of an elementwise post-up.  <a href="#a0158eefb937f15634753922dc9e9455a">More...</a><br/></td></tr>
+<tr class="memdesc:a0158eefb937f15634753922dc9e9455a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns parameters of an elementwise post-op.  <a href="#a0158eefb937f15634753922dc9e9455a">More...</a><br/></td></tr>
 <tr class="separator:a0158eefb937f15634753922dc9e9455a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4229db0e1e1eab273ed0e2b3e18402de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1post__ops.html#a4229db0e1e1eab273ed0e2b3e18402de">append_dw_k3s1p1</a> (<a class="el" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dce">memory::data_type</a> weights_data_type, <a class="el" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dce">memory::data_type</a> bias_data_type, <a class="el" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dce">memory::data_type</a> dst_data_type, int mask, const std::vector&lt; float &gt; &amp;scales)</td></tr>
 <tr class="memdesc:a4229db0e1e1eab273ed0e2b3e18402de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends a depthwise post-op convolution with stride 1.  <a href="#a4229db0e1e1eab273ed0e2b3e18402de">More...</a><br/></td></tr>
@@ -156,6 +156,12 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struc
 <tr class="memitem:a128429160104654adcfb651e9ee02905"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1post__ops.html#a128429160104654adcfb651e9ee02905">get_params_dw_k3s2p1</a> (int index, <a class="el" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dce">memory::data_type</a> &amp;weights_data_type, <a class="el" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dce">memory::data_type</a> &amp;bias_data_type, <a class="el" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dce">memory::data_type</a> &amp;dst_data_type, int &amp;mask, std::vector&lt; float &gt; &amp;scales) const </td></tr>
 <tr class="memdesc:a128429160104654adcfb651e9ee02905"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the parameters of an depthwise post-op with stride 2.  <a href="#a128429160104654adcfb651e9ee02905">More...</a><br/></td></tr>
 <tr class="separator:a128429160104654adcfb651e9ee02905"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40bb2b39a685726ac54873b203be41b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1post__ops.html#a40bb2b39a685726ac54873b203be41b5">append_binary</a> (<a class="el" href="group__dnnl__api__attributes.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a> aalgorithm, const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;src1_desc)</td></tr>
+<tr class="memdesc:a40bb2b39a685726ac54873b203be41b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends a binary post-op.  <a href="#a40bb2b39a685726ac54873b203be41b5">More...</a><br/></td></tr>
+<tr class="separator:a40bb2b39a685726ac54873b203be41b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a726a64a5cd160a51b2f93d33f482670f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1post__ops.html#a726a64a5cd160a51b2f93d33f482670f">get_params_binary</a> (int index, <a class="el" href="group__dnnl__api__attributes.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a> &amp;aalgorithm, <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;src1_desc) const </td></tr>
+<tr class="memdesc:a726a64a5cd160a51b2f93d33f482670f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the parameters of a binary post-op.  <a href="#a726a64a5cd160a51b2f93d33f482670f">More...</a><br/></td></tr>
+<tr class="separator:a726a64a5cd160a51b2f93d33f482670f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_structdnnl_1_1handle"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_structdnnl_1_1handle')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="structdnnl_1_1handle.html">dnnl::handle&lt; dnnl_post_ops_t &gt;</a></td></tr>
 <tr class="memitem:a8569ba9d1b62264df858f3b3316577c6 inherit pub_methods_structdnnl_1_1handle"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdnnl_1_1handle.html#a8569ba9d1b62264df858f3b3316577c6">operator==</a> (const <a class="el" href="structdnnl_1_1handle.html">handle</a>&lt; <a class="el" href="group__dnnl__api__attributes.html#ga7d715ce1a81606584df9dcf045976401">dnnl_post_ops_t</a>, <a class="el" href="structdnnl_1_1handle__traits.html">handle_traits</a>&lt; <a class="el" href="group__dnnl__api__attributes.html#ga7d715ce1a81606584df9dcf045976401">dnnl_post_ops_t</a> &gt; &gt; &amp;other) const</td></tr>
 <tr class="memdesc:a8569ba9d1b62264df858f3b3316577c6 inherit pub_methods_structdnnl_1_1handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equality operator.  <a href="#a8569ba9d1b62264df858f3b3316577c6">More...</a><br/></td></tr>
@@ -492,7 +498,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struc
 </table>
 </div><div class="memdoc">
 
-<p>Returns parameters of an elementwise post-up. </p>
+<p>Returns parameters of an elementwise post-op. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">index</td><td>Index of the post-op. </td></tr>
@@ -784,6 +790,103 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struc
     <tr><td class="paramname">dst_data_type</td><td>Output data type of depthwise post-op </td></tr>
     <tr><td class="paramname">mask</td><td>Output scaling factors correspondence mask that defines the correspondence between the output tensor dimensions and the <code>scales</code> array. The set i-th bit indicates that a dedicated output scaling factor is used for each index along that dimension. The mask value of 0 implies a common scaling factor for the whole output tensor. </td></tr>
     <tr><td class="paramname">scales</td><td>Output pointer to a constant array of float scaling factors. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a40bb2b39a685726ac54873b203be41b5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dnnl::post_ops::append_binary </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__dnnl__api__attributes.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a>&#160;</td>
+          <td class="paramname"><em>aalgorithm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;&#160;</td>
+          <td class="paramname"><em>src1_desc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Appends a binary post-op. </p>
+<p>The kind of this post operation is <a class="el" href="group__dnnl__api__primitives__common.html#gga9878f4795e53ad8443e5c0a29e53286aa1d51705e2642ce2ce19a3e163bb25f93" title="A binary primitive. ">dnnl_binary</a>.</p>
+<p>In the simplest case when the binary is the only post operation, the computations would be: </p>
+<pre class="fragment">dst[:] &lt;- binary_op (dst[:], another_input[:])
+</pre><p>where binary_op is configured with the given parameters. binary_op supports broadcast semantics for a second operand.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">aalgorithm</td><td>Binary algorithm for the post-op. </td></tr>
+    <tr><td class="paramname">src1_desc</td><td>Memory descriptor of a second operand. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a726a64a5cd160a51b2f93d33f482670f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dnnl::post_ops::get_params_binary </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__dnnl__api__attributes.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a> &amp;&#160;</td>
+          <td class="paramname"><em>aalgorithm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdnnl_1_1memory_1_1desc.html">memory::desc</a> &amp;&#160;</td>
+          <td class="paramname"><em>src1_desc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the parameters of a binary post-op. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>Index of the binary post-op. </td></tr>
+    <tr><td class="paramname">aalgorithm</td><td>Output binary algorithm kind. </td></tr>
+    <tr><td class="paramname">src1_desc</td><td>Output memory descriptor of a second operand. </td></tr>
   </table>
   </dd>
 </dl>

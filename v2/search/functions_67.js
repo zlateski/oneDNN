@@ -15,6 +15,7 @@ var searchData=
   ['get_5focl_5fcontext',['get_ocl_context',['../structdnnl_1_1engine.html#a739ba77b89cc3dc890819bc85d038198',1,'dnnl::engine']]],
   ['get_5focl_5fdevice',['get_ocl_device',['../structdnnl_1_1engine.html#a2f7013922cf742705ec04b425fa06a7f',1,'dnnl::engine']]],
   ['get_5foutput_5fscales',['get_output_scales',['../structdnnl_1_1primitive__attr.html#a11f7ce246239d1416ce9ff8d81ff7f5f',1,'dnnl::primitive_attr']]],
+  ['get_5fparams_5fbinary',['get_params_binary',['../structdnnl_1_1post__ops.html#a726a64a5cd160a51b2f93d33f482670f',1,'dnnl::post_ops']]],
   ['get_5fparams_5fdw_5fk3s1p1',['get_params_dw_k3s1p1',['../structdnnl_1_1post__ops.html#aefb536724307912fdfd1439383679501',1,'dnnl::post_ops']]],
   ['get_5fparams_5fdw_5fk3s2p1',['get_params_dw_k3s2p1',['../structdnnl_1_1post__ops.html#a128429160104654adcfb651e9ee02905',1,'dnnl::post_ops']]],
   ['get_5fparams_5feltwise',['get_params_eltwise',['../structdnnl_1_1post__ops.html#a0158eefb937f15634753922dc9e9455a',1,'dnnl::post_ops']]],

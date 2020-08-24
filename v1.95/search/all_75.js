@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['using_20onednn_20with_20threadpool_2dbased_20threading',['Using oneDNN with threadpool-based threading',['../dev_guide_threadpool.html',1,'']]],
+  ['using_20onednn_20with_20threadpool_2dbased_20threading',['Using oneDNN with Threadpool-based Threading',['../dev_guide_threadpool.html',1,'']]],
   ['understanding_20memory_20formats',['Understanding Memory Formats',['../dev_guide_understanding_memory_formats.html',1,'']]],
   ['utilities',['Utilities',['../group__dnnl__api__utils.html',1,'']]],
   ['u8',['u8',['../structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea077393852be20e37026d6281827662f2',1,'dnnl::memory']]],

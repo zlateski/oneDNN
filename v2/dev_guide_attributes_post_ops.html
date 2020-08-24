@@ -96,16 +96,12 @@ $(document).ready(function(){initNavTree('dev_guide_attributes_post_ops.html',''
 <div class="textblock"><p>oneDNN implements some basic capabilities of operation fusion using the <b>post-ops attributes</b> API. The operation fusion typically reduces the memory bandwidth pressure hence leading to higher performance.</p>
 <p><em>Post-ops</em> are operations that are appended after a primitive. They are implemented using the <a class="el" href="dev_guide_attributes.html">Primitive Attributes</a> mechanism. If there are multiple post-ops, they are executed in the order they have been appended.</p>
 <p>Currently the following post-ops are supported by the library:</p>
-<table class="doxtable">
-<tr>
-<th align="left">Post-ops \ Primitive </th><th align="left"><a class="el" href="dev_guide_convolution.html">Convolution</a> </th><th align="left"><a class="el" href="dev_guide_inner_product.html">Inner Product</a> </th><th align="left"><a class="el" href="dev_guide_batch_normalization.html">Batch Normalization</a>  </th></tr>
-<tr>
-<td align="left"><a class="el" href="dev_guide_attributes_post_ops.html#dev_guide_attributes_post_ops_eltwise">Eltwise</a> </td><td align="left">Partial </td><td align="left">Partial </td><td align="left">Partial </td></tr>
-<tr>
-<td align="left"><a class="el" href="dev_guide_attributes_post_ops.html#dev_guide_attributes_post_ops_sum">Sum</a> </td><td align="left">Partial </td><td align="left">N/A </td><td align="left">N/A </td></tr>
-<tr>
-<td align="left"><a class="el" href="dev_guide_attributes_post_ops.html#dev_guide_attributes_post_ops_depthwise">Depthwise</a> </td><td align="left">Partial </td><td align="left">N/A </td><td align="left">N/A </td></tr>
-</table>
+<ul>
+<li><a class="el" href="dev_guide_attributes_post_ops.html#dev_guide_attributes_post_ops_eltwise">Eltwise</a></li>
+<li><a class="el" href="dev_guide_attributes_post_ops.html#dev_guide_attributes_post_ops_sum">Sum</a></li>
+<li><a class="el" href="dev_guide_attributes_post_ops.html#dev_guide_attributes_post_ops_depthwise">Depthwise</a></li>
+<li><a class="el" href="dev_guide_attributes_post_ops.html#dev_guide_attributes_post_ops_binary">Binary</a></li>
+</ul>
 <p>Just like <a class="el" href="dev_guide_attributes.html">Primitive Attributes</a>, the post-ops are represented by an opaque structure (<a class="el" href="group__dnnl__api__attributes.html#ga7d715ce1a81606584df9dcf045976401">dnnl_post_ops_t</a> in C API and <a class="el" href="structdnnl_1_1post__ops.html">dnnl::post_ops</a> in C++ API) which is copied once it is attached to the attributes using the C++ <a class="el" href="structdnnl_1_1primitive__attr.html#ac830fa9f4fcf480b494d73153ad579bf">dnnl::primitive_attr::set_post_ops</a> or C <a class="el" href="group__dnnl__api__attributes.html#ga7045d42606599f156bfca69820c21ea2">dnnl_primitive_attr_set_post_ops</a> functions. The attributes then must be passed to a primitive descriptor creation function to take effect. Below is a simple skeleton for the C++ API:</p>
 <div class="fragment"><div class="line"><a class="code" href="structdnnl_1_1post__ops.html">dnnl::post_ops</a> po; <span class="comment">// default empty post-ops</span></div>
 <div class="line">assert(po.<a class="code" href="structdnnl_1_1post__ops.html#a26d76d6a99c01b33eee312d1491c1d4e">len</a>() == 0); <span class="comment">// no post-ops attached</span></div>
@@ -122,8 +118,8 @@ $(document).ready(function(){initNavTree('dev_guide_attributes_post_ops.html',''
 <div class="line"><span class="comment">// further po changes would not affect attr</span></div>
 <div class="line"></div>
 <div class="line">primitive::primitive_desc op_pd(params, attr); <span class="comment">// create a pd with the attr</span></div>
-</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>Different post-ops can be chained together by appending one after another. Note that the appending order matters: the sequence of the post-ops is executed in the order of appearance.</dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>Different primitives may have different post-ops support. Moreover, the support might also depend on the actual implementation of a primitive. For instance, the library generally does not support post-ops for reference primitives (which are typically very slow, so there is no point in doing the actual fusion). Robust code should handle errors accordingly. See the <a class="el" href="dev_guide_attributes.html#dev_guide_attributes_error_handling">section on attributes error handling</a>.</dd></dl>
+</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>Different post-ops can be chained together by appending one after another. Note that the appending order matters: the sequence of the post operations is executed in the order of appearance. The maximum number of post operations supported in the library is 32.</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Different primitives may have different post-ops support. Each primitive documentation page contains information about what kind of post operations it supports. Moreover, the support might also depend on the actual implementation of a primitive. For instance, the library may not support post-ops for primitive reference implementations (which are typically very slow, so there is no point in doing the actual fusion). Robust code should handle errors accordingly. See the <a class="el" href="dev_guide_attributes.html#dev_guide_attributes_error_handling">section on attributes error handling</a>.</dd></dl>
 <dl class="section note"><dt>Note</dt><dd>Post-ops do not change the memory format of the operation destination memory object.</dd></dl>
 <p>The post-op object can be inspected using the <a class="el" href="structdnnl_1_1post__ops.html#a79ef658c2e7ac0fddbd605c6864c19f9">dnnl::post_ops::kind()</a> function that takes an index of the post-op (which must be less than the value returned by <a class="el" href="structdnnl_1_1post__ops.html#a26d76d6a99c01b33eee312d1491c1d4e">dnnl::post_ops::len()</a>), and returns its kind.</p>
 <h2>Supported Post-ops</h2>
@@ -223,6 +219,36 @@ Fusion</div></div>
 <li>The <code>dst_1x1</code>, <code>wei_dw</code> and <code>dst_dw</code> are assumed to be <a class="el" href="group__dnnl__api__memory.html#gga395e42b594683adb25ed2d842bb3091dafee39ac6fff0325cae43cd66495c18ac" title="Undefined memory format tag. ">dnnl_format_tag_any</a>.</li>
 </ul>
 </dd></dl>
+<p><a class="anchor" id="dev_guide_attributes_post_ops_binary"></a></p>
+<h3>Binary Post-op</h3>
+<p>The binary post-op enables fusing a primitive with a <a class="el" href="dev_guide_binary.html">Binary</a> primitive.</p>
+<p>The <a class="el" href="structdnnl_1_1primitive.html#ad1ec93215a0cf3aa0a32bae0c2cd9169">dnnl::primitive::kind</a> of this post-op is <a class="el" href="structdnnl_1_1primitive.html#ad1ec93215a0cf3aa0a32bae0c2cd9169a9d7183f16acce70658f686ae7f1a4d20" title="A binary primitive. ">dnnl::primitive::kind::binary</a>.</p>
+<p>API:</p>
+<ul>
+<li>C: <a class="el" href="group__dnnl__api__attributes.html#ga9d6524a5808500e78138dd2125ac2cbe">dnnl_post_ops_append_binary</a></li>
+<li>C++: <a class="el" href="structdnnl_1_1post__ops.html#a40bb2b39a685726ac54873b203be41b5">dnnl::post_ops::append_binary</a></li>
+</ul>
+<p>The parameters (C++ API for simplicity): </p>
+<div class="fragment"><div class="line"><span class="keywordtype">void</span> <a class="code" href="structdnnl_1_1post__ops.html#a40bb2b39a685726ac54873b203be41b5">dnnl::post_ops::append_binary</a>(</div>
+<div class="line">        <a class="code" href="group__dnnl__api__attributes.html#ga00377dd4982333e42e8ae1d09a309640">algorithm</a> alg, <span class="comment">// binary algorithm to apply</span></div>
+<div class="line">        <span class="keyword">const</span> memory::desc &amp;src1 <span class="comment">// memory descriptor for a second memory operand</span></div>
+<div class="line">        );</div>
+</div><!-- fragment --><p>The <code>alg</code> and <code>src1</code> parameters are the same as in <a class="el" href="dev_guide_binary.html">Binary</a>.</p>
+<p>The binary post-op replaces: </p>
+<p class="formulaDsp">
+\[ \dst[:] = \operatorname{Op}(...) \]
+</p>
+<p>with</p>
+<p class="formulaDsp">
+\[ \dst[:] = \operatorname{binary}(\operatorname{Op}(...), Source\_1[:]) \]
+</p>
+<p>The intermediate result of \(\operatorname{Op}(...)\) is not preserved. Hence, in most cases this kind of fusion cannot be used during training.</p>
+<p>Currently the following scenarios are supported:</p>
+<ul>
+<li>Per tensor broadcast, when \(Source\_1\) is represented as a one-element tensor, i.e. {1, 1, 1, 1} for 2D spatial \(\operatorname{Op}(...)\).</li>
+<li>Per channels (i.e. dimension 1) broadcast, when a <code>dim[1]</code> value of \(Source\_1\) coincides with a <code>dim[1]</code> value of \(\operatorname{Op}(...)\), i.e. {1, C, 1, 1} for 2D spatial \(\operatorname{Op}(...)\).</li>
+</ul>
+<p>Scenario when \(Source\_1\) represents a full tensor as \(\operatorname{Op}(...)\) is not supported yet.</p>
 <h2>Examples of Chained Post-ops</h2>
 <p>Different post-ops can be chained together by appending one after another. Note that the order matters: the post-ops are executed in the order they have been appended.</p>
 <p>Let's consider some examples.</p>
@@ -247,7 +273,7 @@ Fusion</div></div>
 </p>
 <p><a class="anchor" id="dev_guide_attributes_post_ops_with_scales"></a></p>
 <h3>Tanh -&gt; Sum -&gt; ScaleShift</h3>
-<p>This is a hypothetical example that illustrates the sequence of operations applied. We also set all the scales to values other than 1.0 and use <a class="el" href="structdnnl_1_1primitive__attr.html#a4b81acc8e48886313154f75c1708ae02">dnnl::primitive_attr::set_output_scales</a> which will be covered in <a class="el" href="dev_guide_attributes_quantization.html">Primitive Attributes: Quantization</a>. Unfortunately (or fortunately) the sequence is not supported by the library and is merely used to illustrate the semantics of post-ops.</p>
+<p>This is a hypothetical example that illustrates the sequence of operations applied. We also set all the scales to values other than 1.0 and use <a class="el" href="structdnnl_1_1primitive__attr.html#a4b81acc8e48886313154f75c1708ae02">dnnl::primitive_attr::set_output_scales</a> which will be covered in <a class="el" href="dev_guide_attributes_quantization.html">Primitive Attributes: Quantization</a>.</p>
 <div class="fragment"><div class="line"><a class="code" href="structdnnl_1_1post__ops.html">dnnl::post_ops</a> po;</div>
 <div class="line">po.<a class="code" href="structdnnl_1_1post__ops.html#a28460923ad579c780e4027a6256fe207">append_eltwise</a>(</div>
 <div class="line">        <span class="comment">/* scale     = */</span> s_tanh,</div>
@@ -308,7 +334,44 @@ Fusion</div></div>
 <p class="formulaDsp">
 \[ dst = ReLU_{depthwise} ( scales_{depthwise} \cdot ( conv_{depthwise} ( ReLU_{1x1} ( scales_{conv_{1x1}} \cdot ( conv_{1x1}() ) ) ) ) ) \]
 </p>
- </div></div><!-- contents -->
+<p><a class="anchor" id="dev_guide_attributes_post_ops_binary_fusion"></a></p>
+<h3>Binary</h3>
+<p>An example of fusing convolution with binary post-op with per channel addition.</p>
+<div class="fragment"><div class="line"><a class="code" href="structdnnl_1_1memory_1_1desc.html">dnnl::memory::desc</a> conv_dst_md {MB, C, H, W}; <span class="comment">/* 2D conv destination memory desc */</span></div>
+<div class="line"></div>
+<div class="line"><a class="code" href="structdnnl_1_1post__ops.html">dnnl::post_ops</a> po;</div>
+<div class="line"></div>
+<div class="line"><span class="comment">/* Append eltwise post-op prior the binary post-op */</span></div>
+<div class="line">po.<a class="code" href="structdnnl_1_1post__ops.html#a28460923ad579c780e4027a6256fe207">append_eltwise</a>(</div>
+<div class="line">        <span class="comment">/* scale     = */</span> 1.f,</div>
+<div class="line">        <span class="comment">/* alg kind  = */</span> <a class="code" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640aba09bebb742494255b90b43871c01c69">dnnl::algorithm::eltwise_relu</a>,</div>
+<div class="line">        <span class="comment">/* neg slope = */</span> 0.f,</div>
+<div class="line">        <span class="comment">/* unused for relu */</span> 0.f);</div>
+<div class="line"></div>
+<div class="line"><span class="comment">/* Note that `C` coincides with the one from `conv_dst_md`. Also note that only</span></div>
+<div class="line"><span class="comment"> * supported memory format for src1 memory is `nchw` (or `abcd`) format. */</span></div>
+<div class="line">po.<a class="code" href="structdnnl_1_1post__ops.html#a40bb2b39a685726ac54873b203be41b5">append_binary</a>(</div>
+<div class="line">        <span class="comment">/* alg kind = */</span> <a class="code" href="group__dnnl__api__attributes.html#gga00377dd4982333e42e8ae1d09a309640ab2c3faf084cf82b5603946995f637b35">dnnl::algorithm::binary_add</a>,</div>
+<div class="line">        <span class="comment">/* src1_md = */</span> <a class="code" href="structdnnl_1_1memory_1_1desc.html">dnnl::memory::desc</a>(</div>
+<div class="line">                {1, C, 1, 1},</div>
+<div class="line">                <a class="code" href="structdnnl_1_1memory.html#a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e">dnnl::memory::data_type::f32</a>,</div>
+<div class="line">                <a class="code" href="structdnnl_1_1memory.html#a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fae2fc714c4727ee9395f324cd2e7f331f">dnnl::memory::format_tag::abcd</a>));</div>
+<div class="line"></div>
+<div class="line"><a class="code" href="structdnnl_1_1primitive__attr.html">dnnl::primitive_attr</a> attr;</div>
+<div class="line">attr.<a class="code" href="structdnnl_1_1primitive__attr.html#ac830fa9f4fcf480b494d73153ad579bf">set_post_ops</a>(po);</div>
+<div class="line"></div>
+<div class="line"><span class="keyword">auto</span> cpd = convolution_forward::primitive_desc(conv, attr, engine);</div>
+<div class="line"></div>
+<div class="line"><span class="comment">/* To set memory argument for binary post-op, the following should take place: */</span></div>
+<div class="line">std::unordered_map&lt;int, memory&gt; args;</div>
+<div class="line"></div>
+<div class="line">args.insert(<a class="code" href="group__dnnl__api__primitives__common.html#gac37ad67b48edeb9e742af0e50b70fe09">DNNL_ARG_SRC</a>, conv_src_memory);</div>
+<div class="line">...</div>
+<div class="line">int binary_post_op_position = 1; <span class="comment">/* hard coded here, but may be queried */</span></div>
+<div class="line">args.insert(</div>
+<div class="line">        <a class="code" href="group__dnnl__api__primitives__common.html#ga30839136bbf81b03a173e0842ae015e1">DNNL_ARG_ATTR_MULTIPLE_POST_OP</a>(binary_post_op_position) | <a class="code" href="group__dnnl__api__primitives__common.html#gadc5a5761633c05f4378780d23b7c9692">DNNL_ARG_SRC_1</a>, <span class="comment">/* note parentheses around index */</span></div>
+<div class="line">        binary_post_op_src1_memory);</div>
+</div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="footer">
     <script>

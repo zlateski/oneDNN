@@ -340,6 +340,13 @@ Macros</h2></td></tr>
 <tr class="memitem:ga47534804c9b2f9ede6b875f6cb08cc35"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__primitives__common.html#ga47534804c9b2f9ede6b875f6cb08cc35">DNNL_ARG_ATTR_POST_OP_DW</a>&#160;&#160;&#160;8192</td></tr>
 <tr class="memdesc:ga47534804c9b2f9ede6b875f6cb08cc35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Arguments for fused depthwise convolution.  <a href="#ga47534804c9b2f9ede6b875f6cb08cc35">More...</a><br/></td></tr>
 <tr class="separator:ga47534804c9b2f9ede6b875f6cb08cc35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadec6bcdebcd35d41c394622af3e0cb75"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gadec6bcdebcd35d41c394622af3e0cb75"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__primitives__common.html#gadec6bcdebcd35d41c394622af3e0cb75">DNNL_ARG_ATTR_MULTIPLE_POST_OP_BASE</a>&#160;&#160;&#160;16384</td></tr>
+<tr class="memdesc:gadec6bcdebcd35d41c394622af3e0cb75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starting point for a binary post operation. <br/></td></tr>
+<tr class="separator:gadec6bcdebcd35d41c394622af3e0cb75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga30839136bbf81b03a173e0842ae015e1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dnnl__api__primitives__common.html#ga30839136bbf81b03a173e0842ae015e1">DNNL_ARG_ATTR_MULTIPLE_POST_OP</a>(idx)&#160;&#160;&#160;(<a class="el" href="group__dnnl__api__primitives__common.html#gadec6bcdebcd35d41c394622af3e0cb75">DNNL_ARG_ATTR_MULTIPLE_POST_OP_BASE</a> * ((idx) + 1))</td></tr>
+<tr class="memdesc:ga30839136bbf81b03a173e0842ae015e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Arguments for a binary post operation.  <a href="#ga30839136bbf81b03a173e0842ae015e1">More...</a><br/></td></tr>
+<tr class="separator:ga30839136bbf81b03a173e0842ae015e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -986,6 +993,25 @@ Functions</h2></td></tr>
 
 <p>Arguments for fused depthwise convolution. </p>
 <p>See <a class="el" href="dev_guide_attributes_post_ops.html#dev_guide_attributes_post_ops_depthwise_fusion">dev_guide_attributes_post_ops_depthwise_fusion</a> </p>
+
+</div>
+</div>
+<a class="anchor" id="ga30839136bbf81b03a173e0842ae015e1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DNNL_ARG_ATTR_MULTIPLE_POST_OP</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">idx</td><td>)</td>
+          <td>&#160;&#160;&#160;(<a class="el" href="group__dnnl__api__primitives__common.html#gadec6bcdebcd35d41c394622af3e0cb75">DNNL_ARG_ATTR_MULTIPLE_POST_OP_BASE</a> * ((idx) + 1))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Arguments for a binary post operation. </p>
+<p>Up to 32 arguments are supported. See <a class="el" href="dev_guide_attributes_post_ops.html#dev_guide_attributes_post_ops_binary_fusion">dev_guide_attributes_post_ops_binary_fusion</a> </p>
 
 </div>
 </div>
